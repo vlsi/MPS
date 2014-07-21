@@ -10,5 +10,5 @@ public class UtilityMethodDeclaration_BehaviorDescriptor extends BaseMethodDecla
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration";
-  };;
-;}
+  }
+}

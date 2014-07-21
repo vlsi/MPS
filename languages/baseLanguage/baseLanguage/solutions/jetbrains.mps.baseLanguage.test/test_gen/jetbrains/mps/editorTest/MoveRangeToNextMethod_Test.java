@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class MoveRangeToNextMethod_Test extends BaseTransformationTest {
   public MoveRangeToNextMethod_Test() {
   }
-
   @Test
   public void test_MoveRangeToNextMethod() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.MoveRangeToNextMethod_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("953450985260255429", "953450985260255526");

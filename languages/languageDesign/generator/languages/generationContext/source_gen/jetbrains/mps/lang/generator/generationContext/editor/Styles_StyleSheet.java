@@ -16,5 +16,4 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
   }
 
-
 }

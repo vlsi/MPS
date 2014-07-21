@@ -11,14 +11,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConceptEditorDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
+  }
+  public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "conceptDeclaration", false);
-  };;
-;  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
+  }
+  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SLinkOperations.setTarget(thisNode, "conceptDeclaration", baseConcept, false);
-  };;
-;  public static boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
+  }
+  public static boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
     List<SNode> createdEditors = AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(candidate, LanguageAspect.EDITOR);
     for (SNode createdEditor : createdEditors) {
       if (SNodeOperations.isInstanceOf(createdEditor, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")) {
@@ -26,12 +26,12 @@ public class ConceptEditorDeclaration_Behavior {
       }
     }
     return true;
-  };;
-;  public static void call_createDefaultEditor_2970389781192937380(SNode thisNode, boolean multiline) {
+  }
+  public static void call_createDefaultEditor_2970389781192937380(SNode thisNode, boolean multiline) {
     if (multiline) {
       new DefaultEditorBuilder(thisNode).buildStatementLike();
     } else {
       new DefaultEditorBuilder(thisNode).buildExpressionLike();
     }
-  };;
-;}
+  }
+}

@@ -23,12 +23,10 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
   public BuildSource_JavaOptions_Constraints() {
     super("jetbrains.mps.build.structure.BuildSource_JavaOptions");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -39,7 +37,6 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
 
     return result;
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -48,7 +45,6 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "optionsName";
@@ -57,7 +53,6 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
     });
     return properties;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.structure.BuildProject") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parentNode, "jetbrains.mps.build.structure.BuildProject"), "plugins", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -65,9 +60,7 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
       }
     }) || parentNode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "927724900262213629");
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

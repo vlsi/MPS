@@ -9,5 +9,5 @@ public class CellLayout_Indent_BehaviorDescriptor extends CellLayout_BehaviorDes
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellLayout_Indent";
-  };;
-;}
+  }
+}

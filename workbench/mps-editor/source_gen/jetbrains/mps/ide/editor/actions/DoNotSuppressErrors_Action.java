@@ -18,18 +18,15 @@ import org.apache.log4j.LogManager;
 
 public class DoNotSuppressErrors_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public DoNotSuppressErrors_Action() {
     super("Do not Supress Errors", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -40,7 +37,6 @@ public class DoNotSuppressErrors_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -51,7 +47,6 @@ public class DoNotSuppressErrors_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       AttributeOperations.setAttribute(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"), null);
@@ -61,6 +56,5 @@ public class DoNotSuppressErrors_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(DoNotSuppressErrors_Action.class);
 }

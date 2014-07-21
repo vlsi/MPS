@@ -21,18 +21,15 @@ import org.apache.log4j.LogManager;
 
 public class ShowMetaLevel_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowMetaLevel_Action() {
     super("Show Quotation Metalevel", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -43,7 +40,6 @@ public class ShowMetaLevel_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -66,7 +62,6 @@ public class ShowMetaLevel_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       int metaLevel = BehaviorReflection.invokeVirtual(Integer.TYPE, ((SNode) MapSequence.fromMap(_params).get("currentNode")), "virtual_getMetaLevel_3981318653438234726", new Object[]{});
@@ -77,6 +72,5 @@ public class ShowMetaLevel_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowMetaLevel_Action.class);
 }

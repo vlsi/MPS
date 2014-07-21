@@ -10,5 +10,5 @@ public class ComeFromExpression_BehaviorDescriptor extends Expression_BehaviorDe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.scopes.structure.ComeFromExpression";
-  };;
-;}
+  }
+}

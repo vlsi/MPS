@@ -10,5 +10,5 @@ public class ConceptSwitchStatement_BehaviorDescriptor extends Statement_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement";
-  };;
-;}
+  }
+}

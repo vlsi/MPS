@@ -29,11 +29,9 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_adk1cf_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_adk1cf_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_adk1cf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_adk1cf_a");
@@ -46,7 +44,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_adk1cf_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_adk1cf_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._OpenTag");
     Style style = new StyleImpl();
@@ -54,7 +51,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createRefCell_adk1cf_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("propertyDeclaration");
@@ -85,20 +81,16 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_adk1cf_a1a extends InlineCellProvider {
     public _Inline_adk1cf_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_adk1cf_a0b0(editorContext, node);
     }
-
     private EditorCell createProperty_adk1cf_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -121,31 +113,24 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private static Color _StyleParameter_QueryFunction_adk1cf_a0b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
-
   private static Color _StyleParameter_QueryFunction_adk1cf_a1b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
   }
-
   private static Color _StyleParameter_QueryFunction_adk1cf_a2b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
-
   private static int _StyleParameter_QueryFunction_adk1cf_a3b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
-
   private static boolean _StyleParameter_QueryFunction_adk1cf_a4b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
-
   private static boolean _StyleParameter_QueryFunction_adk1cf_a5b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
   }
-
   private EditorCell createComponent_adk1cf_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
     Style style = new StyleImpl();
@@ -153,7 +138,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_adk1cf_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_adk1cf_a_0");
@@ -167,12 +151,10 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_adk1cf_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_adk1cf_a0_0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     return editorCell;
   }
-
   private EditorCell createConstant_adk1cf_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_adk1cf_b0");
@@ -183,7 +165,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_adk1cf_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Property cell:");
     editorCell.setCellId("Constant_adk1cf_c0");
@@ -193,7 +174,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_adk1cf_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_adk1cf_d0");
@@ -214,7 +194,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_adk1cf_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_adk1cf_a3a");
@@ -226,7 +205,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_adk1cf_b0d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_adk1cf_a0d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property");
     editorCell.setCellId("Constant_adk1cf_a0d0");
@@ -236,7 +214,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_adk1cf_b0d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("propertyDeclaration");
@@ -261,20 +238,16 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_adk1cf_a1a3a extends InlineCellProvider {
     public _Inline_adk1cf_a1a3a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_adk1cf_a0b0d0(editorContext, node);
     }
-
     private EditorCell createProperty_adk1cf_a0b0d0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -297,7 +270,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_adk1cf_b3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_adk1cf_b3a");
@@ -309,11 +281,9 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_adk1cf_b1d0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_adk1cf_a1d0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "emptyNoTargetText"));
   }
-
   private EditorCell createConstant_adk1cf_a1d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text*");
     editorCell.setCellId("Constant_adk1cf_a1d0");
@@ -323,7 +293,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_adk1cf_b1d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("noTargetText");
@@ -347,7 +316,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_adk1cf_c3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_adk1cf_c3a");
@@ -359,11 +327,9 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_adk1cf_b2d0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_adk1cf_a2d0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "noTargetText") == null;
   }
-
   private EditorCell createConstant_adk1cf_a2d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "empty text*");
     editorCell.setCellId("Constant_adk1cf_a2d0");
@@ -373,7 +339,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_adk1cf_b2d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("emptyNoTargetText");
@@ -397,7 +362,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_adk1cf_d3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_adk1cf_d3a");
@@ -409,7 +373,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_adk1cf_b3d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_adk1cf_a3d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "read only");
     editorCell.setCellId("Constant_adk1cf_a3d0");
@@ -419,7 +382,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_adk1cf_b3d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("readOnly");
@@ -440,7 +402,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_adk1cf_e3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_adk1cf_e3a");
@@ -452,11 +413,9 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_adk1cf_b4d0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_adk1cf_a4d0(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"));
   }
-
   private EditorCell createConstant_adk1cf_a4d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "allow empty");
     editorCell.setCellId("Constant_adk1cf_a4d0");
@@ -466,7 +425,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_adk1cf_b4d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("allowEmptyText");

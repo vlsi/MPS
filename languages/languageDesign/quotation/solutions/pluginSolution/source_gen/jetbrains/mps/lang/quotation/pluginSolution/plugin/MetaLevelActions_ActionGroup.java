@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class MetaLevelActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(MetaLevelActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.quotation.pluginSolution.plugin.MetaLevelActions_ActionGroup";
-
   public MetaLevelActions_ActionGroup() {
     super("MetaLevelActions", ID);
     this.setIsInternal(false);

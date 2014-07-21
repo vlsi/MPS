@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_SimpleMathVarDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SimpleMathVarDeclaration_InferenceRule() {
   }
-
   public void applyRule(final SNode declaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = declaration;
@@ -22,18 +21,15 @@ public class typeof_SimpleMathVarDeclaration_InferenceRule extends AbstractInfer
       typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "2073504467209343329", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(declaration, "initializer", true), "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "2073504467209343398", true), false, true, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

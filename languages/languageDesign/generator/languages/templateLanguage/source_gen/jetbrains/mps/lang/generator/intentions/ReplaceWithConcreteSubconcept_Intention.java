@@ -25,38 +25,30 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory {
   public ReplaceWithConcreteSubconcept_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
   public String getPresentation() {
     return "ReplaceWithConcreteSubconcept";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.ReplaceWithConcreteSubconcept_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (!(MacroIntentionsUtil.isInGeneratorModel(node))) {
       return false;
@@ -64,15 +56,12 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
     SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
     return SPropertyOperations.getBoolean(selectedNodeConcept, "abstract");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1210374656847760938");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
     List<SNode> paramList = parameter(node, context);
@@ -83,7 +72,6 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
     }
     return list;
   }
-
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SNodeOperations.getConceptDeclaration(node), SNodeOperations.getModel(node))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -91,24 +79,19 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
       }
     }).toListSequence();
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     private SNode myParameter;
-
     public IntentionImplementation(SNode parameter) {
       myParameter = parameter;
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace with instance of  " + BehaviorReflection.invokeVirtual(String.class, myParameter, "virtual_getPresentation_1213877396640", new Object[]{}) + " concept";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode concreteConceptInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(myParameter), null);
       SNodeOperations.replaceWithAnother(node, concreteConceptInstance);
       SNodeOperations.deleteNode(node);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ReplaceWithConcreteSubconcept_Intention.this;
     }

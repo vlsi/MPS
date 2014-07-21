@@ -10,5 +10,5 @@ public class RuntimeHoleType_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType";
-  };;
-;}
+  }
+}

@@ -34,7 +34,6 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_vwuy6a_a(editorContext, node);
   }
-
   private EditorCell createCollection_vwuy6a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vwuy6a_a");
@@ -45,7 +44,6 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_vwuy6a_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_vwuy6a_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -55,40 +53,32 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new LookRegexp_Editor.ReplaceWith_LookRegexp_cellMenu_vwuy6a_a0a0(), new LookRegexp_Editor.LookRegexp_customReplace_cellMenu_vwuy6a_b0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_LookRegexp_cellMenu_vwuy6a_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_LookRegexp_cellMenu_vwuy6a_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp";
     }
   }
-
   public static class LookRegexp_customReplace_cellMenu_vwuy6a_b0a0 extends AbstractCellMenuPart_ReplaceNode_Group {
     public LookRegexp_customReplace_cellMenu_vwuy6a_b0a0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> res = ListSequence.fromList(new LinkedList<SNode>());
       ListSequence.fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"));
       ListSequence.fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"));
       return res;
     }
-
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
   }
-
   private EditorCell createRefNode_vwuy6a_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("regexp");
@@ -108,7 +98,6 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_vwuy6a_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_vwuy6a_c0");

@@ -42,15 +42,12 @@ public class QueriesGenerated {
               SLinkOperations.setTarget(usage, "leftExpression", _context.getSourceNode(), true);
               return usage;
             }
-
             public String getMatchingText(String pattern) {
               return SPropertyOperations.getString((item), "name");
             }
-
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
-
             @Override
             protected boolean isEnabled() {
               SNode sourceNode = getSourceNode();

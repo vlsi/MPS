@@ -47,7 +47,6 @@ public class FacetDescriptorsIO_Test extends TestCase {
     mpsCfg.readFromXml(cfg);
     this.assertMpsCfg(mpsCfg);
   }
-
   @MPSLaunch
   public void test_ideaModule() throws Exception {
     IFile moduleFile = TestUtils.dataFile("module.iml");
@@ -55,7 +54,6 @@ public class FacetDescriptorsIO_Test extends TestCase {
     MPSFacetConfiguration mpsCfg = imc.getMPSFacetConfiguration();
     assertMpsCfg(mpsCfg);
   }
-
   @MPSLaunch
   public void test_solutionDescriptorIO() throws Exception {
     IFile moduleFile = TestUtils.dataFile("module.iml");
@@ -64,7 +62,6 @@ public class FacetDescriptorsIO_Test extends TestCase {
     SolutionDescriptor sd = io.readFromFile(moduleFile);
     assertSolutionDescriptor(moduleFile, sd);
   }
-
   @MPSLaunch
   public void test_nofacetDescriptorIO() throws Exception {
     IFile moduleFile = TestUtils.dataFile("nofacet.iml");
@@ -73,14 +70,11 @@ public class FacetDescriptorsIO_Test extends TestCase {
     SolutionDescriptor sd = io.readFromFile(moduleFile);
     Assert.assertNull(sd);
   }
-
   public FacetDescriptorsIO_Test() {
   }
-
   private Element readRoot(IFile moduleFile) throws IOException, JDOMException {
     return JDOMUtil.loadDocument(moduleFile).getRootElement();
   }
-
   private void assertMpsCfg(MPSFacetConfiguration mpsCfg) {
     Assert.assertEquals("4f50af0c-4cd4-11e1-a072-6cf049e62fe5", mpsCfg.UUID);
     Assert.assertEquals("$MODULE_DIR$/source_gen", mpsCfg.generatorOutputPath);
@@ -90,7 +84,6 @@ public class FacetDescriptorsIO_Test extends TestCase {
     Assert.assertSame(1, mpsCfg.usedLanguages.length);
     Assert.assertEquals(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), PersistenceFacade.getInstance().createModuleReference(mpsCfg.usedLanguages[0]).getModuleId());
   }
-
   private void assertSolutionDescriptor(IFile moduleFile, SolutionDescriptor sd) {
     Assert.assertEquals("4f50af0c-4cd4-11e1-a072-6cf049e62fe5", sd.getUUID());
     Assert.assertEquals(moduleFile.getParent().getDescendant("source_gen").getPath(), sd.getOutputPath());

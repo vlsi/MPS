@@ -9,5 +9,5 @@ public class InsertMacro_BehaviorDescriptor extends NodeMacro_BehaviorDescriptor
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.InsertMacro";
-  };;
-;}
+  }
+}

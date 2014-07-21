@@ -11,7 +11,6 @@ public class ModelDescriptor extends VoidColumnDescriptor {
   public ModelDescriptor(String name, String header, int width) {
     super(name, header, width);
   }
-
   @Override
   public TableCellRenderer createRenderer() {
     return new ListRendererAdapter(new ModelRenderer(null, null));

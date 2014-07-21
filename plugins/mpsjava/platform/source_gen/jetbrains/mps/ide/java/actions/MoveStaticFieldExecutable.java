@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MoveStaticFieldExecutable implements MoveStaticMemberExecutable {
 
-
   /**
    * Shared between workbench action and plugin MoveContributor
    */
@@ -47,6 +46,5 @@ public class MoveStaticFieldExecutable implements MoveStaticMemberExecutable {
       }
     });
   }
-
 
 }

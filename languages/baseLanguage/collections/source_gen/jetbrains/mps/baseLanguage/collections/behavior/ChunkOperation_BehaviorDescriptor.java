@@ -9,5 +9,5 @@ public abstract class ChunkOperation_BehaviorDescriptor extends SequenceOperatio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ChunkOperation";
-  };;
-;}
+  }
+}

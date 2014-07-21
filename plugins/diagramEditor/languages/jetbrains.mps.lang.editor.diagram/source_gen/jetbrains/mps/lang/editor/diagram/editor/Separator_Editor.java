@@ -13,7 +13,6 @@ public class Separator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ygm7mr_a(editorContext, node);
   }
-
   private EditorCell createCollection_ygm7mr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ygm7mr_a");
@@ -21,7 +20,6 @@ public class Separator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ygm7mr_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ygm7mr_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "separator");
     editorCell.setCellId("Constant_ygm7mr_a0");

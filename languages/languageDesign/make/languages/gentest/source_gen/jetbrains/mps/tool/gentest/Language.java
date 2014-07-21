@@ -11,25 +11,20 @@ import jetbrains.mps.tool.gentest.plugin.FacetAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7(jetbrains.mps.tool.gentest)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.tool.gentest";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return null;
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == MakeAspectDescriptor.class) {

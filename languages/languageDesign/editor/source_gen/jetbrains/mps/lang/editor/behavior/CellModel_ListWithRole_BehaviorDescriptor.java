@@ -9,5 +9,5 @@ public abstract class CellModel_ListWithRole_BehaviorDescriptor extends CellMode
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole";
-  };;
-;}
+  }
+}

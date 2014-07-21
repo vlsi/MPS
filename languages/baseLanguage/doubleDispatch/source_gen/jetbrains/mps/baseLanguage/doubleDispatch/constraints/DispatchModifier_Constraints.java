@@ -14,12 +14,10 @@ public class DispatchModifier_Constraints extends BaseConstraintsDescriptor {
   public DispatchModifier_Constraints() {
     super("jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,11 +28,9 @@ public class DispatchModifier_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     // applicable only to java methods 
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:3d7b3732-9bef-45a8-98fa-22d696f27853(jetbrains.mps.baseLanguage.doubleDispatch.constraints)", "2403002034744707318");
 }

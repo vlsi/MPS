@@ -17,25 +17,20 @@ import jetbrains.mps.baseLanguage.overloadedOperators.typesystem.TypesystemDescr
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "fc8d557e-5de6-4dd8-b749-aab2fb23aefc(jetbrains.mps.baseLanguage.overloadedOperators)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.baseLanguage.overloadedOperators";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.baseLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "cb490d2e-5c25-4e4e-8701-ba03dee6dbd8(jetbrains.mps.baseLanguage.overloadedOperators#6677452554239623057)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

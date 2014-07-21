@@ -21,7 +21,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public class TestScope extends Scope {
   public TestScope() {
   }
-
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     Scopes.forVariables(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression"), this, null);
@@ -31,13 +30,11 @@ public class TestScope extends Scope {
       }
     });
   }
-
   @Nullable
   @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     return null;
   }
-
   @Nullable
   @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {

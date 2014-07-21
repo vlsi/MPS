@@ -10,5 +10,5 @@ public class ToIteratorOperation_BehaviorDescriptor extends NoArgumentsSequenceO
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation";
-  };;
-;}
+  }
+}

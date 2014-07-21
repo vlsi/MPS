@@ -10,5 +10,5 @@ public class ExtractStaticInnerClassCreator_BehaviorDescriptor extends ClassCrea
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator";
-  };;
-;}
+  }
+}

@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_SelectInEditorOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SelectInEditorOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode selectInOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(selectInOperation, "editorContext", true);
@@ -39,22 +38,18 @@ public class typeof_SelectInEditorOperation_InferenceRule extends AbstractInfere
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "3883224472490222881", true), (SNode) _quotation_createNode_gf4lkw_a0d0b(), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.SelectInEditorOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_gf4lkw_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -62,21 +57,18 @@ public class typeof_SelectInEditorOperation_InferenceRule extends AbstractInfere
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)"), facade.createNodeId("~EditorContext")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_gf4lkw_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_gf4lkw_a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_gf4lkw_a0d0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

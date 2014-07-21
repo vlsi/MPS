@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class FunctionType_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public FunctionType_BehaviorDescriptor() {
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return FunctionType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType";

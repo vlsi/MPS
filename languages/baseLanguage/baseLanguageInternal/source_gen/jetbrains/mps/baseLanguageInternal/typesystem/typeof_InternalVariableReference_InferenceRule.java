@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_InternalVariableReference_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_InternalVariableReference_InferenceRule() {
   }
-
   public void applyRule(final SNode varRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = varRef;
@@ -22,18 +21,15 @@ public class typeof_InternalVariableReference_InferenceRule extends AbstractInfe
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371941", true), (SNode) SLinkOperations.getTarget(varRef, "type", true), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -11,6 +11,6 @@ public abstract class AbstractMethodSpecification_BehaviorDescriptor extends Bas
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.AbstractMethodSpecification";
-  };;
-;  public abstract String virtual_getPresentation_7941431147614164371(SNode thisNode);
+  }
+  public abstract String virtual_getPresentation_7941431147614164371(SNode thisNode);
 }

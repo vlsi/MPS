@@ -15,16 +15,13 @@ import com.intellij.openapi.util.Factory;
 
 public class NodeBySeveralConcepts_Configuration_Editor extends SettingsEditorEx<NodeBySeveralConcepts_Configuration> {
   private NodeBySeveralConceptChooser myChooser;
-
   public void disposeEditor() {
   }
-
   @NotNull
   public NodeBySeveralConceptChooser createEditor() {
     myChooser = new NodeBySeveralConceptChooser(myTargets);
     return myChooser;
   }
-
   public void applyEditorTo(final NodeBySeveralConcepts_Configuration configuration) throws ConfigurationException {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -32,7 +29,6 @@ public class NodeBySeveralConcepts_Configuration_Editor extends SettingsEditorEx
       }
     });
   }
-
   public void resetEditorFrom(final NodeBySeveralConcepts_Configuration configuration) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -40,9 +36,7 @@ public class NodeBySeveralConcepts_Configuration_Editor extends SettingsEditorEx
       }
     });
   }
-
   private List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
-
   public NodeBySeveralConcepts_Configuration_Editor(final List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
     super(new Factory<NodeBySeveralConcepts_Configuration>() {
       public NodeBySeveralConcepts_Configuration create() {

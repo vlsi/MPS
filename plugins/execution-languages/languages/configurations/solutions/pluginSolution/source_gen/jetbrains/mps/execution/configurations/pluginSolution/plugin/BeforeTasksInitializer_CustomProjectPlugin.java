@@ -14,10 +14,8 @@ import com.intellij.openapi.extensions.Extensions;
 
 public class BeforeTasksInitializer_CustomProjectPlugin extends BaseCustomProjectPlugin {
   private List<BeforeRunTaskProvider> myRegisteredBeforeTasks = ListSequence.fromList(new ArrayList<BeforeRunTaskProvider>());
-
   public BeforeTasksInitializer_CustomProjectPlugin() {
   }
-
   public void doInit(MPSProject project) {
     ExtensionPoint<BeforeRunTaskProvider<BeforeRunTask>> beforeTasksExtensionPoint = Extensions.getArea(project.getProject()).getExtensionPoint(BeforeRunTaskProvider.EXTENSION_POINT_NAME);
     {
@@ -26,7 +24,6 @@ public class BeforeTasksInitializer_CustomProjectPlugin extends BaseCustomProjec
       beforeTasksExtensionPoint.registerExtension(beforeTask);
     }
   }
-
   public void doDispose(MPSProject project) {
     ExtensionPoint<BeforeRunTaskProvider<BeforeRunTask>> beforeTasksExtensionPoint = Extensions.getArea(project.getProject()).getExtensionPoint(BeforeRunTaskProvider.EXTENSION_POINT_NAME);
     for (BeforeRunTaskProvider beforeTask : ListSequence.fromList(BeforeTasksInitializer_CustomProjectPlugin.this.myRegisteredBeforeTasks)) {

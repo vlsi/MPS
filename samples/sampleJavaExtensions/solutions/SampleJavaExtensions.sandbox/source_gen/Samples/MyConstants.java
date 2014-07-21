@@ -10,7 +10,6 @@ public final class MyConstants {
   public static final String NAME = "MPS";
   public static final boolean flag = true;
   public static final String FULL_NAME = "JetBrains " + NAME + " Develop with pleasure!";
-
   public MyConstants() {
   }
 }

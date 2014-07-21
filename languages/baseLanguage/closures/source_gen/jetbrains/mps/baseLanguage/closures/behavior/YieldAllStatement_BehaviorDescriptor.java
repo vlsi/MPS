@@ -10,9 +10,9 @@ public class YieldAllStatement_BehaviorDescriptor extends Statement_BehaviorDesc
   }
   public boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return YieldAllStatement_Behavior.virtual_isGuardClauseStatement_1237547327995(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement";
-  };;
-;}
+  }
+}

@@ -6,7 +6,6 @@ package jetbrains.mps.samples.formulaLanguage.behavior;
 public class GreaterThanOperation_BehaviorDescriptor extends Operation_BehaviorDescriptor {
   public GreaterThanOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation";

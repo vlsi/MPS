@@ -15,27 +15,27 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ConceptConstraints_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
+  }
+  public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "concept", false);
-  };;
-;  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
+  }
+  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SLinkOperations.setTarget(thisNode, "concept", baseConcept, false);
-  };;
-;  public static SNode call_getConstraintFunctionBodyUsingInheritance_4960272075650318140(SAbstractConcept thisConcept, SNode concept, final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> constraintFunctionSpecifier) {
+  }
+  public static SNode call_getConstraintFunctionBodyUsingInheritance_4960272075650318140(SAbstractConcept thisConcept, SNode concept, final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> constraintFunctionSpecifier) {
     _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> computePredicate = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode concept) {
         return constraintFunctionSpecifier.invoke(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.CONSTRAINTS), "jetbrains.mps.lang.constraints.structure.ConceptConstraints"));
-      };;
-;    };
+      }
+    };
     SNode method = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_computeInHierarchy_4184580446578561998(concept, computePredicate), "jetbrains.mps.baseLanguage.structure.ConceptFunction");
     if (method == null) {
       return _quotation_createNode_wrxfmp_a0a2a2();
     } else {
       return SLinkOperations.getTarget(method, "body", true);
     }
-  };;
-;  private static SNode _quotation_createNode_wrxfmp_a0a2a2() {
+  }
+  private static SNode _quotation_createNode_wrxfmp_a0a2a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -44,5 +44,5 @@ public class ConceptConstraints_Behavior {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", "true");
     quotedNode_1.addChild("expression", quotedNode_2);
     return quotedNode_1;
-  };;
-;}
+  }
+}

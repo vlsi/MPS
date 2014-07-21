@@ -14,12 +14,10 @@ public class SubtreeStatisticsTarget_Constraints extends BaseConstraintsDescript
   public SubtreeStatisticsTarget_Constraints() {
     super("jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget");
   }
-
   @Override
   public boolean hasOwnCanBeAncestorMethod() {
     return true;
   }
-
   @Override
   public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAnAncestor(node, childNode, childConcept, context);
@@ -30,10 +28,8 @@ public class SubtreeStatisticsTarget_Constraints extends BaseConstraintsDescript
 
     return result;
   }
-
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
     return childConcept != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.NodeRefExpression");
   }
-
   private static SNodePointer canBeAncesctorBreakingPoint = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "7820875636625783497");
 }

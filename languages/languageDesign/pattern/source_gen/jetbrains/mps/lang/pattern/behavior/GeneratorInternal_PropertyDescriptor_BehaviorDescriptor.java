@@ -10,5 +10,5 @@ public class GeneratorInternal_PropertyDescriptor_BehaviorDescriptor extends Bas
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor";
-  };;
-;}
+  }
+}

@@ -45,24 +45,19 @@ import org.apache.log4j.LogManager;
 public class StubModelsFastFindSupport implements ApplicationComponent, FindUsagesParticipant {
   public StubModelsFastFindSupport() {
   }
-
   @Override
   public void initComponent() {
     PersistenceFacade.getInstance().addFindUsagesParticipant(this);
   }
-
   @Override
   public void disposeComponent() {
     PersistenceFacade.getInstance().removeFindUsagesParticipant(this);
   }
-
   @NotNull
   @Override
   public String getComponentName() {
     return StubModelsFastFindSupport.class.getSimpleName();
   }
-
-
 
   @Override
   public void findUsages(Collection<SModel> models, Set<SNode> nodes, Consumer<SReference> consumer, Consumer<SModel> processedConsumer) {
@@ -89,7 +84,6 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       FindUsagesUtil.collectUsages(e.getKey(), e.getValue(), consumer);
     }
   }
-
   @Override
   public void findInstances(Collection<SModel> models, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
     final String blName = "jetbrains.mps.baseLanguage";
@@ -104,7 +98,6 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       FindUsagesUtil.collectInstances(e.getKey(), e.getValue(), consumer);
     }
   }
-
   @Override
   public void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer) {
     modelReferences = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), SetSequence.fromSet(modelReferences).where(new IWhereFilter<SModelReference>() {
@@ -126,7 +119,6 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
 
 
   }
-
   private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedConsumer, @Nullable Mapper<T, String> id) {
     MultiMap<SModel, T> result = new SetBasedMultiMap<SModel, T>();
     if (elems.isEmpty()) {
@@ -191,6 +183,5 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     }
     return result;
   }
-
   protected static Logger LOG = LogManager.getLogger(StubModelsFastFindSupport.class);
 }

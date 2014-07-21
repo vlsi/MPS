@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class typeof_Message_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_Message_InferenceRule() {
   }
-
   public void applyRule(final SNode message, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(message, "message", true);
@@ -23,22 +22,18 @@ public class typeof_Message_InferenceRule extends AbstractInferenceRule_Runtime 
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)", "2032731141110265662", true), (SNode) _quotation_createNode_t8mumf_a0a0b(), false, true, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.unitTest.structure.Message";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_t8mumf_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -10,12 +10,12 @@ public class FirstPositionAllowedStyleClassItem_BehaviorDescriptor extends Boole
   }
   public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return FirstPositionAllowedStyleClassItem_Behavior.virtual_getStyleAttribute_3639065570239132541(thisNode);
-  };;
-;  public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
+  }
+  public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     return FirstPositionAllowedStyleClassItem_Behavior.virtual_isApplicableTo_1214304723440(thisNode, cellModel);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem";
-  };;
-;}
+  }
+}

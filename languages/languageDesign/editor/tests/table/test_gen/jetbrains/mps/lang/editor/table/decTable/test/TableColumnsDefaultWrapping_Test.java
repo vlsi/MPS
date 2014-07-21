@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class TableColumnsDefaultWrapping_Test extends BaseTransformationTest {
   public TableColumnsDefaultWrapping_Test() {
   }
-
   @Test
   public void test_TableColumnsDefaultWrapping() throws Throwable {
     this.initTest("${mps_home}", "r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)");
     this.runTest("jetbrains.mps.lang.editor.table.decTable.test.TableColumnsDefaultWrapping_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("7651593722933722506", "8377126844275870351");

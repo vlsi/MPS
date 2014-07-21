@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class JavaWatchableNodeActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(JavaWatchableNodeActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.debugger.java.runtime.ui.actions.JavaWatchableNodeActions_ActionGroup";
-
   public JavaWatchableNodeActions_ActionGroup() {
     super("JavaWatchableNodeActions", ID);
     this.setIsInternal(false);

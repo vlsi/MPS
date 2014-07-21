@@ -34,7 +34,6 @@ public class PropertyDeclarationCellSelector_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_c8nh03_a(editorContext, node);
   }
-
   private EditorCell createCollection_c8nh03_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c8nh03_a");
@@ -44,7 +43,6 @@ public class PropertyDeclarationCellSelector_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_c8nh03_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_c8nh03_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_c8nh03_a0");
@@ -57,16 +55,13 @@ public class PropertyDeclarationCellSelector_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new PropertyDeclarationCellSelector_Editor.ReplaceWith_AbstractCellSelector_cellMenu_c8nh03_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_AbstractCellSelector_cellMenu_c8nh03_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractCellSelector_cellMenu_c8nh03_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.AbstractCellSelector";
     }
   }
-
   private EditorCell createRefCell_c8nh03_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("propertyDeclaration");
@@ -92,20 +87,16 @@ public class PropertyDeclarationCellSelector_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_c8nh03_a1a extends InlineCellProvider {
     public _Inline_c8nh03_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_c8nh03_a0b0(editorContext, node);
     }
-
     private EditorCell createProperty_c8nh03_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -125,50 +116,39 @@ public class PropertyDeclarationCellSelector_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   public static class PropertyDeclarationCellSelector_propertyDeclaration_cellMenu_c8nh03_a0b0 extends PrimaryReferentMenuCellMenuPart {
     public PropertyDeclarationCellSelector_propertyDeclaration_cellMenu_c8nh03_a0b0() {
     }
   }
-
   public static class PropertyDeclarationCellSelector_generic_cellMenu_c8nh03_b0b0 extends AbstractCellMenuPart_Generic_Group {
     public PropertyDeclarationCellSelector_generic_cellMenu_c8nh03_b0b0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return Collections.singletonList("#");
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode propertyExpression = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector");
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, propertyExpression, "sharp", -1);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
-
     public String getMatchingText(Object parameterObject) {
       return this.getMatchingText_internal((String) parameterObject);
     }
-
     public String getMatchingText_internal(String parameterObject) {
       return "#";
     }
-
     public String getDescriptionText(Object parameterObject) {
       return this.getDescriptionText_internal((String) parameterObject);
     }
-
     public String getDescriptionText_internal(String parameterObject) {
       return "specify property declaration by expression";
     }
   }
-
   private EditorCell createConstant_c8nh03_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_c8nh03_c0");

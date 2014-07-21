@@ -15,25 +15,20 @@ import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "16bafbb4-c6cd-4cc5-8332-7c6de8729b3f(jetbrains.mps.samples.Shapes)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.samples.Shapes";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.execution.util", "jetbrains.mps.baseLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "ee06d425-d7a1-494b-b52c-311d93bdcfbd(jetbrains.mps.samples.Shapes#5898776707557467699)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

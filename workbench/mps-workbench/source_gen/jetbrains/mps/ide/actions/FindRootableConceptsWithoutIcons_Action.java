@@ -37,18 +37,15 @@ import org.apache.log4j.LogManager;
 
 public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public FindRootableConceptsWithoutIcons_Action() {
     super("Find Rootable Concepts without Icons", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -59,7 +56,6 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -74,7 +70,6 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
@@ -119,9 +114,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(FindRootableConceptsWithoutIcons_Action.class);
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

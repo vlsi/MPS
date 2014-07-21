@@ -53,7 +53,6 @@ public class ModuleLoader {
 
     return new ModuleChecker(module, originalModule, visible, pathConverter, genContext, file.getParent(), md, reporter);
   }
-
   public static ModuleChecker createModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter) {
     return createModuleChecker(module, visible, pathConverter, null, new ModuleChecker.Reporter(null));
   }

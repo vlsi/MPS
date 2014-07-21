@@ -11,5 +11,5 @@ public class SemanticDowncastExpression_BehaviorDescriptor extends Expression_Be
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression";
-  };;
-;}
+  }
+}

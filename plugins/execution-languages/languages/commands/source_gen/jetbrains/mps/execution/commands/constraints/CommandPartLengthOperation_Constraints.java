@@ -17,12 +17,10 @@ public class CommandPartLengthOperation_Constraints extends BaseConstraintsDescr
   public CommandPartLengthOperation_Constraints() {
     super("jetbrains.mps.execution.commands.structure.CommandPartLengthOperation");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -33,10 +31,8 @@ public class CommandPartLengthOperation_Constraints extends BaseConstraintsDescr
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression") && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPartType"), true) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:fa479534-722a-48ea-9a2e-0d6cd7ab1559(jetbrains.mps.execution.commands.constraints)", "8234001627573849565");
 }

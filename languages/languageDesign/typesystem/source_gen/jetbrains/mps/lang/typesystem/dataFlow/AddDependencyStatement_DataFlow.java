@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class AddDependencyStatement_DataFlow extends DataFlowBuilder {
   public AddDependencyStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "dependency", true));
   }

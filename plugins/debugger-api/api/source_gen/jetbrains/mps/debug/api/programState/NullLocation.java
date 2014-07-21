@@ -6,22 +6,18 @@ package jetbrains.mps.debug.api.programState;
 public class NullLocation implements ILocation {
   public NullLocation() {
   }
-
   @Override
   public String getFileName() {
     return null;
   }
-
   @Override
   public String getUnitName() {
     return null;
   }
-
   @Override
   public String getRoutineName() {
     return null;
   }
-
   @Override
   public int getLineNumber() {
     return -1;

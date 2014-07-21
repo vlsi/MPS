@@ -21,7 +21,6 @@ public abstract class StubsClassChooserDialog extends DialogWrapper {
   private final ChooseByNamePanel myPanel;
   private String mySelected;
   private final ChooseByNameModel myModel;
-
   public StubsClassChooserDialog(Project project, String text) throws HeadlessException {
     super(project);
     setTitle(text);
@@ -30,7 +29,6 @@ public abstract class StubsClassChooserDialog extends DialogWrapper {
       protected boolean isValid(SNode node) {
         return StubsClassChooserDialog.this.isValid(node);
       }
-
       @Override
       public boolean willOpenEditor() {
         return false;
@@ -47,17 +45,14 @@ public abstract class StubsClassChooserDialog extends DialogWrapper {
 
     init();
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myPanel.getPanel();
   }
-
   public String getSelected() {
     return mySelected;
   }
-
   @Override
   protected void doOKAction() {
     NavigationParticipant.NavigationTarget chosenElement = (NavigationParticipant.NavigationTarget) myPanel.getChosenElement();
@@ -66,6 +61,5 @@ public abstract class StubsClassChooserDialog extends DialogWrapper {
     }
     super.doOKAction();
   }
-
   protected abstract boolean isValid(SNode node);
 }

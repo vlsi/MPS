@@ -16,25 +16,20 @@ import jetbrains.mps.baseLanguage.doubleDispatch.typesystem.TypesystemDescriptor
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "7db4447f-913e-4b81-bd75-c9a473319ac6(jetbrains.mps.baseLanguage.doubleDispatch)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.baseLanguage.doubleDispatch";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.baseLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "ee235186-b3b4-4b1e-ada8-109db9fa8810(jetbrains.mps.baseLanguage.doubleDispatch#4496691318496554192)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == ConstraintsAspectDescriptor.class) {

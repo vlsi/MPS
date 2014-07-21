@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class ExportScopeModule_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode) {
     return sourceNamespace.equals(ExportScope_Behavior.call_getNamespace_2565736246230026649(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), targetNode));
   }

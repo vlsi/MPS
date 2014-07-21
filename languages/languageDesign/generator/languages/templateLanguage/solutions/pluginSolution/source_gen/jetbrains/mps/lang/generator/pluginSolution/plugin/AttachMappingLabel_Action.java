@@ -39,18 +39,15 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 public class AttachMappingLabel_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public AttachMappingLabel_Action() {
     super("Attach Mapping Label", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
     if (!(BaseConcept_Behavior.call_isInTemplates_1213877396627(node))) {
@@ -90,7 +87,6 @@ public class AttachMappingLabel_Action extends BaseAction {
     }
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -104,7 +100,6 @@ public class AttachMappingLabel_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -119,7 +114,6 @@ public class AttachMappingLabel_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
@@ -137,7 +131,6 @@ public class AttachMappingLabel_Action extends BaseAction {
             public Iterator<String> iterator() {
               return new YieldingIterator<String>() {
                 private int __CP__ = 0;
-
                 protected boolean moveToNext() {
 __loop__:
                   do {
@@ -182,7 +175,6 @@ __switch__:
                   } while (true);
                   return false;
                 }
-
                 private SNode _2_label;
                 private Iterator<SNode> _2_label_it;
               };
@@ -202,16 +194,13 @@ __switch__:
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(AttachMappingLabel_Action.class);
-
   private static SModule check_gwd6n9_a0a3a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

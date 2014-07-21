@@ -29,12 +29,10 @@ import formulaAdapter.ValueQuantity;
 public class AgreementRegistryBuilder {
   public AgreementRegistryBuilder() {
   }
-
   public void setUp(AgreementRegistry registry) {
     registry.register("regular", this.setUpRegular());
     registry.register("lowPay", this.setUpLowPay());
   }
-
   public ServiceAgreement setUpRegular() {
     ServiceAgreement result = new ServiceAgreement();
     result.registerValue("BASE_RATE");
@@ -46,7 +44,6 @@ public class AgreementRegistryBuilder {
     result.addPostingRule(EventType.TAX, new PostingRule_Formula(AccountType.TAX, false, new MoneyMultiplyOperation(new FeeMoney(), new DoubleConstant(0.055))), new MfDate(1999, 10, 1));
     return result;
   }
-
   public ServiceAgreement setUpLowPay() {
     ServiceAgreement result = new ServiceAgreement();
     result.registerValue("BASE_RATE");

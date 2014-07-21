@@ -9,5 +9,5 @@ public class GenerationContextOp_DirtyNode_BehaviorDescriptor extends Generation
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode";
-  };;
-;}
+  }
+}

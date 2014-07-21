@@ -7,8 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NodeAppendPart_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean virtual_withIndent_1237466287046(SNode thisNode) {
+  }
+  public static boolean virtual_withIndent_1237466287046(SNode thisNode) {
     return SPropertyOperations.getBoolean(thisNode, "withIndent");
-  };;
-;}
+  }
+}

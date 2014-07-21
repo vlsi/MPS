@@ -11,5 +11,5 @@ public class ConceptEditorHintDeclarationReference_BehaviorDescriptor extends Ba
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference";
-  };;
-;}
+  }
+}

@@ -19,7 +19,6 @@ import javax.swing.UIManager;
 
 /*package*/ abstract class GroupedTree<D extends CheckBoxNodeRenderer.NodeData> extends MPSTree {
   private final IOperationContext myContext;
-
   public GroupedTree(IOperationContext context) {
     myContext = context;
     setCellRenderer(new CheckBoxNodeRenderer(true));
@@ -34,18 +33,13 @@ import javax.swing.UIManager;
     });
     setEditable(true);
   }
-
   protected abstract MPSTreeNode createDataNode(IOperationContext operationContext, D data);
-
   protected abstract GroupedTree.GroupKind<D, Object> createRootGroupKind();
-
   protected abstract Collection<D> getData();
-
   @Override
   protected MPSTreeNode rebuild() {
     return new GroupedTree.GroupTreeNode(myContext, createRootGroupKind(), new Object(), getData());
   }
-
   @Nullable
   public MPSTreeNode findNodeForData(D nodeData) {
     if (this.isEmpty()) {
@@ -53,7 +47,6 @@ import javax.swing.UIManager;
     }
     return findNodeForData((GroupedTree.GroupTreeNode) getRootNode(), nodeData);
   }
-
   @Nullable
   private MPSTreeNode findNodeForData(GroupedTree.GroupTreeNode rootNode, D nodeData) {
     for (int i = 0; i < rootNode.getChildCount(); i++) {
@@ -70,30 +63,23 @@ import javax.swing.UIManager;
     }
     return null;
   }
-
   public static abstract class GroupKind<D, T> {
     private boolean myIsVisible = true;
-
     public GroupKind() {
     }
-
     @Nullable
     public abstract T getGroup(D data);
-
     @Nullable
     public Icon getIcon(T group) {
       return null;
     }
-
     public String getText(@NotNull T group) {
       return group.toString();
     }
-
     @Nullable
     public GroupedTree.GroupKind getSubGroupKind() {
       return null;
     }
-
     public Map<T, Set<D>> sortByGroups(Collection<D> dataToSort) {
       Map<T, Set<D>> result = new HashMap<T, Set<D>>();
       for (D data : dataToSort) {
@@ -107,44 +93,36 @@ import javax.swing.UIManager;
       }
       return result;
     }
-
     public boolean isVisible() {
       return myIsVisible;
     }
-
     public void setVisible(boolean isVisible) {
       myIsVisible = isVisible;
     }
   }
-
   private class GroupData<D extends CheckBoxNodeRenderer.NodeData, T> implements CheckBoxNodeRenderer.NodeData {
     @NotNull
     private final GroupedTree.GroupKind<D, T> myKind;
     @NotNull
     private final T myGroup;
     private final Collection<D> myData;
-
     public GroupData(T group, GroupedTree.GroupKind<D, T> kind, Collection<D> data) {
       myGroup = group;
       myKind = kind;
       myData = data;
     }
-
     @Override
     public Icon getIcon(boolean expanded) {
       return myKind.getIcon(myGroup);
     }
-
     @Override
     public Color getColor() {
       return UIManager.getColor("Tree.textForeground");
     }
-
     @Override
     public String getText() {
       return myKind.getText(myGroup);
     }
-
     @Override
     public boolean isSelected() {
       for (D d : myData) {
@@ -154,17 +132,14 @@ import javax.swing.UIManager;
       }
       return true;
     }
-
     @NotNull
     public GroupedTree.GroupKind<D, T> getKind() {
       return myKind;
     }
-
     @NotNull
     public T getGroup() {
       return myGroup;
     }
-
     @Override
     public void setSelected(boolean selected) {
       for (D d : myData) {
@@ -172,10 +147,8 @@ import javax.swing.UIManager;
       }
     }
   }
-
   private class GroupTreeNode<T> extends MPSTreeNode {
     private final Collection<D> myData;
-
     public GroupTreeNode(IOperationContext operationContext, @NotNull GroupedTree.GroupKind<D, T> kind, @NotNull T group, Collection<D> data) {
       super(new GroupedTree.GroupData(group, kind, data), operationContext);
       GroupedTree.GroupData groupData = getGroupData();
@@ -207,7 +180,6 @@ import javax.swing.UIManager;
         }
       }
     }
-
     private GroupedTree.GroupData getGroupData() {
       return (GroupedTree.GroupData) getUserObject();
     }

@@ -10,5 +10,5 @@ public class ConceptSubstitutePart_BehaviorDescriptor extends BaseConcept_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart";
-  };;
-;}
+  }
+}

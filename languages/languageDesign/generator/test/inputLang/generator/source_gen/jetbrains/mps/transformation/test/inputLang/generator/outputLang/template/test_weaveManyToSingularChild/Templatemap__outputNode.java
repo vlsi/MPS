@@ -19,11 +19,9 @@ import jetbrains.mps.smodel.SNodePointer;
 public class Templatemap__outputNode implements TemplateDeclaration {
   public Templatemap__outputNode() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_wi2k8y_a0a1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist1 = null;
     TemplateContext context1 = context.subContext("generated_root");
@@ -50,6 +48,5 @@ public class Templatemap__outputNode implements TemplateDeclaration {
     environment.registerLabel(context.getInput(), tnode2, "generated_root");
     return tlist1;
   }
-
   private static SNodePointer template_wi2k8y_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738789586");
 }

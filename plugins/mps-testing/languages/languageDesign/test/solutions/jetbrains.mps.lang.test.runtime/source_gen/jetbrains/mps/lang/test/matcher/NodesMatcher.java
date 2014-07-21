@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.model.SReference;
 public class NodesMatcher {
   public NodesMatcher() {
   }
-
   public static NodeDifference matchNodes(SNode a, SNode b) {
     ArrayList<SNode> aList = new ArrayList<SNode>();
     aList.add(a);
@@ -28,12 +27,10 @@ public class NodesMatcher {
       return null;
     }
   }
-
   public static ArrayList<NodeDifference> matchNodes(List<SNode> a, List<SNode> b) {
     HashMap<SNode, SNode> map = new HashMap<SNode, SNode>();
     return NodesMatcher.matchNodes(a, b, map);
   }
-
   public static ArrayList<NodeDifference> matchNodes(List<SNode> a, List<SNode> b, Map<SNode, SNode> map) {
     Iterator<SNode> iteratorA = a.iterator();
     Iterator<SNode> iteratorB = b.iterator();
@@ -54,7 +51,6 @@ public class NodesMatcher {
     }
     return ret;
   }
-
   private static void match(SNode a, SNode b, Map<SNode, SNode> map) {
     if (!(a.getConcept().getQualifiedName().equals(b.getConcept().getQualifiedName()))) {
       return;
@@ -71,7 +67,6 @@ public class NodesMatcher {
     }
     map.put(a, b);
   }
-
   public static NodeDifference matchNodes(SNode a, SNode b, Map<SNode, SNode> map) {
     ArrayList<DifferanceItem> difference = new ArrayList<DifferanceItem>();
     if (NodesMatcher.matchConcepts(a, b, difference)) {
@@ -85,7 +80,6 @@ public class NodesMatcher {
     }
     return null;
   }
-
   private static boolean matchConcepts(SNode a, SNode b, ArrayList<DifferanceItem> difference) {
     if (!(a.getConcept().getQualifiedName().equals(b.getConcept().getQualifiedName()))) {
       difference.add(new ConceptDifference(a.getConcept().getQualifiedName(), b.getConcept().getQualifiedName()));
@@ -93,7 +87,6 @@ public class NodesMatcher {
     }
     return false;
   }
-
   private static Map<String, SReference> getReferencesMap(SNode node) {
     HashMap<String, SReference> references = new HashMap<String, SReference>();
     for (SReference nextReference : node.getReferences()) {
@@ -101,7 +94,6 @@ public class NodesMatcher {
     }
     return references;
   }
-
   private static void matchReferences(SNode a, SNode b, Map<SNode, SNode> map, ArrayList<DifferanceItem> difference) {
     Map<String, SReference> references1 = getReferencesMap(a);
     Map<String, SReference> references2 = getReferencesMap(b);
@@ -133,7 +125,6 @@ public class NodesMatcher {
       }
     }
   }
-
   private static int countElements(Iterator it) {
     int counter = 0;
     while (it.hasNext()) {
@@ -142,7 +133,6 @@ public class NodesMatcher {
     }
     return counter;
   }
-
   private static void matchChildren(SNode a, SNode b, Map<SNode, SNode> map, ArrayList<DifferanceItem> difference) {
     HashSet<String> roles = new HashSet<String>();
     roles.addAll(SNodeOperations.getChildRoles(a));
@@ -167,7 +157,6 @@ public class NodesMatcher {
       }
     }
   }
-
   private static void matchProperties(SNode a, SNode b, ArrayList<DifferanceItem> difference) {
     HashSet<String> propertes = new HashSet<String>();
     Map<String, String> properties1 = SNodeOperations.getProperties(a);

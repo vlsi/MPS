@@ -9,5 +9,5 @@ public class UnapplyStyle_BehaviorDescriptor extends StyleClassItem_BehaviorDesc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.UnapplyStyle";
-  };;
-;}
+  }
+}

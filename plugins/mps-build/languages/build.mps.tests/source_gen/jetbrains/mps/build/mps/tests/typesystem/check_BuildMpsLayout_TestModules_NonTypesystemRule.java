@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_BuildMpsLayout_TestModules_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BuildMpsLayout_TestModules_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(node, "haltonfailure", true) != null)) {
       String approxPresentation = BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(node, "haltonfailure", true), null);
@@ -35,18 +34,15 @@ public class check_BuildMpsLayout_TestModules_NonTypesystemRule extends Abstract
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

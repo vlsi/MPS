@@ -22,7 +22,6 @@ public class MPSSourceRevision extends SourceRevision {
     // This class is put in mergedriver module just to avoid creating new module for only one class. 
     // It cannot be put to vcs module, because the latter should not depend on git4idea plugin. 
   }
-
   @Nullable
   @Override
   public String get() {
@@ -52,14 +51,12 @@ public class MPSSourceRevision extends SourceRevision {
     }
     return null;
   }
-
   private static String getCurrentRevision(Project project, VirtualFile root) throws VcsException {
     GitSimpleHandler h = new GitSimpleHandler(project, root, GitCommand.LOG);
     h.setSilent(true);
     h.addParameters("--max-count=1", "--pretty=%h");
     return check_9qzcwz_a3a2(h.run());
   }
-
   public static String getMergeBase(Project project, VirtualFile root) throws VcsException {
     GitSimpleHandler h = new GitSimpleHandler(project, root, GitCommand.MERGE_BASE);
     h.setSilent(true);
@@ -71,7 +68,6 @@ public class MPSSourceRevision extends SourceRevision {
       return null;
     }
   }
-
   public static int getDistance(Project project, VirtualFile root) throws VcsException {
     GitSimpleHandler h = new GitSimpleHandler(project, root, GitCommand.REV_LIST);
     h.setSilent(true);
@@ -79,14 +75,12 @@ public class MPSSourceRevision extends SourceRevision {
     String count = h.run();
     return Integer.parseInt(count.trim());
   }
-
   private static String check_9qzcwz_a0a0e0b(GitLocalBranch checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getName();
     }
     return null;
   }
-
   private static String check_9qzcwz_a3a2(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.trim();

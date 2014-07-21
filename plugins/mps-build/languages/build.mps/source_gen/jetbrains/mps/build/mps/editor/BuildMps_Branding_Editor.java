@@ -23,7 +23,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1x254q_a(editorContext, node);
   }
-
   private EditorCell createCollection_1x254q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1x254q_a");
@@ -34,7 +33,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1x254q_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_1x254q_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -42,7 +40,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("shortName");
@@ -65,7 +62,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_1x254q_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1x254q_c0");
@@ -108,7 +104,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_1x254q_fb2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "codename");
     editorCell.setCellId("Constant_1x254q_a2a");
@@ -118,7 +113,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("codename");
@@ -141,7 +135,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version");
     editorCell.setCellId("Constant_1x254q_c2a");
@@ -151,7 +144,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_1x254q_d2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("major");
@@ -169,7 +161,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_e2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_1x254q_e2a");
@@ -180,7 +171,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_1x254q_f2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("minor");
@@ -198,7 +188,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_g2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_1x254q_g2a");
@@ -208,7 +197,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_h2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "eap");
     editorCell.setCellId("Constant_1x254q_h2a");
@@ -218,7 +206,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_1x254q_i2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("eap");
@@ -239,7 +226,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_j2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "full name");
     editorCell.setCellId("Constant_1x254q_j2a");
@@ -249,7 +235,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_k2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fullName");
@@ -272,7 +257,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_l2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "build number");
     editorCell.setCellId("Constant_1x254q_l2a");
@@ -282,7 +266,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_m2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("buildNumber");
@@ -302,7 +285,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_n2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_1x254q_n2a");
@@ -312,7 +294,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_o2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "date");
     editorCell.setCellId("Constant_1x254q_o2a");
@@ -322,7 +303,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_p2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("buildDate");
@@ -345,7 +325,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_q2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icons");
     editorCell.setCellId("Constant_1x254q_q2a");
@@ -356,7 +335,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_1x254q_r2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1x254q_r2a");
@@ -373,7 +351,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_1x254q_f71c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_a71c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "16x16");
     editorCell.setCellId("Constant_1x254q_a71c0");
@@ -383,7 +360,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_b71c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("icon16");
@@ -406,7 +382,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_c71c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "32x32");
     editorCell.setCellId("Constant_1x254q_c71c0");
@@ -416,7 +391,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_d71c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("icon32");
@@ -439,7 +413,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_e71c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "32x32 opaque");
     editorCell.setCellId("Constant_1x254q_e71c0");
@@ -449,7 +422,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_f71c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("icon32opaque");
@@ -472,7 +444,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_s2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "splash screen");
     editorCell.setCellId("Constant_1x254q_s2a");
@@ -482,7 +453,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_t2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("splashScreen");
@@ -502,7 +472,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_u2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "textcolor");
     editorCell.setCellId("Constant_1x254q_u2a");
@@ -512,7 +481,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_v2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("textColor");
@@ -535,7 +503,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_w2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "about screen");
     editorCell.setCellId("Constant_1x254q_w2a");
@@ -545,7 +512,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_x2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("aboutScreen");
@@ -568,7 +534,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_y2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dialog image");
     editorCell.setCellId("Constant_1x254q_y2a");
@@ -578,7 +543,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_z2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("dialogImage");
@@ -601,7 +565,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_ab2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "welcome screen");
     editorCell.setCellId("Constant_1x254q_ab2a");
@@ -612,7 +575,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_1x254q_bb2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1x254q_bb2a");
@@ -629,7 +591,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_1x254q_f72c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_a72c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "caption");
     editorCell.setCellId("Constant_1x254q_a72c0");
@@ -639,7 +600,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_b72c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("welcomeCaption");
@@ -662,7 +622,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_c72c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "slogan");
     editorCell.setCellId("Constant_1x254q_c72c0");
@@ -672,7 +631,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_d72c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("welcomeSlogan");
@@ -695,7 +653,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_e72c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "logo");
     editorCell.setCellId("Constant_1x254q_e72c0");
@@ -705,7 +662,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_f72c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("welcomeLogo");
@@ -725,7 +681,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_cb2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("updateWebsite");
@@ -748,7 +703,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_db2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("help");
@@ -771,7 +725,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_eb2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "feedback url");
     editorCell.setCellId("Constant_1x254q_eb2a");
@@ -781,7 +734,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1x254q_fb2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("feedbackUrl");
@@ -804,7 +756,6 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1x254q_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1x254q_d0");

@@ -11,57 +11,57 @@
       <node id="7417816926334720594" at="10,0,11,0" concept="2" trace="name" />
       <node id="7417816926334720598" at="11,0,12,0" concept="2" trace="lastName" />
       <node id="7417816926334720602" at="12,0,13,0" concept="2" trace="address" />
-      <node id="7417816926334720606" at="17,27,18,21" concept="5" />
-      <node id="7417816926334720642" at="21,39,22,24" concept="1" />
-      <node id="7417816926334720614" at="25,31,26,25" concept="5" />
-      <node id="7417816926334720662" at="29,47,30,32" concept="1" />
-      <node id="7417816926334720619" at="33,31,34,24" concept="5" />
-      <node id="7417816926334720681" at="37,46,38,30" concept="1" />
-      <node id="5081393330032881550" at="43,31,44,67" concept="4" />
-      <node id="5081393330032881550" at="44,67,45,67" concept="4" />
-      <node id="5081393330032881550" at="45,67,46,67" concept="4" />
-      <node id="5081393330032881550" at="46,67,47,69" concept="1" />
-      <node id="5081393330032881550" at="47,69,48,71" concept="4" />
-      <node id="5081393330032881550" at="48,71,49,71" concept="4" />
-      <node id="5081393330032881550" at="49,71,50,69" concept="1" />
-      <node id="5081393330032881550" at="50,69,51,70" concept="4" />
-      <node id="5081393330032881550" at="51,70,52,79" concept="4" />
-      <node id="5081393330032881550" at="52,79,53,77" concept="1" />
-      <node id="5081393330032881550" at="53,77,54,76" concept="1" />
-      <node id="5081393330032881550" at="54,76,55,76" concept="1" />
-      <node id="5081393330032881550" at="55,76,56,76" concept="1" />
-      <node id="5081393330032881550" at="56,76,57,42" concept="5" />
-      <node id="9152904044274358979" at="14,0,16,0" concept="0" trace="Person#()V" />
-      <node id="9152904044274516033" at="17,0,20,0" concept="3" trace="getName#()Ljava/lang/String;" />
-      <node id="7417816926334720636" at="21,0,24,0" concept="3" trace="setName#(Ljava/lang/String;)V" />
-      <node id="7417816926334720610" at="25,0,28,0" concept="3" trace="getLastName#()Ljava/lang/String;" />
-      <node id="7417816926334720650" at="29,0,32,0" concept="3" trace="setLastName#(Ljava/lang/String;)V" />
-      <node id="9152904044274541180" at="33,0,36,0" concept="3" trace="getAddress#()Ljetbrains/mps/samples/xmlLiterals/sandbox/sandbox/Address;" />
-      <node id="7417816926334720673" at="37,0,40,0" concept="3" trace="setAddress#(Ljetbrains/mps/samples/xmlLiterals/sandbox/sandbox/Address;)V" />
-      <node id="5081393330032881550" at="43,0,59,0" concept="3" trace="invoke#()Lorg/jdom/Element;" />
-      <node id="5081393330032881552" at="41,26,59,15" concept="5" />
-      <node id="9152904044274458171" at="41,0,61,0" concept="3" trace="toXml#()Lorg/jdom/Element;" />
-      <scope id="9152904044274358982" at="14,19,14,19" />
-      <scope id="9152904044274516036" at="17,27,18,21" />
-      <scope id="7417816926334720639" at="21,39,22,24" />
-      <scope id="7417816926334720613" at="25,31,26,25" />
-      <scope id="7417816926334720653" at="29,47,30,32" />
-      <scope id="9152904044274541183" at="33,31,34,24" />
-      <scope id="7417816926334720676" at="37,46,38,30" />
-      <scope id="9152904044274358979" at="14,0,16,0" />
-      <scope id="9152904044274516033" at="17,0,20,0" />
-      <scope id="7417816926334720636" at="21,0,24,0">
+      <node id="7417816926334720606" at="15,27,16,21" concept="5" />
+      <node id="7417816926334720642" at="18,39,19,24" concept="1" />
+      <node id="7417816926334720614" at="21,31,22,25" concept="5" />
+      <node id="7417816926334720662" at="24,47,25,32" concept="1" />
+      <node id="7417816926334720619" at="27,31,28,24" concept="5" />
+      <node id="7417816926334720681" at="30,46,31,30" concept="1" />
+      <node id="5081393330032881550" at="35,31,36,67" concept="4" />
+      <node id="5081393330032881550" at="36,67,37,67" concept="4" />
+      <node id="5081393330032881550" at="37,67,38,67" concept="4" />
+      <node id="5081393330032881550" at="38,67,39,69" concept="1" />
+      <node id="5081393330032881550" at="39,69,40,71" concept="4" />
+      <node id="5081393330032881550" at="40,71,41,71" concept="4" />
+      <node id="5081393330032881550" at="41,71,42,69" concept="1" />
+      <node id="5081393330032881550" at="42,69,43,70" concept="4" />
+      <node id="5081393330032881550" at="43,70,44,79" concept="4" />
+      <node id="5081393330032881550" at="44,79,45,77" concept="1" />
+      <node id="5081393330032881550" at="45,77,46,76" concept="1" />
+      <node id="5081393330032881550" at="46,76,47,76" concept="1" />
+      <node id="5081393330032881550" at="47,76,48,76" concept="1" />
+      <node id="5081393330032881550" at="48,76,49,42" concept="5" />
+      <node id="9152904044274358979" at="13,0,15,0" concept="0" trace="Person#()V" />
+      <node id="9152904044274516033" at="15,0,18,0" concept="3" trace="getName#()Ljava/lang/String;" />
+      <node id="7417816926334720636" at="18,0,21,0" concept="3" trace="setName#(Ljava/lang/String;)V" />
+      <node id="7417816926334720610" at="21,0,24,0" concept="3" trace="getLastName#()Ljava/lang/String;" />
+      <node id="7417816926334720650" at="24,0,27,0" concept="3" trace="setLastName#(Ljava/lang/String;)V" />
+      <node id="9152904044274541180" at="27,0,30,0" concept="3" trace="getAddress#()Ljetbrains/mps/samples/xmlLiterals/sandbox/sandbox/Address;" />
+      <node id="7417816926334720673" at="30,0,33,0" concept="3" trace="setAddress#(Ljetbrains/mps/samples/xmlLiterals/sandbox/sandbox/Address;)V" />
+      <node id="5081393330032881550" at="35,0,51,0" concept="3" trace="invoke#()Lorg/jdom/Element;" />
+      <node id="5081393330032881552" at="33,26,51,15" concept="5" />
+      <node id="9152904044274458171" at="33,0,53,0" concept="3" trace="toXml#()Lorg/jdom/Element;" />
+      <scope id="9152904044274358982" at="13,19,13,19" />
+      <scope id="9152904044274516036" at="15,27,16,21" />
+      <scope id="7417816926334720639" at="18,39,19,24" />
+      <scope id="7417816926334720613" at="21,31,22,25" />
+      <scope id="7417816926334720653" at="24,47,25,32" />
+      <scope id="9152904044274541183" at="27,31,28,24" />
+      <scope id="7417816926334720676" at="30,46,31,30" />
+      <scope id="9152904044274358979" at="13,0,15,0" />
+      <scope id="9152904044274516033" at="15,0,18,0" />
+      <scope id="7417816926334720636" at="18,0,21,0">
         <var name="newName" id="7417816926334720640" />
       </scope>
-      <scope id="7417816926334720610" at="25,0,28,0" />
-      <scope id="7417816926334720650" at="29,0,32,0">
+      <scope id="7417816926334720610" at="21,0,24,0" />
+      <scope id="7417816926334720650" at="24,0,27,0">
         <var name="newLastName" id="7417816926334720654" />
       </scope>
-      <scope id="9152904044274541180" at="33,0,36,0" />
-      <scope id="7417816926334720673" at="37,0,40,0">
+      <scope id="9152904044274541180" at="27,0,30,0" />
+      <scope id="7417816926334720673" at="30,0,33,0">
         <var name="newAddress" id="7417816926334720677" />
       </scope>
-      <scope id="5081393330032881550" at="43,31,57,42">
+      <scope id="5081393330032881550" at="35,31,49,42">
         <var name="elementMacro_jqm3zu_a2a0a0k" id="5081393330032881550" />
         <var name="simpleElement_jqm3zu_a0a0a01" id="5081393330032881550" />
         <var name="simpleElement_jqm3zu_a0a0k" id="5081393330032881550" />
@@ -70,42 +70,42 @@
         <var name="text_jqm3zu_a0a0a0k" id="5081393330032881550" />
         <var name="text_jqm3zu_a1a0a0k" id="5081393330032881550" />
       </scope>
-      <scope id="5081393330032881550" at="43,0,59,0" />
-      <scope id="9152904044274458174" at="41,26,59,15" />
-      <scope id="9152904044274458171" at="41,0,61,0" />
-      <unit id="5081393330032881550" at="42,15,59,5" name="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Person$1" />
-      <unit id="9152904044274358977" at="9,0,62,0" name="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Person" />
+      <scope id="5081393330032881550" at="35,0,51,0" />
+      <scope id="9152904044274458174" at="33,26,51,15" />
+      <scope id="9152904044274458171" at="33,0,53,0" />
+      <unit id="5081393330032881550" at="34,15,51,5" name="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Person$1" />
+      <unit id="9152904044274358977" at="9,0,54,0" name="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Person" />
     </file>
   </root>
   <root nodeRef="r:63e559bf-39bb-4209-acb3-f4d189328793(jetbrains.mps.samples.xmlLiterals.sandbox.sandbox)/9152904044274518176">
     <file name="Address.java">
       <node id="7417816926334720689" at="10,0,11,0" concept="2" trace="addressString" />
-      <node id="7946777123643247292" at="12,40,13,39" concept="1" />
-      <node id="7417816926334720722" at="16,36,17,30" concept="5" />
-      <node id="5081393330032015852" at="22,31,23,68" concept="4" />
-      <node id="5081393330032015852" at="23,68,24,76" concept="4" />
-      <node id="5081393330032015852" at="24,76,25,66" concept="1" />
-      <node id="5081393330032015852" at="25,66,26,42" concept="5" />
-      <node id="9152904044274518178" at="12,0,15,0" concept="0" trace="Address#(Ljava/lang/String;)V" />
-      <node id="7417816926334720717" at="16,0,19,0" concept="3" trace="getAddressString#()Ljava/lang/String;" />
-      <node id="5081393330032015852" at="22,0,28,0" concept="3" trace="invoke#()Lorg/jdom/Element;" />
-      <node id="5081393330032015854" at="20,26,28,15" concept="5" />
-      <node id="9152904044274518182" at="20,0,30,0" concept="3" trace="toXml#()Lorg/jdom/Element;" />
-      <scope id="9152904044274518181" at="12,40,13,39" />
-      <scope id="7417816926334720720" at="16,36,17,30" />
-      <scope id="9152904044274518178" at="12,0,15,0">
+      <node id="7946777123643247292" at="11,40,12,39" concept="1" />
+      <node id="7417816926334720722" at="14,36,15,30" concept="5" />
+      <node id="5081393330032015852" at="19,31,20,68" concept="4" />
+      <node id="5081393330032015852" at="20,68,21,76" concept="4" />
+      <node id="5081393330032015852" at="21,76,22,66" concept="1" />
+      <node id="5081393330032015852" at="22,66,23,42" concept="5" />
+      <node id="9152904044274518178" at="11,0,14,0" concept="0" trace="Address#(Ljava/lang/String;)V" />
+      <node id="7417816926334720717" at="14,0,17,0" concept="3" trace="getAddressString#()Ljava/lang/String;" />
+      <node id="5081393330032015852" at="19,0,25,0" concept="3" trace="invoke#()Lorg/jdom/Element;" />
+      <node id="5081393330032015854" at="17,26,25,15" concept="5" />
+      <node id="9152904044274518182" at="17,0,27,0" concept="3" trace="toXml#()Lorg/jdom/Element;" />
+      <scope id="9152904044274518181" at="11,40,12,39" />
+      <scope id="7417816926334720720" at="14,36,15,30" />
+      <scope id="9152904044274518178" at="11,0,14,0">
         <var name="addressString" id="7417816926334720697" />
       </scope>
-      <scope id="7417816926334720717" at="16,0,19,0" />
-      <scope id="5081393330032015852" at="22,31,26,42">
+      <scope id="7417816926334720717" at="14,0,17,0" />
+      <scope id="5081393330032015852" at="19,31,23,42">
         <var name="simpleElement_49w4x6_a0a0d" id="5081393330032015852" />
         <var name="text_49w4x6_a0a0a3" id="5081393330032015852" />
       </scope>
-      <scope id="5081393330032015852" at="22,0,28,0" />
-      <scope id="9152904044274518185" at="20,26,28,15" />
-      <scope id="9152904044274518182" at="20,0,30,0" />
-      <unit id="5081393330032015852" at="21,15,28,5" name="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address$1" />
-      <unit id="9152904044274518176" at="9,0,31,0" name="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address" />
+      <scope id="5081393330032015852" at="19,0,25,0" />
+      <scope id="9152904044274518185" at="17,26,25,15" />
+      <scope id="9152904044274518182" at="17,0,27,0" />
+      <unit id="5081393330032015852" at="18,15,25,5" name="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address$1" />
+      <unit id="9152904044274518176" at="9,0,28,0" name="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address" />
     </file>
   </root>
 </debug-info>

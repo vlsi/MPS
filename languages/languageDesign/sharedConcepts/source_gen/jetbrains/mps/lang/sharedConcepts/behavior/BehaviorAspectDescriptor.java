@@ -26,6 +26,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
-  };;
-;  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_progressMonitor", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope"};
+  }
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_progressMonitor", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope"};
 }

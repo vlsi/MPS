@@ -5,11 +5,9 @@ package jetbrains.mps.scope;
 
 public class ErrorScope extends EmptyScope {
   private String message;
-
   public ErrorScope(String message) {
     this.message = message;
   }
-
   public String getMessage() {
     return message;
   }

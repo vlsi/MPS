@@ -21,26 +21,22 @@ import org.apache.log4j.LogManager;
 
 public class AnalyzeStacktrace_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public AnalyzeStacktrace_Action() {
     super("Analyze Stacktrace...", "Open console with the navigation stacktrace", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
     this.setMnemonic("s".charAt(0));
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (MPSActionPlaces.MPS_MESSAGES_POPUP.equals(event.getPlace())) {
       return ((Throwable) MapSequence.fromMap(_params).get("exception")) != null;
     }
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -54,7 +50,6 @@ public class AnalyzeStacktrace_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -74,7 +69,6 @@ public class AnalyzeStacktrace_Action extends BaseAction {
     MapSequence.fromMap(_params).put("exception", event.getData(MPSCommonDataKeys.EXCEPTION));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Throwable exc = ((Throwable) MapSequence.fromMap(_params).get("exception"));
@@ -92,6 +86,5 @@ public class AnalyzeStacktrace_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(AnalyzeStacktrace_Action.class);
 }

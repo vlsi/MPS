@@ -19,18 +19,15 @@ import org.apache.log4j.LogManager;
 
 public class ToggleBreakpoint_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ToggleBreakpoint_Action() {
     super("Toggle Breakpoint", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -44,7 +41,6 @@ public class ToggleBreakpoint_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -63,7 +59,6 @@ public class ToggleBreakpoint_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       BreakpointsUiComponent.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).toggleBreakpoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")));
@@ -73,6 +68,5 @@ public class ToggleBreakpoint_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ToggleBreakpoint_Action.class);
 }

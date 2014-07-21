@@ -16,32 +16,25 @@ import javax.swing.JComponent;
 public class ModuleDependenies_Tool extends GeneratedTool {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowModuleDependencies;
   private ModuleDependenciesView myComponent;
-
   public ModuleDependenies_Tool(Project project) {
     super(project, "Module Dependencies", -1, ICON, ToolWindowAnchor.BOTTOM, false);
   }
-
   public void init(Project project) {
     super.init(project);
     ModuleDependenies_Tool.this.myComponent = new ModuleDependenciesView(ModuleDependenies_Tool.this, project);
   }
-
   /*package*/ void setModules(List<SModule> modules) {
     ModuleDependenies_Tool.this.myComponent.setModules(modules);
   }
-
   public void resetAll() {
     ModuleDependenies_Tool.this.myComponent.resetAll();
   }
-
   public void ShowLoops(ModuleDependencyNode node) {
     ModuleDependenies_Tool.this.myComponent.showLoops(node);
   }
-
   public void ShowBootstrapDep(ModuleDependencyNode.ULangDependencyNode node) {
     ModuleDependenies_Tool.this.myComponent.showBootstrapLoop(node);
   }
-
   public JComponent getComponent() {
     return ModuleDependenies_Tool.this.myComponent;
   }

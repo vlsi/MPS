@@ -24,7 +24,6 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_m29bq_a(editorContext, node);
   }
-
   private EditorCell createCollection_m29bq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_m29bq_a");
@@ -37,7 +36,6 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     editorCell.addEditorCell(this.createConstant_m29bq_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_m29bq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pick output");
     editorCell.setCellId("Constant_m29bq_a0");
@@ -47,7 +45,6 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_m29bq_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("label");
@@ -72,20 +69,16 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     } else
     return editorCell;
   }
-
   public static class _Inline_m29bq_a1a extends InlineCellProvider {
     public _Inline_m29bq_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_m29bq_a0b0(editorContext, node);
     }
-
     private EditorCell createProperty_m29bq_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -105,7 +98,6 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
       return editorCell;
     }
   }
-
   private EditorCell createConstant_m29bq_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_m29bq_c0");
@@ -116,7 +108,6 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_m29bq_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_m29bq_d0");
@@ -126,7 +117,6 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_m29bq_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("inputNode");
@@ -146,7 +136,6 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_m29bq_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_m29bq_f0");

@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_XmlLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_XmlLiteral_InferenceRule() {
   }
-
   public void applyRule(final SNode literal, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = literal;
@@ -23,22 +22,18 @@ public class typeof_XmlLiteral_InferenceRule extends AbstractInferenceRule_Runti
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:0264c2b0-f115-4504-b39f-f4dbddf68df1(jetbrains.mps.samples.xmlLiterals.typesystem)", "9152904044274367393", true), (SNode) _quotation_createNode_j6j4pq_a0a0b(), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_j6j4pq_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

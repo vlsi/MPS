@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class IDeprecatable_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
     return false;
   }
-
   public static String virtual_getMessage_1225207468592(SNode thisNode) {
     return null;
   }

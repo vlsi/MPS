@@ -11,9 +11,9 @@ public class ConceptFunctionParameter_oldText_BehaviorDescriptor extends Concept
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConceptFunctionParameter_oldText_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText";
-  };;
-;}
+  }
+}

@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactoring {
   public IntroduceLocalVariableRefactoring() {
   }
-
   @Override
   public SNode doRefactoring() {
     this.findDuplicates();
@@ -42,7 +41,6 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     }
     return varDeclaration;
   }
-
   @Override
   protected SNode getRootToFindDuplicates(SNode node) {
     SNode result = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
@@ -51,14 +49,12 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     }
     return result;
   }
-
   @Override
   public void replaceNode(SNode node, SNode declaration) {
     SNode reference = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), declaration, "virtual_createReference_1213877517482", new Object[]{});
     SNodeOperations.replaceWithAnother(node, reference);
     this.moveDeclarationIfNeed(reference, SNodeOperations.getParent(declaration));
   }
-
   private void moveDeclarationIfNeed(SNode node, SNode declaration) {
     List<SNode> declAncestors = SNodeOperations.getAncestors(declaration, null, false);
     ListSequence.fromList(declAncestors).addElement(declaration);
@@ -80,11 +76,9 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
       }
     }
   }
-
   public static boolean isApplicable(SNode expr) {
     return SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.Expression") && SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) != null;
   }
-
   private static SNode _quotation_createNode_nngwe4_a0b0b(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;

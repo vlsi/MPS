@@ -17,7 +17,6 @@ public class BuildStringPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCustom_vrd04t_a(editorContext, node);
   }
-
   private EditorCell createCustom_vrd04t_a(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {

@@ -9,5 +9,5 @@ public class TailSetOperation_BehaviorDescriptor extends SortedSetOperation_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.TailSetOperation";
-  };;
-;}
+  }
+}

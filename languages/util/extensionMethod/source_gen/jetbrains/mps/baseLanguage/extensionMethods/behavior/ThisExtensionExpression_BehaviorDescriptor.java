@@ -10,5 +10,5 @@ public class ThisExtensionExpression_BehaviorDescriptor extends Expression_Behav
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression";
-  };;
-;}
+  }
+}

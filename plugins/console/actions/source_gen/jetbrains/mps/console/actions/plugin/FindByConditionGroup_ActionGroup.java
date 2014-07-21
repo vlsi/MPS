@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class FindByConditionGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(FindByConditionGroup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.console.actions.plugin.FindByConditionGroup_ActionGroup";
-
   public FindByConditionGroup_ActionGroup() {
     super("FindByConditionGroup", ID);
     this.setIsInternal(false);

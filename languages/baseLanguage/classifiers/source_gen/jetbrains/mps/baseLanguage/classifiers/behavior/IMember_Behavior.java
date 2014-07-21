@@ -16,32 +16,32 @@ import java.util.ArrayList;
 
 public class IMember_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_getVisiblity_1213877352965(SNode thisNode) {
+  }
+  public static SNode virtual_getVisiblity_1213877352965(SNode thisNode) {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PublicVisibility", null);
-  };;
-;  public static SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
+  }
+  public static SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
     SNode memberOperationConcept = ((SNode) ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getOperationConcept_3044950653914717125", new Object[]{})).first());
     if (memberOperationConcept == null) {
       throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConceptDeclaration(thisNode) + " concept");
     }
     return memberOperationConcept;
-  };;
-;  public static SNode virtual_createOperation_1213877353000(SNode thisNode) {
+  }
+  public static SNode virtual_createOperation_1213877353000(SNode thisNode) {
     SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOperationConcept_1213877352972", new Object[]{})), null);
     SLinkOperations.setTarget(result, "member", thisNode, false);
     return result;
-  };;
-;  public static SNode call_getContainer_1213877353020(SNode thisNode) {
+  }
+  public static SNode call_getContainer_1213877353020(SNode thisNode) {
     return IClassifier_Behavior.call_getContextClassifier_1213877527940(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"))), thisNode);
-  };;
-;  public static boolean virtual_canBeReferent_8179323502814657526(SNode thisNode, SNode referentConcept) {
+  }
+  public static boolean virtual_canBeReferent_8179323502814657526(SNode thisNode, SNode referentConcept) {
     return true;
-  };;
-;  public static boolean virtual_canOperationBeChild_4593153787954614840(SNode thisNode, SNode parentNode) {
+  }
+  public static boolean virtual_canOperationBeChild_4593153787954614840(SNode thisNode, SNode parentNode) {
     return true;
-  };;
-;  public static List<SNode> virtual_getOperationConcept_3044950653914717125(SAbstractConcept thisConcept) {
+  }
+  public static List<SNode> virtual_getOperationConcept_3044950653914717125(SAbstractConcept thisConcept) {
     return ListSequence.fromList(new ArrayList<SNode>());
-  };;
-;}
+  }
+}

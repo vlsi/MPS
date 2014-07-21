@@ -35,16 +35,13 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
 public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.heating.tabular.editor.HeatingViews.tabular"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_dgsw3q_a(editorContext, node);
   }
-
   private EditorCell createCollection_dgsw3q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dgsw3q_a");
@@ -53,7 +50,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_dgsw3q_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_dgsw3q_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_dgsw3q_a0");
@@ -61,7 +57,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTable_dgsw3q_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_dgsw3q_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dgsw3q_a0a");
@@ -80,7 +75,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_dgsw3q_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Daily plan");
     editorCell.setCellId("Constant_dgsw3q_a0a0");
@@ -91,7 +85,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_dgsw3q_b0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "customizing the");
     editorCell.setCellId("Constant_dgsw3q_b0a0");
@@ -102,11 +95,9 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_dgsw3q_a1a0a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "customizes", true) != null);
   }
-
   private EditorCell createRefNode_dgsw3q_c0a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("customizes");
@@ -130,11 +121,9 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_dgsw3q_a2a0a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "customizes", true) != null);
   }
-
   private EditorCell createConstant_dgsw3q_d0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_dgsw3q_d0a0");
@@ -147,17 +136,14 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DailyPlan_tabular_Editor.ApplySideTransforms_left_cellMenu_dgsw3q_a0d0a0()}));
     return editorCell;
   }
-
   private static boolean renderingCondition_dgsw3q_a3a0a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "customizes", true) == null);
   }
-
   public static class ApplySideTransforms_left_cellMenu_dgsw3q_a0d0a0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_left_cellMenu_dgsw3q_a0d0a0() {
       super(CellSide.LEFT);
     }
   }
-
   private EditorCell createConstant_dgsw3q_e0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "plan");
     editorCell.setCellId("Constant_dgsw3q_e0a0");
@@ -168,11 +154,9 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_dgsw3q_a4a0a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "customizes", true) != null);
   }
-
   private EditorCell createTable_dgsw3q_b0a(EditorContext editorContext, SNode node) {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
@@ -181,12 +165,10 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
           public int getColumnCount() {
             return 2;
           }
-
           @Override
           public int getRowCount() {
             return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).count();
           }
-
           @Override
           public SNode getValueAt(int row, int column) {
             if (row == 0 && column > 0) {
@@ -201,7 +183,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
             }
             return null;
           }
-
           @Override
           public void createElement(int row, int column) {
             if (row > 0 && column > 0) {
@@ -213,12 +194,10 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
               }
             }
           }
-
           @Override
           public void insertColumn(int columnNumber) {
             return;
           }
-
           @Override
           public void insertRow(int rowNumber) {
             System.out.println("AAAAAA " + rowNumber);
@@ -236,12 +215,10 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
             ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).insertElement(rowNumber - 1, slot);
             return;
           }
-
           @Override
           public void deleteColumn(int columnNumber) {
             return;
           }
-
           @Override
           public void deleteRow(int rowNumber) {
             if (rowNumber <= 0) {
@@ -257,7 +234,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Table_dgsw3q_b0a_0");
     return editorCell;
   }
-
   private EditorCell createConstant_dgsw3q_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_dgsw3q_b0");

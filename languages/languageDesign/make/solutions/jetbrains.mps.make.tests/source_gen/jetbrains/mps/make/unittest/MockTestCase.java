@@ -8,10 +8,8 @@ import org.apache.log4j.BasicConfigurator;
 
 public abstract class MockTestCase {
   protected Mockery context = new JUnit4Mockery();
-
   public MockTestCase() {
   }
-
   static {
     BasicConfigurator.configure();
   }

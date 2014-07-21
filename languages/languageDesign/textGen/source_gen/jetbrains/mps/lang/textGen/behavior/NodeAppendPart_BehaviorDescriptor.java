@@ -9,9 +9,9 @@ public class NodeAppendPart_BehaviorDescriptor extends AbstractAppendPart_Behavi
   }
   public boolean virtual_withIndent_1237466287046(SNode thisNode) {
     return NodeAppendPart_Behavior.virtual_withIndent_1237466287046(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.NodeAppendPart";
-  };;
-;}
+  }
+}

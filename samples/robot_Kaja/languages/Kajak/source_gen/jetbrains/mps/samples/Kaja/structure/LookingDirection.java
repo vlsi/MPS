@@ -13,15 +13,12 @@ public enum LookingDirection {
   west("west", "west");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<LookingDirection> getConstants() {
     List<LookingDirection> list = ListSequence.fromList(new LinkedList<LookingDirection>());
     ListSequence.fromList(list).addElement(LookingDirection.north);
@@ -30,11 +27,9 @@ public enum LookingDirection {
     ListSequence.fromList(list).addElement(LookingDirection.west);
     return list;
   }
-
   public static LookingDirection getDefault() {
     return null;
   }
-
   public static LookingDirection parseValue(String value) {
     if (value == null) {
       return LookingDirection.getDefault();
@@ -53,14 +48,11 @@ public enum LookingDirection {
     }
     return LookingDirection.getDefault();
   }
-
   private String myValue;
-
   LookingDirection(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class LT_Assignment_with_PlusAssignment_Test extends BaseTransformationTest {
   public LT_Assignment_with_PlusAssignment_Test() {
   }
-
   @Test
   public void test_LT_Assignment_with_PlusAssignment() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.LT_Assignment_with_PlusAssignment_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("3956753173913385486", "3956753173913385510");

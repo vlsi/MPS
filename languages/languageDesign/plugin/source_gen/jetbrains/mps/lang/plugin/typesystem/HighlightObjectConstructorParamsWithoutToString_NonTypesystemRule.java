@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameter, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       if (SLinkOperations.getTarget(parameter, "toStringFunction", true) == null) {
@@ -28,18 +27,15 @@ public class HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule e
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

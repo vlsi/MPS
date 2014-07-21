@@ -6,7 +6,6 @@ package jetbrains.mps.core.xml.constraints;
 public class XmlNameUtil {
   public XmlNameUtil() {
   }
-
   /**
    * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.3 Common Syntactic Constructs
    * Token "Name"
@@ -25,7 +24,6 @@ public class XmlNameUtil {
     }
     return true;
   }
-
   /**
    * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.3 Common Syntactic Constructs
    * Token "NameStartChar"
@@ -50,7 +48,6 @@ public class XmlNameUtil {
       return c >= 0xf900 && c <= 0xfdcf || c >= 0xfdf0 && c <= 0xfffd || c >= 0x10000 && c <= 0xeffff;
     }
   }
-
   /**
    * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.3 Common Syntactic Constructs
    * Token "NameChar"
@@ -71,7 +68,6 @@ public class XmlNameUtil {
     }
     return isNameStartChar(c);
   }
-
   /**
    * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.6 Processing Instructions
    * Token "PITarget"
@@ -84,7 +80,6 @@ public class XmlNameUtil {
     }
     return isName(target);
   }
-
   /**
    * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.2 Characters
    * Token "Char": any Unicode character, excluding the surrogate blocks, FFFE, and FFFF.
@@ -100,7 +95,6 @@ public class XmlNameUtil {
       return c <= 0xfffd || c >= 0x10000 && c <= 0x10FFFF;
     }
   }
-
   /**
    * Checks if all characters in a string are xml chars.
    */
@@ -112,7 +106,6 @@ public class XmlNameUtil {
     }
     return true;
   }
-
   /**
    * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.4 Character Data and Markup
    * Token "CharData"
@@ -124,7 +117,6 @@ public class XmlNameUtil {
     }
     return isXmlString(s);
   }
-
   /**
    * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.3 Common Syntactic Constructs
    * Token "White Space"
@@ -140,7 +132,6 @@ public class XmlNameUtil {
     }
     return true;
   }
-
   /**
    * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.5 Comments
    * Token "Comment": ((Char - '-') | ('-' (Char - '-')))*
@@ -162,7 +153,6 @@ public class XmlNameUtil {
     }
     return true;
   }
-
   /**
    * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.3 Common Syntactic Constructs
    * SystemLiteral ::= ('"' [^"]* '"') | ("'" [^']* "'")
@@ -190,7 +180,6 @@ public class XmlNameUtil {
     }
     return true;
   }
-
   /**
    * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.3 Common Syntactic Constructs
    * PubidLiteral ::= '"' PubidChar* '"' | "'" (PubidChar - "'")* "'"
@@ -207,7 +196,6 @@ public class XmlNameUtil {
     }
     return true;
   }
-
   /**
    * Extensible Markup Language (XML) 1.0 (Fifth Edition): 2.3 Common Syntactic Constructs
    * PubidChar ::= #x20 | #xD | #xA | [a-zA-Z0-9] | [-'()+,./:=?;!*#@$_%]
@@ -233,14 +221,12 @@ public class XmlNameUtil {
     }
     return c == '-' || c == '\'' || c == '(' || c == ')' || c == '+' || c == ',' || c == '.' || c == '/' || c == ':' || c == '=' || c == '?' || c == ';' || c == '*' || c == '#' || c == '@' || c == '$' || c == '_' || c == '%';
   }
-
   /**
    * Checks if string is a valid CDATA content
    */
   public static boolean isCDATA(String content) {
     return !(content.contains("]]>")) && isXmlString(content);
   }
-
   public static boolean isAttValue(String text) {
     for (int i = 0; i < text.length(); i++) {
       int c = text.codePointAt(i);
@@ -250,7 +236,6 @@ public class XmlNameUtil {
     }
     return isXmlString(text);
   }
-
   /**
    * Well-formedness constraint: Entity Declared.
    * need not declare any of the following entities: amp, lt, gt, apos, quot.
@@ -258,7 +243,6 @@ public class XmlNameUtil {
   public static String[] getDefaultEntities() {
     return new String[]{"amp", "gt", "lt", "apos", "quot"};
   }
-
   public static boolean isValidCharRef(String charRef) {
     int charCode = 0;
     if (charRef.startsWith("x")) {

@@ -15,12 +15,10 @@ public class EditorComponentDeclaration_Constraints extends BaseConstraintsDescr
   public EditorComponentDeclaration_Constraints() {
     super("jetbrains.mps.lang.editor.structure.EditorComponentDeclaration");
   }
-
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;
   }
-
   @Override
   public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeARoot(model, context);
@@ -31,10 +29,8 @@ public class EditorComponentDeclaration_Constraints extends BaseConstraintsDescr
 
     return result;
   }
-
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
     return LanguageAspect.EDITOR.is(model) || SModelStereotype.isGeneratorModel(model);
   }
-
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1227090208782");
 }

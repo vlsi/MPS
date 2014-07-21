@@ -10,5 +10,5 @@ public class SuperClassifierExpresson_BehaviorDescriptor extends Expression_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson";
-  };;
-;}
+  }
+}

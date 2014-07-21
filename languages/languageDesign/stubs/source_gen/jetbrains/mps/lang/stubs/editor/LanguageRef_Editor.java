@@ -27,7 +27,6 @@ public class LanguageRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_occ0mg_a(editorContext, node);
   }
-
   private EditorCell createProperty_occ0mg_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("languageFqName");
@@ -46,11 +45,9 @@ public class LanguageRef_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class LanguageRef_generic_cellMenu_occ0mg_a0a extends AbstractCellMenuPart_Generic_Group {
     public LanguageRef_generic_cellMenu_occ0mg_a0a() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       Iterable<Language> langList = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
       return Sequence.fromIterable(langList).select(new ISelector<Language, String>() {
@@ -59,23 +56,18 @@ public class LanguageRef_Editor extends DefaultNodeEditor {
         }
       }).toListSequence();
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "languageId", parameterObject);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
-
     public String getMatchingText(Object parameterObject) {
       return this.getMatchingText_internal((String) parameterObject);
     }
-
     public String getMatchingText_internal(String parameterObject) {
       return MPSModuleRepository.getInstance().getModule(ModuleId.fromString(parameterObject)).getModuleName();
     }

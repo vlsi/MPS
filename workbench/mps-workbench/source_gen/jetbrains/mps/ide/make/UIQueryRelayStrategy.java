@@ -17,7 +17,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 public class UIQueryRelayStrategy {
   public UIQueryRelayStrategy() {
   }
-
   public <T extends IOption> T relayQuery(final IQuery<T> query, final IOperationContext context) {
     List<T> optList = Sequence.fromIterable(query.options()).toListSequence();
     final String[] options = ListSequence.fromList(optList).select(new ISelector<T, String>() {
@@ -37,7 +36,6 @@ public class UIQueryRelayStrategy {
     }
     return ListSequence.fromList(optList).getElement(res.value);
   }
-
   public static interface DialogListener {
     public void beforeDialogShown();
   }

@@ -9,5 +9,5 @@ public class ReportErrorStatementAnnotation_BehaviorDescriptor extends MessageSt
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation";
-  };;
-;}
+  }
+}

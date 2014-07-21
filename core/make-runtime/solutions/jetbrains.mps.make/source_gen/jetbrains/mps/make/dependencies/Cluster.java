@@ -22,20 +22,16 @@ public class Cluster {
   private final Iterable<String> myUsedLang;
   private IScript myScript;
 
-
   /*package*/ Cluster(@NotNull Iterable<? extends IResource> resources, @NotNull Iterable<String> usedLang) {
     myResources = ListSequence.fromListWithValues(new ArrayList<IResource>(), resources);
     myUsedLang = usedLang;
   }
-
   public Iterable<String> allUsedLangNamespaces() {
     return myUsedLang;
   }
-
   public Iterable<IResource> getResources() {
     return myResources;
   }
-
   public ScriptBuilder createScriptBuilder() {
     ScriptBuilder scb = new ScriptBuilder();
     for (String ns : allUsedLangNamespaces()) {
@@ -54,11 +50,9 @@ public class Cluster {
     }
     return scb.withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make"));
   }
-
   public void setScript(IScript script) {
     myScript = script;
   }
-
   public IScript getScript() {
     return myScript;
   }

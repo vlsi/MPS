@@ -10,5 +10,5 @@ public class ModelReferenceExpression_BehaviorDescriptor extends Expression_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression";
-  };;
-;}
+  }
+}

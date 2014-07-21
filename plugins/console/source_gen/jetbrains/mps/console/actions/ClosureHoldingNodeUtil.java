@@ -14,12 +14,9 @@ public class ClosureHoldingNodeUtil {
 
   private Map<SNode, _FunctionTypes._void_P0_E0> allActions;
 
-
   private ClosureHoldingNodeUtil() {
     allActions = new WeakHashMap<SNode, _FunctionTypes._void_P0_E0>();
   }
-
-
 
   public static ClosureHoldingNodeUtil getInstance() {
     if (myInstance == null) {
@@ -28,19 +25,13 @@ public class ClosureHoldingNodeUtil {
     return myInstance;
   }
 
-
-
   public void register(SNode node, _FunctionTypes._void_P0_E0 closure) {
     MapSequence.fromMap(allActions).put(node, closure);
   }
 
-
-
   public _FunctionTypes._void_P0_E0 getClosure(SNode node) {
     return MapSequence.fromMap(allActions).get(node);
   }
-
-
 
   public void executeClosure(SNode node) {
     getClosure(node).invoke();

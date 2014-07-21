@@ -11,9 +11,9 @@ public class TemplateFunctionParameter_mainContextNode_BehaviorDescriptor extend
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return TemplateFunctionParameter_mainContextNode_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode";
-  };;
-;}
+  }
+}

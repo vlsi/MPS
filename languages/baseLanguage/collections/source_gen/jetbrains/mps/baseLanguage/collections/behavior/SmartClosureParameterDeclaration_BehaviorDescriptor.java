@@ -10,5 +10,5 @@ public class SmartClosureParameterDeclaration_BehaviorDescriptor extends Unbound
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration";
-  };;
-;}
+  }
+}

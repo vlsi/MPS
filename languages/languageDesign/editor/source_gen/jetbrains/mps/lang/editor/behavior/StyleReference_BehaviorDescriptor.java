@@ -10,5 +10,5 @@ public class StyleReference_BehaviorDescriptor extends BaseConcept_BehaviorDescr
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyleReference";
-  };;
-;}
+  }
+}

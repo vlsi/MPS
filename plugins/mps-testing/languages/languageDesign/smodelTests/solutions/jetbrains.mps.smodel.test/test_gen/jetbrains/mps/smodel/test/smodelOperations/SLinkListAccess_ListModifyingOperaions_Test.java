@@ -25,91 +25,76 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_add", true);
   }
-
   @Test
   public void test_addAll() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_addAll", true);
   }
-
   @Test
   public void test_addAllWithIndex() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_addAllWithIndex", true);
   }
-
   @Test
   public void test_addFirst() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_addFirst", true);
   }
-
   @Test
   public void test_addLast() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_addLast", true);
   }
-
   @Test
   public void test_removeFromOriginalContainerOnAdd() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_removeFromOriginalContainerOnAdd", true);
   }
-
   @Test
   public void test_remove() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_remove", true);
   }
-
   @Test
   public void test_removeAll() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_removeAll", true);
   }
-
   @Test
   public void test_removeFirst() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_removeFirst", true);
   }
-
   @Test
   public void test_removeLast() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_removeLast", true);
   }
-
   @Test
   public void test_removeAt() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_removeAt", true);
   }
-
   @Test
   public void test_removeWhere() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_removeWhere", true);
   }
-
   @Test
   public void test_insert() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_insert", true);
   }
-
   @Test
   public void test_set() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_set", true);
   }
-
   @Test
   public void test_clear() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody", "test_clear", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_add() throws Exception {
@@ -121,7 +106,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).contains(newChild));
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.getParent(newChild));
     }
-
     public void test_addAll() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
@@ -129,7 +113,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addSequence(ListSequence.fromList(addition));
       Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).containsSequence(ListSequence.fromList(addition)));
     }
-
     public void test_addAllWithIndex() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
@@ -146,7 +129,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       Assert.assertEquals(1, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).indexOf(ListSequence.fromList(addition).getElement(0)));
       Assert.assertEquals(2, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).indexOf(ListSequence.fromList(addition).getElement(1)));
     }
-
     public void test_addFirst() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
@@ -155,7 +137,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       Assert.assertEquals(0, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).indexOf(added));
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.getParent(added));
     }
-
     public void test_addLast() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
@@ -164,7 +145,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       Assert.assertEquals(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() - 1, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).indexOf(added));
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.getParent(added));
     }
-
     public void test_removeFromOriginalContainerOnAdd() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
@@ -176,7 +156,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.getParent(toBeMoved));
       Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806423212"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toBeMoved));
     }
-
     public void test_remove() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
@@ -188,7 +167,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toBeRemoved));
       Assert.assertNull(SNodeOperations.getParent(toBeRemoved));
     }
-
     public void test_removeAll() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
@@ -197,7 +175,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeSequence(Sequence.fromIterable(existingChildren));
       Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).isEmpty());
     }
-
     public void test_removeFirst() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
@@ -206,7 +183,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeElementAt(0);
       Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toBeRemoved));
     }
-
     public void test_removeLast() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
@@ -215,7 +191,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).removeLastElement();
       Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toBeRemoved));
     }
-
     public void test_removeAt() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
@@ -226,7 +201,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(removed));
       Assert.assertEquals(elementAt_1, removed);
     }
-
     public void test_removeWhere() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
@@ -241,7 +215,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(SNodeOperations.cast(this.getNodeById("2282909602806391310"), "jetbrains.mps.lang.smodelTests.structure.Child")));
       Assert.assertNull(SNodeOperations.getParent(SNodeOperations.cast(this.getNodeById("2282909602806391310"), "jetbrains.mps.lang.smodelTests.structure.Child")));
     }
-
     public void test_insert() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
@@ -254,7 +227,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(toInsert));
       Assert.assertEquals(index, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).indexOf(toInsert));
     }
-
     public void test_set() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
@@ -268,7 +240,6 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       Assert.assertFalse(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(oldChild));
       Assert.assertNull(SNodeOperations.getParent(oldChild));
     }
-
     public void test_clear() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");

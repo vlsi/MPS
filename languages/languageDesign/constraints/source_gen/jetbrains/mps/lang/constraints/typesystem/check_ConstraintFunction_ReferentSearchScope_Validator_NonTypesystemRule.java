@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ConstraintFunction_ReferentSearchScope_Validator_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ConstraintFunction_ReferentSearchScope_Validator_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode validator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode factory = ConstraintFunction_ReferentSearchScope_Validator_Behavior.call_getSearchScopeFactory_2990203945683059022(validator);
     if ((factory == null)) {
@@ -32,18 +31,15 @@ public class check_ConstraintFunction_ReferentSearchScope_Validator_NonTypesyste
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

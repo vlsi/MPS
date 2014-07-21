@@ -9,5 +9,5 @@ public class ContainsOperation_BehaviorDescriptor extends SingleArgumentSequence
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ContainsOperation";
-  };;
-;}
+  }
+}

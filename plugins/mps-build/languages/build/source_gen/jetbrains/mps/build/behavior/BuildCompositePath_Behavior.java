@@ -21,14 +21,12 @@ public class BuildCompositePath_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "head", "");
   }
-
   public static String call_getPath_8618885170173674800(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "tail", true) != null)) {
       return SPropertyOperations.getString(thisNode, "head") + "/" + BuildCompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, "tail", true));
     }
     return SPropertyOperations.getString(thisNode, "head");
   }
-
   public static String call_getLastSegment_1368030936106771152(SNode thisNode, MacroHelper helper) {
     SNode last = thisNode;
     while ((SLinkOperations.getTarget(last, "tail", true) != null)) {
@@ -36,14 +34,12 @@ public class BuildCompositePath_Behavior {
     }
     return SPropertyOperations.getString(last, "head");
   }
-
   public static String call_getPathToHead_3968971886499106107(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildCompositePath")) {
       return BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildCompositePath")) + "/" + SPropertyOperations.getString(thisNode, "head");
     }
     return SPropertyOperations.getString(thisNode, "head");
   }
-
   public static List<String> call_getHeadSuggestions_4959435991187212109(SNode thisNode, String basePath) {
     String relativePath = basePath;
     if (relativePath == null) {
@@ -73,7 +69,6 @@ public class BuildCompositePath_Behavior {
       }
     }, true).toListSequence();
   }
-
   public static IFile call_getFile_841084130032784919(SNode thisNode, Context context) {
     String basePath = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildRelativePath", false, false), "virtual_getBasePath_4959435991187140515", new Object[]{context});
     if ((basePath == null || basePath.length() == 0)) {

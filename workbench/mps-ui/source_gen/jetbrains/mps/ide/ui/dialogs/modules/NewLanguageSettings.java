@@ -35,12 +35,9 @@ public class NewLanguageSettings extends JPanel {
 
   private NewLanguageSettings.LangSettingsChangedListener myListener;
 
-
   public NewLanguageSettings() {
     this(null);
   }
-
-
 
   public NewLanguageSettings(String projectPath) {
     super(new GridLayoutManager(5, 1, new Insets(0, 5, 5, 5), -1, -1));
@@ -96,44 +93,34 @@ public class NewLanguageSettings extends JPanel {
     }
   }
 
-
-
   public String getLanguageName() {
     return myLanguageName.getText().trim();
   }
-
   public void setLanguageName(String languageName) {
     myLanguageName.setText(languageName);
     fireChanged();
   }
-
   public String getLanguageLocation() {
     return myLanguageLocation.getText().trim();
   }
-
   public void setLanguageLocation(String languageLocation) {
     myLangLocationDocListenerEnabled = false;
     myLanguageLocation.setText(languageLocation);
     myLangLocationDocListenerEnabled = true;
     fireChanged();
   }
-
   public boolean isRuntimeSolutionNeeded() {
     return myRuntimeSolution.isSelected();
   }
-
   public void setRuntimeSolutionNeeded(boolean needed) {
     myRuntimeSolution.setSelected(needed);
   }
-
   public boolean isSandboxSolutionNeeded() {
     return mySandboxSolution.isSelected();
   }
-
   public void setSandboxSolutionNeeded(boolean needed) {
     mySandboxSolution.setSelected(needed);
   }
-
   public void setProjectPath(String projectPath) {
     String oldProjectPath = myProjectPath;
     myProjectPath = projectPath;
@@ -145,25 +132,18 @@ public class NewLanguageSettings extends JPanel {
     fireChanged();
   }
 
-
-
   public void setListener(NewLanguageSettings.LangSettingsChangedListener listener) {
     myListener = listener;
   }
-
   /*package*/ void fireChanged() {
     if (myListener != null) {
       myListener.changed();
     }
   }
 
-
-
   public JComponent getPreferredFocusedComponent() {
     return myLanguageName;
   }
-
-
 
   public static interface LangSettingsChangedListener {
     public void changed();

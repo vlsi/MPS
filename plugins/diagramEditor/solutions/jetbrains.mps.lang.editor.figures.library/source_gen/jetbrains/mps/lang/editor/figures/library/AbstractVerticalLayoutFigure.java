@@ -21,11 +21,9 @@ public abstract class AbstractVerticalLayoutFigure extends RectView implements R
   public Property<Integer> figureWidth = new ValueProperty<Integer>(AbstractVerticalLayoutFigure.DEFAULT_WIDTH);
   public Property<Integer> figureHeight = new ValueProperty<Integer>(AbstractVerticalLayoutFigure.DEFAULT_HEIGHT);
 
-
   protected AbstractVerticalLayoutFigure() {
     background().set(Color.WHITE);
   }
-
   @Override
   protected void doValidate(View.ValidationContext context) {
     super.doValidate(context);
@@ -67,15 +65,12 @@ public abstract class AbstractVerticalLayoutFigure extends RectView implements R
       super.validate();
     }
   }
-
   protected boolean isExcludedFromLayout(View childView) {
     return !((childView.visible().get()));
   }
-
   protected AbstractVerticalLayoutFigure.Insets getInsets() {
     return AbstractVerticalLayoutFigure.Insets.EMPTY_INSETS;
   }
-
   public static class Insets {
     public static final AbstractVerticalLayoutFigure.Insets EMPTY_INSETS = new AbstractVerticalLayoutFigure.Insets(0, 0, 0, 0);
 
@@ -83,24 +78,20 @@ public abstract class AbstractVerticalLayoutFigure extends RectView implements R
     public final int bottom;
     public final int left;
     public final int right;
-
     public Insets(int top, int bottom, int left, int right) {
       this.top = top;
       this.bottom = bottom;
       this.left = left;
       this.right = right;
     }
-
     public AbstractVerticalLayoutFigure.Insets join(AbstractVerticalLayoutFigure.Insets insets) {
       return new AbstractVerticalLayoutFigure.Insets(top + insets.top, bottom + insets.bottom, left + insets.left, right + insets.right);
     }
   }
-
   protected static class AbstractVerticalLayoutFigureMapper<T extends AbstractVerticalLayoutFigure> extends Mapper<T, T> {
     protected AbstractVerticalLayoutFigureMapper(T figure) {
       super(figure, figure);
     }
-
     @Override
     protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
       super.registerSynchronizers(configuration);

@@ -44,7 +44,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_ConfigurationFromExecutorReference_2186841766260429985(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getParentNode()), "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor");
   }

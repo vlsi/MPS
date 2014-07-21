@@ -10,7 +10,6 @@ import javax.swing.Icon;
 
 public class VisualCell extends JPanel {
   private JLabel canvas = new JLabel();
-
   public VisualCell() {
     setLayout(new BorderLayout());
     canvas.setVerticalTextPosition(JLabel.BOTTOM);
@@ -18,11 +17,9 @@ public class VisualCell extends JPanel {
     add(canvas, BorderLayout.CENTER);
     setBorder(LineBorder.createGrayLineBorder());
   }
-
   public void setIcon(Icon icon) {
     canvas.setIcon(icon);
   }
-
   public void setMarks(String marks) {
     canvas.setText(marks);
   }

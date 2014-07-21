@@ -6,7 +6,6 @@ package jetbrains.mps.samples.agreementLanguage.behavior;
 public class QuantityTemporalProperty_BehaviorDescriptor extends TemporalProperty_BehaviorDescriptor {
   public QuantityTemporalProperty_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty";

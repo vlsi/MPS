@@ -11,5 +11,5 @@ public class ClosureControlStatement_BehaviorDescriptor extends Statement_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement";
-  };;
-;}
+  }
+}

@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_FoldRightOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_FoldRightOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode elementType_typevar_1522217801069421887 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode seedType_typevar_1522217801069421888 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -44,22 +43,18 @@ public class typeof_FoldRightOperation_InferenceRule extends AbstractInferenceRu
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.FoldRightOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_tdnv4o_a0c0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -71,7 +66,6 @@ public class typeof_FoldRightOperation_InferenceRule extends AbstractInferenceRu
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_tdnv4o_a0f0b(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;

@@ -10,11 +10,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class NodeRuleFactory {
   private IErrorReporter reporter;
 
-;;;  public NodeRuleFactory(IErrorReporter reporter) {
+  public NodeRuleFactory(IErrorReporter reporter) {
     this.reporter = reporter;
   }
 
-;;;  public SNode createNodeFromRuleMsg(SNode reference) {
+  public SNode createNodeFromRuleMsg(SNode reference) {
     NodeRuleReference ruleReference = new NodeRuleReference(reference);
     if (ruleReference.getType() == RuleType.TYPESYSTEM) {
       return this.createTypeSystemCheckOperation();
@@ -27,7 +27,7 @@ public class NodeRuleFactory {
     }
   }
 
-;;;  private SNode createTypeSystemCheckOperation() {
+  private SNode createTypeSystemCheckOperation() {
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
       return SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation", null);
     } else {
@@ -35,7 +35,7 @@ public class NodeRuleFactory {
     }
   }
 
-;;;  private SNode createConstraintsCheckOperation(SNode reference) {
+  private SNode createConstraintsCheckOperation(SNode reference) {
     SNode result;
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
       result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeConstraintsErrorCheckOperation", null);
@@ -45,7 +45,7 @@ public class NodeRuleFactory {
     return result;
   }
 
-;;;  private SNode createMessageStatementCheckOperation(SNode reference) {
+  private SNode createMessageStatementCheckOperation(SNode reference) {
     SNode result;
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
       result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeErrorCheckOperation", null);
@@ -55,7 +55,7 @@ public class NodeRuleFactory {
     return result;
   }
 
-;;;  private SNode createDefaultCheckOperation(SNode reference) {
+  private SNode createDefaultCheckOperation(SNode reference) {
     SNode result;
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
       result = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeUnknownErrorCheckOperation", null);
@@ -65,4 +65,4 @@ public class NodeRuleFactory {
     return result;
   }
 
-;;;}
+}

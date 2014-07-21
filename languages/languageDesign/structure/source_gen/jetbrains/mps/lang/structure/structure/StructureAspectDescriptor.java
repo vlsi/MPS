@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -55,6 +54,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.structure.structure.AggregationLinkDeclarationScopeKind", "jetbrains.mps.lang.structure.structure.AttributeInfo", "jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept", "jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptReference", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration", "jetbrains.mps.lang.structure.structure.ReferenceLinkDeclartionScopeKind"};
 }

@@ -42,40 +42,31 @@ public class ModelLinkMap {
   private Map<SModelReference, List<DynamicReference>> myDynRefMap = MapSequence.fromMap(new HashMap<SModelReference, List<DynamicReference>>());
   private Map<SNode, Tuples._2<ConceptKind, StaticScope>> myMetainfo = MapSequence.fromMap(new HashMap<SNode, Tuples._2<ConceptKind, StaticScope>>());
   private Map<SNode, Boolean> myRoleMetainfo = MapSequence.fromMap(new HashMap<SNode, Boolean>());
-
   public ModelLinkMap(SModel model) {
     myModel = model;
   }
-
   public void addTargetLocation(SNodeReference ptr, StaticReference ref) {
     addValue(myTargetMap, ptr, ref);
   }
-
   public void addTypeLocation(SNodeReference ptr, SNode node) {
     addValue(myNodeTypeMap, ptr, node);
   }
-
   public void addNodeMetainfo(ConceptKind kind, StaticScope scope, boolean isUnordered, SNode node) {
     MapSequence.fromMap(myMetainfo).put(node, MultiTuple.<ConceptKind,StaticScope>from(kind, scope));
     MapSequence.fromMap(myRoleMetainfo).put(node, isUnordered);
   }
-
   public void addRoleLocation(SNodeReference ptr, SNode node) {
     addValue(myNodeRoleMap, ptr, node);
   }
-
   public void addRoleLocation(SNodeReference ptr, SReference ref) {
     addValue(myRefRoleMap, ptr, ref);
   }
-
   public void addNameLocation(SNodeReference ptr, SNode node, String name) {
     addValue(myPropNameMap, ptr, new Pair<SNode, String>(node, name));
   }
-
   public void addDynamicReference(SModelReference model, DynamicReference ref) {
     addValue(myDynRefMap, model, ref);
   }
-
   public boolean moveNode(SNodeReference oldPtr, final SNodeReference newPtr) {
     boolean res = false;
     res |= move(myTargetMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<StaticReference>() {
@@ -108,7 +99,6 @@ public class ModelLinkMap {
     });
     return res;
   }
-
   public boolean deleteNode(SNodeReference ptr) {
     boolean res = false;
     res |= delete(myNodeTypeMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
@@ -133,7 +123,6 @@ public class ModelLinkMap {
     });
     return res;
   }
-
   public boolean setName(SNodeReference ptr, final String name) {
     boolean res = false;
     res |= setProp(myNodeTypeMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
@@ -153,7 +142,6 @@ public class ModelLinkMap {
     });
     return res;
   }
-
   public boolean setRole(SNodeReference ptr, final String role) {
     // todo: rename correspondent link attribute roles 
     boolean res = false;
@@ -169,7 +157,6 @@ public class ModelLinkMap {
     });
     return res;
   }
-
   public boolean updateModelReference(SModelReference model, final SModelReference newModel) {
     boolean res = false;
     // update imports 
@@ -225,7 +212,6 @@ public class ModelLinkMap {
     updatePtrMap(myTargetMap, model, newModel);
     return res;
   }
-
   public void fillModelEnvironmentInfo() {
     final LightModelEnvironmentInfo info = as_1o71zw_a0a0a22(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), LightModelEnvironmentInfo.class);
     if (info == null) {
@@ -270,7 +256,6 @@ public class ModelLinkMap {
       }
     });
   }
-
   private static <K, T> void addValue(Map<K, List<T>> map, K key, T value) {
     if (key == null || value == null) {
       return;
@@ -281,7 +266,6 @@ public class ModelLinkMap {
     }
     ListSequence.fromList(list).addElement(value);
   }
-
   private static <T> boolean move(Map<SNodeReference, List<T>> map, SNodeReference ptr, SNodeReference newPtr, final _FunctionTypes._void_P1_E0<? super T> f) {
     List<T> list = map.remove(ptr);
     if (list == null) {
@@ -295,7 +279,6 @@ public class ModelLinkMap {
     MapSequence.fromMap(map).put(newPtr, list);
     return true;
   }
-
   private static <T> boolean delete(Map<SNodeReference, List<T>> map, SNodeReference ptr, final _FunctionTypes._void_P1_E0<? super T> f) {
     List<T> list = map.remove(ptr);
     if (list == null) {
@@ -308,7 +291,6 @@ public class ModelLinkMap {
     });
     return true;
   }
-
   private static <T> boolean setProp(Map<SNodeReference, List<T>> map, SNodeReference ptr, final _FunctionTypes._void_P1_E0<? super T> f) {
     List<T> list = MapSequence.fromMap(map).get(ptr);
     if (list == null) {
@@ -321,7 +303,6 @@ public class ModelLinkMap {
     });
     return true;
   }
-
   private static <T> void updatePtrMap(Map<SNodeReference, List<T>> map, final SModelReference oldModel, SModelReference newModel) {
     List<SNodeReference> ptrList = SetSequence.fromSet(MapSequence.fromMap(map).keySet()).where(new IWhereFilter<SNodeReference>() {
       public boolean accept(SNodeReference it) {
@@ -333,11 +314,9 @@ public class ModelLinkMap {
       MapSequence.fromMap(map).put(new SNodePointer(newModel, ((SNodePointer) ptr).getNodeId()), list);
     }
   }
-
   private static SNodeReference ptr(SNode node) {
     return ((node == null) ? null : new SNodePointer(node));
   }
-
   private static <T> T as_1o71zw_a0a0a22(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

@@ -15,26 +15,21 @@ import jetbrains.mps.smodel.SReference;
 public class Complex_is_Numeric_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public Complex_is_Numeric_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode complexType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return SLinkOperations.getTarget(_quotation_createNode_5kk67h_a0a0b(), "descriptor", false);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.complex.structure.ComplexType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_5kk67h_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

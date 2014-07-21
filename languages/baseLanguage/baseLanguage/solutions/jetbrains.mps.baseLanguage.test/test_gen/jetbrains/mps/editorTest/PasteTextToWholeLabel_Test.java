@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class PasteTextToWholeLabel_Test extends BaseTransformationTest {
   public PasteTextToWholeLabel_Test() {
   }
-
   @Test
   public void test_PasteTextToWholeLabel() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.PasteTextToWholeLabel_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("7591654183801453230", "7591654183801453239");

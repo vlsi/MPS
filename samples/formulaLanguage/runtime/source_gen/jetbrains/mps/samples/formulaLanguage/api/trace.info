@@ -11,26 +11,26 @@
     <file name="MultiplyOperation.java">
       <node id="8307544070813664744" at="7,0,8,0" concept="2" trace="myLeftOperand" />
       <node id="8307544070813664748" at="8,0,9,0" concept="2" trace="myRightOperand" />
-      <node id="8307544070813664762" at="10,89,11,32" concept="1" />
-      <node id="8307544070813664766" at="11,32,12,34" concept="1" />
-      <node id="8307544070813664776" at="16,38,17,46" concept="5" />
-      <node id="8307544070813664783" at="17,46,18,47" concept="5" />
-      <node id="8307544070813664790" at="18,47,19,23" concept="6" />
-      <node id="8307544070813664752" at="10,0,14,0" concept="0" trace="MultiplyOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
-      <node id="8307544070813664770" at="15,0,21,0" concept="4" trace="compute#(Ljava/lang/Object;)Ljava/lang/Double;" />
-      <scope id="8307544070813664761" at="10,89,12,34" />
-      <scope id="8307544070813664775" at="16,38,19,23">
+      <node id="8307544070813664762" at="9,89,10,32" concept="1" />
+      <node id="8307544070813664766" at="10,32,11,34" concept="1" />
+      <node id="8307544070813664776" at="14,38,15,46" concept="5" />
+      <node id="8307544070813664783" at="15,46,16,47" concept="5" />
+      <node id="8307544070813664790" at="16,47,17,23" concept="6" />
+      <node id="8307544070813664752" at="9,0,13,0" concept="0" trace="MultiplyOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
+      <node id="8307544070813664770" at="13,0,19,0" concept="4" trace="compute#(Ljava/lang/Object;)Ljava/lang/Double;" />
+      <scope id="8307544070813664761" at="9,89,11,34" />
+      <scope id="8307544070813664775" at="14,38,17,23">
         <var name="num1" id="8307544070813664777" />
         <var name="num2" id="8307544070813664784" />
       </scope>
-      <scope id="8307544070813664752" at="10,0,14,0">
+      <scope id="8307544070813664752" at="9,0,13,0">
         <var name="leftOperand" id="8307544070813664755" />
         <var name="rightOperand" id="8307544070813664758" />
       </scope>
-      <scope id="8307544070813664770" at="15,0,21,0">
+      <scope id="8307544070813664770" at="13,0,19,0">
         <var name="parm" id="8307544070813664773" />
       </scope>
-      <unit id="8307544070813664740" at="6,0,22,0" name="jetbrains.mps.samples.formulaLanguage.api.MultiplyOperation" />
+      <unit id="8307544070813664740" at="6,0,20,0" name="jetbrains.mps.samples.formulaLanguage.api.MultiplyOperation" />
     </file>
   </root>
   <root nodeRef="r:ba35e19a-8f05-4cae-a99b-d51695da551f(jetbrains.mps.samples.formulaLanguage.api)/8307544070813664794">
@@ -38,26 +38,26 @@
       <node id="8307544070813664799" at="7,0,8,0" concept="2" trace="myLogicalTest" />
       <node id="8307544070813664803" at="8,0,9,0" concept="2" trace="myValueIfTrue" />
       <node id="8307544070813664807" at="9,0,10,0" concept="2" trace="myValueIfFalse" />
-      <node id="8307544070813664824" at="11,103,12,32" concept="1" />
-      <node id="8307544070813664828" at="12,32,13,32" concept="1" />
-      <node id="8307544070813664832" at="13,32,14,34" concept="1" />
-      <node id="8307544070813664848" at="19,38,20,41" concept="6" />
-      <node id="8307544070813664853" at="21,5,22,40" concept="6" />
-      <node id="8307544070813664842" at="18,33,21,5" concept="3" />
-      <node id="8307544070813664811" at="11,0,16,0" concept="0" trace="IfFunction#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
-      <node id="8307544070813664836" at="17,0,24,0" concept="4" trace="compute#(Ljava/lang/Object;)null" />
-      <scope id="8307544070813664847" at="19,38,20,41" />
-      <scope id="8307544070813664823" at="11,103,14,34" />
-      <scope id="8307544070813664841" at="18,33,22,40" />
-      <scope id="8307544070813664811" at="11,0,16,0">
+      <node id="8307544070813664824" at="10,103,11,32" concept="1" />
+      <node id="8307544070813664828" at="11,32,12,32" concept="1" />
+      <node id="8307544070813664832" at="12,32,13,34" concept="1" />
+      <node id="8307544070813664848" at="17,38,18,41" concept="6" />
+      <node id="8307544070813664853" at="19,5,20,40" concept="6" />
+      <node id="8307544070813664842" at="16,33,19,5" concept="3" />
+      <node id="8307544070813664811" at="10,0,15,0" concept="0" trace="IfFunction#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
+      <node id="8307544070813664836" at="15,0,22,0" concept="4" trace="compute#(Ljava/lang/Object;)null" />
+      <scope id="8307544070813664847" at="17,38,18,41" />
+      <scope id="8307544070813664823" at="10,103,13,34" />
+      <scope id="8307544070813664841" at="16,33,20,40" />
+      <scope id="8307544070813664811" at="10,0,15,0">
         <var name="logicalTest" id="8307544070813664814" />
         <var name="valueIfFalse" id="8307544070813664820" />
         <var name="valueIfTrue" id="8307544070813664817" />
       </scope>
-      <scope id="8307544070813664836" at="17,0,24,0">
+      <scope id="8307544070813664836" at="15,0,22,0">
         <var name="parm" id="8307544070813664839" />
       </scope>
-      <unit id="8307544070813664794" at="6,0,25,0" name="jetbrains.mps.samples.formulaLanguage.api.IfFunction" />
+      <unit id="8307544070813664794" at="6,0,23,0" name="jetbrains.mps.samples.formulaLanguage.api.IfFunction" />
     </file>
   </root>
   <root nodeRef="r:ba35e19a-8f05-4cae-a99b-d51695da551f(jetbrains.mps.samples.formulaLanguage.api)/8307544070813664858">
@@ -72,19 +72,19 @@
   <root nodeRef="r:ba35e19a-8f05-4cae-a99b-d51695da551f(jetbrains.mps.samples.formulaLanguage.api)/8307544070813664867">
     <file name="DoubleConstant.java">
       <node id="8307544070813664871" at="7,0,8,0" concept="2" trace="myDouble" />
-      <node id="8307544070813664880" at="9,35,10,17" concept="1" />
-      <node id="8307544070813664890" at="14,38,15,20" concept="6" />
-      <node id="8307544070813664874" at="9,0,12,0" concept="0" trace="DoubleConstant#(D)V" />
-      <node id="8307544070813664884" at="13,0,17,0" concept="4" trace="compute#(Ljava/lang/Object;)Ljava/lang/Double;" />
-      <scope id="8307544070813664879" at="9,35,10,17" />
-      <scope id="8307544070813664889" at="14,38,15,20" />
-      <scope id="8307544070813664874" at="9,0,12,0">
+      <node id="8307544070813664880" at="8,35,9,17" concept="1" />
+      <node id="8307544070813664890" at="12,38,13,20" concept="6" />
+      <node id="8307544070813664874" at="8,0,11,0" concept="0" trace="DoubleConstant#(D)V" />
+      <node id="8307544070813664884" at="11,0,15,0" concept="4" trace="compute#(Ljava/lang/Object;)Ljava/lang/Double;" />
+      <scope id="8307544070813664879" at="8,35,9,17" />
+      <scope id="8307544070813664889" at="12,38,13,20" />
+      <scope id="8307544070813664874" at="8,0,11,0">
         <var name="d" id="8307544070813664877" />
       </scope>
-      <scope id="8307544070813664884" at="13,0,17,0">
+      <scope id="8307544070813664884" at="11,0,15,0">
         <var name="parm" id="8307544070813664887" />
       </scope>
-      <unit id="8307544070813664867" at="6,0,18,0" name="jetbrains.mps.samples.formulaLanguage.api.DoubleConstant" />
+      <unit id="8307544070813664867" at="6,0,16,0" name="jetbrains.mps.samples.formulaLanguage.api.DoubleConstant" />
     </file>
   </root>
 </debug-info>

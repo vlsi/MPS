@@ -12,15 +12,15 @@ public class StyleAttributeDeclaration_BehaviorDescriptor extends BaseConcept_Be
   }
   public SNode virtual_getDefaultValue_7677730757102472473(SNode thisNode) {
     return StyleAttributeDeclaration_Behavior.virtual_getDefaultValue_7677730757102472473(thisNode);
-  };;
-;  public String virtual_getFqName_1213877404258(SNode thisNode) {
+  }
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
-  };;
-;  public SNode virtual_getType_7677730757102475082(SNode thisNode) {
+  }
+  public SNode virtual_getType_7677730757102475082(SNode thisNode) {
     return StyleAttributeDeclaration_Behavior.virtual_getType_7677730757102475082(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration";
-  };;
-;}
+  }
+}

@@ -34,15 +34,12 @@ public class DependencyTree extends MPSTree implements DataProvider {
   private boolean myShowUsedLanguage = true;
   private boolean myHideSourceModules;
   private Set<SModule> myCycles = SetSequence.fromSet(new HashSet<SModule>());
-
   public DependencyTree(Project project) {
     myProject = project;
   }
-
   public Project getProject() {
     return myProject;
   }
-
   public void setModules(List<SModule> modules) {
     myModules = modules;
     MPSTreeNode root = getRootNode();
@@ -51,39 +48,30 @@ public class DependencyTree extends MPSTree implements DataProvider {
       selectNode(getRootNode());
     }
   }
-
   public List<SModule> getModules() {
     return myModules;
   }
-
   public boolean isShowRuntime() {
     return myShowRuntime;
   }
-
   public void setShowRuntime(boolean showRuntime) {
     myShowRuntime = showRuntime;
   }
-
   public boolean isShowUsedLanguage() {
     return myShowUsedLanguage;
   }
-
   public void setShowUsedLanguage(boolean showUsedLanguage) {
     myShowUsedLanguage = showUsedLanguage;
   }
-
   public boolean isHideSourceModules() {
     return myHideSourceModules;
   }
-
   public void setHideSourceModules(boolean hideSourceModules) {
     myHideSourceModules = hideSourceModules;
   }
-
   public Set<SModule> getLoops() {
     return myCycles;
   }
-
   @Override
   protected MPSTreeNode rebuild() {
     SetSequence.fromSet(myCycles).clear();
@@ -107,12 +95,10 @@ public class DependencyTree extends MPSTree implements DataProvider {
     expandRoot();
     return root;
   }
-
   @Override
   protected ActionGroup createPopupActionGroup(MPSTreeNode treeNode) {
     return ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowModuleDependencyLoop_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowModuleBootstrapDependency_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowDependenciesInViewer_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")));
   }
-
   @Nullable
   @Override
   public Object getData(@NonNls String id) {
@@ -133,21 +119,18 @@ public class DependencyTree extends MPSTree implements DataProvider {
     }
     return null;
   }
-
   private static IOperationContext check_he3vmc_a0a2a91(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOperationContext();
     }
     return null;
   }
-
   private static List<SModule> check_he3vmc_a0a0d0t(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModules();
     }
     return null;
   }
-
   private static <T> T as_he3vmc_a0a0a91(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

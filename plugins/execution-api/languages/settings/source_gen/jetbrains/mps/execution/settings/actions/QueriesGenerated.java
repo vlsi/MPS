@@ -48,7 +48,6 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(node, "persistentConfiguration", (item), false);
                 return node;
               }
-
               public String getDescriptionText(String pattern) {
                 return "template<" + SPropertyOperations.getString((item), "name") + ">";
               }
@@ -59,11 +58,9 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_Type_943668161921858894(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration");
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_943668161921858987(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -87,7 +84,6 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(node, "persistentConfiguration", (item), false);
                 return node;
               }
-
               public String getDescriptionText(String pattern) {
                 return "configuration<" + SPropertyOperations.getString((item), "name") + ">";
               }
@@ -98,7 +94,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_Type_943668161921866947(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return !(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"));
   }

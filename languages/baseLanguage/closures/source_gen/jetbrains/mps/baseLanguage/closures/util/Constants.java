@@ -7,7 +7,6 @@ public class Constants {
   public static boolean ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE = true;
   public static int MAX_CLOSURE_PARAMETERS = 10;
   public static int MAX_CLOSURE_EXCEPTIONS = 10;
-
   public Constants() {
   }
 }

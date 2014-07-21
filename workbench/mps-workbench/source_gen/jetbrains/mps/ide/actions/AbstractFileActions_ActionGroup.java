@@ -17,7 +17,6 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_ideaActions = ID + "ideaActions";
   public static final String LABEL_ID_idealocalhistory = ID + "idealocalhistory";
   public static final String LABEL_ID_vcs = ID + "vcs";
-
   public AbstractFileActions_ActionGroup() {
     super("AbstractFileActions", ID);
     this.setIsInternal(false);

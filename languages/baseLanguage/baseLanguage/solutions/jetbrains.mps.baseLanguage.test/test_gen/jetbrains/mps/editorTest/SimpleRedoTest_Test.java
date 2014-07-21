@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class SimpleRedoTest_Test extends BaseTransformationTest {
   public SimpleRedoTest_Test() {
   }
-
   @Test
   public void test_SimpleRedoTest() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.SimpleRedoTest_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("1205677679168513017", "1205677679168513023");

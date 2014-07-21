@@ -8,30 +8,24 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public abstract class ListEditAction extends BaseValidatedAction {
   private JList myList;
-
   public ListEditAction(JList list) {
     super("Edit", "Edit", AllIcons.Actions.EditSource);
     myList = list;
   }
-
   @Override
   public void update(AnActionEvent e) {
     super.update(e);
     e.getPresentation().setEnabled(isApplicable());
   }
-
   protected boolean isApplicable() {
     return myList.getSelectedIndices().length == 1;
   }
-
   @Override
   public final void doPerform(AnActionEvent e) {
     doEdit();
   }
-
   public JList getList() {
     return myList;
   }
-
   protected abstract void doEdit();
 }

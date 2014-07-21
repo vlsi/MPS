@@ -14,7 +14,6 @@ public class MetaBlock_Constraints extends BaseConstraintsDescriptor {
   public MetaBlock_Constraints() {
     super("jetbrains.mps.testHybridEditor.structure.MetaBlock");
   }
-
   public String getAlternativeIcon(SNode node) {
     SModule module = SNodeOperations.getModel(node).getModule();
     if (!(module instanceof AbstractModule)) {

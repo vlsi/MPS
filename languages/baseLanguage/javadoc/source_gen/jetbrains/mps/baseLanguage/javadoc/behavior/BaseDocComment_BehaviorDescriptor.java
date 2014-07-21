@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class BaseDocComment_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public BaseDocComment_BehaviorDescriptor() {
   }
-
   public boolean virtual_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
     return BaseDocComment_Behavior.virtual_isTagSectionEmpty_8465538089690623795(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment";

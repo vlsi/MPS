@@ -15,19 +15,15 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_1209150617830(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList"), "useInTest", "reduceExpressionToStatement", "none");
   }
-
   public static boolean baseMappingRule_Condition_1209150502311(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceExpressionToStatement", "none");
   }
-
   public static SNode sourceNodeQuery_1209150187921(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "statementList", true);
   }
-
   public static TemplateModel getDescriptor(TemplateModule module) {
     return new TemplateModelImpl(module);
   }

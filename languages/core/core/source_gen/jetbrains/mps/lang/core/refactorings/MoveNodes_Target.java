@@ -7,19 +7,15 @@ import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 public class MoveNodes_Target implements IRefactoringTarget {
   public MoveNodes_Target() {
   }
-
   public IRefactoringTarget.TargetType getTarget() {
     return IRefactoringTarget.TargetType.NODE;
   }
-
   public boolean allowMultipleTargets() {
     return true;
   }
-
   public boolean isApplicableToEntityType(Object entity) {
     return true;
   }
-
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;

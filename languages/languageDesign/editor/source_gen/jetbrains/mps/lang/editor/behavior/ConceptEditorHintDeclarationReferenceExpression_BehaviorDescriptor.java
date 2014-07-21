@@ -10,5 +10,5 @@ public class ConceptEditorHintDeclarationReferenceExpression_BehaviorDescriptor 
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReferenceExpression";
-  };;
-;}
+  }
+}

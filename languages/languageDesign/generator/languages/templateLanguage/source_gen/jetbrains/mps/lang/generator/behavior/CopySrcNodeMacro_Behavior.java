@@ -14,8 +14,8 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class CopySrcNodeMacro_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
+  }
+  public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
       GeneratedMatchingPattern pattern_7c1mz_a0a = new CopySrcNodeMacro_Behavior.Pattern_7c1mz_a0a0a0a1();
       SNode coercedNode_7c1mz_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_7c1mz_a0a);
@@ -25,8 +25,8 @@ public class CopySrcNodeMacro_Behavior {
       }
     }
     return null;
-  };;
-;  public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+  }
+  public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     if (SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true) == child) {
       return false;
     }
@@ -34,8 +34,8 @@ public class CopySrcNodeMacro_Behavior {
       return false;
     }
     return true;
-  };;
-;  public static class Pattern_7c1mz_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  }
+  public static class Pattern_7c1mz_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
     public Pattern_7c1mz_a0a0a0a1() {
     }
@@ -48,22 +48,22 @@ public class CopySrcNodeMacro_Behavior {
         patternVar_concept = nodeToMatch_7c1mz_a0a0a0.getReferenceTarget("concept");
       }
       return true;
-    };;
-;    public boolean hasAntiquotations() {
+    }
+    public boolean hasAntiquotations() {
       return false;
-    };;
-;    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+    }
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
-    };;
-;    public Object getFieldValue(String fieldName) {
+    }
+    public Object getFieldValue(String fieldName) {
       if ("patternVar_concept".equals(fieldName)) {
         return patternVar_concept;
       }
       return null;
-    };;
-;    public void performActions(Object o) {
-    };;
-;  }
+    }
+    public void performActions(Object o) {
+    }
+  }
 }

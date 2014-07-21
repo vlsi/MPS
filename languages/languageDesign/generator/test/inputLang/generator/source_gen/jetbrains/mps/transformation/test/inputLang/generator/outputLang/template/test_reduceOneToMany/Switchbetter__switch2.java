@@ -19,19 +19,15 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 public class Switchbetter__switch2 implements TemplateSwitchMapping {
   public Switchbetter__switch2() {
   }
-
   public SNodeReference getSwitchNode() {
     return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075900");
   }
-
   public SNodeReference getModifiesSwitch() {
     return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066874");
   }
-
   public Iterable<TemplateReductionRule> getReductionRules() {
     return Collections.emptySet();
   }
-
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.NullLiteral");
     try {
@@ -40,7 +36,6 @@ public class Switchbetter__switch2 implements TemplateSwitchMapping {
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }
 }

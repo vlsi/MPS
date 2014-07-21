@@ -36,11 +36,9 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(res, "type", nodeToWrap, true);
             return res;
           }
-
           public boolean returnSmallPart(SNode nodeToWrap) {
             return false;
           }
-
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
@@ -53,11 +51,9 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_Builder_5389689214216567780(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement");
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_7057666463730278808(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -71,11 +67,9 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "builder", nodeToWrap, true);
             return result;
           }
-
           public boolean returnSmallPart(SNode nodeToWrap) {
             return true;
           }
-
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
@@ -88,7 +82,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuilderCreator_7057666463730193405(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -102,11 +95,9 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "builder", nodeToWrap, true);
             return result;
           }
-
           public boolean returnSmallPart(SNode nodeToWrap) {
             return true;
           }
-
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);

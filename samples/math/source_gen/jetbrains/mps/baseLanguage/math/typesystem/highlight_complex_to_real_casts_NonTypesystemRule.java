@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class highlight_complex_to_real_casts_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public highlight_complex_to_real_casts_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode castExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(castExpression, "expression", true)), "jetbrains.mps.baseLanguage.math.structure.ComplexType") && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(castExpression), MathTypeUtil.qDouble)) {
       {
@@ -33,18 +32,15 @@ public class highlight_complex_to_real_casts_NonTypesystemRule extends AbstractN
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.CastExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

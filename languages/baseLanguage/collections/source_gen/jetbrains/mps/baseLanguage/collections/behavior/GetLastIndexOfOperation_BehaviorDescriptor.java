@@ -9,5 +9,5 @@ public class GetLastIndexOfOperation_BehaviorDescriptor extends SingleArgumentSe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.GetLastIndexOfOperation";
-  };;
-;}
+  }
+}

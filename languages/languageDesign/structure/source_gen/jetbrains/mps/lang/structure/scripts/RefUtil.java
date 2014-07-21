@@ -19,7 +19,6 @@ public class RefUtil {
     }
     return null;
   }
-
   public static SNode findPropertyToMerge(SNode concept, SNode propNode) {
     for (SNode propDecl : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(concept))) {
       if (SPropertyOperations.getString(propDecl, "name").equals(SPropertyOperations.getString(propNode, "name"))) {

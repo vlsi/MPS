@@ -9,5 +9,5 @@ public class ContainerIteratorType_BehaviorDescriptor extends IteratorType_Behav
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType";
-  };;
-;}
+  }
+}

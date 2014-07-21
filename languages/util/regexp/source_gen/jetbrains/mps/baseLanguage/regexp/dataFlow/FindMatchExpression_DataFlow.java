@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class FindMatchExpression_DataFlow extends DataFlowBuilder {
   public FindMatchExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "regexp", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "inputExpression", true));

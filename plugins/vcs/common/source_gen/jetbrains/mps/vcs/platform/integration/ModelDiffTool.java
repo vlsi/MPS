@@ -37,10 +37,8 @@ import org.apache.log4j.LogManager;
 
 public class ModelDiffTool implements DiffTool {
   public static final FileType[] DIFF_SUPPORTED_TYPES = {MPSFileTypeFactory.MPS_FILE_TYPE, MPSFileTypeFactory.MPS_HEADER_FILE_TYPE, MPSFileTypeFactory.MPS_ROOT_FILE_TYPE};
-
   public ModelDiffTool() {
   }
-
   @Override
   public void show(final DiffRequest request) {
     DiffContent[] contents = request.getContents();
@@ -78,7 +76,6 @@ public class ModelDiffTool implements DiffTool {
 
     DiffManager.getInstance().getIdeaDiffTool().show(request);
   }
-
   @Override
   public boolean canShow(DiffRequest request) {
     DiffContent[] contents = request.getContents();
@@ -93,14 +90,11 @@ public class ModelDiffTool implements DiffTool {
     }
     return false;
   }
-
   @Nullable
   @Override
   public DiffViewer createComponent(String string, DiffRequest request, Window window, Disposable disposable) {
     return null;
   }
-
-
 
   @Nullable
   private static SModel readModel(DiffContent content) {
@@ -124,7 +118,6 @@ public class ModelDiffTool implements DiffTool {
     }
     return null;
   }
-
   @Nullable
   private static SModel getModel(DiffContent content) {
     if ((content instanceof DocumentContent || content instanceof FileContent) && content.getFile() != null) {
@@ -136,8 +129,6 @@ public class ModelDiffTool implements DiffTool {
     }
     return readModel(content);
   }
-
-
 
   @Nullable
   private static Tuples._2<SModel, SNodeId> getModelAndRoot(DiffContent content) {
@@ -157,7 +148,6 @@ public class ModelDiffTool implements DiffTool {
     return MultiTuple.<SModel,SNodeId>from(model, (size == 0 ? (SNodeId) null : ListSequence.fromList(SModelOperations.getRoots(model, null)).getElement(0).getNodeId()));
 
   }
-
   @Nullable
   private static Tuples._2<SModel, SNodeId> findModelAndRoot(IFile file) {
     assert FilePerRootDataSource.isPerRootPersistenceFile(file);
@@ -177,6 +167,5 @@ public class ModelDiffTool implements DiffTool {
     assert size <= 1;
     return MultiTuple.<SModel,SNodeId>from(model, (size == 0 ? (SNodeId) null : ListSequence.fromList(SModelOperations.getRoots(diskModel, null)).getElement(0).getNodeId()));
   }
-
   protected static Logger LOG = LogManager.getLogger(ModelDiffTool.class);
 }

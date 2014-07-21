@@ -14,7 +14,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class typeof_ImaginaryUnit_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ImaginaryUnit_InferenceRule() {
   }
-
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
@@ -22,22 +21,18 @@ public class typeof_ImaginaryUnit_InferenceRule extends AbstractInferenceRule_Ru
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)", "1196436225615", true), (SNode) _quotation_createNode_ir5twi_a0a0b(), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.complex.structure.ImaginaryUnit";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_ir5twi_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

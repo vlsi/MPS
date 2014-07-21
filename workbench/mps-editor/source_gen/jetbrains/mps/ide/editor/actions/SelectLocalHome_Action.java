@@ -19,22 +19,18 @@ import org.apache.log4j.LogManager;
 
 public class SelectLocalHome_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public SelectLocalHome_Action() {
     super("Move Caret to Previous Word with Selection", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return EditorActionUtils.isReadonlyActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))) && ((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Label;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -48,7 +44,6 @@ public class SelectLocalHome_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -67,7 +62,6 @@ public class SelectLocalHome_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getActionHandler().executeAction(((EditorCell) MapSequence.fromMap(_params).get("editorCell")), CellActionType.SELECT_LOCAL_HOME);
@@ -78,6 +72,5 @@ public class SelectLocalHome_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(SelectLocalHome_Action.class);
 }

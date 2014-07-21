@@ -9,5 +9,5 @@ public class CaretPositionParameter_BehaviorDescriptor extends SelectParameter_B
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CaretPositionParameter";
-  };;
-;}
+  }
+}

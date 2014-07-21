@@ -23,7 +23,6 @@ import jetbrains.mps.project.AbstractModule;
 /*package*/ class MpsClasspathRefUtil {
   private MpsClasspathRefUtil() {
   }
-
   /*package*/ static void updateReferencesToMpsClasspath(SNode node) {
     SModule[] modules = {ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)")), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)")), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)")), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)")), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)")), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)")), ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)"))};
 
@@ -65,28 +64,24 @@ import jetbrains.mps.project.AbstractModule;
       }
     }
   }
-
   private static SModule check_xpwqv8_a0d0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static String check_xpwqv8_a0b0f0b(jetbrains.mps.smodel.SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLongName();
     }
     return null;
   }
-
   private static SModelReference check_xpwqv8_a0c0c0f0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-
   private static boolean eq_xpwqv8_a0a0a0a0a0a0c0c0f0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

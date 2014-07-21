@@ -18,13 +18,11 @@ public class Java_Configuration_Editor extends SettingsEditorEx<Java_Configurati
   private JLabel myLabel;
   private NodeBySeveralConcepts_Configuration_Editor myNode;
   private JavaRunParameters_Configuration_Editor myRunParameters;
-
   public void disposeEditor() {
     myRunParameters.dispose();
     Disposer.dispose(myNode);
     Disposer.dispose(myRunParameters);
   }
-
   @NotNull
   public JPanel createEditor() {
     myLabel = new JLabel("Select class:");
@@ -40,17 +38,14 @@ public class Java_Configuration_Editor extends SettingsEditorEx<Java_Configurati
     mainPanel.add(javaRunParametersEditor, BorderLayout.CENTER);
     return mainPanel;
   }
-
   public void applyEditorTo(final Java_Configuration configuration) throws ConfigurationException {
     myNode.applyEditorTo(configuration.getNode());
     myRunParameters.applyEditorTo(configuration.getRunParameters());
   }
-
   public void resetEditorFrom(final Java_Configuration configuration) {
     myNode.resetEditorFrom(configuration.getNode());
     myRunParameters.resetEditorFrom(configuration.getRunParameters());
   }
-
   public Java_Configuration_Editor(NodeBySeveralConcepts_Configuration_Editor node, JavaRunParameters_Configuration_Editor runParameters) {
     myNode = node;
     myRunParameters = runParameters;

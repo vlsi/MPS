@@ -20,7 +20,6 @@ public class BuildVariableMacroInitWithValueFromFile_Editor extends DefaultNodeE
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xxatue_a(editorContext, node);
   }
-
   private EditorCell createCollection_xxatue_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xxatue_a");
@@ -31,7 +30,6 @@ public class BuildVariableMacroInitWithValueFromFile_Editor extends DefaultNodeE
     editorCell.addEditorCell(this.createRefNode_xxatue_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_xxatue_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "load");
     editorCell.setCellId("Constant_xxatue_a0");
@@ -41,7 +39,6 @@ public class BuildVariableMacroInitWithValueFromFile_Editor extends DefaultNodeE
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_xxatue_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("propertyName");
@@ -59,7 +56,6 @@ public class BuildVariableMacroInitWithValueFromFile_Editor extends DefaultNodeE
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xxatue_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_xxatue_c0");
@@ -69,7 +65,6 @@ public class BuildVariableMacroInitWithValueFromFile_Editor extends DefaultNodeE
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_xxatue_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fileName");

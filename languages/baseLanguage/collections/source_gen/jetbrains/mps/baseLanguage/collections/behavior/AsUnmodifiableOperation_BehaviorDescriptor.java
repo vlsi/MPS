@@ -12,27 +12,27 @@ public class AsUnmodifiableOperation_BehaviorDescriptor extends NoArgumentsSeque
   }
   public SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
     return IApplicableToNothing_Behavior.virtual_expectedOperandType_6368025520509018230(thisNode, elementType);
-  };;
-;  public List<SNode> virtual_getApplicableTypes_5994574781955586127(SConcept thisConcept) {
+  }
+  public List<SNode> virtual_getApplicableTypes_5994574781955586127(SConcept thisConcept) {
     return IApplicableToCollection_Behavior.virtual_getApplicableTypes_5994574781955586127(thisConcept);
-  };;
-;  public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
+  }
+  public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     return IOperation_Behavior.virtual_getVariableExpectedName_1213877410087(thisNode);
-  };;
-;  public boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
+  }
+  public boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
     return IOperation_Behavior.virtual_isDotExpressionLegalAsStatement_1239212437413(thisNode);
-  };;
-;  public boolean virtual_isLValue_1213877410080(SNode thisNode) {
+  }
+  public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
-  };;
-;  public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
+  }
+  public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
     return IOperation_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
-  };;
-;  public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
+  }
+  public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
     return IOperation_Behavior.virtual_operandCanBeNull_323410281720656291(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AsUnmodifiableOperation";
-  };;
-;}
+  }
+}

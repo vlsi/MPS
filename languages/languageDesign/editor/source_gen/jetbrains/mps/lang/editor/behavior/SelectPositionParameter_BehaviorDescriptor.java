@@ -9,5 +9,5 @@ public class SelectPositionParameter_BehaviorDescriptor extends SelectParameter_
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.SelectPositionParameter";
-  };;
-;}
+  }
+}

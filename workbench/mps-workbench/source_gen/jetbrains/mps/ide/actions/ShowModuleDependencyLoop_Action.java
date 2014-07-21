@@ -19,18 +19,15 @@ import org.apache.log4j.LogManager;
 
 public class ShowModuleDependencyLoop_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowModuleDependencyLoop_Action() {
     super("Show Cycle Paths", "Show Cycle Paths for Selected Module", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     ModuleDependencyNode node = as_hir9am_a0a0a3(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class);
     if (node == null) {
@@ -38,7 +35,6 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
     }
     return node.isCyclic() && !(node.isUsedLanguage());
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -52,7 +48,6 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -67,7 +62,6 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).ShowLoops(as_hir9am_a0a0a0a0g(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class));
@@ -77,13 +71,10 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowModuleDependencyLoop_Action.class);
-
   private static <T> T as_hir9am_a0a0a3(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_hir9am_a0a0a0a0g(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_MatrixElementAccessExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_MatrixElementAccessExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode mea, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(mea, "rowIndex", true), "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard"))) {
       {
@@ -60,18 +59,15 @@ public class typeof_MatrixElementAccessExpression_InferenceRule extends Abstract
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

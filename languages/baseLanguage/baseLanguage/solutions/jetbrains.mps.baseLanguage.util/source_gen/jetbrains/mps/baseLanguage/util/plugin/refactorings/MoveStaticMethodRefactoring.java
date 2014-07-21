@@ -15,7 +15,6 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
   public MoveStaticMethodRefactoring(SNode moving, SNode destination) {
     super(moving, destination);
   }
-
   private void replaceFields() {
     SNode classNode = SNodeOperations.getAncestor(this.myMoving, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     for (SNode field : ListSequence.fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -26,7 +25,6 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
       SNodeOperations.replaceWithAnother(field, _quotation_createNode_f5lqsg_a0a0a1a1(classNode, SLinkOperations.getTarget(field, "variableDeclaration", false)));
     }
   }
-
   private void replaceMethods() {
     SNode classNode = SNodeOperations.getAncestor(this.myMoving, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -42,13 +40,11 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
       }
     }
   }
-
   @Override
   protected void correctMoving() {
     this.replaceFields();
     this.replaceMethods();
   }
-
   @Override
   public void replaceSingleUsage(SNode usage) {
     super.replaceSingleUsage(usage);
@@ -64,7 +60,6 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
       SNodeOperations.replaceWithAnother(usage, newCall);
     }
   }
-
   private static SNode _quotation_createNode_f5lqsg_a0a0a1a1(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -73,7 +68,6 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "variableDeclaration", (SNode) parameter_2);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_f5lqsg_a0a0a0b0c(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -82,7 +76,6 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classConcept", (SNode) parameter_1);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_f5lqsg_a0a0b0b0e(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -90,7 +83,6 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "baseMethodDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_f5lqsg_a0a0a1a1a4(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

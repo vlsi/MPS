@@ -26,7 +26,6 @@ public class RootConcept_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_aw3qer_a(editorContext, node);
   }
-
   private EditorCell createCollection_aw3qer_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_aw3qer_a");
@@ -42,7 +41,6 @@ public class RootConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_aw3qer_i0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_aw3qer_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -60,14 +58,12 @@ public class RootConcept_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_aw3qer_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave");
     editorCell.setCellId("Constant_aw3qer_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_aw3qer_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_aw3qer_c0");
@@ -75,12 +71,10 @@ public class RootConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_aw3qer_b2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_aw3qer_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNodeList_aw3qer_b2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new RootConcept_Editor.weaveListHandler_aw3qer_b2a(node, "weave", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -88,30 +82,25 @@ public class RootConcept_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class weaveListHandler_aw3qer_b2a extends RefNodeListHandler {
     public weaveListHandler_aw3qer_b2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -125,14 +114,12 @@ public class RootConcept_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_aw3qer_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave each");
     editorCell.setCellId("Constant_aw3qer_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_aw3qer_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_aw3qer_e0");
@@ -140,12 +127,10 @@ public class RootConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_aw3qer_b4a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_aw3qer_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNodeList_aw3qer_b4a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new RootConcept_Editor.weaveEachListHandler_aw3qer_b4a(node, "weaveEach", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -153,30 +138,25 @@ public class RootConcept_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class weaveEachListHandler_aw3qer_b4a extends RefNodeListHandler {
     public weaveEachListHandler_aw3qer_b4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -190,14 +170,12 @@ public class RootConcept_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_aw3qer_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave many");
     editorCell.setCellId("Constant_aw3qer_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_aw3qer_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_aw3qer_g0");
@@ -205,12 +183,10 @@ public class RootConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_aw3qer_b6a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_aw3qer_a6a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNodeList_aw3qer_b6a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new RootConcept_Editor.weaveManyListHandler_aw3qer_b6a(node, "weaveMany", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -218,30 +194,25 @@ public class RootConcept_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class weaveManyListHandler_aw3qer_b6a extends RefNodeListHandler {
     public weaveManyListHandler_aw3qer_b6a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -255,14 +226,12 @@ public class RootConcept_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_aw3qer_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave each many");
     editorCell.setCellId("Constant_aw3qer_h0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_aw3qer_i0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_aw3qer_i0");
@@ -270,12 +239,10 @@ public class RootConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_aw3qer_b8a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_aw3qer_a8a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNodeList_aw3qer_b8a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new RootConcept_Editor.weaveEachManyListHandler_aw3qer_b8a(node, "weaveEachMany", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -283,30 +250,25 @@ public class RootConcept_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class weaveEachManyListHandler_aw3qer_b8a extends RefNodeListHandler {
     public weaveEachManyListHandler_aw3qer_b8a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);

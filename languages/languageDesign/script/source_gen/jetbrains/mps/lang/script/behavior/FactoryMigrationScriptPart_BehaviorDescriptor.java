@@ -9,5 +9,5 @@ public class FactoryMigrationScriptPart_BehaviorDescriptor extends MigrationScri
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart";
-  };;
-;}
+  }
+}

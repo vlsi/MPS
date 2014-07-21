@@ -18,13 +18,10 @@ public class JUnitExecutor implements Executor {
   private final JavaRunParameters_Configuration myJavaRunParameters;
   private final List<ITestNodeWrapper> myTestNodes;
 
-
   public JUnitExecutor(JavaRunParameters_Configuration javaRunParameters, List<ITestNodeWrapper> testNodes) {
     myJavaRunParameters = javaRunParameters;
     myTestNodes = testNodes;
   }
-
-
 
   @Override
   public ProcessHandler execute() throws ExecutionException {
@@ -39,8 +36,6 @@ public class JUnitExecutor implements Executor {
     return commandProcess;
   }
 
-
-
   public JavaRunParameters prepareJavaParamsForTests(int runId) {
     String runIdString = "-D" + CachesUtil.PROPERTY_RUN_ID + "=\"" + runId + "\"";
     JavaRunParameters_Configuration javaRunParams = myJavaRunParameters;
@@ -52,6 +47,5 @@ public class JUnitExecutor implements Executor {
     parameters.setVmOptions(vmFromJava + " " + runIdString);
     return parameters;
   }
-
 
 }

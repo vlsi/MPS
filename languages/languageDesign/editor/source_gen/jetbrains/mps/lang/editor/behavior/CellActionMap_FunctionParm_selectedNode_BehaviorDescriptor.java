@@ -10,5 +10,5 @@ public class CellActionMap_FunctionParm_selectedNode_BehaviorDescriptor extends 
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode";
-  };;
-;}
+  }
+}

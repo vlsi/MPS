@@ -25,13 +25,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 public class NodePatcher {
   public NodePatcher() {
   }
-
   public static void removeStatements(SNode node) {
     for (SNode method : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, new String[]{}))) {
       SLinkOperations.setTarget(method, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null), true);
     }
   }
-
   /**
    * Sometimes editor doesn't set nonStatic to true, sometimes it does.
    * It makes node matching hard, as we don't know whether to set this property in
@@ -45,19 +43,16 @@ public class NodePatcher {
       }
     }
   }
-
   public static void removeInitializers(SNode node) {
     for (SNode field : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{}))) {
       SLinkOperations.setTarget(field, "initializer", null, true);
     }
   }
-
   public static void removeConstructorName(SNode node) {
     for (SNode constr : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", false, new String[]{}))) {
       SPropertyOperations.set(constr, "name", null);
     }
   }
-
   public static void removeExtendsObject(SNode node) {
     for (SNode cls : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, new String[]{}))) {
       if ((SLinkOperations.getTarget(cls, "superclass", true) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(cls, "superclass", true), "classifier", false) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(cls, "superclass", true), "classifier", false), "name").equals("Object")) {
@@ -65,7 +60,6 @@ public class NodePatcher {
       }
     }
   }
-
   public static void removeSourceLevelAnnotations(SNode node) {
     final SNode retentionAnno = ListSequence.fromList(SModelOperations.getRoots(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang.annotation", "java_stub")), "jetbrains.mps.baseLanguage.structure.Annotation")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -99,7 +93,6 @@ public class NodePatcher {
       }
     }
   }
-
   public static void sortNestedClass(SNode node) {
     List<SNode> nested = new ArrayList<SNode>();
     ListSequence.fromList(nested).addSequence(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).sort(new ISelector<SNode, String>() {
@@ -114,7 +107,6 @@ public class NodePatcher {
     });
     ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).addSequence(ListSequence.fromList(nested));
   }
-
   public static void removeSModelAttrs(SNode node) {
     for (SNode attr : ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes()))) {
       if (SNodeOperations.getConceptDeclaration(attr) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")) {
@@ -124,7 +116,6 @@ public class NodePatcher {
       SNodeOperations.deleteNode(attr);
     }
   }
-
   public static void copyImportAttrs(SNode from, SNode to) {
     if ((AttributeOperations.getAttribute(SNodeOperations.cast(from, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports")) != null)) {
       AttributeOperations.setAttribute(SNodeOperations.cast(to, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports"), SNodeOperations.copyNode(AttributeOperations.getAttribute(SNodeOperations.cast(from, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports"))));

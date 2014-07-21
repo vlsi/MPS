@@ -22,7 +22,6 @@ public class BuildMps_ModuleDependencyExtendLanguage_Editor extends DefaultNodeE
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_r99sur_a(editorContext, node);
   }
-
   private EditorCell createCollection_r99sur_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_r99sur_a");
@@ -31,7 +30,6 @@ public class BuildMps_ModuleDependencyExtendLanguage_Editor extends DefaultNodeE
     editorCell.addEditorCell(this.createRefCell_r99sur_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_r99sur_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_r99sur_a0");
@@ -41,7 +39,6 @@ public class BuildMps_ModuleDependencyExtendLanguage_Editor extends DefaultNodeE
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_r99sur_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("language");
@@ -63,20 +60,16 @@ public class BuildMps_ModuleDependencyExtendLanguage_Editor extends DefaultNodeE
     } else
     return editorCell;
   }
-
   public static class _Inline_r99sur_a1a extends InlineCellProvider {
     public _Inline_r99sur_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_r99sur_a0b0(editorContext, node);
     }
-
     private EditorCell createProperty_r99sur_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");

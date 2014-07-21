@@ -11,9 +11,9 @@ public class ConstraintsFunctionParameter_node_BehaviorDescriptor extends Concep
   }
   public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept thisConcept) {
     return ConstraintsFunctionParameter_node_Behavior.virtual_dontUseParameterObject_1262430001741498340(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node";
-  };;
-;}
+  }
+}

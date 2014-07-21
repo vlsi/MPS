@@ -15,18 +15,15 @@ import java.awt.event.MouseEvent;
 public class NegativeResizeNode_bottom_central_Test extends BaseTransformationTest {
   public NegativeResizeNode_bottom_central_Test() {
   }
-
   @Test
   public void test_NegativeResizeNode_bottom_central() throws Throwable {
     this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
     this.runTest("jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_bottom_central_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("5540569706412486832", "5540569706412486835");

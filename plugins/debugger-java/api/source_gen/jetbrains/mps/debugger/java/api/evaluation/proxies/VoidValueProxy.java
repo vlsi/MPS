@@ -9,12 +9,10 @@ public class VoidValueProxy extends ValueProxy implements IValueProxy {
   public VoidValueProxy(@NotNull Value v) {
     super(v);
   }
-
   @Override
   public boolean javaEquals(IValueProxy proxy) {
     return false;
   }
-
   public String getPresentation() {
     return "void";
   }

@@ -20,7 +20,6 @@ public class Generator implements TemplateModule {
   private final Collection<TemplateModel> models;
   private final Collection<String> referencedGenerators;
   private Collection<String> usedLanguages;
-
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
     priorities = TemplateUtil.asCollection(TemplateUtil.createStrictlyBeforeRule(TemplateUtil.createRefExternal("791a790e-6d6d-4aa8-8917-3b269a164450(jetbrains.mps.traceInfo.tracemacro.testlang#7980748436587788163)", TemplateUtil.createRefNormal("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "*")), TemplateUtil.createRefExternal("5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)", TemplateUtil.createRefLocal())));
@@ -28,42 +27,34 @@ public class Generator implements TemplateModule {
     referencedGenerators = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage.collections/jetbrains.mps.baseLanguage.collections#1151699677197");
     usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.collections");
   }
-
   @Override
   public String getAlias() {
     return "jetbrains.mps.traceInfo.tracemacro.testlang/<no name>";
   }
-
   @Override
   public Collection<TemplateModel> getModels() {
     return models;
   }
-
   @Override
   public Collection<TemplateMappingPriorityRule> getPriorities() {
     return priorities;
   }
-
   @Override
   public SModuleReference getReference() {
     return PersistenceFacade.getInstance().createModuleReference(MODULE_REF);
   }
-
   @Override
   public Collection<String> getUsedLanguages() {
     return usedLanguages;
   }
-
   @Override
   public LanguageRuntime getSourceLanguage() {
     return sourceLanguage;
   }
-
   @Override
   public Collection<String> getReferencedModules() {
     return referencedGenerators;
   }
-
   private TemplateModel getTemplateModel(String modelName) {
     Class<TemplateModel> clazz = ClassLoaderManager.getInstance().getClass(ModuleRepositoryFacade.getInstance().getModule(getReference()), modelName);
     if (clazz == null) {

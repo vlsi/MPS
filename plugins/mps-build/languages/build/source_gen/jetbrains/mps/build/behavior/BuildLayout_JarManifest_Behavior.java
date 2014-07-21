@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class BuildLayout_JarManifest_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getOutputPath_WithMacro_6837653846148442229(SNode thisNode, Context context) {
     if ((SNodeOperations.getParent(thisNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_Container")) {
       if (BuildLayout_JarManifest_Behavior.call_isInJar_6837653846148477885(thisNode)) {
@@ -38,11 +37,9 @@ public class BuildLayout_JarManifest_Behavior {
     }
     return null;
   }
-
   public static boolean call_isInJar_6837653846148477885(SNode thisNode) {
     return (SNodeOperations.getParent(thisNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_Jar");
   }
-
   public static Iterable<SNode> call_getSections_8563603456895840664(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parts", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -54,7 +51,6 @@ public class BuildLayout_JarManifest_Behavior {
       }
     });
   }
-
   public static Iterable<SNode> call_getAttributes_8563603456895840897(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parts", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -66,7 +62,6 @@ public class BuildLayout_JarManifest_Behavior {
       }
     });
   }
-
   public static String call_defaultManifestName_8990969321155958188(SAbstractConcept thisConcept) {
     return "MANIFEST.MF";
   }

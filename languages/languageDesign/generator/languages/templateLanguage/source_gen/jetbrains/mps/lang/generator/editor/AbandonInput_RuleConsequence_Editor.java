@@ -16,7 +16,6 @@ public class AbandonInput_RuleConsequence_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_msmwtj_a(editorContext, node);
   }
-
   private EditorCell createConstant_msmwtj_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<abandon input>");
     editorCell.setCellId("Constant_msmwtj_a");

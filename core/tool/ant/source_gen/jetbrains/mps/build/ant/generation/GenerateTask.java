@@ -15,48 +15,38 @@ import java.util.LinkedHashSet;
 
 public class GenerateTask extends MpsLoadTask {
   private final GeneratorProperties myGenProps;
-
   public GenerateTask() {
     myGenProps = new GeneratorProperties(myWhatToDo);
     myGenProps.setStrictMode(true).setParallelMode(false).setInplaceTransform(false).setHideWarnings(false);
   }
-
   @Override
   protected String getWorkerClass() {
     return "jetbrains.mps.tool.builder.make.GeneratorWorker";
   }
-
   public void addConfiguredChunk(Chunk chunk) {
     myWhatToDo.addChunk(chunk.getModules(), chunk.getBootstrap());
   }
-
   public void addConfiguredLibrary(LibraryDataType jar) {
     File file = jar.getFile();
     if (file != null) {
       myWhatToDo.addLibraryJar(file.getAbsolutePath());
     }
   }
-
   public void setStrictMode(boolean strictMode) {
     myGenProps.setStrictMode(strictMode);
   }
-
   public void setParallelMode(boolean parallelMode) {
     myGenProps.setParallelMode(parallelMode);
   }
-
   public void setUseInplaceTransform(boolean inplaceEnabled) {
     myGenProps.setInplaceTransform(inplaceEnabled);
   }
-
   public void setParallelThreads(int threadCount) {
     myGenProps.setParallelThreads(threadCount);
   }
-
   public void setHideWarnings(boolean hideWarnings) {
     myGenProps.setHideWarnings(hideWarnings);
   }
-
   public void addConfiguredPlugin(Plugin plugin) {
     String property = myWhatToDo.getProperty(ScriptProperties.PLUGIN_PATHS);
     if ((property == null || property.length() == 0)) {
@@ -66,8 +56,6 @@ public class GenerateTask extends MpsLoadTask {
     }
     myWhatToDo.putProperty(ScriptProperties.PLUGIN_PATHS, property);
   }
-
-
 
   @Override
   protected Set<File> calculateClassPath(boolean fork) {
@@ -83,6 +71,5 @@ public class GenerateTask extends MpsLoadTask {
 
     return classPath;
   }
-
 
 }

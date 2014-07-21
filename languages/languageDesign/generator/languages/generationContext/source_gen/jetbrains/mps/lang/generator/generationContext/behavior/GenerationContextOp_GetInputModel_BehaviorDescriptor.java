@@ -9,5 +9,5 @@ public class GenerationContextOp_GetInputModel_BehaviorDescriptor extends Genera
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel";
-  };;
-;}
+  }
+}

@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_ResultExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ResultExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode expression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode contextBuilder = Builder_Behavior.call_getContextBuilder_7057666463730366732(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder"))), expression);
     {
@@ -27,18 +26,15 @@ public class typeof_ResultExpression_InferenceRule extends AbstractInferenceRule
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "7288041816792294089", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), contextBuilder, "virtual_getResultType_7057666463730718251", new Object[]{}), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.builders.structure.ResultExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

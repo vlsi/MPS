@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class DefaultClassifierMethodParameterInformationQuery implements ParametersInformation<SNode> {
   public DefaultClassifierMethodParameterInformationQuery() {
   }
-
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     SNode selectedActualArgument = this.getSelectedActualArgument(editorContext);
     SNode methodCall = (selectedActualArgument != null ? SNodeOperations.cast(SNodeOperations.getParent(selectedActualArgument), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation") : node);
@@ -37,15 +36,12 @@ public class DefaultClassifierMethodParameterInformationQuery implements Paramet
       }
     });
   }
-
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     BaseMethodParameterInformationQueryUtil.fillPresentation(parameterObject, this.getSelectedActualArgument(editorContext), styledText);
   }
-
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
     return SLinkOperations.getTarget(node, "member", false) == parameterObject;
   }
-
   private SNode getSelectedActualArgument(EditorContext editorContext) {
     SNode selectedNode = editorContext.getSelectedNode();
     if (selectedNode == null) {

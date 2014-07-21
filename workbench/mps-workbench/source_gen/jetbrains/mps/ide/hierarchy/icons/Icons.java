@@ -15,7 +15,6 @@ public class Icons {
   public static final Icon ACTUAL_ZOOM_ICON = AllIcons.Graph.ActualZoom;
   public static final Icon THIS_MODEL_ICON = IdeIcons.MODEL_ICON;
   public static final Icon GENERATOR_ICON = MPSIcons.Nodes.Generator;
-
   public Icons() {
   }
 }

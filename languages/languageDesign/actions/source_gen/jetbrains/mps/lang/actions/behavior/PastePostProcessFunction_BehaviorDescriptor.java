@@ -12,9 +12,9 @@ public class PastePostProcessFunction_BehaviorDescriptor extends ConceptFunction
   }
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return PastePostProcessFunction_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.PastePostProcessFunction";
-  };;
-;}
+  }
+}

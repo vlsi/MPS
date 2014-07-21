@@ -16,7 +16,6 @@ public class ClosureDataFlow_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test$TestBody", "test_ClosureDataFlow", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ClosureDataFlow() throws Exception {

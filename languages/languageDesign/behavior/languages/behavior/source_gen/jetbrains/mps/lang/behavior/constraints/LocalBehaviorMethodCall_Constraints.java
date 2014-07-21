@@ -24,12 +24,10 @@ public class LocalBehaviorMethodCall_Constraints extends BaseConstraintsDescript
   public LocalBehaviorMethodCall_Constraints() {
     super("jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -40,7 +38,6 @@ public class LocalBehaviorMethodCall_Constraints extends BaseConstraintsDescript
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -49,7 +46,6 @@ public class LocalBehaviorMethodCall_Constraints extends BaseConstraintsDescript
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -65,7 +61,6 @@ public class LocalBehaviorMethodCall_Constraints extends BaseConstraintsDescript
               return null;
             }
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_2hfwmh_a0a1a0a0a1a0b0a1a3;
@@ -75,11 +70,9 @@ public class LocalBehaviorMethodCall_Constraints extends BaseConstraintsDescript
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false) != null;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "6496299201655590931");
   private static SNodePointer breakingNode_2hfwmh_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "6496299201655529042");
 }

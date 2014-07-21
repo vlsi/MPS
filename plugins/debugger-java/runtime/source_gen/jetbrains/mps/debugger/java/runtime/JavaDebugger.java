@@ -19,29 +19,24 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
 
 public class JavaDebugger extends AbstractDebugger implements ApplicationComponent {
   private final JavaBreakpointsProvider myJavaBreakpointsProvider = new JavaBreakpointsProvider();
-
   public JavaDebugger(Debuggers debuggers, BreakpointProvidersManager breakpointsProviderManager) {
     super("Java", debuggers, breakpointsProviderManager);
   }
-
   @NotNull
   @Override
   public AbstractDebugSessionCreator createDebugSessionCreator(@NotNull Project project) {
     return new VmCreator(project);
   }
-
   @NotNull
   @Override
   public IBreakpointsProvider getBreakpointsProvider() {
     return myJavaBreakpointsProvider;
   }
-
   @NotNull
   @Override
   public String getComponentName() {
     return getName() + " Debugger";
   }
-
   @Override
   public void initComponent() {
     super.init();
@@ -49,7 +44,6 @@ public class JavaDebugger extends AbstractDebugger implements ApplicationCompone
     new MirrorUtilImpl().init();
     new EvaluationUtilsImpl().init();
   }
-
   @Override
   public void disposeComponent() {
     EvaluationUtils.getInstance().dispose();

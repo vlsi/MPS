@@ -9,5 +9,5 @@ public class PutAllOperation_BehaviorDescriptor extends MapOperation_BehaviorDes
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.PutAllOperation";
-  };;
-;}
+  }
+}

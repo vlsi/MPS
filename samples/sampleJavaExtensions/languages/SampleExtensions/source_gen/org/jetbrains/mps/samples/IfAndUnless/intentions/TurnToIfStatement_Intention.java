@@ -19,61 +19,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class TurnToIfStatement_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public TurnToIfStatement_Intention() {
   }
-
   public String getConcept() {
     return "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement";
   }
-
   public String getPresentation() {
     return "TurnToIfStatement";
   }
-
   public String getPersistentStateKey() {
     return "org.jetbrains.mps.samples.IfAndUnless.intentions.TurnToIfStatement_Intention";
   }
-
   public String getLanguageFqName() {
     return "org.jetbrains.mps.samples.IfAndUnless";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)", "393299394024668987");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new TurnToIfStatement_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Turn to an If Statement";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       // Invert condition 
       SNode condition = SLinkOperations.getTarget(node, "condition", true);
@@ -116,7 +102,6 @@ public class TurnToIfStatement_Intention implements IntentionFactory {
         SNodeOperations.replaceWithAnother(node, ifStatement);
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return TurnToIfStatement_Intention.this;
     }

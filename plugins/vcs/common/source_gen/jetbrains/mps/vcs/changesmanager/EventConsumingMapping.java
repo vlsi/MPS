@@ -18,10 +18,8 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 public class EventConsumingMapping {
   private BidirectionalMultiMap<SNodeId, SModelEvent> myNodesToUnconsumedEvents = new BidirectionalMultiMap<SNodeId, SModelEvent>();
   private BidirectionalMap<SNodeId, SModelEvent> myAddedNodesToEvents = new BidirectionalMap<SNodeId, SModelEvent>();
-
   public EventConsumingMapping() {
   }
-
   private void consumeAllForNode(SNode node) {
     final SNodeId id = node.getNodeId();
     Sequence.fromIterable(((Iterable<SModelEvent>) myNodesToUnconsumedEvents.getValues(id))).where(new IWhereFilter<SModelEvent>() {
@@ -34,7 +32,6 @@ public class EventConsumingMapping {
       }
     });
   }
-
   public synchronized void addEvent(SModelEvent event) {
     SNode affectedNode = null;
     SNode addedNode = null;
@@ -79,7 +76,6 @@ public class EventConsumingMapping {
       myAddedNodesToEvents.put(addedNode.getNodeId(), event);
     }
   }
-
   public synchronized boolean removeEvent(SModelEvent event) {
     // return true if this event should be processed 
     myAddedNodesToEvents.removeValue(event);

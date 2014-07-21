@@ -9,5 +9,5 @@ public class PredefinedSelector_BehaviorDescriptor extends AbstractCellSelector_
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.PredefinedSelector";
-  };;
-;}
+  }
+}

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class BuildLayout_Filemode_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
     SNode nlayout = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildNamedLayout", true, false);
     SNode parent = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet", false, false);
@@ -29,7 +28,6 @@ public class BuildLayout_Filemode_Behavior {
     }
     return context.getTempPath(thisNode, name, ((nlayout != null) ? SPropertyOperations.getString(nlayout, "name") : "default"));
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

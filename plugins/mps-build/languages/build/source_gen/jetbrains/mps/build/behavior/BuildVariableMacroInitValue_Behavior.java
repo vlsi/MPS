@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class BuildVariableMacroInitValue_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getMacroName_244868996532694558(SNode thisNode) {
     return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildVariableMacro"), "name");
   }

@@ -18,12 +18,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   private String myHighLevelName;
   private final String myLowLevelName;
   private boolean myIsHighLevelInfoAvailable = false;
-
   public VariableDescription(String lowLevelName, SNode lowLevelType) {
     myLowLevelName = lowLevelName;
     myLowLevelType = lowLevelType;
   }
-
   public void updateLowLevelVariable(SNode variable) {
     if (myIsHighLevelInfoAvailable) {
       SPropertyOperations.set(variable, "name", myHighLevelName);
@@ -34,31 +32,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     SLinkOperations.setTarget(variable, "type", createDebuggedType(), true);
     SPropertyOperations.set(variable, "lowLevelName", myLowLevelName);
   }
-
   private SNode createDebuggedType() {
     return createDebuggedType(myLowLevelType, (myIsHighLevelInfoAvailable ? myHighLevelType : null));
   }
-
   public void setHighLevelNode(SNode node) {
     myIsHighLevelInfoAvailable = true;
     myHighLevelNode = new SNodePointer(node);
     myHighLevelType = SNodeOperations.copyNode(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type"));
     myHighLevelName = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept") ? SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") : myLowLevelName);
   }
-
   public void setHighLevelName(String highLevelName) {
     myHighLevelName = highLevelName;
   }
-
   public String getLowLevelName() {
     return myLowLevelName;
   }
-
   @Override
   public boolean equals(Object object) {
     return eq_5ytd5s_a0a0m(myLowLevelName, ((VariableDescription) object).myLowLevelName);
   }
-
   public static SNode createDebuggedType(SNode lowType, SNode highType) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.DebuggedType", null);
     if ((highType != null)) {
@@ -70,7 +62,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     SLinkOperations.setTarget(result, "lowType", lowType, true);
     return result;
   }
-
   private static boolean eq_5ytd5s_a0a0m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

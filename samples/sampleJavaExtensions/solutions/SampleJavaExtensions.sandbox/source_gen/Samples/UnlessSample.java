@@ -6,7 +6,6 @@ package Samples;
 public class UnlessSample {
   public UnlessSample() {
   }
-
   public static void main(String[] args) {
     // Type "unless" followed by Control + Space to create an "unless statement" 
 
@@ -36,7 +35,6 @@ public class UnlessSample {
     }
     System.out.println("We can become unreachable by uncommenting the return expression above.");
   }
-
   private static boolean condition() {
     return 1 < 0;
   }

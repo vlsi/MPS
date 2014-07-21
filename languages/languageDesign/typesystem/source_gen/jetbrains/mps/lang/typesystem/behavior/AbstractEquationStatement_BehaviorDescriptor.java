@@ -10,5 +10,5 @@ public abstract class AbstractEquationStatement_BehaviorDescriptor extends State
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
-  };;
-;}
+  }
+}

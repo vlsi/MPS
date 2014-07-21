@@ -24,22 +24,18 @@ import org.apache.log4j.LogManager;
 
 public class DeleteGenerator_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public DeleteGenerator_Action() {
     super("Delete Generator...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof Generator;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,7 +49,6 @@ public class DeleteGenerator_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -72,7 +67,6 @@ public class DeleteGenerator_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", true, false);
@@ -103,6 +97,5 @@ public class DeleteGenerator_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(DeleteGenerator_Action.class);
 }

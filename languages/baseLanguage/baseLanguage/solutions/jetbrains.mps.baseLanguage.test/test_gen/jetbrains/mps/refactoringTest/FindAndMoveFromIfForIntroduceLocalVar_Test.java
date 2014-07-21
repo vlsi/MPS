@@ -22,7 +22,6 @@ public class FindAndMoveFromIfForIntroduceLocalVar_Test extends BaseTransformati
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.FindAndMoveFromIfForIntroduceLocalVar_Test$TestBody", "test_SimpleFindAndMoveForIntroduceLocalVarTest", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_SimpleFindAndMoveForIntroduceLocalVarTest() throws Exception {

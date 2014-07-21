@@ -11,5 +11,5 @@ public class OperationContextExpression_BehaviorDescriptor extends Expression_Be
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.OperationContextExpression";
-  };;
-;}
+  }
+}

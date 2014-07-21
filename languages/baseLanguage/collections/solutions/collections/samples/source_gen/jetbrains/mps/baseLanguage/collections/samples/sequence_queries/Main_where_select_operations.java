@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 /*package*/ class Main_where_select_operations {
   /*package*/ Main_where_select_operations() {
   }
-
   /*package*/ static void main(String[] args) {
     Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -21,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -59,7 +57,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
             };
           }

@@ -16,16 +16,16 @@ public class SModelLanguageUtil {
       return SLinkOperations.getTarget(property, "dataType", false);
     }
     return null;
-  };;
-;  private static SNode getPropertyDeclarationFromLeft_SPropertyAccess(SNode operation) {
+  }
+  private static SNode getPropertyDeclarationFromLeft_SPropertyAccess(SNode operation) {
     SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(operation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     SNode leftOp = SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
     if (SNodeOperations.isInstanceOf(leftOp, "jetbrains.mps.lang.smodel.structure.SPropertyAccess")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(leftOp, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"), "property", false);
     }
     return null;
-  };;
-;  public static SNode getConcept(SNode expression) {
+  }
+  public static SNode getConcept(SNode expression) {
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
       if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.smodel.structure.ILinkAccess")) {
@@ -39,5 +39,5 @@ public class SModelLanguageUtil {
       }
     }
     return null;
-  };;
-;}
+  }
+}

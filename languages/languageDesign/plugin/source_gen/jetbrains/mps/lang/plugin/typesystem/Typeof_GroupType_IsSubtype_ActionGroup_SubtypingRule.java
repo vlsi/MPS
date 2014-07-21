@@ -14,26 +14,21 @@ import jetbrains.mps.smodel.SReference;
 public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode groupType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_o1uhq5_a0a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.plugin.structure.GroupType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_o1uhq5_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

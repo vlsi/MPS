@@ -16,8 +16,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  }
+  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart", "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"}, false, false);
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.actions.structure.AddMenuPart")) {
       return _quotation_createNode_6qptm2_a0a1a0(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.actions.structure.AddMenuPart"), "concept", false));
@@ -31,11 +31,11 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
       return _quotation_createNode_6qptm2_a0a5a0();
     }
     return _quotation_createNode_6qptm2_a6a0(expectedType);
-  };;
-;  public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
+  }
+  public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return true;
-  };;
-;  public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
+  }
+  public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode"));
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode"));
@@ -43,8 +43,8 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model"));
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext"));
     return result;
-  };;
-;  private static SNode _quotation_createNode_6qptm2_a0a1a0(Object parameter_1) {
+  }
+  private static SNode _quotation_createNode_6qptm2_a0a1a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -53,8 +53,8 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "conceptDeclaraton", (SNode) parameter_1);
     quotedNode_2.addChild("elementType", quotedNode_3);
     return quotedNode_2;
-  };;
-;  private static SNode _quotation_createNode_6qptm2_a0a5a0() {
+  }
+  private static SNode _quotation_createNode_6qptm2_a0a5a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -62,8 +62,8 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", null, null, false);
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
-  };;
-;  private static SNode _quotation_createNode_6qptm2_a6a0(Object parameter_1) {
+  }
+  private static SNode _quotation_createNode_6qptm2_a6a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -73,5 +73,5 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
       quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
-  };;
-;}
+  }
+}

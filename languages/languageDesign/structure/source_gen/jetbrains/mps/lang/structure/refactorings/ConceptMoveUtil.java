@@ -18,7 +18,6 @@ import java.util.HashMap;
 public class ConceptMoveUtil {
   public ConceptMoveUtil() {
   }
-
   public static List<SNode> getConceptsAspects(final List<SNode> concepts, SModel aspectModel) {
     return ListSequence.fromList(SModelOperations.getRoots(aspectModel, "jetbrains.mps.lang.structure.structure.IConceptAspect")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -27,11 +26,9 @@ public class ConceptMoveUtil {
       }
     }).toListSequence();
   }
-
   public static List<SNode> getConceptAspects(List<SNode> concepts, SModel aspectModel) {
     return getConceptsAspects(concepts, aspectModel);
   }
-
   public static Map<LanguageAspect, List<SNode>> getAspectNodes(Language language, List<SNode> nodes) {
     // map with aspects to roots solely attached to list of given nodes 
     Map<LanguageAspect, List<SNode>> aspectNodesMap = MapSequence.fromMap(new HashMap<LanguageAspect, List<SNode>>());

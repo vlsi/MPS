@@ -6,15 +6,12 @@ package sandboxModel;
 public class test2 {
   public test2() {
   }
-
   public static void main(String[] args) {
     System.out.println((eval()));
   }
-
   public static Object eval() {
     return lambdaAbstr_5277476162361142418(2);
   }
-
   public static Integer lambdaAbstr_5277476162361142418(Integer x) {
     return x;
   }

@@ -23,7 +23,6 @@ public class ProgressLine extends JPanel implements TestView {
   private final JLabel myStateLabel = new JLabel("Starting...");
   private boolean myTestsBuilt = false;
   private TestRunState myState;
-
   public ProgressLine(TestRunState testState) {
     super(new GridLayout(1, 2));
     myState = testState;
@@ -35,7 +34,6 @@ public class ProgressLine extends JPanel implements TestView {
     myTestsBuilt = true;
     init();
   }
-
   @Override
   public void update() {
     if (myState.getAvailableText() != null || ProcessOutputTypes.SYSTEM.equals(myState.getKey())) {
@@ -52,11 +50,9 @@ public class ProgressLine extends JPanel implements TestView {
       }
     });
   }
-
   @Override
   public void init() {
   }
-
   private void updateProgressBar(int defected, int total, int completed) {
     if (defected > 0) {
       myProgressBar.setColor(ColorProgressBar.RED);
@@ -67,7 +63,6 @@ public class ProgressLine extends JPanel implements TestView {
       myProgressBar.setFraction((double) completed / (double) total);
     }
   }
-
   private void updateLabel(int defected, int total, int completed, String testName) {
     StringBuilder sb = new StringBuilder();
     boolean done = total == completed || testName == null;
@@ -87,7 +82,6 @@ public class ProgressLine extends JPanel implements TestView {
     }
     myStateLabel.setText(sb + "  " + testName);
   }
-
   public ProcessListener getProcessListener() {
     return new ProcessAdapter() {
       @Override

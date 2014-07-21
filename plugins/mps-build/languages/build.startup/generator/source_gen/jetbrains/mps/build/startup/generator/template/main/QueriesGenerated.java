@@ -17,7 +17,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_8979762117546981953(final PropertyMacroContext _context) {
     String pathString = "";
     String prefix = "$APP_PACKAGE/";
@@ -28,59 +27,45 @@ public class QueriesGenerated {
     pathString += prefix + SPropertyOperations.getString(ListSequence.fromList(classPathItemList).last(), "path").replace("\\", "/");
     return pathString;
   }
-
   public static Object propertyMacro_GetPropertyValue_8979762117546982017(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "startupClass");
   }
-
   public static Object propertyMacro_GetPropertyValue_8979762117546982114(final PropertyMacroContext _context) {
     return MpsStartupScript_Behavior.call_getDefaultVmoptions_5842819808956701267(_context.getNode(), true);
   }
-
   public static Object propertyMacro_GetPropertyValue_8979762117546982098(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + "/" + SPropertyOperations.getString(_context.getNode(), "startupFolder");
   }
-
   public static Object propertyMacro_GetPropertyValue_1731640411964942144(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "startupClass");
   }
-
   public static Object propertyMacro_GetPropertyValue_1731640411964944768(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + MpsStartupScript_Behavior.call_getPathToVmOptionsFile_5842819808956911442(_context.getNode(), false).replace(MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode()), "exe." + MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode())).replace("/", "\\");
   }
-
   public static Object propertyMacro_GetPropertyValue_2693344784285481482(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + MpsStartupScript_Behavior.call_getPathToVmOptionsFile_5842819808956911442(_context.getNode(), true).replace(MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode()), "exe." + MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode())).replace("/", "\\");
   }
-
   public static Object propertyMacro_GetPropertyValue_1731640411964953768(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "options");
   }
-
   public static Object propertyMacro_GetPropertyValue_2693344784285678760(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "options");
   }
-
   public static Object propertyMacro_GetPropertyValue_1731640411965070846(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true)).first(), "path").replace("/", "\\");
   }
-
   public static Object propertyMacro_GetPropertyValue_1731640411965084740(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "path").replace("/", "\\");
   }
-
   public static Object propertyMacro_GetPropertyValue_1731640411965091586(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "startupFolder");
   }
-
   public static Object propertyMacro_GetPropertyValue_1731640411964801466(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name") + ".bat";
   }
-
   public static Object propertyMacro_GetPropertyValue_1731640411967557625(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name") + "." + MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode());
   }
-
   public static Object propertyMacro_GetPropertyValue_4487788881657620080(final PropertyMacroContext _context) {
     String startupDir = SPropertyOperations.getString(_context.getNode(), "startupFolder");
     if (startupDir.endsWith("/")) {
@@ -93,71 +78,54 @@ public class QueriesGenerated {
     }
     return _context.getTemplateValue() + pathFromStartupDir;
   }
-
   public static Object propertyMacro_GetPropertyValue_4487788881657707878(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "startupClass");
   }
-
   public static Object propertyMacro_GetPropertyValue_4487788881657806288(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + "\"" + SPropertyOperations.getString(_context.getNode(), "options") + "\"";
   }
-
   public static Object propertyMacro_GetPropertyValue_2693344784290685784(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + "\"" + SPropertyOperations.getString(_context.getNode(), "options") + "\"";
   }
-
   public static Object propertyMacro_GetPropertyValue_4487788881657840185(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), "path");
   }
-
   public static Object propertyMacro_GetPropertyValue_2693344784288480128(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name") + "64." + MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(_context.getNode());
   }
-
   public static boolean ifMacro_Condition_2693344784290772025(final IfMacroContext _context) {
     return Sequence.fromIterable(MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode(), false)).isNotEmpty();
   }
-
   public static boolean ifMacro_Condition_2693344784290780697(final IfMacroContext _context) {
     return Sequence.fromIterable(MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode(), true)).isNotEmpty();
   }
-
   public static boolean ifMacro_Condition_2693344784290713699(final IfMacroContext _context) {
     return Sequence.fromIterable(MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode(), false)).isNotEmpty();
   }
-
   public static boolean ifMacro_Condition_2693344784290724066(final IfMacroContext _context) {
     return Sequence.fromIterable(MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode(), true)).isNotEmpty();
   }
-
   public static Iterable<SNode> sourceNodesQuery_1731640411964947374(final SourceSubstituteMacroNodesContext _context) {
     return MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode(), false);
   }
-
   public static Iterable<SNode> sourceNodesQuery_2693344784285678752(final SourceSubstituteMacroNodesContext _context) {
     return MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode(), true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1731640411965079018(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true)).skip(1);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1731640411967575305(final SourceSubstituteMacroNodesContext _context) {
     return MpsStartupScript_Behavior.call_getDefaultVmOptionsLines_2693344784285072660(_context.getNode(), false);
   }
-
   public static Iterable<SNode> sourceNodesQuery_4487788881657789666(final SourceSubstituteMacroNodesContext _context) {
     return MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode(), false);
   }
-
   public static Iterable<SNode> sourceNodesQuery_2693344784290685776(final SourceSubstituteMacroNodesContext _context) {
     return MpsStartupScript_Behavior.call_getCommentedOptions_5842819808956911345(_context.getNode(), true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_4487788881657835967(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_2693344784288504085(final SourceSubstituteMacroNodesContext _context) {
     return MpsStartupScript_Behavior.call_getDefaultVmOptionsLines_2693344784285072660(_context.getNode(), true);
   }

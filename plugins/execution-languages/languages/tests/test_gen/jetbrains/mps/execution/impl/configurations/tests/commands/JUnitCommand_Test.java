@@ -39,23 +39,19 @@ public class JUnitCommand_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)");
     this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startSimpleBTestCase", true);
   }
-
   @Test
   public void test_startFailedBTestCase() throws Throwable {
     this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)");
     this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startFailedBTestCase", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startSimpleBTestCase() throws Exception {
       this.checkTests(this.wrapTests(Sequence.<String>singleton(SimpleBTestCase_Test.class.getSimpleName())), ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     }
-
     public void test_startFailedBTestCase() throws Exception {
       this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), this.wrapTests(Sequence.<String>singleton(FailedBTestCase_Test.class.getSimpleName())));
     }
-
     public void checkTests(List<ITestNodeWrapper> success, List<ITestNodeWrapper> failure) {
       try {
         List<ITestNodeWrapper> allTests = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();
@@ -79,7 +75,6 @@ public class JUnitCommand_Test extends BaseTransformationTest {
         Assert.fail(e.getMessage());
       }
     }
-
     public List<ITestNodeWrapper> wrapTests(final Iterable<String> names) {
       final List<ITestNodeWrapper> result = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -97,11 +92,9 @@ public class JUnitCommand_Test extends BaseTransformationTest {
       });
       return result;
     }
-
     private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }
-
     private static boolean eq_16es9m_a0a0a0a0a0a0a1a0a0a0a1a3c(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }

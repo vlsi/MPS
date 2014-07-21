@@ -10,7 +10,6 @@ import jetbrains.mps.project.structure.project.Path;
 public class PathRenderer extends StringPathRenderer {
   public PathRenderer() {
   }
-
   @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     if (value == null) {

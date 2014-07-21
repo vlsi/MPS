@@ -9,5 +9,5 @@ public class RemoveOperation_BehaviorDescriptor extends AbstractIteratorOperatio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.RemoveOperation";
-  };;
-;}
+  }
+}

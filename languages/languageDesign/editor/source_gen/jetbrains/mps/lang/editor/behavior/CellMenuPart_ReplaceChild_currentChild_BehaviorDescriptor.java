@@ -11,5 +11,5 @@ public class CellMenuPart_ReplaceChild_currentChild_BehaviorDescriptor extends C
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild";
-  };;
-;}
+  }
+}

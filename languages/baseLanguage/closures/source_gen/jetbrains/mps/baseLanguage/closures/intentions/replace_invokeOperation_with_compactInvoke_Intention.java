@@ -21,78 +21,61 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class replace_invokeOperation_with_compactInvoke_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public replace_invokeOperation_with_compactInvoke_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation";
   }
-
   public String getPresentation() {
     return "replace_invokeOperation_with_compactInvoke";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.closures.intentions.replace_invokeOperation_with_compactInvoke_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.closures";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "1235748072133");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new replace_invokeOperation_with_compactInvoke_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace with Compact Invoke Expression";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression");
       SNodeOperations.replaceWithAnother(parent, _quotation_createNode_7ste6_a0a1a0(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(parent, "operation", true), "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), "parameter", true), SLinkOperations.getTarget(parent, "operand", true)));
     }
-
     public IntentionDescriptor getDescriptor() {
       return replace_invokeOperation_with_compactInvoke_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_7ste6_a0a1a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

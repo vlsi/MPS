@@ -15,34 +15,26 @@ public class CellModel_RefNodeList_RemoveHint_Actions {
     editorCell.setAction(CellActionType.INSERT, new CellModel_RefNodeList_RemoveHint_Actions.CellModel_RefNodeList_RemoveHint_Actions_INSERT(node));
     editorCell.setAction(CellActionType.INSERT_BEFORE, new CellModel_RefNodeList_RemoveHint_Actions.CellModel_RefNodeList_RemoveHint_Actions_INSERT_BEFORE(node));
   }
-
   public static class CellModel_RefNodeList_RemoveHint_Actions_INSERT extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public CellModel_RefNodeList_RemoveHint_Actions_INSERT(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.setTarget(node, "removeHints", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", null), true);
     }
   }
-
   public static class CellModel_RefNodeList_RemoveHint_Actions_INSERT_BEFORE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public CellModel_RefNodeList_RemoveHint_Actions_INSERT_BEFORE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.setTarget(node, "removeHints", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", null), true);
     }

@@ -10,9 +10,9 @@ public class ExtensionStaticFieldReference_BehaviorDescriptor extends VariableRe
   }
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return ExtensionStaticFieldReference_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference";
-  };;
-;}
+  }
+}

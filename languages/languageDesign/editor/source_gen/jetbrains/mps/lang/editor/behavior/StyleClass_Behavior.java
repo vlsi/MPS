@@ -18,11 +18,11 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class StyleClass_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean call_hasCycles_7417001528577667349(SNode thisNode) {
+  }
+  public static boolean call_hasCycles_7417001528577667349(SNode thisNode) {
     return StyleClass_Behavior.call_getPriority_1938068300780663696(thisNode) == -1;
-  };;
-;  public static int call_getPriority_1938068300780663696(SNode thisNode) {
+  }
+  public static int call_getPriority_1938068300780663696(SNode thisNode) {
     Map<SNode, Integer> priorities = MapSequence.fromMap(new HashMap<SNode, Integer>());
 
     List<SNode> extendsTree = ListSequence.fromListAndArray(new LinkedList<SNode>(), thisNode);
@@ -65,8 +65,8 @@ public class StyleClass_Behavior {
       }
     }
     return MapSequence.fromMap(priorities).get(thisNode);
-  };;
-;  public static boolean call_hasApplyCycles_2491174914184428685(SNode thisNode) {
+  }
+  public static boolean call_hasApplyCycles_2491174914184428685(SNode thisNode) {
     List<SNode> dependencies = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> adding = ListSequence.fromListAndArray(new ArrayList<SNode>(), thisNode);
     while (ListSequence.fromList(adding).isNotEmpty()) {
@@ -77,13 +77,13 @@ public class StyleClass_Behavior {
       adding = ListSequence.fromListWithValues(new ArrayList<SNode>(), SNodeOperations.ofConcept(Sequence.fromIterable(SNodeOperations.ofConcept(ListSequence.fromList(adding).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "styleItem", true);
-        };;
-;      }), "jetbrains.mps.lang.editor.structure.ApplyStyleClass")).select(new ISelector<SNode, SNode>() {
+        }
+      }), "jetbrains.mps.lang.editor.structure.ApplyStyleClass")).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(SLinkOperations.getTarget(it, "target", true), "style", false);
-        };;
-;      }), "jetbrains.mps.lang.editor.structure.StyleClass"));
+        }
+      }), "jetbrains.mps.lang.editor.structure.StyleClass"));
     }
     return false;
-  };;
-;}
+  }
+}

@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class listType_with_vars_subtypeOf_listType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public listType_with_vars_subtypeOf_listType_InequationReplacementRule() {
   }
-
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     return !(ListSequence.fromList(SNodeOperations.getChildren(supertype)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode ch) {
@@ -28,39 +27,32 @@ public class listType_with_vars_subtypeOf_listType_InequationReplacementRule ext
       }
     });
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     // Anyway... there should be the only one child. 
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     // Anyway... there should be the only one child. 
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ListType";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ListType";
   }

@@ -19,7 +19,6 @@ public class GeneratorParameterReference_Constraints extends BaseConstraintsDesc
   public GeneratorParameterReference_Constraints() {
     super("jetbrains.mps.lang.generator.structure.GeneratorParameterReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class GeneratorParameterReference_Constraints extends BaseConstraintsDesc
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return SPropertyOperations.getString(_context.getParameterNode(), "name") + " : " + SLinkOperations.getTarget(_context.getParameterNode(), "type", true);

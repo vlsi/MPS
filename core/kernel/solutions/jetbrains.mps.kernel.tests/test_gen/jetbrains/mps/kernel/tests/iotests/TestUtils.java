@@ -14,16 +14,13 @@ import java.io.File;
 public abstract class TestUtils {
   public TestUtils() {
   }
-
   public static IFile dataFile(String name) {
     IFile data = FileSystem.getInstance().getFileByPath(TestUtils.class.getResource("data.zip").getFile() + "!/");
     return data.getDescendant(name);
   }
-
   public static String readXml(IFile file) throws JDOMException, IOException {
     return new XMLOutputter(Format.getCompactFormat()).outputString(JDOMUtil.loadDocument(file).getRootElement());
   }
-
   public static IFile tmpFile(String suffix) throws IOException {
     File tmpFile = File.createTempFile("mpstest", suffix);
     tmpFile.deleteOnExit();

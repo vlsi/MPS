@@ -10,5 +10,5 @@ public class RootTemplateAnnotation_BehaviorDescriptor extends NodeAttribute_Beh
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation";
-  };;
-;}
+  }
+}

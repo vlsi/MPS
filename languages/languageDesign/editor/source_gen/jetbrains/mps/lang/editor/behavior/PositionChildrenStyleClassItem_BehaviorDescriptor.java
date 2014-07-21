@@ -9,5 +9,5 @@ public class PositionChildrenStyleClassItem_BehaviorDescriptor extends StyleClas
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem";
-  };;
-;}
+  }
+}

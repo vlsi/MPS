@@ -10,5 +10,5 @@ public abstract class InsertPosition_BehaviorDescriptor extends BaseConcept_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.InsertPosition";
-  };;
-;}
+  }
+}

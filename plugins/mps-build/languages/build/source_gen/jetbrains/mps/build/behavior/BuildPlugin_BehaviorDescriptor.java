@@ -9,19 +9,15 @@ import jetbrains.mps.scope.Scope;
 public abstract class BuildPlugin_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildPlugin_BehaviorDescriptor() {
   }
-
   public Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
     return BuildPlugin_Behavior.virtual_getImportedLibraries_4101476690142937969(thisNode);
   }
-
   public Scope virtual_getLayoutScope_1224588814561807654(SNode thisNode, SNode kind) {
     return BuildPlugin_Behavior.virtual_getLayoutScope_1224588814561807654(thisNode, kind);
   }
-
   public Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, SNode kind) {
     return BuildPlugin_Behavior.virtual_getProjectStructureScope_3734116213129936182(thisNode, kind);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildPlugin";

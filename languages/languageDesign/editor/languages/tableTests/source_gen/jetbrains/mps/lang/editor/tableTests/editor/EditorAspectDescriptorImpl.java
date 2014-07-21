@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
@@ -49,11 +48,9 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     }
     return Collections.<ConceptEditor>emptyList();
   }
-
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.<ConceptEditorComponent>emptyList();
   }
-
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.tableTests.structure.ContentElement", "jetbrains.mps.lang.editor.tableTests.structure.DataCell", "jetbrains.mps.lang.editor.tableTests.structure.Event", "jetbrains.mps.lang.editor.tableTests.structure.EventReference", "jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable", "jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable", "jetbrains.mps.lang.editor.tableTests.structure.Matrix", "jetbrains.mps.lang.editor.tableTests.structure.State", "jetbrains.mps.lang.editor.tableTests.structure.StateMachine", "jetbrains.mps.lang.editor.tableTests.structure.StateReference", "jetbrains.mps.lang.editor.tableTests.structure.Table", "jetbrains.mps.lang.editor.tableTests.structure.Transition", "jetbrains.mps.lang.editor.tableTests.structure.UltimateContainer", "jetbrains.mps.lang.editor.tableTests.structure.XElement", "jetbrains.mps.lang.editor.tableTests.structure.YElement"};

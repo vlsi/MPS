@@ -10,60 +10,46 @@ public class JavaRunParameters extends MultiTuple._5<String, String, String, Str
   public JavaRunParameters() {
     super();
   }
-
   public JavaRunParameters(String programParameters, String vmOptions, String jrePath, String workingDirectory, Boolean useAlternativeJre) {
     super(programParameters, vmOptions, jrePath, workingDirectory, useAlternativeJre);
   }
-
   public String programParameters(String value) {
     return super._0(value);
   }
-
   public String vmOptions(String value) {
     return super._1(value);
   }
-
   public String jrePath(String value) {
     return super._2(value);
   }
-
   public String workingDirectory(String value) {
     return super._3(value);
   }
-
   public Boolean useAlternativeJre(Boolean value) {
     return super._4(value);
   }
-
   public String programParameters() {
     return super._0();
   }
-
   public String vmOptions() {
     return super._1();
   }
-
   public String jrePath() {
     return super._2();
   }
-
   public String workingDirectory() {
     return super._3();
   }
-
   public Boolean useAlternativeJre() {
     return super._4();
   }
-
   @SuppressWarnings(value = "unchecked")
   public JavaRunParameters assignFrom(Tuples._5<String, String, String, String, Boolean> from) {
     return (JavaRunParameters) super.assign(from);
   }
-
   public JavaRunParameters clone() {
     return new JavaRunParameters(this.programParameters(), this.vmOptions(), this.jrePath(), this.workingDirectory(), (boolean) this.useAlternativeJre());
   }
-
   @Nls
   public String getAlternativeJre() {
     if ((boolean) this.useAlternativeJre()) {
@@ -71,43 +57,33 @@ public class JavaRunParameters extends MultiTuple._5<String, String, String, Str
     }
     return null;
   }
-
   public void setJrePath(String jrePathValue) {
     this.jrePath(jrePathValue);
   }
-
   public String getJrePath() {
     return this.jrePath();
   }
-
   public void setProgramParameters(String programParameters) {
     this.programParameters(programParameters);
   }
-
   public String getProgramParameters() {
     return this.programParameters();
   }
-
   public void setVmOptions(String vmOptions) {
     this.vmOptions(vmOptions);
   }
-
   public String getVmOptions() {
     return this.vmOptions();
   }
-
   public void setWorkingDirectory(String workingDirectory) {
     this.workingDirectory(workingDirectory);
   }
-
   public String getWorkingDirectory() {
     return this.workingDirectory();
   }
-
   public void setUseAlternativeJre(boolean useAlternativeJre) {
     this.useAlternativeJre(useAlternativeJre);
   }
-
   public boolean getUseAlternativeJre() {
     try {
       return (boolean) this.useAlternativeJre();

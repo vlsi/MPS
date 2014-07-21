@@ -20,22 +20,22 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ModuleReferenceExpression_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  @Nullable
+  }
+  @Nullable
   public static SModule call_getModule_4040588429969043137(SNode thisNode) {
     if (SPropertyOperations.getString(thisNode, "moduleId") == null) {
       return null;
     }
     return MPSModuleRepository.getInstance().getModule(ModuleId.fromString(SPropertyOperations.getString(thisNode, "moduleId")));
-  };;
-;  @NotNull
+  }
+  @NotNull
   public static List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode) {
     return ModuleReferenceExpression_Behavior.call_getVisibleModules_4040588429969394431(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"))));
-  };;
-;  @NotNull
+  }
+  @NotNull
   public static List<SModule> call_getVisibleModules_4040588429969394431(SAbstractConcept thisConcept) {
     List<SModule> result = ListSequence.fromList(new ArrayList<SModule>());
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(MPSModuleRepository.getInstance().getModules()));
     return result;
-  };;
-;}
+  }
+}

@@ -34,18 +34,15 @@ import org.apache.log4j.LogManager;
 
 public class HighlightUsages_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public HighlightUsages_Action() {
     super("Highlight Usages", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -56,7 +53,6 @@ public class HighlightUsages_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -79,7 +75,6 @@ public class HighlightUsages_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.highlightUsages");
@@ -119,6 +114,5 @@ public class HighlightUsages_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(HighlightUsages_Action.class);
 }

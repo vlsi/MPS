@@ -44,7 +44,6 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     }
   });
   private AntSettings_Configuration mySettings = new AntSettings_Configuration();
-
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
       final Wrappers._boolean isPackaged = new Wrappers._boolean();
@@ -59,7 +58,6 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       }
     }
   }
-
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
@@ -74,7 +72,6 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       element.addContent(fieldElement);
     }
   }
-
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -102,15 +99,12 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       }
     }
   }
-
   public NodeByConcept_Configuration getNode() {
     return myNode;
   }
-
   public AntSettings_Configuration getSettings() {
     return mySettings;
   }
-
   @Override
   public BuildScript_Configuration clone() {
     BuildScript_Configuration clone = null;
@@ -127,56 +121,44 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     }
     return clone;
   }
-
   public class MyState {
     public MyState() {
     }
-
     @Override
     public Object clone() throws CloneNotSupportedException {
       BuildScript_Configuration.MyState state = new BuildScript_Configuration.MyState();
       return state;
     }
   }
-
   public BuildScript_Configuration(Project project, BuildScript_Configuration_Factory factory, String name) {
     super(project, factory, name);
   }
-
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
     return new BuildScript_Configuration_RunProfileState(this, executor, environment);
   }
-
   @Nullable
   public SettingsEditor<ConfigurationPerRunnerSettings> getRunnerSettingsEditor(ProgramRunner runner) {
     return null;
   }
-
   public ConfigurationPerRunnerSettings createRunnerSettings(ConfigurationInfoProvider provider) {
     return null;
   }
-
   public SettingsEditorEx<BuildScript_Configuration> getConfigurationEditor() {
     return (SettingsEditorEx<BuildScript_Configuration>) getEditor();
   }
-
   public BuildScript_Configuration createCloneTemplate() {
     return (BuildScript_Configuration) super.clone();
   }
-
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
     return new BuildScript_Configuration_Editor(myNode.getEditor(), mySettings.getEditor());
   }
-
   @Override
   public boolean canExecute(String executorId) {
     return BuildScript_Configuration_RunProfileState.canExecute(executorId);
   }
-
   public Object[] createMakeNodePointersTask() {
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodePointer())};
   }
-
   protected static Logger LOG = LogManager.getLogger(BuildScript_Configuration.class);
 }

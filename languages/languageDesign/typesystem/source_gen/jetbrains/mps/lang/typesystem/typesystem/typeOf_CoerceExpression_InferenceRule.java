@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeOf_CoerceExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeOf_CoerceExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode coerceExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode concept;
     SNode pattern = SLinkOperations.getTarget(coerceExpression, "pattern", true);
@@ -34,22 +33,18 @@ public class typeOf_CoerceExpression_InferenceRule extends AbstractInferenceRule
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1195223916497", true), (SNode) _quotation_createNode_b5drln_a0d0b(concept), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.CoerceExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_b5drln_a0d0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

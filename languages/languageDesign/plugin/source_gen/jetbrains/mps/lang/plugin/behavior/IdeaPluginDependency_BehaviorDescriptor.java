@@ -9,9 +9,9 @@ public class IdeaPluginDependency_BehaviorDescriptor extends PluginDependency_Be
   }
   public String virtual_getPluginId_5864553086652219131(SNode thisNode) {
     return IdeaPluginDependency_Behavior.virtual_getPluginId_5864553086652219131(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.IdeaPluginDependency";
-  };;
-;}
+  }
+}

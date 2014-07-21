@@ -15,7 +15,6 @@ public class EncodingLiteral_Constraints extends BaseConstraintsDescriptor {
   public EncodingLiteral_Constraints() {
     super("jetbrains.mps.lang.textGen.structure.EncodingLiteral");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -24,7 +23,6 @@ public class EncodingLiteral_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "encoding";
@@ -44,11 +42,9 @@ public class EncodingLiteral_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-
   public static String trim_p9uqyx_a0a0a1a1a0b0a1a1(String str) {
     return (str == null ? null : str.trim());
   }

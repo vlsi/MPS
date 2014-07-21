@@ -27,13 +27,11 @@ public class TextPreviewFile extends StubVirtualFile {
   private String myName;
   private String myModelName;
   private Object myFileContent;
-
   public TextPreviewFile(String name, Object fileContent, String modelName) {
     this.myName = name;
     this.myFileContent = fileContent;
     this.myModelName = modelName;
   }
-
   @NotNull
   @Override
   public byte[] contentsToByteArray() throws IOException {
@@ -42,72 +40,59 @@ public class TextPreviewFile extends StubVirtualFile {
     }
     return BINARY_CONTENT.getBytes(getCharset());
   }
-
   @Override
   public Charset getCharset() {
     return FileUtil.DEFAULT_CHARSET;
   }
-
   @NotNull
   @NonNls
   @Override
   public String getName() {
     return myName;
   }
-
   @Override
   public long getTimeStamp() {
     return 0L;
   }
-
   @Override
   public long getModificationStamp() {
     return 0L;
   }
-
   @Override
   public String getPath() {
     return myModelName + "/" + myName;
   }
-
   @Nullable
   @Override
   public VirtualFile getParent() {
     return null;
   }
-
   @NotNull
   @Override
   public String getUrl() {
     return TextPreviewFile.TextPreviewVirtualFileSystem.PROTOCOL + getPath();
   }
-
   @NotNull
   @Override
   public VirtualFileSystem getFileSystem() {
     return FS;
   }
-
   @Override
   public boolean isDirectory() {
     return false;
   }
-
   @Override
   public boolean isValid() {
     return true;
   }
-
   @Override
   public boolean isWritable() {
     return false;
   }
-
   @Override
   public long getLength() {
     return (myFileContent instanceof String ? ((String) myFileContent).getBytes(getCharset()).length : 0);
   }
-
   @NotNull
   @Override
   public FileType getFileType() {
@@ -118,19 +103,14 @@ public class TextPreviewFile extends StubVirtualFile {
     return fileType;
   }
 
-
-
   private static class TextPreviewVirtualFileSystem extends NewVirtualFileSystem {
     private static String PROTOCOL = "preview";
-
     public TextPreviewVirtualFileSystem() {
     }
-
     @Override
     public String getCanonicallyCasedName(VirtualFile file) {
       return file.getName();
     }
-
     @Nullable
     @Override
     public FileAttributes getAttributes(@NotNull VirtualFile file) {
@@ -139,158 +119,128 @@ public class TextPreviewFile extends StubVirtualFile {
       }
       return null;
     }
-
     @Override
     public boolean markNewFilesAsDirty() {
       return false;
     }
-
     @Override
     public boolean isReadOnly() {
       return true;
     }
-
     @Override
     public void refresh(boolean b) {
     }
-
     @Override
     public void refreshWithoutFileWatcher(boolean b) {
     }
-
     @Nullable
     @Override
     protected String normalize(String string) {
       return string;
     }
-
     @Nullable
     @Override
     public VirtualFile refreshAndFindFileByPath(@NotNull String string) {
       return null;
     }
-
     @Nullable
     @Override
     public VirtualFile findFileByPathIfCached(@NotNull @NonNls String string) {
       return null;
     }
-
     @Nullable
     @Override
     public VirtualFile findFileByPath(@NotNull @NonNls String string) {
       return null;
     }
-
     @Override
     @NotNull
     public String extractPresentableUrl(@NotNull String string) {
       return string;
     }
-
     @Override
     public void renameFile(Object object, @NotNull VirtualFile file, @NotNull String string) throws IOException {
     }
-
     @Override
     public void moveFile(Object object, @NotNull VirtualFile file, @NotNull VirtualFile file1) throws IOException {
     }
-
     @Override
     public void deleteFile(Object object, @NotNull VirtualFile file) throws IOException {
     }
-
     @Override
     public VirtualFile createChildFile(Object object, @NotNull VirtualFile file, @NotNull String string) throws IOException {
       return null;
     }
-
     @NotNull
     @Override
     public VirtualFile createChildDirectory(Object object, @NotNull VirtualFile file, @NotNull String string) throws IOException {
       return null;
     }
-
     @Override
     public VirtualFile copyFile(Object object, @NotNull VirtualFile file, @NotNull VirtualFile file1, @NotNull String string) throws IOException {
       return null;
     }
-
     @Override
     public int getRank() {
       return 0;
     }
-
     @NotNull
     @Override
     protected String extractRootPath(@NotNull String string) {
       return "/";
     }
-
     @Override
     public boolean isCaseSensitive() {
       return false;
     }
-
     @Override
     public long getLength(VirtualFile file) {
       return 0L;
     }
-
     @NotNull
     @Override
     public OutputStream getOutputStream(VirtualFile file, Object object, long l, long l1) throws IOException {
       return null;
     }
-
     @NotNull
     @Override
     public InputStream getInputStream(VirtualFile file) throws IOException {
       return null;
     }
-
     @NotNull
     @Override
     public byte[] contentsToByteArray(VirtualFile file) throws IOException {
       return null;
     }
-
     @Override
     public void setWritable(VirtualFile file, boolean b) throws IOException {
     }
-
     @Override
     public boolean isWritable(VirtualFile file) {
       return false;
     }
-
     @Override
     public void setTimeStamp(VirtualFile file, long l) throws IOException {
     }
-
     @Override
     public long getTimeStamp(VirtualFile file) {
       return 0L;
     }
-
     @Override
     public boolean isDirectory(VirtualFile file) {
       return false;
     }
-
     @NotNull
     @Override
     public String[] list(VirtualFile file) {
       return ArrayUtil.EMPTY_STRING_ARRAY;
     }
-
     @NonNls
     @NotNull
     @Override
     public String getProtocol() {
       return PROTOCOL;
     }
-
     @Override
     public boolean exists(VirtualFile file) {
       return false;

@@ -25,7 +25,6 @@ public class BuildFolderMacro_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_io6s4u_a(editorContext, node);
   }
-
   private EditorCell createCollection_io6s4u_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_io6s4u_a");
@@ -36,7 +35,6 @@ public class BuildFolderMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_io6s4u_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_io6s4u_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "folder");
     editorCell.setCellId("Constant_io6s4u_a0");
@@ -48,16 +46,13 @@ public class BuildFolderMacro_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildFolderMacro_Editor.ReplaceWith_BuildMacro_cellMenu_io6s4u_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_BuildMacro_cellMenu_io6s4u_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BuildMacro_cellMenu_io6s4u_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.build.structure.BuildMacro";
     }
   }
-
   private EditorCell createProperty_io6s4u_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -78,14 +73,12 @@ public class BuildFolderMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_io6s4u_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_io6s4u_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_io6s4u_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("defaultPath");

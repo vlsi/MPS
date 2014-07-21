@@ -24,18 +24,15 @@ import org.apache.log4j.LogManager;
 
 public class AddToNewFavoritesList_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.AddFavoritesList;
-
   public AddToNewFavoritesList_Action() {
     super("Add to New Favorites List", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       if (FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")))) {
@@ -48,7 +45,6 @@ public class AddToNewFavoritesList_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -63,7 +59,6 @@ public class AddToNewFavoritesList_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
@@ -72,7 +67,6 @@ public class AddToNewFavoritesList_Action extends BaseAction {
         public boolean checkInput(String p0) {
           return (p0 != null && p0.length() > 0);
         }
-
         @Override
         public boolean canClose(String p0) {
           return true;
@@ -94,6 +88,5 @@ public class AddToNewFavoritesList_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(AddToNewFavoritesList_Action.class);
 }

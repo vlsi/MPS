@@ -10,24 +10,19 @@ import jetbrains.mps.build.util.MacroHelper;
 public abstract class BuildRelativePath_BehaviorDescriptor extends BuildSourcePath_BehaviorDescriptor {
   public BuildRelativePath_BehaviorDescriptor() {
   }
-
   @Nullable
   public String virtual_getBasePath_4959435991187140515(SNode thisNode, Context context) {
     return BuildRelativePath_Behavior.virtual_getBasePath_4959435991187140515(thisNode, context);
   }
-
   public String virtual_getLastSegment_1368030936106771141(SNode thisNode, MacroHelper helper) {
     return BuildRelativePath_Behavior.virtual_getLastSegment_1368030936106771141(thisNode, helper);
   }
-
   public String virtual_getLocalPath_5481553824944787364(SNode thisNode, Context context) {
     return BuildRelativePath_Behavior.virtual_getLocalPath_5481553824944787364(thisNode, context);
   }
-
   public SNode virtual_getParent_8654221991637145399(SNode thisNode) {
     return BuildRelativePath_Behavior.virtual_getParent_8654221991637145399(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildRelativePath";

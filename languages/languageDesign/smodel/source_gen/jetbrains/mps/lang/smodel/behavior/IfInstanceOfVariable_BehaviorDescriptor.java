@@ -10,5 +10,5 @@ public class IfInstanceOfVariable_BehaviorDescriptor extends BaseVariableDeclara
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable";
-  };;
-;}
+  }
+}

@@ -23,12 +23,10 @@ public class IsOperation_Constraints extends BaseConstraintsDescriptor {
   public IsOperation_Constraints() {
     super("jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -39,7 +37,6 @@ public class IsOperation_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -48,7 +45,6 @@ public class IsOperation_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -57,7 +53,6 @@ public class IsOperation_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", false, false), "instruction", true);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_ejw1sa_a0a1a0a0a1a0b0a1a3;
@@ -67,11 +62,9 @@ public class IsOperation_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", false, false) != null;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)", "7985661997283725843");
   private static SNodePointer breakingNode_ejw1sa_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)", "7985661997283726527");
 }

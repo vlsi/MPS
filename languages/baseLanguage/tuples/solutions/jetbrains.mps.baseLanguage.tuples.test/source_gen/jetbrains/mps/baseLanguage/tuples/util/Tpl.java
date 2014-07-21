@@ -9,27 +9,21 @@ public class Tpl extends MultiTuple._2<String, Integer> {
   public Tpl() {
     super();
   }
-
   public Tpl(String s, Integer i) {
     super(s, i);
   }
-
   public String s(String value) {
     return super._0(value);
   }
-
   public Integer i(Integer value) {
     return super._1(value);
   }
-
   public String s() {
     return super._0();
   }
-
   public Integer i() {
     return super._1();
   }
-
   @SuppressWarnings(value = "unchecked")
   public Tpl assignFrom(Tuples._2<String, Integer> from) {
     return (Tpl) super.assign(from);

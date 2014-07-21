@@ -16,22 +16,17 @@ public class CheckedDot_Actions_MakeUnchecked {
     editorCell.setAction(CellActionType.DELETE, new CheckedDot_Actions_MakeUnchecked.CheckedDot_Actions_MakeUnchecked_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new CheckedDot_Actions_MakeUnchecked.CheckedDot_Actions_MakeUnchecked_BACKSPACE(node));
   }
-
   public static class CheckedDot_Actions_MakeUnchecked_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public CheckedDot_Actions_MakeUnchecked_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "delete question mark";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode dotExpression = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.DotExpression");
       SLinkOperations.setTarget(dotExpression, "operand", SLinkOperations.getTarget(node, "operand", true), true);
@@ -39,22 +34,17 @@ public class CheckedDot_Actions_MakeUnchecked {
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, dotExpression, "dot", -1);
     }
   }
-
   public static class CheckedDot_Actions_MakeUnchecked_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public CheckedDot_Actions_MakeUnchecked_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "delete question mark";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode dotExpression = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.DotExpression");
       SLinkOperations.setTarget(dotExpression, "operand", SLinkOperations.getTarget(node, "operand", true), true);

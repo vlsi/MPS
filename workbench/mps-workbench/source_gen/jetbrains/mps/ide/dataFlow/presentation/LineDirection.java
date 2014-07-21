@@ -40,11 +40,8 @@ public enum LineDirection {
   };
 
   private static final int GAP = 2;
-
   LineDirection() {
   }
-
   public abstract void paint(Graphics g, int first, int second, int level, Color backGround);
-
   public abstract void shiftLeft(Line line, int indent);
 }

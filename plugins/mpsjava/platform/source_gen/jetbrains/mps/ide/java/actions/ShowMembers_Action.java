@@ -24,22 +24,18 @@ import org.apache.log4j.LogManager;
 
 public class ShowMembers_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowMembers_Action() {
     super("Show Members", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false) != null);
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,7 +49,6 @@ public class ShowMembers_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -81,7 +76,6 @@ public class ShowMembers_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<String> title = new Wrappers._T<String>();
@@ -111,6 +105,5 @@ public class ShowMembers_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowMembers_Action.class);
 }

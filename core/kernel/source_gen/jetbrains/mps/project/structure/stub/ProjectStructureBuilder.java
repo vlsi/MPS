@@ -33,13 +33,11 @@ public abstract class ProjectStructureBuilder {
   private final IFile myFile;
   private SModel myModel;
   private SNode myTarget;
-
   public ProjectStructureBuilder(ModuleDescriptor descriptor, IFile file, SModel model) {
     mySource = descriptor;
     myFile = file;
     myModel = model;
   }
-
   public SNode convert() {
     if (mySource instanceof LanguageDescriptor) {
       myTarget = convertLanguage((LanguageDescriptor) mySource);
@@ -50,7 +48,6 @@ public abstract class ProjectStructureBuilder {
     }
     return myTarget;
   }
-
   private SNode convertLanguage(LanguageDescriptor source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Language", null);
     ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
@@ -74,7 +71,6 @@ public abstract class ProjectStructureBuilder {
     collectModels(result, source);
     return result;
   }
-
   private SNode convertSolution(SolutionDescriptor source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Solution", null);
     ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
@@ -86,7 +82,6 @@ public abstract class ProjectStructureBuilder {
     collectModels(result, source);
     return result;
   }
-
   private SNode convertDevkit(DevkitDescriptor source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.DevKit", null);
     ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
@@ -105,7 +100,6 @@ public abstract class ProjectStructureBuilder {
     }
     return result;
   }
-
   private SNode convert(SModelReference source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModelReference", null);
     SPropertyOperations.set(result, "uuid", source.getModelId().toString());
@@ -115,7 +109,6 @@ public abstract class ProjectStructureBuilder {
     SPropertyOperations.set(result, "stereotype", (atIndex == -1 ? "" : modelName.substring(atIndex + 1)));
     return result;
   }
-
   private void fill(SNode module, ModuleDescriptor source) {
     SPropertyOperations.set(module, "uuid", source.getUUID());
     SPropertyOperations.set(module, "namespace", source.getNamespace());
@@ -141,7 +134,6 @@ public abstract class ProjectStructureBuilder {
       SLinkOperations.getTargets(module, "sourcePaths", true).add(convertSourcePath(s));
     }
   }
-
   private SNode convert(ModelRootDescriptor source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModelRoot", null);
     SPropertyOperations.set(result, "type", source.getType());
@@ -151,20 +143,17 @@ public abstract class ProjectStructureBuilder {
     }
     return result;
   }
-
   private SNode convertSourcePath(String s) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.SourcePath", null);
     SPropertyOperations.set(result, "value", s);
     return result;
   }
-
   private SNode convert(Dependency source) {
     SNode dep = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModuleDependency", null);
     SPropertyOperations.set(dep, "reexport", "" + (source.isReexport()));
     SLinkOperations.setTarget(dep, "moduleRef", convert(source.getModuleRef()), true);
     return dep;
   }
-
   private SNode convert(GeneratorDescriptor source) {
     SNode generator = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Generator", null);
     fill(generator, source);
@@ -182,7 +171,6 @@ public abstract class ProjectStructureBuilder {
     collectModels(generator, source);
     return generator;
   }
-
   private SNode convert(MappingPriorityRule source) {
     SNode rule = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.MappingPriorityRule", null);
     switch (source.getType()) {
@@ -205,7 +193,6 @@ public abstract class ProjectStructureBuilder {
     SLinkOperations.setTarget(rule, "right", convert(source.getRight()), true);
     return rule;
   }
-
   private SNode convert(SModuleReference ref) {
     if (ref == null) {
       return null;
@@ -215,7 +202,6 @@ public abstract class ProjectStructureBuilder {
     SPropertyOperations.set(result, "qualifiedName", ref.getModuleName());
     return result;
   }
-
   private SNode convert(MappingConfig_AbstractRef source) {
     if (source instanceof MappingConfig_RefAllGlobal) {
       return SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal", null);
@@ -240,15 +226,12 @@ public abstract class ProjectStructureBuilder {
     }
     return null;
   }
-
   protected void collectModels(SNode module, ModuleDescriptor descriptor) {
     for (SModelReference ref : Sequence.fromIterable(loadReferences(module, descriptor))) {
       ListSequence.fromList(SLinkOperations.getTargets(module, "model", true)).addElement(convert(ref));
     }
   }
-
   public abstract Iterable<SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor);
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

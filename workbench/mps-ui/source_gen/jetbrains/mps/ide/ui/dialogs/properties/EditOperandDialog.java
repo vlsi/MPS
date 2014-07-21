@@ -37,7 +37,6 @@ public class EditOperandDialog extends DialogWrapper {
   private MappingConfig_AbstractRef myResult;
   private JComponent myMainComponent;
   private JTree myTree;
-
   public EditOperandDialog(final Generator currentGen, final List<SModuleReference> depGenerators, MappingConfig_AbstractRef operand, final boolean isLeft) {
     super(true);
     setTitle("Choose Mappings");
@@ -67,7 +66,6 @@ public class EditOperandDialog extends DialogWrapper {
 
     init();
   }
-
   public void expandCheckedUnder(JTree tree, DefaultMutableTreeNode node) {
     MappingSelectTree.NodeData nodeData = (MappingSelectTree.NodeData) node.getUserObject();
     if (nodeData.isChecksUnder()) {
@@ -80,7 +78,6 @@ public class EditOperandDialog extends DialogWrapper {
       expandCheckedUnder(tree, (DefaultMutableTreeNode) node.getChildAt(i));
     }
   }
-
   private void addGeneratorModels(Generator gen, DefaultMutableTreeNode root) {
     MappingSelectTree.GenRefNodeData genData = new MappingSelectTree.GenRefNodeData(gen.getModuleReference());
     DefaultMutableTreeNode genNode = new DefaultMutableTreeNode(genData);
@@ -97,17 +94,14 @@ public class EditOperandDialog extends DialogWrapper {
       }
     }
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myMainComponent;
   }
-
   public MappingConfig_AbstractRef getResult() {
     return myResult;
   }
-
   private void setRootMappingRef(DefaultMutableTreeNode root, MappingConfig_AbstractRef operand, boolean isLeft) {
     MappingSelectTree.NodeData rootData = (MappingSelectTree.NodeData) root.getUserObject();
     if (operand instanceof MappingConfig_RefAllGlobal) {
@@ -130,7 +124,6 @@ public class EditOperandDialog extends DialogWrapper {
       }
     }
   }
-
   private void setGenMappingRef(DefaultMutableTreeNode root, MappingConfig_ExternalRef operand) {
     SModuleReference modRef = operand.getGenerator();
     Enumeration children = root.children();
@@ -158,7 +151,6 @@ public class EditOperandDialog extends DialogWrapper {
       }
     }
   }
-
   private void setMappingRefSet(DefaultMutableTreeNode child, MappingConfig_RefSet innerOperand) {
     for (MappingConfig_AbstractRef ref : ((MappingConfig_RefSet) innerOperand).getMappingConfigs()) {
       if (ref instanceof MappingConfig_SimpleRef) {
@@ -169,7 +161,6 @@ public class EditOperandDialog extends DialogWrapper {
       }
     }
   }
-
   private void setModelMappingRef(DefaultMutableTreeNode root, MappingConfig_SimpleRef operand) {
     SModelReference modRef = PersistenceFacade.getInstance().createModelReference(operand.getModelUID());
     ((jetbrains.mps.smodel.SModelReference) modRef).update();
@@ -187,7 +178,6 @@ public class EditOperandDialog extends DialogWrapper {
       }
     }
   }
-
   private void setNodeMappingRef(DefaultMutableTreeNode root, MappingConfig_SimpleRef operand) {
     SNodeReference nodeRef = new SNodePointer(operand.getModelUID(), operand.getNodeID());
     Enumeration children = root.children();
@@ -199,7 +189,6 @@ public class EditOperandDialog extends DialogWrapper {
       }
     }
   }
-
   private MappingConfig_AbstractRef getRootMappingRef(DefaultMutableTreeNode root) {
     MappingSelectTree.NodeData rootData = (MappingSelectTree.NodeData) root.getUserObject();
     if (!(rootData.isChecksUnder())) {
@@ -219,7 +208,6 @@ public class EditOperandDialog extends DialogWrapper {
       return result;
     }
   }
-
   private MappingConfig_AbstractRef getGeneratorMappingRef(DefaultMutableTreeNode gRoot) {
     MappingConfig_ExternalRef result = new MappingConfig_ExternalRef();
     MappingSelectTree.GenRefNodeData rootData = (MappingSelectTree.GenRefNodeData) gRoot.getUserObject();
@@ -240,7 +228,6 @@ public class EditOperandDialog extends DialogWrapper {
     }
     return result;
   }
-
   private MappingConfig_AbstractRef getModelMappingRef(DefaultMutableTreeNode mRoot) {
     MappingSelectTree.ModelRefNodeData rootData = (MappingSelectTree.ModelRefNodeData) mRoot.getUserObject();
     if (!(rootData.isChecksUnder())) {
@@ -263,7 +250,6 @@ public class EditOperandDialog extends DialogWrapper {
       return result;
     }
   }
-
   private MappingConfig_AbstractRef getNodeMappingRef(DefaultMutableTreeNode nRoot) {
     MappingSelectTree.NodeRefNodeData rootData = (MappingSelectTree.NodeRefNodeData) nRoot.getUserObject();
     MappingConfig_SimpleRef result = new MappingConfig_SimpleRef();
@@ -271,7 +257,6 @@ public class EditOperandDialog extends DialogWrapper {
     result.setNodeID(rootData.getObject().resolve(MPSModuleRepository.getInstance()).getNodeId().toString());
     return result;
   }
-
   private List<DefaultMutableTreeNode> getChildrenWithChecks(DefaultMutableTreeNode root) {
     List<DefaultMutableTreeNode> result = new ArrayList<DefaultMutableTreeNode>();
     Enumeration children = root.children();
@@ -284,7 +269,6 @@ public class EditOperandDialog extends DialogWrapper {
     }
     return result;
   }
-
   private boolean setCheckedUnder(DefaultMutableTreeNode root) {
     boolean childChecks = false;
     Enumeration<DefaultMutableTreeNode> children = root.children();
@@ -297,7 +281,6 @@ public class EditOperandDialog extends DialogWrapper {
     rootData.setChecksUnder(checksUnder);
     return checksUnder;
   }
-
   @Override
   protected void doOKAction() {
     final DefaultMutableTreeNode root = (DefaultMutableTreeNode) myTree.getModel().getRoot();
@@ -310,7 +293,6 @@ public class EditOperandDialog extends DialogWrapper {
     });
     super.doOKAction();
   }
-
   @Override
   public void doCancelAction() {
     myResult = null;

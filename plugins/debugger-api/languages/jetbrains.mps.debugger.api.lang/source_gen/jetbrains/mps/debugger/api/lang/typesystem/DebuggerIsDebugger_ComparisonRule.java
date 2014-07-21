@@ -15,25 +15,20 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class DebuggerIsDebugger_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
-
   public DebuggerIsDebugger_ComparisonRule() {
   }
-
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     return true;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
       GeneratedMatchingPattern pattern = new DebuggerIsDebugger_ComparisonRule.Pattern_wcp5kc_a0a0a0a5();
@@ -42,19 +37,15 @@ public class DebuggerIsDebugger_ComparisonRule extends ComparisonRule_Runtime {
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public String getApplicableConceptFQName1() {
     return "jetbrains.mps.debugger.api.lang.structure.DebuggerType";
   }
-
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public static class Pattern_wcp5kc_a0a0a0a5 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_wcp5kc_a0a0a0a5() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_1iq6h2_a0a = nodeToMatch;
@@ -70,21 +61,16 @@ public class DebuggerIsDebugger_ComparisonRule extends ComparisonRule_Runtime {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
     }
-
     public Object getFieldValue(String fieldName) {
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNodePointer SNODE_POINTER_wcp5kc_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)", "4474271214082912941");
 }

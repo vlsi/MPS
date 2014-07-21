@@ -42,8 +42,8 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      };;
-;      @Nullable
+      }
+      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseReferenceScopeProvider() {
@@ -74,26 +74,26 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
                   }
                 }
                 return ListSequence.fromListWithValues(new ArrayList<SNode>(), result);
-              };;
-;              @Override
+              }
+              @Override
               public boolean isInScope(SNode node) {
                 SNode extMethod = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration");
                 SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
                 return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(extMethod), "virtual_getLooseType_5744862332972792015", new Object[]{SetSequence.fromSet(new HashSet<SNode>())})) && VisibilityUtil.isVisible(_context.getReferenceNode(), extMethod);
-              };;
-;            };
+              }
+            };
 
 
 
-          };;
-;          @Override
+          }
+          @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_1t8qmy_a0a1a0a0a1a0b0a1a1;
-          };;
-;        };
-      };;
-;    });
+          }
+        };
+      }
+    });
     return references;
-  };;
-;  private static SNodePointer breakingNode_1t8qmy_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "7997068947889524884");
+  }
+  private static SNodePointer breakingNode_1t8qmy_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "7997068947889524884");
 }

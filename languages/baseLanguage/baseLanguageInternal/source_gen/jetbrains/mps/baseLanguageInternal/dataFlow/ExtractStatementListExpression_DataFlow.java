@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ExtractStatementListExpression_DataFlow extends DataFlowBuilder {
   public ExtractStatementListExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "stmts", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "innerExpr", true));

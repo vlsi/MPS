@@ -35,18 +35,15 @@ import jetbrains.mps.smodel.SReference;
 
 public class GenerateEqualsAndHashCode_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GenerateEqualsAndHashCode_Action() {
     super("equals() and hashCode", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = GenerateEqualsAndHashCode_Action.this.getClassConcept(_params);
     return !(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).any(new IWhereFilter<SNode>() {
@@ -55,7 +52,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
       }
     })) && Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).isNotEmpty();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -69,7 +65,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -84,7 +79,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode classConcept = GenerateEqualsAndHashCode_Action.this.getClassConcept(_params);
@@ -190,13 +184,10 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
       }
     }
   }
-
   private SNode getClassConcept(final Map<String, Object> _params) {
     return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
-
   protected static Logger LOG = LogManager.getLogger(GenerateEqualsAndHashCode_Action.class);
-
   private static SNode _quotation_createNode_x9xljz_a0m0a(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -327,7 +318,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     SNodeAccessUtil.setReferenceTarget(quotedNode_39, "variableDeclaration", quotedNode_9);
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0a0f0u0a(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -374,7 +364,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_4.addChild("condition", quotedNode_6);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0a0a5a02a0(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -421,7 +410,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_4.addChild("ifTrue", quotedNode_6);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0a0a5a02a0_0(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -459,7 +447,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_4.addChild("ifTrue", quotedNode_6);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0a5a02a0(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -502,7 +489,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_4.addChild("ifTrue", quotedNode_6);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0b5a02a0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_7 = null;
@@ -580,7 +566,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_7.addChild("condition", quotedNode_9);
     return quotedNode_7;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0a5a02a0_0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_7 = null;
@@ -668,7 +653,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_7.addChild("condition", quotedNode_9);
     return quotedNode_7;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a22a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -679,7 +663,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_1.addChild("expression", quotedNode_2);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0z0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -700,7 +683,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_1.addChild("annotation", quotedNode_5);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0ab0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -718,7 +700,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_1.addChild("localVariableDeclaration", quotedNode_2);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0db0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -732,7 +713,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_1.addChild("localVariableDeclaration", quotedNode_2);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0d0ib0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -748,7 +728,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0a4a43a0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -803,7 +782,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_5.addChild("expression", quotedNode_6);
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0b4a43a0(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -837,7 +815,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_4.addChild("expression", quotedNode_5);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0a2e0ib0a(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -884,7 +861,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_4.addChild("expression", quotedNode_5);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0b0c4a43a0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -939,7 +915,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_5.addChild("expression", quotedNode_6);
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0e0ib0a(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -967,7 +942,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_4.addChild("expression", quotedNode_5);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0d4a43a0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -1022,7 +996,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_5.addChild("expression", quotedNode_6);
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0e4a43a0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -1083,7 +1056,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_5.addChild("expression", quotedNode_6);
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0f4a43a0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -1137,7 +1109,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_5.addChild("expression", quotedNode_6);
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0g4a43a0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -1203,7 +1174,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_5.addChild("expression", quotedNode_6);
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a0a4a43a0_0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -1269,7 +1239,6 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_5.addChild("expression", quotedNode_6);
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_x9xljz_a0a53a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

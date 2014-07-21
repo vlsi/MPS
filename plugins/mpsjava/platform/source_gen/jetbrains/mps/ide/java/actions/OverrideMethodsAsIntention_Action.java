@@ -24,22 +24,18 @@ import org.apache.log4j.LogManager;
 
 public class OverrideMethodsAsIntention_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public OverrideMethodsAsIntention_Action() {
     super("Override Methods", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept") && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getMethodsToOverride_5418393554803767537", new Object[]{})).isNotEmpty();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,7 +49,6 @@ public class OverrideMethodsAsIntention_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -77,7 +72,6 @@ public class OverrideMethodsAsIntention_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
@@ -88,6 +82,5 @@ public class OverrideMethodsAsIntention_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(OverrideMethodsAsIntention_Action.class);
 }

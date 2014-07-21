@@ -11,5 +11,5 @@ public class CellMenuPart_Abstract_editedNode_BehaviorDescriptor extends Concept
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode";
-  };;
-;}
+  }
+}

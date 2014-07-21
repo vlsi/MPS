@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class RemovePropertyAttribute_Test extends BaseTransformationTest {
   public RemovePropertyAttribute_Test() {
   }
-
   @Test
   public void test_RemovePropertyAttribute() throws Throwable {
     this.initTest("${mps_home}", "r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)");
     this.runTest("jetbrains.mps.lang.editor.attribues.RemovePropertyAttribute_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("3447504547919025669", "3447504547919025675");

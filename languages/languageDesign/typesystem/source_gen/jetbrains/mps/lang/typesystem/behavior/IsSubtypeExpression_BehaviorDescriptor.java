@@ -10,5 +10,5 @@ public class IsSubtypeExpression_BehaviorDescriptor extends Expression_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression";
-  };;
-;}
+  }
+}

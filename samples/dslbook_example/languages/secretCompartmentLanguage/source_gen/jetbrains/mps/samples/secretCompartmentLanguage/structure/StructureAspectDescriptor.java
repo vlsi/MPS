@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -31,6 +30,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.samples.secretCompartmentLanguage.structure.Event", "jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent", "jetbrains.mps.samples.secretCompartmentLanguage.structure.State", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod", "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"};
 }

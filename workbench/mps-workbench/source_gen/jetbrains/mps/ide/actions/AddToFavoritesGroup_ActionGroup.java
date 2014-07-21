@@ -26,7 +26,6 @@ public class AddToFavoritesGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(AddToFavoritesGroup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.AddToFavoritesGroup_ActionGroup";
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
-
   public AddToFavoritesGroup_ActionGroup() {
     super("AddToFavoritesGroup", ID);
     this.setIsInternal(false);
@@ -36,7 +35,6 @@ public class AddToFavoritesGroup_ActionGroup extends GeneratedActionGroup {
       LOG.error("User group error", t);
     }
   }
-
   public void doUpdate(AnActionEvent event) {
     try {
       AddToFavoritesGroup_ActionGroup.this.removeAll();
@@ -66,11 +64,9 @@ public class AddToFavoritesGroup_ActionGroup extends GeneratedActionGroup {
       this.addPlace(p.first, p.second);
     }
   }
-
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
   }
-
   public boolean isStrict() {
     return false;
   }

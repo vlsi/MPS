@@ -11,5 +11,5 @@ public class ConceptFunctionParameter_PreferencePage_component_BehaviorDescripto
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component";
-  };;
-;}
+  }
+}

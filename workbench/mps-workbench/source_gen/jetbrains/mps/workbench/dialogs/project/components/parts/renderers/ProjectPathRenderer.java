@@ -13,11 +13,9 @@ import java.awt.Color;
 
 public class ProjectPathRenderer extends PathRenderer {
   private MPSProject myProject;
-
   public ProjectPathRenderer(MPSProject project) {
     myProject = project;
   }
-
   @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     Path path = (Path) value;

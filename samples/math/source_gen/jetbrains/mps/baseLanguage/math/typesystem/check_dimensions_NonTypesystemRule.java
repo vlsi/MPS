@@ -19,7 +19,6 @@ import jetbrains.mps.errors.IErrorReporter;
 public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_dimensions_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode binaryOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode matchedNode_n3qbw2_a0 = binaryOperation;
@@ -80,18 +79,15 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.BinaryOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -10,5 +10,5 @@ public class MultiForEachVariableReference_BehaviorDescriptor extends Expression
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference";
-  };;
-;}
+  }
+}

@@ -23,18 +23,15 @@ import org.apache.log4j.LogManager;
 
 public class TextPreviewModel_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public TextPreviewModel_Action() {
     super("Preview Generated Text", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
@@ -42,7 +39,6 @@ public class TextPreviewModel_Action extends BaseAction {
     SModel md = TextPreviewModel_Action.this.modelToGenerate(_params);
     return md != null && SNodeOperations.isGeneratable(md);
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -56,7 +52,6 @@ public class TextPreviewModel_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -73,7 +68,6 @@ public class TextPreviewModel_Action extends BaseAction {
     MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       MakeSession session = new MakeSession(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, true);
@@ -86,7 +80,6 @@ public class TextPreviewModel_Action extends BaseAction {
       }
     }
   }
-
   private SModel modelToGenerate(final Map<String, Object> _params) {
     SModel md = null;
     if (((SModel) MapSequence.fromMap(_params).get("cmodel")) != null) {
@@ -96,6 +89,5 @@ public class TextPreviewModel_Action extends BaseAction {
     }
     return md;
   }
-
   protected static Logger LOG = LogManager.getLogger(TextPreviewModel_Action.class);
 }

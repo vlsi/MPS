@@ -15,25 +15,20 @@ import jetbrains.mps.lang.actions.testLanguage.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "737ed1ff-fa63-4ebc-a834-435499b23c64(jetbrains.mps.lang.actions.testLanguage)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.lang.actions.testLanguage";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return null;
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == ConstraintsAspectDescriptor.class) {

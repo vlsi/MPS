@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
@@ -121,7 +120,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     }
     return Collections.<ConceptEditor>emptyList();
   }
-
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
@@ -152,7 +150,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
-
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence", "jetbrains.mps.lang.generator.structure.CopySrcListMacro", "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro", "jetbrains.mps.lang.generator.structure.CreateRootRule", "jetbrains.mps.lang.generator.structure.DismissTopMappingRule", "jetbrains.mps.lang.generator.structure.DropRootRule", "jetbrains.mps.lang.generator.structure.GeneratorMessage", "jetbrains.mps.lang.generator.structure.GeneratorParameterReference", "jetbrains.mps.lang.generator.structure.IfMacro", "jetbrains.mps.lang.generator.structure.IncludeMacro", "jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", "jetbrains.mps.lang.generator.structure.InsertMacro", "jetbrains.mps.lang.generator.structure.LabelMacro", "jetbrains.mps.lang.generator.structure.LoopMacro", "jetbrains.mps.lang.generator.structure.MapSrcListMacro", "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", "jetbrains.mps.lang.generator.structure.MappingConfiguration", "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration", "jetbrains.mps.lang.generator.structure.MappingScript", "jetbrains.mps.lang.generator.structure.MappingScriptReference", "jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule", "jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", "jetbrains.mps.lang.generator.structure.Root_MappingRule", "jetbrains.mps.lang.generator.structure.RuleConsequence", "jetbrains.mps.lang.generator.structure.SwitchMacro", "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression", "jetbrains.mps.lang.generator.structure.TemplateCallMacro", "jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", "jetbrains.mps.lang.generator.structure.TemplateFragment", "jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration", "jetbrains.mps.lang.generator.structure.TemplateSwitch", "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro", "jetbrains.mps.lang.generator.structure.TemplateSwitchReference", "jetbrains.mps.lang.generator.structure.TraceMacro", "jetbrains.mps.lang.generator.structure.VarMacro", "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", "jetbrains.mps.lang.generator.structure.WeaveMacro", "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"};

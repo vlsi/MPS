@@ -10,5 +10,5 @@ public class DominatesRecord_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.DominatesRecord";
-  };;
-;}
+  }
+}

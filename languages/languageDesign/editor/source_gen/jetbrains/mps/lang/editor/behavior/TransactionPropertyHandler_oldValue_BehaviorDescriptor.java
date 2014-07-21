@@ -10,5 +10,5 @@ public class TransactionPropertyHandler_oldValue_BehaviorDescriptor extends Conc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue";
-  };;
-;}
+  }
+}

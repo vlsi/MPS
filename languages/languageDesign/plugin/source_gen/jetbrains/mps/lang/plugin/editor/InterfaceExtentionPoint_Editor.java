@@ -23,7 +23,6 @@ public class InterfaceExtentionPoint_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bz5rxc_a(editorContext, node);
   }
-
   private EditorCell createCollection_bz5rxc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_bz5rxc_a");
@@ -35,14 +34,12 @@ public class InterfaceExtentionPoint_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_bz5rxc_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_bz5rxc_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_bz5rxc_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_bz5rxc_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "bootstrap label");
     editorCell.setCellId("Constant_bz5rxc_b0");
@@ -52,7 +49,6 @@ public class InterfaceExtentionPoint_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_bz5rxc_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -70,14 +66,12 @@ public class InterfaceExtentionPoint_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_bz5rxc_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "internal-id");
     editorCell.setCellId("Constant_bz5rxc_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_bz5rxc_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("pointID");

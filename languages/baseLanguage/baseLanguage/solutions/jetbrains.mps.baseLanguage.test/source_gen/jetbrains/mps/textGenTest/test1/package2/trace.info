@@ -4,13 +4,13 @@
   <root nodeRef="r:c78b7b07-f19e-466a-a1b2-aee680cd1d46(jetbrains.mps.textGenTest.test1.package2)/5257650213624905145">
     <file name="Clazz.java">
       <node id="5257650213624905147" at="7,0,9,0" concept="0" trace="Clazz#()V" />
-      <node id="5257650213624905155" at="11,0,13,0" concept="0" trace="Nested#()V" />
+      <node id="5257650213624905155" at="10,0,12,0" concept="0" trace="Nested#()V" />
       <scope id="5257650213624905150" at="7,18,7,18" />
-      <scope id="5257650213624905158" at="11,21,11,21" />
+      <scope id="5257650213624905158" at="10,21,10,21" />
       <scope id="5257650213624905147" at="7,0,9,0" />
-      <scope id="5257650213624905155" at="11,0,13,0" />
-      <unit id="5257650213624905153" at="10,0,14,0" name="jetbrains.mps.textGenTest.test1.package2.Clazz$Nested" />
-      <unit id="5257650213624905145" at="6,0,15,0" name="jetbrains.mps.textGenTest.test1.package2.Clazz" />
+      <scope id="5257650213624905155" at="10,0,12,0" />
+      <unit id="5257650213624905153" at="9,0,13,0" name="jetbrains.mps.textGenTest.test1.package2.Clazz$Nested" />
+      <unit id="5257650213624905145" at="6,0,14,0" name="jetbrains.mps.textGenTest.test1.package2.Clazz" />
     </file>
   </root>
 </debug-info>

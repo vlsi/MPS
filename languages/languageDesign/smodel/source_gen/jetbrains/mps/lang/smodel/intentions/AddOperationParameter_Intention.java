@@ -23,71 +23,56 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddOperationParameter_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddOperationParameter_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.smodel.structure.SNodeOperation";
   }
-
   public String getPresentation() {
     return "AddOperationParameter";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.smodel.intentions.AddOperationParameter_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.smodel";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty()) {
       return ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{})).isNotEmpty();
     }
     return false;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)", "1206998294783");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddOperationParameter_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Parameter(s)";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       List<SNode> applicableParms = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
       if (ListSequence.fromList(applicableParms).count() == 1) {
@@ -96,7 +81,6 @@ public class AddOperationParameter_Intention implements IntentionFactory {
         SNodeFactoryOperations.addNewChild(node, "parameter", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter");
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddOperationParameter_Intention.this;
     }

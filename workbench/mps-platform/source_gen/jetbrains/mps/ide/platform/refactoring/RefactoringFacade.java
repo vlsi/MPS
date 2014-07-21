@@ -55,10 +55,8 @@ import java.util.concurrent.ExecutionException;
 
 public class RefactoringFacade {
   protected Logger myLog = LogManager.getLogger(this.getClass());
-
   public RefactoringFacade() {
   }
-
   public void executeSimple(final RefactoringContext context) {
     ThreadUtils.assertEDT();
     final IRefactoring refactoring = context.getRefactoring();
@@ -89,7 +87,6 @@ public class RefactoringFacade {
       myLog.error("An error occurred in dgoWhenDone(), refactoring: " + refactoring.getUserFriendlyName(), t);
     }
   }
-
   private void doExecuteWithDialog(final RefactoringContext refactoringContext) {
     final IRefactoring refactoring = refactoringContext.getRefactoring();
     final Project project = refactoringContext.getCurrentOperationContext().getProject();
@@ -110,7 +107,6 @@ public class RefactoringFacade {
       }
     });
   }
-
   public void execute(final RefactoringContext refactoringContext) {
     ThreadUtils.assertEDT();
     myLog.assertLog(refactoringContext.getSelectedProject().getModelAccess().canRead(), "Read access");
@@ -119,7 +115,6 @@ public class RefactoringFacade {
       findUsagesAndRun(refactoringContext);
     }
   }
-
   private void findUsagesAndRun(final RefactoringContext refactoringContext) {
     SwingUtilities.invokeLater(new Runnable() {
       @Override
@@ -137,7 +132,6 @@ public class RefactoringFacade {
     });
 
   }
-
   private SearchResults findUsagesSimple(final RefactoringContext refactoringContext) {
     final Wrappers._T<SearchResults> result = new Wrappers._T<SearchResults>(null);
     refactoringContext.getSelectedProject().getModelAccess().runReadAction(new Runnable() {
@@ -157,7 +151,6 @@ public class RefactoringFacade {
     });
     return result.value;
   }
-
   private void showConfirmDialogAndExecuteInUI(SearchResults result, final RefactoringContext refactoringContext) {
     if (result == null) {
       SwingUtilities.invokeLater(new Runnable() {
@@ -173,7 +166,6 @@ public class RefactoringFacade {
       executeInUI(result, refactoringContext);
     }
   }
-
   private void executeInUI(final SearchResults usages, final RefactoringContext refactoringContext) {
     refactoringContext.getSelectedProject().getModelAccess().runReadInEDT(new Runnable() {
       @Override
@@ -187,7 +179,6 @@ public class RefactoringFacade {
       }
     });
   }
-
   private void showRefactoring(final RefactoringContext refactoringContext, final SearchResults searchResults) {
     RefactoringViewAction okAction = new RefactoringViewAction() {
       @Override
@@ -204,13 +195,11 @@ public class RefactoringFacade {
     List<SModel> modelsToGenerate = getModelsToGenerate(refactoringContext.getRefactoring(), refactoringContext);
     RefactoringAccess.getInstance().showRefactoringView(refactoringContext, okAction, searchResults, !(modelsToGenerate.isEmpty()), refactoringContext.getRefactoring().getUserFriendlyName());
   }
-
   public void writeIntoLog(RefactoringContext context) {
     assert !(context.isLocal());
     assert context.getRefactoring() instanceof ILoggableRefactoring;
     StructureModificationProcessor.addToLog(context.getStructureModification());
   }
-
   public void updateLoadedModels(final RefactoringContext context) {
     SetSequence.fromSet(loadedModelsForUpdate(context)).visitAll(new IVisitor<SModel>() {
       public void visit(SModel it) {
@@ -218,7 +207,6 @@ public class RefactoringFacade {
       }
     });
   }
-
   @NotNull
   private List<SModel> getModelsToGenerate(final IRefactoring refactoring, final RefactoringContext context) {
     List<SModel> result = new ArrayList<SModel>();
@@ -230,7 +218,6 @@ public class RefactoringFacade {
 
     return result;
   }
-
   private void updateModels(RefactoringContext context) {
     assert context.getRefactoring() instanceof ILoggableRefactoring;
     if (!(context.isLocal())) {
@@ -244,7 +231,6 @@ public class RefactoringFacade {
       }
     }
   }
-
   private Set<SModel> loadedModelsForUpdate(RefactoringContext context) {
     final SModelRepository modelRepository = SModelRepository.getInstance();
     Map<SModelReference, Integer> dependencies = context.getStructureModification().getDependencies();
@@ -273,7 +259,6 @@ public class RefactoringFacade {
     }
     return result;
   }
-
   private void updateModel(SModel model, RefactoringContext context) {
     IRefactoring refactoring = context.getRefactoring();
     try {
@@ -291,7 +276,6 @@ public class RefactoringFacade {
       ((EditableSModel) model).setChanged(true);
     }
   }
-
   private void generateModels(@NotNull final List<SModel> sourceModels, @NotNull final RefactoringContext context) {
     if (sourceModels.isEmpty()) {
       return;
@@ -331,7 +315,6 @@ public class RefactoringFacade {
     }.start();
     //     GeneratorUIFacade.getInstance().generateModels(operationContext, descriptors, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false); 
   }
-
   private void onGenerationFinished() {
     SNode.setNodeMemberAccessModifier(null);
   }

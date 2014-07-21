@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ParametersCount_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ParametersCount_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode instance, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (ListSequence.fromList(SLinkOperations.getTargets(instance, "actualParameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(instance, "action", false), "constructionParameter", true)).count()) {
       {
@@ -26,18 +25,15 @@ public class check_ParametersCount_NonTypesystemRule extends AbstractNonTypesyst
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.plugin.structure.ActionInstance";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

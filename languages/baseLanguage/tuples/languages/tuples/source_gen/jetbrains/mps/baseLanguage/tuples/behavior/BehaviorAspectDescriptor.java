@@ -32,6 +32,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
-  };;
-;  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"};
+  }
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"};
 }

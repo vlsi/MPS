@@ -17,31 +17,24 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_7980748436587793846(final BaseMappingRuleContext _context) {
     return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach", false, false) != null);
   }
-
   public static Object propertyMacro_GetPropertyValue_7980748436587793603(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", true), "name") + "_gen";
   }
-
   public static Object referenceMacro_GetReferent_7980748436587793726(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach", false, false), "GeneratedForeach"), "variable", true);
   }
-
   public static SNode sourceNodeQuery_7980748436587788180(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "inputSequence", true);
   }
-
   public static SNode sourceNodeQuery_7980748436587788201(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
-
   public static SNode sourceNodeQuery_7980748436587793693(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "variable", true);
   }
-
   public static TemplateModel getDescriptor(TemplateModule module) {
     return new TemplateModelImpl(module);
   }

@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class DeletePrefixIncrementCaret_Test extends BaseTransformationTest {
   public DeletePrefixIncrementCaret_Test() {
   }
-
   @Test
   public void test_DeletePrefixIncrementCaret() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.DeletePrefixIncrementCaret_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("6887089401953600716", "6887089401953600725");

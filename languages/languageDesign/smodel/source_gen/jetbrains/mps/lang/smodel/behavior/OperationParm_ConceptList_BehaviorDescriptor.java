@@ -10,5 +10,5 @@ public class OperationParm_ConceptList_BehaviorDescriptor extends AbstractOperat
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList";
-  };;
-;}
+  }
+}

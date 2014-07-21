@@ -23,7 +23,6 @@ public class DefaultGenerationParameterId_Constraints extends BaseConstraintsDes
   public DefaultGenerationParameterId_Constraints() {
     super("jetbrains.mps.lang.generator.generationParameters.structure.DefaultGenerationParameterId");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class DefaultGenerationParameterId_Constraints extends BaseConstraintsDes
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -44,7 +42,6 @@ public class DefaultGenerationParameterId_Constraints extends BaseConstraintsDes
             }
             return Sequence.fromIterable(Collections.<SNode>emptyList());
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_e4b5n5_a0a1a0a0a1a0b0a1a1;
@@ -54,6 +51,5 @@ public class DefaultGenerationParameterId_Constraints extends BaseConstraintsDes
     });
     return references;
   }
-
   private static SNodePointer breakingNode_e4b5n5_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:6ac9dcee-e5c4-42f1-9aa2-41caa61ece8e(jetbrains.mps.lang.generator.generationParameters.constraints)", "3064182000795632367");
 }

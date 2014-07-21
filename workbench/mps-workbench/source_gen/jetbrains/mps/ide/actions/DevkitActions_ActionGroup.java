@@ -13,7 +13,6 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(DevkitActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.DevkitActions_ActionGroup";
   public static final String LABEL_ID_favorites = ID + "favorites";
-
   public DevkitActions_ActionGroup() {
     super("DevkitActions", ID);
     this.setIsInternal(false);

@@ -11,12 +11,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMethodRefactoringProcessor {
   private SNode myClass;
-
   public ClassExtractMethodRefactoringProcessor(SNode clazz, List<SNode> nodesToExtract) {
     super(clazz, nodesToExtract);
     this.myClass = clazz;
   }
-
   @Override
   public SNode createMethodCall(SNode declaration, List<SNode> parameters) {
     if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
@@ -32,7 +30,6 @@ public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMetho
       return call;
     }
   }
-
   @Override
   public SNode createNewMethod() {
     if (isStatic) {
@@ -42,7 +39,6 @@ public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMetho
     }
 
   }
-
   @Override
   public void addMethod(SNode method) {
     if (SNodeOperations.getConceptDeclaration(this.getContainerMethod()) == SNodeOperations.getConceptDeclaration(method)) {

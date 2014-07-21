@@ -24,13 +24,11 @@ public class InlineFromConceptFunction_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.InlineFromConceptFunction_Test$TestBody", "test_deinition", true);
   }
-
   @Test
   public void test_reference() throws Throwable {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.InlineFromConceptFunction_Test$TestBody", "test_reference", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_deinition() throws Exception {
@@ -44,7 +42,6 @@ public class InlineFromConceptFunction_Test extends BaseTransformationTest {
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
     }
-
     public void test_reference() throws Exception {
       this.addNodeById("1230053266366");
       this.addNodeById("1230053266380");

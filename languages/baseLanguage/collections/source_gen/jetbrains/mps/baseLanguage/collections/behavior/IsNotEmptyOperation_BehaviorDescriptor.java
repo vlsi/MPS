@@ -9,5 +9,5 @@ public class IsNotEmptyOperation_BehaviorDescriptor extends NoArgumentsSequenceO
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation";
-  };;
-;}
+  }
+}

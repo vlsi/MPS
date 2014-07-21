@@ -17,27 +17,21 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class RefScopeCheckerInEditor extends RefScopeChecker {
   private EditorComponent myEditorComponent;
-
   /*package*/ void setEditorComponent(EditorComponent editorContext) {
     myEditorComponent = editorContext;
   }
-
   @Override
   protected QuickFixProvider createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
     return new RefScopeCheckerInEditor.ResolveReferenceEditorBasedQuickFix(reference, repository, executeImmediately, myEditorComponent);
   }
 
-
-
   private class ResolveReferenceEditorBasedQuickFix extends RefScopeChecker.ResolveReferenceQuickFix {
     private EditorComponent myEditorComponent;
-
 
     public ResolveReferenceEditorBasedQuickFix(SReference reference, SRepository repository, boolean executeImmediately, EditorComponent editorComponent) {
       super(reference, repository, executeImmediately);
       myEditorComponent = editorComponent;
     }
-
     @Override
     public QuickFix_Runtime getQuickFix() {
       return new QuickFix_Runtime() {
@@ -56,14 +50,12 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
           }
           EditorBasedReferenceResolverUtils.resolveInEditor(myEditorComponent, sourceNode, resolveInfo, myReference.getRole());
         }
-
         @Override
         public String getDescription(SNode node) {
           return "Resolve \"" + myReference.getRole() + "\" reference";
         }
       };
     }
-
     private SubstituteAction getApplicableSubstituteAction(SubstituteInfo substituteInfo, String resolveInfo) {
       SubstituteAction result = null;
       for (SubstituteAction nextAction : ListSequence.fromList(substituteInfo.getMatchingActions(resolveInfo, true))) {

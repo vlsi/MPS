@@ -15,18 +15,15 @@ import java.util.ArrayList;
 public class RestoreRangeSeletion_Test extends BaseTransformationTest {
   public RestoreRangeSeletion_Test() {
   }
-
   @Test
   public void test_RestoreRangeSeletion() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.RestoreRangeSeletion_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("1932269937152125077", "1932269937152125086");

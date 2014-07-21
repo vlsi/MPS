@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
@@ -41,11 +40,9 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     }
     return Collections.<ConceptEditor>emptyList();
   }
-
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.<ConceptEditorComponent>emptyList();
   }
-
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.script.structure.CommentMigrationScriptPart", "jetbrains.mps.lang.script.structure.DirectClassifierSpecification", "jetbrains.mps.lang.script.structure.DirectMethodSpecification", "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification", "jetbrains.mps.lang.script.structure.FQNameMethodSpecification", "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScript", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", "jetbrains.mps.lang.script.structure.PullUpMethod", "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart"};

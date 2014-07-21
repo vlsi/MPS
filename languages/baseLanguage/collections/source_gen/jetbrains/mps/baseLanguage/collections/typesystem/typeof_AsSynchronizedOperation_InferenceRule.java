@@ -16,7 +16,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_AsSynchronizedOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_AsSynchronizedOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode aso, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode ELEMENT_typevar_4611582986551020949 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -30,22 +29,18 @@ public class typeof_AsSynchronizedOperation_InferenceRule extends AbstractInfere
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "4611582986551020969", true), (SNode) typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(aso), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "4611582986551020964", true), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AsSynchronizedOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_cpvb10_a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

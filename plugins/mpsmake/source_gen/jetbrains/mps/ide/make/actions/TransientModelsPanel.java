@@ -16,7 +16,6 @@ import java.awt.event.MouseEvent;
   private final TransientModelsWidget myWidget;
   private JLabel label;
 
-
   public TransientModelsPanel(TransientModelsWidget widget) {
     myWidget = widget;
     this.label = new JLabel(widget.getMaxPossibleText(), IconContainer.ICON_b0a0b0d, SwingConstants.RIGHT);
@@ -38,12 +37,10 @@ import java.awt.event.MouseEvent;
     });
     setOpaque(false);
   }
-
   public void update() {
     this.label.setText(myWidget.getText());
     this.label.setIcon(myWidget.getIcon());
   }
-
   @Override
   public String getToolTipText() {
     return myWidget.getTooltipText();

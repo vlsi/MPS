@@ -10,5 +10,5 @@ public class TypeVarReference_BehaviorDescriptor extends Expression_BehaviorDesc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.TypeVarReference";
-  };;
-;}
+  }
+}

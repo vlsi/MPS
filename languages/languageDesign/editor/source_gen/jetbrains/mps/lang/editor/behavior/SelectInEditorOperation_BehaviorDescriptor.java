@@ -14,18 +14,18 @@ public class SelectInEditorOperation_BehaviorDescriptor extends SNodeOperation_B
   }
   public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
     return SelectInEditorOperation_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
-  };;
-;  public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
+  }
+  public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
     return SelectInEditorOperation_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
-  };;
-;  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+  }
+  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return SelectInEditorOperation_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
-  };;
-;  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+  }
+  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.SelectInEditorOperation";
-  };;
-;}
+  }
+}

@@ -12,7 +12,6 @@ import jetbrains.mps.build.util.JavaExportUtil;
 public class BuildSource_JavaExternalJarRef_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Tuples._2<SNode, Boolean> call_getDependencyTarget_5610619299014309566(SNode thisNode, VisibleArtifacts artifacts) {
     if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, "jar", false))) {
       return null;

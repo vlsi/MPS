@@ -25,10 +25,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 /*package*/ class ReferencesFinder {
   private Map<SModel, List<SReference>> myModelsRefsCache = new HashMap<SModel, List<SReference>>();
-
   /*package*/ ReferencesFinder() {
   }
-
   /*package*/ SearchResults getTargetSearchResults(List<SNode> nodes, DependencyViewerScope scope, ProgressMonitor monitor) {
     SearchResults results = new SearchResults();
     Set<SNode> targets = new HashSet<SNode>();
@@ -54,7 +52,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     }
     return results;
   }
-
   /*package*/ SearchResults getUsedLanguagesSearchResults(List<SNode> nodes, DependencyViewerScope scope, ProgressMonitor monitor) {
     SearchResults results = new SearchResults();
     Set<SNode> concepts = new HashSet<SNode>();
@@ -75,7 +72,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     }
     return results;
   }
-
   /*package*/ SearchResults getUsagesSearchResults(List<SNode> references, final DependencyViewerScope sourceScope, final DependencyViewerScope targetScope, ProgressMonitor monitor) {
     final SearchResults<SNode> results = new SearchResults<SNode>();
     try {
@@ -103,7 +99,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     }
     return results;
   }
-
   /*package*/ SearchResults getLanguageUsagesSearchResults(List<SNode> nodes, DependencyViewerScope sourceScope, final DependencyViewerScope targetScope, ProgressMonitor monitor) {
     final SearchResults<SNode> results = new SearchResults<SNode>();
     try {
@@ -127,7 +122,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     }
     return results;
   }
-
   /*package*/ List<SNode> getNodes(DependencyViewerScope scope, ProgressMonitor monitor) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     try {

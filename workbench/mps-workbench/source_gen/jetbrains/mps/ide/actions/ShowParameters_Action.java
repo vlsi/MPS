@@ -37,25 +37,21 @@ import org.apache.log4j.LogManager;
 
 public class ShowParameters_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowParameters_Action() {
     super("Show Parameters", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (ShowParameters_Action.this.getCellNode(_params) == null) {
       return false;
     }
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -69,7 +65,6 @@ public class ShowParameters_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -88,7 +83,6 @@ public class ShowParameters_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.showParameters");
@@ -109,11 +103,9 @@ public class ShowParameters_Action extends BaseAction {
       }
     }
   }
-
   /*package*/ SNode getCellNode(final Map<String, Object> _params) {
     return ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNode();
   }
-
   private <T> Component createComponent(ParametersInformation<T> parametersInformation, SNode node, final Map<String, Object> _params) {
     // TODO: make IDEA like 
     JPanel panel = new JPanel(new GridBagLayout());
@@ -147,6 +139,5 @@ public class ShowParameters_Action extends BaseAction {
     }
     return panel;
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowParameters_Action.class);
 }

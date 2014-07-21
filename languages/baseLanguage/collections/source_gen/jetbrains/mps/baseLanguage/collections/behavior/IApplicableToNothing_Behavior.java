@@ -21,41 +21,41 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class IApplicableToNothing_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static Set<SNode> call_getAllApplicableTypes_5994574781955687463(final SAbstractConcept thisConcept) {
+  }
+  public static Set<SNode> call_getAllApplicableTypes_5994574781955687463(final SAbstractConcept thisConcept) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     Iterable<SNode> implementList;
     if (SNodeOperations.isInstanceOf(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       implementList = ListSequence.fromList(SLinkOperations.getTargets(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "implements", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "intfc", false);
-        };;
-;      }).where(new IWhereFilter<SNode>() {
+        }
+      }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return IApplicableToNothing_Behavior.call_hasApplicableTypes_2142237368811537351(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())))), ((SNode) it));
-        };;
-;      });
+        }
+      });
     } else {
       SetSequence.fromSet(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())))), "virtual_getApplicableTypes_5994574781955586127", new Object[]{})));
       implementList = ListSequence.fromList(SLinkOperations.getTargets(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "extends", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "intfc", false);
-        };;
-;      }).where(new IWhereFilter<SNode>() {
+        }
+      }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return IApplicableToNothing_Behavior.call_hasApplicableTypes_2142237368811537351(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())))), ((SNode) it));
-        };;
-;      });
+        }
+      });
     }
     for (SNode impl : Sequence.fromIterable(implementList)) {
       SetSequence.fromSet(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) impl))), "virtual_getApplicableTypes_5994574781955586127", new Object[]{})));
     }
     return result;
-  };;
-;  public static boolean call_hasApplicableTypes_2142237368811537351(SAbstractConcept thisConcept, SNode concept) {
+  }
+  public static boolean call_hasApplicableTypes_2142237368811537351(SAbstractConcept thisConcept, SNode concept) {
     return SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing") && !(SConceptOperations.isExactly(concept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"));
-  };;
-;  public static SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
+  }
+  public static SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
     SNode jt = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
     for (SNode et : IApplicableToNothing_Behavior.call_getAllApplicableTypes_5994574781955687463(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))))) {
       if ((et != null)) {
@@ -67,5 +67,5 @@ public class IApplicableToNothing_Behavior {
       }
     }
     return jt;
-  };;
-;}
+  }
+}

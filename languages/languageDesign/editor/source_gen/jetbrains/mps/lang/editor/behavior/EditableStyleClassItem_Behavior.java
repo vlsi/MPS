@@ -9,11 +9,11 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class EditableStyleClassItem_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
+  }
+  public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     return SNodeOperations.isInstanceOf(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel") || SNodeOperations.isInstanceOf(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation");
-  };;
-;  public static StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
+  }
+  public static StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return StyleAttributes.EDITABLE;
-  };;
-;}
+  }
+}

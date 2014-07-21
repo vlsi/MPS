@@ -10,5 +10,5 @@ public class ToolInstanceExpression_BehaviorDescriptor extends Expression_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression";
-  };;
-;}
+  }
+}

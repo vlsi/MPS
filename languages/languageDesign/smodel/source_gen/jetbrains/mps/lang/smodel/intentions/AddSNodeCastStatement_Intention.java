@@ -22,41 +22,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddSNodeCastStatement_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddSNodeCastStatement_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.IfStatement";
   }
-
   public String getPresentation() {
     return "AddSNodeCastStatement";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.smodel.intentions.AddSNodeCastStatement_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.smodel";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     boolean isApplicable = false;
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
@@ -71,30 +62,24 @@ public class AddSNodeCastStatement_Intention implements IntentionFactory {
     }
     return isApplicable;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)", "1193745200272");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddSNodeCastStatement_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Insert Cast Variable Declaration";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode castVariable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
       SNode de = SNodeOperations.cast(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.DotExpression");
@@ -114,7 +99,6 @@ public class AddSNodeCastStatement_Intention implements IntentionFactory {
       }
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true)).insertElement(0, castVariable);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddSNodeCastStatement_Intention.this;
     }

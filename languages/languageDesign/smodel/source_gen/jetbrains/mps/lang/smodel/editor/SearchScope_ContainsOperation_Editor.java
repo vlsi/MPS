@@ -23,7 +23,6 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_epvjx7_a(editorContext, node);
   }
-
   private EditorCell createCollection_epvjx7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_epvjx7_a");
@@ -34,7 +33,6 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_epvjx7_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_epvjx7_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "contains");
     editorCell.setCellId("Constant_epvjx7_a0");
@@ -44,7 +42,6 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_epvjx7_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_epvjx7_b0");
@@ -54,7 +51,6 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_epvjx7_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("nodeToCheck");
@@ -74,7 +70,6 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_epvjx7_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_epvjx7_d0");

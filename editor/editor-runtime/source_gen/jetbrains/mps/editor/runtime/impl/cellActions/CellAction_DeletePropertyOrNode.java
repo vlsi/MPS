@@ -10,17 +10,14 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class CellAction_DeletePropertyOrNode extends AbstractCellAction {
   private SNode mySemanticNode;
   private String myPropertyName;
-
   public CellAction_DeletePropertyOrNode(SNode semanticNode, String propertyName) {
     mySemanticNode = semanticNode;
     myPropertyName = propertyName;
   }
-
   @Override
   public boolean canExecute(EditorContext context) {
     return true;
   }
-
   @Override
   public void execute(EditorContext context) {
     if (SNodeAccessUtil.getProperty(mySemanticNode, myPropertyName) != null) {

@@ -18,24 +18,19 @@ public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
   public ConceptMethodDeclaration_Menu() {
     super(new SubstituteInfoPartExt[]{new ConceptMethodDeclaration_Menu.ConceptMethodDeclaration_generic_cellMenu_v7l746_a0()});
   }
-
   public static class ConceptMethodDeclaration_generic_cellMenu_v7l746_a0 extends AbstractCellMenuPart_Generic_Group {
     public ConceptMethodDeclaration_generic_cellMenu_v7l746_a0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return AbstractConceptDeclaration_Behavior.call_getVirtualConceptMethods_1213877394290(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "concept", false));
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SLinkOperations.setTarget(node, "overriddenMethod", parameterObject, false);
       SLinkOperations.setTarget(node, "visibility", SNodeOperations.copyNode(SLinkOperations.getTarget(parameterObject, "visibility", true)), true);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }

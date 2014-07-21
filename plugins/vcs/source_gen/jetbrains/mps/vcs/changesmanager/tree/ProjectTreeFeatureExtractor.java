@@ -31,7 +31,6 @@ import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
 public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
   public ProjectTreeFeatureExtractor() {
   }
-
   @Nullable
   @Override
   public Feature getFeature(@NotNull MPSTreeNode treeNode) {

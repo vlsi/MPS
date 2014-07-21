@@ -55,7 +55,6 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
 
-
   public EvaluationContainer(Project project, DebugSession session, @NotNull SModuleReference containerModule, final List<SNodeReference> nodesToImport, final _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
     myProject = project;
     myDebugSession = session;
@@ -83,24 +82,18 @@ public class EvaluationContainer implements IEvaluationContainer {
     });
   }
 
-
-
   @Override
   public Class generateClass() throws EvaluationException {
     return GeneratorUtil.generateAndLoadEvaluatorClass(myProject, SModelRepository.getInstance().getModelDescriptor(myContainerModel), Properties.EVALUATOR_NAME, getContext(), Properties.IS_DEVELOPER_MODE, new TransformingGenerationHandler(false, true, myGenerationListeners), ClassLoaderManager.getInstance().getClassLoader(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd(jetbrains.mps.debugger.java.api)"))));
   }
-
   @Override
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
     ListSequence.fromList(myGenerationListeners).addElement(listener);
   }
-
   @Override
   public Evaluator createEvaluatorInstance(Class clazz) throws EvaluationException {
     return GeneratorUtil.createInstance(clazz, new Class[]{JavaUiState.class}, new Object[]{myUiState});
   }
-
-
 
   @Override
   public IEvaluationContainer copy(boolean isWatch, _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
@@ -113,8 +106,6 @@ public class EvaluationContainer implements IEvaluationContainer {
     };
   }
 
-
-
   @Override
   public String getPresentation() {
     return jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Computable<String>() {
@@ -124,12 +115,10 @@ public class EvaluationContainer implements IEvaluationContainer {
       }
     });
   }
-
   @Override
   public IOperationContext getContext() {
     return myContext;
   }
-
   @Override
   public SNode getNode() {
     if (myNode == null) {
@@ -138,14 +127,10 @@ public class EvaluationContainer implements IEvaluationContainer {
     return myNode.resolve(myDebuggerRepository);
   }
 
-
-
   @Override
   public void updateState() {
     myUiState = myDebugSession.getUiState();
   }
-
-
 
   protected void setUpNode(List<SNodeReference> nodesToImport) {
     // wanted to use resolve method here, but it was not implemented:( 
@@ -162,25 +147,21 @@ public class EvaluationContainer implements IEvaluationContainer {
     ((SModelInternal) containerModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debugger.java.evaluation)"));
     ((SModelInternal) containerModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debugger.java.privateMembers)"));
   }
-
   protected SNode createEvaluatorNode() {
     SNode evaluator = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.Evaluator", null);
     AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluator, "code", true), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation");
     return evaluator;
   }
-
   private class MyBaseLanguagesImportHelper extends BaseLanguagesImportHelper {
     @Override
     public SNode findVariable(SReference variableReference) {
       return null;
     }
-
     @Override
     public SNode createVariableReference(SNode variable) {
       return createInternalVariableReference_jbng3m_a0a1cb(variable.getName());
     }
   }
-
   private static SNode createInternalVariableReference_jbng3m_a0a1cb(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null, false);

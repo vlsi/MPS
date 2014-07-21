@@ -6,22 +6,18 @@ package jetbrains.mps.samples.secretCompartmentLanguage.runtime;
 public class Controller {
   private State currentState;
   private CommandChannel commandsChannel;
-
   public Controller(StateMachine machine, CommandChannel commandChannel) {
     this.commandsChannel = commandChannel;
     transitionTo(machine.getStart());
   }
-
   public State getCurrentState() {
     return currentState;
   }
-
   public void handle(String eventCode) {
     if (currentState.hasTransition(eventCode)) {
       transitionTo(currentState.targetState(eventCode));
     }
   }
-
   private void transitionTo(State target) {
     currentState = target;
     currentState.executeActions(commandsChannel);

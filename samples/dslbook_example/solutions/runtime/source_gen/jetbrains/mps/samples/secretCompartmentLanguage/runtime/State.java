@@ -14,30 +14,24 @@ public class State {
   private Map<Event, State> transitions = new HashMap<Event, State>();
   private Map<String, State> transitionsByCode = new HashMap<String, State>();
   private List<Command> commands = new ArrayList<Command>();
-
   public State(String name) {
     this.name = name;
   }
-
   public void addTransition(Event event, State targetState) {
     transitions.put(event, targetState);
     transitionsByCode.put(event.getCode(), targetState);
   }
-
   public boolean hasTransition(String eventCode) {
     return transitionsByCode.containsKey(eventCode);
   }
-
   public State targetState(String eventCode) {
     return transitionsByCode.get(eventCode);
   }
-
   public void executeActions(CommandChannel commandsChannel) {
     for (Command c : commands) {
       commandsChannel.send(c.getCode());
     }
   }
-
   @Override
   public String toString() {
     StringBuilder result = new StringBuilder();
@@ -50,35 +44,28 @@ public class State {
     }
     return result.toString();
   }
-
   public void addCommand(Command command) {
     commands.add(command);
   }
-
   /*package*/ Collection<State> getAllTargets() {
     return Collections.unmodifiableCollection(transitions.values());
   }
-
   public Collection<Event> getEvents() {
     return Collections.unmodifiableCollection(transitions.keySet());
   }
-
   public String getName() {
     return name;
   }
-
   /*package*/ void compare(State other, Notification note) {
     assert name.equals(other.name);
     compareTransitions(other, note);
     compareActions(other, note);
   }
-
   private void compareActions(State other, Notification note) {
     if (!(commands.equals(other.commands))) {
       note.error("%s has different commands", name);
     }
   }
-
   /*package*/ void compareTransitions(State other, Notification note) {
     for (Map.Entry<Event, State> e : transitions.entrySet()) {
       compareTransition(e.getKey(), e.getValue(), other, note);
@@ -89,7 +76,6 @@ public class State {
       }
     }
   }
-
   /*package*/ void compareTransition(Event myEvent, State myTarget, State otherState, Notification note) {
     if (otherState.transitions.containsKey(myEvent)) {
       State otherTarget = otherState.transitions.get(myEvent);
@@ -100,7 +86,6 @@ public class State {
       note.error("%s has missing transition for %s", name, myEvent);
     }
   }
-
   public void toDot(StringBuilder result) {
     String dotLabel = String.format("{%s", name);
     if (!(commands.isEmpty())) {

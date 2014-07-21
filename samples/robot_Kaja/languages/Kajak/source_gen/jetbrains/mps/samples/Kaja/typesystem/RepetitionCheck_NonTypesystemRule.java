@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class RepetitionCheck_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public RepetitionCheck_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode command, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.RoutineCall") || SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.Step") || SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.LeftTurn") || SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.Drop") || SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.Pick"))) {
       return;
@@ -37,18 +36,15 @@ public class RepetitionCheck_NonTypesystemRule extends AbstractNonTypesystemRule
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.Kaja.structure.AbstractCommand";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

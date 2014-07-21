@@ -18,48 +18,39 @@ public class Generator implements TemplateModule {
   private Language sourceLanguage;
   private final Collection<TemplateModel> models;
   private Collection<String> usedLanguages;
-
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
     models = TemplateUtil.<TemplateModel>asCollection(getTemplateModel("jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.TemplateModelImpl"));
     usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage");
   }
-
   @Override
   public String getAlias() {
     return "jetbrains.mps.traceInfo.testWeavingGenerated.data/main";
   }
-
   @Override
   public Collection<TemplateModel> getModels() {
     return models;
   }
-
   @Override
   public Collection<TemplateMappingPriorityRule> getPriorities() {
     return null;
   }
-
   @Override
   public SModuleReference getReference() {
     return PersistenceFacade.getInstance().createModuleReference(MODULE_REF);
   }
-
   @Override
   public Collection<String> getUsedLanguages() {
     return usedLanguages;
   }
-
   @Override
   public LanguageRuntime getSourceLanguage() {
     return sourceLanguage;
   }
-
   @Override
   public Collection<String> getReferencedModules() {
     return null;
   }
-
   private TemplateModel getTemplateModel(String modelName) {
     Class<TemplateModel> clazz = ClassLoaderManager.getInstance().getClass(ModuleRepositoryFacade.getInstance().getModule(getReference()), modelName);
     if (clazz == null) {

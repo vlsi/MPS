@@ -23,15 +23,15 @@ import jetbrains.mps.smodel.SReference;
 
 public class NamedTupleType_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+  }
+  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getLeftBracket_1262430001741497792", new Object[]{}));
     String sep = "";
     for (SNode ntcd : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(thisNode, "classifier", false))).reversedList().translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode ntd) {
         return SLinkOperations.getTargets(ntd, "component", true);
-      };;
-;    })) {
+      }
+    })) {
       sb.append(sep).append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(ntcd, "type", true), "virtual_getPresentation_1213877396640", new Object[]{})).append(" ").append(SPropertyOperations.getString(ntcd, "name"));
       sep = ", ";
     }
@@ -44,8 +44,8 @@ public class NamedTupleType_Behavior {
       suffix = ">";
     }
     return sb.append(suffix).toString();
-  };;
-;  public static SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+  }
+  public static SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
       return thisNode;
     }
@@ -53,13 +53,13 @@ public class NamedTupleType_Behavior {
       return thisNode;
     }
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenericDescendants_4107091686347838550", new Object[]{SNodeOperations.copyNode(thisNode), substitutions, expTrace});
-  };;
-;  public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, final Map<SNode, SNode> substitutions) {
+  }
+  public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, final Map<SNode, SNode> substitutions) {
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return MapSequence.fromMap(substitutions).containsKey(it);
-      };;
-;    })) {
+      }
+    })) {
       return;
     }
 
@@ -90,18 +90,18 @@ public class NamedTupleType_Behavior {
     for (SNode ifc : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "implements", true))) {
       BehaviorReflection.invokeVirtual(Void.class, ifc, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
     }
-  };;
-;  public static String virtual_getLeftBracket_1262430001741497792(SAbstractConcept thisConcept) {
+  }
+  public static String virtual_getLeftBracket_1262430001741497792(SAbstractConcept thisConcept) {
     return "(";
-  };;
-;  public static String virtual_getRightBracket_1262430001741497990(SAbstractConcept thisConcept) {
+  }
+  public static String virtual_getRightBracket_1262430001741497990(SAbstractConcept thisConcept) {
     return ")";
-  };;
-;  private static SNode _quotation_createNode_ja7850_a0a0a1a2a2() {
+  }
+  private static SNode _quotation_createNode_ja7850_a0a0a1a2a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
-  };;
-;}
+  }
+}

@@ -9,16 +9,13 @@ import jetbrains.mps.extapi.model.SModelBase;
 
 public abstract class ChangeModel {
   private DefaultSModel myModel;
-
   public ChangeModel() {
   }
-
   public void change(SModel model) {
     this.myModel = new DefaultSModel(model.getReference());
     CopyUtil.copyModelContentAndPreserveIds(((SModelBase) model).getSModel(), myModel);
     CopyUtil.copyModelProperties(((SModelBase) model).getSModel(), myModel);
   }
-
   public void rollback(SModel model) {
     SModelBase md = (SModelBase) model;
     md.replace(this.myModel);

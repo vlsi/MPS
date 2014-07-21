@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class InsertRowAfterHeader_Test extends BaseTransformationTest {
   public InsertRowAfterHeader_Test() {
   }
-
   @Test
   public void test_InsertRowAfterHeader() throws Throwable {
     this.initTest("${mps_home}", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)");
     this.runTest("jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterHeader_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("6170050146384276321", "6170050146384276349");

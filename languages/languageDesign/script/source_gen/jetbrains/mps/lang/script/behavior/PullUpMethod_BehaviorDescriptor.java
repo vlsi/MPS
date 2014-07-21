@@ -10,5 +10,5 @@ public class PullUpMethod_BehaviorDescriptor extends BaseConcept_BehaviorDescrip
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.PullUpMethod";
-  };;
-;}
+  }
+}

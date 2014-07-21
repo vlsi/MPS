@@ -10,5 +10,5 @@ public class OrPatternVariableReference_BehaviorDescriptor extends Expression_Be
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference";
-  };;
-;}
+  }
+}

@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_ForEachStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ForEachStatement_InferenceRule() {
   }
-
   public void applyRule(final SNode forEachStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode variable = SLinkOperations.getTarget(forEachStatement, "variable", true);
     SNode inputSequence = SLinkOperations.getTarget(forEachStatement, "inputSequence", true);
@@ -56,22 +55,18 @@ public class typeof_ForEachStatement_InferenceRule extends AbstractInferenceRule
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_tq8cec_a0b0a0a2a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

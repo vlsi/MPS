@@ -19,9 +19,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 public abstract class InlineVariableRefactoring {
   public InlineVariableRefactoring() {
   }
-
   public abstract SNode doRefactoring();
-
   public void optimizeDeclaration(SNode variable) {
     Program program = DataFlowManager.getInstance().buildProgramFor(getBaseStatementList(variable));
     for (Instruction instruction : ListSequence.fromList(program.getInstructions())) {
@@ -43,7 +41,6 @@ public abstract class InlineVariableRefactoring {
     }
     SNodeOperations.deleteNode(SNodeOperations.getAncestor(variable, "jetbrains.mps.baseLanguage.structure.Statement", false, false));
   }
-
   public void optimizeAssignment(SNode assignment, SNode variable) {
     SNode method = SNodeOperations.getAncestor(assignment, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(method, "body", true));
@@ -59,7 +56,6 @@ public abstract class InlineVariableRefactoring {
     }
     SNodeOperations.deleteNode(SNodeOperations.getParent(assignment));
   }
-
   public SNode getBaseStatementList(SNode node) {
     SNode current = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     while ((SNodeOperations.getAncestor(current, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) != null)) {
@@ -67,7 +63,6 @@ public abstract class InlineVariableRefactoring {
     }
     return current;
   }
-
   public static InlineVariableRefactoring createRefactoring(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
       return new InlineVariableAssignmentRefactoring(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));

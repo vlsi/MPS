@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_ModulesExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ModulesExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode modulesExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = modulesExpression;
@@ -23,22 +22,18 @@ public class typeof_ModulesExpression_InferenceRule extends AbstractInferenceRul
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "6864030874028745375", true), (SNode) _quotation_createNode_2y0lxf_a0a0b(), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.console.blCommand.structure.ModulesExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_2y0lxf_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

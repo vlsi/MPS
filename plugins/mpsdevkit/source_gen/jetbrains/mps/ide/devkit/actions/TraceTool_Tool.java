@@ -22,11 +22,9 @@ import javax.swing.JComponent;
 public class TraceTool_Tool extends GeneratedTool {
   private static final Icon ICON = MPSIcons.ToolWindows.TypeTraceView;
   private TypeSystemTracePanel myPanel;
-
   public TraceTool_Tool(Project project) {
     super(project, "Typesystem Trace", 5, ICON, ToolWindowAnchor.RIGHT, false);
   }
-
   public void init(Project project) {
     super.init(project);
     TraceTool_Tool.this.myPanel = new TypeSystemTracePanel(TraceTool_Tool.this);
@@ -40,16 +38,13 @@ public class TraceTool_Tool extends GeneratedTool {
     });
 
   }
-
   public void dispose() {
     Disposer.dispose(TraceTool_Tool.this.myPanel);
     super.dispose();
   }
-
   public void buildTrace(IncrementalTypecheckingContext t, final IOperationContext operationContext, SNode node, EditorComponent editorComponent, boolean rebuild) {
     TraceTool_Tool.this.myPanel.showTraceForNode(t, operationContext, node, editorComponent, rebuild);
   }
-
   public JComponent getComponent() {
     return TraceTool_Tool.this.myPanel;
   }

@@ -13,7 +13,6 @@ public class LanguageDescriptor_Constraints extends BaseConstraintsDescriptor {
   public LanguageDescriptor_Constraints() {
     super("jetbrains.mps.lang.descriptor.structure.LanguageDescriptor");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -22,7 +21,6 @@ public class LanguageDescriptor_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";

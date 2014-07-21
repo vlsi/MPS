@@ -44,14 +44,11 @@ public class MpsTestsSupport {
     initLoggingSystem();
   }
 
-
   private static void initLoggingSystem() {
     Logger.setFactory(LoggerFactory.class);
     assert Logger.isInitialized();
     Logger.getInstance("");
   }
-
-
 
   private static Set<IFile> createExcludesSet() {
     Set<IFile> excludesSet = new HashSet<IFile>();
@@ -61,8 +58,6 @@ public class MpsTestsSupport {
     }
     return excludesSet;
   }
-
-
 
   /**
    * 
@@ -84,13 +79,9 @@ public class MpsTestsSupport {
     return currentEnv;
   }
 
-
-
   public static Environment initEnv(boolean withIdea) {
     return initEnv(withIdea, EnvironmentConfig.defaultEnvironment());
   }
-
-
 
   public static MPSCompilationResult makeAllInCreatedEnvironment() {
     if (LOG.isInfoEnabled()) {
@@ -104,8 +95,6 @@ public class MpsTestsSupport {
     });
   }
 
-
-
   public static MPSCompilationResult makeAllWithoutEnvironment() {
     assert ActiveEnvironment.getInstance() == null;
     Environment createdEnv = MpsTestsSupport.initEnv(false);
@@ -114,8 +103,6 @@ public class MpsTestsSupport {
     createdEnv.dispose();
     return result;
   }
-
-
 
   public static void reloadAllAfterMake() throws InterruptedException, InvocationTargetException {
     // TODO: refactor 
@@ -164,13 +151,9 @@ public class MpsTestsSupport {
     }
   }
 
-
-
   private static void loadAllModulesIntoRepository() {
     loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), SetSequence.fromSetWithValues(new HashSet<IFile>(), EXCLUDE_SET), false));
   }
-
-
 
   private static void loadModules(final Collection<ModulesMiner.ModuleHandle> handles) {
     try {
@@ -196,7 +179,6 @@ public class MpsTestsSupport {
       throw new RuntimeException(e);
     }
   }
-
 
   protected static org.apache.log4j.Logger LOG = LogManager.getLogger(MpsTestsSupport.class);
 }

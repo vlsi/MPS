@@ -14,7 +14,6 @@ public class SelectFieldsDialog extends GroupedNodesChooser {
   public SelectFieldsDialog(SNodeReference[] fields, boolean allowEmpty, Project project) {
     super(fields, allowEmpty, true, ProjectHelper.toIdeaProject(project));
   }
-
   @Override
   protected String getText(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {

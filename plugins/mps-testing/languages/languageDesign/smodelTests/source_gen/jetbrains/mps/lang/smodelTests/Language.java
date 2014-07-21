@@ -14,25 +14,20 @@ import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "b02ae39f-4c16-4545-8dfa-88df16804e7e(jetbrains.mps.lang.smodelTests)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.lang.smodelTests";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.lang.core"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return null;
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

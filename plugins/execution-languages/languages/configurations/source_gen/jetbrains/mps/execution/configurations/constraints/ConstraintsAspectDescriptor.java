@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
   }
-
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 0:
@@ -41,6 +40,5 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new BaseConstraintsDescriptor(fqName);
     }
   }
-
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.EnvironmentExpression", "jetbrains.mps.execution.configurations.structure.GetProjectOperation", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
 }

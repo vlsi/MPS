@@ -15,7 +15,6 @@ public class DependenciesHelper {
   private final Map<Object, SNode> idToArtifactMap;
   private final Map<SNode, String> requiresFetch;
   protected final MacroHelper macros;
-
   public DependenciesHelper(@NotNull TemplateQueryContext genContext, SNode project) {
     this.locationMap = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "location");
     this.contentLocationMap = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "contentLocation");
@@ -23,27 +22,21 @@ public class DependenciesHelper {
     this.macros = new MacroHelper.MacroContext(project, genContext).getMacros(project);
     this.requiresFetch = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "requiresFetch");
   }
-
   public Map<SNode, String> locations() {
     return locationMap;
   }
-
   public Map<SNode, String> contentLocations() {
     return contentLocationMap;
   }
-
   public Map<Object, SNode> artifacts() {
     return idToArtifactMap;
   }
-
   public Map<SNode, String> requiresFetch() {
     return requiresFetch;
   }
-
   public MacroHelper getMacroHelper() {
     return macros;
   }
-
   public static SNode getOriginalNode(SNode node, TemplateQueryContext genContext) {
     if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
       if (genContext == null) {

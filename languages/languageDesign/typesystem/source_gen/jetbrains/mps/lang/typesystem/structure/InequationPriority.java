@@ -14,15 +14,12 @@ public enum InequationPriority {
   inf("inf", 500);
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return "" + this.myValue;
   }
-
   public static List<InequationPriority> getConstants() {
     List<InequationPriority> list = ListSequence.fromList(new LinkedList<InequationPriority>());
     ListSequence.fromList(list).addElement(InequationPriority._0);
@@ -32,11 +29,9 @@ public enum InequationPriority {
     ListSequence.fromList(list).addElement(InequationPriority.inf);
     return list;
   }
-
   public static InequationPriority getDefault() {
     return InequationPriority._0;
   }
-
   public static InequationPriority parseValue(String value) {
     if (value == null) {
       return InequationPriority.getDefault();
@@ -58,14 +53,11 @@ public enum InequationPriority {
     }
     return InequationPriority.getDefault();
   }
-
   private int myValue;
-
   InequationPriority(String name, int value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public int getValue() {
     return this.myValue;
   }

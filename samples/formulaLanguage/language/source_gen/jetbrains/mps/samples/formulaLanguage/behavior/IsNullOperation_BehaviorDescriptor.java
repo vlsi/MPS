@@ -6,7 +6,6 @@ package jetbrains.mps.samples.formulaLanguage.behavior;
 public class IsNullOperation_BehaviorDescriptor extends Operation_BehaviorDescriptor {
   public IsNullOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation";

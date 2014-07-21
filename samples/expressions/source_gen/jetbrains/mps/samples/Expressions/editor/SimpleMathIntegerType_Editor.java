@@ -14,7 +14,6 @@ public class SimpleMathIntegerType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_l9u5sn_a(editorContext, node);
   }
-
   private EditorCell createConstant_l9u5sn_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Int");
     editorCell.setCellId("Constant_l9u5sn_a");

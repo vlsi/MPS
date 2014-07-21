@@ -14,17 +14,14 @@ public class JavaWatchablesCategory extends WatchablesCategory {
   public static final WatchablesCategory RETURN_VALUE = new JavaWatchablesCategory("return value", 5);
   public static final WatchablesCategory FIELD_WATCHPOINT = new JavaWatchablesCategory("field watchpoint", 6);
   private final int myOrder;
-
   public JavaWatchablesCategory(String categoryName, int order) {
     super(categoryName);
     myOrder = order;
   }
-
   @Override
   public int hashCode() {
     return myOrder;
   }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -35,7 +32,6 @@ public class JavaWatchablesCategory extends WatchablesCategory {
     }
     return myOrder == ((JavaWatchablesCategory) o).myOrder;
   }
-
   @Override
   public int compareTo(WatchablesCategory o) {
     if (!(o instanceof JavaWatchablesCategory)) {

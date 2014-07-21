@@ -14,12 +14,10 @@ public class UpdateModelClause_Constraints extends BaseConstraintsDescriptor {
   public UpdateModelClause_Constraints() {
     super("jetbrains.mps.lang.refactoring.structure.UpdateModelClause");
   }
-
   @Override
   public boolean hasOwnCanBeAncestorMethod() {
     return true;
   }
-
   @Override
   public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAnAncestor(node, childNode, childConcept, context);
@@ -30,10 +28,8 @@ public class UpdateModelClause_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
     return SConceptOperations.isExactly(childConcept, "jetbrains.mps.baseLanguage.structure.StatementList") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation");
   }
-
   private static SNodePointer canBeAncesctorBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "2210862369564128647");
 }

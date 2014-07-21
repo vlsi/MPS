@@ -16,7 +16,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_MultipleForeachLoopVariable_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_MultipleForeachLoopVariable_InferenceRule() {
   }
-
   public void applyRule(final SNode forEachVar, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode variable = SLinkOperations.getTarget(forEachVar, "variable", true);
     SNode inputSequence = SLinkOperations.getTarget(forEachVar, "iterable", true);
@@ -34,22 +33,18 @@ public class typeof_MultipleForeachLoopVariable_InferenceRule extends AbstractIn
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_aqgyap_a0b0c0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

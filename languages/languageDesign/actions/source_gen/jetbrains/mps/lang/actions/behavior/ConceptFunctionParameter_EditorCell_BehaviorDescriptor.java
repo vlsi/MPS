@@ -10,5 +10,5 @@ public class ConceptFunctionParameter_EditorCell_BehaviorDescriptor extends Conc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell";
-  };;
-;}
+  }
+}

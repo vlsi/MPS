@@ -19,7 +19,6 @@ public class StopStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ukv9r_a(editorContext, node);
   }
-
   private EditorCell createCollection_ukv9r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ukv9r_a");
@@ -28,7 +27,6 @@ public class StopStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ukv9r_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ukv9r_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stop");
     editorCell.setCellId("Constant_ukv9r_a0");
@@ -39,7 +37,6 @@ public class StopStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ukv9r_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_ukv9r_b0");

@@ -10,20 +10,16 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 public class ModuleClassReference<T> {
   private SModuleReference myModuleRef;
   private String myClassName;
-
   public ModuleClassReference(SModuleReference moduleRef, String className) {
     myModuleRef = moduleRef;
     myClassName = className;
   }
-
   public SModuleReference getModuleRef() {
     return myModuleRef;
   }
-
   public String getClassName() {
     return myClassName;
   }
-
   public Class<T> loadClass() {
     SModule module = ModuleRepositoryFacade.getInstance().getModule(myModuleRef);
 

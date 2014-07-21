@@ -31,7 +31,6 @@ import org.apache.log4j.LogManager;
 public class ConstraintsChecker extends AbstractConstraintsChecker {
   public ConstraintsChecker() {
   }
-
   public SNode getBreakingNodeAndClearContext(CheckingNodeContext checkingNodeContext) {
     SNodeReference breakingNodePointer = checkingNodeContext.getBreakingNode();
     if (breakingNodePointer == null) {
@@ -43,7 +42,6 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       return node;
     }
   }
-
   @Override
   public void checkNode(final SNode node, LanguageErrorsComponent component, SRepository repository) {
     ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
@@ -152,6 +150,5 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ConstraintsChecker.class);
 }

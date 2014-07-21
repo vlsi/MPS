@@ -9,5 +9,5 @@ public class Weaving_MappingRule_BehaviorDescriptor extends BaseMappingRule_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.Weaving_MappingRule";
-  };;
-;}
+  }
+}

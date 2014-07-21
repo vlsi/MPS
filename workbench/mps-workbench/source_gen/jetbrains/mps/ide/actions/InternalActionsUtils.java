@@ -47,7 +47,6 @@ import org.apache.log4j.LogManager;
 public class InternalActionsUtils {
   public InternalActionsUtils() {
   }
-
   public static List<SNodeReference> getAllConcepts() {
     final List<SNodeReference> concepts = ListSequence.fromList(new ArrayList<SNodeReference>());
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -59,7 +58,6 @@ public class InternalActionsUtils {
     });
     return concepts;
   }
-
   public static void executeActionOnAllNodes(String actionName, ProgressMonitor monitor, final _FunctionTypes._void_P1_E0<? super SNode> nodeCallback) {
     final Wrappers._T<Iterable<SModelReference>> modelReferences = new Wrappers._T<Iterable<SModelReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -120,7 +118,6 @@ public class InternalActionsUtils {
       monitor.done();
     }
   }
-
   public static void executeActionOnAllNodesInModal(final String actionName, Project project, final _FunctionTypes._void_P1_E0<? super SNode> nodeCallback) {
     if (ModelAccess.instance().canWrite()) {
       throw new IllegalStateException("Must be executed outside of write action");
@@ -132,7 +129,6 @@ public class InternalActionsUtils {
       }
     });
   }
-
   public static void showUsagesViewForNodes(Project project, final List<SNodeReference> nodes) {
     IResultProvider provider = FindUtils.makeProvider(new IFinder() {
       @Override
@@ -155,6 +151,5 @@ public class InternalActionsUtils {
 
     project.getComponent(UsagesViewTool.class).findUsages(provider, new SearchQuery(GlobalScope.getInstance()), false, true, false, "Nothing");
   }
-
   protected static Logger LOG = LogManager.getLogger(InternalActionsUtils.class);
 }

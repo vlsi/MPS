@@ -10,5 +10,5 @@ public class InterfaceExtentionPoint_BehaviorDescriptor extends GroupAnchor_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint";
-  };;
-;}
+  }
+}

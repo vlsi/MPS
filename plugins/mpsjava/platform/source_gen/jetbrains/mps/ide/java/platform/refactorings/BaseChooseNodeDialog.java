@@ -45,7 +45,6 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
   private Set<SModel> myVisibleModels;
   private SimpleTree myTree;
   private SNodeReference mySelectedNode;
-
   public BaseChooseNodeDialog(Project project, IOperationContext context, SModel contextModel, String title) throws HeadlessException {
     super(project, true);
     setTitle(title);
@@ -54,9 +53,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
 
     init();
   }
-
   protected abstract boolean isAcceptable(SNode node);
-
   private void initVisibleModels(SModel modelDescriptor) {
     myVisibleModels = SetSequence.fromSet(new HashSet<SModel>());
     SetSequence.fromSet(myVisibleModels).addElement(modelDescriptor);
@@ -71,7 +68,6 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
       }
     }
   }
-
   private DefaultMutableTreeNode createRootNode() {
     ModelTreeNode rootNode = new ModelTreeNode("Root");
     for (SModel descriptor : SetSequence.fromSet(myVisibleModels).where(new IWhereFilter<SModel>() {
@@ -87,11 +83,9 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
     }
     return rootNode;
   }
-
   public SNodeReference getResult() {
     return mySelectedNode;
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
@@ -113,7 +107,6 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
           });
         }
       }
-
       private void initModelDescriptorNode(ModelTreeNode node, SModel descriptor) {
         SModel sModel = descriptor;
         for (SNode nextRoot : Sequence.fromIterable(ModelTreeBuilder.sortChildNodes(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sModel, "jetbrains.mps.lang.core.structure.BaseConcept")).where(new IWhereFilter<SNode>() {
@@ -150,7 +143,6 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
     scrollPane.setPreferredSize(new Dimension(700, 500));
     return scrollPane;
   }
-
   @Nullable
   @NonNls
   @Override

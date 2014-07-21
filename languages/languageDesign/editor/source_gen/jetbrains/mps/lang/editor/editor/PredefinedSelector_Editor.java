@@ -15,7 +15,6 @@ public class PredefinedSelector_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_75e44z_a(editorContext, node);
   }
-
   private EditorCell createProperty_75e44z_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("cellId");

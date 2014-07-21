@@ -17,24 +17,20 @@ import com.intellij.ide.util.PropertiesComponent;
   private static Map<String, String> KEYS_TO_TITLES = MapSequence.<String, String>fromMapAndKeysArray(new HashMap<String, String>(), SHORTEN_NAMES, COLORS).withValues("Short names", "Colors");
   private AnnotationColumn myColumn;
   private String myKey;
-
   public ViewAction(AnnotationColumn column, String key) {
     super(MapSequence.fromMap(KEYS_TO_TITLES).get(key));
     myKey = key;
     myColumn = column;
   }
-
   @Override
   public boolean isSelected(AnActionEvent event) {
     return isSet(myKey);
   }
-
   @Override
   public void setSelected(AnActionEvent event, boolean selected) {
     PropertiesComponent.getInstance().setValue(myKey, String.valueOf(selected));
     myColumn.invalidateLayout();
   }
-
   public static boolean isSet(String key) {
     return PropertiesComponent.getInstance().getBoolean(key, true);
   }

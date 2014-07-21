@@ -10,5 +10,5 @@ public class CellMenuDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuDescriptor";
-  };;
-;}
+  }
+}

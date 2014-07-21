@@ -10,5 +10,5 @@ public class MultiForEachPair_BehaviorDescriptor extends BaseConcept_BehaviorDes
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair";
-  };;
-;}
+  }
+}

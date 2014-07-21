@@ -14,50 +14,38 @@ import jetbrains.mps.smodel.LanguageAspect;
 
 public class Find_Usages_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.UsagesFinder;
-
   public Find_Usages_TabDescriptor() {
   }
-
   public String getTitle() {
     return "Find Usages";
   }
-
   public Character getShortcutChar() {
     return 'F';
   }
-
   public int compareTo(RelationDescriptor descriptor) {
     return new FindUsages_Order().compare(this, descriptor);
   }
-
   public void startListening() {
   }
-
   public SNode getBaseNode(SNode node) {
     return ConceptEditorOpenHelper.getBaseNode(node);
   }
-
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   @Nullable
   public Icon getIcon() {
     return ICON;
   }
-
   public List<SNode> getNodes(SNode node) {
     return BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspectCollection_1567570417158062208", new Object[]{LanguageAspect.FIND_USAGES});
   }
-
   public boolean isSingle() {
     return false;
   }
-
   public List<SNode> getConcepts(final SNode node) {
     return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.FIND_USAGES, node);
   }
-
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.FIND_USAGES, node, concept);
   }

@@ -27,7 +27,6 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_rl6lhr_a(editorContext, node);
   }
-
   private EditorCell createCollection_rl6lhr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rl6lhr_a");
@@ -38,12 +37,10 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_rl6lhr_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_rl6lhr_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp");
     return editorCell;
   }
-
   private EditorCell createConstant_rl6lhr_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_rl6lhr_b0");
@@ -53,7 +50,6 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_rl6lhr_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
@@ -78,20 +74,16 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_rl6lhr_a2a extends InlineCellProvider {
     public _Inline_rl6lhr_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_rl6lhr_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_rl6lhr_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -115,7 +107,6 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_rl6lhr_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_rl6lhr_d0");

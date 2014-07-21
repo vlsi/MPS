@@ -10,5 +10,5 @@ public class QuickFixArgumentReference_BehaviorDescriptor extends Expression_Beh
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference";
-  };;
-;}
+  }
+}

@@ -10,5 +10,5 @@ public class NodeSubstituteActionsBuilder_BehaviorDescriptor extends BaseConcept
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder";
-  };;
-;}
+  }
+}

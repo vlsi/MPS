@@ -23,7 +23,6 @@ public class MappingType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6trdjm_a(editorContext, node);
   }
-
   private EditorCell createCollection_6trdjm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6trdjm_a");
@@ -36,7 +35,6 @@ public class MappingType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6trdjm_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_6trdjm_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -45,7 +43,6 @@ public class MappingType_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_6trdjm_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_6trdjm_b0");
@@ -55,7 +52,6 @@ public class MappingType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_6trdjm_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("keyType");
@@ -75,7 +71,6 @@ public class MappingType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_6trdjm_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_6trdjm_d0");
@@ -85,7 +80,6 @@ public class MappingType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_6trdjm_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("valueType");
@@ -105,7 +99,6 @@ public class MappingType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_6trdjm_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_6trdjm_f0");

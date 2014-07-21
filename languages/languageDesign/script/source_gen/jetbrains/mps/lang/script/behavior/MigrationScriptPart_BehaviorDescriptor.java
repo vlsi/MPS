@@ -10,5 +10,5 @@ public abstract class MigrationScriptPart_BehaviorDescriptor extends BaseConcept
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.MigrationScriptPart";
-  };;
-;}
+  }
+}

@@ -18,7 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class FileSetUtil {
   public FileSetUtil() {
   }
-
   public static Iterable<SNode> getImplicitFilesets(SNode container) {
     Iterable<SNode> result = ListSequence.fromList(SLinkOperations.getTargets(container, "children", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -39,7 +38,6 @@ public class FileSetUtil {
     }
     return result;
   }
-
   public static Iterable<SNode> getExplicitFilemodeRoots(SNode container) {
     Iterable<SNode> result = ListSequence.fromList(SLinkOperations.getTargets(container, "children", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -64,7 +62,6 @@ public class FileSetUtil {
       }
     });
   }
-
   public static boolean hasExplicitFilesets(SNode container) {
     return ListSequence.fromList(SLinkOperations.getTargets(container, "children", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -72,7 +69,6 @@ public class FileSetUtil {
       }
     });
   }
-
   public static SNode getFilesetLayoutContainer(SNode contextContainer) {
     if (SNodeOperations.isInstanceOf(contextContainer, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")) {
       return SNodeOperations.cast(contextContainer, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet");
@@ -85,12 +81,10 @@ public class FileSetUtil {
     }
     return null;
   }
-
   public static String getPrefix(SNode fileset, MacroHelper helper) {
     SNode parent = SNodeOperations.getParent(fileset);
     return getContainerPrefix(parent, helper);
   }
-
   public static String getContainerPrefix(SNode container, MacroHelper helper) {
     Stack<String> stack = new Stack<String>();
     while (SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.structure.BuildLayout_Folder") || SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
@@ -112,7 +106,6 @@ public class FileSetUtil {
     }
     return null;
   }
-
   public static Pair<String, String> getFilemode(SNode fileset, MacroHelper helper) {
     SNode parent = SNodeOperations.getParent(fileset);
     String filemode = null;
@@ -133,11 +126,9 @@ public class FileSetUtil {
     }
     return null;
   }
-
   public static boolean isExplicit(SNode fileset) {
     return getFilesetLayoutContainer(SNodeOperations.as(SNodeOperations.getParent(fileset), "jetbrains.mps.build.structure.BuildLayout_Node")) == null || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, fileset, "virtual_isImplicit_1330375798085107777", new Object[]{}));
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

@@ -10,5 +10,5 @@ public class VariableConvertersContainer_BehaviorDescriptor extends BaseConcept_
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer";
-  };;
-;}
+  }
+}

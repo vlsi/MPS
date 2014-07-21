@@ -10,5 +10,5 @@ public class OperationParm_Inclusion_BehaviorDescriptor extends AbstractOperatio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion";
-  };;
-;}
+  }
+}

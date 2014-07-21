@@ -8,16 +8,13 @@ import java.util.Map;
 
 /*package*/ class ShowAdditionalInfoAction extends BaseAction {
   private AnnotationColumn myAnnotationColumn;
-
   public ShowAdditionalInfoAction(AnnotationColumn annotationColumn) {
     myAnnotationColumn = annotationColumn;
   }
-
   @Override
   protected void doUpdate(AnActionEvent event, Map<String, Object> _params) {
     event.getPresentation().setText(((myAnnotationColumn.isShowAdditionalInfo() ? "Hide" : "Show")) + " Additional Info");
   }
-
   @Override
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
     myAnnotationColumn.setShowAdditionalInfo(!(myAnnotationColumn.isShowAdditionalInfo()));

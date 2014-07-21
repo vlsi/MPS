@@ -19,67 +19,52 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertToMethodFQNameSpecification_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertToMethodFQNameSpecification_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.script.structure.DirectMethodSpecification";
   }
-
   public String getPresentation() {
     return "ConvertToMethodFQNameSpecification";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.script.intentions.ConvertToMethodFQNameSpecification_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.script";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:b58ac159-1e62-40c6-8c0d-e9511a9824de(jetbrains.mps.lang.script.intentions)", "4126624587000694735");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertToMethodFQNameSpecification_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert Direct Method reference to hardcoded FQName specification";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode methodSpecification = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.script.structure.FQNameMethodSpecification");
       SPropertyOperations.set(methodSpecification, "snodeId", SLinkOperations.getTarget(node, "methodDeclaration", false).getNodeId().toString());
       SNodeOperations.deleteNode(node);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertToMethodFQNameSpecification_Intention.this;
     }

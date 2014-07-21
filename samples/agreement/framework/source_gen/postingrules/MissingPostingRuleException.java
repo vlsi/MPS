@@ -7,7 +7,6 @@ package postingrules;
   public MissingPostingRuleException() {
     super();
   }
-
   public MissingPostingRuleException(String s) {
     super(s);
   }

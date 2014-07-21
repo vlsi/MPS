@@ -9,9 +9,9 @@ public class ValueAccessOperation_BehaviorDescriptor extends AbstractMappingOper
   }
   public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
     return ValueAccessOperation_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ValueAccessOperation";
-  };;
-;}
+  }
+}

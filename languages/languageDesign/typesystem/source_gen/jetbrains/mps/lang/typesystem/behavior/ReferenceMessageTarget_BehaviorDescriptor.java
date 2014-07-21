@@ -9,5 +9,5 @@ public class ReferenceMessageTarget_BehaviorDescriptor extends MessageTarget_Beh
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget";
-  };;
-;}
+  }
+}

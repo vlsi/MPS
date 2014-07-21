@@ -28,7 +28,6 @@ public class PausedJavaUiState extends JavaUiStateImpl {
   private final Context myContext;
   private final int myStackFrameIndex;
   private final List<IWatchable> myWatchables = ListSequence.fromList(new ArrayList<IWatchable>());
-
   /*package*/ PausedJavaUiState(@NotNull Context context, @NotNull DebugSession debugSession) {
     super(debugSession);
     myContext = context;
@@ -47,7 +46,6 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     check_vzg6vq_a01a3(getStackFrame(), this);
     ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
   }
-
   /**
    * This constructor is called when user selects some thread from ui
    */
@@ -60,7 +58,6 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     check_vzg6vq_a5a4(getStackFrame(), this);
     ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
   }
-
   /**
    * This constructor is called when user selects some frame from ui
    */
@@ -80,7 +77,6 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     getStackFrame().initializeWatchables();
     ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
   }
-
   private int findThreadIndex() {
     List<ThreadReference> threads = getEventProcessor().getVirtualMachine().allThreads();
     ThreadReference thread = myContext.getThread();
@@ -97,7 +93,6 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     }
     return 0;
   }
-
   @Nullable
   @Override
   public ObjectReference getThisObject() {
@@ -107,7 +102,6 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     }
     return null;
   }
-
   @Override
   protected PausedJavaUiState selectFrameInternal(int frame) {
     if (myStackFrameIndex != frame) {
@@ -115,7 +109,6 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     }
     return this;
   }
-
   @Override
   public void selectFrame(final int frame) {
     myDebugSession.getEventsProcessor().schedule(new _FunctionTypes._void_P0_E0() {
@@ -127,18 +120,15 @@ public class PausedJavaUiState extends JavaUiStateImpl {
       }
     });
   }
-
   @NotNull
   @Override
   public Context getContext() {
     return myContext;
   }
-
   @Override
   public boolean isPausedOnBreakpoint() {
     return getEventProcessor().getContextManager().isPausedOnEvent(myContext);
   }
-
   @Nullable
   @Override
   public synchronized JavaStackFrame getStackFrame() {
@@ -149,7 +139,6 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     //  if we have a frame then we have a thread 
     return (JavaStackFrame) ListSequence.fromList(myThreads).getElement(myThreadIndex).getFrames().get(myStackFrameIndex);
   }
-
   @Override
   public IStackFrame getStackFrame(int index) {
     JavaThread thread = getThread();
@@ -158,7 +147,6 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     }
     return thread.getFrame(index);
   }
-
   @NotNull
   private List<IWatchable> getAdditionalWatchables() {
     List<IWatchable> watchables = new ArrayList<IWatchable>();
@@ -176,7 +164,6 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     }
     return watchables;
   }
-
   @NotNull
   @Override
   public synchronized List<IWatchable> getWatchables() {
@@ -185,28 +172,24 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     watchables.addAll(myWatchables);
     return watchables;
   }
-
   private static void check_vzg6vq_a01a3(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.initializeWatchables();
     }
 
   }
-
   private static void check_vzg6vq_a5a4(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.initializeWatchables();
     }
 
   }
-
   private static ObjectReference check_vzg6vq_a0a1a7(StackFrame checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.thisObject();
     }
     return null;
   }
-
   private static ThreadReference check_vzg6vq_a0c0b0o(JavaThread checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getThread();

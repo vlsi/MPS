@@ -5,11 +5,9 @@ package jetbrains.mps.baseLanguage.javastub.asm;
 
 public class ASMVarArgType extends ASMType {
   private ASMType myElementType;
-
   /*package*/ ASMVarArgType(ASMType elementType) {
     myElementType = elementType;
   }
-
   public ASMType getElementType() {
     return myElementType;
   }

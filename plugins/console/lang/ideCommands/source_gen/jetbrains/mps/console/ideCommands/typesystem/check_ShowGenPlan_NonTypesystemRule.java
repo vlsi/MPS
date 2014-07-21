@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ShowGenPlan_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ShowGenPlan_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode showGenPlan, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(showGenPlan, "targetModel", true)) != null) {
       if (!(SNodeOperations.isGeneratable(ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(showGenPlan, "targetModel", true))))) {
@@ -27,18 +26,15 @@ public class check_ShowGenPlan_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.console.ideCommands.structure.ShowGenPlan";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -24,11 +24,9 @@ public class AliasComponent implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_ezwpxy_a(editorContext, node);
   }
-
   private EditorCell createAlternation_ezwpxy_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = AliasComponent.renderingCondition_ezwpxy_a0(node, editorContext);
@@ -40,11 +38,9 @@ public class AliasComponent implements ConceptEditorComponent {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_ezwpxy_a0(SNode node, EditorContext editorContext) {
     return !(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.SNodeOperation"));
   }
-
   private EditorCell createComponent_ezwpxy_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -53,16 +49,13 @@ public class AliasComponent implements ConceptEditorComponent {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AliasComponent.ReplaceWith_SNodeOperation_cellMenu_ezwpxy_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_SNodeOperation_cellMenu_ezwpxy_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_SNodeOperation_cellMenu_ezwpxy_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.smodel.structure.SNodeOperation";
     }
   }
-
   private EditorCell createError_ezwpxy_a0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose operaion>");
     editorCell.setCellId("Error_ezwpxy_a0");

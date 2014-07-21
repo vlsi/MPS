@@ -11,14 +11,14 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class Node_ConceptMethodCall_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean call_isVirtualMethodCall_1213877437823(SNode thisNode) {
+  }
+  public static boolean call_isVirtualMethodCall_1213877437823(SNode thisNode) {
     return (Node_ConceptMethodCall_Behavior.call_getVirtualMethodDeclaration_1213877437832(thisNode) != null);
-  };;
-;  public static boolean call_isSuperMethodCall_1521124695248146659(SNode thisNode) {
+  }
+  public static boolean call_isSuperMethodCall_1521124695248146659(SNode thisNode) {
     return SNodeOperations.isInstanceOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode), "jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
-  };;
-;  public static SNode call_getVirtualMethodDeclaration_1213877437832(SNode thisNode) {
+  }
+  public static SNode call_getVirtualMethodDeclaration_1213877437832(SNode thisNode) {
     SNode methodDeclaration = SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false);
     if ((SLinkOperations.getTarget(methodDeclaration, "overriddenMethod", false) != null)) {
       return SLinkOperations.getTarget(methodDeclaration, "overriddenMethod", false);
@@ -28,8 +28,8 @@ public class Node_ConceptMethodCall_Behavior {
     } else {
       return null;
     }
-  };;
-;  public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
+  }
+  public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     String variableExpectedName;
     variableExpectedName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "name");
     if (variableExpectedName.startsWith("get")) {
@@ -39,14 +39,14 @@ public class Node_ConceptMethodCall_Behavior {
       variableExpectedName = variableExpectedName.substring(2);
     }
     return NameUtil.decapitalize(variableExpectedName);
-  };;
-;  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
+  }
+  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
     return true;
-  };;
-;  public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
+  }
+  public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
     return true;
-  };;
-;  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
+  }
+  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
     return true;
-  };;
-;}
+  }
+}

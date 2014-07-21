@@ -13,7 +13,6 @@ public class AbstractWatchableNodeActions_ActionGroup extends GeneratedActionGro
   private static Logger LOG = LogManager.getLogger(AbstractWatchableNodeActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup";
   public static final String LABEL_ID_extentions = ID + "extentions";
-
   public AbstractWatchableNodeActions_ActionGroup() {
     super("AbstractWatchableNodeActions", ID);
     this.setIsInternal(false);

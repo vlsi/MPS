@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_PersistentPropertyDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_PersistentPropertyDeclaration_InferenceRule() {
   }
-
   public void applyRule(final SNode persistentPropertyDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode primitive = SLinkOperations.getTarget(_quotation_createNode_sacma3_a0a0a1(), "descriptor", false);
     {
@@ -26,22 +25,18 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
       typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(persistentPropertyDeclaration, "type", true), (SNode) _quotation_createNode_sacma3_a0b0b(primitive), false, true, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_sacma3_a0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -49,7 +44,6 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
     quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), facade.createNodeId("1196683941620")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_sacma3_a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

@@ -9,5 +9,5 @@ public class ParameterizedSideTransformMenuPart_BehaviorDescriptor extends SideT
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart";
-  };;
-;}
+  }
+}

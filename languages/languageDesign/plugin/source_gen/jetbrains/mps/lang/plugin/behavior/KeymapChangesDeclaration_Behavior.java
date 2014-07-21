@@ -9,11 +9,11 @@ import jetbrains.mps.util.SNodeOperations;
 
 public class KeymapChangesDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static String call_getGeneratedName_6277721878946468943(SNode thisNode) {
+  }
+  public static String call_getGeneratedName_6277721878946468943(SNode thisNode) {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_KeymapChanges";
-  };;
-;  public static String call_getGeneratedClassFQName_6277721878946468954(SNode thisNode) {
+  }
+  public static String call_getGeneratedClassFQName_6277721878946468954(SNode thisNode) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + KeymapChangesDeclaration_Behavior.call_getGeneratedName_6277721878946468943(thisNode);
-  };;
-;}
+  }
+}

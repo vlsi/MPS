@@ -9,18 +9,18 @@ public class CellModel_RefNodeList_BehaviorDescriptor extends CellModel_ListWith
   }
   public String virtual_getClosingText_1220339738643(SNode thisNode) {
     return CellModel_RefNodeList_Behavior.virtual_getClosingText_1220339738643(thisNode);
-  };;
-;  public String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
+  }
+  public String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
     return CellModel_RefNodeList_Behavior.virtual_getDefaultCellId_4539255030934103845(thisNode);
-  };;
-;  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
+  }
+  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
     return CellModel_RefNodeList_Behavior.virtual_getOpeningText_1220339714057(thisNode);
-  };;
-;  public String virtual_getRoleForCell_1216377898846(SNode thisNode) {
+  }
+  public String virtual_getRoleForCell_1216377898846(SNode thisNode) {
     return CellModel_RefNodeList_Behavior.virtual_getRoleForCell_1216377898846(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList";
-  };;
-;}
+  }
+}

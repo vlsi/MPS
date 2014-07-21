@@ -19,27 +19,22 @@ import org.apache.log4j.LogManager;
 public class ContextManager {
   private final List<EventContext> mySuspendedContexts = ListSequence.fromList(new ArrayList<EventContext>());
   private UserContext myUserContext;
-
   public ContextManager() {
   }
-
   /*package*/ synchronized boolean votePause(EventContext context) {
     context.vote();
     ListSequence.fromList(mySuspendedContexts).insertElement(0, context);
     return context.isProcessed();
   }
-
   /*package*/ synchronized void voteResume(EventContext context) {
     context.vote();
     if (context.isProcessed() && !(ListSequence.fromList(mySuspendedContexts).contains(context))) {
       resume(context);
     }
   }
-
   /*package*/ void pauseUserContext(UserContext context) {
     myUserContext = context;
   }
-
   /*package*/ synchronized void resume(Context context) {
     if (context instanceof EventContext) {
       assert ((EventContext) context).isProcessed();
@@ -62,7 +57,6 @@ public class ContextManager {
       assert false : "Do not know what kind of context it is " + context;
     }
   }
-
   private <C extends Context> void tryResume5Times(C context, _FunctionTypes._void_P1_E0<? super C> resume) {
     int resumeAttempts = 5;
     while (--resumeAttempts > 0) {
@@ -86,7 +80,6 @@ public class ContextManager {
       }
     }
   }
-
   @Nullable
   public synchronized Context firstContext() {
     if (myUserContext != null) {
@@ -97,7 +90,6 @@ public class ContextManager {
     }
     return null;
   }
-
   @Nullable
   public synchronized Context findContextForThread(final ThreadReference threadReference) {
     EventContext context = ListSequence.fromList(mySuspendedContexts).findFirst(new IWhereFilter<EventContext>() {
@@ -121,13 +113,10 @@ public class ContextManager {
     }
     return null;
   }
-
   public synchronized boolean isPausedOnEvent(Context context) {
     return ListSequence.fromList(mySuspendedContexts).contains(context);
   }
-
   protected static Logger LOG = LogManager.getLogger(ContextManager.class);
-
   private static boolean eq_toclu7_a0a0a0a0a0a0a9(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

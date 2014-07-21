@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_SelectOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SelectOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode so, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode sequenceParamType_typevar_1225884177658 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -43,22 +42,18 @@ public class typeof_SelectOperation_InferenceRule extends AbstractInferenceRule_
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1203177771381", true), (SNode) _quotation_createNode_jxb36x_a0g0b(typeCheckingContext.getRepresentative(resType_typevar_1203177754378)), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SelectOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_jxb36x_a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -70,7 +65,6 @@ public class typeof_SelectOperation_InferenceRule extends AbstractInferenceRule_
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_jxb36x_a0e0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -87,7 +81,6 @@ public class typeof_SelectOperation_InferenceRule extends AbstractInferenceRule_
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_jxb36x_a0g0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

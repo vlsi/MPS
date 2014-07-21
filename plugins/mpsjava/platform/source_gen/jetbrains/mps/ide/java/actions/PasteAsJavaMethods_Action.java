@@ -22,22 +22,18 @@ import org.apache.log4j.LogManager;
 
 public class PasteAsJavaMethods_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public PasteAsJavaMethods_Action() {
     super("Paste as Java Class Content", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return (SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("anchorNode"))), "jetbrains.mps.baseLanguage.structure.Classifier", true, false) != null) && JavaPaster.areDataAvailableInClipboard();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -51,7 +47,6 @@ public class PasteAsJavaMethods_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -77,7 +72,6 @@ public class PasteAsJavaMethods_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       new JavaPaster().pasteJava(((SNode) MapSequence.fromMap(_params).get("anchorNode")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), FeatureKind.CLASS_CONTENT, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
@@ -87,6 +81,5 @@ public class PasteAsJavaMethods_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(PasteAsJavaMethods_Action.class);
 }

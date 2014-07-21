@@ -14,7 +14,6 @@ public class PredefinedSymbolClassDeclaration_Constraints extends BaseConstraint
   public PredefinedSymbolClassDeclaration_Constraints() {
     super("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class PredefinedSymbolClassDeclaration_Constraints extends BaseConstraint
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";

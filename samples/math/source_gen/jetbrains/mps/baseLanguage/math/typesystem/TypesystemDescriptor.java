@@ -246,7 +246,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_s("jetbrains.mps.baseLanguage.structure.DivExpression"));
     this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_t("jetbrains.mps.baseLanguage.structure.MulExpression"));
   }
-
   public static class CustomOverloadedOperationsTypesProvider_f extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_f(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigInteger;
@@ -259,17 +258,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "1237817153106";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return MathTypeUtil.qBigInteger;
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_h extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_h(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigInteger;
@@ -282,21 +278,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "1237818502828";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
     }
-
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType");
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_i extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_i(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigInteger;
@@ -309,21 +301,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "1237818537889";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
     }
-
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType");
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_j extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_j(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigInteger;
@@ -336,21 +324,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "1237818540255";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
     }
-
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType");
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_g extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_g(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigInteger;
@@ -363,17 +347,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "1237819138168";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return MathTypeUtil.qBigInteger;
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_e extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_e(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigInteger;
@@ -386,21 +367,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "1238338729728";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
     }
-
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType");
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_k extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_k(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigDecimal;
@@ -413,21 +390,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "1238937384390";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.copyNode(MathTypeUtil.qBoolean);
     }
-
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return !(SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType"));
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_l extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_l(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigDecimal;
@@ -440,21 +413,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "1238937415187";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.copyNode(MathTypeUtil.qBoolean);
     }
-
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return !(SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType"));
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_m extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_m(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigDecimal;
@@ -467,21 +436,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "1238937415928";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.copyNode(MathTypeUtil.qBoolean);
     }
-
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return !(SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType"));
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_n extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_n(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigDecimal;
@@ -494,21 +459,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "1238937416684";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.copyNode(MathTypeUtil.qBoolean);
     }
-
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return !(SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType"));
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_a extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_a(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigComplex;
@@ -521,21 +482,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "4991719046417198034";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return MathTypeUtil.join(leftOperandType, rightOperandType);
     }
-
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType");
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_b extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_b(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigComplex;
@@ -548,21 +505,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "4991719046417344697";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return MathTypeUtil.join(leftOperandType, rightOperandType);
     }
-
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType");
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_c extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_c(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigComplex;
@@ -575,21 +528,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "4991719046417346854";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return MathTypeUtil.join(leftOperandType, rightOperandType);
     }
-
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType");
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_d extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_d(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigComplex;
@@ -602,21 +551,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "4991719046417346892";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return MathTypeUtil.join(leftOperandType, rightOperandType);
     }
-
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType");
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_o extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_o(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBCMatrix;
@@ -629,17 +574,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "7676695779583458415";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return MathTypeUtil.ML_matrixOp(leftOperandType, rightOperandType, false);
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_p extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_p(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBCMatrix;
@@ -652,17 +594,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "7676695779583465006";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return MathTypeUtil.ML_matrixOp(leftOperandType, rightOperandType, false);
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_q extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_q(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigComplex;
@@ -675,17 +614,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "7676695779583588206";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return MathTypeUtil.typeOfMatrixScalarMultiplication(leftOperandType, rightOperandType);
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_r extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_r(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBCMatrix;
@@ -698,7 +634,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "7676695779583588212";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(MathUtil.getUnboxedElementType(leftOperandType), rightOperandType)) {
         return MathTypeUtil.qMatrix(rightOperandType);
@@ -706,13 +641,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         return leftOperandType;
       }
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_s extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_s(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBCMatrix;
@@ -725,7 +658,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "7676695779583590396";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(MathUtil.getUnboxedElementType(leftOperandType), rightOperandType)) {
         return MathTypeUtil.qMatrix(rightOperandType);
@@ -733,13 +665,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         return leftOperandType;
       }
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_t extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_t(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBCMatrix;
@@ -752,11 +682,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)";
       this.myRuleNodeId = "7676695779583653135";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return MathTypeUtil.ML_matrixOp(leftOperandType, rightOperandType, true);
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);

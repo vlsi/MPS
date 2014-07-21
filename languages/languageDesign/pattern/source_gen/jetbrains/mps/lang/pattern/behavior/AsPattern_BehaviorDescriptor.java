@@ -9,5 +9,5 @@ public class AsPattern_BehaviorDescriptor extends PatternVariableDeclaration_Beh
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.AsPattern";
-  };;
-;}
+  }
+}

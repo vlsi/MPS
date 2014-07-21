@@ -10,5 +10,5 @@ public class GroupAccessOperation_BehaviorDescriptor extends Expression_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.GroupAccessOperation";
-  };;
-;}
+  }
+}

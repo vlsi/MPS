@@ -13,14 +13,12 @@ import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 public class Ide_ProjectPlugin extends BaseProjectPlugin {
   public Ide_ProjectPlugin() {
   }
-
   public List<BaseGeneratedTool> initAllTools(Project project) {
     List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
     ListSequence.fromList(tools).addElement(new ModuleDependenies_Tool(project));
     ListSequence.fromList(tools).addElement(new TodoViewer_Tool(project));
     return tools;
   }
-
   public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
     List<BaseProjectPrefsComponent> components = ListSequence.fromList(new ArrayList<BaseProjectPrefsComponent>());
 

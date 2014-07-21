@@ -26,22 +26,18 @@ import org.apache.log4j.LogManager;
 
 public class ShowConceptInHierarchy_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowHierarchy;
-
   public ShowConceptInHierarchy_Action() {
     super("Show Concept in Hierarchy", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return (ShowConceptInHierarchy_Action.this.getConceptNode(_params) != null);
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -55,7 +51,6 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -83,7 +78,6 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       HierarchyViewTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(HierarchyViewTool.class);
@@ -95,7 +89,6 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
       }
     }
   }
-
   private SNode getConceptNode(final Map<String, Object> _params) {
     SNode refNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
     if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
@@ -122,6 +115,5 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
     }
     return SNodeOperations.cast(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowConceptInHierarchy_Action.class);
 }

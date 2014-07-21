@@ -11,5 +11,5 @@ public class AsSequenceOperation_BehaviorDescriptor extends AbstractOperation_Be
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation";
-  };;
-;}
+  }
+}

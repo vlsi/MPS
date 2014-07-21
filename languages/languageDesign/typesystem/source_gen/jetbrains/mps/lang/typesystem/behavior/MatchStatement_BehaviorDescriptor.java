@@ -10,5 +10,5 @@ public class MatchStatement_BehaviorDescriptor extends Statement_BehaviorDescrip
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.MatchStatement";
-  };;
-;}
+  }
+}

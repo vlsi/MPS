@@ -15,7 +15,6 @@ public class FQNameMethodSpecification_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_s22k6o_a(editorContext, node);
   }
-
   private EditorCell createProperty_s22k6o_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("snodeId");

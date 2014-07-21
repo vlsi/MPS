@@ -9,11 +9,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class ConstraintsUtil {
   private ConstraintsUtil() {
   }
-
   public static boolean isInsideOfBehavior(SNode node) {
     return (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false) != null);
   }
-
   public static boolean isInsideOfNonStaticBehaviorContext(SNode node) {
     if (!(isInsideOfBehavior(node))) {
       return false;

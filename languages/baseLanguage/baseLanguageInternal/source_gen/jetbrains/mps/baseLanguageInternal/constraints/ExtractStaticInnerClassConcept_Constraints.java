@@ -21,13 +21,13 @@ public class ExtractStaticInnerClassConcept_Constraints extends BaseConstraintsD
       @Override
       public boolean hasOwnGetter() {
         return true;
-      };;
-;      @Override
+      }
+      @Override
       public Object getValue(SNode node) {
         String propertyName = "resolveInfo";
         return SPropertyOperations.getString(node, "name");
-      };;
-;    });
+      }
+    });
     return properties;
-  };;
-;}
+  }
+}

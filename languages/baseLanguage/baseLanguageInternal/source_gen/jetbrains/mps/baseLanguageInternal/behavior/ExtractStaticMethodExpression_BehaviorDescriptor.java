@@ -10,9 +10,9 @@ public class ExtractStaticMethodExpression_BehaviorDescriptor extends Expression
   }
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return ExtractStaticMethodExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression";
-  };;
-;}
+  }
+}

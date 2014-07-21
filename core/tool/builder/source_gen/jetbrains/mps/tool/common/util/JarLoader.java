@@ -40,13 +40,11 @@ import java.io.FilterInputStream;
       }
     }
   };
-
   /*package*/ JarLoader(URL url, boolean canLockJar) throws IOException {
     super(new URL(JAR_PROTOCOL, "", -1, url + "!/"));
     myURL = url;
     myCanLockJar = canLockJar;
   }
-
   @Nullable
   private ZipFile acquireZipFile() throws IOException {
     if (myCanLockJar) {
@@ -54,7 +52,6 @@ import java.io.FilterInputStream;
     }
     return doGetZipFile();
   }
-
   private void releaseZipFile(final ZipFile zipFile) throws IOException {
     if (myCanLockJar) {
       myZipFileRef.release();
@@ -63,7 +60,6 @@ import java.io.FilterInputStream;
       zipFile.close();
     }
   }
-
   @Nullable
   private ZipFile doGetZipFile() throws IOException {
     if (FILE_PROTOCOL.equals(myURL.getProtocol())) {
@@ -76,12 +72,10 @@ import java.io.FilterInputStream;
     }
     return null;
   }
-
   @Override
   /*package*/ void dispose() {
     myZipFileRef.dispose();
   }
-
   @Override
   /*package*/ void buildCache(final ClasspathCache cache) throws IOException {
     ZipFile zipFile = null;
@@ -99,7 +93,6 @@ import java.io.FilterInputStream;
       releaseZipFile(zipFile);
     }
   }
-
   @Nullable
   @Override
   /*package*/ Resource getResource(String name, boolean flag) {
@@ -128,37 +121,30 @@ import java.io.FilterInputStream;
     }
     return null;
   }
-
   @NonNls
   @Override
   public String toString() {
     return "JarLoader [" + myURL + "]";
   }
-
   private class MyResource extends Resource {
     private final ZipEntry myEntry;
     private final URL myUrl;
-
     public MyResource(ZipEntry name, URL url) {
       myEntry = name;
       myUrl = url;
     }
-
     @Override
     public String getName() {
       return myEntry.getName();
     }
-
     @Override
     public URL getURL() {
       return myUrl;
     }
-
     @Override
     public URL getCodeSourceURL() {
       return myURL;
     }
-
     @Nullable
     @Override
     public InputStream getInputStream() throws IOException {
@@ -179,7 +165,6 @@ import java.io.FilterInputStream;
         final ZipFile finalFile = file;
         return new FilterInputStream(inputStream) {
           private boolean myClosed = false;
-
           @Override
           public void close() throws IOException {
             super.close();
@@ -197,7 +182,6 @@ import java.io.FilterInputStream;
         return null;
       }
     }
-
     @Override
     public int getContentLength() {
       return (int) myEntry.getSize();

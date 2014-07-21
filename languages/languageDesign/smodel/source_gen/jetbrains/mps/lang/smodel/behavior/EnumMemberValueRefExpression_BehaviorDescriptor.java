@@ -10,5 +10,5 @@ public class EnumMemberValueRefExpression_BehaviorDescriptor extends Expression_
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression";
-  };;
-;}
+  }
+}

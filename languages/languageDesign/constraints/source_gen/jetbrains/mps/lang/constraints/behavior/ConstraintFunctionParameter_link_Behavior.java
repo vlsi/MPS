@@ -10,18 +10,18 @@ import jetbrains.mps.smodel.SReference;
 
 public class ConstraintFunctionParameter_link_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean virtual_dontUseParameterObject_1262430001741498340(SAbstractConcept thisConcept) {
+  }
+  public static boolean virtual_dontUseParameterObject_1262430001741498340(SAbstractConcept thisConcept) {
     return true;
-  };;
-;  public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
+  }
+  public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return _quotation_createNode_o122au_a0a1();
-  };;
-;  private static SNode _quotation_createNode_o122au_a0a1() {
+  }
+  private static SNode _quotation_createNode_o122au_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), facade.createNodeId("1071489288298")));
     return quotedNode_1;
-  };;
-;}
+  }
+}

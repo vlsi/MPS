@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.multiple.testLanguage.behavior;
 public class MultipleEditorsTestEditorComponentChildSubconcept_BehaviorDescriptor extends MultipleEditorsTestEditorComponentChild_BehaviorDescriptor {
   public MultipleEditorsTestEditorComponentChildSubconcept_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentChildSubconcept";

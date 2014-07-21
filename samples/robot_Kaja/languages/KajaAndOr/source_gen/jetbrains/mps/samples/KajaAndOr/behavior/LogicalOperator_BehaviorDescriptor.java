@@ -8,7 +8,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public abstract class LogicalOperator_BehaviorDescriptor extends LogicalExpression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public LogicalOperator_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator";

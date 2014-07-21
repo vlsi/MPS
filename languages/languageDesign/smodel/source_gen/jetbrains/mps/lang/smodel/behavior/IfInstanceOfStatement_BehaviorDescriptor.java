@@ -10,5 +10,5 @@ public class IfInstanceOfStatement_BehaviorDescriptor extends Statement_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement";
-  };;
-;}
+  }
+}

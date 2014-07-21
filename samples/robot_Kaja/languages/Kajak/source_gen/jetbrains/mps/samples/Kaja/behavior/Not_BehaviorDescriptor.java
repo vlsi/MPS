@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Kaja.behavior;
 public class Not_BehaviorDescriptor extends LogicalExpression_BehaviorDescriptor {
   public Not_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.Not";

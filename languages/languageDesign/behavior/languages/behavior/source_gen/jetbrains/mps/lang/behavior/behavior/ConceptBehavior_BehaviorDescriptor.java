@@ -18,33 +18,33 @@ public class ConceptBehavior_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   }
   public List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     return IConceptAspect_Behavior.virtual_getBaseConceptCollection_5270353093116013036(thisNode);
-  };;
-;  public SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
+  }
+  public SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return ConceptBehavior_Behavior.virtual_getBaseConcept_2621449412040133768(thisNode);
-  };;
-;  public IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
+  }
+  public IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
     return ConceptBehavior_Behavior.virtual_getExtractMethodRefactoringProcessor_1221393367929(thisNode, nodesToExtract);
-  };;
-;  public String virtual_getFqName_1213877404258(SNode thisNode) {
+  }
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
-  };;
-;  public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
+  }
+  public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     return ConceptBehavior_Behavior.virtual_getMembers_1213877531970(thisNode);
-  };;
-;  public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
+  }
+  public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
     return ConceptBehavior_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
-  };;
-;  public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
+  }
+  public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
     return ConceptBehavior_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
-  };;
-;  public boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
+  }
+  public boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
     return IConceptAspect_Behavior.virtual_isApplicable_7839831476331657915(thisNode, candidate);
-  };;
-;  public void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
+  }
+  public void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     ConceptBehavior_Behavior.virtual_setBaseConcept_6261424444345963020(thisNode, baseConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.behavior.structure.ConceptBehavior";
-  };;
-;}
+  }
+}

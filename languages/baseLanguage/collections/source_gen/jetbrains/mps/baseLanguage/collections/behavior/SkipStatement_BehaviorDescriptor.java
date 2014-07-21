@@ -10,9 +10,9 @@ public class SkipStatement_BehaviorDescriptor extends Statement_BehaviorDescript
   }
   public boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return SkipStatement_Behavior.virtual_isGuardClauseStatement_1237547327995(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SkipStatement";
-  };;
-;}
+  }
+}

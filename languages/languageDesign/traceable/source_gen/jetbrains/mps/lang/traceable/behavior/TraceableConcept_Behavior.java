@@ -8,7 +8,6 @@ import org.jetbrains.annotations.Nullable;
 public class TraceableConcept_Behavior {
   public static void init(SNode thisNode) {
   }
-
   @Nullable
   public static String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
     return null;

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 public class ActionParameterDeclaration_DataFlow extends DataFlowBuilder {
   public ActionParameterDeclaration_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitWrite(_context.getNode(), "r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)/1562714432501063756");
   }

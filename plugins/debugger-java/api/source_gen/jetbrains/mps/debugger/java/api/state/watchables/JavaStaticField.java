@@ -15,33 +15,27 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class JavaStaticField extends JavaWatchable implements IWatchable {
   private final Field myField;
   private final JavaValue myCachedValue;
-
   public JavaStaticField(Field field, ThreadReference threadReference) {
     super(threadReference);
     myField = field;
     myCachedValue = CustomViewersManager.getInstance().fromJdi(myField.declaringType().getValue(myField), myThreadReference);
   }
-
   @Override
   public String getName() {
     return myField.name();
   }
-
   @Override
   public WatchablesCategory getCategory() {
     return WatchablesCategory.NONE;
   }
-
   @Override
   public IValue getValue() {
     return myCachedValue;
   }
-
   @Override
   public Icon getPresentationIcon() {
     return myCachedValue.getPresentationIcon();
   }
-
   @Override
   public SNode getNode() {
     return null;

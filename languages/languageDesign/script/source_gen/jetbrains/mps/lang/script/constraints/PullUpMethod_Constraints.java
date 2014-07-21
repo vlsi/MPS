@@ -33,8 +33,8 @@ public class PullUpMethod_Constraints extends BaseConstraintsDescriptor {
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
-  };;
-;  @Override
+  }
+  @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
 
@@ -43,48 +43,48 @@ public class PullUpMethod_Constraints extends BaseConstraintsDescriptor {
     }
 
     return result;
-  };;
-;  @Override
+  }
+  @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
     references.put("newMethodDeclaration", new BaseReferenceConstraintsDescriptor("newMethodDeclaration", this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      };;
-;      @Nullable
+      }
+      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_8xrh0c_a0a0a0a0a1a0b0a1a3;
-          };;
-;          @Override
+          }
+          @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               SNode ancestor = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", true, false);
               return new SimpleScope(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(ancestor, "newClassifier", false), "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-                };;
-;              })) {
+                }
+              })) {
                 @Nullable
                 @Override
                 public String getReferenceText(@NotNull SNode target) {
                   return target.getName();
-                };;
-;              };
+                }
+              };
             }
-          };;
-;        };
-      };;
-;    });
+          }
+        };
+      }
+    });
     return references;
-  };;
-;  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  }
+  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration");
-  };;
-;  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)", "849077997121906176");
+  }
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)", "849077997121906176");
   private static SNodePointer breakingNode_8xrh0c_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)", "4242940223545087963");
 }

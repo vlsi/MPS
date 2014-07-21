@@ -6,8 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class Quotation_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
+  }
+  public static int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
     return -1;
-  };;
-;}
+  }
+}

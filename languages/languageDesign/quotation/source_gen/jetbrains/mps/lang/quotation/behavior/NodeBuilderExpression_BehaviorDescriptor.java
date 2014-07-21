@@ -10,5 +10,5 @@ public class NodeBuilderExpression_BehaviorDescriptor extends Expression_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression";
-  };;
-;}
+  }
+}

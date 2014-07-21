@@ -17,22 +17,18 @@ import org.apache.log4j.LogManager;
 
 public class DeleteToWordEnd_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public DeleteToWordEnd_Action() {
     super("Delete to Word End", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().getSelectedCells());
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -46,7 +42,6 @@ public class DeleteToWordEnd_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -57,7 +52,6 @@ public class DeleteToWordEnd_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.DELETE_TO_WORD_END);
@@ -67,6 +61,5 @@ public class DeleteToWordEnd_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(DeleteToWordEnd_Action.class);
 }

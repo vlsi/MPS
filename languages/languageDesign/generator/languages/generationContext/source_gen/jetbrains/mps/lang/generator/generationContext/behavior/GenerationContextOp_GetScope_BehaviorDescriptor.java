@@ -9,5 +9,5 @@ public class GenerationContextOp_GetScope_BehaviorDescriptor extends GenerationC
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope";
-  };;
-;}
+  }
+}

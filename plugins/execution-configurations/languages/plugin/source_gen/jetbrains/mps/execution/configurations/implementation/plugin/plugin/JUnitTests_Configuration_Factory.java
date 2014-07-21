@@ -12,16 +12,13 @@ public class JUnitTests_Configuration_Factory extends ConfigurationFactory {
   public JUnitTests_Configuration_Factory(JUnitTests_Kind type) {
     super(type);
   }
-
   public RunConfiguration createTemplateConfiguration(Project project) {
     return new JUnitTests_Configuration(project, this, "Template Configuration");
   }
-
   @Override
   public String getName() {
     return "JUnit Tests";
   }
-
   @Override
   public Icon getIcon() {
     Icon icon = super.getIcon();

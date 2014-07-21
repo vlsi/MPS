@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class MatchVariableReferenceReplacement_DataFlow extends DataFlowBuilder {
   public MatchVariableReferenceReplacement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "match", false), "r:f8e2b09f-b9d8-4076-a472-4264b3fb6a47(jetbrains.mps.baseLanguage.regexp.dataFlow)/1643569692137929228");
   }

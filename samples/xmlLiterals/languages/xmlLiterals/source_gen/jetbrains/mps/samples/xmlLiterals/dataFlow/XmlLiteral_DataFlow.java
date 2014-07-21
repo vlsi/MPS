@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class XmlLiteral_DataFlow extends DataFlowBuilder {
   public XmlLiteral_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     List<SNode> items = SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.samples.xmlLiterals.structure.ElementMacro", "jetbrains.mps.samples.xmlLiterals.structure.TextMacro"}, false, new String[]{});
     for (SNode item : items) {

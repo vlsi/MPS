@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BuildLayout_AbstractContainer_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {
     return "assemble." + thisNode.getNodeId().toString();
   }
-
   public static String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode) {
     return "prepare." + thisNode.getNodeId().toString();
   }

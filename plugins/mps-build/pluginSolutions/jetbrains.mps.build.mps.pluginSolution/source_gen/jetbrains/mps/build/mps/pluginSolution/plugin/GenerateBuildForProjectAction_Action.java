@@ -20,18 +20,15 @@ import org.apache.log4j.LogManager;
 
 public class GenerateBuildForProjectAction_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Ant.Build;
-
   public GenerateBuildForProjectAction_Action() {
     super("Build Solution", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -42,7 +39,6 @@ public class GenerateBuildForProjectAction_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -57,7 +53,6 @@ public class GenerateBuildForProjectAction_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final GenerateBuildWizard wizard = new GenerateBuildWizard("New Build Solution", ((MPSProject) MapSequence.fromMap(_params).get("project")), new BuildGeneratorImpl(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext"))));
@@ -73,6 +68,5 @@ public class GenerateBuildForProjectAction_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(GenerateBuildForProjectAction_Action.class);
 }

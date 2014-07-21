@@ -9,5 +9,5 @@ public abstract class CellModel_AbstractLabel_BehaviorDescriptor extends EditorC
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel";
-  };;
-;}
+  }
+}

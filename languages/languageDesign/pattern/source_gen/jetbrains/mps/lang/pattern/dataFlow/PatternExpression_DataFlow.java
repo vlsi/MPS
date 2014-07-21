@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class PatternExpression_DataFlow extends DataFlowBuilder {
   public PatternExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode antiquotation : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", false, new String[]{})) {
       _context.getBuilder().build((SNode) antiquotation);

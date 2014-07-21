@@ -21,17 +21,14 @@ public class _Quotation_createModel extends KeyMapImpl {
     action = new _Quotation_createModel._Quotation_createModel_Action0();
     this.putAction("any", "[", action);
   }
-
   public static class _Quotation_createModel_Action0 extends KeyMapActionImpl {
     public _Quotation_createModel_Action0() {
       super.setCaretPolicy(KeyMapAction.CARET_AT_LAST_POSITION);
       this.setShownInPopupMenu(false);
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -46,20 +43,16 @@ public class _Quotation_createModel extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return SLinkOperations.getTarget(node, "modelToCreate", true) == null;
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNodeFactoryOperations.setNewChild(node, "modelToCreate", "jetbrains.mps.baseLanguage.structure.Expression");
     }
-
     public String getKeyStroke() {
       return " [";
     }

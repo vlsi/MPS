@@ -16,18 +16,14 @@ public class BLExpression_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.INSERT, new BLExpression_Actions.BLExpression_Actions_INSERT(node));
   }
-
   public static class BLExpression_Actions_INSERT extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public BLExpression_Actions_INSERT(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode blCommand = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.BLCommand", null);
       SLinkOperations.setTarget(blCommand, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);

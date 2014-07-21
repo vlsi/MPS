@@ -9,7 +9,6 @@ public class ReferencesFeature extends NodeAggregationFeature {
   public ReferencesFeature(@NotNull SNodeReference nodePointer) {
     super(nodePointer);
   }
-
   @Override
   @NotNull
   public String toString() {

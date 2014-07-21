@@ -18,18 +18,15 @@ import org.apache.log4j.LogManager;
 
 public class DeletePropertyAction_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public DeletePropertyAction_Action() {
     super("Delete", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((TreeNode) MapSequence.fromMap(_params).get("node")) instanceof PropertyTreeNode)) {
       return false;
@@ -37,7 +34,6 @@ public class DeletePropertyAction_Action extends BaseAction {
     TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
     return parent instanceof PropertiesTreeNode;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -51,7 +47,6 @@ public class DeletePropertyAction_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -62,7 +57,6 @@ public class DeletePropertyAction_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
@@ -75,6 +69,5 @@ public class DeletePropertyAction_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(DeletePropertyAction_Action.class);
 }

@@ -9,5 +9,5 @@ public class AddMenuPart_BehaviorDescriptor extends ConceptPart_BehaviorDescript
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.AddMenuPart";
-  };;
-;}
+  }
+}

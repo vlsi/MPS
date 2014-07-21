@@ -85,7 +85,6 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   private int myHeight = 0;
   private LanguageHierarchiesComponent.ConceptContainer mySelectedConceptContainer;
   public JTextField myScaleField;
-
   public LanguageHierarchiesComponent(Language language, IOperationContext context) {
     myLanguage = language;
     myOperationContext = new ModuleContext(language, context.getProject());
@@ -96,14 +95,12 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
           conceptContainer.mouseClicked(e);
         }
       }
-
       @Override
       public void mousePressed(MouseEvent e) {
         for (LanguageHierarchiesComponent.ConceptContainer conceptContainer : myRoots) {
           conceptContainer.mousePressed(e);
         }
       }
-
       @Override
       public void mouseReleased(MouseEvent e) {
         for (LanguageHierarchiesComponent.ConceptContainer conceptContainer : myRoots) {
@@ -197,27 +194,22 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     myPanel.add(scrollPane, BorderLayout.CENTER);
     setBackground(Color.WHITE);
   }
-
   public JComponent getExternalComponent() {
     return myPanel;
   }
-
   private void select(LanguageHierarchiesComponent.ConceptContainer conceptContainer) {
     mySelectedConceptContainer = conceptContainer;
   }
-
   private SNode getSelectedConcept() {
     if (mySelectedConceptContainer == null) {
       return null;
     }
     return mySelectedConceptContainer.getNode();
   }
-
   private void processPopupMenu(MouseEvent e) {
     BaseGroup group = ActionUtils.getGroup(ProjectPaneActionGroups.NODE_ACTIONS);
     ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent().show(this, e.getX(), e.getY());
   }
-
   public List<LanguageHierarchiesComponent.ConceptContainer> createHierarchyForest() {
     List<LanguageHierarchiesComponent.ConceptContainer> result = new ArrayList<LanguageHierarchiesComponent.ConceptContainer>();
     Map<SNode, LanguageHierarchiesComponent.ConceptContainer> processed = new HashMap<SNode, LanguageHierarchiesComponent.ConceptContainer>();
@@ -246,7 +238,6 @@ outer:
     }
     return result;
   }
-
   private void relayout() {
     if (myRoots.isEmpty()) {
       return;
@@ -266,7 +257,6 @@ outer:
       }
     });
   }
-
   private int relayoutChildren(List<LanguageHierarchiesComponent.ConceptContainer> currentChildren, int x, int y, boolean vertical) {
     int y_ = y;
     for (LanguageHierarchiesComponent.ConceptContainer root : currentChildren) {
@@ -284,7 +274,6 @@ outer:
     }
     return y_;
   }
-
   public void rebuild() {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -295,7 +284,6 @@ outer:
       }
     });
   }
-
   @Override
   public Dimension getPreferredSize() {
     Container parent = this;
@@ -312,7 +300,6 @@ outer:
     Rectangle viewRect = viewport.getViewRect();
     return new Dimension(Math.max(viewRect.width, myWidth), Math.max(viewRect.height, myHeight));
   }
-
   @Override
   protected void paintComponent(final Graphics g) {
     g.setColor(Color.WHITE);
@@ -326,12 +313,10 @@ outer:
       }
     });
   }
-
   @Override
   public Dimension getPreferredScrollableViewportSize() {
     return getPreferredSize();
   }
-
   @Override
   public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
     if (orientation == SwingConstants.VERTICAL) {
@@ -340,22 +325,18 @@ outer:
       return 20;
     }
   }
-
   @Override
   public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {
     return visibleRect.height;
   }
-
   @Override
   public boolean getScrollableTracksViewportWidth() {
     return false;
   }
-
   @Override
   public boolean getScrollableTracksViewportHeight() {
     return false;
   }
-
   @Nullable
   @Override
   public Object getData(@NonNls String dataId) {
@@ -372,7 +353,6 @@ outer:
     }
     return null;
   }
-
   public static class ConceptContainer {
     private SNodeReference myNodePointer;
     private int myX;
@@ -391,7 +371,6 @@ outer:
     private boolean myIsAbstract = false;
     private String myNamespace;
     private boolean myIsOtherLanguage = false;
-
     public ConceptContainer(@NotNull SNode conceptDeclaration, LanguageHierarchiesComponent component, boolean otherLanguage) {
       myComponent = component;
       myIsOtherLanguage = otherLanguage;
@@ -427,7 +406,6 @@ outer:
             });
           }
         }
-
         @Override
         public void mouseReleased(MouseEvent e) {
           if (e.isPopupTrigger()) {
@@ -436,11 +414,9 @@ outer:
         }
       });
     }
-
     public SNode getNode() {
       return SNodeOperations.cast(((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
     }
-
     public void paint(Graphics graphics) {
       Graphics2D g = (Graphics2D) graphics;
       Color color = myColor;
@@ -470,7 +446,6 @@ outer:
       g.setFont(oldfont);
       g.setStroke(oldStroke);
     }
-
     @NotNull
     public String getText() {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
@@ -485,11 +460,9 @@ outer:
         }
       });
     }
-
     public List<LanguageHierarchiesComponent.ConceptContainer> getChildren() {
       return new ArrayList<LanguageHierarchiesComponent.ConceptContainer>(myChildren);
     }
-
     public void addChild(LanguageHierarchiesComponent.ConceptContainer child) {
       if (child == null) {
         return;
@@ -497,11 +470,9 @@ outer:
       myChildren.add(child);
       child.myParent = this;
     }
-
     public LanguageHierarchiesComponent.ConceptContainer getParent() {
       return myParent;
     }
-
     public void sortSubtree() {
       Collections.sort(myChildren, new Comparator<LanguageHierarchiesComponent.ConceptContainer>() {
         @Override
@@ -513,7 +484,6 @@ outer:
         child.sortSubtree();
       }
     }
-
     public void updateSubtreeWidth() {
       updateSize();
       int sum = 0;
@@ -528,7 +498,6 @@ outer:
         updateSubtreeWidth1(sizes);
       }
     }
-
     private void updateSubtreeWidth1(Map<LanguageHierarchiesComponent.ConceptContainer, Integer> sizes) {
       int whole = sizes.get(this) - 1;
       for (LanguageHierarchiesComponent.ConceptContainer child : myChildren) {
@@ -536,7 +505,6 @@ outer:
         child.updateSubtreeWidth1(sizes);
       }
     }
-
     private int computeSubtreeSizes(Map<LanguageHierarchiesComponent.ConceptContainer, Integer> sizes) {
       int size = 1;
       for (LanguageHierarchiesComponent.ConceptContainer child : myChildren) {
@@ -545,11 +513,9 @@ outer:
       sizes.put(this, size);
       return size;
     }
-
     public int getSubtreeWidth() {
       return mySubtreeWidth;
     }
-
     public void updateSize() {
       Font font = myFont.deriveFont((float) myFont.getSize() * myComponent.myScale);
       FontMetrics metrics = myComponent.getFontMetrics(font);
@@ -563,31 +529,24 @@ outer:
       myHeight = (int) ((2 * LanguageHierarchiesComponent.PADDING_Y * myComponent.myScale) + charsHeight);
       myWidth = (int) ((2 * LanguageHierarchiesComponent.PADDING_X * myComponent.myScale) + Math.max(charsWidth1, charWidth2));
     }
-
     public int getWidth() {
       return myWidth;
     }
-
     public int getHeight() {
       return myHeight;
     }
-
     public int getX() {
       return myX;
     }
-
     public int getY() {
       return myY;
     }
-
     public void setX(int x) {
       myX = x;
     }
-
     public void setY(int y) {
       myY = y;
     }
-
     public void moveTo(int newX, int newY) {
       int deltaX = newX - myX;
       int deltaY = newY - myY;
@@ -597,15 +556,12 @@ outer:
         child.moveTo(child.getX() + deltaX, child.getY() + deltaY);
       }
     }
-
     public Point getEntryPoint() {
       return new Point(myX + myWidth / 2, myY);
     }
-
     public Point getOutPoint() {
       return new Point(myX + myWidth / 2, myY + myHeight);
     }
-
     public void paintTree(Graphics g) {
       paint(g);
       if (myChildren.isEmpty()) {
@@ -638,7 +594,6 @@ outer:
         child.paintTree(g);
       }
     }
-
     protected boolean mouseClicked(MouseEvent ev) {
       if (checkMouseEvent(ev)) {
         for (MouseListener listener : myMouseListeners) {
@@ -653,7 +608,6 @@ outer:
       }
       return false;
     }
-
     protected boolean mousePressed(MouseEvent ev) {
       if (checkMouseEvent(ev)) {
         for (MouseListener listener : myMouseListeners) {
@@ -668,7 +622,6 @@ outer:
       }
       return false;
     }
-
     protected boolean mouseReleased(MouseEvent ev) {
       if (checkMouseEvent(ev)) {
         for (MouseListener listener : myMouseListeners) {
@@ -683,7 +636,6 @@ outer:
       }
       return false;
     }
-
     protected boolean checkMouseEvent(MouseEvent ev) {
       int x = ev.getX();
       int y = ev.getY();
@@ -701,15 +653,12 @@ outer:
       }
       return true;
     }
-
     public void setColor(Color c) {
       myColor = c;
     }
-
     public void addMouseListener(MouseListener listener) {
       myMouseListeners.add(listener);
     }
-
     public void removeMouseListener(MouseListener listener) {
       myMouseListeners.remove(listener);
     }

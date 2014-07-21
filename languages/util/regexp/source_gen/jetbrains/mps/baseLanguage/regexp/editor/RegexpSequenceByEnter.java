@@ -18,22 +18,17 @@ public class RegexpSequenceByEnter {
     editorCell.setAction(CellActionType.INSERT_BEFORE, new RegexpSequenceByEnter.RegexpSequenceByEnter_INSERT_BEFORE(node));
     editorCell.setAction(CellActionType.INSERT, new RegexpSequenceByEnter.RegexpSequenceByEnter_INSERT(node));
   }
-
   public static class RegexpSequenceByEnter_INSERT_BEFORE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public RegexpSequenceByEnter_INSERT_BEFORE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "insert an item before";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode nt = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
       SNodeOperations.replaceWithAnother(node, nt);
@@ -41,22 +36,17 @@ public class RegexpSequenceByEnter {
       SelectionUtil.selectCell(editorContext, SLinkOperations.getTarget(nt, "left", true), SelectionManager.FIRST_CELL);
     }
   }
-
   public static class RegexpSequenceByEnter_INSERT extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public RegexpSequenceByEnter_INSERT(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "insert an item after";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode nt = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
       SNodeOperations.replaceWithAnother(node, nt);

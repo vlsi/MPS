@@ -16,18 +16,15 @@ import junit.framework.Assert;
 public class RightTransformWithCustomItems_Parameterized_checkCanBeAncestor_Test extends BaseTransformationTest {
   public RightTransformWithCustomItems_Parameterized_checkCanBeAncestor_Test() {
   }
-
   @Test
   public void test_RightTransformWithCustomItems_Parameterized_checkCanBeAncestor() throws Throwable {
     this.initTest("${mps_home}", "r:3643c33a-b564-4832-938b-79a88b40b6f2(jetbrains.mps.lang.actions.test.sidetransform@tests)");
     this.runTest("jetbrains.mps.lang.actions.test.sidetransform.RightTransformWithCustomItems_Parameterized_checkCanBeAncestor_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("3185679905992058595", "3185679905992058599");

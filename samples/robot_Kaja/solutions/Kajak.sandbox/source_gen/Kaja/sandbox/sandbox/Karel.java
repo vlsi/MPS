@@ -7,7 +7,6 @@ import JavaKaja.runtime.KajaFrame;
 public class Karel extends KajaFrame {
   public Karel() {
   }
-
   protected void perform() {
     turnRight_routine();
     while (!(isMark())) {
@@ -15,7 +14,6 @@ public class Karel extends KajaFrame {
     }
     // Routine definitions 
   }
-
   public void traceStep_routine() {
     if (!(isFull())) {
       addMark();
@@ -25,7 +23,6 @@ public class Karel extends KajaFrame {
     }
     safeStep_routine();
   }
-
   public void safeStep_routine() {
     while (isWall()) {
       turnLeft();
@@ -38,21 +35,18 @@ public class Karel extends KajaFrame {
       reportError("Oops, There's a wall in front of me. I can't make a step forward.");
     }
   }
-
   public void turnRight_routine() {
     for (int indexVariable_ligmp_a0c = 0; indexVariable_ligmp_a0c < 3; indexVariable_ligmp_a0c++) {
       turnLeft();
       pause();
     }
   }
-
   public void turnAround_routine() {
     turnLeft();
     pause();
     turnLeft();
     pause();
   }
-
   public static void main(String[] args) {
     Karel script = new Karel();
     script.initializeComponents();

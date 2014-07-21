@@ -21,7 +21,6 @@ public class IdeaConfigurationXml_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_hbx8re_a(editorContext, node);
   }
-
   private EditorCell createCollection_hbx8re_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hbx8re_a");
@@ -32,7 +31,6 @@ public class IdeaConfigurationXml_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_hbx8re_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_hbx8re_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -50,7 +48,6 @@ public class IdeaConfigurationXml_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_hbx8re_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".xml");
     editorCell.setCellId("Constant_hbx8re_b0");
@@ -60,7 +57,6 @@ public class IdeaConfigurationXml_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_hbx8re_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_hbx8re_c0");
@@ -70,7 +66,6 @@ public class IdeaConfigurationXml_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_hbx8re_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("actions");

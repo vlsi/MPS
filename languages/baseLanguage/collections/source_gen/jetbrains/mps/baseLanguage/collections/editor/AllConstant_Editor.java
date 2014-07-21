@@ -12,7 +12,6 @@ public class AllConstant_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_esxjkz_a(editorContext, node);
   }
-
   private EditorCell createCollection_esxjkz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_esxjkz_a");
@@ -20,7 +19,6 @@ public class AllConstant_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_esxjkz_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_esxjkz_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;

@@ -32,19 +32,15 @@ public class QueriesGenerated {
         }
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         return ". currency";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "get currency";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -63,19 +59,15 @@ public class QueriesGenerated {
         }
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         return ". isZero";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "compare to zero";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -94,19 +86,15 @@ public class QueriesGenerated {
         }
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         return ". amount";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "get amount";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();

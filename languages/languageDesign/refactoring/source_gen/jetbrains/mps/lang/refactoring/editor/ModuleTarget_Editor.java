@@ -22,7 +22,6 @@ public class ModuleTarget_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5pqt0n_a(editorContext, node);
   }
-
   private EditorCell createCollection_5pqt0n_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5pqt0n_a");
@@ -31,7 +30,6 @@ public class ModuleTarget_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_5pqt0n_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_5pqt0n_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5pqt0n_a0");
@@ -44,7 +42,6 @@ public class ModuleTarget_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_5pqt0n_d0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_5pqt0n_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module");
     editorCell.setCellId("Constant_5pqt0n_a0a");
@@ -54,7 +51,6 @@ public class ModuleTarget_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_5pqt0n_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_5pqt0n_b0a");
@@ -65,7 +61,6 @@ public class ModuleTarget_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_5pqt0n_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("moduleType");
@@ -85,7 +80,6 @@ public class ModuleTarget_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_5pqt0n_d0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_5pqt0n_d0a");
@@ -95,7 +89,6 @@ public class ModuleTarget_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_5pqt0n_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.refactoring.editor.RefactoringTarget");
     return editorCell;

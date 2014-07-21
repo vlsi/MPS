@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SReference;
 public class resource_supertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public resource_supertypes_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode rt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> supertypes = ListSequence.fromList(new ArrayList<SNode>());
     SNode classifierType = SLinkOperations.getTarget(rt, "classifierType", true);
@@ -33,22 +32,18 @@ public class resource_supertypes_SubtypingRule extends SubtypingRule_Runtime imp
     }
     return supertypes;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.make.script.structure.ResourceType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_os9pe9_a0a0a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -59,7 +54,6 @@ public class resource_supertypes_SubtypingRule extends SubtypingRule_Runtime imp
     quotedNode_1.addChild("classifierType", quotedNode_2);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_os9pe9_a0a3a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -67,7 +61,6 @@ public class resource_supertypes_SubtypingRule extends SubtypingRule_Runtime imp
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)"), facade.createNodeId("6168415856807657256")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_os9pe9_a0a0a3a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

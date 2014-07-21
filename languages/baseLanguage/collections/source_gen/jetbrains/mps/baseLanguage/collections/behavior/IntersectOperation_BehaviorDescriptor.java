@@ -9,5 +9,5 @@ public class IntersectOperation_BehaviorDescriptor extends BinaryOperation_Behav
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.IntersectOperation";
-  };;
-;}
+  }
+}

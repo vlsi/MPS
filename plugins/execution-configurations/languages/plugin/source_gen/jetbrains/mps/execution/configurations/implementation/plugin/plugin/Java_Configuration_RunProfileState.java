@@ -33,20 +33,16 @@ public class Java_Configuration_RunProfileState extends DebuggerRunProfileState 
   private final Java_Configuration myRunConfiguration;
   @NotNull
   private final ExecutionEnvironment myEnvironment;
-
   public Java_Configuration_RunProfileState(@NotNull Java_Configuration configuration, @NotNull Executor executor, @NotNull ExecutionEnvironment environment) {
     myRunConfiguration = configuration;
     myEnvironment = environment;
   }
-
   public ConfigurationPerRunnerSettings getConfigurationSettings() {
     return null;
   }
-
   public RunnerSettings getRunnerSettings() {
     return null;
   }
-
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
@@ -67,12 +63,10 @@ public class Java_Configuration_RunProfileState extends DebuggerRunProfileState 
       }));
     }
   }
-
   @NotNull
   public IDebuggerConfiguration getDebuggerConfiguration() {
     return Java_Command.getDebuggerConfiguration();
   }
-
   public static boolean canExecute(String executorId) {
     if (DefaultRunExecutor.EXECUTOR_ID.equals(executorId)) {
       return true;

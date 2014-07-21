@@ -30,7 +30,6 @@ public class OutputToInputPortConnector_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createDiagramConnector_87pg9j_a(editorContext, node);
   }
-
   private EditorCell createDiagramConnector_87pg9j_a(final EditorContext editorContext, final SNode node) {
     final ConnectorCell editorCell = new OutputToInputPortConnector_Editor.ConnectorCellImpl_87pg9j_a(editorContext, node);
     editorCell.setCellId("DiagramConnector_87pg9j_a");
@@ -38,16 +37,13 @@ public class OutputToInputPortConnector_Editor extends DefaultNodeEditor {
     DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   public class ConnectorCellImpl_87pg9j_a extends ConnectorCell {
     protected Property<Tuples._1<SNode>> myInputPort = new ValueProperty<Tuples._1<SNode>>();
     protected Property<Tuples._1<SNode>> myOutputPort = new ValueProperty<Tuples._1<SNode>>();
-
     private ConnectorCellImpl_87pg9j_a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
       synchronize();
     }
-
     public Mapper<SNode, PolyLineConnection> createMapper() {
       return new Mapper<SNode, PolyLineConnection>(getSNode(), createConnection()) {
         @Override
@@ -58,7 +54,6 @@ public class OutputToInputPortConnector_Editor extends DefaultNodeEditor {
             public void set(Tuples._1<SNode> port) {
               getTarget().toView().set(getTargetView(port));
             }
-
             private View getTargetView(Tuples._1<SNode> port) {
               Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port._0());
               if (descendantMapper == null) {
@@ -75,7 +70,6 @@ public class OutputToInputPortConnector_Editor extends DefaultNodeEditor {
                 getTarget().toView().set(null);
               }
             }
-
             private View getTargetView(Tuples._1<SNode> port) {
               Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port._0());
               if (descendantMapper == null) {
@@ -122,8 +116,6 @@ public class OutputToInputPortConnector_Editor extends DefaultNodeEditor {
       };
     }
 
-
-
     public Mapper<SNode, ConnectorDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, ConnectorDecoratorView>(getSNode(), createConnectorDecoratorView()) {
         @Override
@@ -145,7 +137,6 @@ public class OutputToInputPortConnector_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     private ConnectorDecoratorView createConnectorDecoratorView() {
       ConnectorDecoratorView connectorDecoratorView = new ConnectorDecoratorView();
       DiagramCell diagramCell = getDiagramCell();
@@ -161,13 +152,10 @@ public class OutputToInputPortConnector_Editor extends DefaultNodeEditor {
     }
 
 
-
-
     public void synchronize() {
       myInputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(getSNode(), "src", false)));
       myOutputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(getSNode(), "dst", false)));
     }
-
     private PolyLineConnection createConnection() {
       PolyLineConnection connection = new PolyLineConnection();
       configureView(connection.view(), new _FunctionTypes._return_P0_E0<Boolean>() {
@@ -178,7 +166,6 @@ public class OutputToInputPortConnector_Editor extends DefaultNodeEditor {
 
       return connection;
     }
-
 
 
   }

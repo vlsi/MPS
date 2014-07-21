@@ -40,20 +40,16 @@ public class QueriesGenerated {
     SNode pd = SNodeFactoryOperations.addNewChild(SNodeOperations.cast(disposeTabClosure, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration");
     SPropertyOperations.set(pd, "name", "component");
   }
-
   public static void nodeFactory_NodeSetup_ActionParameter_315309404903965694(final IOperationContext operationContext, final NodeSetupContext _context) {
     SLinkOperations.addNewChild(_context.getNewNode(), "condition", "jetbrains.mps.lang.plugin.structure.RequiredCondition");
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_1217414463812(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_Type_1217414480519(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", true, false) != null;
   }
-
   public static void removeActionsByCondition_1217414474266(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
     Iterator<SubstituteAction> actions = _context.getSubstituteActions();
     while (actions.hasNext()) {
@@ -73,7 +69,6 @@ public class QueriesGenerated {
       }
     }
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionParameter_1218807115883(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -93,7 +88,6 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(result, "type", (item), true);
                 return result;
               }
-
               public String getDescriptionText(String pattern) {
                 if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
                   return "current node";
@@ -130,7 +124,6 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(result, "key", (item), false);
                 return result;
               }
-
               public String getDescriptionText(String pattern) {
                 return ActionDataParameterDeclaration_Behavior.call_getDescription_47694270442103157(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"))), (item));
               }
@@ -141,28 +134,24 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   private static SNode _quotation_createNode_tuayuq_a0a0a0a1a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_tuayuq_b0a0a0a1a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_tuayuq_c0a0a0a1a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SModelType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_tuayuq_a0a0a0b0a0c0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -170,7 +159,6 @@ public class QueriesGenerated {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)"), facade.createNodeId("~PlatformDataKeys")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_tuayuq_a0a0a0c0a0c0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -178,7 +166,6 @@ public class QueriesGenerated {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.ide.editor(MPS.Editor/jetbrains.mps.ide.editor@java_stub)"), facade.createNodeId("~MPSEditorDataKeys")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_tuayuq_a0a0a0d0a0c0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

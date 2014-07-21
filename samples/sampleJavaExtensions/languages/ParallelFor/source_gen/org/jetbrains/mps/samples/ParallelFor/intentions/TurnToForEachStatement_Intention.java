@@ -22,61 +22,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class TurnToForEachStatement_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public TurnToForEachStatement_Intention() {
   }
-
   public String getConcept() {
     return "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor";
   }
-
   public String getPresentation() {
     return "TurnToForEachStatement";
   }
-
   public String getPersistentStateKey() {
     return "org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention";
   }
-
   public String getLanguageFqName() {
     return "org.jetbrains.mps.samples.ParallelFor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "5384012304952504715");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new TurnToForEachStatement_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Turn to Sequential";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode forStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", null);
       final SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", null);
@@ -102,7 +88,6 @@ public class TurnToForEachStatement_Intention implements IntentionFactory {
       SNodeOperations.replaceWithAnother(node, forStatement);
       editorContext.selectWRTFocusPolicy(variable);
     }
-
     public IntentionDescriptor getDescriptor() {
       return TurnToForEachStatement_Intention.this;
     }

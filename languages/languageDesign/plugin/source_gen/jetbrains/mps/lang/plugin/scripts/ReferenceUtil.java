@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 public class ReferenceUtil {
   public ReferenceUtil() {
   }
-
   public static boolean isReferenceToModel(SReference ref, String modelName) {
     if (ref == null) {
       return false;

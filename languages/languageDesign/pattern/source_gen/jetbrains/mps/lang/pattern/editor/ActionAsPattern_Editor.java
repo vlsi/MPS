@@ -23,7 +23,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_x7b2gi_a(editorContext, node);
   }
-
   private EditorCell createCollection_x7b2gi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x7b2gi_a");
@@ -36,7 +35,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_x7b2gi_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x7b2gi_a0");
@@ -49,11 +47,9 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAttributedNodeCell_x7b2gi_d0a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_x7b2gi_a0a(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "position", true), "jetbrains.mps.lang.pattern.structure.InsertAfterPosition"));
   }
-
   private EditorCell createConstant_x7b2gi_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$");
     editorCell.setCellId("Constant_x7b2gi_a0a");
@@ -63,7 +59,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_x7b2gi_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("action");
@@ -83,7 +78,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_x7b2gi_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("position");
@@ -106,7 +100,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createAttributedNodeCell_x7b2gi_d0a(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
@@ -116,7 +109,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_x7b2gi_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x7b2gi_b0");
@@ -129,11 +121,9 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_x7b2gi_d1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_x7b2gi_a1a(SNode node, EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "position", true), "jetbrains.mps.lang.pattern.structure.InsertAfterPosition");
   }
-
   private EditorCell createAttributedNodeCell_x7b2gi_a1a(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
@@ -144,7 +134,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_x7b2gi_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$");
     editorCell.setCellId("Constant_x7b2gi_b1a");
@@ -154,7 +143,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_x7b2gi_c1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("action");
@@ -174,7 +162,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_x7b2gi_d1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("position");

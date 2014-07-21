@@ -36,18 +36,14 @@ public abstract class MergeDriverPacker {
   private static final String MERGEDRIVER_PATH = "mergedriver";
   private static final String MERGER_RT = "merger-rt.jar";
   private Boolean myFromSources = null;
-
   public MergeDriverPacker() {
   }
-
   public String getPath() {
     return PathManager.getConfigPath() + File.separator + MERGEDRIVER_PATH;
   }
-
   private File getFile() {
     return new File(getPath());
   }
-
   public void pack(final Project project) {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
@@ -88,7 +84,6 @@ public abstract class MergeDriverPacker {
       }
     });
   }
-
   private void internalPack(Iterable<String> classpathDirs, File tmpDir, boolean isForZip) {
     for (String classpathDir : classpathDirs) {
       File file = new File(classpathDir);
@@ -109,7 +104,6 @@ public abstract class MergeDriverPacker {
       FileUtil.write(new File(tmpDir, "dummy.txt"), new byte[0]);
     }
   }
-
   private Iterable<String> getSvnJars() {
     final IdeaPluginDescriptor svnPlugin = PluginManager.getPlugin(PluginId.getId("Subversion"));
     if (svnPlugin != null) {
@@ -121,19 +115,14 @@ public abstract class MergeDriverPacker {
     }
     return null;
   }
-
   protected String getVCSCorePluginPath() {
     IdeaPluginDescriptor vcsCorePlugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.vcs"));
     assert vcsCorePlugin != null;
     return vcsCorePlugin.getPath().getPath();
   }
-
   protected abstract String getMPSCorePath();
-
   protected abstract Set<String> getClasspathInternal();
-
   protected abstract String getVCSCoreFileName();
-
   public Set<String> getClasspath(boolean withSvnkit) {
     Set<String> classpathItems = SetSequence.fromSet(new LinkedHashSet<String>());
     if (isFromSources()) {
@@ -161,21 +150,17 @@ public abstract class MergeDriverPacker {
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(getSvnJars()));
     return classpathItems;
   }
-
   private boolean isFromSources() {
     if (myFromSources == null) {
       myFromSources = !(new File(getMPSCorePath() + File.separator + Sequence.fromIterable(mpsLibJars).first()).exists());
     }
     return myFromSources;
   }
-
   public static MergeDriverPacker getInstance() {
     return ourInstance;
   }
-
   protected static void setInstance(MergeDriverPacker instance) {
     ourInstance = instance;
   }
-
   protected static Logger LOG = LogManager.getLogger(MergeDriverPacker.class);
 }

@@ -21,18 +21,15 @@ import org.apache.log4j.LogManager;
 
 public class RenameModel_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public RenameModel_Action() {
     super("Rename Model", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
       return true;
@@ -42,7 +39,6 @@ public class RenameModel_Action extends BaseAction {
     }
     return ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -56,7 +52,6 @@ public class RenameModel_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -82,7 +77,6 @@ public class RenameModel_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), (EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model"))).show();
@@ -92,6 +86,5 @@ public class RenameModel_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RenameModel_Action.class);
 }

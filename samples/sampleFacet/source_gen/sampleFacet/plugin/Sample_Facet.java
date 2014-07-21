@@ -35,42 +35,32 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 public class Sample_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("sampleFacet.Sample");
-
   public Sample_Facet() {
     ListSequence.fromList(targets).addElement(new Sample_Facet.Target_readParams());
     ListSequence.fromList(targets).addElement(new Sample_Facet.Target_reportFiles());
   }
-
   public Iterable<ITarget> targets() {
     return targets;
   }
-
   public Iterable<IFacet.Name> optional() {
     return null;
   }
-
   public Iterable<IFacet.Name> required() {
     return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen")});
   }
-
   public Iterable<IFacet.Name> extended() {
     return null;
   }
-
   public IFacet.Name getName() {
     return this.name;
   }
-
   public IPropertiesPersistence propertiesPersistence() {
     return new Sample_Facet.TargetProperties();
   }
-
   public static class Target_readParams implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("sampleFacet.Sample.readParams");
-
     public Target_readParams() {
     }
-
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
@@ -103,57 +93,44 @@ public class Sample_Facet extends IFacet.Stub {
         }
       };
     }
-
     public IConfig createConfig() {
       return null;
     }
-
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
-
     public Iterable<ITarget.Name> after() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.configure")});
     }
-
     public Iterable<ITarget.Name> notBefore() {
       return null;
     }
-
     public Iterable<ITarget.Name> before() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.generate")});
     }
-
     public ITarget.Name getName() {
       return name;
     }
-
     public boolean isOptional() {
       return false;
     }
-
     public boolean requiresInput() {
       return true;
     }
-
     public boolean producesOutput() {
       return true;
     }
-
     public Iterable<Class<? extends IResource>> expectedInput() {
       List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
       ListSequence.fromList(rv).addElement(MResource.class);
       return rv;
     }
-
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Parameters());
     }
-
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
@@ -161,61 +138,47 @@ public class Sample_Facet extends IFacet.Stub {
       }
       return t;
     }
-
     public int workEstimate() {
       return 1;
     }
-
     public static Sample_Facet.Target_readParams.Parameters vars(IPropertiesPool ppool) {
       return ppool.properties(name, Sample_Facet.Target_readParams.Parameters.class);
     }
-
     public static class Parameters extends MultiTuple._3<String, Integer, String> {
       public Parameters() {
         super();
       }
-
       public Parameters(String SomeParam, Integer Count, String arch) {
         super(SomeParam, Count, arch);
       }
-
       public String SomeParam(String value) {
         return super._0(value);
       }
-
       public Integer Count(Integer value) {
         return super._1(value);
       }
-
       public String arch(String value) {
         return super._2(value);
       }
-
       public String SomeParam() {
         return super._0();
       }
-
       public Integer Count() {
         return super._1();
       }
-
       public String arch() {
         return super._2();
       }
-
       @SuppressWarnings(value = "unchecked")
       public Sample_Facet.Target_readParams.Parameters assignFrom(Tuples._3<String, Integer, String> from) {
         return (Sample_Facet.Target_readParams.Parameters) super.assign(from);
       }
     }
   }
-
   public static class Target_reportFiles implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("sampleFacet.Sample.reportFiles");
-
     public Target_reportFiles() {
     }
-
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
@@ -241,71 +204,55 @@ public class Sample_Facet extends IFacet.Stub {
         }
       };
     }
-
     public IConfig createConfig() {
       return null;
     }
-
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
-
     public Iterable<ITarget.Name> after() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen")});
     }
-
     public Iterable<ITarget.Name> notBefore() {
       return null;
     }
-
     public Iterable<ITarget.Name> before() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile")});
     }
-
     public ITarget.Name getName() {
       return name;
     }
-
     public boolean isOptional() {
       return false;
     }
-
     public boolean requiresInput() {
       return true;
     }
-
     public boolean producesOutput() {
       return true;
     }
-
     public Iterable<Class<? extends IResource>> expectedInput() {
       List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
       ListSequence.fromList(rv).addElement(TResource.class);
       return rv;
     }
-
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
     }
-
     public int workEstimate() {
       return 1;
     }
   }
-
   public static class TargetProperties implements IPropertiesPersistence {
     public TargetProperties() {
     }
-
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
         ITarget.Name name = new ITarget.Name("sampleFacet.Sample.readParams");
@@ -317,7 +264,6 @@ public class Sample_Facet extends IFacet.Stub {
         }
       }
     }
-
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {

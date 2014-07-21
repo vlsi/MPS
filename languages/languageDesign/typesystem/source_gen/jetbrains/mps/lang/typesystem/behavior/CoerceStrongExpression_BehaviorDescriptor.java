@@ -9,5 +9,5 @@ public class CoerceStrongExpression_BehaviorDescriptor extends CoerceExpression_
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression";
-  };;
-;}
+  }
+}

@@ -27,7 +27,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 public class DependencyUtil {
   public DependencyUtil() {
   }
-
   public static List<DependencyUtil.Link> dependencies(DependencyUtil.Role role, SModule module, boolean trackRuntime) {
     List<DependencyUtil.Link> result = ListSequence.fromList(new ArrayList<DependencyUtil.Link>());
     ModuleDescriptor descr = ((AbstractModule) module).getModuleDescriptor();
@@ -139,7 +138,6 @@ public class DependencyUtil {
     }
     return result;
   }
-
   private static void addDeps(List<DependencyUtil.Link> result, Iterable<SModuleReference> modules, final DependencyUtil.Role role, final DependencyUtil.LinkType linktype) {
     if (modules == null) {
       return;
@@ -158,7 +156,6 @@ public class DependencyUtil {
       }
     }));
   }
-
   private static Iterable<SModuleReference> getReexportDeps(ModuleDescriptor descr) {
     return SetSequence.fromSet(((Set<jetbrains.mps.project.structure.modules.Dependency>) descr.getDependencies())).where(new IWhereFilter<jetbrains.mps.project.structure.modules.Dependency>() {
       public boolean accept(jetbrains.mps.project.structure.modules.Dependency dep) {
@@ -170,7 +167,6 @@ public class DependencyUtil {
       }
     });
   }
-
   private static Iterable<SModuleReference> getNonreexportDeps(ModuleDescriptor descr) {
     return SetSequence.fromSet(((Set<jetbrains.mps.project.structure.modules.Dependency>) descr.getDependencies())).where(new IWhereFilter<jetbrains.mps.project.structure.modules.Dependency>() {
       public boolean accept(jetbrains.mps.project.structure.modules.Dependency dep) {
@@ -182,7 +178,6 @@ public class DependencyUtil {
       }
     });
   }
-
   public static Set<Dependency> getCyclic(Dependency node, Set<Dependency> visited, List<Dependency> path) {
     Set<Dependency> res = SetSequence.fromSet(new HashSet<Dependency>());
     if (ListSequence.fromList(path).contains(node)) {
@@ -198,14 +193,12 @@ public class DependencyUtil {
     }
     return res;
   }
-
   public static Set<Tuples._2<DependencyUtil.Role, SModule>> getLoops(DependencyUtil.Role role, SModule module, boolean trackRuntime) {
     Set<Tuples._2<DependencyUtil.Role, SModule>> result = SetSequence.fromSet(new HashSet<Tuples._2<DependencyUtil.Role, SModule>>());
     Set<Tuples._2<DependencyUtil.Role, SModule>> visited = SetSequence.fromSet(new HashSet<Tuples._2<DependencyUtil.Role, SModule>>());
     calcLoops(MultiTuple.<DependencyUtil.Role,SModule>from(role, module), trackRuntime, visited, ListSequence.fromList(new ArrayList<Tuples._2<DependencyUtil.Role, SModule>>()), result);
     return result;
   }
-
   private static void calcLoops(Tuples._2<DependencyUtil.Role, SModule> cur, boolean trackRuntime, Set<Tuples._2<DependencyUtil.Role, SModule>> visited, List<Tuples._2<DependencyUtil.Role, SModule>> path, Set<Tuples._2<DependencyUtil.Role, SModule>> result) {
     if (ListSequence.fromList(path).contains(cur)) {
       SetSequence.fromSet(result).addSequence(ListSequence.fromList(path).tailListSequence(ListSequence.fromList(path).indexOf(cur)));
@@ -221,7 +214,6 @@ public class DependencyUtil {
     }
     ListSequence.fromList(path).removeLastElement();
   }
-
   public static   enum LinkType {
     Depends("depends on"),
     ReexportsDep("reexports dependency on"),
@@ -239,17 +231,14 @@ public class DependencyUtil {
     LangCore("");
 
     private String myText;
-
     LinkType(String text) {
       myText = text;
     }
-
     @Override
     public String toString() {
       return myText;
     }
   }
-
   public static   enum Role {
     None(),
     DTDependency_(),
@@ -265,66 +254,52 @@ public class DependencyUtil {
 
     Role() {
     }
-
     public boolean isUsedLanguage() {
       return this == DependencyUtil.Role.UsedLanguage;
     }
-
     public boolean isDTDependency() {
       return this == DependencyUtil.Role.DTDependency_ || this == DependencyUtil.Role.DTDependency;
     }
-
     public boolean isRTDependency() {
       return this == DependencyUtil.Role.RTDependency || this == DependencyUtil.Role.RTLibraries;
     }
-
     public boolean isDependency() {
       return isDTDependency() || isRTDependency();
     }
   }
-
   public static class Dependency extends MultiTuple._2<SModule, DependencyUtil.Role> {
     public Dependency() {
       super();
     }
-
     public Dependency(SModule module, DependencyUtil.Role role) {
       super(module, role);
     }
-
     public SModule module(SModule value) {
       return super._0(value);
     }
-
     public DependencyUtil.Role role(DependencyUtil.Role value) {
       return super._1(value);
     }
-
     public SModule module() {
       return super._0();
     }
-
     public DependencyUtil.Role role() {
       return super._1();
     }
-
     @SuppressWarnings(value = "unchecked")
     public DependencyUtil.Dependency assignFrom(Tuples._2<SModule, DependencyUtil.Role> from) {
       return (DependencyUtil.Dependency) super.assign(from);
     }
   }
-
   public static class Link {
     public DependencyUtil.Role role;
     public SModule module;
     public DependencyUtil.LinkType linktype;
-
     public Link(SModule module, DependencyUtil.Role role, DependencyUtil.LinkType linktype) {
       this.module = module;
       this.role = role;
       this.linktype = linktype;
     }
-
     @Override
     public boolean equals(Object object) {
       if (object instanceof DependencyUtil.Link) {
@@ -333,81 +308,65 @@ public class DependencyUtil {
       }
       return false;
     }
-
     @Override
     public int hashCode() {
       return module.hashCode() + linktype.hashCode();
     }
   }
-
   private static Set<SModuleReference> check_he47wm_b0a0j3a1(LanguageDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getExtendedLanguages();
     }
     return null;
   }
-
   private static Set<SModuleReference> check_he47wm_b0b0j3a1(LanguageDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRuntimeModules();
     }
     return null;
   }
-
   private static Set<SModuleReference> check_he47wm_b0a0k3a1(LanguageDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getExtendedLanguages();
     }
     return null;
   }
-
   private static Set<SModuleReference> check_he47wm_b0b0k3a1(LanguageDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRuntimeModules();
     }
     return null;
   }
-
   private static <T> T as_he47wm_a0a0a0a0c0g0a3a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_he47wm_a0a0a0a0d0g0a3a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_he47wm_a0a0a2d0b(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_he47wm_a0a0a4d0b(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_he47wm_a0a1a0a1a5d0b(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_he47wm_a0a1a0a4a0a7d0b(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_he47wm_a0a0a0a0d0f0a0h3a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_he47wm_a0b0a0j3a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_he47wm_a0b0b0j3a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_he47wm_a0b0a0k3a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_he47wm_a0b0b0k3a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

@@ -30,68 +30,53 @@ import jetbrains.mps.smodel.SReference;
 
 public class CreateReferenceConcept_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreateReferenceConcept_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
   }
-
   public String getPresentation() {
     return "CreateReferenceConcept";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.structure";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)", "6895093993902311021");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateReferenceConcept_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create Reference Concept";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       // structure 
       SNode concept = _quotation_createNode_vn7eng_a0b0a(NameUtil.decapitalize(SPropertyOperations.getString(node, "name")), node, SPropertyOperations.getString(node, "name") + "Reference");
@@ -111,12 +96,10 @@ public class CreateReferenceConcept_Intention implements IntentionFactory {
       IOperationContext context = editorContext.getOperationContext();
       NavigationSupport.getInstance().openNode(context, concept, true, true);
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreateReferenceConcept_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_vn7eng_a0b0a(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -132,7 +115,6 @@ public class CreateReferenceConcept_Intention implements IntentionFactory {
     quotedNode_4.addChild("linkDeclaration", quotedNode_5);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_vn7eng_a0l0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

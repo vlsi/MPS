@@ -8,134 +8,104 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 public class ExtendedNamedTuples {
   public ExtendedNamedTuples() {
   }
-
   public static class Foo extends MultiTuple._2<Integer, String> {
     public Foo() {
       super();
     }
-
     public Foo(Integer num, String str) {
       super(num, str);
     }
-
     public Integer num(Integer value) {
       return super._0(value);
     }
-
     public String str(String value) {
       return super._1(value);
     }
-
     public Integer num() {
       return super._0();
     }
-
     public String str() {
       return super._1();
     }
-
     @SuppressWarnings(value = "unchecked")
     public ExtendedNamedTuples.Foo assignFrom(Tuples._2<Integer, String> from) {
       return (ExtendedNamedTuples.Foo) super.assign(from);
     }
   }
-
   public static class Bar extends ExtendedNamedTuples.Foo implements Tuples._4<Integer, String, String, Double> {
     private MultiTuple._2<String, Double> tuple;
-
     public Bar() {
       super();
     }
-
     public Bar(Integer num, String str, String id, Double size) {
       super(num, str);
       this.tuple = new MultiTuple._2<String, Double>(id, size);
     }
-
     public String id(String value) {
       return this._2(value);
     }
-
     public Double size(Double value) {
       return this._3(value);
     }
-
     public String id() {
       return this._2();
     }
-
     public Double size() {
       return this._3();
     }
-
     public String _2(String id) {
       return tuple._0();
     }
-
     public Double _3(Double size) {
       return tuple._1();
     }
-
     public String _2() {
       return tuple._0();
     }
-
     public Double _3() {
       return tuple._1();
     }
-
     public Tuples._3<Integer, String, String> assign(Tuples._3<? extends Integer, ? extends String, ? extends String> from) {
       super.assign(from);
       tuple.assign(from._2());
       return this;
     }
-
     public Tuples._4<Integer, String, String, Double> assign(Tuples._4<? extends Integer, ? extends String, ? extends String, ? extends Double> from) {
       super.assign(from);
       tuple.assign(from._2(), from._3());
       return this;
     }
-
     @SuppressWarnings(value = "unchecked")
     public ExtendedNamedTuples.Bar assignFrom(Tuples._2<String, Double> from) {
       return (ExtendedNamedTuples.Bar) super.assign(from);
     }
   }
-
   public static class Qux extends ExtendedNamedTuples.Bar implements Tuples._5<Integer, String, String, Double, String> {
     private MultiTuple._1<String> tuple;
-
     public Qux() {
       super();
     }
-
     public Qux(Integer num, String str, String id, Double size, String field) {
       super(num, str, id, size);
       this.tuple = new MultiTuple._1<String>(field);
     }
-
     public String field(String value) {
       return this._4(value);
     }
-
     public String field() {
       return this._4();
     }
-
     public String _4(String field) {
       return tuple._0();
     }
-
     public String _4() {
       return tuple._0();
     }
-
     public Tuples._5<Integer, String, String, Double, String> assign(Tuples._5<? extends Integer, ? extends String, ? extends String, ? extends Double, ? extends String> from) {
       super.assign(from);
       tuple.assign(from._4());
       return this;
     }
-
     @SuppressWarnings(value = "unchecked")
     public ExtendedNamedTuples.Qux assignFrom(Tuples._1<String> from) {
       return (ExtendedNamedTuples.Qux) super.assign(from);

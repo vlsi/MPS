@@ -30,11 +30,9 @@ import org.apache.log4j.LogManager;
 /*package*/ class ModelMerger extends SimpleMerger {
   private String myModelName;
   private String myExtension;
-
   public ModelMerger(String extension) {
     myExtension = extension;
   }
-
   @Override
   @Nullable
   public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {
@@ -138,7 +136,6 @@ import org.apache.log4j.LogManager;
 
     return backup(baseContent, localContent, latestContent);
   }
-
   private Tuples._2<Integer, byte[]> backup(FileContent baseContent, FileContent localContent, FileContent latestContent) {
     try {
       File zipModel = MergeDriverBackupUtil.zipModel(new byte[][]{baseContent.getData(), localContent.getData(), latestContent.getData()}, myModelName);
@@ -154,7 +151,6 @@ import org.apache.log4j.LogManager;
     }
     return null;
   }
-
   private static int getPersistenceVersion(SModel model) {
     jetbrains.mps.smodel.SModel m = ((SModelBase) model).getSModelInternal();
     if (m instanceof DefaultSModel) {
@@ -162,6 +158,5 @@ import org.apache.log4j.LogManager;
     }
     return -1;
   }
-
   protected static Logger LOG = LogManager.getLogger(ModelMerger.class);
 }

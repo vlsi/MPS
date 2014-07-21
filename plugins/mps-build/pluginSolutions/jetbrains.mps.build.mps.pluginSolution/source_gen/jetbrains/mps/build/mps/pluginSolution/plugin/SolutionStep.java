@@ -15,32 +15,26 @@ import org.jetbrains.annotations.NotNull;
 
 public class SolutionStep extends TwoOptionsStep<SModule> {
   private final Project myMpsProject;
-
   public SolutionStep(Project project, AbstractBuildGenerator generator, IErrorHandler handler) {
     super(ProjectHelper.toIdeaProject(project), generator, handler);
     this.myMpsProject = project;
   }
-
   @Override
   public String getDescription() {
     return "Select a solution to create a new build script.";
   }
-
   @Override
   protected void setChecked(boolean checked) {
     this.myGenerator.setCreateSolution(checked);
   }
-
   @Override
   protected boolean getChecked() {
     return this.myGenerator.getCreateSolution();
   }
-
   @Override
   protected String getComboBoxName() {
     return "Use existing solution:";
   }
-
   @Override
   protected String getVariantName(final SModule module) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
@@ -50,32 +44,26 @@ public class SolutionStep extends TwoOptionsStep<SModule> {
       }
     });
   }
-
   @Override
   protected String getTextFieldText() {
     return this.myGenerator.getNewSolutionName();
   }
-
   @Override
   protected void setTextFieldText(String text) {
     this.myGenerator.setNewSolutionName(text);
   }
-
   @Override
   protected String getCheckBoxName() {
     return "Create new solution";
   }
-
   @Override
   protected void setVariant(SModule m) {
     this.myGenerator.setSolution((Solution) m);
   }
-
   @Override
   protected String getTextFieldName() {
     return "New solution name:";
   }
-
   @Override
   protected SModule[] getVariants() {
     return Sequence.fromIterable(((Iterable<SModule>) this.myMpsProject.getModules())).where(new IWhereFilter<SModule>() {
@@ -88,17 +76,14 @@ public class SolutionStep extends TwoOptionsStep<SModule> {
       }
     }).toGenericArray(SModule.class);
   }
-
   @Override
   protected boolean isCheckBoxEnabled() {
     return true;
   }
-
   @Override
   protected boolean isValid(String text) {
     return this.myGenerator.isValidSolutionName(text);
   }
-
   @Override
   protected String getWarningText(String text) {
     if (text.equals("")) {
@@ -106,7 +91,6 @@ public class SolutionStep extends TwoOptionsStep<SModule> {
     }
     return "Module " + text + " already exists, choose another name.";
   }
-
   @NotNull
   @Override
   public String getImageText() {

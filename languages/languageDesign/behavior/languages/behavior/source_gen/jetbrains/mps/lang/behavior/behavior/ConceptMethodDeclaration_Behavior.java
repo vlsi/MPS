@@ -12,17 +12,17 @@ import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ConceptMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode call_getBehaviour_1225196403947(SNode thisNode) {
+  }
+  public static SNode call_getBehaviour_1225196403947(SNode thisNode) {
     return SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
-  };;
-;  public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
+  }
+  public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;
-  };;
-;  public static SNode call_getContainingConcept_1241074789565(SNode thisNode) {
+  }
+  public static SNode call_getContainingConcept_1241074789565(SNode thisNode) {
     return SLinkOperations.getTarget(ConceptMethodDeclaration_Behavior.call_getBehaviour_1225196403947(thisNode), "concept", false);
-  };;
-;  public static SNode call_getOverridenMethod_1225196403956(SNode thisNode) {
+  }
+  public static SNode call_getOverridenMethod_1225196403956(SNode thisNode) {
     if (SLinkOperations.getTarget(thisNode, "overriddenMethod", false) != null) {
       if (SLinkOperations.getTarget(thisNode, "overriddenMethod", false) == thisNode) {
         return thisNode;
@@ -34,8 +34,8 @@ public class ConceptMethodDeclaration_Behavior {
       return thisNode;
     }
     return null;
-  };;
-;  public static boolean call_isCorrectlyOverriden_1227262347923(SNode thisNode) {
+  }
+  public static boolean call_isCorrectlyOverriden_1227262347923(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "overriddenMethod", false) == null)) {
       return true;
     }
@@ -52,18 +52,18 @@ public class ConceptMethodDeclaration_Behavior {
       }
     }
     return true;
-  };;
-;  public static String call_getOverridenMethodConceptName_1225196403980(SNode thisNode) {
+  }
+  public static String call_getOverridenMethodConceptName_1225196403980(SNode thisNode) {
     SNode conceptDeclaration = SLinkOperations.getTarget(SNodeOperations.getAncestor(ConceptMethodDeclaration_Behavior.call_getOverridenMethod_1225196403956(thisNode), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "concept", false);
     return SPropertyOperations.getString(conceptDeclaration, "name");
-  };;
-;  public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {
+  }
+  public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {
     return SPropertyOperations.getBoolean(thisNode, "isAbstract");
-  };;
-;  public static SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
+  }
+  public static SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "overriddenMethod", false);
-  };;
-;  public static boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
+  }
+  public static boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
     return false;
-  };;
-;}
+  }
+}

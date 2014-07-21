@@ -11,9 +11,9 @@ public class RightOperandType_parameter_BehaviorDescriptor extends ConceptFuncti
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return RightOperandType_parameter_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter";
-  };;
-;}
+  }
+}

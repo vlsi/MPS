@@ -13,18 +13,14 @@ import jetbrains.mps.make.resources.IResource;
 
 public class CompositeResult implements IResult {
   private Map<ITarget.Name, IResult> results = MapSequence.fromMap(new LinkedHashMap<ITarget.Name, IResult>(16, (float) 0.75, false));
-
   public CompositeResult() {
   }
-
   public void addResult(ITarget.Name target, IResult res) {
     MapSequence.fromMap(results).put(target, res);
   }
-
   public IResult getResult(ITarget.Name target) {
     return MapSequence.fromMap(results).get(target);
   }
-
   @Override
   public boolean isSucessful() {
     return Sequence.fromIterable(MapSequence.fromMap(results).values()).all(new IWhereFilter<IResult>() {
@@ -33,7 +29,6 @@ public class CompositeResult implements IResult {
       }
     });
   }
-
   @Override
   public Iterable<IResource> output() {
     if (MapSequence.fromMap(results).isEmpty()) {

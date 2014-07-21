@@ -30,14 +30,10 @@ public class JavaConvertUtil {
     return result;
   }
 
-
-
   private static boolean accept(IFile file) {
     // called only for files, not dirs 
     return file.getName().endsWith(".java");
   }
-
-
 
   private static Iterable<IFile> onlyLeaves(Iterable<IFile> all) {
     Set<IFile> dirs = SetSequence.fromSetWithValues(new HashSet<IFile>(), Sequence.fromIterable(all).where(new IWhereFilter<IFile>() {

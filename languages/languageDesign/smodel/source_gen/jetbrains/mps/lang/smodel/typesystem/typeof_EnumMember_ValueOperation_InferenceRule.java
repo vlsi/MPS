@@ -18,7 +18,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_EnumMember_ValueOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode Enum_typevar_1240331870095 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -39,22 +38,18 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240577305543", false, false);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_ecgaoh_a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

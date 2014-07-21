@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_AnalyzerFunctionResultType_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_AnalyzerFunctionResultType_InferenceRule() {
   }
-
   public void applyRule(final SNode resultType, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = resultType;
@@ -23,18 +22,15 @@ public class typeof_AnalyzerFunctionResultType_InferenceRule extends AbstractInf
       typeCheckingContext.createEquation((SNode) SLinkOperations.getTarget(SNodeOperations.getAncestor(resultType, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", false, false), "latticeElementType", true), (SNode) resultType, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunctionResultType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

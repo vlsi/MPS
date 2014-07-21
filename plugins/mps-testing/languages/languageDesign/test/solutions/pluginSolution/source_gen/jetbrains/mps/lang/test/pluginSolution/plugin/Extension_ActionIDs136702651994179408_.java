@@ -12,7 +12,6 @@ public class Extension_ActionIDs136702651994179408_ extends Extension.Default<Li
   public Extension_ActionIDs136702651994179408_() {
     super("jetbrains.mps.lang.test.ActionIDs");
   }
-
   public List<String> get() {
     return ListSequence.fromListAndArray(new ArrayList<String>(), ActionManager.getInstance().getActionIds(""));
   }

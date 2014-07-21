@@ -9,5 +9,5 @@ public class CreateComparableEquationStatementStrong_BehaviorDescriptor extends 
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong";
-  };;
-;}
+  }
+}

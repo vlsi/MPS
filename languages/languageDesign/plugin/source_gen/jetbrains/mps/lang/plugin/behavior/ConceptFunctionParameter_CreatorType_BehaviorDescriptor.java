@@ -10,5 +10,5 @@ public abstract class ConceptFunctionParameter_CreatorType_BehaviorDescriptor ex
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType";
-  };;
-;}
+  }
+}

@@ -17,73 +17,57 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class RemoveMayBeUnreachable_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public RemoveMayBeUnreachable_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.dataFlow.structure.EmitStatement";
   }
-
   public String getPresentation() {
     return "RemoveMayBeUnreachable";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.dataFlow.intentions.RemoveMayBeUnreachable_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.dataFlow";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)", "1206534526647");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new RemoveMayBeUnreachable_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Remove May Be Unreachable";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), node);
       SelectionUtil.selectNode(editorContext, node);
     }
-
     public IntentionDescriptor getDescriptor() {
       return RemoveMayBeUnreachable_Intention.this;
     }

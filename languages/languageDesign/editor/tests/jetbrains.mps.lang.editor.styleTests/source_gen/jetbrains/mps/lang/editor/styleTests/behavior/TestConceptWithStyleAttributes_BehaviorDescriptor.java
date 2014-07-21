@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class TestConceptWithStyleAttributes_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public TestConceptWithStyleAttributes_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes";

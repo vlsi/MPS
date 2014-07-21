@@ -11,5 +11,5 @@ public abstract class UnboundClosureParameterDeclaration_BehaviorDescriptor exte
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration";
-  };;
-;}
+  }
+}

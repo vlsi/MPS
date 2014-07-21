@@ -17,7 +17,6 @@ public class SelectionFrameView extends AbstractExternalFrameView {
   public Property<Color> color = new ValueProperty<Color>(Color.BLACK);
   public Property<Integer> lineWidth = new ValueProperty<Integer>(1);
 
-
   public SelectionFrameView() {
     new Mapper<SelectionFrameView, SelectionFrameView>(this, this) {
       @Override
@@ -43,12 +42,10 @@ public class SelectionFrameView extends AbstractExternalFrameView {
       }
     }.attachRoot();
   }
-
   public void setLineWidth(int width) {
     lineWidth.set(width);
     frameWidth.set(AbstractExternalFrameView.getHalfWidth(width));
   }
-
   private void updateBorderView(PolyLineView polyLine, Rectangle frameBounds) {
     Vector topLeft = frameBounds.origin;
     Vector bottomRight = topLeft.add(frameBounds.dimension);

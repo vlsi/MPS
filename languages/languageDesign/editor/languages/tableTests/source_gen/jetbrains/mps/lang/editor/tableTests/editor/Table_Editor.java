@@ -30,7 +30,6 @@ public class Table_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3p37vj_a(editorContext, node);
   }
-
   private EditorCell createCollection_3p37vj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3p37vj_a");
@@ -40,7 +39,6 @@ public class Table_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTable_3p37vj_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_3p37vj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Table");
     editorCell.setCellId("Constant_3p37vj_a0");
@@ -51,7 +49,6 @@ public class Table_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_3p37vj_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -72,7 +69,6 @@ public class Table_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createTable_3p37vj_c0(EditorContext editorContext, SNode node) {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
@@ -81,22 +77,18 @@ public class Table_Editor extends DefaultNodeEditor {
           public SNode getValueAt(int row, int column) {
             return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).getElement(row), "cells", true)).getElement(column);
           }
-
           @Override
           public int getRowCount() {
             return ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).count();
           }
-
           @Override
           public int getColumnCount() {
             return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).first(), "cells", true)).count();
           }
-
           @Override
           public void deleteRow(int rowNumber) {
             ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).removeElementAt(rowNumber);
           }
-
           @Override
           public void insertRow(int rowNumber) {
             SNode rowNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Row", null);
@@ -105,14 +97,12 @@ public class Table_Editor extends DefaultNodeEditor {
             }
             ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).insertElement(rowNumber, rowNode);
           }
-
           @Override
           public void deleteColumn(int columnNumber) {
             for (SNode row : ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true))) {
               ListSequence.fromList(SLinkOperations.getTargets(row, "cells", true)).removeElementAt(columnNumber);
             }
           }
-
           @Override
           public void insertColumn(int columnNumber) {
             for (SNode row : ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true))) {

@@ -28,11 +28,9 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ie6eqd_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createComponent_ie6eqd_a(editorContext, node);
   }
-
   private EditorCell createCollection_ie6eqd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ie6eqd_a");
@@ -43,7 +41,6 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ie6eqd_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_ie6eqd_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftExpression");
@@ -63,7 +60,6 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_ie6eqd_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -72,7 +68,6 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractEquationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_ie6eqd_a0b0()}));
     return editorCell;
   }
-
   private static Color _StyleParameter_QueryFunction_ie6eqd_a0b0(EditorContext editorContext, SNode node) {
     if (SPropertyOperations.getBoolean(node, "checkOnly")) {
       return Color.GRAY;
@@ -80,16 +75,13 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
       return Color.BLACK;
     }
   }
-
   public static class ReplaceWith_AbstractEquationStatement_cellMenu_ie6eqd_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractEquationStatement_cellMenu_ie6eqd_a0b0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
     }
   }
-
   private EditorCell createRefNode_ie6eqd_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightExpression");
@@ -109,14 +101,12 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ie6eqd_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_ie6eqd_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_ie6eqd_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.typesystem.editor.AbstractEquationInspector");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

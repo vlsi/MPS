@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class NamespaceNewActionsEx_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(NamespaceNewActionsEx_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.devkit.actions.NamespaceNewActionsEx_ActionGroup";
-
   public NamespaceNewActionsEx_ActionGroup() {
     super("NamespaceNewActionsEx", ID);
     this.setIsInternal(false);

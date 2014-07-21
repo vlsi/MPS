@@ -16,7 +16,6 @@ public class BuildModuleTestsPlugin_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_a2ysah_a(editorContext, node);
   }
-
   private EditorCell createCollection_a2ysah_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a2ysah_a");
@@ -24,7 +23,6 @@ public class BuildModuleTestsPlugin_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_a2ysah_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_a2ysah_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module-tests");
     editorCell.setCellId("Constant_a2ysah_a0");

@@ -14,7 +14,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class typeof_BooleanInstructionOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_BooleanInstructionOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode booleanInstructionOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = booleanInstructionOperation;
@@ -22,22 +21,18 @@ public class typeof_BooleanInstructionOperation_InferenceRule extends AbstractIn
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)", "7180022869589054944", true), (SNode) _quotation_createNode_4foj38_a0a0b(), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.dataFlow.structure.BooleanInstructionOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_4foj38_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

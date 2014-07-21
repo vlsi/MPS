@@ -14,11 +14,11 @@ import jetbrains.mps.smodel.SReference;
 
 public class QueryFunction_ParameterizedSubstitute_Icon_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean virtual_usesParameterObject_1262430001741497984(SAbstractConcept thisConcept) {
+  }
+  public static boolean virtual_usesParameterObject_1262430001741497984(SAbstractConcept thisConcept) {
     return true;
-  };;
-;  public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
+  }
+  public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childConcept"));
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model"));
@@ -28,15 +28,15 @@ public class QueryFunction_ParameterizedSubstitute_Icon_Behavior {
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern"));
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode"));
     return result;
-  };;
-;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  }
+  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_fh5p0m_a0a2();
-  };;
-;  private static SNode _quotation_createNode_fh5p0m_a0a2() {
+  }
+  private static SNode _quotation_createNode_fh5p0m_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)"), facade.createNodeId("~Icon")));
     return quotedNode_1;
-  };;
-;}
+  }
+}

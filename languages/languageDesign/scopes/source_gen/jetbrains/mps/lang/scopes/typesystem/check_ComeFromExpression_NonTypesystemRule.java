@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ComeFromExpression_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ComeFromExpression_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // todo: do right stuff! =( 
     if (!(SPropertyOperations.getString(SNodeOperations.getAncestor(expr, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false), "name").equals("getScope"))) {
@@ -27,18 +26,15 @@ public class check_ComeFromExpression_NonTypesystemRule extends AbstractNonTypes
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.scopes.structure.ComeFromExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

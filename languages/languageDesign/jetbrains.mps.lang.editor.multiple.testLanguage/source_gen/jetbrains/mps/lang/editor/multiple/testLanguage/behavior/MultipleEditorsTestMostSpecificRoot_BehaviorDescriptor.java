@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class MultipleEditorsTestMostSpecificRoot_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public MultipleEditorsTestMostSpecificRoot_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestMostSpecificRoot";

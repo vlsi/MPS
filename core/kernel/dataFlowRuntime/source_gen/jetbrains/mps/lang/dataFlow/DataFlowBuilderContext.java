@@ -7,16 +7,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class DataFlowBuilderContext {
   private SNode myNode;
   private MPSProgramBuilder myBuilder;
-
   public DataFlowBuilderContext(SNode node, MPSProgramBuilder builder) {
     this.myNode = node;
     this.myBuilder = builder;
   }
-
   public MPSProgramBuilder getBuilder() {
     return this.myBuilder;
   }
-
   public SNode getNode() {
     return this.myNode;
   }

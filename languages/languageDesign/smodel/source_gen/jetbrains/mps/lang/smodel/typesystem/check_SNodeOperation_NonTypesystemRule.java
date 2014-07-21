@@ -12,23 +12,19 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_SNodeOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_SNodeOperation_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     RulesUtil.checkAppliedCorrectly_generic(typeCheckingContext, op);
     RulesUtil.checkOpParameters_generic(typeCheckingContext, op);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.SNodeOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

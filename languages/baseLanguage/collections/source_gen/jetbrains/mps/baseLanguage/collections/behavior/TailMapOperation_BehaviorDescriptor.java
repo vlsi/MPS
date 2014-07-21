@@ -9,5 +9,5 @@ public class TailMapOperation_BehaviorDescriptor extends SortedMapOperation_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.TailMapOperation";
-  };;
-;}
+  }
+}

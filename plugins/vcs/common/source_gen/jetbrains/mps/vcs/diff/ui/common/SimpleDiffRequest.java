@@ -17,13 +17,11 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 public class SimpleDiffRequest extends DiffRequest {
   private String[] myContentTitles;
   private DiffContent[] myContents;
-
   public SimpleDiffRequest(@NotNull Project project, @Nullable DiffContent[] models, @NotNull String[] contentTitles) {
     super(project);
     myContentTitles = contentTitles;
     myContents = models;
   }
-
   public SimpleDiffRequest(@NotNull Project project, @Nullable SModel[] models, @NotNull String[] contentTitles) {
     super(project);
     myContentTitles = contentTitles;
@@ -35,17 +33,14 @@ public class SimpleDiffRequest extends DiffRequest {
       }).toGenericArray(SimpleContent.class);
     }
   }
-
   @Override
   public String getWindowTitle() {
     return "Model difference";
   }
-
   @Override
   public String[] getContentTitles() {
     return myContentTitles;
   }
-
   @NotNull
   @Override
   public DiffContent[] getContents() {

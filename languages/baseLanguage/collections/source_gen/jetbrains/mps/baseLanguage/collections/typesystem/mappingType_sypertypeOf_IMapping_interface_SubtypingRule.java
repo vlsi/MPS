@@ -19,18 +19,14 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
-
   public mappingType_sypertypeOf_IMapping_interface_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode ignore, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_y1o6nk_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_KEY")), ((SNode) status.getPattern().getFieldValue("patternVar_VALUE")));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       GeneratedMatchingPattern pattern = new mappingType_sypertypeOf_IMapping_interface_SubtypingRule.Pattern_y1o6nk_a0a0a0a4();
@@ -39,18 +35,14 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public static class Pattern_y1o6nk_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_KEY;
     /*package*/ SNode patternVar_VALUE;
-
     public Pattern_y1o6nk_a0a0a0a4() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_6v7ed2_a0a = nodeToMatch;
@@ -80,18 +72,15 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_KEY = (SNode) pattern.getFieldValue("patternVar_KEY");
         patternVar_VALUE = (SNode) pattern.getFieldValue("patternVar_VALUE");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_KEY".equals(fieldName)) {
         return patternVar_KEY;
@@ -101,11 +90,9 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNode _quotation_createNode_y1o6nk_a0a2(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -122,6 +109,5 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
     }
     return quotedNode_3;
   }
-
   private static SNodePointer SNODE_POINTER_y1o6nk_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030190");
 }

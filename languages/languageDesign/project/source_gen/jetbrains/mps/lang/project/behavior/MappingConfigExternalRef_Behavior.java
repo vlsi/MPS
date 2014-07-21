@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class MappingConfigExternalRef_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "generator", true) != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "innerRef", true), "virtual_isComplete_2721285250110257005", new Object[]{});
   }

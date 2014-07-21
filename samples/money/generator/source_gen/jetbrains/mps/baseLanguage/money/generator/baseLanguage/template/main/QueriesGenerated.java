@@ -15,87 +15,67 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_1187352489455(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.money.structure.MoneyCreator");
   }
-
   public static boolean baseMappingRule_Condition_1187347436103(final BaseMappingRuleContext _context) {
     return Util.isPlusMinusExpressionMoneyExpression(_context.getNode());
   }
-
   public static boolean baseMappingRule_Condition_1187349818811(final BaseMappingRuleContext _context) {
     return Util.isPlusMinusExpressionMoneyExpression(_context.getNode());
   }
-
   public static boolean baseMappingRule_Condition_1187350249789(final BaseMappingRuleContext _context) {
     return Util.isMulDivExpressionMoneyExpression(_context.getNode());
   }
-
   public static boolean baseMappingRule_Condition_1187350287829(final BaseMappingRuleContext _context) {
     return Util.isMulDivExpressionMoneyExpression(_context.getNode());
   }
-
   public static SNode sourceNodeQuery_1187347202363(final SourceSubstituteMacroNodeContext _context) {
     SNode new_node = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
     SPropertyOperations.set(new_node, "value", SPropertyOperations.getString(_context.getNode(), "amount"));
     return new_node;
   }
-
   public static SNode sourceNodeQuery_1187347224873(final SourceSubstituteMacroNodeContext _context) {
     SNode new_node = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
     SPropertyOperations.set(new_node, "value", SPropertyOperations.getString(_context.getNode(), "currency"));
     return new_node;
   }
-
   public static SNode sourceNodeQuery_1187347392064(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.money.structure.MoneyCreator"), "amount", true);
   }
-
   public static SNode sourceNodeQuery_1187347370038(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.money.structure.MoneyCreator"), "currency", true);
   }
-
   public static SNode sourceNodeQuery_1217888347510(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
-
   public static SNode sourceNodeQuery_1217888349960(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
   public static SNode sourceNodeQuery_1217888375666(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
-
   public static SNode sourceNodeQuery_1217888321098(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
   public static SNode sourceNodeQuery_1217888394951(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
-
   public static SNode sourceNodeQuery_1187350367397(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
   public static SNode sourceNodeQuery_1217888412279(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
-
   public static SNode sourceNodeQuery_1187350349293(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
   public static SNode sourceNodeQuery_1217888432992(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "instance", true);
   }
-
   public static SNode sourceNodeQuery_1217888379132(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "instance", true);
   }
-
   public static SNode sourceNodeQuery_1217888377424(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "instance", true);
   }

@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NonNls;
 public final class ProjectPropertiesDialog extends DialogWrapper {
   private ProjectPropertiesComponent myPropertiesComponent;
 
-
   public ProjectPropertiesDialog(final Project project) {
     super(project);
     myPropertiesComponent = new ProjectPropertiesComponent(project, null);
@@ -22,21 +21,17 @@ public final class ProjectPropertiesDialog extends DialogWrapper {
     init();
   }
 
-
-
   @Nullable
   @Override
   public JComponent createCenterPanel() {
     return myPropertiesComponent;
   }
-
   @Nullable
   @NonNls
   @Override
   protected String getDimensionServiceKey() {
     return this.getClass().getCanonicalName();
   }
-
   @Override
   protected void doOKAction() {
     myPropertiesComponent.apply();

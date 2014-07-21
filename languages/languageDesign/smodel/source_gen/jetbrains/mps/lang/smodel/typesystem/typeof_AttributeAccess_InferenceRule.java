@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_AttributeAccess_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_AttributeAccess_InferenceRule() {
   }
-
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode attr = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(operation, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{});
     if (AttributeDesignTimeOperations.isMultipleAttribute(attr) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier")) {
@@ -36,22 +35,18 @@ public class typeof_AttributeAccess_InferenceRule extends AbstractInferenceRule_
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.AttributeAccess";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_dktlpw_a0a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -59,7 +54,6 @@ public class typeof_AttributeAccess_InferenceRule extends AbstractInferenceRule_
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "elementConcept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_dktlpw_a0a0a1a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

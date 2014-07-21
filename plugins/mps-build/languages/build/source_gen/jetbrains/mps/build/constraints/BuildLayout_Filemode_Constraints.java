@@ -15,12 +15,10 @@ public class BuildLayout_Filemode_Constraints extends BaseConstraintsDescriptor 
   public BuildLayout_Filemode_Constraints() {
     super("jetbrains.mps.build.structure.BuildLayout_Filemode");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -31,11 +29,9 @@ public class BuildLayout_Filemode_Constraints extends BaseConstraintsDescriptor 
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     SNode archive = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet", true, false);
     return archive != null && BehaviorReflection.invokeVirtual(Boolean.TYPE, archive, "virtual_hasFileModeAttribute_6408167411310575237", new Object[]{}) || parentNode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "7801138212747054670");
 }

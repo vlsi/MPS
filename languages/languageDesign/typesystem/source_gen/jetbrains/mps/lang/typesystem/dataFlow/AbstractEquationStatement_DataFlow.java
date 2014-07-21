@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class AbstractEquationStatement_DataFlow extends DataFlowBuilder {
   public AbstractEquationStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "leftExpression", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));

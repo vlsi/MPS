@@ -9,5 +9,5 @@ public class ActionAsPattern_BehaviorDescriptor extends AsPattern_BehaviorDescri
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.ActionAsPattern";
-  };;
-;}
+  }
+}

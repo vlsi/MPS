@@ -6,7 +6,6 @@ package jetbrains.mps.build.workflow.behavior;
 public class BwfJavaLibraryReference_BehaviorDescriptor extends BwfJavaDependency_BehaviorDescriptor {
   public BwfJavaLibraryReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference";

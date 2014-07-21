@@ -23,74 +23,58 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddOperationsAnnotation_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddOperationsAnnotation_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
   public String getPresentation() {
     return "AddOperationsAnnotation";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.test.intentions.AddOperationsAnnotation_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.test";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return NodesTestCase_Behavior.call_isIntentionApplicable_1217250498008(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase"))), node);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)", "1215604006108");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddOperationsAnnotation_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Node Operations Test Annotation";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newAnottation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeOperationsContainer", null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"), newAnottation);
       SelectionUtil.selectCell(editorContext, newAnottation, "operationCell");
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddOperationsAnnotation_Intention.this;
     }

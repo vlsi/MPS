@@ -20,7 +20,6 @@ public class Generator implements TemplateModule {
   private final Collection<TemplateModel> models;
   private final Collection<String> referencedGenerators;
   private Collection<String> usedLanguages;
-
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
     priorities = TemplateUtil.asCollection(TemplateUtil.createBeforeOrTogetherRule(TemplateUtil.createRefExternal("2ec34c1e-7442-4656-9a59-44fa731a9286(jetbrains.mps.baseLanguage.jdk7#616711547384942258)", TemplateUtil.createRefLocal()), TemplateUtil.createRefExternal("46ef3033-ce72-4166-b19e-6ceed23b6844(jetbrains.mps.baseLanguageInternal#1238251529692)", TemplateUtil.createRefLocal())));
@@ -28,42 +27,34 @@ public class Generator implements TemplateModule {
     referencedGenerators = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguageInternal/jetbrains.mps.baseLanguageInternal#1238251529692");
     usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguageInternal");
   }
-
   @Override
   public String getAlias() {
     return "jetbrains.mps.baseLanguage.jdk7/baseLanguage";
   }
-
   @Override
   public Collection<TemplateModel> getModels() {
     return models;
   }
-
   @Override
   public Collection<TemplateMappingPriorityRule> getPriorities() {
     return priorities;
   }
-
   @Override
   public SModuleReference getReference() {
     return PersistenceFacade.getInstance().createModuleReference(MODULE_REF);
   }
-
   @Override
   public Collection<String> getUsedLanguages() {
     return usedLanguages;
   }
-
   @Override
   public LanguageRuntime getSourceLanguage() {
     return sourceLanguage;
   }
-
   @Override
   public Collection<String> getReferencedModules() {
     return referencedGenerators;
   }
-
   private TemplateModel getTemplateModel(String modelName) {
     Class<TemplateModel> clazz = ClassLoaderManager.getInstance().getClass(ModuleRepositoryFacade.getInstance().getModule(getReference()), modelName);
     if (clazz == null) {

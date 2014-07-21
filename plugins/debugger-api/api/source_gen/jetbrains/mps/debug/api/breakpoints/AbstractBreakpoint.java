@@ -12,40 +12,32 @@ public abstract class AbstractBreakpoint implements IBreakpoint {
   protected boolean myIsEnabled = true;
   protected long myCreationTime = -1;
   private final List<IBreakpointListener> myListeners = new ArrayList<IBreakpointListener>();
-
   protected AbstractBreakpoint(Project project) {
     myProject = project;
   }
-
   @Override
   public boolean isEnabled() {
     return myIsEnabled;
   }
-
   public void toggleEnabled() {
     setEnabled(!(myIsEnabled));
   }
-
   @Override
   public void setCreationTime(long time) {
     myCreationTime = time;
   }
-
   @Override
   public void addBreakpointListener(@NotNull IBreakpointListener listener) {
     myListeners.add(listener);
   }
-
   @Override
   public void removeBreakpointListener(IBreakpointListener listener) {
     myListeners.remove(listener);
   }
-
   @Override
   public long getCreationTime() {
     return myCreationTime;
   }
-
   @Override
   public void setEnabled(final boolean enabled) {
     boolean toggled = setEnabledInternal(enabled);
@@ -53,7 +45,6 @@ public abstract class AbstractBreakpoint implements IBreakpoint {
       fireBreakpointEnabledStateToggled(enabled);
     }
   }
-
   private boolean setEnabledInternal(boolean enabled) {
     if (getKind().supportsDisable()) {
       if (myIsEnabled != enabled) {
@@ -68,27 +59,22 @@ public abstract class AbstractBreakpoint implements IBreakpoint {
     }
     return false;
   }
-
   @Override
   public Project getProject() {
     return myProject;
   }
-
   protected void disableInRunningSessions() {
     removeFromRunningSessions();
   }
-
   protected void enableInRunningSessions() {
     addToRunningSessions();
   }
-
   protected void fireBreakpointEnabledStateToggled(boolean enabled) {
     //  todo come up with better name 
     for (IBreakpointListener listener : myListeners) {
       listener.breakpointEnabledStateToggled(this, enabled);
     }
   }
-
   @Override
   public boolean isValid() {
     return true;

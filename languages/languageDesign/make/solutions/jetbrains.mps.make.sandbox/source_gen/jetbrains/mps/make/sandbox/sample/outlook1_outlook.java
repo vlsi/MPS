@@ -11,10 +11,8 @@ import java.util.Collections;
 
 public class outlook1_outlook implements IOutlook {
   private List<IFacet.Name> facetNames = ListSequence.fromListAndArray(new ArrayList<IFacet.Name>(), new IFacet.Name("GGG"), new IFacet.Name("JavaCompile"));
-
   public outlook1_outlook() {
   }
-
   public Iterable<IFacet.Name> facetNames() {
     return Collections.unmodifiableCollection(facetNames);
   }

@@ -16,7 +16,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 public class GeneratorChooser implements Computable<List<SModuleReference>> {
   public GeneratorChooser() {
   }
-
   @Override
   public List<SModuleReference> compute() {
     final Wrappers._T<List<SModuleReference>> genRefs = new Wrappers._T<List<SModuleReference>>();

@@ -9,9 +9,9 @@ public class DirectMethodSpecification_BehaviorDescriptor extends AbstractMethod
   }
   public String virtual_getPresentation_7941431147614164371(SNode thisNode) {
     return DirectMethodSpecification_Behavior.virtual_getPresentation_7941431147614164371(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.DirectMethodSpecification";
-  };;
-;}
+  }
+}

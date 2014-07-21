@@ -7,42 +7,42 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959030f(jetbrains.mps.lang.constraints.generator.baseLanguage.template.util)/1184606474174">
     <file name="QueriesUtil.java">
-      <node id="1227876798399" at="18,39,19,80" concept="3" />
-      <node id="1184606720404" at="21,15,22,70" concept="3" />
-      <node id="1227876804170" at="27,39,28,82" concept="3" />
-      <node id="1184606770457" at="30,15,31,72" concept="3" />
+      <node id="1227876798399" at="17,39,18,80" concept="3" />
+      <node id="1184606720404" at="20,15,21,70" concept="3" />
+      <node id="1227876804170" at="25,39,26,82" concept="3" />
+      <node id="1184606770457" at="28,15,29,72" concept="3" />
       <node id="8949395081772864052" at="13,0,15,0" concept="0" trace="QueriesUtil#()V" />
-      <node id="1227876798395" at="18,0,21,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1227876804166" at="27,0,30,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1184606705290" at="16,58,21,15" concept="2" />
-      <node id="1184606770438" at="25,60,30,15" concept="2" />
-      <node id="1184606480707" at="16,0,24,0" concept="4" trace="get_registerSelf_body#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1184606770434" at="25,0,33,0" concept="4" trace="get_unRegisterSelf_body#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1227876798395" at="17,0,20,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1227876804166" at="25,0,28,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1184606705290" at="15,58,20,15" concept="2" />
+      <node id="1184606770438" at="23,60,28,15" concept="2" />
+      <node id="1184606480707" at="15,0,23,0" concept="4" trace="get_registerSelf_body#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1184606770434" at="23,0,31,0" concept="4" trace="get_unRegisterSelf_body#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="8949395081772864054" at="13,24,13,24" />
-      <scope id="1227876798398" at="18,39,19,80" />
-      <scope id="1227876804169" at="27,39,28,82" />
+      <scope id="1227876798398" at="17,39,18,80" />
+      <scope id="1227876804169" at="25,39,26,82" />
       <scope id="8949395081772864052" at="13,0,15,0" />
-      <scope id="1227876798395" at="18,0,21,0">
+      <scope id="1227876798395" at="17,0,20,0">
         <var name="it" id="1227876798395" />
       </scope>
-      <scope id="1227876804166" at="27,0,30,0">
+      <scope id="1227876804166" at="25,0,28,0">
         <var name="it" id="1227876804166" />
       </scope>
-      <scope id="1184606480710" at="16,58,22,70">
+      <scope id="1184606480710" at="15,58,21,70">
         <var name="regiserSelfMethod" id="1184606705291" />
       </scope>
-      <scope id="1184606770437" at="25,60,31,72">
+      <scope id="1184606770437" at="23,60,29,72">
         <var name="unRegiserSelfMethod" id="1184606770439" />
       </scope>
-      <scope id="1184606480707" at="16,0,24,0">
+      <scope id="1184606480707" at="15,0,23,0">
         <var name="clazz" id="1184606569681" />
       </scope>
-      <scope id="1184606770434" at="25,0,33,0">
+      <scope id="1184606770434" at="23,0,31,0">
         <var name="clazz" id="1184606770461" />
       </scope>
-      <unit id="1227876798395" at="17,123,21,5" name="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil$1" />
-      <unit id="1227876804166" at="26,125,30,5" name="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil$2" />
-      <unit id="1184606474174" at="12,0,34,0" name="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil" />
+      <unit id="1227876798395" at="16,123,20,5" name="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil$1" />
+      <unit id="1227876804166" at="24,125,28,5" name="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil$2" />
+      <unit id="1184606474174" at="12,0,32,0" name="jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.QueriesUtil" />
     </file>
   </root>
 </debug-info>

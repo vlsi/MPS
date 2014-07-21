@@ -30,11 +30,9 @@ public class DefaultGeneratorParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_95jom2_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_95jom2_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_95jom2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_95jom2_a");
@@ -44,7 +42,6 @@ public class DefaultGeneratorParameter_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_95jom2_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_95jom2_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -65,14 +62,12 @@ public class DefaultGeneratorParameter_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_95jom2_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_95jom2_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_95jom2_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
@@ -92,7 +87,6 @@ public class DefaultGeneratorParameter_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_95jom2_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_95jom2_a_0");
@@ -101,7 +95,6 @@ public class DefaultGeneratorParameter_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_95jom2_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_95jom2_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unique id:");
     editorCell.setCellId("Constant_95jom2_a0");
@@ -111,16 +104,13 @@ public class DefaultGeneratorParameter_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_95jom2_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getUniqueId_650531548511609559", new Object[]{});
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }

@@ -6,13 +6,10 @@ package jetbrains.mps.propertiesTest;
 public class BaseTestClass {
   public BaseTestClass() {
   }
-
   private int myBasePropertyValue;
-
   public int getBasePropertyValue() {
     return this.myBasePropertyValue;
   }
-
   public void setBasePropertyValue(int value) {
     this.myBasePropertyValue = value;
   }

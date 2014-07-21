@@ -9,5 +9,5 @@ public class MapSrcNodeMacro_BehaviorDescriptor extends SourceSubstituteMacro_Be
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro";
-  };;
-;}
+  }
+}

@@ -9,5 +9,5 @@ public class SurroundWithIntentionDeclaration_BehaviorDescriptor extends BaseInt
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration";
-  };;
-;}
+  }
+}

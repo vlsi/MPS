@@ -10,9 +10,9 @@ public class ConceptFunctionParameter_createdNode_BehaviorDescriptor extends Con
   }
   public boolean virtual_getFromParameterObject_1213877522908(SNode thisNode) {
     return ConceptFunctionParameter_createdNode_Behavior.virtual_getFromParameterObject_1213877522908(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_createdNode";
-  };;
-;}
+  }
+}

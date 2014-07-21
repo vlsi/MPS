@@ -9,9 +9,9 @@ public class Node_InsertNewNextSiblingOperation_BehaviorDescriptor extends SNode
   }
   public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
     return Node_InsertNewNextSiblingOperation_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation";
-  };;
-;}
+  }
+}

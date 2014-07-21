@@ -28,11 +28,9 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kov3ab_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kov3ab_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_kov3ab_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kov3ab_a");
@@ -52,7 +50,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_kov3ab_i0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_kov3ab_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kov3ab_a0");
@@ -63,11 +60,9 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_kov3ab_b0a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_kov3ab_a0a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
-
   private EditorCell createProperty_kov3ab_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("label");
@@ -89,7 +84,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kov3ab_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_kov3ab_b0a");
@@ -100,7 +94,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_kov3ab_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kov3ab_b0");
@@ -111,11 +104,9 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_kov3ab_b1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_kov3ab_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "loopLabel", true) != null);
   }
-
   private EditorCell createRefNode_kov3ab_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("loopLabel");
@@ -135,7 +126,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kov3ab_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_kov3ab_b1a");
@@ -146,7 +136,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_kov3ab_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreach");
     editorCell.setCellId("Constant_kov3ab_c0");
@@ -157,7 +146,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_kov3ab_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("variable");
@@ -177,7 +165,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kov3ab_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_kov3ab_e0");
@@ -187,7 +174,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_kov3ab_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("inputSequence");
@@ -210,11 +196,9 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_kov3ab_a5a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "inputSequence", true) == null) || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "inputSequence", true)), "jetbrains.mps.baseLanguage.structure.Expression");
   }
-
   private EditorCell createConstant_kov3ab_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_kov3ab_g0");
@@ -225,7 +209,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_kov3ab_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -249,7 +232,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kov3ab_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_kov3ab_i0");
@@ -260,7 +242,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_kov3ab_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kov3ab_a_0");
@@ -270,7 +251,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_kov3ab_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_kov3ab_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label");
     editorCell.setCellId("Constant_kov3ab_a0");
@@ -280,7 +260,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_kov3ab_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_kov3ab_b0");
@@ -291,7 +270,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_kov3ab_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("loopLabel");

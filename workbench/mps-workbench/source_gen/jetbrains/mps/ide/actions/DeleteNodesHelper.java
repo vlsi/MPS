@@ -40,13 +40,11 @@ public class DeleteNodesHelper {
   private List<SNode> myNodesToDelete;
   private SRepository myRepository;
   private Project myProject;
-
   public DeleteNodesHelper(List<SNode> nodes, @NotNull Project project) {
     myProject = project;
     myRepository = myProject.getRepository();
     myNodesToDelete = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
   }
-
   public boolean hasOptions() {
     return ListSequence.fromList(myNodesToDelete).translate(new ITranslator2<SNode, RelationDescriptor>() {
       public Iterable<RelationDescriptor> translate(final SNode node) {
@@ -59,7 +57,6 @@ public class DeleteNodesHelper {
       }
     }).isNotEmpty();
   }
-
   public void deleteNodes(final boolean safe, final boolean aspects, final boolean fromProjectPane) {
     assert !(myRepository.getModelAccess().canRead()) : "can lead to deadlock";
 

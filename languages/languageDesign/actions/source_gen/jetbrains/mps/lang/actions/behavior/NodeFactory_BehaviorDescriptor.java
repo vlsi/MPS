@@ -10,5 +10,5 @@ public class NodeFactory_BehaviorDescriptor extends BaseConcept_BehaviorDescript
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NodeFactory";
-  };;
-;}
+  }
+}

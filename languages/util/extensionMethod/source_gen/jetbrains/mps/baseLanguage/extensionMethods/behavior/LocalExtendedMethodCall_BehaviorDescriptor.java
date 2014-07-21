@@ -10,5 +10,5 @@ public class LocalExtendedMethodCall_BehaviorDescriptor extends BaseMethodCall_B
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall";
-  };;
-;}
+  }
+}

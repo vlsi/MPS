@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class BuildLayout_ImportContent_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, "target", false))) {
       return;
@@ -24,7 +23,6 @@ public class BuildLayout_ImportContent_Behavior {
       builder.addWithContent(artifact);
     }
   }
-
   public static boolean virtual_isImplicit_1330375798085107777(SNode thisNode) {
     return true;
   }

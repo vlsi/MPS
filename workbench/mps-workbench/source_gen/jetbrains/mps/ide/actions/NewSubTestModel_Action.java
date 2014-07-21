@@ -33,25 +33,21 @@ import org.apache.log4j.LogManager;
 
 public class NewSubTestModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.TestModel;
-
   public NewSubTestModel_Action() {
     super("Test Model", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof SModelTreeNode)) {
       return false;
     }
     return SModelStereotype.NONE.equals(SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model"))));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -65,7 +61,6 @@ public class NewSubTestModel_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -88,7 +83,6 @@ public class NewSubTestModel_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<SModel> result = new Wrappers._T<SModel>();
@@ -117,7 +111,6 @@ public class NewSubTestModel_Action extends BaseAction {
       }
     }
   }
-
   /*package*/ String getTestModelName(final Map<String, Object> _params) {
     StringBuilder builder = new StringBuilder();
     builder.append(SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))));
@@ -138,6 +131,5 @@ public class NewSubTestModel_Action extends BaseAction {
     }
     return builder.toString();
   }
-
   protected static Logger LOG = LogManager.getLogger(NewSubTestModel_Action.class);
 }

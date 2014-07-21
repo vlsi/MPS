@@ -16,42 +16,34 @@ import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 
 public class JavaNodePositionProvider extends NodePositionProvider implements ProjectComponent {
   private final PositionProvider myProvider;
-
   public JavaNodePositionProvider(PositionProvider provider) {
     myProvider = provider;
   }
-
   @Nullable
   @Override
   public SNode getNode(@NonNls String unitName, @NonNls String fileName, int position) {
     return TraceInfoUtil.getJavaNode(unitName, fileName, position);
   }
-
   @Override
   public void projectOpened() {
   }
-
   @Override
   public void projectClosed() {
   }
-
   @Override
   public void initComponent() {
     myProvider.addProvider(this, NodeSourcePosition.class.getName());
   }
-
   @Override
   public void disposeComponent() {
     myProvider.removeProvider(this);
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Java Node Position Provider";
   }
-
   @Override
   public boolean accepts(AbstractDebugSession session) {
     return session instanceof DebugSession;

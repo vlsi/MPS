@@ -9,5 +9,5 @@ public class CellLayout_Superscript_BehaviorDescriptor extends CellLayout_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellLayout_Superscript";
-  };;
-;}
+  }
+}

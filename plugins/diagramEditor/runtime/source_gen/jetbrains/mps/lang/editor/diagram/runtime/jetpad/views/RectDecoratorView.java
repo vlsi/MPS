@@ -24,7 +24,6 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
 
   private Property<Rectangle> myInternalsBounds = new ValueProperty<Rectangle>();
 
-
   public RectDecoratorView() {
     new Mapper<RectDecoratorView, RectDecoratorView>(this, this) {
       @Override
@@ -40,7 +39,6 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
       }
     }.attachRoot();
   }
-
   private MapperFactory<Boolean, GroupView> createSelectionDecoratorMapperFactory() {
     return new MapperFactory<Boolean, GroupView>() {
       public Mapper<? extends Boolean, ? extends GroupView> createMapper(Boolean selected) {
@@ -73,7 +71,6 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
       }
     };
   }
-
   private MapperFactory<Boolean, SelectionFrameView> createErrorDecoratorMapperFactory() {
     return new MapperFactory<Boolean, SelectionFrameView>() {
       public Mapper<? extends Boolean, ? extends SelectionFrameView> createMapper(Boolean error) {
@@ -87,7 +84,6 @@ public abstract class RectDecoratorView extends AbstractDecoratorView {
       }
     };
   }
-
   private SelectionFrameView createErrorView() {
     SelectionFrameView result = new SelectionFrameView();
     result.color.set(Color.RED);

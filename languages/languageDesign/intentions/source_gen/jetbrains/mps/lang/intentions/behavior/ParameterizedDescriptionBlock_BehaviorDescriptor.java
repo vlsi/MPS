@@ -11,9 +11,9 @@ public class ParameterizedDescriptionBlock_BehaviorDescriptor extends Descriptio
   }
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return ParameterizedDescriptionBlock_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock";
-  };;
-;}
+  }
+}

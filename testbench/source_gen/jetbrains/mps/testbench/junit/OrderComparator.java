@@ -12,7 +12,6 @@ import java.lang.reflect.Method;
 public class OrderComparator implements Comparator<Description> {
   public OrderComparator() {
   }
-
   @Override
   public int compare(Description a, Description b) {
     if (a.getTestClass() != b.getTestClass()) {

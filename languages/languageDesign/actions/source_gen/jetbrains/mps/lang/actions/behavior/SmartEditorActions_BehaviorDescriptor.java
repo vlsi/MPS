@@ -12,9 +12,9 @@ public class SmartEditorActions_BehaviorDescriptor extends BaseConcept_BehaviorD
   }
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SmartEditorActions";
-  };;
-;}
+  }
+}

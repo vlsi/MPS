@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_SimpleBuilderDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_SimpleBuilderDeclaration_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode builder, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SPropertyOperations.getBoolean(builder, "isAbstract")) {
       if ((SLinkOperations.getTarget(builder, "creator", true) != null)) {
@@ -35,18 +34,15 @@ public class check_SimpleBuilderDeclaration_NonTypesystemRule extends AbstractNo
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

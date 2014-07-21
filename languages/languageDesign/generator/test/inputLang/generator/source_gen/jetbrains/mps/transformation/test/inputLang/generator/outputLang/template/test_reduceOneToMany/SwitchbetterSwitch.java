@@ -22,42 +22,33 @@ import org.jetbrains.annotations.NotNull;
 @Generated
 public class SwitchbetterSwitch implements TemplateSwitchMapping {
   private final Iterable<TemplateReductionRule> rules;
-
   public SwitchbetterSwitch() {
     rules = TemplateUtil.<TemplateReductionRule>asIterable(new SwitchbetterSwitch.ReductionRule0());
   }
-
   public SNodeReference getSwitchNode() {
     return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066874");
   }
-
   public SNodeReference getModifiesSwitch() {
     return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366");
   }
-
   public Iterable<TemplateReductionRule> getReductionRules() {
     return rules;
   }
-
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist1 = Collections.emptyList();
     return tlist1;
   }
-
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
     environment.getLogger().info(templateSwitch, "Hmm, input is null");
   }
-
   public final class ReductionRule0 extends ReductionRuleBase implements TemplateRuleWithCondition {
     public ReductionRule0() {
       super(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066877"), "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", false);
     }
-
     @Override
     public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
       return QueriesGenerated.baseMappingRule_Condition_8371596541809066879(new ReductionRuleQueryContext(context, getRuleNode()));
     }
-
     @Override
     protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();

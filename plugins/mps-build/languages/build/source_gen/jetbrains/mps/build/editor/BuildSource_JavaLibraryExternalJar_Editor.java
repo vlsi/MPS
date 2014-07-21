@@ -19,7 +19,6 @@ public class BuildSource_JavaLibraryExternalJar_Editor extends DefaultNodeEditor
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_fpruxb_a(editorContext, node);
   }
-
   private EditorCell createCollection_fpruxb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fpruxb_a");
@@ -28,7 +27,6 @@ public class BuildSource_JavaLibraryExternalJar_Editor extends DefaultNodeEditor
     editorCell.addEditorCell(this.createRefNode_fpruxb_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_fpruxb_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "external jar");
     editorCell.setCellId("Constant_fpruxb_a0");
@@ -38,7 +36,6 @@ public class BuildSource_JavaLibraryExternalJar_Editor extends DefaultNodeEditor
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_fpruxb_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("extJar");

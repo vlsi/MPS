@@ -7,12 +7,10 @@ import org.jetbrains.mps.openapi.language.SDataType;
 public class SDataTypeAdapter implements SDataType {
   public SDataTypeAdapter() {
   }
-
   @Override
   public Object fromString(String string) {
     return null;
   }
-
   @Override
   public String toString(Object object) {
     return null;

@@ -17,73 +17,57 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateReferenceOnClassifier_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreateReferenceOnClassifier_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression";
   }
-
   public String getPresentation() {
     return "CreateReferenceOnClassifier";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.classifiers.intentions.CreateReferenceOnClassifier_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.classifiers";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SNodeOperations.getAncestor(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", false, false), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", false, false) != null);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590372(jetbrains.mps.baseLanguage.classifiers.intentions)", "1218968276327");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateReferenceOnClassifier_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create a Reference on Outer Classifier";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode outerConcept = SNodeOperations.getAncestor(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", false, false), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", false, false);
       SLinkOperations.setTarget(node, "classifier", outerConcept, false);
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreateReferenceOnClassifier_Intention.this;
     }

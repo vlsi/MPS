@@ -22,7 +22,6 @@ public class TreeSetCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_yg6waa_a(editorContext, node);
   }
-
   private EditorCell createCollection_yg6waa_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yg6waa_a");
@@ -33,12 +32,10 @@ public class TreeSetCreator_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createComponent_yg6waa_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_Component");
     return editorCell;
   }
-
   private EditorCell createCollection_yg6waa_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yg6waa_b0");
@@ -50,11 +47,9 @@ public class TreeSetCreator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_yg6waa_c1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_yg6waa_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "comparator", true) != null);
   }
-
   private EditorCell createConstant_yg6waa_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_yg6waa_a1a");
@@ -64,7 +59,6 @@ public class TreeSetCreator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_yg6waa_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("comparator");
@@ -84,7 +78,6 @@ public class TreeSetCreator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_yg6waa_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_yg6waa_c1a");

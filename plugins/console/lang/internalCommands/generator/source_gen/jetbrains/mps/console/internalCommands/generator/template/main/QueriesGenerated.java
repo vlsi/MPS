@@ -13,15 +13,12 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_8829647120617326153(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.console.internalCommands.structure.InternalMode");
   }
-
   public static Object referenceMacro_GetReferent_5582028874770465419(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.console.blCommand.structure.BLCommand", false, false), "contextParameter");
   }
-
   public static SNode sourceNodeQuery_6369875563697213767(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rValue", true);
   }

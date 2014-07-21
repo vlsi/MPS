@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_CellModel_Diagram_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_CellModel_Diagram_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode diagram, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode topLevelCell = diagram;
     while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(topLevelCell), "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
@@ -37,18 +36,15 @@ public class check_CellModel_Diagram_NonTypesystemRule extends AbstractNonTypesy
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

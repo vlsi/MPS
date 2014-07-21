@@ -16,7 +16,6 @@ public class DefaultPropertyAttribute_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_tfur4z_a(editorContext, node);
   }
-
   private EditorCell createCollection_tfur4z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tfur4z_a");
@@ -25,14 +24,12 @@ public class DefaultPropertyAttribute_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAttributedPropertyCell_tfur4z_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_tfur4z_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$P$");
     editorCell.setCellId("const");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createAttributedPropertyCell_tfur4z_b0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);

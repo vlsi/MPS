@@ -23,7 +23,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_BinaryOperationMathContext_InferenceRule() {
   }
-
   public void applyRule(final SNode oper, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final String S = "Operation only applicable to arguments of big decimal type";
     final SNode rightExpressionType_typevar_8613885519962201007 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -131,22 +130,18 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
       }, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "8613885519962201025", false, false);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }
-
   private static SNode _quotation_createNode_3xwkcy_a0a0a0c0b0b0a0f0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -161,7 +156,6 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
     quotedNode_1.addChild("leftExpression", quotedNode_3);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_3xwkcy_a0a0a0c0a2a1a1a0a5a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -176,7 +170,6 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
     quotedNode_1.addChild("rightExpression", quotedNode_3);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_3xwkcy_a0a0a0c0a2a0c0b0b0a0f0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -191,7 +184,6 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
     quotedNode_1.addChild("leftExpression", quotedNode_3);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_3xwkcy_a0a0a0c0a2a0c0a2a1a1a0a5a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

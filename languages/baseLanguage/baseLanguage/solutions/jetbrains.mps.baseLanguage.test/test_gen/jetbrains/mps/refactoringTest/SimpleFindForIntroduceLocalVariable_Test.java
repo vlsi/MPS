@@ -22,7 +22,6 @@ public class SimpleFindForIntroduceLocalVariable_Test extends BaseTransformation
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.SimpleFindForIntroduceLocalVariable_Test$TestBody", "test_SimpleFindAndMoveForIntroduceLocalVariableTest", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_SimpleFindAndMoveForIntroduceLocalVariableTest() throws Exception {

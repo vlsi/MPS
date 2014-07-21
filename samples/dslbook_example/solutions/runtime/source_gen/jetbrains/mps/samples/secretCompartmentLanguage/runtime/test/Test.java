@@ -9,7 +9,6 @@ import junit.framework.Assert;
 public final class Test extends StateMachineTest {
   public Test() {
   }
-
   public void test() {
     StateMachineFactory stateMachineFactory = new HStateMachineFactory();
     init(stateMachineFactory);

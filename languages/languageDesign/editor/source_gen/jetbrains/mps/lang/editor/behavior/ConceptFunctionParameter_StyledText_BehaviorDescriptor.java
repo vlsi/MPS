@@ -11,9 +11,9 @@ public class ConceptFunctionParameter_StyledText_BehaviorDescriptor extends Conc
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConceptFunctionParameter_StyledText_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText";
-  };;
-;}
+  }
+}

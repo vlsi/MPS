@@ -74,7 +74,6 @@ public class NewModelDialog extends DialogWrapper {
   private SModel myClone;
   private SModel myResult;
   private String myNamespace;
-
   public NewModelDialog(Project project, AbstractModule module, String namespace, String stereotype, boolean strict) throws HeadlessException {
     super(ProjectHelper.toIdeaProject(project));
     setTitle("New Model");
@@ -90,14 +89,12 @@ public class NewModelDialog extends DialogWrapper {
 
     init();
   }
-
   public NewModelDialog(Project project, SModel cloneModel) {
     this(project, (AbstractModule) cloneModel.getModule(), getNamespace(cloneModel), SModelStereotype.getStereotype(cloneModel), false);
     myClone = cloneModel;
     setTitle("Clone Model " + SNodeOperations.getModelLongName(myClone));
     myModelName.setText(myClone.getModelName() + "_clone");
   }
-
   public static String getNamespace(SModel model) {
     SModule module = model.getModule();
     if (module instanceof Generator) {
@@ -112,11 +109,9 @@ public class NewModelDialog extends DialogWrapper {
     }
     return module.getModuleName();
   }
-
   public SModel getResult() {
     return myResult;
   }
-
   private void initContentPane() {
     JPanel mainPanel = new JPanel(new GridLayoutManager(6, 1));
     mainPanel.setPreferredSize(new Dimension(200, 50));
@@ -224,7 +219,6 @@ public class NewModelDialog extends DialogWrapper {
 
     myContentPane.add(mainPanel, BorderLayout.CENTER);
   }
-
   private ModelFactory[] getStorageFormats() {
     List<ModelFactory> list = new LinkedList<ModelFactory>();
     for (String formatId : PersistenceFacade.getInstance().getModelFactoryExtensions()) {
@@ -232,7 +226,6 @@ public class NewModelDialog extends DialogWrapper {
     }
     return list.toArray(new ModelFactory[list.size()]);
   }
-
   @Override
   protected void doOKAction() {
     if (!(check())) {
@@ -329,13 +322,11 @@ public class NewModelDialog extends DialogWrapper {
 
     super.doOKAction();
   }
-
   private String getFqName() {
     String stereo = myModelStereotype.getSelectedItem().toString().trim();
     return myModelName.getText() + ((stereo != null && stereo.length() > 0 ? "@" + stereo : ""));
 
   }
-
   private boolean check() {
     Object selected = myModelRoots.getSelectedItem();
 
@@ -392,14 +383,11 @@ public class NewModelDialog extends DialogWrapper {
     setErrorText(null);
     return true;
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myContentPane;
   }
-
-
 
   @Nullable
   @Override

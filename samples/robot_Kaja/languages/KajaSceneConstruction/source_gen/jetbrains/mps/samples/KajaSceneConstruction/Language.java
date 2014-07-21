@@ -14,25 +14,20 @@ import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "b56912a3-674f-4530-b0cf-55261b526a1f(jetbrains.mps.samples.KajaSceneConstruction)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.samples.KajaSceneConstruction";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.samples.Kaja"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "b4e19835-6919-44a5-8b70-73791426c235(jetbrains.mps.samples.KajaSceneConstruction#3210697320273563026)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == ConstraintsAspectDescriptor.class) {

@@ -18,7 +18,6 @@ public class FigureAttribute_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4m6xne_a(editorContext, node);
   }
-
   private EditorCell createCollection_4m6xne_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4m6xne_a");
@@ -27,7 +26,6 @@ public class FigureAttribute_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAttributedNodeCell_4m6xne_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_4m6xne_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -37,7 +35,6 @@ public class FigureAttribute_Editor extends DefaultNodeEditor {
     AttributeDelete_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   private EditorCell createAttributedNodeCell_4m6xne_b0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);

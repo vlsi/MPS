@@ -11,17 +11,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class MessageStatementUtil {
   public static final int MIN_LENGTH = 3;
 
-;;;  private static final int MAX_LENGTH = 20;
+  private static final int MAX_LENGTH = 20;
 
-;;;  public static String generateNameFromExpression(SNode expr) {
+  public static String generateNameFromExpression(SNode expr) {
     List<SNode> descendants = SNodeOperations.getDescendants(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral", true, new String[]{});
     if (ListSequence.fromList(descendants).isEmpty()) {
       return null;
     }
     return convertToCamelCaseNameString(SPropertyOperations.getString(ListSequence.fromList(descendants).last(), "value"));
-  };;
-;
-;;;  private static String convertToCamelCaseNameString(String nameString) {
+  }
+
+  private static String convertToCamelCaseNameString(String nameString) {
     String[] tokens = nameString.split(" ");
     String result = "";
     for (String token : tokens) {
@@ -31,17 +31,17 @@ public class MessageStatementUtil {
       result += convertTokenToCamelCase(token);
     }
     return result;
-  };;
-;
-;;;  private static String convertTokenToCamelCase(String token) {
+  }
+
+  private static String convertTokenToCamelCase(String token) {
     token = clearNameFromNonJavaSymbols(token);
     if (token.length() <= 1) {
       return "";
     }
     return token.substring(0, 1).toUpperCase() + token.substring(1).toLowerCase();
-  };;
-;
-;;;  private static String clearNameFromNonJavaSymbols(String name) {
+  }
+
+  private static String clearNameFromNonJavaSymbols(String name) {
     name = name.toLowerCase();
     String res = "";
     for (int i = 0; i < name.length(); ++i) {
@@ -50,6 +50,6 @@ public class MessageStatementUtil {
       }
     }
     return res;
-  };;
-;
-;;;}
+  }
+
+}

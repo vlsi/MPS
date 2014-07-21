@@ -10,5 +10,5 @@ public class SimpleShortcutChange_BehaviorDescriptor extends BaseConcept_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange";
-  };;
-;}
+  }
+}

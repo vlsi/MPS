@@ -12,25 +12,21 @@ import java.util.ArrayList;
 
 public class SimpleSearchScope extends AbstractSearchScope {
   private LinkedHashSet<SNode> myNodes;
-
   public SimpleSearchScope(List<SNode> nodes) {
     this(((Collection) nodes));
   }
-
   public SimpleSearchScope(Collection<SNode> nodes) {
     myNodes = new LinkedHashSet<SNode>();
     for (SNode node : nodes) {
       myNodes.add(node);
     }
   }
-
   public SimpleSearchScope(SNode node) {
     myNodes = new LinkedHashSet<SNode>(1);
     if (node != null) {
       myNodes.add(node);
     }
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {

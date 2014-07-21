@@ -46,7 +46,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class ClassifierResolveUtils {
   private ClassifierResolveUtils() {
   }
-
   public static SNode resolveSpecialSyntax(@NotNull String refText, @NotNull SNode contextNode) {
     if (!(refText.startsWith("["))) {
       throw new IllegalArgumentException();
@@ -59,7 +58,6 @@ public class ClassifierResolveUtils {
 
     return resolveWithSpecifiedTargetModelName(targetModelName, targetNodeFqName, SNodeOperations.getModel(contextNode));
   }
-
   public static SNode resolveNonSpecialSyntax(@NotNull String classifierName, @NotNull SNode contextNode, ModelPlusImportedScope modelPlusImported) {
     // try to resolve as nested name in current model 
     Iterable<SNode> result = resolveClassifierByNestedName(SNodeOperations.getModel(contextNode), classifierName);
@@ -93,7 +91,6 @@ public class ClassifierResolveUtils {
     }), classifierName);
     return (Sequence.fromIterable(result).count() == 1 ? Sequence.fromIterable(result).first() : null);
   }
-
   public static SNode resolveWithSpecifiedTargetModelName(@NotNull String targetModelName, @NotNull String classifierFqName, @Nullable SModel sourceModel) {
     Iterable<SNode> sameModelResult = resolveClassifierByFqName(sourceModel, classifierFqName);
     if (Sequence.fromIterable(sameModelResult).isNotEmpty()) {
@@ -112,7 +109,6 @@ public class ClassifierResolveUtils {
     Iterable<SNode> resolved = resolveInScope(targetModelName, classifierFqName, MPSModuleRepository.getInstance().getModules());
     return (Sequence.fromIterable(resolved).count() == 1 ? Sequence.fromIterable(resolved).first() : null);
   }
-
   private static Iterable<SNode> resolveInScope(@NotNull final String targetModelName, @NotNull String classifierFqName, Iterable<SModule> modules) {
     // todo: go through all stereotypes and resolve by long name and stereotype 
     List<SModel> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
@@ -126,7 +122,6 @@ public class ClassifierResolveUtils {
     }).toListSequence();
     return resolveClassifierByFqNameWithNonStubPriority(models, classifierFqName);
   }
-
   private static Iterable<SNode> resolveClassifierByFqNameWithNonStubPriority(Iterable<SModel> models, String classifierFqName) {
     models = Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
@@ -153,7 +148,6 @@ public class ClassifierResolveUtils {
       }
     }), classifierFqName);
   }
-
   private static Iterable<SNode> resolveClassifierByFqName(Iterable<SModel> models, final String classifierFqName) {
     return Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
@@ -161,7 +155,6 @@ public class ClassifierResolveUtils {
       }
     });
   }
-
   private static Iterable<SNode> resolveClassifierByFqName(SModel modelDescriptor, String classifierFqName) {
     assert !(classifierFqName.contains("$"));
 
@@ -177,7 +170,6 @@ public class ClassifierResolveUtils {
     String classifierNestedName = classifierFqName.substring(modelName.length() + 1);
     return resolveClassifierByNestedName(modelDescriptor, classifierNestedName);
   }
-
   private static Iterable<SNode> resolveClassifierByNestedName(SModel modelDescriptor, String classifierNestedName) {
     assert !(classifierNestedName.contains("$"));
 
@@ -195,7 +187,6 @@ public class ClassifierResolveUtils {
     }
     return result;
   }
-
   private static String getNestedName(SNode classifier) {
     String name = SPropertyOperations.getString(classifier, "name");
     if (name == null) {
@@ -207,7 +198,6 @@ public class ClassifierResolveUtils {
     }
     return name;
   }
-
   private static Iterable<SNode> getClassifiersInModel(SModel model) {
     return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.Classifier")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -215,7 +205,6 @@ public class ClassifierResolveUtils {
       }
     });
   }
-
   public static SNode resolveAndCache(final String refText, final SNode contextNode, final ModelPlusImportedScope modelPlusImported, final boolean includeAncestors) {
 
     SNode claz = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
@@ -228,7 +217,6 @@ public class ClassifierResolveUtils {
 
     return SNodeOperations.cast(result.getResult(), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
-
   public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode, ModelPlusImportedScope modelsPlusImported, boolean includeAncestors) {
     // The algorithm: 
     // - split refText into tokens A.B.C (separated by dot) 
@@ -394,7 +382,6 @@ public class ClassifierResolveUtils {
     return resolveNonSpecialSyntax(refText, contextNode, modelsPlusImported);
 
   }
-
   public static Iterable<SNode> getImmediateNestedClassifiers(SNode clas) {
     // TODO are there other deprecated member roles 
     return ListSequence.fromList(SLinkOperations.getTargets(clas, "member", true)).where(new IWhereFilter<SNode>() {
@@ -407,12 +394,10 @@ public class ClassifierResolveUtils {
       }
     }).concat(ListSequence.fromList(SLinkOperations.getTargets(clas, "staticInnerClassifiers", true)));
   }
-
   public static Iterable<SNode> getPathToRoot(SNode clas) {
     // TODO make more precise: take role into consideration 
     return SNodeOperations.getAncestors(clas, "jetbrains.mps.baseLanguage.structure.Classifier", true);
   }
-
   public static Iterable<SNode> getAncestors(SNode clas) {
     final Queue<SNode> queue = QueueSequence.fromQueue(new LinkedList<SNode>());
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
@@ -466,7 +451,6 @@ public class ClassifierResolveUtils {
     // or just classes, doesn't really matter 
     return ListSequence.fromList(result).skip(1);
   }
-
   public static SNode construct(SNode base, StringTokenizer tokenizer) {
     SNode curr = base;
     while ((curr != null) && tokenizer.hasMoreTokens()) {
@@ -479,7 +463,6 @@ public class ClassifierResolveUtils {
     }
     return curr;
   }
-
   public static SNode resolveFqName(String refText, Iterable<SModel> models, SModel contextNodeModel) {
     // FIXME constant 20 
     int[] dotPositions = new int[20];
@@ -534,7 +517,6 @@ public class ClassifierResolveUtils {
     }
     return null;
   }
-
   public static Iterable<SModel> getModelsByName(SearchScope moduleScope, String name) {
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
 
@@ -551,15 +533,12 @@ public class ClassifierResolveUtils {
 
     return models;
   }
-
   public static Iterable<SNode> staticImportedMethods(SNode imports) {
     return staticImportedThings(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), imports);
   }
-
   public static Iterable<SNode> staticImportedFields(SNode imports) {
     return staticImportedThings(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), imports);
   }
-
   /**
    * methodsOrFields: true for methods. false for fields
    */
@@ -626,7 +605,6 @@ public class ClassifierResolveUtils {
     }
     return result;
   }
-
   public static boolean isImportedBy(SNode node, SNode imports) {
     // TODO on-demand imports and probably inherited classes 
     String name = SPropertyOperations.getString(node, "name");
@@ -641,36 +619,30 @@ public class ClassifierResolveUtils {
     }
     return false;
   }
-
   private static SModule check_8z6r2b_a0i0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static SModule check_8z6r2b_a0d0d(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static SModule check_8z6r2b_a0a0a0gb0m(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static boolean eq_8z6r2b_a0a0a0a0a0a0b0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean neq_8z6r2b_a0a0a0a0a0a0f0f(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean eq_8z6r2b_a0a0a0a0a0a9a5(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

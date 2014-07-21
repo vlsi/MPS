@@ -23,7 +23,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_eb7h0d_a(editorContext, node);
   }
-
   private EditorCell createCollection_eb7h0d_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_eb7h0d_a");
@@ -38,7 +37,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_eb7h0d_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "if");
     editorCell.setCellId("Constant_eb7h0d_a0");
@@ -50,7 +48,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_eb7h0d_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("condition");
@@ -70,7 +67,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_eb7h0d_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
     editorCell.setCellId("Constant_eb7h0d_c0");
@@ -83,15 +79,12 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_eb7h0d_a0c0(EditorContext editorContext, SNode node) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "trueBranch", true), "commands", true)).isEmpty();
   }
-
   private static boolean _StyleParameter_QueryFunction_eb7h0d_a1c0(EditorContext editorContext, SNode node) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "trueBranch", true), "commands", true)).isNotEmpty();
   }
-
   private EditorCell createRefNode_eb7h0d_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("trueBranch");
@@ -115,7 +108,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_eb7h0d_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end");
     editorCell.setCellId("Constant_eb7h0d_e0");
@@ -127,7 +119,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_eb7h0d_f0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_eb7h0d_f0");
@@ -140,11 +131,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_eb7h0d_d5a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_eb7h0d_a5a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "falseBranch", true), "commands", true)).isNotEmpty();
   }
-
   private EditorCell createConstant_eb7h0d_a5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "else");
     editorCell.setCellId("Constant_eb7h0d_a5a");
@@ -154,7 +143,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_eb7h0d_b5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
     editorCell.setCellId("Constant_eb7h0d_b5a");
@@ -166,7 +154,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_eb7h0d_c5a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("falseBranch");
@@ -190,7 +177,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_eb7h0d_d5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end");
     editorCell.setCellId("Constant_eb7h0d_d5a");

@@ -38,42 +38,32 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 public class Make_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facets.Make");
-
   public Make_Facet() {
     ListSequence.fromList(targets).addElement(new Make_Facet.Target_reconcile());
     ListSequence.fromList(targets).addElement(new Make_Facet.Target_make());
   }
-
   public Iterable<ITarget> targets() {
     return targets;
   }
-
   public Iterable<IFacet.Name> optional() {
     return null;
   }
-
   public Iterable<IFacet.Name> required() {
     return null;
   }
-
   public Iterable<IFacet.Name> extended() {
     return null;
   }
-
   public IFacet.Name getName() {
     return this.name;
   }
-
   public IPropertiesPersistence propertiesPersistence() {
     return new Make_Facet.TargetProperties();
   }
-
   public static class Target_reconcile implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile");
-
     public Target_reconcile() {
     }
-
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
@@ -138,57 +128,44 @@ public class Make_Facet extends IFacet.Stub {
         }
       };
     }
-
     public IConfig createConfig() {
       return null;
     }
-
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
-
     public Iterable<ITarget.Name> after() {
       return null;
     }
-
     public Iterable<ITarget.Name> notBefore() {
       return null;
     }
-
     public Iterable<ITarget.Name> before() {
       return null;
     }
-
     public ITarget.Name getName() {
       return name;
     }
-
     public boolean isOptional() {
       return false;
     }
-
     public boolean requiresInput() {
       return true;
     }
-
     public boolean producesOutput() {
       return true;
     }
-
     public Iterable<Class<? extends IResource>> expectedInput() {
       List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
       ListSequence.fromList(rv).addElement(DResource.class);
       return rv;
     }
-
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Parameters());
     }
-
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
@@ -196,45 +173,35 @@ public class Make_Facet extends IFacet.Stub {
       }
       return t;
     }
-
     public int workEstimate() {
       return 200;
     }
-
     public static Make_Facet.Target_reconcile.Parameters vars(IPropertiesPool ppool) {
       return ppool.properties(name, Make_Facet.Target_reconcile.Parameters.class);
     }
-
     public static class Parameters extends MultiTuple._1<Boolean> {
       public Parameters() {
         super();
       }
-
       public Parameters(Boolean skipReconcile) {
         super(skipReconcile);
       }
-
       public Boolean skipReconcile(Boolean value) {
         return super._0(value);
       }
-
       public Boolean skipReconcile() {
         return super._0();
       }
-
       @SuppressWarnings(value = "unchecked")
       public Make_Facet.Target_reconcile.Parameters assignFrom(Tuples._1<Boolean> from) {
         return (Make_Facet.Target_reconcile.Parameters) super.assign(from);
       }
     }
   }
-
   public static class Target_make implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.Make.make");
-
     public Target_make() {
     }
-
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
@@ -249,7 +216,6 @@ public class Make_Facet extends IFacet.Stub {
         }
       };
     }
-
     public IConfig createConfig() {
       return new IConfig.Stub() {
         @Override
@@ -269,53 +235,41 @@ public class Make_Facet extends IFacet.Stub {
         }
       };
     }
-
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
-
     public Iterable<ITarget.Name> after() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile")});
     }
-
     public Iterable<ITarget.Name> notBefore() {
       return null;
     }
-
     public Iterable<ITarget.Name> before() {
       return null;
     }
-
     public ITarget.Name getName() {
       return name;
     }
-
     public boolean isOptional() {
       return false;
     }
-
     public boolean requiresInput() {
       return true;
     }
-
     public boolean producesOutput() {
       return false;
     }
-
     public Iterable<Class<? extends IResource>> expectedInput() {
       List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
       ListSequence.fromList(rv).addElement(IResource.class);
       return rv;
     }
-
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Parameters());
     }
-
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
@@ -323,43 +277,34 @@ public class Make_Facet extends IFacet.Stub {
       }
       return t;
     }
-
     public int workEstimate() {
       return 1;
     }
-
     public static Make_Facet.Target_make.Parameters vars(IPropertiesPool ppool) {
       return ppool.properties(name, Make_Facet.Target_make.Parameters.class);
     }
-
     public static class Parameters extends MultiTuple._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> {
       public Parameters() {
         super();
       }
-
       public Parameters(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile) {
         super(pathToFile);
       }
-
       public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> value) {
         return super._0(value);
       }
-
       public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile() {
         return super._0();
       }
-
       @SuppressWarnings(value = "unchecked")
       public Make_Facet.Target_make.Parameters assignFrom(Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> from) {
         return (Make_Facet.Target_make.Parameters) super.assign(from);
       }
     }
   }
-
   public static class TargetProperties implements IPropertiesPersistence {
     public TargetProperties() {
     }
-
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile");
@@ -376,7 +321,6 @@ public class Make_Facet extends IFacet.Stub {
         }
       }
     }
-
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {

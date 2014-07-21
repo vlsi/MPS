@@ -24,14 +24,12 @@ public class OverrideConceptMethodsHelper {
   private SNode myContextMethod;
   private boolean myRemoveAttributes;
   private boolean myNeedReturnKW;
-
   public OverrideConceptMethodsHelper(Project project, SNode classConcept, SNode contextMethod, boolean removeAttributes, boolean needReturnKW) {
     myClassConcept = classConcept;
     myContextMethod = contextMethod;
     myRemoveAttributes = removeAttributes;
     myNeedReturnKW = needReturnKW;
   }
-
   public List<SNode> insertMethods(List<SNode> baseMethods) {
     List<SNode> result = new ArrayList<SNode>();
     int index = (myContextMethod != null && SNodeOperations.getParent(myContextMethod) == myClassConcept ? ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).indexOf(myContextMethod) + 1 : -1);
@@ -53,7 +51,6 @@ public class OverrideConceptMethodsHelper {
     }
     return result;
   }
-
   private void update(SNode method, SNode baseMethod) {
     if (myRemoveAttributes) {
       for (SNode child : SNodeOperations.getChildren(method)) {
@@ -86,7 +83,6 @@ public class OverrideConceptMethodsHelper {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(defaultExpr));
     }
   }
-
   private SNode getReturnStatement(SNode returnExpr) {
     if ((returnExpr == null)) {
       return null;
@@ -98,7 +94,6 @@ public class OverrideConceptMethodsHelper {
       return _quotation_createNode_7wts1u_a0a0c0h(returnExpr);
     }
   }
-
   private void removeAttributes(SNode node) {
     if (SNodeOperations.isAttribute(node)) {
       SNodeOperations.deleteNode(node);
@@ -108,7 +103,6 @@ public class OverrideConceptMethodsHelper {
       }
     }
   }
-
   private static SNode _quotation_createNode_7wts1u_a0a0a0a2a0e0g(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -116,7 +110,6 @@ public class OverrideConceptMethodsHelper {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_7wts1u_a0d0a4a6(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -138,7 +131,6 @@ public class OverrideConceptMethodsHelper {
     quotedNode_4.addChild("operation", quotedNode_6);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_7wts1u_a0a0a0a6a6(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -150,7 +142,6 @@ public class OverrideConceptMethodsHelper {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_7wts1u_a0a2a7(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -162,7 +153,6 @@ public class OverrideConceptMethodsHelper {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_7wts1u_a0a0c0h(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

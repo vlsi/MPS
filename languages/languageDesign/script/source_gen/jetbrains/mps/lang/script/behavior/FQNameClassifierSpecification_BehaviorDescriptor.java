@@ -9,12 +9,12 @@ public class FQNameClassifierSpecification_BehaviorDescriptor extends AbstractCl
   }
   public String virtual_getClassifierFqName_5434557751112930827(SNode thisNode) {
     return FQNameClassifierSpecification_Behavior.virtual_getClassifierFqName_5434557751112930827(thisNode);
-  };;
-;  public String virtual_getSModelReference_5434557751113441014(SNode thisNode) {
+  }
+  public String virtual_getSModelReference_5434557751113441014(SNode thisNode) {
     return FQNameClassifierSpecification_Behavior.virtual_getSModelReference_5434557751113441014(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification";
-  };;
-;}
+  }
+}

@@ -16,64 +16,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeAbstract_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public MakeAbstract_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration";
   }
-
   public String getPresentation() {
     return "MakeAbstract";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.behavior.intentions.MakeAbstract_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.behavior";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)", "1225201879279");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeAbstract_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       if (SPropertyOperations.getBoolean(node, "isAbstract")) {
         return "Make Non-Abstract";
@@ -81,14 +67,12 @@ public class MakeAbstract_Intention implements IntentionFactory {
         return "Make Abstract";
       }
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if (!(SPropertyOperations.getBoolean(node, "isAbstract"))) {
         SPropertyOperations.set(node, "isVirtual", "" + (true));
       }
       SPropertyOperations.set(node, "isAbstract", "" + (!(SPropertyOperations.getBoolean(node, "isAbstract"))));
     }
-
     public IntentionDescriptor getDescriptor() {
       return MakeAbstract_Intention.this;
     }

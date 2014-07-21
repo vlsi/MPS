@@ -26,7 +26,6 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
   public MatchVariableReferenceRegexp_Constraints() {
     super("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -35,7 +34,6 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -44,12 +42,10 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return (_context.getSmartReference() ? "\\" + SPropertyOperations.getString(_context.getParameterNode(), "name") : SPropertyOperations.getString(_context.getParameterNode(), "name"));
           }
-
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> matches = new ArrayList<SNode>();
@@ -63,7 +59,6 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
             }
             return matches;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_15u81x_a0a3a0a0a1a0b0a1a1;
@@ -73,6 +68,5 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
     });
     return references;
   }
-
   private static SNodePointer breakingNode_15u81x_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "1213104860360");
 }

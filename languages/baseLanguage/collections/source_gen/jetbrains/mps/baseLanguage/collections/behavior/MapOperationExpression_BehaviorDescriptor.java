@@ -11,5 +11,5 @@ public class MapOperationExpression_BehaviorDescriptor extends Expression_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression";
-  };;
-;}
+  }
+}

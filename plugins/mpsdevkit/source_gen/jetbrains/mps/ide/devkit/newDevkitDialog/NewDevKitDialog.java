@@ -27,7 +27,6 @@ public class NewDevKitDialog extends DialogWrapper {
   private Project myProject;
   private DevKit myResult;
 
-
   public NewDevKitDialog(com.intellij.openapi.project.Project project) {
     super(project);
     setTitle("New DevKit");
@@ -40,14 +39,10 @@ public class NewDevKitDialog extends DialogWrapper {
     init();
   }
 
-
-
   @Nullable
   protected JComponent createCenterPanel() {
     return myContentPane;
   }
-
-
 
   private void createMainComponent() {
     myContentPane = new JPanel(new GridLayout(4, 1));
@@ -65,8 +60,6 @@ public class NewDevKitDialog extends DialogWrapper {
     myNameField.setText("NewDevkit");
   }
 
-
-
   @Override
   protected void doOKAction() {
     final String path = myPathField.getPath();
@@ -82,8 +75,6 @@ public class NewDevKitDialog extends DialogWrapper {
       }
     });
   }
-
-
 
   public DevKit getResult() {
     return this.myResult;

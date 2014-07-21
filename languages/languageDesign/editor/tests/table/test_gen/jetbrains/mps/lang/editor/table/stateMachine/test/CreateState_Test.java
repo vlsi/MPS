@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class CreateState_Test extends BaseTransformationTest {
   public CreateState_Test() {
   }
-
   @Test
   public void test_CreateState() throws Throwable {
     this.initTest("${mps_home}", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test@tests)");
     this.runTest("jetbrains.mps.lang.editor.table.stateMachine.test.CreateState_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("9025751233592279042", "5877647854348533421");

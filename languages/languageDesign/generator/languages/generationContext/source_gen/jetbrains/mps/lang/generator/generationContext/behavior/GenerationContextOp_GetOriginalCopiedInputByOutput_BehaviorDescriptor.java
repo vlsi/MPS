@@ -9,5 +9,5 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_BehaviorDescript
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput";
-  };;
-;}
+  }
+}

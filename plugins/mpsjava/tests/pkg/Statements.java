@@ -21,7 +21,6 @@ public class Statements {
         return;
     }
   }
-
   /*package*/ int foo() {
     return 4;
   }

@@ -7,11 +7,9 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 
 public class ChangesTreeCreationHandler extends TreeHighlighterExtension {
   private TreeHighlighterFactory myTreesHighlighter;
-
   public ChangesTreeCreationHandler(TreeHighlighterFactory treesHighlighter) {
     myTreesHighlighter = treesHighlighter;
   }
-
   @Override
   protected void attach(MPSTree tree) {
     myTreesHighlighter.highlightTreeIfNeeded(tree);

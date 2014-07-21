@@ -23,7 +23,6 @@ public class Dependency_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_l58ghc_a(editorContext, node);
   }
-
   private EditorCell createCollection_l58ghc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_l58ghc_a");
@@ -32,7 +31,6 @@ public class Dependency_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_l58ghc_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_l58ghc_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_l58ghc_a0");
@@ -45,14 +43,12 @@ public class Dependency_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_l58ghc_d0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_l58ghc_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target concept:");
     editorCell.setCellId("Constant_l58ghc_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_l58ghc_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("targetConcept");
@@ -74,20 +70,16 @@ public class Dependency_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_l58ghc_a1a0 extends InlineCellProvider {
     public _Inline_l58ghc_a1a0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_l58ghc_a0b0a(editorContext, node);
     }
-
     private EditorCell createProperty_l58ghc_a0b0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -107,14 +99,12 @@ public class Dependency_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_l58ghc_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " find source:");
     editorCell.setCellId("Constant_l58ghc_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_l58ghc_d0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("findSourceBlock");
@@ -134,7 +124,6 @@ public class Dependency_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_l58ghc_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_l58ghc_b0");
@@ -145,14 +134,12 @@ public class Dependency_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_l58ghc_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_l58ghc_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "source concept(optional):");
     editorCell.setCellId("Constant_l58ghc_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_l58ghc_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("sourceConcept");
@@ -174,20 +161,16 @@ public class Dependency_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_l58ghc_a1b0 extends InlineCellProvider {
     public _Inline_l58ghc_a1b0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_l58ghc_a0b1a(editorContext, node);
     }
-
     private EditorCell createProperty_l58ghc_a0b1a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 public class GoToEditorDeclarationHelper {
   public GoToEditorDeclarationHelper() {
   }
-
   public static SNode getOrCreateEditorForConcept(Project project, final SModel languageEditor, final SNode concept, final SNode node) {
     ModelAccessHelper mah = new ModelAccessHelper(project.getModelAccess());
     SNode editorDeclaration = mah.runReadAction(new Computable<SNode>() {
@@ -48,7 +47,6 @@ public class GoToEditorDeclarationHelper {
       }
     });
   }
-
   public static SModel getOrCreateEditorAspect(Project project, final Language language, final SNode concept) {
     final SModel languageEditor = LanguageAspect.EDITOR.get(language);
     if (languageEditor != null) {
@@ -68,7 +66,6 @@ public class GoToEditorDeclarationHelper {
     });
     return LanguageAspect.EDITOR.get(language);
   }
-
   public static SNode findEditorDeclaration(SModel editorModel, final SNode conceptDeclaration) {
     return ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -76,7 +73,6 @@ public class GoToEditorDeclarationHelper {
       }
     });
   }
-
   public static SNode createEditorDeclaration(SNode conceptDeclaration, SModel editorModelDescriptor) {
     SModel editorModel = editorModelDescriptor;
     SNode result = SNodeFactoryOperations.createNewNode(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);

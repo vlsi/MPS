@@ -10,5 +10,5 @@ public class InheritedNodeScopeFactory_BehaviorDescriptor extends BaseConcept_Be
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory";
-  };;
-;}
+  }
+}

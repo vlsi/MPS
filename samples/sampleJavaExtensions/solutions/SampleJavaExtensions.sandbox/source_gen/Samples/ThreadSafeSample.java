@@ -11,10 +11,8 @@ import utils.ParallelLoopException;
 
 public class ThreadSafeSample {
   private static final String fixedFieldValue = "Fixed value for ever";
-
   public ThreadSafeSample() {
   }
-
   public static void main(String[] args) throws InterruptedException {
     // This sample shows that classes marked thread-safe will not be reported 
     //  as inproperly used from within parallel for loops 
@@ -122,7 +120,6 @@ public class ThreadSafeSample {
     }
     thread.interrupt();
   }
-
   private static void log(String message) {
     System.out.println(message);
   }

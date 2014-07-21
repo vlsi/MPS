@@ -21,24 +21,19 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class BreakpointLocation {
   private final SNodeReference myNodePointer;
-
   public BreakpointLocation(@NotNull SNodeReference nodePointer) {
     myNodePointer = nodePointer;
   }
-
   public BreakpointLocation(@NotNull SNode node) {
     myNodePointer = new SNodePointer(node);
   }
-
   public SNodeReference getNodePointer() {
     return myNodePointer;
   }
-
   @Nullable
   public SNode getSNode() {
     return myNodePointer.resolve(MPSModuleRepository.getInstance());
   }
-
   @Nullable
   public TraceablePositionInfo getTargetCodePosition() {
     SModel model = SNodeOperations.getModelFromNodeReference(myNodePointer);
@@ -53,16 +48,13 @@ public class BreakpointLocation {
     });
     return positionForNode.value;
   }
-
   @Nullable
   public String getTargetUnitName() {
     return TraceInfoUtil.getUnitName(getTargetCodePosition(), SNodeOperations.getModelFromNodeReference(myNodePointer));
   }
-
   public boolean isValid() {
     return getTargetCodePosition() != null;
   }
-
   public int getLineIndexInFile() {
     PositionInfo position = getTargetCodePosition();
     if (position == null) {
@@ -70,7 +62,6 @@ public class BreakpointLocation {
     }
     return position.getStartLine() + 1;
   }
-
   @Nullable
   public String getFileName() {
     PositionInfo positionInfo = getTargetCodePosition();
@@ -79,7 +70,6 @@ public class BreakpointLocation {
     }
     return positionInfo.getFileName();
   }
-
   public String getPresentation() {
     SModel model = SNodeOperations.getModelFromNodeReference(myNodePointer);
     if (model == null) {
@@ -100,11 +90,9 @@ public class BreakpointLocation {
     model.getRepository().getModelAccess().runReadAction(r);
     return r.getResult();
   }
-
   public SModelReference getModelReference() {
     return myNodePointer.getModelReference();
   }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -116,14 +104,12 @@ public class BreakpointLocation {
 
     return eq_ei108j_a0d0m(myNodePointer, ((BreakpointLocation) o).myNodePointer);
   }
-
   @Override
   public int hashCode() {
     int result = 0;
     result = 31 * result + ((myNodePointer != null ? myNodePointer.hashCode() : 0));
     return result;
   }
-
   private static boolean eq_ei108j_a0d0m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

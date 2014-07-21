@@ -21,7 +21,6 @@ public class Substitute_SimpleString_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cuzi76_a(editorContext, node);
   }
-
   private EditorCell createCollection_cuzi76_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cuzi76_a");
@@ -29,7 +28,6 @@ public class Substitute_SimpleString_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_cuzi76_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_cuzi76_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");

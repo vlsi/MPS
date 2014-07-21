@@ -17,10 +17,8 @@ import com.intellij.openapi.util.Factory;
 
 public class DeployPluginsSettings_Configuration_Editor extends SettingsEditorEx<DeployPluginsSettings_Configuration> {
   private PluginsListPanel myPluginsPanel;
-
   public void disposeEditor() {
   }
-
   @NotNull
   public JPanel createEditor() {
     JPanel panel = new JPanel(new GridBagLayout());
@@ -29,7 +27,6 @@ public class DeployPluginsSettings_Configuration_Editor extends SettingsEditorEx
     panel.add(myPluginsPanel, LayoutUtil.createPanelConstraints(0));
     return panel;
   }
-
   public void applyEditorTo(final DeployPluginsSettings_Configuration configuration) throws ConfigurationException {
     configuration.getPluginsToDeploy().clear();
     ListSequence.fromList(configuration.getPluginsToDeploy().getData()).addSequence(ListSequence.fromList(myPluginsPanel.getItems()).select(new ISelector<SNodeReference, String>() {
@@ -38,11 +35,9 @@ public class DeployPluginsSettings_Configuration_Editor extends SettingsEditorEx
       }
     }));
   }
-
   public void resetEditorFrom(final DeployPluginsSettings_Configuration configuration) {
     myPluginsPanel.setData(PointerUtils.clonableListToNodes(configuration.getPluginsToDeploy()));
   }
-
   public DeployPluginsSettings_Configuration_Editor() {
     super(new Factory<DeployPluginsSettings_Configuration>() {
       public DeployPluginsSettings_Configuration create() {

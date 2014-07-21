@@ -14,21 +14,16 @@ public class Test_Test extends TestCase {
     }
     Assert.assertFalse(false);
   }
-
   public void test_test2() throws Exception {
     Assert.assertTrue(true);
   }
-
   public void setUp() {
     System.err.println("setup test!!");
   }
-
   public void tearDown() {
     System.err.println("teardown test!!");
   }
-
   public Test_Test() {
   }
-
   protected static Logger LOG = LogManager.getLogger(Test_Test.class);
 }

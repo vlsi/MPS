@@ -20,7 +20,6 @@ public class ConceptFunctioParameterTest_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.ConceptFunctioParameterTest_Test$TestBody", "test_ConceptFunctioParameterTest", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ConceptFunctioParameterTest() throws Exception {

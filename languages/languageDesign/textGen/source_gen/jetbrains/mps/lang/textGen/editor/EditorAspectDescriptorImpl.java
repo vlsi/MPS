@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
@@ -53,11 +52,9 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     }
     return Collections.<ConceptEditor>emptyList();
   }
-
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.<ConceptEditorComponent>emptyList();
   }
-
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.textGen.structure.AppendOperation", "jetbrains.mps.lang.textGen.structure.CollectionAppendPart", "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", "jetbrains.mps.lang.textGen.structure.EncodingLiteral", "jetbrains.mps.lang.textGen.structure.FoundErrorOperation", "jetbrains.mps.lang.textGen.structure.InfoAppendPart", "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.NewLineAppendPart", "jetbrains.mps.lang.textGen.structure.NodeAppendPart", "jetbrains.mps.lang.textGen.structure.OperationCall", "jetbrains.mps.lang.textGen.structure.OperationDeclaration", "jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", "jetbrains.mps.lang.textGen.structure.UtilityMethodCall", "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration", "jetbrains.mps.lang.textGen.structure.WithIndentOperation"};

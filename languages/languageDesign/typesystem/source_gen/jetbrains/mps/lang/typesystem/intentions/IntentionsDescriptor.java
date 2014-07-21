@@ -11,7 +11,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
     super(new ModuleReference("7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)"), PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)"));
   }
-
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertInferenceRuleToNonTypesystemRule_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new CreateTypesystemIntention_Intention());

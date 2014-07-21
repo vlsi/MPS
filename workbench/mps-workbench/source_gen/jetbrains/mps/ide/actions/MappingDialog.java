@@ -51,7 +51,6 @@ public class MappingDialog extends DialogWrapper {
       return MappingDialog.this.rebuildTree();
     }
   };
-
   public MappingDialog(final Project project, Language language) {
     super(project);
     setTitle("Choose Mapping Configuration");
@@ -94,13 +93,11 @@ public class MappingDialog extends DialogWrapper {
 
     init();
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myMainComponent;
   }
-
   private MPSTreeNode rebuildTree() {
     if (myLanguage == null) {
       return null;
@@ -127,11 +124,9 @@ public class MappingDialog extends DialogWrapper {
     }
     return root;
   }
-
   public SNode getResult() {
     return myResult;
   }
-
   @Override
   protected void doOKAction() {
     Object[] selectedNode = myTree.getSelectedNodes(SNodeTreeNode.class, new Tree.NodeFilter() {
@@ -148,13 +143,11 @@ public class MappingDialog extends DialogWrapper {
       super.doOKAction();
     }
   }
-
   @Override
   public void doCancelAction() {
     myTree.dispose();
     super.doCancelAction();
   }
-
   private static MPSTreeNode newTreeNode(IOperationContext context, Icon icon, String nodeIdentifier, String text) {
     MPSTreeNode n = new MPSTreeNode(context);
     n.setNodeIdentifier(nodeIdentifier);

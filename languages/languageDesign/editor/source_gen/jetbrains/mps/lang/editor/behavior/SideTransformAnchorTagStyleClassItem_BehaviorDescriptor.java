@@ -9,5 +9,5 @@ public class SideTransformAnchorTagStyleClassItem_BehaviorDescriptor extends Sty
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem";
-  };;
-;}
+  }
+}

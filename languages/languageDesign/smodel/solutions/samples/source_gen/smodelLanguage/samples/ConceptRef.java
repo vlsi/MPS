@@ -20,7 +20,6 @@ public class ConceptRef {
     boolean b2 = SConceptOperations.isExactly(concept1, "jetbrains.mps.baseLanguage.structure.IfStatement");
     boolean b3 = SConceptOperations.isExactly(concept1, NameUtil.nodeFQName(concept2));
   }
-
   public void instanceOf_1(SNode node, SNode concept1, SNode concept2) {
     SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement");
     SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")));
@@ -29,15 +28,12 @@ public class ConceptRef {
     SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept2));
     SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept2));
   }
-
   public void concept_conceptProperties(SNode exprConcept) {
     boolean b = BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(exprConcept)), "virtual_lvalue_1262430001741497939", new Object[]{});
   }
-
   public void concept_conceptLinkTargets(SNode conceptFunctionConcept) {
     List<SNode> applicableParams = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(conceptFunctionConcept)), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
   }
-
   public void concept_types() {
     SNode exprConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
     SNode c1 = exprConcept;
@@ -58,7 +54,6 @@ public class ConceptRef {
     // -- not ok -- 
     bExprConc = exprConc;
   }
-
   public void concept_hierarchy1(SNode concept) {
     // concept and all its supers 
     List<SNode> hierarchy = SConceptOperations.getConceptHierarchy(concept);
@@ -76,7 +71,6 @@ public class ConceptRef {
     SConceptOperations.isSubConceptOf(concept, NameUtil.nodeFQName(concept));
     SConceptOperations.isSuperConceptOf(concept, NameUtil.nodeFQName(concept));
   }
-
   public void concept_hierarchy2(SModel model) {
     List<SNode> subConcepts = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), model);
     SNode n = null;

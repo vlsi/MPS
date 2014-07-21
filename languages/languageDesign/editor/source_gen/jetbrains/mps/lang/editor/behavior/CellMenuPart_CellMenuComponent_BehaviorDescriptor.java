@@ -9,5 +9,5 @@ public class CellMenuPart_CellMenuComponent_BehaviorDescriptor extends CellMenuP
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent";
-  };;
-;}
+  }
+}

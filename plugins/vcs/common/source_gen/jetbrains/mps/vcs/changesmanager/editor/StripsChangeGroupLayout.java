@@ -14,34 +14,28 @@ import jetbrains.mps.vcs.diff.ChangeSet;
 
 /*package*/ class StripsChangeGroupLayout extends ChangeGroupLayout {
   private EditorHighlighter myEditorHighlighter;
-
   public StripsChangeGroupLayout(EditorHighlighter editorHighlighter) {
     super(null, editorHighlighter.getEditorComponent() instanceof InspectorEditorComponent, true);
     myEditorHighlighter = editorHighlighter;
   }
-
   @NotNull
   @Override
   public EditorComponent getLeftComponent() {
     return myEditorHighlighter.getEditorComponent();
   }
-
   @NotNull
   @Override
   public EditorComponent getRightComponent() {
     return myEditorHighlighter.getEditorComponent();
   }
-
   @Override
   protected List<ChangeEditorMessage> getLeftMessages(ModelChange change) {
     return myEditorHighlighter.getMessages(change);
   }
-
   @Override
   protected List<ChangeEditorMessage> getRightMessages(ModelChange change) {
     return myEditorHighlighter.getMessages(change);
   }
-
   @Nullable
   @Override
   protected ChangeSet getChangeSet() {

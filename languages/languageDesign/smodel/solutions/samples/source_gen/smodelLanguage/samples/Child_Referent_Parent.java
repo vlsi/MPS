@@ -15,42 +15,35 @@ public class Child_Referent_Parent {
     SNodeOperations.deleteNode(condition);
     SNodeOperations.detachNode(SLinkOperations.getTarget(ifStatement, "condition", true));
   }
-
   public void accessToChildNode_2(SNode ifStatement, SNode newCondition) {
     SLinkOperations.setTarget(ifStatement, "condition", newCondition, true);
     SNode condition = SLinkOperations.getTarget(ifStatement, "condition", true);
     SNodeOperations.replaceWithAnother(condition, newCondition);
   }
-
   public void accessToChildNode_3(SNode ifStatement1, SNode ifStatement2) {
     SLinkOperations.setTarget(ifStatement1, "condition", SNodeOperations.copyNode(SLinkOperations.getTarget(ifStatement2, "condition", true)), true);
     SNode condition = SLinkOperations.getTarget(ifStatement1, "condition", true);
     SNodeOperations.replaceWithAnother(condition, SNodeOperations.copyNode(SLinkOperations.getTarget(ifStatement2, "condition", true)));
   }
-
   public void accessToChildNode_4(SNode ifStatement) {
     SNode newCondition1 = SLinkOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.Expression");
     SNode newCondition2 = SLinkOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.EqualsExpression");
     SNode newCondition3 = SNodeOperations.replaceWithNewChild(newCondition1, "jetbrains.mps.baseLanguage.structure.NotExpression");
   }
-
   public void accessToChildNode_5(SNode ifStatement) {
     SLinkOperations.setTarget(ifStatement, "condition", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
     SNode detachedExpression = SNodeOperations.detachNode(SLinkOperations.getTarget(ifStatement, "condition", true));
     SNodeOperations.detachNode(ifStatement);
   }
-
   public void accessToReferentNode_1(SNode methodCall, SNode method) {
     SNode oldMethod = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
     String oldMethopdName = SPropertyOperations.getString(oldMethod, "name");
     oldMethopdName = SPropertyOperations.getString(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "name");
     SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", method, false);
   }
-
   public void accessToReferentNode_2(SNode methodCall, SNode method) {
     SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", method, false);
   }
-
   public void accessToParentNode_1(SNode expression) {
     SNode parent_IfStatement = null;
     SNode mayBe_IfStatement = SNodeOperations.getParent(expression);
@@ -62,27 +55,21 @@ public class Child_Referent_Parent {
       mayBe_IfStatement = SNodeOperations.getParent(mayBe_IfStatement);
     }
   }
-
   public void accessToParentNode_2(SNode methodCall) {
     SNode declaringClass = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
-
   public void accessToParentNode_3(SNode node) {
     SNode root = SNodeOperations.getContainingRoot(node);
   }
-
   public void accessToAncestorNode_1(SNode expression) {
     SNode parent_IfStatement = SNodeOperations.getAncestor(expression, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false);
   }
-
   public void accessToAncestorNode_2(SNode expression) {
     SNode parent_If_or_WhileStatement = SNodeOperations.getAncestorWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement", "jetbrains.mps.baseLanguage.structure.WhileStatement"}, false, false);
   }
-
   public void accessToAncestorNodes_1(SNode expression) {
     List<SNode> allAncestorStatements = SNodeOperations.getAncestors(expression, "jetbrains.mps.baseLanguage.structure.Statement", true);
   }
-
   public void accessToAncestorNodes_2(SNode expression) {
     List<SNode> allAncestor_If_or_WhileStatements = SNodeOperations.getAncestorsWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement", "jetbrains.mps.baseLanguage.structure.WhileStatement"}, true);
   }

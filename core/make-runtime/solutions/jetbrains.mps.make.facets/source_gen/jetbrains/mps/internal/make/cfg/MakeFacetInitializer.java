@@ -11,20 +11,16 @@ import jetbrains.mps.make.facet.ITarget;
 public final class MakeFacetInitializer {
   private _FunctionTypes._return_P1_E0<? extends IFile, ? super String> myPathToFile;
   private Boolean mySkipReconcile;
-
   public MakeFacetInitializer() {
   }
-
   public MakeFacetInitializer setPathToFile(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> f) {
     myPathToFile = f;
     return this;
   }
-
   public MakeFacetInitializer skipReconcile(Boolean skip) {
     mySkipReconcile = skip;
     return this;
   }
-
   public void populate(IPropertiesPool ppool) {
     if (myPathToFile != null) {
       Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> makeparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), Object.class);

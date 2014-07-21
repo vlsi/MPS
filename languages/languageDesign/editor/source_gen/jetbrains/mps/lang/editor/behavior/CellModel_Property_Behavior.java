@@ -9,23 +9,23 @@ import jetbrains.mps.editor.runtime.cells.CellIdManager;
 
 public class CellModel_Property_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static String virtual_getRoleForCell_1216377898846(SNode thisNode) {
+  }
+  public static String virtual_getRoleForCell_1216377898846(SNode thisNode) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "name");
-  };;
-;  public static String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
+  }
+  public static String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
     return CellIdManager.createPropertyId(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "name"));
-  };;
-;  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
+  }
+  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
     return "{";
-  };;
-;  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
+  }
+  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
     return "}";
-  };;
-;  public static boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode) {
+  }
+  public static boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode) {
     return true;
-  };;
-;  public static boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode) {
+  }
+  public static boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode) {
     return false;
-  };;
-;}
+  }
+}

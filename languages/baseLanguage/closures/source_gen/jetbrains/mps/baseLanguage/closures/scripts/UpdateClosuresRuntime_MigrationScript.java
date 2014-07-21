@@ -31,15 +31,12 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "_FunctionTypes";
       }
-
       public String getAdditionalInfo() {
         return "_FunctionTypes";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.ClassConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -47,7 +44,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> paramTypeVars = new ArrayList<SNode>();
         for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
@@ -88,7 +84,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(paramTypeVars).addElement(_quotation_createNode_awiph7_a0a2a1a0a("P" + (params + 1)));
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -97,15 +92,12 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "_FunctionTypes";
       }
-
       public String getAdditionalInfo() {
         return "_FunctionTypes";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.ClassConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -113,7 +105,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> paramTypeVars = new ArrayList<SNode>();
         for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
@@ -157,7 +148,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(paramTypeVars).addElement(_quotation_createNode_awiph7_a0a2a1a0b("P" + (params + 1)));
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -166,15 +156,12 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "_UnrestrictedFunctionTypes";
       }
-
       public String getAdditionalInfo() {
         return "_UnrestrictedFunctionTypes";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.ClassConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -182,7 +169,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> paramTypeVars = new ArrayList<SNode>();
         for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
@@ -228,7 +214,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(paramTypeVars).addElement(_quotation_createNode_awiph7_a0a2a1a0c("P" + (params + 1)));
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -237,15 +222,12 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "_UnrestrictedFunctionTypes";
       }
-
       public String getAdditionalInfo() {
         return "_UnrestrictedFunctionTypes";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.ClassConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -253,7 +235,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> paramTypeVars = new ArrayList<SNode>();
         for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
@@ -310,7 +291,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(paramTypeVars).addElement(_quotation_createNode_awiph7_a0a2a1a0d("P" + (params + 1)));
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -319,15 +299,12 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "_UnrestrictedFunctionTypes";
       }
-
       public String getAdditionalInfo() {
         return "_UnrestrictedFunctionTypes";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.ClassConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -335,7 +312,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> paramTypeVars = new ArrayList<SNode>();
         for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
@@ -392,7 +368,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(paramTypeVars).addElement(_quotation_createNode_awiph7_a0a2a1a0e("P" + (params + 1)));
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -401,15 +376,12 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "_UnrestrictedFunctionTypes";
       }
-
       public String getAdditionalInfo() {
         return "_UnrestrictedFunctionTypes";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.ClassConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -417,7 +389,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> paramTypeVars = new ArrayList<SNode>();
         for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
@@ -472,13 +443,11 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(paramTypeVars).addElement(_quotation_createNode_awiph7_a0a2a1a0f("P" + (params + 1)));
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
     });
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0a4a1a1a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -486,7 +455,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a1a0a0a0e0b0b0a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -499,7 +467,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0i0b0b0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -507,7 +474,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a11a1a1a0a(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -555,7 +521,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_5.addChild("member", quotedNode_8);
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a31a1a1a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -567,7 +532,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_2.addChild("bound", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a2a1a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -575,7 +539,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a1a1a1a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -583,7 +546,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "R");
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_awiph7_a0c0b0b0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -591,7 +553,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0a7a1a1a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -599,7 +560,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a1a0a0a0h0b0b0a1(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -612,7 +572,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0l0b0b0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -620,7 +579,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a41a1a1a0b(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_6 = null;
@@ -670,7 +628,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_6.addChild("member", quotedNode_9);
     return quotedNode_6;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a61a1a1a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -682,7 +639,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_2.addChild("bound", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a2a1a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -690,7 +646,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a1a1a1a0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -698,7 +653,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "T");
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_awiph7_a0c0b0b0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -706,7 +660,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a3a1a1a0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -714,7 +667,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "R");
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_awiph7_a0e0b0b0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -722,7 +674,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0f0b0b0a2(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -740,7 +691,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0a9a1a1a0c(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -748,7 +698,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a1a0a0a0j0b0b0a2(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -761,7 +710,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0n0b0b0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -769,7 +717,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a61a1a1a0c(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_6 = null;
@@ -819,7 +766,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_6.addChild("member", quotedNode_9);
     return quotedNode_6;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a81a1a1a0c(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -831,7 +777,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_2.addChild("bound", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a2a1a0c(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -839,7 +784,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a1a1a1a0d() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -847,7 +791,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "T");
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_awiph7_a0c0b0b0a3(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -855,7 +798,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0d0b0b0a3(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -872,7 +814,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_2.addChild("parameter", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0a7a1a1a0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -880,7 +821,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a1a0a0a0h0b0b0a3(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -893,7 +833,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0l0b0b0a3(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -901,7 +840,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0q0b0b0a3(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -909,7 +847,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a91a1a1a0d(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_9 = null;
@@ -979,7 +916,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_9.addChild("member", quotedNode_13);
     return quotedNode_9;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a12a1a1a0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -991,7 +927,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_2.addChild("bound", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a2a1a0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -999,7 +934,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a1a1a1a0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1007,7 +941,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "R");
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_awiph7_a0c0b0b0a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1015,7 +948,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0d0b0b0a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1032,7 +964,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0a7a1a1a0e(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1040,7 +971,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a1a0a0a0h0b0b0a4(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -1053,7 +983,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0l0b0b0a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1061,7 +990,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0q0b0b0a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1069,7 +997,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a91a1a1a0e(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_9 = null;
@@ -1139,7 +1066,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_9.addChild("member", quotedNode_13);
     return quotedNode_9;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a12a1a1a0e(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1151,7 +1077,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_2.addChild("bound", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a2a1a0e(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1159,7 +1084,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0b0b0b0a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1175,7 +1099,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_1.addChild("parameter", quotedNode_3);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0a5a1a1a0f(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1183,7 +1106,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a1a0a0a0f0b0b0a5(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -1196,7 +1118,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0j0b0b0a5(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1204,7 +1125,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a0a0a0o0b0b0a5(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1212,7 +1132,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a71a1a1a0f(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_8 = null;
@@ -1281,7 +1200,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_8.addChild("member", quotedNode_12);
     return quotedNode_8;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a91a1a1a0f(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1293,7 +1211,6 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_2.addChild("bound", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_awiph7_a0a2a1a0f(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

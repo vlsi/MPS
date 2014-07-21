@@ -27,7 +27,6 @@ public class ComeFromExpression_Constraints extends BaseConstraintsDescriptor {
   public ComeFromExpression_Constraints() {
     super("jetbrains.mps.lang.scopes.structure.ComeFromExpression");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -36,7 +35,6 @@ public class ComeFromExpression_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -45,7 +43,6 @@ public class ComeFromExpression_Constraints extends BaseConstraintsDescriptor {
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_t1q7r2_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -65,6 +62,5 @@ public class ComeFromExpression_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_t1q7r2_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:ff944d67-5440-4132-a4a9-2198c9221961(jetbrains.mps.lang.scopes.constraints)", "8077936094962945825");
 }

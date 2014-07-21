@@ -12,7 +12,6 @@ import com.intellij.openapi.project.Project;
 public class DependencyTreeNode extends MPSTreeNode {
   private DependencyUtil.Link myLink;
   private DependencyTreeNode myLinkedNode;
-
   public DependencyTreeNode(DependencyUtil.Link link, IOperationContext operationContext) {
     super(link, operationContext);
     myLink = link;
@@ -21,31 +20,25 @@ public class DependencyTreeNode extends MPSTreeNode {
     setNodeIdentifier(link.linktype + link.module.getModuleName());
     setText("<html>" + linktype + link.module.getModuleName() + "</html>");
   }
-
   public DependencyUtil.Link getLink() {
     return myLink;
   }
-
   public SModule getModule() {
     return check_akkfj9_a0a4(myLink);
   }
-
   public void setDepLeaf() {
     String linktype = (myLink.linktype == null ? "" : "<i>" + myLink.linktype.toString() + "</i> ");
     setText("<html>" + linktype + "<b>" + myLink.module.getModuleName() + "</b></html>");
   }
-
   public void setLinkLeaf(DependencyTreeNode linkedNode) {
     myLinkedNode = linkedNode;
     String linktype = (myLink.linktype == null ? "" : "<i>" + myLink.linktype.toString() + "</i> ");
     setText("<html>" + linktype + myLink.module.getModuleName() + "... <b>--></b></html>");
   }
-
   @Override
   public boolean isLeaf() {
     return children == null || children.isEmpty();
   }
-
   @Override
   public void doubleClick() {
     if (myLinkedNode == null) {
@@ -54,14 +47,12 @@ public class DependencyTreeNode extends MPSTreeNode {
       getTree().selectNode(myLinkedNode);
     }
   }
-
   private static SModule check_akkfj9_a0a4(DependencyUtil.Link checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.module;
     }
     return null;
   }
-
   private static Project check_akkfj9_a0a0a0a8(DependencyPathTree checkedDotOperand, DependencyTreeNode checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProject();

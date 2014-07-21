@@ -33,7 +33,6 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_85j21_a(editorContext, node);
   }
-
   private EditorCell createCollection_85j21_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_85j21_a");
@@ -47,7 +46,6 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_85j21_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_85j21_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_85j21_a0");
@@ -61,7 +59,6 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_85j21_e0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_85j21_a0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -69,7 +66,6 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createProperty_85j21_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -87,7 +83,6 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_85j21_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_85j21_c0a");
@@ -99,7 +94,6 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_85j21_d0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new PersistentConfigurationTemplate_Editor.templateParameterListHandler_85j21_d0a(node, "templateParameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
@@ -107,34 +101,28 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class templateParameterListHandler_85j21_d0a extends RefNodeListHandler {
     public templateParameterListHandler_85j21_d0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_85j21_a3a0(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -148,7 +136,6 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
@@ -161,7 +148,6 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(prevNode));
       return editorCell;
     }
-
     private EditorCell createConstant_85j21_a3a0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_85j21_a3a0");
@@ -169,7 +155,6 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_85j21_e0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_85j21_e0a");
@@ -180,7 +165,6 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_85j21_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_85j21_b0");
@@ -190,12 +174,10 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_85j21_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.settings.editor.PersistentPropertiesComponent");
     return editorCell;
   }
-
   private EditorCell createConstant_85j21_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_85j21_d0");
@@ -205,12 +187,10 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_85j21_e0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.settings.editor.EditorComponent");
     return editorCell;
   }
-
   private EditorCell createConstant_85j21_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_85j21_f0");
@@ -220,7 +200,6 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_85j21_g0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.settings.editor.PersistentMethodsComponent");
     return editorCell;

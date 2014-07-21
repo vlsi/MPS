@@ -11,9 +11,9 @@ public class ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescript
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConceptParameter_ReferentSearchScope_enclosingNode_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode";
-  };;
-;}
+  }
+}

@@ -10,5 +10,5 @@ public class PrintToTrace_BehaviorDescriptor extends Statement_BehaviorDescripto
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.PrintToTrace";
-  };;
-;}
+  }
+}

@@ -10,5 +10,5 @@ public class EditorTabReference_BehaviorDescriptor extends Expression_BehaviorDe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.EditorTabReference";
-  };;
-;}
+  }
+}

@@ -9,9 +9,9 @@ public class Reduction_MappingRule_BehaviorDescriptor extends BaseMappingRule_Be
   }
   public SNode virtual_getTemplateType_1213877498511(SNode thisNode) {
     return Reduction_MappingRule_Behavior.virtual_getTemplateType_1213877498511(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.Reduction_MappingRule";
-  };;
-;}
+  }
+}

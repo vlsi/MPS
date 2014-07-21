@@ -22,7 +22,6 @@ import java.util.HashMap;
 
 public class VisibleClassConstructorsScope extends Scope {
   private final Scope classifiers;
-
   public VisibleClassConstructorsScope(@NotNull SNode contextNode) {
     // todo: find not all classifiers, only class concept! 
     classifiers = new FilteringScope(ClassifierScopes.getVisibleClassifiersScope(contextNode, true)) {
@@ -32,7 +31,6 @@ public class VisibleClassConstructorsScope extends Scope {
       }
     };
   }
-
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     return Sequence.fromIterable(classifiers.getAvailableElements(prefix)).translate(new ITranslator2<SNode, SNode>() {
@@ -45,19 +43,16 @@ public class VisibleClassConstructorsScope extends Scope {
       }
     });
   }
-
   @Override
   public boolean contains(SNode node) {
     // todo: visibility check! 
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && classifiers.contains(SNodeOperations.getParent(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")));
   }
-
   @Nullable
   @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     return SPropertyOperations.getString(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "name");
   }
-
   @Nullable
   @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {

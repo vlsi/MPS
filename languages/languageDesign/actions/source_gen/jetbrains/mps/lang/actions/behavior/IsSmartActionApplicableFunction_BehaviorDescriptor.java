@@ -11,12 +11,12 @@ public class IsSmartActionApplicableFunction_BehaviorDescriptor extends ConceptF
   }
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return IsSmartActionApplicableFunction_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  };;
-;  public List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
+  }
+  public List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     return IsSmartActionApplicableFunction_Behavior.virtual_getParameters_1213877374450(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction";
-  };;
-;}
+  }
+}

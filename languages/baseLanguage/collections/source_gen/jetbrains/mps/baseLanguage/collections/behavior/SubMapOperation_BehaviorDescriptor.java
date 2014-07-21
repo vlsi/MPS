@@ -9,5 +9,5 @@ public class SubMapOperation_BehaviorDescriptor extends SortedMapOperation_Behav
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SubMapOperation";
-  };;
-;}
+  }
+}

@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class ModuleReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getModuleReference_1250389701475344624(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "uuid") + "(" + SPropertyOperations.getString(thisNode, "qualifiedName") + ")";
   }

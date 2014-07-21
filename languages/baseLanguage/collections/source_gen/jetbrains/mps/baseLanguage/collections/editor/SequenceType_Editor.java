@@ -30,7 +30,6 @@ public class SequenceType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_z5ycp4_a(editorContext, node);
   }
-
   private EditorCell createCollection_z5ycp4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_z5ycp4_a");
@@ -41,7 +40,6 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createComponent_z5ycp4_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -53,19 +51,15 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SequenceType_Editor.SequenceType_component_cellMenu_z5ycp4_a0a0()}));
     return editorCell;
   }
-
   public static class SequenceType_component_cellMenu_z5ycp4_a0a0 implements SubstituteInfoPartExt {
     private replace_withAnotherSequenceType myComponent;
-
     public SequenceType_component_cellMenu_z5ycp4_a0a0() {
       this.myComponent = new replace_withAnotherSequenceType();
     }
-
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
-
   private EditorCell createCollection_z5ycp4_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_z5ycp4_b0");
@@ -77,11 +71,9 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_z5ycp4_c1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_z5ycp4_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "elementType", true) != null);
   }
-
   private EditorCell createConstant_z5ycp4_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_z5ycp4_a1a");
@@ -92,7 +84,6 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_z5ycp4_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elementType");
@@ -112,7 +103,6 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_z5ycp4_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_z5ycp4_c1a");

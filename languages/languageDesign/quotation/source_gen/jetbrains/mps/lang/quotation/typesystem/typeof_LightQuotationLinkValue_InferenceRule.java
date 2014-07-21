@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_LightQuotationLinkValue_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_LightQuotationLinkValue_InferenceRule() {
   }
-
   public void applyRule(final SNode val, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(val, "link", false))) {
       if (!(typeCheckingContext.isSingleTypeComputation())) {
@@ -37,22 +36,18 @@ public class typeof_LightQuotationLinkValue_InferenceRule extends AbstractInfere
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_729lck_a0a0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -60,7 +55,6 @@ public class typeof_LightQuotationLinkValue_InferenceRule extends AbstractInfere
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_729lck_a0a0a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

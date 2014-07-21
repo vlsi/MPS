@@ -11,9 +11,9 @@ public class ActionType_BehaviorDescriptor extends BaseClassifierType_BehaviorDe
   }
   public List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
     return ActionType_Behavior.virtual_getMembers_1213877402148(thisNode, contextNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ActionType";
-  };;
-;}
+  }
+}

@@ -18,23 +18,18 @@ public abstract class BreakpointsView implements DataProvider {
   private List<IBreakpoint> myBreakpointsList;
   protected final BreakpointManagerComponent myBreakpointsManager;
   private final List<BreakpointsView.BreakpointSelectionListener> mySelectionListeners = new ArrayList<BreakpointsView.BreakpointSelectionListener>();
-
   public BreakpointsView(BreakpointManagerComponent breakpointsManager) {
     myBreakpointsManager = breakpointsManager;
     updateBreakpoints();
   }
-
   public void dispose() {
   }
-
   protected final void updateBreakpoints() {
     myBreakpointsList = loadBreakpoints();
   }
-
   protected List<IBreakpoint> getBreakpointsList() {
     return myBreakpointsList;
   }
-
   protected List<IBreakpoint> loadBreakpoints() {
     Set<IBreakpoint> mpsBreakpoints = myBreakpointsManager.getAllIBreakpoints();
     final List<IBreakpoint> bpList = new ArrayList<IBreakpoint>(mpsBreakpoints);
@@ -46,35 +41,25 @@ public abstract class BreakpointsView implements DataProvider {
     });
     return bpList;
   }
-
   public void addBreakpointSelectionListener(@NotNull BreakpointsView.BreakpointSelectionListener l) {
     mySelectionListeners.add(l);
   }
-
   public void removeBreakpointSelectionListener(@NotNull BreakpointsView.BreakpointSelectionListener l) {
     mySelectionListeners.remove(l);
   }
-
   protected void fireBreakpointSelected(@Nullable IBreakpoint breakpoint) {
     for (BreakpointsView.BreakpointSelectionListener l : mySelectionListeners) {
       l.breakpointSelected(breakpoint);
     }
   }
-
   public void saveState() {
   }
-
   public abstract String getTitle();
-
   public abstract void update();
-
   public abstract JComponent getMainComponent();
-
   @Nullable
   public abstract IBreakpoint getSelectedBreakpoint();
-
   public abstract void selectBreakpoint(@Nullable IBreakpoint breakpoint);
-
   public static interface BreakpointSelectionListener {
     public void breakpointSelected(@Nullable IBreakpoint breakpoint);
   }

@@ -10,5 +10,5 @@ public class StyleAttributeReferenceExpression_BehaviorDescriptor extends Expres
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyleAttributeReferenceExpression";
-  };;
-;}
+  }
+}

@@ -9,5 +9,5 @@ public class CreateEquationStatement_BehaviorDescriptor extends AbstractEquation
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement";
-  };;
-;}
+  }
+}

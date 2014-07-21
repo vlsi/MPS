@@ -12,16 +12,13 @@ public class Remote_Configuration_Factory extends ConfigurationFactory {
   public Remote_Configuration_Factory(Remote_Kind type) {
     super(type);
   }
-
   public RunConfiguration createTemplateConfiguration(Project project) {
     return new Remote_Configuration(project, this, "Template Configuration");
   }
-
   @Override
   public String getName() {
     return "Remote";
   }
-
   @Override
   public Icon getIcon() {
     Icon icon = super.getIcon();

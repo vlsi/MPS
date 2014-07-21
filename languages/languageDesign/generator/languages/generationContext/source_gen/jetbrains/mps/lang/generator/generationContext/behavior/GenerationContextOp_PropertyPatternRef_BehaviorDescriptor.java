@@ -9,12 +9,12 @@ public class GenerationContextOp_PropertyPatternRef_BehaviorDescriptor extends G
   }
   public SNode virtual_getTarget_1758784108620114792(SNode thisNode) {
     return GenerationContextOp_PropertyPatternRef_Behavior.virtual_getTarget_1758784108620114792(thisNode);
-  };;
-;  public void virtual_setTarget_1758784108620254533(SNode thisNode, SNode target) {
+  }
+  public void virtual_setTarget_1758784108620254533(SNode thisNode, SNode target) {
     GenerationContextOp_PropertyPatternRef_Behavior.virtual_setTarget_1758784108620254533(thisNode, target);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef";
-  };;
-;}
+  }
+}

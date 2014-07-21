@@ -19,7 +19,6 @@ public class JavaConfigurationEditorComponent extends JBPanel {
   private final FieldWithPathChooseDialog myWorkingDirectory;
   private final JBCheckBox myUseAlternativeJre;
   private final FieldWithPathChooseDialog myJreHome;
-
   public JavaConfigurationEditorComponent() {
     super(new GridBagLayout());
 
@@ -48,8 +47,6 @@ public class JavaConfigurationEditorComponent extends JBPanel {
     add(myJreHome, LayoutUtil.createPanelConstraints(10));
   }
 
-
-
   public void reset(@Nullable JavaRunParameters javaOptions) {
     if (javaOptions == null) {
       return;
@@ -61,7 +58,6 @@ public class JavaConfigurationEditorComponent extends JBPanel {
     myUseAlternativeJre.setSelected((boolean) javaOptions.useAlternativeJre());
     myJreHome.setEditable((boolean) javaOptions.useAlternativeJre());
   }
-
   public void apply(@Nullable JavaRunParameters javaOptions) {
     if (javaOptions == null) {
       return;
@@ -72,7 +68,6 @@ public class JavaConfigurationEditorComponent extends JBPanel {
     javaOptions.workingDirectory(myWorkingDirectory.getText());
     javaOptions.useAlternativeJre(myUseAlternativeJre.isSelected());
   }
-
   public void dispose() {
     myJreHome.dispose();
     myProgramParameters.dispose();

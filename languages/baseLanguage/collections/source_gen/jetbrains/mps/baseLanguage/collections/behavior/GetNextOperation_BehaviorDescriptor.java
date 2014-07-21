@@ -9,5 +9,5 @@ public class GetNextOperation_BehaviorDescriptor extends AbstractIteratorOperati
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.GetNextOperation";
-  };;
-;}
+  }
+}

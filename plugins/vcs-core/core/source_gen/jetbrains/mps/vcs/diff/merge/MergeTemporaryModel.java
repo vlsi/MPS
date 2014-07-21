@@ -13,18 +13,15 @@ import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 public class MergeTemporaryModel extends EditableSModelBase {
   protected volatile SModel mySModel;
   private boolean myReadOnly;
-
   public MergeTemporaryModel(SModelReference modelRef, boolean readonly) {
     super(modelRef, new NullDataSource());
     myReadOnly = readonly;
   }
-
   public MergeTemporaryModel(SModel model, boolean readonly) {
     this(model.getReference(), readonly);
     mySModel = model;
     model.setModelDescriptor(this);
   }
-
   @Override
   public final SModel getSModelInternal() {
     if (mySModel != null) {
@@ -39,36 +36,29 @@ public class MergeTemporaryModel extends EditableSModelBase {
     }
     return mySModel;
   }
-
   @Override
   public boolean isLoaded() {
     return mySModel != null;
   }
-
   @Override
   protected SModel getCurrentModelInternal() {
     return mySModel;
   }
-
   @Override
   protected boolean saveModel() throws IOException, ModelSaveException {
     return false;
   }
-
   @Override
   public void rename(String newModelName, boolean changeFile) {
     throw new UnsupportedOperationException();
   }
-
   protected void doUnload() {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public boolean isReadOnly() {
     return myReadOnly;
   }
-
   @Override
   protected void reloadContents() {
     throw new UnsupportedOperationException();

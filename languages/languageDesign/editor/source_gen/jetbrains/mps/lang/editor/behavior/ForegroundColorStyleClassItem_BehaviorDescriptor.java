@@ -9,9 +9,9 @@ public class ForegroundColorStyleClassItem_BehaviorDescriptor extends ColorStyle
   }
   public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     return ForegroundColorStyleClassItem_Behavior.virtual_isApplicableTo_1214304723440(thisNode, cellModel);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem";
-  };;
-;}
+  }
+}

@@ -9,5 +9,5 @@ public abstract class InternalSequenceOperation_BehaviorDescriptor extends Seque
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation";
-  };;
-;}
+  }
+}

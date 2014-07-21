@@ -15,27 +15,21 @@ public abstract class AbstractManager {
       AbstractManager.this.clearCaches();
     }
   };
-
   public AbstractManager() {
   }
-
   public void init() {
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
-
   public void dispose() {
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
   }
-
   public abstract void clearCaches();
-
   protected static class Descriptor<T> {
     private String myClassName;
     private Language myLanguage;
     private T myInstance;
     private boolean myWasInitialized;
     private Logger myLog;
-
     public Descriptor(String className, Language language, Logger log) {
       assert className != null;
       myClassName = className;
@@ -44,7 +38,6 @@ public abstract class AbstractManager {
       assert log != null;
       myLog = log;
     }
-
     public T getInstance() {
       if (!(myWasInitialized)) {
         Class postProcessorClass = ClassLoaderManager.getInstance().getClass(myLanguage, myClassName);

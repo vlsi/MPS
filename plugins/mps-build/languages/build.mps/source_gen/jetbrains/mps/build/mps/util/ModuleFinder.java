@@ -58,7 +58,6 @@ public class ModuleFinder {
       }
     });
   }
-
   private static SNode createGeneratorInternal_String_8pqt49_a0a0a0e0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, false);

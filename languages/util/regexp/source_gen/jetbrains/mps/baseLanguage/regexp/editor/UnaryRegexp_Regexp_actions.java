@@ -18,18 +18,14 @@ public class UnaryRegexp_Regexp_actions {
     editorCell.setAction(CellActionType.DELETE, new UnaryRegexp_Regexp_actions.UnaryRegexp_Regexp_actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new UnaryRegexp_Regexp_actions.UnaryRegexp_Regexp_actions_BACKSPACE(node));
   }
-
   public static class UnaryRegexp_Regexp_actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public UnaryRegexp_Regexp_actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode nn = SLinkOperations.getTarget(node, "regexp", true);
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "regexp", true));
@@ -46,18 +42,14 @@ public class UnaryRegexp_Regexp_actions {
       }
     }
   }
-
   public static class UnaryRegexp_Regexp_actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public UnaryRegexp_Regexp_actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode nn = SLinkOperations.getTarget(node, "regexp", true);
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "regexp", true));

@@ -10,5 +10,5 @@ public class PopupCreator_BehaviorDescriptor extends Expression_BehaviorDescript
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.PopupCreator";
-  };;
-;}
+  }
+}

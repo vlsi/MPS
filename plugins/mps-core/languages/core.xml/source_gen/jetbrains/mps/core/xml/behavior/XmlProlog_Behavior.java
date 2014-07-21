@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class XmlProlog_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_isInValidPosition_2133624044437891376(SNode thisNode, SNode element) {
     SNode declaration = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elements", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

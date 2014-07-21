@@ -9,5 +9,5 @@ public class FontStyleStyleClassItem_BehaviorDescriptor extends StyleClassItem_B
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem";
-  };;
-;}
+  }
+}

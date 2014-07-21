@@ -37,18 +37,14 @@ public enum FileType {
 
   private String mySuffix;
   private String myXmlRoot;
-
   FileType(String suffix, String xmlRoot) {
     mySuffix = suffix;
     myXmlRoot = xmlRoot;
   }
 
-
-
   public String getSuffix() {
     return mySuffix;
   }
-
   @Nullable
   public static FileType get(@Nullable final String filetype, File file) {
     // try to recognize by filetype 
@@ -84,7 +80,6 @@ public enum FileType {
     // try to get file type by file content 
     return getTypeByXmlRoot(file);
   }
-
   @Nullable
   private static FileType getTypeByXmlRoot(File file) {
     final FileType.XMLRootHandler handler = new FileType.XMLRootHandler();
@@ -117,11 +112,9 @@ public enum FileType {
     }
     return res;
   }
-
   private static class XMLRootHandler extends DefaultHandler {
     public String rootName;
     public String contentAttr;
-
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
       rootName = qName;

@@ -10,9 +10,9 @@ public class ConceptFunctionParameter_Selection_BehaviorDescriptor extends Conce
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConceptFunctionParameter_Selection_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection";
-  };;
-;}
+  }
+}

@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class BehaviorCodeOverrideImplementMenuGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(BehaviorCodeOverrideImplementMenuGroup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.devkit.actions.BehaviorCodeOverrideImplementMenuGroup_ActionGroup";
-
   public BehaviorCodeOverrideImplementMenuGroup_ActionGroup() {
     super("BehaviorCodeOverrideImplementMenuGroup", ID);
     this.setIsInternal(false);

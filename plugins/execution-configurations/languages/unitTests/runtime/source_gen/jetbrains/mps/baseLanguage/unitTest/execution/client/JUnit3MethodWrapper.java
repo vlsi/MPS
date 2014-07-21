@@ -14,12 +14,10 @@ public class JUnit3MethodWrapper extends AbstractTestWrapper<SNode> {
   public JUnit3MethodWrapper(SNode method) {
     super(method);
   }
-
   @Override
   public boolean isTestCase() {
     return false;
   }
-
   @Nullable
   @Override
   public ITestNodeWrapper getTestCase() {
@@ -29,11 +27,9 @@ public class JUnit3MethodWrapper extends AbstractTestWrapper<SNode> {
     }
     return null;
   }
-
   public static boolean isTestMethod(@NotNull SNode method) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, method, "virtual_isAbstract_1232982539764", new Object[]{})) && (SLinkOperations.getTarget(method, "visibility", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && (SPropertyOperations.getString(method, "name") != null) && SPropertyOperations.getString(method, "name").startsWith("test");
   }
-
   private static SNode check_pj3jcm_a0a0c(SNode checkedDotOperand, JUnit3MethodWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return SNodeOperations.getAncestor(checkedDotOperand, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);

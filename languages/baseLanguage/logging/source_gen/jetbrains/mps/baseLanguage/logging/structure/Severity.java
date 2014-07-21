@@ -15,15 +15,12 @@ public enum Severity {
   trace("trace", "trace");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<Severity> getConstants() {
     List<Severity> list = ListSequence.fromList(new LinkedList<Severity>());
     ListSequence.fromList(list).addElement(Severity.fatal);
@@ -34,11 +31,9 @@ public enum Severity {
     ListSequence.fromList(list).addElement(Severity.trace);
     return list;
   }
-
   public static Severity getDefault() {
     return Severity.debug;
   }
-
   public static Severity parseValue(String value) {
     if (value == null) {
       return Severity.getDefault();
@@ -63,14 +58,11 @@ public enum Severity {
     }
     return Severity.getDefault();
   }
-
   private String myValue;
-
   Severity(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

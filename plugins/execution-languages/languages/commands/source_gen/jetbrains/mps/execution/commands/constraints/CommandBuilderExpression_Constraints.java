@@ -15,7 +15,6 @@ public class CommandBuilderExpression_Constraints extends BaseConstraintsDescrip
   public CommandBuilderExpression_Constraints() {
     super("jetbrains.mps.execution.commands.structure.CommandBuilderExpression");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -24,7 +23,6 @@ public class CommandBuilderExpression_Constraints extends BaseConstraintsDescrip
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";

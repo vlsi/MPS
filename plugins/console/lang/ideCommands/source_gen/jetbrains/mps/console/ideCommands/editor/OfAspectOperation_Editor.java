@@ -24,7 +24,6 @@ public class OfAspectOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1vnrru_a(editorContext, node);
   }
-
   private EditorCell createCollection_1vnrru_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1vnrru_a");
@@ -35,7 +34,6 @@ public class OfAspectOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1vnrru_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_1vnrru_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -43,7 +41,6 @@ public class OfAspectOperation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_1vnrru_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_1vnrru_b0");
@@ -53,7 +50,6 @@ public class OfAspectOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_1vnrru_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("requestedAspect");
@@ -75,27 +71,22 @@ public class OfAspectOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_1vnrru_a2a extends InlineCellProvider {
     public _Inline_1vnrru_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReferencePresentation_1vnrru_a0c0(editorContext, node);
     }
-
     private EditorCell createReferencePresentation_1vnrru_a0c0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "requestedAspect");
       editorCell.setCellId("ReferencePresentation_1vnrru_a0c0");
       return editorCell;
     }
   }
-
   private EditorCell createConstant_1vnrru_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_1vnrru_d0");

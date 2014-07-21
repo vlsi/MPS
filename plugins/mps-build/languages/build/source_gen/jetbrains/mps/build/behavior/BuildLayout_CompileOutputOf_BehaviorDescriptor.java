@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BuildLayout_CompileOutputOf_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildLayout_FileSet_BehaviorDescriptor {
   public BuildLayout_CompileOutputOf_BehaviorDescriptor() {
   }
-
   public boolean virtual_isImplicit_1330375798085107777(SNode thisNode) {
     return BuildLayout_CompileOutputOf_Behavior.virtual_isImplicit_1330375798085107777(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf";

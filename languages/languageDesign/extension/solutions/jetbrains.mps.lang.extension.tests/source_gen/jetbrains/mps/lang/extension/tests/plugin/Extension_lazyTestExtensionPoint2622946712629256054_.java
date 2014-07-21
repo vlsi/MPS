@@ -8,7 +8,6 @@ public class Extension_lazyTestExtensionPoint2622946712629256054_ extends Extens
   public Extension_lazyTestExtensionPoint2622946712629256054_() {
     super("jetbrains.mps.lang.extension.tests.lazyTestExtensionPoint");
   }
-
   public LazyTestObject get() {
     return new LazyTestObject();
   }

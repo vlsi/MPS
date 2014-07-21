@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class StateReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public StateReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference";

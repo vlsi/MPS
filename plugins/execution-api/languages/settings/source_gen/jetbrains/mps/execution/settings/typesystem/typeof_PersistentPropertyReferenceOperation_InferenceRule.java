@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_PersistentPropertyReferenceOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_PersistentPropertyReferenceOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode persistentPropertyReferenceOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = persistentPropertyReferenceOperation;
@@ -22,18 +21,15 @@ public class typeof_PersistentPropertyReferenceOperation_InferenceRule extends A
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477788", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(persistentPropertyReferenceOperation, "variableDeclaration", false), "type", true), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="Language.java">
-      <unit at="16,0,51,0" name="jetbrains.mps.sampleXML.Language" />
+      <unit at="16,0,46,0" name="jetbrains.mps.sampleXML.Language" />
     </file>
   </root>
 </debug-info>

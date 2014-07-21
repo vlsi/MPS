@@ -6,7 +6,6 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 public abstract class BinaryOperation_BehaviorDescriptor extends LambdaExpression_BehaviorDescriptor {
   public BinaryOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation";

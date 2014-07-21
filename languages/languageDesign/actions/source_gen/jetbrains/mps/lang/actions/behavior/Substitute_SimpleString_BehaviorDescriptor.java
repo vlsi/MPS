@@ -11,5 +11,5 @@ public class Substitute_SimpleString_BehaviorDescriptor extends BaseConcept_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.Substitute_SimpleString";
-  };;
-;}
+  }
+}

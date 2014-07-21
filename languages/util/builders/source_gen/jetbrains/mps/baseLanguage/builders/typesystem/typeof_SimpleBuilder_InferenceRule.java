@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_SimpleBuilder_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SimpleBuilder_InferenceRule() {
   }
-
   public void applyRule(final SNode builder, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (ListSequence.fromList(SLinkOperations.getTargets(builder, "argument", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(builder, "declaration", false), "parameter", true)).count()) {
       {
@@ -36,18 +35,15 @@ public class typeof_SimpleBuilder_InferenceRule extends AbstractInferenceRule_Ru
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

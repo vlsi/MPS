@@ -18,18 +18,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class SmartReferenseUpdateOnChange_Test extends BaseTransformationTest {
   public SmartReferenseUpdateOnChange_Test() {
   }
-
   @Test
   public void test_SmartReferenseUpdateOnChange() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("2345623147105495371", "2345623147105495377");

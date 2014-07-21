@@ -32,7 +32,6 @@ public class FunctionTypeUtil {
   public static String getRuntimeSignature(SNode ft) {
     return BehaviorReflection.invokeVirtual(String.class, ft, "virtual_getRuntimeSignature_1213877404927", new Object[]{});
   }
-
   public static SNode getResultType(SNode functionTypeOrClassifier) {
     if (SNodeOperations.isInstanceOf(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return null;
@@ -46,7 +45,6 @@ public class FunctionTypeUtil {
       throw new IllegalArgumentException("Invalid argument: " + functionTypeOrClassifier);
     }
   }
-
   public static List<SNode> getParameterTypes(SNode functionTypeOrClassifier) {
     if (SNodeOperations.isInstanceOf(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return null;
@@ -64,7 +62,6 @@ public class FunctionTypeUtil {
       throw new IllegalArgumentException("Invalid argument: " + functionTypeOrClassifier);
     }
   }
-
   public static List<SNode> normalizeThrowsTypes(List<SNode> ttypes) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> visited = new ArrayList<SNode>();
@@ -89,7 +86,6 @@ with_throws:
     ListSequence.fromList(result).addSequence(ListSequence.fromList(visited));
     return result;
   }
-
   private static SNode getFunctionMethod(SNode functionTypeOrClassifier) {
     return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(SNodeOperations.cast(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false))).findFirst(new IWhereFilter<SNode>() {
       @Override
@@ -98,7 +94,6 @@ with_throws:
       }
     });
   }
-
   public static SNode unmeet(SNode possiblyMeet) {
     SNode tmp = possiblyMeet;
 with_meet:
@@ -122,7 +117,6 @@ with_meet:
     }
     return tmp;
   }
-
   public static SNode unbound(SNode maybeBound) {
     SNode res = null;
     List<SNode> q = ListSequence.fromListAndArray(new LinkedList<SNode>(), SNodeOperations.copyNode(maybeBound));
@@ -144,7 +138,6 @@ with_meet:
     }
     return res;
   }
-
   public static SNode unmeetRecursively(SNode nodeWithMeetDescendants) {
     for (SNode dsc : SNodeOperations.getDescendants(nodeWithMeetDescendants, null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
@@ -153,7 +146,6 @@ with_meet:
     }
     return nodeWithMeetDescendants;
   }
-
   public static void prepAdaptations(TemplateQueryContext genContext, SNode ltype, SNode rexpr) {
     SNode lCType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ? SNodeOperations.cast(ltype, "jetbrains.mps.baseLanguage.structure.ClassifierType") : null);
     SNode lFType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") ? SNodeOperations.cast(ltype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") : null);
@@ -214,7 +206,6 @@ with_meet:
       }
     }
   }
-
   public static Map<SNode, SNode> mapAdaptableTargetTVDs(SNode adaptable, SNode target) {
     Map<SNode, SNode> resMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
     SNode adMethod = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(adaptable)).first();
@@ -239,7 +230,6 @@ with_meet:
     }
     return resMap;
   }
-
   private static void doMapTVDS(Map<SNode, SNode> theMap, SNode adType, SNode trgType) {
     SNode adTVD = SLinkOperations.getTarget(SNodeOperations.as(adType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
     SNode trgTVD = SLinkOperations.getTarget(SNodeOperations.as(trgType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
@@ -247,7 +237,6 @@ with_meet:
       MapSequence.fromMap(theMap).put(adTVD, trgTVD);
     }
   }
-
   private static SNode _quotation_createNode_2t0coq_a0a0a0a1a2a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -255,7 +244,6 @@ with_meet:
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~RuntimeException")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_2t0coq_a1a1a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

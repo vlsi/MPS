@@ -11,5 +11,5 @@ public class ConceptFunctionParameter_nodeToPasteWrap_BehaviorDescriptor extends
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap";
-  };;
-;}
+  }
+}

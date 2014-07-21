@@ -17,7 +17,6 @@ import jetbrains.mps.errors.IErrorReporter;
 public class check_Antiquotation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_Antiquotation_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode antiquotation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode annotatedNode = SNodeOperations.getParent(antiquotation);
     {
@@ -41,18 +40,15 @@ public class check_Antiquotation_NonTypesystemRule extends AbstractNonTypesystem
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.quotation.structure.Antiquotation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

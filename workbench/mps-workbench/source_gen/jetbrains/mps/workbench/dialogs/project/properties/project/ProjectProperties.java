@@ -17,26 +17,21 @@ public class ProjectProperties {
   public static final String PROPERTY_GEN_CONFIGS = "testConfigurations";
   private ProjectDescriptor myProjectDescriptor;
   private List<Path> myModules = ListsFactory.create(ListsFactory.PATH_VALID_COMPARATOR);
-
   public ProjectProperties() {
   }
-
   public List<Path> getModules() {
     return myModules;
   }
-
   public boolean isSame(ProjectDescriptor projectDescriptor) {
     List<Path> paths = ListsFactory.createSortedList(ListsFactory.PATH_COMPARATOR);
     paths.addAll(myProjectDescriptor.getModules());
     return paths.equals(myModules);
   }
-
   public void loadFrom(StandaloneMPSProject project) {
     myProjectDescriptor = project.getProjectDescriptor();
     myModules.clear();
     myModules.addAll(myProjectDescriptor.getModules());
   }
-
   public void saveTo(StandaloneMPSProject project) {
     ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<Path>(), myProjectDescriptor.getModules())).visitAll(new IVisitor<Path>() {
       public void visit(Path it) {

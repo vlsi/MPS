@@ -7,7 +7,6 @@ package postingrules;
   public AccountingException() {
     super();
   }
-
   public AccountingException(String s) {
     super(s);
   }

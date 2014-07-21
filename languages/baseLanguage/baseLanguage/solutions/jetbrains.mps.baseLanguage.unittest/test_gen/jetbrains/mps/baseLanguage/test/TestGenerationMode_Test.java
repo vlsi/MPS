@@ -16,7 +16,6 @@ public class TestGenerationMode_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.TestGenerationMode_Test$TestBody", "test_GenerationMode", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_GenerationMode() throws Exception {

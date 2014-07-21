@@ -11,14 +11,11 @@ import java.util.ArrayList;
 
 public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.ide");
-
   public Ide_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new AddModuleToProject_Action());
@@ -172,7 +169,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new TransientModulesActions_ActionGroup());
     addGroup(new View_ActionGroup());
   }
-
   public void adjustInterfaceGroups() {
     insertInterfaceGroupIntoAnother("VcsGroup", AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_vcs);
     insertInterfaceGroupIntoAnother("VcsGroup", CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_ideavcs);
@@ -196,7 +192,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertInterfaceGroupIntoAnother("RunContextGroup", "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
     insertInterfaceGroupIntoAnother("jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_refactoring);
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(FavoritesPopup_ActionGroup.ID, FavoritesPopupWrapper_ActionGroup.ID, null);
     insertGroupIntoAnother(AnalyzeModule_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_analyze);
@@ -266,7 +261,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(View_ActionGroup.ID, "ViewMenu", null);
     insertGroupIntoAnother(EditorActionsAddition_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorActions_ActionGroup", null);
   }
-
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());

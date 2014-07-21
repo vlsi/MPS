@@ -27,23 +27,23 @@ public class ActionInstance_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      };;
-;      @Nullable
+      }
+      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.lang.plugin.structure.ActionDeclaration");
-          };;
-;          @Override
+          }
+          @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_m7euep_a0a1a0a0a1a0b0a1a1;
-          };;
-;        };
-      };;
-;    });
+          }
+        };
+      }
+    });
     return references;
-  };;
-;  private static SNodePointer breakingNode_m7euep_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "7029281142617299477");
+  }
+  private static SNodePointer breakingNode_m7euep_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "7029281142617299477");
 }

@@ -9,5 +9,5 @@ public abstract class SubstituteMenuPart_BehaviorDescriptor extends MenuPart_Beh
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SubstituteMenuPart";
-  };;
-;}
+  }
+}

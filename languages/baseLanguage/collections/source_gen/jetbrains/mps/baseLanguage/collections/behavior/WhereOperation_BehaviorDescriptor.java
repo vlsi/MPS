@@ -9,9 +9,9 @@ public class WhereOperation_BehaviorDescriptor extends InternalSequenceOperation
   }
   public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
     return WhereOperation_Behavior.virtual_operandCanBeNull_323410281720656291(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.WhereOperation";
-  };;
-;}
+  }
+}

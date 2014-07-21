@@ -12,7 +12,6 @@ public class ApplicableTypesInfo {
   public boolean myToEnumMember = false;
   public SNode myLinkAccess = null;
   public boolean myLinkToConcept = false;
-
   public ApplicableTypesInfo() {
   }
 }

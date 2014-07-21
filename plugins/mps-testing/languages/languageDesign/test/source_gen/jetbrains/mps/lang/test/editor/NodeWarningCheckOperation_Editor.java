@@ -40,11 +40,9 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_sh9o09_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_sh9o09_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_sh9o09_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_sh9o09_a");
@@ -56,7 +54,6 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createComponent_sh9o09_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -66,7 +63,6 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   private EditorCell createRefNode_sh9o09_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("warningRef");
@@ -86,11 +82,9 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class NodeWarningCheckOperation_generic_cellMenu_sh9o09_a0b0 extends AbstractCellMenuPart_Generic_Group {
     public NodeWarningCheckOperation_generic_cellMenu_sh9o09_a0b0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.typesystem.structure.WarningStatement");
       AbstractModule module = ((AbstractModule) SNodeOperations.getModel(node).getModule());
@@ -101,30 +95,24 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
         }
       }).toListSequence();
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SLinkOperations.setTarget(node, "warningRef", SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.WarningStatementReference", null), true);
       SLinkOperations.setTarget(SLinkOperations.getTarget(node, "warningRef", true), "declaration", parameterObject, false);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
-
     public String getMatchingText(Object parameterObject) {
       return this.getMatchingText_internal((SNode) parameterObject);
     }
-
     public String getMatchingText_internal(SNode parameterObject) {
       SNode warningStatement = parameterObject;
       return BehaviorReflection.invokeVirtual(String.class, warningStatement, "virtual_getName_1597542831856389237", new Object[]{});
     }
   }
-
   private EditorCell createNonEmptyProperty_sh9o09_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -146,7 +134,6 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_sh9o09_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_sh9o09_a_0");
@@ -155,14 +142,12 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_sh9o09_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_sh9o09_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name:");
     editorCell.setCellId("Constant_sh9o09_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_sh9o09_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

@@ -25,22 +25,18 @@ import jetbrains.mps.smodel.SReference;
 public class PatternOrPattern_Test extends BaseTransformationTest {
   public PatternOrPattern_Test() {
   }
-
   @Test
   public void testMethod() throws Throwable {
     this.initTest("${mps_home}", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.PatternOrPattern_Test$TestBody", "testOrPattern", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public TestBody() {
     }
-
     public void testOrPattern() {
       TestCase.assertTrue(match());
     }
-
     public boolean match() {
       SNode nodeToMatch = _quotation_createNode_qttyfe_a0a0c2();
       GeneratedMatchingPattern pattern = new PatternOrPattern_Test.TestBody.Pattern_qttyfe_a0a1a2c();
@@ -59,15 +55,12 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
       }
       return true;
     }
-
     public static class Pattern_qttyfe_a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
       /*package*/ SNode patternVar_body;
       /*package*/ SNode patternVar_ds;
       private GeneratedMatchingPattern myOrPattern_7ozj7q_a0a;
-
       public Pattern_qttyfe_a0a1a2c() {
       }
-
       public boolean match(SNode nodeToMatch) {
         {
           SNode nodeToMatch_7ozj7q_a0 = nodeToMatch;
@@ -131,18 +124,15 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
         }
         return true;
       }
-
       public boolean hasAntiquotations() {
         return false;
       }
-
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
           patternVar_body = (SNode) pattern.getFieldValue("patternVar_body");
           patternVar_ds = (SNode) pattern.getFieldValue("patternVar_ds");
         }
       }
-
       public Object getFieldValue(String fieldName) {
         if ("patternVar_body".equals(fieldName)) {
           return patternVar_body;
@@ -152,14 +142,11 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
         }
         return null;
       }
-
       public void performActions(Object o) {
       }
-
       public class Pattern_qttyfe_a0a0a2a1a1a1a1a1a1a1a0a0a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_qttyfe_a0a0a2a1a1a1a1a1a1a1a0a0a0a1a2c() {
         }
-
         public boolean match(SNode nodeToMatch) {
           {
             SNode nodeToMatch_7ozj7q_a0a0a = nodeToMatch;
@@ -197,26 +184,20 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
           }
           return true;
         }
-
         public boolean hasAntiquotations() {
           return false;
         }
-
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         }
-
         public Object getFieldValue(String fieldName) {
           return null;
         }
-
         public void performActions(Object o) {
         }
       }
-
       public class Pattern_qttyfe_a0a0a3a1a1a1a1a1a1a1a0a0a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_qttyfe_a0a0a3a1a1a1a1a1a1a1a0a0a0a1a2c() {
         }
-
         public boolean match(SNode nodeToMatch) {
           {
             SNode nodeToMatch_7ozj7q_a1a0a = nodeToMatch;
@@ -254,23 +235,18 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
           }
           return true;
         }
-
         public boolean hasAntiquotations() {
           return false;
         }
-
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         }
-
         public Object getFieldValue(String fieldName) {
           return null;
         }
-
         public void performActions(Object o) {
         }
       }
     }
-
     private static SNode _quotation_createNode_qttyfe_a0a0c2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
@@ -293,7 +269,6 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
       quotedNode_1.addChild("condition", quotedNode_3);
       return quotedNode_1;
     }
-
     private static SNode _quotation_createNode_qttyfe_a6a2c() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;

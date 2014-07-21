@@ -17,7 +17,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 public class SolutionChooser implements Computable<List<SModuleReference>> {
   public SolutionChooser() {
   }
-
   @Override
   public List<SModuleReference> compute() {
     final Wrappers._T<List<SModuleReference>> solRefs = new Wrappers._T<List<SModuleReference>>();

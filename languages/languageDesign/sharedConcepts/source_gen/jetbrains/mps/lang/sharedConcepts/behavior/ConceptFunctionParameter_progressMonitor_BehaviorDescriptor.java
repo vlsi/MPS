@@ -11,5 +11,5 @@ public class ConceptFunctionParameter_progressMonitor_BehaviorDescriptor extends
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_progressMonitor";
-  };;
-;}
+  }
+}

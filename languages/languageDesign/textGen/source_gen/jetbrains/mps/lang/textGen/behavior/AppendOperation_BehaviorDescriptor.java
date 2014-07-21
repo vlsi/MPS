@@ -10,5 +10,5 @@ public class AppendOperation_BehaviorDescriptor extends Statement_BehaviorDescri
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.AppendOperation";
-  };;
-;}
+  }
+}

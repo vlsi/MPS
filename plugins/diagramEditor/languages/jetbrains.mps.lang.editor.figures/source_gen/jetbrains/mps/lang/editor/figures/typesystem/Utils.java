@@ -15,7 +15,6 @@ public class Utils {
     }
     return null;
   }
-
   /*package*/ static boolean isSupportedParameterType(SNode classifierType, SNode superClassifier) {
     return classifierType != null && SLinkOperations.getTarget(classifierType, "classifier", false) != null && SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, "classifier", false))).contains(superClassifier);
   }

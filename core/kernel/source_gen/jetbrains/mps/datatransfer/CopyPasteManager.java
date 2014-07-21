@@ -28,10 +28,8 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
   private Map<SNode, AbstractManager.Descriptor<PastePostProcessor>> myPostProcessors = null;
   private Map<SNode, AbstractManager.Descriptor<CopyPreProcessor>> myPreProcessors = null;
   private boolean myLoaded = false;
-
   public CopyPasteManager(ClassLoaderManager classLoaderManager) {
   }
-
   @Override
   public void init() {
     if (INSTANCE != null) {
@@ -41,13 +39,11 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
     INSTANCE = this;
     super.init();
   }
-
   @Override
   public void dispose() {
     super.dispose();
     INSTANCE = null;
   }
-
   public void preProcessNode(SNode copy, final Map<SNode, SNode> newNodesToSourceNodes) {
     SNode sourceNode = newNodesToSourceNodes.get(copy);
     CopyPreProcessor preProcessor = getPreProcessor(SNodeOperations.getConceptDeclaration(copy));
@@ -61,7 +57,6 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
       });
     }
   }
-
   public void postProcessNode(SNode node) {
     PastePostProcessor postProcessor = getPostProcessor(SNodeOperations.getConceptDeclaration(node));
     if (postProcessor != null) {
@@ -74,19 +69,16 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
       });
     }
   }
-
   public CopyPreProcessor getPreProcessor(SNode concept) {
     load();
     AbstractManager.Descriptor<CopyPreProcessor> descriptor = MapSequence.fromMap(myPreProcessors).get(concept);
     return (descriptor == null ? (CopyPreProcessor) null : descriptor.getInstance());
   }
-
   private PastePostProcessor getPostProcessor(SNode concept) {
     load();
     AbstractManager.Descriptor<PastePostProcessor> descriptor = MapSequence.fromMap(myPostProcessors).get(concept);
     return (descriptor == null ? (PastePostProcessor) null : descriptor.getInstance());
   }
-
   private void load() {
     if (myLoaded) {
       return;
@@ -115,14 +107,12 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
     }
     myLoaded = true;
   }
-
   @Override
   public void clearCaches() {
     myPostProcessors = null;
     myPreProcessors = null;
     myLoaded = false;
   }
-
   public static CopyPasteManager getInstance() {
     return INSTANCE;
   }

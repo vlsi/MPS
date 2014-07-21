@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_EditorComponentDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_EditorComponentDeclaration_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode reference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode editorComponent = SNodeOperations.as(SNodeOperations.getParent(reference), "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration");
     if (editorComponent == null || SLinkOperations.getTarget(reference, "editorComponent", false) == null) {
@@ -30,18 +29,15 @@ public class check_EditorComponentDeclaration_NonTypesystemRule extends Abstract
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

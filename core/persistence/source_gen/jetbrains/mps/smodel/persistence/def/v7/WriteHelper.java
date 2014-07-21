@@ -36,14 +36,12 @@ public class WriteHelper {
   private Map<SModelReference, String> myModelIndex;
   private Set<Integer> myUsedIndexes;
   private ModelEnvironmentInfo myEnv;
-
   public WriteHelper(SModelReference modelRef) {
     myModelIndex = MapSequence.fromMap(new HashMap<SModelReference, String>());
     myUsedIndexes = SetSequence.fromSet(new HashSet<Integer>());
     myModelRef = modelRef;
     myEnv = PersistenceRegistry.getInstance().getModelEnvironmentInfo();
   }
-
   public void addModelReference(@NotNull SModelReference model) {
     if (MapSequence.fromMap(myModelIndex).containsKey(model)) {
       return;
@@ -55,11 +53,9 @@ public class WriteHelper {
     SetSequence.fromSet(myUsedIndexes).addElement(hash);
     MapSequence.fromMap(myModelIndex).put(model, Integer.toString(hash, HASH_BASE));
   }
-
   public String getImportIndex(@NotNull SModelReference model) {
     return MapSequence.fromMap(myModelIndex).get(model);
   }
-
   @NotNull
   private String genReferenceString(@NotNull SModelReference ref, @NotNull String text) {
     if (ref.equals(myModelRef)) {
@@ -74,12 +70,10 @@ public class WriteHelper {
     }
     return index + MODEL_SEPARATOR_CHAR + encode(text);
   }
-
   @Nullable
   public String genReferenceId(@Nullable SNodeReference pointer) {
     return (pointer == null ? null : genReferenceString(pointer.getModelReference(), ((SNodePointer) pointer).getNodeId().toString()));
   }
-
   public String genType(@NotNull SNode node) {
     // return fqName prefixed with "." if we can't find model or name of concept 
     String fqName = node.getConcept().getQualifiedName();
@@ -93,12 +87,10 @@ public class WriteHelper {
     }
     return index + MODEL_SEPARATOR_CHAR + node.getConcept().getName();
   }
-
   @Nullable
   public String genTypeId(@NotNull SNode node) {
     return genReferenceId(myEnv.getConceptId(node));
   }
-
   public String genNodeInfo(@NotNull SNode node) {
     ConceptKind conceptKind = myEnv.getConceptKind(node);
     StaticScope conceptScope = myEnv.getConceptScope(node);
@@ -118,15 +110,12 @@ public class WriteHelper {
     }
     return new String(res);
   }
-
   public String genRole(@NotNull SNode node) {
     return node.getRoleInParent();
   }
-
   public String genRole(@NotNull SReference ref) {
     return SLinkOperations.getRole(ref);
   }
-
   @Nullable
   public String genRoleId(@NotNull SNode node) {
     if (SNodeOperations.getParent(node) == null) {
@@ -134,27 +123,22 @@ public class WriteHelper {
     }
     return genReferenceId(myEnv.getNodeRoleId(node));
   }
-
   @Nullable
   public String genRoleId(@NotNull SReference ref) {
     return genReferenceId(myEnv.getReferenceRoleId(ref));
   }
-
   public String genName(@NotNull SNode node, @NotNull String prop) {
     return prop;
   }
-
   @Nullable
   public String genNameId(@NotNull SNode node, @NotNull String prop) {
     return genReferenceId(myEnv.getPropertyId(node, prop));
   }
-
   public String genTarget(@NotNull SReference ref) {
     String target = (ref instanceof StaticReference ? String.valueOf(ref.getTargetNodeId()) : DYNAMIC_REFERENCE_ID);
     SModelReference targetModel = ref.getTargetSModelReference();
     return (targetModel == null ? target : genReferenceString(targetModel, target));
   }
-
   public String genResolveInfo(@NotNull SReference ref) {
     if (!(RuntimeFlags.isMergeDriverMode())) {
       SNode target = (ref instanceof StaticReference ? ref.getTargetNode() : null);
@@ -167,14 +151,11 @@ public class WriteHelper {
     }
     return ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
   }
-
   public static String encode(String s) {
     return s.replace("%", "%p").replace(":", "%c").replace(".", "%d");
   }
-
   public static String decode(String s) {
     return s.replace("%d", ".").replace("%c", ":").replace("%p", "%");
   }
-
   protected static Logger LOG = LogManager.getLogger(WriteHelper.class);
 }

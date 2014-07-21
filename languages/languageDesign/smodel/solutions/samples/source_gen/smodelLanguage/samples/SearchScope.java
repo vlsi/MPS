@@ -13,7 +13,6 @@ public class SearchScope {
     ISearchScope scope = SNodeOperations.getReferentSearchScope(methodCall, "instanceMethodDeclaration", context);
     return scope;
   }
-
   public boolean isInScope(SNode methodCall, SNode methodDeclaration, IOperationContext context) {
     ISearchScope scope = SNodeOperations.getReferentSearchScope(methodCall, "instanceMethodDeclaration", context);
     return SearchScopeOperations.containsNode(scope, methodDeclaration);

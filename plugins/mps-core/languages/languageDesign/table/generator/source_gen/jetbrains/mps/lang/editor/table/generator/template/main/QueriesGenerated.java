@@ -15,39 +15,30 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_3216977149571365620(final PropertyMacroContext _context) {
     return QueriesUtil.getUnicName(EditorCellModel_Behavior.call_getCellId_1216737839993(_context.getNode(), _context), SNodeOperations.getContainingRoot(_context.getNode()), _context);
   }
-
   public static Object propertyMacro_GetPropertyValue_6189378527250534452(final PropertyMacroContext _context) {
     return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode(), _context);
   }
-
   public static Object referenceMacro_GetReferent_293523277269610528(final ReferenceMacroContext _context) {
     return SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "rowsLinkDeclaration", false)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   public static Object referenceMacro_GetReferent_293523277269645361(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rowsLinkDeclaration", false);
   }
-
   public static Object referenceMacro_GetReferent_293523277269645373(final ReferenceMacroContext _context) {
     return SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "cellsInRowLinkDeclaration", false)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   public static Object referenceMacro_GetReferent_293523277269645383(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "cellsInRowLinkDeclaration", false);
   }
-
   public static Object referenceMacro_GetReferent_293523277269645392(final ReferenceMacroContext _context) {
     return SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "headerRowLinkDeclaration", false)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   public static Object referenceMacro_GetReferent_293523277269645402(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "headerRowLinkDeclaration", false);
   }
-
   public static Iterable<SNode> sourceNodesQuery_8562016843455421178(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tableModel", true), "body", true), "statement", true);
   }

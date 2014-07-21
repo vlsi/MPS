@@ -20,19 +20,16 @@ public class ReturnStatement_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.ReturnStatement_Test$TestBody", "test_alwaysReturn", true);
   }
-
   @Test
   public void test_retunInAnonymousClass() throws Throwable {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.ReturnStatement_Test$TestBody", "test_retunInAnonymousClass", true);
   }
-
   @Test
   public void test_notAlwaysReturn() throws Throwable {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.ReturnStatement_Test$TestBody", "test_notAlwaysReturn", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_alwaysReturn() throws Exception {
@@ -40,12 +37,10 @@ public class ReturnStatement_Test extends BaseTransformationTest {
       Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642367"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
       Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642367"), "jetbrains.mps.baseLanguage.structure.IfStatement"), SNodeOperations.cast(this.getNodeById("1230052642388"), "jetbrains.mps.baseLanguage.structure.ReturnStatement"))));
     }
-
     public void test_retunInAnonymousClass() throws Exception {
       this.addNodeById("1230052642345");
       Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642353"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
     }
-
     public void test_notAlwaysReturn() throws Exception {
       this.addNodeById("1230052642345");
       Assert.assertTrue(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642395"), "jetbrains.mps.baseLanguage.structure.IfStatement"))) != null);

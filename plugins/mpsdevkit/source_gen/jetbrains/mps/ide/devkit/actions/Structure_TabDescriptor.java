@@ -14,34 +14,26 @@ import java.util.ArrayList;
 
 public class Structure_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Structure;
-
   public Structure_TabDescriptor() {
   }
-
   public String getTitle() {
     return "Structure";
   }
-
   public Character getShortcutChar() {
     return 'S';
   }
-
   public void startListening() {
   }
-
   public SNode getBaseNode(SNode node) {
     return ConceptEditorOpenHelper.getBaseNode(node);
   }
-
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   @Nullable
   public Icon getIcon() {
     return ICON;
   }
-
   public List<SNode> getNodes(SNode node) {
     List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
     SNode n = getNode(node);
@@ -51,11 +43,9 @@ public class Structure_TabDescriptor extends RelationDescriptor {
     ListSequence.fromList(list).addElement(n);
     return list;
   }
-
   public boolean isSingle() {
     return true;
   }
-
   public SNode getNode(SNode node) {
     return node;
   }

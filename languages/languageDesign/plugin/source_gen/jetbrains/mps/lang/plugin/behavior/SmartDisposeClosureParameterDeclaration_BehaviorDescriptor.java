@@ -10,5 +10,5 @@ public class SmartDisposeClosureParameterDeclaration_BehaviorDescriptor extends 
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration";
-  };;
-;}
+  }
+}

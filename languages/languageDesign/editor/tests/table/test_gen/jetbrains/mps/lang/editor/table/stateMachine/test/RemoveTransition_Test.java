@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class RemoveTransition_Test extends BaseTransformationTest {
   public RemoveTransition_Test() {
   }
-
   @Test
   public void test_RemoveTransition() throws Throwable {
     this.initTest("${mps_home}", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test@tests)");
     this.runTest("jetbrains.mps.lang.editor.table.stateMachine.test.RemoveTransition_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("5877647854348554903", "5877647854348554929");

@@ -10,5 +10,5 @@ public class ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor exten
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue";
-  };;
-;}
+  }
+}

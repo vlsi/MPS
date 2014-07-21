@@ -9,5 +9,5 @@ public class GetIndexOfOperation_BehaviorDescriptor extends SingleArgumentSequen
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation";
-  };;
-;}
+  }
+}

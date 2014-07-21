@@ -9,5 +9,5 @@ public class CellModel_BlockStart_BehaviorDescriptor extends EditorCellModel_Beh
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_BlockStart";
-  };;
-;}
+  }
+}

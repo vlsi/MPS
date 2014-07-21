@@ -9,5 +9,5 @@ public class MapClearOperation_BehaviorDescriptor extends MapOperation_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MapClearOperation";
-  };;
-;}
+  }
+}

@@ -20,15 +20,12 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_3771754276238992076(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("button");
   }
-
   public static boolean baseMappingRule_Condition_3771754276239013003(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("label");
   }
-
   public static Object propertyMacro_GetPropertyValue_3771754276239319050(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -36,11 +33,9 @@ public class QueriesGenerated {
       }
     }), "value");
   }
-
   public static Object propertyMacro_GetPropertyValue_3618324829955517714(final PropertyMacroContext _context) {
     return _context.createUniqueName(_context.getTemplateValue(), null);
   }
-
   public static Object propertyMacro_GetPropertyValue_3618324829955525209(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -48,11 +43,9 @@ public class QueriesGenerated {
       }
     }), "value");
   }
-
   public static Object propertyMacro_GetPropertyValue_3618324829955521581(final PropertyMacroContext _context) {
     return _context.createUniqueName(_context.getTemplateValue(), null);
   }
-
   public static boolean ifMacro_Condition_3771754276239061458(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -60,7 +53,6 @@ public class QueriesGenerated {
       }
     });
   }
-
   public static boolean ifMacro_Condition_3618324829955525186(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -68,7 +60,6 @@ public class QueriesGenerated {
       }
     });
   }
-
   public static SNode templateFragment_ContextNodeQuery_3618324829955554612(final TemplateFragmentContext _context) {
     SNode demoApp = SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode method = Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(demoApp)).where(new IWhereFilter<SNode>() {
@@ -78,7 +69,6 @@ public class QueriesGenerated {
     }).first();
     return SLinkOperations.getTarget(method, "body", true);
   }
-
   public static SNode templateFragment_ContextNodeQuery_3618324829955828392(final TemplateFragmentContext _context) {
     SNode demoApp = SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode method = Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(demoApp)).where(new IWhereFilter<SNode>() {
@@ -88,11 +78,9 @@ public class QueriesGenerated {
     }).first();
     return SLinkOperations.getTarget(method, "body", true);
   }
-
   public static SNode weaving_MappingRule_ContextNodeQuery_3771754276238991338(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.samples.generator_demo.demoLang7.structure.XMLDocument", false, false), "main-class");
   }
-
   public static SNode weaving_MappingRule_ContextNodeQuery_3771754276239012919(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.samples.generator_demo.demoLang7.structure.XMLDocument", false, false), "main-class");
   }

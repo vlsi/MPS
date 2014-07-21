@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class RefactorOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
     return "apply function to manually selected nodes";
   }
-
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
     return "Operates like forEach but asks user to select included/excluded nodes before refactoring.\n" + "Refactoring is applied not immediately but using invokelater, so there may be issues when using several times in the same command.";
   }

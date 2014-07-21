@@ -11,9 +11,9 @@ public class ConstraintFunctionParameter_visible_BehaviorDescriptor extends Conc
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConstraintFunctionParameter_visible_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible";
-  };;
-;}
+  }
+}

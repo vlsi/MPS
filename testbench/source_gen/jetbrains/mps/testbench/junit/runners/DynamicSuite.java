@@ -21,8 +21,6 @@ public class DynamicSuite extends Suite {
     super(builder, testClass, getSuiteClasses(new TestClass(testClass)));
   }
 
-
-
   private static Class<?>[] getSuiteClasses(TestClass testClass) throws Throwable {
     for (FrameworkMethod method : ListSequence.fromList(testClass.getAnnotatedMethods(DynamicSuite.Factory.class))) {
       int modifiers = method.getMethod().getModifiers();
@@ -32,8 +30,6 @@ public class DynamicSuite extends Suite {
     }
     throw new Exception("No public static factory method in class or ots superclasses: " + testClass.getName());
   }
-
-
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(ElementType.METHOD)

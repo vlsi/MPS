@@ -27,15 +27,12 @@ public enum _Colors_Enum {
   black("black", "black");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<_Colors_Enum> getConstants() {
     List<_Colors_Enum> list = ListSequence.fromList(new LinkedList<_Colors_Enum>());
     ListSequence.fromList(list).addElement(_Colors_Enum.none);
@@ -58,11 +55,9 @@ public enum _Colors_Enum {
     ListSequence.fromList(list).addElement(_Colors_Enum.black);
     return list;
   }
-
   public static _Colors_Enum getDefault() {
     return _Colors_Enum.none;
   }
-
   public static _Colors_Enum parseValue(String value) {
     if (value == null) {
       return _Colors_Enum.getDefault();
@@ -123,14 +118,11 @@ public enum _Colors_Enum {
     }
     return _Colors_Enum.getDefault();
   }
-
   private String myValue;
-
   _Colors_Enum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

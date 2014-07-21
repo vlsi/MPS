@@ -15,7 +15,6 @@ public class GenerationHelperAnnotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_r9dw63_a(editorContext, node);
   }
-
   private EditorCell createCollection_r9dw63_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_r9dw63_a");
@@ -24,12 +23,10 @@ public class GenerationHelperAnnotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAttributedNodeCell_r9dw63_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_r9dw63_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
-
   private EditorCell createAttributedNodeCell_r9dw63_b0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);

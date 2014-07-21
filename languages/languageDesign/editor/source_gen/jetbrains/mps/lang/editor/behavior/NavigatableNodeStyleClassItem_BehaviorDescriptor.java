@@ -9,5 +9,5 @@ public class NavigatableNodeStyleClassItem_BehaviorDescriptor extends StyleClass
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem";
-  };;
-;}
+  }
+}

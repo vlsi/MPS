@@ -22,31 +22,22 @@ import java.io.IOException;
 public final class StockPriceDownloader {
   private static StockPriceDownloader instance = new StockPriceDownloader();
 
-
   public static StockPriceDownloader getInstance() {
     return instance;
   }
 
-
-
   private StockPriceDownloader() {
   }
 
-
   private Map<String, List<DailyStockPrice>> priceCache = MapSequence.fromMap(new HashMap<String, List<DailyStockPrice>>());
-
 
   public void clearCache() {
     MapSequence.fromMap(priceCache).clear();
   }
 
-
-
   public boolean isValidStockSymbol(String symbol) {
     return getCurrentPrice(symbol) != null;
   }
-
-
 
   public Money getCurrentPrice(String symbol) {
     if ((symbol != null && symbol.length() > 0)) {
@@ -94,8 +85,6 @@ public final class StockPriceDownloader {
       return null;
     }
   }
-
-
 
   public static String trim_54jj5w_a0a0a0a2a0a7a1a0a0a21(String str) {
     return (str == null ? null : str.trim());

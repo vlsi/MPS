@@ -8,56 +8,43 @@ public class TestLightRunState implements Comparable<TestLightRunState> {
   public static final String LIGHT_EXEC_FLAG = "mps.light.execution";
 
   private TestLightRunStateEnum myValue;
-
   private TestLightRunState() {
     myValue = TestLightRunStateEnum.IDLE;
   }
-
   public static TestLightRunState create() {
     return new TestLightRunState();
   }
-
   public void set(TestLightRunStateEnum value) {
     myValue = value;
   }
-
   public void advance(TestLightRunStateEnum value) {
     assert myValue.compareTo(value) < 0;
     set(value);
   }
-
   public int ordinal() {
     return myValue.ordinal();
   }
-
   public boolean greater(TestLightRunStateEnum another) {
     return this.ordinal() > another.ordinal();
   }
-
   public boolean greater(TestLightRunState another) {
     return this.ordinal() > another.ordinal();
   }
-
   @Override
   public int compareTo(@NotNull TestLightRunState another) {
     return myValue.compareTo(another.myValue);
   }
-
   public boolean isInitialized() {
     return myValue == TestLightRunStateEnum.INITIALIZED;
   }
-
   public boolean isRunning() {
     return myValue == TestLightRunStateEnum.RUNNING;
   }
-
   public boolean isTerminating() {
     return myValue == TestLightRunStateEnum.TERMINATING;
   }
-
   public boolean isTerminated() {
     return myValue == TestLightRunStateEnum.TERMINATED;
   }
-
 
 }

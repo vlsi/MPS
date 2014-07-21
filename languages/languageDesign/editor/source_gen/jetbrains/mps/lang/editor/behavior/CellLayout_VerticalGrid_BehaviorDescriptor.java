@@ -9,5 +9,5 @@ public class CellLayout_VerticalGrid_BehaviorDescriptor extends CellLayout_Verti
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid";
-  };;
-;}
+  }
+}

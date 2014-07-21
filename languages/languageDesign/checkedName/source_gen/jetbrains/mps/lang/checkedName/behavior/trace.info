@@ -21,49 +21,49 @@
   </root>
   <root nodeRef="r:82ee0621-a317-4778-9ea5-72584de35a48(jetbrains.mps.lang.checkedName.behavior)/4844813484172611410">
     <file name="ICheckedNamePolicy_Behavior.java">
-      <node id="4844813484172611417" at="15,96,16,48" concept="2" />
+      <node id="4844813484172611417" at="15,95,16,48" concept="2" />
       <node id="4844813484172611423" at="16,48,17,166" concept="2" />
       <node id="4844813484172611429" at="18,22,19,52" concept="0" />
       <node id="4844813484172611437" at="20,5,21,18" concept="3" />
-      <node id="4844813484172611443" at="23,89,24,16" concept="3" />
-      <node id="4844813484172611448" at="26,107,27,95" concept="2" />
+      <node id="4844813484172611443" at="23,88,24,16" concept="3" />
+      <node id="4844813484172611448" at="26,106,27,95" concept="2" />
       <node id="4844813484172611455" at="27,95,28,193" concept="2" />
       <node id="4844813484172611461" at="29,27,30,57" concept="0" />
       <node id="4844813484172611469" at="31,5,32,18" concept="3" />
-      <node id="4844813484172611477" at="34,99,35,16" concept="3" />
-      <node id="4844813484172611410" at="13,0,15,1" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4844813484172611477" at="34,98,35,16" concept="3" />
+      <node id="4844813484172611410" at="13,0,15,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4844813484172611427" at="17,166,20,5" concept="1" />
-      <node id="4844813484172611410" at="23,1,26,1" concept="4" trace="virtual_getDescendantToCheck_4844813484172611439#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4844813484172611410" at="23,0,26,0" concept="4" trace="virtual_getDescendantToCheck_4844813484172611439#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4844813484172611459" at="28,193,31,5" concept="1" />
-      <node id="4844813484172611410" at="34,1,37,1" concept="4" trace="virtual_getPropertyToCheck_4844813484172611473#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
-      <node id="4844813484172611410" at="15,1,23,1" concept="4" trace="virtual_getDescendantsToCheck_4844813484172611413#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="4844813484172611410" at="26,1,34,1" concept="4" trace="virtual_getPropertiesToCheck_4844813484172611445#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="4844813484172611410" at="34,0,37,0" concept="4" trace="virtual_getPropertyToCheck_4844813484172611473#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
+      <node id="4844813484172611410" at="15,0,23,0" concept="4" trace="virtual_getDescendantsToCheck_4844813484172611413#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="4844813484172611410" at="26,0,34,0" concept="4" trace="virtual_getPropertiesToCheck_4844813484172611445#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <scope id="4844813484172611412" at="13,43,13,43" />
       <scope id="4844813484172611428" at="18,22,19,52" />
-      <scope id="4844813484172611442" at="23,89,24,16" />
+      <scope id="4844813484172611442" at="23,88,24,16" />
       <scope id="4844813484172611460" at="29,27,30,57" />
-      <scope id="4844813484172611476" at="34,99,35,16" />
-      <scope id="4844813484172611410" at="13,0,15,1">
+      <scope id="4844813484172611476" at="34,98,35,16" />
+      <scope id="4844813484172611410" at="13,0,15,0">
         <var name="thisNode" id="4844813484172611410" />
       </scope>
-      <scope id="4844813484172611410" at="23,1,26,1">
+      <scope id="4844813484172611410" at="23,0,26,0">
         <var name="thisNode" id="4844813484172611410" />
       </scope>
-      <scope id="4844813484172611410" at="34,1,37,1">
+      <scope id="4844813484172611410" at="34,0,37,0">
         <var name="thisNode" id="4844813484172611410" />
       </scope>
-      <scope id="4844813484172611416" at="15,96,21,18">
+      <scope id="4844813484172611416" at="15,95,21,18">
         <var name="dsc" id="4844813484172611424" />
         <var name="result" id="4844813484172611418" />
       </scope>
-      <scope id="4844813484172611447" at="26,107,32,18">
+      <scope id="4844813484172611447" at="26,106,32,18">
         <var name="property" id="4844813484172611456" />
         <var name="result" id="4844813484172611449" />
       </scope>
-      <scope id="4844813484172611410" at="15,1,23,1">
+      <scope id="4844813484172611410" at="15,0,23,0">
         <var name="thisNode" id="4844813484172611410" />
       </scope>
-      <scope id="4844813484172611410" at="26,1,34,1">
+      <scope id="4844813484172611410" at="26,0,34,0">
         <var name="thisNode" id="4844813484172611410" />
       </scope>
       <unit id="4844813484172611410" at="12,0,38,0" name="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior" />

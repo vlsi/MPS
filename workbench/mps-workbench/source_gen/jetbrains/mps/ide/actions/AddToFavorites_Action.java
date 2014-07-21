@@ -22,19 +22,16 @@ import org.apache.log4j.LogManager;
 public class AddToFavorites_Action extends BaseAction {
   private static final Icon ICON = null;
   private String name;
-
   public AddToFavorites_Action(String name_par) {
     super("Add to Favorites", "", ICON);
     this.name = name_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setText(AddToFavorites_Action.this.name);
@@ -45,7 +42,6 @@ public class AddToFavorites_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -60,7 +56,6 @@ public class AddToFavorites_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
@@ -79,7 +74,6 @@ public class AddToFavorites_Action extends BaseAction {
       }
     }
   }
-
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
@@ -89,10 +83,8 @@ public class AddToFavorites_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-
   public static String name_State(String object) {
     return object;
   }
-
   protected static Logger LOG = LogManager.getLogger(AddToFavorites_Action.class);
 }

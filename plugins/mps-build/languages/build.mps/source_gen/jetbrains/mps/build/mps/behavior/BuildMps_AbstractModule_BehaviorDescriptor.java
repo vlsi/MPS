@@ -10,15 +10,12 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 public abstract class BuildMps_AbstractModule_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public BuildMps_AbstractModule_BehaviorDescriptor() {
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   public boolean virtual_isCompact_8369506495128693730(SNode thisNode) {
     return BuildMps_AbstractModule_Behavior.virtual_isCompact_8369506495128693730(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule";

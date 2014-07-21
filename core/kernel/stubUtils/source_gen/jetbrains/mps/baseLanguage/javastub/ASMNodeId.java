@@ -23,19 +23,15 @@ import java.util.Iterator;
 public class ASMNodeId {
   public ASMNodeId() {
   }
-
   public static SNodeId createId(String fqClassName) {
     return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(fqClassName));
   }
-
   public static SNodeId createId(ASMClass cls, ASMField field) {
     return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + ASMNodeId.shortNameFromSlashedLongName(cls.getName()) + "." + field.getName());
   }
-
   public static SNodeId createFieldId(String fqClassName, String fieldName) {
     return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(fqClassName) + "." + fieldName);
   }
-
   public static SNodeId createId(ASMClass cls, ASMMethod method) {
     StringBuilder sb = new StringBuilder();
     sb.append(ASMNodeId.shortNameFromSlashedLongName(cls.getName()));
@@ -54,7 +50,6 @@ public class ASMNodeId {
     }
     return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + sb.toString());
   }
-
   public static SNodeId createAnnotationMethodId(String fqClassName, String methodName) {
     StringBuilder sb = new StringBuilder();
     sb.append(NameUtil.shortNameFromLongName(fqClassName));
@@ -63,7 +58,6 @@ public class ASMNodeId {
     sb.append("()");
     return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + sb.toString());
   }
-
   private static String shortNameFromSlashedLongName(String slashedLongName) {
     int offset = slashedLongName.lastIndexOf('/');
     if (offset < 0) {
@@ -71,7 +65,6 @@ public class ASMNodeId {
     }
     return slashedLongName.substring(offset + 1);
   }
-
   private static String asString(ASMType type) {
     if (type instanceof ASMParameterizedType) {
       StringBuilder sb = new StringBuilder();
@@ -107,7 +100,6 @@ public class ASMNodeId {
     }
     throw new RuntimeException("unexpected type: " + type);
   }
-
   private static void appendList(StringBuilder sb, List<ASMType> types) {
     Iterator<ASMType> iterator = types.iterator();
     while (iterator.hasNext()) {

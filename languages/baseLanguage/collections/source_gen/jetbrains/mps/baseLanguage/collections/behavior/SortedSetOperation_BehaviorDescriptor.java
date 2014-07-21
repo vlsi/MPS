@@ -9,5 +9,5 @@ public abstract class SortedSetOperation_BehaviorDescriptor extends AbstractSetO
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SortedSetOperation";
-  };;
-;}
+  }
+}

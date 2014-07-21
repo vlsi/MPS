@@ -19,14 +19,12 @@ import jetbrains.mps.build.util.Context;
 public class BuildMpsLayout_Plugin_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Container")) {
       sb.append("/");
     }
     sb.append(BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "plugin", false), "containerName", true), null));
   }
-
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     // TODO extract! (it is a copy of Folder behavior) 
     SNode parent = helper.parent(thisNode);
@@ -55,7 +53,6 @@ public class BuildMpsLayout_Plugin_Behavior {
       }
     }
   }
-
   public static String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
     if (artifactId instanceof SNode) {
       SNode node = (SNode) artifactId;
@@ -95,7 +92,6 @@ public class BuildMpsLayout_Plugin_Behavior {
     }
     return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer", "virtual_location_7117056644539862594", new Object[]{helper, artifactId});
   }
-
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object artifactId) {
     // TODO extract! (it is a copy of Folder behavior) 
     if (artifactId instanceof SNode) {
@@ -132,11 +128,9 @@ public class BuildMpsLayout_Plugin_Behavior {
     }
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer", "virtual_exports_6547494638219603457", new Object[]{artifactId});
   }
-
   public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
     return BuildMpsLayout_Plugin_Behavior.call_getOutputPath_WithMacro_280273048052535414(thisNode, context);
   }
-
   public static String call_getOutputPath_WithMacro_280273048052535414(SNode thisNode, Context context) {
     if ((SNodeOperations.getParent(thisNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_Container")) {
       String parentChildrenTargetDir = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{context});
@@ -144,15 +138,12 @@ public class BuildMpsLayout_Plugin_Behavior {
     }
     return null;
   }
-
   public static String virtual_getApproximateName_5610619299014531547(SNode thisNode) {
     return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "plugin", false), "containerName", true), null);
   }
-
   public static boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
     return true;
   }
-
   public static SNode call_findGroup_8301447434616448040(SNode thisNode, final SNode module) {
     return SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

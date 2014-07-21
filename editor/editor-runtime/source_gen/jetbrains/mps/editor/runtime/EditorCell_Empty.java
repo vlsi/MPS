@@ -21,38 +21,31 @@ import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 public class EditorCell_Empty extends EditorCell_Basic {
   private boolean myCaretVisible = false;
   protected TextLine myTextLine = new TextLine("", this.getStyle(), false);
-
   public EditorCell_Empty(EditorContext c, SNode node) {
     super(c, node);
     this.myTextLine.setCaretEnabled(true);
   }
-
   @Override
   public void paintContent(Graphics g, ParentSettings parentSettings) {
     this.myTextLine.setShowCaret(this.myCaretVisible && this.isWithinSelection() && this.getEditor().hasFocus());
     this.myTextLine.paint(g, this.myX + this.myGapLeft, this.myY);
   }
-
   @Override
   public void switchCaretVisible() {
     this.myCaretVisible = !(this.myCaretVisible);
   }
-
   @Override
   protected boolean isSelectionPainted() {
     return false;
   }
-
   @Override
   public int getAscent() {
     return this.myTextLine.getAscent();
   }
-
   @Override
   public int getDescent() {
     return this.myTextLine.getDescent();
   }
-
   @Override
   protected void relayoutImpl() {
     if (this.isPunctuationLayout()) {
@@ -63,7 +56,6 @@ public class EditorCell_Empty extends EditorCell_Basic {
     this.myHeight = this.myTextLine.getHeight();
     this.myWidth = this.myTextLine.getWidth();
   }
-
   @Override
   protected boolean doProcessKeyTyped(KeyEvent p0, boolean p1) {
     final EditorContext editorContext = this.getContext();
@@ -92,7 +84,6 @@ public class EditorCell_Empty extends EditorCell_Basic {
       }
     });
   }
-
   private boolean applyLeftTransform(EditorContext editorContext, EditorCell_Empty cellForNewNode, String text) {
     CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(cellForNewNode, CellActionType.LEFT_TRANSFORM);
     ltAction.execute(editorContext);
@@ -100,7 +91,6 @@ public class EditorCell_Empty extends EditorCell_Basic {
     cellForNewNode.getSTHintCell().end();
     return true;
   }
-
   private boolean applyRightTransform(EditorContext editorContext, EditorCell_Empty cellForNewNode, String text) {
     CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(cellForNewNode, CellActionType.RIGHT_TRANSFORM);
     ltAction.execute(editorContext);
@@ -108,12 +98,10 @@ public class EditorCell_Empty extends EditorCell_Basic {
     cellForNewNode.getSTHintCell().end();
     return true;
   }
-
   @Override
   public boolean isLastCaretPosition() {
     return StyleAttributesUtil.isLastPositionAllowed(getStyle()) && !(StyleAttributesUtil.isFirstPositionAllowed(getStyle()));
   }
-
   @Override
   public boolean isFirstCaretPosition() {
     return StyleAttributesUtil.isFirstPositionAllowed(getStyle()) && !(StyleAttributesUtil.isLastPositionAllowed(getStyle()));

@@ -35,7 +35,6 @@ public class MpsEnvironment implements Environment {
   private final Iterable<LibraryContributor> myLibContributors;
   private MpsPlatform myPlatformLoader;
 
-
   public MpsEnvironment(EnvironmentConfig config) {
     if (LOG.isInfoEnabled()) {
       LOG.info("Creating MPS environment");
@@ -64,8 +63,6 @@ public class MpsEnvironment implements Environment {
     myMacrosProvider = initMacros(config);
   }
 
-
-
   private PathMacrosProvider initMacros(EnvironmentConfig config) {
     Map<String, String> macros = MapSequence.fromMap(new HashMap<String, String>());
     for (String name : MapSequence.fromMap(config.macros()).keySet()) {
@@ -75,8 +72,6 @@ public class MpsEnvironment implements Environment {
     PathMacros.getInstance().addMacrosProvider(macrosProvider);
     return macrosProvider;
   }
-
-
 
   private Set<LibraryContributor> initLibs(EnvironmentConfig config) {
     final Set<LibraryContributor> libContribs = SetSequence.fromSetWithValues(new HashSet<LibraryContributor>(), createLibContributors(config));
@@ -91,27 +86,19 @@ public class MpsEnvironment implements Environment {
     return libContribs;
   }
 
-
-
   @Override
   public boolean hasIdeaInstance() {
     return false;
   }
 
-
-
   protected Iterable<LibraryContributor> createLibContributors(EnvironmentConfig config) {
     return Sequence.<LibraryContributor>singleton(EnvironmentUtils.createLibContributor(false, config.libs()));
   }
-
-
 
   @Override
   public boolean isProjectOpened(File projectFile) {
     return myContainer.containsProject(projectFile);
   }
-
-
 
   @Override
   public Project openProject(File projectFile) {
@@ -132,8 +119,6 @@ public class MpsEnvironment implements Environment {
     }
   }
 
-
-
   @Override
   public Project createDummyProject() {
     Project project = EnvironmentUtils.createDummyFileProject();
@@ -141,15 +126,11 @@ public class MpsEnvironment implements Environment {
     return project;
   }
 
-
-
   @Override
   public void disposeProject(File projectFile) {
     Project project = myContainer.getProject(projectFile);
     myContainer.disposeProject(project);
   }
-
-
 
   @Override
   public void dispose() {
@@ -169,6 +150,5 @@ public class MpsEnvironment implements Environment {
 
     ActiveEnvironment.deactivateEnvironment(this);
   }
-
   protected static Logger LOG = LogManager.getLogger(MpsEnvironment.class);
 }

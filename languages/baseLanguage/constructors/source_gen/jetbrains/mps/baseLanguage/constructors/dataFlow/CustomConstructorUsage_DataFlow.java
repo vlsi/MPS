@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class CustomConstructorUsage_DataFlow extends DataFlowBuilder {
   public CustomConstructorUsage_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode el : SLinkOperations.getTargets(_context.getNode(), "element", true)) {
       _context.getBuilder().build((SNode) el);

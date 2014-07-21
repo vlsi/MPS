@@ -21,68 +21,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddRemoveFigureAttribute_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddRemoveFigureAttribute_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   public String getPresentation() {
     return "AddRemoveFigureAttribute";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureAttribute_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor.figures";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(node)).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetbrains.jetpad/jetbrains.jetpad.projectional.view@java_stub)", "~View"));
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)", "5422656561926830596");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddRemoveFigureAttribute_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureAttribute")) == null ? "Add figure attribute" : "Remove figure attribute");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureAttribute")) != null) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureAttribute"), null);
@@ -90,7 +75,6 @@ public class AddRemoveFigureAttribute_Intention implements IntentionFactory {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureAttribute"), SConceptOperations.createNewNode("jetbrains.mps.lang.editor.figures.structure.FigureAttribute", null));
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddRemoveFigureAttribute_Intention.this;
     }

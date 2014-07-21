@@ -15,15 +15,12 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class InvokeFunctionOperation_parameters implements ParametersInformation<SNode> {
   public InvokeFunctionOperation_parameters() {
   }
-
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     return Sequence.<SNode>singleton(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(node)), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
   }
-
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     styledText.append(BehaviorReflection.invokeVirtual(String.class, parameterObject, "virtual_getPresentation_1213877396640", new Object[]{}));
   }
-
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
     return true;
   }

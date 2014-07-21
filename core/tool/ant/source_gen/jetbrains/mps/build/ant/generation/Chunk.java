@@ -9,22 +9,17 @@ import java.util.ArrayList;
 public class Chunk extends DataType {
   private boolean myBootstrap;
   private final List<String> myModules = new ArrayList<String>();
-
   public Chunk() {
   }
-
   public void addConfiguredModule(ModuleChunkPart chunk) {
     myModules.add(chunk.getFile().getPath());
   }
-
   public List<String> getModules() {
     return myModules;
   }
-
   public boolean getBootstrap() {
     return myBootstrap;
   }
-
   public void setBootstrap(boolean bootrastrap) {
     myBootstrap = bootrastrap;
   }

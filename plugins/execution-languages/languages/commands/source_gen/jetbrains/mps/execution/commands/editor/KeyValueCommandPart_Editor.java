@@ -26,11 +26,9 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4797dc_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4797dc_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_4797dc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4797dc_a");
@@ -44,7 +42,6 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_4797dc_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_4797dc_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_4797dc_a0");
@@ -55,7 +52,6 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4797dc_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
     editorCell.setCellId("Constant_4797dc_b0");
@@ -66,11 +62,9 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_4797dc_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "dash");
   }
-
   private EditorCell createRefNode_4797dc_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("key");
@@ -90,7 +84,6 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_4797dc_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("value");
@@ -110,7 +103,6 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_4797dc_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_4797dc_e0");
@@ -121,7 +113,6 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_4797dc_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4797dc_a_0");
@@ -130,14 +121,12 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_4797dc_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_4797dc_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dash");
     editorCell.setCellId("Constant_4797dc_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_4797dc_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("dash");

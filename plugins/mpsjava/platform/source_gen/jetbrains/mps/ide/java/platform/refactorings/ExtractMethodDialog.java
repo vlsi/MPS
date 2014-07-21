@@ -68,7 +68,6 @@ public class ExtractMethodDialog extends RefactoringDialog {
   private boolean myStaticEnabled;
   private String myAnalyzeErrors;
   private String myErrors;
-
   public ExtractMethodDialog(Project project, EditorContext context, ExtractMethodRefactoringParameters params, ExtractMethodRefactoring refactoring) {
     super(project, true);
     setTitle("Extract Method");
@@ -86,14 +85,11 @@ public class ExtractMethodDialog extends RefactoringDialog {
     this.update();
   }
 
-
-
   @Nullable
   @Override
   protected String getHelpId() {
     return "refactoring.extractMethod1";
   }
-
   private void update() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -104,7 +100,6 @@ public class ExtractMethodDialog extends RefactoringDialog {
     });
     this.repaint();
   }
-
   private String getMessagesText() {
     this.myCanRefactor = true;
     StringBuffer buff = new StringBuffer();
@@ -140,7 +135,6 @@ public class ExtractMethodDialog extends RefactoringDialog {
     }
     return buff.toString();
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
@@ -204,21 +198,18 @@ public class ExtractMethodDialog extends RefactoringDialog {
 
     return myPanel;
   }
-
   private JComponent createPreviewPanel() {
     this.myPreviewArea.setEditable(false);
     this.myPreviewArea.setBackground(this.myPanel.getBackground());
     this.myPreviewArea.setBorder(this.createBorder("Signature Preview"));
     return this.myPreviewArea;
   }
-
   private JComponent createMessagesComponent() {
     this.myMessagesArea.setEditable(false);
     this.myMessagesArea.setBackground(this.myPanel.getBackground());
     this.myMessagesArea.setBorder(this.createBorder("Messages"));
     return this.myMessagesArea;
   }
-
   private JComponent createParametersPanel() {
     ParametersPanel parametersPanel = new ParametersPanel(this.myParameters);
     parametersPanel.setBorder(this.createBorder("Parameters"));
@@ -233,7 +224,6 @@ public class ExtractMethodDialog extends RefactoringDialog {
 
     return parametersPanel;
   }
-
   private JComponent createMethodPanel() {
     JPanel methodPanel = new JPanel(new GridBagLayout());
     methodPanel.setBorder(this.createBorder("Method"));
@@ -271,12 +261,10 @@ public class ExtractMethodDialog extends RefactoringDialog {
 
     return methodPanel;
   }
-
   @Override
   public JComponent getPreferredFocusedComponent() {
     return myNameField;
   }
-
   private JCheckBox createDeclareStaticCheckBox() {
     final JCheckBox result = new JCheckBox("Declare static");
     boolean canBeStatic = myRefactoring.canBeStatic();
@@ -294,16 +282,13 @@ public class ExtractMethodDialog extends RefactoringDialog {
     });
     return result;
   }
-
   private void setCheckBox(JCheckBox checkBox, boolean selected, boolean enabled) {
     checkBox.setSelected(selected);
     checkBox.setEnabled(enabled);
   }
-
   private Border createBorder(String title) {
     return new CompoundBorder(new TitledBorder(title), new EmptyBorder(5, 5, 5, 5));
   }
-
   private void setStaticContainer() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -311,7 +296,6 @@ public class ExtractMethodDialog extends RefactoringDialog {
       }
     });
   }
-
   public void chooseStaticContainer() {
     final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -338,14 +322,12 @@ public class ExtractMethodDialog extends RefactoringDialog {
       myRefactoringModel = null;
     }
   }
-
   @Nullable
   @NonNls
   @Override
   protected String getDimensionServiceKey() {
     return getClass().getName();
   }
-
   /**
    * This method will be called on pressing "Refactor" button in dialog.
    * 
@@ -383,35 +365,28 @@ public class ExtractMethodDialog extends RefactoringDialog {
       new ExtractMethodDialog.MyMethodDuplicatesProcessor(myContext, result.value).process(this.myRefactoring.getMatches(), myProject);
     }
   }
-
   public class MyMethodDuplicatesProcessor extends MethodDuplicatesProcessor {
     private SNode myMethod;
-
     public MyMethodDuplicatesProcessor(EditorContext context, SNode method) {
       super(context);
       this.myMethod = method;
     }
-
     @Override
     public void substitute(MethodMatch duplicate) {
       duplicate.getRefactoring().replaceMatch(duplicate, this.myMethod);
     }
   }
-
   private class ChooseContainerPanel extends JPanel {
     {
       myOuterContainerCheckBox = new JCheckBox("Extract into outer container");
       myChooseContainerButton = new JButton("Choose Container");
     }
-
     private JButton myChooseContainerButton;
     private JCheckBox myOuterContainerCheckBox;
-
     public ChooseContainerPanel() {
       super(new GridBagLayout());
       this.initPanel();
     }
-
     private void initPanel() {
       ExtractMethodDialog.this.setCheckBox(this.myOuterContainerCheckBox, ExtractMethodDialog.this.myExtractIntoOuterContainer, !(ExtractMethodDialog.this.myExtractIntoOuterContainer));
       myOuterContainerCheckBox.addActionListener(new ActionListener() {

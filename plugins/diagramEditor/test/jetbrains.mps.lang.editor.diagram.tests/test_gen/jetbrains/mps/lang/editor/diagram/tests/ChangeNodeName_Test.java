@@ -17,18 +17,15 @@ import java.util.ArrayList;
 public class ChangeNodeName_Test extends BaseTransformationTest {
   public ChangeNodeName_Test() {
   }
-
   @Test
   public void test_ChangeNodeName() throws Throwable {
     this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
     this.runTest("jetbrains.mps.lang.editor.diagram.tests.ChangeNodeName_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("822550549814786508", "2303280755028869339");

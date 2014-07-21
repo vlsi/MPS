@@ -18,7 +18,6 @@ import org.jdom.Element;
 public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDescriptor> {
   public IdeaModuleSolutionDescriptorIO() {
   }
-
   @Override
   public SolutionDescriptor readFromFile(final IFile file) throws DescriptorIOException {
     final MPSFacetConfiguration mpsConf = this.readMPSFacetConf(file);
@@ -77,7 +76,6 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
     sd.setTimestamp(Long.toString(file.lastModified()));
     return sd;
   }
-
   public void process(Memento memento, MacroHelper helper) {
     for (String key : memento.getKeys()) {
       if (key.equals("path") || key.endsWith("Path")) {
@@ -88,7 +86,6 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
       process(c, helper);
     }
   }
-
   private MPSFacetConfiguration readMPSFacetConf(IFile file) throws DescriptorIOException {
     try {
       IdeaModuleConfiguration imc = IdeaModuleConfiguration.readFile(file);
@@ -101,17 +98,14 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
       throw new DescriptorIOException(e);
     }
   }
-
   @Override
   public void writeToFile(SolutionDescriptor t, IFile file) {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public SolutionDescriptor readFromXml(Element element, IFile anchorFile) {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public void writeToXml(SolutionDescriptor t, Element element, IFile anchorFile) {
     throw new UnsupportedOperationException();

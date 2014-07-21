@@ -10,5 +10,5 @@ public class TemplateArgumentParameterExpression_BehaviorDescriptor extends Expr
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression";
-  };;
-;}
+  }
+}

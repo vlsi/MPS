@@ -53,15 +53,12 @@ public enum CellActionId {
   SHOW_MESSAGE("SHOW_MESSAGE", "show_message_action_id");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<CellActionId> getConstants() {
     List<CellActionId> list = ListSequence.fromList(new LinkedList<CellActionId>());
     ListSequence.fromList(list).addElement(CellActionId.RIGHT_TRANSFORM);
@@ -110,11 +107,9 @@ public enum CellActionId {
     ListSequence.fromList(list).addElement(CellActionId.SHOW_MESSAGE);
     return list;
   }
-
   public static CellActionId getDefault() {
     return CellActionId.RIGHT_TRANSFORM;
   }
-
   public static CellActionId parseValue(String value) {
     if (value == null) {
       return CellActionId.getDefault();
@@ -253,14 +248,11 @@ public enum CellActionId {
     }
     return CellActionId.getDefault();
   }
-
   private String myValue;
-
   CellActionId(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

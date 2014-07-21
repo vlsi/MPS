@@ -11,5 +11,5 @@ public class ConstraintFunctionParameter_linkTarget_BehaviorDescriptor extends C
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget";
-  };;
-;}
+  }
+}

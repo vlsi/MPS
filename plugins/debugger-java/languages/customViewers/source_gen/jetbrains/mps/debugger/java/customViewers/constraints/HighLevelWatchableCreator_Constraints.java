@@ -25,7 +25,6 @@ public class HighLevelWatchableCreator_Constraints extends BaseConstraintsDescri
   public HighLevelWatchableCreator_Constraints() {
     super("jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class HighLevelWatchableCreator_Constraints extends BaseConstraintsDescri
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -47,7 +45,6 @@ public class HighLevelWatchableCreator_Constraints extends BaseConstraintsDescri
             }
             return result;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_fcwqku_a0a1a0a0a1a0b0a1a1;
@@ -57,6 +54,5 @@ public class HighLevelWatchableCreator_Constraints extends BaseConstraintsDescri
     });
     return references;
   }
-
   private static SNodePointer breakingNode_fcwqku_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)", "43370322128311164");
 }

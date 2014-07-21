@@ -26,11 +26,9 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9nqz5z_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9nqz5z_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_9nqz5z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9nqz5z_a");
@@ -44,7 +42,6 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_9nqz5z_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_9nqz5z_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -53,16 +50,13 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_Tar_Editor.ReplaceWith_BuildLayout_NamedContainer_cellMenu_9nqz5z_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_BuildLayout_NamedContainer_cellMenu_9nqz5z_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BuildLayout_NamedContainer_cellMenu_9nqz5z_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.build.structure.BuildLayout_NamedContainer";
     }
   }
-
   private EditorCell createRefNode_9nqz5z_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("containerName");
@@ -85,7 +79,6 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_9nqz5z_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_9nqz5z_c0");
@@ -96,7 +89,6 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_9nqz5z_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compression");
     editorCell.setCellId("Constant_9nqz5z_d0");
@@ -106,7 +98,6 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_9nqz5z_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("compression");
@@ -124,7 +115,6 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_9nqz5z_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_9nqz5z_f0");
@@ -136,7 +126,6 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_9nqz5z_g0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.editor.BuildLayout_containerElements");
     Style style = new StyleImpl();
@@ -144,7 +133,6 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_9nqz5z_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9nqz5z_a_0");
@@ -153,7 +141,6 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_9nqz5z_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_9nqz5z_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
     editorCell.setCellId("Constant_9nqz5z_a0");
@@ -163,7 +150,6 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_9nqz5z_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

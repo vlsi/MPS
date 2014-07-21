@@ -26,16 +26,13 @@ public class ReadHelper {
   private SModelReference myModelRef;
   private Map<String, SModelReference> myModelByIx;
   private int myMaxImportIndex = 0;
-
   public ReadHelper(SModelReference modelRef) {
     myModelByIx = MapSequence.fromMap(new HashMap<String, SModelReference>());
     myModelRef = modelRef;
   }
-
   public void addModelRef(String index, SModelReference modelRef) {
     MapSequence.fromMap(myModelByIx).put(index, modelRef);
   }
-
   public void addImportToModel(SModel model, String index, String modelUID, int version, boolean implicit) {
     if (modelUID == null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -52,11 +49,9 @@ public class ReadHelper {
     }
     addModelRef(index, modelRef);
   }
-
   public SModelReference getSModelReference(@NotNull String ix) {
     return ((ix == null || ix.length() == 0) ? myModelRef : MapSequence.fromMap(myModelByIx).get(ix));
   }
-
   @NotNull
   public Pair<Boolean, SNodeReference> readLink_internal(String src) {
     // returns <true, xxx> - if src is Dynamic Reference 
@@ -73,24 +68,19 @@ public class ReadHelper {
     result.o2 = new SNodePointer(modelRef, nodeId);
     return result;
   }
-
   public SNodeReference readLinkId(String src) {
     // [modelID.]nodeID[:version] | [modelID.]^[:version] 
     return readLink_internal(src).o2;
   }
-
   public boolean isInterfaceNode(String nodeInfo) {
     return nodeInfo.startsWith("i");
   }
-
   public boolean isImplementationNode(String nodeInfo) {
     return nodeInfo != null && (nodeInfo.startsWith("l") || nodeInfo.startsWith("s"));
   }
-
   public boolean isImplementationWithStubNode(String nodeInfo) {
     return nodeInfo != null && nodeInfo.startsWith("s");
   }
-
   public String getStubConceptQualifiedName(String type) {
     String originalConcept = readType(type);
     int lastDot = originalConcept.lastIndexOf('.');
@@ -99,7 +89,6 @@ public class ReadHelper {
     }
     return originalConcept.substring(0, lastDot + 1) + "Stub" + originalConcept.substring(lastDot + 1);
   }
-
   public Tuples._3<ConceptKind, StaticScope, Boolean> readNodeInfo(String s) {
     ConceptKind kind;
     StaticScope scope;
@@ -145,7 +134,6 @@ public class ReadHelper {
     }
     return MultiTuple.<ConceptKind,StaticScope,Boolean>from(kind, scope, unordered);
   }
-
   public String readType(String s) {
     int ix = s.indexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     if (ix <= 0) {
@@ -165,14 +153,11 @@ public class ReadHelper {
       return SModelStereotype.withoutStereotype(modelRef.getModelName()) + "." + s.substring(ix + 1);
     }
   }
-
   public String readRole(String s) {
     return s;
   }
-
   public String readName(String s) {
     return s;
   }
-
   protected static Logger LOG = LogManager.getLogger(ReadHelper.class);
 }

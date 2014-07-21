@@ -9,5 +9,5 @@ public class IdSelector_BehaviorDescriptor extends AbstractCellSelector_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.IdSelector";
-  };;
-;}
+  }
+}

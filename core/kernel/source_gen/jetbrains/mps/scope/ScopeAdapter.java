@@ -18,11 +18,9 @@ import org.jetbrains.mps.openapi.model.SModelReference;
  */
 public class ScopeAdapter implements ISearchScope {
   private Scope scope;
-
   public ScopeAdapter(Scope scope) {
     this.scope = scope;
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
@@ -38,18 +36,15 @@ public class ScopeAdapter implements ISearchScope {
     }
     return result;
   }
-
   @Override
   public boolean isInScope(SNode node) {
     return scope.contains(node);
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes() {
     return Sequence.fromIterable(scope.getAvailableElements(null)).toListSequence();
   }
-
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(final SNode referenceNode, SNode targetConcept) {
     return new IReferenceInfoResolver() {

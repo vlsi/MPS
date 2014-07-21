@@ -30,30 +30,22 @@ public class WatchedRoots extends MPSDirectoryWatcher implements ApplicationComp
   private final Map<String, Integer> myRequestedPaths = new HashMap<String, Integer>();
   private final LocalFileSystem myLocalFileSystem;
 
-
   public WatchedRoots(LocalFileSystem lfs) {
     myLocalFileSystem = lfs;
   }
-
-
 
   public void initComponent() {
     MPSDirectoryWatcher.setInstance(this);
   }
 
-
-
   public void disposeComponent() {
     MPSDirectoryWatcher.setInstance(null);
   }
-
   @NonNls
   @NotNull
   public String getComponentName() {
     return "Watched Roots";
   }
-
-
 
   @Override
   public synchronized void addGlobalWatch(WatchRequestor req) {
@@ -63,7 +55,6 @@ public class WatchedRoots extends MPSDirectoryWatcher implements ApplicationComp
     }
     myGlobalRequests.put(req, request);
   }
-
   @Override
   public synchronized void removeGlobalWatch(WatchRequestor requestor) {
     LocalFileSystem.WatchRequest request = myGlobalRequests.get(requestor);
@@ -90,7 +81,6 @@ public class WatchedRoots extends MPSDirectoryWatcher implements ApplicationComp
       }
     });
   }
-
   public synchronized void addWatchRequest(String path) {
     Integer count = myRequestedPaths.get(path);
     if (count != null) {
@@ -100,7 +90,6 @@ public class WatchedRoots extends MPSDirectoryWatcher implements ApplicationComp
       maybeAddWatchRequest(path);
     }
   }
-
   private void maybeAddWatchRequest(String path) {
     boolean alreadyCovered = false;
 
@@ -118,7 +107,6 @@ public class WatchedRoots extends MPSDirectoryWatcher implements ApplicationComp
       }
     }
   }
-
   public synchronized void removeWatchRequest(String path) {
     Integer count = myRequestedPaths.get(path);
     if (count == null) {
@@ -137,6 +125,5 @@ public class WatchedRoots extends MPSDirectoryWatcher implements ApplicationComp
       }
     }
   }
-
 
 }

@@ -9,9 +9,9 @@ public class GenerationContextOp_TransientObjectAccess_BehaviorDescriptor extend
   }
   public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
     return GenerationContextOp_TransientObjectAccess_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess";
-  };;
-;}
+  }
+}

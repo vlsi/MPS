@@ -10,5 +10,5 @@ public class ActionAccessOperation_BehaviorDescriptor extends Expression_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ActionAccessOperation";
-  };;
-;}
+  }
+}

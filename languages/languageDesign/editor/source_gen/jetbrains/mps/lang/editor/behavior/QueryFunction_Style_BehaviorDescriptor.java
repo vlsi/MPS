@@ -9,9 +9,9 @@ public class QueryFunction_Style_BehaviorDescriptor extends QueryFunction_StyleP
   }
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_Style_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.QueryFunction_Style";
-  };;
-;}
+  }
+}

@@ -26,55 +26,46 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_size", true);
   }
-
   @Test
   public void test_target() throws Throwable {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_target", true);
   }
-
   @Test
   public void test_linkDeclaration() throws Throwable {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_linkDeclaration", true);
   }
-
   @Test
   public void test_forSpecializedLink() throws Throwable {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_forSpecializedLink", true);
   }
-
   @Test
   public void test_roles() throws Throwable {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_roles", true);
   }
-
   @Test
   public void test_resolveInfo() throws Throwable {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_resolveInfo", true);
   }
-
   @Test
   public void test_unspecifiedReferences() throws Throwable {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_unspecifiedReferences", true);
   }
-
   @Test
   public void test_unresolvedReference() throws Throwable {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_unresolvedReference", true);
   }
-
   @Test
   public void test_forNull() throws Throwable {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_forNull", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_size() throws Exception {
@@ -86,7 +77,6 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       Assert.assertTrue(Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022219808"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).isEmpty());
       Assert.assertEquals(3, Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022219844"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).count());
     }
-
     public void test_target() throws Exception {
       this.addNodeById("2906110183022219846");
       this.addNodeById("2906110183022219807");
@@ -99,7 +89,6 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
         }
       }));
     }
-
     public void test_linkDeclaration() throws Exception {
       this.addNodeById("2906110183022219846");
       this.addNodeById("2906110183022219807");
@@ -112,7 +101,6 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
         }
       }));
     }
-
     public void test_forSpecializedLink() throws Exception {
       this.addNodeById("2906110183022219846");
       this.addNodeById("2906110183022219807");
@@ -134,7 +122,6 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
         }
       }).isEmpty());
     }
-
     public void test_roles() throws Exception {
       this.addNodeById("2906110183022219846");
       this.addNodeById("2906110183022219807");
@@ -147,7 +134,6 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
         }
       }));
     }
-
     public void test_resolveInfo() throws Exception {
       this.addNodeById("2906110183022219846");
       this.addNodeById("2906110183022219807");
@@ -170,7 +156,6 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
         }
       });
     }
-
     public void test_unspecifiedReferences() throws Exception {
       this.addNodeById("2906110183022219846");
       this.addNodeById("2906110183022219807");
@@ -192,7 +177,6 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       Assert.assertEquals(unspecifiedReferenceName, SLinkOperations.getRole(theReference));
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2906110183022219849"), "jetbrains.mps.lang.smodelTests.structure.GrandChild"), SLinkOperations.getTargetNode(theReference));
     }
-
     public void test_unresolvedReference() throws Exception {
       this.addNodeById("2906110183022219846");
       this.addNodeById("2906110183022219807");
@@ -227,7 +211,6 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       Assert.assertEquals(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "root"), SLinkOperations.findLinkDeclaration(theReference));
       Assert.assertNotNull(SLinkOperations.getResolveInfo(theReference));
     }
-
     public void test_forNull() throws Exception {
       this.addNodeById("2906110183022219846");
       this.addNodeById("2906110183022219807");
@@ -242,7 +225,6 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       Assert.assertNull(SLinkOperations.getTargetNode(nullReference));
       Assert.assertNull(SLinkOperations.getResolveInfo(nullReference));
     }
-
     public String addUnspecifiedReference(SNode input, SNode referenceTarget) {
       String referenceName = "unspecifiedReference";
       SNodeAccessUtil.setReferenceTarget(input, referenceName, referenceTarget);

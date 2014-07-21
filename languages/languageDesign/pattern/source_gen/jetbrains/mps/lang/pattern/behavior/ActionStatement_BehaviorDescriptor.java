@@ -10,5 +10,5 @@ public abstract class ActionStatement_BehaviorDescriptor extends Statement_Behav
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.ActionStatement";
-  };;
-;}
+  }
+}

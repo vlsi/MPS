@@ -28,7 +28,6 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kqvvq_a(editorContext, node);
   }
-
   private EditorCell createCollection_kqvvq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kqvvq_a");
@@ -38,7 +37,6 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAlternation_kqvvq_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createAlternation_kqvvq_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = XmlDoctypeDeclaration_Editor.renderingCondition_kqvvq_a0a(node, editorContext);
@@ -50,11 +48,9 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_kqvvq_a0a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
   }
-
   private EditorCell createConstant_kqvvq_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<!");
     editorCell.setCellId("Constant_kqvvq_a0a");
@@ -66,7 +62,6 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_kqvvq_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<!");
     editorCell.setCellId("Constant_kqvvq_a0a_0");
@@ -79,7 +74,6 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_kqvvq_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kqvvq_b0");
@@ -88,7 +82,6 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_kqvvq_c1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_kqvvq_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "DOCTYPE");
     editorCell.setCellId("Constant_kqvvq_a1a");
@@ -98,7 +91,6 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_kqvvq_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("doctypeName");
@@ -119,7 +111,6 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_kqvvq_c1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("externalId");
@@ -139,45 +130,36 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_a0c1a extends AbstractCellMenuPart_ReplaceChild_Item {
     public XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_a0c1a() {
     }
-
     public String getMatchingText() {
       return "PUBLIC";
     }
-
     public boolean isCustomCreateChildNode() {
       return true;
     }
-
     public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode newId = SLinkOperations.setNewChild(node, "externalId", "jetbrains.mps.core.xml.structure.XmlExternalId");
       SPropertyOperations.set(newId, "isPublic", "" + (true));
       return newId;
     }
   }
-
   public static class XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_b0c1a extends AbstractCellMenuPart_ReplaceChild_Item {
     public XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_b0c1a() {
     }
-
     public String getMatchingText() {
       return "SYSTEM";
     }
-
     public boolean isCustomCreateChildNode() {
       return true;
     }
-
     public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode newId = SLinkOperations.setNewChild(node, "externalId", "jetbrains.mps.core.xml.structure.XmlExternalId");
       SPropertyOperations.set(newId, "isPublic", "" + (false));
       return newId;
     }
   }
-
   private EditorCell createAlternation_kqvvq_c0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = XmlDoctypeDeclaration_Editor.renderingCondition_kqvvq_a2a(node, editorContext);
@@ -189,11 +171,9 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_kqvvq_a2a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
   }
-
   private EditorCell createConstant_kqvvq_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_kqvvq_a2a");
@@ -205,7 +185,6 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_kqvvq_a2a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_kqvvq_a2a_0");

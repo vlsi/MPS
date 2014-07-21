@@ -18,12 +18,10 @@ import java.util.List;
 public class TypesystemChecker extends DefaultTypecheckingContextOwner implements INodeChecker {
   public TypesystemChecker() {
   }
-
   @Override
   public String getCategory() {
     return "type system";
   }
-
   @Override
   public Set<IErrorReporter> getErrors(SNode node, SRepository repository) {
     final Set<IErrorReporter> result = new HashSet<IErrorReporter>();

@@ -26,11 +26,9 @@ public class MergeCoreTest extends WorkbenchMpsTest {
   private static boolean ourPlayRefactoringWas;
   private static boolean ourMergeDriverModeWas;
   private String myZipName;
-
   public MergeCoreTest(String testName, String zipName) {
     myZipName = zipName;
   }
-
   @Test
   public void testMerge() {
     try {
@@ -40,7 +38,6 @@ public class MergeCoreTest extends WorkbenchMpsTest {
       Assert.fail();
     }
   }
-
   @Parameterized.Parameters
   public static List<Object[]> params() {
     return Sequence.fromIterable(Sequence.fromArray(TESTDATA_HOME.list())).where(new IWhereFilter<String>() {
@@ -57,7 +54,6 @@ public class MergeCoreTest extends WorkbenchMpsTest {
       }
     }).toListSequence();
   }
-
   @BeforeClass
   public static void setUpClass() {
     ourPlayRefactoringWas = RuntimeFlags.isPlayRefactoringsMode();
@@ -74,13 +70,11 @@ public class MergeCoreTest extends WorkbenchMpsTest {
     p.setProperty("log4j.appender.console.target", "System.err");
     PropertyConfigurator.configure(p);
   }
-
   @AfterClass
   public static void tearDownClass() {
     RuntimeFlags.setPlayRefactoringsMode(ourPlayRefactoringWas);
     RuntimeFlags.setMergeDriverMode(ourMergeDriverModeWas);
   }
-
   public static void main(String[] args) throws IOException, ModelReadException {
     setUpClass();
     for (Object[] p : params()) {

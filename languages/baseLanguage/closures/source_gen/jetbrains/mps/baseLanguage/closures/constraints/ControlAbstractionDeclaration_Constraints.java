@@ -17,8 +17,8 @@ public class ControlAbstractionDeclaration_Constraints extends BaseConstraintsDe
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
-  };;
-;  @Override
+  }
+  @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
 
@@ -27,9 +27,9 @@ public class ControlAbstractionDeclaration_Constraints extends BaseConstraintsDe
     }
 
     return result;
-  };;
-;  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  }
+  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer");
-  };;
-;  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "4448365440079055839");
+  }
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "4448365440079055839");
 }

@@ -23,11 +23,9 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_fs6ae3_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_fs6ae3_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_fs6ae3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_fs6ae3_a");
@@ -40,12 +38,10 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_fs6ae3_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_fs6ae3_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._OpenTag");
     return editorCell;
   }
-
   private EditorCell createConstant_fs6ae3_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "R/O model access");
     editorCell.setCellId("Constant_fs6ae3_b0");
@@ -60,32 +56,25 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static Color _StyleParameter_QueryFunction_fs6ae3_a0b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
-
   private static Color _StyleParameter_QueryFunction_fs6ae3_a1b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
   }
-
   private static Color _StyleParameter_QueryFunction_fs6ae3_a2b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
-
   private static int _StyleParameter_QueryFunction_fs6ae3_a3b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
-
   private static boolean _StyleParameter_QueryFunction_fs6ae3_a4b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
-
   private EditorCell createComponent_fs6ae3_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
     return editorCell;
   }
-
   private EditorCell createCollection_fs6ae3_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_fs6ae3_a_0");
@@ -99,19 +88,16 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_fs6ae3_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_fs6ae3_a0_0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     return editorCell;
   }
-
   private EditorCell createConstant_fs6ae3_b0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_fs6ae3_b0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_fs6ae3_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Value:");
     editorCell.setCellId("Constant_fs6ae3_c0");
@@ -121,14 +107,12 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_fs6ae3_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_fs6ae3_d0");
     editorCell.addEditorCell(this.createRefNode_fs6ae3_a3a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_fs6ae3_a3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("modelAccessor");

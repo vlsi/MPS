@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Kaja.behavior;
 public class RoutineCall_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor {
   public RoutineCall_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.RoutineCall";

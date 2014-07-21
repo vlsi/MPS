@@ -12,32 +12,26 @@ import javax.swing.Icon;
 public abstract class CustomJavaWatchable implements IWatchable {
   protected final JavaValue myCachedValue;
   private final String myVisibleName;
-
   public CustomJavaWatchable(JavaValue value, String name) {
     myCachedValue = value;
     myVisibleName = name;
   }
-
   @Override
   public IValue getValue() {
     return myCachedValue;
   }
-
   @Override
   public String getName() {
     return myVisibleName;
   }
-
   @Override
   public SNode getNode() {
     return null;
   }
-
   @Override
   public WatchablesCategory getCategory() {
     return WatchablesCategory.NONE;
   }
-
   @Override
   public Icon getPresentationIcon() {
     return myCachedValue.getPresentationIcon();

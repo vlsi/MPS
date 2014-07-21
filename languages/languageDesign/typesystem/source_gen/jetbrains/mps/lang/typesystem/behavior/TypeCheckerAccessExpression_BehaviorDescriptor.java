@@ -10,5 +10,5 @@ public class TypeCheckerAccessExpression_BehaviorDescriptor extends Expression_B
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression";
-  };;
-;}
+  }
+}

@@ -10,5 +10,5 @@ public class WeaveEach_RuleConsequence_BehaviorDescriptor extends RuleConsequenc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence";
-  };;
-;}
+  }
+}

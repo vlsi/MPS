@@ -9,12 +9,12 @@ public class Property_SetOperation_BehaviorDescriptor extends SNodeOperation_Beh
   }
   public boolean virtual_applicableToEnumProperty_1262430001741498259(SConcept thisConcept) {
     return Property_SetOperation_Behavior.virtual_applicableToEnumProperty_1262430001741498259(thisConcept);
-  };;
-;  public boolean virtual_applicableToSimpleProperty_1262430001741498100(SConcept thisConcept) {
+  }
+  public boolean virtual_applicableToSimpleProperty_1262430001741498100(SConcept thisConcept) {
     return Property_SetOperation_Behavior.virtual_applicableToSimpleProperty_1262430001741498100(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Property_SetOperation";
-  };;
-;}
+  }
+}

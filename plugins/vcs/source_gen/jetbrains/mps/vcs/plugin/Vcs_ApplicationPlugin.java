@@ -10,14 +10,11 @@ import jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup;
 
 public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.ide.vcs");
-
   public Vcs_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new AddModuleToVcs_Action());
@@ -33,10 +30,8 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ShowDiffWithCurrRev_ActionGroup());
     addGroup(new VCSModelActions_ActionGroup());
   }
-
   public void adjustInterfaceGroups() {
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(MakeFromChangesView_ActionGroup.ID, "ChangesViewPopupMenu", null);
     insertGroupIntoAnother(VCSModelActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_mpsvcs);

@@ -10,9 +10,9 @@ public class ExtractStaticInnerClassExpression_BehaviorDescriptor extends Expres
   }
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return ExtractStaticInnerClassExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression";
-  };;
-;}
+  }
+}

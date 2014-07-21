@@ -29,7 +29,6 @@ public class StatisticsTableModel implements TableModel {
   protected String myFilterTestMethod = null;
   private final TestNameMap<TestCaseRow, TestMethodRow> myMap = new TestNameMap<TestCaseRow, TestMethodRow>();
   private final TestRunState myState;
-
   public StatisticsTableModel(final TestRunState state) {
     myState = state;
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -47,12 +46,10 @@ public class StatisticsTableModel implements TableModel {
           fireTableChanged();
         }
       }
-
       @Nullable
       private TestMethodRow findRowForEvent(TestEvent event) {
         return getRow(event.getTestCaseName(), event.getTestMethodName());
       }
-
       @Override
       public void onTestEnd(TestEvent event) {
         TestMethodRow row = findRowForEvent(event);
@@ -65,7 +62,6 @@ public class StatisticsTableModel implements TableModel {
           fireTableChanged();
         }
       }
-
       @Override
       public void onTestError(TestEvent event) {
         TestMethodRow row = findRowForEvent(event);
@@ -74,7 +70,6 @@ public class StatisticsTableModel implements TableModel {
           fireTableChanged();
         }
       }
-
       @Override
       public void onTestFailure(TestEvent event) {
         TestMethodRow row = findRowForEvent(event);
@@ -83,7 +78,6 @@ public class StatisticsTableModel implements TableModel {
           fireTableChanged();
         }
       }
-
       @Override
       public void onLooseTest(String className, String methodName) {
         TestMethodRow row = getRow(className, methodName);
@@ -94,7 +88,6 @@ public class StatisticsTableModel implements TableModel {
       }
     });
   }
-
   private void setTests(Map<ITestNodeWrapper, List<ITestNodeWrapper>> tests) {
     myRows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());
     TotalRow totalRow = new TotalRow();
@@ -114,11 +107,9 @@ public class StatisticsTableModel implements TableModel {
     }
     filter();
   }
-
   public TestMethodRow getRow(String testCase, String testMethod) {
     return myMap.get(testCase, testMethod);
   }
-
   private void fireTableChanged() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
@@ -129,23 +120,19 @@ public class StatisticsTableModel implements TableModel {
       }
     });
   }
-
   @Override
   public int getRowCount() {
     return ListSequence.fromList(myFilteredRows).count();
   }
-
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
     return ListSequence.fromList(myFilteredRows).getElement(rowIndex);
   }
-
   public void setFilter(String testCase, String testMethod) {
     myFilterTestCase = testCase;
     myFilterTestMethod = testMethod;
     filter();
   }
-
   private void filter() {
     myFilteredRows = ListSequence.fromList(myRows).where(new IWhereFilter<TestStatisticsRow>() {
       public boolean accept(TestStatisticsRow it) {
@@ -154,36 +141,29 @@ public class StatisticsTableModel implements TableModel {
     }).toListSequence();
     fireTableChanged();
   }
-
   @Override
   public int getColumnCount() {
     return ListSequence.fromList(TEST_COLUMNS).count();
   }
-
   @Override
   public String getColumnName(int columnIndex) {
     return ListSequence.fromList(TEST_COLUMNS).getElement(columnIndex);
   }
-
   @Override
   public Class<?> getColumnClass(int columnIndex) {
     return TestStatisticsRow.class;
   }
-
   @Override
   public boolean isCellEditable(int rowIndex, int columnIndex) {
     return false;
   }
-
   @Override
   public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
   }
-
   @Override
   public void addTableModelListener(TableModelListener listener) {
     ListSequence.fromList(myListeners).addElement(listener);
   }
-
   @Override
   public void removeTableModelListener(TableModelListener listener) {
     ListSequence.fromList(myListeners).removeElement(listener);

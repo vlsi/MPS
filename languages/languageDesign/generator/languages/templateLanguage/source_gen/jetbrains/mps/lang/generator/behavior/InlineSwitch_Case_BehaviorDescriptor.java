@@ -10,5 +10,5 @@ public class InlineSwitch_Case_BehaviorDescriptor extends BaseConcept_BehaviorDe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.InlineSwitch_Case";
-  };;
-;}
+  }
+}

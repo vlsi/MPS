@@ -35,11 +35,9 @@ public class IconResource_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_79r3b6_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createProperty_79r3b6_a(editorContext, node);
   }
-
   private EditorCell createCollection_79r3b6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_79r3b6_a");
@@ -50,7 +48,6 @@ public class IconResource_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createAlternation_79r3b6_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a0a(node, editorContext);
@@ -62,11 +59,9 @@ public class IconResource_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_79r3b6_a0a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "iconExpression", true) == null);
   }
-
   private EditorCell createCollection_79r3b6_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_79r3b6_a0a");
@@ -74,7 +69,6 @@ public class IconResource_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createJComponent_79r3b6_b0a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createAlternation_79r3b6_a0a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a0a0a(node, editorContext);
@@ -86,11 +80,9 @@ public class IconResource_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_79r3b6_a0a0a(SNode node, EditorContext editorContext) {
     return isEmptyString(SPropertyOperations.getString(node, "path"));
   }
-
   private EditorCell createConstant_79r3b6_a0a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no icon>");
     editorCell.setCellId("Constant_79r3b6_a0a0a");
@@ -100,7 +92,6 @@ public class IconResource_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createAlternation_79r3b6_a0a0a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a0a0a0(node, editorContext);
@@ -112,11 +103,9 @@ public class IconResource_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_79r3b6_a0a0a0(SNode node, EditorContext editorContext) {
     return IconResource_Behavior.call_isValid_8974276187400030063(node);
   }
-
   private EditorCell createCollection_79r3b6_a0a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_79r3b6_a0a0a0");
@@ -126,7 +115,6 @@ public class IconResource_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createImage_79r3b6_a0a0a0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createImage_79r3b6_a0a0a0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Image editorCell;
     editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0<String>() {
@@ -138,7 +126,6 @@ public class IconResource_Editor extends DefaultNodeEditor {
     editorCell.setDescent(0);
     return editorCell;
   }
-
   private EditorCell createConstant_79r3b6_a0a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<invalid path>");
     editorCell.setCellId("Constant_79r3b6_a0a0a0");
@@ -148,17 +135,14 @@ public class IconResource_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createJComponent_79r3b6_b0a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, IconResource_Editor._QueryFunction_JComponent_79r3b6_a1a0a(node, editorContext), "_79r3b6_b0a0");
     editorCell.setCellId("JComponent_79r3b6_b0a0");
     return editorCell;
   }
-
   private static JComponent _QueryFunction_JComponent_79r3b6_a1a0a(final SNode node, final EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "path", editorContext);
   }
-
   private EditorCell createEmpty_79r3b6_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
@@ -166,7 +150,6 @@ public class IconResource_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Empty_79r3b6_a0a");
     return editorCell;
   }
-
   private EditorCell createAlternation_79r3b6_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = IconResource_Editor.renderingCondition_79r3b6_a1a(node, editorContext);
@@ -178,15 +161,12 @@ public class IconResource_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_79r3b6_a1a(SNode node, EditorContext editorContext) {
     return isEmptyString(SPropertyOperations.getString(node, "path"));
   }
-
   private static boolean renderingCondition_79r3b6_a1a_0(SNode node, EditorContext editorContext) {
     return isEmptyString(SPropertyOperations.getString(node, "path"));
   }
-
   private EditorCell createRefNode_79r3b6_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("iconExpression");
@@ -206,7 +186,6 @@ public class IconResource_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createEmpty_79r3b6_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
@@ -214,7 +193,6 @@ public class IconResource_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Empty_79r3b6_a1a");
     return editorCell;
   }
-
   private EditorCell createProperty_79r3b6_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("path");
@@ -236,11 +214,9 @@ public class IconResource_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static Color _StyleParameter_QueryFunction_79r3b6_a0a(EditorContext editorContext, SNode node) {
     return (IconResource_Behavior.call_isValid_8974276187400030063(node) ? Color.BLACK : Color.RED);
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

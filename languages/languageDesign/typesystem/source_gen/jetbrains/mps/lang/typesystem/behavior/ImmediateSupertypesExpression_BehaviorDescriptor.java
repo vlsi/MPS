@@ -10,5 +10,5 @@ public class ImmediateSupertypesExpression_BehaviorDescriptor extends Expression
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression";
-  };;
-;}
+  }
+}

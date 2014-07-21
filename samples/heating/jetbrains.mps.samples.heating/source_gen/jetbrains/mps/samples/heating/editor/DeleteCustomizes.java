@@ -14,34 +14,26 @@ public class DeleteCustomizes {
     editorCell.setAction(CellActionType.DELETE, new DeleteCustomizes.DeleteCustomizes_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new DeleteCustomizes.DeleteCustomizes_BACKSPACE(node));
   }
-
   public static class DeleteCustomizes_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteCustomizes_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.setTarget(node, "customizes", null, true);
     }
   }
-
   public static class DeleteCustomizes_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteCustomizes_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.setTarget(node, "customizes", null, true);
     }

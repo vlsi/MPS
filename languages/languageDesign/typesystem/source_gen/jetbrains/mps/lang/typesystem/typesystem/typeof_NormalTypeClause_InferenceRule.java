@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class typeof_NormalTypeClause_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_NormalTypeClause_InferenceRule() {
   }
-
   public void applyRule(final SNode clause, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = clause;
@@ -23,22 +22,18 @@ public class typeof_NormalTypeClause_InferenceRule extends AbstractInferenceRule
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(clause, "normalType", true), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240580124502", true), (SNode) _quotation_createNode_4v0lay_a0a0b(), false, true, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.NormalTypeClause";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_4v0lay_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

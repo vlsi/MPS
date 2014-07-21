@@ -7,16 +7,13 @@ import jetbrains.mps.vcs.diff.ChangeSet;
 
 public abstract class DependencyChange extends MetadataChange {
   private boolean myDelete;
-
   public DependencyChange(@NotNull ChangeSet changeSet, boolean delete) {
     super(changeSet);
     myDelete = delete;
   }
-
   protected final boolean isDelete() {
     return myDelete;
   }
-
   @NotNull
   @Override
   public final ChangeType getType() {

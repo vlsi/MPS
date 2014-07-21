@@ -15,25 +15,18 @@ import java.io.IOException;
 public class MPSJavaSrcDataSource extends FolderDataSource {
   private static final Logger LOG = Logger.getLogger(MPSJavaSrcDataSource.class);
 
-
   public MPSJavaSrcDataSource(@NotNull IFile dir, ModelRoot modelRoot) {
     super(dir, modelRoot);
   }
-
-
 
   @Override
   protected boolean isIncluded(IFile file) {
     return super.isIncluded(file) && file.getPath().endsWith(".java");
   }
 
-
-
   public boolean hasJavaFiles() {
     return getAvailableStreams().iterator().hasNext();
   }
-
-
 
   @Nullable
   public String guessPackage() {
@@ -50,6 +43,5 @@ public class MPSJavaSrcDataSource extends FolderDataSource {
       return pkg;
     }
   }
-
 
 }

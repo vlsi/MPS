@@ -19,12 +19,10 @@ public class ParallelLoopVariable_Constraints extends BaseConstraintsDescriptor 
   public ParallelLoopVariable_Constraints() {
     super("org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -35,7 +33,6 @@ public class ParallelLoopVariable_Constraints extends BaseConstraintsDescriptor 
 
     return result;
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -44,7 +41,6 @@ public class ParallelLoopVariable_Constraints extends BaseConstraintsDescriptor 
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "isFinal";
@@ -53,10 +49,8 @@ public class ParallelLoopVariable_Constraints extends BaseConstraintsDescriptor 
     });
     return properties;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:30f28ecb-3abe-411d-8f10-86fc65916e39(org.jetbrains.mps.samples.ParallelFor.constraints)", "47688671297852481");
 }

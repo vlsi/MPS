@@ -10,5 +10,5 @@ public class InternalAnonymousClassCreator_BehaviorDescriptor extends AbstractCr
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClassCreator";
-  };;
-;}
+  }
+}

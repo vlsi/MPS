@@ -25,24 +25,20 @@ import org.apache.log4j.LogManager;
 
 public class ShowGenerationActions_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowGenerationActions_Action() {
     super("Insert...", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     ActionGroup group = ((ActionGroup) ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.GenerationActions_ActionGroup"));
     group.update(event);
     return group.getChildren(event).length != 0;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -56,7 +52,6 @@ public class ShowGenerationActions_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -71,7 +66,6 @@ public class ShowGenerationActions_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       int x = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getX();
@@ -99,6 +93,5 @@ public class ShowGenerationActions_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowGenerationActions_Action.class);
 }

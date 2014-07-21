@@ -30,7 +30,6 @@ public class ExecuteCommandPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6c2ht_a(editorContext, node);
   }
-
   private EditorCell createCollection_6c2ht_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_6c2ht_a");
@@ -42,7 +41,6 @@ public class ExecuteCommandPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_6c2ht_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_6c2ht_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6c2ht_a0");
@@ -52,7 +50,6 @@ public class ExecuteCommandPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6c2ht_d0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_6c2ht_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "execute");
     editorCell.setCellId("Constant_6c2ht_a0a");
@@ -62,7 +59,6 @@ public class ExecuteCommandPart_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_6c2ht_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_6c2ht_b0a");
@@ -72,7 +68,6 @@ public class ExecuteCommandPart_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_6c2ht_c0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ExecuteCommandPart_Editor.parameterDeclarationListHandler_6c2ht_c0a(node, "parameterDeclaration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -86,30 +81,25 @@ public class ExecuteCommandPart_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class parameterDeclarationListHandler_6c2ht_c0a extends RefNodeListHandler {
     public parameterDeclarationListHandler_6c2ht_c0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -123,7 +113,6 @@ public class ExecuteCommandPart_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_6c2ht_d0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_6c2ht_d0a");
@@ -133,7 +122,6 @@ public class ExecuteCommandPart_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_6c2ht_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6c2ht_b0");
@@ -141,12 +129,10 @@ public class ExecuteCommandPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_6c2ht_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_6c2ht_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNode_6c2ht_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("execute");

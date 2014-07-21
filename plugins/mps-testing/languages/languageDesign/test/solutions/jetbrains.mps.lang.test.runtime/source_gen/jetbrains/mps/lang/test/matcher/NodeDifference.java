@@ -8,12 +8,10 @@ import java.util.ArrayList;
 public class NodeDifference extends DifferanceItem {
   private String myName;
   private List<DifferanceItem> myDifference = new ArrayList<DifferanceItem>();
-
   public NodeDifference(String name, List<DifferanceItem> diffs) {
     this.myName = name;
     myDifference = new ArrayList<DifferanceItem>(diffs);
   }
-
   public String toString(int deep) {
     String pref = "";
     for (int i = 0; i < deep; i++) {
@@ -30,12 +28,10 @@ public class NodeDifference extends DifferanceItem {
     }
     return buff.toString();
   }
-
   @Override
   public String toString() {
     return toString(0);
   }
-
   @Override
   public boolean equals(Object obj) {
     if (obj == null) {

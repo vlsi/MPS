@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
   }
-
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 3:
@@ -29,6 +28,5 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new BaseConstraintsDescriptor(fqName);
     }
   }
-
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.build.workflow.structure.BwfFileSet", "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskLibrary"};
 }

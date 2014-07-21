@@ -16,25 +16,20 @@ import jetbrains.mps.lang.traceable.operations.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "eba1dbb3-0bc4-4ce9-a184-05c9135353be(jetbrains.mps.lang.traceable.operations)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.lang.traceable.operations";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.lang.smodel", "jetbrains.mps.baseLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "caed3d50-b9d2-4564-94c9-8724df81e976(jetbrains.mps.lang.traceable.operations#6942529559415687113)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

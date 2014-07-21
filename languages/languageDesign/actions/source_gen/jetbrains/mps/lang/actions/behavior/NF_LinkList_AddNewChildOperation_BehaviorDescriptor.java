@@ -10,9 +10,9 @@ public class NF_LinkList_AddNewChildOperation_BehaviorDescriptor extends LinkLis
   }
   public boolean virtual_applicableToLinkList_1262430001741498382(SConcept thisConcept) {
     return NF_LinkList_AddNewChildOperation_Behavior.virtual_applicableToLinkList_1262430001741498382(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation";
-  };;
-;}
+  }
+}

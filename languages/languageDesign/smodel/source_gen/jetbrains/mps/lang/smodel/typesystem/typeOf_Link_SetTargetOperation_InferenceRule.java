@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeOf_Link_SetTargetOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeOf_Link_SetTargetOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // checking 
     SNode parameter = SLinkOperations.getTarget(op, "linkTarget", true);
@@ -35,18 +34,15 @@ public class typeOf_Link_SetTargetOperation_InferenceRule extends AbstractInfere
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225406429482", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "linkTarget", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225406448709", true), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

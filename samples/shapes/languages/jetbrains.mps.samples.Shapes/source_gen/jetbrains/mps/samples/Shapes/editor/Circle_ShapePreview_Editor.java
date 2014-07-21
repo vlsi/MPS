@@ -28,16 +28,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Circle_ShapePreview_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.Shapes.editor.Shapes.ShapePreview"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_347ksb_a(editorContext, node);
   }
-
   private EditorCell createCollection_347ksb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_347ksb_a");
@@ -53,7 +50,6 @@ public class Circle_ShapePreview_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createJComponent_347ksb_i0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_347ksb_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "circle");
     editorCell.setCellId("Constant_347ksb_a0");
@@ -63,14 +59,12 @@ public class Circle_ShapePreview_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_347ksb_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x:");
     editorCell.setCellId("Constant_347ksb_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_347ksb_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("x");
@@ -88,14 +82,12 @@ public class Circle_ShapePreview_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_347ksb_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "y:");
     editorCell.setCellId("Constant_347ksb_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_347ksb_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("y");
@@ -113,14 +105,12 @@ public class Circle_ShapePreview_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_347ksb_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "radius:");
     editorCell.setCellId("Constant_347ksb_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_347ksb_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("radius");
@@ -138,21 +128,17 @@ public class Circle_ShapePreview_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_347ksb_h0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.samples.Shapes.editor.ShapeColor");
     return editorCell;
   }
-
   private EditorCell createJComponent_347ksb_i0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Circle_ShapePreview_Editor._QueryFunction_JComponent_347ksb_a8a(node, editorContext), "_347ksb_i0");
     editorCell.setCellId("JComponent_347ksb_i0");
     return editorCell;
   }
-
   private static JComponent _QueryFunction_JComponent_347ksb_a8a(final SNode node, final EditorContext editorContext) {
     return new JPanel() {
-
 
       @Override
       protected void paintComponent(final Graphics graphics) {
@@ -164,8 +150,6 @@ public class Circle_ShapePreview_Editor extends DefaultNodeEditor {
           }
         });
       }
-
-
 
       @Override
       public Dimension getPreferredSize() {

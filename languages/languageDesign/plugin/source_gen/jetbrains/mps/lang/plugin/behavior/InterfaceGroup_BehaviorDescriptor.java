@@ -10,5 +10,5 @@ public class InterfaceGroup_BehaviorDescriptor extends ActionGroupDeclaration_Be
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.InterfaceGroup";
-  };;
-;}
+  }
+}

@@ -17,7 +17,6 @@ public class EventContext implements Context {
   private int myVotesToVote;
   private final EventsProcessor myEventProcessor;
   private final ThreadReference myThreadReference;
-
   public EventContext(@NotNull EventsProcessor eventProcessor, @NotNull EventSet eventSet) {
     myEventSet = eventSet;
     myEventProcessor = eventProcessor;
@@ -34,41 +33,33 @@ public class EventContext implements Context {
     });
     myThreadReference = check_gqjtnu_a0f0e(event);
   }
-
   @Override
   public int getSuspendPolicy() {
     return myEventSet.suspendPolicy();
   }
-
   @Override
   public ThreadReference getThread() {
     return myThreadReference;
   }
-
   public RequestManager getRequestManager() {
     return myEventProcessor.getRequestManager();
   }
-
   /*package*/ void vote() {
     // only called from ContextManager 
     myVotesToVote--;
   }
-
   /*package*/ boolean isProcessed() {
     // only called from ContextManager 
     return myVotesToVote == 0;
   }
-
   /*package*/ void resume() {
     // only called from ContextManager 
     myEventSet.resume();
   }
-
   @NotNull
   public EventSet getEventSet() {
     return myEventSet;
   }
-
   private static ThreadReference check_gqjtnu_a0f0e(LocatableEvent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.thread();

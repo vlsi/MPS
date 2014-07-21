@@ -17,7 +17,6 @@ public class CommandDataflowWithReturn_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.CommandDataflowWithReturn_Test$TestBody", "test_ErrorMessagesCheck1229350096076", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ErrorMessagesCheck1229350096076() throws Exception {

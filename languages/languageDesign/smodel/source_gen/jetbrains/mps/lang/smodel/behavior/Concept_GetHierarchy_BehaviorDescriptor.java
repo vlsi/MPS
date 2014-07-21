@@ -9,12 +9,12 @@ public class Concept_GetHierarchy_BehaviorDescriptor extends SNodeOperation_Beha
   }
   public boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
     return Concept_GetHierarchy_Behavior.virtual_applicableToConcept_1262430001741498358(thisConcept);
-  };;
-;  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
+  }
+  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
     return Concept_GetHierarchy_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy";
-  };;
-;}
+  }
+}

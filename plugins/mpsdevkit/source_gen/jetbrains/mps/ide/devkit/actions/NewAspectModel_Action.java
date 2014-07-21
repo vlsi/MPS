@@ -26,19 +26,16 @@ import org.apache.log4j.LogManager;
 public class NewAspectModel_Action extends BaseAction {
   private static final Icon ICON = null;
   private LanguageAspect aspect;
-
   public NewAspectModel_Action(LanguageAspect aspect_par) {
     super("Aspect Model", "", ICON);
     this.aspect = aspect_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setText(NameUtil.capitalize(NewAspectModel_Action.this.aspect.getName()) + " Aspect");
@@ -55,7 +52,6 @@ public class NewAspectModel_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -70,7 +66,6 @@ public class NewAspectModel_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SModel modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
@@ -87,7 +82,6 @@ public class NewAspectModel_Action extends BaseAction {
       }
     }
   }
-
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
@@ -97,10 +91,8 @@ public class NewAspectModel_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-
   public static String aspect_State(LanguageAspect object) {
     return object.getName();
   }
-
   protected static Logger LOG = LogManager.getLogger(NewAspectModel_Action.class);
 }

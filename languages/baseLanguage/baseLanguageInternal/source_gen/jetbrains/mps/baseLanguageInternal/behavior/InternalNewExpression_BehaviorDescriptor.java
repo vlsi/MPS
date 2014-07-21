@@ -10,5 +10,5 @@ public class InternalNewExpression_BehaviorDescriptor extends Expression_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression";
-  };;
-;}
+  }
+}

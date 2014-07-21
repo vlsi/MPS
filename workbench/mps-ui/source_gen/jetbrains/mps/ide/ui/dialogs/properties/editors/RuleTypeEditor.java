@@ -11,7 +11,6 @@ import java.awt.event.KeyEvent;
 
 public class RuleTypeEditor extends DefaultCellEditor {
   private JComboBox myComboBox;
-
   public RuleTypeEditor() {
     super(new JComboBox());
     myComboBox = (JComboBox) editorComponent;
@@ -24,14 +23,12 @@ public class RuleTypeEditor extends DefaultCellEditor {
     editorComponent.addKeyListener(new KeyListener() {
       public void keyTyped(KeyEvent p0) {
       }
-
       public void keyPressed(KeyEvent p0) {
         if (p0.isActionKey() || p0.getKeyCode() == KeyEvent.VK_ENTER) {
           myComboBox.processKeyEvent(p0);
           p0.consume();
         }
       }
-
       public void keyReleased(KeyEvent p0) {
       }
     });

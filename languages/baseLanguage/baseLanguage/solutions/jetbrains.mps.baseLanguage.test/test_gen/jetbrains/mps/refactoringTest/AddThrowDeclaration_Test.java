@@ -27,7 +27,6 @@ public class AddThrowDeclaration_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.AddThrowDeclaration_Test$TestBody", "test_AddThrowDeclaration", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_AddThrowDeclaration() throws Exception {
@@ -43,7 +42,6 @@ public class AddThrowDeclaration_Test extends BaseTransformationTest {
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
     }
-
     private static SNode _quotation_createNode_imjg6i_a0a1a0() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;

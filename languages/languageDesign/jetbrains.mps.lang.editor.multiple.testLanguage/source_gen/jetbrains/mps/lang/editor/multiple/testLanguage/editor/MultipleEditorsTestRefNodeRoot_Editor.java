@@ -24,7 +24,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_fxz4pq_a(editorContext, node);
   }
-
   private EditorCell createCollection_fxz4pq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fxz4pq_a");
@@ -35,14 +34,12 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_fxz4pq_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
     editorCell.setCellId("Constant_fxz4pq_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_fxz4pq_b0");
@@ -53,7 +50,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_fxz4pq_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fxz4pq_c0");
@@ -75,14 +71,12 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_fxz4pq_m2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rich child");
     editorCell.setCellId("Constant_fxz4pq_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_fxz4pq_b2a");
@@ -93,7 +87,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_fxz4pq_c2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext) {
       @Override
@@ -129,7 +122,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_d2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_fxz4pq_d2a");
@@ -139,7 +131,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_fxz4pq_e2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fxz4pq_e2a");
@@ -157,14 +148,12 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_a4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compact child");
     editorCell.setCellId("Constant_fxz4pq_a4c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_b4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_fxz4pq_b4c0");
@@ -175,7 +164,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_fxz4pq_c4c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext) {
       @Override
@@ -211,7 +199,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_f2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_fxz4pq_f2a");
@@ -221,14 +208,12 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_g2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "With presentation:");
     editorCell.setCellId("Constant_fxz4pq_g2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_fxz4pq_h2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("projectionType");
@@ -246,7 +231,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_i2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_fxz4pq_i2a");
@@ -256,7 +240,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_fxz4pq_j2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext) {
       @Override
@@ -292,7 +275,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private Iterable<String> getEditorHints_fxz4pq_a9c0(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.hasValue(node, "projectionType", "rich", null)) {
       return Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich");
@@ -301,7 +283,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     }
     return Collections.emptyList();
   }
-
   private EditorCell createConstant_fxz4pq_k2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_fxz4pq_k2a");
@@ -311,7 +292,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_l2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_fxz4pq_l2a");
@@ -321,7 +301,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_fxz4pq_m2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fxz4pq_m2a");
@@ -341,14 +320,12 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_a21c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Present as compact:");
     editorCell.setCellId("Constant_fxz4pq_a21c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_fxz4pq_b21c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("projectAsCompact");
@@ -366,7 +343,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_c21c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_fxz4pq_c21c0");
@@ -376,7 +352,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_fxz4pq_d21c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext) {
       @Override
@@ -412,15 +387,12 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private Iterable<String> getEditorHints_fxz4pq_a3m2a(SNode node, EditorContext editorContext) {
     return (SPropertyOperations.getBoolean(node, "projectAsCompact") ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact") : Collections.<String>emptyList());
   }
-
   private Iterable<String> getEditorHints_fxz4pq_a3m2a_0(SNode node, EditorContext editorContext) {
     return (SPropertyOperations.getBoolean(node, "projectAsCompact") ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich") : Collections.<String>emptyList());
   }
-
   private EditorCell createConstant_fxz4pq_e21c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_fxz4pq_e21c0");
@@ -430,7 +402,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_fxz4pq_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_fxz4pq_d0");

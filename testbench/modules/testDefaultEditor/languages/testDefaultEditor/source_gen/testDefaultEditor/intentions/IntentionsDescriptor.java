@@ -11,7 +11,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
     super(new ModuleReference("b5734616-c4b0-4639-9c6a-f3a1cf5dc4db(testDefaultEditor)"), PersistenceFacade.getInstance().createModelReference("r:be519384-ff73-407d-8bb6-1d18a1417684(testDefaultEditor.intentions)"));
   }
-
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new AddDefaultNodeAttribute_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddDefaultPropertyAttribute_Intention());

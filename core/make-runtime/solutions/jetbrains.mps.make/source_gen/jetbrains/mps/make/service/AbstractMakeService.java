@@ -19,37 +19,30 @@ import jetbrains.mps.make.script.IQuery;
 public abstract class AbstractMakeService implements IMakeService {
   public AbstractMakeService() {
   }
-
   @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
     return make(session, resources, null, null, new EmptyProgressMonitor());
   }
-
   @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
     return make(session, resources, script, null, new EmptyProgressMonitor());
   }
-
   @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
     return make(session, resources, script, controller, new EmptyProgressMonitor());
   }
-
   /**
    * Reasonable defaults when no IScriptController is supplied by client
    */
   public static class DefaultMonitor extends IConfigMonitor.Stub {
     private MessageFeedbackStrategy myFeedback;
-
     public DefaultMonitor(MakeSession makeSession) {
       myFeedback = new MessageFeedbackStrategy(makeSession.getMessageHandler());
     }
-
     @Override
     public void reportFeedback(IFeedback fdbk) {
       myFeedback.reportFeedback(fdbk);
     }
-
     @Override
     public <T extends IOption> T relayQuery(IQuery<T> query) {
       return query.defaultOption();

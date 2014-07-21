@@ -9,9 +9,9 @@ public class ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor ext
   }
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return ConstraintFunction_ReferentSearchScope_Scope_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope";
-  };;
-;}
+  }
+}

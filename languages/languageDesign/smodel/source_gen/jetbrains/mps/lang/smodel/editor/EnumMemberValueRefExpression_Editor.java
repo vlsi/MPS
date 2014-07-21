@@ -29,7 +29,6 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ldpt2z_a(editorContext, node);
   }
-
   private EditorCell createCollection_ldpt2z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ldpt2z_a");
@@ -42,7 +41,6 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ldpt2z_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ldpt2z_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enum member value");
     editorCell.setCellId("Constant_ldpt2z_a0");
@@ -53,7 +51,6 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldpt2z_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_ldpt2z_b0");
@@ -63,7 +60,6 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_ldpt2z_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("enum");
@@ -85,20 +81,16 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_ldpt2z_a2a extends InlineCellProvider {
     public _Inline_ldpt2z_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_ldpt2z_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_ldpt2z_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -118,7 +110,6 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_ldpt2z_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ldpt2z_d0");
@@ -129,7 +120,6 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_ldpt2z_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("member");
@@ -151,27 +141,22 @@ public class EnumMemberValueRefExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_ldpt2z_a4a extends InlineCellProvider {
     public _Inline_ldpt2z_a4a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReferencePresentation_ldpt2z_a0e0(editorContext, node);
     }
-
     private EditorCell createReferencePresentation_ldpt2z_a0e0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "member");
       editorCell.setCellId("ReferencePresentation_ldpt2z_a0e0");
       return editorCell;
     }
   }
-
   private EditorCell createConstant_ldpt2z_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_ldpt2z_f0");

@@ -17,25 +17,21 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_NamedTupleType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_NamedTupleType_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode ntt, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "typeVariableDeclaration", true)).count())) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ntt, "Invalid parameter types count", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239881405754", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }

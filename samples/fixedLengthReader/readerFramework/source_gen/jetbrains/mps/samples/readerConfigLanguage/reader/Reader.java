@@ -6,7 +6,6 @@ package jetbrains.mps.samples.readerConfigLanguage.reader;
 public class Reader {
   public Reader() {
   }
-
   public void AddStrategy(ReaderStrategy strategy) {
   }
 }

@@ -14,7 +14,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class typeof_ToNodeFunctionParameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ToNodeFunctionParameter_InferenceRule() {
   }
-
   public void applyRule(final SNode toNodeFunctionParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = toNodeFunctionParameter;
@@ -22,22 +21,18 @@ public class typeof_ToNodeFunctionParameter_InferenceRule extends AbstractInfere
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "939897302409170742", true), (SNode) _quotation_createNode_nrfnhq_a0a0b(), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.diagram.structure.ToNodeFunctionParameter";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_nrfnhq_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

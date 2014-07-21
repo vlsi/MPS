@@ -13,22 +13,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class SimpleMathBoolean_subtypeOf_Element_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public SimpleMathBoolean_subtypeOf_Element_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode simpleMathBooleanType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return SConceptOperations.createNewNode("jetbrains.mps.samples.Expressions.structure.SimpleMathElementType", null);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }

@@ -33,11 +33,9 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(res, "type", nodeToWrap, true);
             return res;
           }
-
           public boolean returnSmallPart(SNode nodeToWrap) {
             return false;
           }
-
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);

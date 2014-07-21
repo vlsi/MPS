@@ -11,9 +11,9 @@ public class CompactInvokeFunctionExpression_BehaviorDescriptor extends Expressi
   }
   public boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
     return CompactInvokeFunctionExpression_Behavior.virtual_legalAsStatement_1262430001741498032(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression";
-  };;
-;}
+  }
+}

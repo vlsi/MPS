@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class IndentLayoutUtil {
   public IndentLayoutUtil() {
   }
-
   public static List<SNode> moveToIndentLayoutChildren(SNode node, boolean isLast) {
     List<SNode> result = new ArrayList<SNode>();
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
@@ -55,7 +54,6 @@ public class IndentLayoutUtil {
     }
     return result;
   }
-
   public static void moveToIndentLayout(SNode node) {
     if (SLinkOperations.getTarget(node, "cellLayout", true) == null || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent"))) {
       List<SNode> children = new ArrayList<SNode>();
@@ -67,13 +65,11 @@ public class IndentLayoutUtil {
       SLinkOperations.setTarget(node, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
     }
   }
-
   private static void makeIndent(SNode cellModel) {
     SNode classItem = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem", null);
     SPropertyOperations.set(classItem, "flag", "" + (true));
     ListSequence.fromList(SLinkOperations.getTargets(cellModel, "styleItem", true)).addElement(classItem);
   }
-
   public static boolean isExtendsBaseLanguage(SNode node) {
     SNode editor = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false);
     if (editor == null) {

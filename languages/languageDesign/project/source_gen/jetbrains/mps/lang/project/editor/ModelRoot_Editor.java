@@ -21,7 +21,6 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gn5t9c_a(editorContext, node);
   }
-
   private EditorCell createCollection_gn5t9c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gn5t9c_a");
@@ -32,7 +31,6 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createProperty_gn5t9c_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("type");
@@ -50,7 +48,6 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_gn5t9c_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gn5t9c_b0");
@@ -62,18 +59,15 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gn5t9c_c1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_gn5t9c_a1a(SNode node, EditorContext editorContext) {
     return isNotEmptyString(SPropertyOperations.getString(node, "path"));
   }
-
   private EditorCell createConstant_gn5t9c_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_gn5t9c_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_gn5t9c_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("path");
@@ -91,7 +85,6 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_gn5t9c_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_gn5t9c_c1a");
@@ -101,7 +94,6 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

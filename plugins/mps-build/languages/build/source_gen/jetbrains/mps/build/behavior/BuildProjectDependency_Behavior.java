@@ -11,17 +11,14 @@ import jetbrains.mps.build.util.DependenciesHelper;
 public class BuildProjectDependency_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     String location = "${artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "script", false), "name") + "}";
     helper.locations().put(thisNode, location);
     helper.contentLocations().put(thisNode, location);
   }
-
   public static String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
     return helper.locations().get(thisNode);
   }
-
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     sb.append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "script", false), "name"));
     sb.append("::");

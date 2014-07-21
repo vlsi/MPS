@@ -15,14 +15,12 @@ import java.util.Map;
   private SNode myClass;
   private List<SNode> myActualArguments;
   private ClassifierAndSuperClassifiersScope mySearchScope;
-
   @Deprecated
   public StaticMethodReferenceInfoResolver(ClassifierAndSuperClassifiersScope searchScope, @NotNull SNode class_, List<SNode> actualArguments) {
     this.myClass = class_;
     this.myActualArguments = actualArguments;
     this.mySearchScope = searchScope;
   }
-
   @Override
   public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
     if (referenceInfo == null) {

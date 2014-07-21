@@ -26,18 +26,15 @@ import org.apache.log4j.LogManager;
 
 public class ImplementMethodsAsIntention_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ImplementMethodsAsIntention_Action() {
     super("Implement Methods", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     if (SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
@@ -49,7 +46,6 @@ public class ImplementMethodsAsIntention_Action extends BaseAction {
     return !(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).isInspector()) && (classConcept != null) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classConcept, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})).isNotEmpty();
 
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -63,7 +59,6 @@ public class ImplementMethodsAsIntention_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -87,7 +82,6 @@ public class ImplementMethodsAsIntention_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
@@ -108,6 +102,5 @@ public class ImplementMethodsAsIntention_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ImplementMethodsAsIntention_Action.class);
 }

@@ -23,24 +23,20 @@ public class GeneratedFileConflictResolving extends AbstractProjectComponent {
   private FileStatusManager myFileStatusManager;
   private VcsDirtyScopeManager myDirtyScopeManager;
   private GeneratedFileConflictResolving.MyFileListener myFileListener = new GeneratedFileConflictResolving.MyFileListener();
-
   public GeneratedFileConflictResolving(Project project, ProjectLevelVcsManager vcsManager, FileStatusManager fileStatusManager, VcsDirtyScopeManager dirtyScopeManager) {
     super(project);
     myVcsManager = vcsManager;
     myFileStatusManager = fileStatusManager;
     myDirtyScopeManager = dirtyScopeManager;
   }
-
   @Override
   public void initComponent() {
     VirtualFileManager.getInstance().addVirtualFileListener(myFileListener);
   }
-
   @Override
   public void disposeComponent() {
     VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
   }
-
   private void resolveIfNeeded(VirtualFileEvent e) {
     if (e.getRequestor() == IdeaFileSystemProvider.class) {
       VirtualFile file = e.getFile();
@@ -58,22 +54,18 @@ public class GeneratedFileConflictResolving extends AbstractProjectComponent {
       }
     }
   }
-
   private class MyFileListener extends VirtualFileAdapter {
     public MyFileListener() {
     }
-
     @Override
     public void contentsChanged(VirtualFileEvent event) {
       resolveIfNeeded(event);
     }
-
     @Override
     public void beforeFileDeletion(VirtualFileEvent event) {
       resolveIfNeeded(event);
     }
   }
-
   private static MergeProvider check_tqtyvq_a0d0a0h(AbstractVcs checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getMergeProvider();

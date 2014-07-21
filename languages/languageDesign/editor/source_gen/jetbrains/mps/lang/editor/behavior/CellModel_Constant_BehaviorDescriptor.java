@@ -9,15 +9,15 @@ public class CellModel_Constant_BehaviorDescriptor extends CellModel_AbstractLab
   }
   public boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode) {
     return CellModel_Constant_Behavior.virtual_canBeSynchronized_4052492221165595783(thisNode);
-  };;
-;  public int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
+  }
+  public int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
     return CellModel_Constant_Behavior.virtual_getDefaultFontStyle_1221472292001(thisNode);
-  };;
-;  public boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode) {
+  }
+  public boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode) {
     return CellModel_Constant_Behavior.virtual_shellBeSynchronized_4500758155551546553(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_Constant";
-  };;
-;}
+  }
+}

@@ -23,7 +23,6 @@ public class ContainsKeyOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_c2bjwy_a(editorContext, node);
   }
-
   private EditorCell createCollection_c2bjwy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c2bjwy_a");
@@ -34,7 +33,6 @@ public class ContainsKeyOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_c2bjwy_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_c2bjwy_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -43,7 +41,6 @@ public class ContainsKeyOperation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_c2bjwy_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_c2bjwy_b0");
@@ -53,7 +50,6 @@ public class ContainsKeyOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_c2bjwy_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("key");
@@ -73,7 +69,6 @@ public class ContainsKeyOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_c2bjwy_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_c2bjwy_d0");

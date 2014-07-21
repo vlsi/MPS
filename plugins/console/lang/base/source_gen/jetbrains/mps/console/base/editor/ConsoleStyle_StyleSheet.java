@@ -11,5 +11,4 @@ public class ConsoleStyle_StyleSheet {
     style.set(StyleAttributes.READ_ONLY, 1, true);
   }
 
-
 }

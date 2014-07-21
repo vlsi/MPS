@@ -10,5 +10,5 @@ public abstract class AbstractOverloadedOpsTypeRule_BehaviorDescriptor extends B
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule";
-  };;
-;}
+  }
+}

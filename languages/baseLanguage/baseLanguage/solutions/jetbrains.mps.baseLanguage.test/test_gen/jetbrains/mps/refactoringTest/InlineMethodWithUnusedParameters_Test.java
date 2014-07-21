@@ -22,7 +22,6 @@ public class InlineMethodWithUnusedParameters_Test extends BaseTransformationTes
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.InlineMethodWithUnusedParameters_Test$TestBody", "test_InlineMethodWithUnusedParameters", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_InlineMethodWithUnusedParameters() throws Exception {

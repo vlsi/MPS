@@ -27,10 +27,8 @@ public class TargetRange {
   private Map<ITarget.Name, ITarget> targetsView = MapSequence.fromMap(new HashMap<ITarget.Name, ITarget>());
   private Set<ITarget> allTargets = SetSequence.fromSet(new HashSet<ITarget>());
   private Map<ITarget.Name, TargetRange.TargetRefs> allRefs = MapSequence.fromMap(new HashMap<ITarget.Name, TargetRange.TargetRefs>());
-
   public TargetRange() {
   }
-
   public void addTarget(ITarget trg) {
     if (!(SetSequence.fromSet(allTargets).contains(trg))) {
       trg = this.primAddTarget(trg);
@@ -38,7 +36,6 @@ public class TargetRange {
       this.updateRefs(trg);
     }
   }
-
   public void addRelated(Iterable<ITarget> availableTargets) {
     Set<ITarget.Name> valences = SetSequence.fromSetWithValues(new HashSet<ITarget.Name>(), Sequence.fromIterable(MapSequence.fromMap(targetsView).values()).translate(new ITranslator2<ITarget, ITarget.Name>() {
       public Iterable<ITarget.Name> translate(ITarget trg) {
@@ -64,7 +61,6 @@ public class TargetRange {
       }
     } while (atsize < SetSequence.fromSet(allTargets).count());
   }
-
   public void addRelatedPrecursors(Iterable<ITarget> availableTargets) {
     Set<ITarget.Name> valences = SetSequence.fromSetWithValues(new HashSet<ITarget.Name>(), Sequence.fromIterable(MapSequence.fromMap(targetsView).values()).translate(new ITranslator2<ITarget, ITarget.Name>() {
       public Iterable<ITarget.Name> translate(ITarget trg) {
@@ -90,15 +86,12 @@ public class TargetRange {
       }
     } while (atsize < SetSequence.fromSet(allTargets).count());
   }
-
   public ITarget getTarget(ITarget.Name name) {
     return MapSequence.fromMap(targetsView).get(name);
   }
-
   public boolean hasTarget(ITarget.Name name) {
     return MapSequence.fromMap(targetsView).containsKey(name);
   }
-
   public Iterable<ITarget> sortedTargets() {
     return Sequence.fromIterable(new TargetRange.TargetsGraph().topologicalSort()).select(new ISelector<ITarget.Name, ITarget>() {
       public ITarget select(ITarget.Name tn) {
@@ -106,7 +99,6 @@ public class TargetRange {
       }
     });
   }
-
   public Iterable<ITarget> targetAndSortedPrecursors(ITarget.Name target) {
     if (!(MapSequence.fromMap(targetsView).containsKey(target))) {
       throw new IllegalArgumentException("unknown target");
@@ -117,7 +109,6 @@ public class TargetRange {
       }
     });
   }
-
   public Iterable<ITarget> immediatePrecursors(ITarget.Name target) {
     if (!(MapSequence.fromMap(targetsView).containsKey(target))) {
       throw new IllegalArgumentException("unknown target");
@@ -132,15 +123,12 @@ public class TargetRange {
       }
     });
   }
-
   public boolean hasCycles() {
     return ListSequence.fromList(new TargetRange.TargetsGraph().findCycles()).isNotEmpty();
   }
-
   public List<List<ITarget.Name>> cycles() {
     return new TargetRange.TargetsGraph().findCycles();
   }
-
   private ITarget primAddTarget(ITarget trg) {
     ITarget prev = MapSequence.fromMap(targetsView).get(trg.getName());
     if (prev != null) {
@@ -149,7 +137,6 @@ public class TargetRange {
     MapSequence.fromMap(targetsView).put(trg.getName(), trg);
     return trg;
   }
-
   private void updateRefs(ITarget trg) {
     TargetRange.TargetRefs refs = MapSequence.fromMap(allRefs).get(trg.getName());
     if (refs == null) {
@@ -177,95 +164,76 @@ public class TargetRange {
       }
     }
   }
-
   public static class CompositeTarget implements ITarget {
     private ITarget first;
     private ITarget second;
-
     public CompositeTarget(ITarget first, ITarget second) {
       assert first.getName().equals(second.getName());
       this.first = first;
       this.second = second;
     }
-
     @Override
     public Iterable<ITarget.Name> notAfter() {
       return Sequence.fromIterable(first.notAfter()).concat(Sequence.fromIterable(second.notAfter()));
     }
-
     @Override
     public Iterable<ITarget.Name> after() {
       return Sequence.fromIterable(first.after()).concat(Sequence.fromIterable(second.after()));
     }
-
     @Override
     public Iterable<ITarget.Name> notBefore() {
       return Sequence.fromIterable(first.notBefore()).concat(Sequence.fromIterable(second.notBefore()));
     }
-
     @Override
     public Iterable<ITarget.Name> before() {
       return Sequence.fromIterable(first.before()).concat(Sequence.fromIterable(second.before()));
     }
-
     @Override
     public ITarget.Name getName() {
       return first.getName();
     }
-
     @Override
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
-
     @Override
     public <T> T createParameters(Class<T> varCls, T copyFrom) {
       return null;
     }
-
     @Override
     public IJob createJob() {
       return null;
     }
-
     @Override
     public IConfig createConfig() {
       return null;
     }
-
     @Override
     public boolean requiresInput() {
       return false;
     }
-
     @Override
     public boolean producesOutput() {
       return false;
     }
-
     @Override
     public Iterable<Class<? extends IResource>> expectedInput() {
       return null;
     }
-
     @Override
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
   }
-
   private static class TargetRefs {
     private List<ITarget.Name> before = ListSequence.fromList(new LinkedList<ITarget.Name>());
     private List<ITarget.Name> after = ListSequence.fromList(new LinkedList<ITarget.Name>());
-
     public TargetRefs() {
     }
   }
-
   private class TargetsGraph extends GraphAnalyzer<ITarget.Name> {
     public TargetsGraph() {
     }
-
     @Override
     public Iterable<ITarget.Name> backwardEdges(ITarget.Name v) {
       return ListSequence.fromList(MapSequence.fromMap(allRefs).get(v).after).where(new IWhereFilter<ITarget.Name>() {
@@ -274,7 +242,6 @@ public class TargetRange {
         }
       });
     }
-
     @Override
     public Iterable<ITarget.Name> forwardEdges(ITarget.Name v) {
       return ListSequence.fromList(MapSequence.fromMap(allRefs).get(v).before).where(new IWhereFilter<ITarget.Name>() {
@@ -283,7 +250,6 @@ public class TargetRange {
         }
       });
     }
-
     @Override
     public Iterable<ITarget.Name> vertices() {
       return MapSequence.fromMap(allRefs).keySet();

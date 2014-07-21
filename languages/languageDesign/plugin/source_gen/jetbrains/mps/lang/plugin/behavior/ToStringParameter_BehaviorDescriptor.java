@@ -11,5 +11,5 @@ public class ToStringParameter_BehaviorDescriptor extends ConceptFunctionParamet
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ToStringParameter";
-  };;
-;}
+  }
+}

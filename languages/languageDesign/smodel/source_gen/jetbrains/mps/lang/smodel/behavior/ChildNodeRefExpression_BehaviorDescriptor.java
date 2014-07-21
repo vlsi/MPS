@@ -10,9 +10,9 @@ public class ChildNodeRefExpression_BehaviorDescriptor extends AbstractNodeRefEx
   }
   public SNode virtual_getTargetNode_3575813534625153815(SNode thisNode) {
     return ChildNodeRefExpression_Behavior.virtual_getTargetNode_3575813534625153815(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression";
-  };;
-;}
+  }
+}

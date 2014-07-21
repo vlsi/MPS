@@ -8,23 +8,18 @@ import jetbrains.mps.build.util.UnpackHelper;
 public abstract class BuildLayout_AbstractCopy_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor {
   public BuildLayout_AbstractCopy_BehaviorDescriptor() {
   }
-
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     BuildLayout_AbstractCopy_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
   }
-
   public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     return BuildLayout_AbstractCopy_Behavior.virtual_exports_6547494638219603457(thisNode, object);
   }
-
   public boolean virtual_isFile_1368030936106753986(SNode thisNode) {
     return BuildLayout_AbstractCopy_Behavior.virtual_isFile_1368030936106753986(thisNode);
   }
-
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     BuildLayout_AbstractCopy_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_AbstractCopy";

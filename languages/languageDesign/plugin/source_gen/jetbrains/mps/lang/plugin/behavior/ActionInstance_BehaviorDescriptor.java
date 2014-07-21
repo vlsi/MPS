@@ -10,5 +10,5 @@ public class ActionInstance_BehaviorDescriptor extends BaseConcept_BehaviorDescr
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ActionInstance";
-  };;
-;}
+  }
+}

@@ -6,7 +6,6 @@ package jetbrains.mps.samples.multipleProjections.stateMachine.behavior;
 public class Transition_BehaviorDescriptor extends AbstractStateMachineElement_BehaviorDescriptor {
   public Transition_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition";

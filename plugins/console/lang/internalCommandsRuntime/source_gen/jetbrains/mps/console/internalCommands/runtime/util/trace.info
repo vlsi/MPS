@@ -5,18 +5,18 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:6eb42b25-83db-4c72-9ba5-c1a95b1514ba(jetbrains.mps.console.internalCommands.runtime.util)/8829647120617550906">
     <file name="InternalUtil.java">
-      <node id="8829647120617551057" at="10,43,11,41" concept="1" />
-      <node id="8829647120617554660" at="16,55,17,53" concept="0" />
-      <node id="8829647120617557997" at="17,53,18,29" concept="1" />
-      <node id="8829647120617551037" at="10,0,13,0" concept="2" trace="getInternalFlag#()Z" />
-      <node id="8829647120617554594" at="16,0,20,0" concept="2" trace="setInternalFlag#(Z)Z" />
-      <scope id="8829647120617551040" at="10,43,11,41" />
-      <scope id="8829647120617554597" at="16,55,18,29" />
-      <scope id="8829647120617551037" at="10,0,13,0" />
-      <scope id="8829647120617554594" at="16,0,20,0">
+      <node id="8829647120617551057" at="9,43,10,41" concept="1" />
+      <node id="8829647120617554660" at="13,55,14,53" concept="0" />
+      <node id="8829647120617557997" at="14,53,15,29" concept="1" />
+      <node id="8829647120617551037" at="9,0,12,0" concept="2" trace="getInternalFlag#()Z" />
+      <node id="8829647120617554594" at="13,0,17,0" concept="2" trace="setInternalFlag#(Z)Z" />
+      <scope id="8829647120617551040" at="9,43,10,41" />
+      <scope id="8829647120617554597" at="13,55,15,29" />
+      <scope id="8829647120617551037" at="9,0,12,0" />
+      <scope id="8829647120617554594" at="13,0,17,0">
         <var name="flag" id="8829647120617554621" />
       </scope>
-      <unit id="8829647120617550906" at="7,0,24,0" name="jetbrains.mps.console.internalCommands.runtime.util.InternalUtil" />
+      <unit id="8829647120617550906" at="7,0,20,0" name="jetbrains.mps.console.internalCommands.runtime.util.InternalUtil" />
     </file>
   </root>
 </debug-info>

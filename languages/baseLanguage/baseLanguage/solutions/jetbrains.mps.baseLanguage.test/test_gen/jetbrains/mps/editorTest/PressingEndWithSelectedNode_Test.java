@@ -15,18 +15,15 @@ import java.util.ArrayList;
 public class PressingEndWithSelectedNode_Test extends BaseTransformationTest {
   public PressingEndWithSelectedNode_Test() {
   }
-
   @Test
   public void test_PressingEndWithSelectedNode() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.PressingEndWithSelectedNode_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("1232980665819", "1232980720898");

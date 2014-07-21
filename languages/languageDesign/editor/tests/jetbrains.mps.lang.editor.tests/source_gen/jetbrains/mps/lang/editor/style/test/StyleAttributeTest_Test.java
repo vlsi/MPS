@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class StyleAttributeTest_Test extends BaseTransformationTest {
   public StyleAttributeTest_Test() {
   }
-
   @Test
   public void test_StyleAttributeTest() throws Throwable {
     this.initTest("${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)");
     this.runTest("jetbrains.mps.lang.editor.style.test.StyleAttributeTest_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("8422442021223409310", "8422442021223410181");

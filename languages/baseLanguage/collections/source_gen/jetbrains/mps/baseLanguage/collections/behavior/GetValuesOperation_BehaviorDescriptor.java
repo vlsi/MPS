@@ -9,5 +9,5 @@ public class GetValuesOperation_BehaviorDescriptor extends MapOperation_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation";
-  };;
-;}
+  }
+}

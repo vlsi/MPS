@@ -9,17 +9,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CellModel_Component_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
+  }
+  public static String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
     return CellIdManager.createComponentId(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "editorComponent", false), "name"));
-  };;
-;  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
+  }
+  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
     return "#";
-  };;
-;  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
+  }
+  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
     return "#";
-  };;
-;  public static boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
+  }
+  public static boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return true;
-  };;
-;}
+  }
+}

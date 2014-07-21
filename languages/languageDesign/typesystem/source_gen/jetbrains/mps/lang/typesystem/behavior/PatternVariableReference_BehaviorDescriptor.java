@@ -10,5 +10,5 @@ public class PatternVariableReference_BehaviorDescriptor extends Expression_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.PatternVariableReference";
-  };;
-;}
+  }
+}

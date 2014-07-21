@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class NewProcessBuilderExpression_DataFlow extends DataFlowBuilder {
   public NewProcessBuilderExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode part : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "commandPart", true))) {
       _context.getBuilder().build((SNode) part);

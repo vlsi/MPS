@@ -11,15 +11,15 @@ public class IndexedTupleLiteral_BehaviorDescriptor extends Expression_BehaviorD
   }
   public String virtual_getLeftBracket_1262430001741497798(SConcept thisConcept) {
     return IndexedTupleLiteral_Behavior.virtual_getLeftBracket_1262430001741497798(thisConcept);
-  };;
-;  public String virtual_getRightBracket_1262430001741498223(SConcept thisConcept) {
+  }
+  public String virtual_getRightBracket_1262430001741498223(SConcept thisConcept) {
     return IndexedTupleLiteral_Behavior.virtual_getRightBracket_1262430001741498223(thisConcept);
-  };;
-;  public boolean virtual_isLValue_1213877519786(SNode thisNode) {
+  }
+  public boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return IndexedTupleLiteral_Behavior.virtual_isLValue_1213877519786(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral";
-  };;
-;}
+  }
+}

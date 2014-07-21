@@ -11,5 +11,5 @@ public class MigrationScriptPart_node_BehaviorDescriptor extends ConceptFunction
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.MigrationScriptPart_node";
-  };;
-;}
+  }
+}

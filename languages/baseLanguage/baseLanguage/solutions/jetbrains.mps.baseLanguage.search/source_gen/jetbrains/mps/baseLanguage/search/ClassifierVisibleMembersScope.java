@@ -22,7 +22,6 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   private SNode myClassifierType;
   private final SNode myContextNode;
   private final ClassifierAndSuperClassifiersScope myClassifierScope;
-
   @Deprecated
   public ClassifierVisibleMembersScope(@Nullable SNode classifierType, @Nullable SNode contextNode, int constraint) {
     // if constraint == CLASSIFIER_INSTANCE_METHOD use classifierType.classifier.getVisibleMembers(contextNode, concept/InstanceMethodDeclaration) instead 
@@ -30,7 +29,6 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     this.myContextNode = contextNode;
     this.myClassifierScope = new ClassifierAndSuperClassifiersScope(SLinkOperations.getTarget(classifierType, "classifier", false), constraint);
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(final Condition<SNode> condition) {
@@ -42,7 +40,6 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
       }
     });
   }
-
   @Override
   public boolean isInScope(SNode node) {
     if (myContextNode == null || !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
@@ -53,7 +50,6 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     }
     return myClassifierScope.getClassifierNodes().contains(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) && isVisible(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
   }
-
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     if (this.myClassifierType != null) {
@@ -71,10 +67,8 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     }
     return this.myClassifierScope.getReferenceInfoResolver(referenceNode, targetConcept);
   }
-
   protected boolean isVisible(SNode member) {
     return VisibilityUtil.isVisible(myContextNode, member);
   }
-
   protected static Logger LOG = LogManager.getLogger(ClassifierVisibleMembersScope.class);
 }

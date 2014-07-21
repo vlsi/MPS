@@ -29,7 +29,6 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_pdl482_a(editorContext, node);
   }
-
   private EditorCell createCollection_pdl482_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pdl482_a");
@@ -38,7 +37,6 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_pdl482_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_pdl482_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "by id:");
     editorCell.setCellId("Constant_pdl482_a0");
@@ -49,7 +47,6 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_pdl482_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("actionId");
@@ -70,11 +67,9 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class BootstrapActionReference_actionId_cellMenu_pdl482_a0b0 extends AbstractCellMenuPart_PropertyValues {
     public BootstrapActionReference_actionId_cellMenu_pdl482_a0b0() {
     }
-
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       for (List<String> ext : ExtensionPoint.<List<String>>generify(new ExtensionPoint("jetbrains.mps.lang.test.ActionIDs", List.class)).getObjects()) {

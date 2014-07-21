@@ -23,11 +23,9 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_p0t1np_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_p0t1np_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_p0t1np_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_p0t1np_a");
@@ -52,7 +50,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_p0t1np_l0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parallel for");
     editorCell.setCellId("Constant_p0t1np_a0");
@@ -62,7 +59,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_p0t1np_b0");
@@ -72,7 +68,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_p0t1np_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("loopVariable");
@@ -92,7 +87,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_p0t1np_d0");
@@ -102,7 +96,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_p0t1np_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("inputSequence");
@@ -122,7 +115,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_p0t1np_f0");
@@ -133,7 +125,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "using");
     editorCell.setCellId("Constant_p0t1np_g0");
@@ -144,11 +135,9 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_p0t1np_a6a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "threadPool", true) != null;
   }
-
   private EditorCell createRefNode_p0t1np_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("threadPool");
@@ -171,11 +160,9 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_p0t1np_a7a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "threadPool", true) != null;
   }
-
   private EditorCell createConstant_p0t1np_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no wait");
     editorCell.setCellId("Constant_p0t1np_i0");
@@ -187,11 +174,9 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_p0t1np_a8a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "nowait");
   }
-
   private EditorCell createConstant_p0t1np_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_p0t1np_j0");
@@ -204,7 +189,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_p0t1np_k0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -227,7 +211,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_l0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_p0t1np_l0");
@@ -238,7 +221,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_p0t1np_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_p0t1np_a_0");
@@ -265,7 +247,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_p0t1np_q0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Loops through a collection in parallel using multiple threads.");
     editorCell.setCellId("Constant_p0t1np_a0_0");
@@ -275,7 +256,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_p0t1np_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_p0t1np_b0");
@@ -289,7 +269,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_p0t1np_d1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Threads may be taken from a specified thread pool.");
     editorCell.setCellId("Constant_p0t1np_a1a");
@@ -299,7 +278,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "The main thread may or may not wait for the the parallel branches to finish before continuing.");
     editorCell.setCellId("Constant_p0t1np_b1a");
@@ -309,7 +287,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Potential Exceptions in branches are collected and re-thrown into the main thread grouped into a single");
     editorCell.setCellId("Constant_p0t1np_c1a");
@@ -319,7 +296,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_p0t1np_d1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_p0t1np_d1a");
@@ -327,7 +303,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_p0t1np_b3b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_a3b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ParallelForLoopException");
     editorCell.setCellId("Constant_p0t1np_a3b0");
@@ -337,7 +312,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_b3b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "instance.");
     editorCell.setCellId("Constant_p0t1np_b3b0");
@@ -347,7 +321,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_p0t1np_c0");
@@ -357,7 +330,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_d0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Example:");
     editorCell.setCellId("Constant_p0t1np_d0_0");
@@ -367,7 +339,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parallel for");
     editorCell.setCellId("Constant_p0t1np_e0");
@@ -377,7 +348,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_f0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_p0t1np_f0_0");
@@ -387,21 +357,18 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_g0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "int");
     editorCell.setCellId("Constant_p0t1np_g0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "element");
     editorCell.setCellId("Constant_p0t1np_h0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_i0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_p0t1np_i0_0");
@@ -411,14 +378,12 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_j0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inputSequence");
     editorCell.setCellId("Constant_p0t1np_j0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_p0t1np_k0");
@@ -428,7 +393,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_l0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "using");
     editorCell.setCellId("Constant_p0t1np_l0_0");
@@ -438,14 +402,12 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_m0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "threadPool");
     editorCell.setCellId("Constant_p0t1np_m0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no wait");
     editorCell.setCellId("Constant_p0t1np_n0");
@@ -455,7 +417,6 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_o0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_p0t1np_o0");
@@ -465,14 +426,12 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_p0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "...");
     editorCell.setCellId("Constant_p0t1np_p0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p0t1np_q0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_p0t1np_q0");

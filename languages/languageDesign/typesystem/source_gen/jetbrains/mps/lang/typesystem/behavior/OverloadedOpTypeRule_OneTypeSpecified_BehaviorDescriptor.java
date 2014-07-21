@@ -9,5 +9,5 @@ public class OverloadedOpTypeRule_OneTypeSpecified_BehaviorDescriptor extends Ab
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified";
-  };;
-;}
+  }
+}

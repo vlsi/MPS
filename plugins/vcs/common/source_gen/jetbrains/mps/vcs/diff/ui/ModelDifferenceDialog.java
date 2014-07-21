@@ -81,7 +81,6 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
   private boolean myOldRegistered;
   private boolean myNewRegistered;
 
-
   public ModelDifferenceDialog(Project project, final SModel oldModel, final SModel newModel, String oldTitle, String newTitle, @Nullable DiffRequest diffRequest) {
     super(project);
     myProject = project;
@@ -155,8 +154,6 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     });
   }
 
-
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
@@ -184,31 +181,25 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     return myComponent;
   }
 
-
-
   @NotNull
   @Override
   protected Action[] createActions() {
     return new Action[0];
   }
-
   @Override
   public String getDimensionServiceKey() {
     return getClass().getName();
   }
-
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
     return (myTree.isShowing() ? myTree : super.getPreferredFocusedComponent());
   }
-
   @Nullable
   @Override
   protected JComponent createSouthPanel() {
     return null;
   }
-
   @Override
   protected void dispose() {
     if (myRootDifferencePane != null) {
@@ -217,18 +208,14 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     super.dispose();
   }
 
-
-
   /*package*/ void rebuildChangeSets() {
     ChangeSetBuilder.rebuildChangeSet(myChangeSet);
     ChangeSetBuilder.rebuildChangeSet(myMetadataChangeSet);
     myTree.rebuildLater();
   }
-
   public boolean isEditable() {
     return myEditable;
   }
-
   private void syncMetadataChanges() {
     if (myEditable) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -238,7 +225,6 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
       });
     }
   }
-
   public void resetCurrentRoot() {
     if (myRootDifferencePane == null) {
       return;
@@ -252,7 +238,6 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     myStatusBar.setText("");
     syncMetadataChanges();
   }
-
   private void changeCurrentRoot(@Nullable final SNodeId rootId) {
     if (myRootDifferencePane != null && myRootId == rootId) {
       return;
@@ -281,18 +266,14 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
       }
     });
   }
-
   public void setCurrentRoot(@Nullable SNodeId rootId) {
     myTree.setSelected(rootId);
     changeCurrentRoot(rootId);
   }
-
   @Nullable
   public SNodeId getCurrentRoot() {
     return myRootId;
   }
-
-
 
   private void closeTreeComponent() {
     myActionGroup.unregisterCustomShortcutSet(myComponent);
@@ -301,7 +282,6 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     myPanel.setFirstComponent(null);
     myComponent.remove(myToolbar.getComponent());
   }
-
   public static void showRootDifference(Project project, final SModel oldModel, final SModel newModel, final SNodeId rootId, String oldTitle, String newTitile, @Nullable final Bounds scrollTo, DiffRequest diffRequest) {
     final ModelDifferenceDialog dialog = new ModelDifferenceDialog(project, oldModel, newModel, oldTitle, newTitile, diffRequest);
     dialog.setCurrentRoot(rootId);
@@ -324,8 +304,6 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     dialog.show();
   }
 
-
-
   @Nullable
   public Object getData(@NonNls String dataId) {
     if (DiffModelTree.NODE_ID_DATAKEY.is(dataId)) {
@@ -334,31 +312,24 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     return null;
   }
 
-
-
   public class MyGoToNeighbourRootActions extends GoToNeighbourRootActions.GoToByTree {
     public MyGoToNeighbourRootActions() {
       super(myTree);
     }
-
     @Nullable
     @Override
     protected SNodeId getCurrentNodeId() {
       return getCurrentRoot();
     }
-
     @Override
     public void setCurrentNodeId(@Nullable SNodeId nodeId) {
       changeCurrentRoot(nodeId);
     }
   }
 
-
-
   private class ModelDifferenceTree extends DiffModelTree {
     private ModelDifferenceTree() {
     }
-
     @Override
     protected Iterable<BaseAction> getRootActions() {
       List<BaseAction> actions = ListSequence.fromList(new ArrayList<BaseAction>());
@@ -373,12 +344,10 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
               }
             });
           }
-
           @Override
           protected void after() {
             rebuildChangeSets();
           }
-
           @Override
           protected String getRevertTitle() {
             Iterable<SNodeId> roots = Sequence.fromIterable(Sequence.fromArray(getSelectedNodes(DiffModelTree.RootTreeNode.class, null))).select(new ISelector<DiffModelTree.RootTreeNode, SNodeId>() {
@@ -401,7 +370,6 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
       }
       return actions;
     }
-
     @Override
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
       ChangeType compositeChangeType = ChangeType.CHANGE;
@@ -419,28 +387,23 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
       }
       rootTreeNode.setColor((compositeChangeType == null ? null : ChangeColors.getForTree(compositeChangeType)));
     }
-
     @Override
     protected Iterable<SModel> getModels() {
       return Arrays.asList(myChangeSet.getNewModel(), myChangeSet.getOldModel());
     }
-
     @Override
     protected Iterable<SNodeId> getAffectedRoots() {
       return myChangeSet.getAffectedRoots();
     }
-
     @Override
     protected void onUnselect() {
       resetCurrentRoot();
     }
-
     @Override
     protected void onSelectRoot(@Nullable SNodeId rootId) {
       changeCurrentRoot(rootId);
     }
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

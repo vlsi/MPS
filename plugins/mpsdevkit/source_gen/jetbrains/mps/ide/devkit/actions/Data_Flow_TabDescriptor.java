@@ -17,38 +17,29 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Data_Flow_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.DataFlow;
-
   public Data_Flow_TabDescriptor() {
   }
-
   public String getTitle() {
     return "Data Flow";
   }
-
   public Character getShortcutChar() {
     return 'D';
   }
-
   public int compareTo(RelationDescriptor descriptor) {
     return new DataFlow_Order().compare(this, descriptor);
   }
-
   public void startListening() {
   }
-
   public SNode getBaseNode(SNode node) {
     return ConceptEditorOpenHelper.getBaseNode(node);
   }
-
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   @Nullable
   public Icon getIcon() {
     return ICON;
   }
-
   public List<SNode> getNodes(SNode node) {
     List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
     SNode n = getNode(node);
@@ -58,20 +49,16 @@ public class Data_Flow_TabDescriptor extends RelationDescriptor {
     ListSequence.fromList(list).addElement(n);
     return list;
   }
-
   public boolean isSingle() {
     return true;
   }
-
   public SNode getNode(SNode node) {
     List<SNode> nodes = BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspectCollection_1567570417158062208", new Object[]{LanguageAspect.DATA_FLOW});
     return (ListSequence.fromList(nodes).isEmpty() ? null : ListSequence.fromList(nodes).first());
   }
-
   public List<SNode> getConcepts(final SNode node) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"));
   }
-
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.DATA_FLOW, node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"));
   }

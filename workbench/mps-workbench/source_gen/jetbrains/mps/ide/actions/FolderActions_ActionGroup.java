@@ -13,7 +13,6 @@ public class FolderActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(FolderActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.FolderActions_ActionGroup";
   public static final String LABEL_ID_abstractFileActions = ID + "abstractFileActions";
-
   public FolderActions_ActionGroup() {
     super("FolderActions", ID);
     this.setIsInternal(false);

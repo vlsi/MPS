@@ -27,7 +27,6 @@ public class Developer_Constraints extends BaseConstraintsDescriptor {
   public Developer_Constraints() {
     super("testDefaultEditor.structure.Developer");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -36,7 +35,6 @@ public class Developer_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -45,7 +43,6 @@ public class Developer_Constraints extends BaseConstraintsDescriptor {
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_f3ukjk_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new Scope() {
@@ -72,7 +69,6 @@ public class Developer_Constraints extends BaseConstraintsDescriptor {
 
                 return result;
               }
-
               /**
                * Resolves element by reference text.
                * 
@@ -86,7 +82,6 @@ public class Developer_Constraints extends BaseConstraintsDescriptor {
               public SNode resolve(SNode contextNode, @NotNull String refText) {
                 return null;
               }
-
               /**
                * Creates textual reference for scope element. If element has no textual representation
                * for the reference, returns null.
@@ -108,6 +103,5 @@ public class Developer_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_f3ukjk_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:4903a1be-5d28-4ffe-9f02-a773c7ca3a1a(testDefaultEditor.constraints)", "6007318803035473130");
 }

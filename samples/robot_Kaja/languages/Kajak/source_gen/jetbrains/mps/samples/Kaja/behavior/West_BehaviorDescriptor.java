@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Kaja.behavior;
 public class West_BehaviorDescriptor extends Direction_BehaviorDescriptor {
   public West_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.West";

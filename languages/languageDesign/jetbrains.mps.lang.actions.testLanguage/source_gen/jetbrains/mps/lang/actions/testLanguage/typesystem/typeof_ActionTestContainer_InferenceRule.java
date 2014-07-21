@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_ActionTestContainer_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ActionTestContainer_InferenceRule() {
   }
-
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode parameterizedSubstNode : ListSequence.fromList(SLinkOperations.getTargets(node, "addMenu_parameterizedSubstitute", true))) {
       {
@@ -35,22 +34,18 @@ public class typeof_ActionTestContainer_InferenceRule extends AbstractInferenceR
     }
 
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_ca4xs0_a0a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -58,7 +53,6 @@ public class typeof_ActionTestContainer_InferenceRule extends AbstractInferenceR
     quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:4d38763d-a252-449a-a228-c5edf22068a3(jetbrains.mps.lang.actions.testLanguage.structure)"), facade.createNodeId("2550657305103411658")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ca4xs0_a0a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -6,10 +6,8 @@ import java.util.LinkedList;
 
 public class Test {
   private static int d = 3;
-
   public Test() {
   }
-
   public void foo() {
     LinkedList<Integer> fl = new LinkedList<Integer>();
     Abc.sum(fl);

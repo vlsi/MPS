@@ -25,18 +25,15 @@ import org.apache.log4j.LogManager;
 
 public class Migration_ForcedSaveAll_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public Migration_ForcedSaveAll_Action() {
     super("Update All Models", "Re-save all models even if model was not changed", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -47,7 +44,6 @@ public class Migration_ForcedSaveAll_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -58,7 +54,6 @@ public class Migration_ForcedSaveAll_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Iterable<SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
@@ -96,6 +91,5 @@ public class Migration_ForcedSaveAll_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(Migration_ForcedSaveAll_Action.class);
 }

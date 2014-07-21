@@ -36,12 +36,10 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   private final LeftMarginMouseListener myMouseListener = new BreakpointsUiComponentEx.MyLeftMarginMouseListener();
   private final BreakpointsUiComponentEx.MyEditorComponentCreateListener myEditorComponentCreationHandler = new BreakpointsUiComponentEx.MyEditorComponentCreateListener();
   private MessageBusConnection myMessageBusConnection;
-
   public BreakpointsUiComponentEx(Project project, FileEditorManager manager) {
     myProject = project;
     myFileEditorManager = manager;
   }
-
   public void init() {
     myMessageBusConnection = myProject.getMessageBus().connect();
     myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, myEditorComponentCreationHandler);
@@ -52,32 +50,23 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
       editorComponentCreated(editor);
     }
   }
-
   public void dispose() {
     myMessageBusConnection.disconnect();
   }
-
   protected abstract Set<L> getBreakpointsForComponent(@NotNull EditorComponent component);
-
   protected abstract BreakpointPainterEx<L> createPainter(L breakpoint);
-
   protected abstract BreakpointIconRenderrerEx<L> createRenderrer(L breakpoint, EditorComponent component);
-
   protected abstract void toggleBreakpoint(SNode node);
-
   protected abstract EditorCell findDebuggableOrTraceableCell(EditorCell cell);
-
   public void toggleBreakpoint(EditorCell cell) {
     EditorCell debuggableCell = findDebuggableOrTraceableCell(cell);
     if (debuggableCell != null) {
       toggleBreakpoint(debuggableCell.getSNode());
     }
   }
-
   public boolean isDebuggable(EditorCell cell) {
     return findDebuggableOrTraceableCell(cell) != null;
   }
-
   protected EditorCell findTraceableCell(EditorCell foundCell) {
     EditorCell cell = foundCell;
     while (cell != null) {
@@ -91,7 +80,6 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     }
     return cell;
   }
-
   private SNode findDebuggableNode(final EditorComponent editorComponent, int x, final int y) {
     EditorCell foundCell = editorComponent.getRootCell().findCellWeak(x, y, new Condition<jetbrains.mps.nodeEditor.cells.EditorCell>() {
       @Override
@@ -116,7 +104,6 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     }
     return cell.getSNode();
   }
-
   protected void editorComponentCreated(@Nullable EditorComponent editorComponent) {
     if (editorComponent == null) {
       return;
@@ -131,7 +118,6 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     }
     editorComponent.repaint();
   }
-
   protected void editorComponentDisposed(@Nullable EditorComponent editorComponent) {
     if (editorComponent == null) {
       return;
@@ -143,7 +129,6 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     }
     editorComponent.getLeftEditorHighlighter().removeAllIconRenderers(BreakpointIconRenderrerEx.TYPE);
   }
-
   protected void addLocationBreakpoint(L breakpoint, SNode node) {
     List<EditorComponent> editorComponents = EditorComponentUtil.findComponentForNode(node, myFileEditorManager);
     for (EditorComponent editorComponent : editorComponents) {
@@ -152,7 +137,6 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
       editorComponent.repaint();
     }
   }
-
   protected void removeLocationBreakpoint(L breakpoint, SNode node) {
     List<EditorComponent> editorComponents = EditorComponentUtil.findComponentForNode(node, myFileEditorManager);
     for (EditorComponent editorComponent : editorComponents) {
@@ -161,7 +145,6 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
       editorComponent.repaint();
     }
   }
-
   public void repaintBreakpoints() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
@@ -173,19 +156,15 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
       }
     });
   }
-
   private class MyLeftMarginMouseListener implements LeftMarginMouseListener {
     private MyLeftMarginMouseListener() {
     }
-
     @Override
     public void mousePressed(MouseEvent e, EditorComponent editorComponent) {
     }
-
     @Override
     public void mouseReleased(MouseEvent e, EditorComponent editorComponent) {
     }
-
     @Override
     public void mouseClicked(final MouseEvent e, final EditorComponent editorComponent) {
       if (e.getButton() == MouseEvent.BUTTON1) {
@@ -201,16 +180,13 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
       }
     }
   }
-
   private class MyEditorComponentCreateListener implements EditorComponentCreateListener {
     private MyEditorComponentCreateListener() {
     }
-
     @Override
     public void editorComponentCreated(@NotNull EditorComponent editorComponent) {
       BreakpointsUiComponentEx.this.editorComponentCreated(editorComponent);
     }
-
     @Override
     public void editorComponentDisposed(@NotNull EditorComponent editorComponent) {
       BreakpointsUiComponentEx.this.editorComponentDisposed(editorComponent);

@@ -17,25 +17,20 @@ import org.jetbrains.mps.samples.ParallelFor.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "cb7388e8-f182-4cda-bd83-9796e8634856(org.jetbrains.mps.samples.ParallelFor)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "org.jetbrains.mps.samples.ParallelFor";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.collections"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "dbbf0a76-172f-4191-a1bd-9b6beb1d70ea(org.jetbrains.mps.samples.ParallelFor#8923957828369584137)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

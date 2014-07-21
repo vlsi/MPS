@@ -23,18 +23,15 @@ import org.apache.log4j.LogManager;
 
 public class RenameFileOrDirectory_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public RenameFileOrDirectory_Action() {
     super("Rename...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -45,7 +42,6 @@ public class RenameFileOrDirectory_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -64,7 +60,6 @@ public class RenameFileOrDirectory_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       String oldName = ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getName();
@@ -98,7 +93,6 @@ public class RenameFileOrDirectory_Action extends BaseAction {
       }
     }
   }
-
   /*package*/ boolean isNotValid(String result, final Map<String, Object> _params) {
     if (result == null || result.length() == 0) {
       Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Enter valid name", "Error", Messages.getErrorIcon());
@@ -110,9 +104,7 @@ public class RenameFileOrDirectory_Action extends BaseAction {
     }
     return false;
   }
-
   protected static Logger LOG = LogManager.getLogger(RenameFileOrDirectory_Action.class);
-
   private static VirtualFile check_g7rid4_a0b0a(VirtualFile checkedDotOperand, String result) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.findChild(result);

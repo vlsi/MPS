@@ -10,9 +10,9 @@ public class IconResource_BehaviorDescriptor extends BaseConcept_BehaviorDescrip
   }
   public void virtual_generate_8974276187400030152(SNode thisNode) {
     IconResource_Behavior.virtual_generate_8974276187400030152(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.resources.structure.IconResource";
-  };;
-;}
+  }
+}

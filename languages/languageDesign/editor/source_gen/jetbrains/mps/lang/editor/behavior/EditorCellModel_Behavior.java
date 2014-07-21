@@ -17,15 +17,15 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class EditorCellModel_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static String call_getCellModelKind_1216811674575(SNode thisNode) {
+  }
+  public static String call_getCellModelKind_1216811674575(SNode thisNode) {
     String result = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name");
     if (result.startsWith("CellModel_")) {
       result = result.substring("CellModel_".length());
     }
     return result;
-  };;
-;  public static String call_getCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
+  }
+  public static String call_getCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
     if (SLinkOperations.getTarget(thisNode, "id", true) != null && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "id", true), "name"))) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "id", true), "name");
     }
@@ -34,11 +34,11 @@ public class EditorCellModel_Behavior {
       return EditorCellModel_Behavior.call_getUniqueCellIdPrefix_8288068497638798229(thisNode) + defaultCellId;
     }
     return gc.createUniqueName(EditorCellModel_Behavior.call_getCellModelKind_1216811674575(thisNode) + "_", thisNode);
-  };;
-;  public static String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
+  }
+  public static String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
     return null;
-  };;
-;  public static String call_getUniqueCellIdPrefix_8288068497638798229(SNode thisNode) {
+  }
+  public static String call_getUniqueCellIdPrefix_8288068497638798229(SNode thisNode) {
     SNode containingNode = SNodeOperations.getContainingRoot(thisNode);
     if (SNodeOperations.isInstanceOf(containingNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")) {
       return "";
@@ -47,8 +47,8 @@ public class EditorCellModel_Behavior {
       return EditorCellModel_Behavior.call_getAbbreviation_8288068497639139061(thisNode, SNodeOperations.cast(containingNode, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration")) + "_";
     }
     return containingNode.getNodeId().toString();
-  };;
-;  public static String call_getAbbreviation_8288068497639139061(SNode thisNode, SNode editorComponent) {
+  }
+  public static String call_getAbbreviation_8288068497639139061(SNode thisNode, SNode editorComponent) {
     String name = SPropertyOperations.getString(editorComponent, "name");
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < name.length(); i++) {
@@ -59,29 +59,29 @@ public class EditorCellModel_Behavior {
       }
     }
     return sb.toString();
-  };;
-;  public static String call_getFactoryMethodName_1216812165609(SNode thisNode, TemplateQueryContext cg) {
+  }
+  public static String call_getFactoryMethodName_1216812165609(SNode thisNode, TemplateQueryContext cg) {
     return cg.createUniqueName("create" + EditorCellModel_Behavior.call_getCellModelKind_1216811674575(thisNode) + "_", thisNode);
-  };;
-;  public static SNode virtual_getParent_1219419981626(SNode thisNode) {
+  }
+  public static SNode virtual_getParent_1219419981626(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "parentStyleClass", false);
-  };;
-;  public static boolean call_isSelectable_1219420196673(SNode thisNode) {
+  }
+  public static boolean call_isSelectable_1219420196673(SNode thisNode) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"))).first(), "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem");
     if ((firstItem == null)) {
       return true;
     }
     return SPropertyOperations.getBoolean(firstItem, "flag");
-  };;
-;  public static void call_setSelectable_1241444765326(SNode thisNode, boolean newSelectable) {
+  }
+  public static void call_setSelectable_1241444765326(SNode thisNode, boolean newSelectable) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"))).first(), "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem");
     if ((firstItem == null)) {
       firstItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
       ListSequence.fromList(SLinkOperations.getTargets(thisNode, "styleItem", true)).addElement(firstItem);
     }
     SPropertyOperations.set(firstItem, "flag", "" + (newSelectable));
-  };;
-;  public static Color call_getColor_1225468825117(SNode thisNode, SNode firstItem) {
+  }
+  public static Color call_getColor_1225468825117(SNode thisNode, SNode firstItem) {
     if ((firstItem == null)) {
       return null;
     }
@@ -105,45 +105,45 @@ public class EditorCellModel_Behavior {
       t.printStackTrace();
       return null;
     }
-  };;
-;  public static String call_getStyle_7730231143366568266(SNode thisNode) {
+  }
+  public static String call_getStyle_7730231143366568266(SNode thisNode) {
     // TODO: apply seted style to cell in editor 
     SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem");
     if (item == null) {
       return null;
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(item, "key", false), "value");
-  };;
-;  public static Color call_getForegroundColor_1220960215403(SNode thisNode) {
+  }
+  public static Color call_getForegroundColor_1220960215403(SNode thisNode) {
     SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem");
     return EditorCellModel_Behavior.call_getColor_1225468825117(thisNode, item);
-  };;
-;  public static Color call_getBackgroundColor_1220969182195(SNode thisNode) {
+  }
+  public static Color call_getBackgroundColor_1220969182195(SNode thisNode) {
     SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem");
     return EditorCellModel_Behavior.call_getColor_1225468825117(thisNode, item);
-  };;
-;  public static Color call_getTextBackgroundColor_1220972190901(SNode thisNode) {
+  }
+  public static Color call_getTextBackgroundColor_1220972190901(SNode thisNode) {
     SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem");
     return EditorCellModel_Behavior.call_getColor_1225468825117(thisNode, item);
-  };;
-;  public static boolean call_isUnderlined_1221220594206(SNode thisNode) {
+  }
+  public static boolean call_isUnderlined_1221220594206(SNode thisNode) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem");
     if ((firstItem == null)) {
       return false;
     }
     return SPropertyOperations.hasValue(firstItem, "underlined", "2", "0");
-  };;
-;  public static boolean call_isStrikeOut_1223390694337(SNode thisNode) {
+  }
+  public static boolean call_isStrikeOut_1223390694337(SNode thisNode) {
     return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"), false);
-  };;
-;  public static int call_getFontSize_1221216397365(SNode thisNode) {
+  }
+  public static int call_getFontSize_1221216397365(SNode thisNode) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem");
     if ((firstItem == null) || !(firstItem.hasProperty("value"))) {
       return EditorSettings.getInstance().getDefaultEditorFont().getSize();
     }
     return SPropertyOperations.getInteger(firstItem, "value");
-  };;
-;  public static int call_getFontStyle_1221053923273(SNode thisNode) {
+  }
+  public static int call_getFontStyle_1221053923273(SNode thisNode) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem");
     if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, "style", "PLAIN") == null || SPropertyOperations.hasValue(firstItem, "style", "QUERY", "PLAIN")) {
       return BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_getDefaultFontStyle_1221472292001", new Object[]{});
@@ -155,20 +155,20 @@ public class EditorCellModel_Behavior {
       t.printStackTrace();
       return BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_getDefaultFontStyle_1221472292001", new Object[]{});
     }
-  };;
-;  public static String call_getOpeningTag_1220340471382(SNode thisNode) {
+  }
+  public static String call_getOpeningTag_1220340471382(SNode thisNode) {
     return EditorCellModel_Behavior.call_getOpeningPrefix_1220340126255(thisNode) + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getOpeningText_1220339714057", new Object[]{});
-  };;
-;  public static String call_getClosingTag_1220340488560(SNode thisNode) {
+  }
+  public static String call_getClosingTag_1220340488560(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getClosingText_1220339738643", new Object[]{});
-  };;
-;  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
+  }
+  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
     return "";
-  };;
-;  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
+  }
+  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
     return "";
-  };;
-;  public static String call_getOpeningPrefix_1220340126255(SNode thisNode) {
+  }
+  public static String call_getOpeningPrefix_1220340126255(SNode thisNode) {
     String result = "";
     if ((SLinkOperations.getTarget(thisNode, "renderingCondition", true) != null)) {
       result += "?";
@@ -193,36 +193,36 @@ public class EditorCellModel_Behavior {
       result += "AR";
     }
     return result;
-  };;
-;  public static int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
+  }
+  public static int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
     return MPSFonts.PLAIN;
-  };;
-;  public static boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
+  }
+  public static boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return false;
-  };;
-;  public static boolean call_getBooleanStyleValue_1237383442523(SNode thisNode, SNode styleItem, boolean defaultValue) {
+  }
+  public static boolean call_getBooleanStyleValue_1237383442523(SNode thisNode, SNode styleItem, boolean defaultValue) {
     SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, styleItem)).first(), "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem");
     if ((item == null)) {
       return defaultValue;
     }
     return SPropertyOperations.getBoolean(item, "flag");
-  };;
-;  public static boolean call_isNewLine_1237383076236(SNode thisNode) {
+  }
+  public static boolean call_isNewLine_1237383076236(SNode thisNode) {
     return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"), false);
-  };;
-;  public static boolean call_isOnNewLine_1237385424172(SNode thisNode) {
+  }
+  public static boolean call_isOnNewLine_1237385424172(SNode thisNode) {
     return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem"), false);
-  };;
-;  public static boolean call_isIndented_1237383418148(SNode thisNode) {
+  }
+  public static boolean call_isIndented_1237383418148(SNode thisNode) {
     return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"), false);
-  };;
-;  public static boolean call_isNewLineChildren_1237383562600(SNode thisNode) {
+  }
+  public static boolean call_isNewLineChildren_1237383562600(SNode thisNode) {
     return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"), false);
-  };;
-;  public static SNode call_getParentCollectionCell_9186828658634887710(SNode thisNode) {
+  }
+  public static SNode call_getParentCollectionCell_9186828658634887710(SNode thisNode) {
     return SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
-  };;
-;  private static boolean isNotEmptyString(String str) {
+  }
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
-  };;
-;}
+  }
+}

@@ -9,5 +9,5 @@ public class ApplyStyleClass_BehaviorDescriptor extends StyleClassItem_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ApplyStyleClass";
-  };;
-;}
+  }
+}

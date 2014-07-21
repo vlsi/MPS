@@ -57,11 +57,9 @@ public class QueriesGenerated {
                 SPropertyOperations.set(solutionRef, "moduleID", (item).getModuleId().toString());
                 return solutionRef;
               }
-
               public String getMatchingText(String pattern) {
                 return (item).getModuleName();
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -72,7 +70,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_JUnit3TestCaseRef_1280144168199520224(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -94,11 +91,9 @@ public class QueriesGenerated {
                 ((SModelInternal) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
                 return tref;
               }
-
               public String getMatchingText(String pattern) {
                 return BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getNestedName_8540045600162184125", new Object[]{});
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -109,7 +104,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_JUnit4TestCaseRef_1280144168199633207(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -131,11 +125,9 @@ public class QueriesGenerated {
                 ((SModelInternal) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
                 return tref;
               }
-
               public String getMatchingText(String pattern) {
                 return BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getNestedName_8540045600162184125", new Object[]{});
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -146,7 +138,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TestCaseRef_1280144168199742766(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -173,11 +164,9 @@ public class QueriesGenerated {
                 ((SModelInternal) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
                 return tref;
               }
-
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), "name");
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }

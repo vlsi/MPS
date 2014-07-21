@@ -33,22 +33,18 @@ import org.apache.log4j.LogManager;
 
 public class RunTestInMPS_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public RunTestInMPS_Action() {
     super("Run Test in MPS Process", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.test.structure.NodesTestCase");
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -62,7 +58,6 @@ public class RunTestInMPS_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -92,7 +87,6 @@ public class RunTestInMPS_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Set<SNode> tests = SetSequence.fromSet(new HashSet<SNode>());
@@ -106,7 +100,6 @@ public class RunTestInMPS_Action extends BaseAction {
       }
     }
   }
-
   /*package*/ void runTest(final SNode test, final Map<String, Object> _params) {
     try {
       final String className = BehaviorReflection.invokeVirtual(String.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), test, "virtual_getTestCase_1216134500045", new Object[]{}), "virtual_getClassName_1216136193905", new Object[]{});
@@ -131,6 +124,5 @@ public class RunTestInMPS_Action extends BaseAction {
       e.printStackTrace();
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RunTestInMPS_Action.class);
 }

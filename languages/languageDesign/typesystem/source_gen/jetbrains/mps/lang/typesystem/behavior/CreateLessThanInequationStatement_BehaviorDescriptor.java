@@ -9,5 +9,5 @@ public class CreateLessThanInequationStatement_BehaviorDescriptor extends Abstra
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement";
-  };;
-;}
+  }
+}

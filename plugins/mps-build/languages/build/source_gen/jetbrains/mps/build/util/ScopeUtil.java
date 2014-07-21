@@ -26,7 +26,6 @@ import java.util.ArrayList;
 public class ScopeUtil {
   public ScopeUtil() {
   }
-
   public static Scope simpleRoleScope(SNode node, SNode link) {
     return new SimpleRoleScope(node, link) {
       @Override
@@ -38,7 +37,6 @@ public class ScopeUtil {
       }
     };
   }
-
   public static Scope where(Scope scope, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> filter) {
     return new FilteringScope(scope) {
       @Override
@@ -47,7 +45,6 @@ public class ScopeUtil {
       }
     };
   }
-
   public static Iterable<Scope> imported(Iterable<SNode> importDeclarations, final SNode concept, final SNode child) {
     return Sequence.fromIterable(importDeclarations).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -70,7 +67,6 @@ public class ScopeUtil {
       }
     });
   }
-
   public static Scope unique(Scope scope) {
     return new DelegatingScope(scope) {
       @Override
@@ -79,7 +75,6 @@ public class ScopeUtil {
       }
     };
   }
-
   public static Scope getVisibleArtifactsScope(SNode project, boolean includeLayoutRoots) {
     if (SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
       SModule transientModule = SNodeOperations.getModel(project).getModule();
@@ -87,7 +82,6 @@ public class ScopeUtil {
     }
     return new ScopeUtil.VisibleArtifactsScope(VisibleArtifacts.createFor(project), includeLayoutRoots);
   }
-
   public static Scope getVisibleJarsScope(SNode project) {
     if (SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
       SModule transientModule = SNodeOperations.getModel(project).getModule();
@@ -95,7 +89,6 @@ public class ScopeUtil {
     }
     return new ScopeUtil.VisibleJarsScope(VisibleArtifacts.createFor(project));
   }
-
   public static Scope getVisibleJarFoldersScope(SNode project) {
     if (SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
       SModule transientModule = SNodeOperations.getModel(project).getModule();
@@ -103,16 +96,13 @@ public class ScopeUtil {
     }
     return new ScopeUtil.VisibleJarFoldersScope(VisibleArtifacts.createFor(project));
   }
-
   private static class VisibleArtifactsScope extends Scope {
     private VisibleArtifacts artifacts;
     private boolean includeLayoutRoots;
-
     public VisibleArtifactsScope(VisibleArtifacts artifacts, boolean includeLayoutRoots) {
       this.artifacts = artifacts;
       this.includeLayoutRoots = includeLayoutRoots;
     }
-
     private Iterable<SNode> getAllNodes() {
       Iterable<SNode> seq = Sequence.fromIterable(artifacts.getArtifacts()).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -124,7 +114,6 @@ public class ScopeUtil {
       }
       return seq;
     }
-
     @Override
     public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
       if ((prefix == null || prefix.length() == 0)) {
@@ -139,7 +128,6 @@ public class ScopeUtil {
       }
       return result;
     }
-
     @Override
     public SNode resolve(SNode contextNode, String refText) {
       SNode result = null;
@@ -155,7 +143,6 @@ public class ScopeUtil {
       }
       return result;
     }
-
     @Override
     public String getReferenceText(SNode contextNode, SNode node) {
       if (node == null || !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
@@ -164,13 +151,11 @@ public class ScopeUtil {
 
       return getName(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_Node"));
     }
-
     private String getName(SNode node) {
       StringBuilder sb = new StringBuilder();
       appendName(node, sb);
       return sb.toString();
     }
-
     private void appendName(SNode node, StringBuilder sb) {
       SNode parent = artifacts.parent(node);
       if ((parent != null)) {
@@ -179,14 +164,11 @@ public class ScopeUtil {
       BehaviorReflection.invokeVirtual(Void.class, node, "virtual_appendName_1368030936106665465", new Object[]{parent, sb});
     }
   }
-
   public static abstract class TransformingScope extends Scope {
     protected Scope wrapped;
-
     public TransformingScope(Scope wrapped) {
       this.wrapped = wrapped;
     }
-
     @Override
     public SNode resolve(SNode contextNode, String refText) {
       SNode resolve = wrapped.resolve(contextNode, refText);
@@ -195,7 +177,6 @@ public class ScopeUtil {
       }
       return unwrap(resolve);
     }
-
     @Override
     public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
       return Sequence.fromIterable(wrapped.getAvailableElements(prefix)).select(new ISelector<SNode, SNode>() {
@@ -204,7 +185,6 @@ public class ScopeUtil {
         }
       }).toListSequence();
     }
-
     @Override
     public String getReferenceText(SNode contextNode, SNode node) {
       node = wrap(node);
@@ -213,7 +193,6 @@ public class ScopeUtil {
       }
       return wrapped.getReferenceText(contextNode, node);
     }
-
     @Override
     public boolean contains(SNode node) {
       node = wrap(node);
@@ -222,17 +201,13 @@ public class ScopeUtil {
       }
       return wrapped.contains(node);
     }
-
     public abstract SNode wrap(SNode node);
-
     public abstract SNode unwrap(SNode node);
   }
-
   public static class VisibleJarFoldersScope extends ScopeUtil.TransformingScope {
     public VisibleJarFoldersScope(VisibleArtifacts artifacts) {
       super(new ScopeUtil.VisibleArtifactsScope(artifacts, false));
     }
-
     @Override
     public SNode wrap(SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node")) {
@@ -242,7 +217,6 @@ public class ScopeUtil {
       }
       return null;
     }
-
     @Override
     public SNode unwrap(SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSource_SingleFolder")) {
@@ -256,12 +230,10 @@ public class ScopeUtil {
       return null;
     }
   }
-
   public static class VisibleJarsScope extends ScopeUtil.TransformingScope {
     public VisibleJarsScope(VisibleArtifacts artifacts) {
       super(new ScopeUtil.VisibleArtifactsScope(artifacts, false));
     }
-
     @Override
     public SNode wrap(SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node")) {
@@ -271,7 +243,6 @@ public class ScopeUtil {
       }
       return null;
     }
-
     @Override
     public SNode unwrap(SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSource_SingleFile")) {

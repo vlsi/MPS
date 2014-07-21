@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class LT_PostfixIncrementExpression_with_PrefixIncrement_Test extends BaseTransformationTest {
   public LT_PostfixIncrementExpression_with_PrefixIncrement_Test() {
   }
-
   @Test
   public void test_LT_PostfixIncrementExpression_with_PrefixIncrement() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.LT_PostfixIncrementExpression_with_PrefixIncrement_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("4507831107787893760", "4507831107787903379");

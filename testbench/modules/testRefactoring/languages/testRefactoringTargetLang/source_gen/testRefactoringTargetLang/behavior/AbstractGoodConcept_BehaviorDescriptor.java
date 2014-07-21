@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class AbstractGoodConcept_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public AbstractGoodConcept_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "testRefactoringTargetLang.structure.AbstractGoodConcept";

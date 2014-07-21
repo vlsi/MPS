@@ -21,19 +21,16 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
   private final EventsProcessor myEventsProcessor;
   private volatile boolean myIsMute = false;
   private EvaluationProvider myEvaluationProvider;
-
   public DebugSession(EventsProcessor eventsProcessor, final Project p) {
     super(p);
     myEventsProcessor = eventsProcessor;
     myEventsProcessor.setDebuggableFramesSelector(getDebuggableFramesSelector());
     eventsProcessor.addDebugProcessListener(new DebugSession.MyDebugProcessAdapter());
   }
-
   @Override
   protected JavaUiStateImpl createUiState() {
     return new RunningJavaUiState(this);
   }
-
   @Override
   public void resume() {
     Context context = getUiState().getContext();
@@ -43,53 +40,43 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
     //  context is null => already resumed 
     myEventsProcessor.resume(context);
   }
-
   @Override
   public void pause() {
     myEventsProcessor.pause();
   }
-
   @Override
   public void stop(boolean terminateTargetVM) {
     myEventsProcessor.stop(terminateTargetVM);
   }
-
   @Override
   public void stepOver() {
     step(EventsProcessor.StepKind.Over);
   }
-
   @Override
   public void stepInto() {
     step(EventsProcessor.StepKind.Into);
   }
-
   @Override
   public void stepOut() {
     step(EventsProcessor.StepKind.Out);
   }
-
   @Override
   public boolean canShowEvaluationDialog() {
     return true;
   }
-
   private void step(EventsProcessor.StepKind kind) {
     JavaUiStateImpl state = getUiState();
     Context context = state.getContext();
     assert context != null : "Context is null while debug session state is " + myExecutionState;
     myEventsProcessor.step(kind, context);
   }
-
   public EventsProcessor getEventsProcessor() {
     return myEventsProcessor;
   }
-
   private void pause(@NotNull Context suspendContext) {
     JavaUiStateImpl state = getUiState();
     setState(state, state.paused(suspendContext), false);
   }
-
   public void refresh() {
     myEventsProcessor.schedule(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -99,27 +86,22 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
       }
     });
   }
-
   private void resume(Context suspendContext) {
     JavaUiStateImpl state = getUiState();
     setState(state, state.resumed(suspendContext), false);
   }
-
   @Override
   public void sessionRegistered(DebugSessionManagerComponent manager) {
     VMEventsProcessorManagerComponent vmManager = manager.getProject().getComponent(VMEventsProcessorManagerComponent.class);
     vmManager.addDebugSession(this);
   }
-
   @Override
   public void sessionUnregistered(DebugSessionManagerComponent manager) {
   }
-
   @Override
   public boolean isMute() {
     return myIsMute;
   }
-
   @Override
   public void muteBreakpoints(final boolean mute) {
     if (myEventsProcessor.isAttached()) {
@@ -151,39 +133,32 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
       fireSessionMuted(DebugSession.this);
     }
   }
-
   @Override
   public EvaluationProvider getEvaluationProvider() {
     return myEvaluationProvider;
   }
-
   public void setEvaluationProvider(EvaluationProvider evaluationProvider) {
     myEvaluationProvider = evaluationProvider;
   }
-
   private class MyDebugProcessAdapter extends DebugProcessAdapter {
     private MyDebugProcessAdapter() {
     }
-
     @Override
     public void paused(@NotNull Context suspendContext) {
       myExecutionState = AbstractDebugSession.ExecutionState.Paused;
       pause(suspendContext);
       fireSessionPaused(DebugSession.this);
     }
-
     @Override
     public void resumed(@NotNull Context suspendContext) {
       myExecutionState = AbstractDebugSession.ExecutionState.Running;
       resume(suspendContext);
       fireSessionResumed(DebugSession.this);
     }
-
     @Override
     public void processAttached(@NotNull EventsProcessor process) {
       myExecutionState = AbstractDebugSession.ExecutionState.Running;
     }
-
     @Override
     public void processDetached(@NotNull EventsProcessor process, boolean closedByUser) {
       myExecutionState = AbstractDebugSession.ExecutionState.Stopped;

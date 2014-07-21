@@ -9,5 +9,5 @@ public class CreateGreaterThanInequationStatement_BehaviorDescriptor extends Abs
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement";
-  };;
-;}
+  }
+}

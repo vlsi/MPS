@@ -19,25 +19,20 @@ import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 
 public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
-
   public NodeAndDescendantsUsages_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Node & Descendants Usages";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
@@ -58,12 +53,10 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Node Descendants Usages";

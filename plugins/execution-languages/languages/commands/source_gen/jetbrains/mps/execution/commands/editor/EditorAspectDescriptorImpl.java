@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
@@ -59,11 +58,9 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     }
     return Collections.<ConceptEditor>emptyList();
   }
-
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.<ConceptEditorComponent>emptyList();
   }
-
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.execution.commands.structure.CommandBuilderExpression", "jetbrains.mps.execution.commands.structure.CommandDebuggerOperation", "jetbrains.mps.execution.commands.structure.CommandDeclaration", "jetbrains.mps.execution.commands.structure.CommandParameterAssignment", "jetbrains.mps.execution.commands.structure.CommandParameterReference", "jetbrains.mps.execution.commands.structure.CommandPartLengthOperation", "jetbrains.mps.execution.commands.structure.CommandPartToListOperation", "jetbrains.mps.execution.commands.structure.CommandProcessType", "jetbrains.mps.execution.commands.structure.CommandReferenceExpression", "jetbrains.mps.execution.commands.structure.CommandType", "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.KeyValueCommandPart", "jetbrains.mps.execution.commands.structure.ListCommandPart", "jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression", "jetbrains.mps.execution.commands.structure.PropertyCommandPart", "jetbrains.mps.execution.commands.structure.RedirectOutputExpression", "jetbrains.mps.execution.commands.structure.ReportErrorStatement", "jetbrains.mps.execution.commands.structure.StartAndWaitOperation"};

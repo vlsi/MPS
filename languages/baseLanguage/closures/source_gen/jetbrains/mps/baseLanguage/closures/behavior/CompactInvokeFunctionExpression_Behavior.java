@@ -7,8 +7,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class CompactInvokeFunctionExpression_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean virtual_legalAsStatement_1262430001741498032(SAbstractConcept thisConcept) {
+  }
+  public static boolean virtual_legalAsStatement_1262430001741498032(SAbstractConcept thisConcept) {
     return true;
-  };;
-;}
+  }
+}

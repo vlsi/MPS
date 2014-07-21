@@ -36,22 +36,18 @@ import org.apache.log4j.LogManager;
 
 public class ChangeMethodSignature_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ChangeMethodSignature_Action() {
     super("Change Method Signature", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings" + "." + "ChangeMethodSignature"), ((SNode) MapSequence.fromMap(_params).get("method")));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -65,7 +61,6 @@ public class ChangeMethodSignature_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -96,7 +91,6 @@ public class ChangeMethodSignature_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<SNode> baseMethod = new Wrappers._T<SNode>();
@@ -147,6 +141,5 @@ public class ChangeMethodSignature_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ChangeMethodSignature_Action.class);
 }

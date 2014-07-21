@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_BeanPropertyBuilder_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_BeanPropertyBuilder_InferenceRule() {
   }
-
   public void applyRule(final SNode builder, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(builder, "value", true);
@@ -23,18 +22,15 @@ public class typeof_BeanPropertyBuilder_InferenceRule extends AbstractInferenceR
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "2679357232284100448", true), (SNode) SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(builder, "setter", false), "parameter", true)).first(), "type", true), false, true, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

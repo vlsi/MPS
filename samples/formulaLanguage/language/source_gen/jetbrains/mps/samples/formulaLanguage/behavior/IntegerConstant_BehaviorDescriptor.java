@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class IntegerConstant_BehaviorDescriptor extends Constant_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public IntegerConstant_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant";

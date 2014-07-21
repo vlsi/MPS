@@ -10,5 +10,5 @@ public class NamedTupleComponentReference_BehaviorDescriptor extends BaseConcept
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference";
-  };;
-;}
+  }
+}

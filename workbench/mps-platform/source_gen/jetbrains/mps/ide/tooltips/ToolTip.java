@@ -30,32 +30,27 @@ public class ToolTip {
   private ToolTip.MyDialog myDialog;
   private ToolTipData myHintInformation;
   private boolean myRigthAligned;
-
   /*package*/ ToolTip(boolean rightAligned) {
     myRigthAligned = rightAligned;
   }
-
   /*package*/ void show(Frame owner, Point location, ToolTipData hintInformation) {
     myHintInformation = hintInformation;
     location = new Point(location.x + ((myRigthAligned ? -X_OFFSET : X_OFFSET)), location.y + Y_OFFSET);
     myDialog = new ToolTip.MyDialog(owner, location, myRigthAligned, hintInformation);
     myDialog.setVisible(true);
   }
-
   /*package*/ void hide() {
     if (myDialog != null) {
       myDialog.dispose();
       myDialog = null;
     }
   }
-
   /*package*/ String getText() {
     if (myHintInformation == null) {
       return null;
     }
     return myHintInformation.getText();
   }
-
   /*package*/ static class MyDialog extends Window {
     private Component myPrevFocusOwner;
     private FocusListener myOwnerFocusListener = new FocusAdapter() {
@@ -77,7 +72,6 @@ public class ToolTip {
         dispose();
       }
     };
-
     /*package*/ MyDialog(Frame owner, Point location, boolean rightAligned, ToolTipData toolTipData) {
       super(owner);
       myPrevFocusOwner = owner.getFocusOwner();
@@ -102,7 +96,6 @@ public class ToolTip {
       setLocation(location);
       addListeners();
     }
-
     private void addListeners() {
       if (myPrevFocusOwner != null) {
         myPrevFocusOwner.addFocusListener(myOwnerFocusListener);
@@ -111,7 +104,6 @@ public class ToolTip {
       }
       super.dispose();
     }
-
     @Override
     public void dispose() {
       if (myPrevFocusOwner != null) {

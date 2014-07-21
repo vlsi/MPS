@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 /*package*/ class Main_forEach_loop {
   /*package*/ Main_forEach_loop() {
   }
-
   /*package*/ static void main(String[] args) {
     Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -18,7 +17,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -55,7 +53,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _3_num;
             };
           }

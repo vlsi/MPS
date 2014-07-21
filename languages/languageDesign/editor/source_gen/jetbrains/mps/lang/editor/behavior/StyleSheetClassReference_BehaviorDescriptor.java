@@ -10,5 +10,5 @@ public class StyleSheetClassReference_BehaviorDescriptor extends BaseConcept_Beh
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyleSheetClassReference";
-  };;
-;}
+  }
+}

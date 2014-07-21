@@ -38,7 +38,6 @@ public class QueriesGenerated {
       SPropertyOperations.set(_context.getNewNode(), "isVirtual", "" + (true));
     }
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1238617792506(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -69,11 +68,9 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1238617792565(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return false && SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration"}, true, false) != null;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_SuperNodeExpression_7448026190102456640(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression"), _context.getSourceNode()) {
@@ -84,19 +81,15 @@ public class QueriesGenerated {
         }
         return SLinkOperations.setTarget(_context.getSourceNode(), "superConcept", result, false);
       }
-
       public String getMatchingText(String pattern) {
         return "<";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "add qualifier for super expression";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -107,7 +100,6 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_SuperNodeExpression_7448026190102456641(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "superConcept", false) == null);
   }

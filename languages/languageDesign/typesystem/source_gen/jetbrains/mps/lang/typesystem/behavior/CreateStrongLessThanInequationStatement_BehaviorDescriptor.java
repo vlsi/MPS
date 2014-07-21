@@ -9,5 +9,5 @@ public class CreateStrongLessThanInequationStatement_BehaviorDescriptor extends 
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement";
-  };;
-;}
+  }
+}

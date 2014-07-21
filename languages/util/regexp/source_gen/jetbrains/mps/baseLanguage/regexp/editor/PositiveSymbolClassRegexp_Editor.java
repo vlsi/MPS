@@ -27,7 +27,6 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4p4aum_a(editorContext, node);
   }
-
   private EditorCell createCollection_4p4aum_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4p4aum_a");
@@ -37,7 +36,6 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_4p4aum_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_4p4aum_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_4p4aum_a0");
@@ -49,16 +47,13 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new PositiveSymbolClassRegexp_Editor.ReplaceWith_SymbolClassRegexp_cellMenu_4p4aum_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_SymbolClassRegexp_cellMenu_4p4aum_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_SymbolClassRegexp_cellMenu_4p4aum_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp";
     }
   }
-
   private EditorCell createRefNodeList_4p4aum_b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new PositiveSymbolClassRegexp_Editor.partListHandler_4p4aum_b0(node, "part", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -66,30 +61,25 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class partListHandler_4p4aum_b0 extends RefNodeListHandler {
     public partListHandler_4p4aum_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -103,7 +93,6 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_4p4aum_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_4p4aum_c0");

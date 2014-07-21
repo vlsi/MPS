@@ -9,5 +9,5 @@ public class WarningStatementAnnotation_BehaviorDescriptor extends MessageStatem
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation";
-  };;
-;}
+  }
+}

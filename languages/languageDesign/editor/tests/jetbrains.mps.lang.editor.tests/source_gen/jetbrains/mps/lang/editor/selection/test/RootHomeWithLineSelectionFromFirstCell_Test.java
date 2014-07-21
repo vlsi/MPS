@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class RootHomeWithLineSelectionFromFirstCell_Test extends BaseTransformationTest {
   public RootHomeWithLineSelectionFromFirstCell_Test() {
   }
-
   @Test
   public void test_RootHomeWithLineSelectionFromFirstCell() throws Throwable {
     this.initTest("${mps_home}", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
     this.runTest("jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromFirstCell_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("2025581204008535356", "2025581204008535365");

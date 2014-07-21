@@ -10,5 +10,5 @@ public class PasteWrapper_BehaviorDescriptor extends BaseConcept_BehaviorDescrip
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.PasteWrapper";
-  };;
-;}
+  }
+}

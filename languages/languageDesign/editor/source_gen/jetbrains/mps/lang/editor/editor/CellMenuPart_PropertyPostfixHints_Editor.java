@@ -22,7 +22,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_nmnci2_a(editorContext, node);
   }
-
   private EditorCell createCollection_nmnci2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_nmnci2_a");
@@ -31,7 +30,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createCollection_nmnci2_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_nmnci2_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nmnci2_a0");
@@ -41,7 +39,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createConstant_nmnci2_a0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nmnci2_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property postfix hints");
     editorCell.setCellId("Constant_nmnci2_a0a");
@@ -52,7 +49,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_nmnci2_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nmnci2_b0");
@@ -65,7 +61,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createRefNode_nmnci2_d1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nmnci2_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_nmnci2_a1a");
@@ -75,7 +70,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_nmnci2_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "postfixes");
     editorCell.setCellId("Constant_nmnci2_b1a");
@@ -85,7 +79,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_nmnci2_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nmnci2_c1a");
@@ -95,7 +88,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_nmnci2_d1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("postfixesFunction");

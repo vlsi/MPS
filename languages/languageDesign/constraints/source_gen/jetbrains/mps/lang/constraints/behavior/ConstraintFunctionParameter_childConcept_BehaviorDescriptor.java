@@ -12,12 +12,12 @@ public class ConstraintFunctionParameter_childConcept_BehaviorDescriptor extends
   }
   public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept thisConcept) {
     return ConstraintFunctionParameter_childConcept_Behavior.virtual_dontUseParameterObject_1262430001741498340(thisConcept);
-  };;
-;  public SNode virtual_getType_2443692612523876968(SNode thisNode) {
+  }
+  public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConstraintFunctionParameter_childConcept_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept";
-  };;
-;}
+  }
+}

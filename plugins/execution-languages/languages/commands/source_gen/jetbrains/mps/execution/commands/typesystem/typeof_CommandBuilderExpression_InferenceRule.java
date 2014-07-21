@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_CommandBuilderExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_CommandBuilderExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode commandBuilderExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = commandBuilderExpression;
@@ -25,22 +24,18 @@ public class typeof_CommandBuilderExpression_InferenceRule extends AbstractInfer
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863704", true), (SNode) _quotation_createNode_mdceom_a0a0b(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(commandBuilderExpression, "commandPart", false))), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.execution.commands.structure.CommandBuilderExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_mdceom_a0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

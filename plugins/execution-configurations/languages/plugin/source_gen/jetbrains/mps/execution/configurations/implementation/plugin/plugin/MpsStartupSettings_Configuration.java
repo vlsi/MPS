@@ -30,7 +30,6 @@ import org.apache.log4j.LogManager;
 public class MpsStartupSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
   private MpsStartupSettings_Configuration.MyState myState = new MpsStartupSettings_Configuration.MyState();
-
   public void checkConfiguration() throws RuntimeConfigurationException {
     if (isEmptyString(this.getConfigurationPath())) {
       throw new RuntimeConfigurationException("Configuration path is empty.");
@@ -39,12 +38,10 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
       throw new RuntimeConfigurationException("System path is empty.");
     }
   }
-
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
   }
-
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -52,69 +49,54 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
     }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
   }
-
   public String getVmOptions() {
     return myState.myVmOptions;
   }
-
   public String getJrePath() {
     return myState.myJrePath;
   }
-
   public String getSystemPath() {
     return myState.mySystemPath;
   }
-
   public String getConfigurationPath() {
     return myState.myConfigurationPath;
   }
-
   public boolean getOpenCurrentProject() {
     return myState.myOpenCurrentProject;
   }
-
   public String getProjectToOpen() {
     return myState.myProjectToOpen;
   }
-
   public void setVmOptions(String value) {
     myState.myVmOptions = value;
   }
-
   public void setJrePath(String value) {
     myState.myJrePath = value;
   }
-
   public void setSystemPath(String value) {
     myState.mySystemPath = value;
   }
-
   public void setConfigurationPath(String value) {
     myState.myConfigurationPath = value;
   }
-
   public void setOpenCurrentProject(boolean value) {
     myState.myOpenCurrentProject = value;
   }
-
   public void setProjectToOpen(String value) {
     myState.myProjectToOpen = value;
   }
-
   public String expandPath(String path) {
     if ((path == null || path.length() == 0)) {
       return path;
     }
     return MacrosFactory.getGlobal().expandPath(path).replace(File.separator, "/");
   }
-
   public String shinkPath(String path) {
     if ((path == null || path.length() == 0)) {
       return path;
     }
     return MacrosFactory.getGlobal().shrinkPath(path).replace(File.separator, "/");
   }
-
   public Tuples._2<File, File> prepareFilesToOpenAndToDelete(Project project) {
     File projectDir = getProjectDir(project);
     if (!(this.getOpenCurrentProject())) {
@@ -143,7 +125,6 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
 
     return MultiTuple.<File,File>from(projectDir, temporalDir);
   }
-
   private File getProjectDir(Project currentProject) {
     if (this.getOpenCurrentProject()) {
       return new File(currentProject.getBasePath());
@@ -153,7 +134,6 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
     }
     return null;
   }
-
   private void replacePathMacro(Element element, Project project) {
     String path = "path";
     String value = element.getAttributeValue(path);
@@ -167,7 +147,6 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
       }
     }
   }
-
   @Override
   public MpsStartupSettings_Configuration clone() {
     MpsStartupSettings_Configuration clone = null;
@@ -182,7 +161,6 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
     }
     return clone;
   }
-
   public class MyState {
     public String myVmOptions;
     public String myJrePath;
@@ -190,10 +168,8 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
     public String myConfigurationPath = shinkPath(Mps_Command.getDefaultConfigurationPath());
     public boolean myOpenCurrentProject = false;
     public String myProjectToOpen;
-
     public MyState() {
     }
-
     @Override
     public Object clone() throws CloneNotSupportedException {
       MpsStartupSettings_Configuration.MyState state = new MpsStartupSettings_Configuration.MyState();
@@ -206,29 +182,22 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
       return state;
     }
   }
-
   public MpsStartupSettings_Configuration() {
   }
-
   private SettingsEditorEx<MpsStartupSettings_Configuration> myEditorEx;
-
   public MpsStartupSettings_Configuration createCloneTemplate() {
     return new MpsStartupSettings_Configuration();
   }
-
   public MpsStartupSettings_Configuration_Editor getEditor() {
     return new MpsStartupSettings_Configuration_Editor();
   }
-
   public SettingsEditorEx<MpsStartupSettings_Configuration> getEditorEx() {
     if (myEditorEx == null) {
       myEditorEx = getEditor();
     }
     return myEditorEx;
   }
-
   protected static Logger LOG = LogManager.getLogger(MpsStartupSettings_Configuration.class);
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

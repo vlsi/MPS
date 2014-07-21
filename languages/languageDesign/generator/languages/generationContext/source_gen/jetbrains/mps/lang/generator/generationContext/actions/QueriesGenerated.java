@@ -29,7 +29,6 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput"), "label", false), false);
     }
   }
-
   public static void nodeFactory_NodeSetup_GenerationContextOp_GetOutputByLabelAndInput_1216861604216(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel")) {
       SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel"), "label", false), false);
@@ -38,7 +37,6 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput"), "label", false), false);
     }
   }
-
   public static void nodeFactory_NodeSetup_GenerationContextOp_GetOutputListByLabelAndInput_1221157578226(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel")) {
       SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel"), "label", false), false);
@@ -47,25 +45,21 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "label", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput"), "label", false), false);
     }
   }
-
   public static void nodeFactory_NodeSetup_GenerationContextOp_SessionObjectAccess_1217895102264(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase")) {
       SLinkOperations.setTarget(_context.getNewNode(), "userKey", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"), "userKey", true), true);
     }
   }
-
   public static void nodeFactory_NodeSetup_GenerationContextOp_StepObjectAccess_1217895169605(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase")) {
       SLinkOperations.setTarget(_context.getNewNode(), "userKey", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"), "userKey", true), true);
     }
   }
-
   public static void nodeFactory_NodeSetup_GenerationContextOp_TransientObjectAccess_1217895187935(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase")) {
       SLinkOperations.setTarget(_context.getNewNode(), "userKey", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"), "userKey", true), true);
     }
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IOperation_1216861714161(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -86,7 +80,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_IOperation_1216861714162(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType");
   }

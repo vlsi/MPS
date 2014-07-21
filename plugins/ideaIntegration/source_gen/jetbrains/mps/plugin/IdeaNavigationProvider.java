@@ -10,7 +10,6 @@ import com.intellij.openapi.application.ApplicationManager;
 public class IdeaNavigationProvider implements NavigationProvider {
   public IdeaNavigationProvider() {
   }
-
   @Override
   public boolean openClass(final String projectPath, final String fqName) {
     final boolean[] result = new boolean[]{false};
@@ -35,7 +34,6 @@ public class IdeaNavigationProvider implements NavigationProvider {
     }
     return result[0];
   }
-
   @Override
   public boolean openMethod(final String projectPath, final String className, final String name, final int parameterCount) {
     final boolean[] result = new boolean[]{false};
@@ -60,7 +58,6 @@ public class IdeaNavigationProvider implements NavigationProvider {
     }
     return result[0];
   }
-
   @Override
   public boolean openField(final String projectPath, final String className, final String name) {
     final boolean[] result = new boolean[]{false};
@@ -85,7 +82,6 @@ public class IdeaNavigationProvider implements NavigationProvider {
     }
     return result[0];
   }
-
   @Override
   public boolean openConstructor(final String projectPath, final String className, final int parameterCount) {
     final boolean[] result = new boolean[]{false};

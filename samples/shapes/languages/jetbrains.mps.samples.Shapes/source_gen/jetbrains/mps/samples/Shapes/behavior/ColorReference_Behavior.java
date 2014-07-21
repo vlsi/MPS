@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class ColorReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Color call_findColor_2097561739636344968(SNode thisNode) {
     SNode color = SLinkOperations.getTarget(thisNode, "color", false);
     if (color == null) {

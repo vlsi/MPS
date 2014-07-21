@@ -7,8 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractInequationStatement_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean call_isLessThanInequality_5312038888515830439(SNode thisNode) {
+  }
+  public static boolean call_isLessThanInequality_5312038888515830439(SNode thisNode) {
     return SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement") || SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement");
-  };;
-;}
+  }
+}

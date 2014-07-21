@@ -17,15 +17,12 @@ public enum RoundingMode {
   UP("UP", 7);
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return "" + this.myValue;
   }
-
   public static List<RoundingMode> getConstants() {
     List<RoundingMode> list = ListSequence.fromList(new LinkedList<RoundingMode>());
     ListSequence.fromList(list).addElement(RoundingMode.CEILING);
@@ -38,11 +35,9 @@ public enum RoundingMode {
     ListSequence.fromList(list).addElement(RoundingMode.UP);
     return list;
   }
-
   public static RoundingMode getDefault() {
     return RoundingMode.HALF_EVEN;
   }
-
   public static RoundingMode parseValue(String value) {
     if (value == null) {
       return RoundingMode.getDefault();
@@ -73,14 +68,11 @@ public enum RoundingMode {
     }
     return RoundingMode.getDefault();
   }
-
   private int myValue;
-
   RoundingMode(String name, int value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public int getValue() {
     return this.myValue;
   }

@@ -26,7 +26,6 @@ public class NotMake_Test extends TestCase {
       }
     });
   }
-
   @MPSLaunch
   public void test_finalClass() throws Exception {
     MakeAssert.assertNotMake("finalClass", new ChangeModel() {
@@ -37,7 +36,6 @@ public class NotMake_Test extends TestCase {
       }
     });
   }
-
   @MPSLaunch
   public void test_recursiveInHierarchy() throws Exception {
     MakeAssert.assertNotMake("recursiveInHierarchy", new ChangeModel() {
@@ -54,7 +52,6 @@ public class NotMake_Test extends TestCase {
       }
     });
   }
-
   @MPSLaunch
   public void test_anonymousClass() throws Exception {
     MakeAssert.assertNotMake("anonymousClass", new ChangeModel() {
@@ -65,7 +62,6 @@ public class NotMake_Test extends TestCase {
       }
     });
   }
-
   public NotMake_Test() {
   }
 }

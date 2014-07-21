@@ -9,7 +9,6 @@ public class FailedTestOccurrenceNavigator extends BaseTestOccurenceNavigator {
   public FailedTestOccurrenceNavigator(TestTree tree) {
     super(tree);
   }
-
   @Override
   public boolean hasAvailableOccurence(boolean next) {
     DefaultMutableTreeNode node = myTestTree.getCurrentNode();
@@ -27,7 +26,6 @@ public class FailedTestOccurrenceNavigator extends BaseTestOccurenceNavigator {
       node = leaf;
     }
   }
-
   @Override
   public boolean accept(MPSTreeNode node) {
     return TestTree.isFailed(node);

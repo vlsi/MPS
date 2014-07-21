@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class BaseExecuteCommandStatementSync_DataFlow extends DataFlowBuilder {
   public BaseExecuteCommandStatementSync_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true), "body", true));
   }

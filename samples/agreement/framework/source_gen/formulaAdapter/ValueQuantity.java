@@ -8,11 +8,9 @@ import postingrules.AccountingEvent;
 
 public class ValueQuantity implements Function<Quantity> {
   private String myValueName;
-
   public ValueQuantity(String valueName) {
     myValueName = valueName;
   }
-
   @Override
   public Quantity compute(Object parm) {
     AccountingEvent event = (AccountingEvent) parm;

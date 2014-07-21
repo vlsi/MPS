@@ -17,13 +17,11 @@ public class SLinkOperations {
   @Deprecated
   public SLinkOperations() {
   }
-
   public static SNode findLinkDeclaration(String conceptFqName, String linkRole) {
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
     SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(concept, linkRole);
     return linkDeclaration;
   }
-
   public static SNode getTarget(SNode node, String role, boolean child) {
     if (node != null) {
       if (child) {
@@ -34,7 +32,6 @@ public class SLinkOperations {
     }
     return null;
   }
-
   public static SNode setTarget(SNode node, String role, SNode targetNode, boolean child) {
     if (node != null) {
       if (child) {
@@ -58,7 +55,6 @@ public class SLinkOperations {
     }
     return targetNode;
   }
-
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
       SNode newChild = SModelOperations.createNewNode(node.getModel(), childConceptFQName);
@@ -67,14 +63,12 @@ public class SLinkOperations {
     }
     return null;
   }
-
   public static List<SNode> getTargets(SNode node, String role, boolean child) {
     if (node != null && role != null) {
       return (child ? new AbstractSNodeList.AggregatedSNodesList(node, role) : new AbstractSNodeList.LinkedSNodesList(node, role));
     }
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.EMPTY_LIST;
   }
-
   public static SNode addNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
       SNode newChild = SModelOperations.createNewNode(node.getModel(), childConceptFQName);
@@ -83,7 +77,6 @@ public class SLinkOperations {
     }
     return null;
   }
-
   public static SNode addChild(SNode parent, String role, SNode child) {
     if (parent != null && child != null) {
       SNode childParent = child.getParent();
@@ -94,13 +87,11 @@ public class SLinkOperations {
     }
     return child;
   }
-
   public static void addAll(SNode parent, String role, List<SNode> nodeList) {
     for (SNode node : nodeList) {
       addChild(parent, role, node);
     }
   }
-
   public static SNode insertChildFirst(SNode parent, String role, SNode child) {
     if (parent != null && child != null) {
       SNode childParent = child.getParent();
@@ -111,7 +102,6 @@ public class SLinkOperations {
     }
     return child;
   }
-
   @Deprecated
   public static SNode removeChild(SNode parent, String role) {
     // use SNodeOperations.detachNode 
@@ -126,7 +116,6 @@ public class SLinkOperations {
     }
     return null;
   }
-
   public static List<SNode> removeAllChildren(SNode parent, String role) {
     if (parent == null) {
       return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.EMPTY_LIST;
@@ -137,28 +126,24 @@ public class SLinkOperations {
     }
     return IterableUtil.asList(children);
   }
-
   public static SNode findLinkDeclaration(SReference reference) {
     if (reference == null) {
       return null;
     }
     return ((SNode) SModelSearchUtil.findLinkDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(((SNode) reference.getSourceNode())), reference.getRole()));
   }
-
   public static SNode getTargetNode(SReference reference) {
     if (reference == null) {
       return null;
     }
     return reference.getTargetNode();
   }
-
   public static String getRole(SReference reference) {
     if (reference == null) {
       return null;
     }
     return reference.getRole();
   }
-
   public static String getResolveInfo(SReference reference) {
     if (reference == null) {
       return null;

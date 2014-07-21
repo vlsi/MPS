@@ -17,7 +17,6 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
   public SConceptAdapter(@NotNull String concept) {
     super(concept);
   }
-
   @Override
   public SConcept getSuperConcept() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
@@ -29,7 +28,6 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
     String superConcept = d.getSuperConcept();
     return (superConcept == null ? null : (SConcept) SConceptRepository.getInstance().getConcept(superConcept));
   }
-
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);

@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class ShowDiffWithCurrRev_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(ShowDiffWithCurrRev_ActionGroup.class);
   public static final String ID = "jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup";
-
   public ShowDiffWithCurrRev_ActionGroup() {
     super("ShowDiffWithCurrRev", ID);
     this.setIsInternal(false);

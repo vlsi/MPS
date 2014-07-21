@@ -11,5 +11,5 @@ public class ConceptFunctionParameter_currentTargetNode_BehaviorDescriptor exten
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode";
-  };;
-;}
+  }
+}

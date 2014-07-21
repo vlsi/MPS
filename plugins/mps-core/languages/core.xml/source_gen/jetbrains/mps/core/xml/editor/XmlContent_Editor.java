@@ -21,7 +21,6 @@ public class XmlContent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_91idit_a(editorContext, node);
   }
-
   private EditorCell createCollection_91idit_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_91idit_a");
@@ -32,7 +31,6 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCustom_91idit_a0(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
@@ -54,11 +52,9 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_91idit_a0a0(EditorContext editorContext, SNode node) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_2133624044437631588", new Object[]{});
   }
-
   private EditorCell createConstant_91idit_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_91idit_b0");
@@ -69,7 +65,6 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_91idit_a1a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
   }

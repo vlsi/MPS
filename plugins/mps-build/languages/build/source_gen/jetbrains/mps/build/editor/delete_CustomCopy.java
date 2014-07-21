@@ -14,34 +14,26 @@ public class delete_CustomCopy {
     editorCell.setAction(CellActionType.DELETE, new delete_CustomCopy.delete_CustomCopy_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new delete_CustomCopy.delete_CustomCopy_BACKSPACE(node));
   }
-
   public static class delete_CustomCopy_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_CustomCopy_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.build.structure.BuildLayout_Copy");
     }
   }
-
   public static class delete_CustomCopy_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_CustomCopy_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.build.structure.BuildLayout_Copy");
     }

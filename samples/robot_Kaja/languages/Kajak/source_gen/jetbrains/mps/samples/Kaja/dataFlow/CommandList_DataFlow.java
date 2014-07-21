@@ -13,7 +13,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CommandList_DataFlow extends DataFlowBuilder {
   public CommandList_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "commands", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {

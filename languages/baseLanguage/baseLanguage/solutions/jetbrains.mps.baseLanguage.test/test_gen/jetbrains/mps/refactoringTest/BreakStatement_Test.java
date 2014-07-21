@@ -20,42 +20,35 @@ public class BreakStatement_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_noBreaks", true);
   }
-
   @Test
   public void test_oneBreak() throws Throwable {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_oneBreak", true);
   }
-
   @Test
   public void test_oneContionue() throws Throwable {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_oneContionue", true);
   }
-
   @Test
   public void test_breakAndContinue() throws Throwable {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_breakAndContinue", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_noBreaks() throws Exception {
       this.addNodeById("1230052480264");
       Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480270"), "jetbrains.mps.baseLanguage.structure.WhileStatement"))));
     }
-
     public void test_oneBreak() throws Exception {
       this.addNodeById("1230052480264");
       Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480275"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
     }
-
     public void test_oneContionue() throws Exception {
       this.addNodeById("1230052480264");
       Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480282"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
     }
-
     public void test_breakAndContinue() throws Exception {
       this.addNodeById("1230052480264");
       Assert.assertTrue(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480275"), "jetbrains.mps.baseLanguage.structure.IfStatement"), SNodeOperations.cast(this.getNodeById("1230052480282"), "jetbrains.mps.baseLanguage.structure.IfStatement"))) != null);

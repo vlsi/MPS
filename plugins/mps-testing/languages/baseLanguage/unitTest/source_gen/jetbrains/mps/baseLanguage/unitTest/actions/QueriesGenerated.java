@@ -17,12 +17,10 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_TestMethod_1198167764447(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AssertStatement_589054057631277540(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_AssertStatement_589054057631277541(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", false, false) != null);
   }

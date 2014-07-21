@@ -34,40 +34,31 @@ public abstract class AbstractHierarchyTree extends MPSTree {
   protected boolean myIsParentHierarchy;
   protected boolean myOnlyInOneModel;
   protected boolean myShowGeneratorModels;
-
   public AbstractHierarchyTree(AbstractHierarchyView hierarchyView, String aConceptFqName, boolean isParentHierarchy) {
     myHierarchyView = hierarchyView;
     myConceptFqName = aConceptFqName;
     myIsParentHierarchy = isParentHierarchy;
   }
 
-
-
   @Nullable
   public AbstractHierarchyView getHierarchyView() {
     return myHierarchyView;
   }
-
   public boolean overridesNodeIdentifierCalculation() {
     return false;
   }
-
   public String calculateNodeIdentifier(HierarchyTreeNode node) {
     throw new UnsupportedOperationException();
   }
-
   public boolean isParentHierarchy() {
     return myIsParentHierarchy;
   }
-
   /*package*/ void setParentHierarchy(boolean isParentHierarchy) {
     myIsParentHierarchy = isParentHierarchy;
   }
-
   public boolean isOnlyInOneModel() {
     return myOnlyInOneModel;
   }
-
   /*package*/ void setIsOnlyInOneModel(boolean isOnlyInOneModel) {
     boolean oldOnlyInOneModel = myOnlyInOneModel;
     myOnlyInOneModel = isOnlyInOneModel;
@@ -75,11 +66,9 @@ public abstract class AbstractHierarchyTree extends MPSTree {
       rebuildNow();
     }
   }
-
   public boolean isShowGeneratorModels() {
     return myShowGeneratorModels;
   }
-
   public void setShowGeneratorModels(boolean showGeneratorModels) {
     boolean oldShowGeneratorModels = myShowGeneratorModels;
     myShowGeneratorModels = showGeneratorModels;
@@ -87,14 +76,12 @@ public abstract class AbstractHierarchyTree extends MPSTree {
       rebuildNow();
     }
   }
-
   public void setOperationContext(IOperationContext operationContext) {
     if (operationContext != null) {
       myOperationContext = operationContext;
       myFindUsages = FindUsagesFacade.getInstance();
     }
   }
-
   @Override
   protected MPSTreeNode rebuild() {
     if (myHierarchyNode == null) {
@@ -107,15 +94,10 @@ public abstract class AbstractHierarchyTree extends MPSTree {
       }
     });
   }
-
   protected abstract String noNodeString();
-
   protected abstract SNode getParent(SNode node);
-
   protected abstract Set<SNode> getParents(SNode node, Set<SNode> visited) throws CircularHierarchyException;
-
   protected abstract Set<SNode> getDescendants(SNode node, Set<SNode> visited) throws CircularHierarchyException;
-
   protected Set<SNode> getAbstractChildren(final SNode node, Set<SNode> visited) throws CircularHierarchyException {
     Set<SNode> result;
     if (myIsParentHierarchy) {
@@ -147,7 +129,6 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     }
     return result;
   }
-
   protected SNode getAbstractParent(SNode node) {
     if (myIsParentHierarchy) {
       return null;
@@ -169,7 +150,6 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     }
     return result;
   }
-
   protected MPSTreeNode rebuildParentHierarchy() {
     ArrayList<SNode> parentHierarchy = new ArrayList<SNode>();
     SNode parentDeclaration = myHierarchyNode;
@@ -202,15 +182,12 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     textRootNode.add(rootNode);
     return textRootNode;
   }
-
   public boolean doubleClick(HierarchyTreeNode hierarchyTreeNode) {
     return false;
   }
-
   private boolean isInGeneratorModel(SNode n) {
     return SNodeOperations.getModel(n) != null && SModelStereotype.isGeneratorModel(SNodeOperations.getModel(n));
   }
-
   protected class RootTextTreeNode extends TextTreeNode {
     public RootTextTreeNode(String s) {
       super(s);
@@ -219,7 +196,6 @@ public abstract class AbstractHierarchyTree extends MPSTree {
       }
     }
   }
-
   @Override
   protected ActionGroup createPopupActionGroup(final MPSTreeNode treeNode) {
     if (!(treeNode instanceof HierarchyTreeNode)) {

@@ -17,13 +17,11 @@ import com.intellij.openapi.options.ConfigurationException;
 public class JUnitTests_Configuration_Editor extends SettingsEditorEx<JUnitTests_Configuration> {
   private JUnitSettings_Configuration_Editor myJUnitSettings;
   private JavaRunParameters_Configuration_Editor myJavaRunParameters;
-
   public void disposeEditor() {
     myJUnitSettings.dispose();
     Disposer.dispose(myJUnitSettings);
     Disposer.dispose(myJavaRunParameters);
   }
-
   @NotNull
   public JPanel createEditor() {
     JPanel panel = new JPanel(new GridBagLayout());
@@ -35,17 +33,14 @@ public class JUnitTests_Configuration_Editor extends SettingsEditorEx<JUnitTests
     panel.add(javaEditorComponent, LayoutUtil.createPanelConstraints(1));
     return panel;
   }
-
   public void applyEditorTo(final JUnitTests_Configuration configuration) throws ConfigurationException {
     myJavaRunParameters.applyEditorTo(configuration.getJavaRunParameters());
     myJUnitSettings.applyEditorTo(configuration.getJUnitSettings());
   }
-
   public void resetEditorFrom(final JUnitTests_Configuration configuration) {
     myJavaRunParameters.resetEditorFrom(configuration.getJavaRunParameters());
     myJUnitSettings.resetEditorFrom(configuration.getJUnitSettings());
   }
-
   public JUnitTests_Configuration_Editor(JUnitSettings_Configuration_Editor jUnitSettings, JavaRunParameters_Configuration_Editor javaRunParameters) {
     myJUnitSettings = jUnitSettings;
     myJavaRunParameters = javaRunParameters;

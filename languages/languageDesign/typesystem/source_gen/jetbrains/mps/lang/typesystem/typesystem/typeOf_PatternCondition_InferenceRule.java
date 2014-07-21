@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeOf_PatternCondition_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeOf_PatternCondition_InferenceRule() {
   }
-
   public void applyRule(final SNode pc, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode paternCondition = pc;
     {
@@ -23,18 +22,15 @@ public class typeOf_PatternCondition_InferenceRule extends AbstractInferenceRule
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223981204954", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(paternCondition, "pattern", true), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1175521901932", true), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.PatternCondition";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

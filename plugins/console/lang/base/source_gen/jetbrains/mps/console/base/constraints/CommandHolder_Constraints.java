@@ -16,12 +16,10 @@ public class CommandHolder_Constraints extends BaseConstraintsDescriptor {
   public CommandHolder_Constraints() {
     super("jetbrains.mps.console.base.structure.CommandHolder");
   }
-
   @Override
   public boolean hasOwnCanBeAncestorMethod() {
     return true;
   }
-
   @Override
   public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAnAncestor(node, childNode, childConcept, context);
@@ -32,10 +30,8 @@ public class CommandHolder_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
     return !(childConcept.getModel().getModule().getModuleReference().equals(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)"), Language.class).getModuleReference()));
   }
-
   private static SNodePointer canBeAncesctorBreakingPoint = new SNodePointer("r:a35e9456-af18-4589-b3c4-ed9896a657c9(jetbrains.mps.console.base.constraints)", "7820875636624865126");
 }

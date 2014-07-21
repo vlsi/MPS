@@ -10,12 +10,12 @@ public class OperationDeclaration_BehaviorDescriptor extends BaseMethodDeclarati
   }
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return OperationDeclaration_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  };;
-;  public boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {
+  }
+  public boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {
     return OperationDeclaration_Behavior.virtual_isReturnsVoid_1234359555698(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.OperationDeclaration";
-  };;
-;}
+  }
+}

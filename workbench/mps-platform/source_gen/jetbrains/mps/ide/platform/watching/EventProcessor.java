@@ -8,16 +8,10 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 /*package*/ abstract class EventProcessor {
   public EventProcessor() {
   }
-
   protected abstract boolean accepts(VirtualFile file);
-
   protected abstract void processDelete(VirtualFile file);
-
   protected abstract void processCreate(VirtualFile file);
-
   protected abstract void processContentChanged(VirtualFile file);
-
   public abstract void update(ProgressMonitor monitor);
-
   public abstract boolean isEmpty();
 }

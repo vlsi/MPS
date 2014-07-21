@@ -15,26 +15,21 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class sorted_set_subtypeOf_set_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public sorted_set_subtypeOf_set_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode sortedSetType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_3ege2c_a0a1(SLinkOperations.getTarget(sortedSetType, "elementType", true));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SortedSetType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_3ege2c_a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

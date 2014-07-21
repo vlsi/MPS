@@ -15,11 +15,9 @@ import java.awt.Color;
 
 public abstract class MethodDuplicatesProcessor extends DuplicatesProcessor<MethodMatch> {
   private EditorMessageOwner myOwner = new EditorMessageOwner() {};
-
   public MethodDuplicatesProcessor(EditorContext context) {
     super(context);
   }
-
   @Override
   protected List<EditorMessage> createEditorMessages(MethodMatch duplicate) {
     List<EditorMessage> result = new ArrayList<EditorMessage>();

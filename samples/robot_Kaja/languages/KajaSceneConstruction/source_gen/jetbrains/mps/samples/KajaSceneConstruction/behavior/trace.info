@@ -2,22 +2,22 @@
 <debug-info>
   <root>
     <file name="BuildWall_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.BuildWall_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.BuildWall_BehaviorDescriptor" />
     </file>
     <file name="DestroyWall_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.DestroyWall_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.DestroyWall_BehaviorDescriptor" />
     </file>
     <file name="AbstractBuilderCommand_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.AbstractBuilderCommand_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.AbstractBuilderCommand_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,30,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,28,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="PickMark_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.PickMark_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.PickMark_BehaviorDescriptor" />
     </file>
     <file name="DropMark_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.DropMark_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.KajaSceneConstruction.behavior.DropMark_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

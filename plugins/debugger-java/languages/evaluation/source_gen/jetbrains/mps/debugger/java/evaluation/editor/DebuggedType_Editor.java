@@ -23,7 +23,6 @@ public class DebuggedType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kbrshr_a(editorContext, node);
   }
-
   private EditorCell createCollection_kbrshr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_kbrshr_a");
@@ -34,7 +33,6 @@ public class DebuggedType_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createRefNode_kbrshr_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("highType");
@@ -54,7 +52,6 @@ public class DebuggedType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_kbrshr_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_kbrshr_b0");
@@ -66,11 +63,9 @@ public class DebuggedType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_kbrshr_c1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_kbrshr_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isHigh") || !(SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"));
   }
-
   private EditorCell createConstant_kbrshr_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_kbrshr_a1a");
@@ -80,7 +75,6 @@ public class DebuggedType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_kbrshr_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("lowType");
@@ -100,7 +94,6 @@ public class DebuggedType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kbrshr_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_kbrshr_c1a");

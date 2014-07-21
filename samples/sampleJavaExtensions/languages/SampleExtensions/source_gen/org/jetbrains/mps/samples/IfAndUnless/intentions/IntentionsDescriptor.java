@@ -11,7 +11,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
     super(new ModuleReference("67b828fd-8fbc-4496-b7f7-8b64ac097c62(org.jetbrains.mps.samples.IfAndUnless)"), PersistenceFacade.getInstance().createModelReference("r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)"));
   }
-
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertMyIfToIf_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithUnless_Intention());

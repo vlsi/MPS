@@ -11,12 +11,12 @@ public class SConceptType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   }
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SConceptType_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  };;
-;  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
+  }
+  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     return SConceptType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.SConceptType";
-  };;
-;}
+  }
+}

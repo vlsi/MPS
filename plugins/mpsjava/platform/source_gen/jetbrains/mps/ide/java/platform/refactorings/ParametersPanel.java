@@ -32,14 +32,12 @@ import java.awt.event.ActionEvent;
   private static final int MINIMUM_TABLE_COLUMN_WIDTH = 50;
   private ExtractMethodRefactoringParameters myModel;
   private ParametersTableModel myTableModel;
-
   /*package*/ ParametersPanel(ExtractMethodRefactoringParameters params) {
     super();
     this.myModel = params;
     this.myTableModel = new ParametersTableModel(this.myModel.getParameters());
     this.initPanel();
   }
-
   private void initPanel() {
     this.setLayout(new GridBagLayout());
 
@@ -85,11 +83,9 @@ import java.awt.event.ActionEvent;
     c.fill = GridBagConstraints.NONE;
     this.add(buttonsPanel, c);
   }
-
   /*package*/ ParametersTableModel getTableModel() {
     return this.myTableModel;
   }
-
   /*package*/ void fitTableColumns(JTable table) {
     for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
       TableColumn column = table.getColumnModel().getColumn(i);
@@ -105,11 +101,9 @@ import java.awt.event.ActionEvent;
       column.setPreferredWidth(max);
     }
   }
-
   /*package*/ TableCellEditor createCellEditor() {
     return new ParameterTypeCellEditor(this.myModel);
   }
-
   private JButton createParametersRowMoveButton(final JTable parametersTable, String name, final int dr, int y, JComponent component) {
     GridBagConstraints c = new GridBagConstraints();
     c.insets = new Insets(2, 10, 2, 10);

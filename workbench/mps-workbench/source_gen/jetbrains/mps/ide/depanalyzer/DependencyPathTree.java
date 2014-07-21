@@ -37,32 +37,25 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   private List<Tuples._4<Set<SModule>, Set<SModule>, Set<SModule>, Boolean>> myAllDependencies = ListSequence.fromList(new ArrayList<Tuples._4<Set<SModule>, Set<SModule>, Set<SModule>, Boolean>>());
   private Project myProject;
   private boolean myShowAllPaths;
-
   public DependencyPathTree(Project project) {
     myProject = project;
     getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
   }
-
   public Project getProject() {
     return myProject;
   }
-
   public void setShowAllPaths(boolean value) {
     myShowAllPaths = value;
   }
-
   public boolean isShowAll() {
     return myShowAllPaths;
   }
-
   public void resetDependencies() {
     ListSequence.fromList(myAllDependencies).clear();
   }
-
   public void addDependency(Iterable<SModule> from, Iterable<SModule> to, Iterable<SModule> usedLanguage, boolean showRuntime) {
     ListSequence.fromList(myAllDependencies).addElement(MultiTuple.<Set<SModule>,Set<SModule>,Set<SModule>,Boolean>from(SetSequence.fromSetWithValues(new HashSet<SModule>(), from), SetSequence.fromSetWithValues(new HashSet<SModule>(), to), SetSequence.fromSetWithValues(new HashSet<SModule>(), usedLanguage), showRuntime));
   }
-
   private MPSTreeNode buildTree(SModule from, Set<SModule> dependency, Set<SModule> usedlanguage, boolean showRuntime) {
     Map<Tuples._2<SModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom> visited = MapSequence.fromMap(new HashMap<Tuples._2<SModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom>());
     Queue<DependencyPathTree.LinkFrom> unprocessed = QueueSequence.fromQueue(new LinkedList<DependencyPathTree.LinkFrom>());
@@ -97,7 +90,6 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
     return root.node;
   }
-
   public MPSTreeNode testBuildTree(SModule from, SModule dependency, SModule used, boolean showRuntime) {
     HashSet<SModule> dependencies = new HashSet<SModule>();
     if (dependency != null) {
@@ -109,7 +101,6 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     }
     return buildTree(from, dependencies, usedLanguages, showRuntime);
   }
-
   @Override
   protected MPSTreeNode rebuild() {
     MPSTreeNode result = new TextMPSTreeNode((ListSequence.fromList(myAllDependencies).isEmpty() ? "No Dependencies Selected" : "Found Dependencies:"), null);
@@ -125,12 +116,10 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     setShowsRootHandles(ListSequence.fromList(myAllDependencies).isNotEmpty());
     return result;
   }
-
   @Override
   protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
     return ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowInDependenciesViewer_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")));
   }
-
   @Nullable
   @Override
   public Object getData(@NonNls String id) {
@@ -146,22 +135,18 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     }
     return null;
   }
-
   public static class LinkFrom {
     private DependencyUtil.Link link;
     private DependencyPathTree.LinkFrom from;
     private List<DependencyPathTree.LinkFrom> backdeps = ListSequence.fromList(new ArrayList<DependencyPathTree.LinkFrom>());
     private DependencyTreeNode node;
-
     public LinkFrom(DependencyUtil.Link link, DependencyPathTree.LinkFrom from) {
       this.link = link;
       this.from = from;
     }
-
     public boolean isUsed() {
       return node != null;
     }
-
     public void setUsed() {
       if (isUsed()) {
         return;
@@ -177,36 +162,30 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
         }
       });
     }
-
     public void setLinkUsed(DependencyPathTree.LinkFrom link) {
       setUsed();
       node.setLinkLeaf(link.node);
     }
-
     public void setDepUsed() {
       setUsed();
       node.setDepLeaf();
     }
-
     public void addBackDep(DependencyPathTree.LinkFrom dep) {
       ListSequence.fromList(backdeps).addElement(dep);
     }
   }
-
   private static IOperationContext check_9bg0dz_a0a2a31(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOperationContext();
     }
     return null;
   }
-
   private static SModule check_9bg0dz_a0a3a31(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static <T> T as_9bg0dz_a0a0a31(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

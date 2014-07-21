@@ -10,5 +10,5 @@ public class ClosureArgReference_BehaviorDescriptor extends Expression_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.ClosureArgReference";
-  };;
-;}
+  }
+}

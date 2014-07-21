@@ -17,66 +17,51 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class Option_makeDefault_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public Option_makeDefault_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.make.script.structure.Option";
   }
-
   public String getPresentation() {
     return "Option_makeDefault";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.make.script.intentions.Option_makeDefault_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.make.script";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:5909e14d-efc7-4305-a9c5-848760da6cbc(jetbrains.mps.make.script.intentions)", "8626841540115943116");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new Option_makeDefault_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (SNodeOperations.getIndexInParent(node) != SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption") ? "Make default" : "Make not default");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       boolean makeDefault = SNodeOperations.getIndexInParent(node) != SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption");
       SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption", "" + ((makeDefault ? SNodeOperations.getIndexInParent(node) : -1)));
     }
-
     public IntentionDescriptor getDescriptor() {
       return Option_makeDefault_Intention.this;
     }

@@ -21,68 +21,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddScopeExpectedNodes_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddScopeExpectedNodes_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.test.structure.ScopesTest";
   }
-
   public String getPresentation() {
     return "AddScopeExpectedNodes";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.test.intentions.AddScopeExpectedNodes_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.test";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "checkingReference", false) != null;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)", "3100207102209325314");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddScopeExpectedNodes_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Scope Expected Nodes";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       Scope scope = ModelConstraints.getScope(ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(node));
       for (SNode avaliable : scope.getAvailableElements(null)) {
@@ -91,7 +76,6 @@ public class AddScopeExpectedNodes_Intention implements IntentionFactory {
         ListSequence.fromList(SLinkOperations.getTargets(node, "nodes", true)).addElement(expectedNode);
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddScopeExpectedNodes_Intention.this;
     }

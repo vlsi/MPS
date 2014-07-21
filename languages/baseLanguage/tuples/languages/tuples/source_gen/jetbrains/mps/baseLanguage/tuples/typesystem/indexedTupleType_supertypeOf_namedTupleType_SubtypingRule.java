@@ -21,7 +21,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class indexedTupleType_supertypeOf_namedTupleType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public indexedTupleType_supertypeOf_namedTupleType_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode ntt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final List<SNode> queue = ListSequence.fromList(new LinkedList<SNode>());
     final List<SNode> pts = SLinkOperations.getTargets(ntt, "parameter", true);
@@ -48,22 +47,18 @@ public class indexedTupleType_supertypeOf_namedTupleType_SubtypingRule extends S
       }
     }).toListSequence());
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   private static SNode _quotation_createNode_pquv4f_a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

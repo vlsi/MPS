@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class SearchScopeOperations {
   public SearchScopeOperations() {
   }
-
   public static boolean containsNode(ISearchScope searchScope, final SNode node) {
     if (searchScope == null || node == null) {
       return false;

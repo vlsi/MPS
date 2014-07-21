@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_BuildLayout_Jar_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BuildLayout_Jar_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode jarArchive, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     String approxName = BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(jarArchive, "containerName", true), null);
     if (!(approxName.endsWith("}")) && !(approxName.toLowerCase().endsWith(BehaviorReflection.invokeVirtual(String.class, jarArchive, "virtual_getExpectedExtension_6967233722066020217", new Object[]{})))) {
@@ -34,18 +33,15 @@ public class check_BuildLayout_Jar_NonTypesystemRule extends AbstractNonTypesyst
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.build.structure.BuildLayout_Jar";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }

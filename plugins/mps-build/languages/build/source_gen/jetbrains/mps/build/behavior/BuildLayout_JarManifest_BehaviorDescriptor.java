@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildLayout_JarManifest_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor {
   public BuildLayout_JarManifest_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_JarManifest";

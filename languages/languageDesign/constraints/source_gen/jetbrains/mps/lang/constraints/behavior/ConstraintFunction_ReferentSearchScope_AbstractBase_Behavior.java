@@ -11,11 +11,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
+  }
+  public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return true;
-  };;
-;  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
+  }
+  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "4656991770397278593"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "1163200647017"));
@@ -28,5 +28,5 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior {
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "4656991770397278600"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "4656991770397278586"));
     return result;
-  };;
-;}
+  }
+}

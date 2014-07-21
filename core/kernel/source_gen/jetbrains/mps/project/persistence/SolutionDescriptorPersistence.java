@@ -22,10 +22,8 @@ public class SolutionDescriptorPersistence {
   public static final String SOURCE_PATH = "sourcePath";
   public static final String SOURCE_PATH_SOURCE = "source";
   public static final String COMPILE_IN_MPS = "compileInMPS";
-
   private SolutionDescriptorPersistence() {
   }
-
   public static SolutionDescriptor loadSolutionDescriptor(IFile file, final MacroHelper macroHelper) {
     SolutionDescriptor descriptor;
     try {
@@ -93,7 +91,6 @@ public class SolutionDescriptorPersistence {
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
     return descriptor;
   }
-
   public static void saveSolutionDescriptor(IFile file, SolutionDescriptor descriptor, MacroHelper macroHelper) {
     if (file.isReadOnly()) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -153,6 +150,5 @@ public class SolutionDescriptorPersistence {
 
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
-
   protected static Logger LOG = LogManager.getLogger(SolutionDescriptorPersistence.class);
 }

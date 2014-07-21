@@ -9,21 +9,17 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 public abstract class GroupedToggleAction extends ToggleAction {
   private boolean mySelected = false;
   private ToggleActionGroup myGroup = null;
-
   public GroupedToggleAction(String text, String description, Icon icon, boolean initiallySelected) {
     super(text, description, icon);
     mySelected = initiallySelected;
   }
-
   public void setGroup(ToggleActionGroup group) {
     myGroup = group;
   }
-
   @Override
   public boolean isSelected(AnActionEvent e) {
     return mySelected;
   }
-
   @Override
   public void setSelected(AnActionEvent e, boolean state) {
     if (!(state)) {
@@ -35,14 +31,11 @@ public abstract class GroupedToggleAction extends ToggleAction {
     }
     select();
   }
-
   public void deselect() {
     mySelected = false;
     unselect();
   }
-
   public abstract void select();
-
   public void unselect() {
   }
 }

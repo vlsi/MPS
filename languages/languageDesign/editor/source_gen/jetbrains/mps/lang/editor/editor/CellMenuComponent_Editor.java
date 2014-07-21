@@ -25,7 +25,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_iz7kpk_a(editorContext, node);
   }
-
   private EditorCell createCollection_iz7kpk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_iz7kpk_a");
@@ -34,7 +33,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_iz7kpk_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_iz7kpk_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_iz7kpk_a0");
@@ -45,14 +43,12 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_iz7kpk_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_iz7kpk_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell-menu component");
     editorCell.setCellId("Constant_iz7kpk_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_iz7kpk_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -70,7 +66,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_iz7kpk_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_iz7kpk_b0");
@@ -81,7 +76,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_iz7kpk_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_iz7kpk_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
     editorCell.setCellId("Constant_iz7kpk_a1a");
@@ -91,7 +85,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_iz7kpk_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_iz7kpk_b1a");
@@ -103,7 +96,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_iz7kpk_c1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_iz7kpk_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_iz7kpk_a1b0");
@@ -116,14 +108,12 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_iz7kpk_d0b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_iz7kpk_a0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable to:");
     editorCell.setCellId("Constant_iz7kpk_a0b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_iz7kpk_b0b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("conceptDeclaration");
@@ -145,20 +135,16 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_iz7kpk_a1a1b0 extends InlineCellProvider {
     public _Inline_iz7kpk_a1a1b0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_iz7kpk_a0b0b1a(editorContext, node);
     }
-
     private EditorCell createProperty_iz7kpk_a0b0b1a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -182,14 +168,12 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_iz7kpk_c0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_iz7kpk_c0b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_iz7kpk_d0b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("applicableFeature");
@@ -209,7 +193,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_iz7kpk_b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_iz7kpk_b1b0");
@@ -219,7 +202,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_iz7kpk_c1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("menuDescriptor");

@@ -13,223 +13,223 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499489409">
     <file name="PathRenderer.java">
-      <node id="1560298786499489434" at="16,24,17,26" concept="9" />
-      <node id="1560298786499489437" at="18,5,19,43" concept="8" />
-      <node id="1560298786499489446" at="19,43,20,91" concept="9" />
+      <node id="1560298786499489434" at="15,24,16,26" concept="9" />
+      <node id="1560298786499489437" at="17,5,18,43" concept="8" />
+      <node id="1560298786499489446" at="18,43,19,91" concept="9" />
       <node id="1560298786499489412" at="11,0,13,0" concept="2" trace="PathRenderer#()V" />
-      <node id="1560298786499489429" at="15,134,18,5" concept="6" />
-      <node id="1560298786499489415" at="14,0,22,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
+      <node id="1560298786499489429" at="14,134,17,5" concept="6" />
+      <node id="1560298786499489415" at="13,0,21,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
       <scope id="1560298786499489414" at="11,25,11,25" />
-      <scope id="1560298786499489433" at="16,24,17,26" />
+      <scope id="1560298786499489433" at="15,24,16,26" />
       <scope id="1560298786499489412" at="11,0,13,0" />
-      <scope id="1560298786499489428" at="15,134,20,91">
+      <scope id="1560298786499489428" at="14,134,19,91">
         <var name="path" id="1560298786499489438" />
       </scope>
-      <scope id="1560298786499489415" at="14,0,22,0">
+      <scope id="1560298786499489415" at="13,0,21,0">
         <var name="cellHasFocus" id="1560298786499489426" />
         <var name="index" id="1560298786499489422" />
         <var name="isSelected" id="1560298786499489424" />
         <var name="list" id="1560298786499489418" />
         <var name="value" id="1560298786499489420" />
       </scope>
-      <unit id="1560298786499489409" at="10,0,23,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer" />
+      <unit id="1560298786499489409" at="10,0,22,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer" />
     </file>
   </root>
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499490098">
     <file name="ProjectPathRenderer.java">
       <node id="1560298786499490101" at="15,0,16,0" concept="4" trace="myProject" />
-      <node id="1560298786499490109" at="17,50,18,24" concept="3" />
-      <node id="1560298786499490129" at="22,134,23,29" concept="8" />
-      <node id="1560298786499490135" at="23,29,24,103" concept="8" />
-      <node id="1560298786499490147" at="25,21,26,20" concept="9" />
-      <node id="1560298786499490149" at="27,5,28,32" concept="8" />
-      <node id="1560298786499490168" at="30,31,31,27" concept="3" />
-      <node id="1560298786499490172" at="31,27,32,14" concept="1" />
-      <node id="1560298786499490173" at="34,5,35,71" concept="8" />
-      <node id="1560298786499490192" at="36,58,37,44" concept="3" />
-      <node id="1560298786499490201" at="38,5,39,18" concept="9" />
-      <node id="1560298786499490104" at="17,0,20,0" concept="2" trace="ProjectPathRenderer#(Ljetbrains/mps/project/MPSProject;)V" />
-      <node id="1560298786499490144" at="24,103,27,5" concept="6" />
-      <node id="1560298786499490180" at="35,71,38,5" concept="6" />
-      <node id="1560298786499490162" at="29,75,33,7" concept="6" />
-      <node id="1560298786499490153" at="28,32,34,5" concept="5" />
-      <node id="1560298786499490115" at="21,0,41,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
-      <scope id="1560298786499490108" at="17,50,18,24" />
-      <scope id="1560298786499490146" at="25,21,26,20" />
-      <scope id="1560298786499490191" at="36,58,37,44" />
-      <scope id="1560298786499490167" at="30,31,32,14" />
-      <scope id="1560298786499490104" at="17,0,20,0">
+      <node id="1560298786499490109" at="16,50,17,24" concept="3" />
+      <node id="1560298786499490129" at="20,134,21,29" concept="8" />
+      <node id="1560298786499490135" at="21,29,22,103" concept="8" />
+      <node id="1560298786499490147" at="23,21,24,20" concept="9" />
+      <node id="1560298786499490149" at="25,5,26,32" concept="8" />
+      <node id="1560298786499490168" at="28,31,29,27" concept="3" />
+      <node id="1560298786499490172" at="29,27,30,14" concept="1" />
+      <node id="1560298786499490173" at="32,5,33,71" concept="8" />
+      <node id="1560298786499490192" at="34,58,35,44" concept="3" />
+      <node id="1560298786499490201" at="36,5,37,18" concept="9" />
+      <node id="1560298786499490104" at="16,0,19,0" concept="2" trace="ProjectPathRenderer#(Ljetbrains/mps/project/MPSProject;)V" />
+      <node id="1560298786499490144" at="22,103,25,5" concept="6" />
+      <node id="1560298786499490180" at="33,71,36,5" concept="6" />
+      <node id="1560298786499490162" at="27,75,31,7" concept="6" />
+      <node id="1560298786499490153" at="26,32,32,5" concept="5" />
+      <node id="1560298786499490115" at="19,0,39,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
+      <scope id="1560298786499490108" at="16,50,17,24" />
+      <scope id="1560298786499490146" at="23,21,24,20" />
+      <scope id="1560298786499490191" at="34,58,35,44" />
+      <scope id="1560298786499490167" at="28,31,30,14" />
+      <scope id="1560298786499490104" at="16,0,19,0">
         <var name="project" id="1560298786499490106" />
       </scope>
-      <scope id="1560298786499490161" at="29,75,33,7" />
-      <scope id="1560298786499490153" at="28,32,34,5">
+      <scope id="1560298786499490161" at="27,75,31,7" />
+      <scope id="1560298786499490153" at="26,32,32,5">
         <var name="p" id="1560298786499490159" />
       </scope>
-      <scope id="1560298786499490128" at="22,134,39,18">
+      <scope id="1560298786499490128" at="20,134,37,18">
         <var name="file" id="1560298786499490174" />
         <var name="isContained" id="1560298786499490150" />
         <var name="path" id="1560298786499490130" />
         <var name="result" id="1560298786499490136" />
       </scope>
-      <scope id="1560298786499490115" at="21,0,41,0">
+      <scope id="1560298786499490115" at="19,0,39,0">
         <var name="cellHasFocus" id="1560298786499490126" />
         <var name="index" id="1560298786499490122" />
         <var name="isSelected" id="1560298786499490124" />
         <var name="list" id="1560298786499490118" />
         <var name="value" id="1560298786499490120" />
       </scope>
-      <unit id="1560298786499490098" at="14,0,42,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectPathRenderer" />
+      <unit id="1560298786499490098" at="14,0,40,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectPathRenderer" />
     </file>
   </root>
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499492721">
     <file name="ProjectLevelRenderer.java">
       <node id="1560298786499492724" at="10,0,11,0" concept="4" trace="myModule" />
       <node id="1560298786499492727" at="11,0,12,0" concept="4" trace="myProject" />
-      <node id="1560298786499492737" at="13,64,14,22" concept="3" />
-      <node id="1560298786499492743" at="14,22,15,24" concept="3" />
-      <node id="1560298786499492781" at="18,44,19,28" concept="9" />
-      <node id="2697239579610117315" at="22,30,23,20" concept="9" />
-      <node id="2697239579610117321" at="26,31,27,21" concept="9" />
-      <node id="1560298786499492775" at="18,0,21,0" concept="7" trace="getItemLabel#(Ljava/lang/Object;)Ljava/lang/String;" />
-      <node id="2697239579610117311" at="22,0,25,0" concept="7" trace="getModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="2697239579610117317" at="26,0,29,0" concept="7" trace="getProject#()Ljetbrains/mps/project/Project;" />
-      <node id="1560298786499492730" at="13,0,17,0" concept="2" trace="ProjectLevelRenderer#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/project/Project;)V" />
-      <scope id="1560298786499492780" at="18,44,19,28" />
-      <scope id="2697239579610117314" at="22,30,23,20" />
-      <scope id="2697239579610117320" at="26,31,27,21" />
-      <scope id="1560298786499492736" at="13,64,15,24" />
-      <scope id="1560298786499492775" at="18,0,21,0">
+      <node id="1560298786499492737" at="12,64,13,22" concept="3" />
+      <node id="1560298786499492743" at="13,22,14,24" concept="3" />
+      <node id="1560298786499492781" at="16,44,17,28" concept="9" />
+      <node id="2697239579610117315" at="19,30,20,20" concept="9" />
+      <node id="2697239579610117321" at="22,31,23,21" concept="9" />
+      <node id="1560298786499492775" at="16,0,19,0" concept="7" trace="getItemLabel#(Ljava/lang/Object;)Ljava/lang/String;" />
+      <node id="2697239579610117311" at="19,0,22,0" concept="7" trace="getModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="2697239579610117317" at="22,0,25,0" concept="7" trace="getProject#()Ljetbrains/mps/project/Project;" />
+      <node id="1560298786499492730" at="12,0,16,0" concept="2" trace="ProjectLevelRenderer#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/project/Project;)V" />
+      <scope id="1560298786499492780" at="16,44,17,28" />
+      <scope id="2697239579610117314" at="19,30,20,20" />
+      <scope id="2697239579610117320" at="22,31,23,21" />
+      <scope id="1560298786499492736" at="12,64,14,24" />
+      <scope id="1560298786499492775" at="16,0,19,0">
         <var name="value" id="1560298786499492778" />
       </scope>
-      <scope id="2697239579610117311" at="22,0,25,0" />
-      <scope id="2697239579610117317" at="26,0,29,0" />
-      <scope id="1560298786499492730" at="13,0,17,0">
+      <scope id="2697239579610117311" at="19,0,22,0" />
+      <scope id="2697239579610117317" at="22,0,25,0" />
+      <scope id="1560298786499492730" at="12,0,16,0">
         <var name="module" id="1560298786499492732" />
         <var name="project" id="1560298786499492734" />
       </scope>
-      <unit id="1560298786499492721" at="9,0,30,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectLevelRenderer" />
+      <unit id="1560298786499492721" at="9,0,26,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectLevelRenderer" />
     </file>
   </root>
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499492799">
     <file name="StringPathRenderer.java">
-      <node id="1560298786499492819" at="16,134,17,33" concept="8" />
-      <node id="1560298786499492825" at="17,33,18,103" concept="8" />
-      <node id="1560298786499492839" at="19,23,20,20" concept="9" />
-      <node id="1560298786499492844" at="22,21,23,20" concept="9" />
-      <node id="1560298786499492861" at="25,41,26,31" concept="3" />
-      <node id="1560298786499492866" at="27,5,28,18" concept="9" />
+      <node id="1560298786499492819" at="15,134,16,33" concept="8" />
+      <node id="1560298786499492825" at="16,33,17,103" concept="8" />
+      <node id="1560298786499492839" at="18,23,19,20" concept="9" />
+      <node id="1560298786499492844" at="21,21,22,20" concept="9" />
+      <node id="1560298786499492861" at="24,41,25,31" concept="3" />
+      <node id="1560298786499492866" at="26,5,27,18" concept="9" />
       <node id="1560298786499492802" at="12,0,14,0" concept="2" trace="StringPathRenderer#()V" />
-      <node id="1560298786499492834" at="18,103,21,5" concept="6" />
-      <node id="1560298786499492841" at="21,5,24,5" concept="6" />
-      <node id="1560298786499492851" at="24,5,27,5" concept="6" />
-      <node id="1560298786499492805" at="15,0,30,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
+      <node id="1560298786499492834" at="17,103,20,5" concept="6" />
+      <node id="1560298786499492841" at="20,5,23,5" concept="6" />
+      <node id="1560298786499492851" at="23,5,26,5" concept="6" />
+      <node id="1560298786499492805" at="14,0,29,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
       <scope id="1560298786499492804" at="12,31,12,31" />
-      <scope id="1560298786499492838" at="19,23,20,20" />
-      <scope id="1560298786499492843" at="22,21,23,20" />
-      <scope id="1560298786499492860" at="25,41,26,31" />
+      <scope id="1560298786499492838" at="18,23,19,20" />
+      <scope id="1560298786499492843" at="21,21,22,20" />
+      <scope id="1560298786499492860" at="24,41,25,31" />
       <scope id="1560298786499492802" at="12,0,14,0" />
-      <scope id="1560298786499492818" at="16,134,28,18">
+      <scope id="1560298786499492818" at="15,134,27,18">
         <var name="path" id="1560298786499492820" />
         <var name="result" id="1560298786499492826" />
       </scope>
-      <scope id="1560298786499492805" at="15,0,30,0">
+      <scope id="1560298786499492805" at="14,0,29,0">
         <var name="cellHasFocus" id="1560298786499492816" />
         <var name="index" id="1560298786499492812" />
         <var name="isSelected" id="1560298786499492814" />
         <var name="list" id="1560298786499492808" />
         <var name="value" id="1560298786499492810" />
       </scope>
-      <unit id="1560298786499492799" at="11,0,31,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.StringPathRenderer" />
+      <unit id="1560298786499492799" at="11,0,30,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.StringPathRenderer" />
     </file>
   </root>
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499492868">
     <file name="ModelRenderer.java">
       <node id="1560298786499492878" at="18,67,19,37" concept="10" />
-      <node id="1560298786499492887" at="23,44,24,67" concept="8" />
-      <node id="1560298786499492893" at="24,67,25,85" concept="8" />
-      <node id="1560298786499492905" at="26,24,27,54" concept="8" />
-      <node id="1560298786499492913" at="27,54,28,60" concept="9" />
-      <node id="1560298786499492921" at="29,5,30,41" concept="9" />
-      <node id="1560298786499492941" at="34,134,35,104" concept="8" />
-      <node id="1560298786499492950" at="35,104,36,67" concept="8" />
-      <node id="1560298786499492956" at="36,67,37,33" concept="3" />
-      <node id="7189497640396694879" at="39,53,40,33" concept="3" />
-      <node id="7189497640396694884" at="41,119,42,46" concept="3" />
-      <node id="1560298786499493028" at="44,5,45,18" concept="9" />
+      <node id="1560298786499492887" at="22,44,23,67" concept="8" />
+      <node id="1560298786499492893" at="23,67,24,85" concept="8" />
+      <node id="1560298786499492905" at="25,24,26,54" concept="8" />
+      <node id="1560298786499492913" at="26,54,27,60" concept="9" />
+      <node id="1560298786499492921" at="28,5,29,41" concept="9" />
+      <node id="1560298786499492941" at="32,134,33,104" concept="8" />
+      <node id="1560298786499492950" at="33,104,34,67" concept="8" />
+      <node id="1560298786499492956" at="34,67,35,33" concept="3" />
+      <node id="7189497640396694879" at="37,53,38,33" concept="3" />
+      <node id="7189497640396694884" at="39,119,40,46" concept="3" />
+      <node id="1560298786499493028" at="42,5,43,18" concept="9" />
       <node id="1560298786499492871" at="18,0,21,0" concept="2" trace="ModelRenderer#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/project/Project;)V" />
-      <node id="1560298786499492900" at="25,85,29,5" concept="6" />
-      <node id="7189497640396694861" at="38,24,43,7" concept="6" />
-      <node id="7189497640396694854" at="37,33,44,5" concept="6" />
-      <node id="1560298786499492881" at="22,0,32,0" concept="7" trace="getItemLabel#(Ljava/lang/Object;)Ljava/lang/String;" />
-      <node id="1560298786499492927" at="33,0,47,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
+      <node id="1560298786499492900" at="24,85,28,5" concept="6" />
+      <node id="7189497640396694861" at="36,24,41,7" concept="6" />
+      <node id="7189497640396694854" at="35,33,42,5" concept="6" />
+      <node id="1560298786499492881" at="21,0,31,0" concept="7" trace="getItemLabel#(Ljava/lang/Object;)Ljava/lang/String;" />
+      <node id="1560298786499492927" at="31,0,45,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
       <scope id="1560298786499492877" at="18,67,19,37" />
-      <scope id="7189497640396694862" at="39,53,40,33" />
-      <scope id="7189497640396694867" at="41,119,42,46" />
-      <scope id="1560298786499492904" at="26,24,28,60">
+      <scope id="7189497640396694862" at="37,53,38,33" />
+      <scope id="7189497640396694867" at="39,119,40,46" />
+      <scope id="1560298786499492904" at="25,24,27,60">
         <var name="longName" id="1560298786499492906" />
       </scope>
       <scope id="1560298786499492871" at="18,0,21,0">
         <var name="moduleScope" id="1560298786499492873" />
         <var name="projectScope" id="1560298786499492875" />
       </scope>
-      <scope id="7189497640396694855" at="38,24,43,7" />
-      <scope id="1560298786499492886" at="23,44,30,41">
+      <scope id="7189497640396694855" at="36,24,41,7" />
+      <scope id="1560298786499492886" at="22,44,29,41">
         <var name="model" id="1560298786499492894" />
         <var name="modelReference" id="1560298786499492888" />
       </scope>
-      <scope id="1560298786499492881" at="22,0,32,0">
+      <scope id="1560298786499492881" at="21,0,31,0">
         <var name="value" id="1560298786499492884" />
       </scope>
-      <scope id="1560298786499492940" at="34,134,45,18">
+      <scope id="1560298786499492940" at="32,134,43,18">
         <var name="modelReference" id="1560298786499492951" />
         <var name="result" id="1560298786499492942" />
       </scope>
-      <scope id="1560298786499492927" at="33,0,47,0">
+      <scope id="1560298786499492927" at="31,0,45,0">
         <var name="cellHasFocus" id="1560298786499492938" />
         <var name="index" id="1560298786499492934" />
         <var name="isSelected" id="1560298786499492936" />
         <var name="list" id="1560298786499492930" />
         <var name="value" id="1560298786499492932" />
       </scope>
-      <unit id="1560298786499492868" at="17,0,48,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRenderer" />
+      <unit id="1560298786499492868" at="17,0,46,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRenderer" />
     </file>
   </root>
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499493036">
     <file name="ManagerRenderer.java">
-      <node id="1560298786499493056" at="16,134,17,56" concept="8" />
-      <node id="1560298786499493062" at="17,56,18,115" concept="8" />
-      <node id="1560298786499493074" at="18,115,19,101" concept="9" />
+      <node id="1560298786499493056" at="15,134,16,56" concept="8" />
+      <node id="1560298786499493062" at="16,56,17,115" concept="8" />
+      <node id="1560298786499493074" at="17,115,18,101" concept="9" />
       <node id="1560298786499493039" at="12,0,14,0" concept="2" trace="ManagerRenderer#()V" />
-      <node id="1560298786499493042" at="15,0,21,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
+      <node id="1560298786499493042" at="14,0,20,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
       <scope id="1560298786499493041" at="12,28,12,28" />
       <scope id="1560298786499493039" at="12,0,14,0" />
-      <scope id="1560298786499493055" at="16,134,19,101">
+      <scope id="1560298786499493055" at="15,134,18,101">
         <var name="manager" id="1560298786499493057" />
         <var name="representation" id="1560298786499493063" />
       </scope>
-      <scope id="1560298786499493042" at="15,0,21,0">
+      <scope id="1560298786499493042" at="14,0,20,0">
         <var name="cellHasFocus" id="1560298786499493053" />
         <var name="index" id="1560298786499493049" />
         <var name="isSelected" id="1560298786499493051" />
         <var name="list" id="1560298786499493045" />
         <var name="value" id="1560298786499493047" />
       </scope>
-      <unit id="1560298786499493036" at="11,0,22,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ManagerRenderer" />
+      <unit id="1560298786499493036" at="11,0,21,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ManagerRenderer" />
     </file>
   </root>
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499494305">
     <file name="ListRendererAdapter.java">
       <node id="1560298786499494308" at="12,0,13,0" concept="4" trace="myCellRenderer" />
-      <node id="1560298786499494316" at="14,61,15,34" concept="3" />
-      <node id="1560298786499494338" at="19,137,20,103" concept="9" />
-      <node id="1560298786499494311" at="14,0,17,0" concept="2" trace="ListRendererAdapter#(Ljavax/swing/ListCellRenderer;)V" />
-      <node id="1560298786499494322" at="18,0,22,0" concept="7" trace="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
-      <scope id="1560298786499494315" at="14,61,15,34" />
-      <scope id="1560298786499494337" at="19,137,20,103" />
-      <scope id="1560298786499494311" at="14,0,17,0">
+      <node id="1560298786499494316" at="13,61,14,34" concept="3" />
+      <node id="1560298786499494338" at="17,137,18,103" concept="9" />
+      <node id="1560298786499494311" at="13,0,16,0" concept="2" trace="ListRendererAdapter#(Ljavax/swing/ListCellRenderer;)V" />
+      <node id="1560298786499494322" at="16,0,20,0" concept="7" trace="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
+      <scope id="1560298786499494315" at="13,61,14,34" />
+      <scope id="1560298786499494337" at="17,137,18,103" />
+      <scope id="1560298786499494311" at="13,0,16,0">
         <var name="cellRenderer" id="1560298786499494313" />
       </scope>
-      <scope id="1560298786499494322" at="18,0,22,0">
+      <scope id="1560298786499494322" at="16,0,20,0">
         <var name="column" id="1560298786499494335" />
         <var name="hasFocus" id="1560298786499494331" />
         <var name="isSelected" id="1560298786499494329" />
@@ -237,226 +237,226 @@
         <var name="table" id="1560298786499494325" />
         <var name="value" id="1560298786499494327" />
       </scope>
-      <unit id="1560298786499494305" at="11,0,23,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ListRendererAdapter" />
+      <unit id="1560298786499494305" at="11,0,21,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ListRendererAdapter" />
     </file>
   </root>
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499494573">
     <file name="ModuleRenderer.java">
       <node id="1560298786499494583" at="16,68,17,37" concept="10" />
-      <node id="1560298786499494592" at="21,44,22,63" concept="8" />
-      <node id="1560298786499494598" at="22,63,23,91" concept="8" />
-      <node id="1560298786499494610" at="24,25,25,58" concept="8" />
-      <node id="1560298786499494616" at="25,58,26,64" concept="9" />
-      <node id="1560298786499494635" at="28,38,29,45" concept="9" />
-      <node id="1560298786499494630" at="30,12,31,45" concept="9" />
-      <node id="1560298786499494662" at="36,134,37,110" concept="8" />
-      <node id="1560298786499494656" at="37,110,38,63" concept="8" />
-      <node id="7663374595471632732" at="39,34,40,20" concept="9" />
-      <node id="1560298786499494671" at="41,5,42,33" concept="3" />
-      <node id="1560298786499494679" at="42,33,43,91" concept="8" />
-      <node id="1560298786499494695" at="44,42,45,31" concept="3" />
-      <node id="1560298786499494702" at="46,5,47,18" concept="9" />
-      <node id="1560298786499494628" at="30,10,32,5" concept="0" />
+      <node id="1560298786499494592" at="20,44,21,63" concept="8" />
+      <node id="1560298786499494598" at="21,63,22,91" concept="8" />
+      <node id="1560298786499494610" at="23,25,24,58" concept="8" />
+      <node id="1560298786499494616" at="24,58,25,64" concept="9" />
+      <node id="1560298786499494635" at="27,38,28,45" concept="9" />
+      <node id="1560298786499494630" at="29,12,30,45" concept="9" />
+      <node id="1560298786499494662" at="34,134,35,110" concept="8" />
+      <node id="1560298786499494656" at="35,110,36,63" concept="8" />
+      <node id="7663374595471632732" at="37,34,38,20" concept="9" />
+      <node id="1560298786499494671" at="39,5,40,33" concept="3" />
+      <node id="1560298786499494679" at="40,33,41,91" concept="8" />
+      <node id="1560298786499494695" at="42,42,43,31" concept="3" />
+      <node id="1560298786499494702" at="44,5,45,18" concept="9" />
+      <node id="1560298786499494628" at="29,10,31,5" concept="0" />
       <node id="1560298786499494576" at="16,0,19,0" concept="2" trace="ModuleRenderer#(Lorg/jetbrains/mps/openapi/module/SModule;Ljetbrains/mps/project/Project;)V" />
-      <node id="7663374595471632708" at="38,63,41,5" concept="6" />
-      <node id="1560298786499494686" at="43,91,46,5" concept="6" />
-      <node id="1560298786499494605" at="23,91,27,5" concept="6" />
-      <node id="1560298786499494624" at="27,5,32,5" concept="6" />
-      <node id="1560298786499494586" at="20,0,34,0" concept="7" trace="getItemLabel#(Ljava/lang/Object;)Ljava/lang/String;" />
-      <node id="1560298786499494642" at="35,0,49,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
+      <node id="7663374595471632708" at="36,63,39,5" concept="6" />
+      <node id="1560298786499494686" at="41,91,44,5" concept="6" />
+      <node id="1560298786499494605" at="22,91,26,5" concept="6" />
+      <node id="1560298786499494624" at="26,5,31,5" concept="6" />
+      <node id="1560298786499494586" at="19,0,33,0" concept="7" trace="getItemLabel#(Ljava/lang/Object;)Ljava/lang/String;" />
+      <node id="1560298786499494642" at="33,0,47,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
       <scope id="1560298786499494582" at="16,68,17,37" />
-      <scope id="1560298786499494634" at="28,38,29,45" />
-      <scope id="1560298786499494629" at="30,12,31,45" />
-      <scope id="7663374595471632709" at="39,34,40,20" />
-      <scope id="1560298786499494690" at="44,42,45,31" />
-      <scope id="1560298786499494609" at="24,25,26,64">
+      <scope id="1560298786499494634" at="27,38,28,45" />
+      <scope id="1560298786499494629" at="29,12,30,45" />
+      <scope id="7663374595471632709" at="37,34,38,20" />
+      <scope id="1560298786499494690" at="42,42,43,31" />
+      <scope id="1560298786499494609" at="23,25,25,64">
         <var name="moduleName" id="1560298786499494611" />
       </scope>
       <scope id="1560298786499494576" at="16,0,19,0">
         <var name="moduleScope" id="1560298786499494578" />
         <var name="projectScope" id="1560298786499494580" />
       </scope>
-      <scope id="1560298786499494591" at="21,44,32,5">
+      <scope id="1560298786499494591" at="20,44,31,5">
         <var name="module" id="1560298786499494599" />
         <var name="moduleReference" id="1560298786499494593" />
       </scope>
-      <scope id="1560298786499494655" at="36,134,47,18">
+      <scope id="1560298786499494655" at="34,134,45,18">
         <var name="module" id="1560298786499494680" />
         <var name="moduleReference" id="1560298786499494657" />
         <var name="result" id="1560298786499494663" />
       </scope>
-      <scope id="1560298786499494586" at="20,0,34,0">
+      <scope id="1560298786499494586" at="19,0,33,0">
         <var name="value" id="1560298786499494589" />
       </scope>
-      <scope id="1560298786499494642" at="35,0,49,0">
+      <scope id="1560298786499494642" at="33,0,47,0">
         <var name="cellHasFocus" id="1560298786499494653" />
         <var name="index" id="1560298786499494649" />
         <var name="isSelected" id="1560298786499494651" />
         <var name="list" id="1560298786499494645" />
         <var name="value" id="1560298786499494647" />
       </scope>
-      <unit id="1560298786499494573" at="15,0,50,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleRenderer" />
+      <unit id="1560298786499494573" at="15,0,48,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleRenderer" />
     </file>
   </root>
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499498121">
     <file name="BooleanRenderer.java">
       <node id="1560298786499498124" at="11,0,12,0" concept="4" trace="myCheckBox" />
-      <node id="1560298786499498130" at="13,28,14,33" concept="3" />
-      <node id="1560298786499498151" at="18,134,19,70" concept="3" />
-      <node id="1560298786499498165" at="19,70,20,98" concept="3" />
-      <node id="1560298786499498179" at="20,98,21,98" concept="3" />
-      <node id="1560298786499498193" at="21,98,22,22" concept="9" />
-      <node id="1560298786499498127" at="13,0,16,0" concept="2" trace="BooleanRenderer#()V" />
-      <node id="1560298786499498137" at="17,0,24,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
-      <scope id="1560298786499498129" at="13,28,14,33" />
-      <scope id="1560298786499498127" at="13,0,16,0" />
-      <scope id="1560298786499498150" at="18,134,22,22" />
-      <scope id="1560298786499498137" at="17,0,24,0">
+      <node id="1560298786499498130" at="12,28,13,33" concept="3" />
+      <node id="1560298786499498151" at="16,134,17,70" concept="3" />
+      <node id="1560298786499498165" at="17,70,18,98" concept="3" />
+      <node id="1560298786499498179" at="18,98,19,98" concept="3" />
+      <node id="1560298786499498193" at="19,98,20,22" concept="9" />
+      <node id="1560298786499498127" at="12,0,15,0" concept="2" trace="BooleanRenderer#()V" />
+      <node id="1560298786499498137" at="15,0,22,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
+      <scope id="1560298786499498129" at="12,28,13,33" />
+      <scope id="1560298786499498127" at="12,0,15,0" />
+      <scope id="1560298786499498150" at="16,134,20,22" />
+      <scope id="1560298786499498137" at="15,0,22,0">
         <var name="cellHasFocus" id="1560298786499498148" />
         <var name="index" id="1560298786499498144" />
         <var name="isSelected" id="1560298786499498146" />
         <var name="list" id="1560298786499498140" />
         <var name="value" id="1560298786499498142" />
       </scope>
-      <unit id="1560298786499498121" at="10,0,25,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.BooleanRenderer" />
+      <unit id="1560298786499498121" at="10,0,23,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.BooleanRenderer" />
     </file>
   </root>
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/262971659834150299">
     <file name="ModelRootRenderer.java">
-      <node id="262971659834182173" at="17,134,18,69" concept="8" />
-      <node id="1552421828371757047" at="18,69,19,108" concept="8" />
-      <node id="1552421828371758376" at="19,108,20,43" concept="3" />
-      <node id="262971659834182179" at="20,43,21,121" concept="8" />
-      <node id="262971659834182208" at="21,121,22,18" concept="9" />
+      <node id="262971659834182173" at="16,134,17,69" concept="8" />
+      <node id="1552421828371757047" at="17,69,18,108" concept="8" />
+      <node id="1552421828371758376" at="18,108,19,43" concept="3" />
+      <node id="262971659834182179" at="19,43,20,121" concept="8" />
+      <node id="262971659834182208" at="20,121,21,18" concept="9" />
       <node id="262971659834150301" at="13,0,15,0" concept="2" trace="ModelRootRenderer#()V" />
-      <node id="262971659834182159" at="16,0,24,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
+      <node id="262971659834182159" at="15,0,23,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
       <scope id="262971659834150304" at="13,30,13,30" />
       <scope id="262971659834150301" at="13,0,15,0" />
-      <scope id="262971659834182172" at="17,134,22,18">
+      <scope id="262971659834182172" at="16,134,21,18">
         <var name="result" id="262971659834182180" />
         <var name="root" id="1552421828371757048" />
         <var name="rootDescriptor" id="262971659834182174" />
       </scope>
-      <scope id="262971659834182159" at="16,0,24,0">
+      <scope id="262971659834182159" at="15,0,23,0">
         <var name="cellHasFocus" id="262971659834182170" />
         <var name="index" id="262971659834182166" />
         <var name="isSelected" id="262971659834182168" />
         <var name="list" id="262971659834182162" />
         <var name="value" id="262971659834182164" />
       </scope>
-      <unit id="262971659834150299" at="12,0,25,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRootRenderer" />
+      <unit id="262971659834150299" at="12,0,24,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRootRenderer" />
     </file>
   </root>
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/7093733149214777406">
     <file name="RuleOperandRenderer.java">
       <node id="7093733149214777407" at="45,0,46,0" concept="4" trace="myRenderersCache" />
-      <node id="7093733149214777439" at="53,67,54,62" concept="9" />
-      <node id="7093733149214777447" at="55,5,56,54" concept="8" />
-      <node id="7093733149214777465" at="59,39,60,61" concept="8" />
-      <node id="7093733149214777472" at="60,61,61,97" concept="3" />
-      <node id="7093733149214777485" at="61,97,62,20" concept="9" />
-      <node id="7093733149214777488" at="64,6,65,31" concept="3" />
-      <node id="7093733149214777493" at="65,31,66,22" concept="3" />
-      <node id="7093733149214777497" at="66,22,67,21" concept="3" />
-      <node id="7093733149214777571" at="68,36,69,57" concept="3" />
-      <node id="7093733149214777578" at="69,57,70,57" concept="3" />
-      <node id="7093733149214777585" at="70,57,71,28" concept="3" />
-      <node id="7093733149214777615" at="74,158,75,102" concept="9" />
-      <node id="7093733149214777508" at="78,12,79,79" concept="3" />
-      <node id="7093733149214777520" at="79,79,80,48" concept="3" />
-      <node id="7093733149214777552" at="83,158,84,63" concept="3" />
-      <node id="7093733149214777557" at="84,63,85,106" concept="9" />
-      <node id="7093733149214777566" at="87,9,88,28" concept="3" />
-      <node id="7093733149214777625" at="89,5,90,117" concept="3" />
-      <node id="7093733149214777646" at="90,117,91,59" concept="3" />
-      <node id="7093733149214777652" at="91,59,92,16" concept="9" />
-      <node id="7093733149214777667" at="96,22,97,19" concept="9" />
-      <node id="7093733149214777956" at="99,51,100,47" concept="3" />
-      <node id="7093733149214777964" at="100,47,101,18" concept="9" />
-      <node id="7093733149214777945" at="103,52,104,49" concept="3" />
-      <node id="7093733149214777953" at="104,49,105,18" concept="9" />
-      <node id="7093733149214777801" at="107,49,108,67" concept="8" />
-      <node id="7093733149214777807" at="108,67,109,106" concept="8" />
-      <node id="7093733149214777814" at="109,106,110,22" concept="8" />
-      <node id="7093733149214777925" at="111,41,112,118" concept="3" />
-      <node id="7093733149214777826" at="113,14,114,88" concept="8" />
-      <node id="7093733149214777851" at="117,35,118,89" concept="8" />
-      <node id="7093733149214777857" at="118,89,119,87" concept="8" />
-      <node id="7093733149214777872" at="120,48,121,26" concept="9" />
-      <node id="7093733149214777874" at="122,13,123,103" concept="8" />
-      <node id="7093733149214777881" at="123,103,124,52" concept="9" />
-      <node id="7093733149214777894" at="127,31,128,60" concept="8" />
-      <node id="7093733149214777912" at="128,60,129,74" concept="3" />
-      <node id="7093733149214777922" at="129,74,130,23" concept="9" />
-      <node id="7093733149214777934" at="132,7,133,52" concept="3" />
-      <node id="7093733149214777942" at="133,52,134,18" concept="9" />
-      <node id="7093733149214777717" at="136,51,137,71" concept="8" />
-      <node id="7093733149214777723" at="137,71,138,64" concept="8" />
-      <node id="7093733149214777734" at="139,39,140,84" concept="3" />
-      <node id="7093733149214777742" at="140,84,141,21" concept="9" />
-      <node id="7093733149214777744" at="142,7,143,54" concept="8" />
-      <node id="7093733149214777748" at="143,54,144,98" concept="8" />
-      <node id="7093733149214777762" at="145,30,146,62" concept="8" />
-      <node id="7093733149214777768" at="146,62,147,71" concept="3" />
-      <node id="7093733149214777778" at="147,71,148,21" concept="9" />
-      <node id="7093733149214777780" at="149,7,150,78" concept="8" />
-      <node id="7093733149214777789" at="150,78,151,22" concept="3" />
-      <node id="7093733149214777794" at="151,22,152,49" concept="9" />
-      <node id="7093733149214777690" at="154,46,155,30" concept="8" />
-      <node id="7093733149214777710" at="157,39,158,27" concept="3" />
-      <node id="7093733149214777714" at="160,7,161,22" concept="9" />
-      <node id="7093733149214777966" at="162,5,163,17" concept="9" />
-      <node id="7093733149214777418" at="47,0,50,0" concept="2" trace="RuleOperandRenderer#()V" />
-      <node id="7093733149214777437" at="52,143,55,5" concept="6" />
-      <node id="7093733149214777662" at="95,76,98,5" concept="6" />
-      <node id="7093733149214777863" at="119,87,122,13" concept="6" />
-      <node id="7093733149214777704" at="156,101,159,9" concept="6" />
-      <node id="7093733149214777597" at="73,0,77,0" concept="7" trace="getTreeCellRendererComponent#(Ljavax/swing/JTree;Ljava/lang/Object;ZZZIZ)Ljava/awt/Component;" />
-      <node id="7093733149214777729" at="138,64,142,7" concept="6" />
-      <node id="7093733149214777534" at="82,0,87,0" concept="7" trace="getTreeCellRendererComponent#(Ljavax/swing/JTree;Ljava/lang/Object;ZZZIZ)Ljava/awt/Component;" />
-      <node id="7093733149214777889" at="126,11,131,9" concept="6" />
-      <node id="7093733149214777757" at="144,98,149,7" concept="6" />
-      <node id="7093733149214777694" at="155,30,160,7" concept="5" />
-      <node id="7093733149214777461" at="58,0,64,0" concept="7" trace="rebuild#()Ljetbrains/mps/ide/ui/tree/MPSTreeNode;" />
-      <node id="7093733149214777589" at="71,28,77,9" concept="3" />
-      <node id="7093733149214777527" at="80,48,87,9" concept="3" />
-      <node id="7093733149214777455" at="56,54,64,6" concept="8" />
-      <node id="7093733149214777685" at="153,10,162,5" concept="6" />
-      <node id="7093733149214777847" at="116,0,126,0" concept="7" trace="compute#()Ljava/lang/String;" />
-      <node id="7093733149214777506" at="78,10,89,5" concept="0" />
-      <node id="7093733149214777837" at="114,88,126,11" concept="3" />
-      <node id="7093733149214777824" at="113,12,132,7" concept="0" />
-      <node id="7093733149214777501" at="67,21,89,5" concept="6" />
-      <node id="7093733149214777817" at="110,22,132,7" concept="6" />
-      <node id="7093733149214777681" at="135,10,162,5" concept="6" />
-      <node id="7093733149214777421" at="51,0,94,0" concept="7" trace="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
-      <node id="7093733149214777677" at="106,10,162,5" concept="6" />
-      <node id="7093733149214777673" at="102,10,162,5" concept="6" />
-      <node id="7093733149214777669" at="98,5,162,5" concept="6" />
-      <node id="7093733149214777654" at="95,0,165,0" concept="7" trace="add#(Ljetbrains/mps/ide/ui/tree/TextMPSTreeNode;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;)Z" />
-      <scope id="7093733149214777420" at="48,32,48,32" />
-      <scope id="7093733149214777438" at="53,67,54,62" />
-      <scope id="7093733149214777614" at="74,158,75,102" />
-      <scope id="7093733149214777666" at="96,22,97,19" />
-      <scope id="7093733149214777924" at="111,41,112,118" />
-      <scope id="7093733149214777871" at="120,48,121,26" />
-      <scope id="7093733149214777709" at="157,39,158,27" />
-      <scope id="7093733149214777551" at="83,158,85,106" />
-      <scope id="7093733149214777955" at="99,51,101,18" />
-      <scope id="7093733149214777944" at="103,52,105,18" />
-      <scope id="7093733149214777733" at="139,39,141,21" />
-      <scope id="7093733149214777418" at="47,0,50,0" />
-      <scope id="7093733149214777464" at="59,39,62,20">
+      <node id="7093733149214777439" at="51,67,52,62" concept="9" />
+      <node id="7093733149214777447" at="53,5,54,54" concept="8" />
+      <node id="7093733149214777465" at="57,39,58,61" concept="8" />
+      <node id="7093733149214777472" at="58,61,59,97" concept="3" />
+      <node id="7093733149214777485" at="59,97,60,20" concept="9" />
+      <node id="7093733149214777488" at="62,6,63,31" concept="3" />
+      <node id="7093733149214777493" at="63,31,64,22" concept="3" />
+      <node id="7093733149214777497" at="64,22,65,21" concept="3" />
+      <node id="7093733149214777571" at="66,36,67,57" concept="3" />
+      <node id="7093733149214777578" at="67,57,68,57" concept="3" />
+      <node id="7093733149214777585" at="68,57,69,28" concept="3" />
+      <node id="7093733149214777615" at="72,158,73,102" concept="9" />
+      <node id="7093733149214777508" at="76,12,77,79" concept="3" />
+      <node id="7093733149214777520" at="77,79,78,48" concept="3" />
+      <node id="7093733149214777552" at="81,158,82,63" concept="3" />
+      <node id="7093733149214777557" at="82,63,83,106" concept="9" />
+      <node id="7093733149214777566" at="85,9,86,28" concept="3" />
+      <node id="7093733149214777625" at="87,5,88,117" concept="3" />
+      <node id="7093733149214777646" at="88,117,89,59" concept="3" />
+      <node id="7093733149214777652" at="89,59,90,16" concept="9" />
+      <node id="7093733149214777667" at="93,22,94,19" concept="9" />
+      <node id="7093733149214777956" at="96,51,97,47" concept="3" />
+      <node id="7093733149214777964" at="97,47,98,18" concept="9" />
+      <node id="7093733149214777945" at="100,52,101,49" concept="3" />
+      <node id="7093733149214777953" at="101,49,102,18" concept="9" />
+      <node id="7093733149214777801" at="104,49,105,67" concept="8" />
+      <node id="7093733149214777807" at="105,67,106,106" concept="8" />
+      <node id="7093733149214777814" at="106,106,107,22" concept="8" />
+      <node id="7093733149214777925" at="108,41,109,118" concept="3" />
+      <node id="7093733149214777826" at="110,14,111,88" concept="8" />
+      <node id="7093733149214777851" at="114,35,115,89" concept="8" />
+      <node id="7093733149214777857" at="115,89,116,87" concept="8" />
+      <node id="7093733149214777872" at="117,48,118,26" concept="9" />
+      <node id="7093733149214777874" at="119,13,120,103" concept="8" />
+      <node id="7093733149214777881" at="120,103,121,52" concept="9" />
+      <node id="7093733149214777894" at="124,31,125,60" concept="8" />
+      <node id="7093733149214777912" at="125,60,126,74" concept="3" />
+      <node id="7093733149214777922" at="126,74,127,23" concept="9" />
+      <node id="7093733149214777934" at="129,7,130,52" concept="3" />
+      <node id="7093733149214777942" at="130,52,131,18" concept="9" />
+      <node id="7093733149214777717" at="133,51,134,71" concept="8" />
+      <node id="7093733149214777723" at="134,71,135,64" concept="8" />
+      <node id="7093733149214777734" at="136,39,137,84" concept="3" />
+      <node id="7093733149214777742" at="137,84,138,21" concept="9" />
+      <node id="7093733149214777744" at="139,7,140,54" concept="8" />
+      <node id="7093733149214777748" at="140,54,141,98" concept="8" />
+      <node id="7093733149214777762" at="142,30,143,62" concept="8" />
+      <node id="7093733149214777768" at="143,62,144,71" concept="3" />
+      <node id="7093733149214777778" at="144,71,145,21" concept="9" />
+      <node id="7093733149214777780" at="146,7,147,78" concept="8" />
+      <node id="7093733149214777789" at="147,78,148,22" concept="3" />
+      <node id="7093733149214777794" at="148,22,149,49" concept="9" />
+      <node id="7093733149214777690" at="151,46,152,30" concept="8" />
+      <node id="7093733149214777710" at="154,39,155,27" concept="3" />
+      <node id="7093733149214777714" at="157,7,158,22" concept="9" />
+      <node id="7093733149214777966" at="159,5,160,17" concept="9" />
+      <node id="7093733149214777418" at="46,0,49,0" concept="2" trace="RuleOperandRenderer#()V" />
+      <node id="7093733149214777437" at="50,143,53,5" concept="6" />
+      <node id="7093733149214777662" at="92,76,95,5" concept="6" />
+      <node id="7093733149214777863" at="116,87,119,13" concept="6" />
+      <node id="7093733149214777704" at="153,101,156,9" concept="6" />
+      <node id="7093733149214777597" at="71,0,75,0" concept="7" trace="getTreeCellRendererComponent#(Ljavax/swing/JTree;Ljava/lang/Object;ZZZIZ)Ljava/awt/Component;" />
+      <node id="7093733149214777729" at="135,64,139,7" concept="6" />
+      <node id="7093733149214777534" at="80,0,85,0" concept="7" trace="getTreeCellRendererComponent#(Ljavax/swing/JTree;Ljava/lang/Object;ZZZIZ)Ljava/awt/Component;" />
+      <node id="7093733149214777889" at="123,11,128,9" concept="6" />
+      <node id="7093733149214777757" at="141,98,146,7" concept="6" />
+      <node id="7093733149214777694" at="152,30,157,7" concept="5" />
+      <node id="7093733149214777461" at="56,0,62,0" concept="7" trace="rebuild#()Ljetbrains/mps/ide/ui/tree/MPSTreeNode;" />
+      <node id="7093733149214777589" at="69,28,75,9" concept="3" />
+      <node id="7093733149214777527" at="78,48,85,9" concept="3" />
+      <node id="7093733149214777455" at="54,54,62,6" concept="8" />
+      <node id="7093733149214777685" at="150,10,159,5" concept="6" />
+      <node id="7093733149214777847" at="113,0,123,0" concept="7" trace="compute#()Ljava/lang/String;" />
+      <node id="7093733149214777506" at="76,10,87,5" concept="0" />
+      <node id="7093733149214777837" at="111,88,123,11" concept="3" />
+      <node id="7093733149214777824" at="110,12,129,7" concept="0" />
+      <node id="7093733149214777501" at="65,21,87,5" concept="6" />
+      <node id="7093733149214777817" at="107,22,129,7" concept="6" />
+      <node id="7093733149214777681" at="132,10,159,5" concept="6" />
+      <node id="7093733149214777421" at="49,0,92,0" concept="7" trace="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
+      <node id="7093733149214777677" at="103,10,159,5" concept="6" />
+      <node id="7093733149214777673" at="99,10,159,5" concept="6" />
+      <node id="7093733149214777669" at="95,5,159,5" concept="6" />
+      <node id="7093733149214777654" at="92,0,162,0" concept="7" trace="add#(Ljetbrains/mps/ide/ui/tree/TextMPSTreeNode;Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingConfig_AbstractRef;)Z" />
+      <scope id="7093733149214777420" at="47,32,47,32" />
+      <scope id="7093733149214777438" at="51,67,52,62" />
+      <scope id="7093733149214777614" at="72,158,73,102" />
+      <scope id="7093733149214777666" at="93,22,94,19" />
+      <scope id="7093733149214777924" at="108,41,109,118" />
+      <scope id="7093733149214777871" at="117,48,118,26" />
+      <scope id="7093733149214777709" at="154,39,155,27" />
+      <scope id="7093733149214777551" at="81,158,83,106" />
+      <scope id="7093733149214777955" at="96,51,98,18" />
+      <scope id="7093733149214777944" at="100,52,102,18" />
+      <scope id="7093733149214777733" at="136,39,138,21" />
+      <scope id="7093733149214777418" at="46,0,49,0" />
+      <scope id="7093733149214777464" at="57,39,60,20">
         <var name="root" id="7093733149214777466" />
       </scope>
-      <scope id="7093733149214777893" at="127,31,130,23">
+      <scope id="7093733149214777893" at="124,31,127,23">
         <var name="nodeString" id="7093733149214777895" />
       </scope>
-      <scope id="7093733149214777761" at="145,30,148,21">
+      <scope id="7093733149214777761" at="142,30,145,21">
         <var name="genString" id="7093733149214777763" />
       </scope>
-      <scope id="7093733149214777703" at="156,101,159,9" />
-      <scope id="7093733149214777597" at="73,0,77,0">
+      <scope id="7093733149214777703" at="153,101,156,9" />
+      <scope id="7093733149214777597" at="71,0,75,0">
         <var name="expanded" id="7093733149214777606" />
         <var name="hasFocus" id="7093733149214777612" />
         <var name="leaf" id="7093733149214777608" />
@@ -465,7 +465,7 @@
         <var name="tree" id="7093733149214777600" />
         <var name="value" id="7093733149214777602" />
       </scope>
-      <scope id="7093733149214777534" at="82,0,87,0">
+      <scope id="7093733149214777534" at="80,0,85,0">
         <var name="expanded" id="7093733149214777543" />
         <var name="hasFocus" id="7093733149214777549" />
         <var name="leaf" id="7093733149214777545" />
@@ -474,41 +474,41 @@
         <var name="tree" id="7093733149214777537" />
         <var name="value" id="7093733149214777539" />
       </scope>
-      <scope id="7093733149214777694" at="155,30,160,7">
+      <scope id="7093733149214777694" at="152,30,157,7">
         <var name="mappingRef" id="7093733149214777701" />
       </scope>
-      <scope id="7093733149214777461" at="58,0,64,0" />
-      <scope id="7093733149214777850" at="117,35,124,52">
+      <scope id="7093733149214777461" at="56,0,62,0" />
+      <scope id="7093733149214777850" at="114,35,121,52">
         <var name="model" id="7093733149214777852" />
         <var name="modelName" id="7093733149214777875" />
         <var name="node" id="7093733149214777858" />
       </scope>
-      <scope id="7093733149214777689" at="154,46,161,22">
+      <scope id="7093733149214777689" at="151,46,158,22">
         <var name="complete" id="7093733149214777691" />
       </scope>
-      <scope id="7093733149214777570" at="68,36,77,9" />
-      <scope id="7093733149214777507" at="78,12,88,28" />
-      <scope id="7093733149214777847" at="116,0,126,0" />
-      <scope id="7093733149214777716" at="136,51,152,49">
+      <scope id="7093733149214777570" at="66,36,75,9" />
+      <scope id="7093733149214777507" at="76,12,86,28" />
+      <scope id="7093733149214777847" at="113,0,123,0" />
+      <scope id="7093733149214777716" at="133,51,149,49">
         <var name="child" id="7093733149214777781" />
         <var name="generator" id="7093733149214777749" />
         <var name="generatorReference" id="7093733149214777724" />
         <var name="moduleRef" id="7093733149214777745" />
         <var name="refC" id="7093733149214777718" />
       </scope>
-      <scope id="7093733149214777825" at="113,14,131,9">
+      <scope id="7093733149214777825" at="110,14,128,9">
         <var name="p" id="7093733149214777827" />
       </scope>
-      <scope id="7093733149214777800" at="107,49,134,18">
+      <scope id="7093733149214777800" at="104,49,131,18">
         <var name="modelRef" id="7093733149214777808" />
         <var name="nodeName" id="7093733149214777815" />
         <var name="refC" id="7093733149214777802" />
       </scope>
-      <scope id="7093733149214777436" at="52,143,92,16">
+      <scope id="7093733149214777436" at="50,143,90,16">
         <var name="incomplete" id="7093733149214777448" />
         <var name="tree" id="7093733149214777456" />
       </scope>
-      <scope id="7093733149214777421" at="51,0,94,0">
+      <scope id="7093733149214777421" at="49,0,92,0">
         <var name="column" id="7093733149214777434" />
         <var name="hasFocus" id="7093733149214777430" />
         <var name="isSelected" id="7093733149214777428" />
@@ -516,16 +516,16 @@
         <var name="table" id="7093733149214777424" />
         <var name="value" id="7093733149214777426" />
       </scope>
-      <scope id="7093733149214777661" at="95,76,163,17" />
-      <scope id="7093733149214777654" at="95,0,165,0">
+      <scope id="7093733149214777661" at="92,76,160,17" />
+      <scope id="7093733149214777654" at="92,0,162,0">
         <var name="ref" id="7093733149214777659" />
         <var name="root" id="7093733149214777657" />
       </scope>
-      <unit id="7093733149214777595" at="72,31,77,7" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$3" />
-      <unit id="7093733149214777533" at="81,31,87,7" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$2" />
-      <unit id="7093733149214777460" at="57,23,64,5" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$1" />
-      <unit id="7093733149214777845" at="115,60,126,9" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$4" />
-      <unit id="7093733149214777406" at="43,0,166,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer" />
+      <unit id="7093733149214777595" at="70,31,75,7" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$3" />
+      <unit id="7093733149214777533" at="79,31,85,7" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$2" />
+      <unit id="7093733149214777460" at="55,23,62,5" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$1" />
+      <unit id="7093733149214777845" at="112,60,123,9" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer$4" />
+      <unit id="7093733149214777406" at="43,0,163,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer" />
     </file>
   </root>
 </debug-info>

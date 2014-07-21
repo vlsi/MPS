@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class LetExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getVariables_8981808925914841576(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "variable", true));

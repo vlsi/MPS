@@ -29,10 +29,8 @@ public abstract class IntroduceVariableRefactoring {
   protected boolean myIsFinal = false;
   protected VisibilityLevel myVisibilityLevel;
   protected List<SNode> myDuplicates = new ArrayList<SNode>();
-
   public IntroduceVariableRefactoring() {
   }
-
   public String init(SNode node, JComponent editorComponent) {
     this.myExpression = node;
     this.myContainer = findContainer(node);
@@ -68,7 +66,6 @@ public abstract class IntroduceVariableRefactoring {
       return null;
     }
   }
-
   private SNode getExpressionType(SNode node) {
     SNode expressionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(node), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
     if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.baseLanguage.structure.IInternalType")) {
@@ -93,53 +90,40 @@ public abstract class IntroduceVariableRefactoring {
     }
     return expressionType;
   }
-
   public void setName(String name) {
     this.myName = name;
   }
-
   public void setVisibilityLevel(VisibilityLevel level) {
     this.myVisibilityLevel = level;
   }
-
   public void setReplacingAll(boolean b) {
     this.myIsReplacingAll = b;
   }
-
   public void setIsFinal(boolean b) {
     myIsFinal = b;
   }
-
   public boolean hasDuplicates() {
     return ListSequence.fromList(myDuplicates).isNotEmpty();
   }
-
   public String getName() {
     return this.myName;
   }
-
   public SNode getExpression() {
     return this.myExpression;
   }
-
   public SNode getExpressionType() {
     return this.myExpressionType;
   }
-
   public List<String> getExpectedNames() {
     return this.myExpectedNames;
   }
-
   public SNode getContainer() {
     return this.myContainer;
   }
-
   public abstract void replaceNode(SNode node, SNode declaration);
-
   public List<SNode> getDuplicates() {
     return this.myDuplicates;
   }
-
   protected void findDuplicates() {
     this.myDuplicates = new SimpleDuplicatesFinder(this.getExpression()).findDuplicates(this.getRootToFindDuplicates(this.getExpression()));
     this.myDuplicates = ListSequence.fromList(this.myDuplicates).where(new IWhereFilter<SNode>() {
@@ -148,21 +132,16 @@ public abstract class IntroduceVariableRefactoring {
       }
     }).toListSequence();
   }
-
   protected SNode findContainer(SNode node) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
   }
-
   protected SNode getRootToFindDuplicates(SNode node) {
     return SNodeOperations.getContainingRoot(node);
   }
-
   public abstract SNode doRefactoring();
-
   protected boolean isVoidType(SNode expressionType) {
     return SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.baseLanguage.structure.VoidType");
   }
-
   private static SNode _quotation_createNode_x65dk2_a0b0b0c0l(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -170,7 +149,6 @@ public abstract class IntroduceVariableRefactoring {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_x65dk2_a0a0d0l() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

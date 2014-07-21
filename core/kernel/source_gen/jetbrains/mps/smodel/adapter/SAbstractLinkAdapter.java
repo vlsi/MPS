@@ -17,17 +17,14 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
   protected String conceptName;
   protected String role;
 
-
   public SAbstractLinkAdapter(String conceptName, String role) {
     this.conceptName = conceptName;
     this.role = role;
   }
-
   @Override
   public String getRole() {
     return role;
   }
-
   @Override
   public boolean isOptional() {
     // TODO reimplement using ConceptDescriptor 
@@ -37,7 +34,6 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     }
     return SPropertyOperations.hasValue(link, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "0..n", "0..1");
   }
-
   @Override
   public SAbstractConcept getTargetConcept() {
     // TODO reimplement using ConceptDescriptor 
@@ -49,13 +45,10 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     return (SNodeOperations.isInstanceOf(t, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") ? new SInterfaceConceptAdapter(NameUtil.nodeFQName(t)) : SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(t)));
   }
 
-
-
   @Override
   public int hashCode() {
     return conceptName.hashCode() * 31 + role.hashCode() * 17;
   }
-
   @Override
   public boolean equals(Object o) {
     if (o == null || o.getClass() != getClass()) {
@@ -64,8 +57,6 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     SAbstractLinkAdapter la = (SAbstractLinkAdapter) o;
     return conceptName.equals(la.conceptName) && role.equals(la.role);
   }
-
-
 
   protected final SNode getLinkNode() {
     SNode concept = SModelUtil.findConceptDeclaration(conceptName);

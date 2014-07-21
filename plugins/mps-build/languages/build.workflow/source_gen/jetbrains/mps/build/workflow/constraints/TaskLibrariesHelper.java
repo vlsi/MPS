@@ -27,12 +27,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 public class TaskLibrariesHelper {
   private SNode project;
   private TemplateQueryContext genContext;
-
   public TaskLibrariesHelper(SNode project, TemplateQueryContext genContext) {
     this.project = project;
     this.genContext = genContext;
   }
-
   public void importLibs() {
     Set<SNode> libsSet = new LinkedHashSet<SNode>();
     for (SNode tldep : SLinkOperations.getTargets(project, "imports", true)) {
@@ -78,7 +76,6 @@ public class TaskLibrariesHelper {
       ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).insertElement(0, parts.get(i));
     }
   }
-
   public static void closure(Set<SNode> libs) {
     Queue<SNode> queue = QueueSequence.fromQueue(new LinkedList<SNode>());
     QueueSequence.fromQueue(queue).addSequence(SetSequence.fromSet(libs));

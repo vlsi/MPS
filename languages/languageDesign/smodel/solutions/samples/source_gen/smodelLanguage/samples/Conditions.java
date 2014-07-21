@@ -11,11 +11,9 @@ public class Conditions {
     boolean b = SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement");
     boolean b2 = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IfStatement"), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant");
   }
-
   public void checkRoleAndTypeOfDirectParent(SNode node) {
     boolean b = SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "condition");
   }
-
   public boolean checkIsNull(SNode node) {
     if ((node == null)) {
     } else

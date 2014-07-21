@@ -9,7 +9,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 public class BaseExecuteCommandStatement_DataFlow extends DataFlowBuilder {
   public BaseExecuteCommandStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
   }
 }

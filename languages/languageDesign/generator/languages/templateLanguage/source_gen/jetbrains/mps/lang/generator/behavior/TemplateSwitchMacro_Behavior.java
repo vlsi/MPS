@@ -8,8 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TemplateSwitchMacro_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode call_getTemplateSwitch_982871510068041631(SNode thisNode) {
+  }
+  public static SNode call_getTemplateSwitch_982871510068041631(SNode thisNode) {
     return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "template", false), "jetbrains.mps.lang.generator.structure.TemplateSwitch");
-  };;
-;}
+  }
+}

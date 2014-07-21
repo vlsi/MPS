@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class StateMachineTestMethod_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public StateMachineTestMethod_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod";

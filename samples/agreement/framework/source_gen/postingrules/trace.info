@@ -18,16 +18,16 @@
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299649861">
     <file name="AccountingException.java">
       <node id="6531435794299649867" at="7,32,8,12" concept="11" />
-      <node id="6531435794299649874" at="11,40,12,13" concept="11" />
+      <node id="6531435794299649874" at="10,40,11,13" concept="11" />
       <node id="6531435794299649863" at="7,0,10,0" concept="1" trace="AccountingException#()V" />
-      <node id="6531435794299649868" at="11,0,14,0" concept="1" trace="AccountingException#(Ljava/lang/String;)V" />
+      <node id="6531435794299649868" at="10,0,13,0" concept="1" trace="AccountingException#(Ljava/lang/String;)V" />
       <scope id="6531435794299649866" at="7,32,8,12" />
-      <scope id="6531435794299649873" at="11,40,12,13" />
+      <scope id="6531435794299649873" at="10,40,11,13" />
       <scope id="6531435794299649863" at="7,0,10,0" />
-      <scope id="6531435794299649868" at="11,0,14,0">
+      <scope id="6531435794299649868" at="10,0,13,0">
         <var name="s" id="6531435794299649871" />
       </scope>
-      <unit id="6531435794299649861" at="6,0,15,0" name="postingrules.AccountingException" />
+      <unit id="6531435794299649861" at="6,0,14,0" name="postingrules.AccountingException" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299649876">
@@ -73,44 +73,44 @@
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299650989">
     <file name="AgreementRegistry.java">
       <node id="6531435794299650991" at="9,0,10,0" concept="3" trace="myAgreements" />
-      <node id="6531435794299651007" at="14,65,15,38" concept="2" />
-      <node id="6531435794299651019" at="18,53,19,53" concept="8" />
-      <node id="6531435794299650995" at="11,0,13,0" concept="1" trace="AgreementRegistry#()V" />
-      <node id="6531435794299650999" at="14,0,17,0" concept="6" trace="register#(Ljava/lang/String;Lpostingrules/ServiceAgreement;)V" />
-      <node id="6531435794299651013" at="18,0,21,0" concept="6" trace="getAgreement#(Ljava/lang/String;)Lpostingrules/ServiceAgreement;" />
-      <scope id="6531435794299650998" at="11,30,11,30" />
-      <scope id="6531435794299651006" at="14,65,15,38" />
-      <scope id="6531435794299651018" at="18,53,19,53" />
-      <scope id="6531435794299650995" at="11,0,13,0" />
-      <scope id="6531435794299650999" at="14,0,17,0">
+      <node id="6531435794299651007" at="12,65,13,38" concept="2" />
+      <node id="6531435794299651019" at="15,53,16,53" concept="8" />
+      <node id="6531435794299650995" at="10,0,12,0" concept="1" trace="AgreementRegistry#()V" />
+      <node id="6531435794299650999" at="12,0,15,0" concept="6" trace="register#(Ljava/lang/String;Lpostingrules/ServiceAgreement;)V" />
+      <node id="6531435794299651013" at="15,0,18,0" concept="6" trace="getAgreement#(Ljava/lang/String;)Lpostingrules/ServiceAgreement;" />
+      <scope id="6531435794299650998" at="10,30,10,30" />
+      <scope id="6531435794299651006" at="12,65,13,38" />
+      <scope id="6531435794299651018" at="15,53,16,53" />
+      <scope id="6531435794299650995" at="10,0,12,0" />
+      <scope id="6531435794299650999" at="12,0,15,0">
         <var name="agreement" id="6531435794299651004" />
         <var name="name" id="6531435794299651002" />
       </scope>
-      <scope id="6531435794299651013" at="18,0,21,0">
+      <scope id="6531435794299651013" at="15,0,18,0">
         <var name="name" id="6531435794299651016" />
       </scope>
-      <unit id="6531435794299650989" at="8,0,22,0" name="postingrules.AgreementRegistry" />
+      <unit id="6531435794299650989" at="8,0,19,0" name="postingrules.AgreementRegistry" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299651026">
     <file name="MonetaryEvent.java">
       <node id="6531435794299651029" at="9,0,10,0" concept="3" trace="myAmount" />
-      <node id="6531435794299651046" at="11,113,12,53" concept="11" />
-      <node id="6531435794299651051" at="12,53,13,27" concept="2" />
-      <node id="6531435794299651061" at="16,28,17,20" concept="8" />
-      <node id="6531435794299651057" at="16,0,19,0" concept="6" trace="getAmount#()Lmf/Money;" />
-      <node id="6531435794299651032" at="11,0,15,0" concept="1" trace="MonetaryEvent#(Lmf/Money;Lpostingrules/EventType;Lmf/MfDate;Lmf/MfDate;Lpostingrules/Subject;)V" />
-      <scope id="6531435794299651060" at="16,28,17,20" />
-      <scope id="6531435794299651045" at="11,113,13,27" />
-      <scope id="6531435794299651057" at="16,0,19,0" />
-      <scope id="6531435794299651032" at="11,0,15,0">
+      <node id="6531435794299651046" at="10,113,11,53" concept="11" />
+      <node id="6531435794299651051" at="11,53,12,27" concept="2" />
+      <node id="6531435794299651061" at="14,28,15,20" concept="8" />
+      <node id="6531435794299651057" at="14,0,17,0" concept="6" trace="getAmount#()Lmf/Money;" />
+      <node id="6531435794299651032" at="10,0,14,0" concept="1" trace="MonetaryEvent#(Lmf/Money;Lpostingrules/EventType;Lmf/MfDate;Lmf/MfDate;Lpostingrules/Subject;)V" />
+      <scope id="6531435794299651060" at="14,28,15,20" />
+      <scope id="6531435794299651045" at="10,113,12,27" />
+      <scope id="6531435794299651057" at="14,0,17,0" />
+      <scope id="6531435794299651032" at="10,0,14,0">
         <var name="amount" id="6531435794299651035" />
         <var name="customer" id="6531435794299651043" />
         <var name="type" id="6531435794299651037" />
         <var name="whenNoticed" id="6531435794299651041" />
         <var name="whenOccurred" id="6531435794299651039" />
       </scope>
-      <unit id="6531435794299651026" at="8,0,20,0" name="postingrules.MonetaryEvent" />
+      <unit id="6531435794299651026" at="8,0,18,0" name="postingrules.MonetaryEvent" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299651139">
@@ -118,63 +118,63 @@
       <node id="6531435794299653671" at="10,0,11,0" concept="3" trace="myDate" />
       <node id="6531435794299653674" at="11,0,12,0" concept="3" trace="myAccount" />
       <node id="6531435794299653677" at="12,0,13,0" concept="3" trace="myAmount" />
-      <node id="6531435794299653688" at="14,43,15,27" concept="2" />
-      <node id="6531435794299653694" at="15,27,16,23" concept="2" />
-      <node id="6531435794299653703" at="19,28,20,39" concept="8" />
-      <node id="6531435794299653712" at="23,31,24,21" concept="8" />
-      <node id="6531435794299653718" at="27,28,28,20" concept="8" />
-      <node id="6531435794299653724" at="31,27,32,18" concept="8" />
-      <node id="6531435794299653732" at="35,39,36,68" concept="0" />
-      <node id="6531435794299653737" at="36,68,37,20" concept="2" />
-      <node id="6531435794299653745" at="41,28,42,61" concept="8" />
-      <node id="6531435794299653767" at="46,28,47,18" concept="8" />
-      <node id="6531435794299653769" at="48,5,49,24" concept="7" />
-      <node id="6531435794299653792" at="51,27,52,31" concept="2" />
-      <node id="6531435794299653782" at="53,12,54,41" concept="2" />
-      <node id="6531435794299653798" at="55,5,56,18" concept="8" />
-      <node id="6531435794299653700" at="19,0,22,0" concept="6" trace="copy#()Lpostingrules/Entry;" />
-      <node id="6531435794299653708" at="23,0,26,0" concept="6" trace="getAccount#()Lpostingrules/Account;" />
-      <node id="6531435794299653714" at="27,0,30,0" concept="6" trace="getAmount#()Lmf/Money;" />
-      <node id="6531435794299653720" at="31,0,34,0" concept="6" trace="getDate#()Lmf/MfDate;" />
-      <node id="6531435794299653762" at="45,56,48,5" concept="5" />
-      <node id="6531435794299653680" at="14,0,18,0" concept="1" trace="Entry#(Lmf/Money;Lmf/MfDate;)V" />
-      <node id="6531435794299653726" at="35,0,39,0" concept="6" trace="setAccount#(Lpostingrules/Account;)V" />
-      <node id="6531435794299653741" at="40,0,44,0" concept="6" trace="toString#()Ljava/lang/String;" />
-      <node id="6531435794299653778" at="50,29,54,41" concept="5" />
-      <node id="6531435794299653773" at="49,24,55,5" concept="4" />
-      <node id="6531435794299653755" at="45,0,58,0" concept="10" trace="total#(Ljava/util/Collection;)Lmf/Money;" />
-      <scope id="6531435794299653702" at="19,28,20,39" />
-      <scope id="6531435794299653711" at="23,31,24,21" />
-      <scope id="6531435794299653717" at="27,28,28,20" />
-      <scope id="6531435794299653723" at="31,27,32,18" />
-      <scope id="6531435794299653744" at="41,28,42,61" />
-      <scope id="6531435794299653766" at="46,28,47,18" />
-      <scope id="6531435794299653791" at="51,27,52,31" />
-      <scope id="6531435794299653687" at="14,43,16,23" />
-      <scope id="6531435794299653731" at="35,39,37,20" />
-      <scope id="6531435794299653700" at="19,0,22,0" />
-      <scope id="6531435794299653708" at="23,0,26,0" />
-      <scope id="6531435794299653714" at="27,0,30,0" />
-      <scope id="6531435794299653720" at="31,0,34,0" />
-      <scope id="6531435794299653680" at="14,0,18,0">
+      <node id="6531435794299653688" at="13,43,14,27" concept="2" />
+      <node id="6531435794299653694" at="14,27,15,23" concept="2" />
+      <node id="6531435794299653703" at="17,28,18,39" concept="8" />
+      <node id="6531435794299653712" at="20,31,21,21" concept="8" />
+      <node id="6531435794299653718" at="23,28,24,20" concept="8" />
+      <node id="6531435794299653724" at="26,27,27,18" concept="8" />
+      <node id="6531435794299653732" at="29,39,30,68" concept="0" />
+      <node id="6531435794299653737" at="30,68,31,20" concept="2" />
+      <node id="6531435794299653745" at="34,28,35,61" concept="8" />
+      <node id="6531435794299653767" at="38,28,39,18" concept="8" />
+      <node id="6531435794299653769" at="40,5,41,24" concept="7" />
+      <node id="6531435794299653792" at="43,27,44,31" concept="2" />
+      <node id="6531435794299653782" at="45,12,46,41" concept="2" />
+      <node id="6531435794299653798" at="47,5,48,18" concept="8" />
+      <node id="6531435794299653700" at="17,0,20,0" concept="6" trace="copy#()Lpostingrules/Entry;" />
+      <node id="6531435794299653708" at="20,0,23,0" concept="6" trace="getAccount#()Lpostingrules/Account;" />
+      <node id="6531435794299653714" at="23,0,26,0" concept="6" trace="getAmount#()Lmf/Money;" />
+      <node id="6531435794299653720" at="26,0,29,0" concept="6" trace="getDate#()Lmf/MfDate;" />
+      <node id="6531435794299653762" at="37,56,40,5" concept="5" />
+      <node id="6531435794299653680" at="13,0,17,0" concept="1" trace="Entry#(Lmf/Money;Lmf/MfDate;)V" />
+      <node id="6531435794299653726" at="29,0,33,0" concept="6" trace="setAccount#(Lpostingrules/Account;)V" />
+      <node id="6531435794299653741" at="33,0,37,0" concept="6" trace="toString#()Ljava/lang/String;" />
+      <node id="6531435794299653778" at="42,29,46,41" concept="5" />
+      <node id="6531435794299653773" at="41,24,47,5" concept="4" />
+      <node id="6531435794299653755" at="37,0,50,0" concept="10" trace="total#(Ljava/util/Collection;)Lmf/Money;" />
+      <scope id="6531435794299653702" at="17,28,18,39" />
+      <scope id="6531435794299653711" at="20,31,21,21" />
+      <scope id="6531435794299653717" at="23,28,24,20" />
+      <scope id="6531435794299653723" at="26,27,27,18" />
+      <scope id="6531435794299653744" at="34,28,35,61" />
+      <scope id="6531435794299653766" at="38,28,39,18" />
+      <scope id="6531435794299653791" at="43,27,44,31" />
+      <scope id="6531435794299653687" at="13,43,15,23" />
+      <scope id="6531435794299653731" at="29,39,31,20" />
+      <scope id="6531435794299653700" at="17,0,20,0" />
+      <scope id="6531435794299653708" at="20,0,23,0" />
+      <scope id="6531435794299653714" at="23,0,26,0" />
+      <scope id="6531435794299653720" at="26,0,29,0" />
+      <scope id="6531435794299653680" at="13,0,17,0">
         <var name="amount" id="6531435794299653683" />
         <var name="date" id="6531435794299653685" />
       </scope>
-      <scope id="6531435794299653726" at="35,0,39,0">
+      <scope id="6531435794299653726" at="29,0,33,0">
         <var name="arg" id="6531435794299653729" />
       </scope>
-      <scope id="6531435794299653741" at="40,0,44,0" />
-      <scope id="6531435794299653777" at="50,29,54,41" />
-      <scope id="6531435794299653773" at="49,24,55,5">
+      <scope id="6531435794299653741" at="33,0,37,0" />
+      <scope id="6531435794299653777" at="42,29,46,41" />
+      <scope id="6531435794299653773" at="41,24,47,5">
         <var name="e" id="6531435794299653775" />
       </scope>
-      <scope id="6531435794299653761" at="45,56,56,18">
+      <scope id="6531435794299653761" at="37,56,48,18">
         <var name="result" id="6531435794299653770" />
       </scope>
-      <scope id="6531435794299653755" at="45,0,58,0">
+      <scope id="6531435794299653755" at="37,0,50,0">
         <var name="entries" id="6531435794299653758" />
       </scope>
-      <unit id="6531435794299651139" at="9,0,59,0" name="postingrules.Entry" />
+      <unit id="6531435794299651139" at="9,0,51,0" name="postingrules.Entry" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299651140">
@@ -188,166 +188,166 @@
       <node id="6531435794299651166" at="20,0,21,0" concept="3" trace="myProcessed" />
       <node id="6531435794299651170" at="21,0,22,0" concept="3" trace="myReplacementEvent" />
       <node id="6531435794299651173" at="22,0,23,0" concept="3" trace="myAdjustedEvent" />
-      <node id="6531435794299651188" at="24,100,25,23" concept="2" />
-      <node id="6531435794299651194" at="25,23,26,39" concept="2" />
-      <node id="6531435794299651200" at="26,39,27,37" concept="2" />
-      <node id="6531435794299651206" at="27,37,28,29" concept="2" />
-      <node id="6531435794299651442" at="31,131,32,51" concept="12" />
-      <node id="6531435794299651447" at="32,51,33,41" concept="2" />
-      <node id="6531435794299651453" at="33,41,34,44" concept="2" />
-      <node id="6531435794299651217" at="37,49,38,32" concept="2" />
-      <node id="6531435794299651227" at="41,65,42,31" concept="2" />
-      <node id="6531435794299651237" at="45,46,46,45" concept="7" />
-      <node id="6531435794299651244" at="46,45,47,38" concept="2" />
-      <node id="6531435794299651254" at="48,53,49,62" concept="7" />
-      <node id="6531435794299651260" at="49,62,50,51" concept="2" />
-      <node id="6531435794299651267" at="51,5,52,18" concept="8" />
-      <node id="6531435794299651272" at="55,40,56,18" concept="8" />
-      <node id="6531435794299651277" at="59,53,60,30" concept="8" />
-      <node id="6531435794299651284" at="63,50,64,66" concept="8" />
-      <node id="6531435794299651290" at="67,41,68,59" concept="8" />
-      <node id="6531435794299651297" at="71,31,72,21" concept="8" />
-      <node id="6531435794299651303" at="75,34,76,25" concept="8" />
-      <node id="6531435794299651309" at="79,35,80,26" concept="8" />
-      <node id="6531435794299651315" at="83,36,84,40" concept="8" />
-      <node id="6531435794299651324" at="87,32,88,23" concept="8" />
-      <node id="6531435794299651330" at="91,31,92,23" concept="2" />
-      <node id="6531435794299651338" at="95,25,96,26" concept="0" />
-      <node id="6531435794299651346" at="97,34,98,32" concept="2" />
-      <node id="6531435794299651350" at="99,5,100,28" concept="2" />
-      <node id="6531435794299651355" at="100,28,101,20" concept="2" />
-      <node id="6531435794299651361" at="104,25,105,25" concept="0" />
-      <node id="6531435794299651363" at="105,25,106,76" concept="7" />
-      <node id="6531435794299651383" at="107,33,108,36" concept="2" />
-      <node id="6531435794299651388" at="109,5,110,29" concept="2" />
-      <node id="6531435794299651399" at="114,43,115,49" concept="7" />
-      <node id="6531435794299651405" at="115,49,116,21" concept="2" />
-      <node id="6531435794299651414" at="120,59,121,33" concept="2" />
-      <node id="6531435794299651424" at="124,72,125,45" concept="2" />
-      <node id="6531435794299651462" at="128,42,129,59" concept="8" />
-      <node id="6531435794299651212" at="37,0,40,0" concept="6" trace="addResultingEntry#(Lpostingrules/Entry;)V" />
-      <node id="6531435794299651222" at="41,0,44,0" concept="6" trace="friendAddSecondaryEvent#(Lpostingrules/AccountingEvent;)V" />
-      <node id="6531435794299651269" at="55,0,58,0" concept="6" trace="getEventType#()Lpostingrules/EventType;" />
-      <node id="6531435794299651274" at="59,0,62,0" concept="6" trace="getReplacementEvent#()Lpostingrules/AccountingEvent;" />
-      <node id="6531435794299651279" at="63,0,66,0" concept="6" trace="getResultingEntries#()Ljava/util/Collection;" />
-      <node id="6531435794299651287" at="67,0,70,0" concept="6" trace="getSecondaryEvents#()Ljava/util/List;" />
-      <node id="6531435794299651293" at="71,0,74,0" concept="6" trace="getSubject#()Lpostingrules/Subject;" />
-      <node id="6531435794299651299" at="75,0,78,0" concept="6" trace="getWhenNoticed#()Lmf/MfDate;" />
-      <node id="6531435794299651305" at="79,0,82,0" concept="6" trace="getWhenOccurred#()Lmf/MfDate;" />
-      <node id="6531435794299651311" at="83,0,86,0" concept="6" trace="hasBeenAdjusted#()Z" />
-      <node id="6531435794299651320" at="87,0,90,0" concept="6" trace="isProcessed#()Z" />
-      <node id="6531435794299651326" at="91,0,94,0" concept="6" trace="markProcessed#()V" />
-      <node id="6531435794299651341" at="96,26,99,5" concept="5" />
-      <node id="6531435794299651378" at="106,76,109,5" concept="4" />
-      <node id="6531435794299651409" at="120,0,123,0" concept="6" trace="setIsProcessed#(Z)V" />
-      <node id="6531435794299651418" at="124,0,127,0" concept="6" trace="setReplacementEvent#(Lpostingrules/AccountingEvent;)V" />
-      <node id="6531435794299651458" at="128,0,131,0" concept="6" trace="getAgreement#()Lpostingrules/ServiceAgreement;" />
-      <node id="6531435794299651249" at="47,38,51,5" concept="4" />
-      <node id="6531435794299651394" at="113,41,117,5" concept="4" />
-      <node id="6531435794299651428" at="31,0,36,0" concept="1" trace="AccountingEvent#(Lpostingrules/EventType;Lmf/MfDate;Lmf/MfDate;Lpostingrules/Subject;Lpostingrules/AccountingEvent;)V" />
-      <node id="6531435794299651176" at="24,0,30,0" concept="1" trace="AccountingEvent#(Lpostingrules/EventType;Lmf/MfDate;Lmf/MfDate;Lpostingrules/Subject;)V" />
-      <node id="6531435794299651390" at="113,0,119,0" concept="6" trace="reverseSecondaryEvents#()V" />
-      <node id="6531435794299651334" at="95,0,103,0" concept="6" trace="process#()V" />
-      <node id="6531435794299651357" at="104,0,112,0" concept="6" trace="reverse#()V" />
-      <node id="6531435794299651232" at="45,0,54,0" concept="6" trace="getAllResultingEntries#()Ljava/util/Set;" />
-      <scope id="6531435794299651216" at="37,49,38,32" />
-      <scope id="6531435794299651226" at="41,65,42,31" />
-      <scope id="6531435794299651271" at="55,40,56,18" />
-      <scope id="6531435794299651276" at="59,53,60,30" />
-      <scope id="6531435794299651283" at="63,50,64,66" />
-      <scope id="6531435794299651289" at="67,41,68,59" />
-      <scope id="6531435794299651296" at="71,31,72,21" />
-      <scope id="6531435794299651302" at="75,34,76,25" />
-      <scope id="6531435794299651308" at="79,35,80,26" />
-      <scope id="6531435794299651314" at="83,36,84,40" />
-      <scope id="6531435794299651323" at="87,32,88,23" />
-      <scope id="6531435794299651329" at="91,31,92,23" />
-      <scope id="6531435794299651345" at="97,34,98,32" />
-      <scope id="6531435794299651382" at="107,33,108,36" />
-      <scope id="6531435794299651413" at="120,59,121,33" />
-      <scope id="6531435794299651423" at="124,72,125,45" />
-      <scope id="6531435794299651461" at="128,42,129,59" />
-      <scope id="6531435794299651253" at="48,53,50,51">
+      <node id="6531435794299651188" at="23,100,24,23" concept="2" />
+      <node id="6531435794299651194" at="24,23,25,39" concept="2" />
+      <node id="6531435794299651200" at="25,39,26,37" concept="2" />
+      <node id="6531435794299651206" at="26,37,27,29" concept="2" />
+      <node id="6531435794299651442" at="29,131,30,51" concept="12" />
+      <node id="6531435794299651447" at="30,51,31,41" concept="2" />
+      <node id="6531435794299651453" at="31,41,32,44" concept="2" />
+      <node id="6531435794299651217" at="34,49,35,32" concept="2" />
+      <node id="6531435794299651227" at="37,65,38,31" concept="2" />
+      <node id="6531435794299651237" at="40,46,41,45" concept="7" />
+      <node id="6531435794299651244" at="41,45,42,38" concept="2" />
+      <node id="6531435794299651254" at="43,53,44,62" concept="7" />
+      <node id="6531435794299651260" at="44,62,45,51" concept="2" />
+      <node id="6531435794299651267" at="46,5,47,18" concept="8" />
+      <node id="6531435794299651272" at="49,40,50,18" concept="8" />
+      <node id="6531435794299651277" at="52,53,53,30" concept="8" />
+      <node id="6531435794299651284" at="55,50,56,66" concept="8" />
+      <node id="6531435794299651290" at="58,41,59,59" concept="8" />
+      <node id="6531435794299651297" at="61,31,62,21" concept="8" />
+      <node id="6531435794299651303" at="64,34,65,25" concept="8" />
+      <node id="6531435794299651309" at="67,35,68,26" concept="8" />
+      <node id="6531435794299651315" at="70,36,71,40" concept="8" />
+      <node id="6531435794299651324" at="73,32,74,23" concept="8" />
+      <node id="6531435794299651330" at="76,31,77,23" concept="2" />
+      <node id="6531435794299651338" at="79,25,80,26" concept="0" />
+      <node id="6531435794299651346" at="81,34,82,32" concept="2" />
+      <node id="6531435794299651350" at="83,5,84,28" concept="2" />
+      <node id="6531435794299651355" at="84,28,85,20" concept="2" />
+      <node id="6531435794299651361" at="87,25,88,25" concept="0" />
+      <node id="6531435794299651363" at="88,25,89,76" concept="7" />
+      <node id="6531435794299651383" at="90,33,91,36" concept="2" />
+      <node id="6531435794299651388" at="92,5,93,29" concept="2" />
+      <node id="6531435794299651399" at="96,43,97,49" concept="7" />
+      <node id="6531435794299651405" at="97,49,98,21" concept="2" />
+      <node id="6531435794299651414" at="101,59,102,33" concept="2" />
+      <node id="6531435794299651424" at="104,72,105,45" concept="2" />
+      <node id="6531435794299651462" at="107,42,108,59" concept="8" />
+      <node id="6531435794299651212" at="34,0,37,0" concept="6" trace="addResultingEntry#(Lpostingrules/Entry;)V" />
+      <node id="6531435794299651222" at="37,0,40,0" concept="6" trace="friendAddSecondaryEvent#(Lpostingrules/AccountingEvent;)V" />
+      <node id="6531435794299651269" at="49,0,52,0" concept="6" trace="getEventType#()Lpostingrules/EventType;" />
+      <node id="6531435794299651274" at="52,0,55,0" concept="6" trace="getReplacementEvent#()Lpostingrules/AccountingEvent;" />
+      <node id="6531435794299651279" at="55,0,58,0" concept="6" trace="getResultingEntries#()Ljava/util/Collection;" />
+      <node id="6531435794299651287" at="58,0,61,0" concept="6" trace="getSecondaryEvents#()Ljava/util/List;" />
+      <node id="6531435794299651293" at="61,0,64,0" concept="6" trace="getSubject#()Lpostingrules/Subject;" />
+      <node id="6531435794299651299" at="64,0,67,0" concept="6" trace="getWhenNoticed#()Lmf/MfDate;" />
+      <node id="6531435794299651305" at="67,0,70,0" concept="6" trace="getWhenOccurred#()Lmf/MfDate;" />
+      <node id="6531435794299651311" at="70,0,73,0" concept="6" trace="hasBeenAdjusted#()Z" />
+      <node id="6531435794299651320" at="73,0,76,0" concept="6" trace="isProcessed#()Z" />
+      <node id="6531435794299651326" at="76,0,79,0" concept="6" trace="markProcessed#()V" />
+      <node id="6531435794299651341" at="80,26,83,5" concept="5" />
+      <node id="6531435794299651378" at="89,76,92,5" concept="4" />
+      <node id="6531435794299651409" at="101,0,104,0" concept="6" trace="setIsProcessed#(Z)V" />
+      <node id="6531435794299651418" at="104,0,107,0" concept="6" trace="setReplacementEvent#(Lpostingrules/AccountingEvent;)V" />
+      <node id="6531435794299651458" at="107,0,110,0" concept="6" trace="getAgreement#()Lpostingrules/ServiceAgreement;" />
+      <node id="6531435794299651249" at="42,38,46,5" concept="4" />
+      <node id="6531435794299651394" at="95,41,99,5" concept="4" />
+      <node id="6531435794299651428" at="29,0,34,0" concept="1" trace="AccountingEvent#(Lpostingrules/EventType;Lmf/MfDate;Lmf/MfDate;Lpostingrules/Subject;Lpostingrules/AccountingEvent;)V" />
+      <node id="6531435794299651176" at="23,0,29,0" concept="1" trace="AccountingEvent#(Lpostingrules/EventType;Lmf/MfDate;Lmf/MfDate;Lpostingrules/Subject;)V" />
+      <node id="6531435794299651390" at="95,0,101,0" concept="6" trace="reverseSecondaryEvents#()V" />
+      <node id="6531435794299651334" at="79,0,87,0" concept="6" trace="process#()V" />
+      <node id="6531435794299651357" at="87,0,95,0" concept="6" trace="reverse#()V" />
+      <node id="6531435794299651232" at="40,0,49,0" concept="6" trace="getAllResultingEntries#()Ljava/util/Set;" />
+      <scope id="6531435794299651216" at="34,49,35,32" />
+      <scope id="6531435794299651226" at="37,65,38,31" />
+      <scope id="6531435794299651271" at="49,40,50,18" />
+      <scope id="6531435794299651276" at="52,53,53,30" />
+      <scope id="6531435794299651283" at="55,50,56,66" />
+      <scope id="6531435794299651289" at="58,41,59,59" />
+      <scope id="6531435794299651296" at="61,31,62,21" />
+      <scope id="6531435794299651302" at="64,34,65,25" />
+      <scope id="6531435794299651308" at="67,35,68,26" />
+      <scope id="6531435794299651314" at="70,36,71,40" />
+      <scope id="6531435794299651323" at="73,32,74,23" />
+      <scope id="6531435794299651329" at="76,31,77,23" />
+      <scope id="6531435794299651345" at="81,34,82,32" />
+      <scope id="6531435794299651382" at="90,33,91,36" />
+      <scope id="6531435794299651413" at="101,59,102,33" />
+      <scope id="6531435794299651423" at="104,72,105,45" />
+      <scope id="6531435794299651461" at="107,42,108,59" />
+      <scope id="6531435794299651253" at="43,53,45,51">
         <var name="each" id="6531435794299651255" />
       </scope>
-      <scope id="6531435794299651398" at="114,43,116,21">
+      <scope id="6531435794299651398" at="96,43,98,21">
         <var name="each" id="6531435794299651400" />
       </scope>
-      <scope id="6531435794299651441" at="31,131,34,44" />
-      <scope id="6531435794299651212" at="37,0,40,0">
+      <scope id="6531435794299651441" at="29,131,32,44" />
+      <scope id="6531435794299651212" at="34,0,37,0">
         <var name="arg" id="6531435794299651214" />
       </scope>
-      <scope id="6531435794299651222" at="41,0,44,0">
+      <scope id="6531435794299651222" at="37,0,40,0">
         <var name="arg" id="6531435794299651224" />
       </scope>
-      <scope id="6531435794299651269" at="55,0,58,0" />
-      <scope id="6531435794299651274" at="59,0,62,0" />
-      <scope id="6531435794299651279" at="63,0,66,0" />
-      <scope id="6531435794299651287" at="67,0,70,0" />
-      <scope id="6531435794299651293" at="71,0,74,0" />
-      <scope id="6531435794299651299" at="75,0,78,0" />
-      <scope id="6531435794299651305" at="79,0,82,0" />
-      <scope id="6531435794299651311" at="83,0,86,0" />
-      <scope id="6531435794299651320" at="87,0,90,0" />
-      <scope id="6531435794299651326" at="91,0,94,0" />
-      <scope id="6531435794299651378" at="106,76,109,5">
+      <scope id="6531435794299651269" at="49,0,52,0" />
+      <scope id="6531435794299651274" at="52,0,55,0" />
+      <scope id="6531435794299651279" at="55,0,58,0" />
+      <scope id="6531435794299651287" at="58,0,61,0" />
+      <scope id="6531435794299651293" at="61,0,64,0" />
+      <scope id="6531435794299651299" at="64,0,67,0" />
+      <scope id="6531435794299651305" at="67,0,70,0" />
+      <scope id="6531435794299651311" at="70,0,73,0" />
+      <scope id="6531435794299651320" at="73,0,76,0" />
+      <scope id="6531435794299651326" at="76,0,79,0" />
+      <scope id="6531435794299651378" at="89,76,92,5">
         <var name="entry" id="6531435794299651380" />
       </scope>
-      <scope id="6531435794299651409" at="120,0,123,0">
+      <scope id="6531435794299651409" at="101,0,104,0">
         <var name="newIsProcessed" id="6531435794299651411" />
       </scope>
-      <scope id="6531435794299651418" at="124,0,127,0">
+      <scope id="6531435794299651418" at="104,0,107,0">
         <var name="newReplacementEvent" id="6531435794299651421" />
       </scope>
-      <scope id="6531435794299651458" at="128,0,131,0" />
-      <scope id="6531435794299651187" at="24,100,28,29" />
-      <scope id="6531435794299651249" at="47,38,51,5">
+      <scope id="6531435794299651458" at="107,0,110,0" />
+      <scope id="6531435794299651187" at="23,100,27,29" />
+      <scope id="6531435794299651249" at="42,38,46,5">
         <var name="secondaryEvent" id="6531435794299651251" />
       </scope>
-      <scope id="6531435794299651393" at="113,41,117,5" />
-      <scope id="6531435794299651394" at="113,41,117,5">
+      <scope id="6531435794299651393" at="95,41,99,5" />
+      <scope id="6531435794299651394" at="95,41,99,5">
         <var name="o" id="6531435794299651396" />
       </scope>
-      <scope id="6531435794299651428" at="31,0,36,0">
+      <scope id="6531435794299651428" at="29,0,34,0">
         <var name="adjustedEvent" id="6531435794299651439" />
         <var name="subject" id="6531435794299651437" />
         <var name="type" id="6531435794299651431" />
         <var name="whenNoticed" id="6531435794299651435" />
         <var name="whenOccurred" id="6531435794299651433" />
       </scope>
-      <scope id="6531435794299651176" at="24,0,30,0">
+      <scope id="6531435794299651176" at="23,0,29,0">
         <var name="subject" id="6531435794299651185" />
         <var name="type" id="6531435794299651179" />
         <var name="whenNoticed" id="6531435794299651183" />
         <var name="whenOccurred" id="6531435794299651181" />
       </scope>
-      <scope id="6531435794299651337" at="95,25,101,20" />
-      <scope id="6531435794299651360" at="104,25,110,29">
+      <scope id="6531435794299651337" at="79,25,85,20" />
+      <scope id="6531435794299651360" at="87,25,93,29">
         <var name="entries" id="6531435794299651364" />
       </scope>
-      <scope id="6531435794299651390" at="113,0,119,0" />
-      <scope id="6531435794299651236" at="45,46,52,18">
+      <scope id="6531435794299651390" at="95,0,101,0" />
+      <scope id="6531435794299651236" at="40,46,47,18">
         <var name="result" id="6531435794299651238" />
       </scope>
-      <scope id="6531435794299651334" at="95,0,103,0" />
-      <scope id="6531435794299651357" at="104,0,112,0" />
-      <scope id="6531435794299651232" at="45,0,54,0" />
-      <unit id="6531435794299651140" at="13,0,132,0" name="postingrules.AccountingEvent" />
+      <scope id="6531435794299651334" at="79,0,87,0" />
+      <scope id="6531435794299651357" at="87,0,95,0" />
+      <scope id="6531435794299651232" at="40,0,49,0" />
+      <unit id="6531435794299651140" at="13,0,111,0" name="postingrules.AccountingEvent" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299651566">
     <file name="MissingPostingRuleException.java">
       <node id="6531435794299651572" at="7,40,8,12" concept="11" />
-      <node id="6531435794299651579" at="11,48,12,13" concept="11" />
+      <node id="6531435794299651579" at="10,48,11,13" concept="11" />
       <node id="6531435794299651568" at="7,0,10,0" concept="1" trace="MissingPostingRuleException#()V" />
-      <node id="6531435794299651573" at="11,0,14,0" concept="1" trace="MissingPostingRuleException#(Ljava/lang/String;)V" />
+      <node id="6531435794299651573" at="10,0,13,0" concept="1" trace="MissingPostingRuleException#(Ljava/lang/String;)V" />
       <scope id="6531435794299651571" at="7,40,8,12" />
-      <scope id="6531435794299651578" at="11,48,12,13" />
+      <scope id="6531435794299651578" at="10,48,11,13" />
       <scope id="6531435794299651568" at="7,0,10,0" />
-      <scope id="6531435794299651573" at="11,0,14,0">
+      <scope id="6531435794299651573" at="10,0,13,0">
         <var name="s" id="6531435794299651576" />
       </scope>
-      <unit id="6531435794299651566" at="6,0,15,0" name="postingrules.MissingPostingRuleException" />
+      <unit id="6531435794299651566" at="6,0,14,0" name="postingrules.MissingPostingRuleException" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299652198">
@@ -367,189 +367,189 @@
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299652730">
     <file name="Usage.java">
       <node id="6531435794299652733" at="9,0,10,0" concept="3" trace="myAmount" />
-      <node id="6531435794299652748" at="11,93,12,64" concept="11" />
-      <node id="6531435794299652753" at="12,64,13,27" concept="2" />
-      <node id="6531435794299652787" at="16,122,17,78" concept="11" />
-      <node id="6531435794299652793" at="17,78,18,27" concept="2" />
-      <node id="6531435794299652763" at="21,31,22,20" concept="8" />
-      <node id="6531435794299652769" at="26,28,27,31" concept="8" />
-      <node id="6531435794299652759" at="21,0,24,0" concept="6" trace="getAmount#()Lmf/Quantity;" />
-      <node id="6531435794299652736" at="11,0,15,0" concept="1" trace="Usage#(Lmf/Quantity;Lmf/MfDate;Lmf/MfDate;Lpostingrules/Customer;)V" />
-      <node id="6531435794299652773" at="16,0,20,0" concept="1" trace="Usage#(Lmf/Quantity;Lmf/MfDate;Lmf/MfDate;Lpostingrules/Subject;Lpostingrules/AccountingEvent;)V" />
-      <node id="6531435794299652765" at="25,0,29,0" concept="6" trace="toString#()Ljava/lang/String;" />
-      <scope id="6531435794299652762" at="21,31,22,20" />
-      <scope id="6531435794299652768" at="26,28,27,31" />
-      <scope id="6531435794299652747" at="11,93,13,27" />
-      <scope id="6531435794299652786" at="16,122,18,27" />
-      <scope id="6531435794299652759" at="21,0,24,0" />
-      <scope id="6531435794299652736" at="11,0,15,0">
+      <node id="6531435794299652748" at="10,93,11,64" concept="11" />
+      <node id="6531435794299652753" at="11,64,12,27" concept="2" />
+      <node id="6531435794299652787" at="14,122,15,78" concept="11" />
+      <node id="6531435794299652793" at="15,78,16,27" concept="2" />
+      <node id="6531435794299652763" at="18,31,19,20" concept="8" />
+      <node id="6531435794299652769" at="22,28,23,31" concept="8" />
+      <node id="6531435794299652759" at="18,0,21,0" concept="6" trace="getAmount#()Lmf/Quantity;" />
+      <node id="6531435794299652736" at="10,0,14,0" concept="1" trace="Usage#(Lmf/Quantity;Lmf/MfDate;Lmf/MfDate;Lpostingrules/Customer;)V" />
+      <node id="6531435794299652773" at="14,0,18,0" concept="1" trace="Usage#(Lmf/Quantity;Lmf/MfDate;Lmf/MfDate;Lpostingrules/Subject;Lpostingrules/AccountingEvent;)V" />
+      <node id="6531435794299652765" at="21,0,25,0" concept="6" trace="toString#()Ljava/lang/String;" />
+      <scope id="6531435794299652762" at="18,31,19,20" />
+      <scope id="6531435794299652768" at="22,28,23,31" />
+      <scope id="6531435794299652747" at="10,93,12,27" />
+      <scope id="6531435794299652786" at="14,122,16,27" />
+      <scope id="6531435794299652759" at="18,0,21,0" />
+      <scope id="6531435794299652736" at="10,0,14,0">
         <var name="amount" id="6531435794299652739" />
         <var name="customer" id="6531435794299652745" />
         <var name="whenNoticed" id="6531435794299652743" />
         <var name="whenOccurred" id="6531435794299652741" />
       </scope>
-      <scope id="6531435794299652773" at="16,0,20,0">
+      <scope id="6531435794299652773" at="14,0,18,0">
         <var name="adjustedEvent" id="6531435794299652784" />
         <var name="amount" id="6531435794299652776" />
         <var name="subject" id="6531435794299652782" />
         <var name="whenNoticed" id="6531435794299652780" />
         <var name="whenOccurred" id="6531435794299652778" />
       </scope>
-      <scope id="6531435794299652765" at="25,0,29,0" />
-      <unit id="6531435794299652730" at="8,0,30,0" name="postingrules.Usage" />
+      <scope id="6531435794299652765" at="21,0,25,0" />
+      <unit id="6531435794299652730" at="8,0,26,0" name="postingrules.Usage" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299653396">
     <file name="ServiceAgreement.java">
       <node id="6531435794299653398" at="12,0,13,0" concept="3" trace="myValues" />
       <node id="6531435794299653407" at="13,0,14,0" concept="3" trace="myPostingRules" />
-      <node id="6531435794299653422" at="18,41,19,54" concept="2" />
-      <node id="6531435794299653447" at="23,48,24,68" concept="2" />
-      <node id="6531435794299653454" at="25,5,26,61" concept="2" />
-      <node id="6531435794299653467" at="29,81,30,83" concept="7" />
-      <node id="6531435794299653476" at="30,83,31,26" concept="0" />
-      <node id="6531435794299653480" at="31,26,32,18" concept="8" />
-      <node id="6531435794299653488" at="35,36,36,54" concept="8" />
-      <node id="6531435794299653504" at="39,42,40,33" concept="2" />
-      <node id="6531435794299653516" at="43,61,44,89" concept="7" />
-      <node id="6531435794299653528" at="45,24,46,46" concept="13" />
-      <node id="6531435794299653540" at="48,9,49,62" concept="8" />
-      <node id="6531435794299653534" at="50,42,51,46" concept="13" />
-      <node id="6531435794299653559" at="55,72,56,48" concept="2" />
-      <node id="6531435794299653576" at="59,49,60,37" concept="8" />
-      <node id="6531435794299653412" at="15,0,17,0" concept="1" trace="ServiceAgreement#()V" />
-      <node id="6531435794299653416" at="18,0,21,0" concept="6" trace="registerValue#(Ljava/lang/String;)V" />
-      <node id="6531435794299653439" at="22,82,25,5" concept="5" />
-      <node id="6531435794299653482" at="35,0,38,0" concept="6" trace="getRate#(Lmf/MfDate;)D" />
-      <node id="6531435794299653498" at="39,0,42,0" concept="6" trace="process#(Lpostingrules/AccountingEvent;)V" />
-      <node id="6531435794299653523" at="44,89,47,5" concept="5" />
-      <node id="6531435794299653549" at="55,0,58,0" concept="6" trace="setValue#(Ljava/lang/String;Ljava/lang/Object;Lmf/MfDate;)V" />
-      <node id="6531435794299653568" at="59,0,62,0" concept="6" trace="getValue#(Ljava/lang/String;Lmf/MfDate;)Ljava/lang/Object;" />
-      <node id="6531435794299653461" at="29,0,34,0" concept="6" trace="getRulesTemporalCollectionFor#(Lpostingrules/EventType;)Lmf/TemporalCollection;" />
-      <node id="6531435794299653531" at="47,5,52,5" concept="14" />
-      <node id="6531435794299653429" at="22,0,28,0" concept="6" trace="addPostingRule#(Lpostingrules/EventType;Lpostingrules/PostingRule;Lmf/MfDate;)V" />
-      <node id="6531435794299653510" at="43,0,54,0" concept="6" trace="getPostingRule#(Lpostingrules/AccountingEvent;)Lpostingrules/PostingRule;" />
-      <scope id="6531435794299653415" at="15,29,15,29" />
-      <scope id="6531435794299653421" at="18,41,19,54" />
-      <scope id="6531435794299653446" at="23,48,24,68" />
-      <scope id="6531435794299653487" at="35,36,36,54" />
-      <scope id="6531435794299653503" at="39,42,40,33" />
-      <scope id="6531435794299653527" at="45,24,46,46" />
-      <scope id="6531435794299653539" at="48,9,49,62" />
-      <scope id="6531435794299653532" at="50,0,51,46">
+      <node id="6531435794299653422" at="16,41,17,54" concept="2" />
+      <node id="6531435794299653447" at="20,48,21,68" concept="2" />
+      <node id="6531435794299653454" at="22,5,23,61" concept="2" />
+      <node id="6531435794299653467" at="25,81,26,83" concept="7" />
+      <node id="6531435794299653476" at="26,83,27,26" concept="0" />
+      <node id="6531435794299653480" at="27,26,28,18" concept="8" />
+      <node id="6531435794299653488" at="30,36,31,54" concept="8" />
+      <node id="6531435794299653504" at="33,42,34,33" concept="2" />
+      <node id="6531435794299653516" at="36,61,37,89" concept="7" />
+      <node id="6531435794299653528" at="38,24,39,46" concept="13" />
+      <node id="6531435794299653540" at="41,9,42,62" concept="8" />
+      <node id="6531435794299653534" at="43,42,44,46" concept="13" />
+      <node id="6531435794299653559" at="47,72,48,48" concept="2" />
+      <node id="6531435794299653576" at="50,49,51,37" concept="8" />
+      <node id="6531435794299653412" at="14,0,16,0" concept="1" trace="ServiceAgreement#()V" />
+      <node id="6531435794299653416" at="16,0,19,0" concept="6" trace="registerValue#(Ljava/lang/String;)V" />
+      <node id="6531435794299653439" at="19,82,22,5" concept="5" />
+      <node id="6531435794299653482" at="30,0,33,0" concept="6" trace="getRate#(Lmf/MfDate;)D" />
+      <node id="6531435794299653498" at="33,0,36,0" concept="6" trace="process#(Lpostingrules/AccountingEvent;)V" />
+      <node id="6531435794299653523" at="37,89,40,5" concept="5" />
+      <node id="6531435794299653549" at="47,0,50,0" concept="6" trace="setValue#(Ljava/lang/String;Ljava/lang/Object;Lmf/MfDate;)V" />
+      <node id="6531435794299653568" at="50,0,53,0" concept="6" trace="getValue#(Ljava/lang/String;Lmf/MfDate;)Ljava/lang/Object;" />
+      <node id="6531435794299653461" at="25,0,30,0" concept="6" trace="getRulesTemporalCollectionFor#(Lpostingrules/EventType;)Lmf/TemporalCollection;" />
+      <node id="6531435794299653531" at="40,5,45,5" concept="14" />
+      <node id="6531435794299653429" at="19,0,25,0" concept="6" trace="addPostingRule#(Lpostingrules/EventType;Lpostingrules/PostingRule;Lmf/MfDate;)V" />
+      <node id="6531435794299653510" at="36,0,47,0" concept="6" trace="getPostingRule#(Lpostingrules/AccountingEvent;)Lpostingrules/PostingRule;" />
+      <scope id="6531435794299653415" at="14,29,14,29" />
+      <scope id="6531435794299653421" at="16,41,17,54" />
+      <scope id="6531435794299653446" at="20,48,21,68" />
+      <scope id="6531435794299653487" at="30,36,31,54" />
+      <scope id="6531435794299653503" at="33,42,34,33" />
+      <scope id="6531435794299653527" at="38,24,39,46" />
+      <scope id="6531435794299653539" at="41,9,42,62" />
+      <scope id="6531435794299653532" at="43,0,44,46">
         <var name="e" id="6531435794299653537" />
       </scope>
-      <scope id="6531435794299653533" at="50,42,51,46" />
-      <scope id="6531435794299653558" at="55,72,56,48" />
-      <scope id="6531435794299653575" at="59,49,60,37" />
-      <scope id="6531435794299653412" at="15,0,17,0" />
-      <scope id="6531435794299653416" at="18,0,21,0">
+      <scope id="6531435794299653533" at="43,42,44,46" />
+      <scope id="6531435794299653558" at="47,72,48,48" />
+      <scope id="6531435794299653575" at="50,49,51,37" />
+      <scope id="6531435794299653412" at="14,0,16,0" />
+      <scope id="6531435794299653416" at="16,0,19,0">
         <var name="key" id="6531435794299653419" />
       </scope>
-      <scope id="6531435794299653466" at="29,81,32,18">
+      <scope id="6531435794299653466" at="25,81,28,18">
         <var name="result" id="6531435794299653468" />
       </scope>
-      <scope id="6531435794299653482" at="35,0,38,0">
+      <scope id="6531435794299653482" at="30,0,33,0">
         <var name="at" id="6531435794299653485" />
       </scope>
-      <scope id="6531435794299653498" at="39,0,42,0">
+      <scope id="6531435794299653498" at="33,0,36,0">
         <var name="e" id="6531435794299653501" />
       </scope>
-      <scope id="6531435794299653549" at="55,0,58,0">
+      <scope id="6531435794299653549" at="47,0,50,0">
         <var name="effectiveDate" id="6531435794299653556" />
         <var name="key" id="6531435794299653552" />
         <var name="value" id="6531435794299653554" />
       </scope>
-      <scope id="6531435794299653568" at="59,0,62,0">
+      <scope id="6531435794299653568" at="50,0,53,0">
         <var name="at" id="6531435794299653573" />
         <var name="key" id="6531435794299653571" />
       </scope>
-      <scope id="6531435794299653438" at="22,82,26,61" />
-      <scope id="6531435794299653461" at="29,0,34,0">
+      <scope id="6531435794299653438" at="19,82,23,61" />
+      <scope id="6531435794299653461" at="25,0,30,0">
         <var name="eventType" id="6531435794299653464" />
       </scope>
-      <scope id="6531435794299653429" at="22,0,28,0">
+      <scope id="6531435794299653429" at="19,0,25,0">
         <var name="date" id="6531435794299653436" />
         <var name="eventType" id="6531435794299653432" />
         <var name="rule" id="6531435794299653434" />
       </scope>
-      <scope id="6531435794299653515" at="43,61,52,5">
+      <scope id="6531435794299653515" at="36,61,45,5">
         <var name="rules" id="6531435794299653517" />
       </scope>
-      <scope id="6531435794299653510" at="43,0,54,0">
+      <scope id="6531435794299653510" at="36,0,47,0">
         <var name="event" id="6531435794299653513" />
       </scope>
-      <unit id="6531435794299653396" at="11,0,63,0" name="postingrules.ServiceAgreement" />
+      <unit id="6531435794299653396" at="11,0,54,0" name="postingrules.ServiceAgreement" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299653584">
     <file name="PoorCapPR.java">
       <node id="6531435794299653595" at="9,57,10,27" concept="11" />
-      <node id="6531435794299653604" at="14,56,15,52" concept="7" />
-      <node id="6531435794299653613" at="15,52,16,95" concept="7" />
-      <node id="6531435794299653627" at="16,95,17,107" concept="7" />
-      <node id="6531435794299653641" at="17,107,18,221" concept="8" />
+      <node id="6531435794299653604" at="13,56,14,52" concept="7" />
+      <node id="6531435794299653613" at="14,52,15,95" concept="7" />
+      <node id="6531435794299653627" at="15,95,16,107" concept="7" />
+      <node id="6531435794299653641" at="16,107,17,221" concept="8" />
       <node id="6531435794299653587" at="9,0,12,0" concept="1" trace="PoorCapPR#(Lpostingrules/AccountType;Z)V" />
-      <node id="6531435794299653598" at="13,0,20,0" concept="6" trace="calculateAmount#(Lpostingrules/AccountingEvent;)Lmf/Money;" />
+      <node id="6531435794299653598" at="12,0,19,0" concept="6" trace="calculateAmount#(Lpostingrules/AccountingEvent;)Lmf/Money;" />
       <scope id="6531435794299653594" at="9,57,10,27" />
       <scope id="6531435794299653587" at="9,0,12,0">
         <var name="isTaxable" id="6531435794299653592" />
         <var name="type" id="6531435794299653590" />
       </scope>
-      <scope id="6531435794299653603" at="14,56,18,221">
+      <scope id="6531435794299653603" at="13,56,17,221">
         <var name="amountUsed" id="6531435794299653605" />
         <var name="reducedRate" id="6531435794299653628" />
         <var name="usageLimit" id="6531435794299653614" />
       </scope>
-      <scope id="6531435794299653598" at="13,0,20,0">
+      <scope id="6531435794299653598" at="12,0,19,0">
         <var name="evt" id="6531435794299653601" />
       </scope>
-      <unit id="6531435794299653584" at="8,0,21,0" name="postingrules.PoorCapPR" />
+      <unit id="6531435794299653584" at="8,0,20,0" name="postingrules.PoorCapPR" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299653800">
     <file name="PostingRule.java">
       <node id="6531435794299653802" at="8,0,9,0" concept="3" trace="myType" />
       <node id="6531435794299653805" at="9,0,10,0" concept="3" trace="myTaxable" />
-      <node id="6531435794299653816" at="11,62,12,23" concept="2" />
-      <node id="6531435794299653822" at="12,23,13,31" concept="2" />
-      <node id="6531435794299653834" at="16,44,17,41" concept="2" />
-      <node id="6531435794299653842" at="18,20,19,23" concept="2" />
-      <node id="6531435794299653845" at="23,0,24,0" concept="6" trace="calculateAmount#(Lpostingrules/AccountingEvent;)Lmf/Money;" />
-      <node id="6531435794299653859" at="25,61,26,61" concept="7" />
-      <node id="6531435794299653868" at="26,61,27,48" concept="2" />
-      <node id="6531435794299653876" at="27,48,28,36" concept="2" />
-      <node id="6531435794299653887" at="31,49,32,54" concept="2" />
-      <node id="6531435794299653839" at="17,41,20,5" concept="5" />
-      <node id="6531435794299653881" at="31,0,34,0" concept="6" trace="generateTax#(Lpostingrules/AccountingEvent;)V" />
-      <node id="6531435794299653808" at="11,0,15,0" concept="1" trace="PostingRule#(Lpostingrules/AccountType;Z)V" />
-      <node id="6531435794299653851" at="25,0,30,0" concept="6" trace="makeEntry#(Lpostingrules/AccountingEvent;Lmf/Money;)V" />
-      <node id="6531435794299653828" at="16,0,22,0" concept="6" trace="process#(Lpostingrules/AccountingEvent;)V" />
-      <scope id="6531435794299653841" at="18,20,19,23" />
-      <scope id="6531435794299653845" at="23,0,24,0">
+      <node id="6531435794299653816" at="10,62,11,23" concept="2" />
+      <node id="6531435794299653822" at="11,23,12,31" concept="2" />
+      <node id="6531435794299653834" at="14,44,15,41" concept="2" />
+      <node id="6531435794299653842" at="16,20,17,23" concept="2" />
+      <node id="6531435794299653845" at="20,0,21,0" concept="6" trace="calculateAmount#(Lpostingrules/AccountingEvent;)Lmf/Money;" />
+      <node id="6531435794299653859" at="21,61,22,61" concept="7" />
+      <node id="6531435794299653868" at="22,61,23,48" concept="2" />
+      <node id="6531435794299653876" at="23,48,24,36" concept="2" />
+      <node id="6531435794299653887" at="26,49,27,54" concept="2" />
+      <node id="6531435794299653839" at="15,41,18,5" concept="5" />
+      <node id="6531435794299653881" at="26,0,29,0" concept="6" trace="generateTax#(Lpostingrules/AccountingEvent;)V" />
+      <node id="6531435794299653808" at="10,0,14,0" concept="1" trace="PostingRule#(Lpostingrules/AccountType;Z)V" />
+      <node id="6531435794299653851" at="21,0,26,0" concept="6" trace="makeEntry#(Lpostingrules/AccountingEvent;Lmf/Money;)V" />
+      <node id="6531435794299653828" at="14,0,20,0" concept="6" trace="process#(Lpostingrules/AccountingEvent;)V" />
+      <scope id="6531435794299653841" at="16,20,17,23" />
+      <scope id="6531435794299653845" at="20,0,21,0">
         <var name="evt" id="6531435794299653848" />
       </scope>
-      <scope id="6531435794299653886" at="31,49,32,54" />
-      <scope id="6531435794299653815" at="11,62,13,31" />
-      <scope id="6531435794299653858" at="25,61,28,36">
+      <scope id="6531435794299653886" at="26,49,27,54" />
+      <scope id="6531435794299653815" at="10,62,12,31" />
+      <scope id="6531435794299653858" at="21,61,24,36">
         <var name="newEntry" id="6531435794299653860" />
       </scope>
-      <scope id="6531435794299653881" at="31,0,34,0">
+      <scope id="6531435794299653881" at="26,0,29,0">
         <var name="evt" id="6531435794299653884" />
       </scope>
-      <scope id="6531435794299653808" at="11,0,15,0">
+      <scope id="6531435794299653808" at="10,0,14,0">
         <var name="isTaxable" id="6531435794299653813" />
         <var name="type" id="6531435794299653811" />
       </scope>
-      <scope id="6531435794299653833" at="16,44,20,5" />
-      <scope id="6531435794299653851" at="25,0,30,0">
+      <scope id="6531435794299653833" at="14,44,18,5" />
+      <scope id="6531435794299653851" at="21,0,26,0">
         <var name="amount" id="6531435794299653856" />
         <var name="evt" id="6531435794299653854" />
       </scope>
-      <scope id="6531435794299653828" at="16,0,22,0">
+      <scope id="6531435794299653828" at="14,0,20,0">
         <var name="evt" id="6531435794299653831" />
       </scope>
-      <unit id="6531435794299653800" at="7,0,35,0" name="postingrules.PostingRule" />
+      <unit id="6531435794299653800" at="7,0,30,0" name="postingrules.PostingRule" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299654331">
@@ -564,208 +564,208 @@
     <file name="Customer.java">
       <node id="6531435794299654979" at="12,0,13,0" concept="3" trace="myServiceAgreement" />
       <node id="6531435794299654982" at="13,0,14,0" concept="3" trace="myAccounts" />
-      <node id="6531435794299654993" at="15,32,16,18" concept="2" />
-      <node id="6531435794299654997" at="16,18,17,20" concept="2" />
-      <node id="6531435794299655002" at="20,36,21,53" concept="2" />
-      <node id="6531435794299655014" at="22,51,23,60" concept="2" />
-      <node id="6531435794299655029" at="27,47,28,40" concept="0" />
-      <node id="6531435794299655034" at="28,40,29,32" concept="8" />
-      <node id="6531435794299655047" at="33,53,34,35" concept="2" />
-      <node id="6531435794299655059" at="37,44,38,37" concept="8" />
-      <node id="6531435794299655067" at="41,35,42,20" concept="2" />
-      <node id="6531435794299655073" at="45,28,46,22" concept="8" />
-      <node id="6531435794299655079" at="50,32,51,16" concept="8" />
-      <node id="6531435794299655085" at="54,49,55,30" concept="8" />
-      <node id="6531435794299655093" at="59,39,60,78" concept="7" />
-      <node id="6531435794299655106" at="60,78,61,65" concept="2" />
-      <node id="6531435794299655122" at="65,42,66,34" concept="2" />
-      <node id="6531435794299655133" at="69,36,70,21" concept="2" />
-      <node id="6531435794299655143" at="73,57,74,29" concept="2" />
-      <node id="6531435794299655151" at="78,28,79,45" concept="7" />
-      <node id="6531435794299655156" at="79,45,80,41" concept="7" />
-      <node id="6531435794299655166" at="81,36,82,26" concept="2" />
-      <node id="6531435794299655171" at="82,26,83,26" concept="2" />
-      <node id="6531435794299655176" at="83,26,84,48" concept="2" />
-      <node id="6531435794299655184" at="84,48,85,26" concept="2" />
-      <node id="6531435794299655189" at="86,5,87,29" concept="8" />
-      <node id="6531435794299655197" at="90,44,91,75" concept="8" />
-      <node id="6531435794299655009" at="21,53,24,5" concept="4" />
-      <node id="6531435794299655053" at="37,0,40,0" concept="6" trace="balanceFor#(Lpostingrules/AccountType;)Lmf/Money;" />
-      <node id="6531435794299655064" at="41,0,44,0" concept="6" trace="clearEntries#()V" />
-      <node id="6531435794299655069" at="45,0,48,0" concept="6" trace="getAccounts#()Ljava/util/Map;" />
-      <node id="6531435794299655081" at="54,0,57,0" concept="6" trace="getServiceAgreement#()Lpostingrules/ServiceAgreement;" />
-      <node id="6531435794299655127" at="69,0,72,0" concept="6" trace="setAccounts#(Ljava/util/Map;)V" />
-      <node id="6531435794299655137" at="73,0,76,0" concept="6" trace="setServiceAgreement#(Lpostingrules/ServiceAgreement;)V" />
-      <node id="6531435794299655193" at="90,0,93,0" concept="6" trace="accountTypes#()[Lpostingrules/AccountType;" />
-      <node id="6531435794299654987" at="15,0,19,0" concept="1" trace="Customer#(Ljava/lang/String;)V" />
-      <node id="6531435794299655023" at="27,0,31,0" concept="6" trace="accountFor#(Lpostingrules/AccountType;)Lpostingrules/Account;" />
-      <node id="6531435794299655039" at="32,0,36,0" concept="6" trace="addEntry#(Lpostingrules/Entry;Lpostingrules/AccountType;)V" />
-      <node id="6531435794299655075" at="49,0,53,0" concept="6" trace="getAdjuster#()Lpostingrules/Subject;" />
-      <node id="6531435794299655116" at="64,0,68,0" concept="6" trace="process#(Lpostingrules/AccountingEvent;)V" />
-      <node id="6531435794299655087" at="58,0,63,0" concept="6" trace="reverseEntry#(Lpostingrules/Entry;)V" />
-      <node id="6531435794299654999" at="20,0,26,0" concept="6" trace="setUpAccounts#()V" />
-      <node id="6531435794299655161" at="80,41,86,5" concept="4" />
-      <node id="6531435794299655147" at="77,0,89,0" concept="6" trace="toString#()Ljava/lang/String;" />
-      <scope id="6531435794299655013" at="22,51,23,60" />
-      <scope id="6531435794299655046" at="33,53,34,35" />
-      <scope id="6531435794299655058" at="37,44,38,37" />
-      <scope id="6531435794299655066" at="41,35,42,20" />
-      <scope id="6531435794299655072" at="45,28,46,22" />
-      <scope id="6531435794299655078" at="50,32,51,16" />
-      <scope id="6531435794299655084" at="54,49,55,30" />
-      <scope id="6531435794299655121" at="65,42,66,34" />
-      <scope id="6531435794299655132" at="69,36,70,21" />
-      <scope id="6531435794299655142" at="73,57,74,29" />
-      <scope id="6531435794299655196" at="90,44,91,75" />
-      <scope id="6531435794299654992" at="15,32,17,20" />
-      <scope id="6531435794299655028" at="27,47,29,32" />
-      <scope id="6531435794299655092" at="59,39,61,65">
+      <node id="6531435794299654993" at="14,32,15,18" concept="2" />
+      <node id="6531435794299654997" at="15,18,16,20" concept="2" />
+      <node id="6531435794299655002" at="18,36,19,53" concept="2" />
+      <node id="6531435794299655014" at="20,51,21,60" concept="2" />
+      <node id="6531435794299655029" at="24,47,25,40" concept="0" />
+      <node id="6531435794299655034" at="25,40,26,32" concept="8" />
+      <node id="6531435794299655047" at="29,53,30,35" concept="2" />
+      <node id="6531435794299655059" at="32,44,33,37" concept="8" />
+      <node id="6531435794299655067" at="35,35,36,20" concept="2" />
+      <node id="6531435794299655073" at="38,28,39,22" concept="8" />
+      <node id="6531435794299655079" at="42,32,43,16" concept="8" />
+      <node id="6531435794299655085" at="45,49,46,30" concept="8" />
+      <node id="6531435794299655093" at="49,39,50,78" concept="7" />
+      <node id="6531435794299655106" at="50,78,51,65" concept="2" />
+      <node id="6531435794299655122" at="54,42,55,34" concept="2" />
+      <node id="6531435794299655133" at="57,36,58,21" concept="2" />
+      <node id="6531435794299655143" at="60,57,61,29" concept="2" />
+      <node id="6531435794299655151" at="64,28,65,45" concept="7" />
+      <node id="6531435794299655156" at="65,45,66,41" concept="7" />
+      <node id="6531435794299655166" at="67,36,68,26" concept="2" />
+      <node id="6531435794299655171" at="68,26,69,26" concept="2" />
+      <node id="6531435794299655176" at="69,26,70,48" concept="2" />
+      <node id="6531435794299655184" at="70,48,71,26" concept="2" />
+      <node id="6531435794299655189" at="72,5,73,29" concept="8" />
+      <node id="6531435794299655197" at="75,44,76,75" concept="8" />
+      <node id="6531435794299655009" at="19,53,22,5" concept="4" />
+      <node id="6531435794299655053" at="32,0,35,0" concept="6" trace="balanceFor#(Lpostingrules/AccountType;)Lmf/Money;" />
+      <node id="6531435794299655064" at="35,0,38,0" concept="6" trace="clearEntries#()V" />
+      <node id="6531435794299655069" at="38,0,41,0" concept="6" trace="getAccounts#()Ljava/util/Map;" />
+      <node id="6531435794299655081" at="45,0,48,0" concept="6" trace="getServiceAgreement#()Lpostingrules/ServiceAgreement;" />
+      <node id="6531435794299655127" at="57,0,60,0" concept="6" trace="setAccounts#(Ljava/util/Map;)V" />
+      <node id="6531435794299655137" at="60,0,63,0" concept="6" trace="setServiceAgreement#(Lpostingrules/ServiceAgreement;)V" />
+      <node id="6531435794299655193" at="75,0,78,0" concept="6" trace="accountTypes#()[Lpostingrules/AccountType;" />
+      <node id="6531435794299654987" at="14,0,18,0" concept="1" trace="Customer#(Ljava/lang/String;)V" />
+      <node id="6531435794299655023" at="24,0,28,0" concept="6" trace="accountFor#(Lpostingrules/AccountType;)Lpostingrules/Account;" />
+      <node id="6531435794299655039" at="28,0,32,0" concept="6" trace="addEntry#(Lpostingrules/Entry;Lpostingrules/AccountType;)V" />
+      <node id="6531435794299655075" at="41,0,45,0" concept="6" trace="getAdjuster#()Lpostingrules/Subject;" />
+      <node id="6531435794299655116" at="53,0,57,0" concept="6" trace="process#(Lpostingrules/AccountingEvent;)V" />
+      <node id="6531435794299655087" at="48,0,53,0" concept="6" trace="reverseEntry#(Lpostingrules/Entry;)V" />
+      <node id="6531435794299654999" at="18,0,24,0" concept="6" trace="setUpAccounts#()V" />
+      <node id="6531435794299655161" at="66,41,72,5" concept="4" />
+      <node id="6531435794299655147" at="63,0,75,0" concept="6" trace="toString#()Ljava/lang/String;" />
+      <scope id="6531435794299655013" at="20,51,21,60" />
+      <scope id="6531435794299655046" at="29,53,30,35" />
+      <scope id="6531435794299655058" at="32,44,33,37" />
+      <scope id="6531435794299655066" at="35,35,36,20" />
+      <scope id="6531435794299655072" at="38,28,39,22" />
+      <scope id="6531435794299655078" at="42,32,43,16" />
+      <scope id="6531435794299655084" at="45,49,46,30" />
+      <scope id="6531435794299655121" at="54,42,55,34" />
+      <scope id="6531435794299655132" at="57,36,58,21" />
+      <scope id="6531435794299655142" at="60,57,61,29" />
+      <scope id="6531435794299655196" at="75,44,76,75" />
+      <scope id="6531435794299654992" at="14,32,16,20" />
+      <scope id="6531435794299655028" at="24,47,26,32" />
+      <scope id="6531435794299655092" at="49,39,51,65">
         <var name="reversingEntry" id="6531435794299655094" />
       </scope>
-      <scope id="6531435794299655009" at="21,53,24,5">
+      <scope id="6531435794299655009" at="19,53,22,5">
         <var name="type" id="6531435794299655011" />
       </scope>
-      <scope id="6531435794299655053" at="37,0,40,0">
+      <scope id="6531435794299655053" at="32,0,35,0">
         <var name="key" id="6531435794299655056" />
       </scope>
-      <scope id="6531435794299655064" at="41,0,44,0" />
-      <scope id="6531435794299655069" at="45,0,48,0" />
-      <scope id="6531435794299655081" at="54,0,57,0" />
-      <scope id="6531435794299655127" at="69,0,72,0">
+      <scope id="6531435794299655064" at="35,0,38,0" />
+      <scope id="6531435794299655069" at="38,0,41,0" />
+      <scope id="6531435794299655081" at="45,0,48,0" />
+      <scope id="6531435794299655127" at="57,0,60,0">
         <var name="arg" id="6531435794299655130" />
       </scope>
-      <scope id="6531435794299655137" at="73,0,76,0">
+      <scope id="6531435794299655137" at="60,0,63,0">
         <var name="arg" id="6531435794299655140" />
       </scope>
-      <scope id="6531435794299655193" at="90,0,93,0" />
-      <scope id="6531435794299654987" at="15,0,19,0">
+      <scope id="6531435794299655193" at="75,0,78,0" />
+      <scope id="6531435794299654987" at="14,0,18,0">
         <var name="name" id="6531435794299654990" />
       </scope>
-      <scope id="6531435794299655001" at="20,36,24,5" />
-      <scope id="6531435794299655023" at="27,0,31,0">
+      <scope id="6531435794299655001" at="18,36,22,5" />
+      <scope id="6531435794299655023" at="24,0,28,0">
         <var name="type" id="6531435794299655026" />
       </scope>
-      <scope id="6531435794299655039" at="32,0,36,0">
+      <scope id="6531435794299655039" at="28,0,32,0">
         <var name="arg" id="6531435794299655042" />
         <var name="type" id="6531435794299655044" />
       </scope>
-      <scope id="6531435794299655075" at="49,0,53,0" />
-      <scope id="6531435794299655116" at="64,0,68,0">
+      <scope id="6531435794299655075" at="41,0,45,0" />
+      <scope id="6531435794299655116" at="53,0,57,0">
         <var name="e" id="6531435794299655119" />
       </scope>
-      <scope id="6531435794299655165" at="81,36,85,26" />
-      <scope id="6531435794299655087" at="58,0,63,0">
+      <scope id="6531435794299655165" at="67,36,71,26" />
+      <scope id="6531435794299655087" at="48,0,53,0">
         <var name="arg" id="6531435794299655090" />
       </scope>
-      <scope id="6531435794299654999" at="20,0,26,0" />
-      <scope id="6531435794299655161" at="80,41,86,5">
+      <scope id="6531435794299654999" at="18,0,24,0" />
+      <scope id="6531435794299655161" at="66,41,72,5">
         <var name="type" id="6531435794299655163" />
       </scope>
-      <scope id="6531435794299655150" at="78,28,87,29">
+      <scope id="6531435794299655150" at="64,28,73,29">
         <var name="result" id="6531435794299655152" />
         <var name="types" id="6531435794299655157" />
       </scope>
-      <scope id="6531435794299655147" at="77,0,89,0" />
-      <unit id="6531435794299654975" at="11,0,94,0" name="postingrules.Customer" />
+      <scope id="6531435794299655147" at="63,0,75,0" />
+      <unit id="6531435794299654975" at="11,0,79,0" name="postingrules.Customer" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299655211">
     <file name="Adjustment.java">
       <node id="6531435794299655214" at="10,0,11,0" concept="3" trace="myNewEvents" />
       <node id="6531435794299655221" at="11,0,12,0" concept="3" trace="myOldEvents" />
-      <node id="6531435794299655236" at="13,81,14,95" concept="12" />
-      <node id="6531435794299655246" at="14,95,15,26" concept="2" />
-      <node id="6531435794299655249" at="15,26,16,24" concept="2" />
-      <node id="6531435794299655262" at="19,79,20,52" concept="11" />
-      <node id="6531435794299655273" at="23,43,24,25" concept="2" />
-      <node id="6531435794299655289" at="28,32,29,104" concept="13" />
-      <node id="6531435794299655301" at="30,5,31,25" concept="2" />
-      <node id="6531435794299655306" at="31,25,32,34" concept="2" />
-      <node id="6531435794299655252" at="19,0,22,0" concept="1" trace="Adjustment#(Lmf/MfDate;Lmf/MfDate;Lpostingrules/Subject;)V" />
-      <node id="6531435794299655267" at="23,0,26,0" concept="6" trace="addNew#(Lpostingrules/AccountingEvent;)V" />
-      <node id="6531435794299655284" at="27,43,30,5" concept="5" />
-      <node id="6531435794299655228" at="13,0,18,0" concept="1" trace="Adjustment#(Lpostingrules/AccountingEvent;Lpostingrules/AccountingEvent;)V" />
-      <node id="6531435794299655278" at="27,0,34,0" concept="6" trace="addOld#(Lpostingrules/AccountingEvent;)V" />
-      <scope id="6531435794299655261" at="19,79,20,52" />
-      <scope id="6531435794299655272" at="23,43,24,25" />
-      <scope id="6531435794299655288" at="28,32,29,104" />
-      <scope id="6531435794299655235" at="13,81,16,24" />
-      <scope id="6531435794299655252" at="19,0,22,0">
+      <node id="6531435794299655236" at="12,81,13,95" concept="12" />
+      <node id="6531435794299655246" at="13,95,14,26" concept="2" />
+      <node id="6531435794299655249" at="14,26,15,24" concept="2" />
+      <node id="6531435794299655262" at="17,79,18,52" concept="11" />
+      <node id="6531435794299655273" at="20,43,21,25" concept="2" />
+      <node id="6531435794299655289" at="24,32,25,104" concept="13" />
+      <node id="6531435794299655301" at="26,5,27,25" concept="2" />
+      <node id="6531435794299655306" at="27,25,28,34" concept="2" />
+      <node id="6531435794299655252" at="17,0,20,0" concept="1" trace="Adjustment#(Lmf/MfDate;Lmf/MfDate;Lpostingrules/Subject;)V" />
+      <node id="6531435794299655267" at="20,0,23,0" concept="6" trace="addNew#(Lpostingrules/AccountingEvent;)V" />
+      <node id="6531435794299655284" at="23,43,26,5" concept="5" />
+      <node id="6531435794299655228" at="12,0,17,0" concept="1" trace="Adjustment#(Lpostingrules/AccountingEvent;Lpostingrules/AccountingEvent;)V" />
+      <node id="6531435794299655278" at="23,0,30,0" concept="6" trace="addOld#(Lpostingrules/AccountingEvent;)V" />
+      <scope id="6531435794299655261" at="17,79,18,52" />
+      <scope id="6531435794299655272" at="20,43,21,25" />
+      <scope id="6531435794299655288" at="24,32,25,104" />
+      <scope id="6531435794299655235" at="12,81,15,24" />
+      <scope id="6531435794299655252" at="17,0,20,0">
         <var name="subject" id="6531435794299655259" />
         <var name="whenNoticed" id="6531435794299655257" />
         <var name="whenOccurred" id="6531435794299655255" />
       </scope>
-      <scope id="6531435794299655267" at="23,0,26,0">
+      <scope id="6531435794299655267" at="20,0,23,0">
         <var name="arg" id="6531435794299655270" />
       </scope>
-      <scope id="6531435794299655228" at="13,0,18,0">
+      <scope id="6531435794299655228" at="12,0,17,0">
         <var name="adjustedEvent" id="6531435794299655233" />
         <var name="replacement" id="6531435794299655231" />
       </scope>
-      <scope id="6531435794299655283" at="27,43,32,34" />
-      <scope id="6531435794299655278" at="27,0,34,0">
+      <scope id="6531435794299655283" at="23,43,28,34" />
+      <scope id="6531435794299655278" at="23,0,30,0">
         <var name="arg" id="6531435794299655281" />
       </scope>
-      <unit id="6531435794299655211" at="9,0,35,0" name="postingrules.Adjustment" />
+      <unit id="6531435794299655211" at="9,0,31,0" name="postingrules.Adjustment" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299655311">
     <file name="EventList.java">
       <node id="6531435794299655313" at="9,0,10,0" concept="3" trace="myEvents" />
       <node id="6531435794299655320" at="10,0,11,0" concept="3" trace="myProcessingErrors" />
-      <node id="6531435794299655337" at="15,40,16,22" concept="2" />
-      <node id="6531435794299655347" at="19,53,20,68" concept="7" />
-      <node id="6531435794299655365" at="22,31,23,22" concept="2" />
-      <node id="6531435794299655370" at="25,5,26,18" concept="8" />
-      <node id="6531435794299655380" at="29,79,30,34" concept="2" />
-      <node id="6531435794299655385" at="30,34,31,42" concept="13" />
-      <node id="6531435794299655392" at="34,45,35,43" concept="8" />
-      <node id="6531435794299655416" at="40,11,41,24" concept="2" />
-      <node id="6531435794299655409" at="42,29,43,37" concept="2" />
-      <node id="6531435794299655327" at="12,0,14,0" concept="1" trace="EventList#()V" />
-      <node id="6531435794299655331" at="15,0,18,0" concept="6" trace="add#(Lpostingrules/AccountingEvent;)V" />
-      <node id="6531435794299655359" at="21,40,24,7" concept="5" />
-      <node id="6531435794299655389" at="34,0,37,0" concept="6" trace="hasProcessingErrors#()Z" />
-      <node id="6531435794299655372" at="29,0,33,0" concept="6" trace="logProcessingError#(Lpostingrules/AccountingEvent;Ljava/lang/Exception;)V" />
-      <node id="6531435794299655354" at="20,68,25,5" concept="4" />
-      <node id="6531435794299655406" at="39,55,44,7" concept="14" />
-      <node id="6531435794299655401" at="38,25,45,5" concept="4" />
-      <node id="6531435794299655342" at="19,0,28,0" concept="6" trace="unprocessedEvents#()Ljava/util/List;" />
-      <node id="6531435794299655397" at="38,0,47,0" concept="6" trace="process#()V" />
-      <scope id="6531435794299655330" at="12,22,12,22" />
-      <scope id="6531435794299655336" at="15,40,16,22" />
-      <scope id="6531435794299655364" at="22,31,23,22" />
-      <scope id="6531435794299655391" at="34,45,35,43" />
-      <scope id="6531435794299655415" at="40,11,41,24" />
-      <scope id="6531435794299655407" at="42,0,43,37">
+      <node id="6531435794299655337" at="13,40,14,22" concept="2" />
+      <node id="6531435794299655347" at="16,53,17,68" concept="7" />
+      <node id="6531435794299655365" at="19,31,20,22" concept="2" />
+      <node id="6531435794299655370" at="22,5,23,18" concept="8" />
+      <node id="6531435794299655380" at="25,79,26,34" concept="2" />
+      <node id="6531435794299655385" at="26,34,27,42" concept="13" />
+      <node id="6531435794299655392" at="29,45,30,43" concept="8" />
+      <node id="6531435794299655416" at="34,11,35,24" concept="2" />
+      <node id="6531435794299655409" at="36,29,37,37" concept="2" />
+      <node id="6531435794299655327" at="11,0,13,0" concept="1" trace="EventList#()V" />
+      <node id="6531435794299655331" at="13,0,16,0" concept="6" trace="add#(Lpostingrules/AccountingEvent;)V" />
+      <node id="6531435794299655359" at="18,40,21,7" concept="5" />
+      <node id="6531435794299655389" at="29,0,32,0" concept="6" trace="hasProcessingErrors#()Z" />
+      <node id="6531435794299655372" at="25,0,29,0" concept="6" trace="logProcessingError#(Lpostingrules/AccountingEvent;Ljava/lang/Exception;)V" />
+      <node id="6531435794299655354" at="17,68,22,5" concept="4" />
+      <node id="6531435794299655406" at="33,55,38,7" concept="14" />
+      <node id="6531435794299655401" at="32,25,39,5" concept="4" />
+      <node id="6531435794299655342" at="16,0,25,0" concept="6" trace="unprocessedEvents#()Ljava/util/List;" />
+      <node id="6531435794299655397" at="32,0,41,0" concept="6" trace="process#()V" />
+      <scope id="6531435794299655330" at="11,22,11,22" />
+      <scope id="6531435794299655336" at="13,40,14,22" />
+      <scope id="6531435794299655364" at="19,31,20,22" />
+      <scope id="6531435794299655391" at="29,45,30,43" />
+      <scope id="6531435794299655415" at="34,11,35,24" />
+      <scope id="6531435794299655407" at="36,0,37,37">
         <var name="e" id="6531435794299655413" />
       </scope>
-      <scope id="6531435794299655408" at="42,29,43,37" />
-      <scope id="6531435794299655327" at="12,0,14,0" />
-      <scope id="6531435794299655379" at="29,79,31,42" />
-      <scope id="6531435794299655331" at="15,0,18,0">
+      <scope id="6531435794299655408" at="36,29,37,37" />
+      <scope id="6531435794299655327" at="11,0,13,0" />
+      <scope id="6531435794299655379" at="25,79,27,42" />
+      <scope id="6531435794299655331" at="13,0,16,0">
         <var name="arg" id="6531435794299655334" />
       </scope>
-      <scope id="6531435794299655358" at="21,40,24,7" />
-      <scope id="6531435794299655389" at="34,0,37,0" />
-      <scope id="6531435794299655372" at="29,0,33,0">
+      <scope id="6531435794299655358" at="18,40,21,7" />
+      <scope id="6531435794299655389" at="29,0,32,0" />
+      <scope id="6531435794299655372" at="25,0,29,0">
         <var name="event" id="6531435794299655375" />
         <var name="exception" id="6531435794299655377" />
       </scope>
-      <scope id="6531435794299655354" at="20,68,25,5">
+      <scope id="6531435794299655354" at="17,68,22,5">
         <var name="e" id="6531435794299655356" />
       </scope>
-      <scope id="6531435794299655405" at="39,55,44,7" />
-      <scope id="6531435794299655346" at="19,53,26,18">
+      <scope id="6531435794299655405" at="33,55,38,7" />
+      <scope id="6531435794299655346" at="16,53,23,18">
         <var name="result" id="6531435794299655348" />
       </scope>
-      <scope id="6531435794299655400" at="38,25,45,5" />
-      <scope id="6531435794299655401" at="38,25,45,5">
+      <scope id="6531435794299655400" at="32,25,39,5" />
+      <scope id="6531435794299655401" at="32,25,39,5">
         <var name="event" id="6531435794299655403" />
       </scope>
-      <scope id="6531435794299655342" at="19,0,28,0" />
-      <scope id="6531435794299655397" at="38,0,47,0" />
-      <unit id="6531435794299655311" at="8,0,48,0" name="postingrules.EventList" />
+      <scope id="6531435794299655342" at="16,0,25,0" />
+      <scope id="6531435794299655397" at="32,0,41,0" />
+      <unit id="6531435794299655311" at="8,0,42,0" name="postingrules.EventList" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299655543">
@@ -773,71 +773,71 @@
       <node id="6531435794299655546" at="9,0,10,0" concept="9" trace="USAGE" />
       <node id="6531435794299655552" at="10,0,11,0" concept="9" trace="TAX" />
       <node id="6531435794299655558" at="11,0,12,0" concept="9" trace="SERVICE_CALL" />
-      <node id="6531435794299655570" at="13,33,14,16" concept="11" />
-      <node id="6531435794299655586" at="17,31,18,36" concept="2" />
-      <node id="6531435794299655577" at="21,49,22,55" concept="8" />
-      <node id="6531435794299655564" at="13,0,16,0" concept="1" trace="EventType#(Ljava/lang/String;)V" />
-      <node id="6531435794299655583" at="17,0,20,0" concept="6" trace="register#()V" />
-      <node id="6531435794299655572" at="21,0,24,0" concept="10" trace="get#(Ljava/lang/String;)Lpostingrules/EventType;" />
-      <scope id="6531435794299655569" at="13,33,14,16" />
-      <scope id="6531435794299655585" at="17,31,18,36" />
-      <scope id="6531435794299655576" at="21,49,22,55" />
-      <scope id="6531435794299655564" at="13,0,16,0">
+      <node id="6531435794299655570" at="12,33,13,16" concept="11" />
+      <node id="6531435794299655586" at="15,31,16,36" concept="2" />
+      <node id="6531435794299655577" at="18,49,19,55" concept="8" />
+      <node id="6531435794299655564" at="12,0,15,0" concept="1" trace="EventType#(Ljava/lang/String;)V" />
+      <node id="6531435794299655583" at="15,0,18,0" concept="6" trace="register#()V" />
+      <node id="6531435794299655572" at="18,0,21,0" concept="10" trace="get#(Ljava/lang/String;)Lpostingrules/EventType;" />
+      <scope id="6531435794299655569" at="12,33,13,16" />
+      <scope id="6531435794299655585" at="15,31,16,36" />
+      <scope id="6531435794299655576" at="18,49,19,55" />
+      <scope id="6531435794299655564" at="12,0,15,0">
         <var name="name" id="6531435794299655567" />
       </scope>
-      <scope id="6531435794299655583" at="17,0,20,0" />
-      <scope id="6531435794299655572" at="21,0,24,0">
+      <scope id="6531435794299655583" at="15,0,18,0" />
+      <scope id="6531435794299655572" at="18,0,21,0">
         <var name="name" id="6531435794299655574" />
       </scope>
-      <unit id="6531435794299655543" at="8,0,25,0" name="postingrules.EventType" />
+      <unit id="6531435794299655543" at="8,0,22,0" name="postingrules.EventType" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299656295">
     <file name="MultiplyByRatePR.java">
       <node id="6531435794299656306" at="8,64,9,27" concept="11" />
-      <node id="6531435794299656315" at="13,56,14,35" concept="7" />
-      <node id="6531435794299656321" at="14,35,15,150" concept="8" />
+      <node id="6531435794299656315" at="12,56,13,35" concept="7" />
+      <node id="6531435794299656321" at="13,35,14,150" concept="8" />
       <node id="6531435794299656298" at="8,0,11,0" concept="1" trace="MultiplyByRatePR#(Lpostingrules/AccountType;Z)V" />
-      <node id="6531435794299656309" at="12,0,17,0" concept="6" trace="calculateAmount#(Lpostingrules/AccountingEvent;)Lmf/Money;" />
+      <node id="6531435794299656309" at="11,0,16,0" concept="6" trace="calculateAmount#(Lpostingrules/AccountingEvent;)Lmf/Money;" />
       <scope id="6531435794299656305" at="8,64,9,27" />
-      <scope id="6531435794299656314" at="13,56,15,150">
+      <scope id="6531435794299656314" at="12,56,14,150">
         <var name="usageEvent" id="6531435794299656316" />
       </scope>
       <scope id="6531435794299656298" at="8,0,11,0">
         <var name="isTaxable" id="6531435794299656303" />
         <var name="type" id="6531435794299656301" />
       </scope>
-      <scope id="6531435794299656309" at="12,0,17,0">
+      <scope id="6531435794299656309" at="11,0,16,0">
         <var name="evt" id="6531435794299656312" />
       </scope>
-      <unit id="6531435794299656295" at="7,0,18,0" name="postingrules.MultiplyByRatePR" />
+      <unit id="6531435794299656295" at="7,0,17,0" name="postingrules.MultiplyByRatePR" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299656580">
     <file name="AmountFormulaPR.java">
       <node id="6531435794299656583" at="8,0,9,0" concept="3" trace="myMultiplier" />
       <node id="6531435794299656586" at="9,0,10,0" concept="3" trace="myFixedFee" />
-      <node id="6531435794299656601" at="11,98,12,27" concept="11" />
-      <node id="6531435794299656604" at="12,27,13,35" concept="2" />
-      <node id="6531435794299656610" at="13,35,14,31" concept="2" />
-      <node id="6531435794299656622" at="18,56,19,58" concept="7" />
-      <node id="6531435794299656631" at="19,58,20,70" concept="8" />
-      <node id="6531435794299656589" at="11,0,16,0" concept="1" trace="AmountFormulaPR#(DLmf/Money;Lpostingrules/AccountType;Z)V" />
-      <node id="6531435794299656616" at="17,0,22,0" concept="6" trace="calculateAmount#(Lpostingrules/AccountingEvent;)Lmf/Money;" />
-      <scope id="6531435794299656621" at="18,56,20,70">
+      <node id="6531435794299656601" at="10,98,11,27" concept="11" />
+      <node id="6531435794299656604" at="11,27,12,35" concept="2" />
+      <node id="6531435794299656610" at="12,35,13,31" concept="2" />
+      <node id="6531435794299656622" at="16,56,17,58" concept="7" />
+      <node id="6531435794299656631" at="17,58,18,70" concept="8" />
+      <node id="6531435794299656589" at="10,0,15,0" concept="1" trace="AmountFormulaPR#(DLmf/Money;Lpostingrules/AccountType;Z)V" />
+      <node id="6531435794299656616" at="15,0,20,0" concept="6" trace="calculateAmount#(Lpostingrules/AccountingEvent;)Lmf/Money;" />
+      <scope id="6531435794299656621" at="16,56,18,70">
         <var name="eventAmount" id="6531435794299656623" />
       </scope>
-      <scope id="6531435794299656600" at="11,98,14,31" />
-      <scope id="6531435794299656589" at="11,0,16,0">
+      <scope id="6531435794299656600" at="10,98,13,31" />
+      <scope id="6531435794299656589" at="10,0,15,0">
         <var name="fixedFee" id="6531435794299656594" />
         <var name="isTaxable" id="6531435794299656598" />
         <var name="multiplier" id="6531435794299656592" />
         <var name="type" id="6531435794299656596" />
       </scope>
-      <scope id="6531435794299656616" at="17,0,22,0">
+      <scope id="6531435794299656616" at="15,0,20,0">
         <var name="evt" id="6531435794299656619" />
       </scope>
-      <unit id="6531435794299656580" at="7,0,23,0" name="postingrules.AmountFormulaPR" />
+      <unit id="6531435794299656580" at="7,0,21,0" name="postingrules.AmountFormulaPR" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299656641">
@@ -845,157 +845,157 @@
       <node id="6531435794299656643" at="13,0,14,0" concept="3" trace="myEntries" />
       <node id="6531435794299656650" at="14,0,15,0" concept="3" trace="myCurrency" />
       <node id="6531435794299656653" at="15,0,16,0" concept="3" trace="myType" />
-      <node id="6531435794299656662" at="17,37,18,25" concept="12" />
-      <node id="6531435794299656673" at="21,55,22,31" concept="2" />
-      <node id="6531435794299656679" at="22,31,23,23" concept="2" />
-      <node id="6531435794299656691" at="26,35,27,40" concept="2" />
-      <node id="6531435794299656696" at="27,40,28,23" concept="2" />
-      <node id="6531435794299656701" at="28,23,29,25" concept="2" />
-      <node id="6531435794299656713" at="32,56,33,44" concept="7" />
-      <node id="6531435794299656720" at="33,44,34,16" concept="2" />
-      <node id="6531435794299656738" at="38,47,39,79" concept="13" />
-      <node id="6531435794299656746" at="43,26,44,35" concept="8" />
-      <node id="6531435794299656754" at="47,47,48,44" concept="7" />
-      <node id="6531435794299656774" at="50,41,51,43" concept="2" />
-      <node id="6531435794299656783" at="53,5,54,18" concept="8" />
-      <node id="6531435794299656790" at="57,42,58,41" concept="8" />
-      <node id="6531435794299656798" at="61,25,62,53" concept="7" />
-      <node id="6531435794299656810" at="63,31,64,32" concept="2" />
-      <node id="6531435794299656817" at="65,5,66,18" concept="8" />
-      <node id="6531435794299656824" at="69,48,70,44" concept="7" />
-      <node id="6531435794299656850" at="72,77,73,46" concept="2" />
-      <node id="6531435794299656859" at="75,5,76,18" concept="8" />
-      <node id="6531435794299656866" at="79,28,80,43" concept="8" />
-      <node id="6531435794299656878" at="83,33,84,35" concept="8" />
-      <node id="6531435794299656895" at="89,35,90,21" concept="8" />
-      <node id="6531435794299656897" at="92,5,93,16" concept="8" />
-      <node id="6531435794299656903" at="97,28,98,28" concept="8" />
-      <node id="6531435794299656910" at="101,34,102,18" concept="8" />
-      <node id="6531435794299656921" at="105,72,106,58" concept="2" />
-      <node id="6531435794299656933" at="109,51,110,44" concept="7" />
-      <node id="6531435794299656959" at="112,77,113,46" concept="2" />
-      <node id="6531435794299656968" at="115,5,116,18" concept="8" />
-      <node id="6531435794299656656" at="17,0,20,0" concept="1" trace="Account#(Lmf/Currency;)V" />
-      <node id="6531435794299656729" at="37,46,40,5" concept="5" />
-      <node id="6531435794299656742" at="43,0,46,0" concept="6" trace="balance#()Lmf/Money;" />
-      <node id="6531435794299656766" at="49,31,52,7" concept="5" />
-      <node id="6531435794299656785" at="57,0,60,0" concept="6" trace="balance#(Lmf/MfDate;)Lmf/Money;" />
-      <node id="6531435794299656805" at="62,53,65,5" concept="4" />
-      <node id="6531435794299656836" at="71,34,74,7" concept="5" />
-      <node id="6531435794299656861" at="79,0,82,0" concept="6" trace="entries#()[Lpostingrules/Entry;" />
-      <node id="6531435794299656875" at="83,0,86,0" concept="6" trace="isValid#()Z" />
-      <node id="6531435794299656888" at="88,31,91,7" concept="5" />
-      <node id="6531435794299656907" at="101,0,104,0" concept="6" trace="type#()Lpostingrules/AccountType;" />
-      <node id="6531435794299656912" at="105,0,108,0" concept="6" trace="withdraw#(Lmf/Money;Lpostingrules/Account;Lmf/MfDate;)V" />
-      <node id="6531435794299656945" at="111,34,114,7" concept="5" />
-      <node id="6531435794299656665" at="21,0,25,0" concept="1" trace="Account#(Lmf/Currency;Lpostingrules/AccountType;)V" />
-      <node id="6531435794299656706" at="32,0,36,0" concept="6" trace="addEntry#(Lmf/Money;Lmf/MfDate;)V" />
-      <node id="6531435794299656899" at="96,0,100,0" concept="6" trace="toString#()Ljava/lang/String;" />
-      <node id="6531435794299656685" at="26,0,31,0" concept="6" trace="addEntry#(Lpostingrules/Entry;)V" />
-      <node id="6531435794299656723" at="37,0,42,0" concept="6" trace="ensureSameCurrency#(Lmf/Money;)V" />
-      <node id="6531435794299656761" at="48,44,53,5" concept="4" />
-      <node id="6531435794299656831" at="70,44,75,5" concept="4" />
-      <node id="6531435794299656883" at="87,47,92,5" concept="4" />
-      <node id="6531435794299656940" at="110,44,115,5" concept="4" />
-      <node id="6531435794299656794" at="61,0,68,0" concept="6" trace="copy#()Lpostingrules/Account;" />
-      <node id="6531435794299656880" at="87,0,95,0" concept="6" trace="allMyEntriesReferToMe#()Z" />
-      <node id="6531435794299656749" at="47,0,56,0" concept="6" trace="balance#(Lmf/DateRange;)Lmf/Money;" />
-      <node id="6531435794299656819" at="69,0,78,0" concept="6" trace="deposits#(Lmf/DateRange;)Lmf/Money;" />
-      <node id="6531435794299656928" at="109,0,118,0" concept="6" trace="withdrawels#(Lmf/DateRange;)Lmf/Money;" />
-      <scope id="6531435794299656661" at="17,37,18,25" />
-      <scope id="6531435794299656737" at="38,47,39,79" />
-      <scope id="6531435794299656745" at="43,26,44,35" />
-      <scope id="6531435794299656773" at="50,41,51,43" />
-      <scope id="6531435794299656789" at="57,42,58,41" />
-      <scope id="6531435794299656809" at="63,31,64,32" />
-      <scope id="6531435794299656849" at="72,77,73,46" />
-      <scope id="6531435794299656865" at="79,28,80,43" />
-      <scope id="6531435794299656877" at="83,33,84,35" />
-      <scope id="6531435794299656894" at="89,35,90,21" />
-      <scope id="6531435794299656902" at="97,28,98,28" />
-      <scope id="6531435794299656909" at="101,34,102,18" />
-      <scope id="6531435794299656920" at="105,72,106,58" />
-      <scope id="6531435794299656958" at="112,77,113,46" />
-      <scope id="6531435794299656672" at="21,55,23,23" />
-      <scope id="6531435794299656712" at="32,56,34,16">
+      <node id="6531435794299656662" at="16,37,17,25" concept="12" />
+      <node id="6531435794299656673" at="19,55,20,31" concept="2" />
+      <node id="6531435794299656679" at="20,31,21,23" concept="2" />
+      <node id="6531435794299656691" at="23,35,24,40" concept="2" />
+      <node id="6531435794299656696" at="24,40,25,23" concept="2" />
+      <node id="6531435794299656701" at="25,23,26,25" concept="2" />
+      <node id="6531435794299656713" at="28,56,29,44" concept="7" />
+      <node id="6531435794299656720" at="29,44,30,16" concept="2" />
+      <node id="6531435794299656738" at="33,47,34,79" concept="13" />
+      <node id="6531435794299656746" at="37,26,38,35" concept="8" />
+      <node id="6531435794299656754" at="40,47,41,44" concept="7" />
+      <node id="6531435794299656774" at="43,41,44,43" concept="2" />
+      <node id="6531435794299656783" at="46,5,47,18" concept="8" />
+      <node id="6531435794299656790" at="49,42,50,41" concept="8" />
+      <node id="6531435794299656798" at="52,25,53,53" concept="7" />
+      <node id="6531435794299656810" at="54,31,55,32" concept="2" />
+      <node id="6531435794299656817" at="56,5,57,18" concept="8" />
+      <node id="6531435794299656824" at="59,48,60,44" concept="7" />
+      <node id="6531435794299656850" at="62,77,63,46" concept="2" />
+      <node id="6531435794299656859" at="65,5,66,18" concept="8" />
+      <node id="6531435794299656866" at="68,28,69,43" concept="8" />
+      <node id="6531435794299656878" at="71,33,72,35" concept="8" />
+      <node id="6531435794299656895" at="76,35,77,21" concept="8" />
+      <node id="6531435794299656897" at="79,5,80,16" concept="8" />
+      <node id="6531435794299656903" at="83,28,84,28" concept="8" />
+      <node id="6531435794299656910" at="86,34,87,18" concept="8" />
+      <node id="6531435794299656921" at="89,72,90,58" concept="2" />
+      <node id="6531435794299656933" at="92,51,93,44" concept="7" />
+      <node id="6531435794299656959" at="95,77,96,46" concept="2" />
+      <node id="6531435794299656968" at="98,5,99,18" concept="8" />
+      <node id="6531435794299656656" at="16,0,19,0" concept="1" trace="Account#(Lmf/Currency;)V" />
+      <node id="6531435794299656729" at="32,46,35,5" concept="5" />
+      <node id="6531435794299656742" at="37,0,40,0" concept="6" trace="balance#()Lmf/Money;" />
+      <node id="6531435794299656766" at="42,31,45,7" concept="5" />
+      <node id="6531435794299656785" at="49,0,52,0" concept="6" trace="balance#(Lmf/MfDate;)Lmf/Money;" />
+      <node id="6531435794299656805" at="53,53,56,5" concept="4" />
+      <node id="6531435794299656836" at="61,34,64,7" concept="5" />
+      <node id="6531435794299656861" at="68,0,71,0" concept="6" trace="entries#()[Lpostingrules/Entry;" />
+      <node id="6531435794299656875" at="71,0,74,0" concept="6" trace="isValid#()Z" />
+      <node id="6531435794299656888" at="75,31,78,7" concept="5" />
+      <node id="6531435794299656907" at="86,0,89,0" concept="6" trace="type#()Lpostingrules/AccountType;" />
+      <node id="6531435794299656912" at="89,0,92,0" concept="6" trace="withdraw#(Lmf/Money;Lpostingrules/Account;Lmf/MfDate;)V" />
+      <node id="6531435794299656945" at="94,34,97,7" concept="5" />
+      <node id="6531435794299656665" at="19,0,23,0" concept="1" trace="Account#(Lmf/Currency;Lpostingrules/AccountType;)V" />
+      <node id="6531435794299656706" at="28,0,32,0" concept="6" trace="addEntry#(Lmf/Money;Lmf/MfDate;)V" />
+      <node id="6531435794299656899" at="82,0,86,0" concept="6" trace="toString#()Ljava/lang/String;" />
+      <node id="6531435794299656685" at="23,0,28,0" concept="6" trace="addEntry#(Lpostingrules/Entry;)V" />
+      <node id="6531435794299656723" at="32,0,37,0" concept="6" trace="ensureSameCurrency#(Lmf/Money;)V" />
+      <node id="6531435794299656761" at="41,44,46,5" concept="4" />
+      <node id="6531435794299656831" at="60,44,65,5" concept="4" />
+      <node id="6531435794299656883" at="74,47,79,5" concept="4" />
+      <node id="6531435794299656940" at="93,44,98,5" concept="4" />
+      <node id="6531435794299656794" at="52,0,59,0" concept="6" trace="copy#()Lpostingrules/Account;" />
+      <node id="6531435794299656880" at="74,0,82,0" concept="6" trace="allMyEntriesReferToMe#()Z" />
+      <node id="6531435794299656749" at="40,0,49,0" concept="6" trace="balance#(Lmf/DateRange;)Lmf/Money;" />
+      <node id="6531435794299656819" at="59,0,68,0" concept="6" trace="deposits#(Lmf/DateRange;)Lmf/Money;" />
+      <node id="6531435794299656928" at="92,0,101,0" concept="6" trace="withdrawels#(Lmf/DateRange;)Lmf/Money;" />
+      <scope id="6531435794299656661" at="16,37,17,25" />
+      <scope id="6531435794299656737" at="33,47,34,79" />
+      <scope id="6531435794299656745" at="37,26,38,35" />
+      <scope id="6531435794299656773" at="43,41,44,43" />
+      <scope id="6531435794299656789" at="49,42,50,41" />
+      <scope id="6531435794299656809" at="54,31,55,32" />
+      <scope id="6531435794299656849" at="62,77,63,46" />
+      <scope id="6531435794299656865" at="68,28,69,43" />
+      <scope id="6531435794299656877" at="71,33,72,35" />
+      <scope id="6531435794299656894" at="76,35,77,21" />
+      <scope id="6531435794299656902" at="83,28,84,28" />
+      <scope id="6531435794299656909" at="86,34,87,18" />
+      <scope id="6531435794299656920" at="89,72,90,58" />
+      <scope id="6531435794299656958" at="95,77,96,46" />
+      <scope id="6531435794299656672" at="19,55,21,23" />
+      <scope id="6531435794299656712" at="28,56,30,16">
         <var name="e" id="6531435794299656714" />
       </scope>
-      <scope id="6531435794299656656" at="17,0,20,0">
+      <scope id="6531435794299656656" at="16,0,19,0">
         <var name="currency" id="6531435794299656659" />
       </scope>
-      <scope id="6531435794299656690" at="26,35,29,25" />
-      <scope id="6531435794299656728" at="37,46,40,5" />
-      <scope id="6531435794299656742" at="43,0,46,0" />
-      <scope id="6531435794299656765" at="49,31,52,7" />
-      <scope id="6531435794299656785" at="57,0,60,0">
+      <scope id="6531435794299656690" at="23,35,26,25" />
+      <scope id="6531435794299656728" at="32,46,35,5" />
+      <scope id="6531435794299656742" at="37,0,40,0" />
+      <scope id="6531435794299656765" at="42,31,45,7" />
+      <scope id="6531435794299656785" at="49,0,52,0">
         <var name="date" id="6531435794299656787" />
       </scope>
-      <scope id="6531435794299656805" at="62,53,65,5">
+      <scope id="6531435794299656805" at="53,53,56,5">
         <var name="e" id="6531435794299656807" />
       </scope>
-      <scope id="6531435794299656835" at="71,34,74,7" />
-      <scope id="6531435794299656861" at="79,0,82,0" />
-      <scope id="6531435794299656875" at="83,0,86,0" />
-      <scope id="6531435794299656887" at="88,31,91,7" />
-      <scope id="6531435794299656907" at="101,0,104,0" />
-      <scope id="6531435794299656912" at="105,0,108,0">
+      <scope id="6531435794299656835" at="61,34,64,7" />
+      <scope id="6531435794299656861" at="68,0,71,0" />
+      <scope id="6531435794299656875" at="71,0,74,0" />
+      <scope id="6531435794299656887" at="75,31,78,7" />
+      <scope id="6531435794299656907" at="86,0,89,0" />
+      <scope id="6531435794299656912" at="89,0,92,0">
         <var name="amount" id="6531435794299656914" />
         <var name="date" id="6531435794299656918" />
         <var name="target" id="6531435794299656916" />
       </scope>
-      <scope id="6531435794299656944" at="111,34,114,7" />
-      <scope id="6531435794299656665" at="21,0,25,0">
+      <scope id="6531435794299656944" at="94,34,97,7" />
+      <scope id="6531435794299656665" at="19,0,23,0">
         <var name="currency" id="6531435794299656668" />
         <var name="type" id="6531435794299656670" />
       </scope>
-      <scope id="6531435794299656706" at="32,0,36,0">
+      <scope id="6531435794299656706" at="28,0,32,0">
         <var name="amount" id="6531435794299656708" />
         <var name="date" id="6531435794299656710" />
       </scope>
-      <scope id="6531435794299656899" at="96,0,100,0" />
-      <scope id="6531435794299656685" at="26,0,31,0">
+      <scope id="6531435794299656899" at="82,0,86,0" />
+      <scope id="6531435794299656685" at="23,0,28,0">
         <var name="arg" id="6531435794299656688" />
       </scope>
-      <scope id="6531435794299656723" at="37,0,42,0">
+      <scope id="6531435794299656723" at="32,0,37,0">
         <var name="arg" id="6531435794299656726" />
       </scope>
-      <scope id="6531435794299656761" at="48,44,53,5">
+      <scope id="6531435794299656761" at="41,44,46,5">
         <var name="e" id="6531435794299656763" />
       </scope>
-      <scope id="6531435794299656797" at="61,25,66,18">
+      <scope id="6531435794299656797" at="52,25,57,18">
         <var name="result" id="6531435794299656799" />
       </scope>
-      <scope id="6531435794299656831" at="70,44,75,5">
+      <scope id="6531435794299656831" at="60,44,65,5">
         <var name="each" id="6531435794299656833" />
       </scope>
-      <scope id="6531435794299656883" at="87,47,92,5">
+      <scope id="6531435794299656883" at="74,47,79,5">
         <var name="e" id="6531435794299656885" />
       </scope>
-      <scope id="6531435794299656940" at="110,44,115,5">
+      <scope id="6531435794299656940" at="93,44,98,5">
         <var name="each" id="6531435794299656942" />
       </scope>
-      <scope id="6531435794299656882" at="87,47,93,16" />
-      <scope id="6531435794299656753" at="47,47,54,18">
+      <scope id="6531435794299656882" at="74,47,80,16" />
+      <scope id="6531435794299656753" at="40,47,47,18">
         <var name="result" id="6531435794299656755" />
       </scope>
-      <scope id="6531435794299656794" at="61,0,68,0" />
-      <scope id="6531435794299656823" at="69,48,76,18">
+      <scope id="6531435794299656794" at="52,0,59,0" />
+      <scope id="6531435794299656823" at="59,48,66,18">
         <var name="result" id="6531435794299656825" />
       </scope>
-      <scope id="6531435794299656932" at="109,51,116,18">
+      <scope id="6531435794299656932" at="92,51,99,18">
         <var name="result" id="6531435794299656934" />
       </scope>
-      <scope id="6531435794299656880" at="87,0,95,0" />
-      <scope id="6531435794299656749" at="47,0,56,0">
+      <scope id="6531435794299656880" at="74,0,82,0" />
+      <scope id="6531435794299656749" at="40,0,49,0">
         <var name="period" id="6531435794299656751" />
       </scope>
-      <scope id="6531435794299656819" at="69,0,78,0">
+      <scope id="6531435794299656819" at="59,0,68,0">
         <var name="period" id="6531435794299656821" />
       </scope>
-      <scope id="6531435794299656928" at="109,0,118,0">
+      <scope id="6531435794299656928" at="92,0,101,0">
         <var name="period" id="6531435794299656930" />
       </scope>
-      <unit id="6531435794299656641" at="12,0,119,0" name="postingrules.Account" />
+      <unit id="6531435794299656641" at="12,0,102,0" name="postingrules.Account" />
     </file>
   </root>
 </debug-info>

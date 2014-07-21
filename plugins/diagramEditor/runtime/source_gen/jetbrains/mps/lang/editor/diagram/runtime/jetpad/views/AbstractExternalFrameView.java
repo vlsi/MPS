@@ -18,7 +18,6 @@ public abstract class AbstractExternalFrameView extends GroupView {
 
   protected Property<Rectangle> frameRectangle = new ValueProperty<Rectangle>();
 
-
   public AbstractExternalFrameView() {
     new Mapper<AbstractExternalFrameView, AbstractExternalFrameView>(this, this) {
       @Override
@@ -37,17 +36,13 @@ public abstract class AbstractExternalFrameView extends GroupView {
       }
     }.attachRoot();
   }
-
   private void updateFrameRectangle(Rectangle bounds, int frameWidth) {
     frameRectangle.set(new Rectangle(bounds.origin.x - frameWidth, bounds.origin.y - frameWidth, bounds.dimension.x + frameWidth * 2, bounds.dimension.y + frameWidth * 2));
   }
 
-
-
   protected static int getHalfWidth(int lineWidth) {
     return lineWidth - lineWidth / 2;
   }
-
   protected ObservableList<View> childSubList() {
     return new SubList<View>() {
       protected ObservableList<View> getBaseList() {

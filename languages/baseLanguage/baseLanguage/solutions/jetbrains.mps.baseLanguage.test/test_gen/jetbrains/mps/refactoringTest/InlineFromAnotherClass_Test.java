@@ -22,7 +22,6 @@ public class InlineFromAnotherClass_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.InlineFromAnotherClass_Test$TestBody", "test_InlineFromAnotherClass", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_InlineFromAnotherClass() throws Exception {

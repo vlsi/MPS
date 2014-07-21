@@ -6,8 +6,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="25,49,47,5" name="jetbrains.mps.samples.heating.actions.QueriesGenerated$1" />
-      <unit at="22,0,55,0" name="jetbrains.mps.samples.heating.actions.QueriesGenerated" />
+      <unit at="25,49,44,5" name="jetbrains.mps.samples.heating.actions.QueriesGenerated$1" />
+      <unit at="22,0,51,0" name="jetbrains.mps.samples.heating.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:e11f72fe-1952-4ec4-b00c-5c30b85f591b(jetbrains.mps.samples.heating.actions)/935069066462603543">
@@ -15,13 +15,13 @@
       <node id="935069066462973859" at="26,94,27,125" concept="1" />
       <node id="935069066462974448" at="27,125,28,85" concept="0" />
       <node id="935069066462977640" at="28,85,29,19" concept="2" />
-      <node id="935069066462604243" at="51,200,52,93" concept="2" />
-      <node id="935069066462603596" at="51,0,54,0" concept="3" trace="sideTransformHintSubstituteActionsBuilder_Precondition_DailyPlan_935069066462603596#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <scope id="935069066462603597" at="51,200,52,93" />
+      <node id="935069066462604243" at="47,200,48,93" concept="2" />
+      <node id="935069066462603596" at="47,0,50,0" concept="3" trace="sideTransformHintSubstituteActionsBuilder_Precondition_DailyPlan_935069066462603596#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
+      <scope id="935069066462603597" at="47,200,48,93" />
       <scope id="935069066462612053" at="26,94,29,19">
         <var name="ref" id="935069066462973860" />
       </scope>
-      <scope id="935069066462603596" at="51,0,54,0">
+      <scope id="935069066462603596" at="47,0,50,0">
         <var name="_context" id="935069066462603596" />
         <var name="operationContext" id="935069066462603596" />
       </scope>

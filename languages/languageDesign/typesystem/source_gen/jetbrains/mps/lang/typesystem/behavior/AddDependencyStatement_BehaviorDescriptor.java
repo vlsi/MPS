@@ -10,5 +10,5 @@ public class AddDependencyStatement_BehaviorDescriptor extends Statement_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.AddDependencyStatement";
-  };;
-;}
+  }
+}

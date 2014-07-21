@@ -16,14 +16,11 @@ public class JUnitLightExecutor implements Executor {
   private final TestEventsDispatcher myDispatcher;
   private static volatile boolean ourRunInProgress = false;
 
-
   public JUnitLightExecutor(Iterable<ITestNodeWrapper> testNodeWrappers, TestEventsDispatcher dispatcher) {
     myNodes = testNodeWrappers;
     myDispatcher = dispatcher;
     ourRunInProgress = true;
   }
-
-
 
   @Override
   public ProcessHandler execute() {
@@ -36,8 +33,6 @@ public class JUnitLightExecutor implements Executor {
       dispose();
     }
   }
-
-
 
   private Future<?> doExecute(final TestExecutor executor) {
     return ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
@@ -53,13 +48,9 @@ public class JUnitLightExecutor implements Executor {
     });
   }
 
-
-
   private void dispose() {
     ourRunInProgress = false;
   }
-
-
 
 
   public static boolean isLightRunInProgress() {

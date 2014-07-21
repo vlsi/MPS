@@ -21,76 +21,60 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreatePropertyPatternVariable_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreatePropertyPatternVariable_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.pattern.structure.PatternExpression";
   }
-
   public String getPresentation() {
     return "CreatePropertyPatternVariable";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.pattern.intentions.CreatePropertyPatternVariable_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.pattern";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     EditorCell selectedCell = editorContext.getSelectedCell();
     return selectedCell instanceof EditorCell_Property && ((EditorCell_Property) selectedCell).getModelAccessor() instanceof PropertyAccessor && PatternAddingUtil.isPatternApplicable(editorContext);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)", "3514655265371724198");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreatePropertyPatternVariable_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create Property Pattern Variable";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       EditorCell_Property cell = (EditorCell_Property) editorContext.getSelectedCell();
       String propertyName = ((PropertyAccessor) cell.getModelAccessor()).getPropertyName();
       SNode cellNode = cell.getSNode();
       SNodeFactoryOperations.setNewAttribute(cellNode, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", propertyName), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration");
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreatePropertyPatternVariable_Intention.this;
     }

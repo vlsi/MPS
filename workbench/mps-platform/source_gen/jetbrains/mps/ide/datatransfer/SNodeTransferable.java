@@ -37,7 +37,6 @@ public class SNodeTransferable implements Transferable {
   @NotNull
   private List<DataFlavor> mySupportedDataFlavors = new ArrayList<DataFlavor>(4);
 
-
   public SNodeTransferable(List<SNode> nodes, String text) {
     saveNodes(nodes, null);
     if (nodes.size() == 1) {
@@ -45,7 +44,6 @@ public class SNodeTransferable implements Transferable {
     }
     saveText(text);
   }
-
   /**
    * Deprecated since MPS 3.1 looks like not used anymore
    */
@@ -57,7 +55,6 @@ public class SNodeTransferable implements Transferable {
     }
     saveText("");
   }
-
   public SNodeTransferable(@NotNull List<SNode> nodes, String text, Map<SNode, Set<SNode>> nodesAndAttributes) {
     saveNodes(nodes, nodesAndAttributes);
     if (nodes.size() == 1) {
@@ -65,7 +62,6 @@ public class SNodeTransferable implements Transferable {
     }
     saveText(text);
   }
-
   /**
    * Deprecated since MPS 3.1 looks like not used anymore
    */
@@ -75,23 +71,19 @@ public class SNodeTransferable implements Transferable {
     saveNodeReference(node);
     saveText("");
   }
-
   public SNodeTransferable(String text, SNode node) {
     saveText(text);
     saveNodes(Collections.singletonList(node), null);
     saveNodeReference(node);
   }
-
   @Override
   public DataFlavor[] getTransferDataFlavors() {
     return mySupportedDataFlavors.toArray(new DataFlavor[mySupportedDataFlavors.size()]);
   }
-
   @Override
   public boolean isDataFlavorSupported(DataFlavor flavor) {
     return mySupportedDataFlavors.contains(flavor);
   }
-
   @Override
   public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
     if (isDataFlavorSupported(flavor)) {
@@ -109,11 +101,9 @@ public class SNodeTransferable implements Transferable {
     }
     throw new UnsupportedFlavorException(flavor);
   }
-
   private String getAsString() {
     return myText;
   }
-
   private void saveNodes(@NotNull List<SNode> nodes, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes) {
     for (SNode node : nodes) {
       assert node.getParent() == nodes.get(0).getParent();
@@ -126,22 +116,18 @@ public class SNodeTransferable implements Transferable {
     myNecessaryLanguages = pasteNodeData.getNecessaryLanguages();
     mySupportedDataFlavors.add(SModelDataFlavor.sNode);
   }
-
   private void saveNodeReference(@NotNull SNode node) {
     mySNodeReference = node.getReference();
     mySupportedDataFlavors.add(SModelDataFlavor.sNodeReference);
   }
-
   private void saveText(String text) {
     myText = text;
     mySupportedDataFlavors.add(DataFlavor.stringFlavor);
     mySupportedDataFlavors.add(DataFlavor.plainTextFlavor);
   }
-
   public PasteNodeData createNodeData() {
     return CopyPasteUtil.createNodeDataOut(mySNodes, mySourceModel, new HashSet<SModuleReference>(myNecessaryLanguages), new HashSet<SModelReference>(myNecessaryModels));
   }
-
   public boolean containsNodes() {
     return (!(mySNodes.isEmpty()));
   }

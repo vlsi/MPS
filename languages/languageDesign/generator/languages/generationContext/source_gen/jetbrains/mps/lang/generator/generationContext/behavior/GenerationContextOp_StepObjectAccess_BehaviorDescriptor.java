@@ -9,9 +9,9 @@ public class GenerationContextOp_StepObjectAccess_BehaviorDescriptor extends Gen
   }
   public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
     return GenerationContextOp_StepObjectAccess_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess";
-  };;
-;}
+  }
+}

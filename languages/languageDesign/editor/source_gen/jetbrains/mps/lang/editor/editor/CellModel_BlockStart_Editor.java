@@ -21,11 +21,9 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_5tinyn_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5tinyn_a(editorContext, node);
   }
-
   private EditorCell createProperty_5tinyn_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("openBrace");
@@ -50,7 +48,6 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_5tinyn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5tinyn_a");
@@ -62,7 +59,6 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_5tinyn_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_5tinyn_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     return editorCell;

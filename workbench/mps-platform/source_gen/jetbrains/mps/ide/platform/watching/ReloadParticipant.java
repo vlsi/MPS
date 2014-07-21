@@ -7,12 +7,9 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 public abstract class ReloadParticipant {
   public ReloadParticipant() {
   }
-
   public abstract void update(ProgressMonitor monitor);
-
   public boolean wantsToShowProgress() {
     return true;
   }
-
   public abstract boolean isEmpty();
 }

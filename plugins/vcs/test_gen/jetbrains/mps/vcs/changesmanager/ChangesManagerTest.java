@@ -117,10 +117,8 @@ public class ChangesManagerTest {
   private Runnable myAfterReloadTask;
   private Map<String, FileStatus> myExpectedFileStatuses = MapSequence.fromMap(new HashMap<String, FileStatus>());
   private FileStatusManager myFileStatusManager;
-
   public ChangesManagerTest() {
   }
-
   @Before
   public void init() {
     myProject = ourProject;
@@ -168,12 +166,10 @@ public class ChangesManagerTest {
       ourEnabled = true;
     }
   }
-
   private void setAutoaddPolicy(VcsShowConfirmationOption.Value value) {
     ProjectLevelVcsManager vcsManager = ProjectLevelVcsManager.getInstance(myIdeaProject);
     vcsManager.getStandardConfirmation(VcsConfiguration.StandardConfirmation.ADD, myGitVcs).setValue(value);
   }
-
   @After
   public void dispose() throws InvocationTargetException, InterruptedException {
     SwingUtilities.invokeAndWait(new Runnable() {
@@ -183,7 +179,6 @@ public class ChangesManagerTest {
     });
     Assert.assertFalse(myRegistry.getCommandQueue().hadExceptions());
   }
-
   private void waitForSomething(Runnable waitScheduling) {
     synchronized (myWaitLock) {
       myWaitCompleted = false;
@@ -199,14 +194,12 @@ public class ChangesManagerTest {
       }
     }
   }
-
   private void waitCompleted() {
     synchronized (myWaitLock) {
       myWaitCompleted = true;
       myWaitLock.notify();
     }
   }
-
   private void doSomethingAndWaitForFileStatusChange(@NotNull final Runnable task, @NotNull final VirtualFile file, @Nullable final FileStatus expectedFileStatus) {
     waitForSomething(new Runnable() {
       public void run() {
@@ -231,7 +224,6 @@ public class ChangesManagerTest {
           public void fileStatusesChanged() {
             stopIfNeeded.invoke();
           }
-
           @Override
           public void fileStatusChanged(@NotNull VirtualFile f) {
             stopIfNeeded.invoke();
@@ -245,7 +237,6 @@ public class ChangesManagerTest {
       }
     });
   }
-
   private void waitForChangesManager() {
     waitForSomething(new Runnable() {
       public void run() {
@@ -257,11 +248,9 @@ public class ChangesManagerTest {
       }
     });
   }
-
   private CurrentDifference getCurrentDifference(String shortName) {
     return myRegistry.getCurrentDifference((EditableSModel) SModelRepository.getInstance().getModelDescriptor(MODEL_PREFIX + shortName));
   }
-
   private void checkAndEnable() {
     Assert.assertNull(myHtmlDiff.getChangeSet());
     Assert.assertNull(myUiDiff.getChangeSet());
@@ -276,7 +265,6 @@ public class ChangesManagerTest {
     Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a01a92(myUiDiff.getChangeSet())).isNotEmpty());
     Assert.assertNull(myUtilDiff.getChangeSet());
   }
-
   private void checkRootStatuses() {
     final NodeFileStatusMapping fsm = myIdeaProject.getComponent(NodeFileStatusMapping.class);
     final List<EditableSModel> interestingModels = Arrays.asList(myHtmlDiff.getModelDescriptor(), myUiDiff.getModelDescriptor(), myUtilDiff.getModelDescriptor());
@@ -312,7 +300,6 @@ public class ChangesManagerTest {
       }
     });
   }
-
   private void modifyModel() {
     runCommandAndWait(new Runnable() {
       public void run() {
@@ -341,7 +328,6 @@ public class ChangesManagerTest {
     MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
     checkRootStatuses();
   }
-
   private void saveAndCommit() {
     runCommandAndWait(new Runnable() {
       public void run() {
@@ -364,7 +350,6 @@ public class ChangesManagerTest {
     MapSequence.fromMap(myExpectedFileStatuses).removeKey("util.ImageLoader");
     checkRootStatuses();
   }
-
   private void uncommit() {
     doSomethingAndWaitForFileStatusChange(new Runnable() {
       public void run() {
@@ -382,14 +367,12 @@ public class ChangesManagerTest {
     MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
     checkRootStatuses();
   }
-
   private SNode createNewRoot(SModel modelContent) {
     SNode root = (SNode) new jetbrains.mps.smodel.SNode(InternUtil.intern("jetbrains.mps.baseLanguage.structure.ClassConcept"));
     SPropertyOperations.set(root, "name", "NewRoot");
     SModelOperations.addRootNode(modelContent, root);
     return root;
   }
-
   private void modifyExternally() throws ModelReadException {
     int changesBefore = ListSequence.fromList(check_4gxggu_a0a0a53(myUtilDiff.getChangeSet())).count();
     final jetbrains.mps.smodel.SModel modelContent = ModelPersistence.readModel((StreamDataSource) myUtilDiff.getModelDescriptor().getSource(), false);
@@ -424,7 +407,6 @@ public class ChangesManagerTest {
     MapSequence.fromMap(myExpectedFileStatuses).put("util.NewRoot", FileStatus.ADDED);
     checkRootStatuses();
   }
-
   private void rollback() throws VcsException {
     final List<VcsException> exceptions = ListSequence.fromList(new ArrayList<VcsException>());
     doSomethingAndWaitForFileStatusChange(new Runnable() {
@@ -450,11 +432,9 @@ public class ChangesManagerTest {
     });
     checkRootStatuses();
   }
-
   private String getChangeSetString(ChangeSet changeSet) {
     return getChangeSetString(changeSet.getModelChanges());
   }
-
   private String getChangeSetString(List<ModelChange> modelChanges) {
     return IterableUtils.join(ListSequence.fromList(modelChanges).select(new ISelector<ModelChange, String>() {
       public String select(ModelChange c) {
@@ -466,7 +446,6 @@ public class ChangesManagerTest {
       }
     }, true), "|");
   }
-
   private void assertChangeSetIsCorrect(final ChangeSet changeSet) {
     ChangeSet rebuiltChangeSet = ModelAccess.instance().runReadAction(new Computable<ModelChangeSet>() {
       public ModelChangeSet compute() {
@@ -475,25 +454,20 @@ public class ChangesManagerTest {
     });
     Assert.assertEquals(getChangeSetString(rebuiltChangeSet), getChangeSetString(changeSet));
   }
-
   private void waitAndCheck(CurrentDifference currentDifference) {
     waitForChangesManager();
     assertChangeSetIsCorrect(currentDifference.getChangeSet());
   }
-
   private void runCommandAndWait(Runnable r) {
     myProject.getRepository().getModelAccess().executeCommandInEDT(r);
     ModelAccess.instance().flushEventQueue();
   }
-
   private void doSomethingAndUndo(CurrentDifference diff, _FunctionTypes._return_P0_E0<? extends SNode>... tasks) {
     doSomethingAndUndo(diff, false, tasks);
   }
-
   private void doSomethingAndUndo(CurrentDifference diff, boolean checkAfterEachUndo, _FunctionTypes._return_P0_E0<? extends SNode>... tasks) {
     doSomethingAndUndo(diff, checkAfterEachUndo, Arrays.asList(tasks));
   }
-
   private void doSomethingAndUndo(CurrentDifference diff, boolean checkAfterEachUndo, List<_FunctionTypes._return_P0_E0<? extends SNode>> tasks) {
     checkRootStatuses();
     Map<String, FileStatus> statusesBefore = new HashMap<String, FileStatus>(myExpectedFileStatuses);
@@ -518,7 +492,6 @@ public class ChangesManagerTest {
     myExpectedFileStatuses = statusesBefore;
     checkRootStatuses();
   }
-
   private void undoAndCheck(CurrentDifference diff, List<SNodeReference> affectedNodePointers, boolean checkAfterEachUndo) {
     for (final SNodeReference np : ListSequence.fromList(affectedNodePointers).reversedList()) {
       try {
@@ -543,7 +516,6 @@ public class ChangesManagerTest {
       waitAndCheck(diff);
     }
   }
-
   private SNode getDocumentLayoutRoot() {
     SModel model = myUiDiff.getModelDescriptor();
     return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
@@ -552,7 +524,6 @@ public class ChangesManagerTest {
       }
     });
   }
-
   @Test
   public void modifySaveCommit() throws VcsException {
     checkRootStatuses();
@@ -560,14 +531,12 @@ public class ChangesManagerTest {
     saveAndCommit();
     uncommit();
   }
-
   @Test
   public void modifyExternallyRollback() throws ModelReadException, IOException, VcsException {
     modifyModel();
     modifyExternally();
     rollback();
   }
-
   @Test
   public void removeModifiedRoot() {
     doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
@@ -578,7 +547,6 @@ public class ChangesManagerTest {
       }
     });
   }
-
   @Test
   public void addRoot() {
     final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
@@ -598,7 +566,6 @@ public class ChangesManagerTest {
       }
     });
   }
-
   @Test
   public void changeProperty() {
     final Wrappers._T<SNode> method = new Wrappers._T<SNode>();
@@ -620,7 +587,6 @@ public class ChangesManagerTest {
       }
     });
   }
-
   @Test
   public void changeReference() {
     final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
@@ -644,7 +610,6 @@ public class ChangesManagerTest {
       }
     });
   }
-
   @Test
   public void moveNode() {
     final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
@@ -692,7 +657,6 @@ public class ChangesManagerTest {
     ListSequence.fromList(tasks).addElement(moveToOtherClass);
     doSomethingAndUndo(myUiDiff, false, tasks);
   }
-
   @Test
   public void inlineVariable() {
     final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
@@ -743,7 +707,6 @@ public class ChangesManagerTest {
       }
     });
   }
-
   @Test
   public void rollbackAllSerially() {
     checkRootStatuses();
@@ -783,7 +746,6 @@ public class ChangesManagerTest {
     MapSequence.fromMap(myExpectedFileStatuses).put("ui.HTMLPanel", FileStatus.MODIFIED);
     checkRootStatuses();
   }
-
   @Test
   public void rollbackAllAtomically() {
     checkRootStatuses();
@@ -835,7 +797,6 @@ public class ChangesManagerTest {
     MapSequence.fromMap(myExpectedFileStatuses).put("ui.HTMLPanel", FileStatus.MODIFIED);
     checkRootStatuses();
   }
-
   private void checkOneAddedRoot(CurrentDifference newModelDiff) {
     waitForChangesManager();
     List<ModelChange> changes = check_4gxggu_a0b0fc(newModelDiff.getChangeSet());
@@ -851,7 +812,6 @@ public class ChangesManagerTest {
       }
     }));
   }
-
   @Test
   public void createNewModel() {
     final Wrappers._T<CurrentDifference> newModelDiff = new Wrappers._T<CurrentDifference>();
@@ -906,7 +866,6 @@ public class ChangesManagerTest {
     MapSequence.fromMap(myExpectedFileStatuses).put("newmodel.NewRoot", FileStatus.ADDED);
     checkRootStatuses();
   }
-
   private void waitForReloadFinished() {
     waitForSomething(new Runnable() {
       public void run() {
@@ -923,7 +882,6 @@ public class ChangesManagerTest {
       }
     });
   }
-
   @Test
   public void deleteModelAndRollback() {
     setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_ACTION_SILENTLY);
@@ -966,7 +924,6 @@ public class ChangesManagerTest {
 
     setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
   }
-
   @BeforeClass
   public static void setUp() {
     MpsTestsSupport.initEnv(true, EnvironmentConfig.emptyEnvironment().withBootstrapLibraries().addPlugin("Git4Idea").addPlugin("jetbrains.mps.vcs").addPlugin("jetbrains.mps.ide.make"));
@@ -977,20 +934,16 @@ public class ChangesManagerTest {
     ourProject = ProjectTestsSupport.startTestOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE);
     FSChangesWatcher.instance().initComponent(true);
   }
-
   @AfterClass
   public static void tearDown() {
     ProjectTestsSupport.finishTestOnProjectCopy(ourProject, DESTINATION_PROJECT_DIR);
   }
-
   private class MyReloadListener implements ReloadListener {
     public MyReloadListener() {
     }
-
     @Override
     public void reloadStarted() {
     }
-
     @Override
     public void reloadFinished() {
       synchronized (this) {
@@ -998,105 +951,90 @@ public class ChangesManagerTest {
       }
     }
   }
-
   private static List<ModelChange> check_4gxggu_a0a9a92(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static List<ModelChange> check_4gxggu_a0a01a92(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static List<ModelChange> check_4gxggu_a0a3a13(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static List<ModelChange> check_4gxggu_a0a3a33(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static List<ModelChange> check_4gxggu_a0a0a53(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static List<ModelChange> check_4gxggu_a1a6a53(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static List<ModelChange> check_4gxggu_a0a5a63(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static void check_4gxggu_a3a0a0a0a0a54(FileEditor checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.dispose();
     }
 
   }
-
   private static List<ModelChange> check_4gxggu_a1a6a8a55(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static List<ModelChange> check_4gxggu_a0a0a5a65(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static List<ModelChange> check_4gxggu_a0a0g0ec(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static List<ModelChange> check_4gxggu_a0a9a65(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static List<ModelChange> check_4gxggu_a0b0fc(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static List<ModelChange> check_4gxggu_a0a11a85(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static void check_4gxggu_a0a0a2lc(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();

@@ -12,8 +12,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Order_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static String call_getGeneratedClassName_3038738109029038654(SNode thisNode) {
+  }
+  public static String call_getGeneratedClassName_3038738109029038654(SNode thisNode) {
     String n;
     if (isEmptyString(SPropertyOperations.getString(thisNode, "name"))) {
       n = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false), "name");
@@ -21,18 +21,18 @@ public class Order_Behavior {
       n = SPropertyOperations.getString(thisNode, "name");
     }
     return NameUtil.toValidCamelIdentifier(n) + "_Order";
-  };;
-;  public static boolean virtual_presents_1499919975383879508(SNode thisNode, final SNode tab) {
+  }
+  public static boolean virtual_presents_1499919975383879508(SNode thisNode, final SNode tab) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "tab", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "editorTab", false) == tab;
-      };;
-;    }).isNotEmpty();
-  };;
-;  public static SNode virtual_getOrder_3038738109029048953(SNode thisNode) {
+      }
+    }).isNotEmpty();
+  }
+  public static SNode virtual_getOrder_3038738109029048953(SNode thisNode) {
     return thisNode;
-  };;
-;  private static boolean isEmptyString(String str) {
+  }
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
-  };;
-;}
+  }
+}

@@ -10,24 +10,20 @@ import org.jetbrains.mps.util.Condition;
 public class UndefinedSearchScope implements ISearchScope {
   public UndefinedSearchScope() {
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public boolean isInScope(SNode node) {
     throw new UnsupportedOperationException();
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes() {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     throw new UnsupportedOperationException();

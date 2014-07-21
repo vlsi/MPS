@@ -17,11 +17,9 @@ public class BoxFigure extends AbstractVerticalLayoutFigure {
 
   public Property<Integer> lineWidth = new ValueProperty<Integer>(1);
 
-
   public BoxFigure() {
     this(new BoxFigure.BoxFigureMapperFactory());
   }
-
   protected BoxFigure(BoxFigure.BoxFigureMapperFactory mapperFactory) {
     myPolyLine.color().set(Color.GRAY);
     children().add(myPolyLine);
@@ -29,11 +27,9 @@ public class BoxFigure extends AbstractVerticalLayoutFigure {
       mapperFactory.createMapper(this).attachRoot();
     }
   }
-
   protected boolean isExcludedFromLayout(View childView) {
     return super.isExcludedFromLayout(childView) || childView == myPolyLine;
   }
-
   private void adjustPolyLinePoints() {
     int width = figureWidth.get();
     int height = figureHeight.get();
@@ -49,18 +45,15 @@ public class BoxFigure extends AbstractVerticalLayoutFigure {
     myPolyLine.points.add(new Vector(leftInset, height - rightInset).add(origin));
     myPolyLine.points.add(new Vector(leftInset, leftInset).add(origin));
   }
-
   private static class BoxFigureMapperFactory implements MapperFactory<BoxFigure, BoxFigure> {
     public Mapper<? extends BoxFigure, ? extends BoxFigure> createMapper(BoxFigure figure) {
       return new BoxFigure.BoxFigureMapper<BoxFigure>(figure);
     }
   }
-
   protected static class BoxFigureMapper<T extends BoxFigure> extends AbstractVerticalLayoutFigure.AbstractVerticalLayoutFigureMapper<T> {
     protected BoxFigureMapper(T figure) {
       super(figure);
     }
-
     @Override
     protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
       super.registerSynchronizers(configuration);

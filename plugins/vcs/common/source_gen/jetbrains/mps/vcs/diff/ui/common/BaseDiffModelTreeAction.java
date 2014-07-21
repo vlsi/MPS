@@ -17,20 +17,16 @@ public abstract class BaseDiffModelTreeAction extends BaseAction implements Dumb
     setDisableOnNoProject(false);
     setIsAlwaysVisible(false);
   }
-
   @Override
   protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
     setEnabledState(event.getPresentation(), getRootIdRef(event) != null);
   }
-
   protected static SNodeId getRootId(AnActionEvent event) {
     return check_vfywar_a0a2(getRootIdRef(event));
   }
-
   private static Ref<SNodeId> getRootIdRef(AnActionEvent event) {
     return event.getData(DiffModelTree.NODE_ID_DATAKEY);
   }
-
   private static SNodeId check_vfywar_a0a2(Ref<SNodeId> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.get();

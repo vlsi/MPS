@@ -9,5 +9,5 @@ public class AlsoSortOperation_BehaviorDescriptor extends SortOperation_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AlsoSortOperation";
-  };;
-;}
+  }
+}

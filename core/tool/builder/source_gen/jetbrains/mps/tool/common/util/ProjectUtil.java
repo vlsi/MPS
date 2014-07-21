@@ -26,6 +26,5 @@ public class ProjectUtil {
     }
     return false;
   }
-
   protected static Logger LOG = LogManager.getLogger(ProjectUtil.class);
 }

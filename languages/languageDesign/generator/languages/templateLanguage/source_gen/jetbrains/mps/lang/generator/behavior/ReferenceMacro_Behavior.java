@@ -11,8 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class ReferenceMacro_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+  }
+  public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     if (SLinkOperations.getTarget(thisNode, "referentFunction", true) == child) {
       return false;
     }
@@ -20,5 +20,5 @@ public class ReferenceMacro_Behavior {
       return false;
     }
     return true;
-  };;
-;}
+  }
+}

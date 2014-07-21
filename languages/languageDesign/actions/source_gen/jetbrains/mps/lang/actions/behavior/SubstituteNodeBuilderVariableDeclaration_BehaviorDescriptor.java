@@ -11,5 +11,5 @@ public class SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor extends
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration";
-  };;
-;}
+  }
+}

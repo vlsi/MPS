@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_MapRemoveOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_MapRemoveOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode KEY_typevar_1207233776692 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode VALUE_typevar_1207233776693 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -39,22 +38,18 @@ public class typeof_MapRemoveOperation_InferenceRule extends AbstractInferenceRu
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1207233776690", true), (SNode) typeCheckingContext.getRepresentative(VALUE_typevar_1207233776693), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_sinm8l_a0c0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

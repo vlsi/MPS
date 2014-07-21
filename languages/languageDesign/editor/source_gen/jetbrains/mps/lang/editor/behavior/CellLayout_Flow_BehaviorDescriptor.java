@@ -9,5 +9,5 @@ public class CellLayout_Flow_BehaviorDescriptor extends CellLayout_BehaviorDescr
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellLayout_Flow";
-  };;
-;}
+  }
+}

@@ -51,11 +51,9 @@ public class QueriesGenerated {
                 SPropertyOperations.set(res, "shortEmptyNotation", "" + (true));
                 return res;
               }
-
               public String getMatchingText(String pattern) {
                 return "<" + (item) + "/>";
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -66,11 +64,9 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_XmlBaseElement_7926701909975919246(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.workflow.structure.BwfJavaModule") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.workflow.structure.BwfFileSet") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.workflow.structure.BwfJavaClassPath");
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BwfFileSet_7926701909975921570(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -84,11 +80,9 @@ public class QueriesGenerated {
             ListSequence.fromList(SLinkOperations.getTargets(cp, "elements", true)).addElement(nodeToWrap);
             return cp;
           }
-
           public boolean returnSmallPart(SNode nodeToWrap) {
             return false;
           }
-
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
@@ -101,7 +95,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BwfJavaDependency_7926701909975917808(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -115,11 +108,9 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(cp, "classpath", nodeToWrap, true);
             return cp;
           }
-
           public boolean returnSmallPart(SNode nodeToWrap) {
             return false;
           }
-
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
@@ -132,7 +123,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_BwfSubTask_3961775458390293277(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfSubTask"), _context.getSourceNode()) {
@@ -140,15 +130,12 @@ public class QueriesGenerated {
         ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "before", true)).addElement(SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency"));
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         return "before";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -159,11 +146,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BwfSubTask_3961775458390293278(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "before", true)).isEmpty();
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_BwfSubTask_2769948622284767742(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfSubTask"), _context.getSourceNode()) {
@@ -171,15 +156,12 @@ public class QueriesGenerated {
         ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "after", true)).addElement(SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency"));
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         return "after";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -190,11 +172,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BwfSubTask_2769948622284767743(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "after", true)).isEmpty();
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_BwfTask_2769948622284761907(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTask"), _context.getSourceNode()) {
@@ -202,15 +182,12 @@ public class QueriesGenerated {
         ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "dependencies", true)).addElement(SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.build.workflow.structure.BwfTaskDependency"));
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         return "depends";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -221,11 +198,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BwfTask_2769948622284761933(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "dependencies", true)).isEmpty();
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_BwfTaskPart_7306485738221408320(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskPart"), _context.getSourceNode()) {
@@ -233,15 +208,12 @@ public class QueriesGenerated {
         ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "additionalDependencies", true)).addElement(SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.build.workflow.structure.BwfTaskDependency"));
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         return "depends";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -252,7 +224,6 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BwfTaskPart_7306485738221408337(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "additionalDependencies", true)).isEmpty();
   }

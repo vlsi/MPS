@@ -41,22 +41,18 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   private final CurrentDifferenceRegistry myRegistry;
   private final Map<SNodeReference, FileStatus> myFileStatusMap = MapSequence.fromMap(new HashMap<SNodeReference, FileStatus>());
   private final CurrentDifferenceListener myGlobalListener = new NodeFileStatusMapping.MyGlobalListener();
-
   public NodeFileStatusMapping(Project project, CurrentDifferenceRegistry registry) {
     super(project);
     myRegistry = registry;
   }
-
   @Override
   public void projectOpened() {
     myRegistry.addGlobalDifferenceListener(myGlobalListener);
   }
-
   @Override
   public void projectClosed() {
     myRegistry.removeGlobalDifferenceListener(myGlobalListener);
   }
-
   private void statusChanged(@NotNull final SNodeReference nodePointer) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -70,11 +66,9 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       }
     });
   }
-
   protected void statusChanged(FileStatusManager fsm, MPSNodesVirtualFileSystem nvfs, SNodeReference nodePointer) {
     fsm.fileStatusChanged(nvfs.getFileFor(nodePointer));
   }
-
   private void updateNodeStatus(@NotNull final SNodeReference nodePointer) {
     myRegistry.getCommandQueue().runTask(new Runnable() {
       public void run() {
@@ -84,7 +78,6 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       }
     });
   }
-
   private boolean calcStatus(@NotNull final SNodeReference root) {
     FileStatus status = ModelAccess.instance().runReadAction(new Computable<FileStatus>() {
       public FileStatus compute() {
@@ -127,7 +120,6 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       }
     }
   }
-
   @Nullable
   public FileStatus getStatus(@NotNull final SNode root) {
     final Wrappers._T<SNodeReference> nodePointer = new Wrappers._T<SNodeReference>();
@@ -155,20 +147,16 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       return MapSequence.fromMap(myFileStatusMap).get(nodePointer.value);
     }
   }
-
   @Nullable
   public FileStatus getStatus(@NotNull SNodeReference nodePointer) {
     synchronized (myFileStatusMap) {
       return MapSequence.fromMap(myFileStatusMap).get(nodePointer);
     }
   }
-
   private class MyGlobalListener extends CurrentDifferenceAdapter {
     private List<SNodeReference> myAffectedRoots = ListSequence.fromList(new ArrayList<SNodeReference>());
-
     private MyGlobalListener() {
     }
-
     @Override
     public void changeUpdateFinished() {
       ListSequence.fromList(myAffectedRoots).visitAll(new IVisitor<SNodeReference>() {
@@ -178,24 +166,20 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       });
       ListSequence.fromList(myAffectedRoots).clear();
     }
-
     private void addAffectedRoot(@NotNull ModelChange change) {
       if (change.getRootId() != null) {
         ListSequence.fromList(myAffectedRoots).addElement(new SNodePointer(change.getChangeSet().getNewModel().getReference(), change.getRootId()));
       }
     }
-
     @Override
     public void changeAdded(@NotNull ModelChange change) {
       addAffectedRoot(change);
     }
-
     @Override
     public void changeRemoved(@NotNull ModelChange change) {
       addAffectedRoot(change);
     }
   }
-
   private static List<ModelChange> check_onkh7z_a0d0b0a0a0a0j(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();

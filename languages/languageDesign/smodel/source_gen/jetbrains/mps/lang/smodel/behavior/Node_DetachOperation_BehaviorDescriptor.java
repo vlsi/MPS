@@ -9,12 +9,12 @@ public class Node_DetachOperation_BehaviorDescriptor extends SNodeOperation_Beha
   }
   public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
     return Node_DetachOperation_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
-  };;
-;  public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
+  }
+  public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
     return Node_DetachOperation_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Node_DetachOperation";
-  };;
-;}
+  }
+}

@@ -16,7 +16,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, EditorHintsProvider {
 
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("DiagramTestTextual", "Textual presentation for diagram test language.", true, "jetbrains.mps.lang.editor.diagram.testLanguage.editor.TestDiagramLanguage.DiagramTestTextual"));
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
@@ -45,17 +44,13 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, Edito
     }
     return Collections.<ConceptEditor>emptyList();
   }
-
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
-
-
   public Collection<ConceptEditorHint> getHints() {
     return myHints;
   }
-
 
   private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPortQueries", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
 }

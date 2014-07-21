@@ -11,11 +11,9 @@ import com.intellij.execution.ui.ConsoleViewContentType;
 
 public class ConsoleProcessListener extends ProcessAdapter {
   private final ConsoleView myConsoleView;
-
   public ConsoleProcessListener(ConsoleView consoleView) {
     myConsoleView = consoleView;
   }
-
   @Override
   public void onTextAvailable(ProcessEvent event, Key key) {
     if (ProcessOutputTypes.STDERR.equals(key)) {

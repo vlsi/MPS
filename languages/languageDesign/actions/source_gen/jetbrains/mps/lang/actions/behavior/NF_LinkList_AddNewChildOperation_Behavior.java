@@ -7,8 +7,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class NF_LinkList_AddNewChildOperation_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean virtual_applicableToLinkList_1262430001741498382(SAbstractConcept thisConcept) {
+  }
+  public static boolean virtual_applicableToLinkList_1262430001741498382(SAbstractConcept thisConcept) {
     return true;
-  };;
-;}
+  }
+}

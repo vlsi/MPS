@@ -15,7 +15,6 @@ public class MemberScopes {
   @Deprecated
   private MemberScopes() {
   }
-
   @Deprecated
   public static Scope nonAbstractMethods(@NotNull Scope scope) {
     // just filter members like this 
@@ -26,7 +25,6 @@ public class MemberScopes {
       }
     };
   }
-
   @Deprecated
   public static Scope visibleClassifierMembers(@NotNull Scope scope, final SNode contextClassifier, final SNode contextNode) {
     // use (sequence<node<IClassifierMember>>) classifierType.getVisibleMembers() instead 
@@ -37,7 +35,6 @@ public class MemberScopes {
       }
     };
   }
-
   @Deprecated
   public static Scope visibleClassifierMembers(SNode contextClassifier, SNode kind, SNode contextNode) {
     // use (sequence<node<IClassifierMember>>) classifierType.getVisibleMembers() instead 

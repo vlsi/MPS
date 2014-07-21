@@ -9,5 +9,5 @@ public class SelectOperation_BehaviorDescriptor extends InternalSequenceOperatio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SelectOperation";
-  };;
-;}
+  }
+}

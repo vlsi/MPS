@@ -10,5 +10,5 @@ public class PropertyQualifier_BehaviorDescriptor extends BaseConcept_BehaviorDe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.PropertyQualifier";
-  };;
-;}
+  }
+}

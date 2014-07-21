@@ -7,7 +7,6 @@ public class FacetConfigurationFormatException extends Exception {
   public FacetConfigurationFormatException(Throwable cause) {
     super(cause);
   }
-
   public FacetConfigurationFormatException(String msg) {
     super(msg);
   }

@@ -38,7 +38,6 @@ public class MpsTestsSuite extends Suite {
   private final Project contextProject;
   private final List<Runner> children;
 
-
   public MpsTestsSuite(Class<?> klass, RunnerBuilder builder) throws InitializationError {
     super(klass, Collections.<Runner>emptyList());
     // todo: read config from annotations before start (project / ?) 
@@ -48,8 +47,6 @@ public class MpsTestsSuite extends Suite {
     // <node> 
     children = createChildRunners(builder);
   }
-
-
 
   private static void initIdeaEnvironment() {
     // FIXME: plugins are already loaded into plugin.path property used by idea plugin manager 
@@ -62,8 +59,6 @@ public class MpsTestsSuite extends Suite {
     }
     MpsTestsSupport.initEnv(true, config);
   }
-
-
 
   private static Map<String, File> loadLibraries() {
     Map<String, File> result = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
@@ -81,8 +76,6 @@ public class MpsTestsSuite extends Suite {
     return result;
   }
 
-
-
   private static Map<String, File> loadMacros() {
     Map<String, File> result = MapSequence.fromMap(new HashMap<String, File>());
     for (Map.Entry<Object, Object> property : SetSequence.fromSet(System.getProperties().entrySet())) {
@@ -99,14 +92,10 @@ public class MpsTestsSuite extends Suite {
     return result;
   }
 
-
-
   @Override
   protected List<Runner> getChildren() {
     return children;
   }
-
-
 
   private List<Runner> createChildRunners(final RunnerBuilder builder) {
     final List<Runner> result = new ArrayList<Runner>();
@@ -123,7 +112,6 @@ public class MpsTestsSuite extends Suite {
     });
     return result;
   }
-
 
 
 }

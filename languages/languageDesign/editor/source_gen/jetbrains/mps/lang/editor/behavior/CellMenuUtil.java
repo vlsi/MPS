@@ -16,5 +16,5 @@ public class CellMenuUtil {
       return CellMenuDescriptor_Behavior.call_getEditedFeature_1220342015727(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"));
     }
     return null;
-  };;
-;}
+  }
+}

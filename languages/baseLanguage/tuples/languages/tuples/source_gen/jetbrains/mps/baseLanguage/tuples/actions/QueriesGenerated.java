@@ -52,7 +52,6 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "componentRef", true)).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", null)), "componentDeclaration", cd, false);
     }
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassifierType_1240500090073(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -81,11 +80,9 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_ClassifierType_1240500098737(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration") && "extends".equals(SPropertyOperations.getString(_context.getLink(), "role"));
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_6880792723344953334(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -116,11 +113,9 @@ public class QueriesGenerated {
                   }
                 }).select(toRef).toListSequence(), (item));
               }
-
               public String getMatchingText(String pattern) {
                 return BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getPresentation_1213877396640", new Object[]{}) + " literal";
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -131,7 +126,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_6880792723345030575(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -153,11 +147,9 @@ public class QueriesGenerated {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 return _quotation_createNode_n0gwsk_a0a0a0a((item));
               }
-
               public String getMatchingText(String pattern) {
                 return BehaviorReflection.invokeVirtual(String.class, (item), "virtual_getPresentation_1213877396640", new Object[]{}) + " type";
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -168,7 +160,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1238884711273(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression"), _context.getSourceNode()) {
@@ -177,19 +168,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(mae, "tuple", _context.getSourceNode(), true);
         return mae;
       }
-
       public String getMatchingText(String pattern) {
         return "[";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "access tuple member by index";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -200,11 +187,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1238884718191(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), false) != null);
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_Type_1240401099703(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"), _context.getSourceNode()) {
@@ -212,15 +197,12 @@ public class QueriesGenerated {
         SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"), "final", "" + (true));
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         return "final";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -231,11 +213,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_1240401116348(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return !(SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"), "final"));
   }
-
   private static SNode _quotation_createNode_vpowte_a0a0a1a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -243,7 +223,6 @@ public class QueriesGenerated {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_zhyrwg_a0a0a0a0a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -254,7 +233,6 @@ public class QueriesGenerated {
     quotedNode_2.addChild("value", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_zhyrwg_a1a0a0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -270,7 +248,6 @@ public class QueriesGenerated {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_n0gwsk_a0a0a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

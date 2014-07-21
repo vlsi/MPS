@@ -9,5 +9,5 @@ public class SubtypingRule_BehaviorDescriptor extends AbstractSubtypingRule_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.SubtypingRule";
-  };;
-;}
+  }
+}

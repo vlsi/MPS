@@ -15,21 +15,21 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class MultiForEachStatement_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+  }
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable")) {
       if (ScopeUtils.comeFrom("body", thisNode, child)) {
         return Scopes.forVariables(kind, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "forEach", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "variable", true) != null);
-          };;
-;        }).select(new ISelector<SNode, SNode>() {
+          }
+        }).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "variable", true);
-          };;
-;        }), ScopeUtils.lazyParentScope(thisNode, kind));
+          }
+        }), ScopeUtils.lazyParentScope(thisNode, kind));
       }
     }
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
-  };;
-;}
+  }
+}

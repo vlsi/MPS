@@ -24,61 +24,47 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class AddMethodDocComment_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddMethodDocComment_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   }
-
   public String getPresentation() {
     return "AddMethodDocComment";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.javadoc";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "3196018662491292781");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddMethodDocComment_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")) == null) ? "Add Documentation Comment" : "Remove Documentation Comment");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       System.out.println("Node: " + node);
       DocCommentHelper.addJavadocLangIfMissing(node);
@@ -124,12 +110,10 @@ public class AddMethodDocComment_Intention implements IntentionFactory {
 
       editorContext.select(ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), "body", true)).first());
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddMethodDocComment_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_i2k1f8_a0b0k0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -137,7 +121,6 @@ public class AddMethodDocComment_Intention implements IntentionFactory {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "param", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_i2k1f8_a0b0n0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

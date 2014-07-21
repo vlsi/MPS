@@ -25,11 +25,9 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
   private int mySuspendPolicy = EventRequest.SUSPEND_ALL;
   private boolean myLogMessage = false;
   private final Logger LOG = Logger.wrap(LogManager.getLogger(JavaBreakpoint.class));
-
   protected JavaBreakpoint(Project project) {
     super(project);
   }
-
   public void createClassPrepareRequest(EventsProcessor debugProcess) {
     // this should be called on every breakpoint when DebugEventsProcessor is attached 
     ManagerThread.assertIsMangerThread();
@@ -44,7 +42,6 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
     createOrWaitPrepare(debugProcess);
     //  updateUI(); 
   }
-
   public void createOrWaitPrepare(final EventsProcessor debugProcess) {
     String className = getClassNameToPrepare();
     assert (className != null && className.length() > 0);
@@ -58,13 +55,10 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
       }
     }
   }
-
   protected abstract String getClassNameToPrepare();
-
   @NotNull
   @Override
   public abstract JavaBreakpointKind getKind();
-
   @Override
   public void processClassPrepare(EventsProcessor debugProcess, ReferenceType classType) {
     // this is called when a class for this ClassPrepareRequestor is prepared 
@@ -73,24 +67,19 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
     }
     createRequestForPreparedClass(debugProcess, classType);
   }
-
   protected abstract void createRequestForPreparedClass(EventsProcessor debugProcess, ReferenceType classType);
-
   @Override
   public void removeFromRunningSessions() {
     RequestManager.removeClassPrepareRequests(this);
   }
-
   @Override
   public void addToRunningSessions() {
     RequestManager.createClassPrepareRequests(this);
   }
-
   @Override
   public int getSuspendPolicy() {
     return mySuspendPolicy;
   }
-
   public void setSuspendPolicy(final int policy) {
     if (policy != mySuspendPolicy) {
       mySuspendPolicy = policy;
@@ -98,15 +87,12 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
       addToRunningSessions();
     }
   }
-
   public boolean isLogMessage() {
     return myLogMessage;
   }
-
   public void setLogMessage(boolean logMessage) {
     myLogMessage = logMessage;
   }
-
   @Override
   public boolean isRequestHitByEvent(EventContext context, LocatableEvent event) {
     assert EventsProcessor.isOnPooledThread();
@@ -127,7 +113,6 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
     }
     return true;
   }
-
   private static StackFrame check_e43rhl_a0b0c0q(ThreadReference checkedDotOperand) throws IncompatibleThreadStateException {
     if (null != checkedDotOperand) {
       return checkedDotOperand.frame(0);

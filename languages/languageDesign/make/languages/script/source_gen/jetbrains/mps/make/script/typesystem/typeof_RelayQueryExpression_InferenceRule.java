@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_RelayQueryExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_RelayQueryExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode rqe, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = rqe;
@@ -25,22 +24,18 @@ public class typeof_RelayQueryExpression_InferenceRule extends AbstractInference
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "1977954644795311552", true), (SNode) _quotation_createNode_7onn49_a0a0b(SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(rqe, "query", false), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption")), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.make.script.structure.RelayQueryExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_7onn49_a0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

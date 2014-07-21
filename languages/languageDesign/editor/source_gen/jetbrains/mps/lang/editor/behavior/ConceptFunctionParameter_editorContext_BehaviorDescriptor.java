@@ -11,5 +11,5 @@ public class ConceptFunctionParameter_editorContext_BehaviorDescriptor extends C
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext";
-  };;
-;}
+  }
+}

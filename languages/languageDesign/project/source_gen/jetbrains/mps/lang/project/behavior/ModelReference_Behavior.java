@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class ModelReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getModelReference_6236774123822284799(SNode thisNode) {
     String result = SPropertyOperations.getString(thisNode, "qualifiedName");
     if (isNotEmptyString(SPropertyOperations.getString(thisNode, "stereotype"))) {
@@ -19,7 +18,6 @@ public class ModelReference_Behavior {
     }
     return result;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

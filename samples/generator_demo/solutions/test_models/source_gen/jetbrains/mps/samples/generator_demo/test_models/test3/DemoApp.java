@@ -21,19 +21,16 @@ public class DemoApp {
     frame.setLocationRelativeTo(null);
     frame.setVisible(true);
   }
-
   public static void addContent(Container container) {
     container.add(createComponent_a());
     container.add(createComponent_a_0());
   }
-
   public static Component createComponent_a() {
     JButton component = new JButton();
     component.setText("Hello");
     component.setEnabled(false);
     return component;
   }
-
   public static Component createComponent_a_0() {
     JLabel component = new JLabel();
     component.setText("world!");

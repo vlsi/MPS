@@ -57,7 +57,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   public StackFrameContext(JavaUiState uiState) {
     super(uiState);
   }
-
   @Nullable
   @Override
   public SNode getLocationNode() {
@@ -70,7 +69,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
     return null;
   }
-
   @NotNull
   @Override
   public List<String> getClassPath() {
@@ -85,7 +83,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     classpath.removeAll(CommonPaths.getJDKPath());
     return ListSequence.fromListWithValues(new ArrayList<String>(), classpath);
   }
-
   @NotNull
   @Override
   public Map<String, VariableDescription> getVariables(final _FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
@@ -131,7 +128,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
     return result;
   }
-
   public void fillVariableDescription(String varName, VariableDescription description) {
     JavaStackFrame javaStackFrame = myUiState.getStackFrame();
     if (javaStackFrame != null) {
@@ -148,7 +144,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       }
     }
   }
-
   private void foreachVariable(_FunctionTypes._return_P1_E0<? extends Boolean, ? super JavaLocalVariable> action) {
     JavaStackFrame javaStackFrame = myUiState.getStackFrame();
     if (javaStackFrame != null) {
@@ -160,7 +155,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       }
     }
   }
-
   @Nullable
   @Override
   public SNode getStaticContextType(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
@@ -181,7 +175,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     SPropertyOperations.set(result, "highLevelNodeId", check_4zsmpx_a0a6a6(check_4zsmpx_a0a0g0g(highLevelNode)));
     return result;
   }
-
   private String getStaticContextTypeName() {
     JavaStackFrame frame = myUiState.getStackFrame();
     if (frame != null) {
@@ -192,7 +185,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
     return null;
   }
-
   private SNode getStaticContextNode() {
     JavaStackFrame frame = myUiState.getStackFrame();
     if (frame != null) {
@@ -203,7 +195,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
     return null;
   }
-
   @Nullable
   @Override
   public SNode getThisClassifierType(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
@@ -215,7 +206,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
     return getStaticContextType(createClassifierType);
   }
-
   @Nullable
   private SNode getMpsTypeFromJdiType(Type type, _FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) throws ClassNotLoadedException {
     // TODO generics 
@@ -249,7 +239,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
     return createClassifierType.invoke(type.name());
   }
-
   @Override
   public boolean isVariableVisible(final String variableName, final SNode variableType) {
     final Wrappers._boolean visible = new Wrappers._boolean(false);
@@ -273,7 +262,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     });
     return visible.value;
   }
-
   @Override
   public boolean isThisTypeValid(SNode thisType) {
     ObjectReference thisObject = myUiState.getThisObject();
@@ -282,7 +270,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
     return eq_4zsmpx_a0c0m(thisObject.referenceType().signature(), TransformatorBuilder.getInstance().getJniSignatureFromType(thisType));
   }
-
   @Override
   public boolean isStaticContextTypeValid(SNode staticContextType) {
     if (!(SNodeOperations.isInstanceOf(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
@@ -294,79 +281,67 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
     return staticContextTypeName.equals(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{}));
   }
-
   protected static Logger LOG = LogManager.getLogger(StackFrameContext.class);
-
   private static String check_4zsmpx_a0a6a6(SNodeId checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.toString();
     }
     return null;
   }
-
   private static SNodeId check_4zsmpx_a0a0g0g(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }
     return null;
   }
-
   private static SNode _quotation_createNode_4zsmpx_a0a0a1a01() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4zsmpx_a0a1a1a01() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4zsmpx_a0a2a1a01() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4zsmpx_a0a3a1a01() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4zsmpx_a0a4a1a01() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4zsmpx_a0a5a1a01() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4zsmpx_a0a6a1a01() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4zsmpx_a0a7a1a01() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4zsmpx_a0a0b0k(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -378,15 +353,12 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
     return quotedNode_2;
   }
-
   private static boolean eq_4zsmpx_a0a0a0a0a1a11(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_4zsmpx_a0b0a0a0a0a0a1a11(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_4zsmpx_a0c0m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

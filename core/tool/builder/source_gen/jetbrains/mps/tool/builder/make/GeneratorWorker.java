@@ -39,17 +39,14 @@ import jetbrains.mps.library.LibraryInitializer;
 
 public class GeneratorWorker extends BaseGeneratorWorker {
   private final UrlClassLoader myClassLoader;
-
   public GeneratorWorker(Script whatToDo) {
     super(whatToDo);
     myClassLoader = createClassloader();
   }
-
   public GeneratorWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
     myClassLoader = createClassloader();
   }
-
   @Override
   public void work() {
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
@@ -105,17 +102,14 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     dispose();
     showStatistic();
   }
-
   public static void main(String[] args) {
     MpsWorker mpsWorker = new GeneratorWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     mpsWorker.workFromMain();
   }
-
   protected class MyEnvironment extends MpsEnvironment {
     public MyEnvironment(EnvironmentConfig config) {
       super(config);
     }
-
     @Override
     protected Iterable<LibraryContributor> createLibContributors(EnvironmentConfig config) {
       registerFactory();
@@ -127,8 +121,6 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       }
       return Sequence.<LibraryContributor>singleton(new SetLibraryContributor(libraryPaths));
     }
-
-
 
     private void registerFactory() {
       FacetsFacade.FacetFactory dumbFactory = FacetsFacade.getInstance().getFacetFactory(DumbIdeaPluginFacet.FACET_TYPE);
@@ -147,7 +139,6 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       });
     }
   }
-
   private UrlClassLoader createClassloader() {
     String pluginsPath = myWhatToDo.getProperty(ScriptProperties.PLUGIN_PATHS);
     Set<File> pluginsClasspath = SetSequence.fromSet(new LinkedHashSet<File>());

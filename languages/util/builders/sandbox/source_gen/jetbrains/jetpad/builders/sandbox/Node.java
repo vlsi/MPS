@@ -6,22 +6,16 @@ package jetbrains.jetpad.builders.sandbox;
 public class Node {
   public Node(String c) {
   }
-
   public void add(Node n) {
   }
-
   public void setXYZ(int i) {
   }
-
   public void setAAAA(String s) {
   }
-
   public void setText(String text) {
   }
-
   public void setName(String name) {
   }
-
   public void setChild(Node node) {
   }
 }

@@ -14,34 +14,26 @@ public class _ConceptDeclaration_DeleteAbstract_Action {
     editorCell.setAction(CellActionType.DELETE, new _ConceptDeclaration_DeleteAbstract_Action._ConceptDeclaration_DeleteAbstract_Action_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new _ConceptDeclaration_DeleteAbstract_Action._ConceptDeclaration_DeleteAbstract_Action_BACKSPACE(node));
   }
-
   public static class _ConceptDeclaration_DeleteAbstract_Action_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public _ConceptDeclaration_DeleteAbstract_Action_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "abstract", "" + (false));
     }
   }
-
   public static class _ConceptDeclaration_DeleteAbstract_Action_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public _ConceptDeclaration_DeleteAbstract_Action_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "abstract", "" + (false));
     }

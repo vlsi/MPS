@@ -17,18 +17,14 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
-
   public sequence_supertypeOf_set_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode set, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_5z9xz6_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_elementType")));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SetType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       GeneratedMatchingPattern pattern = new sequence_supertypeOf_set_SubtypingRule.Pattern_5z9xz6_a0a0a0a4();
@@ -37,17 +33,13 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   public static class Pattern_5z9xz6_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_elementType;
-
     public Pattern_5z9xz6_a0a0a0a4() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_twopzc_a0a = nodeToMatch;
@@ -67,28 +59,23 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_elementType = (SNode) pattern.getFieldValue("patternVar_elementType");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_elementType".equals(fieldName)) {
         return patternVar_elementType;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNode _quotation_createNode_5z9xz6_a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

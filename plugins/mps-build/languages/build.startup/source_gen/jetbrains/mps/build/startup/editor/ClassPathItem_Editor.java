@@ -15,7 +15,6 @@ public class ClassPathItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_a89fzi_a(editorContext, node);
   }
-
   private EditorCell createProperty_a89fzi_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("path");

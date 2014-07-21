@@ -13,30 +13,24 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class SimpleMathLongType_subtypeOf_Float_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public SimpleMathLongType_subtypeOf_Float_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode longType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return createSimpleMathFloatType_rmkbnt_a0a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathLongType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   public boolean surelyKeepsConcept() {
     return true;
   }
-
   private static SNode createSimpleMathFloatType_rmkbnt_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType", null, false);

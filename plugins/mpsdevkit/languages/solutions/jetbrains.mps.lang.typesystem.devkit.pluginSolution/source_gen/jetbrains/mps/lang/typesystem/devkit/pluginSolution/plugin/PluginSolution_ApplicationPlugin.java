@@ -13,14 +13,11 @@ import java.util.ArrayList;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution");
-
   public PluginSolution_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new GoToTypeErrorRule_Action());
@@ -32,13 +29,11 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new InternalTypeSystemActions_ActionGroup());
     addGroup(new TypesystemActions_ActionGroup());
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(GoToTypeErrorGroup_ActionGroup.ID, TypesystemActions_ActionGroup.ID, null);
     insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_types);
     insertGroupIntoAnother(InternalTypeSystemActions_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
   }
-
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());

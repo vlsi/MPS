@@ -32,10 +32,8 @@ public class XmlFile_TextGen extends SNodeTextGen {
       }
     }
   }
-
   public String getExtension(SNode node) {
     return "xml";
   }
-
   protected static Logger LOG = LogManager.getLogger(XmlFile_TextGen.class);
 }

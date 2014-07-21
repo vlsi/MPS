@@ -21,7 +21,6 @@ public class SideTranformWrapper_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6v8cz3_a(editorContext, node);
   }
-
   private EditorCell createCollection_6v8cz3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6v8cz3_a");
@@ -34,7 +33,6 @@ public class SideTranformWrapper_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6v8cz3_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_6v8cz3_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_6v8cz3_a0");
@@ -44,7 +42,6 @@ public class SideTranformWrapper_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_6v8cz3_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("child");
@@ -65,7 +62,6 @@ public class SideTranformWrapper_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_6v8cz3_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6v8cz3_c0");
@@ -75,18 +71,15 @@ public class SideTranformWrapper_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6v8cz3_a2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_6v8cz3_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "rightOpen");
   }
-
   private EditorCell createConstant_6v8cz3_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "right");
     editorCell.setCellId("Constant_6v8cz3_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_6v8cz3_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_6v8cz3_d0");

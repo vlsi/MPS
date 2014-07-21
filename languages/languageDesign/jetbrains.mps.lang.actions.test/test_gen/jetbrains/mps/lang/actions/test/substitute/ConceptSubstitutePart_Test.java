@@ -15,18 +15,15 @@ import java.util.ArrayList;
 public class ConceptSubstitutePart_Test extends BaseTransformationTest {
   public ConceptSubstitutePart_Test() {
   }
-
   @Test
   public void test_ConceptSubstitutePart() throws Throwable {
     this.initTest("${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
     this.runTest("jetbrains.mps.lang.actions.test.substitute.ConceptSubstitutePart_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("3213804652589456691", "3213804652589456739");

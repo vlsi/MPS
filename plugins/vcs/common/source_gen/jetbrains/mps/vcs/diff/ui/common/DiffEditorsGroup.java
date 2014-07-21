@@ -25,16 +25,13 @@ public class DiffEditorsGroup {
   private List<DiffEditor> myDiffEditors = ListSequence.fromList(new ArrayList<DiffEditor>());
   private DiffEditorsGroup.MyCellSelectionListener myCellSelectionListener = new DiffEditorsGroup.MyCellSelectionListener();
   private boolean myViewportSetInProgress = false;
-
   public DiffEditorsGroup() {
   }
-
   public void add(DiffEditor diffEditor) {
     ListSequence.fromList(myDiffEditors).addElement(diffEditor);
     diffEditor.getMainEditor().getSelectionManager().addSelectionListener(myCellSelectionListener);
     diffEditor.getMainEditor().getViewport().addChangeListener(new DiffEditorsGroup.MyViewportChangeListener(diffEditor));
   }
-
   private static void synchronizeViewWithOther(@NotNull final EditorComponent thisEditor, @NotNull final EditorComponent otherEditor) {
     if (thisEditor == otherEditor) {
       return;
@@ -77,11 +74,9 @@ public class DiffEditorsGroup {
       }
     });
   }
-
   private class MyCellSelectionListener extends SingularSelectionListenerAdapter {
     public MyCellSelectionListener() {
     }
-
     @Override
     protected void selectionChangedTo(jetbrains.mps.openapi.editor.EditorComponent component, final SingularSelection newSelection) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -96,14 +91,11 @@ public class DiffEditorsGroup {
       });
     }
   }
-
   private class MyViewportChangeListener implements ChangeListener {
     private DiffEditor myDiffEditor;
-
     private MyViewportChangeListener(DiffEditor diffEditor) {
       myDiffEditor = diffEditor;
     }
-
     @Override
     public void stateChanged(ChangeEvent event) {
       if (myViewportSetInProgress) {
@@ -118,56 +110,48 @@ public class DiffEditorsGroup {
       myViewportSetInProgress = false;
     }
   }
-
   private static SNode check_s6qw4f_a0a0c0a0a1a5(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }
     return null;
   }
-
   private static SModel check_s6qw4f_a0d0a0a1a5(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
     return null;
   }
-
   private static boolean check_s6qw4f_a5a6a0a0b0f(String checkedDotOperand, SNode prevSibling) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(check_s6qw4f_a0a5a6a0a0b0f(prevSibling));
     }
     return false;
   }
-
   private static String check_s6qw4f_a0a5a6a0a0b0f(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRoleInParent();
     }
     return null;
   }
-
   private static SNodeId check_s6qw4f_a0a0a0a0a1g(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }
     return null;
   }
-
   private static SNode check_s6qw4f_a0a0a0a0a0b6(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }
     return null;
   }
-
   private static SNode check_s6qw4f_a0a0a0a1a0a0a0b6(SModel checkedDotOperand, SNodeId selectionId) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(selectionId);
     }
     return null;
   }
-
   private static SModel check_s6qw4f_a0a0a0a0b0a0a0a1g(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();

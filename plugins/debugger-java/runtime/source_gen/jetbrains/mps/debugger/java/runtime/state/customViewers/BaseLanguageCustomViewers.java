@@ -15,11 +15,9 @@ import org.jetbrains.annotations.NotNull;
 public class BaseLanguageCustomViewers implements ApplicationComponent {
   private final CustomViewersManager myCustomViewerManager;
   private final Set<ValueWrapperFactory> myFactories = SetSequence.fromSet(new HashSet<ValueWrapperFactory>());
-
   public BaseLanguageCustomViewers(CustomViewersManager manager) {
     myCustomViewerManager = manager;
   }
-
   public void initComponent() {
     SetSequence.fromSet(myFactories).addElement(new ObjectWrapperFactory());
     SetSequence.fromSet(myFactories).addElement(new ArrayWrapperFactory());
@@ -31,7 +29,6 @@ public class BaseLanguageCustomViewers implements ApplicationComponent {
       }
     });
   }
-
   public void disposeComponent() {
     SetSequence.fromSet(myFactories).visitAll(new IVisitor<ValueWrapperFactory>() {
       public void visit(ValueWrapperFactory it) {
@@ -39,7 +36,6 @@ public class BaseLanguageCustomViewers implements ApplicationComponent {
       }
     });
   }
-
   @NonNls
   @NotNull
   public String getComponentName() {

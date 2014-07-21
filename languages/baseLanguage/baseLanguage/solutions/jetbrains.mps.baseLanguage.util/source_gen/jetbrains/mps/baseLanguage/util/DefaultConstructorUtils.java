@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class DefaultConstructorUtils {
   public DefaultConstructorUtils() {
   }
-
   public static boolean containsDefaultConstructor(SNode clazz) {
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, clazz, "virtual_checkLoops_3980490811621705344", new Object[]{}))) {
       return false;
@@ -26,7 +25,6 @@ public class DefaultConstructorUtils {
     }
     return containsVisibleNoArgumentsConstructor(SNodeOperations.cast(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), clazz, "virtual_getSuperclass_1240936569950", new Object[]{}), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), clazz);
   }
-
   private static boolean containsVisibleNoArgumentsConstructor(SNode currentClass, SNode startClass) {
     if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), currentClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).isNotEmpty()) {
       SNode constructor = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), currentClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).findFirst(new IWhereFilter<SNode>() {

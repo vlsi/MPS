@@ -14,10 +14,8 @@ import org.apache.log4j.LogManager;
 
 public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private List<ValueWrapperFactory> myFactories = ListSequence.fromList(new ArrayList<ValueWrapperFactory>());
-
   public CustomViewersInitializer_CustomApplicationPlugin() {
   }
-
   public void doInit() {
     CustomViewersManager manager = CustomViewersManager.getInstance();
     if (manager != null) {
@@ -53,7 +51,6 @@ public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustom
       }
     }
   }
-
   public void doDispose() {
     CustomViewersManager manager = CustomViewersManager.getInstance();
     if (manager != null) {
@@ -67,6 +64,5 @@ public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustom
     }
     ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).clear();
   }
-
   protected static Logger LOG = LogManager.getLogger(CustomViewersInitializer_CustomApplicationPlugin.class);
 }

@@ -9,5 +9,5 @@ public class ReduceLeftOperation_BehaviorDescriptor extends InternalSequenceOper
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ReduceLeftOperation";
-  };;
-;}
+  }
+}

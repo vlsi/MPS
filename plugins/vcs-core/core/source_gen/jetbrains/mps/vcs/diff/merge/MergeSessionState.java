@@ -20,7 +20,6 @@ public class MergeSessionState {
   /*package*/ SModel myResultModel;
   /*package*/ Set<ModelChange> myResolvedChanges;
   /*package*/ Map<SNodeId, SNodeId> myIdReplacementCache;
-
   /*package*/ MergeSessionState(SModel resultModel, Set<ModelChange> resolvedChanges, Map<SNodeId, SNodeId> idReplacementCache) {
     myResultModel = CopyUtil.copyModel(as_4dd3vt_a0a0a0a0d(resultModel, SModelBase.class).getSModelInternal()).getModelDescriptor();
     myResolvedChanges = SetSequence.fromSetWithValues(new HashSet<ModelChange>(), resolvedChanges);
@@ -31,11 +30,9 @@ public class MergeSessionState {
       }
     });
   }
-
   /*package*/ MergeSessionState(MergeSessionState copy) {
     this(copy.myResultModel, copy.myResolvedChanges, copy.myIdReplacementCache);
   }
-
   private static <T> T as_4dd3vt_a0a0a0a0d(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

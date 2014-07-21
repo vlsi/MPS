@@ -22,26 +22,19 @@ public class DependencyHelper {
   private final SModule myModule;
   private final Project myProject;
 
-
   public DependencyHelper(SNode node, Project project) {
     this.myNode = node;
     this.myModule = SNodeOperations.getModel(node).getModule();
     this.myProject = project;
   }
 
-
-
   public boolean isApplicable() {
     return execute(true) > 0;
   }
 
-
-
   public void execute() {
     execute(false);
   }
-
-
 
   private int execute(boolean dryRun) {
     int count = 0;
@@ -62,22 +55,16 @@ public class DependencyHelper {
   }
 
 
-
-
   private void fixModelImport(SModelReference mRefToImport) {
     JFrame projectFrame = WindowManager.getInstance().getFrame(myProject);
     new ModelImporter(SNodeOperations.getModel(myNode), projectFrame).execute(mRefToImport);
   }
-
-
 
   @Nullable
   private SModel resolveModel(SReference ref, @NotNull SRepository repo) {
     SModelReference mRef = ref.getTargetSModelReference();
     return check_iea6ws_a1a51(mRef, repo);
   }
-
-
 
   private static SModel check_iea6ws_a1a51(SModelReference checkedDotOperand, SRepository repo) {
     if (null != checkedDotOperand) {

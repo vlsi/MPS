@@ -34,16 +34,13 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Dependency_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.componentDependencies.editor.views.diagram"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createDiagramConnector_wb79wm_a(editorContext, node);
   }
-
   private EditorCell createDiagramConnector_wb79wm_a(final EditorContext editorContext, final SNode node) {
     final ConnectorCell editorCell = new Dependency_diagram_Editor.ConnectorCellImpl_wb79wm_a(editorContext, node);
     editorCell.setCellId("DiagramConnector_wb79wm_a");
@@ -51,16 +48,13 @@ public class Dependency_diagram_Editor extends DefaultNodeEditor {
     delConnector.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   public class ConnectorCellImpl_wb79wm_a extends ConnectorCell {
     protected Property<Tuples._1<SNode>> myInputPort = new ValueProperty<Tuples._1<SNode>>();
     protected Property<Tuples._1<SNode>> myOutputPort = new ValueProperty<Tuples._1<SNode>>();
-
     private ConnectorCellImpl_wb79wm_a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
       synchronize();
     }
-
     public Mapper<SNode, PolyLineConnection> createMapper() {
       return new Mapper<SNode, PolyLineConnection>(getSNode(), createConnection()) {
         @Override
@@ -71,7 +65,6 @@ public class Dependency_diagram_Editor extends DefaultNodeEditor {
             public void set(Tuples._1<SNode> port) {
               getTarget().toView().set(getTargetView(port));
             }
-
             private View getTargetView(Tuples._1<SNode> port) {
               Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port._0());
               if (descendantMapper == null) {
@@ -88,7 +81,6 @@ public class Dependency_diagram_Editor extends DefaultNodeEditor {
                 getTarget().toView().set(null);
               }
             }
-
             private View getTargetView(Tuples._1<SNode> port) {
               Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port._0());
               if (descendantMapper == null) {
@@ -135,8 +127,6 @@ public class Dependency_diagram_Editor extends DefaultNodeEditor {
       };
     }
 
-
-
     public Mapper<SNode, ConnectorDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, ConnectorDecoratorView>(getSNode(), createConnectorDecoratorView()) {
         @Override
@@ -158,7 +148,6 @@ public class Dependency_diagram_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     private ConnectorDecoratorView createConnectorDecoratorView() {
       ConnectorDecoratorView connectorDecoratorView = new ConnectorDecoratorView();
       DiagramCell diagramCell = getDiagramCell();
@@ -174,8 +163,6 @@ public class Dependency_diagram_Editor extends DefaultNodeEditor {
     }
 
 
-
-
     public void synchronize() {
       myInputPort.set(MultiTuple.<SNode>from(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(getSNode()), "jetbrains.mps.samples.componentDependencies.structure.Component"), "out", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -188,7 +175,6 @@ public class Dependency_diagram_Editor extends DefaultNodeEditor {
         }
       })));
     }
-
     private PolyLineConnection createConnection() {
       PolyLineConnection connection = new PolyLineConnection();
       configureView(connection.view(), new _FunctionTypes._return_P0_E0<Boolean>() {
@@ -199,7 +185,6 @@ public class Dependency_diagram_Editor extends DefaultNodeEditor {
 
       return connection;
     }
-
 
 
   }

@@ -9,5 +9,5 @@ public class OverloadedOperatorTypeRule_BehaviorDescriptor extends AbstractOverl
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule";
-  };;
-;}
+  }
+}

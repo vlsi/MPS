@@ -11,15 +11,12 @@ public class PluginNameUtils {
   public static String getPluginName(SModule module) {
     return ModuleNameUtil.getModuleShortName(module) + "_ProjectPlugin";
   }
-
   public static String getApplicationPluginName(SModule module) {
     return ModuleNameUtil.getModuleShortName(module) + "_ApplicationPlugin";
   }
-
   public static String getPluginInitializerName(SModule module) {
     return ModuleNameUtil.getModuleShortName(module) + "_PluginInitializer";
   }
-
   public static SModule getOriginalModule(TemplateQueryContext context) {
     SModule originalModule = context.getOriginalInputModel().getModule();
     assert originalModule != null;

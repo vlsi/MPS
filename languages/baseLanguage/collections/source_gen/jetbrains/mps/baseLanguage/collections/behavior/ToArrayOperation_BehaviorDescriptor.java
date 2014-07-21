@@ -9,5 +9,5 @@ public class ToArrayOperation_BehaviorDescriptor extends NoArgumentsSequenceOper
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation";
-  };;
-;}
+  }
+}

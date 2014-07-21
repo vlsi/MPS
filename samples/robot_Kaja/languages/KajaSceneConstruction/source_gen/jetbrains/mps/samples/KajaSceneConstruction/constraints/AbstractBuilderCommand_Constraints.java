@@ -15,7 +15,6 @@ public class AbstractBuilderCommand_Constraints extends BaseConstraintsDescripto
   public AbstractBuilderCommand_Constraints() {
     super("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -24,7 +23,6 @@ public class AbstractBuilderCommand_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "col";
@@ -36,7 +34,6 @@ public class AbstractBuilderCommand_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "row";

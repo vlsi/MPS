@@ -6,7 +6,6 @@ package jetbrains.mps.debugger.java.api.evaluation.proxies;
 public class ProxyEqualsUtil {
   public ProxyEqualsUtil() {
   }
-
   public static boolean javaEquals(IValueProxy proxy1, IValueProxy proxy2) {
     if (proxy1 == proxy2) {
       return true;

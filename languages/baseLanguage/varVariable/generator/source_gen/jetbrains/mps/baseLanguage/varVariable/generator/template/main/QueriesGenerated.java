@@ -13,15 +13,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_8425555512443868043(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static SNode sourceNodeQuery_8425555512443868021(final SourceSubstituteMacroNodeContext _context) {
     return TypeChecker.getInstance().getTypeOf(_context.getNode());
   }
-
   public static SNode sourceNodeQuery_8425555512443868053(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "initializer", true);
   }

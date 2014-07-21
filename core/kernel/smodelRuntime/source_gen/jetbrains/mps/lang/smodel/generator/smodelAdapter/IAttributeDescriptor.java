@@ -11,88 +11,70 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public interface IAttributeDescriptor {
   public boolean match(@NotNull SNode attribute);
   public void update(@NotNull SNode attribute);
-
   public static class AttributeDescriptor implements IAttributeDescriptor {
     protected String myAttributeConceptName;
-
     public AttributeDescriptor(@Nullable String attributeConceptName) {
       myAttributeConceptName = attributeConceptName;
     }
-
     @Deprecated
     public AttributeDescriptor(@NotNull SNode attributeDeclaration) {
       myAttributeConceptName = NameUtil.nodeFQName(attributeDeclaration);
     }
-
     @Override
     public boolean match(@NotNull SNode attribute) {
       return myAttributeConceptName == null || SNodeOperations.isInstanceOf(attribute, myAttributeConceptName);
     }
-
     @Override
     public void update(@NotNull SNode attribute) {
     }
   }
-
   public static class AllAttributes extends IAttributeDescriptor.AttributeDescriptor {
     public AllAttributes() {
       super((String) null);
     }
   }
-
   public static class NodeAttribute extends IAttributeDescriptor.AttributeDescriptor {
     public NodeAttribute(@NotNull String attributeConceptName) {
       super(attributeConceptName);
     }
-
     @Deprecated
     public NodeAttribute(@NotNull SNode attributeDeclaration) {
       this(NameUtil.nodeFQName(attributeDeclaration));
     }
   }
-
   public static class LinkAttribute extends IAttributeDescriptor.AttributeDescriptor {
     private String myLinkRole;
-
     public LinkAttribute(@NotNull String attributeConceptName, String linkRole) {
       super(attributeConceptName);
       myLinkRole = linkRole;
     }
-
     @Deprecated
     public LinkAttribute(@NotNull SNode attributeDeclaration, String linkRole) {
       this(NameUtil.nodeFQName(attributeDeclaration), linkRole);
     }
-
     @Override
     public boolean match(@NotNull SNode attribute) {
       return super.match(attribute) && (myLinkRole == null || myLinkRole.equals(SNodeAccessUtil.getProperty(attribute, "linkRole")));
     }
-
     @Override
     public void update(@NotNull SNode attribute) {
       SNodeAccessUtil.setProperty(attribute, "linkRole", myLinkRole);
     }
   }
-
   public static class PropertyAttribute extends IAttributeDescriptor.AttributeDescriptor {
     private String myPropertyName;
-
     public PropertyAttribute(@NotNull String attributeConceptName, String propertyName) {
       super(attributeConceptName);
       myPropertyName = propertyName;
     }
-
     @Deprecated
     public PropertyAttribute(@NotNull SNode attributeDeclaration, String propertyName) {
       this(NameUtil.nodeFQName(attributeDeclaration), propertyName);
     }
-
     @Override
     public boolean match(@NotNull SNode attribute) {
       return super.match(attribute) && (myPropertyName == null || myPropertyName.equals(SNodeAccessUtil.getProperty(attribute, "propertyName")));
     }
-
     @Override
     public void update(@NotNull SNode attribute) {
       SNodeAccessUtil.setProperty(attribute, "propertyName", myPropertyName);

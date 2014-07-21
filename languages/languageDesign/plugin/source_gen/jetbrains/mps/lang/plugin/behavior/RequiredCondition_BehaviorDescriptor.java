@@ -10,5 +10,5 @@ public class RequiredCondition_BehaviorDescriptor extends BaseConcept_BehaviorDe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.RequiredCondition";
-  };;
-;}
+  }
+}

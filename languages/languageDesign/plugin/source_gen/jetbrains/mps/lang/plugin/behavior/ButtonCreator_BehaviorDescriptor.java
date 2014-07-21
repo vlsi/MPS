@@ -10,5 +10,5 @@ public class ButtonCreator_BehaviorDescriptor extends Expression_BehaviorDescrip
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ButtonCreator";
-  };;
-;}
+  }
+}

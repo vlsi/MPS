@@ -18,13 +18,11 @@ import com.intellij.execution.executors.DefaultDebugExecutor;
 public class DebugActionsUtil {
   public DebugActionsUtil() {
   }
-
   @Nullable
   public static AbstractDebugSession getDebugSession(AnActionEvent event) {
     DataContext dataContext = event.getDataContext();
     return DebugActionsUtil.getDebugSession(dataContext);
   }
-
   @Nullable
   public static IEvaluationProvider getEvaluationProvider(AnActionEvent event) {
     AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
@@ -33,7 +31,6 @@ public class DebugActionsUtil {
     }
     return null;
   }
-
   @Nullable
   public static AbstractDebugSession getDebugSession(DataContext dataContext) {
     Project project = PlatformDataKeys.PROJECT.getData(dataContext);

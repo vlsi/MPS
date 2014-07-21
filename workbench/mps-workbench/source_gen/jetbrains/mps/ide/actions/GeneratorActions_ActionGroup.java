@@ -15,7 +15,6 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_generatorNew = ID + "generatorNew";
   public static final String LABEL_ID_commonModule = ID + "commonModule";
   public static final String LABEL_ID_delete = ID + "delete";
-
   public GeneratorActions_ActionGroup() {
     super("GeneratorActions", ID);
     this.setIsInternal(false);

@@ -11,5 +11,5 @@ public class StyleClassReferenceList_BehaviorDescriptor extends BaseConcept_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyleClassReferenceList";
-  };;
-;}
+  }
+}

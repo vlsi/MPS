@@ -10,9 +10,9 @@ public class ConceptFunctionParameter_Concept_BehaviorDescriptor extends Concept
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConceptFunctionParameter_Concept_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Concept";
-  };;
-;}
+  }
+}

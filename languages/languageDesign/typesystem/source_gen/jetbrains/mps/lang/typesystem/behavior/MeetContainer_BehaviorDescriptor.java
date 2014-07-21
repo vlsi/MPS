@@ -11,5 +11,5 @@ public class MeetContainer_BehaviorDescriptor extends NodeAttribute_BehaviorDesc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.MeetContainer";
-  };;
-;}
+  }
+}

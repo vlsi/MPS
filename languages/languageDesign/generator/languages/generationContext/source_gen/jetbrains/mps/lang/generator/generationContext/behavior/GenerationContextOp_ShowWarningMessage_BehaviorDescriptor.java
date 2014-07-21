@@ -9,5 +9,5 @@ public class GenerationContextOp_ShowWarningMessage_BehaviorDescriptor extends G
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage";
-  };;
-;}
+  }
+}

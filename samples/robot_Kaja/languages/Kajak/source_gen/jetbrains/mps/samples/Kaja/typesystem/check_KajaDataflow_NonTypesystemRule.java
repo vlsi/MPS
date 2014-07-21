@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_KajaDataflow_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_KajaDataflow_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode commandList, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (commandList == null) {
       return;
@@ -59,18 +58,15 @@ public class check_KajaDataflow_NonTypesystemRule extends AbstractNonTypesystemR
     }
 
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.Kaja.structure.CommandList";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

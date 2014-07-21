@@ -10,5 +10,5 @@ public class ConceptCondition_BehaviorDescriptor extends BaseConcept_BehaviorDes
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ConceptCondition";
-  };;
-;}
+  }
+}

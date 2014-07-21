@@ -15,42 +15,34 @@ import jetbrains.mps.project.AbstractModule;
 public class OldRefactoringAdapter implements IRefactoring {
   private List<SNode> myNodesToOpen;
   protected AbstractLoggableRefactoring myOldRefactoring;
-
   @Deprecated
   public OldRefactoringAdapter(AbstractLoggableRefactoring oldRefactoring) {
     myOldRefactoring = oldRefactoring;
   }
-
   @Override
   public String getUserFriendlyName() {
     return myOldRefactoring.getUserFriendlyName();
   }
-
   public String getKeyStroke() {
     return myOldRefactoring.getKeyStroke();
   }
-
   @Override
   public Class getOverridenRefactoringClass() {
     return myOldRefactoring.getOverridenRefactoringClass();
   }
-
   @Override
   public IRefactoringTarget getRefactoringTarget() {
     return new OldRefactoringAdapter.MyRefactoringTarget();
   }
-
   @Override
   public boolean init(RefactoringContext refactoringContext) {
     return false;
   }
-
   @Override
   public void refactor(final RefactoringContext refactoringContext) {
     myOldRefactoring.doRefactor(refactoringContext);
     myNodesToOpen = myOldRefactoring.getNodesToOpen(refactoringContext);
   }
-
   @Override
   public List<SModel> getModelsToGenerate(RefactoringContext refactoringContext) {
     Map<SModule, List<SModel>> modelsToGenerate = myOldRefactoring.getModelsToGenerate(refactoringContext);
@@ -63,24 +55,19 @@ public class OldRefactoringAdapter implements IRefactoring {
     }
     return result;
   }
-
   @Override
   public void doWhenDone(final RefactoringContext refactoringContext) {
   }
-
   @Override
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
     return myOldRefactoring.getAffectedNodes(refactoringContext);
   }
-
   public String getRefactoringClassName() {
     return myOldRefactoring.getClass().getName();
   }
-
   public Class getRefactoringClass() {
     return myOldRefactoring.getClass();
   }
-
   public static IRefactoring createAdapterFor(AbstractLoggableRefactoring oldRefactoring) {
     if (oldRefactoring.doesUpdateModel()) {
       return new OldLoggableRefactoringAdapter(oldRefactoring);
@@ -88,13 +75,10 @@ public class OldRefactoringAdapter implements IRefactoring {
       return new OldRefactoringAdapter(oldRefactoring);
     }
   }
-
   private class MyRefactoringTarget implements IRefactoringTarget {
     private RefactoringTarget myTarget = myOldRefactoring.getRefactoringTarget();
-
     private MyRefactoringTarget() {
     }
-
     @Override
     public IRefactoringTarget.TargetType getTarget() {
       if (myTarget == RefactoringTarget.NODE) {
@@ -106,12 +90,10 @@ public class OldRefactoringAdapter implements IRefactoring {
         return IRefactoringTarget.TargetType.MODULE;
       }
     }
-
     @Override
     public boolean allowMultipleTargets() {
       return !(myOldRefactoring.isOneTargetOnly());
     }
-
     @Override
     public boolean isApplicable(Object o) {
       if (myTarget == RefactoringTarget.NODE) {

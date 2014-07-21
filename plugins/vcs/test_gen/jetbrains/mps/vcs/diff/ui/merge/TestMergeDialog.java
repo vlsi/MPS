@@ -64,10 +64,8 @@ public class TestMergeDialog {
     }
   };
   private static MPSProject ourMPSProject = new MPSProject(ourProject);
-
   public TestMergeDialog() {
   }
-
   public static void main(String[] args) throws JDOMException, IOException, ModelReadException {
     if (args.length == 0) {
       System.out.print("Input path to model zip: ");
@@ -147,9 +145,7 @@ public class TestMergeDialog {
       }
     });
   }
-
   protected static Logger LOG = LogManager.getLogger(TestMergeDialog.class);
-
   private static <T> T as_jrs6o7_a0a0a0c0a0a0a0f0a0a0a8a7(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

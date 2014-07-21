@@ -10,5 +10,5 @@ public class NodeInfo_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor 
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.NodeInfo";
-  };;
-;}
+  }
+}

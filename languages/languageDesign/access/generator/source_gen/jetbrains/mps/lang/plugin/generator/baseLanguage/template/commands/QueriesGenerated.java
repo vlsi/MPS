@@ -11,31 +11,24 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static SNode sourceNodeQuery_1225441503888(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
-
   public static SNode sourceNodeQuery_1225441503908(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
-
   public static SNode sourceNodeQuery_8319207097755373177(final SourceSubstituteMacroNodeContext _context) {
     return ((SLinkOperations.getTarget(_context.getNode(), "project", true) != null) ? SLinkOperations.getTarget(_context.getNode(), "project", true) : SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null));
   }
-
   public static SNode sourceNodeQuery_1225441503928(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
-
   public static SNode sourceNodeQuery_1225441503948(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
-
   public static SNode sourceNodeQuery_1225441503968(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
-
   public static SNode sourceNodeQuery_5332677359380594932(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }

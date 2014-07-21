@@ -31,12 +31,10 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
   public Require_Constraints() {
     super("jetbrains.mps.samples.Kaja.structure.Require");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -47,7 +45,6 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -56,7 +53,6 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -65,7 +61,6 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_iz8172_a0a0a0a0a1a0b0a1a3;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -97,7 +92,6 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
                 public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
                   return libraries;
                 }
-
                 /**
                  * Resolves element by reference text.
                  * 
@@ -116,7 +110,6 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
                     }
                   }).first();
                 }
-
                 /**
                  * Creates textual reference for scope element. If element has no textual representation
                  * for the reference, returns null.
@@ -144,11 +137,9 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.samples.Kaja.structure.CommandList") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(parentNode), "jetbrains.mps.samples.Kaja.structure.Script");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6c66d6ce-c8f4-4daf-92c4-a518b78006a8(jetbrains.mps.samples.Kaja.constraints)", "4394627182934757714");
   private static SNodePointer breakingNode_iz8172_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:6c66d6ce-c8f4-4daf-92c4-a518b78006a8(jetbrains.mps.samples.Kaja.constraints)", "4394627182935253715");
 }

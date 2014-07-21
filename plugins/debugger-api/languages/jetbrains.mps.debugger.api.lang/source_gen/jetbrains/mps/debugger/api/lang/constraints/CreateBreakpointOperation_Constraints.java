@@ -17,12 +17,10 @@ public class CreateBreakpointOperation_Constraints extends BaseConstraintsDescri
   public CreateBreakpointOperation_Constraints() {
     super("jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -33,10 +31,8 @@ public class CreateBreakpointOperation_Constraints extends BaseConstraintsDescri
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.debugger.api.lang.structure.DebuggerType"), true) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:907f129c-36bd-4484-bcf9-12840f088fab(jetbrains.mps.debugger.api.lang.constraints)", "5365453833390579712");
 }

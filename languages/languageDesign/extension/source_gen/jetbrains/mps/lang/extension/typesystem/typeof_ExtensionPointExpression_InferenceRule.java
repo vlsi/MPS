@@ -16,7 +16,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_ExtensionPointExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ExtensionPointExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode epe, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode objectType = SLinkOperations.getTarget(SLinkOperations.getTarget(epe, "extensionPoint", false), "objectType", true);
     {
@@ -25,22 +24,18 @@ public class typeof_ExtensionPointExpression_InferenceRule extends AbstractInfer
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "6626851894249791042", true), (SNode) _quotation_createNode_x0hnp2_a0b0b(SLinkOperations.getTarget(epe, "extensionPoint", false)), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.extension.structure.ExtensionPointExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_x0hnp2_a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

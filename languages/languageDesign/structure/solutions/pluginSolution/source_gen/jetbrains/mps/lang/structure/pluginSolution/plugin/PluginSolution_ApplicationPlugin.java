@@ -13,14 +13,11 @@ import java.util.ArrayList;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.structure.pluginSolution");
-
   public PluginSolution_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new MoveConcepts_Action());
@@ -38,7 +35,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ShowHelp_ActionGroup());
     addGroup(new Structure_ActionGroup());
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(Structure_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_structure);
     insertGroupIntoAnother(Structure_ActionGroup.ID, "EditorPopup_ActionGroupstructure", null);
@@ -46,7 +42,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ShowHelp_ActionGroup.ID, Structure_ActionGroup.ID, Structure_ActionGroup.LABEL_ID_showHelp);
     insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, "jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", null);
   }
-
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());

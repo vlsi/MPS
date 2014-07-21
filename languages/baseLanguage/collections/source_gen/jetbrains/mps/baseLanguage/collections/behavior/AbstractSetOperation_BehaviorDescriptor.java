@@ -9,5 +9,5 @@ public abstract class AbstractSetOperation_BehaviorDescriptor extends SequenceOp
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation";
-  };;
-;}
+  }
+}

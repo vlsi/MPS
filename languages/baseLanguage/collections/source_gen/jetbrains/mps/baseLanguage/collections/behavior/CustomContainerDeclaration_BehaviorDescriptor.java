@@ -12,5 +12,5 @@ public class CustomContainerDeclaration_BehaviorDescriptor extends GenericDeclar
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration";
-  };;
-;}
+  }
+}

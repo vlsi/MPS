@@ -6,7 +6,6 @@ package jetbrains.mps.lang.actions.testLanguage.behavior;
 public class ActionTestSidetransformChild1_BehaviorDescriptor extends ActionTestSidetransformAbstractChild_BehaviorDescriptor {
   public ActionTestSidetransformChild1_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1";

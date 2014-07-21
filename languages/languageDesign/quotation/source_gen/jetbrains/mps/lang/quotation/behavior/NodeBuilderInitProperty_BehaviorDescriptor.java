@@ -9,5 +9,5 @@ public class NodeBuilderInitProperty_BehaviorDescriptor extends NodeBuilderInitP
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty";
-  };;
-;}
+  }
+}

@@ -14,7 +14,6 @@ public class PropertyDeclaration_Constraints extends BaseConstraintsDescriptor {
   public PropertyDeclaration_Constraints() {
     super("jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class PropertyDeclaration_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";

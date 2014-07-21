@@ -7,26 +7,20 @@ import java.util.ArrayList;
 
 public class CommandChannel {
   private List<String> history = new ArrayList<String>();
-
   public CommandChannel() {
   }
-
   /*package*/ boolean contains(String code) {
     return history.contains(code);
   }
-
   public void send(String c) {
     history.add(c);
   }
-
   /*package*/ int historySize() {
     return history.size();
   }
-
   /*package*/ void clearHistory() {
     history = new ArrayList<String>();
   }
-
   public static void main(String[] args) {
     System.out.println("Hello from Command Channel");
   }

@@ -20,7 +20,6 @@ public class IfFunction_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_tonzor_a(editorContext, node);
   }
-
   private EditorCell createCollection_tonzor_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tonzor_a");
@@ -34,14 +33,12 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_tonzor_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_tonzor_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "IF(");
     editorCell.setCellId("Constant_tonzor_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_tonzor_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("logicalTest");
@@ -61,7 +58,6 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_tonzor_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_tonzor_c0");
@@ -71,7 +67,6 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_tonzor_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("valueIfTrue");
@@ -91,7 +86,6 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_tonzor_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_tonzor_e0");
@@ -101,7 +95,6 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_tonzor_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("valueIfFalse");
@@ -121,7 +114,6 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_tonzor_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_tonzor_g0");

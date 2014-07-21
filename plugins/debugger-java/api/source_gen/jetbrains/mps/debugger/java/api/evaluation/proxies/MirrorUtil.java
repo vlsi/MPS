@@ -11,26 +11,18 @@ import com.sun.jdi.VirtualMachine;
 public abstract class MirrorUtil {
   protected static MirrorUtil INSTANCE;
   protected static final Object LOCK = new Object();
-
   public MirrorUtil() {
   }
-
   @NotNull
   public abstract IValueProxy getValueProxy(@Nullable Value value);
-
   @NotNull
   public abstract List<Value> getValues(VirtualMachine machine, Object... args);
-
   @NotNull
   public abstract Object getJavaValue(@NotNull Value jdiValue);
-
   @NotNull
   public abstract IValueProxy getValueProxyFromJava(@Nullable Object javaValue, VirtualMachine machine);
-
   public abstract void init();
-
   public abstract void dispose();
-
   public static MirrorUtil getInstance() {
     synchronized (LOCK) {
       return INSTANCE;

@@ -10,5 +10,5 @@ public class GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor extends Ba
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor";
-  };;
-;}
+  }
+}

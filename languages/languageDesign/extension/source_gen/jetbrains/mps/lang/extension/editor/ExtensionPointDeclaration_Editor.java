@@ -22,7 +22,6 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_obn5mp_a(editorContext, node);
   }
-
   private EditorCell createCollection_obn5mp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_obn5mp_a");
@@ -34,7 +33,6 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_obn5mp_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_obn5mp_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ExtensionPoint");
     editorCell.setCellId("Constant_obn5mp_a0");
@@ -44,7 +42,6 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_obn5mp_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("extensionName");
@@ -62,7 +59,6 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_obn5mp_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_obn5mp_c0");
@@ -73,7 +69,6 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_obn5mp_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("objectType");
@@ -93,7 +88,6 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_obn5mp_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_obn5mp_e0");

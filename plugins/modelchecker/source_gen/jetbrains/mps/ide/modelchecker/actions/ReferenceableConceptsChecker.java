@@ -29,7 +29,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 public class ReferenceableConceptsChecker extends SpecificChecker {
   public ReferenceableConceptsChecker() {
   }
-
   @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, final ProgressMonitor monitor, SRepository repository) {
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
@@ -94,8 +93,6 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
     return results;
   }
 
-
-
   private void checkNode(List<SearchResult<ModelCheckerIssue>> results, SNode node, SNode refNode, boolean isAncestor, SNode anchor) {
     SNode conceptDecl = SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName());
     if (conceptDecl == null) {
@@ -120,6 +117,5 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
       SpecificChecker.addIssue(results, node, "Interface instance found! " + node.toString(), ModelChecker.SEVERITY_ERROR, "no concept", null);
     }
   }
-
 
 }

@@ -9,5 +9,5 @@ public class SkipOperation_BehaviorDescriptor extends SequenceOperation_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SkipOperation";
-  };;
-;}
+  }
+}

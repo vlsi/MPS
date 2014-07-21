@@ -11,9 +11,9 @@ public class Operation_parameter_BehaviorDescriptor extends ConceptFunctionParam
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return Operation_parameter_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.Operation_parameter";
-  };;
-;}
+  }
+}

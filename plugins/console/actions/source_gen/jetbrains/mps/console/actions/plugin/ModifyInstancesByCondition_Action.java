@@ -26,18 +26,15 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ModifyInstancesByCondition_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ModifyInstancesByCondition_Action() {
     super("Modify Instances by Condition", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -48,7 +45,6 @@ public class ModifyInstancesByCondition_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -71,7 +67,6 @@ public class ModifyInstancesByCondition_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ConsoleTab tab = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).getCurrentEditableTab();
@@ -84,9 +79,7 @@ public class ModifyInstancesByCondition_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ModifyInstancesByCondition_Action.class);
-
   private static SNode _quotation_createNode_nwjg5s_a0b0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

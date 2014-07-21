@@ -21,69 +21,54 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class IterateOverSequence_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public IterateOverSequence_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Expression";
   }
-
   public String getPresentation() {
     return "IterateOverSequence";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.collections.intentions.IterateOverSequence_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.collections";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     // TODO replace with isSubtype() when MPS-10610 is fixed 
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.collections.structure.SequenceType") || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.collections.structure.SetType") || TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(node), _quotation_createNode_7wizo7_b0a0b0a());
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "309173295241374789");
   }
-
   public boolean isSurroundWith() {
     return true;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new IterateOverSequence_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Iterate over Sequence";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode forStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", null);
       SNode outerStatement = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
@@ -95,12 +80,10 @@ public class IterateOverSequence_Intention implements IntentionFactory {
       }
       editorContext.select(SLinkOperations.getTarget(forStatement, "variable", true));
     }
-
     public IntentionDescriptor getDescriptor() {
       return IterateOverSequence_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_7wizo7_b0a0b0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

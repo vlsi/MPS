@@ -28,11 +28,9 @@ public class BuildMpsLayout_Plugin_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_y1xun7_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_y1xun7_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_y1xun7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y1xun7_a");
@@ -42,7 +40,6 @@ public class BuildMpsLayout_Plugin_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_y1xun7_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_y1xun7_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -51,16 +48,13 @@ public class BuildMpsLayout_Plugin_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildMpsLayout_Plugin_Editor.ReplaceWith_BuildLayout_NamedContainer_cellMenu_y1xun7_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_BuildLayout_NamedContainer_cellMenu_y1xun7_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BuildLayout_NamedContainer_cellMenu_y1xun7_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.build.structure.BuildLayout_NamedContainer";
     }
   }
-
   private EditorCell createRefCell_y1xun7_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("plugin");
@@ -85,20 +79,16 @@ public class BuildMpsLayout_Plugin_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_y1xun7_a1a extends InlineCellProvider {
     public _Inline_y1xun7_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_y1xun7_a0b0(editorContext, node);
     }
-
     private EditorCell createProperty_y1xun7_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("id");
@@ -118,7 +108,6 @@ public class BuildMpsLayout_Plugin_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createComponent_y1xun7_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.editor.BuildLayout_containerElements");
     Style style = new StyleImpl();
@@ -126,7 +115,6 @@ public class BuildMpsLayout_Plugin_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_y1xun7_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y1xun7_a_0");
@@ -135,7 +123,6 @@ public class BuildMpsLayout_Plugin_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_y1xun7_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_y1xun7_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strip implementation:");
     editorCell.setCellId("Constant_y1xun7_a0");
@@ -145,7 +132,6 @@ public class BuildMpsLayout_Plugin_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_y1xun7_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("stripImplementation");

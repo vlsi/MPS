@@ -10,5 +10,5 @@ public class EncodingLiteral_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.EncodingLiteral";
-  };;
-;}
+  }
+}

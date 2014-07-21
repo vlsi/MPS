@@ -26,12 +26,10 @@ public class RefactoringOptionsDialog extends DialogWrapper {
   private JPanel myInnerPanel;
   private boolean myHasModelsToGenerate;
   private boolean myIsCancelled = true;
-
   public RefactoringOptionsDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
     super(project, true);
     initDialog(refactoringContext, refactoring, hasModelsToGenerate);
   }
-
   @Override
   protected JComponent createCenterPanel() {
     myInnerPanel = new JPanel(new GridBagLayout());
@@ -57,11 +55,9 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     myInnerPanel.setPreferredSize(new Dimension(300, 250));
     return myInnerPanel;
   }
-
   public boolean isCancelled() {
     return myIsCancelled;
   }
-
   @Override
   protected void doOKAction() {
     myIsCancelled = false;
@@ -75,14 +71,12 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     }
     close(OK_EXIT_CODE);
   }
-
   @Nullable
   @NonNls
   @Override
   protected String getDimensionServiceKey() {
     return getClass().getName();
   }
-
   private void initDialog(RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
     setTitle("Refactoring Options");
     myRefactoringContext = refactoringContext;
@@ -90,7 +84,6 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     myHasModelsToGenerate = hasModelsToGenerate;
     init();
   }
-
   public static boolean needToBeShown(IRefactoring refactoring, boolean hasModelsToGenerate) {
     return refactoring instanceof ILoggableRefactoring || hasModelsToGenerate;
   }

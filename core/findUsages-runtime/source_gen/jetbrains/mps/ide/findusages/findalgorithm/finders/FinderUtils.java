@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class FinderUtils {
   private FinderUtils() {
   }
-
   public static boolean isAllResultsIsNodes(SearchResults results) {
     for (SearchResult result : ListSequence.fromList(((List<SearchResult>) results.getSearchResults()))) {
       if (!(result.getObject() instanceof SNode)) {
@@ -25,7 +24,6 @@ public class FinderUtils {
     }
     return true;
   }
-
   public static void sortNodeResultsByEditorPosition(SearchResults<SNode> results) {
     List<SearchResult<SNode>> resultList = results.getSearchResults();
     ListSequence.fromList(resultList).sort(new Comparator<SearchResult<SNode>>() {
@@ -34,7 +32,6 @@ public class FinderUtils {
       }
     }, true);
   }
-
   public static int compareNodes(SNode n1, SNode n2) {
     List<SNode> path1 = ListSequence.fromList(SNodeOperations.getAncestors(n1, null, true)).reversedList();
     List<SNode> path2 = ListSequence.fromList(SNodeOperations.getAncestors(n2, null, true)).reversedList();
@@ -45,7 +42,6 @@ public class FinderUtils {
     }
     return ListSequence.fromList(path1).count() - ListSequence.fromList(path2).count();
   }
-
   public static int compareBrothers(SNode n1, SNode n2) {
     if (SNodeOperations.getContainingLinkRole(n1) == null) {
       return n1.getPresentation().compareTo(n2.getPresentation());

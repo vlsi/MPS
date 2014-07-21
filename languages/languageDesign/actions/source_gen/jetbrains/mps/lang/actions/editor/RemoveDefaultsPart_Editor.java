@@ -16,7 +16,6 @@ public class RemoveDefaultsPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_udsylt_a(editorContext, node);
   }
-
   private EditorCell createCollection_udsylt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_udsylt_a");
@@ -24,7 +23,6 @@ public class RemoveDefaultsPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_udsylt_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_udsylt_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "remove defaults");
     editorCell.setCellId("Constant_udsylt_a0");

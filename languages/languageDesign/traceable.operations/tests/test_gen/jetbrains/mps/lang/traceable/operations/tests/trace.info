@@ -8,42 +8,42 @@
     <file name="CopyWithTrace_Test.java">
       <node id="7327404875649026840" at="23,57,24,128" concept="0" />
       <node id="7327404875649026840" at="24,128,25,126" concept="0" />
-      <node id="7327404875649026840" at="29,58,30,128" concept="0" />
-      <node id="7327404875649026840" at="30,128,31,127" concept="0" />
-      <node id="7327404875649026893" at="36,59,37,46" concept="0" />
-      <node id="7327404875649059184" at="37,46,38,372" concept="0" />
-      <node id="7327404875649026944" at="41,60,42,46" concept="0" />
-      <node id="7327404875649026978" at="42,46,43,360" concept="2" />
-      <node id="7327404875649027019" at="43,360,44,68" concept="2" />
-      <node id="7327404875649027081" at="44,68,45,68" concept="2" />
-      <node id="7327404875649059167" at="45,68,46,231" concept="0" />
-      <node id="7327404875649059174" at="46,231,47,231" concept="0" />
-      <node id="901167123042832900" at="49,41,50,173" concept="3" />
-      <node id="901167123042832897" at="49,0,52,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="7327404875649026893" at="36,0,40,0" concept="1" trace="test_copyNodeWithTrace#()V" />
+      <node id="7327404875649026840" at="28,58,29,128" concept="0" />
+      <node id="7327404875649026840" at="29,128,30,127" concept="0" />
+      <node id="7327404875649026893" at="34,59,35,46" concept="0" />
+      <node id="7327404875649059184" at="35,46,36,372" concept="0" />
+      <node id="7327404875649026944" at="38,60,39,46" concept="0" />
+      <node id="7327404875649026978" at="39,46,40,360" concept="2" />
+      <node id="7327404875649027019" at="40,360,41,68" concept="2" />
+      <node id="7327404875649027081" at="41,68,42,68" concept="2" />
+      <node id="7327404875649059167" at="42,68,43,231" concept="0" />
+      <node id="7327404875649059174" at="43,231,44,231" concept="0" />
+      <node id="901167123042832900" at="46,41,47,173" concept="3" />
+      <node id="901167123042832897" at="46,0,49,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="7327404875649026893" at="34,0,38,0" concept="1" trace="test_copyNodeWithTrace#()V" />
       <node id="7327404875649026840" at="22,0,27,0" concept="1" trace="test_copyNodeWithTrace#()V" />
-      <node id="7327404875649026840" at="28,0,33,0" concept="1" trace="test_copyNListWithTrace#()V" />
-      <node id="7327404875649059159" at="47,231,52,81" concept="0" />
-      <node id="7327404875649026944" at="41,0,54,0" concept="1" trace="test_copyNListWithTrace#()V" />
-      <scope id="901167123042832899" at="49,41,50,173" />
+      <node id="7327404875649026840" at="27,0,32,0" concept="1" trace="test_copyNListWithTrace#()V" />
+      <node id="7327404875649059159" at="44,231,49,81" concept="0" />
+      <node id="7327404875649026944" at="38,0,51,0" concept="1" trace="test_copyNListWithTrace#()V" />
+      <scope id="901167123042832899" at="46,41,47,173" />
       <scope id="7327404875649026840" at="23,57,25,126" />
-      <scope id="7327404875649026840" at="29,58,31,127" />
-      <scope id="7327404875649026893" at="36,59,38,372" />
-      <scope id="901167123042832897" at="49,0,52,0">
+      <scope id="7327404875649026840" at="28,58,30,127" />
+      <scope id="7327404875649026893" at="34,59,36,372" />
+      <scope id="901167123042832897" at="46,0,49,0">
         <var name="it" id="901167123042832897" />
       </scope>
-      <scope id="7327404875649026893" at="36,0,40,0" />
+      <scope id="7327404875649026893" at="34,0,38,0" />
       <scope id="7327404875649026840" at="22,0,27,0" />
-      <scope id="7327404875649026840" at="28,0,33,0" />
-      <scope id="7327404875649026944" at="41,60,52,81">
+      <scope id="7327404875649026840" at="27,0,32,0" />
+      <scope id="7327404875649026944" at="38,60,49,81">
         <var name="callingCopy" id="7327404875649027082" />
         <var name="copy" id="7327404875649026979" />
         <var name="utilityCopy" id="7327404875649027020" />
       </scope>
-      <scope id="7327404875649026944" at="41,0,54,0" />
-      <unit id="901167123042832897" at="48,208,52,7" name="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$1" />
-      <unit id="7327404875649026840" at="34,0,55,0" name="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$TestBody" />
-      <unit id="7327404875649026840" at="20,0,56,0" name="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test" />
+      <scope id="7327404875649026944" at="38,0,51,0" />
+      <unit id="901167123042832897" at="45,208,49,7" name="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$1" />
+      <unit id="7327404875649026840" at="32,0,52,0" name="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$TestBody" />
+      <unit id="7327404875649026840" at="20,0,53,0" name="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test" />
     </file>
   </root>
 </debug-info>

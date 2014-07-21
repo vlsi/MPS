@@ -22,7 +22,6 @@ import org.jetbrains.mps.openapi.model.SReference;
 public class MoveRefactoringUtils {
   public MoveRefactoringUtils() {
   }
-
   public static void addNodeAtLink(SNode container, SNode node) {
     if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.Classifier") && SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
       MemberInsertingUtils.insertClassifierMemberInBestPlace(SNodeOperations.cast(container, "jetbrains.mps.baseLanguage.structure.Classifier"), SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
@@ -35,7 +34,6 @@ public class MoveRefactoringUtils {
       }
     }
   }
-
   private static void addImportIfNeed(SModel model, SModel toImport) {
     if (model == null || toImport == null) {
       return;
@@ -57,11 +55,9 @@ public class MoveRefactoringUtils {
       ((Language) module).addDependency(toImport.getModule().getModuleReference(), false);
     }
   }
-
   public static void addNodeModelImportIfNeed(SNode node, SNode toImport) {
     addImportIfNeed(SNodeOperations.getModel(node), SNodeOperations.getModel(toImport));
   }
-
   public static void fixImportsFromNode(SNode node) {
     for (SNode descendant : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
       for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(descendant))) {
@@ -69,7 +65,6 @@ public class MoveRefactoringUtils {
       }
     }
   }
-
   public static boolean isReference(SNode node) {
     return ListSequence.fromList(SNodeOperations.getChildren(node)).isEmpty() && Sequence.fromIterable(SNodeOperations.getReferences(node)).count() == 1;
   }

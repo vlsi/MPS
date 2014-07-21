@@ -36,11 +36,9 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_pa0pfb_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_pa0pfb_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_pa0pfb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pa0pfb_a");
@@ -59,7 +57,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_pa0pfb_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_pa0pfb_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -69,16 +66,13 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildMps_DevKit_Editor.ReplaceWith_BuildProjectPart_cellMenu_pa0pfb_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_BuildProjectPart_cellMenu_pa0pfb_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BuildProjectPart_cellMenu_pa0pfb_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.build.structure.BuildProjectPart";
     }
   }
-
   private EditorCell createProperty_pa0pfb_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -96,7 +90,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_pa0pfb_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pa0pfb_c0");
@@ -108,11 +101,9 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_pa0pfb_c2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_pa0pfb_a2a(SNode node, EditorContext editorContext) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isCompact_8369506495128693730", new Object[]{}));
   }
-
   private EditorCell createConstant_pa0pfb_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_pa0pfb_a2a");
@@ -122,7 +113,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_pa0pfb_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("uuid");
@@ -140,7 +130,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_pa0pfb_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_pa0pfb_c2a");
@@ -152,7 +141,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_pa0pfb_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pa0pfb_d0");
@@ -165,11 +153,9 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_pa0pfb_b3a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_pa0pfb_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "path", true) != null);
   }
-
   private EditorCell createConstant_pa0pfb_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "load from");
     editorCell.setCellId("Constant_pa0pfb_a3a");
@@ -179,7 +165,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_pa0pfb_b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("path");
@@ -199,7 +184,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_pa0pfb_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pa0pfb_e0");
@@ -215,11 +199,9 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_pa0pfb_d4a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_pa0pfb_a4a(SNode node, EditorContext editorContext) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isCompact_8369506495128693730", new Object[]{}));
   }
-
   private EditorCell createConstant_pa0pfb_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends:");
     editorCell.setCellId("Constant_pa0pfb_a4a");
@@ -230,7 +212,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_pa0pfb_b4a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildMps_DevKit_Editor.extendsListHandler_pa0pfb_b4a(node, "extends", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -243,34 +224,28 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class extendsListHandler_pa0pfb_b4a extends RefNodeListHandler {
     public extendsListHandler_pa0pfb_b4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_pa0pfb_a1e0(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -283,7 +258,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_pa0pfb_a1e0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_pa0pfb_a1e0");
@@ -294,7 +268,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_pa0pfb_c4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "exports:");
     editorCell.setCellId("Constant_pa0pfb_c4a");
@@ -305,7 +278,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_pa0pfb_d4a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildMps_DevKit_Editor.exportsListHandler_pa0pfb_d4a(node, "exports", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -317,34 +289,28 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class exportsListHandler_pa0pfb_d4a extends RefNodeListHandler {
     public exportsListHandler_pa0pfb_d4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_pa0pfb_a3e0(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -357,7 +323,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_pa0pfb_a3e0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_pa0pfb_a3e0");
@@ -368,7 +333,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_pa0pfb_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_pa0pfb_f0");
@@ -378,7 +342,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_pa0pfb_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pa0pfb_a_0");
@@ -391,7 +354,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_pa0pfb_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_pa0pfb_a0");
@@ -399,11 +361,9 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_pa0pfb_b0a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_pa0pfb_a0a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isCompact_8369506495128693730", new Object[]{});
   }
-
   private EditorCell createCollection_pa0pfb_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pa0pfb_a0a");
@@ -414,7 +374,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_pa0pfb_b0a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_pa0pfb_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uuid:");
     editorCell.setCellId("Constant_pa0pfb_a0a0");
@@ -424,7 +383,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_pa0pfb_b0a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("uuid");
@@ -442,7 +400,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_pa0pfb_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pa0pfb_b0a");
@@ -458,7 +415,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_pa0pfb_d1a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_pa0pfb_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends:");
     editorCell.setCellId("Constant_pa0pfb_a1a0");
@@ -469,7 +425,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_pa0pfb_b1a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildMps_DevKit_Editor.extendsListHandler_pa0pfb_b1a0(node, "extends", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -482,34 +437,28 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class extendsListHandler_pa0pfb_b1a0 extends RefNodeListHandler {
     public extendsListHandler_pa0pfb_b1a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_pa0pfb_a1b0a(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -522,7 +471,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_pa0pfb_a1b0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_pa0pfb_a1b0a");
@@ -533,7 +481,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_pa0pfb_c1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "exports:");
     editorCell.setCellId("Constant_pa0pfb_c1a0");
@@ -544,7 +491,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_pa0pfb_d1a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildMps_DevKit_Editor.exportsListHandler_pa0pfb_d1a0(node, "exports", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -556,34 +502,28 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class exportsListHandler_pa0pfb_d1a0 extends RefNodeListHandler {
     public exportsListHandler_pa0pfb_d1a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_pa0pfb_a3b0a(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -596,7 +536,6 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_pa0pfb_a3b0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_pa0pfb_a3b0a");

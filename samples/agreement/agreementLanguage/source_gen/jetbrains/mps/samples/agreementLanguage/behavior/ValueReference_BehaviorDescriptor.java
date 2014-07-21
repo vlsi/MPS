@@ -7,7 +7,6 @@ import jetbrains.mps.samples.formulaLanguage.behavior.Expression_BehaviorDescrip
 public class ValueReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ValueReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.agreementLanguage.structure.ValueReference";

@@ -9,5 +9,5 @@ public class WrapperSubstituteMenuPart_BehaviorDescriptor extends SubstituteMenu
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart";
-  };;
-;}
+  }
+}

@@ -15,11 +15,11 @@ import jetbrains.mps.smodel.SReference;
 
 public class ActionParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_getType_1171743928471337193(SNode thisNode) {
+  }
+  public static SNode virtual_getType_1171743928471337193(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "type", true);
-  };;
-;  public static SNode virtual_getFieldDeclaration_1171743928471867409(SNode thisNode) {
+  }
+  public static SNode virtual_getFieldDeclaration_1171743928471867409(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
       return SLinkOperations.getTarget(_quotation_createNode_ax10d1_a0a0a0b(), "variableDeclaration", false);
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "type", true), "jetbrains.mps.lang.smodel.structure.SModelType")) {
@@ -28,34 +28,34 @@ public class ActionParameterDeclaration_Behavior {
       return SLinkOperations.getTarget(_quotation_createNode_ax10d1_a0a0b0a1(), "variableDeclaration", false);
     }
     throw new IllegalStateException("Action parameter has wrong type: " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "type", true), "virtual_getPresentation_1213877396640", new Object[]{}));
-  };;
-;  public static List<SNode> virtual_getOperationConcept_3044950653914717125(SAbstractConcept thisConcept) {
+  }
+  public static List<SNode> virtual_getOperationConcept_3044950653914717125(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.classifiers.structure.IMember", "virtual_getOperationConcept_3044950653914717125", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "1206092561075"));
     return result;
-  };;
-;  private static SNode _quotation_createNode_ax10d1_a0a0a0b() {
+  }
+  private static SNode _quotation_createNode_ax10d1_a0a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, false);
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)"), facade.createNodeId("~MPSCommonDataKeys.NODE")));
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)"), facade.createNodeId("~MPSCommonDataKeys")));
     return quotedNode_1;
-  };;
-;  private static SNode _quotation_createNode_ax10d1_a0a0a0a1() {
+  }
+  private static SNode _quotation_createNode_ax10d1_a0a0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, false);
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)"), facade.createNodeId("~MPSCommonDataKeys.CONTEXT_MODEL")));
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)"), facade.createNodeId("~MPSCommonDataKeys")));
     return quotedNode_1;
-  };;
-;  private static SNode _quotation_createNode_ax10d1_a0a0b0a1() {
+  }
+  private static SNode _quotation_createNode_ax10d1_a0a0b0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, false);
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)"), facade.createNodeId("~MPSCommonDataKeys.NODES")));
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)"), facade.createNodeId("~MPSCommonDataKeys")));
     return quotedNode_1;
-  };;
-;}
+  }
+}

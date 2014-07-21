@@ -17,16 +17,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class ChangeEvent_tabular_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.heating.tabular.editor.HeatingViews.tabular"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_yh5nv6_a(editorContext, node);
   }
-
   private EditorCell createCollection_yh5nv6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yh5nv6_a");
@@ -35,7 +32,6 @@ public class ChangeEvent_tabular_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_yh5nv6_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_yh5nv6_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("temperature");
@@ -53,7 +49,6 @@ public class ChangeEvent_tabular_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_yh5nv6_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Celsius");
     editorCell.setCellId("Constant_yh5nv6_b0");

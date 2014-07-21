@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class RegexUtil {
   public RegexUtil() {
   }
-
   public static List<SNode> collectMatchReferences(SNode enclosingNode) {
     List<SNode> matches = new ArrayList<SNode>();
     for (SNode ruc : SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", true)) {
@@ -38,7 +37,6 @@ public class RegexUtil {
     }
     return matches;
   }
-
   public static SNode findRegexpUsingConstructionFor(SNode ref) {
     SNode parens = SLinkOperations.getTarget(ref, "match", false);
     SNode ruc = SNodeOperations.getAncestor(parens, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false, false);
@@ -66,13 +64,11 @@ public class RegexUtil {
     }
     return null;
   }
-
   public static List<SNode> collectNamedParentheses(SNode node) {
     List<SNode> res = new ArrayList<SNode>();
     collectNamedParenthesesInternal(node, new ArrayList<SNode>(), res);
     return res;
   }
-
   private static void collectNamedParenthesesInternal(SNode node, List<SNode> seen, List<SNode> found) {
     if (ListSequence.fromList(seen).contains(node)) {
       return;
@@ -88,7 +84,6 @@ public class RegexUtil {
       ListSequence.fromList(found).addElement(mpe);
     }
   }
-
   public static SNode getRegexpIfContainer(SNode n) {
     SNode container = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
     if ((container != null) && (SNodeOperations.getParent(container) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(container), "jetbrains.mps.baseLanguage.structure.StatementList") && SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.IfStatement")) {

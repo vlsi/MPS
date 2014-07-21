@@ -16,7 +16,6 @@ public class DefaultReferenceAttribute_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_nltvu5_a(editorContext, node);
   }
-
   private EditorCell createCollection_nltvu5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_nltvu5_a");
@@ -25,14 +24,12 @@ public class DefaultReferenceAttribute_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAttributedLinkCell_nltvu5_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nltvu5_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$R$");
     editorCell.setCellId("const");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createAttributedLinkCell_nltvu5_b0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);

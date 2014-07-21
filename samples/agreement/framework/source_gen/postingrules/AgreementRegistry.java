@@ -7,14 +7,11 @@ import java.util.HashMap;
 
 public class AgreementRegistry {
   /*package*/ Map myAgreements = new HashMap();
-
   public AgreementRegistry() {
   }
-
   public void register(String name, ServiceAgreement agreement) {
     myAgreements.put(name, agreement);
   }
-
   public ServiceAgreement getAgreement(String name) {
     return (ServiceAgreement) myAgreements.get(name);
   }

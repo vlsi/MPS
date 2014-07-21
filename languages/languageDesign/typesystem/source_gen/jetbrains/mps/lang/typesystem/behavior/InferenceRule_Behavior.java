@@ -8,9 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class InferenceRule_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
+  }
+  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
     SPropertyOperations.set(thisNode, "name", "typeof_" + SPropertyOperations.getString(baseConcept, "name"));
-  };;
-;}
+  }
+}

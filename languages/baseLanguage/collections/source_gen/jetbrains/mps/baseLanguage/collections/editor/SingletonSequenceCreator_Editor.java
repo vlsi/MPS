@@ -23,7 +23,6 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_hxtcae_a(editorContext, node);
   }
-
   private EditorCell createCollection_hxtcae_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hxtcae_a");
@@ -37,7 +36,6 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_hxtcae_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_hxtcae_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "singleton");
     editorCell.setCellId("Constant_hxtcae_a0");
@@ -48,7 +46,6 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_hxtcae_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_hxtcae_b0");
@@ -58,7 +55,6 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_hxtcae_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elementType");
@@ -78,7 +74,6 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_hxtcae_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_hxtcae_d0");
@@ -89,7 +84,6 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_hxtcae_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_hxtcae_e0");
@@ -99,7 +93,6 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_hxtcae_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("singletonValue");
@@ -119,7 +112,6 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_hxtcae_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_hxtcae_g0");

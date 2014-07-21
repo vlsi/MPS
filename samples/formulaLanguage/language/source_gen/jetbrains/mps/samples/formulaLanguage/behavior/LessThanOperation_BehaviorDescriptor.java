@@ -6,7 +6,6 @@ package jetbrains.mps.samples.formulaLanguage.behavior;
 public class LessThanOperation_BehaviorDescriptor extends Operation_BehaviorDescriptor {
   public LessThanOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation";

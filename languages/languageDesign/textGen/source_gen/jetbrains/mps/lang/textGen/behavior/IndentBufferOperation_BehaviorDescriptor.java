@@ -9,5 +9,5 @@ public class IndentBufferOperation_BehaviorDescriptor extends SimpleTextGenOpera
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.IndentBufferOperation";
-  };;
-;}
+  }
+}

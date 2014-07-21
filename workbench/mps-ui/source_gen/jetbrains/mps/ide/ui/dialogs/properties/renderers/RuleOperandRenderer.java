@@ -35,10 +35,8 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_A
 
 public class RuleOperandRenderer implements TableCellRenderer {
   private Map<Object, Component> myRenderersCache = MapSequence.fromMap(new WeakHashMap<Object, Component>());
-
   public RuleOperandRenderer() {
   }
-
   @Override
   public Component getTableCellRendererComponent(JTable table, final Object value, boolean isSelected, boolean hasFocus, int row, int column) {
     if (value == null) {

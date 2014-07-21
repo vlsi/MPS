@@ -23,11 +23,9 @@ public final class GeneratorUtilEx {
     TemplateLangElements.add(RuleUtil.concept_TemplateFragment);
     TemplateLangElements.add(RuleUtil.concept_RootTemplateAnnotation);
   }
-
   public static boolean isTemplateLanguageElement(SNode n) {
     return isTemplateLanguageElement(n.getConcept().getQualifiedName());
   }
-
   public static boolean isTemplateLanguageElement(String conceptQualifiedName) {
     if (!(conceptQualifiedName.startsWith("jetbrains.mps.lang.generator"))) {
       // optimization 
@@ -35,7 +33,6 @@ public final class GeneratorUtilEx {
     }
     return RuleUtil.isNodeMacro(conceptQualifiedName) || TemplateLangElements.contains(conceptQualifiedName);
   }
-
   public static String getMappingName_NodeMacro(SNode node, String defaultValue) {
     SNode mappingLabel = SLinkOperations.getTarget(node, "mappingLabel", false);
     String mappingName = (mappingLabel != null ? SPropertyOperations.getString(mappingLabel, "name") : null);
@@ -44,7 +41,6 @@ public final class GeneratorUtilEx {
     }
     return mappingName;
   }
-
   public static String getMappingName_TemplateFragment(SNode node, String defaultValue) {
     SNode ld = SLinkOperations.getTarget(node, "labelDeclaration", false);
     if (ld == null) {
@@ -53,11 +49,9 @@ public final class GeneratorUtilEx {
     String v = SPropertyOperations.getString(ld, "name");
     return (v == null ? defaultValue : v);
   }
-
   public static String getPatternVariableName(SNode ref) {
     return BehaviorReflection.invokeVirtual(String.class, ref, "virtual_getVariableName_2902001550281937661", new Object[]{});
   }
-
   public static List<SNode> getTemplateFragments(@NotNull SNode template) {
     List<SNode> templateFragments = new ArrayList<SNode>();
     LinkedList<SNode> queue = new LinkedList<SNode>();
@@ -80,7 +74,6 @@ public final class GeneratorUtilEx {
     }
     return templateFragments;
   }
-
   public static void dispatchRuleConsequence(@NotNull SNode ruleConsequence, @NotNull GeneratorUtilEx.ConsequenceDispatch dispatch) {
     if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference")) {
       dispatch.templateDeclarationReference(ruleConsequence);
@@ -100,11 +93,9 @@ public final class GeneratorUtilEx {
       dispatch.unknown(ruleConsequence);
     }
   }
-
   public static String getGeneratorMessage_text(SNode generatorMessage) {
     return SPropertyOperations.getString(generatorMessage, "messageText");
   }
-
   public static DismissTopMappingRuleException.MessageType getGeneratorMessage_kind(SNode generatorMessage) {
     if (generatorMessage == null) {
       // this is how it used to be, although to me default to warn/info might be better 
@@ -119,7 +110,6 @@ public final class GeneratorUtilEx {
       return DismissTopMappingRuleException.MessageType.info;
     }
   }
-
   public static interface ConsequenceDispatch {
     public void inlineSwitch(SNode ruleConsequence);
     public void inlineTemplateWithContext(SNode ruleConsequence);

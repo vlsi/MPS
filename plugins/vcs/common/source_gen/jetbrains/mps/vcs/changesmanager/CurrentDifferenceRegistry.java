@@ -41,11 +41,9 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   private final CurrentDifferenceRegistry.MyEventsCollector myEventsCollector = new CurrentDifferenceRegistry.MyEventsCollector();
   private final CurrentDifferenceBroadcaster myGlobalBroadcaster = new CurrentDifferenceBroadcaster(myCommandQueue);
   private final CurrentDifferenceRegistry.MyFileStatusListener myFileStatusListener = new CurrentDifferenceRegistry.MyFileStatusListener();
-
   public CurrentDifferenceRegistry(@NotNull Project project, ProjectLevelVcsManager vcsManager, FileStatusManager fileStatusManager) {
     super(project);
   }
-
   @Override
   public void projectOpened() {
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
@@ -53,7 +51,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
 
     updateLoadedModels();
   }
-
   @Override
   public void projectClosed() {
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
@@ -67,11 +64,9 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     myEventsCollector.dispose();
     myCommandQueue.dispose();
   }
-
   public Project getProject() {
     return myProject;
   }
-
   private void updateModel(@NotNull SModel model) {
     synchronized (myCurrentDifferences) {
       SModelReference modelRef = model.getReference();
@@ -83,7 +78,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       MapSequence.fromMap(myCurrentDifferences).put(modelRef, cd);
     }
   }
-
   private void updateModel(@Nullable VirtualFile file) {
     if (file == null) {
       return;
@@ -98,7 +92,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     }
     updateModel(modelDescriptor);
   }
-
   public void updateLoadedModels() {
     for (SModel md : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
       if (md instanceof EditableSModel && !(md.isReadOnly())) {
@@ -106,7 +99,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       }
     }
   }
-
   private void disposeModelChangesManager(@NotNull SModelReference modelReference) {
     synchronized (myCurrentDifferences) {
       if (MapSequence.fromMap(myCurrentDifferences).containsKey(modelReference)) {
@@ -115,7 +107,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       }
     }
   }
-
   private void scheduleFullUpdate(Iterable<SModelReference> modelRefs) {
     synchronized (myCurrentDifferences) {
       for (SModelReference mr : modelRefs) {
@@ -126,7 +117,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       }
     }
   }
-
   @NotNull
   public CurrentDifference getCurrentDifference(@NotNull EditableSModel modelDescriptor) {
     synchronized (myCurrentDifferences) {
@@ -137,58 +127,44 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       return MapSequence.fromMap(myCurrentDifferences).get(modelRef);
     }
   }
-
   public void addGlobalDifferenceListener(@NotNull CurrentDifferenceListener listener) {
     myGlobalBroadcaster.addDifferenceListener(listener);
   }
-
   public void removeGlobalDifferenceListener(@NotNull CurrentDifferenceListener listener) {
     myGlobalBroadcaster.removeDifferenceListener(listener);
   }
-
   @NotNull
   public SimpleCommandQueue getCommandQueue() {
     return myCommandQueue;
   }
-
   /*package*/ CurrentDifferenceBroadcaster getGlobalBroadcaster() {
     return myGlobalBroadcaster;
   }
-
   /*package*/ void addEventCollector(SModel model, SModelCommandListener listener) {
     myEventsCollector.addListener(model, listener);
   }
-
   /*package*/ void removeEventCollector(SModel model, SModelCommandListener listener) {
     myEventsCollector.removeListener(model, listener);
   }
 
-
-
   public static CurrentDifferenceRegistry getInstance(Project project) {
     return project.getComponent(CurrentDifferenceRegistry.class);
   }
-
   private class MyFileStatusListener implements FileStatusListener {
     public MyFileStatusListener() {
     }
-
     @Override
     public void fileStatusesChanged() {
       updateLoadedModels();
     }
-
     @Override
     public void fileStatusChanged(@NotNull VirtualFile vf) {
       updateModel(vf);
     }
   }
-
   private class MySModelRepositoryListener extends SModelRepositoryAdapter {
     public MySModelRepositoryListener() {
     }
-
-
 
     @Override
     public void modelsReplaced(Set<SModel> set) {
@@ -200,7 +176,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       }
       scheduleFullUpdate(editableModels);
     }
-
     @Override
     public void beforeModelRemoved(SModel descriptor) {
       if (descriptor instanceof EditableSModel) {
@@ -208,10 +183,8 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       }
     }
   }
-
   private static class MyEventsCollector extends EventsCollector {
     private final MultiMap<SModelReference, SModelCommandListener> myListeners = new MultiMap<SModelReference, SModelCommandListener>();
-
     public void addListener(SModel model, SModelCommandListener listener) {
       if (!(myListeners.containsKey(model.getReference()))) {
         //  first time we see the model, tell EventCollector we are interested 
@@ -219,7 +192,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       }
       myListeners.putValue(model.getReference(), listener);
     }
-
     private void removeListener(SModel model, SModelCommandListener listener) {
       myListeners.remove(model.getReference(), listener);
       if (!(myListeners.containsKey(model.getReference()))) {
@@ -227,7 +199,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
         remove(model);
       }
     }
-
     @Override
     protected void eventsHappened(List<SModelEvent> list) {
       MultiMap<SModelReference, SModelEvent> modelToEvents = new MultiMap<SModelReference, SModelEvent>();

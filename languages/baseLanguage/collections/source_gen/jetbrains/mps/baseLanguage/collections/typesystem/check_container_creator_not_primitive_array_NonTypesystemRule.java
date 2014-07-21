@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_container_creator_not_primitive_array_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_container_creator_not_primitive_array_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode acc, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       IMatchingPattern pattern_dxqe5i_a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ArrayType");
@@ -34,18 +33,15 @@ public class check_container_creator_not_primitive_array_NonTypesystemRule exten
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

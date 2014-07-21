@@ -9,5 +9,5 @@ public class CellMenuComponentFeature_Link_BehaviorDescriptor extends CellMenuCo
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link";
-  };;
-;}
+  }
+}

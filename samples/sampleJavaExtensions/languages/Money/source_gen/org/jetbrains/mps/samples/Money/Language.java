@@ -17,25 +17,20 @@ import org.jetbrains.mps.samples.Money.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "662a9f2b-5802-4d16-9558-72c65c7a681e(org.jetbrains.mps.samples.Money)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "org.jetbrains.mps.samples.Money";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.baseLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "f5860f3e-6f54-465b-9172-8b2a11b1bb2e(org.jetbrains.mps.samples.Money#5447719361346496650)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

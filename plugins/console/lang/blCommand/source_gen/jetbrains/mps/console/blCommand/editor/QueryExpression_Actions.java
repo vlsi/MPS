@@ -17,35 +17,27 @@ public class QueryExpression_Actions {
     editorCell.setAction(CellActionType.DELETE, new QueryExpression_Actions.QueryExpression_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new QueryExpression_Actions.QueryExpression_Actions_BACKSPACE(node));
   }
-
   public static class QueryExpression_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public QueryExpression_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "parameter", true), "parameter", true)).clear();
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, SelectionManager.LAST_CELL, -1);
     }
   }
-
   public static class QueryExpression_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public QueryExpression_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "parameter", true), "parameter", true)).clear();
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, SelectionManager.LAST_CELL, -1);

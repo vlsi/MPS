@@ -13,18 +13,15 @@ import java.awt.event.ActionEvent;
 
 public class AskDialog extends DialogWrapper {
   private AskDialog.DialogResults myResult = AskDialog.DialogResults.Cancel;
-
   public AskDialog(Project project, String text) {
     super(project, true);
     setTitle(text);
     setResizable(false);
     init();
   }
-
   public AskDialog.DialogResults getResult() {
     return this.myResult;
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
@@ -32,38 +29,31 @@ public class AskDialog extends DialogWrapper {
     panel.add(new JLabel("Replace this fragment?"));
     return panel;
   }
-
   @Override
   protected Action[] createActions() {
     return new Action[]{new AskDialog.AskDialogAction(AskDialog.DialogResults.Replace, true), new AskDialog.AskDialogAction(AskDialog.DialogResults.Skip), new AskDialog.AskDialogAction(AskDialog.DialogResults.All), getCancelAction()};
   }
-
   @Override
   public void doCancelAction() {
     myResult = AskDialog.DialogResults.Cancel;
     super.doCancelAction();
   }
-
   public class AskDialogAction extends DialogWrapper.DialogWrapperAction {
     private AskDialog.DialogResults myValue;
-
     public AskDialogAction(AskDialog.DialogResults value, boolean isDefault) {
       this(value);
       putValue(DialogWrapper.DEFAULT_ACTION, Boolean.TRUE);
     }
-
     public AskDialogAction(AskDialog.DialogResults value) {
       super(value.name());
       myValue = value;
     }
-
     @Override
     protected void doAction(ActionEvent event) {
       myResult = myValue;
       close(DialogWrapper.OK_EXIT_CODE);
     }
   }
-
   public static   enum DialogResults {
     Replace(),
     Skip(),

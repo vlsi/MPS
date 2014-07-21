@@ -13,21 +13,17 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 
 /*package*/ abstract class AbstractWatchableNode extends MPSTreeNode {
   protected final SNode myNode;
-
   public AbstractWatchableNode(@Nullable SNode node) {
     this(null, node);
   }
-
   public AbstractWatchableNode(@Nullable IOperationContext context, @Nullable SNode node) {
     super(context);
     myNode = node;
   }
-
   @Nullable
   public SNode getNode() {
     return myNode;
   }
-
   public void openNode(final boolean focus, final boolean select) {
     if (myNode == null) {
       return;
@@ -44,7 +40,6 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
       });
     }
   }
-
   @Nullable
   private Project getProject() {
     MPSTree tree = getTree();

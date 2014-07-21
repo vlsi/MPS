@@ -10,5 +10,5 @@ public class ParentScope_BehaviorDescriptor extends Expression_BehaviorDescripto
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.scopes.structure.ParentScope";
-  };;
-;}
+  }
+}

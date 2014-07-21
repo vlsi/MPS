@@ -9,5 +9,5 @@ public class FoldRightOperation_BehaviorDescriptor extends InternalSequenceOpera
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.FoldRightOperation";
-  };;
-;}
+  }
+}

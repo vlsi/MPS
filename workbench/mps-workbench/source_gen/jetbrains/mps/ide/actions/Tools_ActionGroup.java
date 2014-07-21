@@ -15,7 +15,6 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_migration = ID + "migration";
   public static final String LABEL_ID_customTools = ID + "customTools";
   public static final String LABEL_ID_devkitTools = ID + "devkitTools";
-
   public Tools_ActionGroup() {
     super("Tools", ID);
     this.setIsInternal(false);

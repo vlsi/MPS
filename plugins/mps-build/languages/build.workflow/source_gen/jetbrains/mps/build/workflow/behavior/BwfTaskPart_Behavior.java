@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class BwfTaskPart_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfSubTask")) {
       SNode task = SLinkOperations.getTarget(thisNode, "task", false);

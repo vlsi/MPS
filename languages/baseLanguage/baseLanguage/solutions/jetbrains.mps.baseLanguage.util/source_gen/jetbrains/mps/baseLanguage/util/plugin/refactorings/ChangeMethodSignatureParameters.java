@@ -14,7 +14,6 @@ public class ChangeMethodSignatureParameters {
   private SNode myMethod;
   private SNode myOldMethod;
   private List<String> myParametersIds = ListSequence.fromList(new ArrayList<String>());
-
   public ChangeMethodSignatureParameters(SNode declaration) {
     this.myMethod = SNodeOperations.copyNode(declaration);
     this.myOldMethod = SNodeOperations.copyNode(declaration);
@@ -22,19 +21,15 @@ public class ChangeMethodSignatureParameters {
       ListSequence.fromList(this.myParametersIds).addElement(param.getNodeId().toString());
     }
   }
-
   public SNode getDeclaration() {
     return this.myMethod;
   }
-
   public List<String> getIdList() {
     return this.myParametersIds;
   }
-
   public boolean isVisibilityChanged() {
     return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(this.myMethod, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true)) != SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(this.myOldMethod, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true));
   }
-
   public boolean isReturnValueChanged() {
     return !(MatchingUtil.matchNodes(SLinkOperations.getTarget(this.myMethod, "returnType", true), SLinkOperations.getTarget(this.myOldMethod, "returnType", true)));
   }

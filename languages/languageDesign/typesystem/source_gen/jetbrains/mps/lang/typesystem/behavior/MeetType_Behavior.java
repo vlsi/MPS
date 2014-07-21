@@ -11,8 +11,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MeetType_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+  }
+  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder("meet(");
     List<SNode> nodes = SLinkOperations.getTargets(thisNode, "argument", true);
     for (SNode arg : nodes) {
@@ -23,8 +23,8 @@ public class MeetType_Behavior {
     }
     sb.append(")");
     return sb.toString();
-  };;
-;  public static SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
+  }
+  public static SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
     SNode copy = SNodeOperations.copyNode(thisNode);
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(copy, "argument", true)).toListSequence()) {
       if (SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
@@ -32,5 +32,5 @@ public class MeetType_Behavior {
       }
     }
     return copy;
-  };;
-;}
+  }
+}

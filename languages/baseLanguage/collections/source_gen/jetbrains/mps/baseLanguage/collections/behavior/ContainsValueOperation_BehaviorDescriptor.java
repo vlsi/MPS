@@ -9,5 +9,5 @@ public class ContainsValueOperation_BehaviorDescriptor extends MapOperation_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation";
-  };;
-;}
+  }
+}

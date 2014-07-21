@@ -14,12 +14,10 @@ public class Match_Test extends TestCase {
     Assert.assertTrue(REGEXP_vwem4m_a0a0a0a.matcher("acccasdawe").find());
     Assert.assertFalse(REGEXP_vwem4m_a0a0b0a.matcher("accasdawe").find());
   }
-
   public void test_match() throws Exception {
     Assert.assertTrue(REGEXP_vwem4m_a0a0a0b.matcher("ww").matches());
     Assert.assertFalse(REGEXP_vwem4m_a0a0b0b.matcher("www").matches());
   }
-
   public void test_split() throws Exception {
     List<String> list = RegexpOperations.split("abc, def, xxyyy", REGEXP_vwem4m_b0a0a2);
     Assert.assertEquals(list.size(), 3);
@@ -27,7 +25,6 @@ public class Match_Test extends TestCase {
     Assert.assertEquals("def", list.get(1));
     Assert.assertEquals("xxyyy", list.get(2));
   }
-
   public void test_refFromRegexps() throws Exception {
     boolean executed = false;
     {
@@ -41,12 +38,10 @@ public class Match_Test extends TestCase {
     }
     Assert.assertTrue(executed);
   }
-
   public void test_matchInIf() throws Exception {
     this.check("! xyz");
     this.check("xxxaaadyyy");
   }
-
   public void test_innerRegexps() throws Exception {
     Matcher _matcher_vwem4m_a0a5a;
     if ((_matcher_vwem4m_a0a5a = REGEXP_vwem4m_a0a0a1a5.matcher("_123[3]inner")).find()) {
@@ -55,10 +50,8 @@ public class Match_Test extends TestCase {
       Assert.assertEquals("_123", _matcher_vwem4m_a0a5a.group(1));
     }
   }
-
   public Match_Test() {
   }
-
   public void check(String searchin) {
     Matcher _matcher_vwem4m_a0a0;
     Matcher _matcher_vwem4m_a0a0a;
@@ -70,7 +63,6 @@ public class Match_Test extends TestCase {
       Assert.fail("no match");
     }
   }
-
   private static Pattern REGEXP_vwem4m_a0a0a0a = Pattern.compile("c{3,}", 0);
   private static Pattern REGEXP_vwem4m_a0a0b0a = Pattern.compile("c{3,}", 0);
   private static Pattern REGEXP_vwem4m_a0a0a0b = Pattern.compile("\\w\\w", 0);

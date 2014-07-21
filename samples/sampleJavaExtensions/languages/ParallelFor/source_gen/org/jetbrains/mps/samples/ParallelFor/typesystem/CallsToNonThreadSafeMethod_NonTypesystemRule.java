@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class CallsToNonThreadSafeMethod_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public CallsToNonThreadSafeMethod_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode baseMethodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode parentLoop = SNodeOperations.getAncestor(baseMethodCall, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
     if (parentLoop != null) {
@@ -94,18 +93,15 @@ public class CallsToNonThreadSafeMethod_NonTypesystemRule extends AbstractNonTyp
 
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodCall";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

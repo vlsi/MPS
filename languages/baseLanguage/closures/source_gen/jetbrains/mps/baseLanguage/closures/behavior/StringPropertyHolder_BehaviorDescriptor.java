@@ -10,5 +10,5 @@ public class StringPropertyHolder_BehaviorDescriptor extends BaseConcept_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder";
-  };;
-;}
+  }
+}

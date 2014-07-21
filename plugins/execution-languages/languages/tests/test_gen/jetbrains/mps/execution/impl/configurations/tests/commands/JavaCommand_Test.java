@@ -36,7 +36,6 @@ public class JavaCommand_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)");
     this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$TestBody", "test_startJavaByNode", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startJavaByNode() throws Exception {
@@ -54,7 +53,6 @@ public class JavaCommand_Test extends BaseTransformationTest {
       });
       this.checkProcess(new Java_Command().createProcess(pointer.value), Main.MESSAGE + "\n");
     }
-
     public void checkProcess(ProcessHandler process, final String expectedSysErr) {
       final ProcessEvent[] failed = new ProcessEvent[1];
       final boolean[] printed = new boolean[1];
@@ -86,11 +84,9 @@ public class JavaCommand_Test extends BaseTransformationTest {
         Assert.fail("Exit with code " + exitCode);
       }
     }
-
     private static boolean eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0b(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
-
     private static boolean neq_849b2c_a0a0a0a0a1a3a1b(Object a, Object b) {
       return !((a != null ? a.equals(b) : a == b));
     }

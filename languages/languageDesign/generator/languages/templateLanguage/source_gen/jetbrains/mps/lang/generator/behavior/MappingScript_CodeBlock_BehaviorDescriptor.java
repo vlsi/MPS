@@ -11,12 +11,12 @@ public class MappingScript_CodeBlock_BehaviorDescriptor extends TemplateQueryBas
   }
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return MappingScript_CodeBlock_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  };;
-;  public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+  }
+  public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
     return MappingScript_CodeBlock_Behavior.virtual_usesParameterObject_1262430001741497984(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock";
-  };;
-;}
+  }
+}

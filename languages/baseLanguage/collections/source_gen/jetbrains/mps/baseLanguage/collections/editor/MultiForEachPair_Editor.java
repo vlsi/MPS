@@ -20,7 +20,6 @@ public class MultiForEachPair_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1d0bj4_a(editorContext, node);
   }
-
   private EditorCell createCollection_1d0bj4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1d0bj4_a");
@@ -30,7 +29,6 @@ public class MultiForEachPair_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_1d0bj4_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_1d0bj4_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("variable");
@@ -50,7 +48,6 @@ public class MultiForEachPair_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1d0bj4_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_1d0bj4_b0");
@@ -60,7 +57,6 @@ public class MultiForEachPair_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1d0bj4_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("input");

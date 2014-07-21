@@ -21,7 +21,6 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_36u1b4_a(editorContext, node);
   }
-
   private EditorCell createCollection_36u1b4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_36u1b4_a");
@@ -37,7 +36,6 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_36u1b4_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_36u1b4_a0");
@@ -47,11 +45,9 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_36u1b4_a0a(SNode node, EditorContext editorContext) {
     return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
   }
-
   private EditorCell createRefNode_36u1b4_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("left");
@@ -72,7 +68,6 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_36u1b4_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -81,7 +76,6 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createRefNode_36u1b4_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("right");
@@ -102,7 +96,6 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_36u1b4_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_36u1b4_e0");
@@ -112,7 +105,6 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_36u1b4_a4a(SNode node, EditorContext editorContext) {
     return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
   }

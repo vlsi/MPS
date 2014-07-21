@@ -36,7 +36,6 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_dgzt1x_a(editorContext, node);
   }
-
   private EditorCell createCollection_dgzt1x_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_dgzt1x_a");
@@ -59,7 +58,6 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_dgzt1x_h0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_dgzt1x_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Daily Plan applicable");
     editorCell.setCellId("Constant_dgzt1x_a0");
@@ -69,7 +67,6 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_dgzt1x_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("applicability");
@@ -92,7 +89,6 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_dgzt1x_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "customizing the");
     editorCell.setCellId("Constant_dgzt1x_c0");
@@ -103,11 +99,9 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_dgzt1x_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "customizes", true) != null);
   }
-
   private EditorCell createRefNode_dgzt1x_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("customizes");
@@ -130,11 +124,9 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_dgzt1x_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "customizes", true) != null);
   }
-
   private EditorCell createConstant_dgzt1x_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_dgzt1x_e0");
@@ -147,17 +139,14 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DailyPlan_Editor.ApplySideTransforms_left_cellMenu_dgzt1x_a0e0()}));
     return editorCell;
   }
-
   private static boolean renderingCondition_dgzt1x_a4a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "customizes", true) == null);
   }
-
   public static class ApplySideTransforms_left_cellMenu_dgzt1x_a0e0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_left_cellMenu_dgzt1x_a0e0() {
       super(CellSide.LEFT);
     }
   }
-
   private EditorCell createConstant_dgzt1x_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "plan");
     editorCell.setCellId("Constant_dgzt1x_f0");
@@ -169,11 +158,9 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_dgzt1x_a5a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "customizes", true) != null);
   }
-
   private EditorCell createCollection_dgzt1x_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_dgzt1x_g0");
@@ -184,7 +171,6 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_dgzt1x_a6a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNodeList_dgzt1x_a6a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new DailyPlan_Editor.itemsListHandler_dgzt1x_a6a(node, "items", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -192,37 +178,31 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class itemsListHandler_dgzt1x_a6a extends RefNodeListHandler {
     public itemsListHandler_dgzt1x_a6a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return this.nodeFactory(listOwner, editorContext);
     }
-
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
       SNode item = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.heating.structure.Slot", null);
       SPropertyOperations.set(item, "start", "" + (-1));
       SPropertyOperations.set(SLinkOperations.getTarget(item, "event", true), "temperature", "" + (20));
       return item;
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -236,7 +216,6 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_dgzt1x_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_dgzt1x_h0");

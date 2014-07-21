@@ -61,17 +61,14 @@ public class XmlTestReporter implements ITestReporter {
   private Map<String, StringBuilder> testStderr = MapSequence.fromMap(new HashMap<String, StringBuilder>());
   private StringBuilder suiteStdout = new StringBuilder();
   private StringBuilder suiteStderr = new StringBuilder();
-
   public XmlTestReporter(String name) {
     this.suiteStarted = System.currentTimeMillis();
     this.root = jdom.element(TESTSUITE).setAttribute(jdom.attribute(ATTR_NAME, name)).setAttribute(jdom.attribute(TIMESTAMP, timeStamp(new Date(suiteStarted)))).setAttribute(jdom.attribute(HOSTNAME, hostname()));
     this.document = jdom.document(this.root);
   }
-
   public void dump(OutputStream os) throws IOException {
     new XMLOutputter(Format.getPrettyFormat()).output(document, os);
   }
-
   @Override
   public void runFinished() {
     long suiteFinished = System.currentTimeMillis();
@@ -83,14 +80,12 @@ public class XmlTestReporter implements ITestReporter {
       root.addContent(jdom.element(SYSTEM_ERR).addContent(jdom.cdata(fixDoubleClosingBrackets(suiteStderr).toString())));
     }
   }
-
   @Override
   public void testStarted(String testFQname) {
     MapSequence.fromMap(testStarted).put(testFQname, System.currentTimeMillis());
     MapSequence.fromMap(testElement).put(testFQname, jdom.element(TESTCASE).setAttribute(jdom.attribute(ATTR_NAME, shortName(testFQname))).setAttribute(jdom.attribute(ATTR_CLASSNAME, prefix(testFQname))));
     root.addContent(MapSequence.fromMap(testElement).get(testFQname));
   }
-
   @Override
   public void testFinished(String testFQname) {
     if (!(MapSequence.fromMap(testElement).containsKey(testFQname))) {
@@ -105,7 +100,6 @@ public class XmlTestReporter implements ITestReporter {
       MapSequence.fromMap(testElement).get(testFQname).addContent(jdom.element(SYSTEM_ERR).addContent(jdom.cdata(fixDoubleClosingBrackets(MapSequence.fromMap(testStderr).get(testFQname)).toString())));
     }
   }
-
   @Override
   public void testFailed(String testFQname, String msg, String longMsg) {
     if (!(MapSequence.fromMap(testElement).containsKey(testFQname))) {
@@ -119,7 +113,6 @@ public class XmlTestReporter implements ITestReporter {
       fail.addContent(jdom.text(longMsg));
     }
   }
-
   @Override
   public void testOutputLine(String testFQname, String msg) {
     if (!(MapSequence.fromMap(testElement).containsKey(testFQname))) {
@@ -132,7 +125,6 @@ public class XmlTestReporter implements ITestReporter {
     }
     sb.append(msg).append("\n");
   }
-
   @Override
   public void testErrorLine(String testFQname, String msg) {
     if (!(MapSequence.fromMap(testElement).containsKey(testFQname))) {
@@ -145,17 +137,14 @@ public class XmlTestReporter implements ITestReporter {
     }
     sb.append(msg).append("\n");
   }
-
   @Override
   public void outputLine(String msg) {
     suiteStdout.append(msg).append("\n");
   }
-
   @Override
   public void errorLine(String msg) {
     suiteStderr.append(msg).append("\n");
   }
-
   private StringBuilder fixDoubleClosingBrackets(StringBuilder sb) {
     int dcb = 0;
     while ((dcb = sb.indexOf("]]", dcb)) >= 0) {
@@ -163,21 +152,17 @@ public class XmlTestReporter implements ITestReporter {
     }
     return sb;
   }
-
   private String shortName(String testFQname) {
     Matcher matcher = REGEXP_rw4j9x_a0a0a74.matcher(testFQname);
     return (matcher.matches() ? matcher.group(1) : testFQname);
   }
-
   private String prefix(String testFQname) {
     Matcher matcher = REGEXP_rw4j9x_a0a0a84.matcher(testFQname);
     return (matcher.matches() ? matcher.group(1) : testFQname);
   }
-
   public String seconds(long millis) {
     return String.valueOf(((double) millis) / 1000.0);
   }
-
   private String timeStamp(Date date) {
     if (simpleDateFormat == null) {
       simpleDateFormat = new SimpleDateFormat(ISO8601_DATETIME_PATTERN);
@@ -186,7 +171,6 @@ public class XmlTestReporter implements ITestReporter {
     }
     return simpleDateFormat.format(date);
   }
-
   private String hostname() {
     if (hostname == null) {
       try {
@@ -196,7 +180,6 @@ public class XmlTestReporter implements ITestReporter {
     }
     return this.hostname;
   }
-
   private static Pattern REGEXP_rw4j9x_a0a0a74 = Pattern.compile(".+\\.([^\\.]+)$", 0);
   private static Pattern REGEXP_rw4j9x_a0a0a84 = Pattern.compile("(.*)\\.[^\\.]+$", 0);
 }

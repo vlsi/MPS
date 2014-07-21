@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class checkNumberOfArgs_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public checkNumberOfArgs_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode customConstructorUsage, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode args = SLinkOperations.getTarget(SLinkOperations.getTarget(customConstructorUsage, "customConstructor", false), "arguments", true);
     if (SNodeOperations.isInstanceOf(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause")) {
@@ -30,18 +29,15 @@ public class checkNumberOfArgs_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -14,34 +14,26 @@ public class MatchParensRegexp_removeName {
     editorCell.setAction(CellActionType.DELETE, new MatchParensRegexp_removeName.MatchParensRegexp_removeName_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new MatchParensRegexp_removeName.MatchParensRegexp_removeName_BACKSPACE(node));
   }
-
   public static class MatchParensRegexp_removeName_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public MatchParensRegexp_removeName_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp");
     }
   }
-
   public static class MatchParensRegexp_removeName_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public MatchParensRegexp_removeName_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp");
     }

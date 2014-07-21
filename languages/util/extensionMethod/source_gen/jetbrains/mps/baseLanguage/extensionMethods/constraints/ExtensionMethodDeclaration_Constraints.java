@@ -18,8 +18,8 @@ public class ExtensionMethodDeclaration_Constraints extends BaseConstraintsDescr
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;
-  };;
-;  @Override
+  }
+  @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
 
@@ -28,12 +28,12 @@ public class ExtensionMethodDeclaration_Constraints extends BaseConstraintsDescr
     }
 
     return result;
-  };;
-;  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
+  }
+  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (!(SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.baseLanguage.structure.PublicVisibility") || SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) && link == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "visibility")) {
       return false;
     }
     return true;
-  };;
-;  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "2763618064981525309");
+  }
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "2763618064981525309");
 }

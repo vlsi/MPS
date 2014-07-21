@@ -98,7 +98,6 @@ public class RulesUtil {
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "operation is not applicable to " + LeftType, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186067417054", null, errorTarget);
     }
   }
-
   @CheckingMethod
   public static void checkAppliedTo_LinkAccess_aggregation(final TypeCheckingContext typeCheckingContext, final SNode op) {
     // expect access to an aggregation link with singular cardinality 
@@ -115,7 +114,6 @@ public class RulesUtil {
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "operation is only applicable to aggregation-link-access", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205272067893", null, errorTarget);
     }
   }
-
   @CheckingMethod
   public static void checkAppliedNotTo_LinkAccess_reference(final TypeCheckingContext typeCheckingContext, SNode op) {
     // expect access to an aggregation link with singular cardinality 
@@ -133,7 +131,6 @@ public class RulesUtil {
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "operation is not applicable to reference-link-access", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1230333667606", null, errorTarget);
     }
   }
-
   @CheckingMethod
   public static boolean checkAssignableConcept(final TypeCheckingContext typeCheckingContext, SNode fromConcept, SNode toConcept, SNode nodeToReportError, String errorTextPrefix) {
     if (SConceptOperations.isSubConceptOf(fromConcept, NameUtil.nodeFQName(toConcept))) {
@@ -145,7 +142,6 @@ public class RulesUtil {
     }
     return false;
   }
-
   @CheckingMethod
   public static boolean checkOpParameters_generic(final TypeCheckingContext typeCheckingContext, SNode op) {
     boolean noProblem = true;
@@ -161,12 +157,10 @@ public class RulesUtil {
     }
     return noProblem;
   }
-
   @InferenceMethod
   public static void equate_inputNodeConcept(final TypeCheckingContext typeCheckingContext, SNode op, SNode TypeToEquate) {
     RulesUtil.equate_inputNodeConcept_internal(typeCheckingContext, op, TypeToEquate);
   }
-
   @InferenceMethod
   private static void equate_inputNodeConcept_internal(final TypeCheckingContext typeCheckingContext, final SNode op, final SNode TypeToEquate) {
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
@@ -183,7 +177,6 @@ public class RulesUtil {
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8844001996561701137", true, false);
     }
   }
-
   public static SNode get_inputNodeConcept(final SNode op, final boolean conceptOfConceptIfInputConcept) {
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
@@ -213,7 +206,6 @@ public class RulesUtil {
     }
     return conceptDeclaration;
   }
-
   @InferenceMethod
   public static void equate_inputNodeType(final TypeCheckingContext typeCheckingContext, SNode op, SNode TypeToEquate) {
     final SNode Concept_typevar_1206099042246 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -224,7 +216,6 @@ public class RulesUtil {
       typeCheckingContext.createEquation((SNode) TypeToEquate, (SNode) _quotation_createNode_yxkngc_a0c0i(typeCheckingContext.getRepresentative(Concept_typevar_1206099042246)), _info_12389875345);
     }
   }
-
   @InferenceMethod
   public static void equate_conceptFromOpParm(final TypeCheckingContext typeCheckingContext, final SNode op, final SNode TypeToEquate) {
     SNode opParm = SNodeOperations.cast(SNodeOperation_Behavior.call_getParameter_1213877508972(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Concept")), "jetbrains.mps.lang.smodel.structure.OperationParm_Concept");
@@ -269,7 +260,6 @@ public class RulesUtil {
       }
     }
   }
-
   public static SNode leastCommonSuperconcept(List<SNode> concepts) {
     SubtypingManager subtypingManager = TypeChecker.getInstance().getSubtypingManager();
     List<SNode> allTypes = ListSequence.fromList(new ArrayList<SNode>());
@@ -282,35 +272,30 @@ public class RulesUtil {
     }
     return SLinkOperations.getTarget(SNodeOperations.cast(leastCommonSupertypes.iterator().next(), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
   }
-
   private static SNode _quotation_createNode_yxkngc_b0a0a4a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SModelType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_yxkngc_b0a0a5a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_yxkngc_b0a0a6a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_yxkngc_b0a0a0b0b0b0i0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_yxkngc_a0a0b0g(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -325,7 +310,6 @@ public class RulesUtil {
     quotedNode_3.addChild("argument", quotedNode_5);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_yxkngc_a0c0i(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -333,7 +317,6 @@ public class RulesUtil {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_yxkngc_a0b0a0c0j(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -341,7 +324,6 @@ public class RulesUtil {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "conceptDeclaraton", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_yxkngc_a0a0a2a01(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -349,7 +331,6 @@ public class RulesUtil {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_yxkngc_a0a0e0k() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

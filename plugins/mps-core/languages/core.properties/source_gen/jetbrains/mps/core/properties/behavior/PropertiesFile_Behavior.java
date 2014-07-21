@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class PropertiesFile_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getUnitName_5067982036267369911(SNode thisNode) {
     return SNodeOperations.getModelLongName(thisNode.getModel()) + "." + SPropertyOperations.getString(thisNode, "name");
   }

@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class StructureAdditions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(StructureAdditions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.devkit.actions.StructureAdditions_ActionGroup";
-
   public StructureAdditions_ActionGroup() {
     super("StructureAdditions", ID);
     this.setIsInternal(false);

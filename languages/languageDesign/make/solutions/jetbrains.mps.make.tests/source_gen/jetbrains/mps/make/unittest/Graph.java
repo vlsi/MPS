@@ -20,10 +20,8 @@ public class Graph<V> {
   private Map<V, List<V>> bkEdges = MapSequence.fromMap(new HashMap<V, List<V>>());
   private _FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super V> sorter;
   private boolean asc;
-
   public Graph() {
   }
-
   public void addEdges(V from, V... to) {
     List<V> fw = MapSequence.fromMap(fwEdges).get(from);
     if (fw == null) {
@@ -42,28 +40,23 @@ public class Graph<V> {
       SetSequence.fromSet(vertices).addElement(next);
     }
   }
-
   public void sort(_FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super V> sorter, boolean asc) {
     this.sorter = sorter;
     this.asc = asc;
   }
-
   public Iterable<V> getVertices() {
     return (sorter != null ? SetSequence.fromSet(vertices).sort(sorter, asc) : vertices);
   }
-
   public GraphAnalyzer<V> getCycleDetector() {
     return new GraphAnalyzer<V>() {
       @Override
       public Iterable<V> forwardEdges(V v) {
         return MapSequence.fromMap(fwEdges).get(v);
       }
-
       @Override
       public Iterable<V> vertices() {
         return getVertices();
       }
-
       @Override
       public Iterable<V> backwardEdges(V v) {
         return MapSequence.fromMap(bkEdges).get(v);

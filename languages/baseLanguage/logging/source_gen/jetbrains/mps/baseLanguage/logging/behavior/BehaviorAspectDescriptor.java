@@ -18,6 +18,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
-  };;
-;  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.baseLanguage.logging.structure.LogStatement", "jetbrains.mps.baseLanguage.logging.structure.PrintStatement"};
+  }
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.baseLanguage.logging.structure.LogStatement", "jetbrains.mps.baseLanguage.logging.structure.PrintStatement"};
 }

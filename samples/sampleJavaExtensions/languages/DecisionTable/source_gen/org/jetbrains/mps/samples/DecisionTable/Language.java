@@ -16,25 +16,20 @@ import org.jetbrains.mps.samples.DecisionTable.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "65c13e67-09b6-4695-af88-52024b7d2027(org.jetbrains.mps.samples.DecisionTable)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "org.jetbrains.mps.samples.DecisionTable";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.baseLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "38daf5f6-3ea9-4539-9ff0-4dfa8b2ff692(org.jetbrains.mps.samples.DecisionTable#3863300516938090568)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

@@ -32,32 +32,26 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
   private final BreakpointLocation myLocation;
   private String myMethodName = null;
   private String myJniSignature = null;
-
   public MethodBreakpoint(SNodeReference nodePointer, Project project) {
     super(project);
     myLocation = new BreakpointLocation(nodePointer);
   }
-
   public MethodBreakpoint(@NotNull SNode node, Project project) {
     this(new SNodePointer(node), project);
   }
-
   @Override
   protected String getClassNameToPrepare() {
     return myLocation.getTargetUnitName();
   }
-
   @NotNull
   @Override
   public JavaBreakpointKind getKind() {
     return JavaBreakpointKind.METHOD_BREAKPOINT;
   }
-
   @Override
   public String getPresentation() {
     return myLocation.getPresentation();
   }
-
   @Override
   protected void createRequestForPreparedClass(EventsProcessor debugProcess, ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
@@ -80,7 +74,6 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
       LOG.error(null, ex);
     }
   }
-
   private boolean updateMethodNameAndSignature() {
     if (myMethodName != null && myJniSignature != null) {
       return true;
@@ -102,7 +95,6 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
     myJniSignature = split[1];
     return myMethodName != null && myJniSignature != null;
   }
-
   @Override
   public boolean isRequestHitByEvent(EventContext context, LocatableEvent event) {
     boolean result = super.isRequestHitByEvent(context, event);
@@ -118,22 +110,18 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
     }
     return !((method == null || !(accept(method))));
   }
-
   private boolean accept(Method method) {
     return method.name().equals(myMethodName) && method.signature().equals(myJniSignature);
   }
-
   @NotNull
   @Override
   public BreakpointLocation getLocation() {
     return myLocation;
   }
-
   @Override
   public boolean isValid() {
     return super.isValid() && updateMethodNameAndSignature();
   }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -145,14 +133,12 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
 
     return eq_spo82x_a0d0p(myLocation, ((MethodBreakpoint) o).myLocation);
   }
-
   @Override
   public int hashCode() {
     int result = 0;
     result = 31 * result + ((myLocation != null ? ((Object) myLocation).hashCode() : 0));
     return result;
   }
-
   private static boolean eq_spo82x_a0d0p(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

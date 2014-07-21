@@ -36,7 +36,6 @@ import com.intellij.openapi.progress.ProgressManager;
 public class AnnotationHelper {
   private AnnotationHelper() {
   }
-
   @Nullable
   private static AnnotationColumn findAnnotationColumn(@NotNull EditorComponent editorComponent) {
     for (AbstractLeftColumn column : ListSequence.fromList(editorComponent.getLeftEditorHighlighter().getLeftColumns())) {
@@ -46,7 +45,6 @@ public class AnnotationHelper {
     }
     return null;
   }
-
   private static boolean annotate(@NotNull final EditorComponent editorComponent, boolean dryRun) {
     final LeftEditorHighlighter leftEditorHighlighter = editorComponent.getLeftEditorHighlighter();
     if (findAnnotationColumn(editorComponent) != null) {
@@ -96,7 +94,6 @@ public class AnnotationHelper {
     Task.Backgroundable annotateTask = new Task.Backgroundable(ideaProject, "Retrieving annotations", true, BackgroundFromStartOption.getInstance()) {
       private FileAnnotation myFileAnnotation;
       private VcsException myException;
-
       @Override
       public void run(@NotNull ProgressIndicator indicator) {
         try {
@@ -105,12 +102,10 @@ public class AnnotationHelper {
           myException = e;
         }
       }
-
       @Override
       public void onCancel() {
         onSuccess();
       }
-
       @Override
       public void onSuccess() {
         if (myException != null) {
@@ -130,15 +125,12 @@ public class AnnotationHelper {
     ProgressManager.getInstance().run(annotateTask);
     return true;
   }
-
   public static void annotate(EditorComponent editorComponent) {
     annotate(editorComponent, false);
   }
-
   public static boolean isAnnotateable(EditorComponent editorComponent) {
     return annotate(editorComponent, true);
   }
-
   private static SModel check_19hp0u_a0d0c(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();

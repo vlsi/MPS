@@ -19,23 +19,19 @@ import org.apache.log4j.LogManager;
 
 public class CollapseAll_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public CollapseAll_Action() {
     super("Collapse All", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
     this.setMnemonic("A".charAt(0));
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return CollapseAll_Action.this.getAction(_params) != null;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -49,7 +45,6 @@ public class CollapseAll_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -64,7 +59,6 @@ public class CollapseAll_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       CollapseAll_Action.this.getAction(_params).execute(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
@@ -74,10 +68,8 @@ public class CollapseAll_Action extends BaseAction {
       }
     }
   }
-
   /*package*/ CellAction getAction(final Map<String, Object> _params) {
     return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getComponentAction(CellActionType.FOLD_ALL);
   }
-
   protected static Logger LOG = LogManager.getLogger(CollapseAll_Action.class);
 }

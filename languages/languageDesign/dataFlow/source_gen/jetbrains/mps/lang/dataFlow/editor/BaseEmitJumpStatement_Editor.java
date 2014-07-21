@@ -20,7 +20,6 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bs8xw7_a(editorContext, node);
   }
-
   private EditorCell createCollection_bs8xw7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bs8xw7_a");
@@ -35,7 +34,6 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_bs8xw7_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "insert");
     editorCell.setCellId("Constant_bs8xw7_a0");
@@ -45,11 +43,9 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_bs8xw7_a0a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "position", true) != null;
   }
-
   private EditorCell createComponent_bs8xw7_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -57,7 +53,6 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createRefNode_bs8xw7_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("jumpTo");
@@ -77,7 +72,6 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_bs8xw7_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("position");
@@ -97,7 +91,6 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_bs8xw7_a3a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "position", true) != null;
   }

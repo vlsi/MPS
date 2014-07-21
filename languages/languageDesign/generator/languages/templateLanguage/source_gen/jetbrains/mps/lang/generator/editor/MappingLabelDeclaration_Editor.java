@@ -24,7 +24,6 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_sexq64_a(editorContext, node);
   }
-
   private EditorCell createCollection_sexq64_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_sexq64_a");
@@ -37,7 +36,6 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_sexq64_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_sexq64_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label");
     editorCell.setCellId("Constant_sexq64_a0");
@@ -47,7 +45,6 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_sexq64_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -68,14 +65,12 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_sexq64_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_sexq64_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_sexq64_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("sourceConcept");
@@ -97,20 +92,16 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_sexq64_a3a extends InlineCellProvider {
     public _Inline_sexq64_a3a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_sexq64_a0d0(editorContext, node);
     }
-
     private EditorCell createProperty_sexq64_a0d0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -133,14 +124,12 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_sexq64_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_sexq64_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_sexq64_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("targetConcept");
@@ -162,20 +151,16 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_sexq64_a5a extends InlineCellProvider {
     public _Inline_sexq64_a5a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_sexq64_a0f0(editorContext, node);
     }
-
     private EditorCell createProperty_sexq64_a0f0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");

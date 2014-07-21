@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_EditorNodeExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_EditorNodeExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode editorComponent = SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.editor.structure.BaseEditorComponent");
     if (editorComponent != null) {
@@ -28,22 +27,18 @@ public class typeof_EditorNodeExpression_InferenceRule extends AbstractInference
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_zhw4c5_a0a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

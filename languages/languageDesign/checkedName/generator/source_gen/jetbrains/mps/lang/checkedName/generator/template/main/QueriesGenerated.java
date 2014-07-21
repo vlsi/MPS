@@ -12,11 +12,9 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_5003188907304823222(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "propertyDeclaration", false), "name");
   }
-
   public static SNode sourceNodeQuery_5003188907304823214(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "nodeExpr", true);
   }

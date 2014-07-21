@@ -18,22 +18,18 @@ import org.apache.log4j.LogManager;
 
 public class MoveLeft_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public MoveLeft_Action() {
     super("Left", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isFocusOwner() && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible());
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -47,7 +43,6 @@ public class MoveLeft_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -58,7 +53,6 @@ public class MoveLeft_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Selection selection = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection();
@@ -73,6 +67,5 @@ public class MoveLeft_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(MoveLeft_Action.class);
 }

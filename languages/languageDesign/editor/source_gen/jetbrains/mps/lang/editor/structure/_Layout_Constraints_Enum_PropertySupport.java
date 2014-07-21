@@ -20,7 +20,6 @@ public class _Layout_Constraints_Enum_PropertySupport extends PropertySupport {
     }
     return false;
   }
-
   public String toInternalValue(String value) {
     if (value == null) {
       return null;
@@ -34,7 +33,6 @@ public class _Layout_Constraints_Enum_PropertySupport extends PropertySupport {
     }
     return null;
   }
-
   public String fromInternalValue(String value) {
     _Layout_Constraints_Enum constant = _Layout_Constraints_Enum.parseValue(value);
     if (constant != null) {

@@ -9,5 +9,5 @@ public abstract class BinaryOperation_BehaviorDescriptor extends SequenceOperati
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation";
-  };;
-;}
+  }
+}

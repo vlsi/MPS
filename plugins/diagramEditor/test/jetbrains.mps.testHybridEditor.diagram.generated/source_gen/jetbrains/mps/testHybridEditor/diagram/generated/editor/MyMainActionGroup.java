@@ -26,12 +26,9 @@ public class MyMainActionGroup implements PaletteActionGroup {
   private Map<String, List<SNode>> tagToGroupMap = MapSequence.fromMap(new HashMap<String, List<SNode>>());
   private DiagramCell myDiagramCell;
 
-
   public MyMainActionGroup(DiagramCell diagramCell) {
     myDiagramCell = diagramCell;
   }
-
-
 
   public PaletteElement[] getElements() {
     List<PaletteElement> groups = ListSequence.fromList(new ArrayList<PaletteElement>());
@@ -53,15 +50,12 @@ public class MyMainActionGroup implements PaletteActionGroup {
     ListSequence.fromList(groups).addElement(new MyConnectorCreationAction(myDiagramCell));
     return ListSequence.fromList(groups).toGenericArray(PaletteElement.class);
   }
-
   public boolean isPopup() {
     return false;
   }
-
   public Icon getIcon() {
     return null;
   }
-
   public String getText() {
     return "";
   }

@@ -20,11 +20,9 @@ import jetbrains.mps.smodel.SNodePointer;
 public class Templatemap__RootConcept implements TemplateDeclaration {
   public Templatemap__RootConcept() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_56x90y_a0a1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
     try {
@@ -89,7 +87,6 @@ public class Templatemap__RootConcept implements TemplateDeclaration {
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   private static SNodePointer template_56x90y_a0a1 = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490321");
   private static SNodePointer propertyMacro_56x90y_c0a0c0b0b0c = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490328");
 }

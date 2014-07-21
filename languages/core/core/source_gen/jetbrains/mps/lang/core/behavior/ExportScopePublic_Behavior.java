@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ExportScopePublic_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode) {
     return true;
   }

@@ -62,30 +62,24 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Default_KeymapChanges.GoToBookmark_ShortcutChange_qjewi8_sb());
     addComplexShortcut("jetbrains.mps.ide.actions.SetBookmark_Action", new Default_KeymapChanges.SetBookmark_ShortcutChange_qjewi8_tb());
   }
-
   public String getScheme() {
     return "$default";
   }
-
   public static Shortcut getShortcut(String stroke) {
     return new KeyboardShortcut(KeyStroke.getKeyStroke(stroke), null);
   }
-
   public class GoToBookmark_ShortcutChange_qjewi8_sb extends BaseKeymapChanges.ComplexShortcut {
     public GoToBookmark_ShortcutChange_qjewi8_sb() {
     }
-
     public List<Shortcut> getShortcutsFor(Object... objects) {
       List<Shortcut> _result = new ArrayList<Shortcut>();
       _result.add(new KeyboardShortcut(KeyStroke.getKeyStroke("ctrl " + ((Integer) objects[0])), null));
       return _result;
     }
   }
-
   public class SetBookmark_ShortcutChange_qjewi8_tb extends BaseKeymapChanges.ComplexShortcut {
     public SetBookmark_ShortcutChange_qjewi8_tb() {
     }
-
     public List<Shortcut> getShortcutsFor(Object... objects) {
       List<Shortcut> _result = new ArrayList<Shortcut>();
       _result.add(new KeyboardShortcut(KeyStroke.getKeyStroke("ctrl shift " + ((Integer) objects[0])), null));

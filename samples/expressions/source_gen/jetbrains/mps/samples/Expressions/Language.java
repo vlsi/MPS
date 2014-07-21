@@ -16,25 +16,20 @@ import jetbrains.mps.samples.Expressions.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "7e282943-fc6b-4900-ada5-34c0024cc4f4(jetbrains.mps.samples.Expressions)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.samples.Expressions";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.baseLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "eef058a7-de86-460b-ad59-5059d2eb4026(jetbrains.mps.samples.Expressions#2073504467207856858)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == ConstraintsAspectDescriptor.class) {

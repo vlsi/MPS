@@ -12,15 +12,15 @@ public class QueryFunction_SideTransform_Handler_BehaviorDescriptor extends Conc
   }
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return QueryFunction_SideTransform_Handler_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  };;
-;  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  }
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_SideTransform_Handler_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  };;
-;  public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
+  }
+  public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return QueryFunction_SideTransform_Handler_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler";
-  };;
-;}
+  }
+}

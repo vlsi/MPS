@@ -9,9 +9,9 @@ public class Property_HasValue_Enum_BehaviorDescriptor extends SNodeOperation_Be
   }
   public boolean virtual_applicableToEnumProperty_1262430001741498259(SConcept thisConcept) {
     return Property_HasValue_Enum_Behavior.virtual_applicableToEnumProperty_1262430001741498259(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum";
-  };;
-;}
+  }
+}

@@ -27,25 +27,20 @@ public class RenameLink extends BaseLoggableRefactoring {
   public RenameLink() {
     this.addTransientParameter("newName");
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new RenameLink_Target();
   }
-
   public String getUserFriendlyName() {
     return "Rename Link";
   }
-
   public Class getOverridenRefactoringClass() {
     return Rename.class;
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     SNode concept = SNodeOperations.getAncestor(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
     String newLinkName = SNodeOperations.getModel(concept).getReference().getModelName() + "." + SPropertyOperations.getString(concept, "name");
     refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newLinkName, ((String) refactoringContext.getParameter("newName")));
   }
-
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
     Language sourceLanguage = Language.getLanguageFor(refactoringContext.getSelectedModel());
@@ -58,11 +53,9 @@ public class RenameLink extends BaseLoggableRefactoring {
     }
     return result;
   }
-
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.LinkInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
-
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateByDefault(model);
   }

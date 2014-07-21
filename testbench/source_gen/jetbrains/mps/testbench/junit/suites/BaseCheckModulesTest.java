@@ -23,12 +23,9 @@ public class BaseCheckModulesTest {
   private static CheckingTestStatistic ourStatistic;
   private static Project ourContextProject;
   protected final SModule myModule;
-
   public BaseCheckModulesTest(SModule module) {
     this.myModule = module;
   }
-
-
 
   @Parameterized.Parameters
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
@@ -39,8 +36,6 @@ public class BaseCheckModulesTest {
     return createTestParametersFromModules(ourContextProject.getModules());
   }
 
-
-
   public static void initTestEnvironment(boolean withIdea) throws InvocationTargetException, InterruptedException {
     // todo: dispose env? 
     MpsTestsSupport.initEnv(withIdea);
@@ -48,8 +43,6 @@ public class BaseCheckModulesTest {
     ourStatistic = new CheckingTestStatistic();
     ourContextProject = ContextProjectSupport.loadContextProject();
   }
-
-
 
   public static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {
     ArrayList<Object[]> res = new ArrayList<Object[]>();
@@ -65,8 +58,6 @@ public class BaseCheckModulesTest {
     return res;
   }
 
-
-
   public static Set<SModule> excludeModules(Iterable<? extends SModule> modules, Set<String> excludedModules) {
     Set<SModule> result = new HashSet<SModule>();
     for (SModule module : modules) {
@@ -77,19 +68,13 @@ public class BaseCheckModulesTest {
     return result;
   }
 
-
-
   public static Project getContextProject() {
     return ourContextProject;
   }
 
-
-
   public static CheckingTestStatistic getStatistic() {
     return ourStatistic;
   }
-
-
 
   @AfterClass
   public static void cleanUp() {

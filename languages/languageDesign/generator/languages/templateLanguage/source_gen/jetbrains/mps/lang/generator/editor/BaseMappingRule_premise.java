@@ -28,11 +28,9 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_v63wqt_a(editorContext, node);
   }
-
   private EditorCell createCollection_v63wqt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_v63wqt_a");
@@ -47,7 +45,6 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createCollection_v63wqt_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_v63wqt_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_v63wqt_a0");
@@ -58,7 +55,6 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createRefCell_v63wqt_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_v63wqt_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
     editorCell.setCellId("Constant_v63wqt_a0a");
@@ -69,7 +65,6 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_v63wqt_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("applicableConcept");
@@ -94,20 +89,16 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   public static class _Inline_v63wqt_a1a0 extends InlineCellProvider {
     public _Inline_v63wqt_a1a0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_v63wqt_a0b0a(editorContext, node);
     }
-
     private EditorCell createProperty_v63wqt_a0b0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -130,7 +121,6 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_v63wqt_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_v63wqt_b0");
@@ -141,7 +131,6 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createProperty_v63wqt_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_v63wqt_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inheritors");
     editorCell.setCellId("Constant_v63wqt_a1a");
@@ -152,7 +141,6 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_v63wqt_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("applyToConceptInheritors");
@@ -170,7 +158,6 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_v63wqt_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_v63wqt_c0");
@@ -181,7 +168,6 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createRefNode_v63wqt_b2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_v63wqt_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_v63wqt_a2a");
@@ -192,7 +178,6 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_v63wqt_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("conditionFunction");

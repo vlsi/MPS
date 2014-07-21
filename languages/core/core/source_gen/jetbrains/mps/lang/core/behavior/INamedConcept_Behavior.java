@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class INamedConcept_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
     SModel model = SNodeOperations.getModel(thisNode);
     if (model == null) {

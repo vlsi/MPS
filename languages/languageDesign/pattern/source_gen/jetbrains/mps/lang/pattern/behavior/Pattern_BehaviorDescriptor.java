@@ -10,5 +10,5 @@ public abstract class Pattern_BehaviorDescriptor extends NodeAttribute_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.Pattern";
-  };;
-;}
+  }
+}

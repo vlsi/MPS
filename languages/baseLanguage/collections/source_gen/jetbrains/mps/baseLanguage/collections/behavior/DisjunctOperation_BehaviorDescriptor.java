@@ -9,5 +9,5 @@ public class DisjunctOperation_BehaviorDescriptor extends BinaryOperation_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.DisjunctOperation";
-  };;
-;}
+  }
+}

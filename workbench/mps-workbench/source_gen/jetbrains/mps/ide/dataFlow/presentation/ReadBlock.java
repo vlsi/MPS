@@ -10,7 +10,6 @@ public class ReadBlock extends AbstractBlock {
   public ReadBlock(int x, int y, int width, int height, SNodeReference source, String caption, String ruleNodeReference) {
     super(x, y, width, height, source, caption, ruleNodeReference);
   }
-
   @Override
   public void paintBlock(Graphics g) {
     g.setColor(new Color(150, 190, 245));

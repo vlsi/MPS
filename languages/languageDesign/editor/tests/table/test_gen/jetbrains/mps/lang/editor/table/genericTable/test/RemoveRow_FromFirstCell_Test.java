@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class RemoveRow_FromFirstCell_Test extends BaseTransformationTest {
   public RemoveRow_FromFirstCell_Test() {
   }
-
   @Test
   public void test_RemoveRow_FromFirstCell() throws Throwable {
     this.initTest("${mps_home}", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)");
     this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.RemoveRow_FromFirstCell_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("8143909488490604941", "8143909488490604963");

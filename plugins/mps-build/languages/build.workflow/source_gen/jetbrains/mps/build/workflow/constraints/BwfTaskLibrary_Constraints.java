@@ -14,12 +14,10 @@ public class BwfTaskLibrary_Constraints extends BaseConstraintsDescriptor {
   public BwfTaskLibrary_Constraints() {
     super("jetbrains.mps.build.workflow.structure.BwfTaskLibrary");
   }
-
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;
   }
-
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
@@ -30,10 +28,8 @@ public class BwfTaskLibrary_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     return SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfTask") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfTaskPart") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfMacro") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency");
   }
-
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "1117643560963285902");
 }

@@ -21,7 +21,6 @@ public class NodeRefExpression_Constraints extends BaseConstraintsDescriptor {
   public NodeRefExpression_Constraints() {
     super("jetbrains.mps.lang.smodel.structure.NodeRefExpression");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -30,7 +29,6 @@ public class NodeRefExpression_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -40,7 +38,6 @@ public class NodeRefExpression_Constraints extends BaseConstraintsDescriptor {
             // roots only 
             return SModelSearchUtil.createModelAndImportedModelsScope(SNodeOperations.getModel(_context.getReferenceNode()), true);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_sg71kg_a0a1a0a0a1a0b0a1a1;
@@ -50,6 +47,5 @@ public class NodeRefExpression_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_sg71kg_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1219363783269");
 }

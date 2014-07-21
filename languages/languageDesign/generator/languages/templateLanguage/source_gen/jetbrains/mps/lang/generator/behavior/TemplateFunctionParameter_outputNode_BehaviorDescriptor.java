@@ -11,5 +11,5 @@ public class TemplateFunctionParameter_outputNode_BehaviorDescriptor extends Con
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode";
-  };;
-;}
+  }
+}

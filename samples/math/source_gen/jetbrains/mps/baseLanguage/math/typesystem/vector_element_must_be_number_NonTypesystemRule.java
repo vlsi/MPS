@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class vector_element_must_be_number_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public vector_element_must_be_number_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode vT, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(vT, "elementType", true), MathTypeUtil.qBigComplex))) {
       {
@@ -26,18 +25,15 @@ public class vector_element_must_be_number_NonTypesystemRule extends AbstractNon
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.VectorType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

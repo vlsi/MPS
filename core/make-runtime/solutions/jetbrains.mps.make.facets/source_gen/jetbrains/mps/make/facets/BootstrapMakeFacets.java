@@ -14,7 +14,6 @@ public class BootstrapMakeFacets implements CoreComponent {
   private IFacet reloadClassesFacet;
   private IFacet makeFacet;
 
-
   public void init() {
     try {
       javaCompileFacet = JavaCompile_Facet.class.newInstance();
@@ -27,8 +26,6 @@ public class BootstrapMakeFacets implements CoreComponent {
       throw new RuntimeException(t);
     }
   }
-
-
 
   public void dispose() {
     FacetRegistry.getInstance().unregister(javaCompileFacet);

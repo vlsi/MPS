@@ -41,30 +41,25 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   private final VirtualFileManager myVirtualFileManager;
   private TaskQueue<Conflictable> myTaskQueue;
   private ReloadManagerComponent myReloadManager;
-
   public SuspiciousModelIndex(ProjectManager manager, FSChangesWatcher watcher, VirtualFileManager vfManager, ReloadManagerComponent reloadManager) {
     myProjectManager = manager;
     this.myReloadManager = reloadManager;
     myVirtualFileManager = vfManager;
   }
-
   public void addModel(SModel model, boolean isInConflict) {
     if (model instanceof EditableSModel && !(model.isReadOnly())) {
       myTaskQueue.addTask(new ConflictableModelAdapter((EditableSModel) model, isInConflict));
     }
   }
-
   public void addModule(AbstractModule abstractModule, boolean inConflict) {
     myTaskQueue.addTask(new ConflictableModuleAdapter(abstractModule, inConflict));
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Suspicious Model Index";
   }
-
   @Override
   public void initComponent() {
     myTaskQueue = new SuspiciousModelIndex.MyTaskQueue(myProjectManager, myVirtualFileManager, myReloadManager);
@@ -73,19 +68,16 @@ public class SuspiciousModelIndex implements ApplicationComponent {
       public void handleSuspiciousModel(SModel model, boolean inConflict) {
         addModel(model, inConflict);
       }
-
       @Override
       public void handleSuspiciousModule(AbstractModule module, boolean inConflict) {
         addModule(module, inConflict);
       }
     });
   }
-
   @Override
   public void disposeComponent() {
     myTaskQueue.dispose();
   }
-
   public void mergeModelsLater(List<Conflictable> models) {
     final Map<Project, List<VirtualFile>> toMerge = new HashMap<Project, List<VirtualFile>>();
     final Map<VirtualFile, Conflictable> fileToConflictable = new LinkedHashMap<VirtualFile, Conflictable>();
@@ -144,11 +136,9 @@ public class SuspiciousModelIndex implements ApplicationComponent {
       }
     }, ModalityState.defaultModalityState());
   }
-
   public static SuspiciousModelIndex instance() {
     return ApplicationManager.getApplication().getComponent(SuspiciousModelIndex.class);
   }
-
   @Nullable
   private static Project getProjectForFile(VirtualFile f) {
     for (Project project : ProjectManager.getInstance().getOpenProjects()) {
@@ -161,7 +151,6 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
     return null;
   }
-
   private static boolean isInConflict(IFile ifile) {
     VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
     if ((vfile != null) && (vfile.exists())) {
@@ -173,17 +162,14 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
     return false;
   }
-
   private class MyTaskQueue extends TaskQueue<Conflictable> {
     public MyTaskQueue(ProjectManager manager, VirtualFileManager virtualFileManager, ReloadManagerComponent reloadManager) {
       super(manager, virtualFileManager, reloadManager);
     }
-
     @Override
     protected boolean isProcessingAllowed() {
       return super.isProcessingAllowed() && !(ModelAccess.instance().canRead());
     }
-
     @Override
     protected void processTask(final List<Conflictable> tasks) {
       mergeModelsLater(tasks);

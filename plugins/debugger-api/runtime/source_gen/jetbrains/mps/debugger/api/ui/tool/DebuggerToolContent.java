@@ -7,7 +7,6 @@ public class DebuggerToolContent {
   public static final String FRAMES = "Frames";
   public static final String VARIABLES = "Variables";
   public static final String WATCHES = "Watches";
-
   public DebuggerToolContent() {
   }
 }

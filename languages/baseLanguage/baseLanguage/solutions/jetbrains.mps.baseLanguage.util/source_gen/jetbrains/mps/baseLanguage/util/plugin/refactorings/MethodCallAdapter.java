@@ -12,14 +12,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class MethodCallAdapter {
   @NotNull
   private SNode myMethodCall;
-
   public MethodCallAdapter(@NotNull SNode methodCall) {
     if (!(SNodeOperations.isInstanceOf(methodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall") || SNodeOperations.isInstanceOf(methodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"))) {
       throw new IllegalArgumentException();
     }
     this.myMethodCall = methodCall;
   }
-
   public SNode getMethodDeclaration() {
     if (SNodeOperations.isInstanceOf(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false);
@@ -29,7 +27,6 @@ public class MethodCallAdapter {
     }
     return null;
   }
-
   public List<SNode> getMethodArguments() {
     if (SNodeOperations.isInstanceOf(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       return SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true);
@@ -39,7 +36,6 @@ public class MethodCallAdapter {
     }
     return null;
   }
-
   public void removeArguments() {
     if (SNodeOperations.isInstanceOf(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).clear();
@@ -48,7 +44,6 @@ public class MethodCallAdapter {
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), "actualArgument", true)).clear();
     }
   }
-
   public void addArgument(SNode arguemnt) {
     if (SNodeOperations.isInstanceOf(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).addElement(arguemnt);
@@ -57,12 +52,10 @@ public class MethodCallAdapter {
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), "actualArgument", true)).addElement(arguemnt);
     }
   }
-
   @NotNull
   public SNode getNode() {
     return this.myMethodCall;
   }
-
   public static boolean isMethodCall(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IMethodCall") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation");
   }

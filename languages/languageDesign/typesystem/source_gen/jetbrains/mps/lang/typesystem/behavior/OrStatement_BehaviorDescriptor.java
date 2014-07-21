@@ -10,5 +10,5 @@ public class OrStatement_BehaviorDescriptor extends BaseConcept_BehaviorDescript
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.OrStatement";
-  };;
-;}
+  }
+}

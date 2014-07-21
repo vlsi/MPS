@@ -8,11 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class AttributeQualifier_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode call_getAttributeContainerType_6407023681583057388(SNode thisNode) {
+  }
+  public static SNode call_getAttributeContainerType_6407023681583057388(SNode thisNode) {
     return AttributeAccess_Behavior.call_getAttributeContainerType_6960953357954139822(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.smodel.structure.AttributeAccess"));
-  };;
-;  public static SNode virtual_getTargetConcept_6407023681583066586(SNode thisNode) {
+  }
+  public static SNode virtual_getTargetConcept_6407023681583066586(SNode thisNode) {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.Attribute");
-  };;
-;}
+  }
+}

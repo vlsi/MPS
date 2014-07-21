@@ -17,64 +17,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SwitchToComplexIsApplicable_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public SwitchToComplexIsApplicable_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem";
   }
-
   public String getPresentation() {
     return "SwitchToComplexIsApplicable";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.debugger.api.lang.intentions.SwitchToComplexIsApplicable_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.debugger.api.lang";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:e5ea276a-79c7-4383-9407-3428086d3297(jetbrains.mps.debugger.api.lang.intentions)", "8751745335399757635");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SwitchToComplexIsApplicable_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       if (SPropertyOperations.getBoolean(node, "isComplex")) {
         return "Use Concept List";
       }
       return "Use isApplicable Function";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "isComplex", "" + (!(SPropertyOperations.getBoolean(node, "isComplex"))));
       if (SPropertyOperations.getBoolean(node, "isComplex") && (SLinkOperations.getTarget(node, "isApplicable", true) == null)) {
@@ -82,7 +68,6 @@ public class SwitchToComplexIsApplicable_Intention implements IntentionFactory {
         SLinkOperations.setNewChild(SLinkOperations.getTarget(node, "isApplicable", true), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return SwitchToComplexIsApplicable_Intention.this;
     }

@@ -25,18 +25,15 @@ import org.apache.log4j.LogManager;
 
 public class ShowNodeMessages_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowNodeMessages_Action() {
     super("Show Node Messages", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ListSequence.fromList(((List<SimpleEditorMessage>) ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().getMessagesFor(((SNode) MapSequence.fromMap(_params).get("node"))))).where(new IWhereFilter<SimpleEditorMessage>() {
       public boolean accept(SimpleEditorMessage it) {
@@ -44,7 +41,6 @@ public class ShowNodeMessages_Action extends BaseAction {
       }
     }).isNotEmpty();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -58,7 +54,6 @@ public class ShowNodeMessages_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -81,7 +76,6 @@ public class ShowNodeMessages_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SimpleEditorMessage> messages = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().getMessagesFor(((SNode) MapSequence.fromMap(_params).get("node")));
@@ -103,9 +97,7 @@ public class ShowNodeMessages_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowNodeMessages_Action.class);
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

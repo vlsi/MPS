@@ -22,22 +22,18 @@ import jetbrains.mps.smodel.SReference;
 public class PatternProperty_Test extends BaseTransformationTest {
   public PatternProperty_Test() {
   }
-
   @Test
   public void testMethod() throws Throwable {
     this.initTest("${mps_home}", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.PatternProperty_Test$TestBody", "testProperty", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public TestBody() {
     }
-
     public void testProperty() {
       TestCase.assertTrue(match());
     }
-
     public boolean match() {
       SNode nodeToMatch = _quotation_createNode_xihehy_a0a0c2();
       GeneratedMatchingPattern pattern = new PatternProperty_Test.TestBody.Pattern_xihehy_a0a1a2c();
@@ -52,16 +48,13 @@ public class PatternProperty_Test extends BaseTransformationTest {
       Assert.assertEquals("something", (String) pattern.getFieldValue("patternVar_printed"));
       return true;
     }
-
     public static class Pattern_xihehy_a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
       /*package*/ SNode patternVar_field;
       /*package*/ SNode patternVar_className;
       /*package*/ SNode patternVar_method;
       /*package*/ String patternVar_printed;
-
       public Pattern_xihehy_a0a1a2c() {
       }
-
       public boolean match(SNode nodeToMatch) {
         {
           SNode nodeToMatch_ru5khm_a0 = nodeToMatch;
@@ -120,11 +113,9 @@ public class PatternProperty_Test extends BaseTransformationTest {
         }
         return true;
       }
-
       public boolean hasAntiquotations() {
         return false;
       }
-
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
           patternVar_field = (SNode) pattern.getFieldValue("patternVar_field");
@@ -133,7 +124,6 @@ public class PatternProperty_Test extends BaseTransformationTest {
           patternVar_printed = (String) pattern.getFieldValue("patternVar_printed");
         }
       }
-
       public Object getFieldValue(String fieldName) {
         if ("patternVar_field".equals(fieldName)) {
           return patternVar_field;
@@ -149,11 +139,9 @@ public class PatternProperty_Test extends BaseTransformationTest {
         }
         return null;
       }
-
       public void performActions(Object o) {
       }
     }
-
     private static SNode _quotation_createNode_xihehy_a0a0c2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;

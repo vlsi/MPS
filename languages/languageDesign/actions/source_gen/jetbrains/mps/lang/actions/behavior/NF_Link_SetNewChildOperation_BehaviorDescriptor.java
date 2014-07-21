@@ -10,9 +10,9 @@ public class NF_Link_SetNewChildOperation_BehaviorDescriptor extends Link_SetNew
   }
   public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
     return NF_Link_SetNewChildOperation_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation";
-  };;
-;}
+  }
+}

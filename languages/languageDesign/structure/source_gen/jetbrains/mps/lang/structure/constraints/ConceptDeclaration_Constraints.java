@@ -27,16 +27,13 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ConceptDeclaration_Constraints() {
     super("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
   }
-
   public String getAlternativeIcon(SNode node) {
     return (SPropertyOperations.getBoolean(node, "rootable") ? "${language_descriptor}/icons/rootableConcept.png" : "${language_descriptor}/icons/structure.png");
   }
-
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
   }
-
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseScopeProvider() {
@@ -44,19 +41,16 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_8geshg_a0a0a0a0a3;
       }
-
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         return new ConceptsScope(_context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
       }
     };
   }
-
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;
   }
-
   @Override
   public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeARoot(model, context);
@@ -67,7 +61,6 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -76,7 +69,6 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -85,7 +77,6 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_8geshg_a0a0a0a0a1a0b0a1a6;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             // don't allow cycling 
@@ -96,11 +87,9 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
     return LanguageAspect.STRUCTURE.is(model) || SModelStereotype.isGeneratorModel(model);
   }
-
   private static SNodePointer breakingNode_8geshg_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "8857655676216515363");
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087258260");
   private static SNodePointer breakingNode_8geshg_a0a0a0a0a1a0b0a1a6 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "843447540011607884");

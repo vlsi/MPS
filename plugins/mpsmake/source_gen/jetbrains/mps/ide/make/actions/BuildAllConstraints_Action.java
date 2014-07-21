@@ -27,18 +27,15 @@ import org.apache.log4j.LogManager;
 
 public class BuildAllConstraints_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public BuildAllConstraints_Action() {
     super("Rebuild All Constraints", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -49,7 +46,6 @@ public class BuildAllConstraints_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -64,7 +60,6 @@ public class BuildAllConstraints_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
@@ -86,6 +81,5 @@ public class BuildAllConstraints_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(BuildAllConstraints_Action.class);
 }

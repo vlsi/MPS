@@ -9,5 +9,5 @@ public class ToolDeclaration_BehaviorDescriptor extends BaseToolDeclaration_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ToolDeclaration";
-  };;
-;}
+  }
+}

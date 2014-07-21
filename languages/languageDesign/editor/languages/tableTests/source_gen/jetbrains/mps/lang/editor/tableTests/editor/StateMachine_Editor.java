@@ -35,7 +35,6 @@ public class StateMachine_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_qpt50r_a(editorContext, node);
   }
-
   private EditorCell createCollection_qpt50r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qpt50r_a");
@@ -45,7 +44,6 @@ public class StateMachine_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTable_qpt50r_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_qpt50r_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "StateMachine");
     editorCell.setCellId("Constant_qpt50r_a0");
@@ -56,7 +54,6 @@ public class StateMachine_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_qpt50r_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -77,7 +74,6 @@ public class StateMachine_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createTable_qpt50r_c0(EditorContext editorContext, SNode node) {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
@@ -86,12 +82,10 @@ public class StateMachine_Editor extends DefaultNodeEditor {
           public int getColumnCount() {
             return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).count();
           }
-
           @Override
           public int getRowCount() {
             return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).count();
           }
-
           @Override
           public SNode getValueAt(int row, int column) {
             if (row == 0 && column > 0) {
@@ -111,7 +105,6 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             }
             return null;
           }
-
           @Override
           public void createElement(int row, int column) {
             if (row > 0 && column > 0) {
@@ -125,7 +118,6 @@ public class StateMachine_Editor extends DefaultNodeEditor {
               ListSequence.fromList(SLinkOperations.getTargets(node, "transitions", true)).addElement(transition);
             }
           }
-
           @Override
           public void insertColumn(int columnNumber) {
             if (columnNumber <= 0) {
@@ -133,7 +125,6 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             }
             ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).insertElement(columnNumber - 1, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Event", null));
           }
-
           @Override
           public void insertRow(int rowNumber) {
             if (rowNumber <= 0) {
@@ -141,7 +132,6 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             }
             ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).insertElement(rowNumber - 1, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.State", null));
           }
-
           @Override
           public void deleteColumn(int columnNumber) {
             if (columnNumber <= 0) {
@@ -155,7 +145,6 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             }
             SNodeOperations.deleteNode(event);
           }
-
           @Override
           public SubstituteInfo getSubstituteInfo(final int row, final int column) {
             SNode linkDeclaration = null;
@@ -208,7 +197,6 @@ public class StateMachine_Editor extends DefaultNodeEditor {
               }
             };
           }
-
           @Override
           public void deleteRow(int rowNumber) {
             if (rowNumber <= 0) {

@@ -13,9 +13,9 @@ public class LanguageReferenceExpression_BehaviorDescriptor extends ModuleRefere
   @NotNull
   public List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode) {
     return LanguageReferenceExpression_Behavior.virtual_getVisibleModules_4040588429969394404(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression";
-  };;
-;}
+  }
+}

@@ -25,7 +25,6 @@ public class CheckDependencies_Test extends TestCase {
       }
     });
   }
-
   public CheckDependencies_Test() {
   }
 }

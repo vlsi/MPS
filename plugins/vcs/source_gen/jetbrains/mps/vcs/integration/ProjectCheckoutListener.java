@@ -14,7 +14,6 @@ import com.intellij.platform.ProjectBaseDirectory;
 public class ProjectCheckoutListener implements CheckoutListener {
   public ProjectCheckoutListener() {
   }
-
   @Override
   public boolean processCheckedOutDirectory(Project project, File directory) {
     File[] files = directory.listFiles(new FilenameFilter() {
@@ -35,7 +34,6 @@ public class ProjectCheckoutListener implements CheckoutListener {
     }
     return false;
   }
-
   @Override
   public void processOpenedProject(Project lastOpenedProject) {
   }

@@ -47,11 +47,9 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_ParametersDeclaration_7320828025189345690(final IOperationContext operationContext, final NodeSetupContext _context) {
     SPropertyOperations.set(_context.getNewNode(), "name", "Parameters");
   }
-
   public static void nodeFactory_NodeSetup_ParametersDeclaration_127305800529615845(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.addNewChild(_context.getNewNode(), "component", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration");
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TargetDependency_8351679702044371560(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -71,7 +69,6 @@ public class QueriesGenerated {
                   public Iterator<Tuples._2<SNode, SNode>> iterator() {
                     return new YieldingIterator<Tuples._2<SNode, SNode>>() {
                       private int __CP__ = 0;
-
                       protected boolean moveToNext() {
 __loop__:
                         do {
@@ -106,7 +103,6 @@ __switch__:
                         } while (true);
                         return false;
                       }
-
                       private SNode _2_em;
                       private Iterator<SNode> _2_em_it;
                     };
@@ -125,11 +121,9 @@ __switch__:
                 SLinkOperations.setTarget(dep, "dependsOn", (item)._1(), false);
                 return dep;
               }
-
               public String getMatchingText(String pattern) {
                 return SEnumOperations.getEnumMemberName((item)._0()) + " " + SPropertyOperations.getString((item)._1(), "name");
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -140,7 +134,6 @@ __switch__:
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_7320828025189375232(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -162,11 +155,9 @@ __switch__:
                 SLinkOperations.setTarget(lvce, "operation", _quotation_createNode_59frgq_a0d0a0a0((item)), true);
                 return lvce;
               }
-
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), "name");
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -177,11 +168,9 @@ __switch__:
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_7320828025189375235(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false) != null);
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_3344436107830239664(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -219,11 +208,9 @@ __switch__:
                 SNode op = _quotation_createNode_gb3jz3_a0b0a0a0((item));
                 return _quotation_createNode_gb3jz3_a2a0a0a(fve, op);
               }
-
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString(SNodeOperations.getAncestor((item), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), "name") + "." + SPropertyOperations.getString((item), "name");
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -234,7 +221,6 @@ __switch__:
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_FacetReferenceExpression_7178445679340358586(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -252,15 +238,12 @@ __switch__:
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 return _quotation_createNode_wcrlau_a0a0a0a((item));
               }
-
               public String getMatchingText(String pattern) {
                 return "&" + SPropertyOperations.getString((item), "name");
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
-
               public String getDescriptionText(String pattern) {
                 return "reference to facet " + SPropertyOperations.getString((item), "name");
               }
@@ -271,16 +254,13 @@ __switch__:
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ResourceClassifierType_4902420589276875806(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_ResourceClassifierType_4902420589276882578(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return !(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration"));
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_IPropertyExpression_2191561637326275634(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression"), _context.getSourceNode()) {
@@ -288,19 +268,15 @@ __switch__:
         SLinkOperations.setNewChild(_context.getSourceNode(), "resource", "jetbrains.mps.baseLanguage.structure.Expression");
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         return "@";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "specify resource";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -311,11 +287,9 @@ __switch__:
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IPropertyExpression_2191561637326275635(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "resource", true) == null);
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_FacetReferenceExpression_8703512757937161165(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -333,15 +307,12 @@ __switch__:
               SLinkOperations.setTarget(tre, "target", (item), false);
               return tre;
             }
-
             public String getMatchingText(String pattern) {
               return ":" + SPropertyOperations.getString((item), "name");
             }
-
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
-
             @Override
             protected boolean isEnabled() {
               SNode sourceNode = getSourceNode();
@@ -355,11 +326,9 @@ __switch__:
     }
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_FacetReferenceExpression_8703512757937161166(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.make.facet.structure.TargetReferenceExpression"));
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_FacetReference_8703512757937205090(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createSideTransformHintSubstituteActions(new Computable<SNode>() {
@@ -369,11 +338,9 @@ __switch__:
     }.compute(), _context.getSide(), _context.getTransformationTag(), operationContext)));
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_FacetReference_8703512757937205101(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.make.facet.structure.TargetReferenceExpression", false, false) == null);
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_TargetDeclaration_7219266275016399963(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.TargetDeclaration"), _context.getSourceNode()) {
@@ -381,15 +348,12 @@ __switch__:
         SPropertyOperations.set(_context.getSourceNode(), "optional", "" + (true));
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         return "optional";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -400,11 +364,9 @@ __switch__:
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_TargetDeclaration_7219266275016399965(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "optional"));
   }
-
   private static SNode _quotation_createNode_59frgq_a0d0a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -412,7 +374,6 @@ __switch__:
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "component", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_gb3jz3_a0a0a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -420,7 +381,6 @@ __switch__:
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "target", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_gb3jz3_a0b0a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -428,7 +388,6 @@ __switch__:
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "component", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_gb3jz3_a2a0a0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -445,7 +404,6 @@ __switch__:
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_wcrlau_a0a0a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

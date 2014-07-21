@@ -13,7 +13,6 @@ public class ProcessType_Constraints extends BaseConstraintsDescriptor {
   public ProcessType_Constraints() {
     super("jetbrains.mps.execution.commands.structure.ProcessType");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -22,7 +21,6 @@ public class ProcessType_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "alias";

@@ -11,9 +11,9 @@ public class ConceptFunctionParameter_isAggregation_BehaviorDescriptor extends C
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConceptFunctionParameter_isAggregation_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation";
-  };;
-;}
+  }
+}

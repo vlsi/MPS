@@ -9,5 +9,5 @@ public class OrPatternClause_BehaviorDescriptor extends PatternExpression_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.OrPatternClause";
-  };;
-;}
+  }
+}

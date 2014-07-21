@@ -20,20 +20,17 @@ public class OneReturnStatement_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.OneReturnStatement_Test$TestBody", "test_oneReturnStatement", true);
   }
-
   @Test
   public void test_returnAndOutVariable() throws Throwable {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.OneReturnStatement_Test$TestBody", "test_returnAndOutVariable", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_oneReturnStatement() throws Exception {
       this.addNodeById("1230052642175");
       Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642181"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
     }
-
     public void test_returnAndOutVariable() throws Exception {
       this.addNodeById("1230052642175");
       Assert.assertTrue(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642191"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), SNodeOperations.cast(this.getNodeById("1230052642198"), "jetbrains.mps.baseLanguage.structure.IfStatement"))) != null);

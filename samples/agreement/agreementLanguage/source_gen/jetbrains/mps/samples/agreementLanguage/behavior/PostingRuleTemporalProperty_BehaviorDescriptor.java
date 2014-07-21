@@ -6,7 +6,6 @@ package jetbrains.mps.samples.agreementLanguage.behavior;
 public class PostingRuleTemporalProperty_BehaviorDescriptor extends TemporalProperty_BehaviorDescriptor {
   public PostingRuleTemporalProperty_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty";

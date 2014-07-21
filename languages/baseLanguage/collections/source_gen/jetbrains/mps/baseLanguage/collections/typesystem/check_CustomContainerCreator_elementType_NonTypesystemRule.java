@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_CustomContainerCreator_elementType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_CustomContainerCreator_elementType_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode ccc, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SLinkOperations.getTarget(ccc, "elementType", true);
     if (!(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ccc, "containerDeclaration", false), "typeVariableDeclaration", true)).count() <= 1 && ((ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ccc, "containerDeclaration", false), "typeVariableDeclaration", true)).count() == 1) == (SLinkOperations.getTarget(ccc, "elementType", true) != null)))) {
@@ -25,18 +24,15 @@ public class check_CustomContainerCreator_elementType_NonTypesystemRule extends 
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ccc, "Invalid type parameter", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5192033827214196979", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

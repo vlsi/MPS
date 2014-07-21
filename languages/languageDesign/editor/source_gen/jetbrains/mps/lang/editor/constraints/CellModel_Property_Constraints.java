@@ -23,7 +23,6 @@ public class CellModel_Property_Constraints extends BaseConstraintsDescriptor {
   public CellModel_Property_Constraints() {
     super("jetbrains.mps.lang.editor.structure.CellModel_Property");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class CellModel_Property_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -43,7 +41,6 @@ public class CellModel_Property_Constraints extends BaseConstraintsDescriptor {
             SNode editedConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
             return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(editedConcept);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_p94y3m_a0a1a0a0a1a0b0a1a1;
@@ -53,6 +50,5 @@ public class CellModel_Property_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_p94y3m_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1213104846627");
 }

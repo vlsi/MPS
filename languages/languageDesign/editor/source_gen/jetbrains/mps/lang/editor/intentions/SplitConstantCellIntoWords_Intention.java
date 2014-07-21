@@ -20,41 +20,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SplitConstantCellIntoWords_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public SplitConstantCellIntoWords_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.editor.structure.CellModel_Constant";
   }
-
   public String getPresentation() {
     return "SplitConstantCellIntoWords";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.intentions.SplitConstantCellIntoWords_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if ((SNodeOperations.getParent(node) == null)) {
       return false;
@@ -68,30 +59,24 @@ public class SplitConstantCellIntoWords_Intention implements IntentionFactory {
     }
     return false;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1224529494087");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SplitConstantCellIntoWords_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Split Constant Cell into Words";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       String text = SPropertyOperations.getString(node, "text").trim();
       SNode collection = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
@@ -130,7 +115,6 @@ public class SplitConstantCellIntoWords_Intention implements IntentionFactory {
         i++;
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return SplitConstantCellIntoWords_Intention.this;
     }

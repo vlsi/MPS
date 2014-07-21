@@ -28,65 +28,50 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 public class Mappingmain implements TemplateMappingConfiguration {
   private final Collection<TemplateReductionRule> rules;
   private final TemplateModel myModel;
-
   public Mappingmain(TemplateModel model) {
     this.myModel = model;
     rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1(), new Mappingmain.ReductionRule2());
   }
-
   public String getName() {
     return "main";
   }
-
   public TemplateModel getModel() {
     return this.myModel;
   }
-
   public SNodeReference getMappingNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887556");
   }
-
   public boolean isApplicable(ITemplateGenerator generator) {
     return true;
   }
-
   public Collection<TemplateReductionRule> getReductionRules() {
     return rules;
   }
-
   public Collection<TemplateCreateRootRule> getCreateRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateRootMappingRule> getRootRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateWeavingRule> getWeavingRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateDropRootRule> getDropRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateMappingScript> getPostScripts() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateMappingScript> getPreScripts() {
     return Collections.emptySet();
   }
-
   public boolean isTopPriority() {
     return true;
   }
-
   public final class ReductionRule0 extends ReductionRuleBase {
     public ReductionRule0() {
       super(new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887579"), "jetbrains.mps.lang.quotation.structure.Quotation", false);
     }
-
     @Override
     protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
@@ -94,12 +79,10 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return tlist1;
     }
   }
-
   public final class ReductionRule1 extends ReductionRuleBase {
     public ReductionRule1() {
       super(new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1006429225401295240"), "jetbrains.mps.lang.quotation.structure.NodeBuilder", false);
     }
-
     @Override
     protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
@@ -107,12 +90,10 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return tlist1;
     }
   }
-
   public final class ReductionRule2 extends ReductionRuleBase {
     public ReductionRule2() {
       super(new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709774"), "jetbrains.mps.lang.quotation.structure.NodeBuilderNode", false);
     }
-
     @Override
     protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();

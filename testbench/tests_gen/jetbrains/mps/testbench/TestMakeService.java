@@ -28,17 +28,13 @@ import jetbrains.mps.make.script.IPropertiesPool;
 public class TestMakeService extends AbstractMakeService implements IMakeService {
   private IOperationContext context;
   private IMessageHandler messageHandler;
-
   @Deprecated
   public TestMakeService(IOperationContext context, IMessageHandler messageHandler) {
     this.context = context;
     this.messageHandler = messageHandler;
   }
-
   public TestMakeService() {
   }
-
-
 
   @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
@@ -65,35 +61,28 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
     task.run(monitor);
     return new FutureValue<IResult>(task.getResult());
   }
-
   @Override
   public boolean isSessionActive() {
     return false;
   }
-
   @Override
   public boolean openNewSession(MakeSession session) {
     return false;
   }
-
   @Override
   public void closeSession(MakeSession session) {
   }
-
   @Override
   public void addListener(IMakeNotificationListener listener) {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public void removeListener(IMakeNotificationListener listener) {
     throw new UnsupportedOperationException();
   }
-
   private void showError(String msg) {
     messageHandler.handle(new Message(MessageKind.ERROR, msg));
   }
-
   private IScriptController completeController(final IScriptController ctl, MakeSession makeSession) {
     // client is responsible to populate properties of possible facets, don't do anything if 
     // client has supplied a conrtoller. If not, create a default controller that expects Generate facet to 

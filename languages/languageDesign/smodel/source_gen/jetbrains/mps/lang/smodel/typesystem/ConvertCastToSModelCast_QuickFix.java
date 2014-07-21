@@ -11,11 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class ConvertCastToSModelCast_QuickFix extends QuickFix_Runtime {
   public ConvertCastToSModelCast_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Convert to smodel cast";
   }
-
   public void execute(SNode node) {
     SNode snode = node;
     SNode blCast = SNodeOperations.cast(snode, "jetbrains.mps.baseLanguage.structure.CastExpression");

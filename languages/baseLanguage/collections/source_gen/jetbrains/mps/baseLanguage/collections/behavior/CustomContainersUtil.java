@@ -44,8 +44,8 @@ with_ctParams:
           }
         }
         return cmc;
-      };;
-;    }) : Sequence.fromIterable(containerDeclarations(model, type)).select(new ISelector<SNode, SNode>() {
+      }
+    }) : Sequence.fromIterable(containerDeclarations(model, type)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode ccd) {
         SNode ccc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator", null);
         SLinkOperations.setTarget(ccc, "containerDeclaration", ccd, false);
@@ -53,14 +53,14 @@ with_ctParams:
           SLinkOperations.setTarget(ccc, "elementType", SNodeOperations.as(ListSequence.fromList(SNodeOperations.getChildren(type)).first(), "jetbrains.mps.baseLanguage.structure.Type"), true);
         }
         return ccc;
-      };;
-;    })));
-  };;
-;  public static Iterable<SNode> containerDeclarations(SModel model, final SNode type) {
+      }
+    })));
+  }
+  public static Iterable<SNode> containerDeclarations(SModel model, final SNode type) {
     return ListSequence.fromList(CollectionsLanguage.getInstance().getCustomContainersRegistry().accessibleCustomContainerDeclarations(model)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode ccd) {
         return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(ccd, "containerType", true)) == SNodeOperations.getConceptDeclaration(type);
-      };;
-;    });
-  };;
-;}
+      }
+    });
+  }
+}

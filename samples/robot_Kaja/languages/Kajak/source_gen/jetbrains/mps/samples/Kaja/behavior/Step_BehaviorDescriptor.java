@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Kaja.behavior;
 public class Step_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor {
   public Step_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.Step";

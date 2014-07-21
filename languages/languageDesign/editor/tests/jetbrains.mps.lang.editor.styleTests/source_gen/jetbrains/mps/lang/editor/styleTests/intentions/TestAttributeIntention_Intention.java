@@ -21,61 +21,47 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class TestAttributeIntention_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public TestAttributeIntention_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes";
   }
-
   public String getPresentation() {
     return "TestAttributeIntention";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.styleTests.intentions.TestAttributeIntention_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor.styleTests";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:775aad27-5694-4d43-9bf6-7ae06a44bdd7(jetbrains.mps.lang.editor.styleTests.intentions)", "6609104295326686867");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new TestAttributeIntention_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace ConceptWithStyleAttributes with BooleanConstant";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       EditorCell_Collection bigCollection = as_3rumhz_a0a0a2m(editorContext.getEditorComponent().findNodeCell(node), EditorCell_Collection.class);
       EditorCell doCell = bigCollection.getCellAt(0);
@@ -129,75 +115,58 @@ public class TestAttributeIntention_Intention implements IntentionFactory {
 
       SNodeOperations.replaceWithAnother(node, createBooleanConstant_x6194x_a0a44a0(ok));
     }
-
     public IntentionDescriptor getDescriptor() {
       return TestAttributeIntention_Intention.this;
     }
   }
-
   private static SNode createBooleanConstant_x6194x_a0a44a0(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, false);
     n1.setProperty("value", String.valueOf(p0));
     return n1;
   }
-
   private static <T> T as_3rumhz_a0a0a2m(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_3rumhz_a0a2a2m(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_3rumhz_a0a5a2m(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_3rumhz_a0a8a2m(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static boolean eq_3rumhz_a0a41a2m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_3rumhz_a0a71a2m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_3rumhz_a0a02a2m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_3rumhz_a0a32a2m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_3rumhz_a0a62a2m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_3rumhz_a0a92a2m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_3rumhz_a0a23a2m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_3rumhz_a0a53a2m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_3rumhz_a0a83a2m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_3rumhz_a0a0pb0c21(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_3rumhz_a0a3pb0c21(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

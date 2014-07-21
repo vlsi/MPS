@@ -12,7 +12,6 @@ public class QueryExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_8t0fqe_a(editorContext, node);
   }
-
   private EditorCell createComponent_8t0fqe_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.console.blCommand.editor.QueryExpression_EditorComponent");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

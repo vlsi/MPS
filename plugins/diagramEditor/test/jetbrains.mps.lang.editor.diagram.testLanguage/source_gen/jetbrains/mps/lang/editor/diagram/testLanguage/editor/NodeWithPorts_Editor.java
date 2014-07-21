@@ -40,7 +40,6 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createDiagramNode_t9c2f5_a(editorContext, node);
   }
-
   private EditorCell createDiagramNode_t9c2f5_a(final EditorContext editorContext, final SNode node) {
     BlockCell editorCell = new NodeWithPorts_Editor.BlockCellImpl_t9c2f5_a(editorContext, node);
     editorCell.setCellId("DiagramNode_t9c2f5_a");
@@ -48,7 +47,6 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
     DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   private class BlockCellImpl_t9c2f5_a extends BlockCell {
     private final PropertyMapperCell<Integer> myPropertyCell_t9c2f5_a0a;
     private final PropertyMapperCell<Integer> myPropertyCell_t9c2f5_a1a;
@@ -57,14 +55,12 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
     private final PropertyMapperCell<Integer> myPropertyCell_t9c2f5_a4a;
     private final ObservableList<SNode> myInputPorts = new ObservableArrayList<SNode>();
     private final ObservableList<SNode> myOutputPorts = new ObservableArrayList<SNode>();
-
     private BlockCellImpl_t9c2f5_a(EditorContext editorContext, final SNode node) {
       super(editorContext, node);
       myPropertyCell_t9c2f5_a0a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "x");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "x", "" + (value));
         }
@@ -75,7 +71,6 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "y", "" + (value));
         }
@@ -86,7 +81,6 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "width");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "width", "" + (value));
         }
@@ -97,7 +91,6 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "height");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "height", "" + (value));
         }
@@ -108,7 +101,6 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "lineWidth");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "lineWidth", "" + (value));
         }
@@ -117,7 +109,6 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
       myPropertyCell_t9c2f5_a4a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_t9c2f5_a4a, new Pair<SNodeReference, String>(new SNodePointer(node), "lineWidth"));
       synchronize();
     }
-
     public void synchronize() {
       super.synchronizeViewWithModel();
       myPropertyCell_t9c2f5_a0a.synchronize();
@@ -128,7 +119,6 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
       syncPortNodes(SLinkOperations.getTargets(getSNode(), "inputs", true), myInputPorts.listIterator(), new HashSet<SNode>(myInputPorts));
       syncPortNodes(SLinkOperations.getTargets(getSNode(), "outputs", true), myOutputPorts.listIterator(), new HashSet<SNode>(myOutputPorts));
     }
-
     public Mapper<SNode, DiagramNodeView> createMapper() {
       return new Mapper<SNode, DiagramNodeView>(getSNode(), createDiagramNodeView()) {
         @Override
@@ -213,7 +203,6 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public Mapper<SNode, NodeDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, NodeDecoratorView>(getSNode(), new NodeDecoratorView()) {
         @Override

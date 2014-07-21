@@ -42,13 +42,11 @@ public class AspectDependenciesChecker extends SpecificChecker {
   private SModule coreModule;
   private SModule editorModule;
   private String languagesUtilPath;
-
   public AspectDependenciesChecker() {
     this.coreModule = MPSModuleRepository.getInstance().getModuleByFqName("MPS.Core");
     this.editorModule = MPSModuleRepository.getInstance().getModuleByFqName("MPS.Editor");
     this.languagesUtilPath = PathManager.getHomePath() + "/languages/util/";
   }
-
   @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final SRepository repository) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
@@ -89,7 +87,6 @@ public class AspectDependenciesChecker extends SpecificChecker {
     monitor.done();
     return results;
   }
-
   public int getModelKind(SModel model, @Nullable SReference reference) {
     DataSource source = (model != null ? model.getSource() : null);
     IFile modelFile = (source instanceof FileDataSource ? ((FileDataSource) source).getFile() : null);
@@ -186,7 +183,6 @@ public class AspectDependenciesChecker extends SpecificChecker {
     }
     return OTHER;
   }
-
   public static boolean findInModule(SModule module, String modelName, String rootName) {
     for (SModel d : module.getModels()) {
       if (d.getModelName().equals(modelName)) {
@@ -200,7 +196,6 @@ public class AspectDependenciesChecker extends SpecificChecker {
     }
     return false;
   }
-
   public static String kindToString(int kind) {
     switch (kind) {
       case 1:

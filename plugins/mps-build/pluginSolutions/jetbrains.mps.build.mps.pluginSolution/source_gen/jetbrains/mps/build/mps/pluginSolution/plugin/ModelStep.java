@@ -22,52 +22,42 @@ public class ModelStep extends TwoOptionsStep<SModel> {
   public ModelStep(Project project, AbstractBuildGenerator buildGenerator, IErrorHandler handler) {
     super(ProjectHelper.toIdeaProject(project), buildGenerator, handler);
   }
-
   @Override
   protected void setChecked(boolean checked) {
     this.myGenerator.setCreateModel(checked);
   }
-
   @Override
   protected boolean getChecked() {
     return this.myGenerator.getCreateModel();
   }
-
   @Override
   protected String getComboBoxName() {
     return "Use existing model:";
   }
-
   @Override
   protected String getVariantName(final SModel model) {
     return NameUtil.shortNameFromLongName(model.getModelName());
   }
-
   @Override
   protected String getTextFieldText() {
     return this.myGenerator.getNewModelName();
   }
-
   @Override
   protected void setTextFieldText(String text) {
     this.myGenerator.setNewModelName(text);
   }
-
   @Override
   protected String getCheckBoxName() {
     return "Create new model";
   }
-
   @Override
   protected void setVariant(SModel m) {
     this.myGenerator.setModel(m);
   }
-
   @Override
   protected String getTextFieldName() {
     return "New model name:";
   }
-
   @Override
   protected SModel[] getVariants() {
     final Solution solution = this.myGenerator.getSolution();
@@ -91,22 +81,18 @@ public class ModelStep extends TwoOptionsStep<SModel> {
       return ListSequence.fromList(models).toGenericArray(SModel.class);
     }
   }
-
   @Override
   public String getDescription() {
     return "Select a model to create a new build script.";
   }
-
   @Override
   protected boolean isCheckBoxEnabled() {
     return !(this.myGenerator.getCreateSolution());
   }
-
   @Override
   protected boolean isValid(String text) {
     return this.myGenerator.isValidModelName(text);
   }
-
   @Override
   protected String getWarningText(String text) {
     if (text.equals("")) {
@@ -114,7 +100,6 @@ public class ModelStep extends TwoOptionsStep<SModel> {
     }
     return "Model " + text + " already exists, choose another name.";
   }
-
   @NotNull
   @Override
   public String getImageText() {

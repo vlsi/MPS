@@ -22,7 +22,6 @@ public class InlineWithoutDeclarationDeletion_Test extends BaseTransformationTes
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.InlineWithoutDeclarationDeletion_Test$TestBody", "test_inlineWithoutDeclarationDeletion", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_inlineWithoutDeclarationDeletion() throws Exception {

@@ -26,7 +26,6 @@ public class BuildLayout_FilesOf_Constraints extends BaseConstraintsDescriptor {
   public BuildLayout_FilesOf_Constraints() {
     super("jetbrains.mps.build.structure.BuildLayout_FilesOf");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -35,7 +34,6 @@ public class BuildLayout_FilesOf_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -44,17 +42,14 @@ public class BuildLayout_FilesOf_Constraints extends BaseConstraintsDescriptor {
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getParameterNode()), "conceptAlias") + " " + SPropertyOperations.getString(_context.getParameterNode(), "name");
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_jcryfz_a0a2a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -67,6 +62,5 @@ public class BuildLayout_FilesOf_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_jcryfz_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1224588814562040209");
 }

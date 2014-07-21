@@ -16,25 +16,20 @@ import org.jetbrains.mps.samples.IfAndUnless.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "67b828fd-8fbc-4496-b7f7-8b64ac097c62(org.jetbrains.mps.samples.IfAndUnless)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "org.jetbrains.mps.samples.IfAndUnless";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.baseLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "a9b9fa8e-12f5-448d-b22d-5663c8206e2f(org.jetbrains.mps.samples.IfAndUnless#393299394024627256)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

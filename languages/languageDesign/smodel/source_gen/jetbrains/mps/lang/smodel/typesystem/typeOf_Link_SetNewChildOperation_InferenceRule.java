@@ -16,7 +16,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeOf_Link_SetNewChildOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode Concept_typevar_1206099875685 = typeCheckingContext.createNewRuntimeTypesVariable();
     RulesUtil.equate_inputNodeConcept(typeCheckingContext, op, typeCheckingContext.getRepresentative(Concept_typevar_1206099875685));
@@ -42,22 +41,18 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInfe
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }
-
   private static SNode _quotation_createNode_7cps2z_a0a0d0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -65,7 +60,6 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInfe
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_7cps2z_a0a0a3a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -73,7 +67,6 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInfe
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_7cps2z_a0b0a3a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

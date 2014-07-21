@@ -17,25 +17,20 @@ import jetbrains.mps.debugger.java.customViewers.typesystem.TypesystemDescriptor
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77(jetbrains.mps.debugger.java.customViewers)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.debugger.java.customViewers";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.lang.plugin.standalone", "jetbrains.mps.baseLanguage.logging", "jetbrains.mps.debugger.java.privateMembers", "jetbrains.mps.lang.plugin", "jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.collections"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "2f4c5ebf-446e-468d-9e74-a64cbeb906c0(jetbrains.mps.debugger.java.customViewers#4089989733346806812)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

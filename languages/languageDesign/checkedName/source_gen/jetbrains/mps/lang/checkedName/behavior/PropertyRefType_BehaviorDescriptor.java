@@ -10,5 +10,5 @@ public class PropertyRefType_BehaviorDescriptor extends Type_BehaviorDescriptor 
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.checkedName.structure.PropertyRefType";
-  };;
-;}
+  }
+}

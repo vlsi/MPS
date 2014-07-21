@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 public class CommandClosureLiteral_DataFlow extends DataFlowBuilder {
   public CommandClosureLiteral_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_isExecuteSynchronous_1230212745736", new Object[]{})) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));

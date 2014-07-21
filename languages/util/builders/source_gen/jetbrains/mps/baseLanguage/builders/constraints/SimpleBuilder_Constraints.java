@@ -33,7 +33,6 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
   public SimpleBuilder_Constraints() {
     super("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -42,7 +41,6 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -74,7 +72,6 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
               return new ArrayList<SNode>();
             }
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_r83cww_a0a1a0a0a1a0b0a1a1;
@@ -84,6 +81,5 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_r83cww_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "7288041816793179321");
 }

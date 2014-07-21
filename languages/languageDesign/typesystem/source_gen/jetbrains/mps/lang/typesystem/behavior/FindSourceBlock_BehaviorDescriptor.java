@@ -12,12 +12,12 @@ public class FindSourceBlock_BehaviorDescriptor extends ConceptFunction_Behavior
   }
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return FindSourceBlock_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  };;
-;  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  }
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return FindSourceBlock_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.FindSourceBlock";
-  };;
-;}
+  }
+}

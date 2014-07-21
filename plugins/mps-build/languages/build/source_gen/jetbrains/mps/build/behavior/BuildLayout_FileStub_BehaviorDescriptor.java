@@ -8,23 +8,18 @@ import jetbrains.mps.build.util.UnpackHelper;
 public class BuildLayout_FileStub_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildLayout_PureNode_BehaviorDescriptor, BuildSource_SingleFile_BehaviorDescriptor {
   public BuildLayout_FileStub_BehaviorDescriptor() {
   }
-
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     BuildLayout_FileStub_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
   }
-
   public String virtual_getApproximateName_5610619299013425878(SNode thisNode) {
     return BuildLayout_FileStub_Behavior.virtual_getApproximateName_5610619299013425878(thisNode);
   }
-
   public boolean virtual_isFile_1368030936106753986(SNode thisNode) {
     return BuildLayout_FileStub_Behavior.virtual_isFile_1368030936106753986(thisNode);
   }
-
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     BuildLayout_FileStub_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_FileStub";

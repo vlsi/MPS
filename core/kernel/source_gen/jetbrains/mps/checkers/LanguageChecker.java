@@ -14,14 +14,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LanguageChecker implements INodeChecker {
   private Set<AbstractConstraintsChecker> myRules = SetSequence.fromSet(new HashSet<AbstractConstraintsChecker>());
-
   public LanguageChecker() {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
     SetSequence.fromSet(myRules).addElement(new RefScopeChecker());
     SetSequence.fromSet(myRules).addElement(new CardinalitiesChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
   }
-
   @Override
   public Set<IErrorReporter> getErrors(final SNode rootNode, final SRepository repoitory) {
     return TypeContextManager.getInstance().runResolveAction(new Computable<Set<IErrorReporter>>() {
@@ -34,7 +32,6 @@ public class LanguageChecker implements INodeChecker {
       }
     });
   }
-
   @Override
   public String getCategory() {
     return "constraints and scopes";

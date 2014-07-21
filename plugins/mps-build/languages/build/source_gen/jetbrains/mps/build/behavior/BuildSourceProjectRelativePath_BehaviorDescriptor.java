@@ -8,15 +8,12 @@ import jetbrains.mps.build.util.Context;
 public class BuildSourceProjectRelativePath_BehaviorDescriptor extends BuildRelativePath_BehaviorDescriptor {
   public BuildSourceProjectRelativePath_BehaviorDescriptor() {
   }
-
   public String virtual_getBasePath_4959435991187140515(SNode thisNode, Context context) {
     return BuildSourceProjectRelativePath_Behavior.virtual_getBasePath_4959435991187140515(thisNode, context);
   }
-
   public String virtual_getRelativePath_5481553824944787371(SNode thisNode) {
     return BuildSourceProjectRelativePath_Behavior.virtual_getRelativePath_5481553824944787371(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildSourceProjectRelativePath";

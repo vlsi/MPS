@@ -1,31 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-29yvsg2spe2ixamxyhfd9h65v921whr">
-  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
-  <dep model="r:e1acdb32-2aee-4485-9fb3-7df994baeae3(jetbrains.mps.baseLanguage.extensionMethods.generator.template.main@generator)" hash="7vz19cdt9xhvcyqabr1a6nfvw6kn1pt" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="bw7mx7gxjqi54iq7qhhss945rd9wghk" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="6791353716095480383" name="StringExtensionMethods" hash="-d65yynvho091psr64134ty2coijr1ot">
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:e1acdb32-2aee-4485-9fb3-7df994baeae3(jetbrains.mps.baseLanguage.extensionMethods.generator.template.main@generator)" />
-    <file name="StringExtensionMethods.java" />
-  </source>
-  <source id="6791353716095480385" name="Abc" hash="30k61dcb5gsjobijsiskzg395zmdv0m">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:e1acdb32-2aee-4485-9fb3-7df994baeae3(jetbrains.mps.baseLanguage.extensionMethods.generator.template.main@generator)" />
-    <file name="Abc.java" />
-  </source>
-  <source id="3097384118511823189" name="Test" hash="-4cg6vp99qfwb3t7bzda57ue534k3vl8">
-    <dep root="6791353716095480385" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:e1acdb32-2aee-4485-9fb3-7df994baeae3(jetbrains.mps.baseLanguage.extensionMethods.generator.template.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="Test.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-29yvsg2spe2ixamxyhfd9h65v921whr" />
 

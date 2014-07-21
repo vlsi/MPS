@@ -2,10 +2,10 @@
 <debug-info>
   <root>
     <file name="Generator.java">
-      <unit at="16,0,81,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.Generator" />
+      <unit at="16,0,72,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.Generator" />
     </file>
     <file name="Language.java">
-      <unit at="12,0,41,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.Language" />
+      <unit at="12,0,36,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.Language" />
     </file>
   </root>
 </debug-info>

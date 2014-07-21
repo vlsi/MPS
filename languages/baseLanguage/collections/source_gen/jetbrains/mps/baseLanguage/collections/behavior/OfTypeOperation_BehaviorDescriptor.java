@@ -9,5 +9,5 @@ public class OfTypeOperation_BehaviorDescriptor extends SequenceOperation_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation";
-  };;
-;}
+  }
+}

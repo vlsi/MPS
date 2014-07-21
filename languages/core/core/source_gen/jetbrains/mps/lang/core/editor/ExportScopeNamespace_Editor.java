@@ -22,7 +22,6 @@ public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_p7dwc8_a(editorContext, node);
   }
-
   private EditorCell createCollection_p7dwc8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_p7dwc8_a");
@@ -33,7 +32,6 @@ public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAttributedNodeCell_p7dwc8_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_p7dwc8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@export(namespace =");
     editorCell.setCellId("Constant_p7dwc8_a0");
@@ -41,7 +39,6 @@ public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_p7dwc8_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("namespace");
@@ -59,7 +56,6 @@ public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_p7dwc8_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_p7dwc8_c0");
@@ -70,11 +66,9 @@ public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_p7dwc8_a1c0(EditorContext editorContext, SNode node) {
     return (SNodeOperations.getParent(node) != null) && jetbrains.mps.util.SNodeOperations.isRoot(SNodeOperations.getParent(node));
   }
-
   private EditorCell createAttributedNodeCell_p7dwc8_d0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);

@@ -13,11 +13,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class PathProvider {
   private static Set<String> reservedNames = new HashSet<String>(Arrays.asList("con", "prn", "aux", "clock$", "nul", "com0", "com1", "com2", "com3", "com4", "com5", "com6", "com7", "com8", "com9", "lpt0", "lpt1", "lpt2", "lpt3", "lpt4", "lpt5", "lpt6", "lpt7", "lpt8", "lpt9"));
   private ConcurrentMap<String, String> usedNames;
-
   public PathProvider(@NotNull TemplateQueryContext genContext, SNode project) {
     this.usedNames = GenerationUtil.<String,String>getSessionMap(project, genContext, "location");
   }
-
   public String createTempPath(String name, String... categories) {
     StringBuilder sb = new StringBuilder("${build.tmp}/");
     int before;
@@ -46,7 +44,6 @@ public class PathProvider {
     }
     return result;
   }
-
   private static void appendFileName(StringBuilder sb, String name) {
     int before = sb.length();
     for (int i = 0; i < name.length(); i++) {

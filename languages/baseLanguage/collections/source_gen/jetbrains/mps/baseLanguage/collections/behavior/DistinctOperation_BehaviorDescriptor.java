@@ -9,5 +9,5 @@ public class DistinctOperation_BehaviorDescriptor extends NoArgumentsSequenceOpe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.DistinctOperation";
-  };;
-;}
+  }
+}

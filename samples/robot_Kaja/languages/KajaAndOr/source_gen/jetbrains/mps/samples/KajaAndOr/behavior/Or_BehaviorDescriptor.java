@@ -6,7 +6,6 @@ package jetbrains.mps.samples.KajaAndOr.behavior;
 public class Or_BehaviorDescriptor extends LogicalOperator_BehaviorDescriptor {
   public Or_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.KajaAndOr.structure.Or";

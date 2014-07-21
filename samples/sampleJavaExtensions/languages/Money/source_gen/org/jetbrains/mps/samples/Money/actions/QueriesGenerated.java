@@ -46,7 +46,6 @@ public class QueriesGenerated {
         }
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         Iterable<SNode> units = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(_context.getSourceNode()), "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable")).translate(new ITranslator2<SNode, SNode>() {
           public Iterable<SNode> translate(SNode it) {
@@ -60,11 +59,9 @@ public class QueriesGenerated {
         }
         return null;
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();

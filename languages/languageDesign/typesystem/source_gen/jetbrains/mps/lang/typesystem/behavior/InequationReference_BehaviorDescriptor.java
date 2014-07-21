@@ -10,5 +10,5 @@ public class InequationReference_BehaviorDescriptor extends BaseConcept_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.InequationReference";
-  };;
-;}
+  }
+}

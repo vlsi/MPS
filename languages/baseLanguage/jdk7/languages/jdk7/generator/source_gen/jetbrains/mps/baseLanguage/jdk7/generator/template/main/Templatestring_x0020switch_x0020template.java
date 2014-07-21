@@ -26,11 +26,9 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class Templatestring_x0020switch_x0020template implements TemplateDeclarationWeavingAware {
   public Templatestring_x0020switch_x0020template() {
   }
-
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550420129");
   }
-
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.SwitchStatement");
     try {
@@ -168,18 +166,15 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
     }
     return tnode1;
   }
-
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(environment, context));
   }
-
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     SNode tnodepart0 = applyPart0(environment, context);
     SNodeReference weaveTf0 = weaveTfConst_wjpymb_a0b0e;
     environment.weaveNode(outputContextNode, "statement", tnodepart0, weaveTf0, context.getInput());
     return TemplateUtil.singletonList(tnodepart0);
   }
-
   private static SNodePointer loopMacroRef_wjpymb_b0a0a1a1a1a2 = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550422239");
   private static SNodePointer propertyMacro_wjpymb_c0a0c0b0b0b0d0c0b0b0c = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550422213");
   private static SNodePointer copySrcMacro_wjpymb_b0a0c0c0d0c0b0b0c = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550422231");

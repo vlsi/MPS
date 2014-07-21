@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="Language.java">
-      <unit at="13,0,42,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.Language" />
+      <unit at="13,0,37,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.Language" />
     </file>
   </root>
 </debug-info>

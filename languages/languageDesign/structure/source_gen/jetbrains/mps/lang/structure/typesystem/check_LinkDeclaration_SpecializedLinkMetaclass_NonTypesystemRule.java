@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_LinkDeclaration_SpecializedLinkMetaclass_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_LinkDeclaration_SpecializedLinkMetaclass_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode link, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode specializedLink = SLinkOperations.getTarget(link, "specializedLink", false);
     if (specializedLink != null && SPropertyOperations.getString_def(specializedLink, "metaClass", "reference") != SPropertyOperations.getString_def(link, "metaClass", "reference")) {
@@ -27,18 +26,15 @@ public class check_LinkDeclaration_SpecializedLinkMetaclass_NonTypesystemRule ex
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.structure.structure.LinkDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

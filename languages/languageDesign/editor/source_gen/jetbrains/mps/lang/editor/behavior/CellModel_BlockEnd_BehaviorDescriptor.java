@@ -9,5 +9,5 @@ public class CellModel_BlockEnd_BehaviorDescriptor extends EditorCellModel_Behav
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd";
-  };;
-;}
+  }
+}

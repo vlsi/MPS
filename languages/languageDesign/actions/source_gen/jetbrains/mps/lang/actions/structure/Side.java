@@ -12,15 +12,12 @@ public enum Side {
   both_sides("both sides", "both");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<Side> getConstants() {
     List<Side> list = ListSequence.fromList(new LinkedList<Side>());
     ListSequence.fromList(list).addElement(Side.right);
@@ -28,11 +25,9 @@ public enum Side {
     ListSequence.fromList(list).addElement(Side.both_sides);
     return list;
   }
-
   public static Side getDefault() {
     return Side.right;
   }
-
   public static Side parseValue(String value) {
     if (value == null) {
       return Side.getDefault();
@@ -48,14 +43,11 @@ public enum Side {
     }
     return Side.getDefault();
   }
-
   private String myValue;
-
   Side(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

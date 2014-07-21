@@ -19,11 +19,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.build.structure.BuildInputFileSet";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.build.structure.BuildLayout_Node";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode cp = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, "jetbrains.mps.build.structure.BuildLayout_Copy");
         SLinkOperations.setTarget(cp, "fileset", _context.getSourceNode(), true);
@@ -34,11 +32,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.build.structure.BuildInputSingleFolder";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.build.structure.BuildSource_JavaFiles";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, "jetbrains.mps.build.structure.BuildSource_JavaFiles");
         SLinkOperations.setTarget(nn, "resset", _context.getSourceNode(), true);
@@ -49,11 +45,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.build.structure.BuildSource_JavaJar";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar");
         SLinkOperations.setTarget(nn, "jar", _context.getSourceNode(), true);
@@ -64,11 +58,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.build.structure.BuildSource_JavaCP";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP");
         SLinkOperations.setTarget(nn, "classpath", _context.getSourceNode(), true);

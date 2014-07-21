@@ -14,11 +14,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class FixNamingPolicy_QuickFix extends QuickFix_Runtime {
   public FixNamingPolicy_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Fix Naming Issues";
   }
-
   public void execute(SNode node) {
     for (SNode s : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), ((SNode) FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]), "virtual_getDescendantsToCheck_4844813484172611413", new Object[]{})) {
       SPropertyOperations.set(s, "value", NameUtil.captionPartWithNamingPolicy(SPropertyOperations.getString(s, "value")));

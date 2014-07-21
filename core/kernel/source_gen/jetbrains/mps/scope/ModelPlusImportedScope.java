@@ -12,7 +12,6 @@ public class ModelPlusImportedScope extends ModelsScope {
   public ModelPlusImportedScope(SModel model, boolean rootsOnly, String targetConcept) {
     super(getImportedModels(model), rootsOnly, targetConcept);
   }
-
   private static Collection<SModel> getImportedModels(SModel model) {
     if (model == null) {
       return Collections.emptyList();

@@ -14,23 +14,23 @@ import jetbrains.mps.smodel.SReference;
 
 public class CellMenuPart_ReplaceChild_CustomChildConcept_Query_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
+  }
+  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1162497113192"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1162498275506"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1163613822479"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)", "1161622753914"));
     return result;
-  };;
-;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  }
+  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_eqbwyn_a0a1();
-  };;
-;  private static SNode _quotation_createNode_eqbwyn_a0a1() {
+  }
+  private static SNode _quotation_createNode_eqbwyn_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), facade.createNodeId("1071489090640")));
     return quotedNode_1;
-  };;
-;}
+  }
+}

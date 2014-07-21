@@ -24,7 +24,6 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8agmue_a(editorContext, node);
   }
-
   private EditorCell createCollection_8agmue_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8agmue_a");
@@ -37,12 +36,10 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     editorCell.addEditorCell(this.createConstant_8agmue_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_8agmue_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp");
     return editorCell;
   }
-
   private EditorCell createConstant_8agmue_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_8agmue_b0");
@@ -52,7 +49,6 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_8agmue_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("referenceLink");
@@ -77,20 +73,16 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     } else
     return editorCell;
   }
-
   public static class _Inline_8agmue_a2a extends InlineCellProvider {
     public _Inline_8agmue_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_8agmue_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_8agmue_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
@@ -110,14 +102,12 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
       return editorCell;
     }
   }
-
   private EditorCell createConstant_8agmue_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_8agmue_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_8agmue_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("operationContext");
@@ -137,7 +127,6 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_8agmue_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_8agmue_f0");

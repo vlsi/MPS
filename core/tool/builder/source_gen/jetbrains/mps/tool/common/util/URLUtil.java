@@ -10,7 +10,6 @@ import java.io.UnsupportedEncodingException;
 public class URLUtil {
   public URLUtil() {
   }
-
   @NotNull
   public static String unescapePercentSequences(@NotNull String s) {
     if (s.indexOf('%') == -1) {
@@ -50,7 +49,6 @@ public class URLUtil {
     }
     return decoded.toString();
   }
-
   private static int decode(char c) {
     if ((c >= '0') && (c <= '9')) {
       return c - '0';

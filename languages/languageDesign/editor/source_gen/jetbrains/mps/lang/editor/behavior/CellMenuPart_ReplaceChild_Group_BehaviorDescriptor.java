@@ -10,5 +10,5 @@ public class CellMenuPart_ReplaceChild_Group_BehaviorDescriptor extends CellMenu
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group";
-  };;
-;}
+  }
+}

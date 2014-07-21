@@ -14,11 +14,9 @@ public class HandlersComponent implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_tplquy_a(editorContext, node);
   }
-
   private EditorCell createCollection_tplquy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tplquy_a");

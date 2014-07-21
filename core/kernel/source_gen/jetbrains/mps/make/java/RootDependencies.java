@@ -22,10 +22,8 @@ public class RootDependencies implements Comparable<RootDependencies> {
   private List<String> myExtendsNodes = new InternAwareStringList(2);
   private String myClassName;
   private String myFileName;
-
   /*package*/ RootDependencies() {
   }
-
   public RootDependencies(String nodeName, String fileName, List<String> dependNodes, List<String> extendsNodes) {
     this.myClassName = InternUtil.intern(nodeName);
     this.myFileName = InternUtil.intern(fileName);
@@ -36,7 +34,6 @@ public class RootDependencies implements Comparable<RootDependencies> {
       ListSequence.fromList(this.myExtendsNodes).addSequence(ListSequence.fromList(extendsNodes));
     }
   }
-
   public RootDependencies(Element element) {
     myClassName = InternUtil.intern(element.getAttribute(CLASS_NAME).getValue());
     Attribute attr = element.getAttribute(FILE_NAME);
@@ -57,7 +54,6 @@ public class RootDependencies implements Comparable<RootDependencies> {
       }
     }
   }
-
   public void saveTo(Element element) {
     element.setAttribute(CLASS_NAME, myClassName);
     if (myFileName != null) {
@@ -74,39 +70,30 @@ public class RootDependencies implements Comparable<RootDependencies> {
       element.addContent(e);
     }
   }
-
   public Set<String> getDependencies() {
     return new HashSet((Collection) myDependNodes);
   }
-
   public Set<String> getExtends() {
     return new HashSet((Collection) myExtendsNodes);
   }
-
   /*package*/ void addDependNode(String s) {
     ListSequence.fromList(myDependNodes).addElement(s);
   }
-
   /*package*/ void addExtendsNode(String s) {
     ListSequence.fromList(myExtendsNodes).addElement(s);
   }
-
   /*package*/ void setFileName(String fileName) {
     this.myFileName = InternUtil.intern(fileName);
   }
-
   /*package*/ void setClassName(String className) {
     this.myClassName = InternUtil.intern(className);
   }
-
   public String getClassName() {
     return myClassName;
   }
-
   public String getFileName() {
     return (myFileName == null ? myClassName : myFileName);
   }
-
   @Override
   public int compareTo(RootDependencies p0) {
     if (p0 == null || this.myClassName == null || p0.myClassName == null) {

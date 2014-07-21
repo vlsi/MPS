@@ -25,12 +25,10 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
   public OperationDeclaration_Constraints() {
     super("jetbrains.mps.lang.textGen.structure.OperationDeclaration");
   }
-
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
   }
-
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseReferenceScopeProvider() {
@@ -43,14 +41,12 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
         }
         return result;
       }
-
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_617hs5_a0a1a0a0a2;
       }
     };
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -59,7 +55,6 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "operationName";
@@ -83,6 +78,5 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
     });
     return properties;
   }
-
   private static SNodePointer breakingNode_617hs5_a0a1a0a0a2 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1236703304349");
 }

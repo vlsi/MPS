@@ -51,35 +51,29 @@ import com.sun.jdi.ObjectReference;
 
 public class EvaluationUtilsImpl extends EvaluationUtils {
   private static final Logger LOG = LogManager.getLogger(EvaluationUtilsImpl.class);
-
   public EvaluationUtilsImpl() {
   }
-
   @Override
   public void dispose() {
     synchronized (LOCK) {
       INSTANCE = null;
     }
   }
-
   @Override
   public void init() {
     synchronized (LOCK) {
       INSTANCE = this;
     }
   }
-
   public void assertEvaluating() {
     // todo real check 
     LOG.assertLog(!(ApplicationManager.getApplication().isDispatchThread()), "Evaluation should be invoked in evaluation command rather than in edt.");
   }
-
   @Override
   public Value getArrayElementAt(ArrayReference array, int index) {
     assertEvaluating();
     return array.getValue(index);
   }
-
   private Value invokeStaticInternal(String className, String methodName, String jniSignature, @NotNull final ThreadReference threadReference, Object... args) throws EvaluationException {
     assertEvaluating();
     final ClassType referenceType = (ClassType) findClassType(className, threadReference.virtualMachine());
@@ -92,7 +86,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
       }
     });
   }
-
   private Value getStaticFieldValueInternal(String className, String fieldName, @NotNull final VirtualMachine machine) throws InvalidEvaluatedExpressionException {
     assertEvaluating();
     ClassType referenceType = (ClassType) findClassType(className, machine);
@@ -100,7 +93,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     assert field.isStatic();
     return referenceType.getValue(field);
   }
-
   private Value invokeConstructorInternal(String className, String jniSignature, @NotNull final ThreadReference threadReference, Object... args) throws EvaluationException {
     // TODO duplication in code 
     assertEvaluating();
@@ -114,7 +106,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
       }
     });
   }
-
   @NotNull
   @Override
   public Field findField(ClassType referenceType, String fieldName) throws InvalidEvaluatedExpressionException {
@@ -125,12 +116,10 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     }
     return field;
   }
-
   @Override
   public List<Field> findFields(ClassType referenceType) {
     return referenceType.fields();
   }
-
   @NotNull
   @Override
   public Method findConstructor(ClassType referenceType, String jniSignature) throws InvalidEvaluatedExpressionException {
@@ -151,7 +140,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     }
     return constructor;
   }
-
   @NotNull
   @Override
   public Method findMethod(ClassType referenceType, String methodsName, String jniSignature) throws InvalidEvaluatedExpressionException {
@@ -162,7 +150,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     }
     return methods.get(0);
   }
-
   @NotNull
   @Override
   public ReferenceType findClassType(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException {
@@ -173,7 +160,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     }
     return classType;
   }
-
   @Nullable
   @Override
   public ReferenceType findClassTypeSilently(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException {
@@ -186,7 +172,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     }
     return classes.get(0);
   }
-
   @Nullable
   @Override
   public Type findTypeSilently(String typeSignature, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException {
@@ -216,7 +201,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     }
     return findClassTypeSilently(typeSignature.substring(1, typeSignature.length() - 1), virtualMachine);
   }
-
   @Override
   public boolean instanceOf(final Type what, final String jniSignature, final VirtualMachine machine) throws EvaluationException {
     assertEvaluating();
@@ -261,7 +245,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
       }
     });
   }
-
   @NotNull
   @Override
   public IValueProxy getVariableValue(String varName, StackFrame stackFrame) throws EvaluationException {
@@ -279,42 +262,36 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     Value v = stackFrame.getValue(localVariable);
     return MirrorUtil.getInstance().getValueProxy(v);
   }
-
   @NotNull
   @Override
   public <T extends IValueProxy> Iterable<T> toIterableProxy(IObjectValueProxy valueProxy, ThreadReference threadReference) {
     assertEvaluating();
     return new IterableProxy<T>(valueProxy, threadReference);
   }
-
   @NotNull
   @Override
   public <T extends IValueProxy> Iterable<T> toIterableProxyFromArray(IArrayValueProxy valueProxy) {
     assertEvaluating();
     return new IterableArrayProxy<T>(valueProxy);
   }
-
   @NotNull
   @Override
   public IValueProxy invokeStaticMethod(String className, String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
     assertEvaluating();
     return MirrorUtil.getInstance().getValueProxy(invokeStaticInternal(className, name, jniSignature, threadReference, args));
   }
-
   @NotNull
   @Override
   public IValueProxy getStaticField(String className, String fieldName, VirtualMachine machine) throws InvalidEvaluatedExpressionException {
     assertEvaluating();
     return MirrorUtil.getInstance().getValueProxy(getStaticFieldValueInternal(className, fieldName, machine));
   }
-
   @NotNull
   @Override
   public IObjectValueProxy invokeConstructorProxy(String className, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
     assertEvaluating();
     return (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(invokeConstructorInternal(className, jniSignature, threadReference, args));
   }
-
   @Override
   public IArrayValueProxy createArrayProxy(String className, VirtualMachine machine, int size) throws EvaluationException {
     assertEvaluating();
@@ -335,7 +312,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     ArrayReference arrayReference = arrayType.newInstance(size);
     return (IArrayValueProxy) MirrorUtil.getInstance().getValueProxy(arrayReference);
   }
-
   @Override
   public final IArrayValueProxy createArrayProxyFromValues(String className, VirtualMachine machine, Object... args) throws EvaluationException {
     assertEvaluating();
@@ -351,7 +327,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
       return array;
     }
   }
-
   @NotNull
   @Override
   public IValueProxy getClass(String className, VirtualMachine machine) throws InvalidEvaluatedExpressionException {
@@ -360,7 +335,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     ClassObjectReference classObject = referenceType.classObject();
     return MirrorUtil.getInstance().getValueProxy(classObject);
   }
-
   @NotNull
   @Override
   public IObjectValueProxy boxValue(PrimitiveValueProxy primitiveValueProxy, ThreadReference threadReference) throws EvaluationException {
@@ -392,7 +366,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     }
     throw new UnsupportedOperationException("Cant box " + primitiveValue);
   }
-
   @Override
   public PrimitiveValueProxy unboxValue(IObjectValueProxy valueProxy, ThreadReference threadReference) throws EvaluationException {
     assertEvaluating();
@@ -423,7 +396,6 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     }
     throw new UnsupportedOperationException("Cant unbox value of type" + type);
   }
-
   @Override
   public String getStringPresentation(@NotNull final Value value, @NotNull final ThreadReference threadReference) {
     assertEvaluating();

@@ -17,11 +17,9 @@ public class ManagerThread {
   private final BlockingQueue<IManagerCommand> myCommandQueue = new LinkedBlockingQueue<IManagerCommand>();
   private final ManagerThread.WorkerThread myThread = new ManagerThread.WorkerThread();
   private volatile boolean myClosed = false;
-
   public ManagerThread() {
     myThread.start();
   }
-
   public void invoke(IManagerCommand command) {
     if (isManagerThread()) {
       myThread.processCommand(command);
@@ -29,7 +27,6 @@ public class ManagerThread {
       schedule(command);
     }
   }
-
   public void invokeAndWait(final IManagerCommand command) {
     if (isManagerThread()) {
       myThread.processCommand(command);
@@ -58,7 +55,6 @@ public class ManagerThread {
       }
     }
   }
-
   public void schedule(IManagerCommand command) {
     if (myClosed) {
       command.cancel();
@@ -66,23 +62,18 @@ public class ManagerThread {
       myCommandQueue.offer(command);
     }
   }
-
   public void close() {
     myClosed = true;
   }
-
   public static boolean isManagerThread() {
     return Thread.currentThread() instanceof ManagerThread.WorkerThread;
   }
-
   public static void assertIsMangerThread() {
     assert isManagerThread();
   }
-
   private class WorkerThread extends Thread {
     public WorkerThread() {
     }
-
     @Override
     public void run() {
       try {
@@ -113,7 +104,6 @@ public class ManagerThread {
         LOG.debug("Thread " + this + " finished working.");
       }
     }
-
     private void processCommand(IManagerCommand command) {
       try {
         if (myClosed) {
@@ -128,6 +118,5 @@ public class ManagerThread {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ManagerThread.class);
 }

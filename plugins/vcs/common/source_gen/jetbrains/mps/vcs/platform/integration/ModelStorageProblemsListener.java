@@ -59,23 +59,17 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
   private Notification myLastNotification;
   private volatile SModelReference myLastModel;
 
-
   public ModelStorageProblemsListener() {
   }
-
-
 
   @Override
   protected void startListening(SModel model) {
     model.addModelListener(this);
   }
-
   @Override
   protected void stopListening(SModel model) {
     model.removeModelListener(this);
   }
-
-
 
   @Override
   public void modelSaved(SModel model) {
@@ -93,8 +87,6 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     }
   }
 
-
-
   @Override
   public void conflictDetected(SModel model) {
     EditableSModel m = (EditableSModel) model;
@@ -102,7 +94,6 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
 
     resolveDiskMemoryConflict(m);
   }
-
   @Override
   public void problemsDetected(SModel model, Iterable<SModel.Problem> problems) {
     Iterable<SModel.Problem> pr = problems;
@@ -178,8 +169,6 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     }
   }
 
-
-
   private void resolveDiskMemoryConflict(final EditableSModel model) {
     final IFile file = ((FileDataSource) model.getSource()).getFile();
     final File backupFile = doBackup(file, model);
@@ -218,7 +207,6 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
       }
     });
   }
-
   private static boolean showDeletedFromDiskQuestion(SModel inMemory, File backupFile) {
     // <node> 
 
@@ -228,7 +216,6 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     int result = JOptionPane.showConfirmDialog(null, "Model file for model \n" + inMemory + "\n was externally deleted from disk.\n" + "Backup of it was saved to \"" + backupFile.getAbsolutePath() + "\"\nDo you wish to restore it?", "Model Deleted Externally", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, Messages.getQuestionIcon());
     return result == 0;
   }
-
   private static boolean showDiskMemoryQuestion(IFile modelFile, SModel inMemory, File backupFile) {
     String message = "Changes have been made to \n" + inMemory + "\n model in memory and on disk.\n" + "Backup of both versions was saved to \"" + backupFile.getAbsolutePath() + "\"\n" + "Which version to use?";
     String title = "Model Versions Conflict";
@@ -253,7 +240,6 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
       }
     }
   }
-
   private static File doBackup(IFile modelFile, SModel inMemory) {
     try {
       File tmp = FileUtil.createTmpDir();
@@ -273,7 +259,6 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
       throw new RuntimeException(e);
     }
   }
-
   private static void openDiffDialog(IFile modelFile, SModel inMemory) {
     SModel onDisk = PersistenceUtil.loadModel(modelFile);
     com.intellij.openapi.project.Project project = com.intellij.openapi.project.ProjectManager.getInstance().getOpenProjects()[0];
@@ -285,26 +270,21 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     });
     dialog.show();
   }
-
   public static   enum DiskMemoryConflictVersion implements ModelVersion {
     FILE_SYSTEM("filesystem"),
     MEMORY("memory");
 
     private final String mySuffix;
-
     DiskMemoryConflictVersion(String suffix) {
       mySuffix = suffix;
     }
-
     @Override
     public String getSuffix() {
       return mySuffix;
     }
   }
 
-
   private static TestDialog ourTestImplementation = TestDialog.DEFAULT;
-
   public static TestDialog setTestDialog(TestDialog newValue) {
     Application application = ApplicationManager.getApplication();
     if (application != null) {
@@ -314,11 +294,9 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     ourTestImplementation = newValue;
     return oldValue;
   }
-
   private static boolean isApplicationInUnitTestOrHeadless() {
     final Application application = ApplicationManager.getApplication();
     return application != null && (application.isUnitTestMode() || application.isHeadlessEnvironment());
   }
-
   protected static Logger LOG = LogManager.getLogger(ModelStorageProblemsListener.class);
 }

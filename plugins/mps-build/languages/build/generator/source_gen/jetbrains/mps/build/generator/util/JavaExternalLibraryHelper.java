@@ -23,13 +23,11 @@ public class JavaExternalLibraryHelper {
   private SNode library;
   private DependenciesHelper helper;
   private TemplateQueryContext genContext;
-
   public JavaExternalLibraryHelper(DependenciesHelper helper, SNode library, TemplateQueryContext genContext) {
     this.library = library;
     this.helper = helper;
     this.genContext = genContext;
   }
-
   public Iterable<SNode> artifacts() {
     List<SNode> artifacts = new ArrayList<SNode>();
     List<SNode> jarContainers = new ArrayList<SNode>();
@@ -122,7 +120,6 @@ public class JavaExternalLibraryHelper {
     }
     return result;
   }
-
   private static SNode _quotation_createNode_g6ffke_b0a3a9a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -134,7 +131,6 @@ public class JavaExternalLibraryHelper {
     quotedNode_2.addChild("value", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_g6ffke_b0a3a01a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -146,7 +142,6 @@ public class JavaExternalLibraryHelper {
     quotedNode_2.addChild("value", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_g6ffke_b0a4a01a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -27,16 +27,13 @@ public class ModelChecker {
   private SearchResults<ModelCheckerIssue> myResults;
   private IOperationContext myOperationContext;
   private List<SpecificChecker> mySpecificCheckers;
-
   public ModelChecker(IOperationContext operationContext) {
     this(operationContext, new SearchResults<ModelCheckerIssue>());
   }
-
   public ModelChecker(IOperationContext operationContext, SearchResults<ModelCheckerIssue> results) {
     myResults = results;
     myOperationContext = operationContext;
   }
-
   public void checkModel(final SModel model, final ProgressMonitor monitor) {
     final Wrappers._T<List<SpecificChecker>> specificCheckers = new Wrappers._T<List<SpecificChecker>>(mySpecificCheckers);
     if (specificCheckers.value == null) {
@@ -82,24 +79,19 @@ public class ModelChecker {
       monitor.done();
     }
   }
-
   public SearchResults<ModelCheckerIssue> getSearchResults() {
     return myResults;
   }
-
   public IOperationContext getOperationContext() {
     return myOperationContext;
   }
-
   public void setSpecificCheckers(List<SpecificChecker> specificCheckers) {
     mySpecificCheckers = specificCheckers;
   }
-
   public class ModelCheckerOperationContext extends ModuleContext {
     public ModelCheckerOperationContext(@NotNull Project project, @NotNull SModule module) {
       super(module, project);
     }
-
     @Override
     public Project getProject() {
       if (LOG.isEnabledFor(Level.WARN)) {
@@ -108,6 +100,5 @@ public class ModelChecker {
       return super.getProject();
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ModelChecker.class);
 }

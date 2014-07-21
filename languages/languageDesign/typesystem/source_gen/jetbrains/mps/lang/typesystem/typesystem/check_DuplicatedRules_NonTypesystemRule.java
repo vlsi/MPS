@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_DuplicatedRules_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_DuplicatedRules_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode abstractRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final String name = SPropertyOperations.getString(abstractRule, "name");
     if (ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(abstractRule), "jetbrains.mps.lang.typesystem.structure.AbstractRule")).any(new IWhereFilter<SNode>() {
@@ -36,18 +35,15 @@ public class check_DuplicatedRules_NonTypesystemRule extends AbstractNonTypesyst
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.AbstractRule";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

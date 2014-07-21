@@ -14,12 +14,10 @@ public class SimpleCommandQueue {
   private boolean myDisposed = false;
   private boolean myHadExceptions = false;
   private final Queue<Runnable> myQueue = new LinkedList<Runnable>();
-
   public SimpleCommandQueue(@NotNull String threadName) {
     myThread = new SimpleCommandQueue.MyExecutorThread(threadName);
     myThread.start();
   }
-
   public void runTask(@NotNull Runnable task) {
     if (Thread.currentThread() == myThread) {
       task.run();
@@ -27,23 +25,19 @@ public class SimpleCommandQueue {
       addTask(task);
     }
   }
-
   public void addTask(@NotNull Runnable task) {
     synchronized (myQueue) {
       myQueue.add(task);
       myQueue.notify();
     }
   }
-
   public void dispose() {
     myDisposed = true;
     myThread.interrupt();
   }
-
   public void assertIsCommandThread() {
     assert Thread.currentThread() == myThread;
   }
-
   public void assertSoftlyIsCommandThread() {
     if (Thread.currentThread() != myThread) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -51,20 +45,16 @@ public class SimpleCommandQueue {
       }
     }
   }
-
   public void setHadExceptions(boolean value) {
     myHadExceptions = value;
   }
-
   public boolean hadExceptions() {
     return myHadExceptions;
   }
-
   private class MyExecutorThread extends Thread {
     public MyExecutorThread(@NotNull String name) {
       super(name);
     }
-
     @Override
     public void run() {
       while (true) {
@@ -96,6 +86,5 @@ public class SimpleCommandQueue {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(SimpleCommandQueue.class);
 }

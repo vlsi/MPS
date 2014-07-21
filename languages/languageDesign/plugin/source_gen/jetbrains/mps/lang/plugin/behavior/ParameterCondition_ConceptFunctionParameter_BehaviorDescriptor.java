@@ -10,5 +10,5 @@ public class ParameterCondition_ConceptFunctionParameter_BehaviorDescriptor exte
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ParameterCondition_ConceptFunctionParameter";
-  };;
-;}
+  }
+}

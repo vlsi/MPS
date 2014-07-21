@@ -10,5 +10,5 @@ public class NodePropertyConstraint_BehaviorDescriptor extends BaseConcept_Behav
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint";
-  };;
-;}
+  }
+}

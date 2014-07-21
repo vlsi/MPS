@@ -6,5 +6,5 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class CellMenuPart_ReplaceNode_CustomNodeConcept_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;}
+  }
+}

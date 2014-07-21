@@ -10,18 +10,15 @@ import jetbrains.mps.util.EqualUtil;
 public class SPropertyOperations {
   public SPropertyOperations() {
   }
-
   public static void set(SNode node, String propertyName, String propertyValue) {
     if (node != null) {
       SNodeAccessUtil.setProperty(node, propertyName, propertyValue);
     }
   }
-
   @Deprecated
   public static String get(SNode node, String propertyName) {
     return SPropertyOperations.getString(node, propertyName);
   }
-
   public static String getString(SNode node, String propertyName) {
     if (node != null) {
       String value = SNodeAccessUtil.getProperty(node, propertyName);
@@ -29,7 +26,6 @@ public class SPropertyOperations {
     }
     return null;
   }
-
   public static String getString(String value) {
     if (value != null) {
       return InternUtil.intern(value);
@@ -37,7 +33,6 @@ public class SPropertyOperations {
       return null;
     }
   }
-
   public static int getInteger(SNode node, String propertyName) {
     if (node != null) {
       String value = SNodeAccessUtil.getProperty(node, propertyName);
@@ -45,7 +40,6 @@ public class SPropertyOperations {
     }
     return 0;
   }
-
   public static int getInteger(String value) {
     try {
       return Integer.parseInt(value);
@@ -53,7 +47,6 @@ public class SPropertyOperations {
       return 0;
     }
   }
-
   public static boolean getBoolean(SNode node, String propertyName) {
     if (node != null) {
       String value = SNodeAccessUtil.getProperty(node, propertyName);
@@ -61,11 +54,9 @@ public class SPropertyOperations {
     }
     return false;
   }
-
   public static boolean getBoolean(String value) {
     return "true".equals(value);
   }
-
   public static boolean hasValue(SNode node, String propertyName, String propertyValue) {
     if (node != null) {
       String value = SNodeAccessUtil.getProperty(node, propertyName);
@@ -77,7 +68,6 @@ public class SPropertyOperations {
     }
     return false;
   }
-
   public static String getString_def(SNode node, String propertyName, String defaultValue) {
     if (node != null) {
       String value = SNodeAccessUtil.getProperty(node, propertyName);
@@ -90,7 +80,6 @@ public class SPropertyOperations {
     }
     return null;
   }
-
   public static int getInteger_def(SNode node, String propertyName, String defaultValue) {
     if (node != null) {
       String value = SNodeAccessUtil.getProperty(node, propertyName);
@@ -107,7 +96,6 @@ public class SPropertyOperations {
     }
     return 0;
   }
-
   public static boolean getBoolean_def(SNode node, String propertyName, String defaultValue) {
     if (node != null) {
       String value = SNodeAccessUtil.getProperty(node, propertyName);
@@ -128,7 +116,6 @@ public class SPropertyOperations {
     }
     return false;
   }
-
   public static boolean hasValue(SNode node, String propertyName, String propertyValue, String defaultValue) {
     if (node != null) {
       String value = SNodeAccessUtil.getProperty(node, propertyName);

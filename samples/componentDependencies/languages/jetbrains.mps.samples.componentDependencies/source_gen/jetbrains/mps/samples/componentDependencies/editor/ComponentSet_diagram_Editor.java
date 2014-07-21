@@ -41,16 +41,13 @@ import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
 
 public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.componentDependencies.editor.views.diagram"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_amytw9_a(editorContext, node);
   }
-
   private EditorCell createCollection_amytw9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCanBeSynchronized(true);
@@ -62,7 +59,6 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_amytw9_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_amytw9_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_amytw9_a0");
@@ -72,13 +68,11 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createDiagram_amytw9_a0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createDiagram_amytw9_a0a(EditorContext editorContext, SNode node) {
     DiagramCell editorCell = new ComponentSet_diagram_Editor.DiagramCellImpl_amytw9_a0a(editorContext, node);
     editorCell.setCellId("Diagram_amytw9_a0a");
     return editorCell;
   }
-
   private class DiagramCellImpl_amytw9_a0a extends DiagramCell {
     private DiagramCellImpl_amytw9_a0a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
@@ -92,8 +86,6 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
       synchronize();
     }
 
-
-
     protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
       return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Component"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "component"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
@@ -103,11 +95,9 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
         }
       })};
     }
-
     protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
       return new SubstituteInfoPartExt[]{};
     }
-
     public Mapper<SNode, DiagramView> createMapper(SNode node) {
       return new Mapper<SNode, DiagramView>(node, createDiagramView()) {
         @Override
@@ -148,7 +138,6 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public Mapper<SNode, DiagramDecoratorView> createDecorationMapper(SNode node) {
       return new Mapper<SNode, DiagramDecoratorView>(getSNode(), new DiagramDecoratorView()) {
         @Override
@@ -167,7 +156,6 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public void synchronize() {
       Set<SNode> existingBlocks = new HashSet<SNode>(myBlocks);
       ListIterator<SNode> blocksIterator = myBlocks.listIterator();
@@ -182,7 +170,6 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
       purgeTailNodes(blocksIterator);
       purgeTailNodes(connectorsIterator);
     }
-
     private DiagramView createDiagramView() {
       ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
       return diagramView;

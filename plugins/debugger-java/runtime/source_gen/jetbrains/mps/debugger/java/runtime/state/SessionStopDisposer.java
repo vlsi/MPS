@@ -7,7 +7,6 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public abstract class SessionStopDisposer {
   private final DebugSession myDebugSession;
-
   public SessionStopDisposer(DebugSession debugSession) {
     myDebugSession = debugSession;
     myDebugSession.addChangeListener(new SessionChangeAdapter() {
@@ -20,6 +19,5 @@ public abstract class SessionStopDisposer {
       }
     });
   }
-
   public abstract void doDispose();
 }

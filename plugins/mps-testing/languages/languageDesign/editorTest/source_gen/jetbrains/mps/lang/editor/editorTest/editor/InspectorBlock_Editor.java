@@ -20,11 +20,9 @@ public class InspectorBlock_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_mb7jv_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_mb7jv_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_mb7jv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mb7jv_a");
@@ -32,7 +30,6 @@ public class InspectorBlock_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_mb7jv_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_mb7jv_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -40,7 +37,6 @@ public class InspectorBlock_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_mb7jv_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mb7jv_a_0");
@@ -48,7 +44,6 @@ public class InspectorBlock_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_mb7jv_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_mb7jv_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("block");

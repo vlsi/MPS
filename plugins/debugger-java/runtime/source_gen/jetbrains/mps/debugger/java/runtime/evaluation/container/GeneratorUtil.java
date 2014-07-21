@@ -66,7 +66,6 @@ public class GeneratorUtil {
       throw new EvaluationException(e);
     }
   }
-
   public static <E> E createInstance(Class clazz, Class[] parameterClasses, Object[] parameters) throws EvaluationException {
     try {
       return (E) clazz.getConstructor(parameterClasses).newInstance(parameters);
@@ -80,14 +79,11 @@ public class GeneratorUtil {
       throw new EvaluationException(e);
     }
   }
-
   private static class MyCompilationResultAdapter extends CompilationResultAdapter {
     private final StringBuffer myBuffer = new StringBuffer();
     private boolean myHasErrors;
-
     public MyCompilationResultAdapter() {
     }
-
     @Override
     public void onCompilationResult(CompilationResult result) {
       if (result.hasErrors()) {
@@ -98,25 +94,20 @@ public class GeneratorUtil {
         }
       }
     }
-
     public boolean hasErrors() {
       return myHasErrors;
     }
-
     public String getMessage() {
       return myBuffer.toString();
     }
   }
-
   private static class MyMessageHandler implements IMessageHandler {
     private final DefaultMessageHandler myInternalHandler;
     private final boolean myDeveloperMode;
-
     private MyMessageHandler(Project project, boolean developerMode) {
       myInternalHandler = new DefaultMessageHandler(ProjectHelper.toIdeaProject(project));
       myDeveloperMode = developerMode;
     }
-
     @Override
     public void handle(IMessage message) {
       if (myDeveloperMode && message.getKind().equals(MessageKind.ERROR)) {
@@ -124,7 +115,6 @@ public class GeneratorUtil {
       }
       myInternalHandler.handle(message);
     }
-
     @Override
     public void clear() {
       myInternalHandler.clear();

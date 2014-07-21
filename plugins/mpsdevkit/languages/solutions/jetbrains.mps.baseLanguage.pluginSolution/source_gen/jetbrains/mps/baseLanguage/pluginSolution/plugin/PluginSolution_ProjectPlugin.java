@@ -13,7 +13,6 @@ import jetbrains.mps.project.MPSProject;
 public class PluginSolution_ProjectPlugin extends BaseProjectPlugin {
   public PluginSolution_ProjectPlugin() {
   }
-
   public List<BaseCustomProjectPlugin> initCustomParts(Project project) {
     List<BaseCustomProjectPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomProjectPlugin>());
     MPSProject mpsProject = project.getComponent(MPSProject.class);

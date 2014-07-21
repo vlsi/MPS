@@ -9,5 +9,5 @@ public class UnionOperation_BehaviorDescriptor extends BinaryOperation_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.UnionOperation";
-  };;
-;}
+  }
+}

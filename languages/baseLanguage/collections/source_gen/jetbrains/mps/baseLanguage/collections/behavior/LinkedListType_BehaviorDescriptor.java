@@ -9,5 +9,5 @@ public class LinkedListType_BehaviorDescriptor extends ListType_BehaviorDescript
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.LinkedListType";
-  };;
-;}
+  }
+}

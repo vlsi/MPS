@@ -19,19 +19,19 @@ public class ControlAbstractionContainer_Constraints extends BaseConstraintsDesc
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
-  };;
-;  @Override
+  }
+  @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseScopeProvider() {
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_vhsk47_a0a0a0a0a2;
-      };;
-;      @Override
+      }
+      @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         return ClassifierScopes.getVisibleClassifiersScope((_context.getReferenceNode() == null ? _context.getEnclosingNode() : _context.getReferenceNode()), false);
-      };;
-;    };
-  };;
-;  private static SNodePointer breakingNode_vhsk47_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "8756160028285599728");
+      }
+    };
+  }
+  private static SNodePointer breakingNode_vhsk47_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "8756160028285599728");
 }

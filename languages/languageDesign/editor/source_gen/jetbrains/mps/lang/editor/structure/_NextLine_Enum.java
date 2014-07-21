@@ -12,15 +12,12 @@ public enum _NextLine_Enum {
   indented("indented", "indented");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<_NextLine_Enum> getConstants() {
     List<_NextLine_Enum> list = ListSequence.fromList(new LinkedList<_NextLine_Enum>());
     ListSequence.fromList(list).addElement(_NextLine_Enum.right);
@@ -28,11 +25,9 @@ public enum _NextLine_Enum {
     ListSequence.fromList(list).addElement(_NextLine_Enum.indented);
     return list;
   }
-
   public static _NextLine_Enum getDefault() {
     return _NextLine_Enum.right;
   }
-
   public static _NextLine_Enum parseValue(String value) {
     if (value == null) {
       return _NextLine_Enum.getDefault();
@@ -48,14 +43,11 @@ public enum _NextLine_Enum {
     }
     return _NextLine_Enum.getDefault();
   }
-
   private String myValue;
-
   _NextLine_Enum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

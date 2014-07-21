@@ -11,5 +11,5 @@ public abstract class AbstractCellSelector_BehaviorDescriptor extends BaseConcep
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.AbstractCellSelector";
-  };;
-;}
+  }
+}

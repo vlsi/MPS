@@ -15,12 +15,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class FilteringByNameScope extends Scope {
   private final Set<String> filteredNames;
   private final Scope scope;
-
   public FilteringByNameScope(Set<String> filteredNames, @NotNull Scope scope) {
     this.filteredNames = filteredNames;
     this.scope = scope;
   }
-
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     return Sequence.fromIterable(scope.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
@@ -29,19 +27,16 @@ public class FilteringByNameScope extends Scope {
       }
     });
   }
-
   @Nullable
   @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     return (!(SetSequence.fromSet(filteredNames).contains(refText)) ? scope.resolve(contextNode, refText) : null);
   }
-
   @Nullable
   @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     return scope.getReferenceText(contextNode, node);
   }
-
   @Override
   public boolean contains(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {

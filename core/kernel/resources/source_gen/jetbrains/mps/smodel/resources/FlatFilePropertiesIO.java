@@ -14,16 +14,13 @@ import java.util.HashMap;
 
 public class FlatFilePropertiesIO implements IPropertiesIO {
   private IFile descFile;
-
   public FlatFilePropertiesIO(IFile descFile) {
     this.descFile = descFile;
   }
-
   @Override
   public void writeProperties(Map<String, String> store) throws IOException {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public Map<String, String> readProperties() throws IOException {
     if (descFile == null) {
@@ -55,7 +52,6 @@ public class FlatFilePropertiesIO implements IPropertiesIO {
     });
     return (Map<String, String>) ((props.value != null ? new HashMap(props.value) : null));
   }
-
   @Override
   public Object getKey() {
     return (descFile != null ? descFile.getPath() : null);

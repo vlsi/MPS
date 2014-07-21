@@ -31,16 +31,13 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class SLanguageAdapter implements SLanguage {
   private String myLanguage;
-
   public SLanguageAdapter(@NotNull String language) {
     this.myLanguage = language;
   }
-
   @Override
   public String getQualifiedName() {
     return myLanguage;
   }
-
   @Override
   public Iterable<SAbstractConcept> getConcepts() {
     LanguageRuntime runtime = LanguageRegistry.getInstance().getLanguage(myLanguage);
@@ -71,7 +68,6 @@ public class SLanguageAdapter implements SLanguage {
     }));
     return c;
   }
-
   public Iterable<SEnumeration> getEnumerations() {
     // TODO rewrite using LanguageRuntime 
     Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(getSourceModule()).getRootNodes();
@@ -88,7 +84,6 @@ public class SLanguageAdapter implements SLanguage {
     return c;
 
   }
-
   @Override
   public Iterable<SModuleReference> getLanguageRuntimes() {
     Set<SModuleReference> runtimes = new HashSet<SModuleReference>();
@@ -99,17 +94,14 @@ public class SLanguageAdapter implements SLanguage {
     }
     return runtimes;
   }
-
   @Override
   public Language getSourceModule() {
     return (Language) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(myLanguage));
   }
-
   @Override
   public int hashCode() {
     return myLanguage.hashCode();
   }
-
   @Override
   public boolean equals(Object object) {
     return object instanceof SLanguageAdapter && myLanguage.equals(((SLanguageAdapter) object).myLanguage);

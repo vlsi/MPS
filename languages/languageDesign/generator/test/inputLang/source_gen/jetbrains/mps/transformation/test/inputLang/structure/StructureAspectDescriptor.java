@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -44,6 +43,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.transformation.test.inputLang.structure.ExpressionToReduceToStatement", "jetbrains.mps.transformation.test.inputLang.structure.InputNode", "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", "jetbrains.mps.transformation.test.inputLang.structure.InputNode_B", "jetbrains.mps.transformation.test.inputLang.structure.InputNode_C", "jetbrains.mps.transformation.test.inputLang.structure.InputRoot", "jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList", "jetbrains.mps.transformation.test.inputLang.structure.RefTestClass", "jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression", "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod", "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethodCall", "jetbrains.mps.transformation.test.inputLang.structure.RefTestParam", "jetbrains.mps.transformation.test.inputLang.structure.RefTestParamRef"};
 }

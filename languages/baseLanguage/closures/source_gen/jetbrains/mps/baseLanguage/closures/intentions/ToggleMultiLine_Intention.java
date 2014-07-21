@@ -16,57 +16,44 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ToggleMultiLine_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ToggleMultiLine_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral";
   }
-
   public String getPresentation() {
     return "ToggleMultiLine";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.closures.intentions.ToggleMultiLine_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.closures";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "890797661671409032");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ToggleMultiLine_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       if (SPropertyOperations.getBoolean(node, "forceMultiLine")) {
         return "Remove Force Multi Line";
@@ -74,12 +61,10 @@ public class ToggleMultiLine_Intention implements IntentionFactory {
         return "Make Force Multi Line";
       }
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "forceMultiLine", "" + (!(SPropertyOperations.getBoolean(node, "forceMultiLine"))));
       editorContext.getEditorComponent().rebuildEditorContent();
     }
-
     public IntentionDescriptor getDescriptor() {
       return ToggleMultiLine_Intention.this;
     }

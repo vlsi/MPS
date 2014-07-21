@@ -20,7 +20,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_LightQuotationLinkList_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_LightQuotationLinkList_InferenceRule() {
   }
-
   public void applyRule(final SNode list, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode lval = SNodeOperations.as(SNodeOperations.getParent(list), "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink");
     SNode type;
@@ -44,22 +43,18 @@ public class typeof_LightQuotationLinkList_InferenceRule extends AbstractInferen
       }
     });
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.quotation.structure.NodeBuilderList";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_ttlvyh_a0a0c0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -67,7 +62,6 @@ public class typeof_LightQuotationLinkList_InferenceRule extends AbstractInferen
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ttlvyh_a0a0a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -78,7 +72,6 @@ public class typeof_LightQuotationLinkList_InferenceRule extends AbstractInferen
     quotedNode_2.addChild("elementType", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ttlvyh_a0a0a0a4a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

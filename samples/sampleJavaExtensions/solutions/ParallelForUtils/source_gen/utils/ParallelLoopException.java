@@ -7,12 +7,10 @@ import java.util.Collections;
 
 public class ParallelLoopException extends RuntimeException {
   private List<Exception> exceptions;
-
   public ParallelLoopException(String message, List<Exception> exceptions) {
     super(message);
     this.exceptions = exceptions;
   }
-
   public List<Exception> getCauseExceptions() {
     return Collections.unmodifiableList(exceptions);
   }

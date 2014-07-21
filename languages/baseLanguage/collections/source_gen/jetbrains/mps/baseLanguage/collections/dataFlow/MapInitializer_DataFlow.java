@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class MapInitializer_DataFlow extends DataFlowBuilder {
   public MapInitializer_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode entry : SLinkOperations.getTargets(_context.getNode(), "entries", true)) {
       _context.getBuilder().build((SNode) entry);

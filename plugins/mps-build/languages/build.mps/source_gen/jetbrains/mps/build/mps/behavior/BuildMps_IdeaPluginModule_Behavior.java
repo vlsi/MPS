@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class BuildMps_IdeaPluginModule_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     if (object instanceof SNode) {
       SNode node = (SNode) object;

@@ -25,7 +25,6 @@ public class PropertyRefExpression_Constraints extends BaseConstraintsDescriptor
   public PropertyRefExpression_Constraints() {
     super("jetbrains.mps.lang.checkedName.structure.PropertyRefExpression");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class PropertyRefExpression_Constraints extends BaseConstraintsDescriptor
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -46,7 +44,6 @@ public class PropertyRefExpression_Constraints extends BaseConstraintsDescriptor
             }
             return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getReferenceNode(), "nodeExpr", true)), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false));
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_e11h12_a0a1a0a0a1a0b0a1a1;
@@ -56,6 +53,5 @@ public class PropertyRefExpression_Constraints extends BaseConstraintsDescriptor
     });
     return references;
   }
-
   private static SNodePointer breakingNode_e11h12_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:bfde7c59-4df1-47aa-b96c-63906ea441df(jetbrains.mps.lang.checkedName.constraints)", "4844813484172611612");
 }

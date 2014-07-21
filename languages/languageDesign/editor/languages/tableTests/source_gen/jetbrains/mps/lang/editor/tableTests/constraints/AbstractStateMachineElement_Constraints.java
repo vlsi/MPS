@@ -14,12 +14,10 @@ public class AbstractStateMachineElement_Constraints extends BaseConstraintsDesc
   public AbstractStateMachineElement_Constraints() {
     super("jetbrains.mps.lang.editor.tableTests.structure.AbstractStateMachineElement");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class AbstractStateMachineElement_Constraints extends BaseConstraintsDesc
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.editor.tableTests.structure.StateMachine");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5eda252d-8f97-48fa-a19c-1626b2b52512(jetbrains.mps.lang.editor.tableTests.constraints)", "7943979732673457902");
 }

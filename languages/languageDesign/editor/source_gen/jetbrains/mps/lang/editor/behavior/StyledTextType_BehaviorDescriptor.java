@@ -10,5 +10,5 @@ public class StyledTextType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyledTextType";
-  };;
-;}
+  }
+}

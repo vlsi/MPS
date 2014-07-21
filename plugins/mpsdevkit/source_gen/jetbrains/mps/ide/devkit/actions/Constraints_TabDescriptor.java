@@ -17,38 +17,29 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Constraints_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Constraint;
-
   public Constraints_TabDescriptor() {
   }
-
   public String getTitle() {
     return "Constraints";
   }
-
   public Character getShortcutChar() {
     return 'C';
   }
-
   public int compareTo(RelationDescriptor descriptor) {
     return new Constraints_Order().compare(this, descriptor);
   }
-
   public void startListening() {
   }
-
   public SNode getBaseNode(SNode node) {
     return ConceptEditorOpenHelper.getBaseNode(node);
   }
-
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   @Nullable
   public Icon getIcon() {
     return ICON;
   }
-
   public List<SNode> getNodes(SNode node) {
     List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
     SNode n = getNode(node);
@@ -58,20 +49,16 @@ public class Constraints_TabDescriptor extends RelationDescriptor {
     ListSequence.fromList(list).addElement(n);
     return list;
   }
-
   public boolean isSingle() {
     return true;
   }
-
   public SNode getNode(SNode node) {
     List<SNode> nodes = BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspectCollection_1567570417158062208", new Object[]{LanguageAspect.CONSTRAINTS});
     return (ListSequence.fromList(nodes).isEmpty() ? null : ListSequence.fromList(nodes).first());
   }
-
   public List<SNode> getConcepts(final SNode node) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConceptConstraints"));
   }
-
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.CONSTRAINTS, node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConceptConstraints"));
   }

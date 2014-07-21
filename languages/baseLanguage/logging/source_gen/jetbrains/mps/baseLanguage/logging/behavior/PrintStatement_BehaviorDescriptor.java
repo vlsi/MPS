@@ -10,5 +10,5 @@ public class PrintStatement_BehaviorDescriptor extends Statement_BehaviorDescrip
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.logging.structure.PrintStatement";
-  };;
-;}
+  }
+}

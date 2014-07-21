@@ -10,5 +10,5 @@ public class SNodeCreatorAndInitializer_BehaviorDescriptor extends SNodeCreator_
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer";
-  };;
-;}
+  }
+}

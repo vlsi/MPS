@@ -11,9 +11,9 @@ public class ForEachStatement_BehaviorDescriptor extends AbstractLoopStatement_B
   }
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return ForEachStatement_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement";
-  };;
-;}
+  }
+}

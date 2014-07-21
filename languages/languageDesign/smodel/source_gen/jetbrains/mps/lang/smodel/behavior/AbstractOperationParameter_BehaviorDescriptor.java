@@ -10,5 +10,5 @@ public abstract class AbstractOperationParameter_BehaviorDescriptor extends Base
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter";
-  };;
-;}
+  }
+}

@@ -24,7 +24,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_vh2hfk_a(editorContext, node);
   }
-
   private EditorCell createCollection_vh2hfk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vh2hfk_a");
@@ -44,14 +43,12 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     editorCell.addEditorCell(this.createConstant_vh2hfk_m0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_vh2hfk_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generator internal_ reference descriptor");
     editorCell.setCellId("Constant_vh2hfk_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_vh2hfk_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("model");
@@ -69,14 +66,12 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_vh2hfk_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "main node");
     editorCell.setCellId("Constant_vh2hfk_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_vh2hfk_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("mainNode");
@@ -98,27 +93,22 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     } else
     return editorCell;
   }
-
   public static class _Inline_vh2hfk_a3a extends InlineCellProvider {
     public _Inline_vh2hfk_a3a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReferencePresentation_vh2hfk_a0d0(editorContext, node);
     }
-
     private EditorCell createReferencePresentation_vh2hfk_a0d0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "mainNode");
       editorCell.setCellId("ReferencePresentation_vh2hfk_a0d0");
       return editorCell;
     }
   }
-
   private EditorCell createConstant_vh2hfk_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_vh2hfk_e0");
@@ -130,14 +120,12 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_vh2hfk_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "role");
     editorCell.setCellId("Constant_vh2hfk_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_vh2hfk_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_vh2hfk_g0");
@@ -147,7 +135,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_vh2hfk_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("role");
@@ -165,7 +152,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_vh2hfk_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_vh2hfk_i0");
@@ -175,14 +161,12 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_vh2hfk_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id");
     editorCell.setCellId("Constant_vh2hfk_j0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_vh2hfk_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_vh2hfk_k0");
@@ -192,7 +176,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_vh2hfk_l0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("id");
@@ -210,7 +193,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_vh2hfk_m0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_vh2hfk_m0");

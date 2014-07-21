@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class Diagram1_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Diagram1_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1";

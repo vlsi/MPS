@@ -16,7 +16,6 @@ import java.util.List;
 public class LatticeUtil {
   public LatticeUtil() {
   }
-
   private static void processMeetsAndJoins(SNode node) {
     {
       SNode joinType = node;
@@ -55,7 +54,6 @@ public class LatticeUtil {
       }
     }
   }
-
   private static SNode join(SNode node1, SNode node2) {
     SNode joinType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
     if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
@@ -84,7 +82,6 @@ public class LatticeUtil {
     }
     return joinType;
   }
-
   private static SNode meet(SNode node1, SNode node2) {
     SNode meetType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MeetType", null);
     if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
@@ -113,7 +110,6 @@ public class LatticeUtil {
     }
     return meetType;
   }
-
   public static SNode joinNodes(Set<SNode> nodes) {
     if (nodes.isEmpty()) {
       return null;
@@ -130,7 +126,6 @@ public class LatticeUtil {
     result.add(join(node1, node2));
     return joinNodes(result);
   }
-
   public static SNode meetNodes(Set<SNode> nodes) {
     if (nodes.isEmpty()) {
       return null;
@@ -147,23 +142,18 @@ public class LatticeUtil {
     result.add(meet(node1, node2));
     return meetNodes(result);
   }
-
   public static boolean isMeet(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.MeetType");
   }
-
   public static boolean isJoin(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.JoinType");
   }
-
   public static boolean isPolymorphic(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.MeetType") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.JoinType") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LowerBoundType");
   }
-
   public static List<SNode> getMeetArguments(SNode meet) {
     return SLinkOperations.getTargets(SNodeOperations.as(meet, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true);
   }
-
   public static List<SNode> getJoinArguments(SNode join) {
     return SLinkOperations.getTargets(SNodeOperations.as(join, "jetbrains.mps.lang.typesystem.structure.JoinType"), "argument", true);
   }

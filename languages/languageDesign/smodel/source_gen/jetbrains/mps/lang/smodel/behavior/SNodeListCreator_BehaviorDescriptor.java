@@ -10,5 +10,5 @@ public class SNodeListCreator_BehaviorDescriptor extends AbstractCreator_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.SNodeListCreator";
-  };;
-;}
+  }
+}

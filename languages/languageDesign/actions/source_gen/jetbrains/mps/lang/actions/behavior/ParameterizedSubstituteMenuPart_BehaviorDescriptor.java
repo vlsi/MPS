@@ -9,5 +9,5 @@ public class ParameterizedSubstituteMenuPart_BehaviorDescriptor extends Substitu
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart";
-  };;
-;}
+  }
+}

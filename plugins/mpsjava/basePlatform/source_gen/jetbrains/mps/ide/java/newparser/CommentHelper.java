@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class CommentHelper {
   public CommentHelper() {
   }
-
   public static List<String> splitString(char[] content, int[] lineends, int start, int end) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     for (int i = Math.abs(Arrays.binarySearch(lineends, start) + 1); i < lineends.length && lineends[i] <= end; ++i) {
@@ -24,7 +23,6 @@ public class CommentHelper {
     }
     return result;
   }
-
   public static List<String> processLines(Iterable<String> lines, String start, String end) {
     // remove start and end (if any) tags, indent 
     List<String> result = ListSequence.fromListWithValues(new ArrayList<String>(), lines);
@@ -77,11 +75,9 @@ public class CommentHelper {
     }
     return result;
   }
-
   public static List<String> processJavadoc(Iterable<String> lines) {
     return processLines(lines, "/**", "*/");
   }
-
   public static List<String> processComment(Iterable<String> lines) {
     if (Sequence.fromIterable(lines).first().startsWith("//")) {
       return processLines(lines, "//", null);
@@ -89,8 +85,6 @@ public class CommentHelper {
       return processLines(lines, "/*", "*/");
     }
   }
-
-
 
   private static int whitespaceOrStar(String s) {
     char[] chars = s.toCharArray();
@@ -106,11 +100,9 @@ public class CommentHelper {
     }
     return k;
   }
-
   public static String trim_rf742u_a0a4a2(String str) {
     return (str == null ? null : str.trim());
   }
-
   public static String trim_rf742u_a0a0a6a2(String str) {
     return (str == null ? null : str.trim());
   }

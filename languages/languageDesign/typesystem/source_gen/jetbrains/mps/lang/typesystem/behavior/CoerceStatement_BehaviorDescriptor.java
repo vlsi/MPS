@@ -10,5 +10,5 @@ public class CoerceStatement_BehaviorDescriptor extends Statement_BehaviorDescri
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.CoerceStatement";
-  };;
-;}
+  }
+}

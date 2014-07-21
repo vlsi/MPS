@@ -24,7 +24,6 @@ public class BlockContentView extends CenterVerticalLayoutView implements Movabl
   private TextCell myCell = new TextCell();
   private RectView myRectView = new RectView();
   public Property<Boolean> isClicked = new ValueProperty<Boolean>(false);
-
   public BlockContentView() {
     super(false);
     background().set(Color.BLUE);
@@ -51,7 +50,6 @@ public class BlockContentView extends CenterVerticalLayoutView implements Movabl
     children().add(bottomRect);
     initSynchronizers();
   }
-
   private void initSynchronizers() {
     new Mapper<BlockContentView, BlockContentView>(this, this) {
       @Override
@@ -69,7 +67,6 @@ public class BlockContentView extends CenterVerticalLayoutView implements Movabl
       }
     }.attachRoot();
   }
-
   public Property<String> text() {
     return myCell.text();
   }

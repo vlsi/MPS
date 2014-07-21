@@ -5,7 +5,6 @@ package jetbrains.mps.propertiesTest;
 
 public class TestClass extends BaseTestClass {
   public int value;
-
   public TestClass(int initialValue) {
     setPropertyValue(initialValue);
     this.setPropertyValue(initialValue);
@@ -16,11 +15,9 @@ public class TestClass extends BaseTestClass {
     setBasePropertyValue(asLocalValue);
     int secondLocalValue = getBasePropertyValue();
   }
-
   public void changeValueUsingNestedClass(int newValue) {
     new TestClass.PropertyChanger(newValue);
   }
-
   public class PropertyChanger {
     public PropertyChanger(int newValue) {
       setPropertyValue(newValue);
@@ -31,23 +28,17 @@ public class TestClass extends BaseTestClass {
       setSecondPropertyValue(getPropertyValue());
     }
   }
-
   private int myPropertyValue;
-
   public int getPropertyValue() {
     return this.myPropertyValue;
   }
-
   private void setPropertyValue(int value) {
     this.myPropertyValue = value;
   }
-
   private int mySecondPropertyValue;
-
   public int getSecondPropertyValue() {
     return this.mySecondPropertyValue;
   }
-
   private void setSecondPropertyValue(int value) {
     this.mySecondPropertyValue = value;
   }

@@ -13,11 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public abstract class AbstractIntroduceFieldRefactoring extends IntroduceVariableRefactoring {
   protected FieldInitializationPlace myFieldInitialization;
 
-
   public void setFieldInitializationPlace(FieldInitializationPlace place) {
     this.myFieldInitialization = place;
   }
-
   public boolean isInitializeInFieldAvailable() {
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -31,7 +29,6 @@ public abstract class AbstractIntroduceFieldRefactoring extends IntroduceVariabl
     });
     return result.value;
   }
-
   public static boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression") && (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null);
   }

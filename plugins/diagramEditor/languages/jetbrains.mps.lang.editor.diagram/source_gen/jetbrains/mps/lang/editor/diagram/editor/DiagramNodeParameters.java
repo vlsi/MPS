@@ -22,11 +22,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class DiagramNodeParameters implements ParametersInformation<SNode> {
   public DiagramNodeParameters() {
   }
-
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     return Collections.singletonList(SLinkOperations.getTarget(node, "figure", true));
   }
-
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     if (SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "figure", true)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference")) {
       styledText.append("null()");
@@ -64,11 +62,9 @@ public class DiagramNodeParameters implements ParametersInformation<SNode> {
     }
     styledText.append(")");
   }
-
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
     return SLinkOperations.getTarget(node, "figure", true) == parameterObject;
   }
-
   private void appendParameter(String parameterName, StyledTextPrinter styledText, boolean isEmpty, boolean isBold) {
     if (!(isEmpty)) {
       styledText.append(", ");

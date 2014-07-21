@@ -10,5 +10,5 @@ public class GenerationContextType_BehaviorDescriptor extends Type_BehaviorDescr
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType";
-  };;
-;}
+  }
+}

@@ -17,23 +17,19 @@ import jetbrains.mps.vfs.IFile;
 public class JavaSourceStubModelRootSettingsEditor implements ModelRootSettingsEditor {
   private Project myProject;
   private String myPath;
-
   public JavaSourceStubModelRootSettingsEditor() {
   }
-
   @Override
   public void reset(Project project, ModelRoot root) {
     assert root instanceof JavaSourceStubModelRoot;
     this.myProject = project;
     this.myPath = ((JavaSourceStubModelRoot) root).getContentRoot();
   }
-
   @Override
   public void apply(ModelRoot root) {
     assert root instanceof JavaSourceStubModelRoot;
     ((JavaSourceStubModelRoot) root).setContentRoot(myPath);
   }
-
   @Override
   public JComponent getComponent() {
     return new JButton(new AbstractAction("path") {

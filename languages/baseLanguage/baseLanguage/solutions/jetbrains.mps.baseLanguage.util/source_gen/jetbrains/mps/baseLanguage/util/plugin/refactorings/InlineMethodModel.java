@@ -21,7 +21,6 @@ public class InlineMethodModel {
   private MethodCallAdapter myCall;
   private boolean myIsContainsSelfCalls;
   private String myMethodPresentation;
-
   public InlineMethodModel(final SNode node) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -36,23 +35,18 @@ public class InlineMethodModel {
       }
     });
   }
-
   public boolean isRecusive() {
     return myIsContainsSelfCalls;
   }
-
   public String getMethodPresentation() {
     return myMethodPresentation;
   }
-
   public MethodCallAdapter getMethodCall() {
     return myCall;
   }
-
   public SNode getMethod() {
     return myMethod;
   }
-
   public String getErrors() {
     if ((SLinkOperations.getTarget(getMethod(), "body", true) == null) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(getMethod(), "body", true), "jetbrains.mps.baseLanguage.structure.StubStatementList")) {
       return "No sources attached";
@@ -65,7 +59,6 @@ public class InlineMethodModel {
     }
     return null;
   }
-
   private boolean isContainsSelfCalls() {
     for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(getMethod(), null, false, new String[]{}))) {
       if (MethodCallAdapter.isMethodCall(call)) {
@@ -76,7 +69,6 @@ public class InlineMethodModel {
     }
     return false;
   }
-
   private boolean isReturnBreaksExecitionFlow() {
     Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(getMethod(), "body", true));
     for (Instruction instruction : ListSequence.fromList(program.getInstructions())) {

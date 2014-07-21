@@ -19,7 +19,6 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_o0ayvq_a(editorContext, node);
   }
-
   private EditorCell createCollection_o0ayvq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o0ayvq_a");
@@ -28,7 +27,6 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_o0ayvq_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_o0ayvq_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("instance");
@@ -48,7 +46,6 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_o0ayvq_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();

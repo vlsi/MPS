@@ -19,17 +19,13 @@ public abstract class AbstractPaletteCreationAction implements PaletteToggleActi
   protected SubstituteAction mySubstituteAction;
   private Icon myIcon;
   private String myText;
-
   public AbstractPaletteCreationAction(DiagramCell diagramCell, SubstituteAction action) {
     myDiagramCell = diagramCell;
     mySubstituteAction = createSubstituteAction(action);
     init();
   }
-
   protected abstract SubstituteAction createSubstituteAction(SubstituteAction action);
-
   protected abstract ViewTrait getTrait();
-
   private Icon createIcon() {
     // todo code is duplicated from the diagram cell 
     Icon icon;
@@ -42,7 +38,6 @@ public abstract class AbstractPaletteCreationAction implements PaletteToggleActi
     }
     return icon;
   }
-
   protected void init() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -51,20 +46,15 @@ public abstract class AbstractPaletteCreationAction implements PaletteToggleActi
       }
     });
   }
-
   public Icon getIcon() {
     return myIcon;
   }
-
   public String getText() {
     return myText;
   }
 
-
-
   public void onClick() {
     myDiagramCell.setExternalTrait(getTrait());
   }
-
 
 }

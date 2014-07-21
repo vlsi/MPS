@@ -14,22 +14,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_SubtypingRule_ExpectedReturns_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_SubtypingRule_ExpectedReturns_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode subtypingRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     DataFlowUtil.checkReturns(typeCheckingContext, SLinkOperations.getTarget(subtypingRule, "body", true));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.SubtypingRule";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

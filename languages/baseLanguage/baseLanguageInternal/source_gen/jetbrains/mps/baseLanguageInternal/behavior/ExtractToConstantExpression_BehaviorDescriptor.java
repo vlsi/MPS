@@ -10,5 +10,5 @@ public class ExtractToConstantExpression_BehaviorDescriptor extends Expression_B
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression";
-  };;
-;}
+  }
+}

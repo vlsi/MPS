@@ -16,25 +16,20 @@ import jetbrains.mps.samples.componentDependencies.typesystem.TypesystemDescript
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "3066bc09-2438-4300-a936-5bd59917ae9b(jetbrains.mps.samples.componentDependencies)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.samples.componentDependencies";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return null;
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

@@ -36,12 +36,10 @@ public class QueriesGenerated {
       SPropertyOperations.set(pd, "name", "node");
     }
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_RefactorOperation_5932042262275851226(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     return result;
   }
-
   public static void removeActionsByCondition_5932042262275851847(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
     Iterator<SubstituteAction> actions = _context.getSubstituteActions();
     while (actions.hasNext()) {
@@ -64,7 +62,6 @@ public class QueriesGenerated {
       }
     }
   }
-
   private static SNode _quotation_createNode_b0a1a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

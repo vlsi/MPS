@@ -24,15 +24,12 @@ public class MigrateAbstractConceptDeclarationMethodOnConceptVariable_MigrationS
       public String getName() {
         return "Migration abstract concept declaration methods on concept<>";
       }
-
       public String getAdditionalInfo() {
         return "Migration abstract concept declaration methods on concept<>";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall";
       }
-
       public boolean isApplicableInstanceNode(final SNode node) {
         if (SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "isStatic")) {
           return false;
@@ -44,19 +41,16 @@ public class MigrateAbstractConceptDeclarationMethodOnConceptVariable_MigrationS
         });
         return SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SConceptType");
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
         SNode newOperand = _quotation_createNode_dt2z82_a0b0a0(operand);
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), _quotation_createNode_dt2z82_a0a2a0a(newOperand, SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true)));
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
     });
   }
-
   private static SNode _quotation_createNode_dt2z82_a0b0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -74,7 +68,6 @@ public class MigrateAbstractConceptDeclarationMethodOnConceptVariable_MigrationS
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_dt2z82_a0a2a0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

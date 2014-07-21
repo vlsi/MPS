@@ -14,42 +14,32 @@ public class delete_Layout_Node {
     editorCell.setAction(CellActionType.DELETE, new delete_Layout_Node.delete_Layout_Node_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new delete_Layout_Node.delete_Layout_Node_BACKSPACE(node));
   }
-
   public static class delete_Layout_Node_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_Layout_Node_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "delete layout node";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.deleteNode(node);
     }
   }
-
   public static class delete_Layout_Node_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_Layout_Node_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "delete layout node";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.deleteNode(node);
     }

@@ -43,14 +43,12 @@ public class QueriesGenerated {
             SPropertyOperations.set(result, "value", smallPattern);
             return result;
           }
-
           public String getMatchingText(String pattern) {
             if (pattern.startsWith("\"")) {
               return pattern;
             }
             return "\"";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -59,7 +57,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LambdaExpression_6645816968628267298(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -72,14 +69,12 @@ public class QueriesGenerated {
             SPropertyOperations.set(result, "value", "" + (Integer.parseInt(pattern)));
             return result;
           }
-
           public String getMatchingText(String pattern) {
             if (pattern.matches("[1-9]+[0-9]*")) {
               return pattern;
             }
             return "0";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -88,7 +83,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LambdaExpression_3978364766705549166(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -100,11 +94,9 @@ public class QueriesGenerated {
             SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression", null);
             return result;
           }
-
           public String getMatchingText(String pattern) {
             return "(";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -113,7 +105,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LambdaExpression_8084891409541502197(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -125,11 +116,9 @@ public class QueriesGenerated {
             SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.LetExpression", null);
             return node;
           }
-
           public String getMatchingText(String pattern) {
             return "let";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -138,7 +127,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_LambdaExpression_1934341835352174459(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"), _context.getSourceNode()) {
@@ -148,15 +136,12 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(application, "function", _context.getSourceNode(), true);
         return application;
       }
-
       public String getMatchingText(String pattern) {
         return "[";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -167,7 +152,6 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_LambdaExpression_1934341835352312224(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -176,7 +160,6 @@ public class QueriesGenerated {
         public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           return substitute(newChild, lastPattern[0], editorContext);
         }
-
         private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
           SLinkOperations.setTarget(result, "left", _context.getSourceNode(), true);
@@ -195,7 +178,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_LambdaExpression_5864443919858363011(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression"), _context.getSourceNode()) {
@@ -205,15 +187,12 @@ public class QueriesGenerated {
         ListSequence.fromList(SLinkOperations.getTargets(multiple, "expressions", true)).insertElement(0, _context.getSourceNode());
         return multiple;
       }
-
       public String getMatchingText(String pattern) {
         return ";";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();

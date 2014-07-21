@@ -20,14 +20,11 @@ public class UnitTestRunner extends RunListener {
   public static final String FAILURE_TEST_PREFIX = "<TEST_FAILURE_BEGIN>";
   public static final String FAILURE_TEST_SUFFIX = "<TEST_FAILURE_END>";
   private Description currentDesc;
-
   public UnitTestRunner() {
   }
-
   public void start(String[] argv) throws Throwable {
     runTests(collectTestsToRun(argv));
   }
-
   private void runTests(List<Request> tests) {
     JUnitCore jUnitCore = new JUnitCore();
     jUnitCore.addListener(this);
@@ -39,7 +36,6 @@ public class UnitTestRunner extends RunListener {
       jUnitCore.run(test);
     }
   }
-
   private List<Request> collectTestsToRun(String[] argv) throws ClassNotFoundException {
     List<Request> tests = new ArrayList<Request>();
     for (int i = 0; i < argv.length; i++) {
@@ -60,12 +56,10 @@ public class UnitTestRunner extends RunListener {
     }
     return tests;
   }
-
   private String getTestName(String testName) {
     String[] parts = testName.split("\\(|\\)");
     return parts[1] + "." + parts[0];
   }
-
   private void testFailed(Failure failure) {
     System.out.flush();
     String testName = getTestName(failure.getTestHeader());
@@ -74,46 +68,38 @@ public class UnitTestRunner extends RunListener {
     System.err.println(FAILURE_TEST_SUFFIX + testName);
     System.err.flush();
   }
-
   @Override
   public void testRunStarted(Description description) throws Exception {
     this.currentDesc = description;
   }
-
   @Override
   public void testRunFinished(Result result) throws Exception {
     if (result.getRunCount() == 0) {
       System.err.println("No tests found in " + currentDesc.getDisplayName());
     }
   }
-
   @Override
   public void testStarted(Description description) throws Exception {
     System.out.println(START_TEST_PREFIX + getTestName(description.getDisplayName()));
     System.out.flush();
   }
-
   @Override
   public void testFinished(Description description) throws Exception {
     System.out.println(END_TEST_PREFIX + getTestName(description.getDisplayName()));
     System.out.flush();
   }
-
   @Override
   public void testFailure(Failure failure) throws Exception {
     testFailed(failure);
   }
-
   @Override
   public void testAssumptionFailure(Failure failure) {
     testFailed(failure);
   }
-
   @Override
   public void testIgnored(Description description) throws Exception {
     super.testIgnored(description);
   }
-
   public static void main(String[] argv) {
     if (argv.length > 0 && "-w".equals(argv[0])) {
       try {

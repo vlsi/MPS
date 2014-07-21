@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_FindLastOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_FindLastOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode elementType_typevar_1225730451735 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -38,22 +37,18 @@ public class typeof_FindLastOperation_InferenceRule extends AbstractInferenceRul
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.FindLastOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_q7hdhc_a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -65,7 +60,6 @@ public class typeof_FindLastOperation_InferenceRule extends AbstractInferenceRul
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_q7hdhc_a0d0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

@@ -9,5 +9,5 @@ public class AllAttributeQualifier_BehaviorDescriptor extends AttributeQualifier
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier";
-  };;
-;}
+  }
+}

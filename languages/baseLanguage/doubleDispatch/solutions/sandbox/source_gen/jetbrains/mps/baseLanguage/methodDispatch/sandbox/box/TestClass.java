@@ -7,7 +7,6 @@ public class TestClass {
   public TestClass() {
 
   }
-
   private int hello(Number numParm, String zzz) {
     if (numParm instanceof Double) {
       return hello((Double) numParm, zzz);
@@ -21,17 +20,14 @@ public class TestClass {
     }
 
   }
-
   public int hello(Double doubleParam, String info) {
     System.out.println("double");
     return 2;
   }
-
   public int hello(Integer intPara, String info) {
     System.out.println("integer");
     return 3;
   }
-
   public String arg(Arg1 arg1) {
     if (arg1 instanceof Arg2) {
       return arg((Arg2) arg1);
@@ -42,7 +38,6 @@ public class TestClass {
     }
 
   }
-
   public String arg(Arg2 arg2) {
     if (arg2 instanceof Arg5) {
       return arg((Arg5) arg2);
@@ -51,18 +46,14 @@ public class TestClass {
     }
 
   }
-
   public String arg(Arg3 arg3) {
     return "arg3";
   }
-
   public String arg(Arg5 arg5) {
     return "arg5";
   }
-
   public void newDisp(Number x) {
   }
-
   public static String stat(Arg2 arg2) {
     if (arg2 instanceof Arg5) {
       return stat((Arg5) arg2);
@@ -71,7 +62,6 @@ public class TestClass {
     }
 
   }
-
   public static String stat(Arg5 arg5) {
     return "arg5";
   }

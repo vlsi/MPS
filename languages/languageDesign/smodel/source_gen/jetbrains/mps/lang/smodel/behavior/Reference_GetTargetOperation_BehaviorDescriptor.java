@@ -12,21 +12,21 @@ public class Reference_GetTargetOperation_BehaviorDescriptor extends BaseConcept
   }
   public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     return IOperation_Behavior.virtual_getVariableExpectedName_1213877410087(thisNode);
-  };;
-;  public boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
+  }
+  public boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
     return IOperation_Behavior.virtual_isDotExpressionLegalAsStatement_1239212437413(thisNode);
-  };;
-;  public boolean virtual_isLValue_1213877410080(SNode thisNode) {
+  }
+  public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
-  };;
-;  public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
+  }
+  public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
     return IOperation_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
-  };;
-;  public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
+  }
+  public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
     return IOperation_Behavior.virtual_operandCanBeNull_323410281720656291(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation";
-  };;
-;}
+  }
+}

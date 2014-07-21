@@ -9,5 +9,5 @@ public class GenerationContextOp_VarRef_BehaviorDescriptor extends GenerationCon
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef";
-  };;
-;}
+  }
+}

@@ -23,7 +23,6 @@ public class AdvanceWorkStatement_Constraints extends BaseConstraintsDescriptor 
   public AdvanceWorkStatement_Constraints() {
     super("jetbrains.mps.make.script.structure.AdvanceWorkStatement");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class AdvanceWorkStatement_Constraints extends BaseConstraintsDescriptor 
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,17 +39,14 @@ public class AdvanceWorkStatement_Constraints extends BaseConstraintsDescriptor 
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return SPropertyOperations.getString(_context.getParameterNode(), "workName");
           }
-
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false), "body", true), "jetbrains.mps.make.script.structure.BeginWorkStatement", false, new String[]{});
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_vuepmh_a0a3a0a0a1a0b0a1a1;
@@ -61,6 +56,5 @@ public class AdvanceWorkStatement_Constraints extends BaseConstraintsDescriptor 
     });
     return references;
   }
-
   private static SNodePointer breakingNode_vuepmh_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:56325792-0540-48ec-8d52-897a8821cc64(jetbrains.mps.make.script.constraints)", "682890046602395485");
 }

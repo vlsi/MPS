@@ -21,7 +21,6 @@ public class ParametersInformationStyleClassItem_Editor extends DefaultNodeEdito
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_foagvc_a(editorContext, node);
   }
-
   private EditorCell createCollection_foagvc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_foagvc_a");
@@ -31,7 +30,6 @@ public class ParametersInformationStyleClassItem_Editor extends DefaultNodeEdito
     editorCell.addEditorCell(this.createRefCell_foagvc_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_foagvc_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -39,14 +37,12 @@ public class ParametersInformationStyleClassItem_Editor extends DefaultNodeEdito
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_foagvc_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_foagvc_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_foagvc_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("parametersInformation");
@@ -68,20 +64,16 @@ public class ParametersInformationStyleClassItem_Editor extends DefaultNodeEdito
     } else
     return editorCell;
   }
-
   public static class _Inline_foagvc_a2a extends InlineCellProvider {
     public _Inline_foagvc_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_foagvc_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_foagvc_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");

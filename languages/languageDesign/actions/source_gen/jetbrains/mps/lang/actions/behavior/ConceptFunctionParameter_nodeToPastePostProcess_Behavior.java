@@ -8,11 +8,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptFunctionParameter_nodeToPastePostProcess_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode call_getPostProcessor_6026743057587447970(SNode thisNode) {
+  }
+  public static SNode call_getPostProcessor_6026743057587447970(SNode thisNode) {
     return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.PastePostProcessor", false, false);
-  };;
-;  public static boolean virtual_dontUseParameterObject_1262430001741498340(SAbstractConcept thisConcept) {
+  }
+  public static boolean virtual_dontUseParameterObject_1262430001741498340(SAbstractConcept thisConcept) {
     return true;
-  };;
-;}
+  }
+}

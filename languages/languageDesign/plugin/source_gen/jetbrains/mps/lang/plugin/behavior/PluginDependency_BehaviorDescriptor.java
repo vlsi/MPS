@@ -11,6 +11,6 @@ public abstract class PluginDependency_BehaviorDescriptor extends BaseConcept_Be
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.PluginDependency";
-  };;
-;  public abstract String virtual_getPluginId_5864553086652219131(SNode thisNode);
+  }
+  public abstract String virtual_getPluginId_5864553086652219131(SNode thisNode);
 }

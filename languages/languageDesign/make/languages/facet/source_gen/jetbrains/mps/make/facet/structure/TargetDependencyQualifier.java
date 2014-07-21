@@ -13,15 +13,12 @@ public enum TargetDependencyQualifier {
   not_after("not after", "NOT_AFTER");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<TargetDependencyQualifier> getConstants() {
     List<TargetDependencyQualifier> list = ListSequence.fromList(new LinkedList<TargetDependencyQualifier>());
     ListSequence.fromList(list).addElement(TargetDependencyQualifier.before);
@@ -30,11 +27,9 @@ public enum TargetDependencyQualifier {
     ListSequence.fromList(list).addElement(TargetDependencyQualifier.not_after);
     return list;
   }
-
   public static TargetDependencyQualifier getDefault() {
     return TargetDependencyQualifier.before;
   }
-
   public static TargetDependencyQualifier parseValue(String value) {
     if (value == null) {
       return TargetDependencyQualifier.getDefault();
@@ -53,14 +48,11 @@ public enum TargetDependencyQualifier {
     }
     return TargetDependencyQualifier.getDefault();
   }
-
   private String myValue;
-
   TargetDependencyQualifier(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

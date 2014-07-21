@@ -20,7 +20,6 @@ public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_pessfj_a(editorContext, node);
   }
-
   private EditorCell createCollection_pessfj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pessfj_a");
@@ -31,7 +30,6 @@ public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor
     editorCell.addEditorCell(this.createConstant_pessfj_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_pessfj_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("tuple");
@@ -51,7 +49,6 @@ public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_pessfj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_pessfj_b0");
@@ -61,7 +58,6 @@ public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_pessfj_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("index");
@@ -81,7 +77,6 @@ public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_pessfj_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_pessfj_d0");

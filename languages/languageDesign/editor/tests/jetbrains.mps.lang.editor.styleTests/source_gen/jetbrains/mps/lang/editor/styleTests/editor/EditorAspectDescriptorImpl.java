@@ -16,7 +16,6 @@ import jetbrains.mps.editor.runtime.style.SimpleStyleAttribute;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, StyleAttributeProvider {
 
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
@@ -27,12 +26,9 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, Style
     }
     return Collections.<ConceptEditor>emptyList();
   }
-
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.<ConceptEditorComponent>emptyList();
   }
-
-
 
 
   public StyleAttribute getStyleAttribute(String attributeName) {
@@ -45,7 +41,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, Style
         return null;
     }
   }
-
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes"};
   private static String[] stringSwitchCases_xbvbvu_a0a0f = new String[]{"test-inherited-attribute", "test-simple-attribute"};
 }

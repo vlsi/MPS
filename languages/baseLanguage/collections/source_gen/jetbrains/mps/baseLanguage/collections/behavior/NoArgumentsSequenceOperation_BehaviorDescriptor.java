@@ -9,5 +9,5 @@ public abstract class NoArgumentsSequenceOperation_BehaviorDescriptor extends Se
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation";
-  };;
-;}
+  }
+}

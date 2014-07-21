@@ -23,7 +23,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static void mappingScript_CodeBlock_5916922432461069146(final MappingScriptContext _context) {
     for (SNode executor : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -50,7 +49,6 @@ public class QueriesGenerated {
       }
     }
   }
-
   private static SNode _quotation_createNode_x583g4_a0b0a0a0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -73,7 +71,6 @@ public class QueriesGenerated {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_x583g4_a0d0a0a0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

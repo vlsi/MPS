@@ -17,19 +17,16 @@ public class ReadAction_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.ReadAction_Test$TestBody", "test_ReadAction", true);
   }
-
   @Test
   public void test_ErrorMessagesCheck1216549241562() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.ReadAction_Test$TestBody", "test_ErrorMessagesCheck1216549241562", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ReadAction() throws Exception {
       this.addNodeById("1217271586326");
     }
-
     public void test_ErrorMessagesCheck1216549241562() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1216549241562"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("1216549152296")});

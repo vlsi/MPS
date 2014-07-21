@@ -10,5 +10,5 @@ public class MapEntry_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor 
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MapEntry";
-  };;
-;}
+  }
+}

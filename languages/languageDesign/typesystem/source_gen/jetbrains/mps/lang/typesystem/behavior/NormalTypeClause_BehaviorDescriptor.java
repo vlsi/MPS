@@ -9,5 +9,5 @@ public class NormalTypeClause_BehaviorDescriptor extends TypeClause_BehaviorDesc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.NormalTypeClause";
-  };;
-;}
+  }
+}

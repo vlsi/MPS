@@ -9,24 +9,19 @@ import com.intellij.openapi.util.Factory;
 
 public class JavaRunParameters_Configuration_Editor extends SettingsEditorEx<JavaRunParameters_Configuration> {
   private JavaConfigurationEditorComponent myJavaOptionsEditor = new JavaConfigurationEditorComponent();
-
   public void disposeEditor() {
     myJavaOptionsEditor.dispose();
   }
-
   @NotNull
   public JavaConfigurationEditorComponent createEditor() {
     return myJavaOptionsEditor;
   }
-
   public void applyEditorTo(final JavaRunParameters_Configuration configuration) throws ConfigurationException {
     myJavaOptionsEditor.apply(configuration.getJavaRunParameters());
   }
-
   public void resetEditorFrom(final JavaRunParameters_Configuration configuration) {
     myJavaOptionsEditor.reset(configuration.getJavaRunParameters());
   }
-
   public JavaRunParameters_Configuration_Editor() {
     super(new Factory<JavaRunParameters_Configuration>() {
       public JavaRunParameters_Configuration create() {

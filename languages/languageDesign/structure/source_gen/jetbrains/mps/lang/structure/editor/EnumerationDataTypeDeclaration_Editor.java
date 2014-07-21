@@ -35,7 +35,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_tm8wum_a(editorContext, node);
   }
-
   private EditorCell createCollection_tm8wum_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_tm8wum_a");
@@ -44,7 +43,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_tm8wum_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_tm8wum_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tm8wum_a0");
@@ -55,7 +53,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_tm8wum_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_tm8wum_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enumeration datatype");
     editorCell.setCellId("Constant_tm8wum_a0a");
@@ -65,7 +62,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_tm8wum_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -83,7 +79,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_tm8wum_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tm8wum_b0");
@@ -94,12 +89,10 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_tm8wum_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_tm8wum_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createCollection_tm8wum_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_tm8wum_b1a");
@@ -113,7 +106,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_tm8wum_e1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_tm8wum_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_tm8wum_a1b0");
@@ -123,7 +115,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_tm8wum_b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_tm8wum_b1b0");
@@ -142,7 +133,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_tm8wum_e1b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_tm8wum_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tm8wum_a1b1a");
@@ -154,7 +144,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_tm8wum_c0b1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_tm8wum_a0b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "member type");
     editorCell.setCellId("Constant_tm8wum_a0b1b0");
@@ -164,7 +153,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_tm8wum_b0b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_tm8wum_b0b1b0");
@@ -174,7 +162,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_tm8wum_c0b1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("memberDataType");
@@ -196,20 +183,16 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_tm8wum_a2a1b1a extends InlineCellProvider {
     public _Inline_tm8wum_a2a1b1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_tm8wum_a0c0b1b0(editorContext, node);
     }
-
     private EditorCell createProperty_tm8wum_a0c0b1b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -229,7 +212,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_tm8wum_b1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tm8wum_b1b1a");
@@ -241,7 +223,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_tm8wum_c1b1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_tm8wum_a1b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no default");
     editorCell.setCellId("Constant_tm8wum_a1b1b0");
@@ -251,7 +232,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_tm8wum_b1b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_tm8wum_b1b1b0");
@@ -261,7 +241,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_tm8wum_c1b1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("hasNoDefaultMember");
@@ -279,7 +258,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_tm8wum_c1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tm8wum_c1b1a");
@@ -291,11 +269,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_tm8wum_c2b1b0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_tm8wum_a2b1b0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "hasNoDefaultMember");
   }
-
   private EditorCell createConstant_tm8wum_a2b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null text");
     editorCell.setCellId("Constant_tm8wum_a2b1b0");
@@ -305,7 +281,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_tm8wum_b2b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_tm8wum_b2b1b0");
@@ -315,7 +290,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_tm8wum_c2b1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("noValueText");
@@ -337,7 +311,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_tm8wum_d1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tm8wum_d1b1a");
@@ -349,11 +322,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_tm8wum_c3b1b0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_tm8wum_a3b1b0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "hasNoDefaultMember"));
   }
-
   private EditorCell createConstant_tm8wum_a3b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");
     editorCell.setCellId("Constant_tm8wum_a3b1b0");
@@ -363,7 +334,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_tm8wum_b3b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_tm8wum_b3b1b0");
@@ -373,7 +343,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_tm8wum_c3b1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("defaultMember");
@@ -395,20 +364,16 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_tm8wum_a2d1b1a extends InlineCellProvider {
     public _Inline_tm8wum_a2d1b1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_tm8wum_a0c3b1b0(editorContext, node);
     }
-
     private EditorCell createProperty_tm8wum_a0c3b1b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("externalValue");
@@ -432,7 +397,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_tm8wum_e1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tm8wum_e1b1a");
@@ -444,7 +408,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_tm8wum_c4b1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_tm8wum_a4b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "member identifier");
     editorCell.setCellId("Constant_tm8wum_a4b1b0");
@@ -454,7 +417,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_tm8wum_b4b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_tm8wum_b4b1b0");
@@ -464,7 +426,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_tm8wum_c4b1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("memberIdentifierPolicy");
@@ -486,7 +447,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_tm8wum_c1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_tm8wum_c1b0");
@@ -496,7 +456,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_tm8wum_d1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_tm8wum_d1b0");
@@ -506,7 +465,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_tm8wum_e1b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new EnumerationDataTypeDeclaration_Editor.memberListHandler_tm8wum_e1b0(node, "member", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -518,30 +476,25 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class memberListHandler_tm8wum_e1b0 extends RefNodeListHandler {
     public memberListHandler_tm8wum_e1b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);

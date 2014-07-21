@@ -16,65 +16,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeRootable_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public MakeRootable_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
   }
-
   public String getPresentation() {
     return "MakeRootable";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.structure.intentions.MakeRootable_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.structure";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)", "2799938697970315260");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeRootable_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (SPropertyOperations.getBoolean(node, "rootable") ? "Make Not Rootable" : "Make Rootable");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "rootable", "" + (!(SPropertyOperations.getBoolean(node, "rootable"))));
     }
-
     public IntentionDescriptor getDescriptor() {
       return MakeRootable_Intention.this;
     }

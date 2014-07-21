@@ -24,7 +24,6 @@ public class RoutineDefinition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7lzh7e_a(editorContext, node);
   }
-
   private EditorCell createCollection_7lzh7e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7lzh7e_a");
@@ -36,7 +35,6 @@ public class RoutineDefinition_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_7lzh7e_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_7lzh7e_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "routine");
     editorCell.setCellId("Constant_7lzh7e_a0");
@@ -46,7 +44,6 @@ public class RoutineDefinition_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_7lzh7e_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -67,7 +64,6 @@ public class RoutineDefinition_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_7lzh7e_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "means");
     editorCell.setCellId("Constant_7lzh7e_c0");
@@ -80,15 +76,12 @@ public class RoutineDefinition_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_7lzh7e_a0c0(EditorContext editorContext, SNode node) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "commands", true)).isEmpty();
   }
-
   private static boolean _StyleParameter_QueryFunction_7lzh7e_a1c0(EditorContext editorContext, SNode node) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "commands", true)).isNotEmpty();
   }
-
   private EditorCell createRefNode_7lzh7e_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -112,7 +105,6 @@ public class RoutineDefinition_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_7lzh7e_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end");
     editorCell.setCellId("Constant_7lzh7e_e0");

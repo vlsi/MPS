@@ -19,11 +19,9 @@ import jetbrains.mps.smodel.SNodePointer;
 public class Templatedescriptor implements TemplateDeclaration {
   public Templatedescriptor() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_e20rlw_a0a1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.lang.descriptor.structure.LanguageDescriptor");
     try {
@@ -41,7 +39,6 @@ public class Templatedescriptor implements TemplateDeclaration {
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   private static SNodePointer template_e20rlw_a0a1 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1698302279987411125");
   private static SNodePointer insertMacro_e20rlw_b0a0a1a1a1a2 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1509962061695074411");
 }

@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class SelectDownWithNodeRangeSelection_Test extends BaseTransformationTest {
   public SelectDownWithNodeRangeSelection_Test() {
   }
-
   @Test
   public void test_SelectDownWithNodeRangeSelection() throws Throwable {
     this.initTest("${mps_home}", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
     this.runTest("jetbrains.mps.lang.editor.selection.test.SelectDownWithNodeRangeSelection_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("5476958923832863139", "5476958923832863153");

@@ -15,13 +15,11 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
   private SNode mySource;
   private SNode myLink;
   private SNode myTarget;
-
   public CellAction_DeleteSmart(SNode source, SNode link, SNode target) {
     mySource = source;
     myLink = link;
     myTarget = target;
   }
-
   @Override
   public boolean canExecute(EditorContext context) {
     // This action used only for aggregation links 
@@ -31,7 +29,6 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
     }
     return SPropertyOperations.hasValue(genuineLinkDeclaration, "metaClass", "aggregation", "reference") && (SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "1", "0..1"));
   }
-
   @Override
   public void execute(EditorContext context) {
     SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLink);

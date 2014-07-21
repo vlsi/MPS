@@ -20,61 +20,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class FlipInequality_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public FlipInequality_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement";
   }
-
   public String getPresentation() {
     return "FlipInequality";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.typesystem.intentions.FlipInequality_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.typesystem";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "6840209722389643031");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new FlipInequality_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Flip Inequality";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newNode;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement")) {
@@ -104,7 +90,6 @@ public class FlipInequality_Intention implements IntentionFactory {
       ListSequence.fromList(SLinkOperations.getTargets(newNode, "rulesToSkip", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "rulesToSkip", true)));
       SNodeOperations.replaceWithAnother(node, newNode);
     }
-
     public IntentionDescriptor getDescriptor() {
       return FlipInequality_Intention.this;
     }

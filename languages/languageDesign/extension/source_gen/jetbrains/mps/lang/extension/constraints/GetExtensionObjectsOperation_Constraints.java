@@ -17,12 +17,10 @@ public class GetExtensionObjectsOperation_Constraints extends BaseConstraintsDes
   public GetExtensionObjectsOperation_Constraints() {
     super("jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -33,10 +31,8 @@ public class GetExtensionObjectsOperation_Constraints extends BaseConstraintsDes
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression") && (link == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", "operation")) && TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.extension.structure.ExtensionPointType"), true) != null;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:34afaabb-1c5b-40d4-ae6d-6f5312d7475d(jetbrains.mps.lang.extension.constraints)", "3175313036448596717");
 }

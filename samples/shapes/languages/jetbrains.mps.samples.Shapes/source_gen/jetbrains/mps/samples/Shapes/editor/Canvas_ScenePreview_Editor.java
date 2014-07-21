@@ -32,16 +32,13 @@ import jetbrains.mps.samples.Shapes.behavior.PreviewFactory;
 
 public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.Shapes.editor.Shapes.ScenePreview"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3bcydw_a(editorContext, node);
   }
-
   private EditorCell createCollection_3bcydw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3bcydw_a");
@@ -51,14 +48,12 @@ public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_3bcydw_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_3bcydw_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Painting");
     editorCell.setCellId("Constant_3bcydw_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_3bcydw_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -79,7 +74,6 @@ public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_3bcydw_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3bcydw_c0");
@@ -88,7 +82,6 @@ public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_3bcydw_c2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNodeList_3bcydw_a2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new Canvas_ScenePreview_Editor.shapesListHandler_3bcydw_a2a(node, "shapes", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -96,30 +89,25 @@ public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class shapesListHandler_3bcydw_a2a extends RefNodeListHandler {
     public shapesListHandler_3bcydw_a2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -133,25 +121,21 @@ public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createIndentCell_3bcydw_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createCollection_3bcydw_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_3bcydw_c2a");
     editorCell.addEditorCell(this.createJComponent_3bcydw_a2c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createJComponent_3bcydw_a2c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Canvas_ScenePreview_Editor._QueryFunction_JComponent_3bcydw_a0c2a(node, editorContext), "_3bcydw_a2c0");
     editorCell.setCellId("JComponent_3bcydw_a2c0");
     return editorCell;
   }
-
   private static JComponent _QueryFunction_JComponent_3bcydw_a0c2a(final SNode node, final EditorContext editorContext) {
     return PreviewFactory.createPanel(node);
   }

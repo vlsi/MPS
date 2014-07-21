@@ -9,9 +9,9 @@ public class PaddingLeftStyleClassItem_BehaviorDescriptor extends AbstractPaddin
   }
   public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     return PaddingLeftStyleClassItem_Behavior.virtual_isApplicableTo_1214304723440(thisNode, cellModel);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem";
-  };;
-;}
+  }
+}

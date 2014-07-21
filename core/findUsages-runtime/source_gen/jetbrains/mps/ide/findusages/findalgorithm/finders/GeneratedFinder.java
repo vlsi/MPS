@@ -22,30 +22,24 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public abstract class GeneratedFinder implements IInterfacedFinder {
   private static final Logger LOG = LogManager.getLogger(GeneratedFinder.class);
-
   public GeneratedFinder() {
   }
-
   @Override
   public boolean isApplicable(SNode node) {
     return true;
   }
-
   @Override
   public boolean isVisible(SNode node) {
     return true;
   }
-
   @Override
   public boolean isUsedByDefault(SNode node) {
     return false;
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public SNode getNodeToNavigate() {
     final SNode[] finderNode = new SNode[]{null};
@@ -57,22 +51,17 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     });
     return finderNode[0];
   }
-
   @Override
   public boolean canNavigate() {
     return true;
   }
-
   protected abstract void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor);
-
   public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     _results.add(node);
   }
-
   public String getNodeCategory(SNode node) {
     return "Uncategorized";
   }
-
   @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults<SNode> results = new SearchResults<SNode>();

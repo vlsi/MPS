@@ -5,16 +5,16 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:50b262dd-a4ec-4590-840b-ad3be9b20f9c(org.jetbrains.mps.samples.Money.generator.main.util)/2864272256649704726">
     <file name="MoneyUtil.java">
-      <node id="2864272256649705445" at="14,54,15,537" concept="1" />
+      <node id="2864272256649705445" at="13,54,14,537" concept="1" />
       <node id="2864272256649704728" at="11,0,13,0" concept="0" trace="MoneyUtil#()V" />
-      <node id="2864272256649704791" at="14,0,17,0" concept="2" trace="isMoneyOperation#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2864272256649704791" at="13,0,16,0" concept="2" trace="isMoneyOperation#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="2864272256649704731" at="11,22,11,22" />
-      <scope id="2864272256649704794" at="14,54,15,537" />
+      <scope id="2864272256649704794" at="13,54,14,537" />
       <scope id="2864272256649704728" at="11,0,13,0" />
-      <scope id="2864272256649704791" at="14,0,17,0">
+      <scope id="2864272256649704791" at="13,0,16,0">
         <var name="node" id="2864272256649704804" />
       </scope>
-      <unit id="2864272256649704726" at="10,0,18,0" name="org.jetbrains.mps.samples.Money.generator.main.util.MoneyUtil" />
+      <unit id="2864272256649704726" at="10,0,17,0" name="org.jetbrains.mps.samples.Money.generator.main.util.MoneyUtil" />
     </file>
   </root>
 </debug-info>

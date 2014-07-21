@@ -31,7 +31,6 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   private IWatchable myContextWatchable;
   private final List<JavaLocalVariable> myVariables = ListSequence.fromList(new ArrayList<JavaLocalVariable>());
   private boolean myInitialized;
-
   public JavaStackFrame(JavaThread threadReference, int i) throws AbsentInformationException {
     super(new Pair<JavaThread, Integer>(threadReference, i));
     myIndex = i;
@@ -43,18 +42,15 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       myLocation = null;
     }
   }
-
   @Override
   @Nullable
   public JavaLocation getLocation() {
     return myLocation;
   }
-
   @Override
   public JavaThread getThread() {
     return myThread;
   }
-
   @Nullable
   public StackFrame getStackFrame() {
     assert !(ModelAccess.instance().isInEDT());
@@ -65,7 +61,6 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       return null;
     }
   }
-
   @Override
   public synchronized List<IWatchable> getVisibleWatchables() {
     List<IWatchable> watchables = ListSequence.fromList(new ArrayList<IWatchable>());
@@ -75,15 +70,12 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     }
     return watchables;
   }
-
   public synchronized List<JavaLocalVariable> getVisibleVariables() {
     return myVariables;
   }
-
   public synchronized IWatchable getContextWatchable() {
     return myContextWatchable;
   }
-
   public synchronized void initializeWatchables() {
     if (myInitialized) {
       return;
@@ -96,7 +88,6 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     } catch (AbsentInformationException ignore) {
     }
   }
-
   private List<JavaLocalVariable> fetchVisibleVariables() throws IncompatibleThreadStateException, AbsentInformationException {
     assert !(ModelAccess.instance().isInEDT());
 
@@ -109,7 +100,6 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     }
     return result;
   }
-
   private IWatchable fetchContextWatchable() throws IncompatibleThreadStateException {
     assert !(ModelAccess.instance().isInEDT());
 
@@ -124,11 +114,9 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     }
     return null;
   }
-
   private StackFrame getFrame() throws IncompatibleThreadStateException {
     return myThread.getThread().frame(myIndex);
   }
-
   @Override
   public IValue getValue(IWatchable watchable) {
     assert !(ModelAccess.instance().isInEDT());
@@ -141,7 +129,6 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     }
     return null;
   }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -164,7 +151,6 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
 
     return true;
   }
-
   @Override
   public int hashCode() {
     int result = 0;

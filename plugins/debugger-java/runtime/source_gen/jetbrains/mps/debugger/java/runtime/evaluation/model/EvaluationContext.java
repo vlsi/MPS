@@ -17,19 +17,15 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 /*package*/ abstract class EvaluationContext {
   protected JavaUiState myUiState;
-
   public EvaluationContext(JavaUiState state) {
     myUiState = state;
   }
-
   @NotNull
   public List<String> getClassPath() {
     return ListSequence.fromList(new ArrayList<String>());
   }
-
   @Nullable
   public abstract SNode getLocationNode();
-
   @Nullable
   public SModule getLocationModule() {
     SModel model = getLocationModel();
@@ -38,32 +34,23 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
     }
     return model.getModule();
   }
-
   @Nullable
   protected SModel getLocationModel() {
     return SNodeOperations.getModel(getLocationNode());
   }
-
   public JavaUiState getUiState() {
     return myUiState;
   }
-
   public void setUiState(JavaUiState uiState) {
     myUiState = uiState;
   }
-
   @NotNull
   public abstract Map<String, VariableDescription> getVariables(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType);
-
   @Nullable
   public abstract SNode getStaticContextType(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType);
-
   @Nullable
   public abstract SNode getThisClassifierType(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType);
-
   public abstract boolean isVariableVisible(String variableName, SNode variableType);
-
   public abstract boolean isThisTypeValid(SNode thisType);
-
   public abstract boolean isStaticContextTypeValid(SNode staticContextType);
 }

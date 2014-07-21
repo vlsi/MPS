@@ -55,7 +55,6 @@ public class ModuleChecker {
   private final PathConverter myPathConverter;
   private final ModuleChecker.Reporter myReporter;
 
-
   public ModuleChecker(SNode module, SNode originalModule, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext, IFile moduleSourceDir, ModuleDescriptor moduleDescriptor, ModuleChecker.Reporter reporter) {
     myGenContext = genContext;
     myModule = module;
@@ -66,8 +65,6 @@ public class ModuleChecker {
     myModuleDescriptor = moduleDescriptor;
     myReporter = reporter;
   }
-
-
 
   public void check(ModuleChecker.CheckType type) {
     if (type.doFullImport) {
@@ -95,8 +92,6 @@ public class ModuleChecker {
       checkModule(type);
     }
   }
-
-
 
   private void checkModule(ModuleChecker.CheckType type) {
     if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language")) {
@@ -137,8 +132,6 @@ public class ModuleChecker {
     }
   }
 
-
-
   public boolean checkModuleReference(ModuleChecker.CheckType type) {
     SModuleReference moduleReference = myModuleDescriptor.getModuleReference();
 
@@ -165,8 +158,6 @@ public class ModuleChecker {
 
     return true;
   }
-
-
 
   public void checkDevkit(ModuleChecker.CheckType type) {
     DevkitDescriptor descriptor = (DevkitDescriptor) myModuleDescriptor;
@@ -275,15 +266,11 @@ public class ModuleChecker {
     }
   }
 
-
-
   public void checkLanguage(ModuleChecker.CheckType type, List<SNode> previous) {
     checkRuntime(type);
     checkLanguageDeps(type, previous);
     checkGenerators(type);
   }
-
-
 
   public void checkRuntime(ModuleChecker.CheckType type) {
     LanguageDescriptor descriptor = (LanguageDescriptor) myModuleDescriptor;
@@ -322,8 +309,6 @@ public class ModuleChecker {
       }
     }
   }
-
-
 
   public void checkLanguageDeps(ModuleChecker.CheckType type, List<SNode> previous) {
     LanguageDescriptor descriptor = (LanguageDescriptor) myModuleDescriptor;
@@ -393,8 +378,6 @@ public class ModuleChecker {
       }
     }
   }
-
-
 
   public void collectSources(ModuleChecker.CheckType type) {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
@@ -485,8 +468,6 @@ public class ModuleChecker {
       }
     }
   }
-
-
 
   public void collectDependencies(ModuleChecker.CheckType type, List<SNode> previous) {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
@@ -647,8 +628,6 @@ public class ModuleChecker {
     }
   }
 
-
-
   private void checkGenerators(ModuleChecker.CheckType type) {
     SNode language = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language");
     LanguageDescriptor languageDescriptor = (LanguageDescriptor) myModuleDescriptor;
@@ -708,7 +687,6 @@ public class ModuleChecker {
       }
     }
   }
-
   private static Set<SNode> unwrapExtractedDeps(SNode module) {
     // unwrap extracted dependencies into true dependencies, find dependencies from modules 
     Iterable<SNode> moduleExtractedDependencies = SNodeOperations.ofConcept(SLinkOperations.getTargets(module, "dependencies", true), "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency");
@@ -734,7 +712,6 @@ public class ModuleChecker {
       }
     }));
   }
-
   private void optimizeDeps() {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
     List<SNode> deps = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(module, "dependencies", true));
@@ -776,7 +753,6 @@ public class ModuleChecker {
       }
     }
   }
-
   private void collectLocalDependencies() {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
     Iterable<SModuleReference> usedLanguages = myModuleDescriptor.getUsedLanguages();
@@ -804,8 +780,6 @@ public class ModuleChecker {
     }
   }
 
-
-
   private List<SNode> convertPath(String path) {
     try {
       // apparently model argument is merely a factory of new path nodes and doesn't need to be 'original' one (despite thefact PathConverter is build from 'origin' project in ModuleLoader) 
@@ -815,16 +789,12 @@ public class ModuleChecker {
       return null;
     }
   }
-
   private void report(String message, SNode node) {
     myReporter.report(message, node, null);
   }
-
   private void report(String message, SNode node, Exception cause) {
     myReporter.report(message, node, cause);
   }
-
-
 
   public static   enum CheckType {
     CHECK(true, false, false),
@@ -834,21 +804,17 @@ public class ModuleChecker {
     public final boolean doCheck;
     public final boolean doPartialImport;
     public final boolean doFullImport;
-
     CheckType(boolean doCheck, boolean doPartialImport, boolean doFullImport) {
       this.doCheck = doCheck;
       this.doPartialImport = doPartialImport;
       this.doFullImport = doFullImport;
     }
   }
-
   public static class Reporter {
     private final TemplateQueryContext myGenContext;
-
     public Reporter(TemplateQueryContext genContext) {
       myGenContext = genContext;
     }
-
     public void report(String message, SNode node, Exception cause) {
       if (myGenContext == null) {
         throw new ModuleLoaderException(message, node, cause);
@@ -857,7 +823,6 @@ public class ModuleChecker {
       myGenContext.showErrorMessage(node, message);
     }
   }
-
   private static SNode createBuildMps_ModuleDependencyOnModule_yr5c5g_a0a0a0a11a72(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", null, false);
@@ -865,19 +830,15 @@ public class ModuleChecker {
     n1.setReferenceTarget("module", (SNode) p0);
     return n1;
   }
-
   private static boolean neq_yr5c5g_a0a0e0p(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean neq_yr5c5g_a0a8a51(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean eq_yr5c5g_a0a1a0a0a0a0b0a0d0w0bb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_yr5c5g_a0a0a0a0a0a0a0c0d0w0bb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

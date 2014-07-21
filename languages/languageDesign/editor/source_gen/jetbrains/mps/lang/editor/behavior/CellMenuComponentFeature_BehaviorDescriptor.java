@@ -10,5 +10,5 @@ public abstract class CellMenuComponentFeature_BehaviorDescriptor extends BaseCo
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature";
-  };;
-;}
+  }
+}

@@ -22,11 +22,9 @@ import java.util.Collection;
 public class Templateweave__ChildConceptWeaveMany implements TemplateDeclarationWeavingAware {
   public Templateweave__ChildConceptWeaveMany() {
   }
-
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533395");
   }
-
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     try {
@@ -174,7 +172,6 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
     }
     return tnode1;
   }
-
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode14 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     try {
@@ -322,7 +319,6 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
     }
     return tnode14;
   }
-
   protected SNode applyPart2(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode27 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     try {
@@ -470,11 +466,9 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
     }
     return tnode27;
   }
-
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.asList(applyPart0(environment, context), applyPart1(environment, context), applyPart2(environment, context));
   }
-
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     SNode tnodepart0 = applyPart0(environment, context);
     SNodeReference weaveTf0 = weaveTfConst_es4xty_a0b0g;
@@ -487,7 +481,6 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
     environment.weaveNode(outputContextNode, "member", tnodepart2, weaveTf2, context.getInput());
     return TemplateUtil.asList(tnodepart0, tnodepart1, tnodepart2);
   }
-
   private static SNodePointer propertyMacro_es4xty_c0a0c0b0b0c = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533416");
   private static SNodePointer propertyMacro_es4xty_c0a0c0b0b0c0b0b0b0c0b0c0b0b0b0b0b0e0b0c = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533407");
   private static SNodePointer propertyMacro_es4xty_c0a0c0b0b0d = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533457");

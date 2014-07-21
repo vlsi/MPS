@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_ExtensionObjectGetter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ExtensionObjectGetter_InferenceRule() {
   }
-
   public void applyRule(final SNode eog, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = eog;
@@ -24,18 +23,15 @@ public class typeof_ExtensionObjectGetter_InferenceRule extends AbstractInferenc
       typeCheckingContext.createLessThanInequality((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), eog, "virtual_getExpectedReturnType_1213877374441", new Object[]{}), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(eog), "jetbrains.mps.lang.extension.structure.ExtensionDeclaration"), "extensionPoint", false), "objectType", true), false, true, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

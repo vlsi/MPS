@@ -10,5 +10,5 @@ public class SuperNodeExpression_BehaviorDescriptor extends Expression_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.behavior.structure.SuperNodeExpression";
-  };;
-;}
+  }
+}

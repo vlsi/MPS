@@ -10,11 +10,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 public class NodeSubstituteActionsComparator implements Comparator<SubstituteAction> {
   private SNode myContainingRoot;
-
   public NodeSubstituteActionsComparator(SNode containingRoot) {
     myContainingRoot = containingRoot;
   }
-
   @Override
   public int compare(SubstituteAction action1, SubstituteAction action2) {
     Object parameter1 = action1.getParameterObject();
@@ -26,7 +24,6 @@ public class NodeSubstituteActionsComparator implements Comparator<SubstituteAct
       return (parameter2 instanceof SNode ? 1 : 0);
     }
   }
-
   private int compare(SNode node1, SNode node2) {
     if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       return (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration") ? 0 : 1);

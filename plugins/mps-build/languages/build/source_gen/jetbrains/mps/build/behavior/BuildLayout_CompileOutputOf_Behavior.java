@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BuildLayout_CompileOutputOf_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isImplicit_1330375798085107777(SNode thisNode) {
     return true;
   }

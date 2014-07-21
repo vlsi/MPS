@@ -9,5 +9,5 @@ public class CellIdReferenceSelector_BehaviorDescriptor extends AbstractCellSele
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector";
-  };;
-;}
+  }
+}

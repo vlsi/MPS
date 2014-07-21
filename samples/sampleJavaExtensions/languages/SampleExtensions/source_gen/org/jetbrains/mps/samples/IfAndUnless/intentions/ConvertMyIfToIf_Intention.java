@@ -19,61 +19,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertMyIfToIf_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertMyIfToIf_Intention() {
   }
-
   public String getConcept() {
     return "org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement";
   }
-
   public String getPresentation() {
     return "ConvertMyIfToIf";
   }
-
   public String getPersistentStateKey() {
     return "org.jetbrains.mps.samples.IfAndUnless.intentions.ConvertMyIfToIf_Intention";
   }
-
   public String getLanguageFqName() {
     return "org.jetbrains.mps.samples.IfAndUnless";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)", "954830572076058611");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertMyIfToIf_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to If";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode statement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
       SLinkOperations.setTarget(statement, "condition", SLinkOperations.getTarget(node, "condition", true), true);
@@ -88,7 +74,6 @@ public class ConvertMyIfToIf_Intention implements IntentionFactory {
       SNodeOperations.replaceWithAnother(node, statement);
       editorContext.select(SLinkOperations.getTarget(statement, "condition", true));
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertMyIfToIf_Intention.this;
     }

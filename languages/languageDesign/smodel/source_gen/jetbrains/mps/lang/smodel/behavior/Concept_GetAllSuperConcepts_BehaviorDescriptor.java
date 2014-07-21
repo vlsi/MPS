@@ -11,15 +11,15 @@ public class Concept_GetAllSuperConcepts_BehaviorDescriptor extends SNodeOperati
   }
   public boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
     return Concept_GetAllSuperConcepts_Behavior.virtual_applicableToConcept_1262430001741498358(thisConcept);
-  };;
-;  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
+  }
+  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
     return Concept_GetAllSuperConcepts_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
-  };;
-;  public List<SNode> virtual_getApplicableParameter_3044950653914717056(SConcept thisConcept) {
+  }
+  public List<SNode> virtual_getApplicableParameter_3044950653914717056(SConcept thisConcept) {
     return Concept_GetAllSuperConcepts_Behavior.virtual_getApplicableParameter_3044950653914717056(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts";
-  };;
-;}
+  }
+}

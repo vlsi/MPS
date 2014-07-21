@@ -44,7 +44,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 public class ModuleDependenciesView extends JPanel implements DataProvider {
   private DependencyTree myLeftTree;
   private DependencyPathTree myRightTree;
-
   public ModuleDependenciesView(BaseTool tool, Project project) {
     super(new BorderLayout());
     myLeftTree = new DependencyTree(project);
@@ -84,12 +83,10 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
       }
     });
   }
-
   public void setModules(List<SModule> modules) {
     myLeftTree.setModules(modules);
     resetAll();
   }
-
   public void rebuildDependencies() {
     // rebuild right tree based on selection in the left 
     myRightTree.resetDependencies();
@@ -129,33 +126,27 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
     myRightTree.rebuildNow();
     myRightTree.expandAll();
   }
-
   private void setShowRuntime(boolean b) {
     myLeftTree.setShowRuntime(b);
     resetAll();
   }
-
   private void setShowUsedLanguages(boolean b) {
     myLeftTree.setShowUsedLanguage(b);
     resetAll();
   }
-
   private void setShowAllPaths(boolean b) {
     myRightTree.setShowAllPaths(b);
     myRightTree.rebuildNow();
     myRightTree.expandAll();
   }
-
   public void setHideSourceModules(boolean b) {
     myLeftTree.setHideSourceModules(b);
     resetAll();
   }
-
   public void resetAll() {
     myLeftTree.rebuildNow();
     rebuildDependencies();
   }
-
   public void showLoops(final ModuleDependencyNode node) {
     final SModule module = ListSequence.fromList(node.getModules()).first();
     final MPSTree tree = node.getTree();
@@ -180,7 +171,6 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
       }
     });
   }
-
   public void showBootstrapLoop(final ModuleDependencyNode.ULangDependencyNode node) {
     final MPSTree tree = node.getTree();
     final ModuleDependencyNode parent = node.getFromNode();
@@ -207,7 +197,6 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
       }
     });
   }
-
   @Nullable
   @Override
   public Object getData(@NonNls String dataId) {
@@ -218,50 +207,41 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
     // not found 
     return null;
   }
-
   private ActionPlace getPlace() {
     return ActionPlace.MODULE_DEPENDENCIES;
   }
-
   public static class MyToggleAction extends ToggleAction {
     private boolean myValue;
     private _FunctionTypes._void_P1_E0<? super Boolean> mySetValue;
-
     public MyToggleAction(String title, Icon icon, boolean value, _FunctionTypes._void_P1_E0<? super Boolean> setValue) {
       super(title, title, icon);
       myValue = value;
       mySetValue = setValue;
     }
-
     @Override
     public void setSelected(AnActionEvent event, boolean b) {
       mySetValue.invoke(myValue = b);
     }
-
     @Override
     public boolean isSelected(AnActionEvent event) {
       return myValue;
     }
   }
-
   private static List<SModule> check_jxc64t_a0b0b0c0d0e(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModules();
     }
     return null;
   }
-
   private static List<SModule> check_jxc64t_a0a0b0g0d0e(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModules();
     }
     return null;
   }
-
   private static <T> T as_jxc64t_a0a0a1a0a0a0a6a01(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_jxc64t_a0a0a3a0a0a0a4a11(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

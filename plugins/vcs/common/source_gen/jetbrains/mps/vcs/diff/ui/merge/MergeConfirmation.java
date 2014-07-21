@@ -19,14 +19,11 @@ public class MergeConfirmation {
   public static final int RETURN = 0;
   public static final int SAVE_AS_IS = 1;
   public static final int RESOLVE_AUTOMATICALLY = 2;
-
   private MergeConfirmation() {
   }
-
   public static void showMergeConfirmationAndTakeAction(DialogWrapper dialog, MergeSession mergeSession, Iterable<ModelChange> allRelevantChanges, _FunctionTypes._void_P0_E0 resolveTask, _FunctionTypes._void_P0_E0 saveAndCloseTask) {
     showMergeConfirmationAndTakeAction(dialog, mergeSession, allRelevantChanges, null, null, resolveTask, saveAndCloseTask);
   }
-
   public static void showMergeConfirmationAndTakeAction(DialogWrapper dialog, final MergeSession mergeSession, Iterable<ModelChange> allRelevantChanges, @Nullable final MergeSession mergeSession2, Iterable<ModelChange> allRelevantChanges2, final _FunctionTypes._void_P0_E0 resolveTask, final _FunctionTypes._void_P0_E0 saveAndCloseTask) {
     List<ModelChange> changes = Sequence.fromIterable(allRelevantChanges).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
@@ -66,7 +63,6 @@ public class MergeConfirmation {
       });
     }
   }
-
   private static int showMergeConfirmationIfNeeded(DialogWrapper dialog, int changes, int conflicted) {
     if (conflicted != 0) {
       return showUnresolvedConflictsConfirmation(dialog, conflicted);
@@ -75,7 +71,6 @@ public class MergeConfirmation {
     }
     return SAVE_AS_IS;
   }
-
   private static int showUnresolvedConflictsConfirmation(DialogWrapper dialog, int changes) {
     String msg = String.format("You have %s left. You need to resolve them manually.\n" + "Are you sure want to close merge dialog without resolving them?", NameUtil.formatNumericalString(changes, "unresolved conflicting change"));
     if (Messages.showYesNoDialog(dialog.getContentPane(), msg, "Unresolved Conflicting Changes", Messages.getWarningIcon()) == 0) {
@@ -84,7 +79,6 @@ public class MergeConfirmation {
       return MergeConfirmation.RETURN;
     }
   }
-
   private static int showUnresolvedChangesConfirmation(DialogWrapper dialog, int changes) {
     String message = String.format("You have %s left. Do you want to resolve %s automatically?", NameUtil.formatNumericalString(changes, "unresolved change"), (changes > 1 ? "them" : "it"));
     String title = "Unresolved Change" + ((changes > 1 ? "s" : ""));

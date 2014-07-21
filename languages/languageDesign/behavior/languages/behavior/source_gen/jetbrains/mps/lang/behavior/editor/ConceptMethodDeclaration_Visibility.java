@@ -15,28 +15,22 @@ public class ConceptMethodDeclaration_Visibility extends AbstractCellMenuCompone
   public ConceptMethodDeclaration_Visibility() {
     super(new SubstituteInfoPartExt[]{new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu_f3wli8_a0(), new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu_f3wli8_b0()});
   }
-
   public static class ConceptMethodDeclaration_generic_cellMenu_f3wli8_a0 extends AbstractCellMenuPart_Generic_Item {
     public ConceptMethodDeclaration_generic_cellMenu_f3wli8_a0() {
     }
-
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "isPrivate", "" + (true));
     }
-
     public String getMatchingText() {
       return "private";
     }
   }
-
   public static class ConceptMethodDeclaration_generic_cellMenu_f3wli8_b0 extends AbstractCellMenuPart_Generic_Item {
     public ConceptMethodDeclaration_generic_cellMenu_f3wli8_b0() {
     }
-
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "isPrivate", "" + (false));
     }
-
     public String getMatchingText() {
       return "public";
     }

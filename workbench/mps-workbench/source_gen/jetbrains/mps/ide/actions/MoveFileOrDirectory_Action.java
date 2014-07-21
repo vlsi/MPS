@@ -29,18 +29,15 @@ import org.apache.log4j.LogManager;
 
 public class MoveFileOrDirectory_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public MoveFileOrDirectory_Action() {
     super("Move...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -51,7 +48,6 @@ public class MoveFileOrDirectory_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -74,7 +70,6 @@ public class MoveFileOrDirectory_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       String path = ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent().getPath();
@@ -110,7 +105,6 @@ public class MoveFileOrDirectory_Action extends BaseAction {
       }
     }
   }
-
   /*package*/ boolean isNotValid(String result, final Map<String, Object> _params) {
     if (result == null || result.length() == 0) {
       JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter valid name");
@@ -122,6 +116,5 @@ public class MoveFileOrDirectory_Action extends BaseAction {
     }
     return false;
   }
-
   protected static Logger LOG = LogManager.getLogger(MoveFileOrDirectory_Action.class);
 }

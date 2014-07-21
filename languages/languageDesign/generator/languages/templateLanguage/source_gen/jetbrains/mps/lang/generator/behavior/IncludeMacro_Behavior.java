@@ -11,8 +11,8 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class IncludeMacro_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
+  }
+  public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
       GeneratedMatchingPattern pattern_wfrqja_a0a = new IncludeMacro_Behavior.Pattern_wfrqja_a0a0a0a1();
       SNode coercedNode_wfrqja_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_wfrqja_a0a);
@@ -22,8 +22,8 @@ public class IncludeMacro_Behavior {
       }
     }
     return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
-  };;
-;  public static class Pattern_wfrqja_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  }
+  public static class Pattern_wfrqja_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
     public Pattern_wfrqja_a0a0a0a1() {
     }
@@ -36,22 +36,22 @@ public class IncludeMacro_Behavior {
         patternVar_concept = nodeToMatch_wfrqja_a0a0a0.getReferenceTarget("concept");
       }
       return true;
-    };;
-;    public boolean hasAntiquotations() {
+    }
+    public boolean hasAntiquotations() {
       return false;
-    };;
-;    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+    }
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
-    };;
-;    public Object getFieldValue(String fieldName) {
+    }
+    public Object getFieldValue(String fieldName) {
       if ("patternVar_concept".equals(fieldName)) {
         return patternVar_concept;
       }
       return null;
-    };;
-;    public void performActions(Object o) {
-    };;
-;  }
+    }
+    public void performActions(Object o) {
+    }
+  }
 }

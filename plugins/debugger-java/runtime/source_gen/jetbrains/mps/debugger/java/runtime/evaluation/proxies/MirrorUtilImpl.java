@@ -31,7 +31,6 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.ValueProxy;
 public class MirrorUtilImpl extends MirrorUtil {
   public MirrorUtilImpl() {
   }
-
   @Nullable
   private Value getJDIValueFromRaw(@Nullable Object value, VirtualMachine vm) {
     if (value == null) {
@@ -67,7 +66,6 @@ public class MirrorUtilImpl extends MirrorUtil {
       throw new UnsupportedOperationException();
     }
   }
-
   @NotNull
   @Override
   public Object getJavaValue(@NotNull Value jdiValue) {
@@ -111,14 +109,12 @@ public class MirrorUtilImpl extends MirrorUtil {
     }
     throw new UnsupportedOperationException();
   }
-
   @NotNull
   @Override
   public IValueProxy getValueProxyFromJava(@Nullable Object javaValue, VirtualMachine machine) {
     Value v = getJDIValueFromRaw(javaValue, machine);
     return getValueProxy(v);
   }
-
   @NotNull
   @Override
   public IValueProxy getValueProxy(@Nullable Value value) {
@@ -140,7 +136,6 @@ public class MirrorUtilImpl extends MirrorUtil {
       throw new UnsupportedOperationException();
     }
   }
-
   @NotNull
   @Override
   public List<Value> getValues(VirtualMachine machine, Object... args) {
@@ -156,14 +151,12 @@ public class MirrorUtilImpl extends MirrorUtil {
     }
     return argValues;
   }
-
   @Override
   public void dispose() {
     synchronized (LOCK) {
       INSTANCE = null;
     }
   }
-
   @Override
   public void init() {
     synchronized (LOCK) {

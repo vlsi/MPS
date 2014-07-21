@@ -15,35 +15,27 @@ public class Abstraction_Variable_actions {
     editorCell.setAction(CellActionType.DELETE, new Abstraction_Variable_actions.Abstraction_Variable_actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new Abstraction_Variable_actions.Abstraction_Variable_actions_BACKSPACE(node));
   }
-
   public static class Abstraction_Variable_actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public Abstraction_Variable_actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode body = SLinkOperations.getTarget(node, "body", true);
       SNodeOperations.replaceWithAnother(node, body);
     }
   }
-
   public static class Abstraction_Variable_actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public Abstraction_Variable_actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode body = SLinkOperations.getTarget(node, "body", true);
       SNodeOperations.replaceWithAnother(node, body);

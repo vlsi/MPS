@@ -24,7 +24,6 @@ public class ExtractMethodWithUnusedAssignments_Test extends BaseTransformationT
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.ExtractMethodWithUnusedAssignments_Test$TestBody", "test_ExtractMethodWithUnusedAssignmentsTest", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ExtractMethodWithUnusedAssignmentsTest() throws Exception {

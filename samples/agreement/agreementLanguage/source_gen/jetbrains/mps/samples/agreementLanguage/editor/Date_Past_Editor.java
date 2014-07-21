@@ -18,7 +18,6 @@ public class Date_Past_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_54iyzo_a(editorContext, node);
   }
-
   private EditorCell createConstant_54iyzo_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "PAST");
     editorCell.setCellId("Constant_54iyzo_a");

@@ -14,15 +14,15 @@ public abstract class BaseExtensionMethodContainer_BehaviorDescriptor extends Ge
   }
   public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     return BaseExtensionMethodContainer_Behavior.virtual_getMembers_1213877531970(thisNode);
-  };;
-;  public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
+  }
+  public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
     return IMemberContainer_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
-  };;
-;  public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
+  }
+  public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
     return IMemberContainer_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer";
-  };;
-;}
+  }
+}

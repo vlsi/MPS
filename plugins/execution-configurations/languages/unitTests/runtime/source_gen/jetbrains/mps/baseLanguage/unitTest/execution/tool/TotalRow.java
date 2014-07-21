@@ -7,7 +7,6 @@ public class TotalRow extends TestContainerRow {
   public TotalRow() {
     super("Total:", null);
   }
-
   @Override
   public boolean matches(String testCase, String testMethod) {
     return true;

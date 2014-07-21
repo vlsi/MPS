@@ -30,11 +30,9 @@ public class DataFlowManager implements CoreComponent {
       DataFlowManager.this.clear();
     }
   };
-
   public DataFlowManager(ClassLoaderManager classLoaderManager, MPSModuleRepository moduleRepository) {
     this.myClassLoaderManager = classLoaderManager;
   }
-
   @Override
   public void init() {
     if (INSTANCE != null) {
@@ -43,32 +41,26 @@ public class DataFlowManager implements CoreComponent {
     INSTANCE = this;
     this.myClassLoaderManager.addReloadHandler(this.myReloadHandler);
   }
-
   @Override
   public void dispose() {
     this.myClassLoaderManager.removeReloadHandler(this.myReloadHandler);
     INSTANCE = null;
   }
-
   public void register(String conceptFqName, DataFlowBuilder builder) {
     this.myBuilders.put(conceptFqName, builder);
   }
-
   public Program buildProgramFor(SNode node) {
     checkLoaded();
     return new MPSProgramBuilder(this).buildProgram(node);
   }
-
   /*package*/ DataFlowBuilder getBuilderFor(String conceptName) {
     checkLoaded();
     return this.myBuilders.get(conceptName);
   }
-
   private void clear() {
     this.myBuilders.clear();
     myLoaded = false;
   }
-
   private synchronized void checkLoaded() {
     if (myLoaded) {
       return;
@@ -76,7 +68,6 @@ public class DataFlowManager implements CoreComponent {
     myLoaded = true;
     this.load();
   }
-
   private void load() {
     for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       SModel dfaModel = LanguageAspect.DATA_FLOW.get(l);
@@ -94,7 +85,6 @@ public class DataFlowManager implements CoreComponent {
       }
     }
   }
-
   public static DataFlowManager getInstance() {
     return INSTANCE;
   }

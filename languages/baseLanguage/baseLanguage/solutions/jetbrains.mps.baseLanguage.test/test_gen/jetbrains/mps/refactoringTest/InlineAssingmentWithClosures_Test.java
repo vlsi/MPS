@@ -22,7 +22,6 @@ public class InlineAssingmentWithClosures_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.InlineAssingmentWithClosures_Test$TestBody", "test_InlineAssingmentWithClosures", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_InlineAssingmentWithClosures() throws Exception {

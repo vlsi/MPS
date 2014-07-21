@@ -10,5 +10,5 @@ public class ConstantValue_BehaviorDescriptor extends Expression_BehaviorDescrip
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.ConstantValue";
-  };;
-;}
+  }
+}

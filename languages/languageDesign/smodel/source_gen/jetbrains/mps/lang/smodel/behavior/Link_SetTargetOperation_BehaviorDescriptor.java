@@ -9,9 +9,9 @@ public class Link_SetTargetOperation_BehaviorDescriptor extends SNodeOperation_B
   }
   public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
     return Link_SetTargetOperation_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation";
-  };;
-;}
+  }
+}

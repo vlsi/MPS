@@ -14,12 +14,10 @@ public class NodeBuilderExpression_Constraints extends BaseConstraintsDescriptor
   public NodeBuilderExpression_Constraints() {
     super("jetbrains.mps.lang.quotation.structure.NodeBuilderExpression");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class NodeBuilderExpression_Constraints extends BaseConstraintsDescriptor
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink") || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.quotation.structure.NodeBuilderList");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "8182547171709752183");
 }

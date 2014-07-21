@@ -9,5 +9,5 @@ public class GetCurrentOperation_BehaviorDescriptor extends AbstractEnumeratorOp
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.GetCurrentOperation";
-  };;
-;}
+  }
+}

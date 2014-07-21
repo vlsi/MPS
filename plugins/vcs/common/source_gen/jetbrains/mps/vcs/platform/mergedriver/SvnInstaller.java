@@ -25,7 +25,6 @@ import java.io.IOException;
   private File myConfigDir;
   private File myScriptFile;
   private boolean myUseIdeConfig;
-
   public SvnInstaller(Project project, boolean useIdeConfig) {
     super(project);
     myConfigDir = new File(System.getProperty("user.home") + File.separator + ".subversion");
@@ -40,7 +39,6 @@ import java.io.IOException;
     myConfigFile = new File(myConfigDir, "config");
     myScriptFile = new File(myConfigDir, "mps-merger." + ((SystemInfo.isWindows ? "bat" : "sh")));
   }
-
   @NotNull
   @Override
   protected AbstractInstaller.State install(boolean dryRun) {
@@ -174,29 +172,23 @@ import java.io.IOException;
       return AbstractInstaller.State.NOT_INSTALLED;
     }
   }
-
   @Override
   public String getActionTitle() {
     return String.format("Subversion custom diff3 cmd (%s, %s)", (myUseIdeConfig ? "MPS config" : "common"), myConfigFile.getAbsolutePath());
   }
-
   @Override
   public String getAffectedVcsName() {
     return "svn";
   }
-
   public boolean sameAs(SvnInstaller other) {
     return eq_k2wvr2_a0a0i(other.myConfigDir.getAbsolutePath(), myConfigDir.getAbsolutePath());
   }
-
   private static boolean neq_k2wvr2_a0a2a2a3a1a01a5(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean eq_k2wvr2_a0a0a71a5(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_k2wvr2_a0a0i(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

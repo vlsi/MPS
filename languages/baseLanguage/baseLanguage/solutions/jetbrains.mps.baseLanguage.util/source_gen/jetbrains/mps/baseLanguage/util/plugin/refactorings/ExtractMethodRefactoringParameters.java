@@ -17,7 +17,6 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
   private List<SNode> myNodesToRefactor;
   private VisibilityLevel myVisibility = VisibilityLevel.PRIVATE;
   private List<MethodParameter> myParameters = ListSequence.fromList(new ArrayList<MethodParameter>());
-
   public ExtractMethodRefactoringParameters(List<SNode> nodes) {
     this.myNodesToRefactor = nodes;
     this.myAnalyzer = new ExtractMethodRefactoringAnalyzer(nodes);
@@ -26,28 +25,22 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
     }
     this.myIsStatic = this.getStatic();
   }
-
   public List<SNode> getNodesToRefactor() {
     return this.myNodesToRefactor;
   }
-
   public SNode getContainerMethod() {
     return this.myAnalyzer.getExtractMethodReafactoringProcessor().getContainerMethod();
   }
-
   public VisibilityLevel getVisibilityLevel() {
     return this.myVisibility;
   }
-
   public void setVisibilityLevel(VisibilityLevel level) {
     this.myVisibility = level;
     this.fireChange();
   }
-
   public List<MethodParameter> getParameters() {
     return this.myParameters;
   }
-
   @Override
   public List<String> getParametersNames() {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
@@ -56,7 +49,6 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
     }
     return result;
   }
-
   public SNode getOverridingMethodClass() {
     String name = this.getName();
     SNode classifier = this.myAnalyzer.getClassifier();
@@ -72,11 +64,9 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
     }
     return null;
   }
-
   public ExtractMethodRefactoringAnalyzer getAnalyzer() {
     return this.myAnalyzer;
   }
-
   private boolean isParametersMatch(SNode method) {
     Iterator<SNode> parameters = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).iterator();
     for (MethodParameter p1 : this.myParameters) {
@@ -95,7 +85,6 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
     }
     return true;
   }
-
   private boolean getStatic() {
     if (this.myAnalyzer.canBeStatic() && this.myAnalyzer.shouldBeStatic()) {
       return true;
@@ -103,7 +92,6 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
       return false;
     }
   }
-
   @Override
   public String getMethodText() {
     String result = this.myVisibility.getName() + " " + super.getMethodText();

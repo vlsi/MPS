@@ -36,7 +36,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cuxtnd_a(editorContext, node);
   }
-
   private EditorCell createCollection_cuxtnd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cuxtnd_a");
@@ -46,7 +45,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_cuxtnd_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_cuxtnd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cuxtnd_a0");
@@ -55,14 +53,12 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_cuxtnd_c0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_cuxtnd_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept behavior");
     editorCell.setCellId("Constant_cuxtnd_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_cuxtnd_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
@@ -84,20 +80,16 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_cuxtnd_a1a0 extends InlineCellProvider {
     public _Inline_cuxtnd_a1a0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_cuxtnd_a0b0a(editorContext, node);
     }
-
     private EditorCell createProperty_cuxtnd_a0b0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -120,7 +112,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_cuxtnd_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_cuxtnd_c0a");
@@ -130,7 +121,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_cuxtnd_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cuxtnd_b0");
@@ -138,12 +128,10 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_cuxtnd_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_cuxtnd_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createCollection_cuxtnd_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cuxtnd_b1a");
@@ -153,7 +141,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_cuxtnd_d1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_cuxtnd_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_cuxtnd_a1b0");
@@ -163,7 +150,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_cuxtnd_b1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("constructor");
@@ -183,7 +169,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_cuxtnd_c1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_cuxtnd_c1b0");
@@ -193,7 +178,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_cuxtnd_d1b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ConceptBehavior_Editor.methodListHandler_cuxtnd_d1b0(node, "method", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -201,34 +185,28 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class methodListHandler_cuxtnd_d1b0 extends RefNodeListHandler {
     public methodListHandler_cuxtnd_d1b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_cuxtnd_a3b1a(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -241,7 +219,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_cuxtnd_a3b1a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<concept methods>>");
       editorCell.setCellId("Constant_cuxtnd_a3b1a");
@@ -252,7 +229,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_cuxtnd_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_cuxtnd_c0");

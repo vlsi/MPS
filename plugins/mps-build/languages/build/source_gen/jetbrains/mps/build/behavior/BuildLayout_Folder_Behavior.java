@@ -19,11 +19,9 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 public class BuildLayout_Folder_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
     return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(thisNode, context);
   }
-
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
@@ -43,15 +41,12 @@ public class BuildLayout_Folder_Behavior {
       }
     }
   }
-
   public static boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     return !(propertyValue.contains("$") || propertyValue.contains("\\"));
   }
-
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     if (object instanceof SNode) {
       final SNode node = (SNode) object;
@@ -88,7 +83,6 @@ public class BuildLayout_Folder_Behavior {
     }
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.build.structure.BuildLayout_NamedContainer", "virtual_exports_6547494638219603457", new Object[]{object});
   }
-
   public static Iterable<SNode> call_getImportContentChildren_7045211410692956036(SNode thisNode) {
     List<SNode> list = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "children", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -109,11 +103,9 @@ public class BuildLayout_Folder_Behavior {
       }
     }));
   }
-
   private static boolean eq_n0rd9q_a0a1a0a3a1a5(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_n0rd9q_a0a1a1a0a0d0b0f(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -20,7 +20,6 @@ public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlig
   private static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(1);
   private boolean myIsInterface;
   private Condition<EditorCell> myClassifierNameCellCondition;
-
   public SubclassedClassifierEditorMessage(final SNode node, EditorMessageOwner owner, String tooltip, boolean isInterface) {
     super(node, owner, tooltip);
     myIsInterface = isInterface;
@@ -31,28 +30,23 @@ public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlig
       }
     };
   }
-
   @Override
   public Icon getIcon() {
     return (myIsInterface ? IconResourceBundle_OverrideImplements.getInstance().getResource("IMPLEMENTED") : IconResourceBundle_OverrideImplements.getInstance().getResource("OVERRIDEN"));
   }
-
   @Override
   public EditorMessageIconRenderer.IconRendererType getType() {
     return TYPE;
   }
-
   @Override
   public EditorCell getAnchorCell(EditorCell bigCell) {
     EditorCell returnTypeCell = CellFinderUtil.findChildByCondition(bigCell, myClassifierNameCellCondition, true);
     return (returnTypeCell != null ? returnTypeCell : bigCell);
   }
-
   @Override
   public AnAction getClickAction() {
     return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action"));
   }
-
   @Override
   public JPopupMenu getPopupMenu() {
     return null;

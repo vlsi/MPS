@@ -10,5 +10,5 @@ public class MapInitializer_BehaviorDescriptor extends BaseConcept_BehaviorDescr
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MapInitializer";
-  };;
-;}
+  }
+}

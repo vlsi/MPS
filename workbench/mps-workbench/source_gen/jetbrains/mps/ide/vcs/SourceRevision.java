@@ -17,17 +17,13 @@ public abstract class SourceRevision {
       return null;
     }
   };
-
   public SourceRevision() {
   }
-
   @Nullable
   public abstract String get();
-
   public static void setProvider(SourceRevision provider) {
     ourProvider = provider;
   }
-
   @Nullable
   public static String getSourceRevision() {
     return ourProvider.get();

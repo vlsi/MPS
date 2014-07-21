@@ -9,5 +9,5 @@ public class TailOperation_BehaviorDescriptor extends ChunkOperation_BehaviorDes
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.TailOperation";
-  };;
-;}
+  }
+}

@@ -14,12 +14,10 @@ public class TemplateArgumentQueryExpression_Constraints extends BaseConstraints
   public TemplateArgumentQueryExpression_Constraints() {
     super("jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class TemplateArgumentQueryExpression_Constraints extends BaseConstraints
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.generator.structure.ITemplateCall");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4035562641222635153");
 }

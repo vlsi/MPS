@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class LocalHomeFromColumnSelection_Test extends BaseTransformationTest {
   public LocalHomeFromColumnSelection_Test() {
   }
-
   @Test
   public void test_LocalHomeFromColumnSelection() throws Throwable {
     this.initTest("${mps_home}", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)");
     this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.LocalHomeFromColumnSelection_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("2025581204008440328", "2025581204008440350");

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_BuildMps_GeneratorOptions_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BuildMps_GeneratorOptions_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode genOpts, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(genOpts), "jetbrains.mps.build.structure.BuildProject")) {
       SNode bp = SNodeOperations.cast(SNodeOperations.getParent(genOpts), "jetbrains.mps.build.structure.BuildProject");
@@ -35,18 +34,15 @@ public class check_BuildMps_GeneratorOptions_NonTypesystemRule extends AbstractN
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

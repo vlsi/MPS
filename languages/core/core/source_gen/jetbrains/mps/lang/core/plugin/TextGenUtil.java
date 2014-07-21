@@ -14,7 +14,6 @@ import jetbrains.mps.vfs.FileSystem;
 public final class TextGenUtil {
   private TextGenUtil() {
   }
-
   public static IFile getOutputDir(SModel model) {
     IFile forced = getOverriddenOutputDir(model);
     if (forced != null) {
@@ -26,7 +25,6 @@ public final class TextGenUtil {
     }
     return FileGenerationUtil.getDefaultOutputDir(model, root);
   }
-
   public static IFile getCachesDir(SModel model) {
     // seems to be intentional that we don't look into overridden output dir when constriction location for caches 
     // as we might direct output to a public location but still keep caches in our own space 
@@ -37,7 +35,6 @@ public final class TextGenUtil {
     IFile cachesDir = FileGenerationUtil.getCachesDir(root);
     return FileGenerationUtil.getDefaultOutputDir(model, cachesDir);
   }
-
   private static IFile getOverriddenOutputDir(SModel md) {
     if (md instanceof GeneratableSModel) {
       boolean useModelFolder = ((GeneratableSModel) md).isGenerateIntoModelFolder();
@@ -49,7 +46,6 @@ public final class TextGenUtil {
     }
     return null;
   }
-
   public static boolean runWriteTransaction(final Runnable runnable) {
     return FileSystem.getInstance().runWriteTransaction(runnable);
   }

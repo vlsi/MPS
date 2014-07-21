@@ -10,11 +10,9 @@ public enum FieldInitializationPlace {
   STATICINIT("Static initializer");
 
   private String myName;
-
   FieldInitializationPlace(String name) {
     this.myName = name;
   }
-
   public String getName() {
     return this.myName;
   }

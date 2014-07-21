@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class GeneratorActions_Delete_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(GeneratorActions_Delete_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.devkit.actions.GeneratorActions_Delete_ActionGroup";
-
   public GeneratorActions_Delete_ActionGroup() {
     super("GeneratorActions_Delete", ID);
     this.setIsInternal(false);

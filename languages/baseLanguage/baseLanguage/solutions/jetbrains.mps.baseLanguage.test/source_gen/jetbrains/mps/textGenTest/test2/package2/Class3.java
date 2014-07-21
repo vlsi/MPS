@@ -6,7 +6,6 @@ package jetbrains.mps.textGenTest.test2.package2;
 public class Class3 {
   public Class3() {
   }
-
   public static void method() {
   }
 }

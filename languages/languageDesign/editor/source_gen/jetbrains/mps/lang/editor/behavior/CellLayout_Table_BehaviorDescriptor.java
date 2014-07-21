@@ -9,5 +9,5 @@ public class CellLayout_Table_BehaviorDescriptor extends CellLayout_BehaviorDesc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellLayout_Table";
-  };;
-;}
+  }
+}

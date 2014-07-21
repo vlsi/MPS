@@ -15,12 +15,10 @@ public class ChangeMethodSignatureRefactoring {
   private ChangeMethodSignatureParameters myParameters;
   private SNode myDeclaration;
   private List<SNode> myUssages = new ArrayList<SNode>();
-
   public ChangeMethodSignatureRefactoring(ChangeMethodSignatureParameters params, SNode declaration) {
     this.myParameters = params;
     this.myDeclaration = declaration;
   }
-
   public void doRefactoring() {
     SPropertyOperations.set(this.myDeclaration, "name", SPropertyOperations.getString(this.myParameters.getDeclaration(), "name"));
     if (this.myParameters.isReturnValueChanged()) {
@@ -50,11 +48,9 @@ public class ChangeMethodSignatureRefactoring {
       }
     }
   }
-
   public SNode getDeclaration() {
     return myDeclaration;
   }
-
   private void changeParameters() {
     List<SNode> oldParams = SLinkOperations.getTargets(this.myDeclaration, "parameter", true);
     ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).clear();
@@ -70,11 +66,9 @@ public class ChangeMethodSignatureRefactoring {
       }
     }
   }
-
   public void setUsages(List<SNode> ussages) {
     this.myUssages = ussages;
   }
-
   public static boolean isApplicable(SNode node) {
     return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) && (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
   }

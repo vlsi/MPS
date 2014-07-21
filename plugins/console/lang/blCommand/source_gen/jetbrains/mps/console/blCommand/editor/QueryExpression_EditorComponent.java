@@ -29,11 +29,9 @@ public class QueryExpression_EditorComponent implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_adikco_a(editorContext, node);
   }
-
   private EditorCell createCollection_adikco_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_adikco_a");
@@ -43,23 +41,19 @@ public class QueryExpression_EditorComponent implements ConceptEditorComponent {
     }
     return editorCell;
   }
-
   private EditorCell createComponent_adikco_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.addKeyMap(new QueryExpression_KeyMap());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new QueryExpression_EditorComponent.ReplaceWith_QueryExpression_cellMenu_adikco_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_QueryExpression_cellMenu_adikco_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_QueryExpression_cellMenu_adikco_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.console.blCommand.structure.QueryExpression";
     }
   }
-
   private EditorCell createCollection_adikco_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_adikco_b0");
@@ -71,11 +65,9 @@ public class QueryExpression_EditorComponent implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createConstant_adikco_c1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_adikco_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "parameter", true), "parameter", true)).isNotEmpty();
   }
-
   private EditorCell createConstant_adikco_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_adikco_a1a");
@@ -85,7 +77,6 @@ public class QueryExpression_EditorComponent implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_adikco_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("parameter");
@@ -105,7 +96,6 @@ public class QueryExpression_EditorComponent implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_adikco_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_adikco_c1a");

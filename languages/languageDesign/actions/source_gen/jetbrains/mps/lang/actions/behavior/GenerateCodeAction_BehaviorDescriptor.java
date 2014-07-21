@@ -10,5 +10,5 @@ public class GenerateCodeAction_BehaviorDescriptor extends BaseConcept_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.GenerateCodeAction";
-  };;
-;}
+  }
+}

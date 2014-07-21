@@ -9,5 +9,5 @@ public class IncreaseDepthOperation_BehaviorDescriptor extends SimpleTextGenOper
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation";
-  };;
-;}
+  }
+}

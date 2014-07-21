@@ -13,7 +13,6 @@ public class DebugRunMenu_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(DebugRunMenu_ActionGroup.class);
   public static final String ID = "jetbrains.mps.debugger.api.ui.actions.DebugRunMenu_ActionGroup";
   public static final String LABEL_ID_steps = ID + "steps";
-
   public DebugRunMenu_ActionGroup() {
     super("DebugRunMenu", ID);
     this.setIsInternal(false);

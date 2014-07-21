@@ -20,16 +20,13 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class OutputPort_DiagramTestTextual_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.editor.TestDiagramLanguage.DiagramTestTextual"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_fr6iqo_a(editorContext, node);
   }
-
   private EditorCell createCollection_fr6iqo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fr6iqo_a");
@@ -39,14 +36,12 @@ public class OutputPort_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_fr6iqo_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_fr6iqo_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output port");
     editorCell.setCellId("Constant_fr6iqo_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_fr6iqo_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -64,7 +59,6 @@ public class OutputPort_DiagramTestTextual_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_fr6iqo_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_fr6iqo_c0");

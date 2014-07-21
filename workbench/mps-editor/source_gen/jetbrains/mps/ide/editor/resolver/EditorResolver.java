@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.event.SModelEvent;
 public class EditorResolver implements IResolver {
   public EditorResolver() {
   }
-
   @Nullable
   @Override
   public boolean resolve(@NotNull SReference reference, @NotNull SNode sourceNode, @NotNull SRepository repository) {
@@ -35,14 +34,12 @@ public class EditorResolver implements IResolver {
       fakeEditor.dispose();
     }
   }
-
   private class FakeEditorComponent extends EditorComponent {
     public FakeEditorComponent(SNode node, SRepository repository) {
       super(repository);
       setEditorContext(new EditorContext(this, SNodeOperations.getModel(node), repository));
       editNode(node);
     }
-
     @Override
     protected EditorCell createRootCell(List<SModelEvent> events) {
       return getEditorContext().createRootCell(getEditedNode(), events);

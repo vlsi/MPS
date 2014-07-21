@@ -18,7 +18,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_StyleAttributeReferenceExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_StyleAttributeReferenceExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode styleAttributeReferenceExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = styleAttributeReferenceExpression;
@@ -26,22 +25,18 @@ public class typeof_StyleAttributeReferenceExpression_InferenceRule extends Abst
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6029276237634420184", true), (SNode) _quotation_createNode_mwwp74_a0a0b(StyleAttributeDeclaration_Behavior.call_getClassifierType_6029276237639807717(SLinkOperations.getTarget(styleAttributeReferenceExpression, "attributeDeclaration", false))), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.StyleAttributeReferenceExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_mwwp74_a0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

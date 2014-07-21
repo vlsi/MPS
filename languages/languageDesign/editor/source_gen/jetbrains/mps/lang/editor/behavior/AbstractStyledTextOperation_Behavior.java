@@ -10,11 +10,11 @@ import java.util.ArrayList;
 
 public class AbstractStyledTextOperation_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static String virtual_getMethodToGenerate_1262430001741492328(SAbstractConcept thisConcept) {
+  }
+  public static String virtual_getMethodToGenerate_1262430001741492328(SAbstractConcept thisConcept) {
     return null;
-  };;
-;  public static List<SNode> virtual_getOperationArgumentType_6575219246652510406(SAbstractConcept thisConcept) {
+  }
+  public static List<SNode> virtual_getOperationArgumentType_6575219246652510406(SAbstractConcept thisConcept) {
     return ListSequence.fromList(new ArrayList<SNode>());
-  };;
-;}
+  }
+}

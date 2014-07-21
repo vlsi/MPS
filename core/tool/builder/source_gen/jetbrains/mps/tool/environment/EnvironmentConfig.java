@@ -19,59 +19,42 @@ public class EnvironmentConfig {
   private final Map<String, File> macros = MapSequence.fromMap(new HashMap<String, File>());
   private final Map<String, File> libs = MapSequence.fromMap(new HashMap<String, File>());
 
-
   private EnvironmentConfig() {
   }
-
-
 
   public Set<String> plugins() {
     return SetSequence.fromSet(plugins).asUnmodifiable();
   }
 
-
-
   public Map<String, File> macros() {
     return Collections.unmodifiableMap(macros);
   }
 
-
-
   public Map<String, File> libs() {
     return Collections.unmodifiableMap(libs);
   }
-
-
 
   public EnvironmentConfig addPlugin(String plugin) {
     SetSequence.fromSet(plugins).addElement(plugin);
     return this;
   }
 
-
-
   public EnvironmentConfig addMacro(String macroName, File macroValue) {
     MapSequence.fromMap(macros).put(macroName, macroValue);
     return this;
   }
-
-
 
   public EnvironmentConfig addLib(String libName, File libPath) {
     MapSequence.fromMap(libs).put(libName, libPath);
     return this;
   }
 
-
-
   public EnvironmentConfig withDefaultSamples() {
     return addMacro("samples_home", new File(System.getProperty("user.dir"), "samples"));
   }
-
   public EnvironmentConfig withDefaultPlugins() {
     return addPlugin("jetbrains.mps.ide.make").addPlugin("jetbrains.mps.vcs");
   }
-
   public EnvironmentConfig withBootstrapLibraries() {
     for (String path : PathManager.getBootstrapPaths()) {
       addLib(BOOTSTRAP_LIBRARIES_LIB_NAME, new File(path));
@@ -79,13 +62,9 @@ public class EnvironmentConfig {
     return addLib(BOOTSTRAP_LIBRARIES_LIB_NAME, new File(PathManager.getLanguagesPath()));
   }
 
-
-
   public static EnvironmentConfig defaultEnvironment() {
     return new EnvironmentConfig().withDefaultSamples().withDefaultPlugins().withBootstrapLibraries();
   }
-
-
 
   public static EnvironmentConfig emptyEnvironment() {
     return new EnvironmentConfig();

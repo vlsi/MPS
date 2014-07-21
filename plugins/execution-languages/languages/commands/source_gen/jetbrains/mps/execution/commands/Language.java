@@ -17,25 +17,20 @@ import jetbrains.mps.execution.commands.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "f3347d8a-0e79-4f35-8ac9-1574f25c986f(jetbrains.mps.execution.commands)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.execution.commands";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.debugger.api.lang", "jetbrains.mps.lang.structure", "jetbrains.mps.lang.core", "jetbrains.mps.execution.common", "jetbrains.mps.baseLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "c31fc437-4bfb-4447-bafe-2aa77860610e(jetbrains.mps.execution.commands#856705193941426438)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

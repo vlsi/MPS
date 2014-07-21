@@ -27,13 +27,13 @@ import jetbrains.mps.smodel.LanguageAspect;
 
 public class ConceptBehavior_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
+  }
+  public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = new ArrayList<SNode>();
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
     return members;
-  };;
-;  public static IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
+  }
+  public static IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
     AbstractExtractMethodRefactoringProcessor result = new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToExtract) {
       @Override
       public SNode createMethodCall(SNode declaration, List<SNode> arguments) {
@@ -44,19 +44,19 @@ public class ConceptBehavior_Behavior {
           return call;
         }
         return null;
-      };;
-;      @Override
+      }
+      @Override
       public SNode createNewMethod() {
         // <node> 
         // <node> 
         SNode method = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", null);
         SPropertyOperations.set(method, "isStatic", "" + (isStatic));
         return method;
-      };;
-;    };
+      }
+    };
     return result;
-  };;
-;  public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
+  }
+  public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
     List<SNode> candidates = new ArrayList<SNode>();
     Map<SNode, SNode> concrete = MapSequence.fromMap(new HashMap<SNode, SNode>());
 
@@ -84,15 +84,15 @@ public class ConceptBehavior_Behavior {
       ListSequence.fromList(result).addElement(method);
     }
     return result;
-  };;
-;  public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
+  }
+  public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
     SNode baseNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
     if ((baseNode == null)) {
       return new ArrayList<SNode>();
     }
     return AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(baseNode);
-  };;
-;  public static List<SNode> call_getAllSuperBehaviors_1818770337282950280(SNode thisNode) {
+  }
+  public static List<SNode> call_getAllSuperBehaviors_1818770337282950280(SNode thisNode) {
     Set<SNode> seen = SetSequence.fromSet(new HashSet<SNode>());
     List<SNode> conceptResult = new ArrayList<SNode>();
     Queue<SNode> q = QueueSequence.fromQueue(new LinkedList<SNode>());
@@ -130,11 +130,11 @@ public class ConceptBehavior_Behavior {
       }
     }
     return result;
-  };;
-;  public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
+  }
+  public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "concept", false);
-  };;
-;  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
+  }
+  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SLinkOperations.setTarget(thisNode, "concept", baseConcept, false);
-  };;
-;}
+  }
+}

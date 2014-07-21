@@ -10,5 +10,5 @@ public class CellMenuPart_PropertyValues_BehaviorDescriptor extends CellMenuPart
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues";
-  };;
-;}
+  }
+}

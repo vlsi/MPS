@@ -130,18 +130,13 @@ public enum TestNodeWrapperFactory {
 
   TestNodeWrapperFactory() {
   }
-
   @Nullable
   public abstract ITestNodeWrapper wrap(@NotNull SNode node);
-
   public boolean canWrap(@NotNull SNode node) {
     return SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(getWrappedConcept()));
   }
-
   public abstract SNode getWrappedConcept();
-
   public abstract boolean isRoot();
-
   @Nullable
   public static ITestNodeWrapper tryToWrap(@NotNull SNode node) {
     for (TestNodeWrapperFactory factory : Sequence.fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values()))) {
@@ -151,7 +146,6 @@ public enum TestNodeWrapperFactory {
     }
     return null;
   }
-
   private static Iterable<SNode> getWrappedConcepts(final _FunctionTypes._return_P1_E0<? extends Boolean, ? super TestNodeWrapperFactory> condition) {
     return Sequence.fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values())).where(new IWhereFilter<TestNodeWrapperFactory>() {
       public boolean accept(TestNodeWrapperFactory it) {
@@ -163,7 +157,6 @@ public enum TestNodeWrapperFactory {
       }
     }).distinct();
   }
-
   public static Iterable<SNode> getWrappedConcepts() {
     return getWrappedConcepts(new _FunctionTypes._return_P1_E0<Boolean, TestNodeWrapperFactory>() {
       public Boolean invoke(TestNodeWrapperFactory factory) {
@@ -171,7 +164,6 @@ public enum TestNodeWrapperFactory {
       }
     });
   }
-
   public static Iterable<SNode> getWrappedRootConcepts() {
     return getWrappedConcepts(new _FunctionTypes._return_P1_E0<Boolean, TestNodeWrapperFactory>() {
       public Boolean invoke(TestNodeWrapperFactory factory) {
@@ -179,7 +171,6 @@ public enum TestNodeWrapperFactory {
       }
     });
   }
-
   public static Iterable<SNode> getWrappedNonRootConcepts() {
     return getWrappedConcepts(new _FunctionTypes._return_P1_E0<Boolean, TestNodeWrapperFactory>() {
       public Boolean invoke(TestNodeWrapperFactory factory) {
@@ -187,7 +178,6 @@ public enum TestNodeWrapperFactory {
       }
     });
   }
-
   public static SNode findWrappableAncestor(SNode source, boolean isRoot) {
     Iterable<SNode> concepts = (isRoot ? TestNodeWrapperFactory.getWrappedRootConcepts() : TestNodeWrapperFactory.getWrappedNonRootConcepts());
     return SNodeOperations.getAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).select(new ISelector<SNode, String>() {
@@ -196,18 +186,15 @@ public enum TestNodeWrapperFactory {
       }
     }).toGenericArray(String.class), true, isRoot);
   }
-
   private static SNode check_kl7j79_a0a0d0a0b2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);
     }
     return null;
   }
-
   private static boolean eq_kl7j79_a0a0b2(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_kl7j79_a0a0b4(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

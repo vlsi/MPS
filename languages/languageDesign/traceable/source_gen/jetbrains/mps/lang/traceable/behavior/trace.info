@@ -13,7 +13,7 @@
       <unit at="8,0,12,0" name="jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,22,0" name="jetbrains.mps.lang.traceable.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.traceable.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)/5067982036267369893">
@@ -28,18 +28,18 @@
   </root>
   <root nodeRef="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)/5067982036267369900">
     <file name="TraceableConcept_Behavior.java">
-      <node id="5067982036267369905" at="13,89,14,16" concept="0" />
+      <node id="5067982036267369905" at="12,89,13,16" concept="0" />
       <node id="5067982036267369900" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5067982036267369900" at="12,0,16,0" concept="1" trace="virtual_getTraceableProperty_5067982036267369901#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="5067982036267369900" at="11,0,15,0" concept="1" trace="virtual_getTraceableProperty_5067982036267369901#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="5067982036267369909" at="9,43,9,43" />
-      <scope id="5067982036267369904" at="13,89,14,16" />
+      <scope id="5067982036267369904" at="12,89,13,16" />
       <scope id="5067982036267369900" at="9,0,11,0">
         <var name="thisNode" id="5067982036267369900" />
       </scope>
-      <scope id="5067982036267369900" at="12,0,16,0">
+      <scope id="5067982036267369900" at="11,0,15,0">
         <var name="thisNode" id="5067982036267369900" />
       </scope>
-      <unit id="5067982036267369900" at="8,0,17,0" name="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
+      <unit id="5067982036267369900" at="8,0,16,0" name="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     </file>
   </root>
   <root nodeRef="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)/5067982036267369910">

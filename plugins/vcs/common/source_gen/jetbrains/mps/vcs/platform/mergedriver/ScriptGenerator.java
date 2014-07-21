@@ -18,10 +18,8 @@ import com.intellij.openapi.ui.Messages;
 /*package*/ class ScriptGenerator {
   public static final int GIT = 1;
   public static final int SVN = 2;
-
   private ScriptGenerator() {
   }
-
   @NotNull
   public static AbstractInstaller.State generateScript(Project project, String filetype, int vcs, File scriptFile, boolean dryRun) {
     final String buildstring = "build=" + ApplicationInfo.getInstance().getBuild().asString();
@@ -65,7 +63,6 @@ import com.intellij.openapi.ui.Messages;
       return AbstractInstaller.State.NOT_INSTALLED;
     }
   }
-
   private static boolean neq_7mp2j8_a0a0a0b0a0a0d0d(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

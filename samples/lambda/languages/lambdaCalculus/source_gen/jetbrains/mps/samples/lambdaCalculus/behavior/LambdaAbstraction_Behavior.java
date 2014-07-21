@@ -12,14 +12,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class LambdaAbstraction_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getInnerBody_5066394162984540354(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "body", true), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction")) {
       return LambdaAbstraction_Behavior.call_getInnerBody_5066394162984540354(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "body", true), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction"));
     }
     return SLinkOperations.getTarget(thisNode, "body", true);
   }
-
   public static List<SNode> call_getAllVariables_5066394162984559815(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     // Is it OK to create lists recursively? 
@@ -29,7 +27,6 @@ public class LambdaAbstraction_Behavior {
     }
     return result;
   }
-
   public static List<SNode> virtual_getVariables_8981808925914841576(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "variable", true);
   }

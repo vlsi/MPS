@@ -21,7 +21,6 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1r2vma_a(editorContext, node);
   }
-
   private EditorCell createCollection_1r2vma_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1r2vma_a");
@@ -30,7 +29,6 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_1r2vma_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_1r2vma_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -39,7 +37,6 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_1r2vma_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1r2vma_b0");
@@ -55,7 +52,6 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_1r2vma_f1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_1r2vma_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check url");
     editorCell.setCellId("Constant_1r2vma_a1a");
@@ -65,7 +61,6 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1r2vma_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("checkUrl");
@@ -88,7 +83,6 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1r2vma_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "update url");
     editorCell.setCellId("Constant_1r2vma_c1a");
@@ -98,7 +92,6 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1r2vma_d1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("updateUrl");
@@ -121,7 +114,6 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1r2vma_e1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "channel");
     editorCell.setCellId("Constant_1r2vma_e1a");
@@ -131,7 +123,6 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1r2vma_f1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("updateChannel");

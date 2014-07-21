@@ -14,21 +14,21 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class MultipleForeachLoop_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+  }
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       if (ScopeUtils.comeFrom("body", thisNode, child)) {
         return CompositeWithParentScope.from(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "loopVariable", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "variable", true) != null);
-          };;
-;        }).select(new ISelector<SNode, SNode>() {
+          }
+        }).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "variable", true);
-          };;
-;        }), thisNode, kind);
+          }
+        }), thisNode, kind);
       }
     }
     return null;
-  };;
-;}
+  }
+}

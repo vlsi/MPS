@@ -11,5 +11,5 @@ public class JoinContainer_BehaviorDescriptor extends NodeAttribute_BehaviorDesc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.JoinContainer";
-  };;
-;}
+  }
+}

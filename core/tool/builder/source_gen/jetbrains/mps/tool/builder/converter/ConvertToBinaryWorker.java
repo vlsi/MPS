@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 public class ConvertToBinaryWorker {
   public ConvertToBinaryWorker() {
   }
-
   public void convert(Map<String, String> map, Boolean stripImplementation) {
     final MPSCore mpsCore = new MPSCore();
     mpsCore.init();
@@ -41,7 +40,6 @@ public class ConvertToBinaryWorker {
       mpsCore.dispose();
     }
   }
-
   private void convertModelToBinary(String sourceFile, String destFile, boolean stripImplementation) throws IOException {
     IFile source = FileSystem.getInstance().getFileByPath(sourceFile);
     try {

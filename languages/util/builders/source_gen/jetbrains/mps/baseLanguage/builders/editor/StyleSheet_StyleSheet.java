@@ -14,11 +14,9 @@ public class StyleSheet_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
   }
-
   public static void apply_Parameter(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
   }
-
 
 }

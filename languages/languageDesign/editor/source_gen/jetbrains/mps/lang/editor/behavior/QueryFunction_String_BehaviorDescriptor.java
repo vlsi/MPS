@@ -12,12 +12,12 @@ public class QueryFunction_String_BehaviorDescriptor extends ConceptFunction_Beh
   }
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return QueryFunction_String_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  };;
-;  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  }
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_String_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.QueryFunction_String";
-  };;
-;}
+  }
+}

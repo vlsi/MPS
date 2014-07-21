@@ -9,5 +9,5 @@ public class ComparatorSortOperation_BehaviorDescriptor extends InternalSequence
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation";
-  };;
-;}
+  }
+}

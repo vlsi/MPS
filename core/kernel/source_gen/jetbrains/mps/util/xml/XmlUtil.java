@@ -10,33 +10,28 @@ import java.util.List;
 public class XmlUtil {
   private XmlUtil() {
   }
-
   public static void tagWithText(Element container, String tagName, String text) {
     Element child = new Element(tagName);
     child.setText(text);
     container.addContent(child);
   }
-
   public static void tagWithAttribute(Element container, String tagName, String attrName, String attrValue) {
     Element child = new Element(tagName);
     child.setAttribute(attrName, attrValue);
     container.addContent(child);
   }
-
   public static void tagWithAttributeAndText(Element container, String tagName, String attrName, String attrValue, String text) {
     Element child = new Element(tagName);
     child.setAttribute(attrName, attrValue);
     child.setText(text);
     container.addContent(child);
   }
-
   public static void tagWithAttributes(Element container, String tagName, String attrName, String attrValue, String attr2Name, String attr2Value) {
     Element child = new Element(tagName);
     child.setAttribute(attrName, attrValue);
     child.setAttribute(attr2Name, attr2Value);
     container.addContent(child);
   }
-
   public static Iterable<Element> children(Element container, String tagName) {
     if (container == null) {
       return Sequence.fromIterable(Collections.<Element>emptyList());
@@ -44,14 +39,12 @@ public class XmlUtil {
 
     return (Iterable<Element>) ((List<Element>) container.getChildren(tagName));
   }
-
   public static Element first(Element container, String tagName) {
     if (container == null) {
       return null;
     }
     return Sequence.fromIterable(children(container, tagName)).first();
   }
-
   public static boolean booleanWithDefault(Element element, String attrName, boolean defaultValue) {
     if (element == null) {
       return defaultValue;
@@ -59,7 +52,6 @@ public class XmlUtil {
     String attrValue = element.getAttributeValue(attrName);
     return (attrValue == null ? defaultValue : Boolean.parseBoolean(attrValue));
   }
-
   public static String stringWithDefault(Element element, String attrName, String defaultValue) {
     if (element == null) {
       return defaultValue;

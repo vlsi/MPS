@@ -11,15 +11,12 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_7287346816896135373(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "intval") == 42;
   }
-
   public static SNode weaving_MappingRule_ContextNodeQuery_7287346816896128676(final WeavingMappingRuleContext _context) {
     return null;
   }
-
   public static SNode weaving_MappingRule_ContextNodeQuery_6145560071556216092(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByMappingLabel("aaa");
   }

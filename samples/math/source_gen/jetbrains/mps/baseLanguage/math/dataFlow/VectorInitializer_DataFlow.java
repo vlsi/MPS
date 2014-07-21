@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class VectorInitializer_DataFlow extends DataFlowBuilder {
   public VectorInitializer_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rowsCount", true));

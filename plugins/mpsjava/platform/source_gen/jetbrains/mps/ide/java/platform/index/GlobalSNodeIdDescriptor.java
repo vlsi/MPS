@@ -10,34 +10,28 @@ import java.io.DataInput;
 public class GlobalSNodeIdDescriptor implements KeyDescriptor<GlobalSNodeId> {
   public GlobalSNodeIdDescriptor() {
   }
-
   @Override
   public void save(DataOutput out, GlobalSNodeId nodeId) throws IOException {
     GlobalSNodeIdDescriptor.writeString(out, nodeId.getModelReference());
     GlobalSNodeIdDescriptor.writeString(out, nodeId.getNodeId());
   }
-
   @Override
   public GlobalSNodeId read(DataInput input) throws IOException {
     return new GlobalSNodeId(GlobalSNodeIdDescriptor.readString(input), GlobalSNodeIdDescriptor.readString(input));
   }
-
   @Override
   public int getHashCode(GlobalSNodeId id) {
     return id.hashCode();
   }
-
   @Override
   public boolean isEqual(GlobalSNodeId first, GlobalSNodeId second) {
     return first.equals(second);
   }
-
   private static void writeString(DataOutput out, String text) throws IOException {
     byte[] bytes = text.getBytes();
     out.writeInt(bytes.length);
     out.write(bytes);
   }
-
   private static String readString(DataInput input) throws IOException {
     int length = input.readInt();
     byte[] bytes = new byte[length];

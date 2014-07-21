@@ -37,16 +37,16 @@ public class DirectMethodSpecification_Constraints extends BaseConstraintsDescri
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      };;
-;      @Nullable
+      }
+      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_xwijc_a0a0a0a0a1a0b0a1a1;
-          };;
-;          @Override
+          }
+          @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               SNode ancestor = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", true, false);
@@ -55,22 +55,22 @@ public class DirectMethodSpecification_Constraints extends BaseConstraintsDescri
                 return new SimpleScope(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(classifierSpecification, "classifier", false), "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
                   public boolean accept(SNode it) {
                     return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-                  };;
-;                })) {
+                  }
+                })) {
                   @Nullable
                   @Override
                   public String getReferenceText(@NotNull SNode target) {
                     return target.getName();
-                  };;
-;                };
+                  }
+                };
               }
               return new EmptyScope();
             }
-          };;
-;        };
-      };;
-;    });
+          }
+        };
+      }
+    });
     return references;
-  };;
-;  private static SNodePointer breakingNode_xwijc_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)", "338341484719582769");
+  }
+  private static SNodePointer breakingNode_xwijc_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)", "338341484719582769");
 }

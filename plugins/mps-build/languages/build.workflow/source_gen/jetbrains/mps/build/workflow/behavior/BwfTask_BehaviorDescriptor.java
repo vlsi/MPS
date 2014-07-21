@@ -12,23 +12,18 @@ import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 public class BwfTask_BehaviorDescriptor extends BwfProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public BwfTask_BehaviorDescriptor() {
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   public int virtual_getPriority_2059109515400548718(SNode thisNode) {
     return BwfTask_Behavior.virtual_getPriority_2059109515400548718(thisNode);
   }
-
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return BwfTask_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
-
   public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.workflow.structure.BwfTask";

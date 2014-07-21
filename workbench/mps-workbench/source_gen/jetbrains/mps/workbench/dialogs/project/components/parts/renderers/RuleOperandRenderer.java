@@ -43,11 +43,9 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 @Deprecated
 public class RuleOperandRenderer implements TableCellRenderer {
   private Map<Object, Component> myRenderersCache = MapSequence.fromMap(new WeakHashMap<Object, Component>());
-
   @Deprecated
   public RuleOperandRenderer() {
   }
-
   @Override
   public Component getTableCellRendererComponent(JTable table, final Object value, boolean isSelected, boolean hasFocus, int row, int column) {
     if (MapSequence.fromMap(myRenderersCache).containsKey(value)) {
@@ -91,7 +89,6 @@ public class RuleOperandRenderer implements TableCellRenderer {
     MapSequence.fromMap(myRenderersCache).put(value, tree);
     return tree;
   }
-
   private boolean add(TextMPSTreeNode root, MappingConfig_AbstractRef ref) {
     if (ref == null) {
       return false;

@@ -21,15 +21,12 @@ import jetbrains.mps.smodel.SReference;
 
 public class ClosureLiteralAdapterBuilder {
   private TemplateQueryContext genContext;
-
   public ClosureLiteralAdapterBuilder(TemplateQueryContext genContext) {
     this.genContext = genContext;
   }
-
   public boolean hasAdapterClass(SNode literal) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(literal), "jetbrains.mps.baseLanguage.structure.IMethodCall") && (lookupAdapterClassAnnotation(literal) != null);
   }
-
   public SNode buildAdapterClassType(SNode literal, SNode targetFunType) {
     SNode annInst = lookupAdapterClassAnnotation(literal);
     SNode adapterClass = findAdapterClassDeclaration(literal, annInst);
@@ -45,7 +42,6 @@ public class ClosureLiteralAdapterBuilder {
     }
     return result;
   }
-
   private void replaceWithTarget(SNode tvr, SNode adapterFunType, SNode targetFunType) {
     if (SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false) == SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(adapterFunType, "resultType", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)) {
       SNodeOperations.replaceWithAnother(tvr, ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.copyNode(SLinkOperations.getTarget(targetFunType, "resultType", true))));
@@ -61,7 +57,6 @@ public class ClosureLiteralAdapterBuilder {
       }
     }
   }
-
   private SNode lookupAdapterClassAnnotation(SNode literal) {
     final SNode adapterAnn = SLinkOperations.getTarget(_quotation_createNode_wzrebk_a0a0a5(), "annotation", false);
     SNode pdecl = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(literal), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true)).getElement(SNodeOperations.getIndexInParent(literal));
@@ -72,7 +67,6 @@ public class ClosureLiteralAdapterBuilder {
     }
     return null;
   }
-
   private SNode findAdapterClassDeclaration(SNode literal, final SNode annInst) {
     return ListSequence.fromList(SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(literal), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
       @Override
@@ -81,7 +75,6 @@ public class ClosureLiteralAdapterBuilder {
       }
     });
   }
-
   private SNode getAdapterClassFunctionType(SNode cls) {
     for (SNode md : Classifier_Behavior.call_methods_5292274854859311639(cls)) {
       if (SNodeOperations.isInstanceOf(md, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration")) {
@@ -90,7 +83,6 @@ public class ClosureLiteralAdapterBuilder {
     }
     return null;
   }
-
   private static SNode _quotation_createNode_wzrebk_a0a0a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

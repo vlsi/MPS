@@ -10,5 +10,5 @@ public class AddStatement_BehaviorDescriptor extends Statement_BehaviorDescripto
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.AddStatement";
-  };;
-;}
+  }
+}

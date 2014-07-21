@@ -11,9 +11,9 @@ public class ConceptFunctionParameter_pattern_BehaviorDescriptor extends Concept
   }
   public boolean virtual_getFromParameterObject_1213877522908(SNode thisNode) {
     return ConceptFunctionParameter_pattern_Behavior.virtual_getFromParameterObject_1213877522908(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern";
-  };;
-;}
+  }
+}

@@ -14,7 +14,6 @@ public class PatternVariableDeclaration_Constraints extends BaseConstraintsDescr
   public PatternVariableDeclaration_Constraints() {
     super("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class PatternVariableDeclaration_Constraints extends BaseConstraintsDescr
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
@@ -35,7 +33,6 @@ public class PatternVariableDeclaration_Constraints extends BaseConstraintsDescr
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";

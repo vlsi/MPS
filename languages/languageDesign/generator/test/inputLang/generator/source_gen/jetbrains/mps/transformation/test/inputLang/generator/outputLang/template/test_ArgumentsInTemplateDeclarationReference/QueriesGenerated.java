@@ -20,55 +20,42 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_7496726876599935510(final BaseMappingRuleContext _context) {
     return true;
   }
-
   public static boolean baseMappingRule_Condition_4929591503636513204(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "key") == 1;
   }
-
   public static boolean baseMappingRule_Condition_4929591503636589503(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "key") == 2;
   }
-
   public static boolean baseMappingRule_Condition_4929591503636676782(final BaseMappingRuleContext _context) {
     return false;
   }
-
   public static boolean baseMappingRule_Condition_4929591503636614138(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "key") == 3;
   }
-
   public static Object propertyMacro_GetPropertyValue_7496726876599876334(final PropertyMacroContext _context) {
     return "text from argument:" + ((String) _context.getVariable("p1"));
   }
-
   public static boolean ifMacro_Condition_4929591503636643306(final IfMacroContext _context) {
     return false;
   }
-
   public static Object templateArgumentQuery_7496726876599916822(final TemplateQueryContext _context) {
     return "from expression";
   }
-
   public static Object templateArgumentQuery_7496726876599937591(final TemplateQueryContext _context) {
     return "from within case of inline switch";
   }
-
   public static Object templateArgumentQuery_4929591503636646079(final TemplateQueryContext _context) {
     return "from IF/ELSE alternative concequence";
   }
-
   public static Object templateArgumentQuery_4929591503636680081(final TemplateQueryContext _context) {
     return "from within default case of in-line switch";
   }
-
   public static Iterable<SNode> sourceNodesQuery_7496726876599914779(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
-
   public static boolean mappingConfiguration_Condition_7496726876599722461(final TemplateQueryContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -76,7 +63,6 @@ public class QueriesGenerated {
       }
     }).isNotEmpty();
   }
-
   public static TemplateModel getDescriptor(TemplateModule module) {
     return new TemplateModelImpl(module);
   }

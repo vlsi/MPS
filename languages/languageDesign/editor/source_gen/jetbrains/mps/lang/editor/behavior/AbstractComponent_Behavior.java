@@ -7,8 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AbstractComponent_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_getConceptDeclaration_7055725856388417603(SNode thisNode) {
+  }
+  public static SNode virtual_getConceptDeclaration_7055725856388417603(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "conceptDeclaration", false);
-  };;
-;}
+  }
+}

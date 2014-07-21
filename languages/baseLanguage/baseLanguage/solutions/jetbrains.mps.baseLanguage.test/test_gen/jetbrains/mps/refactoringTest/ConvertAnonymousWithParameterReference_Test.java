@@ -22,7 +22,6 @@ public class ConvertAnonymousWithParameterReference_Test extends BaseTransformat
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.ConvertAnonymousWithParameterReference_Test$TestBody", "test_WithParameterReferenceTest", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_WithParameterReferenceTest() throws Exception {

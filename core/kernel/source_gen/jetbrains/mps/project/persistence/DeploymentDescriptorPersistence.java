@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class DeploymentDescriptorPersistence {
   public DeploymentDescriptorPersistence() {
   }
-
   public static DeploymentDescriptor loadDeploymentDescriptor(final IFile file) {
     DeploymentDescriptor descriptor;
 

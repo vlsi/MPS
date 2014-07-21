@@ -31,7 +31,6 @@ public class MPSModulesPartitioner {
   private List<MPSModulesPartitioner.Chunk> chunks;
   private boolean useMeta;
   private Iterable<SNode> external;
-
   public MPSModulesPartitioner(SNode project) {
     this(project, ListSequence.fromList(Sequence.fromIterable(getModules(project)).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -39,12 +38,10 @@ public class MPSModulesPartitioner {
       }
     }, true).toListSequence()).asUnmodifiable());
   }
-
   public MPSModulesPartitioner(SNode project, List<SNode> modules) {
     this.project = project;
     this.modules = modules;
   }
-
   public void buildChunks() {
     Graph<MPSModulesPartitioner.Node> graph = new Graph<MPSModulesPartitioner.Node>();
     final Map<SNode, MPSModulesPartitioner.Node> map = new LinkedHashMap<SNode, MPSModulesPartitioner.Node>();
@@ -92,7 +89,6 @@ public class MPSModulesPartitioner {
       }
     }
   }
-
   public void buildExternalDependencies() {
     this.external = Sequence.fromIterable(new MPSModulesClosure(modules).trackDevkits().generationDependenciesClosure().runtimeClosure().getAllModules()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -100,15 +96,12 @@ public class MPSModulesPartitioner {
       }
     });
   }
-
   public List<MPSModulesPartitioner.Chunk> getChunks() {
     return chunks;
   }
-
   public Iterable<SNode> getExternal() {
     return external;
   }
-
   public static Iterable<SNode> getModules(SNode project) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(project, "parts", true), "jetbrains.mps.build.mps.structure.BuildMps_Group")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
@@ -116,21 +109,17 @@ public class MPSModulesPartitioner {
       }
     }).concat(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(project, "parts", true), "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule")));
   }
-
   private class Node implements IVertex {
     private SNode module;
     private Set<MPSModulesPartitioner.Node> dependencyNodes = SetSequence.fromSet(new LinkedHashSet<MPSModulesPartitioner.Node>());
     private Set<MPSModulesPartitioner.Node> metaDependencies = SetSequence.fromSet(new LinkedHashSet<MPSModulesPartitioner.Node>());
-
     public Node(SNode module) {
       this.module = module;
     }
-
     @Override
     public Set<? extends IVertex> getNexts() {
       return (useMeta ? metaDependencies : dependencyNodes);
     }
-
     public void fill(Map<SNode, MPSModulesPartitioner.Node> map) {
       if (SNodeOperations.isInstanceOf(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
         MPSModulesClosure closure = new MPSModulesClosure(SNodeOperations.cast(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")).skipExternalModules().generationDependenciesClosure();
@@ -167,32 +156,25 @@ public class MPSModulesPartitioner {
       }
     }
   }
-
   public static class Chunk {
     private final Set<SNode> modules;
     private final Set<SNode> conflicting;
-
     public Chunk() {
       this.modules = SetSequence.fromSet(new LinkedHashSet<SNode>());
       this.conflicting = SetSequence.fromSet(new HashSet<SNode>());
     }
-
     public Set<SNode> getModules() {
       return modules;
     }
-
     public Set<SNode> getConflicting() {
       return conflicting;
     }
-
     public boolean isConflicting(SNode mod) {
       return SetSequence.fromSet(conflicting).contains(mod);
     }
-
     public boolean isBootstrap() {
       return SetSequence.fromSet(conflicting).isNotEmpty();
     }
-
     public void setBootstrap(SNode module, boolean flag) {
       if (flag) {
         SetSequence.fromSet(conflicting).addElement(module);

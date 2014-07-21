@@ -24,27 +24,22 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   @NotNull
   protected final SNodeReference myNodePointer;
   private String myFqName;
-
   public AbstractTestWrapper(@NotNull N node) {
     myNodePointer = new SNodePointer(node);
   }
-
   public AbstractTestWrapper(@NotNull SNodeReference nodePointer) {
     myNodePointer = nodePointer;
   }
-
   @Nullable
   @Override
   public N getNode() {
     return (N) ((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance());
   }
-
   @NotNull
   @Override
   public SNodeReference getNodePointer() {
     return myNodePointer;
   }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -61,32 +56,27 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
 
     return true;
   }
-
   @Override
   public int hashCode() {
     int result = 0;
     result = 31 * result + ((this.myNodePointer != null ? ((Object) this.myNodePointer).hashCode() : 0));
     return result;
   }
-
   @Nullable
   @Override
   public ITestNodeWrapper getTestCase() {
     return null;
   }
-
   @NotNull
   @Override
   public Iterable<ITestNodeWrapper> getTestMethods() {
     return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
   }
-
   @NotNull
   @Override
   public Tuples._3<String, List<String>, List<String>> getTestRunParameters() {
     return getDefaultRunParameters();
   }
-
   @Override
   public String getName() {
     SNode node = getNode();
@@ -99,7 +89,6 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
       throw new UnsupportedOperationException("Should override getName for not INamedConcept: " + SNodeOperations.getConceptDeclaration(node));
     }
   }
-
   @Override
   public String getFqName() {
     ITestNodeWrapper testCase = getTestCase();
@@ -116,7 +105,6 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
     }
     return testCase.getFqName() + "." + getName();
   }
-
   @Override
   public String getCachedFqName() {
     if (myFqName == null) {
@@ -128,7 +116,6 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
     }
     return myFqName;
   }
-
   public static Tuples._3<String, List<String>, List<String>> getDefaultRunParameters() {
     List<String> startupPath = Java_Command.getClasspath(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("8b958198-128f-4136-80e5-ca9777caa869(jetbrains.mps.baseLanguage.unitTest.execution.startup)")));
     return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.BTestExecutor", ListSequence.fromList(new ArrayList<String>()), startupPath);

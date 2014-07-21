@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ExternalViewFigureParameter_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ExternalViewFigureParameter_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode externalViewFigureParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(Utils.isSupportedParameterType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), externalViewFigureParameter, "virtual_getParameterType_342110547581236128", new Object[]{}), SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(jetbrains.jetpad/jetbrains.jetpad.model.property@java_stub)", "~Property")))) {
       {
@@ -26,18 +25,15 @@ public class check_ExternalViewFigureParameter_NonTypesystemRule extends Abstrac
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

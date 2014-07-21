@@ -22,16 +22,13 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class OutputToInputPortConnector_DiagramTestTextual_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.editor.TestDiagramLanguage.DiagramTestTextual"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bem9lq_a(editorContext, node);
   }
-
   private EditorCell createCollection_bem9lq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bem9lq_a");
@@ -44,21 +41,18 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
     editorCell.addEditorCell(this.createConstant_bem9lq_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_bem9lq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output to input port connector");
     editorCell.setCellId("Constant_bem9lq_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_bem9lq_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "src");
     editorCell.setCellId("Constant_bem9lq_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_bem9lq_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("src");
@@ -80,20 +74,16 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
     } else
     return editorCell;
   }
-
   public static class _Inline_bem9lq_a2a extends InlineCellProvider {
     public _Inline_bem9lq_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_bem9lq_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_bem9lq_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -112,14 +102,12 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
       return editorCell;
     }
   }
-
   private EditorCell createConstant_bem9lq_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dst");
     editorCell.setCellId("Constant_bem9lq_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_bem9lq_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("dst");
@@ -141,20 +129,16 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
     } else
     return editorCell;
   }
-
   public static class _Inline_bem9lq_a4a extends InlineCellProvider {
     public _Inline_bem9lq_a4a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_bem9lq_a0e0(editorContext, node);
     }
-
     private EditorCell createProperty_bem9lq_a0e0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -173,7 +157,6 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
       return editorCell;
     }
   }
-
   private EditorCell createConstant_bem9lq_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_bem9lq_f0");

@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 public class MigrationUtil {
   public MigrationUtil() {
   }
-
   public static SNode getOrCreateConceptAspectInstance(LanguageAspect aspect, SNode applicableNode, SNode concept) {
     Language language = SModelUtil.getDeclaringLanguage(applicableNode);
     assert language != null : "Language shouldn't be null for " + applicableNode;

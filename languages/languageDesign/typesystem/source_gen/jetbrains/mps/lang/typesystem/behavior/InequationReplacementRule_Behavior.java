@@ -7,8 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class InequationReplacementRule_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_getSecondNodeCondition_4484478261143583672(SNode thisNode) {
+  }
+  public static SNode virtual_getSecondNodeCondition_4484478261143583672(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "supertypeNode", true);
-  };;
-;}
+  }
+}

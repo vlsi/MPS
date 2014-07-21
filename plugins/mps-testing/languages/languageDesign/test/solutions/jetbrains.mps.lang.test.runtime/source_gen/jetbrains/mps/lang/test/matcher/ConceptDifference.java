@@ -6,17 +6,14 @@ package jetbrains.mps.lang.test.matcher;
 public class ConceptDifference extends DifferanceItem {
   public String myConcept1;
   public String myConcept2;
-
   public ConceptDifference(String concept1, String concept2) {
     myConcept1 = concept1;
     myConcept2 = concept2;
   }
-
   @Override
   public String toString() {
     return "Different concepts: " + myConcept1 + ", " + myConcept2;
   }
-
   @Override
   public boolean equals(Object obj) {
     if (obj == null) {

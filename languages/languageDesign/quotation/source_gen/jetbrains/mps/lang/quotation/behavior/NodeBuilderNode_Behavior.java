@@ -17,8 +17,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class NodeBuilderNode_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+  }
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration")) {
       if ((SLinkOperations.getTarget(thisNode, "concept", false) == null)) {
         return new EmptyScope();
@@ -33,17 +33,17 @@ public class NodeBuilderNode_Behavior {
         @Override
         public String getName(SNode child) {
           return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role");
-        };;
-;      };
+        }
+      };
     }
     return null;
-  };;
-;  public static Iterable<SNode> call_getExternalExpressions_1006429225401327586(SNode thisNode) {
+  }
+  public static Iterable<SNode> call_getExternalExpressions_1006429225401327586(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     NodeBuilderNode_Behavior.call_collectExternalExpressions_1006429225401327680(thisNode, result);
     return result;
-  };;
-;  public static void call_collectExternalExpressions_1006429225401327680(SNode thisNode, List<SNode> list) {
+  }
+  public static void call_collectExternalExpressions_1006429225401327680(SNode thisNode, List<SNode> list) {
     for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "values", true))) {
       if (SNodeOperations.isInstanceOf(v, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty")) {
         SNode pe = SLinkOperations.getTarget(SNodeOperations.cast(v, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty"), "expression", true);
@@ -67,5 +67,5 @@ public class NodeBuilderNode_Behavior {
         }
       }
     }
-  };;
-;}
+  }
+}

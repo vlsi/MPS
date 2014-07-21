@@ -24,12 +24,10 @@ public class NodeBuilderInitLink_Constraints extends BaseConstraintsDescriptor {
   public NodeBuilderInitLink_Constraints() {
     super("jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink");
   }
-
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;
   }
-
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
@@ -40,7 +38,6 @@ public class NodeBuilderInitLink_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -49,7 +46,6 @@ public class NodeBuilderInitLink_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -58,7 +54,6 @@ public class NodeBuilderInitLink_Constraints extends BaseConstraintsDescriptor {
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_nild3x_a0a0a0a0a1a0b0a1a3;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -71,11 +66,9 @@ public class NodeBuilderInitLink_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     return SConceptOperations.isExactly(childConcept, "jetbrains.mps.lang.quotation.structure.NodeBuilderList") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.lang.quotation.structure.NodeBuilderRef") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.baseLanguage.structure.NullLiteral");
   }
-
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "8182547171709752216");
   private static SNodePointer breakingNode_nild3x_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "5455284157994012192");
 }

@@ -9,5 +9,5 @@ public class AllOperation_BehaviorDescriptor extends InternalSequenceOperation_B
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AllOperation";
-  };;
-;}
+  }
+}

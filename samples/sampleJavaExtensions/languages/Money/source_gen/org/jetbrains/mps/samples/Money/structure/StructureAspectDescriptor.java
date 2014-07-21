@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -38,6 +37,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"org.jetbrains.mps.samples.Money.structure.ConvertTo", "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable", "org.jetbrains.mps.samples.Money.structure.CurrencyUnit", "org.jetbrains.mps.samples.Money.structure.CurrentStockPrice", "org.jetbrains.mps.samples.Money.structure.GetAmount", "org.jetbrains.mps.samples.Money.structure.GetCurrency", "org.jetbrains.mps.samples.Money.structure.MoneyLiteral", "org.jetbrains.mps.samples.Money.structure.MoneyType", "org.jetbrains.mps.samples.Money.structure.MovingAverage", "org.jetbrains.mps.samples.Money.structure.StockSymbol"};
 }

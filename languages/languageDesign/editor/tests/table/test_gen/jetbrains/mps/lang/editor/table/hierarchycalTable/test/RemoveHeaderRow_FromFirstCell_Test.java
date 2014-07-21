@@ -15,18 +15,15 @@ import java.util.ArrayList;
 public class RemoveHeaderRow_FromFirstCell_Test extends BaseTransformationTest {
   public RemoveHeaderRow_FromFirstCell_Test() {
   }
-
   @Test
   public void test_RemoveHeaderRow_FromFirstCell() throws Throwable {
     this.initTest("${mps_home}", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)");
     this.runTest("jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromFirstCell_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("8143909488490605461", "8143909488490605486");

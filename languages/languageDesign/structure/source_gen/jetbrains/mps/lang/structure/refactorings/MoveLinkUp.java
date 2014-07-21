@@ -33,19 +33,15 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
     this.addTransientParameter("mergeLinks");
     this.addTransientParameter("linkToReplace");
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new MoveLinkUp_Target();
   }
-
   public String getUserFriendlyName() {
     return "Move Link Up";
   }
-
   public Class getOverridenRefactoringClass() {
     return MoveNodes.class;
   }
-
   public boolean init(final RefactoringContext refactoringContext) {
     final Wrappers._T<SNode> concept = new Wrappers._T<SNode>();
     ModelAccess modelAccess = refactoringContext.getRepository().getModelAccess();
@@ -68,7 +64,6 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
     });
     return true;
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
     refactoringContext.changeFeatureName(node, SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getReference().getModelName() + "." + SPropertyOperations.getString(((SNode) refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(node, "role"));
@@ -78,7 +73,6 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
       refactoringContext.moveNodeToNode(node, node.getRoleInParent(), ((SNode) refactoringContext.getParameter("targetConcept")));
     }
   }
-
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
 
@@ -100,11 +94,9 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
 
     return result;
   }
-
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
-
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateByDefault(model);
   }

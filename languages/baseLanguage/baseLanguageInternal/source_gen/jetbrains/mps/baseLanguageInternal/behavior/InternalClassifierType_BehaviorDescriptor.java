@@ -10,5 +10,5 @@ public class InternalClassifierType_BehaviorDescriptor extends ClassifierType_Be
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType";
-  };;
-;}
+  }
+}

@@ -35,18 +35,15 @@ import org.apache.log4j.LogManager;
 
 public class ImportAllModulesFromFolder_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Actions.ImportModulesFromFolder;
-
   public ImportAllModulesFromFolder_Action() {
     super("Import All Modules from Folder", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -57,7 +54,6 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -92,7 +88,6 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
@@ -158,9 +153,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ImportAllModulesFromFolder_Action.class);
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

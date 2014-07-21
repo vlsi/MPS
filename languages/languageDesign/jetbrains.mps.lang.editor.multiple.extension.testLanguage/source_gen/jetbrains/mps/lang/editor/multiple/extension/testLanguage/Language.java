@@ -12,25 +12,20 @@ import jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.EditorAs
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "2a136e2a-e48f-4b7a-bcbc-7b2a11f3bbeb(jetbrains.mps.lang.editor.multiple.extension.testLanguage)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.lang.editor.multiple.extension.testLanguage";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "e5e59881-5506-41a5-b870-4b4703455d4c(jetbrains.mps.lang.editor.multiple.extension.testLanguage#6822301196699110738)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == EditorAspectDescriptor.class) {

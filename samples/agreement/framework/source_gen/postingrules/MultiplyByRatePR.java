@@ -8,7 +8,6 @@ public class MultiplyByRatePR extends PostingRule {
   public MultiplyByRatePR(AccountType type, boolean isTaxable) {
     super(type, isTaxable);
   }
-
   @Override
   protected Money calculateAmount(AccountingEvent evt) {
     Usage usageEvent = (Usage) evt;

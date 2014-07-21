@@ -19,12 +19,10 @@ public enum TestState {
   TERMINATED(AllIcons.RunConfigurations.TestTerminated);
 
   private final Icon myIcon;
-
   TestState(Icon icon) {
     Language language = Language.getLanguageFor(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")));
     myIcon = icon;
   }
-
   public Icon getIcon() {
     if (equals(TestState.IN_PROGRESS)) {
       return TestTreeIconAnimator.getCurrentFrame();

@@ -18,34 +18,28 @@ import jetbrains.mps.ide.datatransfer.SNodeTransferable;
 @Deprecated
 public class JavaCopyPasteDataConverter implements ApplicationComponent, CopyPasteUtil.IDataConverter {
   private static final int MIN_TEXT_LENGTH_TO_CONVERT = 100;
-
   @Deprecated
   public JavaCopyPasteDataConverter(MPSCoreComponents coreComponents) {
   }
-
   @Override
   public void initComponent() {
     CopyPasteUtil.setDataConverter(this);
   }
-
   @Override
   public void disposeComponent() {
     CopyPasteUtil.setDataConverter(null);
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Java-specific CopyPaste Data Converter implementation";
   }
-
   @Override
   public boolean canPasteAsNodes(SModel model, SNode anchor) {
     String text = TextPasteUtil.getStringFromClipboard();
     return text != null && text.length() > MIN_TEXT_LENGTH_TO_CONVERT;
   }
-
   @Override
   public void pasteAsNodes(SModel model, SNode anchor, Project project) {
     String text = TextPasteUtil.getStringFromClipboard();
@@ -53,7 +47,6 @@ public class JavaCopyPasteDataConverter implements ApplicationComponent, CopyPas
       new JavaPaster().pasteJavaAsNode(anchor, model, text, null, FeatureKind.STATEMENTS, project);
     }
   }
-
   @Override
   public PasteNodeData getPasteNodeData(SModel model, Project project) {
     // requires write action :( 

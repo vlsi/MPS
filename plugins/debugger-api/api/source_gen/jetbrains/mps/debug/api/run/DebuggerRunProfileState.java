@@ -14,10 +14,8 @@ public abstract class DebuggerRunProfileState implements RunProfileState {
   @NotNull
   protected IDebuggerSettings myDebuggerSettings = EmptyDebuggerSettings.getInstance();
   private boolean myUpdated = false;
-
   public DebuggerRunProfileState() {
   }
-
   protected void updateDebuggerSettings() {
     if (myUpdated) {
       LOG.warn("Updating debugger settings twice.");
@@ -29,13 +27,11 @@ public abstract class DebuggerRunProfileState implements RunProfileState {
       myDebuggerSettings = debuggerSettings;
     }
   }
-
   @NotNull
   public IDebuggerSettings getDebuggerSettings() {
     updateDebuggerSettings();
     return myDebuggerSettings;
   }
-
   @NotNull
   public abstract IDebuggerConfiguration getDebuggerConfiguration();
 }

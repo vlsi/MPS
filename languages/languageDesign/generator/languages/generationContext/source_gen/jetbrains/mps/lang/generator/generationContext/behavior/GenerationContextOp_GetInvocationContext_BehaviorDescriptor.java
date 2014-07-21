@@ -9,5 +9,5 @@ public class GenerationContextOp_GetInvocationContext_BehaviorDescriptor extends
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext";
-  };;
-;}
+  }
+}

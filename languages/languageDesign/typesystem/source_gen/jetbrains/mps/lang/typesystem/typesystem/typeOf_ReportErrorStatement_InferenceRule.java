@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class typeOf_ReportErrorStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeOf_ReportErrorStatement_InferenceRule() {
   }
-
   public void applyRule(final SNode reportErrorStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
@@ -32,29 +31,24 @@ public class typeOf_ReportErrorStatement_InferenceRule extends AbstractInference
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_rl2skv_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rl2skv_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

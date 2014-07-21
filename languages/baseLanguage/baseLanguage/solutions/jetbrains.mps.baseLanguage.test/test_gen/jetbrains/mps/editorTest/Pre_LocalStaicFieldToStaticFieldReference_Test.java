@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class Pre_LocalStaicFieldToStaticFieldReference_Test extends BaseTransformationTest {
   public Pre_LocalStaicFieldToStaticFieldReference_Test() {
   }
-
   @Test
   public void test_Pre_LocalStaicFieldToStaticFieldReference() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.Pre_LocalStaicFieldToStaticFieldReference_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("6769498721974583568", "6769498721974638214");

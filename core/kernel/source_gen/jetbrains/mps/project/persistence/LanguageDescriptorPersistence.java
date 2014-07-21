@@ -26,7 +26,6 @@ import org.apache.log4j.LogManager;
 public class LanguageDescriptorPersistence {
   private LanguageDescriptorPersistence() {
   }
-
   public static LanguageDescriptor loadLanguageDescriptor(final IFile file, final MacroHelper macroHelper) {
     LanguageDescriptor descriptor;
 
@@ -108,7 +107,6 @@ public class LanguageDescriptorPersistence {
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
     return descriptor;
   }
-
   public static void saveLanguageDescriptor(IFile file, LanguageDescriptor descriptor, MacroHelper macroHelper) {
     if (file.isReadOnly()) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -180,6 +178,5 @@ public class LanguageDescriptorPersistence {
     }
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
-
   protected static Logger LOG = LogManager.getLogger(LanguageDescriptorPersistence.class);
 }

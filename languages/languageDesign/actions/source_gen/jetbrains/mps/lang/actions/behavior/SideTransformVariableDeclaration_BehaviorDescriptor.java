@@ -11,5 +11,5 @@ public class SideTransformVariableDeclaration_BehaviorDescriptor extends Variabl
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration";
-  };;
-;}
+  }
+}

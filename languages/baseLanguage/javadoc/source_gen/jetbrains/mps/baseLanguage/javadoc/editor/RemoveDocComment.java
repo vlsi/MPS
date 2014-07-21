@@ -16,54 +16,42 @@ public class RemoveDocComment {
     editorCell.setAction(CellActionType.BACKSPACE, new RemoveDocComment.RemoveDocComment_BACKSPACE(node));
     editorCell.setAction(CellActionType.INSERT, new RemoveDocComment.RemoveDocComment_INSERT(node));
   }
-
   public static class RemoveDocComment_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public RemoveDocComment_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode doc = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", true, new String[]{})).first();
       editorContext.selectWRTFocusPolicy(SNodeOperations.getParent(doc));
       SNodeOperations.deleteNode(doc);
     }
   }
-
   public static class RemoveDocComment_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public RemoveDocComment_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode doc = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", true, new String[]{})).first();
       editorContext.selectWRTFocusPolicy(SNodeOperations.getParent(doc));
       SNodeOperations.deleteNode(doc);
     }
   }
-
   public static class RemoveDocComment_INSERT extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public RemoveDocComment_INSERT(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       CommentLineEditingUtil.insertLine(editorContext);
     }

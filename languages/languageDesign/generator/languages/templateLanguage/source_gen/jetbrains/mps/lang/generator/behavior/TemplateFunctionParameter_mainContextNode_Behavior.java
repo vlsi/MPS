@@ -8,14 +8,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class TemplateFunctionParameter_mainContextNode_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
+  }
+  public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return _quotation_createNode_opc7i8_a0a0();
-  };;
-;  private static SNode _quotation_createNode_opc7i8_a0a0() {
+  }
+  private static SNode _quotation_createNode_opc7i8_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
-  };;
-;}
+  }
+}

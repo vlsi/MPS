@@ -34,20 +34,17 @@ public class MigrationScriptExecutor {
   private SNodeReference script;
   private IOperationContext context;
   private String title;
-
   public MigrationScriptExecutor(SNodeReference script, String title, IOperationContext context, Project project) {
     this.project = project;
     this.script = script;
     this.context = context;
     this.title = title;
   }
-
   public void execImmediately(ProgressMonitor promon) {
     ThreadUtils.assertEDT();
     Runnable process = createProcess(false, promon);
     process.run();
   }
-
   public void execAsCommand(Frame frame) {
     // FIXME pretty much identical to ModelCheckerExecutor - cries out loud for refactoring 
     ThreadUtils.assertEDT();
@@ -67,7 +64,6 @@ public class MigrationScriptExecutor {
     };
     primExec(task, process, afterFinish, frame);
   }
-
   private TaskInfo createTaskInfo() {
     return new TaskInfo() {
       @NotNull
@@ -75,22 +71,18 @@ public class MigrationScriptExecutor {
       public String getTitle() {
         return title;
       }
-
       @Override
       public String getCancelText() {
         return null;
       }
-
       @Override
       public String getCancelTooltipText() {
         return null;
       }
-
       @Override
       public boolean isCancellable() {
         return false;
       }
-
       @NonNls
       @Override
       public String getProcessId() {
@@ -98,7 +90,6 @@ public class MigrationScriptExecutor {
       }
     };
   }
-
   private Runnable createProcess(final boolean spawnCommands, final ProgressMonitor monitor) {
     return new Runnable() {
       @Override
@@ -133,7 +124,6 @@ public class MigrationScriptExecutor {
       }
     };
   }
-
   private ProgressMonitor getOrCreateProgressMonitor(ProgressMonitor promon) {
     if (promon != null) {
       return promon;
@@ -142,7 +132,6 @@ public class MigrationScriptExecutor {
     prind = (prind != null ? prind : new EmptyProgressIndicator());
     return new ProgressMonitorAdapter(prind);
   }
-
   private void primExec(TaskInfo task, final Runnable proc, final Runnable afterFinish, Frame frame) {
     Runnable process = new Runnable() {
       @Override
@@ -155,19 +144,15 @@ public class MigrationScriptExecutor {
     };
     execAsync(process, task, frame);
   }
-
   private Object startCommand(TaskInfo task) {
     return ((CommandProcessorEx) CommandProcessor.getInstance()).startCommand(project, task.getTitle(), null, UndoConfirmationPolicy.REQUEST_CONFIRMATION);
   }
-
   private void finishCommand(Object cmd) {
     ((CommandProcessorEx) CommandProcessor.getInstance()).finishCommand(project, cmd, null);
   }
-
   private void execAsync(Runnable process, TaskInfo task, Frame frame) {
     ApplicationManagerEx.getApplicationEx().runProcessWithProgressSynchronously(process, task.getTitle(), task.isCancellable(), project, SwingUtilities.getRootPane(frame));
   }
-
   private MPSProject getMPSProject() {
     return project.getComponent(MPSProject.class);
   }

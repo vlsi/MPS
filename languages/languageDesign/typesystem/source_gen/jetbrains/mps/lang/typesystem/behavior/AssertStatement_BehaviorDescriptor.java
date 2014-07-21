@@ -9,5 +9,5 @@ public class AssertStatement_BehaviorDescriptor extends ReportErrorStatement_Beh
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.AssertStatement";
-  };;
-;}
+  }
+}

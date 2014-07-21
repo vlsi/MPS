@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SReference;
 public class TypesystemGenUtil {
   public TypesystemGenUtil() {
   }
-
   public static boolean isInCheckEquation(SNode node) {
     SNode current = node;
     SNode oldCurrent = null;
@@ -26,7 +25,6 @@ public class TypesystemGenUtil {
     }
     return "checkInequation".equals(SPropertyOperations.getString(SNodeOperations.getAncestor(oldCurrent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "name"));
   }
-
   public static boolean isInRuleWithContext(SNode node) {
     SNode root = SNodeOperations.getContainingRoot(node);
     if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule")) {
@@ -43,7 +41,6 @@ public class TypesystemGenUtil {
     }
     return false;
   }
-
   public static boolean returnsNode(SNode subtypingRule) {
     List<SNode> returnStatements = SNodeOperations.getDescendants(subtypingRule, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"});
     for (SNode retSt : returnStatements) {
@@ -59,7 +56,6 @@ public class TypesystemGenUtil {
     }
     return true;
   }
-
   private static SNode _quotation_createNode_y65bbo_a0a0b0a0d0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -67,7 +63,6 @@ public class TypesystemGenUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), facade.createNodeId("1196177069451")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_y65bbo_a0a0b0a0d0c_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -75,14 +70,12 @@ public class TypesystemGenUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), facade.createNodeId("1223644778913")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_y65bbo_b0a0a0b0d() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_y65bbo_b0a0a0d0d() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

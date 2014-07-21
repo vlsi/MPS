@@ -26,18 +26,15 @@ import org.apache.log4j.LogManager;
 
 public class SubmitToTracker_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public SubmitToTracker_Action() {
     super("Submit to Issue Tracker", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     List<IMessage> messages = ((List<IMessage>) MapSequence.fromMap(_params).get("messages"));
     return ListSequence.fromList(messages).any(new IWhereFilter<IMessage>() {
@@ -46,7 +43,6 @@ public class SubmitToTracker_Action extends BaseAction {
       }
     });
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -60,7 +56,6 @@ public class SubmitToTracker_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -83,7 +78,6 @@ public class SubmitToTracker_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")));
@@ -120,6 +114,5 @@ public class SubmitToTracker_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(SubmitToTracker_Action.class);
 }

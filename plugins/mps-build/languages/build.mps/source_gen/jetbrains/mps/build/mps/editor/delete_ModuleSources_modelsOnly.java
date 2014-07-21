@@ -14,34 +14,26 @@ public class delete_ModuleSources_modelsOnly {
     editorCell.setAction(CellActionType.DELETE, new delete_ModuleSources_modelsOnly.delete_ModuleSources_modelsOnly_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new delete_ModuleSources_modelsOnly.delete_ModuleSources_modelsOnly_BACKSPACE(node));
   }
-
   public static class delete_ModuleSources_modelsOnly_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_ModuleSources_modelsOnly_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "modelsOnly", "" + (false));
     }
   }
-
   public static class delete_ModuleSources_modelsOnly_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_ModuleSources_modelsOnly_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "modelsOnly", "" + (false));
     }

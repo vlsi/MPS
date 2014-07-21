@@ -9,5 +9,5 @@ public class GenerationContextOp_ParameterRef_BehaviorDescriptor extends Generat
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef";
-  };;
-;}
+  }
+}

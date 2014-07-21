@@ -9,5 +9,5 @@ public class SimpleExtensionMethodsContainer_BehaviorDescriptor extends BaseExte
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer";
-  };;
-;}
+  }
+}

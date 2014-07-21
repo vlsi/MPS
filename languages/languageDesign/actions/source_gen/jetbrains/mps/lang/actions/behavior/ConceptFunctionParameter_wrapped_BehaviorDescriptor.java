@@ -11,5 +11,5 @@ public class ConceptFunctionParameter_wrapped_BehaviorDescriptor extends Concept
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped";
-  };;
-;}
+  }
+}

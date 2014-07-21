@@ -10,9 +10,9 @@ public class ReadOnlyStyleClassItem_BehaviorDescriptor extends BooleanStyleSheet
   }
   public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return ReadOnlyStyleClassItem_Behavior.virtual_getStyleAttribute_3639065570239132541(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem";
-  };;
-;}
+  }
+}

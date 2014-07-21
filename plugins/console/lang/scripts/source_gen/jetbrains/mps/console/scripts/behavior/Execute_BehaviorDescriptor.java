@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class Execute_BehaviorDescriptor extends GeneratedCommand_BehaviorDescriptor {
   public Execute_BehaviorDescriptor() {
   }
-
   public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
     return Execute_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.scripts.structure.Execute";

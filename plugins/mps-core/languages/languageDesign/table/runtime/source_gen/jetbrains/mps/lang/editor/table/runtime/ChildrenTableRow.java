@@ -17,25 +17,21 @@ public class ChildrenTableRow extends AbstractTableRow {
   private SNode myChildLinkDeclaration;
   private SNode myParentNode;
   private List<SNode> myChildNodes;
-
   public ChildrenTableRow(@NotNull SNode parentNode, @NotNull SNode childLinkDeclaration, int rowNumber) {
     super(rowNumber);
     myParentNode = parentNode;
     myChildLinkDeclaration = childLinkDeclaration;
   }
-
   @Override
   public void removeCell(int index) {
     SNodeOperations.deleteNode(ListSequence.fromList(getChildren()).getElement(index));
   }
-
   @Override
   public void createNewCell(int index) {
     assert index <= ListSequence.fromList(getChildren()).count();
     SNode newCellNode = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myChildLinkDeclaration, "target", false)), null);
     insertNewCell(newCellNode, index);
   }
-
   protected void insertNewCell(SNode newCellNode, int index) {
     // subclasses may implement this method in a different way 
     if (index == ListSequence.fromList(getChildren()).count()) {
@@ -44,24 +40,20 @@ public class ChildrenTableRow extends AbstractTableRow {
       SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(getChildren()).getElement(index), newCellNode);
     }
   }
-
   @Override
   public int getColumnCount() {
     return ListSequence.fromList(getChildren()).count();
   }
-
   @Override
   public SNode getCell(int index) {
     return ListSequence.fromList(getChildren()).getElement(index);
   }
-
   protected List<SNode> filterChildren(List<SNode> children) {
     // Dummy filter subclasses may implement some filtering here. 
     // Returned list can contain nulls representing not existing cells. 
     List<SNode> result = new ArrayList<SNode>();
     return ListSequence.fromList(result).addSequence(ListSequence.fromList(children));
   }
-
   private List<SNode> getChildren() {
     if (myChildNodes == null) {
       myChildNodes = filterChildren(SNodeOperations.getChildren(myParentNode, myChildLinkDeclaration));

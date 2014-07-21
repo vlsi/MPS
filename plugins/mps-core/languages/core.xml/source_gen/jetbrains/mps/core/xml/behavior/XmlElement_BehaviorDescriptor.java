@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class XmlElement_BehaviorDescriptor extends XmlBaseElement_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public XmlElement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.structure.XmlElement";

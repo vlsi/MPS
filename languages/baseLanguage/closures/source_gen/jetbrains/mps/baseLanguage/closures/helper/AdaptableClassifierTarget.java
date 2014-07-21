@@ -18,11 +18,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class AdaptableClassifierTarget {
   private TemplateQueryContext genContext;
-
   public AdaptableClassifierTarget(TemplateQueryContext genContext) {
     this.genContext = genContext;
   }
-
   public void setTarget(SNode adaptable, final SNode target) {
     List<SNode> allAdaptable = (List<SNode>) genContext.getStepObject(Keys.ALL_NEEDS_ADAPTED);
     if (allAdaptable == null) {
@@ -43,7 +41,6 @@ public class AdaptableClassifierTarget {
       Values.ADAPTABLE.set(genContext, SLinkOperations.getTarget(target, "classifier", false), SLinkOperations.getTarget(adaptable, "classifier", false));
     }
   }
-
   private List<SNode> getOrCreateTargets(SNode adaptable) {
     List<SNode> trgList = (List<SNode>) genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(adaptable, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{})));
     if (trgList == null) {
@@ -52,7 +49,6 @@ public class AdaptableClassifierTarget {
     }
     return trgList;
   }
-
   public String getTargetName(SNode target) {
     SNode adaptable = (SNode) Values.ADAPTABLE.get(genContext, target);
     String aname = SPropertyOperations.getString(adaptable, "name");
@@ -63,7 +59,6 @@ public class AdaptableClassifierTarget {
     tname = (tldidx >= 0 ? tname.substring(tldidx + 1) : tname);
     return aname + "_to_" + tname + "_adapter";
   }
-
   public SNode getTarget(SNode expr) {
     SNode ntype = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(expr), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
     ntype = (ntype == null ? TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true) : ntype);
@@ -78,15 +73,12 @@ public class AdaptableClassifierTarget {
     assert Values.ADAPTABLE.get(genContext, target) != null;
     return target;
   }
-
   public List<SNode> getTargets(SNode adaptable) {
     return (List<SNode>) genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(BehaviorReflection.invokeVirtual(String.class, adaptable, "virtual_getFqName_1213877404258", new Object[]{})));
   }
-
   public List<SNode> getAllAdaptable() {
     return (List<SNode>) genContext.getStepObject(Keys.ALL_NEEDS_ADAPTED);
   }
-
   public boolean hasAdaptable() {
     return ListSequence.fromList(getAllAdaptable()).isNotEmpty();
   }

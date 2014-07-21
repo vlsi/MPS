@@ -8,16 +8,13 @@ import java.util.Collections;
 
 public class SetLibraryContributor implements LibraryContributor {
   private Set<LibraryContributor.LibDescriptor> libraryPaths;
-
   public SetLibraryContributor(Set<LibraryContributor.LibDescriptor> libraryPaths) {
     this.libraryPaths = libraryPaths;
   }
-
   @Override
   public Set<LibraryContributor.LibDescriptor> getLibraries() {
     return Collections.unmodifiableSet(libraryPaths);
   }
-
   @Override
   public boolean hiddenLanguages() {
     return false;

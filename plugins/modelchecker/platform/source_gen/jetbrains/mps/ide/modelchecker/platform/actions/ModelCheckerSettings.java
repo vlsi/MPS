@@ -25,94 +25,76 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   private ModelCheckerSettings.MyState myState = new ModelCheckerSettings.MyState();
   private ModelCheckerPreferencesPage myPreferences;
   private boolean myMigrationMode = false;
-
   public ModelCheckerSettings() {
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Model Checker Settings";
   }
-
   @Override
   public void initComponent() {
   }
-
   @Override
   public void disposeComponent() {
   }
-
   @Override
   public ModelCheckerSettings.MyState getState() {
     return myState;
   }
-
   @Override
   public void loadState(ModelCheckerSettings.MyState state) {
     myState = state;
   }
-
   @Nls
   @Override
   public String getDisplayName() {
     return "Model Checker";
   }
-
   @Nullable
   public Icon getIcon() {
     return null;
   }
-
   @Nullable
   @NonNls
   @Override
   public String getHelpTopic() {
     return "Model_Checker";
   }
-
   @Override
   public JComponent createComponent() {
     return getPreferences().getComponent();
   }
-
   @Override
   public boolean isModified() {
     return getPreferences().isModified();
   }
-
   @Override
   public void apply() throws ConfigurationException {
     getPreferences().commit();
   }
-
   @Override
   public void reset() {
   }
-
   @Override
   public void disposeUIResources() {
     myPreferences = null;
   }
-
   @Override
   public String getId() {
     return "model.checker";
   }
-
   @Override
   public Runnable enableSearch(String option) {
     return null;
   }
-
   private ModelCheckerPreferencesPage getPreferences() {
     if (myPreferences == null) {
       myPreferences = new ModelCheckerPreferencesPage(this);
     }
     return myPreferences;
   }
-
   public List<SpecificChecker> getSpecificCheckers() {
     List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
 
@@ -132,7 +114,6 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     }
     return specificCheckers;
   }
-
   public boolean checkerIsOn(String category) {
     if (category.equals("type system")) {
       return isCheckTypesystem();
@@ -142,69 +123,53 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     }
     return false;
   }
-
   public boolean isCheckUnresolvedReferences() {
     return myState.myCheckUnresolvedReferences;
   }
-
   public void setCheckUnresolvedReferences(boolean checkUnresolvedReferences) {
     myState.myCheckUnresolvedReferences = checkUnresolvedReferences;
   }
-
   public boolean isCheckConstraints() {
     return myState.myCheckConstraints;
   }
-
   public void setCheckConstraints(boolean checkConstraints) {
     myState.myCheckConstraints = checkConstraints;
   }
-
   public boolean isCheckModelProperties() {
     return myState.myCheckModelProperties;
   }
-
   public void setCheckModelProperties(boolean check) {
     myState.myCheckModelProperties = check;
   }
-
   public boolean isCheckTypesystem() {
     return myState.myCheckTypesystem;
   }
-
   public void setCheckTypesystem(boolean checkTypesystem) {
     myState.myCheckTypesystem = checkTypesystem;
   }
-
   public boolean isCheckStubs() {
     return myState.myCheckStubs;
   }
-
   public void setCheckStubs(boolean checkStubs) {
     myState.myCheckStubs = checkStubs;
   }
-
   public boolean isCheckBeforeCommit() {
     return myState.myCheckBeforeCommit;
   }
-
   public void setCheckBeforeCommit(boolean checkBeforeCommit) {
     myState.myCheckBeforeCommit = checkBeforeCommit;
   }
-
   @Deprecated
   public void setMigrationMode(boolean migrationMode) {
     myMigrationMode = migrationMode;
   }
-
   @Deprecated
   public boolean getMigrationMode() {
     return myMigrationMode;
   }
-
   public static ModelCheckerSettings getInstance() {
     return ApplicationManager.getApplication().getComponent(ModelCheckerSettings.class);
   }
-
   public static class MyState {
     public boolean myCheckUnresolvedReferences = true;
     public boolean myCheckConstraints = true;
@@ -212,7 +177,6 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     public boolean myCheckTypesystem = true;
     public boolean myCheckBeforeCommit = true;
     public boolean myCheckStubs = false;
-
     public MyState() {
     }
   }

@@ -16,7 +16,6 @@ import com.intellij.ui.components.JBScrollPane;
 public class WatchesPanel extends EvaluationUi {
   private final SessionStopDisposer mySessionStopDisposer;
   private final EvaluationProvider myProvider;
-
   public WatchesPanel(final EvaluationProvider provider) {
     super(provider.getDebugSession(), true);
     myTree.setActionGroup(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.java.runtime.ui.actions.WatchesTreeActions_ActionGroup")));
@@ -33,7 +32,6 @@ public class WatchesPanel extends EvaluationUi {
           }
         });
       }
-
       @Override
       public void watchUpdated(final IEvaluationContainer model) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -43,7 +41,6 @@ public class WatchesPanel extends EvaluationUi {
           }
         });
       }
-
       @Override
       public void watchRemoved(final IEvaluationContainer model) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -72,14 +69,12 @@ public class WatchesPanel extends EvaluationUi {
     add(toolbar.getComponent(), BorderLayout.WEST);
     add(new JBScrollPane(myTree), BorderLayout.CENTER);
   }
-
   @Override
   protected void update() {
     for (IEvaluationContainer model : myProvider.getWatches()) {
       model.updateState();
     }
   }
-
   @Override
   public void evaluate() {
     for (IEvaluationContainer model : myProvider.getWatches()) {

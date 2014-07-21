@@ -11,5 +11,5 @@ public class ActionConstructionParameterDeclaration_BehaviorDescriptor extends D
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration";
-  };;
-;}
+  }
+}

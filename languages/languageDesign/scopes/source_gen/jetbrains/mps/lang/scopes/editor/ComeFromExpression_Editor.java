@@ -25,7 +25,6 @@ public class ComeFromExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1c8esj_a(editorContext, node);
   }
-
   private EditorCell createCollection_1c8esj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1c8esj_a");
@@ -34,14 +33,12 @@ public class ComeFromExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_1c8esj_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_1c8esj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "come from");
     editorCell.setCellId("Constant_1c8esj_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_1c8esj_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("link");
@@ -66,20 +63,16 @@ public class ComeFromExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_1c8esj_a1a extends InlineCellProvider {
     public _Inline_1c8esj_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_1c8esj_a0b0(editorContext, node);
     }
-
     private EditorCell createProperty_1c8esj_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");

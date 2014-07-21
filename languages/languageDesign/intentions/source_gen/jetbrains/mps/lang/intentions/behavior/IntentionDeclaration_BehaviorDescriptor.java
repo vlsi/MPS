@@ -9,12 +9,12 @@ public class IntentionDeclaration_BehaviorDescriptor extends BaseIntentionDeclar
   }
   public SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return IntentionDeclaration_Behavior.virtual_getBaseConcept_2621449412040133768(thisNode);
-  };;
-;  public SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
+  }
+  public SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
     return IntentionDeclaration_Behavior.virtual_getDescendantToCheck_4844813484172611439(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.intentions.structure.IntentionDeclaration";
-  };;
-;}
+  }
+}

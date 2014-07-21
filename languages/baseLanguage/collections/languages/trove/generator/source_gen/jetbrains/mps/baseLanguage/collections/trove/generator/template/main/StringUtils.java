@@ -28,7 +28,6 @@ package jetbrains.mps.baseLanguage.collections.trove.generator.template.main;
     }
     return str.substring(start, end);
   }
-
   /*package*/ static String substring(String str, int start) {
     if (str == null) {
       return null;

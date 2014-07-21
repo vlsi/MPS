@@ -9,5 +9,5 @@ public class BracketColorStyleClassItem_BehaviorDescriptor extends ColorStyleCla
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem";
-  };;
-;}
+  }
+}

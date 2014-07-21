@@ -20,7 +20,6 @@ public class JavaConsoleCreator {
   @Deprecated
   public JavaConsoleCreator() {
   }
-
   public static ConsoleViewImpl createConsoleView(Project project) {
     final TextConsoleBuilder builder = TextConsoleBuilderFactory.getInstance().createBuilder(project);
     for (Filter filter : Extensions.getExtensions(AnalyzeStacktraceUtil.EP_NAME, project)) {

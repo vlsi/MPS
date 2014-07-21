@@ -26,16 +26,13 @@ public class QueryExpression_KeyMap extends KeyMapImpl {
     action = new QueryExpression_KeyMap.QueryExpression_KeyMap_Action0();
     this.putAction("any", "<", action);
   }
-
   public static class QueryExpression_KeyMap_Action0 extends KeyMapActionImpl {
     public QueryExpression_KeyMap_Action0() {
       this.setShownInPopupMenu(false);
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -50,20 +47,16 @@ public class QueryExpression_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "parameter", true), "parameter", true)).isEmpty() && Sequence.fromIterable(BehaviorReflection.invokeVirtualStatic((Class<Iterable<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getSupportedParameters_4307205004146936444", new Object[]{})).isNotEmpty();
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(node, "parameter", true), "parameter", "jetbrains.mps.console.blCommand.structure.QueryParameter");
     }
-
     public String getKeyStroke() {
       return " <";
     }

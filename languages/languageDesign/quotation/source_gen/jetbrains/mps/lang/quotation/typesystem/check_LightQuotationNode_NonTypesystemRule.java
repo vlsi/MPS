@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_LightQuotationNode_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_LightQuotationNode_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (final SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(node, "concept", false))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -46,18 +45,15 @@ public class check_LightQuotationNode_NonTypesystemRule extends AbstractNonTypes
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.quotation.structure.NodeBuilderNode";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

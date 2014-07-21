@@ -8,124 +8,124 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:e318478c-edb7-4caf-bafe-2e5906944dde(jetbrains.mps.baseLanguage.math.tests)/1650644170366801770">
     <file name="IntervalTest.java">
-      <node id="1650644170366801780" at="17,32,18,62" concept="4" />
-      <node id="1650644170366801789" at="18,62,19,44" concept="1" />
-      <node id="1650644170366801795" at="19,44,20,44" concept="1" />
-      <node id="1650644170366801801" at="20,44,21,45" concept="1" />
-      <node id="1650644170366801807" at="21,45,22,46" concept="1" />
-      <node id="1650644170366801814" at="22,46,23,46" concept="1" />
-      <node id="1650644170366801825" at="27,33,28,75" concept="4" />
-      <node id="1650644170366801836" at="28,75,29,44" concept="1" />
-      <node id="1650644170366801842" at="29,44,30,45" concept="1" />
-      <node id="1650644170366801848" at="30,45,31,45" concept="1" />
-      <node id="1650644170366801859" at="35,34,36,75" concept="4" />
-      <node id="1650644170366801870" at="36,75,37,44" concept="1" />
-      <node id="1650644170366801876" at="37,44,38,44" concept="1" />
-      <node id="1650644170366801882" at="38,44,39,46" concept="1" />
-      <node id="1650644170366801893" at="43,30,44,78" concept="4" />
-      <node id="1650644170366801904" at="44,78,45,48" concept="1" />
-      <node id="1650644170366801911" at="45,48,46,45" concept="1" />
-      <node id="1650644170366801917" at="46,45,47,47" concept="1" />
-      <node id="1650644170366801928" at="51,31,52,77" concept="4" />
-      <node id="1650644170366801939" at="52,77,53,44" concept="1" />
-      <node id="1650644170366801945" at="53,44,54,47" concept="1" />
-      <node id="1650644170366801951" at="54,47,55,46" concept="1" />
-      <node id="1650644170366801963" at="59,45,60,61" concept="4" />
-      <node id="1650644170366801972" at="60,61,61,68" concept="1" />
-      <node id="1650644170366801985" at="65,49,66,74" concept="4" />
-      <node id="1650644170366801996" at="66,74,67,65" concept="1" />
-      <node id="1650644170366802008" at="71,50,72,74" concept="4" />
-      <node id="1650644170366802019" at="72,74,73,65" concept="1" />
-      <node id="1650644170366802031" at="77,45,78,61" concept="4" />
-      <node id="1650644170366802040" at="78,61,79,62" concept="1" />
-      <node id="1650644170366802051" at="83,31,84,34" concept="1" />
-      <node id="1650644170366802064" at="88,39,89,48" concept="1" />
-      <node id="1650644170366802079" at="93,38,94,47" concept="1" />
-      <node id="1650644170366802094" at="98,31,99,49" concept="1" />
-      <node id="1650644170366802133" at="108,73,109,40" concept="4" />
-      <node id="1650644170366802145" at="110,26,111,20" concept="1" />
-      <node id="1650644170366802150" at="112,5,113,18" concept="5" />
+      <node id="1650644170366801780" at="16,32,17,62" concept="4" />
+      <node id="1650644170366801789" at="17,62,18,44" concept="1" />
+      <node id="1650644170366801795" at="18,44,19,44" concept="1" />
+      <node id="1650644170366801801" at="19,44,20,45" concept="1" />
+      <node id="1650644170366801807" at="20,45,21,46" concept="1" />
+      <node id="1650644170366801814" at="21,46,22,46" concept="1" />
+      <node id="1650644170366801825" at="25,33,26,75" concept="4" />
+      <node id="1650644170366801836" at="26,75,27,44" concept="1" />
+      <node id="1650644170366801842" at="27,44,28,45" concept="1" />
+      <node id="1650644170366801848" at="28,45,29,45" concept="1" />
+      <node id="1650644170366801859" at="32,34,33,75" concept="4" />
+      <node id="1650644170366801870" at="33,75,34,44" concept="1" />
+      <node id="1650644170366801876" at="34,44,35,44" concept="1" />
+      <node id="1650644170366801882" at="35,44,36,46" concept="1" />
+      <node id="1650644170366801893" at="39,30,40,78" concept="4" />
+      <node id="1650644170366801904" at="40,78,41,48" concept="1" />
+      <node id="1650644170366801911" at="41,48,42,45" concept="1" />
+      <node id="1650644170366801917" at="42,45,43,47" concept="1" />
+      <node id="1650644170366801928" at="46,31,47,77" concept="4" />
+      <node id="1650644170366801939" at="47,77,48,44" concept="1" />
+      <node id="1650644170366801945" at="48,44,49,47" concept="1" />
+      <node id="1650644170366801951" at="49,47,50,46" concept="1" />
+      <node id="1650644170366801963" at="53,45,54,61" concept="4" />
+      <node id="1650644170366801972" at="54,61,55,68" concept="1" />
+      <node id="1650644170366801985" at="58,49,59,74" concept="4" />
+      <node id="1650644170366801996" at="59,74,60,65" concept="1" />
+      <node id="1650644170366802008" at="63,50,64,74" concept="4" />
+      <node id="1650644170366802019" at="64,74,65,65" concept="1" />
+      <node id="1650644170366802031" at="68,45,69,61" concept="4" />
+      <node id="1650644170366802040" at="69,61,70,62" concept="1" />
+      <node id="1650644170366802051" at="73,31,74,34" concept="1" />
+      <node id="1650644170366802064" at="77,39,78,48" concept="1" />
+      <node id="1650644170366802079" at="81,38,82,47" concept="1" />
+      <node id="1650644170366802094" at="85,31,86,49" concept="1" />
+      <node id="1650644170366802133" at="93,73,94,40" concept="4" />
+      <node id="1650644170366802145" at="95,26,96,20" concept="1" />
+      <node id="1650644170366802150" at="97,5,98,18" concept="5" />
       <node id="1650644170366801772" at="13,0,15,0" concept="0" trace="IntervalTest#()V" />
-      <node id="1650644170366802109" at="103,39,105,5" concept="2" />
-      <node id="1650644170366802140" at="109,40,112,5" concept="2" />
-      <node id="1650644170366802047" at="82,0,86,0" concept="3" trace="endBeforStart#()V" />
-      <node id="1650644170366802060" at="87,0,91,0" concept="3" trace="minusInfinityIncluded#()V" />
-      <node id="1650644170366802075" at="92,0,96,0" concept="3" trace="plusInfinityIncluded#()V" />
-      <node id="1650644170366802090" at="97,0,101,0" concept="3" trace="emptyInterval#()V" />
-      <node id="1650644170366801959" at="58,0,63,0" concept="3" trace="integerIterationAllIncluded#()V" />
-      <node id="1650644170366801981" at="64,0,69,0" concept="3" trace="integerIterationLeftNotIncluded#()V" />
-      <node id="1650644170366802004" at="70,0,75,0" concept="3" trace="integerIterationRightNotIncluded#()V" />
-      <node id="1650644170366802027" at="76,0,81,0" concept="3" trace="oneElementIntervalIteration#()V" />
-      <node id="1650644170366802105" at="102,0,107,0" concept="3" trace="iterationFromInfinity#()V" />
-      <node id="1650644170366801821" at="26,0,33,0" concept="3" trace="leftNotIncluded#()V" />
-      <node id="1650644170366801855" at="34,0,41,0" concept="3" trace="rightNotIncluded#()V" />
-      <node id="1650644170366801889" at="42,0,49,0" concept="3" trace="leftInfinity#()V" />
-      <node id="1650644170366801924" at="50,0,57,0" concept="3" trace="rightInfinity#()V" />
-      <node id="1650644170366802123" at="108,0,115,0" concept="3" trace="elements#(Ljetbrains/mps/baseLanguage/math/runtime/Interval;)Ljava/util/List;" />
-      <node id="1650644170366801776" at="16,0,25,0" concept="3" trace="simpleInterval#()V" />
+      <node id="1650644170366802109" at="89,39,91,5" concept="2" />
+      <node id="1650644170366802140" at="94,40,97,5" concept="2" />
+      <node id="1650644170366802047" at="72,0,76,0" concept="3" trace="endBeforStart#()V" />
+      <node id="1650644170366802060" at="76,0,80,0" concept="3" trace="minusInfinityIncluded#()V" />
+      <node id="1650644170366802075" at="80,0,84,0" concept="3" trace="plusInfinityIncluded#()V" />
+      <node id="1650644170366802090" at="84,0,88,0" concept="3" trace="emptyInterval#()V" />
+      <node id="1650644170366801959" at="52,0,57,0" concept="3" trace="integerIterationAllIncluded#()V" />
+      <node id="1650644170366801981" at="57,0,62,0" concept="3" trace="integerIterationLeftNotIncluded#()V" />
+      <node id="1650644170366802004" at="62,0,67,0" concept="3" trace="integerIterationRightNotIncluded#()V" />
+      <node id="1650644170366802027" at="67,0,72,0" concept="3" trace="oneElementIntervalIteration#()V" />
+      <node id="1650644170366802105" at="88,0,93,0" concept="3" trace="iterationFromInfinity#()V" />
+      <node id="1650644170366801821" at="24,0,31,0" concept="3" trace="leftNotIncluded#()V" />
+      <node id="1650644170366801855" at="31,0,38,0" concept="3" trace="rightNotIncluded#()V" />
+      <node id="1650644170366801889" at="38,0,45,0" concept="3" trace="leftInfinity#()V" />
+      <node id="1650644170366801924" at="45,0,52,0" concept="3" trace="rightInfinity#()V" />
+      <node id="1650644170366802123" at="93,0,100,0" concept="3" trace="elements#(Ljetbrains/mps/baseLanguage/math/runtime/Interval;)Ljava/util/List;" />
+      <node id="1650644170366801776" at="15,0,24,0" concept="3" trace="simpleInterval#()V" />
       <scope id="1650644170366801775" at="13,25,13,25" />
-      <scope id="1650644170366802119" at="104,69,104,69" />
-      <scope id="1650644170366802050" at="83,31,84,34" />
-      <scope id="1650644170366802063" at="88,39,89,48" />
-      <scope id="1650644170366802078" at="93,38,94,47" />
-      <scope id="1650644170366802093" at="98,31,99,49" />
-      <scope id="1650644170366802144" at="110,26,111,20" />
+      <scope id="1650644170366802119" at="90,69,90,69" />
+      <scope id="1650644170366802050" at="73,31,74,34" />
+      <scope id="1650644170366802063" at="77,39,78,48" />
+      <scope id="1650644170366802078" at="81,38,82,47" />
+      <scope id="1650644170366802093" at="85,31,86,49" />
+      <scope id="1650644170366802144" at="95,26,96,20" />
       <scope id="1650644170366801772" at="13,0,15,0" />
-      <scope id="1650644170366801962" at="59,45,61,68">
+      <scope id="1650644170366801962" at="53,45,55,68">
         <var name="interval" id="1650644170366801964" />
       </scope>
-      <scope id="1650644170366801984" at="65,49,67,65">
+      <scope id="1650644170366801984" at="58,49,60,65">
         <var name="interval" id="1650644170366801986" />
       </scope>
-      <scope id="1650644170366802007" at="71,50,73,65">
+      <scope id="1650644170366802007" at="63,50,65,65">
         <var name="interval" id="1650644170366802009" />
       </scope>
-      <scope id="1650644170366802030" at="77,45,79,62">
+      <scope id="1650644170366802030" at="68,45,70,62">
         <var name="interval" id="1650644170366802032" />
       </scope>
-      <scope id="1650644170366802108" at="103,39,105,5" />
-      <scope id="1650644170366802109" at="103,39,105,5">
+      <scope id="1650644170366802108" at="89,39,91,5" />
+      <scope id="1650644170366802109" at="89,39,91,5">
         <var name="i" id="1650644170366802117" />
       </scope>
-      <scope id="1650644170366802140" at="109,40,112,5">
+      <scope id="1650644170366802140" at="94,40,97,5">
         <var name="t" id="1650644170366802142" />
       </scope>
-      <scope id="1650644170366801824" at="27,33,31,45">
+      <scope id="1650644170366801824" at="25,33,29,45">
         <var name="interval" id="1650644170366801826" />
       </scope>
-      <scope id="1650644170366801858" at="35,34,39,46">
+      <scope id="1650644170366801858" at="32,34,36,46">
         <var name="interval" id="1650644170366801860" />
       </scope>
-      <scope id="1650644170366801892" at="43,30,47,47">
+      <scope id="1650644170366801892" at="39,30,43,47">
         <var name="interval" id="1650644170366801894" />
       </scope>
-      <scope id="1650644170366801927" at="51,31,55,46">
+      <scope id="1650644170366801927" at="46,31,50,46">
         <var name="interval" id="1650644170366801929" />
       </scope>
-      <scope id="1650644170366802047" at="82,0,86,0" />
-      <scope id="1650644170366802060" at="87,0,91,0" />
-      <scope id="1650644170366802075" at="92,0,96,0" />
-      <scope id="1650644170366802090" at="97,0,101,0" />
-      <scope id="1650644170366801959" at="58,0,63,0" />
-      <scope id="1650644170366801981" at="64,0,69,0" />
-      <scope id="1650644170366802004" at="70,0,75,0" />
-      <scope id="1650644170366802027" at="76,0,81,0" />
-      <scope id="1650644170366802105" at="102,0,107,0" />
-      <scope id="1650644170366802132" at="108,73,113,18">
+      <scope id="1650644170366802047" at="72,0,76,0" />
+      <scope id="1650644170366802060" at="76,0,80,0" />
+      <scope id="1650644170366802075" at="80,0,84,0" />
+      <scope id="1650644170366802090" at="84,0,88,0" />
+      <scope id="1650644170366801959" at="52,0,57,0" />
+      <scope id="1650644170366801981" at="57,0,62,0" />
+      <scope id="1650644170366802004" at="62,0,67,0" />
+      <scope id="1650644170366802027" at="67,0,72,0" />
+      <scope id="1650644170366802105" at="88,0,93,0" />
+      <scope id="1650644170366802132" at="93,73,98,18">
         <var name="result" id="1650644170366802134" />
       </scope>
-      <scope id="1650644170366801779" at="17,32,23,46">
+      <scope id="1650644170366801779" at="16,32,22,46">
         <var name="interval" id="1650644170366801781" />
       </scope>
-      <scope id="1650644170366801821" at="26,0,33,0" />
-      <scope id="1650644170366801855" at="34,0,41,0" />
-      <scope id="1650644170366801889" at="42,0,49,0" />
-      <scope id="1650644170366801924" at="50,0,57,0" />
-      <scope id="1650644170366802123" at="108,0,115,0">
+      <scope id="1650644170366801821" at="24,0,31,0" />
+      <scope id="1650644170366801855" at="31,0,38,0" />
+      <scope id="1650644170366801889" at="38,0,45,0" />
+      <scope id="1650644170366801924" at="45,0,52,0" />
+      <scope id="1650644170366802123" at="93,0,100,0">
         <var name="interval" id="1650644170366802129" />
       </scope>
-      <scope id="1650644170366801776" at="16,0,25,0" />
-      <unit id="1650644170366801770" at="12,0,116,0" name="jetbrains.mps.baseLanguage.math.tests.IntervalTest" />
+      <scope id="1650644170366801776" at="15,0,24,0" />
+      <unit id="1650644170366801770" at="12,0,101,0" name="jetbrains.mps.baseLanguage.math.tests.IntervalTest" />
     </file>
   </root>
 </debug-info>

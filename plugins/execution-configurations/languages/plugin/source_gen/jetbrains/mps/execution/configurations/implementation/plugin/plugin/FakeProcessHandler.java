@@ -12,13 +12,10 @@ public class FakeProcessHandler extends ProcessHandler {
   private final Future<?> myFuture;
   private final TestLightExecutor myExecutor;
 
-
   public FakeProcessHandler(Future<?> future, TestLightExecutor executor) {
     myFuture = future;
     myExecutor = executor;
   }
-
-
 
   @Override
   public void startNotify() {
@@ -26,48 +23,34 @@ public class FakeProcessHandler extends ProcessHandler {
     myExecutor.setReady();
   }
 
-
-
   public void terminate() {
     myExecutor.terminateRun();
   }
-
-
 
   @Override
   protected void destroyProcessImpl() {
     terminate();
   }
 
-
-
   @Override
   protected void detachProcessImpl() {
     terminate();
   }
-
-
 
   @Override
   public boolean isProcessTerminated() {
     return myFuture.isDone();
   }
 
-
-
   @Override
   public boolean detachIsDefault() {
     return false;
   }
 
-
-
   @Override
   public OutputStream getProcessInput() {
     return null;
   }
-
-
 
   @Override
   public void notifyTextAvailable(String string, Key key) {

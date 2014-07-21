@@ -21,8 +21,6 @@ public class EnvironmentUtils {
   private EnvironmentUtils() {
   }
 
-
-
   public static void setSystemProperties(boolean loadIdeaPlugins) {
     String mpsInternal = System.getProperty("mps.internal");
     System.setProperty("idea.is.internal", (mpsInternal == null ? "false" : mpsInternal));
@@ -33,8 +31,6 @@ public class EnvironmentUtils {
     System.setProperty("idea.platform.prefix", "Idea");
   }
 
-
-
   public static void setIdeaPluginsToLoad(EnvironmentConfig config) {
     if (isEmptyString(System.getProperty("plugin.path"))) {
       setPluginPath();
@@ -44,8 +40,6 @@ public class EnvironmentUtils {
       }
     }
   }
-
-
 
   public static void setPluginPath() {
     StringBuilder pluginPath = new StringBuilder();
@@ -61,8 +55,6 @@ public class EnvironmentUtils {
     }
   }
 
-
-
   public static FileMPSProject createDummyFileProject() {
     File projectFile = FileUtil.createTmpFile();
     FileMPSProject project = new FileMPSProject(projectFile);
@@ -70,8 +62,6 @@ public class EnvironmentUtils {
     projectFile.deleteOnExit();
     return project;
   }
-
-
 
   public static MapPathMacrosProvider createMapMacrosProvider(Map<String, String> macros) {
     Map<String, String> realMacros = new HashMap<String, String>();
@@ -84,8 +74,6 @@ public class EnvironmentUtils {
     }
     return new MapPathMacrosProvider(realMacros);
   }
-
-
 
   public static SetLibraryContributor createLibContributor(boolean loadBootstrapLibs, Map<String, File> libs) {
     Set<LibraryContributor.LibDescriptor> libraryPaths = new HashSet<LibraryContributor.LibDescriptor>();
@@ -101,7 +89,6 @@ public class EnvironmentUtils {
     }
     return new SetLibraryContributor(libraryPaths);
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

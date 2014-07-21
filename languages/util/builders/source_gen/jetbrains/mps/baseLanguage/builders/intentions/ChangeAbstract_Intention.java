@@ -16,65 +16,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ChangeAbstract_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ChangeAbstract_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration";
   }
-
   public String getPresentation() {
     return "ChangeAbstract";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.builders.intentions.ChangeAbstract_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.builders";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:7f54566a-e579-4f13-aaf4-b6e2c202aeb2(jetbrains.mps.baseLanguage.builders.intentions)", "5219429592916269641");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ChangeAbstract_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (SPropertyOperations.getBoolean(node, "isAbstract") ? "Make Non Abstract" : "Make Abstract");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "isAbstract", "" + (!(SPropertyOperations.getBoolean(node, "isAbstract"))));
     }
-
     public IntentionDescriptor getDescriptor() {
       return ChangeAbstract_Intention.this;
     }

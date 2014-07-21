@@ -11,14 +11,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Node_GetAncestorOperation_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
+  }
+  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
     return true;
-  };;
-;  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
+  }
+  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
     return true;
-  };;
-;  public static List<SNode> virtual_getApplicableParameter_3044950653914717056(SAbstractConcept thisConcept) {
+  }
+  public static List<SNode> virtual_getApplicableParameter_3044950653914717056(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.lang.smodel.structure.SNodeOperation", "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1144100932627"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1154546920561"));
@@ -26,5 +26,5 @@ public class Node_GetAncestorOperation_Behavior {
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1540150895035667832"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1144101972840"));
     return result;
-  };;
-;}
+  }
+}

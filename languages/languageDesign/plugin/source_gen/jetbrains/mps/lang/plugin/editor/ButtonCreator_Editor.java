@@ -20,7 +20,6 @@ public class ButtonCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_v9w7sp_a(editorContext, node);
   }
-
   private EditorCell createCollection_v9w7sp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_v9w7sp_a");
@@ -31,7 +30,6 @@ public class ButtonCreator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_v9w7sp_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_v9w7sp_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "button");
     editorCell.setCellId("Constant_v9w7sp_a0");
@@ -41,7 +39,6 @@ public class ButtonCreator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_v9w7sp_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_v9w7sp_b0");
@@ -51,7 +48,6 @@ public class ButtonCreator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_v9w7sp_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("action");
@@ -71,7 +67,6 @@ public class ButtonCreator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_v9w7sp_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_v9w7sp_d0");

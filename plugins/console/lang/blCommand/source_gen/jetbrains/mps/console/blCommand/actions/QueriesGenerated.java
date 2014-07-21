@@ -30,25 +30,20 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "parameter", null, true);
     }
   }
-
   public static void nodeFactory_NodeSetup_AbstractPrintExpression_7284872370241013747(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression")) {
       SLinkOperations.setTarget(_context.getNewNode(), "object", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression"), "object", true), true);
     }
   }
-
   public static void nodeFactory_NodeSetup_ModulesScope_3492877759608901831(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.addNewChild(_context.getNewNode(), "module", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression");
   }
-
   public static void nodeFactory_NodeSetup_ModelScope_3492877759608986171(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.addNewChild(_context.getNewNode(), "model", "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression");
   }
-
   public static void nodeFactory_NodeSetup_CustomScope_3492877759609298946(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "scope", "jetbrains.mps.baseLanguage.structure.GenericNewExpression");
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Command_3786816536599613947(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -62,11 +57,9 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "expression", nodeToWrap, true);
             return result;
           }
-
           public boolean returnSmallPart(SNode nodeToWrap) {
             return true;
           }
-
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);

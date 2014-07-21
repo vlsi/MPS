@@ -9,7 +9,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 public class MultiForEachVariable_DataFlow extends DataFlowBuilder {
   public MultiForEachVariable_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitWrite(_context.getNode(), "r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/5684597377559856246");
   }

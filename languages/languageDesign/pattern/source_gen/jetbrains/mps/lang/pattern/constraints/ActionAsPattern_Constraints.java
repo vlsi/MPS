@@ -15,12 +15,10 @@ public class ActionAsPattern_Constraints extends BaseConstraintsDescriptor {
   public ActionAsPattern_Constraints() {
     super("jetbrains.mps.lang.pattern.structure.ActionAsPattern");
   }
-
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;
   }
-
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
@@ -31,7 +29,6 @@ public class ActionAsPattern_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (link == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.pattern.structure.ActionAsPattern", "action")) {
       return SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.lang.pattern.structure.ActionStatement");
@@ -41,6 +38,5 @@ public class ActionAsPattern_Constraints extends BaseConstraintsDescriptor {
     }
     return false;
   }
-
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)", "1483902774837520155");
 }

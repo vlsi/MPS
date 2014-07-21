@@ -20,16 +20,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Transition_tabular_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_jwa5mk_a(editorContext, node);
   }
-
   private EditorCell createCollection_jwa5mk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jwa5mk_a");
@@ -38,7 +35,6 @@ public class Transition_tabular_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_jwa5mk_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_jwa5mk_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jwa5mk_a0");
@@ -51,14 +47,12 @@ public class Transition_tabular_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_jwa5mk_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_jwa5mk_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_jwa5mk_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_jwa5mk_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("toState");
@@ -78,7 +72,6 @@ public class Transition_tabular_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_jwa5mk_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_jwa5mk_b0");

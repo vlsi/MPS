@@ -42,10 +42,10 @@ import jetbrains.mps.util.NameUtil;
       }
     }
     return editorModels;
-  };;
-;  @Override
+  }
+  @Override
   public boolean isExcluded(SNode node) {
     SNode editorComponent = SNodeOperations.as(node, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration");
     return editorComponent == null || SLinkOperations.getTarget(editorComponent, "overridenEditorComponent", true) != null || !(SConceptOperations.isSuperConceptOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), NameUtil.nodeFQName(myConceptDeclaration)));
-  };;
-;}
+  }
+}

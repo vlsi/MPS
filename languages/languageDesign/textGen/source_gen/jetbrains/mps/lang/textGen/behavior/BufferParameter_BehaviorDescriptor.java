@@ -9,9 +9,9 @@ public class BufferParameter_BehaviorDescriptor extends AbstractTextGenParameter
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return BufferParameter_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.BufferParameter";
-  };;
-;}
+  }
+}

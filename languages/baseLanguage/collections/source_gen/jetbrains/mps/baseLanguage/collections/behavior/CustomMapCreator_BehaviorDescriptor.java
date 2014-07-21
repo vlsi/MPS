@@ -9,9 +9,9 @@ public class CustomMapCreator_BehaviorDescriptor extends HashMapCreator_Behavior
   }
   public boolean virtual_hasInitSize_1262430001741497996(SConcept thisConcept) {
     return CustomMapCreator_Behavior.virtual_hasInitSize_1262430001741497996(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator";
-  };;
-;}
+  }
+}

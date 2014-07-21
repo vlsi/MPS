@@ -19,11 +19,9 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 public class Templatereduce__NodeStatement implements TemplateDeclarationWeavingAware {
   public Templatereduce__NodeStatement() {
   }
-
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "1200266997193");
   }
-
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
     try {
@@ -75,18 +73,15 @@ public class Templatereduce__NodeStatement implements TemplateDeclarationWeaving
     }
     return tnode1;
   }
-
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(environment, context));
   }
-
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     SNode tnodepart0 = applyPart0(environment, context);
     SNodeReference weaveTf0 = weaveTfConst_rm6jd2_a0b0e;
     environment.weaveNode(outputContextNode, "statement", tnodepart0, weaveTf0, context.getInput());
     return TemplateUtil.singletonList(tnodepart0);
   }
-
   private static SNodePointer templateNode_rm6jd2_c0a1a1a1a1a1a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "3021153905151599942");
   private static SNodePointer copySrcMacro_rm6jd2_b0a0c0b0b0c0b0b0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "1206533809815");
   private static SNodePointer weaveTfConst_rm6jd2_a0b0e = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "1206533809822");

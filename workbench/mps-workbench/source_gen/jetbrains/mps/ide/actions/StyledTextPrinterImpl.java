@@ -12,16 +12,13 @@ import javax.swing.text.BadLocationException;
 public class StyledTextPrinterImpl implements StyledTextPrinter {
   private StyledDocument myDocument = new DefaultStyledDocument();
   private SimpleAttributeSet myAttributeSet = new SimpleAttributeSet();
-
   public StyledTextPrinterImpl() {
   }
-
   @Override
   public StyledTextPrinter setBold(boolean flag) {
     StyleConstants.setBold(this.myAttributeSet, flag);
     return this;
   }
-
   @Override
   public StyledTextPrinter append(String text) {
     try {
@@ -31,10 +28,8 @@ public class StyledTextPrinterImpl implements StyledTextPrinter {
     }
     return this;
   }
-
   public StyledDocument getDocument() {
     return this.myDocument;
   }
-
 
 }

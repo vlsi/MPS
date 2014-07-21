@@ -17,12 +17,10 @@ public class ModelReference_Constraints extends BaseConstraintsDescriptor {
   public ModelReference_Constraints() {
     super("jetbrains.mps.console.ideCommands.structure.ModelReference");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -33,10 +31,8 @@ public class ModelReference_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences"), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.StatCommand"), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.ShowGenPlan"))).contains(SNodeOperations.getConceptDeclaration(parentNode));
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "7820875636627213167");
 }

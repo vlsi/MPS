@@ -9,5 +9,5 @@ public class GenerationContextOp_GetCopiedOutputByInput_BehaviorDescriptor exten
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput";
-  };;
-;}
+  }
+}

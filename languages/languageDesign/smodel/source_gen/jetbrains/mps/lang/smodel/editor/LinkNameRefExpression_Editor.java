@@ -28,7 +28,6 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_vnocnn_a(editorContext, node);
   }
-
   private EditorCell createCollection_vnocnn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vnocnn_a");
@@ -41,7 +40,6 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_vnocnn_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_vnocnn_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "link name");
     editorCell.setCellId("Constant_vnocnn_a0");
@@ -52,7 +50,6 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_vnocnn_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_vnocnn_b0");
@@ -62,7 +59,6 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_vnocnn_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("conceptDeclaration");
@@ -87,20 +83,16 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_vnocnn_a2a extends InlineCellProvider {
     public _Inline_vnocnn_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_vnocnn_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_vnocnn_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -124,7 +116,6 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_vnocnn_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_vnocnn_d0");
@@ -135,7 +126,6 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_vnocnn_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("linkDeclaration");
@@ -160,20 +150,16 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_vnocnn_a4a extends InlineCellProvider {
     public _Inline_vnocnn_a4a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_vnocnn_a0e0(editorContext, node);
     }
-
     private EditorCell createProperty_vnocnn_a0e0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
@@ -197,7 +183,6 @@ public class LinkNameRefExpression_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_vnocnn_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_vnocnn_f0");

@@ -19,36 +19,29 @@ public class StringWrapperFactory extends ValueWrapperFactory {
   public boolean canWrapValue(@NotNull IValueProxy value) {
     return value instanceof IObjectValueProxy && value.getJDIValue() instanceof StringReference;
   }
-
   @Override
   public String getWrappedType() {
     return "Ljava/lang/String;";
   }
-
   @Override
   public String getName() {
     return "String";
   }
-
   public ValueWrapper createValueWrapper(IValueProxy value, ThreadReference threadReference) {
     return new StringWrapperFactory.JavaStringValue(((IObjectValueProxy) value), threadReference);
   }
-
   private static class JavaStringValue extends ObjectWrapperFactory.JavaObjectValue {
     public JavaStringValue(IObjectValueProxy value, ThreadReference threadReference) {
       super(value, threadReference);
     }
-
     @Override
     public boolean isStructure() {
       return false;
     }
-
     @Override
     public List<IWatchable> getSubvaluesImpl() {
       return ListSequence.fromList(new ArrayList<IWatchable>());
     }
   }
-
 
 }

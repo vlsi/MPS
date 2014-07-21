@@ -10,9 +10,9 @@ public class NodeSetupFunction_SampleNode_BehaviorDescriptor extends ConceptFunc
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return NodeSetupFunction_SampleNode_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode";
-  };;
-;}
+  }
+}

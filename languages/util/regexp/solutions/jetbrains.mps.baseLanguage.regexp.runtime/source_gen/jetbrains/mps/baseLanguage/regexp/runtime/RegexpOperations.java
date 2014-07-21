@@ -10,7 +10,6 @@ import java.util.Arrays;
 public class RegexpOperations {
   public RegexpOperations() {
   }
-
   public static String replace(String text, Pattern regexp, Replacer replacer) {
     Matcher m = regexp.matcher(text);
     StringBuilder newText = new StringBuilder();
@@ -23,7 +22,6 @@ public class RegexpOperations {
     newText.append(text.substring(current, text.length()));
     return newText.toString();
   }
-
   public static List<String> split(String s, Pattern pattern) {
     return Arrays.asList(pattern.split(s));
   }

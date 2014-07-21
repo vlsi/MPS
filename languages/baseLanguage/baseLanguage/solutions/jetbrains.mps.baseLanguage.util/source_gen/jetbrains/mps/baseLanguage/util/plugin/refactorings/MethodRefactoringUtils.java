@@ -19,12 +19,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class MethodRefactoringUtils {
   public MethodRefactoringUtils() {
   }
-
   public static List<SNode> findOverridingMethods(final SNode method, IOperationContext operationContext, ProgressMonitor monitor) {
     List<SNode> results = MethodRefactoringUtils.findOverridingMethods(method, monitor);
     return results;
   }
-
   public static List<SNode> findOverridingMethods(SNode method, ProgressMonitor progressMonitor) {
     List<SNode> results = new ArrayList<SNode>();
     if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
@@ -50,7 +48,6 @@ public class MethodRefactoringUtils {
     }
     return results;
   }
-
   public static SearchResults findMethodUsages(SNode method, ProgressMonitor progressMonitor) {
     return FindUtils.getSearchResults(progressMonitor, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
   }

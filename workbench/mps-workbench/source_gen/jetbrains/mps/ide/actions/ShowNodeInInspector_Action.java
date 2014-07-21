@@ -18,22 +18,18 @@ import org.apache.log4j.LogManager;
 
 public class ShowNodeInInspector_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowNodeInInspector_Action() {
     super("Inspect Node", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((EditorComponent) MapSequence.fromMap(_params).get("editor")) instanceof InspectorEditorComponent;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -47,7 +43,6 @@ public class ShowNodeInInspector_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -62,7 +57,6 @@ public class ShowNodeInInspector_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       InspectorEditorComponent inspector = (InspectorEditorComponent) ((EditorComponent) MapSequence.fromMap(_params).get("editor"));
@@ -73,6 +67,5 @@ public class ShowNodeInInspector_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowNodeInInspector_Action.class);
 }

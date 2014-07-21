@@ -25,7 +25,6 @@ public class ClosureLiteralUtil {
     }
     return false;
   }
-
   public static List<SNode> collectNonFinalVariableDeclarations(SNode cl) {
     List<SNode> vrefs = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode desc : SNodeOperations.getDescendants(cl, null, false, new String[]{})) {
@@ -40,7 +39,6 @@ public class ClosureLiteralUtil {
     }
     return vrefs;
   }
-
   public static SNode fillParams(SNode targetIfaceErase, SNode funType) {
     TypeMatcher matcher = new TypeMatcher();
     SNode meth = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(targetIfaceErase, "classifier", false))).first();

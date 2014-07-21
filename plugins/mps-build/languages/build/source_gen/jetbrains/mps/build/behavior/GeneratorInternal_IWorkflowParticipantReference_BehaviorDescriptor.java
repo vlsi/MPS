@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class GeneratorInternal_IWorkflowParticipantReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public GeneratorInternal_IWorkflowParticipantReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference";

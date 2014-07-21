@@ -12,15 +12,12 @@ public enum GeneratorMessageType {
   error("error", "error");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<GeneratorMessageType> getConstants() {
     List<GeneratorMessageType> list = ListSequence.fromList(new LinkedList<GeneratorMessageType>());
     ListSequence.fromList(list).addElement(GeneratorMessageType.info);
@@ -28,11 +25,9 @@ public enum GeneratorMessageType {
     ListSequence.fromList(list).addElement(GeneratorMessageType.error);
     return list;
   }
-
   public static GeneratorMessageType getDefault() {
     return GeneratorMessageType.info;
   }
-
   public static GeneratorMessageType parseValue(String value) {
     if (value == null) {
       return GeneratorMessageType.getDefault();
@@ -48,14 +43,11 @@ public enum GeneratorMessageType {
     }
     return GeneratorMessageType.getDefault();
   }
-
   private String myValue;
-
   GeneratorMessageType(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

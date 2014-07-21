@@ -29,13 +29,11 @@ public class TraceDown {
   @Deprecated
   public TraceDown() {
   }
-
   @NotNull
   public static Iterable<String> unitNames(SNode node) {
     List<String> unitNames = TraceInfo.unitNames(node);
     return unitNames;
   }
-
   public static String anyUnitName(SNode node) {
     Iterable<String> unitNames = unitNames(node);
     if (Sequence.fromIterable(unitNames).isEmpty()) {
@@ -43,7 +41,6 @@ public class TraceDown {
     }
     return Sequence.fromIterable(unitNames).first();
   }
-
   public static String unitNameWithPosition(SNode node, _FunctionTypes._return_P1_E0<? extends Boolean, ? super TraceablePositionInfo> positionMatcher) {
     SModel model = node.getModel();
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
@@ -68,7 +65,6 @@ public class TraceDown {
     }
     return null;
   }
-
   public static boolean isTraceable(@NotNull SNode node) {
     return TraceInfo.getPositionForNode(node) != null;
   }

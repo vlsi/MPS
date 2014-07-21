@@ -27,25 +27,20 @@ public class ProjectTest {
   private static Project ourContextProject;
   private final ModuleGenerationHolder generationHolder;
 
-
   public ProjectTest(SModule module, ModuleGenerationHolder generationHolder) {
     // module argument only for test name 
     this.generationHolder = generationHolder;
   }
-
   @Parameterized.Parameters
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
     initTestEnvironment();
     return createTestParametersFromModules(ourContextProject.getModules());
   }
 
-
-
   public static void initTestEnvironment() throws InvocationTargetException, InterruptedException {
     MpsTestsSupport.initEnv(false);
     ourContextProject = ContextProjectSupport.loadContextProject();
   }
-
   public static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {
     ArrayList<Object[]> res = new ArrayList<Object[]>();
     for (SModule module : modules) {
@@ -59,8 +54,6 @@ public class ProjectTest {
     });
     return res;
   }
-
-
 
   @Test
   @Order(value = 1)
@@ -76,7 +69,6 @@ public class ProjectTest {
       Assert.fail(String.format("Make failed with %d errors and %d warnings", errors.size(), warns.size()));
     }
   }
-
   @Test
   @Order(value = 2)
   public void diffModule() throws Exception {

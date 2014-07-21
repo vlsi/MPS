@@ -24,18 +24,15 @@ import org.apache.log4j.LogManager;
 
 public class ForcedSaveAll_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ForcedSaveAll_Action() {
     super("Re-save all models from project", "Re-save all models even if model was not changed", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -46,7 +43,6 @@ public class ForcedSaveAll_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -57,7 +53,6 @@ public class ForcedSaveAll_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Iterable<SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
@@ -95,6 +90,5 @@ public class ForcedSaveAll_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ForcedSaveAll_Action.class);
 }

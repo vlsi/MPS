@@ -10,5 +10,5 @@ public class SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor extend
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder";
-  };;
-;}
+  }
+}

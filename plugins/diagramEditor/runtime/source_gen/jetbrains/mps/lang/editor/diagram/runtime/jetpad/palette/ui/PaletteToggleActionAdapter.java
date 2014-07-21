@@ -7,13 +7,10 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 
 /*package*/ class PaletteToggleActionAdapter extends DiagramPaletteToggleAction {
   private PaletteToggleAction myAction;
-
   public PaletteToggleActionAdapter(PaletteToggleAction action, DiagramPalette palette) {
     super(palette, action);
     myAction = action;
   }
-
-
 
 
   @Override
@@ -23,6 +20,5 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
       myAction.onClick();
     }
   }
-
 
 }

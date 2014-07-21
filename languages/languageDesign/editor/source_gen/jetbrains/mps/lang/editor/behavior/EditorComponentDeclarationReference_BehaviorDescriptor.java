@@ -10,5 +10,5 @@ public class EditorComponentDeclarationReference_BehaviorDescriptor extends Base
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference";
-  };;
-;}
+  }
+}

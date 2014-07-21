@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode itt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     final String ifcname = "_" + ListSequence.fromList(SLinkOperations.getTargets(itt, "componentType", true)).count();
@@ -42,22 +41,18 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
     }
     return result;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   private static SNode _quotation_createNode_tm6bn3_a0a0a2a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -65,7 +60,6 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)"), facade.createNodeId("1238932923132")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_tm6bn3_a0d0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

@@ -10,5 +10,5 @@ public class CompositeWithParentScopeExpression_BehaviorDescriptor extends Expre
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.scopes.structure.CompositeWithParentScopeExpression";
-  };;
-;}
+  }
+}

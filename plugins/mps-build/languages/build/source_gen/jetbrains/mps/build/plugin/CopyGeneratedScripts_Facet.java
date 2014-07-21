@@ -45,42 +45,32 @@ import jetbrains.mps.make.script.IPropertiesPool;
 public class CopyGeneratedScripts_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.build.CopyGeneratedScripts");
-
   public CopyGeneratedScripts_Facet() {
     ListSequence.fromList(targets).addElement(new CopyGeneratedScripts_Facet.Target_copyFiles());
     ListSequence.fromList(targets).addElement(new CopyGeneratedScripts_Facet.Target_collectScriptDirectories());
   }
-
   public Iterable<ITarget> targets() {
     return targets;
   }
-
   public Iterable<IFacet.Name> optional() {
     return null;
   }
-
   public Iterable<IFacet.Name> required() {
     return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen")});
   }
-
   public Iterable<IFacet.Name> extended() {
     return null;
   }
-
   public IFacet.Name getName() {
     return this.name;
   }
-
   public IPropertiesPersistence propertiesPersistence() {
     return new CopyGeneratedScripts_Facet.TargetProperties();
   }
-
   public static class Target_copyFiles implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.build.CopyGeneratedScripts.copyFiles");
-
     public Target_copyFiles() {
     }
-
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
@@ -136,73 +126,56 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
         }
       };
     }
-
     public IConfig createConfig() {
       return null;
     }
-
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
-
     public Iterable<ITarget.Name> after() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), new ITarget.Name("jetbrains.mps.build.CopyGeneratedScripts.collectScriptDirectories")});
     }
-
     public Iterable<ITarget.Name> notBefore() {
       return null;
     }
-
     public Iterable<ITarget.Name> before() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile")});
     }
-
     public ITarget.Name getName() {
       return name;
     }
-
     public boolean isOptional() {
       return false;
     }
-
     public boolean requiresInput() {
       return true;
     }
-
     public boolean producesOutput() {
       return true;
     }
-
     public Iterable<Class<? extends IResource>> expectedInput() {
       List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
       ListSequence.fromList(rv).addElement(TResource.class);
       return rv;
     }
-
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
     }
-
     public int workEstimate() {
       return 100;
     }
   }
-
   public static class Target_collectScriptDirectories implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.build.CopyGeneratedScripts.collectScriptDirectories");
-
     public Target_collectScriptDirectories() {
     }
-
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
@@ -259,57 +232,44 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
         }
       };
     }
-
     public IConfig createConfig() {
       return null;
     }
-
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
-
     public Iterable<ITarget.Name> after() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.generate")});
     }
-
     public Iterable<ITarget.Name> notBefore() {
       return null;
     }
-
     public Iterable<ITarget.Name> before() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen")});
     }
-
     public ITarget.Name getName() {
       return name;
     }
-
     public boolean isOptional() {
       return false;
     }
-
     public boolean requiresInput() {
       return true;
     }
-
     public boolean producesOutput() {
       return true;
     }
-
     public Iterable<Class<? extends IResource>> expectedInput() {
       List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
       ListSequence.fromList(rv).addElement(GResource.class);
       return rv;
     }
-
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Parameters());
     }
-
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
@@ -317,43 +277,34 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
       }
       return t;
     }
-
     public int workEstimate() {
       return 100;
     }
-
     public static CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters vars(IPropertiesPool ppool) {
       return ppool.properties(name, CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class);
     }
-
     public static class Parameters extends MultiTuple._1<Map<SModelReference, Map<String, String>>> {
       public Parameters() {
         super();
       }
-
       public Parameters(Map<SModelReference, Map<String, String>> fileNameToDestination) {
         super(fileNameToDestination);
       }
-
       public Map<SModelReference, Map<String, String>> fileNameToDestination(Map<SModelReference, Map<String, String>> value) {
         return super._0(value);
       }
-
       public Map<SModelReference, Map<String, String>> fileNameToDestination() {
         return super._0();
       }
-
       @SuppressWarnings(value = "unchecked")
       public CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters assignFrom(Tuples._1<Map<SModelReference, Map<String, String>>> from) {
         return (CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters) super.assign(from);
       }
     }
   }
-
   public static class TargetProperties implements IPropertiesPersistence {
     public TargetProperties() {
     }
-
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.build.CopyGeneratedScripts.collectScriptDirectories");
@@ -363,7 +314,6 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
         }
       }
     }
-
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {

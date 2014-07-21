@@ -11,5 +11,5 @@ public class InternalConceptDeclarationReference_BehaviorDescriptor extends Base
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference";
-  };;
-;}
+  }
+}

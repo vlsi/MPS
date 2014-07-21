@@ -46,31 +46,25 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
   private final Map<DebugSession, Map<Long, String>> myObjectIdToFactory = MapSequence.fromMap(new HashMap<DebugSession, Map<Long, String>>());
   private final DebugSessionManagerComponent.DebugSessionAdapter myDebugSessionListener = new CustomViewersManagerImpl.MyDebugSessionAdapter();
   private final ProjectManagerListener myProjectManagerListener = new CustomViewersManagerImpl.MyProjectManagerAdapter();
-
   public CustomViewersManagerImpl(ProjectManager projectManager) {
     myProjectManager = projectManager;
   }
-
   @Override
   public void initComponent() {
     myProjectManager.addProjectManagerListener(myProjectManagerListener);
   }
-
   @Override
   public void disposeComponent() {
     myProjectManager.removeProjectManagerListener(myProjectManagerListener);
   }
-
   @Override
   public void addFactory(@NotNull ValueWrapperFactory factory) {
     MapSequence.fromMap(myFactories).put(factory.getClass().getName(), factory);
   }
-
   @Override
   public void removeFactory(@NotNull ValueWrapperFactory factory) {
     MapSequence.fromMap(myFactories).removeKey(factory.getClass().getName());
   }
-
   public Set<ValueWrapperFactory> getValueWrapperFactories(@NotNull final IValueProxy originalValue) {
     Set<ValueWrapperFactory> result = SetSequence.fromSet(new LinkedHashSet<ValueWrapperFactory>());
     for (ValueWrapperFactory factory : MapSequence.fromMap(myFactories).values()) {
@@ -80,7 +74,6 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
     }
     return result;
   }
-
   private ValueWrapperFactory getBestFactory(Set<ValueWrapperFactory> factories, DebugSession session) {
     VirtualMachine vm = session.getEventsProcessor().getVirtualMachine();
     Tuples._2<ValueWrapperFactory, Type> currentBest = MultiTuple.<ValueWrapperFactory,Type>from(null, null);
@@ -105,7 +98,6 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
     }
     return currentBest._0();
   }
-
   public synchronized ValueWrapper getValueWrapper(@NotNull IValueProxy proxy, ThreadReference threadReference) {
     if (proxy instanceof INullValueProxy) {
       return MapSequence.fromMap(myFactories).get(ObjectWrapperFactory.class.getName()).createValueWrapper(proxy, threadReference);
@@ -136,7 +128,6 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
     }
     return factory.createValueWrapper(proxy, threadReference);
   }
-
   public synchronized void setValueWrapper(@NotNull IValueProxy value, @NotNull ValueWrapperFactory factory, @NotNull DebugSession session) {
     Map<Long, String> objectIdToFactory = MapSequence.fromMap(myObjectIdToFactory).get(session);
     if (objectIdToFactory == null) {
@@ -150,15 +141,12 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
       session.refresh();
     }
   }
-
   public static CustomViewersManagerImpl getInstanceImpl() {
     return (CustomViewersManagerImpl) CustomViewersManager.getInstance();
   }
-
   private long getValueId(@NotNull IValueProxy originalValue) {
     return ((ObjectReference) originalValue.getJDIValue()).uniqueID();
   }
-
   private DebugSession getSession(@NotNull IValueProxy value) {
     // this is just wrong 
     for (Project project : ProjectManager.getInstance().getOpenProjects()) {
@@ -172,30 +160,24 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
     }
     return null;
   }
-
   public JavaValue fromJdi(@Nullable Value value, @NotNull ThreadReference threadReference) {
     return getValueWrapper(MirrorUtil.getInstance().getValueProxy(value), threadReference);
   }
-
   private class MyProjectManagerAdapter extends ProjectManagerAdapter {
     public MyProjectManagerAdapter() {
     }
-
     @Override
     public void projectOpened(Project project) {
       DebugSessionManagerComponent.getInstance(project).addDebugSessionListener(myDebugSessionListener);
     }
-
     @Override
     public void projectClosing(Project project) {
       DebugSessionManagerComponent.getInstance(project).removeDebugSessionListener(CustomViewersManagerImpl.this.myDebugSessionListener);
     }
   }
-
   private class MyDebugSessionAdapter extends DebugSessionManagerComponent.DebugSessionAdapter {
     public MyDebugSessionAdapter() {
     }
-
     @Override
     public void detached(AbstractDebugSession session) {
       if (session instanceof DebugSession) {
@@ -203,9 +185,7 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CustomViewersManagerImpl.class);
-
   private static boolean neq_2btpdq_a0e0n(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

@@ -9,8 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SuperClassifierExpresson_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode call_getClassifier_1217434044387(SNode thisNode) {
+  }
+  public static SNode call_getClassifier_1217434044387(SNode thisNode) {
     return IClassifier_Behavior.call_getContextClassifier_1213877527940(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"))), thisNode);
-  };;
-;}
+  }
+}

@@ -20,72 +20,56 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class RemoveOnNewLine_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public RemoveOnNewLine_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.editor.structure.EditorCellModel";
   }
-
   public String getPresentation() {
     return "RemoveOnNewLine";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.intentions.RemoveOnNewLine_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isOnNewLine_1237385424172(node);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1237404019413");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new RemoveOnNewLine_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Remove On New Line";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.deleteNode(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem"))).first());
     }
-
     public IntentionDescriptor getDescriptor() {
       return RemoveOnNewLine_Intention.this;
     }

@@ -10,5 +10,5 @@ public class PatternReduction_MappingRule_BehaviorDescriptor extends BaseConcept
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule";
-  };;
-;}
+  }
+}

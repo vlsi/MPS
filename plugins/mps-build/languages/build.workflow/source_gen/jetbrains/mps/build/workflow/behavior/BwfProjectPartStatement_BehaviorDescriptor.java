@@ -6,7 +6,6 @@ package jetbrains.mps.build.workflow.behavior;
 public class BwfProjectPartStatement_BehaviorDescriptor extends BwfStatement_BehaviorDescriptor {
   public BwfProjectPartStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.workflow.structure.BwfProjectPartStatement";

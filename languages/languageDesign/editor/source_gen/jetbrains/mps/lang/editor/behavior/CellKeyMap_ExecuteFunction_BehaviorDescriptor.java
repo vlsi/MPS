@@ -9,5 +9,5 @@ public class CellKeyMap_ExecuteFunction_BehaviorDescriptor extends CellKeyMap_Ab
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction";
-  };;
-;}
+  }
+}

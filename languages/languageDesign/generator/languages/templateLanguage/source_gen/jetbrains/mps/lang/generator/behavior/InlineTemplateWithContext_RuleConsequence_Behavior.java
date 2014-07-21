@@ -10,12 +10,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class InlineTemplateWithContext_RuleConsequence_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_getTemplateType_7933327286924651185(SNode thisNode) {
+  }
+  public static SNode virtual_getTemplateType_7933327286924651185(SNode thisNode) {
     List<SNode> fragments = SNodeOperations.getDescendants(SLinkOperations.getTarget(thisNode, "contentNode", true), "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{});
     if ((ListSequence.fromList(fragments).first() != null) && (SNodeOperations.getParent(ListSequence.fromList(fragments).first()) != null)) {
       return SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(ListSequence.fromList(fragments).first()));
     }
     return null;
-  };;
-;}
+  }
+}

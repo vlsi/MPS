@@ -40,42 +40,35 @@ public class Junit_Command {
   private String myVirtualMachineParameter_String;
   private String myJrePath_String;
   private File myWorkingDirectory_File = new File(System.getProperty("user.home"));
-
   public Junit_Command() {
   }
-
   public Junit_Command setDebuggerSettings_String(String debuggerSettings) {
     if (debuggerSettings != null) {
       myDebuggerSettings_String = debuggerSettings;
     }
     return this;
   }
-
   public Junit_Command setVirtualMachineParameter_String(String virtualMachineParameter) {
     if (virtualMachineParameter != null) {
       myVirtualMachineParameter_String = virtualMachineParameter;
     }
     return this;
   }
-
   public Junit_Command setJrePath_String(String jrePath) {
     if (jrePath != null) {
       myJrePath_String = jrePath;
     }
     return this;
   }
-
   public Junit_Command setWorkingDirectory_File(File workingDirectory) {
     if (workingDirectory != null) {
       myWorkingDirectory_File = workingDirectory;
     }
     return this;
   }
-
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests, JavaRunParameters javaRunParameters) throws ExecutionException {
     return new Junit_Command().setVirtualMachineParameter_String(check_u7m9j_a1a0a0a(javaRunParameters)).setJrePath_String((check_u7m9j_a0c0a0a0(javaRunParameters) ? javaRunParameters.jrePath() : null)).setWorkingDirectory_File((isEmptyString(check_u7m9j_a0a3a0a0a(javaRunParameters)) ? null : new File(javaRunParameters.workingDirectory()))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
   }
-
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests) throws ExecutionException {
     if (tests == null) {
       throw new ExecutionException("Tests to run are null.");
@@ -86,11 +79,9 @@ public class Junit_Command {
     }
     return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun._1()._1()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ? " " + myVirtualMachineParameter_String : ""))).setClassPath_ListString(ListSequence.fromList(testsToRun._1()._2()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(Junit_Command.getProgramParameters(testsToRun._0())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun._1()._0());
   }
-
   public static IDebugger getDebugger() {
     return getDebuggerConfiguration().getDebugger();
   }
-
   private static String getProgramParameters(final List<ITestNodeWrapper> tests) {
     final Wrappers._T<List<String>> testsCommandLine = new Wrappers._T<List<String>>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -104,7 +95,6 @@ public class Junit_Command {
     });
     return IterableUtils.join(ListSequence.fromList(testsCommandLine.value), " ");
   }
-
   private static Tuples._2<List<ITestNodeWrapper>, Tuples._3<String, List<String>, List<String>>> getTestsToRunWithParameters(@NotNull List<ITestNodeWrapper> tests) throws ExecutionException {
     final Wrappers._T<List<ITestNodeWrapper>> _tests = new Wrappers._T<List<ITestNodeWrapper>>(tests);
     final Wrappers._T<Tuples._3<String, List<String>, List<String>>> runParams = new Wrappers._T<Tuples._3<String, List<String>, List<String>>>();
@@ -150,7 +140,6 @@ public class Junit_Command {
     }
     return MultiTuple.<List<ITestNodeWrapper>,Tuples._3<String, List<String>, List<String>>>from(testsToRun.value, runParams.value);
   }
-
   private static List<String> getClasspath(final List<ITestNodeWrapper> tests) {
     final Set<SModule> uniqueModules = SetSequence.fromSet(new HashSet<SModule>());
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -167,55 +156,45 @@ public class Junit_Command {
       }
     }).distinct().toListSequence();
   }
-
   public static IDebuggerConfiguration getDebuggerConfiguration() {
     return new IDebuggerConfiguration() {
       @Nullable
       public IDebuggerSettings createDebuggerSettings() {
         return new LocalConnectionSettings(true);
       }
-
       public IDebugger getDebugger() {
         return Debuggers.getInstance().getDebuggerByName("Java");
       }
     };
   }
-
   protected static Logger LOG = LogManager.getLogger(Junit_Command.class);
-
   private static String check_u7m9j_a1a0a0a(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.vmOptions();
     }
     return null;
   }
-
   private static boolean check_u7m9j_a0c0a0a0(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return (boolean) checkedDotOperand.useAlternativeJre();
     }
     return false;
   }
-
   private static String check_u7m9j_a0a3a0a0a(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.workingDirectory();
     }
     return null;
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-
   private static boolean eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0g0n(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean neq_yo2c7x_a0a0a0a0a0a0a2a0a0a0a6a31(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

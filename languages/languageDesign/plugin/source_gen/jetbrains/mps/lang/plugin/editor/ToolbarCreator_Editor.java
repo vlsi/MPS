@@ -21,7 +21,6 @@ public class ToolbarCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5tw6n1_a(editorContext, node);
   }
-
   private EditorCell createCollection_5tw6n1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5tw6n1_a");
@@ -34,7 +33,6 @@ public class ToolbarCreator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_5tw6n1_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_5tw6n1_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "toolbar");
     editorCell.setCellId("Constant_5tw6n1_a0");
@@ -44,7 +42,6 @@ public class ToolbarCreator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_5tw6n1_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_5tw6n1_b0");
@@ -54,7 +51,6 @@ public class ToolbarCreator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_5tw6n1_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("group");
@@ -74,14 +70,12 @@ public class ToolbarCreator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_5tw6n1_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_5tw6n1_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_5tw6n1_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isHorizontal");
@@ -99,7 +93,6 @@ public class ToolbarCreator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_5tw6n1_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_5tw6n1_f0");

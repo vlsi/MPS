@@ -10,5 +10,5 @@ public class ConceptConstructorDeclaration_BehaviorDescriptor extends ConceptFun
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration";
-  };;
-;}
+  }
+}

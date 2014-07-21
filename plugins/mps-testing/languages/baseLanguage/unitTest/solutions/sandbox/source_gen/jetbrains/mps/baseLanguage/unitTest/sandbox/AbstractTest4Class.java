@@ -8,7 +8,6 @@ import junit.framework.Assert;
 public abstract class AbstractTest4Class {
   public AbstractTest4Class() {
   }
-
   @Test
   public void testMethod4() {
     Assert.assertEquals("true", "false");

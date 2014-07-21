@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class typeof_rightOperandConcept_parameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_rightOperandConcept_parameter_InferenceRule() {
   }
-
   public void applyRule(final SNode concept_parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode typeRule = SNodeOperations.getAncestor(concept_parameter, "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", false, false);
     if ((typeRule != null)) {
@@ -43,29 +42,24 @@ public class typeof_rightOperandConcept_parameter_InferenceRule extends Abstract
     }
 
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }
-
   private static SNode _quotation_createNode_enkrh2_a0a0a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_enkrh2_a0a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

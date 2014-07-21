@@ -17,25 +17,20 @@ import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.core.xml";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.lang.traceable"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "db5d1808-b409-4d5e-a418-0ffebefc4266(jetbrains.mps.core.xml#3080189811177537724)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

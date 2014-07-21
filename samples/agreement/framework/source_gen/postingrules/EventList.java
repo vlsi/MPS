@@ -8,14 +8,11 @@ import java.util.ArrayList;
 public class EventList {
   private List<AccountingEvent> myEvents = new ArrayList<AccountingEvent>();
   private List<AccountingEvent> myProcessingErrors = new ArrayList<AccountingEvent>();
-
   public EventList() {
   }
-
   public void add(AccountingEvent arg) {
     myEvents.add(arg);
   }
-
   private List<AccountingEvent> unprocessedEvents() {
     List<AccountingEvent> result = new ArrayList<AccountingEvent>();
     for (AccountingEvent e : myEvents) {
@@ -25,16 +22,13 @@ public class EventList {
     }
     return result;
   }
-
   private void logProcessingError(AccountingEvent event, Exception exception) {
     myProcessingErrors.add(event);
     throw new RuntimeException(exception);
   }
-
   /*package*/ boolean hasProcessingErrors() {
     return !(myProcessingErrors.isEmpty());
   }
-
   public void process() {
     for (AccountingEvent event : unprocessedEvents()) {
       try {

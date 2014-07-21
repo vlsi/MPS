@@ -9,5 +9,5 @@ public class AbandonInput_RuleConsequence_BehaviorDescriptor extends RuleConsequ
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence";
-  };;
-;}
+  }
+}

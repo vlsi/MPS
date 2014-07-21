@@ -18,7 +18,6 @@ import java.util.ArrayList;
 public class DependencyChooser implements Computable<List<Dependency>> {
   public DependencyChooser() {
   }
-
   @Override
   public List<Dependency> compute() {
     final Wrappers._T<Iterable<SModuleReference>> allModuleRefs = new Wrappers._T<Iterable<SModuleReference>>();

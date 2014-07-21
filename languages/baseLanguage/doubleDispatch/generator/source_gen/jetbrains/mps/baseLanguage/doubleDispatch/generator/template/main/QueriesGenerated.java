@@ -20,7 +20,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_2379134940425784781(final BaseMappingRuleContext _context) {
     boolean methodHasDispatchModifier = SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.MethodDeclaration") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.MethodDeclaration"), "modifiers", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -30,43 +29,33 @@ public class QueriesGenerated {
 
     return methodHasDispatchModifier && Sequence.fromIterable(DispatchGenUtil.getMatchingMethods(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.MethodDeclaration"))).isNotEmpty();
   }
-
   public static Object referenceMacro_GetReferent_2379134940429909478(final ReferenceMacroContext _context) {
     return ((SNode) _context.getVariable("var:paramName"));
   }
-
   public static Object referenceMacro_GetReferent_2379134940430034369(final ReferenceMacroContext _context) {
     return ((SNode) _context.getVariable("var:paramName"));
   }
-
   public static Object referenceMacro_GetReferent_2323553266849458668(final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("methodDecl")), "parameter", true)).first();
   }
-
   public static Object referenceMacro_GetReferent_2323553266848914933(final ReferenceMacroContext _context) {
     return ((SNode) _context.getVariable("targetMethod"));
   }
-
   public static Object referenceMacro_GetReferent_2323553266848914952(final ReferenceMacroContext _context) {
     return _context.getNode();
   }
-
   public static Object referenceMacro_GetReferent_2323553266849548486(final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("methodDecl")), "parameter", true)).first();
   }
-
   public static Object referenceMacro_GetReferent_2323553266848914908(final ReferenceMacroContext _context) {
     return ((SNode) _context.getVariable("targetMethod"));
   }
-
   public static Object referenceMacro_GetReferent_2323553266848914927(final ReferenceMacroContext _context) {
     return _context.getNode();
   }
-
   public static boolean ifMacro_Condition_2323553266848914890(final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(((SNode) _context.getVariable("methodDecl")), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType");
   }
-
   public static SNode sourceNodeQuery_2403002034749657032(final SourceSubstituteMacroNodeContext _context) {
     SNode newDecl = SNodeOperations.copyNode(_context.getNode());
     ListSequence.fromList(SLinkOperations.getTargets(newDecl, "modifiers", true)).removeWhere(new IWhereFilter<SNode>() {
@@ -76,64 +65,49 @@ public class QueriesGenerated {
     });
     return newDecl;
   }
-
   public static SNode sourceNodeQuery_2379134940430361177(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:methods"))).first(), "parameter", true)).first(), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
   }
-
   public static SNode sourceNodeQuery_2379134940430356891(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).first(), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
   }
-
   public static SNode sourceNodeQuery_2323553266849741443(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("targetMethod")), "parameter", true)).first(), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
   }
-
   public static SNode sourceNodeQuery_2323553266849838761(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("targetMethod")), "parameter", true)).first(), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
   }
-
   public static Object templateArgumentQuery_2323553266848892792(final TemplateQueryContext _context) {
     return ((SNode) _context.getVariable("var:methodDecl"));
   }
-
   public static Object templateArgumentQuery_2323553266848938515(final TemplateQueryContext _context) {
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:methods"))).first();
   }
-
   public static Object templateArgumentQuery_2323553266849248475(final TemplateQueryContext _context) {
     return ((SNode) _context.getVariable("var:methodDecl"));
   }
-
   public static Object templateArgumentQuery_2323553266849259847(final TemplateQueryContext _context) {
     return _context.getNode();
   }
-
   public static Iterable<SNode> sourceNodesQuery_2379134940430025802(final SourceSubstituteMacroNodesContext _context) {
     // first class is already handled in the first if branch 
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:methods"))).skip(1);
   }
-
   public static Iterable<SNode> sourceNodesQuery_2379134940430020121(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "statement", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_2323553266848914943(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("methodDecl")), "parameter", true)).skip(1);
   }
-
   public static Iterable<SNode> sourceNodesQuery_2323553266848914918(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("methodDecl")), "parameter", true)).skip(1);
   }
-
   public static Object insertMacro_varValue_2379134940430813886(final TemplateQueryContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.MethodDeclaration"), "parameter", true)).first();
   }
-
   public static Object insertMacro_varValue_2379134940431021756(final TemplateQueryContext _context) {
     return DispatchGenUtil.getMatchingMethods(((SNode) _context.getVariable("var:methodDecl")));
   }
-
   public static Object insertMacro_varValue_2379134940433430092(final TemplateQueryContext _context) {
     return SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
   }

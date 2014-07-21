@@ -10,5 +10,5 @@ public class GeneratorInternal_ChildDescriptor_BehaviorDescriptor extends BaseCo
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor";
-  };;
-;}
+  }
+}

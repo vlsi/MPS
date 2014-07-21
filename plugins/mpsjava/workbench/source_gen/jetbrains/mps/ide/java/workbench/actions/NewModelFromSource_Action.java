@@ -51,18 +51,15 @@ import org.apache.log4j.LogManager;
 
 public class NewModelFromSource_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public NewModelFromSource_Action() {
     super("Models from Java Sources", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
       return false;
@@ -79,7 +76,6 @@ public class NewModelFromSource_Action extends BaseAction {
     }
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -93,7 +89,6 @@ public class NewModelFromSource_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -120,7 +115,6 @@ public class NewModelFromSource_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SRepository repository = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
@@ -190,24 +184,20 @@ public class NewModelFromSource_Action extends BaseAction {
       }
     }
   }
-
   protected String getStereotype(final Map<String, Object> _params) {
     if (((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof StereotypeProvider) {
       return ((StereotypeProvider) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getStereotype();
     }
     return null;
   }
-
   protected boolean isStrict(final Map<String, Object> _params) {
     if (((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof StereotypeProvider) {
       return ((StereotypeProvider) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).isStrict();
     }
     return false;
   }
-
   protected String getNamespace(final Map<String, Object> _params) {
     return null;
   }
-
   protected static Logger LOG = LogManager.getLogger(NewModelFromSource_Action.class);
 }

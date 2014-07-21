@@ -18,20 +18,17 @@ public class IfStatementDataFlow_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test$TestBody", "test_IfStatementDataFlow", true);
   }
-
   @Test
   public void test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test$TestBody", "test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_IfStatementDataFlow() throws Exception {
       this.addNodeById("1217271587920");
       NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444237453"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
     }
-
     public void test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624928604755"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228488")});

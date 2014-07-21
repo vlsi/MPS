@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class CheckNamespace_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(CheckNamespace_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.modelchecker.actions.CheckNamespace_ActionGroup";
-
   public CheckNamespace_ActionGroup() {
     super("CheckNamespace", ID);
     this.setIsInternal(false);

@@ -17,7 +17,6 @@ public class XmlNoSpaceValue_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gu0qdg_a(editorContext, node);
   }
-
   private EditorCell createCollection_gu0qdg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gu0qdg_a");
@@ -27,7 +26,6 @@ public class XmlNoSpaceValue_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gu0qdg_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gu0qdg_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<-");
     editorCell.setCellId("Constant_gu0qdg_a0");
@@ -40,11 +38,9 @@ public class XmlNoSpaceValue_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_gu0qdg_a1a0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_3080189811177340436", new Object[]{}));
   }
-
   private EditorCell createConstant_gu0qdg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no space");
     editorCell.setCellId("Constant_gu0qdg_b0");
@@ -54,7 +50,6 @@ public class XmlNoSpaceValue_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_gu0qdg_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_gu0qdg_c0");
@@ -67,7 +62,6 @@ public class XmlNoSpaceValue_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_gu0qdg_a1c0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_3080189811177340441", new Object[]{}));
   }

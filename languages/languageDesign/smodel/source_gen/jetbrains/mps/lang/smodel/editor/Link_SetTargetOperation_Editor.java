@@ -20,7 +20,6 @@ public class Link_SetTargetOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xcbu2x_a(editorContext, node);
   }
-
   private EditorCell createCollection_xcbu2x_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xcbu2x_a");
@@ -31,12 +30,10 @@ public class Link_SetTargetOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_xcbu2x_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_xcbu2x_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp");
     return editorCell;
   }
-
   private EditorCell createConstant_xcbu2x_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_xcbu2x_b0");
@@ -46,7 +43,6 @@ public class Link_SetTargetOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_xcbu2x_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("linkTarget");
@@ -66,7 +62,6 @@ public class Link_SetTargetOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xcbu2x_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_xcbu2x_d0");

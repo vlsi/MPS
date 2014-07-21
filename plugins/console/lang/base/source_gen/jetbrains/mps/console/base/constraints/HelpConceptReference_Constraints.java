@@ -30,7 +30,6 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
   public HelpConceptReference_Constraints() {
     super("jetbrains.mps.console.base.structure.HelpConceptReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -39,7 +38,6 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -48,17 +46,14 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) _context.getParameterNode()))), "virtual_getDisplayString_7006261637493126103", new Object[]{});
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_asp0i5_a0a2a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new FilteringScope(new SubconceptsScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.base.structure.ConsoleHelpProvider"), _context.getModel()) {
@@ -77,6 +72,5 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
     });
     return references;
   }
-
   private static SNodePointer breakingNode_asp0i5_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:a35e9456-af18-4589-b3c4-ed9896a657c9(jetbrains.mps.console.base.constraints)", "6928665434433996663");
 }

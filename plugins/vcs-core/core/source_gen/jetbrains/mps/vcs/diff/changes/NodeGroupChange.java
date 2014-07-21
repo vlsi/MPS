@@ -27,7 +27,6 @@ public class NodeGroupChange extends ModelChange {
   private int myResultEnd;
   private List<SNodeId> myPreparedIdsToDelete = null;
   private SNodeId myPreparedAnchorId = null;
-
   public NodeGroupChange(@NotNull ChangeSet changeSet, @NotNull SNodeId parentNodeId, @NotNull String role, int begin, int end, int resultBegin, int resultEnd) {
     super(changeSet);
     myParentNodeId = parentNodeId;
@@ -37,33 +36,26 @@ public class NodeGroupChange extends ModelChange {
     myResultBegin = resultBegin;
     myResultEnd = resultEnd;
   }
-
   @NotNull
   public SNodeId getParentNodeId() {
     return myParentNodeId;
   }
-
   @NotNull
   public String getRole() {
     return myRole;
   }
-
   public int getBegin() {
     return myBegin;
   }
-
   public int getEnd() {
     return myEnd;
   }
-
   public int getResultEnd() {
     return myResultEnd;
   }
-
   public int getResultBegin() {
     return myResultBegin;
   }
-
   public void prepare() {
     if (myPreparedIdsToDelete == null) {
       SNode parent = getChangeSet().getOldModel().getNode(myParentNodeId);
@@ -77,7 +69,6 @@ public class NodeGroupChange extends ModelChange {
       myPreparedAnchorId = (myBegin == 0 ? null : children.get(myBegin - 1).getNodeId());
     }
   }
-
   @Override
   public void apply(@NotNull final SModel model, @NotNull NodeCopier nodeCopier) {
     // delete old nodes 
@@ -103,13 +94,11 @@ public class NodeGroupChange extends ModelChange {
       SNodeOperations.insertChild(parent, myRole, newNode, anchor);
     }
   }
-
   @Nullable
   @Override
   public SNodeId getRootId() {
     return getChangeSet().getOldModel().getNode(myParentNodeId).getContainingRoot().getNodeId();
   }
-
   @NotNull
   @Override
   public ChangeType getType() {
@@ -121,7 +110,6 @@ public class NodeGroupChange extends ModelChange {
     }
     return ChangeType.CHANGE;
   }
-
   @Override
   public String toString() {
     if (myEnd == myBegin) {
@@ -132,12 +120,10 @@ public class NodeGroupChange extends ModelChange {
     }
     return String.format("Replace %s with nodes %s in role %s of node %s", nodeRange(myBegin, myEnd), nodeRange(myResultBegin, myResultEnd), myRole, myParentNodeId);
   }
-
   @Override
   public String getDescription() {
     return getDescription(true);
   }
-
   public String getDescription(boolean verbose) {
     List<? extends SNode> newChildren = null;
     String newIds = null;
@@ -174,21 +160,17 @@ public class NodeGroupChange extends ModelChange {
       return String.format("Replaced %s with %s", oldStuff, newStuff);
     }
   }
-
   @NotNull
   @Override
   protected ModelChange createOppositeChange() {
     return new NodeGroupChange(getChangeSet().getOppositeChangeSet(), myParentNodeId, myRole, myResultBegin, myResultEnd, myBegin, myEnd);
   }
-
   private static String nodeRange(int begin, int end) {
     return (begin + 1 == end ? String.format("node #%d", begin) : String.format("nodes #%d-%d", begin, end - 1));
   }
-
   private static boolean eq_yjf6x2_a0a6a12(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_yjf6x2_a0a6a12_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

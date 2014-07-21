@@ -15,24 +15,20 @@ public enum VisibilityLevel {
   private String myName;
   private SNode myNode;
   private String myButtonText;
-
   VisibilityLevel(String name, String buttonText, SNode node) {
     this.myName = name;
     this.myNode = node;
     this.myButtonText = buttonText;
   }
-
   public SNode getNode() {
     if (this.myNode == null) {
       return null;
     } else
     return SNodeOperations.copyNode(this.myNode);
   }
-
   public String getName() {
     return this.myName;
   }
-
   public String getButtonText() {
     return this.myButtonText;
   }

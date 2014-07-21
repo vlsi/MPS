@@ -6,7 +6,6 @@ package jetbrains.mps.core.properties.behavior;
 public class PropertiesComment_BehaviorDescriptor extends PropertiesLine_BehaviorDescriptor {
   public PropertiesComment_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.properties.structure.PropertiesComment";

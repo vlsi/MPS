@@ -10,9 +10,9 @@ public class IsReplacementRuleApplicable_ConceptFunction_BehaviorDescriptor exte
   }
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return IsReplacementRuleApplicable_ConceptFunction_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction";
-  };;
-;}
+  }
+}

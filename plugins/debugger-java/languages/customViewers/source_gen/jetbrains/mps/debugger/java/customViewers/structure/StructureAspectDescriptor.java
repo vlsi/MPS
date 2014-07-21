@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -42,6 +41,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchable", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelValue_ConceptFunctionParameter", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator", "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod", "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", "jetbrains.mps.debugger.java.customViewers.structure.WatchableType", "jetbrains.mps.debugger.java.customViewers.structure.WatchablesListCreator"};
 }

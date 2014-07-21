@@ -13,18 +13,15 @@ public class CheckersComponent implements CoreComponent {
   private static CheckersComponent INSTANCE;
   private List<INodeChecker> myCheckers;
   private LanguageChecker myLanguageChecker;
-
   public CheckersComponent() {
     myLanguageChecker = new LanguageChecker();
     myCheckers = ListSequence.fromList(new LinkedList<INodeChecker>());
   }
-
   @NonNls
   @NotNull
   public String getComponentName() {
     return "Checkers";
   }
-
   @Override
   public void init() {
     if (INSTANCE != null) {
@@ -34,25 +31,20 @@ public class CheckersComponent implements CoreComponent {
     INSTANCE = this;
     ListSequence.fromList(myCheckers).addElement(myLanguageChecker);
   }
-
   @Override
   public void dispose() {
     ListSequence.fromList(myCheckers).removeElement(myLanguageChecker);
     INSTANCE = null;
   }
-
   public void addChecker(INodeChecker checker) {
     ListSequence.fromList(myCheckers).addElement(checker);
   }
-
   public void removeChecker(INodeChecker checker) {
     ListSequence.fromList(myCheckers).removeElement(checker);
   }
-
   public List<INodeChecker> getCheckers() {
     return myCheckers;
   }
-
   public static CheckersComponent getInstance() {
     return INSTANCE;
   }

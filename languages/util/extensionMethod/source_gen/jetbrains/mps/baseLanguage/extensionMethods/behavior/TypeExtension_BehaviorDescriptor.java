@@ -9,5 +9,5 @@ public class TypeExtension_BehaviorDescriptor extends BaseExtensionMethodContain
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension";
-  };;
-;}
+  }
+}

@@ -35,7 +35,6 @@ import jetbrains.mps.make.facet.FacetRegistry;
 @RunWith(JMock.class)
 public class Generator_Test extends MockTestCase {
   private IFacetManifest manifest;
-
   @Test
   public void test_queryStop() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
@@ -50,7 +49,6 @@ public class Generator_Test extends MockTestCase {
             cfg[0] = o;
             return true;
           }
-
           @Override
           public void describeTo(Description p0) {
           }
@@ -61,7 +59,6 @@ public class Generator_Test extends MockTestCase {
             ((_FunctionTypes._void_P1_E0<? super IConfigMonitor>) cfg[0]).invoke(cmon);
             return null;
           }
-
           @Override
           public void describeTo(Description description) {
           }
@@ -79,7 +76,6 @@ public class Generator_Test extends MockTestCase {
             }
             return false;
           }
-
           @Override
           public void describeTo(Description p0) {
           }
@@ -89,7 +85,6 @@ public class Generator_Test extends MockTestCase {
           public Object invoke(Invocation invocation) throws Throwable {
             return Sequence.fromIterable(query[0].options()).last();
           }
-
           @Override
           public void describeTo(Description description) {
           }
@@ -109,10 +104,8 @@ public class Generator_Test extends MockTestCase {
     Assert.assertFalse(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
   }
-
   public Generator_Test() {
   }
-
   @Before
   public void setUp() throws Exception {
     Class<?> mf = Class.forName(Generator_Test.class.getPackage().getName() + ".FacetManifest");
@@ -121,24 +114,20 @@ public class Generator_Test extends MockTestCase {
     this.manifest = (IFacetManifest) inst;
     registerFacets(manifest);
   }
-
   @After
   public void tearDown() throws Exception {
     unregisterFacets(manifest);
   }
-
   private void registerFacets(IFacetManifest fm) {
     for (IFacet fct : fm.facets()) {
       FacetRegistry.getInstance().register(fct);
     }
   }
-
   private void unregisterFacets(IFacetManifest fm) {
     for (IFacet fct : fm.facets()) {
       FacetRegistry.getInstance().unregister(fct);
     }
   }
-
   private String internalWorkName(String name) {
     return "__" + name + "__";
   }

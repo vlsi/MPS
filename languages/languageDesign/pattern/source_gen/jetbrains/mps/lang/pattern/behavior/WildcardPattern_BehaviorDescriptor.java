@@ -9,5 +9,5 @@ public class WildcardPattern_BehaviorDescriptor extends Pattern_BehaviorDescript
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.WildcardPattern";
-  };;
-;}
+  }
+}

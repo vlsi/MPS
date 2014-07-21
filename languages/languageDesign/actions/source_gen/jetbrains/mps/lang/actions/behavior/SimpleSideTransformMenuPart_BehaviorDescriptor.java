@@ -9,5 +9,5 @@ public class SimpleSideTransformMenuPart_BehaviorDescriptor extends SideTransfor
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart";
-  };;
-;}
+  }
+}

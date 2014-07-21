@@ -27,7 +27,6 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ns5ajd_a(editorContext, node);
   }
-
   private EditorCell createCollection_ns5ajd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ns5ajd_a");
@@ -36,7 +35,6 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_ns5ajd_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ns5ajd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "solution");
     editorCell.setCellId("Constant_ns5ajd_a0");
@@ -47,25 +45,20 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SolutionRef_Editor.ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.testbench.suite.structure.SolutionRef";
     }
   }
-
   private EditorCell createReadOnlyModelAccessor_ns5ajd_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return BehaviorReflection.invokeVirtual(SModuleReference.class, node, "virtual_moduleReference_1280144168199513544", new Object[]{}).getModuleName();
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
@@ -76,11 +69,9 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_ns5ajd_b0");
     return editorCell;
   }
-
   public static class ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0b0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.testbench.suite.structure.SolutionRef";
     }

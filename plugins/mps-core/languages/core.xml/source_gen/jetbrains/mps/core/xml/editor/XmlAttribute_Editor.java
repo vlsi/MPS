@@ -30,7 +30,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_1uorir_a(editorContext, node);
   }
-
   private EditorCell createAlternation_1uorir_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = XmlAttribute_Editor.renderingCondition_1uorir_a0(node, editorContext);
@@ -46,11 +45,9 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_1uorir_a0(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isMultiline_3080189811177259788", new Object[]{});
   }
-
   private EditorCell createCollection_1uorir_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1uorir_a0");
@@ -64,7 +61,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1uorir_e0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_1uorir_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("attrName");
@@ -85,7 +81,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1uorir_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_1uorir_b0a");
@@ -96,7 +91,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_1uorir_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_1uorir_c0a");
@@ -108,7 +102,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_1uorir_d0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1uorir_d0a");
@@ -119,7 +112,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_1uorir_a3a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNodeList_1uorir_a3a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new XmlAttribute_Editor.valueListHandler_1uorir_a3a0(node, "value", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -127,38 +119,31 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class valueListHandler_1uorir_a3a0 extends RefNodeListHandler {
     public valueListHandler_1uorir_a3a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return this.nodeFactory(listOwner, editorContext);
     }
-
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
       return SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlTextValue", null);
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_1uorir_a0d0a(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -171,7 +156,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_1uorir_a0d0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1uorir_a0d0a");
@@ -182,7 +166,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_1uorir_e0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_1uorir_e0a");
@@ -194,7 +177,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_1uorir_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1uorir_a0_0");
@@ -205,7 +187,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1uorir_e0a_0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_1uorir_a0a_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("attrName");
@@ -226,7 +207,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1uorir_b0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_1uorir_b0a_0");
@@ -237,7 +217,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_1uorir_c0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_1uorir_c0a_0");
@@ -249,7 +228,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_1uorir_d0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new XmlAttribute_Editor.valueListHandler_1uorir_d0a(node, "value", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -257,38 +235,31 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class valueListHandler_1uorir_d0a extends RefNodeListHandler {
     public valueListHandler_1uorir_d0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return this.nodeFactory(listOwner, editorContext);
     }
-
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
       return SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlTextValue", null);
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_1uorir_a3a0(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -301,7 +272,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_1uorir_a3a0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1uorir_a3a0");
@@ -312,7 +282,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_1uorir_e0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_1uorir_e0a_0");

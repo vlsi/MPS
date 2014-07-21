@@ -35,7 +35,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_pkrqbh_a(editorContext, node);
   }
-
   private EditorCell createCollection_pkrqbh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pkrqbh_a");
@@ -58,14 +57,12 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_pkrqbh_p0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_pkrqbh_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sax parser");
     editorCell.setCellId("Constant_pkrqbh_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_pkrqbh_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -83,7 +80,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_pkrqbh_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_pkrqbh_c0");
@@ -93,7 +89,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_pkrqbh_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameters");
     editorCell.setCellId("Constant_pkrqbh_d0");
@@ -104,7 +99,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_pkrqbh_e0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new XMLSAXParser_Editor.parametersListHandler_pkrqbh_e0(node, "parameters", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -117,30 +111,25 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class parametersListHandler_pkrqbh_e0 extends RefNodeListHandler {
     public parametersListHandler_pkrqbh_e0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -154,7 +143,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_pkrqbh_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "variables");
     editorCell.setCellId("Constant_pkrqbh_f0");
@@ -165,7 +153,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_pkrqbh_g0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new XMLSAXParser_Editor.fieldsListHandler_pkrqbh_g0(node, "fields", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -178,30 +165,25 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class fieldsListHandler_pkrqbh_g0 extends RefNodeListHandler {
     public fieldsListHandler_pkrqbh_g0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -215,7 +197,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_pkrqbh_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_pkrqbh_h0");
@@ -226,7 +207,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_pkrqbh_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
     editorCell.setCellId("Constant_pkrqbh_i0");
@@ -236,7 +216,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_pkrqbh_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("root");
@@ -261,20 +240,16 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_pkrqbh_a9a extends InlineCellProvider {
     public _Inline_pkrqbh_a9a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_pkrqbh_a0j0(editorContext, node);
     }
-
     private EditorCell createProperty_pkrqbh_a0j0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -298,7 +273,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_pkrqbh_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_pkrqbh_k0");
@@ -309,7 +283,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_pkrqbh_l0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new XMLSAXParser_Editor.nodesListHandler_pkrqbh_l0(node, "nodes", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -322,30 +295,25 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class nodesListHandler_pkrqbh_l0 extends RefNodeListHandler {
     public nodesListHandler_pkrqbh_l0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -359,7 +327,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), " ");
@@ -374,7 +341,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_pkrqbh_m0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_pkrqbh_m0");
@@ -385,7 +351,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_pkrqbh_n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "global text handler");
     editorCell.setCellId("Constant_pkrqbh_n0");
@@ -395,7 +360,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_pkrqbh_o0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("globalText");
@@ -418,7 +382,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_pkrqbh_p0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_pkrqbh_p0");

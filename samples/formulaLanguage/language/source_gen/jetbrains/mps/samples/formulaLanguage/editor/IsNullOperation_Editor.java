@@ -26,7 +26,6 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ehpdiz_a(editorContext, node);
   }
-
   private EditorCell createCollection_ehpdiz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ehpdiz_a");
@@ -36,7 +35,6 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ehpdiz_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_ehpdiz_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftOperand");
@@ -56,7 +54,6 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ehpdiz_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_ehpdiz_b0");
@@ -64,16 +61,13 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IsNullOperation_Editor.ReplaceWith_Operation_cellMenu_ehpdiz_a0b0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_Operation_cellMenu_ehpdiz_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_Operation_cellMenu_ehpdiz_a0b0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.samples.formulaLanguage.structure.Operation";
     }
   }
-
   private EditorCell createConstant_ehpdiz_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isNull");
     editorCell.setCellId("Constant_ehpdiz_c0");

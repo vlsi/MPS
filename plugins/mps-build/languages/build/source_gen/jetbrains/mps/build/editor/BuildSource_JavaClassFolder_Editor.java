@@ -19,7 +19,6 @@ public class BuildSource_JavaClassFolder_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_wef3hb_a(editorContext, node);
   }
-
   private EditorCell createCollection_wef3hb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wef3hb_a");
@@ -28,7 +27,6 @@ public class BuildSource_JavaClassFolder_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_wef3hb_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_wef3hb_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "classes folder");
     editorCell.setCellId("Constant_wef3hb_a0");
@@ -38,7 +36,6 @@ public class BuildSource_JavaClassFolder_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_wef3hb_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("dir");

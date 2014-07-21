@@ -14,42 +14,32 @@ public class delete_XmlElement_shortNotation {
     editorCell.setAction(CellActionType.DELETE, new delete_XmlElement_shortNotation.delete_XmlElement_shortNotation_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new delete_XmlElement_shortNotation.delete_XmlElement_shortNotation_BACKSPACE(node));
   }
-
   public static class delete_XmlElement_shortNotation_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_XmlElement_shortNotation_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "full notation";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "shortEmptyNotation", "" + (false));
     }
   }
-
   public static class delete_XmlElement_shortNotation_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_XmlElement_shortNotation_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "full notation";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "shortEmptyNotation", "" + (false));
     }

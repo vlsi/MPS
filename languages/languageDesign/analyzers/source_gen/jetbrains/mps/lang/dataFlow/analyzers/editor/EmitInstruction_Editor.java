@@ -21,7 +21,6 @@ public class EmitInstruction_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_tx9kns_a(editorContext, node);
   }
-
   private EditorCell createCollection_tx9kns_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tx9kns_a");
@@ -33,14 +32,12 @@ public class EmitInstruction_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_tx9kns_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "insert");
     editorCell.setCellId("Constant_tx9kns_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_tx9kns_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("instructionRef");
@@ -60,7 +57,6 @@ public class EmitInstruction_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_tx9kns_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tx9kns_c0");
@@ -71,11 +67,9 @@ public class EmitInstruction_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_tx9kns_b2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_tx9kns_a2a(SNode node, EditorContext editorContext) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.pattern.structure.Pattern", false, false) == null;
   }
-
   private EditorCell createRefNode_tx9kns_a2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("position");
@@ -95,7 +89,6 @@ public class EmitInstruction_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_tx9kns_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("target");

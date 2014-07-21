@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_ActionCallParameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ActionCallParameter_InferenceRule() {
   }
-
   public void applyRule(final SNode actionCallParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode type = SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), actionCallParameter, "virtual_getParameterDeclaration_5582028874769074473", new Object[]{}), "type", true);
     if (!(typeCheckingContext.isSingleTypeComputation())) {
@@ -46,22 +45,18 @@ public class typeof_ActionCallParameter_InferenceRule extends AbstractInferenceR
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.console.ideCommands.structure.ActionCallParameter";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_vuymlq_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -69,7 +64,6 @@ public class typeof_ActionCallParameter_InferenceRule extends AbstractInferenceR
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)"), facade.createNodeId("~DataKey")));
     return quotedNode_1;
   }
-
   private static boolean eq_vuymlq_a0a0c0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

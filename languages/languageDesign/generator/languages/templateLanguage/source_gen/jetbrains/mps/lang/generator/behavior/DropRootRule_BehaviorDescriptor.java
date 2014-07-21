@@ -10,5 +10,5 @@ public class DropRootRule_BehaviorDescriptor extends BaseConcept_BehaviorDescrip
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.DropRootRule";
-  };;
-;}
+  }
+}

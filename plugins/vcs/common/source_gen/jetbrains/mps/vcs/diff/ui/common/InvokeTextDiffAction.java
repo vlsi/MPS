@@ -17,7 +17,6 @@ public class InvokeTextDiffAction extends BaseAction implements DumbAware {
   private DiffRequest myDiffRequest;
   private DialogWrapper myDialog;
   private DiffTool myDiffTool;
-
   public InvokeTextDiffAction(String title, String description, DialogWrapper dialog, DiffRequest diffRequest, DiffTool diffTool) {
     super(title, description, TEXT_ICON);
     myDialog = dialog;
@@ -26,7 +25,6 @@ public class InvokeTextDiffAction extends BaseAction implements DumbAware {
     setDisableOnNoProject(false);
     setExecuteOutsideCommand(true);
   }
-
   @Override
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
     if (myDiffTool.canShow(myDiffRequest)) {

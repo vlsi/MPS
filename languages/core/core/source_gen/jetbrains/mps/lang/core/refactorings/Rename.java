@@ -17,27 +17,21 @@ public class Rename extends BaseRefactoring {
   public Rename() {
     this.addTransientParameter("newName");
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new Rename_Target();
   }
-
   public String getUserFriendlyName() {
     return "Rename";
   }
-
   public boolean init(final RefactoringContext refactoringContext) {
     return true;
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     SPropertyOperations.set(refactoringContext.getSelectedNode(), "name", ((String) refactoringContext.getParameter("newName")));
   }
-
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     return (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel());
   }
-
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }

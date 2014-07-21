@@ -10,16 +10,13 @@ import org.jetbrains.annotations.NonNls;
 public class BuildLayout_JarManifest_Attribute_BehaviorDescriptor extends BuildLayout_JarManifest_Part_BehaviorDescriptor implements BuildStringContainer_BehaviorDescriptor {
   public BuildLayout_JarManifest_Attribute_BehaviorDescriptor() {
   }
-
   @Nullable
   public Color virtual_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
     return BuildLayout_JarManifest_Attribute_Behavior.virtual_getColorForTextPart_6083230236994422116(thisNode, role);
   }
-
   public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     return BuildLayout_JarManifest_Attribute_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_JarManifest_Attribute";

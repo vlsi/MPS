@@ -8,11 +8,11 @@ import jetbrains.mps.scope.EmptyScope;
 
 public class TemplateQueryBase_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+  }
+  public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return new EmptyScope();
-  };;
-;  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+  }
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return new EmptyScope();
-  };;
-;}
+  }
+}

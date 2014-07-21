@@ -26,7 +26,6 @@ public class CurrentStockPrice_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_w8qb9s_a(editorContext, node);
   }
-
   private EditorCell createCollection_w8qb9s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_w8qb9s_a");
@@ -39,19 +38,16 @@ public class CurrentStockPrice_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_w8qb9s_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_w8qb9s_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
-
   private EditorCell createConstant_w8qb9s_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_w8qb9s_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_w8qb9s_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("symbol");
@@ -71,7 +67,6 @@ public class CurrentStockPrice_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_w8qb9s_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(Current price:");
     editorCell.setCellId("Constant_w8qb9s_d0");
@@ -81,16 +76,13 @@ public class CurrentStockPrice_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_w8qb9s_e0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return CurrentStockPrice_Behavior.call_getCurrentPrice_4001135958233293105(node).toString();
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
@@ -103,7 +95,6 @@ public class CurrentStockPrice_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_w8qb9s_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_w8qb9s_f0");

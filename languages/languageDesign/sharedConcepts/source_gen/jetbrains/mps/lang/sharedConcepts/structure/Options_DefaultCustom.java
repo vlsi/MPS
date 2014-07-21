@@ -11,26 +11,21 @@ public enum Options_DefaultCustom {
   custom_("custom_", "custom");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<Options_DefaultCustom> getConstants() {
     List<Options_DefaultCustom> list = ListSequence.fromList(new LinkedList<Options_DefaultCustom>());
     ListSequence.fromList(list).addElement(Options_DefaultCustom.default_);
     ListSequence.fromList(list).addElement(Options_DefaultCustom.custom_);
     return list;
   }
-
   public static Options_DefaultCustom getDefault() {
     return Options_DefaultCustom.default_;
   }
-
   public static Options_DefaultCustom parseValue(String value) {
     if (value == null) {
       return Options_DefaultCustom.getDefault();
@@ -43,14 +38,11 @@ public enum Options_DefaultCustom {
     }
     return Options_DefaultCustom.getDefault();
   }
-
   private String myValue;
-
   Options_DefaultCustom(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

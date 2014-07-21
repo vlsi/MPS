@@ -9,5 +9,5 @@ public class MoveNextOperation_BehaviorDescriptor extends AbstractEnumeratorOper
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MoveNextOperation";
-  };;
-;}
+  }
+}

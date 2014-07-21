@@ -47,15 +47,12 @@ public class QueriesGenerated {
                 }
                 return logStatement;
               }
-
               public String getMatchingText(String pattern) {
                 return SEnumOperations.getEnumMemberValue((item));
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
-
               public String getDescriptionText(String pattern) {
                 return "Log statement";
               }

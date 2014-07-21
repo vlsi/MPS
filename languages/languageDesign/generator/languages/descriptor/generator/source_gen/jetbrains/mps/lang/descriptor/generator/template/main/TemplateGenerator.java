@@ -26,11 +26,9 @@ import jetbrains.mps.smodel.SNodePointer;
 public class TemplateGenerator implements TemplateDeclaration {
   public TemplateGenerator() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_g5r92k_a0a1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
     try {
@@ -2142,7 +2140,6 @@ public class TemplateGenerator implements TemplateDeclaration {
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   private static SNodePointer template_g5r92k_a0a1 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1698302279987270980");
   private static SNodePointer propertyMacro_g5r92k_c0a0c0b0b0c = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1698302279987411158");
   private static SNodePointer propertyMacro_g5r92k_c0a0c0b0b0e0b0e0b0c = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "7633657384060768609");

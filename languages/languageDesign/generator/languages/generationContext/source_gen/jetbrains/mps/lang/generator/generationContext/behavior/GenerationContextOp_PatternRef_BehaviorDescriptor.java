@@ -10,7 +10,7 @@ public abstract class GenerationContextOp_PatternRef_BehaviorDescriptor extends 
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef";
-  };;
-;  public abstract SNode virtual_getTarget_1758784108620114792(SNode thisNode);
+  }
+  public abstract SNode virtual_getTarget_1758784108620114792(SNode thisNode);
   public abstract void virtual_setTarget_1758784108620254533(SNode thisNode, SNode target);
 }

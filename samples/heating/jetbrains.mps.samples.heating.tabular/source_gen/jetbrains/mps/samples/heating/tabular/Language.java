@@ -11,25 +11,20 @@ import jetbrains.mps.samples.heating.tabular.editor.EditorAspectDescriptorImpl;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "000a73b2-ac88-49d9-bfcf-a3fa90cdb367(jetbrains.mps.samples.heating.tabular)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.samples.heating.tabular";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.samples.heating"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return null;
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == EditorAspectDescriptor.class) {

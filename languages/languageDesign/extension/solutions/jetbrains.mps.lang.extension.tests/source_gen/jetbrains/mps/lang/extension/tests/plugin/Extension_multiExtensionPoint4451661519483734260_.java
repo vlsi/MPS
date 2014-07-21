@@ -8,7 +8,6 @@ public class Extension_multiExtensionPoint4451661519483734260_ extends Extension
   public Extension_multiExtensionPoint4451661519483734260_() {
     super("jetbrains.mps.lang.extension.tests.multiExtensionPoint");
   }
-
   public String get() {
     return "salam";
   }

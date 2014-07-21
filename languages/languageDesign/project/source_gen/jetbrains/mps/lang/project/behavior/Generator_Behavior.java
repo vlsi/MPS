@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class Generator_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getModuleReference_9020561928507315628(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "uuid") + "(" + SPropertyOperations.getString(thisNode, "generatorUID") + ")";
   }

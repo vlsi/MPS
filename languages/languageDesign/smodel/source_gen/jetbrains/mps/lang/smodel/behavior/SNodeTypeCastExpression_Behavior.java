@@ -11,18 +11,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class SNodeTypeCastExpression_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean call_isSNodeCast_1238686302573(SNode thisNode) {
+  }
+  public static boolean call_isSNodeCast_1238686302573(SNode thisNode) {
     SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "leftExpression", true));
     return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, _quotation_createNode_cjhknp_b0a0b0a(), false));
-  };;
-;  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+  }
+  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return (SPropertyOperations.getBoolean(thisNode, "asCast") ? "as" : ":");
-  };;
-;  private static SNode _quotation_createNode_cjhknp_b0a0b0a() {
+  }
+  private static SNode _quotation_createNode_cjhknp_b0a0b0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, false);
     return quotedNode_1;
-  };;
-;}
+  }
+}

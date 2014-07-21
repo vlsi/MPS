@@ -8,28 +8,23 @@ import org.jetbrains.annotations.Nullable;
 
 public class ReferenceFeature extends AbstractNodeFeature {
   private String myReferenceRole;
-
   public ReferenceFeature(@NotNull SNodeReference nodePointer, @NotNull String referenceRole) {
     super(nodePointer);
     myReferenceRole = referenceRole;
   }
-
   @NotNull
   public String getReferenceRole() {
     return myReferenceRole;
   }
-
   @Nullable
   @Override
   public Feature getParent() {
     return new ReferencesFeature(getNodePointer());
   }
-
   @Override
   public boolean equals(Object object) {
     return super.equals(object) && this.myReferenceRole.equals(((ReferenceFeature) object).myReferenceRole);
   }
-
   @Override
   @NotNull
   public String toString() {

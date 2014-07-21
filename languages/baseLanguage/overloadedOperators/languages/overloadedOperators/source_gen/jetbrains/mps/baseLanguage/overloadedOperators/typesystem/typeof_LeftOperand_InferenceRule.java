@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_LeftOperand_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_LeftOperand_InferenceRule() {
   }
-
   public void applyRule(final SNode leftOperand, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = leftOperand;
@@ -23,18 +22,15 @@ public class typeof_LeftOperand_InferenceRule extends AbstractInferenceRule_Runt
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:c493b9a9-0f39-4efb-93f7-8ac7c0a1036c(jetbrains.mps.baseLanguage.overloadedOperators.typesystem)", "6677452554239169674", true), (SNode) SLinkOperations.getTarget(SNodeOperations.getAncestor(leftOperand, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", false, false), "leftType", true), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }

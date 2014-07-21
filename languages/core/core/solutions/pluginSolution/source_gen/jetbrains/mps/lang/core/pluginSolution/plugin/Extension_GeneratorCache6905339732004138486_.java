@@ -11,7 +11,6 @@ public class Extension_GeneratorCache6905339732004138486_ extends Extension.Defa
   public Extension_GeneratorCache6905339732004138486_() {
     super("jetbrains.mps.lang.core.GeneratorCache");
   }
-
   public GenerationCacheContainer get() {
     if (ApplicationManager.getApplication() == null) {
       return null;

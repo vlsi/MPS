@@ -24,7 +24,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_s0kiw8_a(editorContext, node);
   }
-
   private EditorCell createCollection_s0kiw8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_s0kiw8_a");
@@ -39,14 +38,12 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createConstant_s0kiw8_h0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_s0kiw8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generator internal_ child descriptor");
     editorCell.setCellId("Constant_s0kiw8_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_s0kiw8_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("role");
@@ -64,14 +61,12 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_s0kiw8_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child link declaration");
     editorCell.setCellId("Constant_s0kiw8_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_s0kiw8_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("childLinkDeclaration");
@@ -93,20 +88,16 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     } else
     return editorCell;
   }
-
   public static class _Inline_s0kiw8_a3a extends InlineCellProvider {
     public _Inline_s0kiw8_a3a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_s0kiw8_a0d0(editorContext, node);
     }
-
     private EditorCell createProperty_s0kiw8_a0d0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
@@ -125,14 +116,12 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
       return editorCell;
     }
   }
-
   private EditorCell createConstant_s0kiw8_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "main node");
     editorCell.setCellId("Constant_s0kiw8_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_s0kiw8_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("mainNode");
@@ -154,27 +143,22 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     } else
     return editorCell;
   }
-
   public static class _Inline_s0kiw8_a5a extends InlineCellProvider {
     public _Inline_s0kiw8_a5a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReferencePresentation_s0kiw8_a0f0(editorContext, node);
     }
-
     private EditorCell createReferencePresentation_s0kiw8_a0f0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "mainNode");
       editorCell.setCellId("ReferencePresentation_s0kiw8_a0f0");
       return editorCell;
     }
   }
-
   private EditorCell createConstant_s0kiw8_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_s0kiw8_g0");
@@ -186,7 +170,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_s0kiw8_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_s0kiw8_h0");

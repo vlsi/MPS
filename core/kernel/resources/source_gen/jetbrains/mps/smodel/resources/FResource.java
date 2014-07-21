@@ -13,56 +13,43 @@ public class FResource extends MultiTuple._5<String, Map<String, Object>, Map<SN
   public FResource() {
     super();
   }
-
   public FResource(String packageName, Map<String, Object> contents, Map<SNodeReference, String> rootNodeNames, SModule module, SModel model) {
     super(packageName, contents, rootNodeNames, module, model);
   }
-
   public String packageName(String value) {
     return super._0(value);
   }
-
   public Map<String, Object> contents(Map<String, Object> value) {
     return super._1(value);
   }
-
   public Map<SNodeReference, String> rootNodeNames(Map<SNodeReference, String> value) {
     return super._2(value);
   }
-
   public SModule module(SModule value) {
     return super._3(value);
   }
-
   public SModel model(SModel value) {
     return super._4(value);
   }
-
   public String packageName() {
     return super._0();
   }
-
   public Map<String, Object> contents() {
     return super._1();
   }
-
   public Map<SNodeReference, String> rootNodeNames() {
     return super._2();
   }
-
   public SModule module() {
     return super._3();
   }
-
   public SModel model() {
     return super._4();
   }
-
   @SuppressWarnings(value = "unchecked")
   public FResource assignFrom(Tuples._5<String, Map<String, Object>, Map<SNodeReference, String>, SModule, SModel> from) {
     return (FResource) super.assign(from);
   }
-
   public String describe() {
     return null;
   }

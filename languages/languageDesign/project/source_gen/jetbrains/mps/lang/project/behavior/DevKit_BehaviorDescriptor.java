@@ -6,7 +6,6 @@ package jetbrains.mps.lang.project.behavior;
 public class DevKit_BehaviorDescriptor extends Module_BehaviorDescriptor {
   public DevKit_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.project.structure.DevKit";

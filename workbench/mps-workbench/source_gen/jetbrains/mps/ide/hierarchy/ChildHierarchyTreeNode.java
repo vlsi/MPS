@@ -18,19 +18,16 @@ import jetbrains.mps.util.StringUtil;
 public class ChildHierarchyTreeNode extends HierarchyTreeNode {
   private boolean myInitialized = false;
   private Set<SNode> myVisited;
-
   public ChildHierarchyTreeNode(SNode declaration, IOperationContext operationContext, AbstractHierarchyTree tree, Set<SNode> visited) {
     super(declaration, operationContext, tree);
     myVisited = new HashSet<SNode>(visited);
     setColor(new Color(64, 0, 144));
     setText(calculateText());
   }
-
   @Override
   public boolean isInitialized() {
     return myInitialized;
   }
-
   @Override
   protected void doInit() {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -61,7 +58,6 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
               setIcon(Icons.ERROR_ICON);
               setColor(Color.RED);
             }
-
             @Override
             protected String calculateAdditionalText() {
               return message;
@@ -73,7 +69,6 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
       }
     });
   }
-
   @Override
   public boolean isLeaf() {
     if (!(isInitialized())) {
@@ -81,13 +76,11 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
     }
     return getChildCount() == 0;
   }
-
   @Override
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
   }
-
   public String calculateText() {
     String name = super.toString();
     AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();

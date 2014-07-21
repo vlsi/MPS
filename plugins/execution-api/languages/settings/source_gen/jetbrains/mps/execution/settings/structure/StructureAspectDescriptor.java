@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -78,6 +77,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.execution.settings.structure.ApplyTo_Function", "jetbrains.mps.execution.settings.structure.CheckProperitesOperation", "jetbrains.mps.execution.settings.structure.CheckProperties_Function", "jetbrains.mps.execution.settings.structure.Configuration_Parameter", "jetbrains.mps.execution.settings.structure.CreateEditor_Function", "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation", "jetbrains.mps.execution.settings.structure.Dispose_Function", "jetbrains.mps.execution.settings.structure.EditorExpression", "jetbrains.mps.execution.settings.structure.EditorOperationCall", "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyReference", "jetbrains.mps.execution.settings.structure.GetEditorOperation", "jetbrains.mps.execution.settings.structure.GridBagConstraints", "jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder", "jetbrains.mps.execution.settings.structure.PersistentConfiguration", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent", "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer", "jetbrains.mps.execution.settings.structure.PersistentConfigurationType", "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration", "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation", "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement", "jetbrains.mps.execution.settings.structure.ResetFrom_Function", "jetbrains.mps.execution.settings.structure.SettingsEditor", "jetbrains.mps.execution.settings.structure.SettingsEditorType", "jetbrains.mps.execution.settings.structure.TemplateParameter", "jetbrains.mps.execution.settings.structure.TemplateParameterReference", "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"};
 }

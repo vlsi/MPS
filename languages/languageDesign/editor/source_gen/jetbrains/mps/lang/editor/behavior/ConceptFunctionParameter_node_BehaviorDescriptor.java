@@ -11,5 +11,5 @@ public class ConceptFunctionParameter_node_BehaviorDescriptor extends ConceptFun
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node";
-  };;
-;}
+  }
+}

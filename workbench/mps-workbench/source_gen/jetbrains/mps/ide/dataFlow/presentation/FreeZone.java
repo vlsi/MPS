@@ -9,12 +9,10 @@ public class FreeZone {
   private int myFirstIndex;
   private int myLastIndex;
   private boolean myIsDeleted = false;
-
   public FreeZone(int firstIndex, int lastIndex) {
     this.myFirstIndex = firstIndex;
     this.myLastIndex = lastIndex;
   }
-
   public boolean insert(int first, int last) {
     if (this.myIsDeleted) {
       return false;
@@ -63,7 +61,6 @@ public class FreeZone {
     }
     return true;
   }
-
   public boolean canBeAdded(int first, int last) {
     FreeZone current = this;
     while (current != null) {
@@ -74,7 +71,6 @@ public class FreeZone {
     }
     return false;
   }
-
   private void delete() {
     if (this.myPrev != null) {
       this.myPrev.myNext = this.myNext;

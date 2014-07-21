@@ -9,5 +9,5 @@ public class CellModel_ReferencePresentation_BehaviorDescriptor extends EditorCe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation";
-  };;
-;}
+  }
+}

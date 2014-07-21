@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public class ValueInlineDocTag_BehaviorDescriptor extends BaseInlineDocTag_BehaviorDescriptor {
   public ValueInlineDocTag_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag";

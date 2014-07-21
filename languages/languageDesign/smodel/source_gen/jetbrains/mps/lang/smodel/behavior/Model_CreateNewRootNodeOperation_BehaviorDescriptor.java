@@ -9,9 +9,9 @@ public class Model_CreateNewRootNodeOperation_BehaviorDescriptor extends Model_C
   }
   public boolean virtual_applicableToModel_1262430001741492322(SConcept thisConcept) {
     return Model_CreateNewRootNodeOperation_Behavior.virtual_applicableToModel_1262430001741492322(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation";
-  };;
-;}
+  }
+}

@@ -25,7 +25,6 @@ public class BLQueryArgument_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_c3akx4_a(editorContext, node);
   }
-
   private EditorCell createCollection_c3akx4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c3akx4_a");
@@ -35,16 +34,13 @@ public class BLQueryArgument_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_c3akx4_b0(editorContext, node));
     return editorCell;
   }
-
   public static class ReplaceWith_AbstractArgument_cellMenu_c3akx4_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractArgument_cellMenu_c3akx4_a0a() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument";
     }
   }
-
   private EditorCell createConstant_c3akx4_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
     editorCell.setCellId("Constant_c3akx4_a0");
@@ -58,16 +54,13 @@ public class BLQueryArgument_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BLQueryArgument_Editor.ReplaceWith_AbstractArgument_cellMenu_c3akx4_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_AbstractArgument_cellMenu_c3akx4_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractArgument_cellMenu_c3akx4_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument";
     }
   }
-
   private EditorCell createRefNode_c3akx4_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("query");

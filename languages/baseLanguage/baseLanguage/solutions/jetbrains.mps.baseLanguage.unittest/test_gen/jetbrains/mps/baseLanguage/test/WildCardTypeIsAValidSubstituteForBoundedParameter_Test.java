@@ -17,75 +17,62 @@ public class WildCardTypeIsAValidSubstituteForBoundedParameter_Test extends Base
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_NodeWarningCheck595838485961914360", true);
   }
-
   @Test
   public void test_NodeErrorCheck595838485955120512() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_NodeErrorCheck595838485955120512", true);
   }
-
   @Test
   public void test_NodeWarningCheck595838485961915035() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_NodeWarningCheck595838485961915035", true);
   }
-
   @Test
   public void test_NodeWarningCheck595838485961916732() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_NodeWarningCheck595838485961916732", true);
   }
-
   @Test
   public void test_NodeWarningCheck595838485961917399() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_NodeWarningCheck595838485961917399", true);
   }
-
   @Test
   public void test_NodeWarningCheck595838485961918062() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_NodeWarningCheck595838485961918062", true);
   }
-
   @Test
   public void test_ErrorMessagesCheck595838485955141760() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_ErrorMessagesCheck595838485955141760", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_NodeWarningCheck595838485961914360() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("595838485961914360"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("595838485955112039")});
     }
-
     public void test_NodeErrorCheck595838485955120512() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("595838485955120512"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("595838485955112480")});
     }
-
     public void test_NodeWarningCheck595838485961915035() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("595838485961915035"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("595838485955112302")});
     }
-
     public void test_NodeWarningCheck595838485961916732() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("595838485961916732"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("595838485955114506")});
     }
-
     public void test_NodeWarningCheck595838485961917399() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("595838485961917399"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("595838485955117670")});
     }
-
     public void test_NodeWarningCheck595838485961918062() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("595838485961918062"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("595838485955150406")});
     }
-
     public void test_ErrorMessagesCheck595838485955141760() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("595838485955141760"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("595838485955086231")});

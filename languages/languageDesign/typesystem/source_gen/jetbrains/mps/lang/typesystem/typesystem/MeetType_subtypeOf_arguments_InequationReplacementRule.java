@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class MeetType_subtypeOf_arguments_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public MeetType_subtypeOf_arguments_InequationReplacementRule() {
   }
-
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     for (SNode arg : SLinkOperations.getTargets(subtype, "argument", true)) {
       if (MatchingUtil.matchNodes(arg, supertype)) {
@@ -24,37 +23,30 @@ public class MeetType_subtypeOf_arguments_InequationReplacementRule extends Abst
     }
     return false;
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.MeetType";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.Type";
   }

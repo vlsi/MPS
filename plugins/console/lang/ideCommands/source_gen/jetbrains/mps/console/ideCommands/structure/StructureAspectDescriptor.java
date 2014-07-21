@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -69,6 +68,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.ideCommands.structure.AbsractMake", "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter", "jetbrains.mps.console.ideCommands.structure.ActionCallParameter", "jetbrains.mps.console.ideCommands.structure.CallActionExpression", "jetbrains.mps.console.ideCommands.structure.Clean", "jetbrains.mps.console.ideCommands.structure.ClickableGenerator", "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.INodeSetReference", "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.Make", "jetbrains.mps.console.ideCommands.structure.ModelProperties", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ModuleProperties", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.OfAspectOperation", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.RebuildProjectCommand", "jetbrains.mps.console.ideCommands.structure.RemoveGenSources", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.ShowGenPlan", "jetbrains.mps.console.ideCommands.structure.StatCommand", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.UnloadModelsCommand", "jetbrains.mps.console.ideCommands.structure.WithDependencies"};
 }

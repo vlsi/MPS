@@ -10,5 +10,5 @@ public class TemplateSwitchReference_BehaviorDescriptor extends BaseConcept_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.TemplateSwitchReference";
-  };;
-;}
+  }
+}

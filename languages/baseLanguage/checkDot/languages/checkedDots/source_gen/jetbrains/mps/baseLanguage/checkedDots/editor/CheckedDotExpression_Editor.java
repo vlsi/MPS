@@ -23,7 +23,6 @@ public class CheckedDotExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6ihim1_a(editorContext, node);
   }
-
   private EditorCell createCollection_6ihim1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6ihim1_a");
@@ -33,7 +32,6 @@ public class CheckedDotExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_6ihim1_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_6ihim1_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("operand");
@@ -53,7 +51,6 @@ public class CheckedDotExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_6ihim1_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".?");
     editorCell.setCellId("Constant_6ihim1_b0");
@@ -65,7 +62,6 @@ public class CheckedDotExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_6ihim1_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("operation");

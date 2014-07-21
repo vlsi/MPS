@@ -18,7 +18,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 public class LanguageChooser implements Computable<List<SModuleReference>> {
   public LanguageChooser() {
   }
-
   @Override
   public List<SModuleReference> compute() {
     final Wrappers._T<List<SModuleReference>> langRefs = new Wrappers._T<List<SModuleReference>>();

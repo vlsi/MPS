@@ -27,7 +27,6 @@ public class SConceptType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6of1q_a(editorContext, node);
   }
-
   private EditorCell createCollection_6of1q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6of1q_a");
@@ -38,7 +37,6 @@ public class SConceptType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6of1q_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_6of1q_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
     editorCell.setCellId("Constant_6of1q_a0");
@@ -49,7 +47,6 @@ public class SConceptType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_6of1q_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_6of1q_b0");
@@ -60,7 +57,6 @@ public class SConceptType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_6of1q_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("conceptDeclaraton");
@@ -85,20 +81,16 @@ public class SConceptType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_6of1q_a2a extends InlineCellProvider {
     public _Inline_6of1q_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_6of1q_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_6of1q_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -122,7 +114,6 @@ public class SConceptType_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_6of1q_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_6of1q_d0");

@@ -32,12 +32,10 @@ public class CycleHelper {
   private final SNode project;
   private final Map<SNode, CycleHelper.Module> map = new HashMap<SNode, CycleHelper.Module>();
   private final TemplateQueryContext genContext;
-
   public CycleHelper(SNode project, TemplateQueryContext genContext) {
     this.project = project;
     this.genContext = genContext;
   }
-
   public void optimizeDependencies(SNode m) {
     final Set<String> seenDependencies = new HashSet<String>();
     ListSequence.fromList(SLinkOperations.getTargets(m, "dependencies", true)).removeWhere(new IWhereFilter<SNode>() {
@@ -52,7 +50,6 @@ public class CycleHelper {
       }
     });
   }
-
   public void processCycles() {
     List<SNode> modules = new ArrayList<SNode>();
     ListSequence.fromList(modules).addSequence(ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).where(new IWhereFilter<SNode>() {
@@ -201,15 +198,12 @@ public class CycleHelper {
       SPropertyOperations.set(cycleX, "outputFolder", SPropertyOperations.getString(project, "temporaryFolder") + "/" + SPropertyOperations.getString(cycleX, "name"));
     }
   }
-
   public class Module implements IVertex {
     private final SNode module;
     private Set<CycleHelper.Module> targets;
-
     public Module(SNode module) {
       this.module = module;
     }
-
     public Set<? extends IVertex> getNexts() {
       if (targets == null) {
         if (ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).isEmpty()) {
@@ -232,12 +226,10 @@ public class CycleHelper {
       }
       return targets;
     }
-
     public SNode getModule() {
       return module;
     }
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

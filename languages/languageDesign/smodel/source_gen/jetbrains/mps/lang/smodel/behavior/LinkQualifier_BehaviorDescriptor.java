@@ -10,5 +10,5 @@ public class LinkQualifier_BehaviorDescriptor extends BaseConcept_BehaviorDescri
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.LinkQualifier";
-  };;
-;}
+  }
+}

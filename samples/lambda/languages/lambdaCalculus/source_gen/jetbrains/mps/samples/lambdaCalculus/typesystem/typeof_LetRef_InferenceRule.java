@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_LetRef_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_LetRef_InferenceRule() {
   }
-
   public void applyRule(final SNode letRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
 
     SNode type = SNodeOperations.copyNode(typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(letRef, "variable", false)), "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), "value", true), "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "926857988255646351", true));
@@ -44,18 +43,15 @@ public class typeof_LetRef_InferenceRule extends AbstractInferenceRule_Runtime i
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "403206377113910075", true), (SNode) type, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.lambdaCalculus.structure.LetRef";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

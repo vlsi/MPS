@@ -12,12 +12,12 @@ public class StyleClass_BehaviorDescriptor extends BaseConcept_BehaviorDescripto
   }
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
-  };;
-;  public SNode virtual_getParent_1219419981626(SNode thisNode) {
+  }
+  public SNode virtual_getParent_1219419981626(SNode thisNode) {
     return IStyleContainer_Behavior.virtual_getParent_1219419981626(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyleClass";
-  };;
-;}
+  }
+}

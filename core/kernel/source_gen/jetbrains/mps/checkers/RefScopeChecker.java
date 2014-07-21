@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
   }
-
   @Override
   public void checkNode(SNode node, LanguageErrorsComponent component, SRepository repository) {
     if (node == null || SNodeOperations.getModel(node) == null) {
@@ -66,23 +65,19 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       }
     }
   }
-
   protected QuickFixProvider createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
     return new RefScopeChecker.ResolveReferenceQuickFix(reference, repository, executeImmediately);
   }
-
   protected class ResolveReferenceQuickFix implements QuickFixProvider {
     private boolean myIsError;
     protected SReference myReference;
     protected SRepository myRepository;
     private boolean myExecuteImmediately;
-
     public ResolveReferenceQuickFix(SReference reference, SRepository repository, boolean executeImmediately) {
       myReference = reference;
       myRepository = repository;
       myExecuteImmediately = executeImmediately;
     }
-
     @Override
     public QuickFix_Runtime getQuickFix() {
       return new QuickFix_Runtime() {
@@ -90,30 +85,25 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         public void execute(SNode node) {
           ResolverComponent.getInstance().resolve(myReference, myRepository);
         }
-
         @Override
         public String getDescription(SNode node) {
           return "Resolve \"" + myReference.getRole() + "\" reference";
         }
       };
     }
-
     @Override
     public boolean isExecutedImmediately() {
       return myExecuteImmediately;
     }
-
     @Override
     public void setIsError(boolean isError) {
       myIsError = isError;
     }
-
     @Override
     public boolean isError() {
       return myIsError;
     }
   }
-
   private static SModule check_bt3k2y_a0b0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

@@ -18,20 +18,16 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
     add(new ViewAction(annotationColumn, ViewAction.SHORTEN_NAMES));
     add(new ViewAction(annotationColumn, ViewAction.COLORS));
   }
-
   private class ShowHideSubcolumnAction extends ToggleAction {
     private AnnotationAspectSubcolumn mySubcolumn;
-
     public ShowHideSubcolumnAction(AnnotationAspectSubcolumn subcolumn) {
       super(subcolumn.getId());
       mySubcolumn = subcolumn;
     }
-
     @Override
     public void setSelected(AnActionEvent event, boolean selected) {
       mySubcolumn.setEnabled(selected);
     }
-
     @Override
     public boolean isSelected(AnActionEvent event) {
       return mySubcolumn.isEnabled();

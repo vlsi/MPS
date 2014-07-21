@@ -15,15 +15,12 @@ import com.intellij.ide.util.treeView.smartTree.Sorter;
 /*package*/ class TreeStructureActionsOwner implements TreeActionsOwner {
   private final Set<TreeAction> myActions = new HashSet<TreeAction>();
   private final StructureViewModel myModel;
-
   /*package*/ TreeStructureActionsOwner(StructureViewModel model) {
     myModel = model;
   }
-
   @Override
   public void setActionActive(String name, boolean state) {
   }
-
   @Override
   public boolean isActionActive(String name) {
     for (final Sorter sorter : myModel.getSorters()) {
@@ -40,7 +37,6 @@ import com.intellij.ide.util.treeView.smartTree.Sorter;
     }
     return Sorter.ALPHA_SORTER_ID.equals(name);
   }
-
   public void setActionIncluded(final TreeAction filter, final boolean selected) {
     if (selected) {
       myActions.add(filter);

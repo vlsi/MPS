@@ -13,29 +13,24 @@ import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 public class DebugProcessMulticaster {
   private static Logger LOG = LogManager.getLogger(DebugProcessMulticaster.class);
   private final List<DebugProcessListener> myListeners = new ArrayList<DebugProcessListener>();
-
   public DebugProcessMulticaster() {
   }
-
   private List<DebugProcessListener> getListeners() {
     synchronized (myListeners) {
       List<DebugProcessListener> result = new ArrayList<DebugProcessListener>(myListeners);
       return result;
     }
   }
-
   public void addListener(@NotNull DebugProcessListener listener) {
     synchronized (myListeners) {
       myListeners.add(listener);
     }
   }
-
   public void removeListener(@NotNull DebugProcessListener listener) {
     synchronized (myListeners) {
       myListeners.remove(listener);
     }
   }
-
   public void connectorIsReady() {
     for (DebugProcessListener listener : getListeners()) {
       try {
@@ -45,7 +40,6 @@ public class DebugProcessMulticaster {
       }
     }
   }
-
   public void paused(@NotNull Context suspendContext) {
     for (DebugProcessListener listener : getListeners()) {
       try {
@@ -55,7 +49,6 @@ public class DebugProcessMulticaster {
       }
     }
   }
-
   public void resumed(@NotNull Context suspendContext) {
     for (DebugProcessListener listener : getListeners()) {
       try {
@@ -65,7 +58,6 @@ public class DebugProcessMulticaster {
       }
     }
   }
-
   public void processDetached(@NotNull EventsProcessor process, boolean closedByUser) {
     for (DebugProcessListener listener : getListeners()) {
       try {
@@ -75,7 +67,6 @@ public class DebugProcessMulticaster {
       }
     }
   }
-
   public void processAttached(@NotNull EventsProcessor process) {
     for (DebugProcessListener listener : getListeners()) {
       try {

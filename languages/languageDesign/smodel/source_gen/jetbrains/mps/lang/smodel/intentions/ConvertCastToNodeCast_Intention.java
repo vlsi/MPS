@@ -19,68 +19,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertCastToNodeCast_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertCastToNodeCast_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.CastExpression";
   }
-
   public String getPresentation() {
     return "ConvertCastToNodeCast";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.smodel.intentions.ConvertCastToNodeCast_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.smodel";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType") && (SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false) != null) && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), "jetbrains.mps.lang.smodel.structure.SNodeType");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)", "8288233991428663607");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertCastToNodeCast_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to Node Cast";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", null);
       SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
@@ -88,7 +73,6 @@ public class ConvertCastToNodeCast_Intention implements IntentionFactory {
       SLinkOperations.setTarget(result, "leftExpression", SLinkOperations.getTarget(node, "expression", true), true);
       SNodeOperations.replaceWithAnother(node, result);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertCastToNodeCast_Intention.this;
     }

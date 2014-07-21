@@ -10,5 +10,5 @@ public class SingletonSequenceCreator_BehaviorDescriptor extends AbstractCreator
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator";
-  };;
-;}
+  }
+}

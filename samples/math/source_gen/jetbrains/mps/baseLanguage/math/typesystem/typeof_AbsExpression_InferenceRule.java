@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_AbsExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_AbsExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode expression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode t1_typevar_1238331597992 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -57,18 +56,15 @@ public class typeof_AbsExpression_InferenceRule extends AbstractInferenceRule_Ru
       }, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238331598001", false, false);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.AbsExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

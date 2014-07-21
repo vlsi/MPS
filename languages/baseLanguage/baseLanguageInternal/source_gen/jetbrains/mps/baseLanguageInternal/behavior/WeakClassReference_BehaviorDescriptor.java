@@ -11,5 +11,5 @@ public class WeakClassReference_BehaviorDescriptor extends Expression_BehaviorDe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference";
-  };;
-;}
+  }
+}

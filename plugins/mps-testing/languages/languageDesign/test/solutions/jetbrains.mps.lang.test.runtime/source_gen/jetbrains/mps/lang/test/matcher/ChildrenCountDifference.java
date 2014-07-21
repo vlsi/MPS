@@ -7,18 +7,15 @@ public class ChildrenCountDifference extends DifferanceItem {
   private String myRole;
   private int myCount1;
   private int myCount2;
-
   public ChildrenCountDifference(String role, int c1, int c2) {
     myRole = role;
     myCount1 = c1;
     myCount2 = c2;
   }
-
   @Override
   public String toString() {
     return "Different children count in role: " + myRole + " [" + myCount1 + ", " + myCount2 + "]";
   }
-
   @Override
   public boolean equals(Object obj) {
     if (obj == null) {

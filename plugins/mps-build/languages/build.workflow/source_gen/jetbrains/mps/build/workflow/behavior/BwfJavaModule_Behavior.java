@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class BwfJavaModule_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getAntTargetName_7385586609667776611(SNode thisNode) {
     return "java.compile." + SPropertyOperations.getString(thisNode, "name");
   }

@@ -27,11 +27,9 @@ public class CellModel_DiagramPort_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_inwiug_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createComponent_inwiug_a(editorContext, node);
   }
-
   private EditorCell createCollection_inwiug_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_inwiug_a");
@@ -43,7 +41,6 @@ public class CellModel_DiagramPort_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_inwiug_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createAlternation_inwiug_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = CellModel_DiagramPort_Editor.renderingCondition_inwiug_a0a(node, editorContext);
@@ -56,51 +53,41 @@ public class CellModel_DiagramPort_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CellModel_DiagramPort_Editor.CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0(), new CellModel_DiagramPort_Editor.CellModel_DiagramPort_generic_cellMenu_inwiug_b0a0()}));
     return editorCell;
   }
-
   private static boolean renderingCondition_inwiug_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "input");
   }
-
   public static class CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0 extends AbstractCellMenuPart_Generic_Item {
     public CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0() {
     }
-
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "input", "" + (true));
     }
-
     public String getMatchingText() {
       return "input";
     }
   }
-
   public static class CellModel_DiagramPort_generic_cellMenu_inwiug_b0a0 extends AbstractCellMenuPart_Generic_Item {
     public CellModel_DiagramPort_generic_cellMenu_inwiug_b0a0() {
     }
-
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "input", "" + (false));
     }
-
     public String getMatchingText() {
       return "output";
     }
   }
-
   private EditorCell createConstant_inwiug_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input");
     editorCell.setCellId("Constant_inwiug_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_inwiug_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output");
     editorCell.setCellId("Constant_inwiug_a0a_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_inwiug_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "port");
     editorCell.setCellId("Constant_inwiug_b0");
@@ -110,7 +97,6 @@ public class CellModel_DiagramPort_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_inwiug_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

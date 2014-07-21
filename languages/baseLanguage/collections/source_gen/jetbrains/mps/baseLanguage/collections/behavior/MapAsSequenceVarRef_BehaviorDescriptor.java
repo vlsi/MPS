@@ -10,5 +10,5 @@ public class MapAsSequenceVarRef_BehaviorDescriptor extends Expression_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MapAsSequenceVarRef";
-  };;
-;}
+  }
+}

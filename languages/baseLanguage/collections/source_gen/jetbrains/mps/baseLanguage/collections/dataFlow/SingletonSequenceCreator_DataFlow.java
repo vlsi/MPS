@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class SingletonSequenceCreator_DataFlow extends DataFlowBuilder {
   public SingletonSequenceCreator_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "singletonValue", true) != null)) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "singletonValue", true));

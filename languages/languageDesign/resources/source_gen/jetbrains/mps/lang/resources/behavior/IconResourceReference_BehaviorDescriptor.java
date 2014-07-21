@@ -10,9 +10,9 @@ public class IconResourceReference_BehaviorDescriptor extends Expression_Behavio
   }
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return IconResourceReference_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.resources.structure.IconResourceReference";
-  };;
-;}
+  }
+}

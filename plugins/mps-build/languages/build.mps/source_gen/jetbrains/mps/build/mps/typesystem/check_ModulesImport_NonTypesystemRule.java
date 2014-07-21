@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ModulesImport_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode buildProject, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.getModel(buildProject).getModule() instanceof TransientModelsModule || SModelStereotype.isGeneratorModel(SNodeOperations.getModel(buildProject)) || !(jetbrains.mps.util.SNodeOperations.isGeneratable(SNodeOperations.getModel(buildProject)))) {
       return;
@@ -78,18 +77,15 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.build.structure.BuildProject";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

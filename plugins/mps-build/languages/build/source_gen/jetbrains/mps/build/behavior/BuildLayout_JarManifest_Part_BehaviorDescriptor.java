@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class BuildLayout_JarManifest_Part_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildLayout_JarManifest_Part_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_JarManifest_Part";

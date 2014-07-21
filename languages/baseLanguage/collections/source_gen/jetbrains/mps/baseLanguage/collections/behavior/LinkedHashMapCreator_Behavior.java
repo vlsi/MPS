@@ -7,8 +7,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class LinkedHashMapCreator_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean virtual_hasInitSize_1262430001741497996(SAbstractConcept thisConcept) {
+  }
+  public static boolean virtual_hasInitSize_1262430001741497996(SAbstractConcept thisConcept) {
     return true;
-  };;
-;}
+  }
+}

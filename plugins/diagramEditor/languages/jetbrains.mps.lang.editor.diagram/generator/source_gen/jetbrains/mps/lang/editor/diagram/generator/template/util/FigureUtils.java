@@ -14,8 +14,6 @@ public class FigureUtils {
     return SNodeOperations.isInstanceOf(figureReference, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference") && ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(SLinkOperations.getTarget(SNodeOperations.cast(figureReference, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference"), "figureAttribute", false)))).contains(SNodeOperations.getNode("r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)", "8082246476498952649"));
   }
 
-
-
   public static boolean isResizable(SNode figureReference) {
     return SNodeOperations.isInstanceOf(figureReference, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference") && ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(SLinkOperations.getTarget(SNodeOperations.cast(figureReference, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference"), "figureAttribute", false)))).contains(SNodeOperations.getNode("r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)", "7493754406620213986"));
   }

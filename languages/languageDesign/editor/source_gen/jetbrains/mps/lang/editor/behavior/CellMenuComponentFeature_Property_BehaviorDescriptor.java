@@ -9,5 +9,5 @@ public class CellMenuComponentFeature_Property_BehaviorDescriptor extends CellMe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property";
-  };;
-;}
+  }
+}

@@ -14,7 +14,6 @@ public class DebugTool_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup";
   public static final String LABEL_ID_StopAction = ID + "StopAction";
   public static final String LABEL_ID_MuteAction = ID + "MuteAction";
-
   public DebugTool_ActionGroup() {
     super("DebugTool", ID);
     this.setIsInternal(false);

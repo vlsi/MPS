@@ -35,61 +35,51 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_justWrite", true);
   }
-
   @Test
   public void test_stringUserObjects() throws Throwable {
     this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_stringUserObjects", true);
   }
-
   @Test
   public void test_intUserObjects() throws Throwable {
     this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_intUserObjects", true);
   }
-
   @Test
   public void test_charUserObjects() throws Throwable {
     this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_charUserObjects", true);
   }
-
   @Test
   public void test_numberUserObjects() throws Throwable {
     this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_numberUserObjects", true);
   }
-
   @Test
   public void test_booleanUserObjects() throws Throwable {
     this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_booleanUserObjects", true);
   }
-
   @Test
   public void test_mpsUserObjects() throws Throwable {
     this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_mpsUserObjects", true);
   }
-
   @Test
   public void test_baseLanguageStructure() throws Throwable {
     this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_baseLanguageStructure", true);
   }
-
   @Test
   public void test_testOverloadedOperatorsSandbox() throws Throwable {
     this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testOverloadedOperatorsSandbox", true);
   }
-
   @Test
   public void test_testSkipNodesWhileSaving() throws Throwable {
     this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testSkipNodesWhileSaving", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_justWrite() throws Exception {
@@ -105,7 +95,6 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
         org.junit.Assert.fail(e.getMessage());
       }
     }
-
     public void test_stringUserObjects() throws Exception {
       this.addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new HashMap<Object, Object>());
@@ -113,7 +102,6 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       MapSequence.fromMap(userObjects).put("2", "2");
       this.testUserObjectsSaving(userObjects);
     }
-
     public void test_intUserObjects() throws Exception {
       this.addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
@@ -122,7 +110,6 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       MapSequence.fromMap(userObjects).put(4, 4);
       this.testUserObjectsSaving(userObjects);
     }
-
     public void test_charUserObjects() throws Exception {
       this.addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
@@ -131,7 +118,6 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       MapSequence.fromMap(userObjects).put('3', '3');
       this.testUserObjectsSaving(userObjects);
     }
-
     public void test_numberUserObjects() throws Exception {
       this.addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
@@ -142,7 +128,6 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       MapSequence.fromMap(userObjects).put(Long.MAX_VALUE, Long.MAX_VALUE);
       this.testUserObjectsSaving(userObjects);
     }
-
     public void test_booleanUserObjects() throws Exception {
       this.addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
@@ -152,7 +137,6 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       MapSequence.fromMap(userObjects).put(true, true);
       this.testUserObjectsSaving(userObjects);
     }
-
     public void test_mpsUserObjects() throws Exception {
       this.addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
@@ -162,7 +146,6 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getModelId(), SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getReference());
       this.testUserObjectsSaving(userObjects);
     }
-
     public void test_baseLanguageStructure() throws Exception {
       this.addNodeById("1732396662099564446");
       SModel sampleModel = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.baseLanguage.structure", ""));
@@ -170,7 +153,6 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       ArrayList<NodeDifference> matchNodes = NodesMatcher.matchNodes(SModelOperations.getRoots(sampleModel, null), SModelOperations.getRoots(resultModel, null));
       Assert.assertNull(matchNodes);
     }
-
     public void test_testOverloadedOperatorsSandbox() throws Exception {
       this.addNodeById("1732396662099564446");
       SModel sampleModel = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test", ""));
@@ -178,7 +160,6 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       ArrayList<NodeDifference> matchNodes = NodesMatcher.matchNodes(SModelOperations.getRoots(sampleModel, null), SModelOperations.getRoots(resultModel, null));
       Assert.assertNull(matchNodes);
     }
-
     public void test_testSkipNodesWhileSaving() throws Exception {
       this.addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
@@ -191,7 +172,6 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
 
       this.testUserObjectsSaving(userObjects, userObjectsToSkip);
     }
-
     public void testUserObjectsSaving(Map<Object, Object> userObjects, Map<Object, Object> userObjectsToLoose) {
       SNode var1732396662099564454 = this.getNodeById("1732396662099564449");
       try {
@@ -220,7 +200,6 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
         org.junit.Assert.fail(e.getMessage());
       }
     }
-
     public void testUserObjectsSaving(Map<Object, Object> userObjects) {
       this.testUserObjectsSaving(userObjects, MapSequence.fromMap(new HashMap<Object, Object>()));
     }

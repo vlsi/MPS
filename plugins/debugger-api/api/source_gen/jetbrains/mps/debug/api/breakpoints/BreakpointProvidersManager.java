@@ -17,24 +17,19 @@ import com.intellij.openapi.application.ApplicationManager;
 public class BreakpointProvidersManager implements ApplicationComponent {
   private final Map<IBreakpointKind, IBreakpointsProvider> myKindToProvider = new HashMap<IBreakpointKind, IBreakpointsProvider>();
   private final Map<String, IBreakpointKind> myNameToKind = new HashMap<String, IBreakpointKind>();
-
   public BreakpointProvidersManager() {
   }
-
   @NotNull
   @Override
   public String getComponentName() {
     return "Breakpoint Providers Manager Component";
   }
-
   @Override
   public void initComponent() {
   }
-
   @Override
   public void disposeComponent() {
   }
-
   public void registerProvider(IBreakpointsProvider<? extends IBreakpoint, ? extends IBreakpointKind<? extends IBreakpoint>> provider) {
     //  I just love generics in java 
     for (IBreakpointKind kind : provider.getAllKinds()) {
@@ -45,7 +40,6 @@ public class BreakpointProvidersManager implements ApplicationComponent {
       BreakpointManagerComponent.getInstance(project).reReadState();
     }
   }
-
   public void unregisterProvider(IBreakpointsProvider<? extends IBreakpoint, ? extends IBreakpointKind<? extends IBreakpoint>> provider) {
     Map<BreakpointManagerComponent, Element> states = new HashMap<BreakpointManagerComponent, Element>();
     for (Project project : ProjectManager.getInstance().getOpenProjects()) {
@@ -60,21 +54,17 @@ public class BreakpointProvidersManager implements ApplicationComponent {
       component.loadState(states.get(component));
     }
   }
-
   @Nullable
   public IBreakpointsProvider getProvider(IBreakpointKind kind) {
     return myKindToProvider.get(kind);
   }
-
   @Nullable
   public IBreakpointKind getKind(String name) {
     return myNameToKind.get(name);
   }
-
   public Set<IBreakpointKind> getAllKinds() {
     return myKindToProvider.keySet();
   }
-
   public static BreakpointProvidersManager getInstance() {
     return ApplicationManager.getApplication().getComponent(BreakpointProvidersManager.class);
   }

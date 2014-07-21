@@ -19,7 +19,6 @@ import java.util.List;
 public class SNodeCompare {
   private SNodeCompare() {
   }
-
   private static boolean nodePropertiesEquals(SNode a, SNode b) {
     Map<String, String> aMap = (Map<String, String>) SNodeOperations.getProperties(a);
     Map<String, String> bMap = (Map<String, String>) SNodeOperations.getProperties(b);
@@ -30,7 +29,6 @@ public class SNodeCompare {
     }
     return true;
   }
-
   private static boolean nodeReferencesEquals(SNode a, SNode b) {
     final Map<String, SReference> aMap = MapSequence.fromMap(new HashMap<String, SReference>());
     final Map<String, SReference> bMap = MapSequence.fromMap(new HashMap<String, SReference>());
@@ -75,7 +73,6 @@ public class SNodeCompare {
     }
     return true;
   }
-
   private static boolean nodeChildrenEquals(SNode a, SNode b) {
     Set<String> roles = SetSequence.fromSetWithValues(new HashSet<String>(), SNodeOperations.getChildRoles(a, true));
     SetSequence.fromSet(roles).addSequence(SetSequence.fromSet(SNodeOperations.getChildRoles(b, true)));
@@ -93,31 +90,24 @@ public class SNodeCompare {
     }
     return true;
   }
-
   public static boolean nodeEquals(SNode a, SNode b) {
     return eq_acety0_a0a0a0a0e(a.getConcept().getQualifiedName(), b.getConcept().getQualifiedName()) && eq_acety0_a0a0a0a0e_0(a.getNodeId(), b.getNodeId()) && nodePropertiesEquals(a, b) && nodeReferencesEquals(a, b) && nodeChildrenEquals(a, b);
   }
-
   private static boolean neq_acety0_a0a0c0b(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean neq_acety0_a0e0f0c(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean neq_acety0_a0f0f0c(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean neq_acety0_a0b0a6a5a2(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean eq_acety0_a0a0a0a0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_acety0_a0a0a0a0e_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

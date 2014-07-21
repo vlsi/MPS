@@ -13,22 +13,18 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class XmlText_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isLastPositionAllowed_2133624044437631519(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_isFirstPositionAllowed_2133624044437631446(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
     if (isEmptyString(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) != null)) {
       return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_onNewLine_2133624044437631588", new Object[]{}));
     }
     return false;
   }
-
   public static boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
     SNode left = SNodeOperations.getPrevSibling(thisNode);
     if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlContent")) {
@@ -37,11 +33,9 @@ public class XmlText_Behavior {
     }
     return false;
   }
-
   public static boolean virtual_textLike_1262430001741498277(SAbstractConcept thisConcept) {
     return true;
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

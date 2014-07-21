@@ -14,9 +14,9 @@
   </root>
   <root nodeRef="r:10e26070-7ddd-4eff-9570-d2a7151f9936(jetbrains.mps.baseLanguage.logging.behavior)/2511103526757020849">
     <file name="LogStatement_Behavior.java">
-      <node id="2511103526757020849" at="8,0,10,1" concept="0" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2511103526757020849" at="8,0,10,0" concept="0" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="2511103526757020851" at="8,43,8,43" />
-      <scope id="2511103526757020849" at="8,0,10,1">
+      <scope id="2511103526757020849" at="8,0,10,0">
         <var name="thisNode" id="2511103526757020849" />
       </scope>
       <unit id="2511103526757020849" at="7,0,11,0" name="jetbrains.mps.baseLanguage.logging.behavior.LogStatement_Behavior" />

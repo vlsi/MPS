@@ -28,7 +28,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_mtcnr8_a(editorContext, node);
   }
-
   private EditorCell createCollection_mtcnr8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mtcnr8_a");
@@ -39,14 +38,12 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_mtcnr8_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_mtcnr8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "many statements");
     editorCell.setCellId("Constant_mtcnr8_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_mtcnr8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_mtcnr8_b0");
@@ -57,7 +54,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_mtcnr8_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mtcnr8_c0");
@@ -79,14 +75,12 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_mtcnr8_m2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_mtcnr8_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "list");
     editorCell.setCellId("Constant_mtcnr8_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_mtcnr8_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_mtcnr8_b2a");
@@ -97,7 +91,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_mtcnr8_c2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("list");
@@ -121,7 +114,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_mtcnr8_d2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_mtcnr8_d2a");
@@ -131,7 +123,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_mtcnr8_e2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mtcnr8_e2a");
@@ -140,14 +131,12 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_mtcnr8_c4c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_mtcnr8_a4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "statement");
     editorCell.setCellId("Constant_mtcnr8_a4c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_mtcnr8_b4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_mtcnr8_b4c0");
@@ -158,7 +147,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_mtcnr8_c4c0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ManyStatements_Editor.statementListHandler_mtcnr8_c4c0(node, "statement", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -171,30 +159,25 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class statementListHandler_mtcnr8_c4c0 extends RefNodeListHandler {
     public statementListHandler_mtcnr8_c4c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -208,14 +191,12 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_mtcnr8_f2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "list1");
     editorCell.setCellId("Constant_mtcnr8_f2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_mtcnr8_g2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_mtcnr8_g2a");
@@ -226,7 +207,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_mtcnr8_h2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("list1");
@@ -250,7 +230,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_mtcnr8_i2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_mtcnr8_i2a");
@@ -260,14 +239,12 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_mtcnr8_j2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "list2");
     editorCell.setCellId("Constant_mtcnr8_j2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_mtcnr8_k2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_mtcnr8_k2a");
@@ -278,7 +255,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_mtcnr8_l2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("list2");
@@ -302,7 +278,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_mtcnr8_m2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_mtcnr8_m2a");
@@ -312,7 +287,6 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_mtcnr8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_mtcnr8_d0");

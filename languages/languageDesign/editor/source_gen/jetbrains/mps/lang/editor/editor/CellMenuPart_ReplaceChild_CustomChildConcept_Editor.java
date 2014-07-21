@@ -22,7 +22,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_h8lpox_a(editorContext, node);
   }
-
   private EditorCell createCollection_h8lpox_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_h8lpox_a");
@@ -31,7 +30,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     editorCell.addEditorCell(this.createCollection_h8lpox_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_h8lpox_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_h8lpox_a0");
@@ -41,7 +39,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     editorCell.addEditorCell(this.createConstant_h8lpox_a0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_h8lpox_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace child (custom child's concept)");
     editorCell.setCellId("Constant_h8lpox_a0a");
@@ -52,7 +49,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_h8lpox_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_h8lpox_b0");
@@ -65,7 +61,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     editorCell.addEditorCell(this.createRefNode_h8lpox_d1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_h8lpox_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_h8lpox_a1a");
@@ -75,7 +70,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_h8lpox_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept of child");
     editorCell.setCellId("Constant_h8lpox_b1a");
@@ -85,7 +79,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_h8lpox_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_h8lpox_c1a");
@@ -95,7 +88,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_h8lpox_d1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("childConceptFunction");

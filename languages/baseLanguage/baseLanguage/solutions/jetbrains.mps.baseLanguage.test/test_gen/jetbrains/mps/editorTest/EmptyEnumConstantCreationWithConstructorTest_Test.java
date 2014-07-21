@@ -15,18 +15,15 @@ import java.util.ArrayList;
 public class EmptyEnumConstantCreationWithConstructorTest_Test extends BaseTransformationTest {
   public EmptyEnumConstantCreationWithConstructorTest_Test() {
   }
-
   @Test
   public void test_EmptyEnumConstantCreationWithConstructorTest() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.EmptyEnumConstantCreationWithConstructorTest_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("7045533117182184908", "7045533117182184964");

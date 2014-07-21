@@ -27,16 +27,13 @@ import jetbrains.mps.kernel.model.SModelUtil;
 public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
   public AdapterUsagesFinder() {
   }
-
   @Override
   protected List<SpecificChecker> getSpecificCheckers() {
     return ListSequence.fromListAndArray(new ArrayList<SpecificChecker>(), new AdapterUsagesFinder.AdapterUsagesChecker());
   }
-
   public static class AdapterUsagesChecker extends SpecificChecker {
     public AdapterUsagesChecker() {
     }
-
     @Override
     public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, SRepository repository) {
       List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());

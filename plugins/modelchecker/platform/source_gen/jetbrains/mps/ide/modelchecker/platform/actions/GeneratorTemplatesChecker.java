@@ -24,7 +24,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class GeneratorTemplatesChecker extends SpecificChecker {
   public GeneratorTemplatesChecker() {
   }
-
   @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, final ProgressMonitor progressMonitor, SRepository repository) {
     if (!(SModelStereotype.isGeneratorModel(model))) {
@@ -49,7 +48,6 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
           }
         }
       }
-
       @Override
       protected void scanTemplateNode(SNode node) {
         if (node == null) {

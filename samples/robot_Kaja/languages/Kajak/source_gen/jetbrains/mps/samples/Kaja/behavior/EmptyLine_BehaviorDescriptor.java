@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class EmptyLine_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public EmptyLine_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.EmptyLine";

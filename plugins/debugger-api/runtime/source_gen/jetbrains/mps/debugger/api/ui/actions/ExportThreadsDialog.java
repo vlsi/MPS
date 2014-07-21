@@ -14,7 +14,6 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 public class ExportThreadsDialog extends DialogWrapper {
   private final StringBuffer myThreads;
   private final JComponent myMainComponent;
-
   public ExportThreadsDialog(Project project, StringBuffer threads) {
     super(project);
     setTitle("Export Threads");
@@ -31,13 +30,11 @@ public class ExportThreadsDialog extends DialogWrapper {
 
     init();
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myMainComponent;
   }
-
   @Override
   protected void doOKAction() {
     CopyPasteUtil.copyTextToClipboard(myThreads.toString());

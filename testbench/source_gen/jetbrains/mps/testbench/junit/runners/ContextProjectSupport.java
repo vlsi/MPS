@@ -28,7 +28,6 @@ public class ContextProjectSupport {
   public static final String MODULES_PATHS_PROPERTY = "mps.test.modules";
   public static final String MODULES_ROOT_PROPERTY = "mps.junit.modules.root";
 
-
   /**
    * 
    * 
@@ -55,8 +54,6 @@ public class ContextProjectSupport {
     throw new IllegalStateException("Could not load context project");
   }
 
-
-
   /**
    * Do not forget set previous context project path after your test!
    * 
@@ -74,8 +71,6 @@ public class ContextProjectSupport {
     return (previous != null ? new File(previous) : null);
   }
 
-
-
   @NotNull
   private static Project loadProjectFromProjectPath(String projectPath) {
     Environment environment = ActiveEnvironment.getInstance();
@@ -89,15 +84,11 @@ public class ContextProjectSupport {
     }
   }
 
-
-
   @NotNull
   private static Project loadProjectFromDirectoryWithModules(String modulesRootPath) {
     List<ModulesMiner.ModuleHandle> moduleHandles = collectHandles(new File(modulesRootPath));
     return loadProjectFromModuleHandles(moduleHandles);
   }
-
-
 
   @NotNull
   private static Project loadProjectFromModulesList(String modulesString) {
@@ -113,8 +104,6 @@ public class ContextProjectSupport {
     }
     return loadProjectFromModuleHandles(handles);
   }
-
-
 
   private static List<ModulesMiner.ModuleHandle> collectHandles(File rootFolder) {
     // todo: remove 
@@ -132,8 +121,6 @@ public class ContextProjectSupport {
     }).toListSequence();
   }
 
-
-
   @NotNull
   private static Project loadProjectFromModuleHandles(final Iterable<ModulesMiner.ModuleHandle> moduleHandles) {
     // todo: check currently opened projects 
@@ -149,8 +136,6 @@ public class ContextProjectSupport {
 
     return makeOnFirstTimeOpened(project);
   }
-
-
 
   @NotNull
   private static Project makeOnFirstTimeOpened(@NotNull Project project) {

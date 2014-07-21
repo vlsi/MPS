@@ -15,37 +15,30 @@ public abstract class BreakpointIconRenderrerEx<B> implements EditorMessageIconR
   public static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(4);
   protected final B myBreakpoint;
   protected final Component myComponent;
-
   public BreakpointIconRenderrerEx(B breakpoint, Component component) {
     myBreakpoint = breakpoint;
     myComponent = component;
   }
-
   @Override
   public EditorMessageIconRenderer.IconRendererType getType() {
     return TYPE;
   }
-
   @Override
   public EditorCell getAnchorCell(EditorCell cell) {
     return BreakpointIconRenderrerEx.getBreakpointIconAnchorCell(cell);
   }
-
   @Override
   public AnAction getClickAction() {
     return null;
   }
-
   @Override
   public Cursor getMouseOverCursor() {
     return null;
   }
-
   @Override
   public String getTooltipText() {
     return null;
   }
-
   public static EditorCell getBreakpointIconAnchorCell(EditorCell bigCell) {
     if (bigCell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) bigCell;

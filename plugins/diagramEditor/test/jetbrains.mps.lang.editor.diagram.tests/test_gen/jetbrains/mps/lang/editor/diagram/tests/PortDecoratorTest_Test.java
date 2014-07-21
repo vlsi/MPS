@@ -26,18 +26,15 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView
 public class PortDecoratorTest_Test extends BaseTransformationTest {
   public PortDecoratorTest_Test() {
   }
-
   @Test
   public void test_PortDecoratorTest() throws Throwable {
     this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
     this.runTest("jetbrains.mps.lang.editor.diagram.tests.PortDecoratorTest_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("1560508619094015368", "1560508619094015372");

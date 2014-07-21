@@ -10,5 +10,5 @@ public class InternalClassCreator_BehaviorDescriptor extends AbstractCreator_Beh
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalClassCreator";
-  };;
-;}
+  }
+}

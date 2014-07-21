@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class Analyze_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(Analyze_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Analyze_ActionGroup";
-
   public Analyze_ActionGroup() {
     super("Analyze", ID);
     this.setIsInternal(false);

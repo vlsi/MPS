@@ -9,5 +9,5 @@ public class HorizontalGapStyleClassItem_BehaviorDescriptor extends AbstractPadd
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem";
-  };;
-;}
+  }
+}

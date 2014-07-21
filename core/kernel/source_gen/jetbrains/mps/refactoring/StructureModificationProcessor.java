@@ -30,12 +30,10 @@ import org.apache.log4j.LogManager;
 public class StructureModificationProcessor {
   private ModelLinkMap myModelMap;
   private SModel myModel;
-
   public StructureModificationProcessor(ModelLinkMap modelMap, SModel model) {
     myModelMap = modelMap;
     myModel = model;
   }
-
   private boolean playRefactoring(@NotNull StructureModification data) {
     boolean result = data.apply(myModelMap);
     for (IMapping<SModelReference, Integer> entry : MapSequence.fromMap(data.getDependencies())) {
@@ -44,7 +42,6 @@ public class StructureModificationProcessor {
     }
     return result;
   }
-
   public boolean updateModelOnLoad() {
     // should be called in loading state 
     if (!(refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(myModel.getReference().getModelName()))) {
@@ -56,7 +53,6 @@ public class StructureModificationProcessor {
     }
     return played;
   }
-
   public List<StructureModification> getApplicableModifications() {
     List<StructureModification> result = ListSequence.fromList(new ArrayList<StructureModification>());
     for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(myModel))) {
@@ -72,7 +68,6 @@ public class StructureModificationProcessor {
     }
     return result;
   }
-
   private List<StructureModification> sortModifications(List<StructureModification> list) {
     // create graph 
     final Map<Integer, Set<Integer>> graph = MapSequence.fromMap(new HashMap<Integer, Set<Integer>>());
@@ -123,7 +118,6 @@ lfind:
     }
     return result;
   }
-
   public static void addToLog(@NotNull final StructureModification data) {
     // add all missed dependencies with current version 
     for (StructureModification.Entry entry : ListSequence.fromList(data.getData())) {
@@ -143,7 +137,6 @@ lfind:
       model.setChanged(true);
     }
   }
-
   public static boolean hasRefactoringsToPlay(@NotNull SModel model) {
     if (refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(model.getReference().getModelName())) {
       for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model))) {
@@ -155,17 +148,13 @@ lfind:
     }
     return false;
   }
-
   public static boolean refactoringsPlaybackEnabled() {
     return RuntimeFlags.isPlayRefactoringsMode();
   }
-
   protected static Logger LOG = LogManager.getLogger(StructureModificationProcessor.class);
-
   private static <T> T as_etzqsh_a0a0a1a5(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_etzqsh_a0a0a0a0a8(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

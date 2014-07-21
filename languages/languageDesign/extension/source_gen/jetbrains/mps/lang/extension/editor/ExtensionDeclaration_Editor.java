@@ -35,7 +35,6 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_i2dquw_a(editorContext, node);
   }
-
   private EditorCell createCollection_i2dquw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_i2dquw_a");
@@ -51,7 +50,6 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_i2dquw_i0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_i2dquw_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_i2dquw_a0");
@@ -59,7 +57,6 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_i2dquw_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_i2dquw_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Extension of");
     editorCell.setCellId("Constant_i2dquw_a0a");
@@ -71,7 +68,6 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_i2dquw_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("extensionPoint");
@@ -93,20 +89,16 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_i2dquw_a1a0 extends InlineCellProvider {
     public _Inline_i2dquw_a1a0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_i2dquw_a0b0a(editorContext, node);
     }
-
     private EditorCell createProperty_i2dquw_a0b0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("extensionName");
@@ -126,12 +118,10 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createIndentCell_i2dquw_b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNodeList_i2dquw_c0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ExtensionDeclaration_Editor.fieldDeclarationListHandler_i2dquw_c0(node, "fieldDeclaration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -143,34 +133,28 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class fieldDeclarationListHandler_i2dquw_c0 extends RefNodeListHandler {
     public fieldDeclarationListHandler_i2dquw_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_i2dquw_a2a(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -183,7 +167,6 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_i2dquw_a2a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_i2dquw_a2a");
@@ -191,12 +174,10 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createIndentCell_i2dquw_d0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createCollection_i2dquw_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_i2dquw_e0");
@@ -204,7 +185,6 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_i2dquw_b4a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_i2dquw_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "on activate");
     editorCell.setCellId("Constant_i2dquw_a4a");
@@ -214,7 +194,6 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_i2dquw_b4a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("activator");
@@ -234,12 +213,10 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createIndentCell_i2dquw_f0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createCollection_i2dquw_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_i2dquw_g0");
@@ -247,7 +224,6 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_i2dquw_b6a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_i2dquw_a6a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "on deactivate");
     editorCell.setCellId("Constant_i2dquw_a6a");
@@ -257,7 +233,6 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_i2dquw_b6a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("deactivator");
@@ -277,12 +252,10 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createIndentCell_i2dquw_h0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createCollection_i2dquw_i0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_i2dquw_i0");
@@ -290,7 +263,6 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_i2dquw_b8a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_i2dquw_a8a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extension object");
     editorCell.setCellId("Constant_i2dquw_a8a");
@@ -300,7 +272,6 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_i2dquw_b8a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("objectGetter");

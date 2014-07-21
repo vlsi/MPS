@@ -9,5 +9,5 @@ public class GenerationContextOp_GetOutputByLabelAndInput_BehaviorDescriptor ext
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput";
-  };;
-;}
+  }
+}

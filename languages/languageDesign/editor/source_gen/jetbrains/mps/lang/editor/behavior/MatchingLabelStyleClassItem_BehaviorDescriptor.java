@@ -9,5 +9,5 @@ public class MatchingLabelStyleClassItem_BehaviorDescriptor extends StyleClassIt
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem";
-  };;
-;}
+  }
+}

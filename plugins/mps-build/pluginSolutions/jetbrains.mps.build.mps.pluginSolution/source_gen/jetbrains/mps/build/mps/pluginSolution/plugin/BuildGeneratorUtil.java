@@ -21,7 +21,6 @@ import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 public class BuildGeneratorUtil {
   public BuildGeneratorUtil() {
   }
-
   public static SModel createModel(final String modelName, final Solution solution) {
     final Wrappers._T<SModel> model = new Wrappers._T<SModel>(null);
     for (SModel descriptor : ListSequence.fromList(solution.getModels())) {
@@ -41,7 +40,6 @@ public class BuildGeneratorUtil {
     }
     return model.value;
   }
-
   public static Solution createSolution(Project mpsProject, String solutionName, IFile solutionBaseDirFile) {
     String solutionBaseDirPath = solutionBaseDirFile.getPath();
     if (!(BuildGeneratorUtil.isValidSolutionDir(solutionBaseDirFile))) {
@@ -77,11 +75,9 @@ public class BuildGeneratorUtil {
     }
     return solution;
   }
-
   private static boolean isValidSolutionDir(IFile baseDirFile) {
     return !(baseDirFile.getDescendant(Solution.SOLUTION_MODELS).exists()) || baseDirFile.getDescendant(Solution.SOLUTION_MODELS).getChildren().isEmpty();
   }
-
   public static Solution createSolutionFromFile(final Project project, String solutionName, final IFile solutionDescriptorFile) {
     return NewModuleUtil.createSolution(solutionName, solutionDescriptorFile.getParent().getPath(), project);
   }

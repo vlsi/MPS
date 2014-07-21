@@ -17,7 +17,6 @@ public class BuildMps_ModuleSource_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCustom_o3tuhw_a(editorContext, node);
   }
-
   private EditorCell createCustom_o3tuhw_a(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {

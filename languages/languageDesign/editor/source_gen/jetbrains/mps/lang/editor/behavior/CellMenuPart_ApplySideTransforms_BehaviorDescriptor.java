@@ -9,5 +9,5 @@ public class CellMenuPart_ApplySideTransforms_BehaviorDescriptor extends CellMen
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms";
-  };;
-;}
+  }
+}

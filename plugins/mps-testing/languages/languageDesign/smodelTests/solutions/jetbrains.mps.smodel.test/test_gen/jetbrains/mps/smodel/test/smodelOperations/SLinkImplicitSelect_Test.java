@@ -26,37 +26,31 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_empty", true);
   }
-
   @Test
   public void test_singleChild() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_singleChild", true);
   }
-
   @Test
   public void test_multipleChildren() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_multipleChildren", true);
   }
-
   @Test
   public void test_operationsOnList() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_operationsOnList", true);
   }
-
   @Test
   public void test_specializedLinks() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_specializedLinks", true);
   }
-
   @Test
   public void test_inheritedLinks() throws Throwable {
     this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody", "test_inheritedLinks", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_empty() throws Exception {
@@ -119,7 +113,6 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
         }
       }).isEmpty());
     }
-
     public void test_singleChild() throws Exception {
       this.addNodeById("278471160714368807");
       this.addNodeById("7551657168186489228");
@@ -152,7 +145,6 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
         }
       }));
     }
-
     public void test_multipleChildren() throws Exception {
       this.addNodeById("278471160714368807");
       this.addNodeById("7551657168186489228");
@@ -185,7 +177,6 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
         }
       }));
     }
-
     public void test_operationsOnList() throws Exception {
       this.addNodeById("278471160714368807");
       this.addNodeById("7551657168186489228");
@@ -201,7 +192,6 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
         }
       }));
     }
-
     public void test_specializedLinks() throws Exception {
       this.addNodeById("278471160714368807");
       this.addNodeById("7551657168186489228");
@@ -215,7 +205,6 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
         }
       }));
     }
-
     public void test_inheritedLinks() throws Exception {
       this.addNodeById("278471160714368807");
       this.addNodeById("7551657168186489228");
@@ -225,7 +214,6 @@ public class SLinkImplicitSelect_Test extends BaseTransformationTest {
         }
       }));
     }
-
     public void assertEquals(Iterable<SNode> expected, final Iterable<SNode> actual) {
       Assert.assertEquals(Sequence.fromIterable(expected).count(), Sequence.fromIterable(actual).count());
       Sequence.fromIterable(expected).visitAll(new IVisitor<SNode>() {

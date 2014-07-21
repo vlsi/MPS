@@ -24,7 +24,6 @@ public class IdSelector_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xpgp09_a(editorContext, node);
   }
-
   private EditorCell createCollection_xpgp09_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xpgp09_a");
@@ -34,7 +33,6 @@ public class IdSelector_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_xpgp09_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_xpgp09_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_xpgp09_a0");
@@ -47,16 +45,13 @@ public class IdSelector_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IdSelector_Editor.ReplaceWith_AbstractCellSelector_cellMenu_xpgp09_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_AbstractCellSelector_cellMenu_xpgp09_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractCellSelector_cellMenu_xpgp09_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.AbstractCellSelector";
     }
   }
-
   private EditorCell createProperty_xpgp09_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("cellId");
@@ -79,7 +74,6 @@ public class IdSelector_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xpgp09_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_xpgp09_c0");

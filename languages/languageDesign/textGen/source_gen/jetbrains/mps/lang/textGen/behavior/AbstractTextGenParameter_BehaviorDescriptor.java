@@ -11,12 +11,12 @@ public abstract class AbstractTextGenParameter_BehaviorDescriptor extends Concep
   }
   public String virtual_getGetterName_1234885318469(SNode thisNode) {
     return AbstractTextGenParameter_Behavior.virtual_getGetterName_1234885318469(thisNode);
-  };;
-;  public boolean virtual_needConceptFunction_1236687728308(SNode thisNode) {
+  }
+  public boolean virtual_needConceptFunction_1236687728308(SNode thisNode) {
     return AbstractTextGenParameter_Behavior.virtual_needConceptFunction_1236687728308(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter";
-  };;
-;}
+  }
+}

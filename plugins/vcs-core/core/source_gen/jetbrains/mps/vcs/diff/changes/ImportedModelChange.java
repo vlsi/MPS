@@ -10,27 +10,22 @@ import jetbrains.mps.extapi.model.SModelBase;
 
 public class ImportedModelChange extends DependencyChange {
   private SModelReference myModelReference;
-
   public ImportedModelChange(@NotNull ChangeSet changeSet, @NotNull SModelReference modelReference, boolean delete) {
     super(changeSet, delete);
     myModelReference = modelReference;
   }
-
   public SModelReference getModelReference() {
     return myModelReference;
   }
-
   @Override
   public String toString() {
     return ((isDelete() ? "Delete" : "Add")) + " imported model " + myModelReference;
   }
-
   @NotNull
   @Override
   protected ModelChange createOppositeChange() {
     return new ImportedModelChange(getChangeSet().getOppositeChangeSet(), myModelReference, !(isDelete()));
   }
-
   @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     if (isDelete()) {

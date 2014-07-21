@@ -16,25 +16,20 @@ import jetbrains.mps.console.scripts.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "f26691d2-0def-4c06-aec6-2cb90c4af0a4(jetbrains.mps.console.scripts)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.console.scripts";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.console.base", "jetbrains.mps.console.blCommand"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "b372f31d-dc58-46b6-ad0b-2e1b2e187b9d(jetbrains.mps.console.scripts#1734392475490224704)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

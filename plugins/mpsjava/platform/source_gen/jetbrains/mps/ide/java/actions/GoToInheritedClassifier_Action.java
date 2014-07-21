@@ -41,22 +41,18 @@ import org.apache.log4j.LogManager;
 
 public class GoToInheritedClassifier_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GoToInheritedClassifier_Action() {
     super("Go to Inherited Classifiers", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.Interface");
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -70,7 +66,6 @@ public class GoToInheritedClassifier_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -113,7 +108,6 @@ public class GoToInheritedClassifier_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final ModelAccess modelAccess = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess();
@@ -169,6 +163,5 @@ public class GoToInheritedClassifier_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(GoToInheritedClassifier_Action.class);
 }

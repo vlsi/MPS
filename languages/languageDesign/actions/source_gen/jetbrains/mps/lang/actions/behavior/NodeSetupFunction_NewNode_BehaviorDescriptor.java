@@ -10,5 +10,5 @@ public class NodeSetupFunction_NewNode_BehaviorDescriptor extends ConceptFunctio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode";
-  };;
-;}
+  }
+}

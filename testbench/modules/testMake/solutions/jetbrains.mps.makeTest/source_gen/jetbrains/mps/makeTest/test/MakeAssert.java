@@ -24,10 +24,8 @@ public class MakeAssert extends WorkbenchMpsTest {
   private static final String MESSAGE_COMPILATION_FAILED = "Compilation failed";
   private static final String MESSAGE_DEPENDENCY_NOT_CHECKED = "Compilation finished with Unchecked Dependencies";
   private static final String PROJECT_FILE = "core/tests/testMake/testMake";
-
   private MakeAssert() {
   }
-
   public static void assertNotMake(final String modelName, final ChangeModel changer) {
     Project project = launchProject();
     Assert.assertNotNull("project is not loaded", project);
@@ -40,7 +38,6 @@ public class MakeAssert extends WorkbenchMpsTest {
     assertNoProblems(baseIsOk);
     assertDependenciesChecked(newIsOk);
   }
-
   public static void assertDependenciesChecked(final String modelName, final ChangeModel changer) {
     final Project project = launchProject();
     Assert.assertNotNull("project is not loaded", project);
@@ -75,20 +72,16 @@ public class MakeAssert extends WorkbenchMpsTest {
     WorkbenchMpsTest.disposeProject(project.getComponent(MPSProject.class));
     Assert.assertFalse(MESSAGE_DEPENDENCY_NOT_CHECKED, returnValue[0]);
   }
-
   public static void assertDependenciesChecked(boolean isOk) {
     Assert.assertFalse(MESSAGE_DEPENDENCY_NOT_CHECKED, isOk);
   }
-
   public static void assertNoProblems(boolean isOk) {
     Assert.assertTrue(MESSAGE_COMPILATION_FAILED, isOk);
   }
-
   private static Project launchProject() {
     jetbrains.mps.project.Project mpsProject = ActiveEnvironment.getInstance().openProject(new File(PROJECT_FILE));
     return ((MPSProject) mpsProject).getProject();
   }
-
   private static IGenerationHandler getFilesGenHandler() {
     return new JavaGenerationHandler();
   }

@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.SModelRepository;
 
 public class ManagerTableCellEditor extends DefaultCellEditor {
   private JComboBox myCombo;
-
   public ManagerTableCellEditor() {
     super(new JComboBox(ListSequence.fromList(getManagers()).toGenericArray(ModelRootManager.class)));
     myCombo = ((JComboBox) super.getComponent());
@@ -42,7 +41,6 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
       }
     });
   }
-
   public static List<ModelRootManager> getManagers() {
     final List<ModelRootManager> result = ListSequence.fromList(new ArrayList<ModelRootManager>());
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -62,7 +60,6 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
 
     return result;
   }
-
   public static List<SNode> getManagerNodes() {
     final List<SNode> result = new ArrayList<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {

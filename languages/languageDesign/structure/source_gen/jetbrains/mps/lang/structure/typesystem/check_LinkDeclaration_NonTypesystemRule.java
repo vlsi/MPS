@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_LinkDeclaration_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode linkToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // link role shouldn't hide roles in super-concepts 
     if (SPropertyOperations.getString(linkToCheck, "role") == null) {
@@ -41,7 +40,6 @@ public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesyst
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -77,7 +75,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private List<SNode> _3_links;
               private SNode _4_link;
               private Iterator<SNode> _4_link_it;
@@ -110,18 +107,15 @@ __switch__:
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.structure.structure.LinkDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

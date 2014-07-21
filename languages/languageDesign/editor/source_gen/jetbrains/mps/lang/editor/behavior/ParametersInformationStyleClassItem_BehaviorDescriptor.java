@@ -9,5 +9,5 @@ public class ParametersInformationStyleClassItem_BehaviorDescriptor extends Styl
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem";
-  };;
-;}
+  }
+}

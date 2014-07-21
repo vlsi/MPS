@@ -23,7 +23,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_jiwbly_a(editorContext, node);
   }
-
   private EditorCell createCollection_jiwbly_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_jiwbly_a");
@@ -32,7 +31,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_jiwbly_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_jiwbly_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_jiwbly_a0");
@@ -42,7 +40,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_jiwbly_a0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_jiwbly_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace child (custom action)");
     editorCell.setCellId("Constant_jiwbly_a0a");
@@ -53,7 +50,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_jiwbly_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_jiwbly_b0");
@@ -64,7 +60,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_jiwbly_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_jiwbly_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_jiwbly_a1a");
@@ -74,7 +69,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_jiwbly_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_jiwbly_b1a");
@@ -88,7 +82,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_jiwbly_c1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_jiwbly_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_jiwbly_a1b0");
@@ -100,14 +93,12 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_jiwbly_c0b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_jiwbly_a0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matching text");
     editorCell.setCellId("Constant_jiwbly_a0b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_jiwbly_b0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_jiwbly_b0b1a");
@@ -117,7 +108,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_jiwbly_c0b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("matchingText");
@@ -138,7 +128,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_jiwbly_b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_jiwbly_b1b0");
@@ -150,14 +139,12 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_jiwbly_c1b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_jiwbly_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");
     editorCell.setCellId("Constant_jiwbly_a1b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_jiwbly_b1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_jiwbly_b1b1a");
@@ -167,7 +154,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_jiwbly_c1b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("descriptionText");
@@ -189,7 +175,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_jiwbly_c1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_jiwbly_c1b0");
@@ -201,14 +186,12 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_jiwbly_c2b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_jiwbly_a2b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create new child");
     editorCell.setCellId("Constant_jiwbly_a2b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_jiwbly_b2b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_jiwbly_b2b1a");
@@ -218,7 +201,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_jiwbly_c2b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("createFunction");

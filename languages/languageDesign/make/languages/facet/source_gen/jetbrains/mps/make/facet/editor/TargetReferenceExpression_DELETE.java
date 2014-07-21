@@ -15,34 +15,26 @@ public class TargetReferenceExpression_DELETE {
     editorCell.setAction(CellActionType.DELETE, new TargetReferenceExpression_DELETE.TargetReferenceExpression_DELETE_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new TargetReferenceExpression_DELETE.TargetReferenceExpression_DELETE_BACKSPACE(node));
   }
-
   public static class TargetReferenceExpression_DELETE_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public TargetReferenceExpression_DELETE_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "facetRef", true));
     }
   }
-
   public static class TargetReferenceExpression_DELETE_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public TargetReferenceExpression_DELETE_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "facetRef", true));
     }

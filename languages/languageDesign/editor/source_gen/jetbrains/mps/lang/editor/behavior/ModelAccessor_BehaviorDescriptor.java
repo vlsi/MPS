@@ -10,5 +10,5 @@ public class ModelAccessor_BehaviorDescriptor extends BaseConcept_BehaviorDescri
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ModelAccessor";
-  };;
-;}
+  }
+}

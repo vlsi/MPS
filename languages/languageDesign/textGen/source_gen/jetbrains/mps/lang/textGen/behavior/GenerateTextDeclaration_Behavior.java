@@ -13,21 +13,21 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class GenerateTextDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
+  }
+  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234279682891"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234351783410"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1233748055915"));
     return result;
-  };;
-;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  }
+  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_7h7f64_a0a1();
-  };;
-;  private static SNode _quotation_createNode_7h7f64_a0a1() {
+  }
+  private static SNode _quotation_createNode_7h7f64_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
-  };;
-;}
+  }
+}

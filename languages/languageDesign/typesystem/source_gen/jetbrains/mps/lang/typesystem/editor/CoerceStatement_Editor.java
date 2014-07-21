@@ -23,11 +23,9 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_olrwx8_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_olrwx8_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_olrwx8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_olrwx8_a");
@@ -47,7 +45,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_olrwx8_m0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_olrwx8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "coerce");
     editorCell.setCellId("Constant_olrwx8_a0");
@@ -57,7 +54,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_olrwx8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_olrwx8_b0");
@@ -67,7 +63,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_olrwx8_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("nodeToCoerce");
@@ -87,14 +82,12 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_olrwx8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":<");
     editorCell.setCellId("Constant_olrwx8_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_olrwx8_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("pattern");
@@ -114,7 +107,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_olrwx8_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_olrwx8_f0");
@@ -124,7 +116,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_olrwx8_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_olrwx8_g0");
@@ -135,7 +126,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_olrwx8_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -159,7 +149,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_olrwx8_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_olrwx8_i0");
@@ -169,7 +158,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_olrwx8_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "else");
     editorCell.setCellId("Constant_olrwx8_j0");
@@ -179,7 +167,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_olrwx8_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_olrwx8_k0");
@@ -190,7 +177,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_olrwx8_l0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elseClause");
@@ -214,7 +200,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_olrwx8_m0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_olrwx8_m0");
@@ -225,7 +210,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_olrwx8_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_olrwx8_a_0");
@@ -238,7 +222,6 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_olrwx8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_olrwx8_a0");
@@ -246,18 +229,15 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_olrwx8_b0a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_olrwx8_a0a(SNode node, EditorContext editorContext) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", false, false) != null;
   }
-
   private EditorCell createConstant_olrwx8_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strong:");
     editorCell.setCellId("Constant_olrwx8_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_olrwx8_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("strong");

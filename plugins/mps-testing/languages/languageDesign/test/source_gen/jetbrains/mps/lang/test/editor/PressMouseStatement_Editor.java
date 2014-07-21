@@ -22,7 +22,6 @@ public class PressMouseStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6i2vkv_a(editorContext, node);
   }
-
   private EditorCell createCollection_6i2vkv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6i2vkv_a");
@@ -40,7 +39,6 @@ public class PressMouseStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6i2vkv_k0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_6i2vkv_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press mouse");
     editorCell.setCellId("Constant_6i2vkv_a0");
@@ -50,7 +48,6 @@ public class PressMouseStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_6i2vkv_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_6i2vkv_b0");
@@ -60,7 +57,6 @@ public class PressMouseStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_6i2vkv_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("x");
@@ -78,7 +74,6 @@ public class PressMouseStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_6i2vkv_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_6i2vkv_d0");
@@ -90,7 +85,6 @@ public class PressMouseStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_6i2vkv_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("y");
@@ -108,7 +102,6 @@ public class PressMouseStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_6i2vkv_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_6i2vkv_f0");
@@ -118,7 +111,6 @@ public class PressMouseStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_6i2vkv_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_6i2vkv_g0");
@@ -129,7 +121,6 @@ public class PressMouseStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_6i2vkv_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("statementList");
@@ -153,7 +144,6 @@ public class PressMouseStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_6i2vkv_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_6i2vkv_i0");
@@ -163,7 +153,6 @@ public class PressMouseStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_6i2vkv_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "release mouse");
     editorCell.setCellId("Constant_6i2vkv_j0");
@@ -173,7 +162,6 @@ public class PressMouseStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_6i2vkv_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_6i2vkv_k0");

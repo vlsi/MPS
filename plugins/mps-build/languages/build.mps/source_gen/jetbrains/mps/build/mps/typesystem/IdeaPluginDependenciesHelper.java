@@ -19,17 +19,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class IdeaPluginDependenciesHelper {
   private SNode plugin;
   private Set<SNode> visible;
-
   public IdeaPluginDependenciesHelper(SNode plugin) {
     this.plugin = plugin;
   }
-
   private void buildVisible() {
     visible = new HashSet<SNode>();
     Set<SNode> seenPlugins = new HashSet<SNode>();
     collectVisible(plugin, seenPlugins);
   }
-
   private void collectVisible(SNode plugin, Set<SNode> seen) {
     if (!(seen.add(plugin))) {
       return;
@@ -57,7 +54,6 @@ public class IdeaPluginDependenciesHelper {
       collectVisible(SLinkOperations.getTarget(dep, "target", false), seen);
     }
   }
-
   public Iterable<SNode> getUnsatisfiedDependencies(SNode module) {
     if (visible == null) {
       buildVisible();
@@ -73,7 +69,6 @@ public class IdeaPluginDependenciesHelper {
     }
     return Sequence.fromIterable(Collections.<SNode>emptyList());
   }
-
   public void printUnsatisfiedDependencies(StringBuilder sb, SNode module, boolean includeModuleName) {
     for (SNode uns : getUnsatisfiedDependencies(module)) {
       if (includeModuleName) {

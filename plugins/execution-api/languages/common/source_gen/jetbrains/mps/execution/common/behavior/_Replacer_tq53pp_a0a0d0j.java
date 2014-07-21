@@ -9,10 +9,8 @@ public class _Replacer_tq53pp_a0a0d0j implements Replacer {
   public String replace(Matcher matcher) {
     return matcher.group(1);
   }
-
   /*package*/ IGeneratedToClass_Behavior _enclosingClass;
   /*package*/ Object _closureContext;
-
   public _Replacer_tq53pp_a0a0d0j(IGeneratedToClass_Behavior enclosingClass, Object closureContext) {
     this._enclosingClass = enclosingClass;
     this._closureContext = (Object) closureContext;

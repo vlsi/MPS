@@ -17,11 +17,9 @@ import org.apache.log4j.LogManager;
 public class ReloadRequired_QuickFix extends QuickFix_Runtime {
   public ReloadRequired_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Load required information from file";
   }
-
   public void execute(SNode node) {
     SNode module = SNodeOperations.as(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
     if (module == null) {
@@ -50,6 +48,5 @@ public class ReloadRequired_QuickFix extends QuickFix_Runtime {
       // TODO report? 
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ReloadRequired_QuickFix.class);
 }

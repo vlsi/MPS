@@ -12,15 +12,12 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_7529650772944783750(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation");
   }
-
   public static SNode sourceNodeQuery_1381762044504211661(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }
-
   public static SNode sourceNodeQuery_2603522263179413973(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "argument", true);
   }

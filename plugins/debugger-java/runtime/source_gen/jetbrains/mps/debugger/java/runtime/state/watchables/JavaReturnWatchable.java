@@ -15,32 +15,26 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 /*package*/ class JavaReturnWatchable extends JavaWatchable {
   private final JavaValue myValue;
-
   public JavaReturnWatchable(Value value, ThreadReference threadReference) {
     super(threadReference);
     myValue = CustomViewersManager.getInstance().fromJdi(value, threadReference);
   }
-
   @Override
   public String getName() {
     return "return value";
   }
-
   @Override
   public WatchablesCategory getCategory() {
     return JavaWatchablesCategory.RETURN_VALUE;
   }
-
   @Override
   public IValue getValue() {
     return myValue;
   }
-
   @Override
   public Icon getPresentationIcon() {
     return getValue().getPresentationIcon();
   }
-
   @Override
   public SNode getNode() {
     return null;

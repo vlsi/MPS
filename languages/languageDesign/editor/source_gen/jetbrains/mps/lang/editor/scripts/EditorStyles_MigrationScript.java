@@ -21,19 +21,15 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "pre-defined-style to apply and apply-condition";
       }
-
       public String getAdditionalInfo() {
         return "pre-defined-style to apply and apply-condition";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return true;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode replacement;
         if ((SLinkOperations.getTarget(node, "query", true) != null)) {
@@ -45,7 +41,6 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
         SLinkOperations.setTarget(replacement, "target", createStyleReference_s4lgfb_a0c0a0(SLinkOperations.getTarget(node, "key", false)), true);
         SNodeOperations.replaceWithAnother(node, replacement);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -54,19 +49,15 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "StyleSheetClass to StyleClass";
       }
-
       public String getAdditionalInfo() {
         return "StyleSheetClass to StyleClass";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.editor.structure.StyleSheetClass";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return true;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         as_n8en9w_a0a0a4a0a0a0a2a0(node, jetbrains.mps.smodel.SNode.class).setConceptFqName(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClass")));
         if ((SLinkOperations.getTarget(node, "extendedClass", true) != null)) {
@@ -74,20 +65,17 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
           SLinkOperations.setTarget(node, "extendedClass", null, true);
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
     });
   }
-
   private static SNode createStyleReference_s4lgfb_a0c0a0(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleReference", null, false);
     n1.setReferenceTarget("style", (SNode) p0);
     return n1;
   }
-
   private static SNode createApplyStyleClass_s4lgfb_a0a0a1a0b(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ApplyStyleClass", null, false);
@@ -98,7 +86,6 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
     }
     return n1;
   }
-
   private static <T> T as_n8en9w_a0a0a4a0a0a0a2a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

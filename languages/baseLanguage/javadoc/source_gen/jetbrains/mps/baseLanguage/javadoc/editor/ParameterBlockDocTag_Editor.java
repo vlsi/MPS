@@ -20,7 +20,6 @@ public class ParameterBlockDocTag_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_hezczn_a(editorContext, node);
   }
-
   private EditorCell createCollection_hezczn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hezczn_a");
@@ -30,7 +29,6 @@ public class ParameterBlockDocTag_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_hezczn_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_hezczn_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@param");
     editorCell.setCellId("Constant_hezczn_a0");
@@ -40,7 +38,6 @@ public class ParameterBlockDocTag_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_hezczn_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("parameter");
@@ -60,7 +57,6 @@ public class ParameterBlockDocTag_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_hezczn_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");

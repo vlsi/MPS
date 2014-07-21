@@ -14,15 +14,12 @@ public enum RefactoringTargetKind_Enum {
   devkit("devkit", "devkit");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<RefactoringTargetKind_Enum> getConstants() {
     List<RefactoringTargetKind_Enum> list = ListSequence.fromList(new LinkedList<RefactoringTargetKind_Enum>());
     ListSequence.fromList(list).addElement(RefactoringTargetKind_Enum.node);
@@ -32,11 +29,9 @@ public enum RefactoringTargetKind_Enum {
     ListSequence.fromList(list).addElement(RefactoringTargetKind_Enum.devkit);
     return list;
   }
-
   public static RefactoringTargetKind_Enum getDefault() {
     return RefactoringTargetKind_Enum.node;
   }
-
   public static RefactoringTargetKind_Enum parseValue(String value) {
     if (value == null) {
       return RefactoringTargetKind_Enum.getDefault();
@@ -58,14 +53,11 @@ public enum RefactoringTargetKind_Enum {
     }
     return RefactoringTargetKind_Enum.getDefault();
   }
-
   private String myValue;
-
   RefactoringTargetKind_Enum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

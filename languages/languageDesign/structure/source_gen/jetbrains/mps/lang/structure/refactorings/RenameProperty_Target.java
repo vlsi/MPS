@@ -9,19 +9,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class RenameProperty_Target implements IRefactoringTarget {
   public RenameProperty_Target() {
   }
-
   public IRefactoringTarget.TargetType getTarget() {
     return IRefactoringTarget.TargetType.NODE;
   }
-
   public boolean allowMultipleTargets() {
     return false;
   }
-
   public boolean isApplicableToEntityType(final Object entity) {
     return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
-
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;

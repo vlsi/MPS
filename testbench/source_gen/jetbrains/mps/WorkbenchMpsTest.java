@@ -13,7 +13,6 @@ import java.io.File;
 public class WorkbenchMpsTest {
   private static Environment CREATED_ENV;
 
-
   @BeforeClass
   public static void setUpEnvironment() {
     CREATED_ENV = MpsTestsSupport.initEnv(true);
@@ -22,28 +21,20 @@ public class WorkbenchMpsTest {
     }
   }
 
-
-
   @AfterClass
   public static void cleanup() {
     // todo: if we dispose IdeaEnv we can't create it again =( so we should but we can't dispose CREATED_ENV here 
     // <node> 
   }
 
-
-
   private static void checkEnvironmentExists() {
     assert ActiveEnvironment.getInstance() != null;
   }
-
-
 
   public static Project openProject(File projectFile) {
     checkEnvironmentExists();
     return ActiveEnvironment.getInstance().openProject(projectFile);
   }
-
-
 
   public static void disposeProject(Project project) {
     checkEnvironmentExists();

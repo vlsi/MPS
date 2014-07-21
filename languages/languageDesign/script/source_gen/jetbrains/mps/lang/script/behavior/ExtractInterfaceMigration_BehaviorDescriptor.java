@@ -9,5 +9,5 @@ public class ExtractInterfaceMigration_BehaviorDescriptor extends MigrationScrip
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration";
-  };;
-;}
+  }
+}

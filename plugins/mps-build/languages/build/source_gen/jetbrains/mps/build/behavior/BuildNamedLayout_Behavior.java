@@ -12,19 +12,15 @@ import jetbrains.mps.build.util.DependenciesHelper;
 public class BuildNamedLayout_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
     return "${build.layout." + SPropertyOperations.getString(thisNode, "name") + "}";
   }
-
   public static String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {
     return null;
   }
-
   public static String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode) {
     return null;
   }
-
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildProject")) {
       sb.append(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildProject"), "name"));
@@ -32,11 +28,9 @@ public class BuildNamedLayout_Behavior {
     }
     sb.append(SPropertyOperations.getString(thisNode, "name"));
   }
-
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     // nop 
   }
-
   public static String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
     return null;
   }

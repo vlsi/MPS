@@ -14,87 +14,66 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_5447719361346553354(final BaseMappingRuleContext _context) {
     return MoneyUtil.isMoneyOperation(_context.getNode());
   }
-
   public static boolean baseMappingRule_Condition_5447719361346553533(final BaseMappingRuleContext _context) {
     return MoneyUtil.isMoneyOperation(_context.getNode());
   }
-
   public static boolean baseMappingRule_Condition_2864272256649711188(final BaseMappingRuleContext _context) {
     return MoneyUtil.isMoneyOperation(_context.getNode());
   }
-
   public static boolean baseMappingRule_Condition_2864272256651347929(final BaseMappingRuleContext _context) {
     return MoneyUtil.isMoneyOperation(_context.getNode());
   }
-
   public static boolean baseMappingRule_Condition_2864272256651353592(final BaseMappingRuleContext _context) {
     return MoneyUtil.isMoneyOperation(_context.getNode());
   }
-
   public static boolean baseMappingRule_Condition_2864272256651360964(final BaseMappingRuleContext _context) {
     return MoneyUtil.isMoneyOperation(_context.getNode());
   }
-
   public static Object propertyMacro_GetPropertyValue_5447719361346518799(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "amount");
   }
-
   public static Object propertyMacro_GetPropertyValue_5447719361346518812(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "unit", false), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_1790427706118386796(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "targetCurrency");
   }
-
   public static SNode sourceNodeQuery_5447719361346558522(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
-
   public static SNode sourceNodeQuery_5447719361346558513(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
   public static SNode sourceNodeQuery_5447719361346558533(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
-
   public static SNode sourceNodeQuery_5447719361346558490(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
   public static SNode sourceNodeQuery_2864272256649727827(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
   public static SNode sourceNodeQuery_2864272256649728152(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
-
   public static SNode sourceNodeQuery_2864272256651350066(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
   public static SNode sourceNodeQuery_2864272256651350076(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
-
   public static SNode sourceNodeQuery_2864272256651359470(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
   public static SNode sourceNodeQuery_2864272256651359480(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
-
   public static SNode sourceNodeQuery_2864272256651363162(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
   public static SNode sourceNodeQuery_2864272256651363172(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }

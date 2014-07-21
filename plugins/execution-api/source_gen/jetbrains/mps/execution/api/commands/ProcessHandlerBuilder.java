@@ -22,49 +22,41 @@ import java.util.concurrent.TimeUnit;
 
 public class ProcessHandlerBuilder {
   private final List<String> myCommandLine = ListSequence.fromList(new ArrayList<String>());
-
   public ProcessHandlerBuilder() {
   }
-
   public ProcessHandlerBuilder append(@Nullable String command) {
     if (!((command == null || command.length() == 0))) {
       ListSequence.fromList(myCommandLine).addSequence(Sequence.fromIterable(splitCommandInParts(command)));
     }
     return this;
   }
-
   public ProcessHandlerBuilder append(@Nullable File file) {
     if (file != null) {
       ListSequence.fromList(myCommandLine).addElement(file.getAbsolutePath());
     }
     return this;
   }
-
   public ProcessHandlerBuilder append(String... command) {
     for (String commandPart : Sequence.fromArray(command)) {
       append(commandPart);
     }
     return this;
   }
-
   public ProcessHandlerBuilder append(@NotNull List<String> command) {
     for (String commandPart : command) {
       append(commandPart);
     }
     return this;
   }
-
   public ProcessHandlerBuilder append(@Nullable CommandPart commandPart) {
     if (commandPart != null) {
       ListSequence.fromList(myCommandLine).addSequence(ListSequence.fromList(commandPart.getCommandList()));
     }
     return this;
   }
-
   public ProcessHandler build() throws ExecutionException {
     return build(new File(System.getProperty("user.dir")));
   }
-
   public ProcessHandler build(@NotNull File workingDirectory) throws ExecutionException {
     if (!(workingDirectory.exists())) {
       throw new ExecutionException("Working directory " + workingDirectory + " does not exist.");
@@ -87,7 +79,6 @@ public class ProcessHandlerBuilder {
       throw new ProcessNotCreatedException("Start process failed", t, getCommandLine(workingDirectory.getAbsolutePath()));
     }
   }
-
   private GeneralCommandLine getCommandLine(String workingDirectory) {
     GeneralCommandLine commandLine = new GeneralCommandLine();
     commandLine.setExePath(ListSequence.fromList(myCommandLine).getElement(0));
@@ -95,7 +86,6 @@ public class ProcessHandlerBuilder {
     commandLine.addParameters(ListSequence.fromList(myCommandLine).tailListSequence(1));
     return commandLine;
   }
-
   public static Iterable<String> splitCommandInParts(@NotNull String command) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     boolean insideQuotes = false;
@@ -127,7 +117,6 @@ public class ProcessHandlerBuilder {
     }
     return result;
   }
-
   private static CountDownLatch startCountDown(ProcessHandler process, final int[] exitCode) {
     final CountDownLatch countDown = new CountDownLatch(1);
     OutputRedirector.redirect(process, new ProcessAdapter() {
@@ -140,7 +129,6 @@ public class ProcessHandlerBuilder {
     process.startNotify();
     return countDown;
   }
-
   public static int startAndWait(ProcessHandler process) {
     final int[] exitCode = new int[]{-1};
     try {
@@ -150,7 +138,6 @@ public class ProcessHandlerBuilder {
     }
     return exitCode[0];
   }
-
   public static int startAndWait(ProcessHandler process, long timeout) {
     final int[] exitCode = new int[]{-1};
     try {

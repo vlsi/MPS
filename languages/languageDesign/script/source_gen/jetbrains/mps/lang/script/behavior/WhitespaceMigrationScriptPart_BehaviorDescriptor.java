@@ -9,5 +9,5 @@ public class WhitespaceMigrationScriptPart_BehaviorDescriptor extends MigrationS
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart";
-  };;
-;}
+  }
+}

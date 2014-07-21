@@ -10,5 +10,5 @@ public class CellMenuPart_ReferentPrimary_BehaviorDescriptor extends CellMenuPar
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary";
-  };;
-;}
+  }
+}

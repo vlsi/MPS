@@ -34,20 +34,16 @@ import org.jetbrains.annotations.NonNls;
 
 public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
 
-
   public LanguageTestWrapper(SNode test) {
     super(test);
   }
-
   @Override
   public boolean isTestCase() {
     return check_9og6tg_a0a2(getNode(), this);
   }
-
   private boolean isTestMethod() {
     return check_9og6tg_a0a3(getNode(), this);
   }
-
   @Nullable
   @Override
   public ITestNodeWrapper getTestCase() {
@@ -59,7 +55,6 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     return null;
   }
-
   @NotNull
   @Override
   public Iterable<ITestNodeWrapper> getTestMethods() {
@@ -76,7 +71,6 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
       }
     });
   }
-
   @Override
   @NotNull
   public Tuples._3<String, List<String>, List<String>> getTestRunParameters() {
@@ -94,7 +88,6 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     return super.getTestRunParameters();
   }
-
   private List<String> getPluginClasspath() {
     List<String> path = ListSequence.fromList(new ArrayList<String>());
     String pluginsPath = PathManager.getPreinstalledPluginsPath();
@@ -126,7 +119,6 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     return path;
   }
-
   private List<String> getIdeaClasspath() {
     final List<String> result = ListSequence.fromList(new ArrayList<String>());
     ClassLoader classLoader = UrlClassLoader.class.getClassLoader();
@@ -149,7 +141,6 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     ListSequence.fromList(result).addSequence(ListSequence.fromList(getPluginClasspath()));
     return result;
   }
-
   @NonNls
   @Override
   public String getFqName() {
@@ -158,7 +149,6 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     return super.getFqName();
   }
-
   @NonNls
   @Override
   public String getName() {
@@ -167,42 +157,36 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     return check_9og6tg_a1a01(SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), this);
   }
-
   private static boolean check_9og6tg_a0a2(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return SNodeOperations.isInstanceOf(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
     }
     return false;
   }
-
   private static boolean check_9og6tg_a0a3(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return SNodeOperations.isInstanceOf(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod");
     }
     return false;
   }
-
   private static boolean check_9og6tg_a0a4(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return SNodeOperations.isInstanceOf(checkedDotOperand, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod");
     }
     return false;
   }
-
   private static String check_9og6tg_a0a0a9(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getClassName_1216136193905", new Object[]{});
     }
     return null;
   }
-
   private static String check_9og6tg_a0a0a01(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getTestName_1216136419751", new Object[]{});
     }
     return null;
   }
-
   private static String check_9og6tg_a1a01(SNode checkedDotOperand, LanguageTestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getSimpleClassName_1229278847513", new Object[]{});

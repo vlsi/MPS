@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class SequenceCreator_DataFlow extends DataFlowBuilder {
   public SequenceCreator_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "initializer", true) != null)) {
       if ((SLinkOperations.getTarget(_context.getNode(), "initializer", true) != null)) {

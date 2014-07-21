@@ -17,72 +17,56 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class RemoveTVD_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public RemoveTVD_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration";
   }
-
   public String getPresentation() {
     return "RemoveTVD";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.behavior.intentions.RemoveTVD_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.behavior";
   }
-
   public IntentionType getType() {
     return IntentionType.ERROR;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)", "6678378332547031548");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new RemoveTVD_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Remove Type Variable Declaration";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).clear();
     }
-
     public IntentionDescriptor getDescriptor() {
       return RemoveTVD_Intention.this;
     }

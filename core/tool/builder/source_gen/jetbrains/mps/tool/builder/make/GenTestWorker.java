@@ -83,7 +83,6 @@ public class GenTestWorker extends GeneratorWorker {
   private Map<String, String> path2tmp = MapSequence.fromMap(new HashMap<String, String>());
   private String tmpPath;
   private GenTestWorker.MyReporter myReporter = new GenTestWorker.MyReporter();
-
   public GenTestWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
     myBuildServerMessageFormat = getBuildServerMessageFormat();
@@ -97,7 +96,6 @@ public class GenTestWorker extends GeneratorWorker {
     }
     this.tmpPath = tmpDir.getAbsolutePath();
   }
-
   @Override
   public void work() {
     myReporter.init();
@@ -139,8 +137,6 @@ public class GenTestWorker extends GeneratorWorker {
     myReporter.finishRun();
     cleanUp();
   }
-
-
 
   @Override
   protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
@@ -220,7 +216,6 @@ public class GenTestWorker extends GeneratorWorker {
     } catch (ExecutionException ignore) {
     }
   }
-
   private void loadAndMake(final MpsWorker.ObjectsToProcess go) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
@@ -235,7 +230,6 @@ public class GenTestWorker extends GeneratorWorker {
           public void step(String text) {
             // silently 
           }
-
           @Override
           public void start(String taskName, int work) {
             // silently 
@@ -258,13 +252,11 @@ public class GenTestWorker extends GeneratorWorker {
       }
     });
   }
-
   private void reportIfStartsWith(String prefix, String work, _FunctionTypes._void_P1_E0<? super String> format) {
     if (work != null && work.startsWith(prefix)) {
       format.invoke(work.substring(prefix.length()) + ".Test." + ((prefix == null ? null : prefix.trim())));
     }
   }
-
   private void cleanUp() {
     for (Queue<File> dirs = QueueSequence.fromQueueAndArray(new LinkedList<File>(), new File(tmpPath)); QueueSequence.fromQueue(dirs).isNotEmpty();) {
       File dir = QueueSequence.fromQueue(dirs).removeFirstElement();
@@ -280,7 +272,6 @@ public class GenTestWorker extends GeneratorWorker {
     this.tmpPath = null;
     MapSequence.fromMap(path2tmp).clear();
   }
-
   private Iterable<IResource> collectResources(IOperationContext context, final Iterable<SModule> modules, final Iterable<SModel> models) {
     final Wrappers._T<Iterable<SModel>> result = new Wrappers._T<Iterable<SModel>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -312,7 +303,6 @@ public class GenTestWorker extends GeneratorWorker {
       }
     })).resources(false);
   }
-
   private IFile tmpFile(String path) {
     if (MapSequence.fromMap(path2tmp).containsKey(path)) {
       return FileSystem.getInstance().getFileByPath(MapSequence.fromMap(path2tmp).get(path));
@@ -329,7 +319,6 @@ public class GenTestWorker extends GeneratorWorker {
     MapSequence.fromMap(path2tmp).put(path, tmp);
     return FileSystem.getInstance().getFileByPath(tmp);
   }
-
   private String pathOfTmpFile(IFile file) {
     String p = file.getPath();
     if (!(p.startsWith(tmpPath))) {
@@ -342,7 +331,6 @@ public class GenTestWorker extends GeneratorWorker {
     String prefix = (File.separatorChar == '/' ? "/" : "\\\\");
     return FileSystem.getInstance().getFileByPath(prefix + p).getPath();
   }
-
   public IMessageFormat getBuildServerMessageFormat() {
     if (isRunningOnTeamCity()) {
       return new TeamCityMessageFormat();
@@ -350,54 +338,43 @@ public class GenTestWorker extends GeneratorWorker {
       return new ConsoleMessageFormat();
     }
   }
-
   private boolean isRunningOnTeamCity() {
     return myWhatToDo.getProperty("teamcity.version") != null;
   }
-
   private boolean isInvokeTestsSet() {
     return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.INVOKE_TESTS)) && isCompileSet();
   }
-
   private boolean isCompileSet() {
     return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.COMPILE));
   }
-
   private boolean isShowDiff() {
     return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.SHOW_DIFF));
   }
-
   @Override
   protected void showStatistic() {
     if (myTestFailed && myWhatToDo.getFailOnError()) {
       throw new RuntimeException("Tests Failed");
     }
   }
-
   public static void main(String[] args) {
     GenTestWorker generator = new GenTestWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     generator.workFromMain();
   }
-
   private class MyProgress extends IProgress.Stub {
     private final _FunctionTypes._void_P1_E0<? super String> myStartTestFormat;
     private final _FunctionTypes._void_P1_E0<? super String> myFinishTestFormat;
-
     public MyProgress(_FunctionTypes._void_P1_E0<? super String> startTestFormat, _FunctionTypes._void_P1_E0<? super String> finishTestFormat) {
       myStartTestFormat = startTestFormat;
       myFinishTestFormat = finishTestFormat;
     }
-
     @Override
     public void beginWork(String name, int estimate, int ofTotal) {
       reportIfStartsWith("Generating ", name, MyProgress.this.myStartTestFormat);
     }
-
     @Override
     public void finishWork(String name) {
       reportIfStartsWith("Generating ", name, MyProgress.this.myFinishTestFormat);
     }
-
     @Override
     public void advanceWork(String name, int done, String comment) {
       if (comment != null) {
@@ -409,11 +386,9 @@ public class GenTestWorker extends GeneratorWorker {
       }
     }
   }
-
   private class MyMessageHandler implements IMessageHandler {
     public MyMessageHandler() {
     }
-
     @Override
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
@@ -432,32 +407,26 @@ public class GenTestWorker extends GeneratorWorker {
         default:
       }
     }
-
     @Override
     public void clear() {
     }
   }
-
   private class MyUnitTestAdapter extends UnitTestAdapter {
     private MyUnitTestAdapter() {
     }
-
     @Override
     public void testStarted(String testName) {
       myReporter.testStarted(testName);
     }
-
     @Override
     public void testFailed(String test, String message, String details) {
       myReporter.testFailed(test, message, details);
       myTestFailed = true;
     }
-
     @Override
     public void testFinished(String testName) {
       myReporter.testFinished(testName);
     }
-
     @Override
     public void logMessage(String message) {
       if (message != null && !(message.isEmpty())) {
@@ -465,7 +434,6 @@ public class GenTestWorker extends GeneratorWorker {
         myReporter.outputLine(message);
       }
     }
-
     @Override
     public void logError(String errorMessage) {
       if (errorMessage != null && !(errorMessage.isEmpty())) {
@@ -474,15 +442,12 @@ public class GenTestWorker extends GeneratorWorker {
       }
     }
   }
-
   private class MyReporter {
     private ITestReporter testReporter;
     private String currentTestName;
     private File gentestdir;
-
     private MyReporter() {
     }
-
     private void init() {
       if (gentestdir != null) {
         return;
@@ -510,15 +475,12 @@ public class GenTestWorker extends GeneratorWorker {
         }
       }
     }
-
     private String getCurrentTestName() {
       return currentTestName;
     }
-
     private void startRun(String name) {
       this.testReporter = (isRunningOnTeamCity() ? new XmlTestReporter(name) : new ConsoleTestReporter());
     }
-
     private void finishRun() {
       if (testReporter == null) {
         return;
@@ -546,11 +508,9 @@ public class GenTestWorker extends GeneratorWorker {
       }
       this.testReporter = null;
     }
-
     private String normalizeTestName(String name) {
       return name.replace("@", "_");
     }
-
     private void testStarted(String testname) {
       testname = normalizeTestName(testname);
       if (currentTestName != null) {
@@ -559,18 +519,15 @@ public class GenTestWorker extends GeneratorWorker {
       this.currentTestName = testname;
       testReporter.testStarted(testname);
     }
-
     private void testFinished(String testname) {
       testname = normalizeTestName(testname);
       testReporter.testFinished(testname);
       this.currentTestName = null;
     }
-
     private void testFailed(String testname, String msg, String longmsg) {
       testname = normalizeTestName(testname);
       testReporter.testFailed(testname, msg, longmsg);
     }
-
     private void outputLine(String out) {
       if (currentTestName != null) {
         testReporter.testOutputLine(currentTestName, out);
@@ -580,7 +537,6 @@ public class GenTestWorker extends GeneratorWorker {
         System.out.println(out);
       }
     }
-
     private void errorLine(String err) {
       if (currentTestName != null) {
         testReporter.testErrorLine(currentTestName, err);
@@ -591,12 +547,10 @@ public class GenTestWorker extends GeneratorWorker {
       }
     }
   }
-
   private class MyJobMonitor extends IJobMonitor.Stub {
     public MyJobMonitor(IProgress pstub) {
       super(pstub);
     }
-
     @Override
     public void reportFeedback(IFeedback fdbk) {
       if (fdbk.getSeverity() == IFeedback.Severity.ERROR) {
@@ -616,47 +570,37 @@ public class GenTestWorker extends GeneratorWorker {
       }
     }
   }
-
   private class MyProgressMonitorBase extends ProgressMonitorBase {
     private String prevTitle;
     private final _FunctionTypes._void_P1_E0<? super String> myStartTestFormat;
     private final _FunctionTypes._void_P1_E0<? super String> myFinishTestFormat;
-
     public MyProgressMonitorBase(_FunctionTypes._void_P1_E0<? super String> startTestFormat, _FunctionTypes._void_P1_E0<? super String> finishTestFormat) {
       myStartTestFormat = startTestFormat;
       myFinishTestFormat = finishTestFormat;
     }
-
     @Override
     protected void update(double p0) {
     }
-
     @Override
     protected void startInternal(String text) {
     }
-
     @Override
     protected void doneInternal(String text) {
     }
-
     @Override
     protected void setTitleInternal(String text) {
       prevTitle = text;
     }
-
     @Override
     protected void setStepInternal(String p0) {
     }
-
     @Override
     public boolean isCanceled() {
       return false;
     }
-
     @Override
     public void cancel() {
     }
-
     private ProgressMonitorBase.SubProgressMonitor customSubProgress(ProgressMonitorBase parent, int work, SubProgressKind kind) {
       if (prevTitle != null && prevTitle.startsWith("Generating :: ")) {
         return new ProgressMonitorBase.SubProgressMonitor(parent, work, kind) {
@@ -664,7 +608,6 @@ public class GenTestWorker extends GeneratorWorker {
           protected void startInternal(String text) {
             reportIfStartsWith("Generating ", "Generating " + text, MyProgressMonitorBase.this.myStartTestFormat);
           }
-
           @Override
           protected void doneInternal(String text) {
             reportIfStartsWith("Generating ", "Generating " + text, MyProgressMonitorBase.this.myFinishTestFormat);
@@ -678,7 +621,6 @@ public class GenTestWorker extends GeneratorWorker {
         }
       };
     }
-
     @Override
     protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
       return customSubProgress(this, work, kind);

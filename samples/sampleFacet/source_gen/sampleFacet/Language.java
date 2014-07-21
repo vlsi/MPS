@@ -11,25 +11,20 @@ import sampleFacet.plugin.FacetAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "411cfb96-468d-4c3f-accc-a13ad135b216(sampleFacet)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "sampleFacet";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return null;
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == MakeAspectDescriptor.class) {

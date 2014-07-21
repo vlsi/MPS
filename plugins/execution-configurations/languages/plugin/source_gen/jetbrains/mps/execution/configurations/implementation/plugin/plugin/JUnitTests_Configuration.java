@@ -45,11 +45,9 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   private JUnitTests_Configuration.MyState myState = new JUnitTests_Configuration.MyState();
   private JUnitSettings_Configuration myJUnitSettings = new JUnitSettings_Configuration(this.getProject());
   private JavaRunParameters_Configuration myJavaRunParameters = new JavaRunParameters_Configuration();
-
   public void checkConfiguration() throws RuntimeConfigurationException {
     this.getJUnitSettings().checkConfiguration();
   }
-
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
@@ -64,7 +62,6 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       element.addContent(fieldElement);
     }
   }
-
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -92,19 +89,15 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       }
     }
   }
-
   public JUnitSettings_Configuration getJUnitSettings() {
     return myJUnitSettings;
   }
-
   public JavaRunParameters_Configuration getJavaRunParameters() {
     return myJavaRunParameters;
   }
-
   public List<SNodeReference> getTestsToMake() {
     return this.getJUnitSettings().getTestsToMake(ProjectHelper.toMPSProject(this.getProject()));
   }
-
   public JavaRunParameters prepareJavaParamsForTests(int runId) {
     String runIdString = "-D" + CachesUtil.PROPERTY_RUN_ID + "=\"" + runId + "\"";
     JavaRunParameters_Configuration javaRunParams = this.getJavaRunParameters();
@@ -116,7 +109,6 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     parameters.setVmOptions(vmFromJava + " " + runIdString);
     return parameters;
   }
-
   public UnitTestViewComponent createTestViewComponent(TestRunState runState, final ProcessHandler process) {
     ConsoleView console = ConsoleCreator.createConsoleView(this.getProject(), false);
     console.addMessageFilter(new StandaloneMPSStackTraceFilter(this.getProject()));
@@ -128,7 +120,6 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       }
     });
   }
-
   @Override
   public JUnitTests_Configuration clone() {
     JUnitTests_Configuration clone = null;
@@ -145,56 +136,44 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     }
     return clone;
   }
-
   public class MyState {
     public MyState() {
     }
-
     @Override
     public Object clone() throws CloneNotSupportedException {
       JUnitTests_Configuration.MyState state = new JUnitTests_Configuration.MyState();
       return state;
     }
   }
-
   public JUnitTests_Configuration(Project project, JUnitTests_Configuration_Factory factory, String name) {
     super(project, factory, name);
   }
-
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
     return new JUnitTests_Configuration_RunProfileState(this, executor, environment);
   }
-
   @Nullable
   public SettingsEditor<ConfigurationPerRunnerSettings> getRunnerSettingsEditor(ProgramRunner runner) {
     return null;
   }
-
   public ConfigurationPerRunnerSettings createRunnerSettings(ConfigurationInfoProvider provider) {
     return null;
   }
-
   public SettingsEditorEx<JUnitTests_Configuration> getConfigurationEditor() {
     return (SettingsEditorEx<JUnitTests_Configuration>) getEditor();
   }
-
   public JUnitTests_Configuration createCloneTemplate() {
     return (JUnitTests_Configuration) super.clone();
   }
-
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
     return new JUnitTests_Configuration_Editor(myJUnitSettings.getEditor(), myJavaRunParameters.getEditor());
   }
-
   @Override
   public boolean canExecute(String executorId) {
     return JUnitTests_Configuration_RunProfileState.canExecute(executorId);
   }
-
   public Object[] createMakeNodePointersTask() {
     return new Object[]{this.getTestsToMake()};
   }
-
   protected static Logger LOG = LogManager.getLogger(JUnitTests_Configuration.class);
 }

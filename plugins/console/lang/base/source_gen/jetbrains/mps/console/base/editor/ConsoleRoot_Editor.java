@@ -21,7 +21,6 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_drvoix_a(editorContext, node);
   }
-
   private EditorCell createCollection_drvoix_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_drvoix_a");
@@ -42,7 +41,6 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_drvoix_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_drvoix_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Type an expression or {statements} to execute.");
     editorCell.setCellId("Constant_drvoix_a0");
@@ -52,7 +50,6 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_drvoix_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Type ? for a list of commands.");
     editorCell.setCellId("Constant_drvoix_b0");
@@ -62,7 +59,6 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_drvoix_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Press Ctrl+Enter to execute command.");
     editorCell.setCellId("Constant_drvoix_c0");
@@ -72,7 +68,6 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_drvoix_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Use Ctrl+M and Ctrl+L to add imports and languages.");
     editorCell.setCellId("Constant_drvoix_d0");
@@ -82,7 +77,6 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_drvoix_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("history");
@@ -102,7 +96,6 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_drvoix_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("commandHolder");

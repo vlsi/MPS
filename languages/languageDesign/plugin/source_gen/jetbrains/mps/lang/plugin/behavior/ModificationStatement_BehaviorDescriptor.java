@@ -10,5 +10,5 @@ public class ModificationStatement_BehaviorDescriptor extends BaseConcept_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ModificationStatement";
-  };;
-;}
+  }
+}

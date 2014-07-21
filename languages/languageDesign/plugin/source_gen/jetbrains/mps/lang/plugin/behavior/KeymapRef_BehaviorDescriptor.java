@@ -10,5 +10,5 @@ public class KeymapRef_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.KeymapRef";
-  };;
-;}
+  }
+}

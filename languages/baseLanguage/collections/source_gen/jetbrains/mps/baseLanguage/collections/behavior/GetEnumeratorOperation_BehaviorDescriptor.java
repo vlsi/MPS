@@ -9,5 +9,5 @@ public class GetEnumeratorOperation_BehaviorDescriptor extends NoArgumentsSequen
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.GetEnumeratorOperation";
-  };;
-;}
+  }
+}

@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
@@ -47,7 +46,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     }
     return Collections.<ConceptEditor>emptyList();
   }
-
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
@@ -64,7 +62,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
-
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.ConsoleRoot", "jetbrains.mps.console.base.structure.HelpCommand", "jetbrains.mps.console.base.structure.HelpConceptReference", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NewLineResponseItem", "jetbrains.mps.console.base.structure.NodeResponseItem", "jetbrains.mps.console.base.structure.OutputConsoleRoot", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.Response", "jetbrains.mps.console.base.structure.TextResponseItem"};

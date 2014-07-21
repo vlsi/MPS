@@ -20,18 +20,14 @@ public class TextCommentLinePart_ActionMap {
     editorCell.setAction(CellActionType.BACKSPACE, new TextCommentLinePart_ActionMap.TextCommentLinePart_ActionMap_BACKSPACE(node));
     editorCell.setAction(CellActionType.DELETE, new TextCommentLinePart_ActionMap.TextCommentLinePart_ActionMap_DELETE(node));
   }
-
   public static class TextCommentLinePart_ActionMap_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public TextCommentLinePart_ActionMap_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       // there is a difference between Backspace & delete actions now. 
       // code was copied from delete action. 
@@ -177,27 +173,21 @@ public class TextCommentLinePart_ActionMap {
       }
 
     }
-
     private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }
-
     private static boolean isEmptyString(String str) {
       return str == null || str.length() == 0;
     }
   }
-
   public static class TextCommentLinePart_ActionMap_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public TextCommentLinePart_ActionMap_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       int caretPosition = ((EditorCell_Label) editorContext.getSelectedCell()).getCaretPosition();
       // todo: this cannot distinguish backspace and delete when placed on the first position in a part 
@@ -339,11 +329,9 @@ public class TextCommentLinePart_ActionMap {
 
       }
     }
-
     private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }
-
     private static boolean isEmptyString(String str) {
       return str == null || str.length() == 0;
     }

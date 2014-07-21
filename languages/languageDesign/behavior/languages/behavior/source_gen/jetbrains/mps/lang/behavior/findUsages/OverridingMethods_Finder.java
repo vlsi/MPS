@@ -17,30 +17,24 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class OverridingMethods_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
-
   public OverridingMethods_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Overriding Methods";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration";
   }
-
   @Override
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {

@@ -27,7 +27,6 @@ import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 public class LanguageConceptsUsagesFinder implements IFinder {
   public LanguageConceptsUsagesFinder() {
   }
-
   @Override
   public SearchResults find(SearchQuery query, @NotNull ProgressMonitor monitor) {
     SearchResults<SNode> searchResults = new SearchResults<SNode>();

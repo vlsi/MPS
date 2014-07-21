@@ -13,12 +13,10 @@ public class BooleanDescriptor extends ColumnDescriptor {
   public BooleanDescriptor(String name, String header, int width) {
     super(name, header, width);
   }
-
   @Override
   public TableCellRenderer createRenderer() {
     return new ListRendererAdapter(new BooleanRenderer());
   }
-
   @Override
   public TableCellEditor createEditor() {
     return new BooleanEditor();

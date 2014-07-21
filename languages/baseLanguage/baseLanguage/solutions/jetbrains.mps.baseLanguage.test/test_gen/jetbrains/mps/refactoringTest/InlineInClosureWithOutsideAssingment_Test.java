@@ -23,7 +23,6 @@ public class InlineInClosureWithOutsideAssingment_Test extends BaseTransformatio
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.InlineInClosureWithOutsideAssingment_Test$TestBody", "test_InlineInClosureWithOutsideAssingmentTest", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_InlineInClosureWithOutsideAssingmentTest() throws Exception {

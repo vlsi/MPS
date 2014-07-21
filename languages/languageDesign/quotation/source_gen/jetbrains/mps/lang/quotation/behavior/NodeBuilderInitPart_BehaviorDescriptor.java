@@ -10,5 +10,5 @@ public abstract class NodeBuilderInitPart_BehaviorDescriptor extends BaseConcept
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart";
-  };;
-;}
+  }
+}

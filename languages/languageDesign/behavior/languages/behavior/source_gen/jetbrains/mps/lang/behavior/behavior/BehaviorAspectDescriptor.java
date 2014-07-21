@@ -30,6 +30,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
-  };;
-;  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.behavior.structure.ConceptBehavior", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder", "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", "jetbrains.mps.lang.behavior.structure.SuperNodeExpression", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"};
+  }
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.behavior.structure.ConceptBehavior", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder", "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", "jetbrains.mps.lang.behavior.structure.SuperNodeExpression", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"};
 }

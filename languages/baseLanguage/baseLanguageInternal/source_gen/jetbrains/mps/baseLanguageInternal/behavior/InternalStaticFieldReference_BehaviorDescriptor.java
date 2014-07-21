@@ -10,5 +10,5 @@ public class InternalStaticFieldReference_BehaviorDescriptor extends Expression_
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference";
-  };;
-;}
+  }
+}

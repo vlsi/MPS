@@ -23,7 +23,6 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_a75gvn_a(editorContext, node);
   }
-
   private EditorCell createCollection_a75gvn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a75gvn_a");
@@ -36,7 +35,6 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createRefNode_a75gvn_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
@@ -56,7 +54,6 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_a75gvn_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
     editorCell.setCellId("Constant_a75gvn_b0");
@@ -66,7 +63,6 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_a75gvn_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("builder");
@@ -86,7 +82,6 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_a75gvn_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a75gvn_d0");
@@ -98,11 +93,9 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_a75gvn_c3a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_a75gvn_a3a(SNode node, EditorContext editorContext) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "builder", true), "virtual_isLeaf_7057666463730595159", new Object[]{}));
   }
-
   private EditorCell createConstant_a75gvn_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_a75gvn_a3a");
@@ -113,7 +106,6 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_a75gvn_b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -136,7 +128,6 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_a75gvn_c3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_a75gvn_c3a");

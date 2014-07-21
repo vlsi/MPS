@@ -27,22 +27,18 @@ import org.apache.log4j.LogManager;
 
 public class MoveProperyUp_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public MoveProperyUp_Action() {
     super("Move Property Up", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.structure.refactorings" + "." + "MovePropertyUp"), ((SNode) MapSequence.fromMap(_params).get("target")));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -56,7 +52,6 @@ public class MoveProperyUp_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -79,7 +74,6 @@ public class MoveProperyUp_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<SNode> concept = new Wrappers._T<SNode>();
@@ -119,6 +113,5 @@ public class MoveProperyUp_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(MoveProperyUp_Action.class);
 }

@@ -35,7 +35,6 @@ public class QueriesGenerated {
             }
             return pd;
           }
-
           public String getMatchingText(String pattern) {
             if (!((pattern == null || pattern.length() == 0)) && !(pattern.equals("#"))) {
               String name = pattern;
@@ -46,7 +45,6 @@ public class QueriesGenerated {
             }
             return "key=value";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }

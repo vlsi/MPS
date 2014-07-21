@@ -9,8 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DefaultBaseLine_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
+  }
+  public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     {
       SNode matchedNode_q0zywl_a0a = cellModel;
       {
@@ -38,5 +38,5 @@ public class DefaultBaseLine_Behavior {
         }
       }
     }
-  };;
-;}
+  }
+}

@@ -18,7 +18,6 @@ public class ModelCheckerPreferencesPage {
   private JCheckBox myCheckTypesystemCheckBox = new JCheckBox("Perform typesystem checks");
   private JCheckBox myCheckStubsCheckBox = new JCheckBox("Check stub models");
   private ModelCheckerSettings myModelCheckerSettings;
-
   public ModelCheckerPreferencesPage(ModelCheckerSettings settings) {
     myModelCheckerSettings = settings;
     myCheckUnresolvedReferencesCheckBox.setSelected(myModelCheckerSettings.isCheckUnresolvedReferences());
@@ -38,23 +37,18 @@ public class ModelCheckerPreferencesPage {
     myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
     myPage.add(optionsPanel, BorderLayout.NORTH);
   }
-
   public String getName() {
     return "Model Checker";
   }
-
   public Icon getIcon() {
     return null;
   }
-
   public JComponent getComponent() {
     return myPage;
   }
-
   public boolean validate() {
     return true;
   }
-
   public void commit() {
     myModelCheckerSettings.setCheckUnresolvedReferences(myCheckUnresolvedReferencesCheckBox.isSelected());
     myModelCheckerSettings.setCheckConstraints(myCheckConstraintsCheckBox.isSelected());
@@ -62,7 +56,6 @@ public class ModelCheckerPreferencesPage {
     myModelCheckerSettings.setCheckTypesystem(myCheckTypesystemCheckBox.isSelected());
     myModelCheckerSettings.setCheckStubs(myCheckStubsCheckBox.isSelected());
   }
-
   public boolean isModified() {
     if (myModelCheckerSettings.isCheckUnresolvedReferences() != myCheckUnresolvedReferencesCheckBox.isSelected()) {
       return true;

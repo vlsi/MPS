@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CellModel_Collection_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
+  }
+  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
     if (CellModel_Collection_Behavior.call_isVertical_1237380214915(thisNode)) {
       return "[/";
     } else if (CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(thisNode)) {
@@ -21,8 +21,8 @@ public class CellModel_Collection_Behavior {
     } else {
       return "[>";
     }
-  };;
-;  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
+  }
+  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
     if (CellModel_Collection_Behavior.call_isVertical_1237380214915(thisNode)) {
       return "/]";
     } else if (CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(thisNode)) {
@@ -30,23 +30,23 @@ public class CellModel_Collection_Behavior {
     } else {
       return "<]";
     }
-  };;
-;  public static boolean call_isVertical_1237380214915(SNode thisNode) {
+  }
+  public static boolean call_isVertical_1237380214915(SNode thisNode) {
     return (SPropertyOperations.getBoolean(thisNode, "vertical") && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical");
-  };;
-;  public static boolean call_isVerticalGrid_1239872947848(SNode thisNode) {
+  }
+  public static boolean call_isVerticalGrid_1239872947848(SNode thisNode) {
     return (SPropertyOperations.getBoolean(thisNode, "gridLayout") && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid");
-  };;
-;  public static boolean call_isHorizontal_1237380252717(SNode thisNode) {
+  }
+  public static boolean call_isHorizontal_1237380252717(SNode thisNode) {
     return (!(SPropertyOperations.getBoolean(thisNode, "vertical")) && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal");
-  };;
-;  public static boolean call_isIndentLayout_1237380273398(SNode thisNode) {
+  }
+  public static boolean call_isIndentLayout_1237380273398(SNode thisNode) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
-  };;
-;  public static boolean call_isFoldingEnabled_1822203275565710635(SNode thisNode) {
+  }
+  public static boolean call_isFoldingEnabled_1822203275565710635(SNode thisNode) {
     return SPropertyOperations.getBoolean(thisNode, "usesFolding") || (SLinkOperations.getTarget(thisNode, "usesFoldingCondition", true) != null);
-  };;
-;  public static boolean call_isVerticalIndent_1237451001939(SNode thisNode) {
+  }
+  public static boolean call_isVerticalIndent_1237451001939(SNode thisNode) {
     if (!(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(thisNode))) {
       return false;
     }
@@ -62,25 +62,25 @@ public class CellModel_Collection_Behavior {
       }
     }
     return false;
-  };;
-;  public static boolean virtual_shellBeSynchronized_4500758155551546553(final SNode thisNode) {
+  }
+  public static boolean virtual_shellBeSynchronized_4500758155551546553(final SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "childCellModel", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return CellModel_Collection_Behavior.call_shellBeSynchronized_4500758155551647684(thisNode, it);
-      };;
-;    }) || CellModel_Collection_Behavior.call_shellBeSynchronized_4500758155551647684(thisNode, SLinkOperations.getTarget(thisNode, "foldedCellModel", true));
-  };;
-;  public static boolean call_shellBeSynchronized_4500758155551647684(SNode thisNode, SNode childCell) {
+      }
+    }) || CellModel_Collection_Behavior.call_shellBeSynchronized_4500758155551647684(thisNode, SLinkOperations.getTarget(thisNode, "foldedCellModel", true));
+  }
+  public static boolean call_shellBeSynchronized_4500758155551647684(SNode thisNode, SNode childCell) {
     return childCell != null && SNodeOperations.isInstanceOf(childCell, "jetbrains.mps.lang.editor.structure.Synchronizeable") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(childCell, "jetbrains.mps.lang.editor.structure.Synchronizeable"), "virtual_shellBeSynchronized_4500758155551546553", new Object[]{});
-  };;
-;  public static boolean virtual_canBeSynchronized_4052492221165595783(final SNode thisNode) {
+  }
+  public static boolean virtual_canBeSynchronized_4052492221165595783(final SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "childCellModel", true)).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return CellModel_Collection_Behavior.call_canBeSynchronized_4052492221165827676(thisNode, it);
-      };;
-;    }) && CellModel_Collection_Behavior.call_canBeSynchronized_4052492221165827676(thisNode, SLinkOperations.getTarget(thisNode, "foldedCellModel", true));
-  };;
-;  public static boolean call_canBeSynchronized_4052492221165827676(SNode thisNode, SNode childCell) {
+      }
+    }) && CellModel_Collection_Behavior.call_canBeSynchronized_4052492221165827676(thisNode, SLinkOperations.getTarget(thisNode, "foldedCellModel", true));
+  }
+  public static boolean call_canBeSynchronized_4052492221165827676(SNode thisNode, SNode childCell) {
     return childCell == null || (SNodeOperations.isInstanceOf(childCell, "jetbrains.mps.lang.editor.structure.Synchronizeable") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(childCell, "jetbrains.mps.lang.editor.structure.Synchronizeable"), "virtual_canBeSynchronized_4052492221165595783", new Object[]{}));
-  };;
-;}
+  }
+}

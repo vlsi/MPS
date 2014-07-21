@@ -24,7 +24,6 @@ public class GenerationContextOp_GenParameterRef_Constraints extends BaseConstra
   public GenerationContextOp_GenParameterRef_Constraints() {
     super("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -33,7 +32,6 @@ public class GenerationContextOp_GenParameterRef_Constraints extends BaseConstra
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -46,7 +44,6 @@ public class GenerationContextOp_GenParameterRef_Constraints extends BaseConstra
               }
             });
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_bxu0yd_a0a1a0a0a1a0b0a1a1;
@@ -56,6 +53,5 @@ public class GenerationContextOp_GenParameterRef_Constraints extends BaseConstra
     });
     return references;
   }
-
   private static SNodePointer breakingNode_bxu0yd_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902ee(jetbrains.mps.lang.generator.generationContext.constraints)", "2507865635201658713");
 }

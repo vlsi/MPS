@@ -34,7 +34,6 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4fi5xp_a(editorContext, node);
   }
-
   private EditorCell createCollection_4fi5xp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4fi5xp_a");
@@ -49,7 +48,6 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createComponent_4fi5xp_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -58,23 +56,19 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new UnderlinedStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_4fi5xp_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_StyleClassItem_cellMenu_4fi5xp_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_StyleClassItem_cellMenu_4fi5xp_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
   }
-
   private EditorCell createConstant_4fi5xp_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_4fi5xp_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_4fi5xp_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("underlined");
@@ -92,33 +86,26 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_4fi5xp_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "query", true) == null;
   }
-
   public static class UnderlinedStyleClassItem_underlined_cellMenu_4fi5xp_a0c0 extends AbstractCellMenuPart_PropertyValues {
     public UnderlinedStyleClassItem_underlined_cellMenu_4fi5xp_a0c0() {
     }
-
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "0", "1", "2");
     }
   }
-
   public static class UnderlinedStyleClassItem_generic_cellMenu_4fi5xp_b0c0 extends AbstractCellMenuPart_Generic_Item {
     public UnderlinedStyleClassItem_generic_cellMenu_4fi5xp_b0c0() {
     }
-
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined");
     }
-
     public String getMatchingText() {
       return "query";
     }
   }
-
   private EditorCell createRefNode_4fi5xp_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("query");
@@ -141,7 +128,6 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_4fi5xp_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "query", true) != null);
   }

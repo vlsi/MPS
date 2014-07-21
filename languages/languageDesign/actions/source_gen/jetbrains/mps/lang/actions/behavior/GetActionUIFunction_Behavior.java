@@ -9,15 +9,15 @@ import jetbrains.mps.smodel.SReference;
 
 public class GetActionUIFunction_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  }
+  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_mmgly4_a0a0();
-  };;
-;  private static SNode _quotation_createNode_mmgly4_a0a0() {
+  }
+  private static SNode _quotation_createNode_mmgly4_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.lang.actions(MPS.Editor/jetbrains.mps.lang.actions@java_stub)"), facade.createNodeId("~SmartActionUIPanel")));
     return quotedNode_1;
-  };;
-;}
+  }
+}

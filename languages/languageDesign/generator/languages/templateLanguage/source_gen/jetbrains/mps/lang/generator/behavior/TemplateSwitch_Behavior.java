@@ -11,17 +11,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class TemplateSwitch_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
+  }
+  public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode mappingRule : SLinkOperations.getTargets(thisNode, "reductionMappingRule", true)) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(mappingRule, "applicableConcept", false));
     }
     return result;
-  };;
-;  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
+  }
+  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SNode rule = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", null);
     SLinkOperations.setTarget(rule, "applicableConcept", baseConcept, false);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "reductionMappingRule", true)).addElement(rule);
-  };;
-;}
+  }
+}

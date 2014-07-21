@@ -10,21 +10,17 @@ import java.util.Collection;
 /*package*/ class SortedList<T> extends AbstractList<T> {
   private ListsFactory.ListComparator<T> myComparator;
   private ArrayList<T> myList = new ArrayList<T>();
-
   public SortedList(ListsFactory.ListComparator<T> comparator) {
     myComparator = comparator;
   }
-
   @Override
   public int size() {
     return myList.size();
   }
-
   @Override
   public T get(int index) {
     return myList.get(index);
   }
-
   @Override
   public int indexOf(Object o) {
     ListIterator<T> e = SortedList.this.listIterator();
@@ -43,7 +39,6 @@ import java.util.Collection;
     }
     return -1;
   }
-
   @Override
   public int lastIndexOf(Object o) {
     ListIterator<T> e = SortedList.this.listIterator(size());
@@ -62,17 +57,14 @@ import java.util.Collection;
     }
     return -1;
   }
-
   @Override
   public T remove(int index) {
     return myList.remove(index);
   }
-
   @Override
   public void add(int index, T element) {
     add(element);
   }
-
   @Override
   public boolean add(T o) {
     int index = myList.size();
@@ -90,7 +82,6 @@ import java.util.Collection;
     myList.add(index, o);
     return true;
   }
-
   @Override
   public boolean addAll(Collection<? extends T> c) {
     for (T element : c) {
@@ -98,7 +89,6 @@ import java.util.Collection;
     }
     return true;
   }
-
   @Override
   public boolean addAll(int index, Collection<? extends T> c) {
     return addAll(c);

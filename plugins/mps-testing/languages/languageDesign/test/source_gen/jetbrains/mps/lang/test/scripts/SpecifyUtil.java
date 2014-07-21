@@ -20,14 +20,10 @@ public class SpecifyUtil {
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
   }
 
-
-
   public static Iterable<IErrorReporter> getErrorReporters(SNode node) {
     TestsErrorsChecker checker = new TestsErrorsChecker(node);
     return checker.getErrors();
   }
-
-
 
   public static void fillContainerWithRuleMessages(SNode node) {
     SNode operationsContainer = SpecifyUtil.getOperationsContainer(node);
@@ -42,14 +38,10 @@ public class SpecifyUtil {
     new MissingDependenciesFixer(SNodeOperations.getModel(operationsContainer)).fixAllDependencies();
   }
 
-
-
   public static void attachNewContainer(SNode node) {
     SNode container = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeOperationsContainer", null);
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"), container);
   }
-
-
 
   private static void addModelImports(SNode container, SNode ruleNode) {
     SModelReference ruleModelRef = SNodeOperations.getModel(ruleNode).getReference();

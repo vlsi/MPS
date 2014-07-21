@@ -23,7 +23,6 @@ public class DefaultBaseLine_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4pywwz_a(editorContext, node);
   }
-
   private EditorCell createCollection_4pywwz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4pywwz_a");
@@ -33,7 +32,6 @@ public class DefaultBaseLine_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_4pywwz_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_4pywwz_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default-baseline");
     editorCell.setCellId("Constant_4pywwz_a0");
@@ -44,23 +42,19 @@ public class DefaultBaseLine_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DefaultBaseLine_Editor.ReplaceWith_StyleClassItem_cellMenu_4pywwz_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_StyleClassItem_cellMenu_4pywwz_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_StyleClassItem_cellMenu_4pywwz_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
   }
-
   private EditorCell createConstant_4pywwz_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_4pywwz_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_4pywwz_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("baseline");

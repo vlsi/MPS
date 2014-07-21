@@ -16,7 +16,6 @@ public class ModuleRenderer extends ProjectLevelRenderer {
   public ModuleRenderer(SModule moduleScope, Project projectScope) {
     super(moduleScope, projectScope);
   }
-
   @Override
   public String getItemLabel(Object value) {
     SModuleReference moduleReference = (ModuleReference) value;
@@ -31,7 +30,6 @@ public class ModuleRenderer extends ProjectLevelRenderer {
       return moduleReference.getModuleName();
     }
   }
-
   @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     final Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);

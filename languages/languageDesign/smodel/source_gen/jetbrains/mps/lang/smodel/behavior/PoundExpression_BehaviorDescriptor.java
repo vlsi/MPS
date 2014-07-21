@@ -10,5 +10,5 @@ public class PoundExpression_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.PoundExpression";
-  };;
-;}
+  }
+}

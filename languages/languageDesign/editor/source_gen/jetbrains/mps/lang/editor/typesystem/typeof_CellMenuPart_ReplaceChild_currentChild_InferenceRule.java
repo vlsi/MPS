@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule() {
   }
-
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode hostMenuPart = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", false, false);
     SNode editedFeature = CellMenuUtil.getEditedFeature(hostMenuPart);
@@ -44,22 +43,18 @@ public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule extends
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086251", true), (SNode) _quotation_createNode_fjdzuh_a0e0b(), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_fjdzuh_a0b0c0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -67,7 +62,6 @@ public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule extends
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_fjdzuh_a0e0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

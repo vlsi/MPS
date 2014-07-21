@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_ConstantReference_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ConstantReference_InferenceRule() {
   }
-
   public void applyRule(final SNode constantReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = constantReference;
@@ -22,18 +21,15 @@ public class typeof_ConstantReference_InferenceRule extends AbstractInferenceRul
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b7bbbd3b-af8b-4b1e-9ab8-def9512d9413(org.jetbrains.mps.samples.Constants.typesystem)", "3990190717072396554", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(constantReference, "original", false), "r:b7bbbd3b-af8b-4b1e-9ab8-def9512d9413(org.jetbrains.mps.samples.Constants.typesystem)", "3990190717072396562", true), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "org.jetbrains.mps.samples.Constants.structure.ConstantReference";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

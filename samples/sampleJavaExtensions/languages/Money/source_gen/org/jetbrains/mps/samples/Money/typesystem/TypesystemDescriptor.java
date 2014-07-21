@@ -48,7 +48,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_a("jetbrains.mps.baseLanguage.structure.MinusExpression"));
     this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_a("jetbrains.mps.baseLanguage.structure.PlusExpression"));
   }
-
   public static class CustomOverloadedOperationsTypesProvider_b extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_b(String conceptFQ) {
       this.myLeftOperandType = _quotation_createNode_3ist9o_a0a0a1();
@@ -61,30 +60,25 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)";
       this.myRuleNodeId = "2864272256649699155";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return _quotation_createNode_3ist9o_a0a1b();
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
-
     private static SNode _quotation_createNode_3ist9o_a0a0a1() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
-
     private static SNode _quotation_createNode_3ist9o_a0b0a1() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
-
     private static SNode _quotation_createNode_3ist9o_a0a1b() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
@@ -92,7 +86,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       return quotedNode_1;
     }
   }
-
   public static class CustomOverloadedOperationsTypesProvider_a extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_a(String conceptFQ) {
       this.myLeftOperandType = _quotation_createNode_3ist9o_a0a0a2();
@@ -105,30 +98,25 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleModelId = "r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)";
       this.myRuleNodeId = "5447719361346552314";
     }
-
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return _quotation_createNode_3ist9o_a0a1c();
     }
-
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
       producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
-
     private static SNode _quotation_createNode_3ist9o_a0a0a2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
-
     private static SNode _quotation_createNode_3ist9o_a0b0a2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyType", null, null, false);
       return quotedNode_1;
     }
-
     private static SNode _quotation_createNode_3ist9o_a0a1c() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;

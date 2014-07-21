@@ -9,5 +9,5 @@ public class CellMenuPart_Generic_Group_BehaviorDescriptor extends CellMenuPart_
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group";
-  };;
-;}
+  }
+}

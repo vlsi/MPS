@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(TypesystemActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.TypesystemActions_ActionGroup";
-
   public TypesystemActions_ActionGroup() {
     super("Type System", ID);
     this.setIsInternal(false);

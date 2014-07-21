@@ -22,7 +22,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_PatternReduction_MappingRule_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_PatternReduction_MappingRule_InferenceRule() {
   }
-
   public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode applicableConcept = PatternReduction_MappingRule_Behavior.call_getConcept_1805153994417064763(rule);
     if (SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "labelDeclaration", false), "sourceConcept", false) != null && (applicableConcept != null)) {
@@ -39,22 +38,18 @@ public class typeof_PatternReduction_MappingRule_InferenceRule extends AbstractI
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_xjg16h_a0b0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -62,7 +57,6 @@ public class typeof_PatternReduction_MappingRule_InferenceRule extends AbstractI
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_xjg16h_a0b0b0b_0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

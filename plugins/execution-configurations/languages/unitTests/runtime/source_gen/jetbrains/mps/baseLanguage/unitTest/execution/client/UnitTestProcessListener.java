@@ -13,11 +13,9 @@ public class UnitTestProcessListener extends ProcessAdapter {
   private final StringBuffer myBuffer = new StringBuffer();
   private final TestEventsDispatcher myDispatcher;
   private TestEvent myLastEvent;
-
   public UnitTestProcessListener(TestEventsDispatcher dispatcher) {
     myDispatcher = dispatcher;
   }
-
   private String getLine(String text) {
     text = text.replaceAll("\r\n", "\n");
     myBuffer.append(text);
@@ -31,7 +29,6 @@ public class UnitTestProcessListener extends ProcessAdapter {
       return null;
     }
   }
-
   private boolean isTerminatedEvent() {
     for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
       if (element.getClassName().equals(ProcessTerminatedListener.class.getName())) {
@@ -40,7 +37,6 @@ public class UnitTestProcessListener extends ProcessAdapter {
     }
     return false;
   }
-
   @Override
   public void onTextAvailable(ProcessEvent event, Key k) {
     if (this.isTerminatedEvent()) {

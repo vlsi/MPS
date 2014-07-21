@@ -31,7 +31,6 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_lhunxw_a(editorContext, node);
   }
-
   private EditorCell createCollection_lhunxw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lhunxw_a");
@@ -45,7 +44,6 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createConstant_lhunxw_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_lhunxw_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extend");
     editorCell.setCellId("Constant_lhunxw_a0");
@@ -55,7 +53,6 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_lhunxw_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("extended");
@@ -77,20 +74,16 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
     } else
     return editorCell;
   }
-
   public static class _Inline_lhunxw_a1a extends InlineCellProvider {
     public _Inline_lhunxw_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_lhunxw_a0b0(editorContext, node);
     }
-
     private EditorCell createProperty_lhunxw_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -110,7 +103,6 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
       return editorCell;
     }
   }
-
   private EditorCell createConstant_lhunxw_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_lhunxw_c0");
@@ -121,7 +113,6 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_lhunxw_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_lhunxw_d0");
@@ -132,7 +123,6 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_lhunxw_e0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new SimpleBuilderExtensionDeclaration_Editor.childListHandler_lhunxw_e0(node, "child", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -144,30 +134,25 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class childListHandler_lhunxw_e0 extends RefNodeListHandler {
     public childListHandler_lhunxw_e0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -181,7 +166,6 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
       }
     }
   }
-
   private EditorCell createRefNodeList_lhunxw_f0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new SimpleBuilderExtensionDeclaration_Editor.propertyListHandler_lhunxw_f0(node, "property", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -193,30 +177,25 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class propertyListHandler_lhunxw_f0 extends RefNodeListHandler {
     public propertyListHandler_lhunxw_f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -230,7 +209,6 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
       }
     }
   }
-
   private EditorCell createConstant_lhunxw_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_lhunxw_g0");

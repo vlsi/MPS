@@ -11,18 +11,14 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 
 public class StateUtil {
   public static final int normal = 0;
-
   public StateUtil() {
   }
-
   public static boolean isAvailable(final SModelReference modelReference) {
     return SModelRepository.getInstance().getModelDescriptor(modelReference) != null;
   }
-
   public static boolean isAvailable(SModuleReference moduleReference) {
     return ModuleRepositoryFacade.getInstance().getModule(moduleReference) != null;
   }
-
   public static boolean isAvailable(String path) {
     VirtualFile file = VirtualFileUtils.getVirtualFile(path);
     if (file == null || !(file.exists())) {
@@ -30,7 +26,6 @@ public class StateUtil {
     }
     return true;
   }
-
   public static int compare(boolean isOk1, boolean isOk2) {
     if (isOk1 && !(isOk2)) {
       return 1;
@@ -40,11 +35,9 @@ public class StateUtil {
     }
     return 0;
   }
-
   public static int compare(SModuleReference moduleRef1, SModuleReference moduleRef2) {
     return compare(isAvailable(moduleRef1), isAvailable(moduleRef2));
   }
-
   public static int compare(String path1, String path2) {
     return compare(isAvailable(path1), isAvailable(path2));
   }

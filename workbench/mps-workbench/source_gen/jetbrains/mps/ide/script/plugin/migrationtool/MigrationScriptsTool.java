@@ -32,26 +32,21 @@ import jetbrains.mps.ide.findusages.view.icons.IconManager;
 public class MigrationScriptsTool extends TabbedUsagesTool {
   private List<SNodeReference> myScripts;
   private List<MigrationScriptsView> myViews = new ArrayList<MigrationScriptsView>();
-
   public MigrationScriptsTool(Project project) {
     super(project, "Migration", -1, null, ToolWindowAnchor.BOTTOM, true);
   }
-
   @Override
   protected UsagesView getUsagesView(int index) {
     return myViews.get(index).getUsagesView();
   }
-
   @Override
   protected void onRemove(int index) {
     myViews.remove(index);
   }
-
   @Override
   protected boolean forceCloseOnReload() {
     return true;
   }
-
   public void startMigration(List<SNode> scriptNodes, final SearchScope scope, final IOperationContext context) {
     if (!(ThreadUtils.isEventDispatchThread())) {
       throw new IllegalStateException("Can't use this outside of EDT");
@@ -91,7 +86,6 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
       }
     });
   }
-
   /*package*/ void addTab(final MigrationScriptFinder finder, final IResultProvider provider, final SearchQuery query) {
     if (!(ThreadUtils.isEventDispatchThread())) {
       throw new IllegalStateException("Can't use this outside of EDT");
@@ -113,11 +107,9 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
       }
     });
   }
-
   public int getPriority() {
     return -1;
   }
-
   @Override
   public Project getProject() {
     return super.getProject();

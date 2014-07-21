@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_NodeTypeOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_NodeTypeOperation_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode node_TypeOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(!(RulesUtil.withinInferenceItem(node_TypeOperation)))) {
       MessageTarget errorTarget = new NodeMessageTarget();
@@ -26,18 +25,15 @@ public class check_NodeTypeOperation_NonTypesystemRule extends AbstractNonTypesy
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node_TypeOperation, "don't use typeOperation within such rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1135966777630207247", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -35,7 +35,6 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     public void sessionOpened(MakeNotification notification) {
       suspendReloads();
     }
-
     @Override
     public void sessionClosed(MakeNotification notification) {
       resumeReloads();
@@ -47,18 +46,14 @@ public class ReloadManagerComponent extends ReloadManager implements Application
   private Object myUpdateId = new Object();
   private AtomicInteger mySuspendCount = new AtomicInteger(0);
 
-
   public ReloadManagerComponent(ProjectManager projectManager) {
     this.myProjectManager = projectManager;
     myQueue.setRestartTimerOnAdd(true);
   }
 
-
-
   public void initComponent() {
     setInstance(this);
   }
-
   public void disposeComponent() {
     setInstance(null);
     if (myMakeService != null) {
@@ -66,13 +61,11 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       myMakeService = null;
     }
   }
-
   @NonNls
   @NotNull
   public String getComponentName() {
     return "Reload Manager";
   }
-
   public void setMakeService(IMakeService ms) {
     if (ms != null) {
       ms.addListener(myMakeListener);
@@ -83,13 +76,11 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     }
     myMakeService = ms;
   }
-
   public void suspendReloads() {
     int count = mySuspendCount.incrementAndGet();
     assert count >= 0;
     myQueue.suspend();
   }
-
   public void resumeReloads() {
     int count = mySuspendCount.decrementAndGet();
     assert count >= 0;
@@ -97,8 +88,6 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       myQueue.resume();
     }
   }
-
-
 
   @Override
   public <T extends ReloadParticipant> void runReload(Class<T> participantClass, ReloadAction<T> reloadAction) {
@@ -118,17 +107,14 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     }
     queueReloadSession();
   }
-
   @Override
   public void addReloadListener(ReloadListener listener) {
     ListSequence.fromList(myReloadListeners).addElement(listener);
   }
-
   @Override
   public void removeReloadListener(ReloadListener listener) {
     ListSequence.fromList(myReloadListeners).removeElement(listener);
   }
-
   @Override
   public <T> T computeNoReload(Computable<T> computable) {
     try {
@@ -138,7 +124,6 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       resumeReloads();
     }
   }
-
   @Override
   public void flush() {
     // synchronously commit all pending reload requests 
@@ -149,8 +134,6 @@ public class ReloadManagerComponent extends ReloadManager implements Application
     // Q: also do normal progressMonintor, as in real reload on timeout ? 
     session.doReload(new EmptyProgressMonitor());
   }
-
-
 
 
   private void queueReloadSession() {
@@ -191,10 +174,8 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       }
     });
   }
-
   private class ReloadSessionBroker {
     private ReloadSession myReloadSession;
-
     /*package*/ synchronized ReloadSession employ() {
       if (myReloadSession == null) {
         myReloadSession = new ReloadSession(myReloadListeners);
@@ -202,18 +183,15 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       myReloadSession.incEmployCount();
       return myReloadSession;
     }
-
     /*package*/ synchronized void dismiss(ReloadSession rs) {
       assert myReloadSession == rs;
       rs.decEmployCount();
       notify();
     }
-
     /*package*/ boolean hasUnemployed() {
       ReloadSession rs = myReloadSession;
       return rs != null && !(rs.isBeingEmployed());
     }
-
     /*package*/ synchronized ReloadSession getUnemployed() {
       if (myReloadSession == null || myReloadSession.isBeingEmployed()) {
         return null;
@@ -222,7 +200,6 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       myReloadSession = null;
       return rs;
     }
-
     /*package*/ synchronized ReloadSession waitForUnemployed() {
       if (myReloadSession == null) {
         return null;
@@ -239,6 +216,5 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       return rs;
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ReloadManagerComponent.class);
 }

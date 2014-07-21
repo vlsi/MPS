@@ -12,11 +12,9 @@ enum LayoutConstraints {
   PUNCTUATION_LAYOUT_CONSTRAINT(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_Layout_Constraints_Enum"), "punctuation")));
 
   private String myName;
-
   LayoutConstraints(String name) {
     myName = name;
   }
-
   public String getName() {
     return myName;
   }

@@ -25,22 +25,18 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class PatternMultipleOr_Test extends BaseTransformationTest {
   public PatternMultipleOr_Test() {
   }
-
   @Test
   public void testMethod() throws Throwable {
     this.initTest("${mps_home}", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.PatternMultipleOr_Test$TestBody", "testMultipleOr", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public TestBody() {
     }
-
     public void testMultipleOr() {
       TestCase.assertTrue(match());
     }
-
     public boolean match() {
       SNode nodeToMatch = _quotation_createNode_ay21uv_a0a0c2();
       GeneratedMatchingPattern pattern = new PatternMultipleOr_Test.TestBody.Pattern_ay21uv_a0a1a2c();
@@ -59,14 +55,11 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
       }
       return true;
     }
-
     public static class Pattern_ay21uv_a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
       /*package*/ SNode patternVar_s;
       private GeneratedMatchingPattern myOrPattern_qy0uft_a0a;
-
       public Pattern_ay21uv_a0a1a2c() {
       }
-
       public boolean match(SNode nodeToMatch) {
         {
           SNode nodeToMatch_qy0uft_a0 = nodeToMatch;
@@ -130,31 +123,25 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
         }
         return true;
       }
-
       public boolean hasAntiquotations() {
         return false;
       }
-
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
           patternVar_s = (SNode) pattern.getFieldValue("patternVar_s");
         }
       }
-
       public Object getFieldValue(String fieldName) {
         if ("patternVar_s".equals(fieldName)) {
           return patternVar_s;
         }
         return null;
       }
-
       public void performActions(Object o) {
       }
-
       public class Pattern_ay21uv_a0a0a2a1a1a1a1a1a1a1a0a0a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_ay21uv_a0a0a2a1a1a1a1a1a1a1a0a0a0a1a2c() {
         }
-
         public boolean match(SNode nodeToMatch) {
           {
             SNode nodeToMatch_qy0uft_a0a0a = nodeToMatch;
@@ -192,26 +179,20 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
           }
           return true;
         }
-
         public boolean hasAntiquotations() {
           return false;
         }
-
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         }
-
         public Object getFieldValue(String fieldName) {
           return null;
         }
-
         public void performActions(Object o) {
         }
       }
-
       public class Pattern_ay21uv_a0a0a3a1a1a1a1a1a1a1a0a0a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_ay21uv_a0a0a3a1a1a1a1a1a1a1a0a0a0a1a2c() {
         }
-
         public boolean match(SNode nodeToMatch) {
           {
             SNode nodeToMatch_qy0uft_a1a0a = nodeToMatch;
@@ -249,26 +230,20 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
           }
           return true;
         }
-
         public boolean hasAntiquotations() {
           return false;
         }
-
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         }
-
         public Object getFieldValue(String fieldName) {
           return null;
         }
-
         public void performActions(Object o) {
         }
       }
-
       public class Pattern_ay21uv_a0a0a4a1a1a1a1a1a1a1a0a0a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_ay21uv_a0a0a4a1a1a1a1a1a1a1a0a0a0a1a2c() {
         }
-
         public boolean match(SNode nodeToMatch) {
           {
             SNode nodeToMatch_qy0uft_a2a0a = nodeToMatch;
@@ -330,26 +305,20 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
           }
           return true;
         }
-
         public boolean hasAntiquotations() {
           return false;
         }
-
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         }
-
         public Object getFieldValue(String fieldName) {
           return null;
         }
-
         public void performActions(Object o) {
         }
       }
-
       public class Pattern_ay21uv_a0a0a5a1a1a1a1a1a1a1a0a0a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
         public Pattern_ay21uv_a0a0a5a1a1a1a1a1a1a1a0a0a0a1a2c() {
         }
-
         public boolean match(SNode nodeToMatch) {
           {
             SNode nodeToMatch_qy0uft_a3a0a = nodeToMatch;
@@ -411,23 +380,18 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
           }
           return true;
         }
-
         public boolean hasAntiquotations() {
           return false;
         }
-
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         }
-
         public Object getFieldValue(String fieldName) {
           return null;
         }
-
         public void performActions(Object o) {
         }
       }
     }
-
     private static SNode _quotation_createNode_ay21uv_a0a0c2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
@@ -463,7 +427,6 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
       quotedNode_1.addChild("ifTrue", quotedNode_3);
       return quotedNode_1;
     }
-
     private static SNode _quotation_createNode_ay21uv_a6a2c() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;

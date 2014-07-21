@@ -9,5 +9,5 @@ public class ReferenceRoleTarget_BehaviorDescriptor extends MessageTarget_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget";
-  };;
-;}
+  }
+}

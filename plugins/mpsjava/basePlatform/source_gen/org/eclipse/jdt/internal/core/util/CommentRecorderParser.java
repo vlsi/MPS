@@ -32,11 +32,9 @@ public class CommentRecorderParser extends Parser {
   /*package*/ int[] commentStarts = new int[10];
   /*package*/ int commentPtr = -1;
   protected static final int CommentIncrement = 100;
-
   public CommentRecorderParser(ProblemReporter problemReporter, boolean optimizeStringLiterals) {
     super(problemReporter, optimizeStringLiterals);
   }
-
   public void checkComment() {
     // discard obsolete comments while inside methods or fields initializer (see bug 74369) 
     if (!((this.diet && this.dietInt == 0)) && this.scanner.commentPtr >= 0) {
@@ -83,7 +81,6 @@ nextComment:
       }
     }
   }
-
   /**
    * @see org.eclipse.jdt.internal.compiler.parser.Parser#consumeClassHeader()
    */
@@ -91,7 +88,6 @@ nextComment:
     pushOnCommentsStack(0, this.scanner.commentPtr);
     super.consumeClassHeader();
   }
-
   /**
    * @see org.eclipse.jdt.internal.compiler.parser.Parser#consumeEmptyTypeDeclaration()
    */
@@ -99,7 +95,6 @@ nextComment:
     pushOnCommentsStack(0, this.scanner.commentPtr);
     super.consumeEmptyTypeDeclaration();
   }
-
   /**
    * @see org.eclipse.jdt.internal.compiler.parser.Parser#consumeInterfaceHeader()
    */
@@ -107,7 +102,6 @@ nextComment:
     pushOnCommentsStack(0, this.scanner.commentPtr);
     super.consumeInterfaceHeader();
   }
-
   /**
    * @see org.eclipse.jdt.internal.compiler.parser.Parser#endParse(int)
    */
@@ -119,7 +113,6 @@ nextComment:
     }
     return unit;
   }
-
   /**
    * Save all source comments currently stored before flushing them.
    * @see org.eclipse.jdt.internal.compiler.parser.Parser#flushCommentsDefinedPriorTo(int)
@@ -195,7 +188,6 @@ nextComment:
     this.scanner.commentPtr = validCount - 1;
     return position;
   }
-
   /**
    * Build a n*2 matrix of comments positions.
    * For each position, 0 is for start position and 1 for end position of the comment.
@@ -208,7 +200,6 @@ nextComment:
     }
     return positions;
   }
-
   /**
    * @see org.eclipse.jdt.internal.compiler.parser.Parser#initialize()
    */
@@ -216,7 +207,6 @@ nextComment:
     super.initialize(initializeNLS);
     this.commentPtr = -1;
   }
-
   /**
    * @see org.eclipse.jdt.internal.compiler.parser.Parser#initialize()
    */
@@ -224,7 +214,6 @@ nextComment:
     super.initialize();
     this.commentPtr = -1;
   }
-
   /**
    * Create and store a specific comment recorder scanner.
    * @see org.eclipse.jdt.internal.compiler.parser.Parser#initializeScanner()
@@ -239,7 +228,6 @@ nextComment:
     // taskCaseSensitive 
     this.scanner = new Scanner(false, false, this.options.getSeverity(CompilerOptions.NonExternalizedString) != ProblemSeverities.Ignore, this.options.sourceLevel, this.options.taskTags, this.options.taskPriorities, this.options.isTaskCaseSensitive);
   }
-
   /**
    * Push all stored comments in stack.
    */
@@ -259,7 +247,6 @@ nextComment:
       }
     }
   }
-
   /**
    * Save all source comments currently stored before flushing them.
    * this.scanner.commentPtr is expected *not* yet being reset before calling this method.

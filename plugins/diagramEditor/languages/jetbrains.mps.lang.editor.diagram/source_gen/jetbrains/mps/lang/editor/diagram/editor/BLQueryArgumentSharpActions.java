@@ -14,34 +14,26 @@ public class BLQueryArgumentSharpActions {
     editorCell.setAction(CellActionType.DELETE, new BLQueryArgumentSharpActions.BLQueryArgumentSharpActions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new BLQueryArgumentSharpActions.BLQueryArgumentSharpActions_BACKSPACE(node));
   }
-
   public static class BLQueryArgumentSharpActions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public BLQueryArgumentSharpActions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode abstractParameter = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument");
     }
   }
-
   public static class BLQueryArgumentSharpActions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public BLQueryArgumentSharpActions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode abstractParameter = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument");
     }

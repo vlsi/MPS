@@ -16,7 +16,6 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 public class TestCaseTreeNode extends BaseTestTreeNode {
   @NotNull
   protected final ITestNodeWrapper myTestCase;
-
   public TestCaseTreeNode(@NotNull IOperationContext operationContext, @NotNull ITestNodeWrapper testCase) {
     super(operationContext);
     myTestCase = testCase;
@@ -24,7 +23,6 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
     setText(SPropertyOperations.getString(SNodeOperations.cast(myTestCase.getNode(), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
     setAdditionalText(SModelStereotype.withoutStereotype(myTestCase.getNodePointer().getModelReference().getModelName()));
   }
-
   public String getClassName() {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -34,7 +32,6 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
     });
     return className.value;
   }
-
   @Override
   public void doubleClick() {
     ModelAccess.instance().runWriteAction(new Runnable() {
@@ -43,12 +40,10 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
       }
     });
   }
-
   @Override
   public int getToggleClickCount() {
     return -1;
   }
-
   @Override
   public Object getUserObject() {
     return myTestCase;

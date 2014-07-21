@@ -12,17 +12,14 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.Manage
 
 public class ManagerDescriptor extends VoidColumnDescriptor {
   private final IBindedDialog myOwner;
-
   public ManagerDescriptor(IBindedDialog owner, String name, String header, int width) {
     super(name, header, width);
     myOwner = owner;
   }
-
   @Override
   public TableCellEditor createEditor() {
     return new ManagerTableCellEditor();
   }
-
   @Override
   public TableCellRenderer createRenderer() {
     return new ListRendererAdapter(new ManagerRenderer());

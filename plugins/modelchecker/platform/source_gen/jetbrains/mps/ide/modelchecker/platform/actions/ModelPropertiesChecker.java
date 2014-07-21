@@ -16,7 +16,6 @@ import jetbrains.mps.util.NameUtil;
 public class ModelPropertiesChecker extends SpecificChecker {
   public ModelPropertiesChecker() {
   }
-
   @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, SRepository repository) {
     monitor.start("model properties", 1);

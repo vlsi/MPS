@@ -9,5 +9,5 @@ public class SimpleItemSubstitutePart_BehaviorDescriptor extends SubstituteMenuP
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart";
-  };;
-;}
+  }
+}

@@ -9,5 +9,5 @@ public class TableComponentStyleClassItem_BehaviorDescriptor extends StyleClassI
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem";
-  };;
-;}
+  }
+}

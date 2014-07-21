@@ -23,23 +23,19 @@ import org.apache.log4j.LogManager;
 
 public class FastFindNodeUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
-
   public FastFindNodeUsages_Action() {
     super("Find Usages", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
     this.setMnemonic("U".charAt(0));
   }
-
   @Override
   public boolean isDumbAware() {
     return false;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).isApplicable();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,7 +49,6 @@ public class FastFindNodeUsages_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -86,7 +81,6 @@ public class FastFindNodeUsages_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModel) MapSequence.fromMap(_params).get("model")));
@@ -96,6 +90,5 @@ public class FastFindNodeUsages_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(FastFindNodeUsages_Action.class);
 }

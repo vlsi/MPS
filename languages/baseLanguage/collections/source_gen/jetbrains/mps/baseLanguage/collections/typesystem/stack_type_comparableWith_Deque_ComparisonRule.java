@@ -16,25 +16,20 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
-
   public stack_type_comparableWith_Deque_ComparisonRule() {
   }
-
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     return true;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
       GeneratedMatchingPattern pattern = new stack_type_comparableWith_Deque_ComparisonRule.Pattern_2rsa22_a0a0a0a5();
@@ -43,21 +38,16 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public String getApplicableConceptFQName1() {
     return "jetbrains.mps.baseLanguage.collections.structure.StackType";
   }
-
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public static class Pattern_2rsa22_a0a0a0a5 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_ELEMENT_TYPE;
-
     public Pattern_2rsa22_a0a0a0a5() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_h34l93_a0a = nodeToMatch;
@@ -83,27 +73,22 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_ELEMENT_TYPE = (SNode) pattern.getFieldValue("patternVar_ELEMENT_TYPE");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_ELEMENT_TYPE".equals(fieldName)) {
         return patternVar_ELEMENT_TYPE;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNodePointer SNODE_POINTER_2rsa22_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Deque");
 }

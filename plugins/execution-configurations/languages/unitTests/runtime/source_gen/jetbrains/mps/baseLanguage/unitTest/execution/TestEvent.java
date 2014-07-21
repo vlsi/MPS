@@ -22,7 +22,6 @@ public class TestEvent {
   private final String myTestMethodName;
   private final long myMemoryUsage;
   private final long myTime;
-
   public TestEvent(String token, Description description) {
     myToken = token;
     myTestCaseName = description.getTestClass().getName();
@@ -31,7 +30,6 @@ public class TestEvent {
     myMemoryUsage = runtime.totalMemory() - runtime.freeMemory();
     myTime = System.currentTimeMillis();
   }
-
   public TestEvent(String token, String testCaseName, String testMethodName, long memoryUsage, long time) {
     myToken = token;
     myTestCaseName = testCaseName;
@@ -39,7 +37,6 @@ public class TestEvent {
     myMemoryUsage = memoryUsage;
     myTime = time;
   }
-
   @Override
   public String toString() {
     StringBuilder builder = new StringBuilder();
@@ -52,27 +49,21 @@ public class TestEvent {
     builder.append(":time=").append(this.myTime);
     return builder.toString();
   }
-
   public String getToken() {
     return this.myToken;
   }
-
   public String getTestCaseName() {
     return this.myTestCaseName;
   }
-
   public String getTestMethodName() {
     return this.myTestMethodName;
   }
-
   public long getMemoryUsage() {
     return this.myMemoryUsage;
   }
-
   public long getTime() {
     return this.myTime;
   }
-
   @Override
   public boolean equals(Object p0) {
     if (p0 == null || !(p0 instanceof TestEvent)) {
@@ -81,12 +72,10 @@ public class TestEvent {
     TestEvent event = (TestEvent) p0;
     return event.myToken.equals(this.myToken) && event.myTestCaseName.equals(this.myTestCaseName) && event.myTestMethodName.equals(this.myTestMethodName);
   }
-
   @Override
   public int hashCode() {
     return this.myToken.hashCode() + 10 * this.myTestCaseName.hashCode() + 10 * this.myTestMethodName.hashCode();
   }
-
   public static String getEventToken(String messageString) {
     String token = null;
     for (String expectedToken : TestEvent.ALL_TOKENS) {
@@ -97,7 +86,6 @@ public class TestEvent {
     }
     return token;
   }
-
   public static TestEvent parse(String messageString) {
     TestEvent testEvent = null;
     String expectedToken = getEventToken(messageString);
@@ -106,7 +94,6 @@ public class TestEvent {
     }
     return testEvent;
   }
-
   private static TestEvent parse(String expectedToken, String messageString) {
     TestEvent testEvent = null;
     if (messageString.startsWith(expectedToken)) {
@@ -121,7 +108,6 @@ public class TestEvent {
     }
     return testEvent;
   }
-
   static {
     TestEvent.ALL_TOKENS = ListSequence.fromListAndArray(new ArrayList<String>(), TestEvent.START_TEST_PREFIX, TestEvent.END_TEST_PREFIX, TestEvent.ERROR_TEST_PREFIX, TestEvent.ERROR_TEST_SUFFIX, TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX);
   }

@@ -7,21 +7,17 @@ import com.intellij.openapi.extensions.PluginId;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.generator.pluginSolution");
-
   public PluginSolution_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new AttachMappingLabel_Action());
     // groups 
     addGroup(new ShowAsIntentions_ActionGroup());
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
   }

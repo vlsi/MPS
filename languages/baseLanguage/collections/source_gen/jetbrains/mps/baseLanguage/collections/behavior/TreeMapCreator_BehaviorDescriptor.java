@@ -9,9 +9,9 @@ public class TreeMapCreator_BehaviorDescriptor extends HashMapCreator_BehaviorDe
   }
   public boolean virtual_hasInitSize_1262430001741497996(SConcept thisConcept) {
     return TreeMapCreator_Behavior.virtual_hasInitSize_1262430001741497996(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator";
-  };;
-;}
+  }
+}

@@ -14,26 +14,26 @@
   <root nodeRef="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)/3323419009397486857">
     <file name="IdeaDescriptorIOProvider.java">
       <node id="9081946191808729956" at="12,0,13,0" concept="6" trace="SOLUTION" />
-      <node id="9081946191808729946" at="18,66,19,20" concept="5" />
-      <node id="3323419009397486877" at="23,66,24,16" concept="5" />
-      <node id="3323419009397486884" at="28,62,29,16" concept="5" />
-      <node id="3323419009397486891" at="32,68,33,16" concept="5" />
-      <node id="3323419009397486859" at="14,0,16,0" concept="0" trace="IdeaDescriptorIOProvider#()V" />
-      <node id="3323419009397486886" at="32,0,35,0" concept="3" trace="generatorDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-      <node id="3323419009397486865" at="17,0,21,0" concept="3" trace="solutionDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-      <node id="3323419009397486872" at="22,0,26,0" concept="3" trace="languageDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-      <node id="3323419009397486879" at="27,0,31,0" concept="3" trace="devkitDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-      <scope id="3323419009397486862" at="14,42,14,42" />
-      <scope id="3323419009397486869" at="18,66,19,20" />
-      <scope id="3323419009397486876" at="23,66,24,16" />
-      <scope id="3323419009397486883" at="28,62,29,16" />
-      <scope id="3323419009397486890" at="32,68,33,16" />
-      <scope id="3323419009397486859" at="14,0,16,0" />
-      <scope id="3323419009397486886" at="32,0,35,0" />
-      <scope id="3323419009397486865" at="17,0,21,0" />
-      <scope id="3323419009397486872" at="22,0,26,0" />
-      <scope id="3323419009397486879" at="27,0,31,0" />
-      <unit id="3323419009397486857" at="11,0,36,0" name="jetbrains.mps.project.io.IdeaDescriptorIOProvider" />
+      <node id="9081946191808729946" at="16,66,17,20" concept="5" />
+      <node id="3323419009397486877" at="20,66,21,16" concept="5" />
+      <node id="3323419009397486884" at="24,62,25,16" concept="5" />
+      <node id="3323419009397486891" at="27,68,28,16" concept="5" />
+      <node id="3323419009397486859" at="13,0,15,0" concept="0" trace="IdeaDescriptorIOProvider#()V" />
+      <node id="3323419009397486886" at="27,0,30,0" concept="3" trace="generatorDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="3323419009397486865" at="15,0,19,0" concept="3" trace="solutionDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="3323419009397486872" at="19,0,23,0" concept="3" trace="languageDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="3323419009397486879" at="23,0,27,0" concept="3" trace="devkitDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <scope id="3323419009397486862" at="13,42,13,42" />
+      <scope id="3323419009397486869" at="16,66,17,20" />
+      <scope id="3323419009397486876" at="20,66,21,16" />
+      <scope id="3323419009397486883" at="24,62,25,16" />
+      <scope id="3323419009397486890" at="27,68,28,16" />
+      <scope id="3323419009397486859" at="13,0,15,0" />
+      <scope id="3323419009397486886" at="27,0,30,0" />
+      <scope id="3323419009397486865" at="15,0,19,0" />
+      <scope id="3323419009397486872" at="19,0,23,0" />
+      <scope id="3323419009397486879" at="23,0,27,0" />
+      <unit id="3323419009397486857" at="11,0,31,0" name="jetbrains.mps.project.io.IdeaDescriptorIOProvider" />
     </file>
   </root>
   <root nodeRef="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)/557142600900286111">
@@ -41,43 +41,43 @@
       <node id="557142600900532770" at="10,0,11,0" concept="6" trace="INSTANCE" />
       <node id="557142600900541528" at="11,0,12,0" concept="6" trace="STANDARD_FACTORY" />
       <node id="9081946191808734224" at="12,0,13,0" concept="6" trace="IDEA" />
-      <node id="5177508097213614246" at="17,76,18,41" concept="5" />
-      <node id="9081946191808734200" at="21,50,22,28" concept="5" />
-      <node id="9081946191808734214" at="25,46,26,16" concept="5" />
-      <node id="5177508097213614199" at="30,52,31,55" concept="5" />
-      <node id="5177508097213614205" at="32,59,33,55" concept="5" />
-      <node id="5177508097213614211" at="34,57,35,53" concept="5" />
-      <node id="5177508097213614235" at="36,39,37,51" concept="5" />
-      <node id="5177508097213614218" at="38,5,39,16" concept="5" />
-      <node id="557142600900560817" at="42,50,43,20" concept="5" />
-      <node id="557142600900286113" at="14,0,16,0" concept="0" trace="DescriptorIOFacade#()V" />
-      <node id="5177508097213611918" at="17,0,20,0" concept="3" trace="fromFileType#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/io/DescriptorIO;" />
-      <node id="9081946191808734194" at="21,0,24,0" concept="3" trace="standardProvider#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
-      <node id="9081946191808734202" at="25,0,28,0" concept="3" trace="ideaProvider#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
-      <node id="557142600900560812" at="42,0,45,0" concept="7" trace="getInstance#()Ljetbrains/mps/project/io/DescriptorIOFacade;" />
-      <node id="5177508097213611961" at="29,79,38,5" concept="2" />
-      <node id="5177508097213611953" at="29,0,41,0" concept="3" trace="fromExtension#(Ljava/lang/String;)Ljetbrains/mps/project/io/DescriptorIO;" />
-      <scope id="557142600900286116" at="14,32,14,32" />
-      <scope id="5177508097213611921" at="17,76,18,41" />
-      <scope id="9081946191808734199" at="21,50,22,28" />
-      <scope id="9081946191808734207" at="25,46,26,16" />
-      <scope id="5177508097213611963" at="30,52,31,55" />
-      <scope id="5177508097213611986" at="32,59,33,55" />
-      <scope id="5177508097213611993" at="34,57,35,53" />
-      <scope id="5177508097213614222" at="36,39,37,51" />
-      <scope id="557142600900560815" at="42,50,43,20" />
-      <scope id="557142600900286113" at="14,0,16,0" />
-      <scope id="5177508097213611918" at="17,0,20,0">
+      <node id="5177508097213614246" at="15,76,16,41" concept="5" />
+      <node id="9081946191808734200" at="18,50,19,28" concept="5" />
+      <node id="9081946191808734214" at="21,46,22,16" concept="5" />
+      <node id="5177508097213614199" at="25,52,26,55" concept="5" />
+      <node id="5177508097213614205" at="27,59,28,55" concept="5" />
+      <node id="5177508097213614211" at="29,57,30,53" concept="5" />
+      <node id="5177508097213614235" at="31,39,32,51" concept="5" />
+      <node id="5177508097213614218" at="33,5,34,16" concept="5" />
+      <node id="557142600900560817" at="36,50,37,20" concept="5" />
+      <node id="557142600900286113" at="13,0,15,0" concept="0" trace="DescriptorIOFacade#()V" />
+      <node id="5177508097213611918" at="15,0,18,0" concept="3" trace="fromFileType#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="9081946191808734194" at="18,0,21,0" concept="3" trace="standardProvider#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
+      <node id="9081946191808734202" at="21,0,24,0" concept="3" trace="ideaProvider#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
+      <node id="557142600900560812" at="36,0,39,0" concept="7" trace="getInstance#()Ljetbrains/mps/project/io/DescriptorIOFacade;" />
+      <node id="5177508097213611961" at="24,79,33,5" concept="2" />
+      <node id="5177508097213611953" at="24,0,36,0" concept="3" trace="fromExtension#(Ljava/lang/String;)Ljetbrains/mps/project/io/DescriptorIO;" />
+      <scope id="557142600900286116" at="13,32,13,32" />
+      <scope id="5177508097213611921" at="15,76,16,41" />
+      <scope id="9081946191808734199" at="18,50,19,28" />
+      <scope id="9081946191808734207" at="21,46,22,16" />
+      <scope id="5177508097213611963" at="25,52,26,55" />
+      <scope id="5177508097213611986" at="27,59,28,55" />
+      <scope id="5177508097213611993" at="29,57,30,53" />
+      <scope id="5177508097213614222" at="31,39,32,51" />
+      <scope id="557142600900560815" at="36,50,37,20" />
+      <scope id="557142600900286113" at="13,0,15,0" />
+      <scope id="5177508097213611918" at="15,0,18,0">
         <var name="file" id="5177508097213611928" />
       </scope>
-      <scope id="9081946191808734194" at="21,0,24,0" />
-      <scope id="9081946191808734202" at="25,0,28,0" />
-      <scope id="557142600900560812" at="42,0,45,0" />
-      <scope id="5177508097213611956" at="29,79,39,16" />
-      <scope id="5177508097213611953" at="29,0,41,0">
+      <scope id="9081946191808734194" at="18,0,21,0" />
+      <scope id="9081946191808734202" at="21,0,24,0" />
+      <scope id="557142600900560812" at="36,0,39,0" />
+      <scope id="5177508097213611956" at="24,79,34,16" />
+      <scope id="5177508097213611953" at="24,0,36,0">
         <var name="path" id="5177508097213611958" />
       </scope>
-      <unit id="557142600900286111" at="9,0,46,0" name="jetbrains.mps.project.io.DescriptorIOFacade" />
+      <unit id="557142600900286111" at="9,0,40,0" name="jetbrains.mps.project.io.DescriptorIOFacade" />
     </file>
   </root>
   <root nodeRef="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)/557142600900286148">
@@ -121,168 +121,168 @@
       <node id="557142600900559966" at="18,0,19,0" concept="6" trace="SOLUTION" />
       <node id="557142600900560061" at="19,0,20,0" concept="6" trace="LANGUAGE" />
       <node id="557142600900560763" at="20,0,21,0" concept="6" trace="DEVKIT" />
-      <node id="557142600900559962" at="26,66,27,20" concept="5" />
-      <node id="557142600900560057" at="31,66,32,20" concept="5" />
-      <node id="557142600900560759" at="36,62,37,18" concept="5" />
-      <node id="9081946191808723836" at="46,11,47,109" concept="5" />
-      <node id="4144315967010534361" at="48,40,49,57" concept="4" />
-      <node id="4144315967010534359" at="49,57,50,67" concept="1" />
-      <node id="4144315967010534368" at="50,67,51,18" concept="5" />
-      <node id="557142600900539602" at="56,64,57,104" concept="1" />
-      <node id="557142600900560342" at="61,86,62,48" concept="9" />
-      <node id="557142600900560347" at="66,78,67,48" concept="9" />
-      <node id="9081946191808723851" at="77,11,78,109" concept="5" />
-      <node id="4144315967010534371" at="79,40,80,57" concept="4" />
-      <node id="4144315967010534376" at="80,57,81,67" concept="1" />
-      <node id="4144315967010534381" at="81,67,82,18" concept="5" />
-      <node id="557142600900560044" at="87,64,88,104" concept="1" />
-      <node id="557142600900560368" at="92,86,93,48" concept="9" />
-      <node id="557142600900560371" at="97,78,98,48" concept="9" />
-      <node id="9081946191808723869" at="108,11,109,70" concept="5" />
-      <node id="4144315967010535620" at="110,40,111,53" concept="4" />
-      <node id="4144315967010535625" at="111,53,112,67" concept="1" />
-      <node id="4144315967010535630" at="112,67,113,18" concept="5" />
-      <node id="557142600900560621" at="118,62,119,65" concept="1" />
-      <node id="557142600900560630" at="123,76,124,48" concept="9" />
-      <node id="557142600900560635" at="128,83,129,48" concept="9" />
-      <node id="557142600900560790" at="22,0,24,0" concept="0" trace="StandardDescriptorIOProvider#()V" />
-      <node id="557142600900539551" at="41,0,43,0" concept="0" trace="SolutionDescriptorIO#()V" />
-      <node id="557142600900560019" at="72,0,74,0" concept="0" trace="LanguageDescriptorIO#()V" />
-      <node id="557142600900560578" at="103,0,105,0" concept="0" trace="DevkitDescriptorIO#()V" />
-      <node id="557142600900539576" at="25,0,29,0" concept="3" trace="solutionDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-      <node id="557142600900559994" at="30,0,34,0" concept="3" trace="languageDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-      <node id="557142600900560001" at="35,0,39,0" concept="3" trace="devkitDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-      <node id="557142600900539590" at="55,0,59,0" concept="3" trace="writeToFile#(Ljetbrains/mps/project/structure/modules/SolutionDescriptor;Ljetbrains/mps/vfs/IFile;)V" />
-      <node id="557142600900560332" at="60,0,64,0" concept="3" trace="writeToXml#(Ljetbrains/mps/project/structure/modules/SolutionDescriptor;Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
-      <node id="557142600900560324" at="65,0,69,0" concept="3" trace="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
-      <node id="557142600900560032" at="86,0,90,0" concept="3" trace="writeToFile#(Ljetbrains/mps/project/structure/modules/LanguageDescriptor;Ljetbrains/mps/vfs/IFile;)V" />
-      <node id="557142600900560358" at="91,0,95,0" concept="3" trace="writeToXml#(Ljetbrains/mps/project/structure/modules/LanguageDescriptor;Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
-      <node id="557142600900560350" at="96,0,100,0" concept="3" trace="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/LanguageDescriptor;" />
-      <node id="557142600900560591" at="117,0,121,0" concept="3" trace="writeToFile#(Ljetbrains/mps/project/structure/modules/DevkitDescriptor;Ljetbrains/mps/vfs/IFile;)V" />
-      <node id="557142600900560599" at="122,0,126,0" concept="3" trace="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/DevkitDescriptor;" />
-      <node id="557142600900560607" at="127,0,131,0" concept="3" trace="writeToXml#(Ljetbrains/mps/project/structure/modules/DevkitDescriptor;Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
-      <node id="9081946191808723813" at="45,85,52,7" concept="10" />
-      <node id="9081946191808723837" at="76,85,83,7" concept="10" />
-      <node id="9081946191808723855" at="107,83,114,7" concept="10" />
-      <node id="557142600900539584" at="44,0,54,0" concept="3" trace="readFromFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
-      <node id="557142600900560026" at="75,0,85,0" concept="3" trace="readFromFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/LanguageDescriptor;" />
-      <node id="557142600900560585" at="106,0,116,0" concept="3" trace="readFromFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/DevkitDescriptor;" />
-      <scope id="557142600900560792" at="22,46,22,46" />
-      <scope id="557142600900539554" at="41,35,41,35" />
-      <scope id="557142600900560022" at="72,35,72,35" />
-      <scope id="557142600900560581" at="103,33,103,33" />
-      <scope id="557142600900539580" at="26,66,27,20" />
-      <scope id="557142600900559998" at="31,66,32,20" />
-      <scope id="557142600900560005" at="36,62,37,18" />
-      <scope id="9081946191808723814" at="46,11,47,109" />
-      <scope id="557142600900539597" at="56,64,57,104" />
-      <scope id="557142600900560341" at="61,86,62,48" />
-      <scope id="557142600900560331" at="66,78,67,48" />
-      <scope id="9081946191808723838" at="77,11,78,109" />
-      <scope id="557142600900560039" at="87,64,88,104" />
-      <scope id="557142600900560367" at="92,86,93,48" />
-      <scope id="557142600900560357" at="97,78,98,48" />
-      <scope id="9081946191808723856" at="108,11,109,70" />
-      <scope id="557142600900560598" at="118,62,119,65" />
-      <scope id="557142600900560606" at="123,76,124,48" />
-      <scope id="557142600900560616" at="128,83,129,48" />
-      <scope id="557142600900560790" at="22,0,24,0" />
-      <scope id="557142600900539551" at="41,0,43,0" />
-      <scope id="557142600900560019" at="72,0,74,0" />
-      <scope id="557142600900560578" at="103,0,105,0" />
-      <scope id="9081946191808723816" at="48,0,51,18">
+      <node id="557142600900559962" at="24,66,25,20" concept="5" />
+      <node id="557142600900560057" at="28,66,29,20" concept="5" />
+      <node id="557142600900560759" at="32,62,33,18" concept="5" />
+      <node id="9081946191808723836" at="40,11,41,109" concept="5" />
+      <node id="4144315967010534361" at="42,40,43,57" concept="4" />
+      <node id="4144315967010534359" at="43,57,44,67" concept="1" />
+      <node id="4144315967010534368" at="44,67,45,18" concept="5" />
+      <node id="557142600900539602" at="49,64,50,104" concept="1" />
+      <node id="557142600900560342" at="53,86,54,48" concept="9" />
+      <node id="557142600900560347" at="57,78,58,48" concept="9" />
+      <node id="9081946191808723851" at="66,11,67,109" concept="5" />
+      <node id="4144315967010534371" at="68,40,69,57" concept="4" />
+      <node id="4144315967010534376" at="69,57,70,67" concept="1" />
+      <node id="4144315967010534381" at="70,67,71,18" concept="5" />
+      <node id="557142600900560044" at="75,64,76,104" concept="1" />
+      <node id="557142600900560368" at="79,86,80,48" concept="9" />
+      <node id="557142600900560371" at="83,78,84,48" concept="9" />
+      <node id="9081946191808723869" at="92,11,93,70" concept="5" />
+      <node id="4144315967010535620" at="94,40,95,53" concept="4" />
+      <node id="4144315967010535625" at="95,53,96,67" concept="1" />
+      <node id="4144315967010535630" at="96,67,97,18" concept="5" />
+      <node id="557142600900560621" at="101,62,102,65" concept="1" />
+      <node id="557142600900560630" at="105,76,106,48" concept="9" />
+      <node id="557142600900560635" at="109,83,110,48" concept="9" />
+      <node id="557142600900560790" at="21,0,23,0" concept="0" trace="StandardDescriptorIOProvider#()V" />
+      <node id="557142600900539551" at="36,0,38,0" concept="0" trace="SolutionDescriptorIO#()V" />
+      <node id="557142600900560019" at="62,0,64,0" concept="0" trace="LanguageDescriptorIO#()V" />
+      <node id="557142600900560578" at="88,0,90,0" concept="0" trace="DevkitDescriptorIO#()V" />
+      <node id="557142600900539576" at="23,0,27,0" concept="3" trace="solutionDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="557142600900559994" at="27,0,31,0" concept="3" trace="languageDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="557142600900560001" at="31,0,35,0" concept="3" trace="devkitDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="557142600900539590" at="48,0,52,0" concept="3" trace="writeToFile#(Ljetbrains/mps/project/structure/modules/SolutionDescriptor;Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="557142600900560332" at="52,0,56,0" concept="3" trace="writeToXml#(Ljetbrains/mps/project/structure/modules/SolutionDescriptor;Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="557142600900560324" at="56,0,60,0" concept="3" trace="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
+      <node id="557142600900560032" at="74,0,78,0" concept="3" trace="writeToFile#(Ljetbrains/mps/project/structure/modules/LanguageDescriptor;Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="557142600900560358" at="78,0,82,0" concept="3" trace="writeToXml#(Ljetbrains/mps/project/structure/modules/LanguageDescriptor;Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="557142600900560350" at="82,0,86,0" concept="3" trace="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/LanguageDescriptor;" />
+      <node id="557142600900560591" at="100,0,104,0" concept="3" trace="writeToFile#(Ljetbrains/mps/project/structure/modules/DevkitDescriptor;Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="557142600900560599" at="104,0,108,0" concept="3" trace="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/DevkitDescriptor;" />
+      <node id="557142600900560607" at="108,0,112,0" concept="3" trace="writeToXml#(Ljetbrains/mps/project/structure/modules/DevkitDescriptor;Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="9081946191808723813" at="39,85,46,7" concept="10" />
+      <node id="9081946191808723837" at="65,85,72,7" concept="10" />
+      <node id="9081946191808723855" at="91,83,98,7" concept="10" />
+      <node id="557142600900539584" at="38,0,48,0" concept="3" trace="readFromFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
+      <node id="557142600900560026" at="64,0,74,0" concept="3" trace="readFromFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/LanguageDescriptor;" />
+      <node id="557142600900560585" at="90,0,100,0" concept="3" trace="readFromFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/DevkitDescriptor;" />
+      <scope id="557142600900560792" at="21,46,21,46" />
+      <scope id="557142600900539554" at="36,35,36,35" />
+      <scope id="557142600900560022" at="62,35,62,35" />
+      <scope id="557142600900560581" at="88,33,88,33" />
+      <scope id="557142600900539580" at="24,66,25,20" />
+      <scope id="557142600900559998" at="28,66,29,20" />
+      <scope id="557142600900560005" at="32,62,33,18" />
+      <scope id="9081946191808723814" at="40,11,41,109" />
+      <scope id="557142600900539597" at="49,64,50,104" />
+      <scope id="557142600900560341" at="53,86,54,48" />
+      <scope id="557142600900560331" at="57,78,58,48" />
+      <scope id="9081946191808723838" at="66,11,67,109" />
+      <scope id="557142600900560039" at="75,64,76,104" />
+      <scope id="557142600900560367" at="79,86,80,48" />
+      <scope id="557142600900560357" at="83,78,84,48" />
+      <scope id="9081946191808723856" at="92,11,93,70" />
+      <scope id="557142600900560598" at="101,62,102,65" />
+      <scope id="557142600900560606" at="105,76,106,48" />
+      <scope id="557142600900560616" at="109,83,110,48" />
+      <scope id="557142600900560790" at="21,0,23,0" />
+      <scope id="557142600900539551" at="36,0,38,0" />
+      <scope id="557142600900560019" at="62,0,64,0" />
+      <scope id="557142600900560578" at="88,0,90,0" />
+      <scope id="9081946191808723816" at="42,0,45,18">
         <var name="ex" id="9081946191808723817" />
       </scope>
-      <scope id="9081946191808723819" at="48,40,51,18">
+      <scope id="9081946191808723819" at="42,40,45,18">
         <var name="sd" id="4144315967010534362" />
       </scope>
-      <scope id="9081946191808723842" at="79,0,82,18">
+      <scope id="9081946191808723842" at="68,0,71,18">
         <var name="ex" id="9081946191808723843" />
       </scope>
-      <scope id="9081946191808723845" at="79,40,82,18">
+      <scope id="9081946191808723845" at="68,40,71,18">
         <var name="ld" id="4144315967010534372" />
       </scope>
-      <scope id="9081946191808723860" at="110,0,113,18">
+      <scope id="9081946191808723860" at="94,0,97,18">
         <var name="ex" id="9081946191808723861" />
       </scope>
-      <scope id="9081946191808723863" at="110,40,113,18">
+      <scope id="9081946191808723863" at="94,40,97,18">
         <var name="dd" id="4144315967010535621" />
       </scope>
-      <scope id="557142600900539576" at="25,0,29,0" />
-      <scope id="557142600900559994" at="30,0,34,0" />
-      <scope id="557142600900560001" at="35,0,39,0" />
-      <scope id="557142600900539590" at="55,0,59,0">
+      <scope id="557142600900539576" at="23,0,27,0" />
+      <scope id="557142600900559994" at="27,0,31,0" />
+      <scope id="557142600900560001" at="31,0,35,0" />
+      <scope id="557142600900539590" at="48,0,52,0">
         <var name="file" id="557142600900539595" />
         <var name="sd" id="557142600900539593" />
       </scope>
-      <scope id="557142600900560332" at="60,0,64,0">
+      <scope id="557142600900560332" at="52,0,56,0">
         <var name="anchorFile" id="557142600900560339" />
         <var name="element" id="557142600900560337" />
         <var name="sd" id="557142600900560335" />
       </scope>
-      <scope id="557142600900560324" at="65,0,69,0">
+      <scope id="557142600900560324" at="56,0,60,0">
         <var name="anchorFile" id="557142600900560327" />
         <var name="element" id="557142600900560325" />
       </scope>
-      <scope id="557142600900560032" at="86,0,90,0">
+      <scope id="557142600900560032" at="74,0,78,0">
         <var name="file" id="557142600900560037" />
         <var name="ld" id="557142600900560035" />
       </scope>
-      <scope id="557142600900560358" at="91,0,95,0">
+      <scope id="557142600900560358" at="78,0,82,0">
         <var name="anchorFile" id="557142600900560365" />
         <var name="element" id="557142600900560363" />
         <var name="ld" id="557142600900560361" />
       </scope>
-      <scope id="557142600900560350" at="96,0,100,0">
+      <scope id="557142600900560350" at="82,0,86,0">
         <var name="anchorFile" id="557142600900560353" />
         <var name="element" id="557142600900560351" />
       </scope>
-      <scope id="557142600900560591" at="117,0,121,0">
+      <scope id="557142600900560591" at="100,0,104,0">
         <var name="dd" id="557142600900560594" />
         <var name="file" id="557142600900560596" />
       </scope>
-      <scope id="557142600900560599" at="122,0,126,0">
+      <scope id="557142600900560599" at="104,0,108,0">
         <var name="anchorFile" id="557142600900560602" />
         <var name="element" id="557142600900560600" />
       </scope>
-      <scope id="557142600900560607" at="127,0,131,0">
+      <scope id="557142600900560607" at="108,0,112,0">
         <var name="anchorFile" id="557142600900560614" />
         <var name="element" id="557142600900560612" />
         <var name="t" id="557142600900560610" />
       </scope>
-      <scope id="557142600900539589" at="45,85,52,7" />
-      <scope id="557142600900560031" at="76,85,83,7" />
-      <scope id="557142600900560590" at="107,83,114,7" />
-      <scope id="557142600900539584" at="44,0,54,0">
+      <scope id="557142600900539589" at="39,85,46,7" />
+      <scope id="557142600900560031" at="65,85,72,7" />
+      <scope id="557142600900560590" at="91,83,98,7" />
+      <scope id="557142600900539584" at="38,0,48,0">
         <var name="file" id="557142600900539585" />
       </scope>
-      <scope id="557142600900560026" at="75,0,85,0">
+      <scope id="557142600900560026" at="64,0,74,0">
         <var name="file" id="557142600900560027" />
       </scope>
-      <scope id="557142600900560585" at="106,0,116,0">
+      <scope id="557142600900560585" at="90,0,100,0">
         <var name="file" id="557142600900560586" />
       </scope>
-      <unit id="557142600900539549" at="40,0,70,0" name="jetbrains.mps.project.io.StandardDescriptorIOProvider$SolutionDescriptorIO" />
-      <unit id="557142600900560017" at="71,0,101,0" name="jetbrains.mps.project.io.StandardDescriptorIOProvider$LanguageDescriptorIO" />
-      <unit id="557142600900560576" at="102,0,132,0" name="jetbrains.mps.project.io.StandardDescriptorIOProvider$DevkitDescriptorIO" />
-      <unit id="557142600900539533" at="17,0,133,0" name="jetbrains.mps.project.io.StandardDescriptorIOProvider" />
+      <unit id="557142600900539549" at="35,0,61,0" name="jetbrains.mps.project.io.StandardDescriptorIOProvider$SolutionDescriptorIO" />
+      <unit id="557142600900560017" at="61,0,87,0" name="jetbrains.mps.project.io.StandardDescriptorIOProvider$LanguageDescriptorIO" />
+      <unit id="557142600900560576" at="87,0,113,0" name="jetbrains.mps.project.io.StandardDescriptorIOProvider$DevkitDescriptorIO" />
+      <unit id="557142600900539533" at="17,0,114,0" name="jetbrains.mps.project.io.StandardDescriptorIOProvider" />
     </file>
   </root>
   <root nodeRef="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)/9081946191808704816">
     <file name="DescriptorIOException.java">
       <node id="9081946191808704825" at="7,49,8,17" concept="8" />
-      <node id="9081946191808704836" at="11,44,12,15" concept="8" />
+      <node id="9081946191808704836" at="10,44,11,15" concept="8" />
       <node id="9081946191808704818" at="7,0,10,0" concept="0" trace="DescriptorIOException#(Ljava/lang/Throwable;)V" />
-      <node id="9081946191808704830" at="11,0,14,0" concept="0" trace="DescriptorIOException#(Ljava/lang/String;)V" />
+      <node id="9081946191808704830" at="10,0,13,0" concept="0" trace="DescriptorIOException#(Ljava/lang/String;)V" />
       <scope id="9081946191808704821" at="7,49,8,17" />
-      <scope id="9081946191808704833" at="11,44,12,15" />
+      <scope id="9081946191808704833" at="10,44,11,15" />
       <scope id="9081946191808704818" at="7,0,10,0">
         <var name="cause" id="9081946191808704823" />
       </scope>
-      <scope id="9081946191808704830" at="11,0,14,0">
+      <scope id="9081946191808704830" at="10,0,13,0">
         <var name="msg" id="9081946191808704834" />
       </scope>
-      <unit id="9081946191808704816" at="6,0,15,0" name="jetbrains.mps.project.io.DescriptorIOException" />
+      <unit id="9081946191808704816" at="6,0,14,0" name="jetbrains.mps.project.io.DescriptorIOException" />
     </file>
   </root>
 </debug-info>

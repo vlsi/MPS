@@ -11,12 +11,12 @@ public class EnumerateChildrenFunction_BehaviorDescriptor extends ConceptFunctio
   }
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return EnumerateChildrenFunction_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  };;
-;  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+  }
+  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return EnumerateChildrenFunction_Behavior.virtual_showName_1262430001741498082(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.EnumerateChildrenFunction";
-  };;
-;}
+  }
+}

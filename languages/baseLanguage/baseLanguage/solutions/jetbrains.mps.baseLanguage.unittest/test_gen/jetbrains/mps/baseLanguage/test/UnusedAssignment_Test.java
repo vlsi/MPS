@@ -18,20 +18,17 @@ public class UnusedAssignment_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody", "test_UnusedAssignment", true);
   }
-
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624928924551() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624928924551", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_UnusedAssignment() throws Exception {
       this.addNodeById("1217271585694");
       NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444198388"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
     }
-
     public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624928924551() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624928924551"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228055")});

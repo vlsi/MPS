@@ -45,13 +45,10 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
   private final PluginReloader myPluginReloader;
   private RunConfigurationsStateManager.RunConfigurationsState myState = null;
 
-
   public RunConfigurationsStateManager(Project project, PluginReloader pluginReloader) {
     myProject = project;
     myPluginReloader = pluginReloader;
   }
-
-
 
   @Override
   public void afterPluginsLoaded() {
@@ -61,8 +58,6 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     initRunConfigurations();
   }
 
-
-
   @Override
   public void beforePluginsDisposed() {
     if (RuntimeFlags.isTestMode()) {
@@ -71,19 +66,13 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     disposeRunConfigurations();
   }
 
-
-
   @Override
   public void projectOpened() {
   }
 
-
-
   @Override
   public void projectClosed() {
   }
-
-
 
   public void initRunConfigurations() {
     if (myProject.isDisposed()) {
@@ -92,8 +81,6 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
 
     myState.restoreState();
   }
-
-
 
   /**
    * not saving state at dispose, because we do not have the valid classes at this time
@@ -105,8 +92,6 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     disposeRunContentDescriptors();
     clearAllRunConfigurations();
   }
-
-
 
   private void disposeRunContentDescriptors() {
     final List<RunContentDescriptor> descriptors = collectDescriptorsToDispose();
@@ -137,13 +122,9 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     }, ModalityState.NON_MODAL);
   }
 
-
-
   private void clearAllRunConfigurations() {
     getRunManager().clearAll();
   }
-
-
 
   private List<RunContentDescriptor> collectDescriptorsToDispose() {
     ExecutionManager executionManager = myProject.getComponent(ExecutionManager.class);
@@ -172,19 +153,13 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     return descriptors;
   }
 
-
-
   private RunManagerImpl getRunManager() {
     return (RunManagerImpl) RunManagerEx.getInstanceEx(myProject);
   }
 
-
-
   private ProjectRunConfigurationManager getSharedConfigurationManager() {
     return myProject.getComponent(ProjectRunConfigurationManager.class);
   }
-
-
 
   @NonNls
   @NotNull
@@ -193,8 +168,6 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     return "MPS Run Configs Manager";
   }
 
-
-
   @Override
   public void initComponent() {
     myState = new RunConfigurationsStateManager.RunConfigurationsState(getRunManager());
@@ -202,14 +175,10 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     myPluginReloader.addReloadingListener(this);
   }
 
-
-
   @Override
   public void disposeComponent() {
     myPluginReloader.removeReloadingListener(this);
   }
-
-
 
   public static ConfigurationType[] getConfigurationTypes() {
     ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
@@ -227,18 +196,13 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     return ListSequence.fromList(result).toGenericArray(ConfigurationType.class);
   }
 
-
-
   public static RunConfigurationsStateManager getInstance(Project project) {
     return project.getComponent(RunConfigurationsStateManager.class);
   }
 
-
-
   private class RunConfigurationsState {
     private Element myState;
     private Element mySharedState;
-
 
     public RunConfigurationsState(RunManagerEx runManager) {
       runManager.addRunManagerListener(new RunManagerAdapter() {
@@ -247,14 +211,10 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
           saveState();
         }
 
-
-
         @Override
         public void beforeRunTasksChanged() {
           saveState();
         }
-
-
 
         @Override
         public void runConfigurationChanged(@NotNull RunnerAndConfigurationSettings p0) {
@@ -262,8 +222,6 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
         }
       });
     }
-
-
 
     public void restoreState() {
       assert myState != null && mySharedState != null;
@@ -277,8 +235,6 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
         }
       }
     }
-
-
 
     public void saveState() {
       try {
@@ -296,6 +252,5 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RunConfigurationsStateManager.class);
 }

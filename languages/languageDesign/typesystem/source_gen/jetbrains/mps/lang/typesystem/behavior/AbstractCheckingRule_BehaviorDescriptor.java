@@ -9,5 +9,5 @@ public abstract class AbstractCheckingRule_BehaviorDescriptor extends AbstractRu
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule";
-  };;
-;}
+  }
+}

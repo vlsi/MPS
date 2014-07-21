@@ -26,7 +26,6 @@ public class ConstraintsChecker extends SpecificChecker {
   @Deprecated
   public ConstraintsChecker() {
   }
-
   @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, SRepository repository) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());

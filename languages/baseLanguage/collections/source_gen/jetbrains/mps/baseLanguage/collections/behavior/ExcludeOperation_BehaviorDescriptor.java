@@ -9,5 +9,5 @@ public class ExcludeOperation_BehaviorDescriptor extends BinaryOperation_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ExcludeOperation";
-  };;
-;}
+  }
+}

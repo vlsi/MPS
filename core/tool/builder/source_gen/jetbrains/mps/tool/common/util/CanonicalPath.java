@@ -10,12 +10,9 @@ import java.util.Stack;
 public class CanonicalPath {
   private final String canonicalPath;
 
-
   public CanonicalPath(@NonNls String path) {
     canonicalPath = convertToCanonical(path);
   }
-
-
 
   private static String convertToCanonical(@NonNls String path) {
     if (path == null || path.length() == 0) {
@@ -50,8 +47,6 @@ public class CanonicalPath {
     return result.toString();
   }
 
-
-
   public boolean isValidDirectory() {
     File file = new File(canonicalPath);
     if (file.exists() && file.isDirectory()) {
@@ -59,8 +54,6 @@ public class CanonicalPath {
     }
     return false;
   }
-
-
 
   public String getValue() {
     return canonicalPath;

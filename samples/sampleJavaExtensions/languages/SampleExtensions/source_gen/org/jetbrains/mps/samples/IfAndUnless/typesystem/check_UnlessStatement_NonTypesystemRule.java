@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_UnlessStatement_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_UnlessStatement_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode us, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(us, "body", true), "statement", true)).isEmpty()) {
       {
@@ -32,18 +31,15 @@ public class check_UnlessStatement_NonTypesystemRule extends AbstractNonTypesyst
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

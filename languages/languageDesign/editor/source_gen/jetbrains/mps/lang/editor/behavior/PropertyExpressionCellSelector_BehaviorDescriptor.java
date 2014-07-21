@@ -9,5 +9,5 @@ public class PropertyExpressionCellSelector_BehaviorDescriptor extends AbstractC
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector";
-  };;
-;}
+  }
+}

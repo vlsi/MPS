@@ -20,7 +20,6 @@ public class NF_Concept_NewInstance_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1fuglm_a(editorContext, node);
   }
-
   private EditorCell createCollection_1fuglm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1fuglm_a");
@@ -31,12 +30,10 @@ public class NF_Concept_NewInstance_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1fuglm_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_1fuglm_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp");
     return editorCell;
   }
-
   private EditorCell createConstant_1fuglm_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_1fuglm_b0");
@@ -46,7 +43,6 @@ public class NF_Concept_NewInstance_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1fuglm_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("prototype");
@@ -66,7 +62,6 @@ public class NF_Concept_NewInstance_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1fuglm_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_1fuglm_d0");

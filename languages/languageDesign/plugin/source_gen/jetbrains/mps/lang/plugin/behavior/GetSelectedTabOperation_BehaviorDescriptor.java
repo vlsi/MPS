@@ -9,5 +9,5 @@ public class GetSelectedTabOperation_BehaviorDescriptor extends TabbedToolOperat
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation";
-  };;
-;}
+  }
+}

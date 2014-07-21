@@ -9,5 +9,5 @@ public class CellModel_Empty_BehaviorDescriptor extends EditorCellModel_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_Empty";
-  };;
-;}
+  }
+}

@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class JUnitTestCaseActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(JUnitTestCaseActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.JUnitTestCaseActions_ActionGroup";
-
   public JUnitTestCaseActions_ActionGroup() {
     super("JUnitTestCaseActions", ID);
     this.setIsInternal(false);

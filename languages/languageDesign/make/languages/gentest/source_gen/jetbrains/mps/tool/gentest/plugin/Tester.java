@@ -19,12 +19,10 @@ import java.util.Collections;
 public class Tester implements ITestResource {
   private SModule module;
   private Iterable<String> testClasses;
-
   public Tester(SModule module, Iterable<String> testClasses) {
     this.module = module;
     this.testClasses = testClasses;
   }
-
   @Override
   public List<String> buildCommandLine() {
     List<String> cmdline = ListSequence.fromList(new ArrayList<String>());
@@ -46,20 +44,16 @@ public class Tester implements ITestResource {
     }
     return cmdline;
   }
-
   private String getResource(Class<?> cls) {
     return PathManager.getResourceRoot(cls, "/" + cls.getName().replace('.', '/') + ".class");
   }
-
   private Iterable<String> getModuleClasspath() {
     return (Set<String>) JavaModuleOperations.collectExecuteClasspath(Collections.<SModule>singleton(module));
   }
-
   @Override
   public String describe() {
     return "Testing " + module.getModuleName();
   }
-
   @Override
   public SModule getModule() {
     return module;

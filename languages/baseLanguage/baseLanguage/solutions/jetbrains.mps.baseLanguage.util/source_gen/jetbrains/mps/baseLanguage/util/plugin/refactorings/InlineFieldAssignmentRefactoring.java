@@ -9,12 +9,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class InlineFieldAssignmentRefactoring extends InlineFieldRefactoring {
   private SNode myVariable;
 
-
   public InlineFieldAssignmentRefactoring(SNode node) {
     this.myVariable = node;
 
   }
-
   @Override
   public SNode doRefactoring() {
     for (SNode reference : this.findAllReferences(this.myVariable)) {

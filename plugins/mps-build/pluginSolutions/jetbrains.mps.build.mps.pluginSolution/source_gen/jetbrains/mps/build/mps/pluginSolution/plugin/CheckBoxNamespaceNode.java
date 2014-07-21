@@ -7,11 +7,9 @@ public class CheckBoxNamespaceNode extends CheckBoxNode<NamespaceData> {
   public CheckBoxNamespaceNode(NamespaceData data) {
     super(data, false);
   }
-
   public String getName() {
     return this.myData.getText();
   }
-
   public void setName(String name) {
     this.myData.setText(name);
   }

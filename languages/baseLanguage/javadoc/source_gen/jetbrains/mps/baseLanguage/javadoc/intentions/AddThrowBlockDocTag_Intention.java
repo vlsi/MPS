@@ -16,68 +16,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddThrowBlockDocTag_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddThrowBlockDocTag_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment";
   }
-
   public String getPresentation() {
     return "AddThrowBlockDocTag";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.javadoc.intentions.AddThrowBlockDocTag_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.javadoc";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "6612597108006318457");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddThrowBlockDocTag_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add @throw Tag";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode addedNode = SNodeFactoryOperations.addNewChild(node, "throwsTag", "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag");
       BlockDocTagHelper.setFocus(editorContext, addedNode, "Error");
 
 
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddThrowBlockDocTag_Intention.this;
     }

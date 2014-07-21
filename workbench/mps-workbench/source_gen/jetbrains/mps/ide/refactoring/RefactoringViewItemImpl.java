@@ -48,16 +48,13 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
   private RefactoringContext myRefactoringContext = null;
   private JCheckBox myGenerateModelsCheckbox;
   private JCheckBox myIsLocalCheckbox;
-
   public RefactoringViewItemImpl(@NotNull RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
     myRefactoringContext = refactoringContext;
     init(refactoringViewAction, searchResults, hasModelsToGenerate, ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject()));
   }
-
   public RefactoringViewItemImpl(Project p, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
     init(refactoringViewAction, searchResults, hasModelsToGenerate, p);
   }
-
   private void init(RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate, final Project project) {
     myRefactoringViewAction = refactoringViewAction;
     mySearchResults = searchResults;
@@ -70,21 +67,17 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
       public void close() {
         RefactoringViewItemImpl.this.close();
       }
-
       @Override
       public String getCaption() {
         return "";
       }
-
       @Override
       public Icon getIcon() {
         return null;
       }
-
       @Override
       public void read(Element element, jetbrains.mps.project.Project p) {
       }
-
       @Override
       public void write(Element element, jetbrains.mps.project.Project p) {
       }
@@ -120,7 +113,6 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
     final FocusTraversalPolicy ftp = myPanel.getFocusTraversalPolicy();
     myPanel.setFocusTraversalPolicy(new RefactoringViewItemImpl.MyFocusTraversalPolicy(ftp));
   }
-
   private void addCheckboxes(boolean hasModelsToGenerate) {
     if (hasModelsToGenerate) {
       myGenerateModelsCheckbox = new JCheckBox("rebuild models");
@@ -134,19 +126,15 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
       myButtonsPanel.add(myIsLocalCheckbox);
     }
   }
-
   public JComponent getComponent() {
     return myPanel;
   }
-
   public JButton getOkButton() {
     return myDoRefactorButton;
   }
-
   public UsagesView getUsagesView() {
     return myUsagesView;
   }
-
   /*package*/ void initUsagesView() {
     // package 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -156,7 +144,6 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
       }
     });
   }
-
   private void doRefactor() {
     if (myRefactoringContext != null) {
       if (myRefactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
@@ -173,14 +160,11 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
     }
     myRefactoringViewAction.performAction(this);
   }
-
   @Override
   public abstract void close();
-
   public void dispose() {
     myUsagesView.dispose();
   }
-
   public void requestFocus() {
     SwingUtilities.invokeLater(new Runnable() {
       @Override
@@ -189,34 +173,27 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
       }
     });
   }
-
   private class MyFocusTraversalPolicy extends FocusTraversalPolicy {
     private final FocusTraversalPolicy myFtp;
-
     public MyFocusTraversalPolicy(FocusTraversalPolicy ftp) {
       myFtp = ftp;
     }
-
     @Override
     public Component getComponentAfter(Container aContainer, Component aComponent) {
       return myFtp.getComponentAfter(aContainer, aComponent);
     }
-
     @Override
     public Component getComponentBefore(Container aContainer, Component aComponent) {
       return myFtp.getComponentBefore(aContainer, aComponent);
     }
-
     @Override
     public Component getFirstComponent(Container aContainer) {
       return myFtp.getFirstComponent(aContainer);
     }
-
     @Override
     public Component getLastComponent(Container aContainer) {
       return myFtp.getLastComponent(aContainer);
     }
-
     @Override
     public Component getDefaultComponent(Container aContainer) {
       return myDoRefactorButton;

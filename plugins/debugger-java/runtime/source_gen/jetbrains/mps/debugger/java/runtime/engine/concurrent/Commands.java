@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public class Commands {
   public Commands() {
   }
-
   public static IManagerCommand fromClosure(final _FunctionTypes._void_P0_E0 command) {
     return new Commands.ManagerCommand() {
       @Override
@@ -16,25 +15,21 @@ public class Commands {
       }
     };
   }
-
   public static IManagerCommand fromClosure(final _FunctionTypes._void_P0_E0 command, final _FunctionTypes._void_P0_E0 cancel) {
     return new Commands.ManagerCommand() {
       @Override
       public void invoke() {
         command.invoke();
       }
-
       @Override
       public void cancel() {
         cancel();
       }
     };
   }
-
   public static abstract class ManagerCommand implements IManagerCommand {
     public ManagerCommand() {
     }
-
     @Override
     public void cancel() {
     }

@@ -14,34 +14,26 @@ public class ModelReference_Actions {
     editorCell.setAction(CellActionType.DELETE, new ModelReference_Actions.ModelReference_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new ModelReference_Actions.ModelReference_Actions_BACKSPACE(node));
   }
-
   public static class ModelReference_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ModelReference_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.deleteNode(node);
     }
   }
-
   public static class ModelReference_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ModelReference_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.deleteNode(node);
     }

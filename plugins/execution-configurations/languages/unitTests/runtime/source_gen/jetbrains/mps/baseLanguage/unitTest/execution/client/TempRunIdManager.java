@@ -8,11 +8,8 @@ import java.util.HashSet;
 public class TempRunIdManager {
   private static TempRunIdManager ourInstance;
   private Set<Integer> myTestRunIdLocks = new HashSet<Integer>();
-
   private TempRunIdManager() {
   }
-
-
 
   public synchronized int acquireId() {
     int size = myTestRunIdLocks.size();
@@ -26,13 +23,9 @@ public class TempRunIdManager {
     return answer;
   }
 
-
-
   public synchronized void releaseId(int id) {
     myTestRunIdLocks.remove(id);
   }
-
-
 
   public static synchronized TempRunIdManager getInstance() {
     if (ourInstance == null) {

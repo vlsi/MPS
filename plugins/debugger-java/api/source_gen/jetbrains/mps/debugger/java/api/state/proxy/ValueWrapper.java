@@ -18,12 +18,10 @@ import com.sun.jdi.VirtualMachine;
 
 public abstract class ValueWrapper<V extends IValueProxy> extends JavaValue<V> implements IValue {
   private final String myPresentation;
-
   public ValueWrapper(@NotNull V value, @NotNull ThreadReference threadReference) {
     super(value, threadReference);
     myPresentation = myValue.getPresentation();
   }
-
   @Override
   public Icon getPresentationIcon() {
     if (myValue instanceof INullValueProxy) {
@@ -37,12 +35,10 @@ public abstract class ValueWrapper<V extends IValueProxy> extends JavaValue<V> i
     }
     return Icons.VALUE_OBJECT;
   }
-
   @Override
   public String getValuePresentation() {
     return myPresentation;
   }
-
   @Override
   public List<IWatchable> calculateSubvalues() {
     List<IWatchable> result = new ArrayList<IWatchable>();
@@ -51,18 +47,14 @@ public abstract class ValueWrapper<V extends IValueProxy> extends JavaValue<V> i
     }
     return result;
   }
-
   protected abstract List<? extends IWatchable> getSubvaluesImpl();
-
   @Override
   public boolean isStructure() {
     return true;
   }
-
   public ThreadReference getThreadReference() {
     return myThreadReference;
   }
-
   public VirtualMachine getVM() {
     return myValue.getJDIValue().virtualMachine();
   }

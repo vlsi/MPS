@@ -9,5 +9,5 @@ public class InsertAfterPosition_BehaviorDescriptor extends InsertPosition_Behav
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.InsertAfterPosition";
-  };;
-;}
+  }
+}

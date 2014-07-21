@@ -10,5 +10,5 @@ public class ConceptRightTransformPart_BehaviorDescriptor extends BaseConcept_Be
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart";
-  };;
-;}
+  }
+}

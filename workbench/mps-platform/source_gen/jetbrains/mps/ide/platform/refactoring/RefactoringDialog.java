@@ -16,16 +16,13 @@ import java.awt.event.ActionEvent;
 public abstract class RefactoringDialog extends DialogWrapper {
   protected Action myRefactorAction;
   protected final Project myProject;
-
   public RefactoringDialog(@NotNull Project project, boolean canBeParent) {
     super(project, canBeParent);
     myProject = project;
   }
-
   protected final Action getRefactorAction() {
     return myRefactorAction;
   }
-
   @Override
   @NotNull
   protected Action[] createActions() {
@@ -34,13 +31,11 @@ public abstract class RefactoringDialog extends DialogWrapper {
     ListSequence.fromList(actions).addElement(getCancelAction());
     return ListSequence.fromList(actions).toGenericArray(Action.class);
   }
-
   @Override
   protected void createDefaultActions() {
     super.createDefaultActions();
     myRefactorAction = new RefactoringDialog.RefactorAction();
   }
-
   /**
    * This method will be called on pressing "Refactor" button in dialog.
    * 
@@ -48,19 +43,16 @@ public abstract class RefactoringDialog extends DialogWrapper {
   protected void doRefactoringAction() {
     close(OK_EXIT_CODE);
   }
-
   private class RefactorAction extends AbstractAction {
     public RefactorAction() {
       putValue(NAME, RefactoringBundle.message("refactor.button"));
       putValue(DialogWrapper.DEFAULT_ACTION, Boolean.TRUE);
     }
-
     @Override
     public void actionPerformed(ActionEvent event) {
       doRefactoringAction();
     }
   }
-
   public Project getProject() {
     return myProject;
   }

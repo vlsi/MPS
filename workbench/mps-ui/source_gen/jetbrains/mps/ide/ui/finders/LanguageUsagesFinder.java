@@ -35,10 +35,8 @@ public class LanguageUsagesFinder implements IFinder {
   private static final String MODELS_WRITTEN_IN_LANGUAGE = "models written in language";
   private static final String NODES_IN_LANGUAGE = "nodes written in language";
 
-
   public LanguageUsagesFinder() {
   }
-
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
@@ -82,7 +80,6 @@ public class LanguageUsagesFinder implements IFinder {
     }
     return searchResults;
   }
-
   private void collectUsagesInSolution(Language searchedLanguage, Solution solution, SearchResults searchResults) {
     if (getDeclaredDependenciesTargets(solution).contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Solution>(solution, DEPENDENT_MODULES));
@@ -92,7 +89,6 @@ public class LanguageUsagesFinder implements IFinder {
       collectUsagesInModels(searchedLanguage, solution, searchResults);
     }
   }
-
   private void collectUsagesInLanguage(Language searchedLanguage, Language language, SearchResults searchResults) {
     if (language.getExtendedLanguageRefs().contains(searchedLanguage.getModuleReference())) {
       searchResults.getSearchResults().add(new SearchResult<Language>(language, EXTENDING_LANGUAGES));
@@ -105,7 +101,6 @@ public class LanguageUsagesFinder implements IFinder {
       searchResults.getSearchResults().add(new SearchResult<Language>(language, DEPENDENT_MODULES));
     }
   }
-
   private void collectUsagesInDevKit(Language searchedLanguage, DevKit devKit, SearchResults searchResults) {
     if (devKit.getExportedLanguages().contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, EXPORTED_BY));
@@ -114,7 +109,6 @@ public class LanguageUsagesFinder implements IFinder {
       searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, DEPENDENT_MODULES));
     }
   }
-
   private void collectUsagesInModels(Language searchedLanguage, SModule owner, SearchResults searchResults) {
     for (SModel modelDescriptor : owner.getModels()) {
       if (!(SModelStereotype.isUserModel(modelDescriptor))) {
@@ -126,7 +120,6 @@ public class LanguageUsagesFinder implements IFinder {
       }
     }
   }
-
   private void collectUsagesInModel(Language searchedLanguage, SModel modelDescriptor, SearchResults searchResults) {
     if (!(SModelStereotype.isUserModel(modelDescriptor))) {
       return;
@@ -137,7 +130,6 @@ public class LanguageUsagesFinder implements IFinder {
       }
     }
   }
-
   private static Set<SModule> getDeclaredDependenciesTargets(SModule module) {
     Set<SModule> result = new HashSet<SModule>();
     for (SDependency dep : module.getDeclaredDependencies()) {
@@ -145,11 +137,9 @@ public class LanguageUsagesFinder implements IFinder {
     }
     return result;
   }
-
   private static <T> T as_m2sz3c_a0a0a0j0i(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_m2sz3c_a0a0b0a9a8(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

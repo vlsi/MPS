@@ -31,12 +31,10 @@ public final class MacroHelper {
   private final Set<String> usedPrefixes = new HashSet<String>();
   private final SNode project;
   private final MacroHelper.MacroContext context;
-
   private MacroHelper(SNode project, MacroHelper.MacroContext context) {
     this.project = project;
     this.context = context;
   }
-
   public void init() {
     for (SNode m : SLinkOperations.getTargets(project, "macros", true)) {
       if (usedNames.contains(SPropertyOperations.getString(m, "name"))) {
@@ -77,7 +75,6 @@ public final class MacroHelper {
       }
     }
   }
-
   private void add(SNode macro, String importName, String exportName) {
     SNode macroProject = SNodeOperations.as(SNodeOperations.getContainingRoot(macro), "jetbrains.mps.build.structure.BuildProject");
     if (macroProject == null) {
@@ -95,7 +92,6 @@ public final class MacroHelper {
       exportNames.put(macro, exportName);
     }
   }
-
   private String makeUnique(String baseName, Set<String> usedNames) {
     String name = baseName;
     int i = 1;
@@ -104,11 +100,9 @@ public final class MacroHelper {
     }
     return name;
   }
-
   public Collection<SNode> getAvailableMacros() {
     return availableMacros;
   }
-
   public Iterable<SNode> getVarsContainers() {
     return ListSequence.fromList(SLinkOperations.getTargets(this.project, "dependencies", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -120,7 +114,6 @@ public final class MacroHelper {
       }
     });
   }
-
   public Iterable<SNode> getMacrosToExport() {
     return Sequence.fromIterable(((Iterable<SNode>) availableMacros)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -128,7 +121,6 @@ public final class MacroHelper {
       }
     });
   }
-
   public Iterable<SNode> getMacrosToImport() {
     return Sequence.fromIterable(((Iterable<SNode>) availableMacros)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -136,41 +128,32 @@ public final class MacroHelper {
       }
     });
   }
-
   public String getName(SNode macro) {
     return macroToName.get(context.getOriginalMacro(macro));
   }
-
   public String getExportName(SNode macro) {
     return exportNames.get(context.getOriginalMacro(macro));
   }
-
   public String getImportName(SNode macro) {
     return importNames.get(context.getOriginalMacro(macro));
   }
-
   public String getPrefix(SNode dep) {
     return depPrefixes.get(context.getOriginalDep(dep));
   }
-
   public String getProjectName() {
     return SPropertyOperations.getString(project, "name");
   }
-
   public void report(String message, SNode node) {
     context.reportProblem(message, node);
   }
-
   public static class MacroContext {
     private final Set<SNode> seenProjects = new HashSet<SNode>();
     private final TemplateQueryContext genContext;
     private final ConcurrentMap<SNode, MacroHelper> existingMacros;
-
     public MacroContext(SNode project, TemplateQueryContext genContext) {
       this.genContext = genContext;
       this.existingMacros = GenerationUtil.<SNode,MacroHelper>getSessionMap(project, genContext, "macroHelpers");
     }
-
     public MacroHelper getMacros(SNode dep) {
       dep = SNodeOperations.as(DependenciesHelper.getOriginalNode(dep, genContext), "jetbrains.mps.build.structure.BuildProject");
       if (dep == null) {
@@ -195,15 +178,12 @@ public final class MacroHelper {
         return null;
       }
     }
-
     public SNode getOriginalMacro(SNode macro) {
       return SNodeOperations.as(DependenciesHelper.getOriginalNode(macro, genContext), "jetbrains.mps.build.structure.BuildMacro");
     }
-
     public SNode getOriginalDep(SNode dep) {
       return SNodeOperations.as(DependenciesHelper.getOriginalNode(dep, genContext), "jetbrains.mps.build.structure.BuildProjectDependency");
     }
-
     public void reportProblem(String message, SNode node) {
       genContext.showErrorMessage(node, message);
     }

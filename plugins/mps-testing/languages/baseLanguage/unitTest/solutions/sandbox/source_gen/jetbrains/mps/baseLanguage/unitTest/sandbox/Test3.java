@@ -7,7 +7,6 @@ import junit.framework.Assert;
 public class Test3 extends AbstractTestClass {
   public Test3() {
   }
-
   public void testBlah() {
     System.out.println("Hi!");
     Assert.assertFalse(false);

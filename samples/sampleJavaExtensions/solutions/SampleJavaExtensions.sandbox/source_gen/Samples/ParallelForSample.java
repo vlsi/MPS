@@ -16,7 +16,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ParallelForSample {
   public ParallelForSample() {
   }
-
   public static void main(String[] args) {
     // Some thread pools to use 
     final ExecutorService myPool = Executors.newFixedThreadPool(3);
@@ -172,7 +171,6 @@ public class ParallelForSample {
     myPool.shutdown();
     youPool.shutdown();
   }
-
   private static void log(String message) {
     System.out.println("Logging: " + message);
   }

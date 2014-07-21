@@ -12,9 +12,9 @@ public class KeymapChangesDeclaration_BehaviorDescriptor extends BaseConcept_Beh
   }
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration";
-  };;
-;}
+  }
+}

@@ -22,19 +22,16 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope {
   private SNode myTopClassifier;
   private int myOriginalConstraint;
-
   @Deprecated
   public ClassifierAndSuperClassifiersScope(@Nullable SNode topClassifier, int constraint) {
     super(constraint ^ (constraint & (INSTANCE_METHOD | STATIC_METHOD | CONSTRUCTOR | INSTANCE_FIELD | STATIC_FIELD)));
     this.myTopClassifier = topClassifier;
     this.myOriginalConstraint = constraint;
   }
-
   @Deprecated
   public ClassifierAndSuperClassifiersScope(@Nullable SNode topClassifier) {
     this(topClassifier, ANYTHING);
   }
-
   @NotNull
   @Override
   public List<SNode> getClassifiers() {
@@ -43,7 +40,6 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     }
     return new ArrayList<SNode>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getClassifiers());
   }
-
   @NotNull
   public List<SNode> getMethods() {
     if (this.myTopClassifier == null) {
@@ -51,7 +47,6 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     }
     return new ArrayList<SNode>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getMethods());
   }
-
   @NotNull
   public List<SNode> getOverriddenMethods(SNode method) {
     if (this.myTopClassifier == null) {
@@ -59,14 +54,12 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     }
     return new ArrayList<SNode>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getOverriddenMethods(method));
   }
-
   public List<SNode> getMethodsByName(String methodName) {
     if (this.myTopClassifier == null) {
       return new ArrayList<SNode>();
     }
     return new ArrayList<SNode>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getMethodsByName(methodName));
   }
-
   @NotNull
   public List<SNode> getFields() {
     if (this.myTopClassifier == null) {
@@ -74,21 +67,18 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     }
     return new ArrayList<SNode>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getFields());
   }
-
   public SNode getFieldByName(String name) {
     if (this.myTopClassifier == null) {
       return null;
     }
     return ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getFieldByName(name);
   }
-
   public SNode getStaticFieldByName(String name) {
     if (this.myTopClassifier == null) {
       return null;
     }
     return ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getStaticFieldByName(name);
   }
-
   public SNode getEnumConstantByName(String name) {
     if (myTopClassifier == null) {
       return null;
@@ -103,7 +93,6 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     }
     return null;
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
@@ -155,7 +144,6 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     }
     return list;
   }
-
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {

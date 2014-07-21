@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_ForEachVariable_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ForEachVariable_InferenceRule() {
   }
-
   public void applyRule(final SNode variable, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     typeCheckingContext.addDependencyForCurrent(SNodeOperations.getParent(variable));
     final SNode FOO_typevar_751357332316905307 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -24,18 +23,15 @@ public class typeof_ForEachVariable_InferenceRule extends AbstractInferenceRule_
       typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(FOO_typevar_751357332316905307), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "751357332316905337", true), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

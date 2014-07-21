@@ -11,5 +11,5 @@ public class IntentionParameter_BehaviorDescriptor extends Expression_BehaviorDe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.intentions.structure.IntentionParameter";
-  };;
-;}
+  }
+}

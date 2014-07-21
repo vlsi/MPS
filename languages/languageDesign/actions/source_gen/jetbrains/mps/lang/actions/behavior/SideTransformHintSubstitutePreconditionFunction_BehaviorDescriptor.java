@@ -12,15 +12,15 @@ public class SideTransformHintSubstitutePreconditionFunction_BehaviorDescriptor 
   }
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return SideTransformHintSubstitutePreconditionFunction_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  };;
-;  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  }
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return SideTransformHintSubstitutePreconditionFunction_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  };;
-;  public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+  }
+  public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
     return SideTransformHintSubstitutePreconditionFunction_Behavior.virtual_usesParameterObject_1262430001741497984(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction";
-  };;
-;}
+  }
+}

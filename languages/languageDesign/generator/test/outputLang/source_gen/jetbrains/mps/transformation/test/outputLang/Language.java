@@ -18,25 +18,20 @@ import jetbrains.mps.transformation.test.outputLang.typesystem.TypesystemDescrip
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "157a9668-bf58-417b-893e-53d86388dc56(jetbrains.mps.transformation.test.outputLang)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.transformation.test.outputLang";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.lang.core", "jetbrains.mps.baseLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(new Generator(this));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

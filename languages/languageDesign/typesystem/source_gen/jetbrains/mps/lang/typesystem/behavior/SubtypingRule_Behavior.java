@@ -10,8 +10,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class SubtypingRule_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean call_surelyKeepsConcept_4214710807058415622(SNode thisNode) {
+  }
+  public static boolean call_surelyKeepsConcept_4214710807058415622(SNode thisNode) {
     SNode initialConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "applicableNode", true), "virtual_getApplicableConcept_1213877307633", new Object[]{});
     for (SNode returnStatement : SNodeOperations.getDescendants(SLinkOperations.getTarget(thisNode, "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})) {
       SNode expression = SLinkOperations.getTarget(returnStatement, "expression", true);
@@ -29,5 +29,5 @@ public class SubtypingRule_Behavior {
       }
     }
     return true;
-  };;
-;}
+  }
+}

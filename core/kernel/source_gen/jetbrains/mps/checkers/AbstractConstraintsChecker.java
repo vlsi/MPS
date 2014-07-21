@@ -8,6 +8,5 @@ import org.jetbrains.mps.openapi.module.SRepository;
 public abstract class AbstractConstraintsChecker {
   public AbstractConstraintsChecker() {
   }
-
   public abstract void checkNode(SNode node, LanguageErrorsComponent component, SRepository repository);
 }

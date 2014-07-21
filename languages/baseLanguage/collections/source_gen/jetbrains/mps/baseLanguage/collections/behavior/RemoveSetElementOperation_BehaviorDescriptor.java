@@ -9,5 +9,5 @@ public class RemoveSetElementOperation_BehaviorDescriptor extends AbstractSetOpe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation";
-  };;
-;}
+  }
+}

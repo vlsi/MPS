@@ -27,7 +27,6 @@ public class ResizeHandleView extends PolyLineView {
   public Property<Vector> centerLocation = new ValueProperty<Vector>(new Vector(0, 0));
   public Property<DragHandler> dragHandler = new ValueProperty<DragHandler>();
 
-
   private ResizeHandleView() {
     new Mapper<ResizeHandleView, ResizeHandleView>(this, this) {
       @Override
@@ -47,7 +46,6 @@ public class ResizeHandleView extends PolyLineView {
         }));
         configuration.add(Synchronizers.forProperty(dragHandler, new WritableProperty<DragHandler>() {
           private Registration myRegistration;
-
           public void set(DragHandler handler) {
             if (myRegistration != null) {
               myRegistration.remove();
@@ -60,17 +58,14 @@ public class ResizeHandleView extends PolyLineView {
       }
     }.attachRoot();
   }
-
   public ResizeHandleView(Vector location) {
     this();
     centerLocation.set(location);
   }
-
   @Override
   protected boolean contains(Vector vector) {
     return dragHandler.get() != null;
   }
-
   private ViewTrait getResizeHandlingTrait() {
     return new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
       public void handle(View view, MouseEvent event) {
@@ -87,7 +82,6 @@ public class ResizeHandleView extends PolyLineView {
       }
     }).build();
   }
-
   private void updateLocation(Vector location, int halfWidth) {
     points.clear();
     points.add(new Vector(location.x - halfWidth, location.y - halfWidth));

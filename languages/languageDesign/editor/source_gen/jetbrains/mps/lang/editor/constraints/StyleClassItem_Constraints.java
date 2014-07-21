@@ -18,12 +18,10 @@ public class StyleClassItem_Constraints extends BaseConstraintsDescriptor {
   public StyleClassItem_Constraints() {
     super("jetbrains.mps.lang.editor.structure.StyleClassItem");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -34,7 +32,6 @@ public class StyleClassItem_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.editor.structure.CellModel_Component")) {
       SNode testInstance = SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(childConcept), null), "jetbrains.mps.lang.editor.structure.StyleClassItem");
@@ -45,6 +42,5 @@ public class StyleClassItem_Constraints extends BaseConstraintsDescriptor {
     }
     return true;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1214304867262");
 }

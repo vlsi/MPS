@@ -10,9 +10,9 @@ public class ListElementAccessExpression_BehaviorDescriptor extends Expression_B
   }
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return ListElementAccessExpression_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression";
-  };;
-;}
+  }
+}

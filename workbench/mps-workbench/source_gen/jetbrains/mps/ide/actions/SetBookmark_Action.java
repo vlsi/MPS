@@ -19,19 +19,16 @@ import org.apache.log4j.LogManager;
 public class SetBookmark_Action extends BaseAction {
   private static final Icon ICON = null;
   private int num;
-
   public SetBookmark_Action(int num_par) {
     super("Set Bookmark", "", ICON);
     this.num = num_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setText("Set Bookmark " + SetBookmark_Action.this.num);
@@ -42,7 +39,6 @@ public class SetBookmark_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -57,7 +53,6 @@ public class SetBookmark_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).setBookmark(((SNode) MapSequence.fromMap(_params).get("node")), SetBookmark_Action.this.num);
@@ -67,7 +62,6 @@ public class SetBookmark_Action extends BaseAction {
       }
     }
   }
-
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
@@ -77,6 +71,5 @@ public class SetBookmark_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-
   protected static Logger LOG = LogManager.getLogger(SetBookmark_Action.class);
 }

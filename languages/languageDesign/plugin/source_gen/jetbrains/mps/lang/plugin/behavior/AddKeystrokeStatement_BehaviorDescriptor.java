@@ -10,5 +10,5 @@ public class AddKeystrokeStatement_BehaviorDescriptor extends Statement_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement";
-  };;
-;}
+  }
+}

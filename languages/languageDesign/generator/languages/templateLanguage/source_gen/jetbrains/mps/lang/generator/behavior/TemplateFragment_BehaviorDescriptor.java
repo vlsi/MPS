@@ -10,5 +10,5 @@ public class TemplateFragment_BehaviorDescriptor extends NodeAttribute_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.TemplateFragment";
-  };;
-;}
+  }
+}

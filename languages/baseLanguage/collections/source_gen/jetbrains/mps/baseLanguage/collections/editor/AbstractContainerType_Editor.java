@@ -30,7 +30,6 @@ public class AbstractContainerType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_v6pnhl_a(editorContext, node);
   }
-
   private EditorCell createCollection_v6pnhl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_v6pnhl_a");
@@ -41,7 +40,6 @@ public class AbstractContainerType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_v6pnhl_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_v6pnhl_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -52,19 +50,15 @@ public class AbstractContainerType_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractContainerType_Editor.AbstractContainerType_component_cellMenu_v6pnhl_a0a0()}));
     return editorCell;
   }
-
   public static class AbstractContainerType_component_cellMenu_v6pnhl_a0a0 implements SubstituteInfoPartExt {
     private replace_withAnotherSequenceType myComponent;
-
     public AbstractContainerType_component_cellMenu_v6pnhl_a0a0() {
       this.myComponent = new replace_withAnotherSequenceType();
     }
-
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
-
   private EditorCell createConstant_v6pnhl_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_v6pnhl_b0");
@@ -75,7 +69,6 @@ public class AbstractContainerType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_v6pnhl_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elementType");
@@ -98,7 +91,6 @@ public class AbstractContainerType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_v6pnhl_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_v6pnhl_d0");

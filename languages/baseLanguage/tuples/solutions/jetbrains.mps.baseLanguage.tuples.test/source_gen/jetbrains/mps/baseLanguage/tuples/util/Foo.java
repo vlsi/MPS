@@ -8,7 +8,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 public class Foo {
   public Foo() {
   }
-
   public static Tuples._2<String, Integer> getTuple() {
     return MultiTuple.<String,Integer>from("bar", 22);
   }

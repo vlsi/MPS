@@ -19,18 +19,15 @@ import org.apache.log4j.LogManager;
 
 public class AddModuleToProject_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public AddModuleToProject_Action() {
     super("Add to Project", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     for (SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("modules"))) {
       if (((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules().contains(module)) {
@@ -39,7 +36,6 @@ public class AddModuleToProject_Action extends BaseAction {
     }
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,7 +49,6 @@ public class AddModuleToProject_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -68,7 +63,6 @@ public class AddModuleToProject_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (SModule module : ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules")))) {
@@ -83,6 +77,5 @@ public class AddModuleToProject_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(AddModuleToProject_Action.class);
 }

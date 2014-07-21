@@ -23,7 +23,6 @@ public class AssertSame_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1px6hs_a(editorContext, node);
   }
-
   private EditorCell createCollection_1px6hs_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1px6hs_a");
@@ -36,7 +35,6 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1px6hs_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_1px6hs_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert");
     editorCell.setCellId("Constant_1px6hs_a0");
@@ -46,7 +44,6 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1px6hs_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expected");
@@ -66,7 +63,6 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1px6hs_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "==");
     editorCell.setCellId("Constant_1px6hs_c0");
@@ -77,7 +73,6 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_1px6hs_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("actual");
@@ -97,7 +92,6 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_1px6hs_e0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.unitTest.editor.MessageComponent");
     Style style = new StyleImpl();
@@ -105,7 +99,6 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_1px6hs_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_1px6hs_f0");

@@ -10,7 +10,6 @@ import com.intellij.openapi.extensions.PluginId;
 public class MakeFromChangesView_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(MakeFromChangesView_ActionGroup.class);
   public static final String ID = "jetbrains.mps.vcs.plugin.MakeFromChangesView_ActionGroup";
-
   public MakeFromChangesView_ActionGroup() {
     super("MakeFromChangesView", ID);
     this.setIsInternal(false);

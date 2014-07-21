@@ -10,5 +10,5 @@ public class KeyStrokeType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.KeyStrokeType";
-  };;
-;}
+  }
+}

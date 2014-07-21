@@ -44,41 +44,34 @@ public class SNodeOperations {
    * <code>myA.nodeB.nodeC.add(new NodeC)</code> used to pass silently even if nodeB was not set.
    */
   /*package*/ static final List<SNode> EMPTY_LIST = new EmptyList<SNode>("Attempt to add node to nonexistent parent or role. Node: %s");
-
   public SNodeOperations() {
   }
-
   public static SNode copyNode(SNode node) {
     if (node == null) {
       return null;
     }
     return CopyUtil.copy(node);
   }
-
   public static SNode getContainingRoot(SNode node) {
     if (node == null) {
       return null;
     }
     return node.getContainingRoot();
   }
-
   @Deprecated
   public static SNode getParent(SNode node, String parentConceptFqName, boolean inclusion, boolean root) {
     // use node.getParent() 
     return SNodeOperations.getAncestor(node, parentConceptFqName, inclusion, root);
   }
-
   public static SNode getParent(SNode node) {
     if (node == null) {
       return null;
     }
     return node.getParent();
   }
-
   public static SNode getAncestor(SNode node, String ancestorConceptFqName, boolean inclusion, boolean root) {
     return SNodeOperations.getAncestor(node, ancestorConceptFqName, inclusion, root, false);
   }
-
   public static SNode getAncestor(SNode node, String ancestorConceptFqName, boolean inclusion, boolean root, boolean sameMetaLevel) {
     if (node == null) {
       return null;
@@ -120,18 +113,15 @@ public class SNodeOperations {
     }
     return outputNode;
   }
-
   private static boolean nullSafeInstanceOf(SNode node, String conceptFQName) {
     if (conceptFQName == null) {
       return true;
     }
     return SNodeOperations._isInstanceOf(node, conceptFQName);
   }
-
   public static SNode getAncestorWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion, boolean root) {
     return SNodeOperations.getAncestorWhereConceptInList(node, ancestorConceptFqNames, inclusion, root, false);
   }
-
   public static SNode getAncestorWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion, boolean root, boolean sameMetaLevel) {
     if (node == null) {
       return null;
@@ -174,7 +164,6 @@ public class SNodeOperations {
     }
     return null;
   }
-
   public static List<SNode> getAncestors(SNode node, String ancestorConceptFqName, boolean inclusion) {
     if (node == null) {
       return EMPTY_LIST;
@@ -191,7 +180,6 @@ public class SNodeOperations {
     }
     return result;
   }
-
   public static List<SNode> getAncestorsWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion) {
     if (node == null) {
       return EMPTY_LIST;
@@ -208,14 +196,12 @@ public class SNodeOperations {
     }
     return result;
   }
-
   public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion) {
     if (node == null) {
       return EMPTY_LIST;
     }
     return IterableUtil.asList(SNodeUtil.getDescendants(node, (childConceptFqName == null ? null : new InstanceOfCondition(childConceptFqName)), inclusion));
   }
-
   public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion, final String[] stopConceptFqNames) {
     if (node == null) {
       return EMPTY_LIST;
@@ -230,14 +216,12 @@ public class SNodeOperations {
     }
     return descendantsAsList(node, inclusion, new InstanceOfCondition(childConceptFqName), new InstanceOfCondition(stopConceptFqNames));
   }
-
   public static List<SNode> getDescendantsWhereConceptInList(SNode node, final String[] descendantConceptFqNames, boolean inclusion) {
     if (node == null || descendantConceptFqNames.length == 0) {
       return EMPTY_LIST;
     }
     return IterableUtil.asList(SNodeUtil.getDescendants(node, new InstanceOfCondition(descendantConceptFqNames), inclusion));
   }
-
   public static List<SNode> getDescendantsWhereConceptInList(SNode node, final String[] descendantConceptFqNames, boolean inclusion, final String[] stopConceptFqNames) {
     if (node == null || descendantConceptFqNames.length == 0) {
       return EMPTY_LIST;
@@ -247,7 +231,6 @@ public class SNodeOperations {
     }
     return descendantsAsList(node, inclusion, new InstanceOfCondition(descendantConceptFqNames), new InstanceOfCondition(stopConceptFqNames));
   }
-
   private static List<SNode> descendantsAsList(SNode node, boolean inclusion, Condition<SNode> condition, Condition<SNode> stopCondition) {
     // can't use TreeFilterIterator as nodes that match both condition and stopCondition are proper return values 
     ArrayList<SNode> rv = new ArrayList<SNode>();
@@ -266,7 +249,6 @@ public class SNodeOperations {
     }
     return rv;
   }
-
   private static boolean _isInstanceOf(SNode node, String[] conceptFqNames) {
     for (String conceptFqName : conceptFqNames) {
       if (conceptFqName == null) {
@@ -278,21 +260,18 @@ public class SNodeOperations {
     }
     return false;
   }
-
   private static boolean _isInstanceOf(SNode node, String conceptFqName) {
     if (node == null) {
       return false;
     }
     return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getInstanceConcept(conceptFqName));
   }
-
   public static List<SNode> getChildren(SNode node) {
     if (node == null) {
       return EMPTY_LIST;
     }
     return jetbrains.mps.util.SNodeOperations.getChildren(node);
   }
-
   public static List<SNode> getChildren(SNode node, SNode linkDeclaration) {
     if (node == null || linkDeclaration == null) {
       return EMPTY_LIST;
@@ -300,14 +279,12 @@ public class SNodeOperations {
     linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
     return SLinkOperations.getTargets(node, SPropertyOperations.getString(linkDeclaration, "role"), true);
   }
-
   public static SModel getModel(SNode node) {
     if (node == null) {
       return null;
     }
     return node.getModel();
   }
-
   public static boolean isInstanceOf(SNode node, String conceptFQName) {
     if (node == null) {
       return false;
@@ -317,7 +294,6 @@ public class SNodeOperations {
     }
     return SNodeOperations._isInstanceOf(node, conceptFQName);
   }
-
   public static SNode getNextSibling(SNode node) {
     SNode p = node.getParent();
     if (p == null) {
@@ -334,7 +310,6 @@ public class SNodeOperations {
     }
     return null;
   }
-
   public static SNode getPrevSibling(SNode node) {
     SNode p = node.getParent();
     if (p == null) {
@@ -352,7 +327,6 @@ public class SNodeOperations {
     }
     return null;
   }
-
   public static List<SNode> getPrevSiblings(SNode node, boolean inclusion) {
     if (node == null) {
       return EMPTY_LIST;
@@ -375,7 +349,6 @@ public class SNodeOperations {
     }
     return result;
   }
-
   public static List<SNode> getNextSiblings(SNode node, boolean inclusion) {
     if (node == null) {
       return EMPTY_LIST;
@@ -401,7 +374,6 @@ public class SNodeOperations {
     }
     return result;
   }
-
   public static List<SNode> getAllSiblings(SNode node, boolean inclusion) {
     if (node == null) {
       return EMPTY_LIST;
@@ -424,7 +396,6 @@ public class SNodeOperations {
     }
     return result;
   }
-
   public static SNode insertNewNextSiblingChild(SNode node, String conceptFQName) {
     if (node == null || node.getParent() == null) {
       return null;
@@ -439,7 +410,6 @@ public class SNodeOperations {
     jetbrains.mps.util.SNodeOperations.insertChild(parent, role, newChild, node);
     return newChild;
   }
-
   public static SNode insertNewPrevSiblingChild(SNode node, String conceptFqName) {
     if (node == null) {
       return null;
@@ -457,7 +427,6 @@ public class SNodeOperations {
     parent.insertChildBefore(role, newChild, node);
     return newChild;
   }
-
   public static SNode insertNextSiblingChild(SNode node, SNode siblingNode) {
     if (node == null) {
       return null;
@@ -475,7 +444,6 @@ public class SNodeOperations {
     jetbrains.mps.util.SNodeOperations.insertChild(nodeParent, role, siblingNode, node);
     return siblingNode;
   }
-
   public static SNode insertPrevSiblingChild(SNode node, SNode siblingNode) {
     if (node == null) {
       return null;
@@ -493,7 +461,6 @@ public class SNodeOperations {
     nodeParent.insertChildBefore(role, siblingNode, node);
     return siblingNode;
   }
-
   public static SNode replaceWithNewChild(SNode oldChild, String conceptFqName) {
     assert oldChild != null : "can't replace node. node is NULL";
     SNode oldChildParent = oldChild.getParent();
@@ -509,7 +476,6 @@ public class SNodeOperations {
     SNodeOperations.copyAllAttributes(oldChild, newChild);
     return newChild;
   }
-
   private static void copyAllAttributes(SNode oldChild, SNode newChild) {
     for (SNode attribute : AttributeOperations.getAllAttributes(oldChild)) {
       if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute")) {
@@ -532,18 +498,15 @@ public class SNodeOperations {
       newChild.addChild(SNodeOperations.getContainingLinkRole(attribute), SNodeOperations.copyNode(attribute));
     }
   }
-
   public static SNode replaceWithAnother(SNode node, SNode anotherNode) {
     assert node != null : "can't replace node. node is NULL";
     return ((SNode) SNodeUtil.replaceWithAnother(node, anotherNode));
   }
-
   public static void deleteNode(SNode node) {
     if (node != null) {
       node.delete();
     }
   }
-
   public static SNode detachNode(SNode node) {
     if (node != null && node.getModel() != null) {
       SNode parent = node.getParent();
@@ -555,7 +518,6 @@ public class SNodeOperations {
     }
     return node;
   }
-
   public static boolean hasRole(SNode node, String conceptOfParentFqName, String role) {
     if (node == null || node.getParent() == null || conceptOfParentFqName == null || conceptOfParentFqName.length() == 0 || role == null || role.length() == 0) {
       return false;
@@ -572,11 +534,9 @@ public class SNodeOperations {
     }
     return role.equals(node.getRoleInParent());
   }
-
   public static SNode getConceptDeclaration(SNode node) {
     return (node == null ? null : SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName()));
   }
-
   public static int getIndexInParent(SNode node) {
     if (node == null || node.getParent() == null) {
       return -1;
@@ -587,19 +547,15 @@ public class SNodeOperations {
     }
     return IterableUtil.asList(node.getParent().getChildren(role)).indexOf(node);
   }
-
   public static List<SNode> getAllAttributes(SNode node) {
     return AttributeOperations.getAllAttributes(node);
   }
-
   public static boolean isAttribute(SNode node) {
     return AttributeOperations.isAttribute(node);
   }
-
   public static SNode getNode(String modelUID, String nodeID) {
     return new SNodePointer(modelUID, nodeID).resolve(MPSModuleRepository.getInstance());
   }
-
   /**
    * use ModelConstraints.getScope() and ModelConstraints.getReferenceDescriptor()
    */
@@ -617,7 +573,6 @@ public class SNodeOperations {
     }
     return new ScopeAdapter(scope);
   }
-
   public static SNode cast(SNode node, String castTo) {
     if (node == null) {
       return null;
@@ -632,14 +587,12 @@ public class SNodeOperations {
     }
     return node;
   }
-
   public static SNode as(SNode node, String castTo) {
     if (!(SNodeOperations.isInstanceOf(node, castTo))) {
       return null;
     }
     return node;
   }
-
   public static SNode castConcept(SNode node, String castTo) {
     if (node == null) {
       return null;
@@ -654,7 +607,6 @@ public class SNodeOperations {
     }
     return node;
   }
-
   public static SNode asConcept(SNode node, String castTo) {
     if (node == null) {
       return null;
@@ -664,7 +616,6 @@ public class SNodeOperations {
     }
     return node;
   }
-
   public static SNode getContainingLinkDeclaration(SNode childNode) {
     if (childNode == null) {
       return null;
@@ -676,21 +627,18 @@ public class SNodeOperations {
     SNode c = SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(childNode));
     return SModelSearchUtil.findLinkDeclaration(c, role);
   }
-
   public static String getContainingLinkRole(SNode childNode) {
     if (childNode == null) {
       return null;
     }
     return childNode.getRoleInParent();
   }
-
   public static List<SReference> getReferences(SNode node) {
     if (node == null) {
       return new EmptyList<SReference>("Attempt to add reference to unexistent parent. Reference: %s");
     }
     return IterableUtil.asList(node.getReferences());
   }
-
   public static SReference getReference(SNode node, SNode linkDeclaration) {
     if (node == null || linkDeclaration == null) {
       return null;
@@ -698,7 +646,6 @@ public class SNodeOperations {
     linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
     return node.getReference(SPropertyOperations.getString(linkDeclaration, "role"));
   }
-
   public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, String conceptName) {
     if (conceptName == null) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());

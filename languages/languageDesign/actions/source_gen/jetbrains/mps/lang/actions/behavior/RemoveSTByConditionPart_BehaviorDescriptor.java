@@ -10,5 +10,5 @@ public class RemoveSTByConditionPart_BehaviorDescriptor extends BaseConcept_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart";
-  };;
-;}
+  }
+}

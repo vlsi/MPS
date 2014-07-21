@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class TestCollector {
   public TestCollector() {
   }
-
   public boolean collectTests(SModel model, _FunctionTypes._void_P1_E0<? super _FunctionTypes._return_P0_E0<? extends SNode>> into) {
     boolean any = false;
     any |= new TestCollector.TestCaseCollector().collectTests(model, into);
@@ -35,11 +34,9 @@ public class TestCollector {
     any |= new TestCollector.JUnit4TestCollector().collectTests(model, into);
     return any;
   }
-
   public static class TestCaseCollector extends TestCollector {
     public TestCaseCollector() {
     }
-
     @Override
     public boolean collectTests(final SModel model, final _FunctionTypes._void_P1_E0<? super _FunctionTypes._return_P0_E0<? extends SNode>> into) {
       final Wrappers._boolean any = new Wrappers._boolean(false);
@@ -73,7 +70,6 @@ public class TestCollector {
       });
       return any.value;
     }
-
     private static SNode _quotation_createNode_rpw6il_a0a0a0a0c0b2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
@@ -82,11 +78,9 @@ public class TestCollector {
       return quotedNode_1;
     }
   }
-
   public static class JUnit4TestCollector extends TestCollector {
     public JUnit4TestCollector() {
     }
-
     @Override
     public boolean collectTests(final SModel model, final _FunctionTypes._void_P1_E0<? super _FunctionTypes._return_P0_E0<? extends SNode>> into) {
       final Wrappers._boolean any = new Wrappers._boolean(false);
@@ -129,7 +123,6 @@ public class TestCollector {
       });
       return any.value;
     }
-
     private static SNode _quotation_createNode_rpw6il_a0a0a0a0c0b3() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
@@ -137,7 +130,6 @@ public class TestCollector {
       quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Test")));
       return quotedNode_1;
     }
-
     private static SNode _quotation_createNode_rpw6il_a0a1a0a0c0b3() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
@@ -146,11 +138,9 @@ public class TestCollector {
       return quotedNode_1;
     }
   }
-
   public static class JUnit3TestCollector extends TestCollector {
     public JUnit3TestCollector() {
     }
-
     @Override
     public boolean collectTests(final SModel model, final _FunctionTypes._void_P1_E0<? super _FunctionTypes._return_P0_E0<? extends SNode>> into) {
       final Wrappers._boolean any = new Wrappers._boolean(false);
@@ -184,7 +174,6 @@ public class TestCollector {
       });
       return any.value;
     }
-
     private static SNode _quotation_createNode_rpw6il_a0a0a0a0c0b4() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
@@ -192,7 +181,6 @@ public class TestCollector {
       quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Ignore")));
       return quotedNode_1;
     }
-
     private static SNode _quotation_createNode_rpw6il_a0a0a0a0a0a0c0a0a2a1e() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;

@@ -10,5 +10,5 @@ public class SearchScopeType_BehaviorDescriptor extends Type_BehaviorDescriptor 
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.SearchScopeType";
-  };;
-;}
+  }
+}

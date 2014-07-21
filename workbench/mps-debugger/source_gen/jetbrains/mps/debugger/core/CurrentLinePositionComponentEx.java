@@ -40,27 +40,21 @@ public abstract class CurrentLinePositionComponentEx<S> {
   private final EditorComponentCreateListener myEditorComponentCreationHandler = new CurrentLinePositionComponentEx.MyEditorComponentCreateListener();
   private MessageBusConnection myMessageBusConnection;
   private final SRepositoryListener myRepositoryListener = new CurrentLinePositionComponentEx.MyRepositoryListener();
-
   public CurrentLinePositionComponentEx(Project project, FileEditorManager fileEditorManager) {
     myProject = project;
     myFileEditorManager = fileEditorManager;
   }
-
   protected void init() {
     myMessageBusConnection = myProject.getMessageBus().connect();
     myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, myEditorComponentCreationHandler);
     MPSModuleRepository.getInstance().addRepositoryListener(myRepositoryListener);
   }
-
   protected void dispose() {
     MPSModuleRepository.getInstance().removeRepositoryListener(myRepositoryListener);
     myMessageBusConnection.disconnect();
   }
-
   protected abstract S getCurrentSession();
-
   protected abstract Collection<? extends S> getAllSessions();
-
   private List<CurrentLinePainter> getAllPainters() {
     synchronized (mySessionToContextPainterMap) {
       List<CurrentLinePainter> painters = ListSequence.fromList(new ArrayList<CurrentLinePainter>());
@@ -68,7 +62,6 @@ public abstract class CurrentLinePositionComponentEx<S> {
       return painters;
     }
   }
-
   protected void attach(@NotNull final CurrentLinePainter painter, @NotNull final EditorComponent editorComponent) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -82,7 +75,6 @@ public abstract class CurrentLinePositionComponentEx<S> {
       }
     });
   }
-
   protected void detach(@NotNull final CurrentLinePainter painter, @NotNull final EditorComponent editorComponent) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -96,7 +88,6 @@ public abstract class CurrentLinePositionComponentEx<S> {
       }
     });
   }
-
   @Nullable
   protected Runnable attachPainterRunnable(final S debugSession, final boolean focus) {
     final CurrentLinePainter newPainter = ModelAccess.instance().runReadAction(new Computable<CurrentLinePainter>() {
@@ -140,9 +131,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
     }
     return null;
   }
-
   protected abstract SNode getNode(S session);
-
   @Nullable
   protected Runnable detachPainterRunnable(S session) {
     final CurrentLinePainter painter;
@@ -162,7 +151,6 @@ public abstract class CurrentLinePositionComponentEx<S> {
     }
     return null;
   }
-
   protected void detachPainter(S session) {
     Runnable detachPainterRunnable = detachPainterRunnable(session);
     if (detachPainterRunnable == null) {
@@ -170,7 +158,6 @@ public abstract class CurrentLinePositionComponentEx<S> {
     }
     ApplicationManager.getApplication().invokeLater(detachPainterRunnable);
   }
-
   protected void reAttachPainter(S session, boolean focus) {
     final Runnable detachSession = detachPainterRunnable(session);
     final Runnable attachSession = attachPainterRunnable(session, focus);
@@ -188,7 +175,6 @@ public abstract class CurrentLinePositionComponentEx<S> {
       });
     }
   }
-
   protected void currentSessionChanged(S newSession) {
     synchronized (mySessionToContextPainterMap) {
       for (S session : SetSequence.fromSet(MapSequence.fromMap(mySessionToContextPainterMap).keySet())) {
@@ -207,18 +193,15 @@ public abstract class CurrentLinePositionComponentEx<S> {
       }
     });
   }
-
   private class MyEditorComponentCreateListener implements EditorComponentCreateListener {
     private MyEditorComponentCreateListener() {
     }
-
     @Override
     public void editorComponentCreated(@NotNull EditorComponent editorComponent) {
       for (CurrentLinePainter p : ListSequence.fromList(getAllPainters())) {
         attach(p, editorComponent);
       }
     }
-
     @Override
     public void editorComponentDisposed(@NotNull EditorComponent editorComponent) {
       List<AdditionalPainter> additionalPainters = editorComponent.getAdditionalPainters();
@@ -229,7 +212,6 @@ public abstract class CurrentLinePositionComponentEx<S> {
       }
     }
   }
-
   private class MyRepositoryListener extends SRepositoryAdapter {
     @Override
     public void commandFinished(SRepository repository) {

@@ -10,17 +10,13 @@ import com.sun.jdi.ThreadReference;
 public abstract class ValueWrapperFactory {
   public ValueWrapperFactory() {
   }
-
   public boolean canWrapValue(@NotNull IValueProxy value) {
     return false;
   }
-
   public String getWrappedType() {
     return EvaluationUtils.JAVA_LANG_OBJECT;
   }
-
   public abstract ValueWrapper createValueWrapper(IValueProxy value, ThreadReference threadReference);
-
   public String getName() {
     return this.toString();
   }

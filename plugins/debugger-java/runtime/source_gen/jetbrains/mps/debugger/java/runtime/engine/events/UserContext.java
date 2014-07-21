@@ -8,22 +8,18 @@ import com.sun.jdi.request.EventRequest;
 
 /*package*/ class UserContext implements Context {
   private final EventsProcessor myEventsProcessor;
-
   public UserContext(EventsProcessor eventsProcessor) {
     myEventsProcessor = eventsProcessor;
   }
-
   @Nullable
   @Override
   public ThreadReference getThread() {
     return null;
   }
-
   @Override
   public int getSuspendPolicy() {
     return EventRequest.SUSPEND_ALL;
   }
-
   /*package*/ void resume() {
     // todo when we get some other suspend policies, add some code here 
     myEventsProcessor.getVirtualMachine().resume();

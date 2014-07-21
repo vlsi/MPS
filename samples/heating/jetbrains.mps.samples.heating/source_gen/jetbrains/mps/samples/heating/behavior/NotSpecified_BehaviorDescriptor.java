@@ -6,7 +6,6 @@ package jetbrains.mps.samples.heating.behavior;
 public class NotSpecified_BehaviorDescriptor extends Applicability_BehaviorDescriptor {
   public NotSpecified_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.heating.structure.NotSpecified";

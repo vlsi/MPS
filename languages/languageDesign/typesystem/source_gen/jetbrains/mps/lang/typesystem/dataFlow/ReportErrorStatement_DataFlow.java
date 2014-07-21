@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ReportErrorStatement_DataFlow extends DataFlowBuilder {
   public ReportErrorStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "errorString", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "nodeToReport", true));

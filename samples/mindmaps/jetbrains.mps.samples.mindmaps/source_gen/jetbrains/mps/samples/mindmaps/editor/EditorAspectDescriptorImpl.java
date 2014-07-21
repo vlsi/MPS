@@ -16,7 +16,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, EditorHintsProvider {
 
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("diagram", "", true, "jetbrains.mps.samples.mindmaps.editor.mindmaps.diagram"));
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
@@ -33,17 +32,13 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, Edito
     }
     return Collections.<ConceptEditor>emptyList();
   }
-
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
-
-
   public Collection<ConceptEditorHint> getHints() {
     return myHints;
   }
-
 
   private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.samples.mindmaps.structure.CoreThrought", "jetbrains.mps.samples.mindmaps.structure.MindMap", "jetbrains.mps.samples.mindmaps.structure.Relationship", "jetbrains.mps.samples.mindmaps.structure.Specializes", "jetbrains.mps.samples.mindmaps.structure.Thought"};
 }

@@ -16,27 +16,21 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_3893401255414132234(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), "useInTest", "reduceOneToMany", "none");
   }
-
   public static boolean baseMappingRule_Condition_3893401255414129777(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceOneToMany", "none");
   }
-
   public static boolean baseMappingRule_Condition_8371596541809066879(final BaseMappingRuleContext _context) {
     return false;
   }
-
   public static Iterable<SNode> sourceNodesQuery_3893401255414086894(final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getChildren(_context.getNode());
   }
-
   public static Iterable<SNode> sourceNodesQuery_3893401255414161783(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _context.getNode(), _context.getNode());
   }
-
   public static TemplateModel getDescriptor(TemplateModule module) {
     return new TemplateModelImpl(module);
   }

@@ -16,7 +16,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_HashMapCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_HashMapCreator_InferenceRule() {
   }
-
   public void applyRule(final SNode hashMapCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = hashMapCreator;
@@ -33,22 +32,18 @@ public class typeof_HashMapCreator_InferenceRule extends AbstractInferenceRule_R
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_dvqbcx_a0a0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -65,7 +60,6 @@ public class typeof_HashMapCreator_InferenceRule extends AbstractInferenceRule_R
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_dvqbcx_a0a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

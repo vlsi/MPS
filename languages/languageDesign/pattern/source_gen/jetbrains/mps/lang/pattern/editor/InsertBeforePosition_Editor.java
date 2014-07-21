@@ -13,7 +13,6 @@ public class InsertBeforePosition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_o352kl_a(editorContext, node);
   }
-
   private EditorCell createCollection_o352kl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o352kl_a");
@@ -21,7 +20,6 @@ public class InsertBeforePosition_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_o352kl_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_o352kl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "before");
     editorCell.setCellId("Constant_o352kl_a0");

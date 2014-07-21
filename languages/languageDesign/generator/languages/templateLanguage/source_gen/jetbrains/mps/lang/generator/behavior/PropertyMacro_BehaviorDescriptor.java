@@ -11,5 +11,5 @@ public class PropertyMacro_BehaviorDescriptor extends PropertyAttribute_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.PropertyMacro";
-  };;
-;}
+  }
+}

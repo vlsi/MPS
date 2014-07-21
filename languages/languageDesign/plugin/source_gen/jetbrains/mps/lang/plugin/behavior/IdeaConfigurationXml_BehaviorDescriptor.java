@@ -12,9 +12,9 @@ public class IdeaConfigurationXml_BehaviorDescriptor extends BaseConcept_Behavio
   }
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.IdeaConfigurationXml";
-  };;
-;}
+  }
+}

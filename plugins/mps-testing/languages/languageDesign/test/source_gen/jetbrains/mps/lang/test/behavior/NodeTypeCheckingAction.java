@@ -9,17 +9,17 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 public abstract class NodeTypeCheckingAction implements ITypechecking.Action {
   private SNode operation;
 
-;;;  public NodeTypeCheckingAction(final SNode operation) {
+  public NodeTypeCheckingAction(final SNode operation) {
     this.operation = operation;
   }
 
-;;;  public SNode getNodeToCheck() {
+  public SNode getNodeToCheck() {
     return NodeCheckOperation_Behavior.call_getAnnotatedNode_2912288420882528229(operation);
   }
 
-;;;  public abstract void checkOperation(TypeCheckingContext context);
+  public abstract void checkOperation(TypeCheckingContext context);
 
-;;;  public void run(TypeCheckingContext context) {
+  public void run(TypeCheckingContext context) {
     SNode nodeToCheck = getNodeToCheck();
     context.checkIfNotChecked(nodeToCheck, true);
     checkOperation(context);

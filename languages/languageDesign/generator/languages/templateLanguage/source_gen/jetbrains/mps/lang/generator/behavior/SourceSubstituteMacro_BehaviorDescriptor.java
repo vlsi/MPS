@@ -9,5 +9,5 @@ public abstract class SourceSubstituteMacro_BehaviorDescriptor extends NodeMacro
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro";
-  };;
-;}
+  }
+}

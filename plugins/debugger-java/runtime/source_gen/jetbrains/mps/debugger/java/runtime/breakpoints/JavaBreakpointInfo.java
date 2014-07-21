@@ -8,16 +8,13 @@ import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 public class JavaBreakpointInfo extends BreakpointInfo {
   public int mySuspendPolicy;
   public boolean myIsLogMessage;
-
   public JavaBreakpointInfo(JavaBreakpoint breakpoint, BreakpointLocation location) {
     super(breakpoint, location);
     mySuspendPolicy = breakpoint.getSuspendPolicy();
     myIsLogMessage = breakpoint.isLogMessage();
   }
-
   public JavaBreakpointInfo() {
   }
-
   public void initBreakpoint(JavaBreakpoint breakpoint) {
     super.initBreakpoint(breakpoint);
     breakpoint.setSuspendPolicy(mySuspendPolicy);

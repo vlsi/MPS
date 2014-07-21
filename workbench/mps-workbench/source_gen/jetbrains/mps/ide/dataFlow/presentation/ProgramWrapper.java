@@ -9,21 +9,17 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class ProgramWrapper implements IProgram<InstructionWrapper> {
   private Program myProgram;
-
   public ProgramWrapper(Program program) {
     this.myProgram = program;
   }
-
   @Override
   public IInstruction<InstructionWrapper> getStart() {
     return new InstructionWrapper(this.myProgram.getStart());
   }
-
   @Override
   public IInstruction<InstructionWrapper> getEnd() {
     return new InstructionWrapper(this.myProgram.getEnd());
   }
-
   @Override
   public List<IInstruction<InstructionWrapper>> getInstructions() {
     List<IInstruction<InstructionWrapper>> result = new ArrayList<IInstruction<InstructionWrapper>>();

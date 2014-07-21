@@ -15,12 +15,10 @@ public class BuildLayout_File_Constraints extends BaseConstraintsDescriptor {
   public BuildLayout_File_Constraints() {
     super("jetbrains.mps.build.structure.BuildLayout_File");
   }
-
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;
   }
-
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
@@ -31,13 +29,11 @@ public class BuildLayout_File_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (link == SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildLayout_File", "parameters")) {
       return SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.build.structure.BuildLayout_CopyHandler");
     }
     return true;
   }
-
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "2750015747481358841");
 }

@@ -38,28 +38,23 @@ public class TransientModelBallonDisplayer implements Disposable {
   private final IMakeNotificationListener myMakeNotificationListener = new TransientModelBallonDisplayer.MyMakeNotificationListener();
   private final Project myProject;
   private final TransientModelsWidget myWidget;
-
   public TransientModelBallonDisplayer(Project project, TransientModelsWidget widget) {
     myProject = project;
     myWidget = widget;
   }
-
   public void init() {
     IMakeService.INSTANCE.get().addListener(myMakeNotificationListener);
     ensureRegistered();
   }
-
   @Override
   public void dispose() {
     IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
   }
-
   private void ensureRegistered() {
     if (!(NotificationsConfigurationImpl.getNotificationsConfigurationImpl().isRegistered(ID))) {
       NotificationsConfiguration.getNotificationsConfiguration().register(ID, NotificationDisplayType.BALLOON, false);
     }
   }
-
   private void showBaloonInternal() {
     Notification notification = new Notification(ID, "Saving transient models", "Saving transient models is on", NotificationType.WARNING);
     boolean sticky = NotificationsConfigurationImpl.getSettings(ID).getDisplayType() == NotificationDisplayType.STICKY_BALLOON;
@@ -91,7 +86,6 @@ public class TransientModelBallonDisplayer implements Disposable {
       }
     }
   }
-
   private void showBallon() {
     if (!(GenerationSettings.getInstance().isSaveTransientModels()) || !(isPopupShown())) {
       return;
@@ -103,13 +97,11 @@ public class TransientModelBallonDisplayer implements Disposable {
       }
     });
   }
-
   private void showForComponent(Component component, Balloon ballon) {
     int offset = component.getHeight() / 2;
     Point point = new Point(component.getWidth() - offset, component.getHeight() - offset);
     ballon.show(new RelativePoint(component, point), Balloon.Position.above);
   }
-
   public static boolean isPopupShown() {
     if (!(NotificationsConfigurationImpl.getNotificationsConfigurationImpl().SHOW_BALLOONS)) {
       return false;
@@ -117,18 +109,14 @@ public class TransientModelBallonDisplayer implements Disposable {
     NotificationDisplayType displayType = NotificationsConfigurationImpl.getSettings(ID).getDisplayType();
     return displayType == NotificationDisplayType.BALLOON || displayType == NotificationDisplayType.STICKY_BALLOON;
   }
-
   public static void setShowPopup(boolean show) {
     NotificationSettings settings = NotificationsConfigurationImpl.getSettings(ID);
     settings.withDisplayType((show ? NotificationDisplayType.BALLOON : NotificationDisplayType.NONE));
   }
-
   private class MyMakeNotificationListener implements IMakeNotificationListener {
     private volatile boolean mySessionJustOpened;
-
     public MyMakeNotificationListener() {
     }
-
     @Override
     public void handleNotification(MakeNotification notification) {
       if (notification.getKind() == MakeNotification.Kind.SESSION_OPENED) {
@@ -142,31 +130,25 @@ public class TransientModelBallonDisplayer implements Disposable {
         mySessionJustOpened = false;
       }
     }
-
     @Override
     public void scriptAboutToStart(MakeNotification notification) {
     }
-
     @Override
     public void scriptFinished(MakeNotification notification) {
     }
-
     @Override
     public void sessionOpened(MakeNotification notification) {
     }
-
     @Override
     public void sessionClosed(MakeNotification notification) {
     }
   }
-
   private static JComponent check_45eojt_a0j0i(TransientModelsWidget checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent();
     }
     return null;
   }
-
   private static JComponent check_45eojt_a0a0a01a8(StatusBar checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent();

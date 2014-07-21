@@ -9,5 +9,5 @@ public class AbstractComparableStatement_BehaviorDescriptor extends AbstractEqua
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement";
-  };;
-;}
+  }
+}

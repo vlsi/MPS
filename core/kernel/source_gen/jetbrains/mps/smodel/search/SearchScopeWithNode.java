@@ -6,11 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class SearchScopeWithNode extends AbstractSearchScope {
   private SNode myEnclosingNode;
-
   public SearchScopeWithNode(SNode enclosingNode) {
     myEnclosingNode = enclosingNode;
   }
-
   public SNode getEnclosingNode() {
     return myEnclosingNode;
   }

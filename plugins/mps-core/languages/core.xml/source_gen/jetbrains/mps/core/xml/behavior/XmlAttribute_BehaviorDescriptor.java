@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class XmlAttribute_BehaviorDescriptor extends XmlBaseAttribute_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public XmlAttribute_BehaviorDescriptor() {
   }
-
   public boolean virtual_isMultiline_3080189811177259788(SNode thisNode) {
     return XmlAttribute_Behavior.virtual_isMultiline_3080189811177259788(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.structure.XmlAttribute";

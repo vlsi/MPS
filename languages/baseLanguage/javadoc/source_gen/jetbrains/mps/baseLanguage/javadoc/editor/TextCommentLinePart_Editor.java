@@ -20,7 +20,6 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_x1gmbt_a(editorContext, node);
   }
-
   private EditorCell createCollection_x1gmbt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x1gmbt_a");
@@ -34,18 +33,15 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createModelAccess_x1gmbt_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createModelAccess_x1gmbt_a0(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
         return SPropertyOperations.getString(node, "text");
       }
-
       public void setText(String text) {
         SPropertyOperations.set(node, "text", text);
         TextCommentPartUtil.processCellText(editorContext, node, text);
       }
-
       public boolean isValidText(String text) {
         return true;
       }

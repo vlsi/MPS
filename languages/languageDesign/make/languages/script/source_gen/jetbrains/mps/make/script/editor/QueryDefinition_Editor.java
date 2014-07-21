@@ -21,7 +21,6 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_egantk_a(editorContext, node);
   }
-
   private EditorCell createCollection_egantk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_egantk_a");
@@ -32,7 +31,6 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_egantk_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_egantk_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -50,7 +48,6 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_egantk_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_egantk_b0");
@@ -61,14 +58,12 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_egantk_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_egantk_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with title");
     editorCell.setCellId("Constant_egantk_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_egantk_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("title");
@@ -88,7 +83,6 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_egantk_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_egantk_c0");
@@ -99,14 +93,12 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_egantk_b2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_egantk_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "display");
     editorCell.setCellId("Constant_egantk_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_egantk_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("presentation");
@@ -126,7 +118,6 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_egantk_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_egantk_d0");
@@ -137,14 +128,12 @@ public class QueryDefinition_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_egantk_b3a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_egantk_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expect");
     editorCell.setCellId("Constant_egantk_a3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_egantk_b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expected");

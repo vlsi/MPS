@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class XmlDoctypeDeclaration_BehaviorDescriptor extends XmlBasePrologElement_BehaviorDescriptor implements XmlPrologElement_BehaviorDescriptor {
   public XmlDoctypeDeclaration_BehaviorDescriptor() {
   }
-
   public boolean virtual_isSingle_1262430001741497810(SConcept thisConcept) {
     return XmlDoctypeDeclaration_Behavior.virtual_isSingle_1262430001741497810(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration";

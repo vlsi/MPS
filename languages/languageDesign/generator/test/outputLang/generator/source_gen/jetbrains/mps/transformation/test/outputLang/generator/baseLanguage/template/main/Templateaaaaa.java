@@ -20,21 +20,17 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 @Generated
 public class Templateaaaaa implements TemplateDeclarationWeavingAware {
   private SNode myNnnn;
-
   public Templateaaaaa(SNode nnnn) {
     this.myNnnn = nnnn;
   }
-
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "933643154466320524");
   }
-
   private Map<String, Object> getParametersAsMap() {
     Map<String, Object> result = MapSequence.fromMap(new HashMap<String, Object>());
     MapSequence.fromMap(result).put("nnnn", myNnnn);
     return result;
   }
-
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.BlockStatement");
     try {
@@ -54,12 +50,10 @@ public class Templateaaaaa implements TemplateDeclarationWeavingAware {
     }
     return tnode1;
   }
-
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
     return TemplateUtil.singletonList(applyPart0(environment, contextWithParams));
   }
-
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
     SNode tnodepart0 = applyPart0(environment, contextWithParams);
@@ -67,6 +61,5 @@ public class Templateaaaaa implements TemplateDeclarationWeavingAware {
     environment.weaveNode(outputContextNode, "contentNode", tnodepart0, weaveTf0, contextWithParams.getInput());
     return TemplateUtil.singletonList(tnodepart0);
   }
-
   private static SNodePointer weaveTfConst_54ml0j_a0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "7870321878389731892");
 }

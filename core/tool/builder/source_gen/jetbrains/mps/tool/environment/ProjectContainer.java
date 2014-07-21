@@ -14,18 +14,13 @@ import org.jetbrains.annotations.NotNull;
 public class ProjectContainer {
   private Set<Project> myProjects;
 
-
   public ProjectContainer() {
     myProjects = SetSequence.fromSet(new HashSet<Project>());
   }
 
-
-
   public void dispose() {
     clear();
   }
-
-
 
   private void clear() {
     try {
@@ -43,13 +38,9 @@ public class ProjectContainer {
     SetSequence.fromSet(myProjects).clear();
   }
 
-
-
   public Set<Project> getProjects() {
     return myProjects;
   }
-
-
 
   public Project getProject(File anotherProjectFile) {
     assert containsProject(anotherProjectFile);
@@ -62,14 +53,10 @@ public class ProjectContainer {
     return null;
   }
 
-
-
   public void addProject(@NotNull Project project) {
     assert !(SetSequence.fromSet(myProjects).contains(project));
     SetSequence.fromSet(this.myProjects).addElement(project);
   }
-
-
 
   public void disposeProject(@NotNull Project project) {
     assert SetSequence.fromSet(myProjects).contains(project);
@@ -77,13 +64,9 @@ public class ProjectContainer {
     project.dispose();
   }
 
-
-
   public void size() {
     SetSequence.fromSet(myProjects).count();
   }
-
-
 
   public boolean containsProject(File anotherProjectFile) {
     assert myProjects != null;
@@ -94,6 +77,5 @@ public class ProjectContainer {
     }
     return false;
   }
-
 
 }

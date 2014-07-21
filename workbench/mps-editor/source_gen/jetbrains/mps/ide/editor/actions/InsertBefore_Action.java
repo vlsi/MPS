@@ -18,22 +18,18 @@ import org.apache.log4j.LogManager;
 
 public class InsertBefore_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public InsertBefore_Action() {
     super("Insert New Element before Current", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))) != null && EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), Sequence.<EditorCell>singleton(EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")))));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -47,7 +43,6 @@ public class InsertBefore_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -62,7 +57,6 @@ public class InsertBefore_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       EditorActionUtils.callInsertBeforeAction(EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
@@ -72,6 +66,5 @@ public class InsertBefore_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(InsertBefore_Action.class);
 }

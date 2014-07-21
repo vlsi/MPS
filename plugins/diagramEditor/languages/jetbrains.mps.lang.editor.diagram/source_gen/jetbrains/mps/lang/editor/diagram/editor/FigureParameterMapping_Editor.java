@@ -30,7 +30,6 @@ public class FigureParameterMapping_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3uf681_a(editorContext, node);
   }
-
   private EditorCell createCollection_3uf681_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3uf681_a");
@@ -40,7 +39,6 @@ public class FigureParameterMapping_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_3uf681_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_3uf681_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -63,32 +61,25 @@ public class FigureParameterMapping_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static SNode _StyleParameter_QueryFunction_3uf681_a0a0(EditorContext editorContext, SNode node) {
     return FigureParameterMapping_Behavior.call_getParameterDeclaration_4115105161238952352(node);
   }
-
   public static class FigureParameterMapping_generic_cellMenu_3uf681_a0a0 extends AbstractCellMenuPart_Generic_Group {
     public FigureParameterMapping_generic_cellMenu_3uf681_a0a0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(FigureParameterMapping_Behavior.call_getDiagramNodeCell_1491555030355957123(node), "figure", true), "virtual_getFigureParameterNames_1491555030356445722", new Object[]{});
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "name", parameterObject);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
   }
-
   private EditorCell createConstant_3uf681_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_3uf681_b0");
@@ -100,7 +91,6 @@ public class FigureParameterMapping_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_3uf681_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("argument");

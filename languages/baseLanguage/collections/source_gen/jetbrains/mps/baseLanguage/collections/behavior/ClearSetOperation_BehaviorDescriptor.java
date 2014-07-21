@@ -9,5 +9,5 @@ public class ClearSetOperation_BehaviorDescriptor extends AbstractSetOperation_B
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation";
-  };;
-;}
+  }
+}

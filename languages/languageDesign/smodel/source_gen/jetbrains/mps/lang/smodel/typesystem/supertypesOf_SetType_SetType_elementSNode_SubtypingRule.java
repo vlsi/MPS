@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SReference;
 public class supertypesOf_SetType_SetType_elementSNode_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_SetType_SetType_elementSNode_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode setType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(setType, "elementType", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
@@ -29,22 +28,18 @@ public class supertypesOf_SetType_SetType_elementSNode_SubtypingRule extends Sub
     }
     return result;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SetType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   private static SNode _quotation_createNode_6rkyoe_a0a0a2a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -54,7 +49,6 @@ public class supertypesOf_SetType_SetType_elementSNode_SubtypingRule extends Sub
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_6rkyoe_a0a2a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

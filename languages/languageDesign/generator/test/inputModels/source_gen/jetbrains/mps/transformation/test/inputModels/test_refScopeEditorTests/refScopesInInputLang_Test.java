@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class refScopesInInputLang_Test extends BaseTransformationTest {
   public refScopesInInputLang_Test() {
   }
-
   @Test
   public void test_refScopesInInputLang() throws Throwable {
     this.initTest("${mps_home}", "r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)");
     this.runTest("jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopesInInputLang_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("5934496548013480007", "5934496548013480013");

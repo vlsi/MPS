@@ -14,7 +14,6 @@ public class XmlElement_Constraints extends BaseConstraintsDescriptor {
   public XmlElement_Constraints() {
     super("jetbrains.mps.core.xml.structure.XmlElement");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class XmlElement_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "tagName";

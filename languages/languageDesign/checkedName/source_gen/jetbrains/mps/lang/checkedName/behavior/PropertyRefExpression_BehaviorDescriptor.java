@@ -10,5 +10,5 @@ public class PropertyRefExpression_BehaviorDescriptor extends Expression_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.checkedName.structure.PropertyRefExpression";
-  };;
-;}
+  }
+}

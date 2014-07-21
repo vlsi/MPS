@@ -14,32 +14,26 @@ public class transformationTest_StyleSheet {
   public static void apply_AssertStyle(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
   }
-
   public static void apply_NodeAnnotation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.UNDERLINED, 0, true);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
-
   public static void apply_NodeOperation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
   }
-
   public static void apply_TestLabel(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.UNDERLINED, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
   }
-
   public static void apply_EditorOperation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
-
   public static void apply_AnyBracket(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
   }
-
   public static void apply_Parenthesis(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -54,7 +48,6 @@ public class transformationTest_StyleSheet {
     }
     style.set(StyleAttributes.MATCHING_LABEL, 0, "parenthesis");
   }
-
   public static void apply_LeftParen(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -64,7 +57,6 @@ public class transformationTest_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
-
   public static void apply_RightParen(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -74,7 +66,6 @@ public class transformationTest_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
-
   public static void apply_LeftParenAfterName(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -84,6 +75,5 @@ public class transformationTest_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
-
 
 }

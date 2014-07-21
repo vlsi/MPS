@@ -6,5 +6,5 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class Synchronizeable_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;}
+  }
+}

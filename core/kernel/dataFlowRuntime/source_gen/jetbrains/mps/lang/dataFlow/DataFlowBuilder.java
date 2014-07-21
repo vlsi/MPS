@@ -7,6 +7,5 @@ import jetbrains.mps.smodel.IOperationContext;
 public abstract class DataFlowBuilder {
   public DataFlowBuilder() {
   }
-
   public abstract void build(IOperationContext operationContext, DataFlowBuilderContext _context);
 }

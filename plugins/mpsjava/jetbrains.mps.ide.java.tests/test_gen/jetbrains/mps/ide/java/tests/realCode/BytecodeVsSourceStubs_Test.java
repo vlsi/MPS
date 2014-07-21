@@ -16,7 +16,6 @@ public class BytecodeVsSourceStubs_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:160abcc6-9e67-4700-883d-b19377a315a7(jetbrains.mps.ide.java.tests.realCode@tests)");
     this.runTest("jetbrains.mps.ide.java.tests.realCode.BytecodeVsSourceStubs_Test$TestBody", "test_Guava", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_Guava() throws Exception {

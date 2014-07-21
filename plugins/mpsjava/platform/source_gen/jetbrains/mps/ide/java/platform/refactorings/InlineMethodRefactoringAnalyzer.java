@@ -25,13 +25,11 @@ public class InlineMethodRefactoringAnalyzer {
   private IOperationContext myOperationContext;
   private SNode myCall;
   private SNode myMethod;
-
   public InlineMethodRefactoringAnalyzer(IOperationContext operationContext, SNode call, SNode method) {
     this.myOperationContext = operationContext;
     this.myCall = call;
     this.myMethod = method;
   }
-
   public String findProblems(final SearchResults<SNode> ussages) {
     final Wrappers._T<List<SNode>> myOverriding = new Wrappers._T<List<SNode>>(new ArrayList<SNode>());
     ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(InlineMethodRefactoringAnalyzer.this.myOperationContext.getProject()), "Search for overriding methods", true) {
@@ -59,7 +57,6 @@ public class InlineMethodRefactoringAnalyzer {
     });
     return errors.toString();
   }
-
   private String getOverridingErrors(List<SNode> overridingMethods) {
     StringBuffer errors = new StringBuffer();
     if (overridingMethods != null && ListSequence.fromList(overridingMethods).isNotEmpty()) {
@@ -71,7 +68,6 @@ public class InlineMethodRefactoringAnalyzer {
     }
     return errors.toString();
   }
-
   private void appendRefactoringProblems(SNode node, StringBuffer errors) {
     InlineMethodRefactoring ref = new InlineMethodRefactoring(node);
     errors.append(ref.getProblems());

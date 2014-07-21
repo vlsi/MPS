@@ -24,13 +24,11 @@ public class ExtractDefaultClassifierMethodDeclaration_Test extends BaseTransfor
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.ExtractDefaultClassifierMethodDeclaration_Test$TestBody", "test_extractFromMethod", true);
   }
-
   @Test
   public void test_extractFromExecute() throws Throwable {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.ExtractDefaultClassifierMethodDeclaration_Test$TestBody", "test_extractFromExecute", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_extractFromMethod() throws Exception {
@@ -47,7 +45,6 @@ public class ExtractDefaultClassifierMethodDeclaration_Test extends BaseTransfor
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
     }
-
     public void test_extractFromExecute() throws Exception {
       this.addNodeById("1230052509259");
       this.addNodeById("1230052509277");

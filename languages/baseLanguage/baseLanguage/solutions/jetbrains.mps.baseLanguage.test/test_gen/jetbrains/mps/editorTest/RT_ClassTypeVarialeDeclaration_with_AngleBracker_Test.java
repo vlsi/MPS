@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test extends BaseTransformationTest {
   public RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test() {
   }
-
   @Test
   public void test_RT_ClassTypeVarialeDeclaration_with_AngleBracker() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("1528454294471609027", "1528454294471625075");

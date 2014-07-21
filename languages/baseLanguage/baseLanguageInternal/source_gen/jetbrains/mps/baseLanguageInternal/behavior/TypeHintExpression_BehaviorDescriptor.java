@@ -10,5 +10,5 @@ public class TypeHintExpression_BehaviorDescriptor extends Expression_BehaviorDe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression";
-  };;
-;}
+  }
+}

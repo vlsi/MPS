@@ -20,16 +20,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.editor.TestDiagramLanguage.DiagramTestTextual"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_20b5h0_a(editorContext, node);
   }
-
   private EditorCell createCollection_20b5h0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_20b5h0_a");
@@ -54,14 +51,12 @@ public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_20b5h0_r0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node with size");
     editorCell.setCellId("Constant_20b5h0_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_20b5h0_b0");
@@ -73,14 +68,12 @@ public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x");
     editorCell.setCellId("Constant_20b5h0_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_20b5h0_d0");
@@ -90,7 +83,6 @@ public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_20b5h0_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("x");
@@ -108,7 +100,6 @@ public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_20b5h0_f0");
@@ -118,14 +109,12 @@ public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "y");
     editorCell.setCellId("Constant_20b5h0_g0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_20b5h0_h0");
@@ -135,7 +124,6 @@ public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_20b5h0_i0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("y");
@@ -153,7 +141,6 @@ public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_20b5h0_j0");
@@ -163,14 +150,12 @@ public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "width");
     editorCell.setCellId("Constant_20b5h0_k0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_l0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_20b5h0_l0");
@@ -180,7 +165,6 @@ public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_20b5h0_m0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("width");
@@ -198,7 +182,6 @@ public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_20b5h0_n0");
@@ -208,14 +191,12 @@ public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_o0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "height");
     editorCell.setCellId("Constant_20b5h0_o0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_p0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_20b5h0_p0");
@@ -225,7 +206,6 @@ public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_20b5h0_q0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("height");
@@ -243,7 +223,6 @@ public class NodeWithSize_DiagramTestTextual_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_20b5h0_r0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_20b5h0_r0");

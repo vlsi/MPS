@@ -15,12 +15,10 @@ public class CellAction_DeleteEasily extends CellAction_DeleteNode {
   public CellAction_DeleteEasily(SNode semanticNode) {
     super(semanticNode);
   }
-
   @Override
   public boolean canExecute(EditorContext context) {
     return super.canExecute(context) && canBeDeletedEasily();
   }
-
   private boolean canBeDeletedEasily() {
     SNode semanticNode = getSourceNode();
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(semanticNode)).where(new IWhereFilter<SNode>() {

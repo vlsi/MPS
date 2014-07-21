@@ -14,11 +14,9 @@ import java.awt.Color;
 
 public abstract class VariableDuplicatesProcessor extends DuplicatesProcessor<SNode> {
   private EditorMessageOwner myOwner = new EditorMessageOwner() {};
-
   public VariableDuplicatesProcessor(EditorContext context) {
     super(context);
   }
-
   @Override
   protected List<EditorMessage> createEditorMessages(SNode duplicate) {
     return ListSequence.fromListAndArray(new ArrayList(), new DefaultEditorMessage(duplicate, Color.BLUE, null, this.myOwner));

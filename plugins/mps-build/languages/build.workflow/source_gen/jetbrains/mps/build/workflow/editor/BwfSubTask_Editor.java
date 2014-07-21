@@ -31,7 +31,6 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6puhak_a(editorContext, node);
   }
-
   private EditorCell createCollection_6puhak_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6puhak_a");
@@ -48,7 +47,6 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6puhak_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_6puhak_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "subtask");
     editorCell.setCellId("Constant_6puhak_a0");
@@ -58,7 +56,6 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_6puhak_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -79,7 +76,6 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_6puhak_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6puhak_c0");
@@ -90,11 +86,9 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_6puhak_b2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_6puhak_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "after", true)).isNotEmpty();
   }
-
   private EditorCell createConstant_6puhak_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after");
     editorCell.setCellId("Constant_6puhak_a2a");
@@ -104,7 +98,6 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_6puhak_b2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BwfSubTask_Editor.afterListHandler_6puhak_b2a(node, "after", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -113,30 +106,25 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class afterListHandler_6puhak_b2a extends RefNodeListHandler {
     public afterListHandler_6puhak_b2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -150,7 +138,6 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
@@ -164,7 +151,6 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_6puhak_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6puhak_d0");
@@ -175,11 +161,9 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_6puhak_b3a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_6puhak_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "before", true)).isNotEmpty();
   }
-
   private EditorCell createConstant_6puhak_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "before");
     editorCell.setCellId("Constant_6puhak_a3a");
@@ -189,7 +173,6 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_6puhak_b3a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BwfSubTask_Editor.beforeListHandler_6puhak_b3a(node, "before", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -198,30 +181,25 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class beforeListHandler_6puhak_b3a extends RefNodeListHandler {
     public beforeListHandler_6puhak_b3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -235,7 +213,6 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
@@ -249,7 +226,6 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createRefNodeList_6puhak_e0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BwfSubTask_Editor.statementsListHandler_6puhak_e0(node, "statements", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -262,30 +238,25 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class statementsListHandler_6puhak_e0 extends RefNodeListHandler {
     public statementsListHandler_6puhak_e0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -299,7 +270,6 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_6puhak_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6puhak_f0");

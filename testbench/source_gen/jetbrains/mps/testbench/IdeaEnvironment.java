@@ -44,7 +44,6 @@ public class IdeaEnvironment implements Environment {
   private final LibraryContributor myLibContributor;
   private final IdeaTestApplication myIdeaApplication;
 
-
   public IdeaEnvironment(EnvironmentConfig config) {
     if (LOG.isInfoEnabled()) {
       LOG.info("Creating Idea environment");
@@ -59,8 +58,6 @@ public class IdeaEnvironment implements Environment {
     initMacros(config);
   }
 
-
-
   private void invalidateIdeaCaches() {
     if (LOG.isInfoEnabled()) {
       LOG.info("Invalidating caches");
@@ -68,15 +65,11 @@ public class IdeaEnvironment implements Environment {
     FSRecords.invalidateCaches();
   }
 
-
-
   private void initMacros(EnvironmentConfig config) {
     for (String macro : MapSequence.fromMap(config.macros()).keySet()) {
       setMacro(macro, MapSequence.fromMap(config.macros()).get(macro));
     }
   }
-
-
 
   private void setMacro(String macroName, File file) {
     CanonicalPath path = new CanonicalPath(file.getAbsolutePath());
@@ -84,8 +77,6 @@ public class IdeaEnvironment implements Environment {
       PathMacros.getInstance().setMacro(macroName, path.getValue());
     }
   }
-
-
 
   private LibraryContributor initLibraries(EnvironmentConfig config) {
     if (LOG.isInfoEnabled()) {
@@ -111,8 +102,6 @@ public class IdeaEnvironment implements Environment {
     return libContributor;
   }
 
-
-
   private IdeaTestApplication createIdeaTestApp() {
     if (LOG.isInfoEnabled()) {
       LOG.info("Creating IdeaTestApplication");
@@ -120,14 +109,10 @@ public class IdeaEnvironment implements Environment {
     return IdeaTestApplication.getInstance(null);
   }
 
-
-
   @Override
   public boolean hasIdeaInstance() {
     return true;
   }
-
-
 
   @Override
   public Project openProject(File projectFile) {
@@ -147,8 +132,6 @@ public class IdeaEnvironment implements Environment {
     }
   }
 
-
-
   @Override
   public Project createDummyProject() {
     File dummyProjectFile = createDummyProjectFile();
@@ -156,8 +139,6 @@ public class IdeaEnvironment implements Environment {
     myContainer.addProject(dummyProject);
     return dummyProject;
   }
-
-
 
   @Override
   public void disposeProject(File projectFile) {
@@ -177,14 +158,10 @@ public class IdeaEnvironment implements Environment {
     });
   }
 
-
-
   @Override
   public boolean isProjectOpened(File projectFile) {
     return myContainer.containsProject(projectFile);
   }
-
-
 
   @Override
   public void dispose() {
@@ -215,8 +192,6 @@ public class IdeaEnvironment implements Environment {
     ActiveEnvironment.deactivateEnvironment(this);
   }
 
-
-
   private File createDummyProjectFile() {
     File dummyProjDir = FileUtil.createTmpDir();
     File dotMps = new File(dummyProjDir, ".mps");
@@ -236,8 +211,6 @@ public class IdeaEnvironment implements Environment {
     dummyProjDir.deleteOnExit();
     return dummyProjDir;
   }
-
-
 
   private static Project openProjectInIdeaEnvironment(File projectFile) {
     if (!(projectFile.exists())) {
@@ -266,7 +239,6 @@ public class IdeaEnvironment implements Environment {
     }
     return project[0].getComponent(MPSProject.class);
   }
-
 
   protected static Logger LOG = LogManager.getLogger(IdeaEnvironment.class);
 }

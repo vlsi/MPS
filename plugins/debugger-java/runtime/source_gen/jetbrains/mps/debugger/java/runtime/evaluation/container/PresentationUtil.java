@@ -30,7 +30,6 @@ public class PresentationUtil {
 
     return BehaviorReflection.invokeVirtual(String.class, lastStatement, "virtual_getPresentation_1213877396640", new Object[]{}) + suffix;
   }
-
   public static String getExpressionPresentation(@Nullable SNode expression) {
     if (expression == null) {
       return "????";
@@ -62,7 +61,6 @@ public class PresentationUtil {
 
     return BehaviorReflection.invokeVirtual(String.class, expression, "virtual_getPresentation_1213877396640", new Object[]{});
   }
-
   public static String getOperationPresentation(@Nullable SNode operation) {
     if (operation == null) {
       return "????";
@@ -79,7 +77,6 @@ public class PresentationUtil {
     }
     return BehaviorReflection.invokeVirtual(String.class, operation, "virtual_getPresentation_1213877396640", new Object[]{});
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

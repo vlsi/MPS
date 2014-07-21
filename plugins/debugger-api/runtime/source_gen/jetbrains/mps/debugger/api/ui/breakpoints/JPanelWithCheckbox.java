@@ -16,7 +16,6 @@ import javax.swing.UIManager;
 /*package*/ class JPanelWithCheckbox extends JPanel {
   private final JCheckBox myCheckBox;
   protected final JLabel myLabel;
-
   public JPanelWithCheckbox() {
     this.setLayout(new GridBagLayout());
     myCheckBox = new JCheckBox();
@@ -34,7 +33,6 @@ import javax.swing.UIManager;
     constraints.anchor = GridBagConstraints.WEST;
     add(myLabel, constraints);
   }
-
   public void update(IBreakpoint breakpoint, boolean isSelected) {
     Color bg;
     if (isSelected) {
@@ -48,7 +46,6 @@ import javax.swing.UIManager;
     myLabel.setText(breakpoint.getPresentation());
     myLabel.setIcon(BreakpointIconRenderer.getIconFor(breakpoint));
   }
-
   public JCheckBox getCheckBox() {
     return myCheckBox;
   }

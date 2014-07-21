@@ -10,5 +10,5 @@ public class Dependency_BehaviorDescriptor extends BaseConcept_BehaviorDescripto
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.Dependency";
-  };;
-;}
+  }
+}

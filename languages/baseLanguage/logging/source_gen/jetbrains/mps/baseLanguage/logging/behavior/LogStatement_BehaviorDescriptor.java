@@ -11,5 +11,5 @@ public class LogStatement_BehaviorDescriptor extends Statement_BehaviorDescripto
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.logging.structure.LogStatement";
-  };;
-;}
+  }
+}

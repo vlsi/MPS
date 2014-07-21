@@ -15,18 +15,15 @@ import java.awt.event.MouseEvent;
 public class SelectAnotherNode_Test extends BaseTransformationTest {
   public SelectAnotherNode_Test() {
   }
-
   @Test
   public void test_SelectAnotherNode() throws Throwable {
     this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
     this.runTest("jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNode_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("8095638845859254465", "8095638845859254471");

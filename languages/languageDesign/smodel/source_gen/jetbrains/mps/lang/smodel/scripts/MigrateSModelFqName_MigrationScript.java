@@ -26,15 +26,12 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "mref.getSModelFqName.getStereotype -> mRef.getStereotype";
       }
-
       public String getAdditionalInfo() {
         return "mref.getSModelFqName.getStereotype -> mRef.getStereotype";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.DotExpression";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         {
           SNode matchedNode_s34syj_a0a0_0 = node;
@@ -53,7 +50,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
           }
         }
       }
-
       public void doUpdateInstanceNode(SNode node) {
         {
           SNode matchedNode_s34syj_a0a0 = node;
@@ -67,7 +63,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
           }
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -76,15 +71,12 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "mref.getSModelFqName.getLongName -> mRef.getLongName";
       }
-
       public String getAdditionalInfo() {
         return "mref.getSModelFqName.getLongName -> mRef.getLongName";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.DotExpression";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         {
           SNode matchedNode_s34syj_a0a1_0 = node;
@@ -103,7 +95,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
           }
         }
       }
-
       public void doUpdateInstanceNode(SNode node) {
         {
           SNode matchedNode_s34syj_a0a1 = node;
@@ -117,7 +108,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
           }
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -126,15 +116,12 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "mref.getSModelFqName.getCompactPresentation -> mRef.getCompactPresentation";
       }
-
       public String getAdditionalInfo() {
         return "mref.getSModelFqName.getCompactPresentation -> mRef.getCompactPresentation";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.DotExpression";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         {
           SNode matchedNode_s34syj_a0a2_0 = node;
@@ -153,7 +140,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
           }
         }
       }
-
       public void doUpdateInstanceNode(SNode node) {
         {
           SNode matchedNode_s34syj_a0a2 = node;
@@ -167,7 +153,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
           }
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -176,15 +161,12 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "mref.getSModelFqName + -> mRef.getModelName +";
       }
-
       public String getAdditionalInfo() {
         return "mref.getSModelFqName + -> mRef.getModelName +";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.PlusExpression";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         {
           SNode matchedNode_s34syj_a0a3_0 = node;
@@ -203,7 +185,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
           }
         }
       }
-
       public void doUpdateInstanceNode(SNode node) {
         {
           SNode matchedNode_s34syj_a0a3 = node;
@@ -217,7 +198,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
           }
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -226,15 +206,12 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "+ mref.getSModelFqName -> + mRef.getModelName";
       }
-
       public String getAdditionalInfo() {
         return "+ mref.getSModelFqName -> + mRef.getModelName";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.PlusExpression";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         {
           SNode matchedNode_s34syj_a0a4_0 = node;
@@ -253,7 +230,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
           }
         }
       }
-
       public void doUpdateInstanceNode(SNode node) {
         {
           SNode matchedNode_s34syj_a0a4 = node;
@@ -267,7 +243,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
           }
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -276,15 +251,12 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "mref.getSModelFqName.toString -> mref.getModelName";
       }
-
       public String getAdditionalInfo() {
         return "mref.getSModelFqName.toString -> mref.getModelName";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.DotExpression";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         {
           SNode matchedNode_s34syj_a0a5_0 = node;
@@ -303,7 +275,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
           }
         }
       }
-
       public void doUpdateInstanceNode(SNode node) {
         {
           SNode matchedNode_s34syj_a0a5 = node;
@@ -317,20 +288,16 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
           }
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
     });
     // whitespace 
   }
-
   public static class Pattern_okm9hk_a0a1a1a0a3a0a0a0a1a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_modelRef;
-
     public Pattern_okm9hk_a0a1a1a0a3a0a0a0a1a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a0a0_0 = nodeToMatch;
@@ -407,32 +374,26 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_modelRef = (SNode) pattern.getFieldValue("patternVar_modelRef");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_modelRef".equals(fieldName)) {
         return patternVar_modelRef;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a1a0a1a0a3a1a0a3a0a0a0a1a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_okm9hk_a1a0a1a0a3a1a0a3a0a0a0a1a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a1a0a0a0 = nodeToMatch;
@@ -448,28 +409,21 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
     }
-
     public Object getFieldValue(String fieldName) {
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a0a1a1a0a4a0a0a0a1a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_modelRef;
-
     public Pattern_okm9hk_a0a1a1a0a4a0a0a0a1a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a0a0 = nodeToMatch;
@@ -546,34 +500,27 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_modelRef = (SNode) pattern.getFieldValue("patternVar_modelRef");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_modelRef".equals(fieldName)) {
         return patternVar_modelRef;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a0a1a1a0a3a0a0a0a2a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_modelRef;
-
     public Pattern_okm9hk_a0a1a1a0a3a0a0a0a2a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a0a1_0 = nodeToMatch;
@@ -650,32 +597,26 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_modelRef = (SNode) pattern.getFieldValue("patternVar_modelRef");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_modelRef".equals(fieldName)) {
         return patternVar_modelRef;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a1a0a1a0a3a1a0a3a0a0a0a2a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_okm9hk_a1a0a1a0a3a1a0a3a0a0a0a2a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a1a0a0a1 = nodeToMatch;
@@ -691,28 +632,21 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
     }
-
     public Object getFieldValue(String fieldName) {
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a0a1a1a0a4a0a0a0a2a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_modelRef;
-
     public Pattern_okm9hk_a0a1a1a0a4a0a0a0a2a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a0a1 = nodeToMatch;
@@ -789,34 +723,27 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_modelRef = (SNode) pattern.getFieldValue("patternVar_modelRef");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_modelRef".equals(fieldName)) {
         return patternVar_modelRef;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a0a1a1a0a3a0a0a0a3a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_modelRef;
-
     public Pattern_okm9hk_a0a1a1a0a3a0a0a0a3a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a0a2_0 = nodeToMatch;
@@ -893,32 +820,26 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_modelRef = (SNode) pattern.getFieldValue("patternVar_modelRef");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_modelRef".equals(fieldName)) {
         return patternVar_modelRef;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a1a0a1a0a3a1a0a3a0a0a0a3a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_okm9hk_a1a0a1a0a3a1a0a3a0a0a0a3a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a1a0a0a2 = nodeToMatch;
@@ -934,28 +855,21 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
     }
-
     public Object getFieldValue(String fieldName) {
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a0a1a1a0a4a0a0a0a3a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_modelRef;
-
     public Pattern_okm9hk_a0a1a1a0a4a0a0a0a3a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a0a2 = nodeToMatch;
@@ -1032,35 +946,28 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_modelRef = (SNode) pattern.getFieldValue("patternVar_modelRef");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_modelRef".equals(fieldName)) {
         return patternVar_modelRef;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a0a1a1a0a3a0a0a0a4a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_right;
     /*package*/ SNode patternVar_modelRef;
-
     public Pattern_okm9hk_a0a1a1a0a3a0a0a0a4a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a0a3_0 = nodeToMatch;
@@ -1126,18 +1033,15 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_right = (SNode) pattern.getFieldValue("patternVar_right");
         patternVar_modelRef = (SNode) pattern.getFieldValue("patternVar_modelRef");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_right".equals(fieldName)) {
         return patternVar_right;
@@ -1147,15 +1051,12 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a1a0a1a0a3a1a0a3a0a0a0a4a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_okm9hk_a1a0a1a0a3a1a0a3a0a0a0a4a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a1a0a0a3 = nodeToMatch;
@@ -1171,29 +1072,22 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
     }
-
     public Object getFieldValue(String fieldName) {
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a0a1a1a0a4a0a0a0a4a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_right;
     /*package*/ SNode patternVar_modelRef;
-
     public Pattern_okm9hk_a0a1a1a0a4a0a0a0a4a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a0a3 = nodeToMatch;
@@ -1259,18 +1153,15 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_right = (SNode) pattern.getFieldValue("patternVar_right");
         patternVar_modelRef = (SNode) pattern.getFieldValue("patternVar_modelRef");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_right".equals(fieldName)) {
         return patternVar_right;
@@ -1280,18 +1171,14 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a0a1a1a0a3a0a0a0a5a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_left;
     /*package*/ SNode patternVar_modelRef;
-
     public Pattern_okm9hk_a0a1a1a0a3a0a0a0a5a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a0a4_0 = nodeToMatch;
@@ -1357,18 +1244,15 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_left = (SNode) pattern.getFieldValue("patternVar_left");
         patternVar_modelRef = (SNode) pattern.getFieldValue("patternVar_modelRef");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_left".equals(fieldName)) {
         return patternVar_left;
@@ -1378,15 +1262,12 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a1a0a1a0a3a1a0a3a0a0a0a5a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_okm9hk_a1a0a1a0a3a1a0a3a0a0a0a5a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a1a0a0a4 = nodeToMatch;
@@ -1402,29 +1283,22 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
     }
-
     public Object getFieldValue(String fieldName) {
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a0a1a1a0a4a0a0a0a5a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_left;
     /*package*/ SNode patternVar_modelRef;
-
     public Pattern_okm9hk_a0a1a1a0a4a0a0a0a5a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a0a4 = nodeToMatch;
@@ -1490,18 +1364,15 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_left = (SNode) pattern.getFieldValue("patternVar_left");
         patternVar_modelRef = (SNode) pattern.getFieldValue("patternVar_modelRef");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_left".equals(fieldName)) {
         return patternVar_left;
@@ -1511,17 +1382,13 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a0a1a1a0a3a0a0a0a6a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_modelRef;
-
     public Pattern_okm9hk_a0a1a1a0a3a0a0a0a6a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a0a5_0 = nodeToMatch;
@@ -1598,32 +1465,26 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_modelRef = (SNode) pattern.getFieldValue("patternVar_modelRef");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_modelRef".equals(fieldName)) {
         return patternVar_modelRef;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a1a0a1a0a3a1a0a3a0a0a0a6a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_okm9hk_a1a0a1a0a3a1a0a3a0a0a0a6a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a1a0a0a5 = nodeToMatch;
@@ -1639,28 +1500,21 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
     }
-
     public Object getFieldValue(String fieldName) {
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_okm9hk_a0a1a1a0a4a0a0a0a6a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_modelRef;
-
     public Pattern_okm9hk_a0a1a1a0a4a0a0a0a6a0() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_s34syj_a0a0a0a5 = nodeToMatch;
@@ -1737,28 +1591,23 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_modelRef = (SNode) pattern.getFieldValue("patternVar_modelRef");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_modelRef".equals(fieldName)) {
         return patternVar_modelRef;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNode _quotation_createNode_s34syj_a0a0a0a3a1a0a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1777,7 +1626,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_s34syj_a0a0a0a3a1a0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1796,7 +1644,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_s34syj_a0a0a0a3a1a0a0c(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1810,7 +1657,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_s34syj_a0a0a0a3a1a0a0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1829,7 +1675,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_s34syj_a0a0a0a3a1a0a0e(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1848,7 +1693,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_s34syj_a0a0a0a3a1a0a0f(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1867,7 +1711,6 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_2;
   }
-
   private static SNodePointer SNODE_POINTER_okm9hk_a0a0a0a0b0b0b0b0b0a0b0b0b0b0b0a0b0b0a0a0a0b0b0a0d0a0a0a0b0a = new SNodePointer("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)", "~SModelReference.getSModelFqName():jetbrains.mps.smodel.SModelFqName");
   private static SNodePointer SNODE_POINTER_okm9hk_a0a0a0a0b0b0b0b0b0b0b0b0a0a0a0b0b0a0d0a0a0a0b0a = new SNodePointer("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)", "~SModelFqName.getStereotype():java.lang.String");
   private static SNodePointer SNODE_POINTER_okm9hk_a0a0a0a0b0b0a0a0b0a0b0a0d0b0a0d0a0a0a0b0a = new SNodePointer("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)", "~SModelReference");

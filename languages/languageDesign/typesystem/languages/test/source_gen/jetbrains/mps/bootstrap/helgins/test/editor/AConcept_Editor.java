@@ -17,7 +17,6 @@ public class AConcept_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ngw44y_a(editorContext, node);
   }
-
   private EditorCell createCollection_ngw44y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ngw44y_a");
@@ -26,14 +25,12 @@ public class AConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_ngw44y_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ngw44y_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ACONCEPT");
     editorCell.setCellId("Constant_ngw44y_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_ngw44y_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");

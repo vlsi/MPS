@@ -7,7 +7,6 @@ import jetbrains.mps.build.behavior.BuildAspect_BehaviorDescriptor;
 public class BuildMpsAspect_BehaviorDescriptor extends BuildAspect_BehaviorDescriptor {
   public BuildMpsAspect_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMpsAspect";

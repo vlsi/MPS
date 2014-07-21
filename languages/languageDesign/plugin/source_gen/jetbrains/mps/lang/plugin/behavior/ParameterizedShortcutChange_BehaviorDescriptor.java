@@ -10,9 +10,9 @@ public class ParameterizedShortcutChange_BehaviorDescriptor extends ConceptFunct
   }
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return ParameterizedShortcutChange_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange";
-  };;
-;}
+  }
+}

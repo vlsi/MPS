@@ -29,82 +29,63 @@ public class ConsoleFileEditor implements DocumentsEditor {
     }
   };
 
-
   public ConsoleFileEditor(EditorComponent editor) {
     myEditor = editor;
   }
-
   @NotNull
   public JComponent getComponent() {
     return null;
   }
-
   @Nullable
   public JComponent getPreferredFocusedComponent() {
     return null;
   }
-
   @NonNls
   @NotNull
   public String getName() {
     return null;
   }
-
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
     return myState;
   }
-
   public void setState(@NotNull FileEditorState state) {
     myState = state;
   }
-
   public boolean isModified() {
     return false;
   }
-
   public boolean isValid() {
     return false;
   }
-
   public void selectNotify() {
   }
-
   public void deselectNotify() {
   }
-
   public void addPropertyChangeListener(@NotNull PropertyChangeListener listener) {
   }
-
   public void removePropertyChangeListener(@NotNull PropertyChangeListener listener) {
   }
-
   @Nullable
   public BackgroundEditorHighlighter getBackgroundHighlighter() {
     return null;
   }
-
   @Nullable
   public FileEditorLocation getCurrentLocation() {
     return null;
   }
-
   @Nullable
   public StructureViewBuilder getStructureViewBuilder() {
     return null;
   }
-
   @Nullable
   public <T> T getUserData(@NotNull Key<T> key) {
     return null;
   }
-
   public <T> void putUserData(@NotNull Key<T> key, @Nullable T t) {
   }
-
   public void dispose() {
   }
-
   public Document[] getDocuments() {
     final MPSNodeVirtualFile[] virtualFile = new MPSNodeVirtualFile[1];
     ModelAccess.instance().runReadAction(new Runnable() {

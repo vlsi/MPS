@@ -9,5 +9,5 @@ public class AddAllSetElementsOperation_BehaviorDescriptor extends AbstractSetOp
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation";
-  };;
-;}
+  }
+}

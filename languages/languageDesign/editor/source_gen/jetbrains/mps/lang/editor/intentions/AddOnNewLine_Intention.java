@@ -21,74 +21,58 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddOnNewLine_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddOnNewLine_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.editor.structure.EditorCellModel";
   }
-
   public String getPresentation() {
     return "AddOnNewLine";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.intentions.AddOnNewLine_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SNodeOperations.getParent(node) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection"), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent") && !(EditorCellModel_Behavior.call_isNewLine_1237383076236(node));
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1237395444116");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddOnNewLine_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add On New Line";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newLine = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem", null);
       SPropertyOperations.set(newLine, "flag", "" + (true));
       ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).addElement(newLine);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddOnNewLine_Intention.this;
     }

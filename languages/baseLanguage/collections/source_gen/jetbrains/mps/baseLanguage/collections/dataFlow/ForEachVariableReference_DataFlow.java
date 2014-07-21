@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ForEachVariableReference_DataFlow extends DataFlowBuilder {
   public ForEachVariableReference_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "variable", false), "r:00000000-0000-4000-0000-011c89590329(jetbrains.mps.baseLanguage.collections.dataFlow)/1207323273739");
   }

@@ -11,9 +11,9 @@ public class ConceptFunctionParameter_strictly_BehaviorDescriptor extends Concep
   }
   public boolean virtual_isParameterObjectUsed_1213877522926(SNode thisNode) {
     return ConceptFunctionParameter_strictly_Behavior.virtual_isParameterObjectUsed_1213877522926(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly";
-  };;
-;}
+  }
+}

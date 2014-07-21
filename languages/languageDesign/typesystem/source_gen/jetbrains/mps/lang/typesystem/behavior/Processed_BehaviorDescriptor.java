@@ -10,5 +10,5 @@ public class Processed_BehaviorDescriptor extends NodeAttribute_BehaviorDescript
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.Processed";
-  };;
-;}
+  }
+}

@@ -6,7 +6,6 @@ package jetbrains.mps.lang.actions.testLanguage.behavior;
 public class ActionTestChildToWrap2_BehaviorDescriptor extends ActionTestChildToWrap1_BehaviorDescriptor {
   public ActionTestChildToWrap2_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2";

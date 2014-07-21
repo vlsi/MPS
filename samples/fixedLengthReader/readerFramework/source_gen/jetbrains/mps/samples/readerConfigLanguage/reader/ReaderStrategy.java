@@ -6,7 +6,6 @@ package jetbrains.mps.samples.readerConfigLanguage.reader;
 public class ReaderStrategy {
   public ReaderStrategy(String mappingCode, Class targetClass) {
   }
-
   public void AddFieldExtractor(int start, int end, String name) {
   }
 }

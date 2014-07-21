@@ -10,9 +10,9 @@ public class PunctuationRightStyleClassItem_BehaviorDescriptor extends BooleanSt
   }
   public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return PunctuationRightStyleClassItem_Behavior.virtual_getStyleAttribute_3639065570239132541(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem";
-  };;
-;}
+  }
+}

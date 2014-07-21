@@ -15,15 +15,12 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class CompactInvokeFunctionExpression_parameters implements ParametersInformation<SNode> {
   public CompactInvokeFunctionExpression_parameters() {
   }
-
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     return Sequence.<SNode>singleton(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "function", true)), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
   }
-
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     styledText.append(BehaviorReflection.invokeVirtual(String.class, parameterObject, "virtual_getPresentation_1213877396640", new Object[]{}));
   }
-
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
     return true;
   }

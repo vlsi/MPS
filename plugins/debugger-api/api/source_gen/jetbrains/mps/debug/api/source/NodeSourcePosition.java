@@ -9,16 +9,13 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class NodeSourcePosition extends SourcePosition {
   private final SNodeReference myNode;
-
   public NodeSourcePosition(SNodeReference node) {
     myNode = node;
   }
-
   @Override
   public int hashCode() {
     return ((SNodePointer) myNode).hashCode();
   }
-
   @Override
   public boolean equals(Object object) {
     if (object == null || !(object instanceof NodeSourcePosition)) {
@@ -29,11 +26,9 @@ public class NodeSourcePosition extends SourcePosition {
 
     return eq_1z1n6b_a0e0d(myNode, nodePosition.myNode);
   }
-
   public SNode getNode() {
     return ((SNodePointer) myNode).resolve(MPSModuleRepository.getInstance());
   }
-
   private static boolean eq_1z1n6b_a0e0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

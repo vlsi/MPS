@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
@@ -55,11 +54,9 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     }
     return Collections.<ConceptEditor>emptyList();
   }
-
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.<ConceptEditorComponent>emptyList();
   }
-
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef"};

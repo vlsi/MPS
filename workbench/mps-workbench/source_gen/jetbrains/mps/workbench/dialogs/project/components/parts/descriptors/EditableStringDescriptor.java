@@ -11,7 +11,6 @@ public class EditableStringDescriptor extends VoidColumnDescriptor {
   public EditableStringDescriptor(String name, String header, int width) {
     super(name, header, width);
   }
-
   @Override
   public TableCellEditor createEditor() {
     return new DefaultCellEditor(new JTextField());

@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_PropertyArgument_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_PropertyArgument_InferenceRule() {
   }
-
   public void applyRule(final SNode propertyArgument, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = propertyArgument;
@@ -23,18 +22,15 @@ public class typeof_PropertyArgument_InferenceRule extends AbstractInferenceRule
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "9176911587997316202", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(propertyArgument, "property", false), "dataType", false), "virtual_toBaseLanguageType_1213877229718", new Object[]{}), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

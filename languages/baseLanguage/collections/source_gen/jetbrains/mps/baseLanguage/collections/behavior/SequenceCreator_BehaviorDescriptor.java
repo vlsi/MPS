@@ -10,5 +10,5 @@ public class SequenceCreator_BehaviorDescriptor extends AbstractCreator_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator";
-  };;
-;}
+  }
+}

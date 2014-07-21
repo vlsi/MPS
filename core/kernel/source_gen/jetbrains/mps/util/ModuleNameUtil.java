@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 public class ModuleNameUtil {
   public ModuleNameUtil() {
   }
-
   public static String getModuleShortName(SModule module) {
     String moduleUID = module.getModuleName();
     String shortName = NameUtil.shortNameFromLongName(moduleUID);

@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_AnalyzerRunnerCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_AnalyzerRunnerCreator_InferenceRule() {
   }
-
   public void applyRule(final SNode analyzerRunnerCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = analyzerRunnerCreator;
@@ -25,22 +24,18 @@ public class typeof_AnalyzerRunnerCreator_InferenceRule extends AbstractInferenc
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)", "178770917832644950", true), (SNode) _quotation_createNode_tazfkf_a0a0b(SLinkOperations.getTarget(SLinkOperations.getTarget(analyzerRunnerCreator, "analyzer", false), "latticeElementType", true)), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_tazfkf_a0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

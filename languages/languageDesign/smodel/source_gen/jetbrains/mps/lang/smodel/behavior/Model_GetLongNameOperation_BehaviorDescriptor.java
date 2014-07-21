@@ -9,9 +9,9 @@ public class Model_GetLongNameOperation_BehaviorDescriptor extends SNodeOperatio
   }
   public boolean virtual_applicableToModel_1262430001741492322(SConcept thisConcept) {
     return Model_GetLongNameOperation_Behavior.virtual_applicableToModel_1262430001741492322(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation";
-  };;
-;}
+  }
+}

@@ -29,29 +29,23 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
   private PsiElement mySourceElement;
   @Nullable
   private ConfigurationContext myContext;
-
   public BaseMpsProducer(ConfigurationType configurationType, String factoryClassName) {
     super(BaseMpsProducer.findFactory(configurationType, factoryClassName));
   }
-
   public BaseMpsProducer(ConfigurationFactory configurationFactory) {
     super(configurationFactory);
   }
-
   public void setSourceElement(PsiElement sourceElement) {
     mySourceElement = sourceElement;
   }
-
   @Override
   public PsiElement getSourceElement() {
     return mySourceElement;
   }
-
   @Nullable
   protected ConfigurationContext getContext() {
     return myContext;
   }
-
   @Override
   protected RunnerAndConfigurationSettings createConfigurationByElement(Location location, ConfigurationContext context) {
     myContext = context;
@@ -78,21 +72,16 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
     }
     return new RunnerAndConfigurationSettingsImpl(RunManagerImpl.getInstanceImpl(location.getProject()), config, false);
   }
-
   protected abstract RunConfiguration doCreateConfiguration(T node);
-
   protected abstract boolean isApplicable(Object element);
-
   @Override
   public int compareTo(Object o) {
     return RuntimeConfigurationProducer.PREFERED;
   }
-
   @Override
   public int hashCode() {
     return ((myContext == null ? 0 : myContext.hashCode())) + 10 * ((mySourceElement == null ? 0 : mySourceElement.hashCode())) + 20 * getClass().getName().hashCode();
   }
-
   @Override
   public boolean equals(Object obj) {
     if (obj == null || !((obj instanceof BaseMpsProducer))) {
@@ -101,7 +90,6 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
     BaseMpsProducer configCreator = (BaseMpsProducer) obj;
     return EqualUtil.equals(configCreator.myContext, myContext) && EqualUtil.equals(configCreator.mySourceElement, mySourceElement) && EqualUtil.equals(configCreator.getClass().getName(), getClass().getName());
   }
-
   @NotNull
   protected static ConfigurationFactory findFactory(ConfigurationType configurationType, @NonNls String configurationFactoryClassName) {
     for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {
@@ -114,6 +102,5 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
     }
     return configurationType.getConfigurationFactories()[0];
   }
-
   protected static Logger LOG = LogManager.getLogger(BaseMpsProducer.class);
 }

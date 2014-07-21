@@ -10,5 +10,5 @@ public class CellMenuPart_PropertyPostfixHints_BehaviorDescriptor extends CellMe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints";
-  };;
-;}
+  }
+}

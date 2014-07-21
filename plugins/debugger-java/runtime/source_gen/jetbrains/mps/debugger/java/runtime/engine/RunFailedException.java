@@ -7,11 +7,9 @@ public class RunFailedException extends Exception {
   public RunFailedException(String message) {
     super(message);
   }
-
   public RunFailedException(String message, Throwable cause) {
     super(message, cause);
   }
-
   public RunFailedException(Throwable cause) {
     super(cause);
   }

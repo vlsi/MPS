@@ -9,5 +9,5 @@ public class PropertyMessageTarget_BehaviorDescriptor extends MessageTarget_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget";
-  };;
-;}
+  }
+}

@@ -14,11 +14,11 @@ import jetbrains.mps.util.NameUtil;
 
 public class AbstractContainerType_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+  }
+  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + "<" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + ">";
-  };;
-;  public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
+  }
+  public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias"));
     if ((SLinkOperations.getTarget(thisNode, "elementType", true) != null)) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_hasPluralVariableSuffixes_1447667470349154499", new Object[]{})) {
@@ -34,8 +34,8 @@ public class AbstractContainerType_Behavior {
       }
     }
     return variableSuffixes;
-  };;
-;  public static boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
+  }
+  public static boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
     return true;
-  };;
-;}
+  }
+}

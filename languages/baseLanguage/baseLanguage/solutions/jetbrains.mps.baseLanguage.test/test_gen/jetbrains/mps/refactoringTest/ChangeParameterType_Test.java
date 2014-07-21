@@ -26,7 +26,6 @@ public class ChangeParameterType_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
     this.runTest("jetbrains.mps.refactoringTest.ChangeParameterType_Test$TestBody", "test_ChangeParameterType", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ChangeParameterType() throws Exception {
@@ -42,7 +41,6 @@ public class ChangeParameterType_Test extends BaseTransformationTest {
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
     }
-
     private static SNode _quotation_createNode_iyo2tl_a0b0a() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;

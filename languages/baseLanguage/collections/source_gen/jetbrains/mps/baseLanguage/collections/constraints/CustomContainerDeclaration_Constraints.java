@@ -21,8 +21,8 @@ public class CustomContainerDeclaration_Constraints extends BaseConstraintsDescr
       @Override
       public boolean hasOwnValidator() {
         return true;
-      };;
-;      @Override
+      }
+      @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";
         for (int i = 0; i < (SPropertyOperations.getString(propertyValue)).length(); i++) {
@@ -32,8 +32,8 @@ public class CustomContainerDeclaration_Constraints extends BaseConstraintsDescr
           }
         }
         return true;
-      };;
-;    });
+      }
+    });
     return properties;
-  };;
-;}
+  }
+}

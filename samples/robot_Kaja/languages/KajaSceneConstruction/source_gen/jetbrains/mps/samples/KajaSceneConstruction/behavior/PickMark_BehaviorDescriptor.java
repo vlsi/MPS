@@ -6,7 +6,6 @@ package jetbrains.mps.samples.KajaSceneConstruction.behavior;
 public class PickMark_BehaviorDescriptor extends AbstractBuilderCommand_BehaviorDescriptor {
   public PickMark_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark";

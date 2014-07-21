@@ -16,7 +16,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 public class DevKitChooser implements Computable<List<SModuleReference>> {
   public DevKitChooser() {
   }
-
   @Override
   public List<SModuleReference> compute() {
     Iterable<Language> langs = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);

@@ -10,5 +10,5 @@ public class ExplicitHintsSpecification_BehaviorDescriptor extends BaseConcept_B
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification";
-  };;
-;}
+  }
+}

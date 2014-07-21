@@ -8,11 +8,9 @@ public class PrimitiveValueProxy extends ValueProxy implements IValueProxy {
   public PrimitiveValueProxy(PrimitiveValue v) {
     super(v);
   }
-
   public PrimitiveValue getPrimitiveValue() {
     return (PrimitiveValue) myValue;
   }
-
   @Override
   public boolean javaEquals(IValueProxy valueProxy) {
     if (valueProxy == null || valueProxy instanceof INullValueProxy) {
@@ -20,7 +18,6 @@ public class PrimitiveValueProxy extends ValueProxy implements IValueProxy {
     }
     return myValue.equals(valueProxy.getJDIValue());
   }
-
   public String getPresentation() {
     return myValue.toString();
   }

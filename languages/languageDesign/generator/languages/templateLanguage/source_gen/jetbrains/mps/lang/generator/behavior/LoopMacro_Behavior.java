@@ -12,8 +12,8 @@ import jetbrains.mps.util.IterableUtil;
 
 public class LoopMacro_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
+  }
+  public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
       GeneratedMatchingPattern pattern_cdqxf8_a0a = new LoopMacro_Behavior.Pattern_cdqxf8_a0a0a0a1();
       SNode coercedNode_cdqxf8_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodesQuery", true)), pattern_cdqxf8_a0a);
@@ -23,8 +23,8 @@ public class LoopMacro_Behavior {
       }
     }
     return null;
-  };;
-;  public static class Pattern_cdqxf8_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  }
+  public static class Pattern_cdqxf8_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
     public Pattern_cdqxf8_a0a0a0a1() {
     }
@@ -52,22 +52,22 @@ public class LoopMacro_Behavior {
         }
       }
       return true;
-    };;
-;    public boolean hasAntiquotations() {
+    }
+    public boolean hasAntiquotations() {
       return false;
-    };;
-;    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+    }
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
-    };;
-;    public Object getFieldValue(String fieldName) {
+    }
+    public Object getFieldValue(String fieldName) {
       if ("patternVar_concept".equals(fieldName)) {
         return patternVar_concept;
       }
       return null;
-    };;
-;    public void performActions(Object o) {
-    };;
-;  }
+    }
+    public void performActions(Object o) {
+    }
+  }
 }

@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ConceptDeclaration_iconPath_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ConceptDeclaration_iconPath_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode conceptDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     String iconPath = SPropertyOperations.getString(conceptDeclaration, "iconPath");
     if (iconPath != null && iconPath.startsWith("${")) {
@@ -28,18 +27,15 @@ public class check_ConceptDeclaration_iconPath_NonTypesystemRule extends Abstrac
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -20,7 +20,6 @@ public class TestInfo_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_v9r28m_a(editorContext, node);
   }
-
   private EditorCell createCollection_v9r28m_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_v9r28m_a");
@@ -33,14 +32,12 @@ public class TestInfo_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_v9r28m_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_v9r28m_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Project path:");
     editorCell.setCellId("Constant_v9r28m_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_v9r28m_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("projectPath");
@@ -61,14 +58,12 @@ public class TestInfo_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_v9r28m_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "UI test:");
     editorCell.setCellId("Constant_v9r28m_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_v9r28m_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("uiTest");
@@ -89,14 +84,12 @@ public class TestInfo_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_v9r28m_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ReOpen project:");
     editorCell.setCellId("Constant_v9r28m_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_v9r28m_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("reOpenProject");

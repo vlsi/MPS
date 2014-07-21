@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class Applicability_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Applicability_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.heating.structure.Applicability";

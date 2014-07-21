@@ -9,11 +9,9 @@ public enum MergeVersion implements ModelVersion {
   BASE("base");
 
   private final String mySuffix;
-
   MergeVersion(String suffix) {
     mySuffix = suffix;
   }
-
   @Override
   public String getSuffix() {
     return mySuffix;

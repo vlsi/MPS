@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ConceptAncestorsProvider implements IDescendantsProvider {
   public ConceptAncestorsProvider() {
   }
-
   @Override
   public Set<SNode> getDescendants(SNode node) {
     Set<SNode> result = new HashSet<SNode>();

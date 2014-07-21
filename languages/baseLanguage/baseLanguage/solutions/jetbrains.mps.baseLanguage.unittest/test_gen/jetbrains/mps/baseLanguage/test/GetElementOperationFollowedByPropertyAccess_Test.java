@@ -17,7 +17,6 @@ public class GetElementOperationFollowedByPropertyAccess_Test extends BaseTransf
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.GetElementOperationFollowedByPropertyAccess_Test$TestBody", "test_ErrorMessagesCheck5679018521759346994", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ErrorMessagesCheck5679018521759346994() throws Exception {

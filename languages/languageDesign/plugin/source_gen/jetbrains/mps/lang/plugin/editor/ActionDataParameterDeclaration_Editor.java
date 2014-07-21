@@ -37,11 +37,9 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_d8l4wt_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createComponent_d8l4wt_a(editorContext, node);
   }
-
   private EditorCell createCollection_d8l4wt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_d8l4wt_a");
@@ -53,16 +51,13 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_d8l4wt_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_d8l4wt_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return BehaviorReflection.invokeVirtual(String.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getType_1171743928471337193", new Object[]{}), "virtual_getPresentation_1213877396640", new Object[]{});
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
@@ -72,19 +67,16 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_d8l4wt_a0");
     return editorCell;
   }
-
   private EditorCell createComponent_d8l4wt_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.plugin.editor.ActionParameter_NameCellComponent");
     return editorCell;
   }
-
   private EditorCell createConstant_d8l4wt_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "key:");
     editorCell.setCellId("Constant_d8l4wt_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_d8l4wt_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("key");
@@ -106,20 +98,16 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_d8l4wt_a3a extends InlineCellProvider {
     public _Inline_d8l4wt_a3a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_d8l4wt_a0d0(editorContext, node);
     }
-
     private EditorCell createProperty_d8l4wt_a0d0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -139,7 +127,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createRefNodeList_d8l4wt_e0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ActionDataParameterDeclaration_Editor.conditionListHandler_d8l4wt_e0(node, "condition", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
@@ -147,30 +134,25 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class conditionListHandler_d8l4wt_e0 extends RefNodeListHandler {
     public conditionListHandler_d8l4wt_e0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -184,7 +166,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
@@ -198,7 +179,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createComponent_d8l4wt_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.plugin.editor.ActionParameter_Hint");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

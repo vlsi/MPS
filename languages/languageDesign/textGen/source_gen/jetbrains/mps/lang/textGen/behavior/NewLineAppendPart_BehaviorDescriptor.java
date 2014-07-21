@@ -9,5 +9,5 @@ public class NewLineAppendPart_BehaviorDescriptor extends AbstractAppendPart_Beh
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.NewLineAppendPart";
-  };;
-;}
+  }
+}

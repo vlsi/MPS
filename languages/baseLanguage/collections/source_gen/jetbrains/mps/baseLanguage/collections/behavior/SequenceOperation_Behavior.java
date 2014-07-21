@@ -8,9 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SequenceOperation_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode call_getLeft_1213877497463(SNode thisNode) {
+  }
+  public static SNode call_getLeft_1213877497463(SNode thisNode) {
     SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     return operand;
-  };;
-;}
+  }
+}

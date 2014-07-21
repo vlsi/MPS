@@ -10,5 +10,5 @@ public class StopStatement_BehaviorDescriptor extends Statement_BehaviorDescript
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.StopStatement";
-  };;
-;}
+  }
+}

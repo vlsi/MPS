@@ -14,23 +14,23 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class ConstraintFunction_ReferentSearchScope_Validator_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode call_getSearchScopeFactory_2990203945683059022(SNode thisNode) {
+  }
+  public static SNode call_getSearchScopeFactory_2990203945683059022(SNode thisNode) {
     SNode node = (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope") ? SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"), "searchScopeFactory", true) : (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint") ? SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"), "searchScopeFactory", true) : null));
     return SNodeOperations.as(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory");
-  };;
-;  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
+  }
+  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "2990203945683059368"));
     return result;
-  };;
-;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  }
+  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_cefu43_a0a2();
-  };;
-;  private static SNode _quotation_createNode_cefu43_a0a2() {
+  }
+  private static SNode _quotation_createNode_cefu43_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);
     return quotedNode_1;
-  };;
-;}
+  }
+}

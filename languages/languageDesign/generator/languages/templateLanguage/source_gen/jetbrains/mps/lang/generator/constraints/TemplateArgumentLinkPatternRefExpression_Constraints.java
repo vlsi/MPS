@@ -25,7 +25,6 @@ public class TemplateArgumentLinkPatternRefExpression_Constraints extends BaseCo
   public TemplateArgumentLinkPatternRefExpression_Constraints() {
     super("jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class TemplateArgumentLinkPatternRefExpression_Constraints extends BaseCo
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -48,7 +46,6 @@ public class TemplateArgumentLinkPatternRefExpression_Constraints extends BaseCo
             }
             return result;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_c4c9o1_a0a1a0a0a1a0b0a1a1;
@@ -58,6 +55,5 @@ public class TemplateArgumentLinkPatternRefExpression_Constraints extends BaseCo
     });
     return references;
   }
-
   private static SNodePointer breakingNode_c4c9o1_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4816349095291149871");
 }

@@ -11,9 +11,9 @@ public class ReferenceMacro_BehaviorDescriptor extends LinkAttribute_BehaviorDes
   }
   public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     return ReferenceMacro_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.ReferenceMacro";
-  };;
-;}
+  }
+}

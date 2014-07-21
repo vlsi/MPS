@@ -27,7 +27,6 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8a66hs_a(editorContext, node);
   }
-
   private EditorCell createCollection_8a66hs_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8a66hs_a");
@@ -37,7 +36,6 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_8a66hs_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_8a66hs_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("pattern");
@@ -57,7 +55,6 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_8a66hs_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
     editorCell.setCellId("Constant_8a66hs_b0");
@@ -67,7 +64,6 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_8a66hs_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

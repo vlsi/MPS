@@ -12,12 +12,10 @@ public class Collections_Style_StyleSheet {
   public static void apply_Operation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
   }
-
   public static void apply_AngleBracket(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.MATCHING_LABEL, 0, "AngleBracket");
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
   }
-
   public static void apply_LeftAngleBracket(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -28,7 +26,6 @@ public class Collections_Style_StyleSheet {
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
-
   public static void apply_RightAngleBracket(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -38,6 +35,5 @@ public class Collections_Style_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
-
 
 }

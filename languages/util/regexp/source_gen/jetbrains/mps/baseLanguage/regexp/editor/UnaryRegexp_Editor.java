@@ -27,7 +27,6 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xoe8gq_a(editorContext, node);
   }
-
   private EditorCell createCollection_xoe8gq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xoe8gq_a");
@@ -43,7 +42,6 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_xoe8gq_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_xoe8gq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_xoe8gq_a0");
@@ -53,11 +51,9 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_xoe8gq_a0a(SNode node, EditorContext editorContext) {
     return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
   }
-
   private EditorCell createRefNode_xoe8gq_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("regexp");
@@ -77,7 +73,6 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xoe8gq_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_xoe8gq_c0");
@@ -87,11 +82,9 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_xoe8gq_a2a(SNode node, EditorContext editorContext) {
     return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
   }
-
   private EditorCell createComponent_xoe8gq_d0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -107,11 +100,9 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new UnaryRegexp_Editor.ReplaceWith_UnaryRegexp_cellMenu_xoe8gq_a0d0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_UnaryRegexp_cellMenu_xoe8gq_a0d0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_UnaryRegexp_cellMenu_xoe8gq_a0d0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp";
     }

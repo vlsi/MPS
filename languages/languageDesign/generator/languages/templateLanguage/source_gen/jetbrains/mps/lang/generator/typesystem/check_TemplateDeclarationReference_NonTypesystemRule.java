@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_TemplateDeclarationReference_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_TemplateDeclarationReference_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode tdr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(tdr, "template", false) != null) && (SLinkOperations.getTarget(TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(tdr), "contentNode", true) != null)) {
       SNode content = SLinkOperations.getTarget(TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(tdr), "contentNode", true);
@@ -31,18 +30,15 @@ public class check_TemplateDeclarationReference_NonTypesystemRule extends Abstra
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

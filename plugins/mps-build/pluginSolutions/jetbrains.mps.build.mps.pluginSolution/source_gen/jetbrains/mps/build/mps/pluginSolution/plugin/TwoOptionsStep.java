@@ -31,39 +31,24 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
   private JComboBox mySelectComboBox;
   private IErrorHandler myHandler;
   protected M[] myVariantsArray;
-
   public TwoOptionsStep(Project project, AbstractBuildGenerator buildGenerator, IErrorHandler handler) {
     this.myGenerator = buildGenerator;
     this.myHandler = handler;
     this.myProject = project;
   }
-
   protected abstract M[] getVariants();
-
   protected abstract String getCheckBoxName();
-
   protected abstract String getVariantName(M variant);
-
   protected abstract String getTextFieldName();
-
   protected abstract boolean isValid(String text);
-
   protected abstract String getWarningText(String text);
-
   protected abstract String getComboBoxName();
-
   protected abstract boolean getChecked();
-
   protected abstract String getTextFieldText();
-
   protected abstract void setChecked(boolean checked);
-
   protected abstract void setTextFieldText(String text);
-
   protected abstract void setVariant(M m);
-
   protected abstract boolean isCheckBoxEnabled();
-
   @Override
   public JComponent createMainComponent() {
     JPanel panel = new JPanel(new GridBagLayout());
@@ -79,7 +64,6 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
     panel.add(this.mySelectComboBox, this.createConstraint(4, 0));
     return panel;
   }
-
   @Override
   public void _init() {
     this.mySelectComboBox.setModel(this.updateComboBoxModel());
@@ -88,7 +72,6 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
     this.myTextField.setText(this.getTextFieldText());
     this.setEnabledState(this.myOptionsCheckBox.isSelected());
   }
-
   @Override
   public void _commit(boolean finish) {
     this.setChecked(this.myOptionsCheckBox.isSelected());
@@ -98,7 +81,6 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
       this.setVariant(this.myVariantsArray[index]);
     }
   }
-
   private JCheckBox createOptionsCheckBox() {
     return new JCheckBox(new AbstractAction(TwoOptionsStep.this.getCheckBoxName()) {
       @Override
@@ -109,11 +91,9 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
       }
     });
   }
-
   private JComboBox createSelectComboBox() {
     return new JComboBox(this.updateComboBoxModel());
   }
-
   private JTextField createTextField() {
     final JTextField textField = new JTextField();
     this.myDefaultTextFieldColor = textField.getForeground();
@@ -125,7 +105,6 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
     });
     return textField;
   }
-
   private void checkTextField(JTextField textField) {
     String text = textField.getText();
     if (!(this.isValid(text)) && this.myOptionsCheckBox.isSelected()) {
@@ -137,12 +116,10 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
     }
     this.myTextField.repaint();
   }
-
   private void setEnabledState(boolean checkBoxSelected) {
     this.myTextField.setEnabled(checkBoxSelected);
     this.mySelectComboBox.setEnabled(!(checkBoxSelected));
   }
-
   private ComboBoxModel updateComboBoxModel() {
     M[] newVariants = this.getVariants();
     if (!(this.mySelectComboBox == null) && Arrays.deepEquals(newVariants, this.myVariantsArray)) {

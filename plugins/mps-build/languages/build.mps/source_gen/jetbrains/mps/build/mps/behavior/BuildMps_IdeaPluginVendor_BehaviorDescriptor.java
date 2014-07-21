@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class BuildMps_IdeaPluginVendor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildMps_IdeaPluginVendor_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginVendor";

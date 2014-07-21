@@ -20,13 +20,11 @@ public class MakeActionImpl {
   private IOperationContext context;
   private MakeActionParameters params;
   private boolean cleanMake;
-
   public MakeActionImpl(IOperationContext context, MakeActionParameters params, boolean cleanMake) {
     this.context = context;
     this.params = params;
     this.cleanMake = cleanMake;
   }
-
   public void executeAction() {
     final Iterable<? extends IResource> inputRes = params.collectInput(!(this.cleanMake));
 
@@ -56,7 +54,6 @@ public class MakeActionImpl {
       IMakeService.INSTANCE.get().make(session, inputRes);
     }
   }
-
   private Iterable<SModel> selectModels(Iterable<? extends IResource> inputRes) {
     return Sequence.fromIterable(inputRes).translate(new ITranslator2<IResource, SModel>() {
       public Iterable<SModel> translate(IResource it) {

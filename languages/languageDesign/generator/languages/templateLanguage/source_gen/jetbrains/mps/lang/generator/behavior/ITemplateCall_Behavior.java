@@ -9,8 +9,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ITemplateCall_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
+  }
+  public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.lang.generator.structure.ITemplateCall", "actualArgument")) {
       SNode template = SLinkOperations.getTarget(thisNode, "template", false);
       int i = SNodeOperations.getIndexInParent(expression);
@@ -21,5 +21,5 @@ public class ITemplateCall_Behavior {
       }
     }
     return null;
-  };;
-;}
+  }
+}

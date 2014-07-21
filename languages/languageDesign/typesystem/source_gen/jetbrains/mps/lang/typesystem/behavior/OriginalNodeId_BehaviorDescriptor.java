@@ -10,5 +10,5 @@ public class OriginalNodeId_BehaviorDescriptor extends NodeAttribute_BehaviorDes
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.OriginalNodeId";
-  };;
-;}
+  }
+}

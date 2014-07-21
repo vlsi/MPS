@@ -8,13 +8,10 @@ import java.util.Map;
 public abstract class BuildLayout_CopyProcessor_BehaviorDescriptor extends BuildLayout_CopyHandler_BehaviorDescriptor {
   public BuildLayout_CopyProcessor_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_CopyProcessor";
   }
-
   public abstract String virtual_getTaskName_1330375798060763184(SNode thisNode);
-
   public abstract Map<String, String> virtual_getTaskArguments_7918752904805535914(SNode thisNode);
 }

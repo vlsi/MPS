@@ -12,13 +12,11 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 public class EmptySearchScope extends AbstractSearchScope {
   public EmptySearchScope() {
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     return new ArrayList<SNode>();
   }
-
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     return new IReferenceInfoResolver() {

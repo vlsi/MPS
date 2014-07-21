@@ -6,21 +6,17 @@ import org.jetbrains.annotations.NotNull;
 
 public class EmptyDebuggerSettings implements IDebuggerSettings {
   private static final EmptyDebuggerSettings myInstance = new EmptyDebuggerSettings();
-
   private EmptyDebuggerSettings() {
   }
-
   @NotNull
   @Override
   public String getCommandLine(boolean application) {
     return "";
   }
-
   @Override
   public boolean isEmpty() {
     return true;
   }
-
   public static EmptyDebuggerSettings getInstance() {
     return myInstance;
   }

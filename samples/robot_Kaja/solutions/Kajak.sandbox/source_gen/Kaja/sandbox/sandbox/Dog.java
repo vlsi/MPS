@@ -7,7 +7,6 @@ import JavaKaja.runtime.KajaFrame;
 public class Dog extends KajaFrame {
   public Dog() {
   }
-
   protected void perform() {
     if (canMove()) {
       moveKaja();
@@ -27,7 +26,6 @@ public class Dog extends KajaFrame {
     turnAround_routine();
     runArround_routine();
   }
-
   public void lay_routine() {
     for (int indexVariable_qku_a0a = 0; indexVariable_qku_a0a < 5; indexVariable_qku_a0a++) {
       if (canMove()) {
@@ -53,7 +51,6 @@ public class Dog extends KajaFrame {
       }
     }
   }
-
   public void fetch_routine() {
     if (isMark()) {
       if (isMark()) {
@@ -79,14 +76,12 @@ public class Dog extends KajaFrame {
       }
     }
   }
-
   public void turnAround_routine() {
     turnLeft();
     pause();
     turnLeft();
     pause();
   }
-
   public void run_routine() {
     while (!(isWall())) {
       if (canMove()) {
@@ -97,21 +92,18 @@ public class Dog extends KajaFrame {
       }
     }
   }
-
   public void runArround_routine() {
     for (int indexVariable_qku_a0e = 0; indexVariable_qku_a0e < 4; indexVariable_qku_a0e++) {
       run_routine();
       turnRight_routine();
     }
   }
-
   public void turnRight_routine() {
     for (int indexVariable_qku_a0f = 0; indexVariable_qku_a0f < 3; indexVariable_qku_a0f++) {
       turnLeft();
       pause();
     }
   }
-
   public static void main(String[] args) {
     Dog script = new Dog();
     script.initializeComponents();

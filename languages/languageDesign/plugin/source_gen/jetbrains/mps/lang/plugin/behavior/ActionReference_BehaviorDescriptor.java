@@ -10,5 +10,5 @@ public class ActionReference_BehaviorDescriptor extends Expression_BehaviorDescr
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ActionReference";
-  };;
-;}
+  }
+}

@@ -23,53 +23,53 @@
   <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499490464">
     <file name="BaseAddAction.java">
       <node id="1560298786499490467" at="12,0,13,0" concept="2" trace="mySelectionModel" />
-      <node id="1560298786499490475" at="14,53,15,46" concept="8" />
-      <node id="1560298786499490479" at="15,46,16,29" concept="1" />
-      <node id="1560298786499490491" at="20,48,21,40" concept="6" />
-      <node id="1560298786499490499" at="21,40,22,41" concept="1" />
-      <node id="1560298786499490510" at="23,31,24,61" concept="1" />
-      <node id="1560298786499490522" at="28,52,29,28" concept="7" />
-      <node id="1560298786499490533" at="32,53,33,57" concept="6" />
-      <node id="1560298786499490540" at="33,57,34,29" concept="6" />
-      <node id="1560298786499490552" at="35,25,36,28" concept="1" />
-      <node id="1560298786499490557" at="37,5,38,18" concept="7" />
-      <node id="1560298786499490565" at="41,40,42,14" concept="7" />
-      <node id="1560298786499490505" at="22,41,25,5" concept="3" />
-      <node id="1560298786499490518" at="28,0,31,0" concept="5" trace="getSelectionModel#()Ljavax/swing/ListSelectionModel;" />
-      <node id="1560298786499490547" at="34,29,37,5" concept="4" />
-      <node id="1560298786499490559" at="41,0,44,0" concept="5" trace="doAdd#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)I" />
-      <node id="1560298786499490470" at="14,0,18,0" concept="0" trace="BaseAddAction#(Ljavax/swing/ListSelectionModel;)V" />
-      <node id="1560298786499490485" at="19,0,27,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="1560298786499490526" at="32,0,40,0" concept="5" trace="doAddMul#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljava/util/List;" />
-      <scope id="1560298786499490509" at="23,31,24,61" />
-      <scope id="1560298786499490521" at="28,52,29,28" />
-      <scope id="1560298786499490551" at="35,25,36,28" />
-      <scope id="1560298786499490564" at="41,40,42,14" />
-      <scope id="1560298786499490474" at="14,53,16,29" />
-      <scope id="1560298786499490505" at="22,41,25,5">
+      <node id="1560298786499490475" at="13,53,14,46" concept="8" />
+      <node id="1560298786499490479" at="14,46,15,29" concept="1" />
+      <node id="1560298786499490491" at="18,48,19,40" concept="6" />
+      <node id="1560298786499490499" at="19,40,20,41" concept="1" />
+      <node id="1560298786499490510" at="21,31,22,61" concept="1" />
+      <node id="1560298786499490522" at="25,52,26,28" concept="7" />
+      <node id="1560298786499490533" at="28,53,29,57" concept="6" />
+      <node id="1560298786499490540" at="29,57,30,29" concept="6" />
+      <node id="1560298786499490552" at="31,25,32,28" concept="1" />
+      <node id="1560298786499490557" at="33,5,34,18" concept="7" />
+      <node id="1560298786499490565" at="36,40,37,14" concept="7" />
+      <node id="1560298786499490505" at="20,41,23,5" concept="3" />
+      <node id="1560298786499490518" at="25,0,28,0" concept="5" trace="getSelectionModel#()Ljavax/swing/ListSelectionModel;" />
+      <node id="1560298786499490547" at="30,29,33,5" concept="4" />
+      <node id="1560298786499490559" at="36,0,39,0" concept="5" trace="doAdd#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)I" />
+      <node id="1560298786499490470" at="13,0,17,0" concept="0" trace="BaseAddAction#(Ljavax/swing/ListSelectionModel;)V" />
+      <node id="1560298786499490485" at="17,0,25,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <node id="1560298786499490526" at="28,0,36,0" concept="5" trace="doAddMul#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljava/util/List;" />
+      <scope id="1560298786499490509" at="21,31,22,61" />
+      <scope id="1560298786499490521" at="25,52,26,28" />
+      <scope id="1560298786499490551" at="31,25,32,28" />
+      <scope id="1560298786499490564" at="36,40,37,14" />
+      <scope id="1560298786499490474" at="13,53,15,29" />
+      <scope id="1560298786499490505" at="20,41,23,5">
         <var name="index" id="1560298786499490507" />
       </scope>
-      <scope id="1560298786499490518" at="28,0,31,0" />
-      <scope id="1560298786499490559" at="41,0,44,0">
+      <scope id="1560298786499490518" at="25,0,28,0" />
+      <scope id="1560298786499490559" at="36,0,39,0">
         <var name="e" id="1560298786499490562" />
       </scope>
-      <scope id="1560298786499490470" at="14,0,18,0">
+      <scope id="1560298786499490470" at="13,0,17,0">
         <var name="model" id="1560298786499490472" />
       </scope>
-      <scope id="1560298786499490490" at="20,48,25,5">
+      <scope id="1560298786499490490" at="18,48,23,5">
         <var name="indices" id="1560298786499490492" />
       </scope>
-      <scope id="1560298786499490532" at="32,53,38,18">
+      <scope id="1560298786499490532" at="28,53,34,18">
         <var name="addResult" id="1560298786499490541" />
         <var name="result" id="1560298786499490534" />
       </scope>
-      <scope id="1560298786499490485" at="19,0,27,0">
+      <scope id="1560298786499490485" at="17,0,25,0">
         <var name="e" id="1560298786499490488" />
       </scope>
-      <scope id="1560298786499490526" at="32,0,40,0">
+      <scope id="1560298786499490526" at="28,0,36,0">
         <var name="e" id="1560298786499490530" />
       </scope>
-      <unit id="1560298786499490464" at="11,0,45,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseAddAction" />
+      <unit id="1560298786499490464" at="11,0,40,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseAddAction" />
     </file>
   </root>
   <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499493326">
@@ -86,174 +86,174 @@
   <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499493338">
     <file name="ListRemoveAction.java">
       <node id="1560298786499493341" at="10,0,11,0" concept="2" trace="myList" />
-      <node id="1560298786499493349" at="12,39,13,55" concept="8" />
-      <node id="1560298786499493353" at="13,55,14,18" concept="1" />
-      <node id="1560298786499493365" at="18,39,19,20" concept="1" />
-      <node id="1560298786499493368" at="19,20,20,76" concept="1" />
-      <node id="1560298786499493390" at="24,48,25,42" concept="6" />
-      <node id="1560298786499493412" at="27,22,28,18" concept="1" />
-      <node id="1560298786499493416" at="30,5,31,16" concept="1" />
-      <node id="1560298786499493421" at="31,16,32,47" concept="6" />
-      <node id="1560298786499493449" at="33,28,34,14" concept="1" />
-      <node id="1560298786499493444" at="36,36,37,16" concept="1" />
-      <node id="1560298786499493458" at="39,21,40,37" concept="1" />
-      <node id="1560298786499493465" at="44,0,45,0" concept="5" trace="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="1560298786499493407" at="26,47,29,7" concept="4" />
-      <node id="1560298786499493435" at="35,10,38,5" concept="4" />
-      <node id="1560298786499493452" at="38,5,41,5" concept="4" />
-      <node id="1560298786499493344" at="12,0,16,0" concept="0" trace="ListRemoveAction#(Ljavax/swing/JList;)V" />
-      <node id="1560298786499493359" at="17,0,22,0" concept="5" trace="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="1560298786499493398" at="25,42,30,5" concept="3" />
-      <node id="1560298786499493431" at="32,47,38,5" concept="4" />
-      <node id="1560298786499493384" at="23,0,43,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <scope id="1560298786499493411" at="27,22,28,18" />
-      <scope id="1560298786499493448" at="33,28,34,14" />
-      <scope id="1560298786499493443" at="36,36,37,16" />
-      <scope id="1560298786499493457" at="39,21,40,37" />
-      <scope id="1560298786499493465" at="44,0,45,0">
+      <node id="1560298786499493349" at="11,39,12,55" concept="8" />
+      <node id="1560298786499493353" at="12,55,13,18" concept="1" />
+      <node id="1560298786499493365" at="16,39,17,20" concept="1" />
+      <node id="1560298786499493368" at="17,20,18,76" concept="1" />
+      <node id="1560298786499493390" at="21,48,22,42" concept="6" />
+      <node id="1560298786499493412" at="24,22,25,18" concept="1" />
+      <node id="1560298786499493416" at="27,5,28,16" concept="1" />
+      <node id="1560298786499493421" at="28,16,29,47" concept="6" />
+      <node id="1560298786499493449" at="30,28,31,14" concept="1" />
+      <node id="1560298786499493444" at="33,36,34,16" concept="1" />
+      <node id="1560298786499493458" at="36,21,37,37" concept="1" />
+      <node id="1560298786499493465" at="40,0,41,0" concept="5" trace="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <node id="1560298786499493407" at="23,47,26,7" concept="4" />
+      <node id="1560298786499493435" at="32,10,35,5" concept="4" />
+      <node id="1560298786499493452" at="35,5,38,5" concept="4" />
+      <node id="1560298786499493344" at="11,0,15,0" concept="0" trace="ListRemoveAction#(Ljavax/swing/JList;)V" />
+      <node id="1560298786499493359" at="15,0,20,0" concept="5" trace="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <node id="1560298786499493398" at="22,42,27,5" concept="3" />
+      <node id="1560298786499493431" at="29,47,35,5" concept="4" />
+      <node id="1560298786499493384" at="20,0,40,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <scope id="1560298786499493411" at="24,22,25,18" />
+      <scope id="1560298786499493448" at="30,28,31,14" />
+      <scope id="1560298786499493443" at="33,36,34,16" />
+      <scope id="1560298786499493457" at="36,21,37,37" />
+      <scope id="1560298786499493465" at="40,0,41,0">
         <var name="e" id="1560298786499493468" />
       </scope>
-      <scope id="1560298786499493348" at="12,39,14,18" />
-      <scope id="1560298786499493364" at="18,39,20,76" />
-      <scope id="1560298786499493406" at="26,47,29,7" />
-      <scope id="1560298786499493344" at="12,0,16,0">
+      <scope id="1560298786499493348" at="11,39,13,18" />
+      <scope id="1560298786499493364" at="16,39,18,76" />
+      <scope id="1560298786499493406" at="23,47,26,7" />
+      <scope id="1560298786499493344" at="11,0,15,0">
         <var name="list" id="1560298786499493346" />
       </scope>
-      <scope id="1560298786499493359" at="17,0,22,0">
+      <scope id="1560298786499493359" at="15,0,20,0">
         <var name="e" id="1560298786499493362" />
       </scope>
-      <scope id="1560298786499493398" at="25,42,30,5">
+      <scope id="1560298786499493398" at="22,42,27,5">
         <var name="i" id="1560298786499493404" />
       </scope>
-      <scope id="1560298786499493389" at="24,48,41,5">
+      <scope id="1560298786499493389" at="21,48,38,5">
         <var name="index" id="1560298786499493391" />
         <var name="listSize" id="1560298786499493422" />
       </scope>
-      <scope id="1560298786499493384" at="23,0,43,0">
+      <scope id="1560298786499493384" at="20,0,40,0">
         <var name="e" id="1560298786499493387" />
       </scope>
-      <unit id="1560298786499493338" at="9,0,46,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction" />
+      <unit id="1560298786499493338" at="9,0,42,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction" />
     </file>
   </root>
   <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499494244">
     <file name="BaseValidatedAction.java">
       <node id="1560298786499494247" at="10,0,11,0" concept="2" trace="myValidator" />
-      <node id="1560298786499494259" at="12,77,13,35" concept="8" />
-      <node id="1560298786499494269" at="17,54,18,17" concept="1" />
-      <node id="1560298786499494281" at="19,30,20,24" concept="1" />
-      <node id="1560298786499494293" at="24,54,25,28" concept="1" />
-      <node id="1560298786499494299" at="28,0,29,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="1560298786499494250" at="12,0,15,0" concept="0" trace="BaseValidatedAction#(Ljava/lang/String;Ljava/lang/String;Ljavax/swing/Icon;)V" />
-      <node id="1560298786499494274" at="18,17,21,5" concept="4" />
-      <node id="1560298786499494287" at="24,0,27,0" concept="5" trace="setValidator#(Ljava/lang/Runnable;)V" />
-      <node id="1560298786499494263" at="16,0,23,0" concept="5" trace="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <scope id="1560298786499494258" at="12,77,13,35" />
-      <scope id="1560298786499494280" at="19,30,20,24" />
-      <scope id="1560298786499494292" at="24,54,25,28" />
-      <scope id="1560298786499494299" at="28,0,29,0">
+      <node id="1560298786499494259" at="11,77,12,35" concept="8" />
+      <node id="1560298786499494269" at="15,54,16,17" concept="1" />
+      <node id="1560298786499494281" at="17,30,18,24" concept="1" />
+      <node id="1560298786499494293" at="21,54,22,28" concept="1" />
+      <node id="1560298786499494299" at="24,0,25,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <node id="1560298786499494250" at="11,0,14,0" concept="0" trace="BaseValidatedAction#(Ljava/lang/String;Ljava/lang/String;Ljavax/swing/Icon;)V" />
+      <node id="1560298786499494274" at="16,17,19,5" concept="4" />
+      <node id="1560298786499494287" at="21,0,24,0" concept="5" trace="setValidator#(Ljava/lang/Runnable;)V" />
+      <node id="1560298786499494263" at="14,0,21,0" concept="5" trace="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <scope id="1560298786499494258" at="11,77,12,35" />
+      <scope id="1560298786499494280" at="17,30,18,24" />
+      <scope id="1560298786499494292" at="21,54,22,28" />
+      <scope id="1560298786499494299" at="24,0,25,0">
         <var name="e" id="1560298786499494302" />
       </scope>
-      <scope id="1560298786499494250" at="12,0,15,0">
+      <scope id="1560298786499494250" at="11,0,14,0">
         <var name="description" id="1560298786499494254" />
         <var name="icon" id="1560298786499494256" />
         <var name="text" id="1560298786499494252" />
       </scope>
-      <scope id="1560298786499494287" at="24,0,27,0">
+      <scope id="1560298786499494287" at="21,0,24,0">
         <var name="validator" id="1560298786499494290" />
       </scope>
-      <scope id="1560298786499494268" at="17,54,21,5" />
-      <scope id="1560298786499494263" at="16,0,23,0">
+      <scope id="1560298786499494268" at="15,54,19,5" />
+      <scope id="1560298786499494263" at="14,0,21,0">
         <var name="e" id="1560298786499494266" />
       </scope>
-      <unit id="1560298786499494244" at="9,0,30,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction" />
+      <unit id="1560298786499494244" at="9,0,26,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction" />
     </file>
   </root>
   <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499495342">
     <file name="TableRemoveAction.java">
       <node id="1560298786499495345" at="10,0,11,0" concept="2" trace="myTable" />
-      <node id="1560298786499495353" at="12,42,13,55" concept="8" />
-      <node id="1560298786499495357" at="13,55,14,20" concept="1" />
-      <node id="1560298786499495369" at="18,39,19,20" concept="1" />
-      <node id="1560298786499495372" at="19,20,20,71" concept="1" />
-      <node id="1560298786499495392" at="24,48,25,41" concept="6" />
-      <node id="1560298786499495414" at="27,22,28,18" concept="1" />
-      <node id="1560298786499495418" at="30,5,31,16" concept="1" />
-      <node id="1560298786499495423" at="31,16,32,52" concept="6" />
-      <node id="1560298786499495451" at="33,28,34,14" concept="1" />
-      <node id="1560298786499495446" at="36,36,37,16" concept="1" />
-      <node id="1560298786499495460" at="39,21,40,69" concept="1" />
-      <node id="1560298786499495470" at="44,0,45,0" concept="5" trace="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="1560298786499495409" at="26,45,29,7" concept="4" />
-      <node id="1560298786499495437" at="35,10,38,5" concept="4" />
-      <node id="1560298786499495454" at="38,5,41,5" concept="4" />
-      <node id="1560298786499495348" at="12,0,16,0" concept="0" trace="TableRemoveAction#(Ljavax/swing/JTable;)V" />
-      <node id="1560298786499495363" at="17,0,22,0" concept="5" trace="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="1560298786499495400" at="25,41,30,5" concept="3" />
-      <node id="1560298786499495433" at="32,52,38,5" concept="4" />
-      <node id="1560298786499495386" at="23,0,43,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <scope id="1560298786499495413" at="27,22,28,18" />
-      <scope id="1560298786499495450" at="33,28,34,14" />
-      <scope id="1560298786499495445" at="36,36,37,16" />
-      <scope id="1560298786499495459" at="39,21,40,69" />
-      <scope id="1560298786499495470" at="44,0,45,0">
+      <node id="1560298786499495353" at="11,42,12,55" concept="8" />
+      <node id="1560298786499495357" at="12,55,13,20" concept="1" />
+      <node id="1560298786499495369" at="16,39,17,20" concept="1" />
+      <node id="1560298786499495372" at="17,20,18,71" concept="1" />
+      <node id="1560298786499495392" at="21,48,22,41" concept="6" />
+      <node id="1560298786499495414" at="24,22,25,18" concept="1" />
+      <node id="1560298786499495418" at="27,5,28,16" concept="1" />
+      <node id="1560298786499495423" at="28,16,29,52" concept="6" />
+      <node id="1560298786499495451" at="30,28,31,14" concept="1" />
+      <node id="1560298786499495446" at="33,36,34,16" concept="1" />
+      <node id="1560298786499495460" at="36,21,37,69" concept="1" />
+      <node id="1560298786499495470" at="40,0,41,0" concept="5" trace="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <node id="1560298786499495409" at="23,45,26,7" concept="4" />
+      <node id="1560298786499495437" at="32,10,35,5" concept="4" />
+      <node id="1560298786499495454" at="35,5,38,5" concept="4" />
+      <node id="1560298786499495348" at="11,0,15,0" concept="0" trace="TableRemoveAction#(Ljavax/swing/JTable;)V" />
+      <node id="1560298786499495363" at="15,0,20,0" concept="5" trace="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <node id="1560298786499495400" at="22,41,27,5" concept="3" />
+      <node id="1560298786499495433" at="29,52,35,5" concept="4" />
+      <node id="1560298786499495386" at="20,0,40,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <scope id="1560298786499495413" at="24,22,25,18" />
+      <scope id="1560298786499495450" at="30,28,31,14" />
+      <scope id="1560298786499495445" at="33,36,34,16" />
+      <scope id="1560298786499495459" at="36,21,37,69" />
+      <scope id="1560298786499495470" at="40,0,41,0">
         <var name="e" id="1560298786499495473" />
       </scope>
-      <scope id="1560298786499495352" at="12,42,14,20" />
-      <scope id="1560298786499495368" at="18,39,20,71" />
-      <scope id="1560298786499495408" at="26,45,29,7" />
-      <scope id="1560298786499495348" at="12,0,16,0">
+      <scope id="1560298786499495352" at="11,42,13,20" />
+      <scope id="1560298786499495368" at="16,39,18,71" />
+      <scope id="1560298786499495408" at="23,45,26,7" />
+      <scope id="1560298786499495348" at="11,0,15,0">
         <var name="table" id="1560298786499495350" />
       </scope>
-      <scope id="1560298786499495363" at="17,0,22,0">
+      <scope id="1560298786499495363" at="15,0,20,0">
         <var name="e" id="1560298786499495366" />
       </scope>
-      <scope id="1560298786499495400" at="25,41,30,5">
+      <scope id="1560298786499495400" at="22,41,27,5">
         <var name="i" id="1560298786499495406" />
       </scope>
-      <scope id="1560298786499495391" at="24,48,41,5">
+      <scope id="1560298786499495391" at="21,48,38,5">
         <var name="index" id="1560298786499495393" />
         <var name="listSize" id="1560298786499495424" />
       </scope>
-      <scope id="1560298786499495386" at="23,0,43,0">
+      <scope id="1560298786499495386" at="20,0,40,0">
         <var name="e" id="1560298786499495389" />
       </scope>
-      <unit id="1560298786499495342" at="9,0,46,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.TableRemoveAction" />
+      <unit id="1560298786499495342" at="9,0,42,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.TableRemoveAction" />
     </file>
   </root>
   <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499497503">
     <file name="ListEditAction.java">
       <node id="1560298786499497506" at="10,0,11,0" concept="2" trace="myList" />
-      <node id="1560298786499497514" at="12,37,13,55" concept="8" />
-      <node id="1560298786499497518" at="13,55,14,18" concept="1" />
-      <node id="1560298786499497530" at="18,39,19,20" concept="1" />
-      <node id="1560298786499497533" at="19,20,20,51" concept="1" />
-      <node id="8156633209088098085" at="23,36,24,51" concept="7" />
-      <node id="1560298786499497555" at="28,48,29,13" concept="1" />
-      <node id="8156633209087166437" at="32,26,33,18" concept="7" />
-      <node id="1560298786499497559" at="36,0,37,0" concept="5" trace="doEdit#()V" />
-      <node id="8156633209088098094" at="23,0,26,0" concept="5" trace="isApplicable#()Z" />
-      <node id="8156633209087164974" at="32,0,35,0" concept="5" trace="getList#()Ljavax/swing/JList;" />
-      <node id="1560298786499497509" at="12,0,16,0" concept="0" trace="ListEditAction#(Ljavax/swing/JList;)V" />
-      <node id="1560298786499497549" at="27,0,31,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="1560298786499497524" at="17,0,22,0" concept="5" trace="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <scope id="8156633209088098084" at="23,36,24,51" />
-      <scope id="1560298786499497554" at="28,48,29,13" />
-      <scope id="8156633209087164977" at="32,26,33,18" />
-      <scope id="1560298786499497559" at="36,0,37,0" />
-      <scope id="1560298786499497513" at="12,37,14,18" />
-      <scope id="1560298786499497529" at="18,39,20,51" />
-      <scope id="8156633209088098094" at="23,0,26,0" />
-      <scope id="8156633209087164974" at="32,0,35,0" />
-      <scope id="1560298786499497509" at="12,0,16,0">
+      <node id="1560298786499497514" at="11,37,12,55" concept="8" />
+      <node id="1560298786499497518" at="12,55,13,18" concept="1" />
+      <node id="1560298786499497530" at="16,39,17,20" concept="1" />
+      <node id="1560298786499497533" at="17,20,18,51" concept="1" />
+      <node id="8156633209088098085" at="20,36,21,51" concept="7" />
+      <node id="1560298786499497555" at="24,48,25,13" concept="1" />
+      <node id="8156633209087166437" at="27,26,28,18" concept="7" />
+      <node id="1560298786499497559" at="30,0,31,0" concept="5" trace="doEdit#()V" />
+      <node id="8156633209088098094" at="20,0,23,0" concept="5" trace="isApplicable#()Z" />
+      <node id="8156633209087164974" at="27,0,30,0" concept="5" trace="getList#()Ljavax/swing/JList;" />
+      <node id="1560298786499497509" at="11,0,15,0" concept="0" trace="ListEditAction#(Ljavax/swing/JList;)V" />
+      <node id="1560298786499497549" at="23,0,27,0" concept="5" trace="doPerform#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <node id="1560298786499497524" at="15,0,20,0" concept="5" trace="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <scope id="8156633209088098084" at="20,36,21,51" />
+      <scope id="1560298786499497554" at="24,48,25,13" />
+      <scope id="8156633209087164977" at="27,26,28,18" />
+      <scope id="1560298786499497559" at="30,0,31,0" />
+      <scope id="1560298786499497513" at="11,37,13,18" />
+      <scope id="1560298786499497529" at="16,39,18,51" />
+      <scope id="8156633209088098094" at="20,0,23,0" />
+      <scope id="8156633209087164974" at="27,0,30,0" />
+      <scope id="1560298786499497509" at="11,0,15,0">
         <var name="list" id="1560298786499497511" />
       </scope>
-      <scope id="1560298786499497549" at="27,0,31,0">
+      <scope id="1560298786499497549" at="23,0,27,0">
         <var name="e" id="1560298786499497552" />
       </scope>
-      <scope id="1560298786499497524" at="17,0,22,0">
+      <scope id="1560298786499497524" at="15,0,20,0">
         <var name="e" id="1560298786499497527" />
       </scope>
-      <unit id="1560298786499497503" at="9,0,38,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListEditAction" />
+      <unit id="1560298786499497503" at="9,0,32,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListEditAction" />
     </file>
   </root>
 </debug-info>

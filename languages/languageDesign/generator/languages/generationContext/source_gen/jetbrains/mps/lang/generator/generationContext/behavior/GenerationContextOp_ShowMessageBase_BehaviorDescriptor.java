@@ -9,5 +9,5 @@ public abstract class GenerationContextOp_ShowMessageBase_BehaviorDescriptor ext
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase";
-  };;
-;}
+  }
+}

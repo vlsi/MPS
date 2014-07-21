@@ -10,5 +10,5 @@ public abstract class ConceptPart_BehaviorDescriptor extends BaseConcept_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptPart";
-  };;
-;}
+  }
+}

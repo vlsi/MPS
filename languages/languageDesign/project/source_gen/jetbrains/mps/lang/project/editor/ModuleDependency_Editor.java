@@ -21,7 +21,6 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_c4v0tm_a(editorContext, node);
   }
-
   private EditorCell createCollection_c4v0tm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c4v0tm_a");
@@ -32,7 +31,6 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createRefNode_c4v0tm_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("moduleRef");
@@ -55,7 +53,6 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_c4v0tm_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c4v0tm_b0");
@@ -67,11 +64,9 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_c4v0tm_c1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_c4v0tm_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "reexport");
   }
-
   private EditorCell createConstant_c4v0tm_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_c4v0tm_a1a");
@@ -81,7 +76,6 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_c4v0tm_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reexport");
     editorCell.setCellId("Constant_c4v0tm_b1a");
@@ -91,7 +85,6 @@ public class ModuleDependency_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_c4v0tm_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_c4v0tm_c1a");

@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 public class NodeByConcept_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
   private NodeByConcept_Configuration.MyState myState = new NodeByConcept_Configuration.MyState();
-
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
       final Wrappers._T<String> errorText = new Wrappers._T<String>(null);
@@ -45,12 +44,10 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
       }
     }
   }
-
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
   }
-
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -58,35 +55,28 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
   }
-
   public String getNodeId() {
     return myState.myNodeId;
   }
-
   public String getModelId() {
     return myState.myModelId;
   }
-
   public void setNodeId(String value) {
     myState.myNodeId = value;
   }
-
   public void setModelId(String value) {
     myState.myModelId = value;
   }
-
   @Nullable
   public SNode getNode() {
     return check_h3hwcn_a0a0(((SNodePointer) getNodePointer()));
   }
-
   public SNodeReference getNodePointer() {
     if (this.getModelId() == null || this.getNodeId() == null) {
       return null;
     }
     return new SNodePointer(this.getModelId(), this.getNodeId());
   }
-
   public void setNode(@Nullable SNode node) {
     if (node == null) {
       this.setModelId(null);
@@ -96,7 +86,6 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
       this.setNodeId(node.getNodeId().toString());
     }
   }
-
   @Override
   public NodeByConcept_Configuration clone() {
     NodeByConcept_Configuration clone = null;
@@ -111,14 +100,11 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     }
     return clone;
   }
-
   public class MyState {
     public String myNodeId;
     public String myModelId;
-
     public MyState() {
     }
-
     @Override
     public Object clone() throws CloneNotSupportedException {
       NodeByConcept_Configuration.MyState state = new NodeByConcept_Configuration.MyState();
@@ -127,40 +113,32 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
       return state;
     }
   }
-
   public NodeByConcept_Configuration(String concept, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
     myConcept = concept;
     myIsValid = isValid;
   }
-
   private final String myConcept;
   private final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
   private SettingsEditorEx<NodeByConcept_Configuration> myEditorEx;
-
   public NodeByConcept_Configuration createCloneTemplate() {
     return new NodeByConcept_Configuration(myConcept, myIsValid);
   }
-
   public NodeByConcept_Configuration_Editor getEditor() {
     return new NodeByConcept_Configuration_Editor(myConcept, myIsValid);
   }
-
   public SettingsEditorEx<NodeByConcept_Configuration> getEditorEx() {
     if (myEditorEx == null) {
       myEditorEx = getEditor();
     }
     return myEditorEx;
   }
-
   protected static Logger LOG = LogManager.getLogger(NodeByConcept_Configuration.class);
-
   private static SNode check_h3hwcn_a0a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

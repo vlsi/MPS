@@ -45,7 +45,6 @@ public class ExtractMethodRefactoringAnalyzer {
   private boolean shouldBeStatic;
   private boolean canBeStatic;
   private boolean shouldChooseOuterContainer;
-
   public ExtractMethodRefactoringAnalyzer(List<SNode> nodes) {
     this.myPartToExtract = nodes;
     this.findExtractMethodRefactoringProcessor();
@@ -57,11 +56,9 @@ public class ExtractMethodRefactoringAnalyzer {
     this.shouldBeStatic = this.findIfShouldBeStatic();
     this.canBeStatic = this.findIfCanBeStatic();
   }
-
   /*package*/ boolean hasExitPoints() {
     return ListSequence.fromList(this.myInternalExitPoints).isNotEmpty();
   }
-
   private boolean isInside(SNode node) {
     SNode current = node;
     while (current != null) {
@@ -72,19 +69,15 @@ public class ExtractMethodRefactoringAnalyzer {
     }
     return false;
   }
-
   public boolean shouldBeStatic() {
     return shouldBeStatic;
   }
-
   public boolean canBeStatic() {
     return canBeStatic;
   }
-
   public boolean shouldChooseOuterContainer() {
     return shouldChooseOuterContainer;
   }
-
   private boolean findIfShouldBeStatic() {
     if (shouldChooseOuterContainer) {
       return true;
@@ -98,7 +91,6 @@ public class ExtractMethodRefactoringAnalyzer {
     }
     return false;
   }
-
   private boolean findIfCanBeStatic() {
     for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
       if (ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -115,7 +107,6 @@ public class ExtractMethodRefactoringAnalyzer {
     }
     return true;
   }
-
   private List<SNode> calculateInternalExitPoints() {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
@@ -140,18 +131,15 @@ public class ExtractMethodRefactoringAnalyzer {
     }
     return result;
   }
-
   /*package*/ List<SNode> getIntenalExitPoints() {
     return this.myInternalExitPoints;
   }
-
   /*package*/ List<SNode> getOutputVariables() {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(result).addSequence(SetSequence.fromSet(this.getVarableLiveAtExitPoints()));
     Iterable<SNode> t = SetSequence.fromSet(result).intersect(SetSequence.fromSet(this.getModificationsReachingExitPoints(true)));
     return ListSequence.fromListWithValues(new ArrayList<SNode>(), Sequence.fromIterable(t).toListSequence());
   }
-
   private Set<SNode> getModificationsReachingExitPoints(boolean internal) {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (Instruction preExit : SetSequence.fromSet(this.getPreExitPoints())) {
@@ -163,7 +151,6 @@ public class ExtractMethodRefactoringAnalyzer {
     }
     return result;
   }
-
   private Set<SNode> getVarableLiveAtExitPoints() {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (Instruction exitPoint : SetSequence.fromSet(this.getExitPoints())) {
@@ -173,7 +160,6 @@ public class ExtractMethodRefactoringAnalyzer {
     }
     return result;
   }
-
   private Set<Instruction> getExitPoints() {
     Set<Instruction> result = SetSequence.fromSet(new LinkedHashSet<Instruction>());
     Set<Instruction> instructions = this.getInstructions();
@@ -183,7 +169,6 @@ public class ExtractMethodRefactoringAnalyzer {
     SetSequence.fromSet(result).removeSequence(SetSequence.fromSet(instructions));
     return result;
   }
-
   private Set<Instruction> getPreExitPoints() {
     Set<Instruction> result = SetSequence.fromSet(new LinkedHashSet<Instruction>());
     Set<Instruction> exitPoints = this.getExitPoints();
@@ -194,7 +179,6 @@ public class ExtractMethodRefactoringAnalyzer {
     SetSequence.fromSet(tmp).addSequence(SetSequence.fromSet(result).intersect(SetSequence.fromSet(this.getInstructions())));
     return tmp;
   }
-
   /*package*/ boolean isExitPointsDifferent() {
     List<SNode> exits = this.myInternalExitPoints;
     for (int i = 1; i < ListSequence.fromList(exits).count(); i++) {
@@ -204,7 +188,6 @@ public class ExtractMethodRefactoringAnalyzer {
     }
     return false;
   }
-
   /*package*/ boolean isAlwaysReturns() {
     for (Instruction instruction : SetSequence.fromSet(this.getInstructions())) {
       if (this.myReachability.get(instruction)) {
@@ -222,7 +205,6 @@ public class ExtractMethodRefactoringAnalyzer {
     }
     return true;
   }
-
   /*package*/ Set<Instruction> getInstructions() {
     Set<Instruction> result = SetSequence.fromSet(new LinkedHashSet<Instruction>());
     for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
@@ -230,7 +212,6 @@ public class ExtractMethodRefactoringAnalyzer {
     }
     return result;
   }
-
   /*package*/ boolean isReturnExpressionsNotChangedInStatements() {
     List<SNode> returns = this.calculateInternalExitPoints();
     for (SNode ret : ListSequence.fromList(returns)) {
@@ -244,7 +225,6 @@ public class ExtractMethodRefactoringAnalyzer {
     }
     return true;
   }
-
   public List<MethodParameter> getInputVariables() {
     Map<SNode, MethodParameter> result = MapSequence.fromMap(new LinkedHashMap<SNode, MethodParameter>(16, (float) 0.75, false));
     this.addDataflowParameters(result);
@@ -258,15 +238,12 @@ public class ExtractMethodRefactoringAnalyzer {
     }
     return ListSequence.fromListWithValues(new ArrayList<MethodParameter>(), MapSequence.fromMap(result).values());
   }
-
   /*package*/ SNode getClassifier() {
     return SNodeOperations.getAncestor(ListSequence.fromList(this.myPartToExtract).first(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
   }
-
   public IExtractMethodRefactoringProcessor getExtractMethodReafactoringProcessor() {
     return this.myProcessor;
   }
-
   private void findExtractMethodRefactoringProcessor() {
     shouldChooseOuterContainer = false;
     SNode first = ListSequence.fromList(this.myPartToExtract).first();
@@ -281,7 +258,6 @@ public class ExtractMethodRefactoringAnalyzer {
       shouldChooseOuterContainer = true;
     }
   }
-
   private void addExternalParameters(Map<SNode, MethodParameter> result) {
     SNode list = SNodeOperations.getAncestor(ListSequence.fromList(myPartToExtract).getElement(0), "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(list), "jetbrains.mps.baseLanguage.structure.Statement")) {
@@ -325,7 +301,6 @@ public class ExtractMethodRefactoringAnalyzer {
       }
     }
   }
-
   private void addDataflowParameters(Map<SNode, MethodParameter> result) {
     for (Instruction instruction : SetSequence.fromSet(this.getInstructions())) {
       if ((instruction instanceof ReadInstruction)) {
@@ -353,7 +328,6 @@ public class ExtractMethodRefactoringAnalyzer {
       }
     }
   }
-
   public static boolean isStatements(List<SNode> nodes) {
     return SNodeOperations.isInstanceOf(ListSequence.fromList(nodes).first(), "jetbrains.mps.baseLanguage.structure.Statement");
   }

@@ -15,7 +15,6 @@ public class BuildVariableMacroInitWithDate_Constraints extends BaseConstraintsD
   public BuildVariableMacroInitWithDate_Constraints() {
     super("jetbrains.mps.build.structure.BuildVariableMacroInitWithDate");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -24,7 +23,6 @@ public class BuildVariableMacroInitWithDate_Constraints extends BaseConstraintsD
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "pattern";

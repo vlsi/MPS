@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class LT_PlusExpressionRArgument_with_Mul_Test extends BaseTransformationTest {
   public LT_PlusExpressionRArgument_with_Mul_Test() {
   }
-
   @Test
   public void test_LT_PlusExpressionRArgument_with_Mul() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     this.runTest("jetbrains.mps.editorTest.LT_PlusExpressionRArgument_with_Mul_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("8763293761094385740", "8763293761094402190");

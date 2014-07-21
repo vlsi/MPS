@@ -27,7 +27,6 @@ public class MessageStatementAnnotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xk09i2_a(editorContext, node);
   }
-
   private EditorCell createCollection_xk09i2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xk09i2_a");
@@ -38,7 +37,6 @@ public class MessageStatementAnnotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_xk09i2_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_xk09i2_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_xk09i2_a0");
@@ -48,7 +46,6 @@ public class MessageStatementAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_xk09i2_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -71,14 +68,12 @@ public class MessageStatementAnnotation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createAttributedNodeCell_xk09i2_c0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
     return editorCell;
   }
-
   private EditorCell createConstant_xk09i2_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_xk09i2_d0");

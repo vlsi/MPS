@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ComparisonRule_DataFlow extends DataFlowBuilder {
   public ComparisonRule_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "applicableNode", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "anotherNode", true));

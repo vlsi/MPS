@@ -9,9 +9,9 @@ public class CellModel_Indent_BehaviorDescriptor extends EditorCellModel_Behavio
   }
   public boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return CellModel_Indent_Behavior.virtual_isCellIdInitialized_1229948571177(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_Indent";
-  };;
-;}
+  }
+}

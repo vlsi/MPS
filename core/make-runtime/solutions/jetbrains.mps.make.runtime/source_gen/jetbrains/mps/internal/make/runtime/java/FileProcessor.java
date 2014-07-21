@@ -29,37 +29,29 @@ public class FileProcessor {
   private final List<FileProcessor.FileAndContent> myFilesAndContents = new ArrayList<FileProcessor.FileAndContent>();
   private final List<IFile> myFilesToDelete = new ArrayList<IFile>();
   private final Object LOCK = new Object();
-
   public FileProcessor() {
   }
-
   public void invalidateModel(SModel modelDescriptor) {
     synchronized (LOCK) {
       myModels.add(modelDescriptor);
     }
   }
-
   public boolean saveContent(IFile file, String content) {
     return saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.StringFileContent(content)));
   }
-
   public boolean saveContent(IFile file, Element content) {
     return saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.XMLFileContent(content)));
   }
-
   public boolean saveContent(IFile file, byte[] content) {
     return saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.BinaryFileContent(content)));
   }
-
   private boolean saveContent(FileProcessor.FileAndContent fileAndContent) {
     myFilesAndContents.add(fileAndContent);
     return !(fileAndContent.myContent.isUnchanged(fileAndContent.myFile));
   }
-
   public void filesToDelete(Collection<IFile> files) {
     myFilesToDelete.addAll(files);
   }
-
   public void flushChanges() {
     for (FileProcessor.FileAndContent fileAndContent : myFilesAndContents) {
       fileAndContent.save();
@@ -69,7 +61,6 @@ public class FileProcessor {
     }
     ModelGenerationStatusManager.getInstance().invalidateData(myModels);
   }
-
   /*package*/ int calcApproximateSize() {
     int size = 0;
     for (FileProcessor.FileAndContent fileAndContent : myFilesAndContents) {
@@ -77,39 +68,31 @@ public class FileProcessor {
     }
     return size;
   }
-
   private static class FileAndContent {
     private IFile myFile;
     private FileProcessor.FileContent myContent;
-
     private FileAndContent(IFile file, FileProcessor.FileContent content) {
       myFile = file;
       myContent = content;
     }
-
     private void save() {
       myContent.saveToFile(myFile);
     }
-
     @Override
     public String toString() {
       return myFile.toString();
     }
   }
-
   private static interface FileContent {
     public boolean isUnchanged(IFile file);
     public void saveToFile(IFile file);
     public int calcApproximateSize();
   }
-
   private static class StringFileContent implements FileProcessor.FileContent {
     private String myContent;
-
     private StringFileContent(String content) {
       myContent = content;
     }
-
     @Override
     public void saveToFile(IFile file) {
       OutputStreamWriter writer = null;
@@ -127,7 +110,6 @@ public class FileProcessor {
         }
       }
     }
-
     @Override
     public boolean isUnchanged(IFile file) {
       if (!(file.exists())) {
@@ -154,20 +136,16 @@ public class FileProcessor {
         }
       }
     }
-
     @Override
     public int calcApproximateSize() {
       return myContent.getBytes().length;
     }
   }
-
   private static class BinaryFileContent implements FileProcessor.FileContent {
     private byte[] myContent;
-
     private BinaryFileContent(byte[] content) {
       myContent = content;
     }
-
     @Override
     public void saveToFile(IFile file) {
       OutputStream stream = null;
@@ -185,7 +163,6 @@ public class FileProcessor {
         }
       }
     }
-
     @Override
     public boolean isUnchanged(IFile file) {
       if (!(file.exists())) {
@@ -216,20 +193,16 @@ public class FileProcessor {
         }
       }
     }
-
     @Override
     public int calcApproximateSize() {
       return myContent.length;
     }
   }
-
   private static class XMLFileContent implements FileProcessor.FileContent {
     private Document myDocument;
-
     private XMLFileContent(Element element) {
       myDocument = new Document(element);
     }
-
     @Override
     public void saveToFile(IFile file) {
       try {
@@ -239,8 +212,6 @@ public class FileProcessor {
       }
     }
 
-
-
     @Override
     public int calcApproximateSize() {
       try {
@@ -249,7 +220,6 @@ public class FileProcessor {
         throw new RuntimeException(e);
       }
     }
-
     @Override
     public boolean isUnchanged(IFile file) {
       return false;

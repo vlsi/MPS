@@ -21,7 +21,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_InternalNewExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode internalNewExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode type;
     if ((SLinkOperations.getTarget(internalNewExpression, "type", true) != null)) {
@@ -35,22 +34,18 @@ public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenc
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1196525371898", true), (SNode) _quotation_createNode_8luvtd_a0c0b(SPropertyOperations.getString(internalNewExpression, "fqClassName"), SLinkOperations.getTarget(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), SLinkOperations.getTargets(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }
-
   private static SNode _quotation_createNode_8luvtd_a0a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -58,7 +53,6 @@ public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenc
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_8luvtd_a0c0b(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;

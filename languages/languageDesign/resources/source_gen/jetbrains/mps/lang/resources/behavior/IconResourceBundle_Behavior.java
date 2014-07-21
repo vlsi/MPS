@@ -8,8 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IconResourceBundle_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static String call_getJavaName_8974276187400030159(SNode thisNode) {
+  }
+  public static String call_getJavaName_8974276187400030159(SNode thisNode) {
     return "IconResourceBundle_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name"));
-  };;
-;}
+  }
+}

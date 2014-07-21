@@ -10,5 +10,5 @@ public class SideTransform_SimpleString_BehaviorDescriptor extends BaseConcept_B
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString";
-  };;
-;}
+  }
+}

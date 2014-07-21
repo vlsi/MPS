@@ -12,7 +12,6 @@ public class Concept_GetAllSuperConcepts_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ic75k4_a(editorContext, node);
   }
-
   private EditorCell createCollection_ic75k4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ic75k4_a");
@@ -20,7 +19,6 @@ public class Concept_GetAllSuperConcepts_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_ic75k4_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_ic75k4_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp");
     return editorCell;

@@ -46,23 +46,17 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 public class Utils {
   public Utils() {
   }
-
   private static SModule getModule() {
     return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)"));
   }
-
   public static String generateCode(SNode node) {
     TextGenerationResult res = TextGen.generateText(node);
     return (String) res.getResult();
   }
 
-
-
   public static void checkStringStubs(String code, SNode expected) {
     checkString(code, expected, true);
   }
-
-
 
   public static void checkString(String code, SNode expected, boolean onlyStubs) {
     try {
@@ -100,7 +94,6 @@ public class Utils {
       throw new RuntimeException(e);
     }
   }
-
   public static void checkFile(String path, SNode expected) {
 
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
@@ -131,11 +124,9 @@ public class Utils {
     }
 
   }
-
   public static void checkStubModel(String dirPath, SModel expected) {
     checkStubModels(dirPath, ListSequence.fromListAndArray(new ArrayList<SModel>(), expected));
   }
-
   public static void checkStubModels(String dirPath, List<SModel> expected) {
 
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
@@ -159,7 +150,6 @@ public class Utils {
 
     compare(models, expected);
   }
-
   public static void checkSourceModel(String dirPath, SModel expected) {
     try {
       SModule testMaterials = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("49166c31-952a-46f6-8970-ea45964379d0(jetbrains.mps.ide.java.testMaterial)"));
@@ -188,7 +178,6 @@ public class Utils {
       throw new RuntimeException(e);
     }
   }
-
   public static void compareBinAndSrcStubs(String binPath, String sourcePath) {
     JavaSourceStubModelRoot src2 = new JavaSourceStubModelRoot();
 
@@ -244,7 +233,6 @@ public class Utils {
     compare(binModels, srcModelsX);
     // <node> 
   }
-
   public static void compare(Iterable<SModel> leftModels, Iterable<SModel> rightModels) {
 
     Map<String, SModel> leftModelMap = MapSequence.fromMap(new HashMap<String, SModel>());
@@ -281,7 +269,6 @@ public class Utils {
 
     Assert.assertFalse("Models differ", errors);
   }
-
   public static boolean compare2models(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
     boolean wereErrors = false;
     List<SNode> binRoots = SModelOperations.getRoots(left, null);
@@ -306,7 +293,6 @@ public class Utils {
     }
     return wereErrors;
   }
-
   public static void buildModelNodeMap(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
     Map<String, SNode> rightRootIndex = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode rightRoot : ListSequence.fromList(SModelOperations.getRoots(right, null))) {
@@ -322,7 +308,6 @@ public class Utils {
       // <node> 
     }
   }
-
   public static void buildClassifierNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
     // handling this class and nested classes 
     Map<String, SNode> rightNestedIndex = MapSequence.fromMap(new HashMap<String, SNode>());
@@ -355,7 +340,6 @@ public class Utils {
       }
     }
   }
-
   public static void buildMethodsNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
     List<SNode> leftMethods = new ArrayList<SNode>();
     List<SNode> rightMethods = new ArrayList<SNode>();
@@ -373,7 +357,6 @@ public class Utils {
       // <node> 
     }
   }
-
   public static void buildMethodBodyNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
 
     //  type vars 
@@ -394,7 +377,6 @@ public class Utils {
 
 
   }
-
   public static void buildJustNodeMap(List<SNode> left, List<SNode> right, Map<SNode, SNode> nodeMap) {
     Map<String, SNode> rightIndex = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode rightNode : ListSequence.fromList(right)) {

@@ -21,7 +21,6 @@ public class ResourceSpecificPropertiesExpression_Editor extends DefaultNodeEdit
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_yckn5s_a(editorContext, node);
   }
-
   private EditorCell createCollection_yckn5s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yckn5s_a");
@@ -31,7 +30,6 @@ public class ResourceSpecificPropertiesExpression_Editor extends DefaultNodeEdit
     editorCell.addEditorCell(this.createRefNode_yckn5s_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_yckn5s_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("properties");
@@ -51,7 +49,6 @@ public class ResourceSpecificPropertiesExpression_Editor extends DefaultNodeEdit
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_yckn5s_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_yckn5s_b0");
@@ -63,7 +60,6 @@ public class ResourceSpecificPropertiesExpression_Editor extends DefaultNodeEdit
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_yckn5s_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("resource");

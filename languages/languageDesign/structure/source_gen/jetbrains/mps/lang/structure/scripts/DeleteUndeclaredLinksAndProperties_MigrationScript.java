@@ -19,15 +19,12 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
       public String getName() {
         return "Undeclared property";
       }
-
       public String getAdditionalInfo() {
         return "Undeclared property";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         for (String propname : SNodeOperations.getProperties(node).keySet()) {
           if (((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propname) == null) {
@@ -36,7 +33,6 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
         }
         return false;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         for (String propname : SNodeOperations.getProperties(node).keySet()) {
           if (((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propname) == null) {
@@ -44,7 +40,6 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
           }
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -53,23 +48,18 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
       public String getName() {
         return "Child in undeclared role";
       }
-
       public String getAdditionalInfo() {
         return "Child in undeclared role";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(node) != null) && (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLinkDeclaration(node) == null);
       }
-
       public void doUpdateInstanceNode(SNode node) {
         jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(node);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -78,15 +68,12 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
       public String getName() {
         return "Undeclared reference";
       }
-
       public String getAdditionalInfo() {
         return "Undeclared reference";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
@@ -94,7 +81,6 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
           }
         }).isNotEmpty();
       }
-
       public void doUpdateInstanceNode(SNode node) {
         for (SReference ref : Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
@@ -104,7 +90,6 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
           node.setReference(ref.getRole(), null);
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

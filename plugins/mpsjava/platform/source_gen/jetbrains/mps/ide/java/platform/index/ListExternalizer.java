@@ -12,11 +12,9 @@ import java.util.ArrayList;
 
 public class ListExternalizer<T> implements DataExternalizer<List<T>> {
   private DataExternalizer<T> myInnerExternalizer;
-
   public ListExternalizer(DataExternalizer<T> innerExternalizer) {
     myInnerExternalizer = innerExternalizer;
   }
-
   @Override
   public void save(DataOutput output, List<T> elements) throws IOException {
     output.writeInt(ListSequence.fromList(elements).count());
@@ -24,7 +22,6 @@ public class ListExternalizer<T> implements DataExternalizer<List<T>> {
       myInnerExternalizer.save(output, element);
     }
   }
-
   @Override
   public List<T> read(DataInput input) throws IOException {
     List<T> result = ListSequence.fromList(new ArrayList<T>());

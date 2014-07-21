@@ -9,5 +9,5 @@ public class SubSetOperation_BehaviorDescriptor extends SortedSetOperation_Behav
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SubSetOperation";
-  };;
-;}
+  }
+}

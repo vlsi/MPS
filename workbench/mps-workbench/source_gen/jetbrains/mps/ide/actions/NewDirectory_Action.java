@@ -26,18 +26,15 @@ import org.apache.log4j.LogManager;
 
 public class NewDirectory_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public NewDirectory_Action() {
     super("Directory", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setIcon(IdeIcons.OPENED_FOLDER);
@@ -48,7 +45,6 @@ public class NewDirectory_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -63,7 +59,6 @@ public class NewDirectory_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final VirtualFile dir = (((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory() ? ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")) : ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent());
@@ -73,7 +68,6 @@ public class NewDirectory_Action extends BaseAction {
         public boolean checkInput(String p) {
           return true;
         }
-
         @Override
         public boolean canClose(final String p) {
           if (p.length() == 0) {
@@ -109,6 +103,5 @@ public class NewDirectory_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(NewDirectory_Action.class);
 }

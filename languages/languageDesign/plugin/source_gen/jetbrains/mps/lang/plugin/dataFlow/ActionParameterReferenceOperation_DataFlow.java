@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ActionParameterReferenceOperation_DataFlow extends DataFlowBuilder {
   public ActionParameterReferenceOperation_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "member", false), "r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)/1241370846227");
   }

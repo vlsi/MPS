@@ -9,7 +9,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 public class LogicalExpression_DataFlow extends DataFlowBuilder {
   public LogicalExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitNop("r:5784598d-868b-437e-9c58-15fb07e7f373(jetbrains.mps.samples.Kaja.dataFlow)/6630310702469874802");
   }

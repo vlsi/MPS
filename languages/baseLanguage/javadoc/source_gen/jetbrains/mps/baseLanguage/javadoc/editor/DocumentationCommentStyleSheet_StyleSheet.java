@@ -16,7 +16,6 @@ public class DocumentationCommentStyleSheet_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
   }
-
   public static void apply_CommentTag(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -25,7 +24,6 @@ public class DocumentationCommentStyleSheet_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_CommentHTMLTag(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -35,6 +33,5 @@ public class DocumentationCommentStyleSheet_StyleSheet {
     }
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD_ITALIC);
   }
-
 
 }

@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildSource_JavaJars_BehaviorDescriptor extends BuildSource_JavaCP_BehaviorDescriptor implements BuildSourceSetContainer_BehaviorDescriptor {
   public BuildSource_JavaJars_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildSource_JavaJars";

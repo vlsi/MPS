@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ConstrainedDataTypeDeclaration_BehaviorDescriptor extends DataTypeDeclaration_BehaviorDescriptor {
   public ConstrainedDataTypeDeclaration_BehaviorDescriptor() {
   }
-
   public SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
     return ConstrainedDataTypeDeclaration_Behavior.virtual_toBaseLanguageType_1213877229718(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration";

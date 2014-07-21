@@ -25,7 +25,6 @@ public class ModelCacheReloader implements ApplicationComponent {
   private VirtualFileManager myVirtualFileManager;
   private ModelCacheReloader.CacheFileListener myFileListener = new ModelCacheReloader.CacheFileListener();
   private List<BaseModelCache> myCaches = ListSequence.fromList(new ArrayList<BaseModelCache>());
-
   public ModelCacheReloader(VirtualFileManager virtualFileManager, MPSCoreComponents coreComponents) {
     // TODO rewrite using FileSystem.getInstance().addListener(..) 
     myVirtualFileManager = virtualFileManager;
@@ -33,24 +32,20 @@ public class ModelCacheReloader implements ApplicationComponent {
     ListSequence.fromList(myCaches).addElement(BLDependenciesCache.getInstance());
     ListSequence.fromList(myCaches).addElement(GenerationDependenciesCache.getInstance());
   }
-
   @Override
   public void initComponent() {
     myVirtualFileManager.addVirtualFileListener(myFileListener);
   }
-
   @Override
   public void disposeComponent() {
     myVirtualFileManager.removeVirtualFileListener(myFileListener);
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return getClass().getName();
   }
-
   private void invalidateForFile(VirtualFileEvent event) {
     final IFile file = VirtualFileUtils.toIFile(event.getFile());
     check_hmm83z_a1a7(ListSequence.fromList(myCaches).findFirst(new IWhereFilter<BaseModelCache>() {
@@ -59,32 +54,26 @@ public class ModelCacheReloader implements ApplicationComponent {
       }
     }), file);
   }
-
   private class CacheFileListener extends VirtualFileAdapter {
     private CacheFileListener() {
     }
-
     @Override
     public void beforeFileMovement(VirtualFileMoveEvent event) {
       invalidateForFile(event);
     }
-
     @Override
     public void beforeFileDeletion(VirtualFileEvent event) {
       invalidateForFile(event);
     }
-
     @Override
     public void fileCreated(VirtualFileEvent event) {
       invalidateForFile(event);
     }
-
     @Override
     public void contentsChanged(VirtualFileEvent event) {
       invalidateForFile(event);
     }
   }
-
   private static void check_hmm83z_a1a7(BaseModelCache checkedDotOperand, IFile file) {
     if (null != checkedDotOperand) {
       checkedDotOperand.invalidateCacheForFile(file);

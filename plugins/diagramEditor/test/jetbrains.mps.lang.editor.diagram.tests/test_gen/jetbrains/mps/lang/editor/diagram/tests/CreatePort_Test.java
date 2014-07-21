@@ -18,18 +18,15 @@ import java.awt.event.MouseEvent;
 public class CreatePort_Test extends BaseTransformationTest {
   public CreatePort_Test() {
   }
-
   @Test
   public void test_CreatePort() throws Throwable {
     this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
     this.runTest("jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("2278461409093572745", "2278461409093572838");

@@ -7,32 +7,32 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <root nodeRef="r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)/7651593722933722504">
     <file name="TableColumnsDefaultWrapping_Test.java">
-      <node id="7651593722933722504" at="18,67,19,128" concept="1" />
-      <node id="7651593722933722504" at="19,128,20,129" concept="1" />
-      <node id="7651593722933722504" at="29,51,30,99" concept="3" />
-      <node id="7651593722933722504" at="30,99,31,93" concept="3" />
-      <node id="7376433222636454255" at="31,93,32,77" concept="4" />
-      <node id="3556593678838427559" at="32,77,33,15" concept="4" />
-      <node id="3556593678838427576" at="33,15,34,75" concept="4" />
-      <node id="3556593678838428176" at="34,75,35,123" concept="4" />
-      <node id="7376433222636454421" at="35,123,36,77" concept="4" />
+      <node id="7651593722933722504" at="17,67,18,128" concept="1" />
+      <node id="7651593722933722504" at="18,128,19,129" concept="1" />
+      <node id="7651593722933722504" at="26,51,27,99" concept="3" />
+      <node id="7651593722933722504" at="27,99,28,93" concept="3" />
+      <node id="7376433222636454255" at="28,93,29,77" concept="4" />
+      <node id="3556593678838427559" at="29,77,30,15" concept="4" />
+      <node id="3556593678838427576" at="30,15,31,75" concept="4" />
+      <node id="3556593678838428176" at="31,75,32,123" concept="4" />
+      <node id="7376433222636454421" at="32,123,33,77" concept="4" />
       <node id="7651593722933722504" at="14,0,16,0" concept="0" trace="TableColumnsDefaultWrapping_Test#()V" />
-      <node id="7651593722933722504" at="25,0,27,0" concept="0" trace="TestBody#()V" />
-      <node id="7651593722933722504" at="17,0,22,0" concept="2" trace="test_TableColumnsDefaultWrapping#()V" />
-      <node id="7651593722933722504" at="28,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <node id="7651593722933722504" at="23,0,25,0" concept="0" trace="TestBody#()V" />
+      <node id="7651593722933722504" at="16,0,21,0" concept="2" trace="test_TableColumnsDefaultWrapping#()V" />
+      <node id="7651593722933722504" at="25,0,35,0" concept="2" trace="testMethodImpl#()V" />
       <scope id="7651593722933722504" at="14,45,14,45" />
-      <scope id="7651593722933722504" at="25,23,25,23" />
+      <scope id="7651593722933722504" at="23,23,23,23" />
       <scope id="7651593722933722504" at="14,0,16,0" />
-      <scope id="7651593722933722504" at="18,67,20,129" />
-      <scope id="7651593722933722504" at="25,0,27,0" />
-      <scope id="7651593722933722504" at="17,0,22,0" />
-      <scope id="7651593722933722504" at="29,51,36,77">
+      <scope id="7651593722933722504" at="17,67,19,129" />
+      <scope id="7651593722933722504" at="23,0,25,0" />
+      <scope id="7651593722933722504" at="16,0,21,0" />
+      <scope id="7651593722933722504" at="26,51,33,77">
         <var name="editor" id="7651593722933722504" />
         <var name="editorComponent" id="7651593722933722504" />
       </scope>
-      <scope id="7651593722933722504" at="28,0,38,0" />
-      <unit id="7651593722933722504" at="23,0,39,0" name="jetbrains.mps.lang.editor.table.decTable.test.TableColumnsDefaultWrapping_Test$TestBody" />
-      <unit id="7651593722933722504" at="12,0,40,0" name="jetbrains.mps.lang.editor.table.decTable.test.TableColumnsDefaultWrapping_Test" />
+      <scope id="7651593722933722504" at="25,0,35,0" />
+      <unit id="7651593722933722504" at="21,0,36,0" name="jetbrains.mps.lang.editor.table.decTable.test.TableColumnsDefaultWrapping_Test$TestBody" />
+      <unit id="7651593722933722504" at="12,0,37,0" name="jetbrains.mps.lang.editor.table.decTable.test.TableColumnsDefaultWrapping_Test" />
     </file>
   </root>
 </debug-info>

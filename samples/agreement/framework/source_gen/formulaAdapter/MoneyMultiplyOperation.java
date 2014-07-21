@@ -8,12 +8,10 @@ import mf.Money;
 public class MoneyMultiplyOperation implements Function<Money> {
   private Function<Money> myLeftOperand;
   private Function<Double> myRightOperand;
-
   public MoneyMultiplyOperation(Function<Money> leftOperand, Function<Double> rightOperand) {
     myLeftOperand = leftOperand;
     myRightOperand = rightOperand;
   }
-
   @Override
   public Money compute(Object parm) {
     return myLeftOperand.compute(parm).multiply(myRightOperand.compute(parm));

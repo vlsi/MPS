@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SReference;
 public class check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode debuggerReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(debuggerReference), "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator")) {
       Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());
@@ -27,22 +26,18 @@ public class check_DebuggerReferenceThrowableIsCaught_NonTypesystemRule extends 
       RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, debuggerReference);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.debugger.api.lang.structure.DebuggerReference";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_fpej4j_a0a1a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

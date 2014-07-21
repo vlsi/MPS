@@ -40,10 +40,8 @@ public class SNodeUtil {
   public static final String link_BaseConcept_smodelAttribute = "smodelAttribute";
   public static final String CPR_BaseConcept_alias = "alias";
   public static final String CPR_BaseConcept_abstract = "abstract";
-
   public SNodeUtil() {
   }
-
   public static String getPresentation(SNode node) {
     try {
       return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPresentation_1213877396640", new Object[]{});
@@ -51,41 +49,33 @@ public class SNodeUtil {
       return node.getName();
     }
   }
-
   public static String getDetailedPresentation(SNode node) {
     return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getDetailedPresentation_2354269628709769373", new Object[]{});
   }
-
   public static boolean isDefaultSubstitutable(SNode node) {
     return BehaviorReflection.invokeNonVirtual(Boolean.TYPE, node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_isDefaultSubstitutable_7429110134803670673", new Object[]{});
   }
-
   public static List<SNode> findAllAspects(SNode node) {
     return BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findAllAspects_7754459869734028917", new Object[]{});
   }
-
   public static int getMetaLevel(SNode node) {
     return BehaviorReflection.invokeVirtual(Integer.TYPE, node, "virtual_getMetaLevel_3981318653438234726", new Object[]{});
   }
-
   public static String getConceptDeclarationAlias(SNode conceptDeclaration) {
     return SPropertyOperations.getString(conceptDeclaration, "alias");
   }
-
   public static boolean isInstanceOfConceptDeclaration(SNode node) {
     if (node == null) {
       return false;
     }
     return node.getConcept().getQualifiedName().equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
   }
-
   public static boolean isInstanceOfInterfaceConceptDeclaration(SNode node) {
     if (node == null) {
       return false;
     }
     return node.getConcept().getQualifiedName().equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
   }
-
   public static boolean isInstanceOfAbstractConceptDeclaration(SNode node) {
     if (node == null) {
       return false;
@@ -93,15 +83,12 @@ public class SNodeUtil {
     String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   public static boolean getConceptDeclaration_IsRootable(SNode concept) {
     return SPropertyOperations.getBoolean(concept, "rootable");
   }
-
   public static SNode getConceptDeclaration_Extends(SNode concept) {
     return SLinkOperations.getTarget(concept, "extends", false);
   }
-
   public static Iterable<SNode> getConceptDeclaration_Implements(SNode concept) {
     return ListSequence.fromList(SLinkOperations.getTargets(concept, "implements", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -109,19 +96,15 @@ public class SNodeUtil {
       }
     });
   }
-
   public static Iterable<SNode> getConceptDeclaration_ImplementsReferenceNodes(SNode concept) {
     return SLinkOperations.getTargets(concept, "implements", true);
   }
-
   public static Iterable<SNode> getConcept_LinkDeclarations(SNode concept) {
     return SLinkOperations.getTargets(concept, "linkDeclaration", true);
   }
-
   public static Iterable<SNode> getConcept_PropertyDeclarations(SNode concept) {
     return SLinkOperations.getTargets(concept, "propertyDeclaration", true);
   }
-
   public static Iterable<SNode> getInterfaceConceptDeclaration_Extends(SNode concept) {
     return ListSequence.fromList(SLinkOperations.getTargets(concept, "extends", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -129,27 +112,21 @@ public class SNodeUtil {
       }
     });
   }
-
   public static Iterable<SNode> getInterfaceConceptDeclaration_ExtendsReferenceNodes(SNode concept) {
     return SLinkOperations.getTargets(concept, "extends", true);
   }
-
   public static String getNodeShortDescription(SNode node) {
     return SPropertyOperations.getString(node, "shortDescription");
   }
-
   public static String getConceptShortDescription(SNode concept) {
     return SPropertyOperations.getString(concept, "conceptShortDescription");
   }
-
   public static String getConceptAlias(SNode concept) {
     return SPropertyOperations.getString(concept, "conceptAlias");
   }
-
   public static String getResolveInfo(SNode node) {
     return SPropertyOperations.getString(node, "resolveInfo");
   }
-
   public static boolean isInstanceOfLinkDeclaration(SNode node) {
     if (node == null) {
       return false;
@@ -157,7 +134,6 @@ public class SNodeUtil {
     String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.LinkDeclaration");
   }
-
   public static boolean isInstanceOfPropertyDeclaration(SNode node) {
     if (node == null) {
       return false;
@@ -165,11 +141,9 @@ public class SNodeUtil {
     String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
-
   public static SNode getPropertyDeclaration_DataType(SNode decl) {
     return SLinkOperations.getTarget(decl, "dataType", false);
   }
-
   public static boolean isInstanceOfPrimitiveDataTypeDeclaration(SNode node) {
     if (node == null) {
       return false;
@@ -177,7 +151,6 @@ public class SNodeUtil {
     String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration");
   }
-
   public static boolean isInstanceOfEnumerationDataTypeDeclaration(SNode node) {
     if (node == null) {
       return false;
@@ -185,23 +158,18 @@ public class SNodeUtil {
     String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
   }
-
   public static boolean getLinkDeclaration_IsReference(SNode link) {
     return SPropertyOperations.hasValue(link, "metaClass", "reference", "reference");
   }
-
   public static boolean getLinkDeclaration_IsExactlyOneMultiplicity(SNode link) {
     return SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1");
   }
-
   public static boolean getLinkDeclaration_IsAtLeastOneMultiplicity(SNode link) {
     return SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1..n", "0..1");
   }
-
   public static boolean getLinkDeclaration_IsSingular(SNode link) {
     return BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isSingular_1213877254557", new Object[]{});
   }
-
   public static boolean hasReferenceMacro(SNode node, String role) {
     return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", role)) != null);
   }

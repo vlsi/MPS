@@ -51,7 +51,6 @@ public class NewGeneratorDialog extends DialogWrapper {
   private JTextField myGeneratorName;
   private Language mySourceLanguage;
   private Generator myResult;
-
   public NewGeneratorDialog(Project project, Language sourceLanguage) throws HeadlessException {
     super(project);
     setTitle("New Generator");
@@ -62,13 +61,11 @@ public class NewGeneratorDialog extends DialogWrapper {
 
     init();
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myContenetPane;
   }
-
   private void initContentPane() {
     myContenetPane.add(new JLabel("Generator name"));
     myGeneratorName = new JTextField();
@@ -95,7 +92,6 @@ public class NewGeneratorDialog extends DialogWrapper {
     myContenetPane.add(myTemplateModelsDir);
     updateTemplateModelsDir();
   }
-
   private void updateTemplateModelsDir() {
     IFile moduleDir = mySourceLanguage.getModuleSourceDir();
     assert moduleDir != null;
@@ -103,7 +99,6 @@ public class NewGeneratorDialog extends DialogWrapper {
     String modelsDir = path + File.separatorChar + "generator" + File.separatorChar + "template";
     myTemplateModelsDir.setText(modelsDir);
   }
-
   private boolean isValidName(String name) {
     for (char c : name.toCharArray()) {
       if (!(Character.isLetterOrDigit(c)) && c != '_') {
@@ -112,11 +107,9 @@ public class NewGeneratorDialog extends DialogWrapper {
     }
     return true;
   }
-
   public Generator getResult() {
     return myResult;
   }
-
   @Override
   protected void doOKAction() {
     final String templateModelsPath = myTemplateModelsDir.getText();
@@ -156,13 +149,11 @@ public class NewGeneratorDialog extends DialogWrapper {
     myResult = newGenerator.value;
     super.doOKAction();
   }
-
   @Override
   protected void dispose() {
     super.dispose();
     Disposer.dispose(myTemplateModelsDir);
   }
-
   protected Generator createNewGenerator(final Language language, String templateModelsDir, String name) {
     final LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
@@ -181,11 +172,9 @@ public class NewGeneratorDialog extends DialogWrapper {
 
     return (Generator) MPSModuleRepository.getInstance().getModule(generatorDescriptor.getId());
   }
-
   private String getTemplateModelPrefix(Language sourceLanguage) {
     return sourceLanguage.getModuleName() + ".generator.template";
   }
-
   private void adjustTemplateModel(Language sourceLanguage, Generator newGenerator) {
     boolean alreadyOwnsTemplateModel = false;
     for (SModel modelDescriptor : newGenerator.getModels()) {
@@ -203,6 +192,5 @@ public class NewGeneratorDialog extends DialogWrapper {
     SModelOperations.addRootNode(((SModel) templateModel), mappingConfiguration);
     templateModel.save();
   }
-
   protected static Logger LOG = LogManager.getLogger(NewGeneratorDialog.class);
 }

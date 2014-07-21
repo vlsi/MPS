@@ -19,75 +19,59 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddMayBeUnreachable_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddMayBeUnreachable_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.dataFlow.structure.EmitStatement";
   }
-
   public String getPresentation() {
     return "AddMayBeUnreachable";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.dataFlow.intentions.AddMayBeUnreachable_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.dataFlow";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable"));
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)", "1206534589230");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddMayBeUnreachable_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add May Be Unreachable";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", null);
       SNodeOperations.replaceWithAnother(node, result);
       SLinkOperations.setTarget(result, "emitStatement", node, true);
       SelectionUtil.selectNode(editorContext, node);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddMayBeUnreachable_Intention.this;
     }

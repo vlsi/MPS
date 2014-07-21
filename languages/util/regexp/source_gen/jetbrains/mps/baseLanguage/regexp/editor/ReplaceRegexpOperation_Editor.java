@@ -40,11 +40,9 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ldr481_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ldr481_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_ldr481_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ldr481_a");
@@ -68,7 +66,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "s/");
     editorCell.setCellId("Constant_ldr481_a0");
@@ -79,7 +76,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_ldr481_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("search");
@@ -99,7 +95,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_ldr481_c0");
@@ -111,7 +106,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_ldr481_d0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ReplaceRegexpOperation_Editor.replacementListHandler_ldr481_d0(node, "replacement", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -119,34 +113,28 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class replacementListHandler_ldr481_d0 extends RefNodeListHandler {
     public replacementListHandler_ldr481_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_ldr481_a3a(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -159,7 +147,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_ldr481_a3a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_ldr481_a3a");
@@ -167,7 +154,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_ldr481_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_ldr481_e0");
@@ -178,7 +164,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "g");
     editorCell.setCellId("Constant_ldr481_f0");
@@ -190,11 +175,9 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_ldr481_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "globalReplace");
   }
-
   private EditorCell createConstant_ldr481_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "m");
     editorCell.setCellId("Constant_ldr481_g0");
@@ -206,11 +189,9 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_ldr481_a6a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "multiLine");
   }
-
   private EditorCell createConstant_ldr481_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "s");
     editorCell.setCellId("Constant_ldr481_h0");
@@ -222,11 +203,9 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_ldr481_a7a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "dotAll");
   }
-
   private EditorCell createConstant_ldr481_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "i");
     editorCell.setCellId("Constant_ldr481_i0");
@@ -238,11 +217,9 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_ldr481_a8a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "caseInsensitive");
   }
-
   private EditorCell createCollection_ldr481_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ldr481_a_0");
@@ -274,7 +251,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_ldr481_y0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Options:");
     editorCell.setCellId("Constant_ldr481_a0_0");
@@ -284,14 +260,12 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Global replace (/g) :");
     editorCell.setCellId("Constant_ldr481_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ldr481_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("globalReplace");
@@ -312,14 +286,12 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_ldr481_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_e0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Replaces every subsequence of the input sequence that matches the pattern with the given replacement string.");
     editorCell.setCellId("Constant_ldr481_e0_0");
@@ -330,7 +302,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_f0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_ldr481_f0_0");
@@ -340,14 +311,12 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_g0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Case insensitive (/i) :");
     editorCell.setCellId("Constant_ldr481_g0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ldr481_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("caseInsensitive");
@@ -368,7 +337,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_i0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_ldr481_i0_0");
@@ -378,14 +346,12 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Dot all (/s) : ");
     editorCell.setCellId("Constant_ldr481_j0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ldr481_k0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("dotAll");
@@ -406,7 +372,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_l0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_ldr481_l0");
@@ -416,7 +381,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_m0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "If dot all mode is enabled, the . symbol class will include new line characters");
     editorCell.setCellId("Constant_ldr481_m0");
@@ -427,7 +391,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_ldr481_n0");
@@ -437,14 +400,12 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_o0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Multiline mode (/m) : ");
     editorCell.setCellId("Constant_ldr481_o0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ldr481_p0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("multiLine");
@@ -465,7 +426,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_q0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_ldr481_q0");
@@ -475,7 +435,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_r0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "If multiline mode is enabled, the $ and ^ will work not only in the start and");
     editorCell.setCellId("Constant_ldr481_r0");
@@ -486,7 +445,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_s0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_ldr481_s0");
@@ -496,7 +454,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_t0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "the end of the text but on starts and ends of lines separated by new line characters");
     editorCell.setCellId("Constant_ldr481_t0");
@@ -507,7 +464,6 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_u0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_ldr481_u0");
@@ -517,23 +473,19 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_v0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Value:");
     editorCell.setCellId("Constant_ldr481_v0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_ldr481_w0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "search", true), "virtual_isValid_4759120547781297301", new Object[]{}) ? "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "search", true), "virtual_toString_1213877429451", new Object[]{}) + "/" : "<invalid>");
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
@@ -546,23 +498,19 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_ldr481_x0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Replacement:");
     editorCell.setCellId("Constant_ldr481_x0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_ldr481_y0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return "\"" + ReplaceRegexpOperation_Behavior.call_getReplacementString_3796137614137207007(node) + "\"";
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }

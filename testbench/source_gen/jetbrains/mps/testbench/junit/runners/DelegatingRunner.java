@@ -17,24 +17,20 @@ public class DelegatingRunner extends Runner {
   private RunnerBuilder myBuilder;
   private String myClassName;
   private SModuleReference myModuleReference;
-
   public DelegatingRunner(RunnerBuilder builder, SModuleReference moduleRef, String className) {
     myBuilder = builder;
     myModuleReference = moduleRef;
     myClassName = className;
   }
-
   @Override
   public void run(RunNotifier notifier) {
     // todo: runner should be created only twice: in #run and #getDescription 
     myBuilder.safeRunnerForClass(getTestClass()).run(notifier);
   }
-
   @Override
   public Description getDescription() {
     return myBuilder.safeRunnerForClass(getTestClass()).getDescription();
   }
-
   private Class getTestClass() {
     return ModelAccess.instance().runReadAction(new Computable<Class>() {
       public Class compute() {
@@ -42,7 +38,6 @@ public class DelegatingRunner extends Runner {
       }
     });
   }
-
   private static Class getTestClass(SModule module, String className) {
     // todo: warning on null class loader and ClassNotFoundException? 
     // todo: execute only MPS tests here. move all unit tests to ant task 

@@ -25,13 +25,11 @@ import jetbrains.mps.scope.Scope;
 public class LocalVariablesScope extends AbstractSearchScope {
   private SNode myContextNode;
   private List<SNode> myLocalVariables;
-
   @Deprecated
   public LocalVariablesScope(SNode contextNode) {
     // use Adapters.getLocalVariableScope in jetbrains.mps.baseLanguage.scopes instead 
     this.myContextNode = contextNode;
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
@@ -86,7 +84,6 @@ public class LocalVariablesScope extends AbstractSearchScope {
     }
     return result;
   }
-
   private void _populateLocalVariables(SNode statementList, SNode beforeStatement, List<SNode> result) {
     if (statementList == null) {
       return;
@@ -100,7 +97,6 @@ public class LocalVariablesScope extends AbstractSearchScope {
       this._populateLocalVariables(statementList, containingStatement, result);
     }
   }
-
   private void _populateLocalVariablesFromList(SNode statementList, SNode beforeStatement, List<SNode> result) {
     for (SNode sNode : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), statementList, "virtual_getLocalVariableElements_1238805763253", new Object[]{})) {
       // todo: bad code =( 
@@ -120,7 +116,6 @@ public class LocalVariablesScope extends AbstractSearchScope {
       }
     }
   }
-
   private void _populateLocalVariables(SNode loopStatement, List<SNode> result) {
     for (SNode child : SNodeOperations.getChildren(loopStatement)) {
       if (child.getRoleInParent().equals("body")) {
@@ -153,7 +148,6 @@ public class LocalVariablesScope extends AbstractSearchScope {
       this._populateLocalVariables(containingLoop, result);
     }
   }
-
   private void _populateLocalVariablesForCatch(SNode tryCatchStatement, List<SNode> result) {
     SNode throwable = SLinkOperations.getTarget(tryCatchStatement, "throwable", true);
     if (throwable != null) {
@@ -164,7 +158,6 @@ public class LocalVariablesScope extends AbstractSearchScope {
       this._populateLocalVariablesForCatch(containingCatchClause, result);
     }
   }
-
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
@@ -185,7 +178,6 @@ public class LocalVariablesScope extends AbstractSearchScope {
     }
     return super.getReferenceInfoResolver(referenceNode, targetConcept);
   }
-
   private static SNode findThisOrParent(SNode sourceNode, SNode concept) {
     SNode testNode = sourceNode;
     while (testNode != null) {
@@ -199,7 +191,6 @@ public class LocalVariablesScope extends AbstractSearchScope {
     }
     return null;
   }
-
   private static SNode getLastSourceNode(SNode sourceNode, SNode ancestorNode) {
     if (sourceNode == ancestorNode) {
       return sourceNode;

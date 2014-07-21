@@ -19,7 +19,6 @@ public class BuildLayout_TransparentContainer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_frgcez_a(editorContext, node);
   }
-
   private EditorCell createCollection_frgcez_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_frgcez_a");
@@ -28,7 +27,6 @@ public class BuildLayout_TransparentContainer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_frgcez_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_frgcez_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -38,16 +36,13 @@ public class BuildLayout_TransparentContainer_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_TransparentContainer_Editor.ReplaceWith_BuildLayout_NamedContainer_cellMenu_frgcez_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_BuildLayout_NamedContainer_cellMenu_frgcez_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BuildLayout_NamedContainer_cellMenu_frgcez_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.build.structure.BuildLayout_NamedContainer";
     }
   }
-
   private EditorCell createComponent_frgcez_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.editor.BuildLayout_containerElements");
     Style style = new StyleImpl();

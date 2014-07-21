@@ -9,5 +9,5 @@ public abstract class CellMenuPart_AbstractGroup_BehaviorDescriptor extends Cell
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup";
-  };;
-;}
+  }
+}

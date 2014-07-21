@@ -30,19 +30,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(downcast, "expression", _context.getSourceNode(), true);
         return downcast;
       }
-
       public String getMatchingText(String pattern) {
         return "/";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "downcast to low-level type";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -53,7 +49,6 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_7915630211773500744(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"), true) != null);
   }

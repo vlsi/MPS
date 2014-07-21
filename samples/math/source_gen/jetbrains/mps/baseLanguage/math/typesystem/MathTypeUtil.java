@@ -33,30 +33,23 @@ public class MathTypeUtil {
   public static final SNode bFloat = _quotation_createNode_i9t80i_a11();
   public static final SNode qDouble = _quotation_createNode_i9t80i_a21();
   public static final SNode bDouble = _quotation_createNode_i9t80i_a31();
-
   public MathTypeUtil() {
   }
-
   public static SNode qMatrix(SNode elementType) {
     return _quotation_createNode_i9t80i_a0a51(elementType);
   }
-
   public static SNode qVector(SNode elementType) {
     return _quotation_createNode_i9t80i_a0a61(elementType);
   }
-
   public static boolean bigType(SNode t) {
     return SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigComplexType");
   }
-
   public static boolean complexType(SNode t) {
     return SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.ComplexType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigComplexType");
   }
-
   public static boolean floatType(SNode t) {
     return SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.FloatType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.DoubleType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.ComplexType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigComplexType") || MatchingUtil.matchNodes(t, _quotation_createNode_i9t80i_a0a0a0t()) || MatchingUtil.matchNodes(t, _quotation_createNode_i9t80i_a0a0a91());
   }
-
   public static SNode join(SNode t1, SNode t2) {
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(t1, t2)) {
       return t2;
@@ -75,7 +68,6 @@ public class MathTypeUtil {
       return null;
     }
   }
-
   public static SNode ML_matrixOp(SNode t1, SNode t2, boolean mul) {
     SNode eT = join(MathUtil.getUnboxedElementType(t1), MathUtil.getUnboxedElementType(t2));
     boolean v1 = SNodeOperations.isInstanceOf(t1, "jetbrains.mps.baseLanguage.math.structure.VectorType");
@@ -94,7 +86,6 @@ public class MathTypeUtil {
       }
     }
   }
-
   public static int binaryOperationRequiresWidening(SNode binOp, SNode expr) {
     boolean left = SNodeOperations.hasRole(expr, "jetbrains.mps.baseLanguage.structure.BinaryOperation", "leftExpression");
     boolean right = SNodeOperations.hasRole(expr, "jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression");
@@ -130,7 +121,6 @@ public class MathTypeUtil {
       }
     }
   }
-
   public static SNode getElementType(SNode t) {
     {
       SNode matchedNode_i9t80i_a0x = t;
@@ -160,7 +150,6 @@ public class MathTypeUtil {
       }
     }
   }
-
   public static int pickExplicitWidening(SNode narrower, SNode wider) {
     if (!(SNodeOperations.isInstanceOf(narrower, "jetbrains.mps.baseLanguage.structure.Type"))) {
       return 0;
@@ -220,7 +209,6 @@ public class MathTypeUtil {
     }
     return 0;
   }
-
   public static SNode canMakeReturnStatement(SNode node) {
     SNode returnType = null;
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
@@ -249,7 +237,6 @@ public class MathTypeUtil {
     }
     return returnType;
   }
-
   public static SNode typeOfMatrixScalarMultiplication(SNode scalarType, SNode vT) {
     SNode e = MathTypeUtil.getElementType(vT);
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(e, scalarType) && SNodeOperations.isInstanceOf(scalarType, "jetbrains.mps.baseLanguage.structure.Type")) {
@@ -294,7 +281,6 @@ public class MathTypeUtil {
       }
     }
   }
-
   public static boolean checkAdditiveOperationDimensions(SNode binOp) {
     SNode lEt = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binOp, "leftExpression", true));
     SNode rEt = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binOp, "rightExpression", true));
@@ -309,7 +295,6 @@ public class MathTypeUtil {
     }
     return true;
   }
-
   public static SNode typeCast(SNode type, SNode parentType) {
     if (MatchingUtil.matchNodes(parentType, bDouble) && !(MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getBoxedType_1213877337320", new Object[]{}), bDouble))) {
       return _quotation_createNode_i9t80i_a0a0a82();
@@ -325,14 +310,12 @@ public class MathTypeUtil {
     }
     return null;
   }
-
   private static SNode _quotation_createNode_i9t80i_a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -342,28 +325,24 @@ public class MathTypeUtil {
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigIntegerType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -371,28 +350,24 @@ public class MathTypeUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Long")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a6() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a7() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ComplexType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a8() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a9() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -400,14 +375,12 @@ public class MathTypeUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Integer")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a01() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a11() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -415,14 +388,12 @@ public class MathTypeUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Float")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a21() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a31() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -430,7 +401,6 @@ public class MathTypeUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Double")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a0a51(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -442,7 +412,6 @@ public class MathTypeUtil {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_i9t80i_a0a61(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -454,7 +423,6 @@ public class MathTypeUtil {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_i9t80i_a0a0a0t() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -462,7 +430,6 @@ public class MathTypeUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Float")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a0a0a91() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -470,7 +437,6 @@ public class MathTypeUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Double")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a0a0a82() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -483,7 +449,6 @@ public class MathTypeUtil {
     quotedNode_1.addChild("expression", quotedNode_3);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a0a1a82() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -496,7 +461,6 @@ public class MathTypeUtil {
     quotedNode_1.addChild("expression", quotedNode_3);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a0a2a82() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -509,7 +473,6 @@ public class MathTypeUtil {
     quotedNode_1.addChild("expression", quotedNode_3);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_i9t80i_a0a3a82() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

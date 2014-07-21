@@ -13,15 +13,15 @@ public abstract class AbstractTextGenDeclaration_BehaviorDescriptor extends Base
   }
   public List<SNode> virtual_getAvailableOperations_1234781444746(SNode thisNode) {
     return AbstractTextGenDeclaration_Behavior.virtual_getAvailableOperations_1234781444746(thisNode);
-  };;
-;  public String virtual_getFqName_1213877404258(SNode thisNode) {
+  }
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
-  };;
-;  public String virtual_getTextGenNode_1234784577703(SNode thisNode) {
+  }
+  public String virtual_getTextGenNode_1234784577703(SNode thisNode) {
     return AbstractTextGenDeclaration_Behavior.virtual_getTextGenNode_1234784577703(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration";
-  };;
-;}
+  }
+}

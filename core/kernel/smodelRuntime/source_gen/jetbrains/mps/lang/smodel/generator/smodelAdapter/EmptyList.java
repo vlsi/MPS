@@ -14,31 +14,25 @@ import org.apache.log4j.LogManager;
  */
 /*package*/ class EmptyList<T> extends AbstractList<T> {
   private String myMessage;
-
   /*package*/ EmptyList() {
     myMessage = "%s";
   }
-
   /*package*/ EmptyList(@NotNull String message) {
     myMessage = message;
   }
-
   @Override
   public T get(int p0) {
     throw new IndexOutOfBoundsException();
   }
-
   @Override
   public int size() {
     return 0;
   }
-
   @Override
   public void add(int i, T e) {
     final Logger l = Logger.wrap(LogManager.getLogger(EmptyList.class));
     l.error(String.format(myMessage, e));
   }
-
   @Override
   public boolean contains(Object object) {
     return false;

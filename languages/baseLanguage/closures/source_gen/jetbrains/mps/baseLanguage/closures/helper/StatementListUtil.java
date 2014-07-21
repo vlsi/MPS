@@ -16,7 +16,6 @@ public class StatementListUtil {
     }
     return ListSequence.fromList(new ArrayList<SNode>());
   }
-
   public static List<SNode> selectStatementsUntilControlStatement(SNode slist, SNode start) {
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     boolean foundStart = false;
@@ -35,7 +34,6 @@ public class StatementListUtil {
     }
     return res;
   }
-
   public static SNode nextSibling(SNode stmt) {
     SNode nextSibling = SNodeOperations.cast(SNodeOperations.getNextSibling(stmt), "jetbrains.mps.baseLanguage.structure.Statement");
     while ((nextSibling != null) && isIgnoredStatement(nextSibling)) {
@@ -43,7 +41,6 @@ public class StatementListUtil {
     }
     return nextSibling;
   }
-
   public static boolean isControlStatement(SNode stmt) {
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.WhileStatement")) {
       return true;
@@ -68,7 +65,6 @@ public class StatementListUtil {
     }
     return false;
   }
-
   public static boolean isIgnoredStatement(SNode stmt) {
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
       return true;

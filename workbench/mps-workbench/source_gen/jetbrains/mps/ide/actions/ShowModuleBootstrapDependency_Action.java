@@ -19,18 +19,15 @@ import org.apache.log4j.LogManager;
 
 public class ShowModuleBootstrapDependency_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowModuleBootstrapDependency_Action() {
     super("Show Bootstrap Dependency", "Show Bootstrap Dependency for Used Language", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     ModuleDependencyNode node = as_b70vs2_a0a0a3(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.ULangDependencyNode.class);
     if (node == null) {
@@ -38,7 +35,6 @@ public class ShowModuleBootstrapDependency_Action extends BaseAction {
     }
     return node.isCyclic();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -52,7 +48,6 @@ public class ShowModuleBootstrapDependency_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -67,7 +62,6 @@ public class ShowModuleBootstrapDependency_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).ShowBootstrapDep(as_b70vs2_a0a0a0a0g(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.ULangDependencyNode.class));
@@ -77,13 +71,10 @@ public class ShowModuleBootstrapDependency_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowModuleBootstrapDependency_Action.class);
-
   private static <T> T as_b70vs2_a0a0a3(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_b70vs2_a0a0a0a0g(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

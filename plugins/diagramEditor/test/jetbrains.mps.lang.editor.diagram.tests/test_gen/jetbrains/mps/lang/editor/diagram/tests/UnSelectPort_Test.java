@@ -15,18 +15,15 @@ import java.util.ArrayList;
 public class UnSelectPort_Test extends BaseTransformationTest {
   public UnSelectPort_Test() {
   }
-
   @Test
   public void test_UnSelectPort() throws Throwable {
     this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
     this.runTest("jetbrains.mps.lang.editor.diagram.tests.UnSelectPort_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("2278461409093334301", "2278461409093334297");

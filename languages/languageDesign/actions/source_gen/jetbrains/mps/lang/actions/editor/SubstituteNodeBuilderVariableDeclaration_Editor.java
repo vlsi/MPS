@@ -23,7 +23,6 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1gifeu_a(editorContext, node);
   }
-
   private EditorCell createCollection_1gifeu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1gifeu_a");
@@ -34,7 +33,6 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     editorCell.addEditorCell(this.createCollection_1gifeu_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_1gifeu_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
@@ -54,7 +52,6 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_1gifeu_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -75,14 +72,12 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1gifeu_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_1gifeu_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_1gifeu_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1gifeu_d0");
@@ -90,7 +85,6 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     editorCell.addEditorCell(this.createConstant_1gifeu_b3a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_1gifeu_a3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("initializerBlock");
@@ -110,7 +104,6 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1gifeu_b3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1gifeu_b3a");

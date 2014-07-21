@@ -18,7 +18,6 @@ public class SModelType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_t3o53y_a(editorContext, node);
   }
-
   private EditorCell createConstant_t3o53y_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model");
     editorCell.setCellId("Constant_t3o53y_a");

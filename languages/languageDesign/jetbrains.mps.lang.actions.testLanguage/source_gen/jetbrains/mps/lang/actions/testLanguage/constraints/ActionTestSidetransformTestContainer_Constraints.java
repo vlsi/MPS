@@ -15,12 +15,10 @@ public class ActionTestSidetransformTestContainer_Constraints extends BaseConstr
   public ActionTestSidetransformTestContainer_Constraints() {
     super("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer");
   }
-
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;
   }
-
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
@@ -31,7 +29,6 @@ public class ActionTestSidetransformTestContainer_Constraints extends BaseConstr
 
     return result;
   }
-
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1") && link == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer", "abstractChildConstrained")) {
       return false;
@@ -42,6 +39,5 @@ public class ActionTestSidetransformTestContainer_Constraints extends BaseConstr
 
     return true;
   }
-
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:51315b9d-b515-42e5-b0a0-21c0544c81b4(jetbrains.mps.lang.actions.testLanguage.constraints)", "4942308145798610609");
 }

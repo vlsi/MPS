@@ -19,64 +19,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ToggleDeprecatedAnnotation_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ToggleDeprecatedAnnotation_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.execution.settings.structure.PersistentConfiguration";
   }
-
   public String getPresentation() {
     return "ToggleDeprecatedAnnotation";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.execution.settings.intentions.ToggleDeprecatedAnnotation_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.execution.settings";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:2f15cca9-9d4b-4caa-8c6d-31f12b9faf00(jetbrains.mps.execution.settings.intentions)", "9191251033651652580");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ToggleDeprecatedAnnotation_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) == null)) {
         return "Deprecate configuration " + SPropertyOperations.getString(node, "name");
       }
       return "Remove deprecated annotation";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) == null)) {
         AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"), "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation");
@@ -84,7 +70,6 @@ public class ToggleDeprecatedAnnotation_Intention implements IntentionFactory {
         SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")));
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return ToggleDeprecatedAnnotation_Intention.this;
     }

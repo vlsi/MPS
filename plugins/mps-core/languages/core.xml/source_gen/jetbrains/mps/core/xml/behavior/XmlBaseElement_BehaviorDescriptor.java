@@ -8,27 +8,21 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public abstract class XmlBaseElement_BehaviorDescriptor extends XmlContent_BehaviorDescriptor {
   public XmlBaseElement_BehaviorDescriptor() {
   }
-
   public boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
     return XmlBaseElement_Behavior.virtual_hasNewLineAfter_2133624044437631594(thisNode);
   }
-
   public boolean virtual_isFirstPositionAllowed_2133624044437631446(SNode thisNode) {
     return XmlBaseElement_Behavior.virtual_isFirstPositionAllowed_2133624044437631446(thisNode);
   }
-
   public boolean virtual_isLastPositionAllowed_2133624044437631519(SNode thisNode) {
     return XmlBaseElement_Behavior.virtual_isLastPositionAllowed_2133624044437631519(thisNode);
   }
-
   public boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
     return XmlBaseElement_Behavior.virtual_onNewLine_2133624044437631588(thisNode);
   }
-
   public boolean virtual_textLike_1262430001741498277(SConcept thisConcept) {
     return XmlBaseElement_Behavior.virtual_textLike_1262430001741498277(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.structure.XmlBaseElement";

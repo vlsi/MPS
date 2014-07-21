@@ -16,7 +16,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, EditorHintsProvider {
 
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("ScenePreview", "With Scene Preview", true, "jetbrains.mps.samples.Shapes.editor.Shapes.ScenePreview"), new ConceptEditorHintImpl("ShapePreview", "With Shape Preview", true, "jetbrains.mps.samples.Shapes.editor.Shapes.ShapePreview"));
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
@@ -31,7 +30,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, Edito
     }
     return Collections.<ConceptEditor>emptyList();
   }
-
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
@@ -44,12 +42,9 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, Edito
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
-
-
   public Collection<ConceptEditorHint> getHints() {
     return myHints;
   }
-
 
   private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.samples.Shapes.structure.Canvas", "jetbrains.mps.samples.Shapes.structure.Circle", "jetbrains.mps.samples.Shapes.structure.ColorReference", "jetbrains.mps.samples.Shapes.structure.Square"};
   private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.samples.Shapes.structure.Shape"};

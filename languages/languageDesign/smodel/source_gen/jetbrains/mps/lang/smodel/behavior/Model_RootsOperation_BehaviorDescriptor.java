@@ -9,9 +9,9 @@ public class Model_RootsOperation_BehaviorDescriptor extends SNodeOperation_Beha
   }
   public boolean virtual_applicableToModel_1262430001741492322(SConcept thisConcept) {
     return Model_RootsOperation_Behavior.virtual_applicableToModel_1262430001741492322(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Model_RootsOperation";
-  };;
-;}
+  }
+}

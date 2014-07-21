@@ -6,7 +6,6 @@ package jetbrains.mps.tool.environment;
 public class ActiveEnvironment {
   private static Environment INSTANCE;
 
-
   public static void activateEnvironment(Environment env) {
     if (ActiveEnvironment.INSTANCE != null) {
       throw new IllegalStateException("Active env: " + ActiveEnvironment.INSTANCE);
@@ -14,16 +13,12 @@ public class ActiveEnvironment {
     ActiveEnvironment.INSTANCE = env;
   }
 
-
-
   public static void deactivateEnvironment(Environment env) {
     if (ActiveEnvironment.INSTANCE != env) {
       throw new IllegalStateException("Active env: " + ActiveEnvironment.INSTANCE);
     }
     ActiveEnvironment.INSTANCE = null;
   }
-
-
 
   public static Environment getInstance() {
     return ActiveEnvironment.INSTANCE;

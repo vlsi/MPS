@@ -15,7 +15,6 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
 public abstract class Evaluator {
   private JavaUiState myUiState;
   private IObjectValueProxy myThisObject;
-
   public Evaluator(JavaUiState uiState) {
     myUiState = uiState;
     ObjectReference objectReference = uiState.getThisObject();
@@ -23,27 +22,21 @@ public abstract class Evaluator {
       myThisObject = (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(objectReference);
     }
   }
-
   protected IObjectValueProxy getThisObject() {
     return myThisObject;
   }
-
   public ThreadReference getThreadReference() {
     return myUiState.getThread().getThread();
   }
-
   public StackFrame getStackFrame() {
     return myUiState.getStackFrame().getStackFrame();
   }
-
   public VirtualMachine getVM() {
     return myUiState.getThread().getThread().virtualMachine();
   }
-
   @Nullable
   protected String getThisFQName() {
     return myUiState.getStackFrame().getLocation().getUnitName();
   }
-
   public abstract IValueProxy evaluate() throws EvaluationException;
 }

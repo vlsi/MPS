@@ -20,31 +20,26 @@ public class SNodeGetReferenceOperation_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test$TestBody", "test_empty", true);
   }
-
   @Test
   public void test_byLinkDeclaration() throws Throwable {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test$TestBody", "test_byLinkDeclaration", true);
   }
-
   @Test
   public void test_bySpecializedLinkDeclaration() throws Throwable {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test$TestBody", "test_bySpecializedLinkDeclaration", true);
   }
-
   @Test
   public void test_forNull() throws Throwable {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test$TestBody", "test_forNull", true);
   }
-
   @Test
   public void test_invalidLinkDeclaration() throws Throwable {
     this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test$TestBody", "test_invalidLinkDeclaration", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_empty() throws Exception {
@@ -53,7 +48,6 @@ public class SNodeGetReferenceOperation_Test extends BaseTransformationTest {
       this.addNodeById("2906110183022122679");
       Assert.assertNull(SNodeOperations.getReference(SNodeOperations.cast(this.getNodeById("2906110183022090593"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "root")));
     }
-
     public void test_byLinkDeclaration() throws Exception {
       this.addNodeById("2906110183022090592");
       this.addNodeById("2906110183022122665");
@@ -70,7 +64,6 @@ public class SNodeGetReferenceOperation_Test extends BaseTransformationTest {
       Assert.assertEquals(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "leftChild"), "role"), SLinkOperations.getRole(leftChildReference));
       Assert.assertNotNull(SLinkOperations.getResolveInfo(leftChildReference));
     }
-
     public void test_bySpecializedLinkDeclaration() throws Exception {
       this.addNodeById("2906110183022090592");
       this.addNodeById("2906110183022122665");
@@ -83,7 +76,6 @@ public class SNodeGetReferenceOperation_Test extends BaseTransformationTest {
       SReference refBySpecializedLink = SNodeOperations.getReference(SNodeOperations.cast(this.getNodeById("2906110183022122680"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept", "specializedRightChild"));
       Assert.assertEquals(refByOriginalLink, refBySpecializedLink);
     }
-
     public void test_forNull() throws Exception {
       this.addNodeById("2906110183022090592");
       this.addNodeById("2906110183022122665");
@@ -93,7 +85,6 @@ public class SNodeGetReferenceOperation_Test extends BaseTransformationTest {
       SNode nullLinkDeclaration = null;
       Assert.assertNull(SNodeOperations.getReference(SNodeOperations.cast(this.getNodeById("2906110183022090593"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"), nullLinkDeclaration));
     }
-
     public void test_invalidLinkDeclaration() throws Exception {
       this.addNodeById("2906110183022090592");
       this.addNodeById("2906110183022122665");

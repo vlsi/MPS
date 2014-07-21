@@ -15,7 +15,6 @@ public class Build_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_options = ID + "options";
   public static final String LABEL_ID_aux = ID + "aux";
-
   public Build_ActionGroup() {
     super("Build", ID);
     this.setIsInternal(false);

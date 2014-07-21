@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class CommentLinePart_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static NodeCaretPair virtual_smartDelete_9042833497008205283(SNode thisNode, boolean isBeginning) {
     SNodeOperations.deleteNode(thisNode);
     return null;

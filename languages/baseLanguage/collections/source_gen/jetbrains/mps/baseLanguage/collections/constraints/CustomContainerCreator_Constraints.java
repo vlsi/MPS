@@ -38,24 +38,24 @@ public class CustomContainerCreator_Constraints extends BaseConstraintsDescripto
       @Override
       public boolean hasOwnGetter() {
         return true;
-      };;
-;      @Override
+      }
+      @Override
       public Object getValue(SNode node) {
         String propertyName = "alias";
         return SPropertyOperations.getString(SLinkOperations.getTarget(node, "containerDeclaration", false), "name");
-      };;
-;    });
+      }
+    });
     return properties;
-  };;
-;  @Override
+  }
+  @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
     references.put("containerDeclaration", new BaseReferenceConstraintsDescriptor("containerDeclaration", this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      };;
-;      @Nullable
+      }
+      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseReferenceScopeProvider() {
@@ -65,17 +65,17 @@ public class CustomContainerCreator_Constraints extends BaseConstraintsDescripto
             return ((expr != null) ? Sequence.fromIterable(CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(expr), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{expr}))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return !(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(it, "containerType", true)), "jetbrains.mps.baseLanguage.collections.structure.MapType"));
-              };;
-;            }) : Sequence.fromIterable(Collections.<SNode>emptyList()));
-          };;
-;          @Override
+              }
+            }) : Sequence.fromIterable(Collections.<SNode>emptyList()));
+          }
+          @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_tzy4hl_a0a1a0a0a1a0b0a1a2;
-          };;
-;        };
-      };;
-;    });
+          }
+        };
+      }
+    });
     return references;
-  };;
-;  private static SNodePointer breakingNode_tzy4hl_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628295001");
+  }
+  private static SNodePointer breakingNode_tzy4hl_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628295001");
 }

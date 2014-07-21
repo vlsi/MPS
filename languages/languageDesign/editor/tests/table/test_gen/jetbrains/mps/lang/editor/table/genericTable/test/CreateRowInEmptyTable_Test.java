@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class CreateRowInEmptyTable_Test extends BaseTransformationTest {
   public CreateRowInEmptyTable_Test() {
   }
-
   @Test
   public void test_CreateRowInEmptyTable() throws Throwable {
     this.initTest("${mps_home}", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)");
     this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.CreateRowInEmptyTable_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("8316952525720946185", "8316952525720946207");

@@ -10,5 +10,5 @@ public class ExtractStaticInnerClassConcept_BehaviorDescriptor extends ClassConc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept";
-  };;
-;}
+  }
+}

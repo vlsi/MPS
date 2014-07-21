@@ -10,5 +10,5 @@ public class IfInstanceOfVarReference_BehaviorDescriptor extends BaseVariableRef
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference";
-  };;
-;}
+  }
+}

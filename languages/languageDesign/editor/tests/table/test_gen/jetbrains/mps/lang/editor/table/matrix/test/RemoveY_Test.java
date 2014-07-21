@@ -13,18 +13,15 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class RemoveY_Test extends BaseTransformationTest {
   public RemoveY_Test() {
   }
-
   @Test
   public void test_RemoveY() throws Throwable {
     this.initTest("${mps_home}", "r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)");
     this.runTest("jetbrains.mps.lang.editor.table.matrix.test.RemoveY_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("8748948598094995666", "6635613118814996729");

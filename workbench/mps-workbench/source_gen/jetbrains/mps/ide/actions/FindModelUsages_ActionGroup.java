@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class FindModelUsages_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(FindModelUsages_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.FindModelUsages_ActionGroup";
-
   public FindModelUsages_ActionGroup() {
     super("FindModelUsages", ID);
     this.setIsInternal(false);

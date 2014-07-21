@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ChangeFeatureNameExpression_DataFlow extends DataFlowBuilder {
   public ChangeFeatureNameExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "feature", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "newConceptFQName", true));

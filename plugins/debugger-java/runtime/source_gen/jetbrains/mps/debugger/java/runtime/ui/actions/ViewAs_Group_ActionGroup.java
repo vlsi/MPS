@@ -30,7 +30,6 @@ public class ViewAs_Group_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(ViewAs_Group_ActionGroup.class);
   public static final String ID = "jetbrains.mps.debugger.java.runtime.ui.actions.ViewAs_Group_ActionGroup";
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
-
   public ViewAs_Group_ActionGroup() {
     super("View As", ID);
     this.setIsInternal(false);
@@ -40,7 +39,6 @@ public class ViewAs_Group_ActionGroup extends GeneratedActionGroup {
       LOG.error("User group error", t);
     }
   }
-
   public void doUpdate(AnActionEvent event) {
     try {
       ViewAs_Group_ActionGroup.this.removeAll();
@@ -79,11 +77,9 @@ public class ViewAs_Group_ActionGroup extends GeneratedActionGroup {
       this.addPlace(p.first, p.second);
     }
   }
-
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
   }
-
   public boolean isStrict() {
     return false;
   }

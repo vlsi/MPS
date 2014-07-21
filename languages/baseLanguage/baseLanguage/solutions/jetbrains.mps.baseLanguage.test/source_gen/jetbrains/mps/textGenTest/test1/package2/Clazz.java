@@ -6,7 +6,6 @@ package jetbrains.mps.textGenTest.test1.package2;
 public class Clazz {
   public Clazz() {
   }
-
   public class Nested {
     public Nested() {
     }

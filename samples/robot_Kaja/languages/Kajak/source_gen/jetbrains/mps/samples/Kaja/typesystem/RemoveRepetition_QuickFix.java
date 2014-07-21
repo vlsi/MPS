@@ -13,11 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class RemoveRepetition_QuickFix extends QuickFix_Runtime {
   public RemoveRepetition_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Replace with the repeat command";
   }
-
   public void execute(SNode node) {
     SNode repeat = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.samples.Kaja.structure.Repeat");
     SLinkOperations.setTarget(repeat, "body", SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.CommandList", null), true);

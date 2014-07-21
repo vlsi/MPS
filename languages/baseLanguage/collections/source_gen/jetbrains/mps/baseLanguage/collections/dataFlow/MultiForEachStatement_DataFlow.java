@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class MultiForEachStatement_DataFlow extends DataFlowBuilder {
   public MultiForEachStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode it : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "forEach", true))) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(it, "input", true));

@@ -18,11 +18,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.console.base.structure.PastedNodeReference";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget", null);
         SLinkOperations.setTarget(result, "target", _context.getSourceNode(), true);
@@ -33,11 +31,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.console.base.structure.PastedNodeReference";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.console.ideCommands.structure.INodeSetReference";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget", null);
         SLinkOperations.setTarget(result, "target", _context.getSourceNode(), true);

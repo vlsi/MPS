@@ -11,5 +11,5 @@ public class DowncastExpression_BehaviorDescriptor extends Expression_BehaviorDe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.DowncastExpression";
-  };;
-;}
+  }
+}

@@ -40,15 +40,12 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(checkedDot, "operation", SLinkOperations.getTarget(dot, "operation", true), true);
             return null;
           }
-
           public String getDescriptionText(String pattern) {
             return "checked dot";
           }
-
           public String getMatchingText(String pattern) {
             return "?";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -57,7 +54,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_4079382982702692313(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"), _context.getSourceNode()) {
@@ -67,15 +63,12 @@ public class QueriesGenerated {
         SNodeFactoryOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.AbstractOperation");
         return operationExpression;
       }
-
       public String getMatchingText(String pattern) {
         return ":checked dot:";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -86,11 +79,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_4079382982702692314(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (TypeChecker.getInstance().getTypeOf(_context.getSourceNode()) != null);
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_IOperation_7404423900570111860(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"), _context.getSourceNode()) {
@@ -101,15 +92,12 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(checkedDot, "operation", SLinkOperations.getTarget(dot, "operation", true), true);
         return checkedDot;
       }
-
       public String getMatchingText(String pattern) {
         return "?";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();

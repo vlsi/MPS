@@ -10,5 +10,5 @@ public class WhenConcreteVariableDeclaration_BehaviorDescriptor extends Variable
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration";
-  };;
-;}
+  }
+}

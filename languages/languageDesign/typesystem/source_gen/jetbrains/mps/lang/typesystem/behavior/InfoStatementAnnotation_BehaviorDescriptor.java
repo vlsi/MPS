@@ -9,5 +9,5 @@ public class InfoStatementAnnotation_BehaviorDescriptor extends MessageStatement
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.InfoStatementAnnotation";
-  };;
-;}
+  }
+}

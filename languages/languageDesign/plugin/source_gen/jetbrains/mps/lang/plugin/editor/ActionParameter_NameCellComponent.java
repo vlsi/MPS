@@ -25,11 +25,9 @@ public class ActionParameter_NameCellComponent implements ConceptEditorComponent
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_w0sqte_a(editorContext, node);
   }
-
   private EditorCell createProperty_w0sqte_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -47,11 +45,9 @@ public class ActionParameter_NameCellComponent implements ConceptEditorComponent
     } else
     return editorCell;
   }
-
   public static class ActionParameter_name_postfixCellMenu_w0sqte_a0a extends AbstractCellMenuPart_PropertyPostfixHints {
     public ActionParameter_name_postfixCellMenu_w0sqte_a0a() {
     }
-
     public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result;
       SNode nodeType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getType_1171743928471337193", new Object[]{});

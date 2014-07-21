@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class AdvanceWorkStatement_DataFlow extends DataFlowBuilder {
   public AdvanceWorkStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "amount", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "comment", true));

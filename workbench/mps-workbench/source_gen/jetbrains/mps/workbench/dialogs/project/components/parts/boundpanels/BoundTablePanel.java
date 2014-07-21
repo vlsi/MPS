@@ -34,38 +34,30 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
   private JTable myTable;
   private boolean myDiffRow;
   private List<ColumnDescriptor> myColumns = new ArrayList<ColumnDescriptor>();
-
   public BoundTablePanel(IBindedDialog owner, String caption, @NotNull List<T> ts) {
     super(owner, caption, ts);
   }
-
   public void addColumn(ColumnDescriptor d) {
     myColumns.add(d);
   }
-
   public void setDiffRow(boolean isDiffRow) {
     myDiffRow = isDiffRow;
   }
-
   public JTable getTable() {
     return myTable;
   }
-
   @Override
   protected BaseValidatedAction createAddAction(final Computable<List<T>> chooser) {
     return new BoundTablePanel.MyTableAddAction(chooser);
   }
-
   @Override
   protected BaseValidatedAction createRemoveAction() {
     return new BoundTablePanel.MyTableRemoveAction(myTable);
   }
-
   @Override
   protected int[] getSelectedIndices() {
     return myTable.getSelectedRows();
   }
-
   @Override
   protected JComponent initUIComponentAndBinding() {
     myTable = (myDiffRow ? new DiffRowTable() : new JBTable());
@@ -107,12 +99,10 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
     myTable.setSelectionMode((multipleChooserSet() ? ListSelectionModel.MULTIPLE_INTERVAL_SELECTION : ListSelectionModel.SINGLE_INTERVAL_SELECTION));
     return myTable;
   }
-
   private class MyTableRemoveAction extends TableRemoveAction {
     public MyTableRemoveAction(JTable table) {
       super(table);
     }
-
     @Override
     protected void doRemove(AnActionEvent e) {
       String errorMessage = BoundTablePanel.this.removeSelectedWithCheck();
@@ -121,15 +111,12 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
       }
     }
   }
-
   private class MyTableAddAction<T> extends TableAddAction {
     private final Computable<List<T>> myChooser;
-
     public MyTableAddAction(Computable<List<T>> chooser) {
       super(myTable);
       myChooser = chooser;
     }
-
     @Override
     protected int doAdd(AnActionEvent e) {
       List<T> chosen = myChooser.compute();

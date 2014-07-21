@@ -12,9 +12,9 @@ public class CellMenuPart_Generic_Item_Handler_BehaviorDescriptor extends Concep
   }
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return CellMenuPart_Generic_Item_Handler_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler";
-  };;
-;}
+  }
+}

@@ -19,7 +19,6 @@ import javax.swing.table.TableCellRenderer;
   public BasicDiffRowTableUI() {
     super();
   }
-
   private Dimension createTableSize(long width) {
     int numCols = table.getColumnCount();
     int numRows = table.getRowCount();
@@ -41,7 +40,6 @@ import javax.swing.table.TableCellRenderer;
     }
     return new Dimension((int) widthWithMargin, totalHeight + numRows * table.getRowMargin());
   }
-
   @Override
   public Dimension getMinimumSize(JComponent c) {
     long width = 0;
@@ -52,7 +50,6 @@ import javax.swing.table.TableCellRenderer;
     }
     return createTableSize(width);
   }
-
   @Override
   public Dimension getPreferredSize(JComponent c) {
     long width = 0;
@@ -63,7 +60,6 @@ import javax.swing.table.TableCellRenderer;
     }
     return createTableSize(width);
   }
-
   @Override
   public Dimension getMaximumSize(JComponent c) {
     long width = 0;
@@ -74,7 +70,6 @@ import javax.swing.table.TableCellRenderer;
     }
     return createTableSize(width);
   }
-
   @Override
   public void paint(Graphics g, JComponent c) {
     Rectangle oldClipBounds = g.getClipBounds();
@@ -99,7 +94,6 @@ import javax.swing.table.TableCellRenderer;
     }
     g.setClip(oldClipBounds);
   }
-
   private void paintGrid(Graphics g) {
     g.setColor(table.getGridColor());
     if (table.getShowHorizontalLines()) {
@@ -109,7 +103,6 @@ import javax.swing.table.TableCellRenderer;
       paintVerticalLines(g);
     }
   }
-
   private void paintHorizontalLines(Graphics g) {
     Rectangle r = g.getClipBounds();
     Rectangle rect = r;
@@ -127,7 +120,6 @@ import javax.swing.table.TableCellRenderer;
       }
     }
   }
-
   private void paintVerticalLines(Graphics g) {
     Rectangle rect = g.getClipBounds();
     int x = 0;
@@ -142,7 +134,6 @@ import javax.swing.table.TableCellRenderer;
       }
     }
   }
-
   private void paintRow(Graphics g, int row) {
     Rectangle rect = g.getClipBounds();
     int column = 0;
@@ -197,7 +188,6 @@ import javax.swing.table.TableCellRenderer;
       paintCell(g, draggedCellRect, row, draggedColumnIndex);
     }
   }
-
   private void paintCell(Graphics g, Rectangle cellRect, int row, int column) {
     int spacingHeight = table.getRowMargin();
     int spacingWidth = table.getColumnModel().getColumnMargin();
@@ -216,7 +206,6 @@ import javax.swing.table.TableCellRenderer;
     }
     cellRect.setBounds(cellRect.x - spacingWidth / 2, cellRect.y - spacingHeight / 2, cellRect.width + spacingWidth, cellRect.height + spacingHeight);
   }
-
   private int lastVisibleRow(Rectangle clip) {
     int lastIndex = table.rowAtPoint(new Point(0, clip.y + clip.height - 1));
     if (lastIndex == -1) {

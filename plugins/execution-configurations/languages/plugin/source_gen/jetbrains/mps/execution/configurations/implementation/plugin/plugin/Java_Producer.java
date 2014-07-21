@@ -17,10 +17,8 @@ import com.intellij.execution.impl.RunManagerImpl;
 
 public class Java_Producer {
   private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration_Factory";
-
   public Java_Producer() {
   }
-
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
     List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
     ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_NodeClassConcept_d1i8dk_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
@@ -28,16 +26,13 @@ public class Java_Producer {
     ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_NodeIMainClass_d1i8dk_c(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     return creators;
   }
-
   public static class ProducerPart_NodeClassConcept_d1i8dk_a extends BaseMpsProducer<SNode> {
     public ProducerPart_NodeClassConcept_d1i8dk_a(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
-
     protected boolean isApplicable(Object source) {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     }
-
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
       if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), source, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getMainMethod_1213877355884", new Object[]{}) == null)) {
@@ -47,22 +42,18 @@ public class Java_Producer {
       configuration.getNode().setNode(source);
       return configuration;
     }
-
     @Override
     public Java_Producer.ProducerPart_NodeClassConcept_d1i8dk_a clone() {
       return (Java_Producer.ProducerPart_NodeClassConcept_d1i8dk_a) super.clone();
     }
   }
-
   public static class ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b extends BaseMpsProducer<SNode> {
     public ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
-
     protected boolean isApplicable(Object source) {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
     }
-
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
       if (!(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, source, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", "call_isMainMethod_1213877536670", new Object[]{}))) {
@@ -76,22 +67,18 @@ public class Java_Producer {
       configuration.getNode().setNode(classifier);
       return configuration;
     }
-
     @Override
     public Java_Producer.ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b clone() {
       return (Java_Producer.ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b) super.clone();
     }
   }
-
   public static class ProducerPart_NodeIMainClass_d1i8dk_c extends BaseMpsProducer<SNode> {
     public ProducerPart_NodeIMainClass_d1i8dk_c(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
-
     protected boolean isApplicable(Object source) {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.execution.util.structure.IMainClass");
     }
-
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, source, "virtual_isNodeRunnable_4666195181811081448", new Object[]{}))) {
@@ -102,7 +89,6 @@ public class Java_Producer {
       configuration.getNode().setNode(source);
       return configuration;
     }
-
     @Override
     public Java_Producer.ProducerPart_NodeIMainClass_d1i8dk_c clone() {
       return (Java_Producer.ProducerPart_NodeIMainClass_d1i8dk_c) super.clone();

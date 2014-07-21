@@ -10,5 +10,5 @@ public class RightTransformAnchorTagWrapper_BehaviorDescriptor extends BaseConce
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper";
-  };;
-;}
+  }
+}

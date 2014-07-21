@@ -16,7 +16,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_SingletonSequenceCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SingletonSequenceCreator_InferenceRule() {
   }
-
   public void applyRule(final SNode creator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode elementType = SLinkOperations.getTarget(creator, "elementType", true);
     if (!(typeCheckingContext.isSingleTypeComputation())) {
@@ -32,22 +31,18 @@ public class typeof_SingletonSequenceCreator_InferenceRule extends AbstractInfer
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1235573464929", true), (SNode) _quotation_createNode_kyakf6_a0c0b(elementType), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_kyakf6_a0c0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

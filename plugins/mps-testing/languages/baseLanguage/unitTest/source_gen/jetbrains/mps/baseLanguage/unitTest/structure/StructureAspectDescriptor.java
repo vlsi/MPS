@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -58,6 +57,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.AfterTest", "jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", "jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse", "jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull", "jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull", "jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", "jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows", "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue", "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", "jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest", "jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert", "jetbrains.mps.baseLanguage.unitTest.structure.Fail", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.ITestable", "jetbrains.mps.baseLanguage.unitTest.structure.Message", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder", "jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod", "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList"};
 }

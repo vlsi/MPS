@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_TemplateFunctionParameter_outputNode_InferenceRule() {
   }
-
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode parentMacro = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", "jetbrains.mps.lang.generator.structure.MapSrcListMacro"}, false, false);
     if (SNodeOperations.isInstanceOf(parentMacro, "jetbrains.mps.lang.generator.structure.ReferenceMacro")) {
@@ -51,29 +50,24 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_fai2pj_a0a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_fai2pj_a0c0a5a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

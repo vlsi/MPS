@@ -15,11 +15,11 @@ import jetbrains.mps.smodel.Language;
 
 public class LanguageReferenceExpression_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  @NotNull
+  }
+  @NotNull
   public static List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode) {
     List<SModule> result = ListSequence.fromList(new ArrayList<SModule>());
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(ScopeOperations.getModules(GlobalScope.getInstance(), Language.class)));
     return result;
-  };;
-;}
+  }
+}

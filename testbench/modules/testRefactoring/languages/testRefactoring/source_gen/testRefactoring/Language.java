@@ -12,25 +12,20 @@ import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "343e2a8b-449f-45b3-9da8-1463945cb208(testRefactoring)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "testRefactoring";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"testRefactoringTargetLang", "jetbrains.mps.lang.core"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return null;
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == EditorAspectDescriptor.class) {

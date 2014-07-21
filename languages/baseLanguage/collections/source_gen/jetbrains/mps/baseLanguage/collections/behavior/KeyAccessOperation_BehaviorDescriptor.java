@@ -9,5 +9,5 @@ public class KeyAccessOperation_BehaviorDescriptor extends AbstractMappingOperat
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.KeyAccessOperation";
-  };;
-;}
+  }
+}

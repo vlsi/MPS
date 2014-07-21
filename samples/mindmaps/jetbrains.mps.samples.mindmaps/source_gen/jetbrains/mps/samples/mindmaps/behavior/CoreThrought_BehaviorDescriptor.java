@@ -6,7 +6,6 @@ package jetbrains.mps.samples.mindmaps.behavior;
 public class CoreThrought_BehaviorDescriptor extends Thought_BehaviorDescriptor {
   public CoreThrought_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.mindmaps.structure.CoreThrought";

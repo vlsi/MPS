@@ -11,5 +11,5 @@ public class ConstraintFunctionParameter_oldReferentNode_BehaviorDescriptor exte
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode";
-  };;
-;}
+  }
+}

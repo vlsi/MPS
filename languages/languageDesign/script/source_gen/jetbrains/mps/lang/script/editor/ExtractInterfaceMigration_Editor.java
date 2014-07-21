@@ -34,11 +34,9 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7cysuj_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7cysuj_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_7cysuj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7cysuj_a");
@@ -52,7 +50,6 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_7cysuj_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_7cysuj_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -60,7 +57,6 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createRefNode_7cysuj_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("oldClassifier");
@@ -80,7 +76,6 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_7cysuj_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_7cysuj_c0");
@@ -90,7 +85,6 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_7cysuj_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("newClassifier");
@@ -112,27 +106,22 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_7cysuj_a3a extends InlineCellProvider {
     public _Inline_7cysuj_a3a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReferencePresentation_7cysuj_a0d0(editorContext, node);
     }
-
     private EditorCell createReferencePresentation_7cysuj_a0d0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "newClassifier");
       editorCell.setCellId("ReferencePresentation_7cysuj_a0d0");
       return editorCell;
     }
   }
-
   private EditorCell createConstant_7cysuj_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_7cysuj_e0");
@@ -143,7 +132,6 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_7cysuj_f0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ExtractInterfaceMigration_Editor.pullUpMethodsListHandler_7cysuj_f0(node, "pullUpMethods", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -156,30 +144,25 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class pullUpMethodsListHandler_7cysuj_f0 extends RefNodeListHandler {
     public pullUpMethodsListHandler_7cysuj_f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -193,7 +176,6 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_7cysuj_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_7cysuj_g0");
@@ -203,7 +185,6 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_7cysuj_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7cysuj_a_0");
@@ -211,7 +192,6 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_7cysuj_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_7cysuj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7cysuj_a0");
@@ -223,14 +203,12 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_7cysuj_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_7cysuj_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "update classifier types:");
     editorCell.setCellId("Constant_7cysuj_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_7cysuj_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("updateClassifierTypes");

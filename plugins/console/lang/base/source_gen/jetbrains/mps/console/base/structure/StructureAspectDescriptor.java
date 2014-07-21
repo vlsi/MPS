@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -65,6 +64,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.base.structure.Command", "jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.ConsoleHelpProvider", "jetbrains.mps.console.base.structure.ConsoleRoot", "jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.console.base.structure.HelpCommand", "jetbrains.mps.console.base.structure.HelpConceptReference", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.HistoryItem", "jetbrains.mps.console.base.structure.IActionHolder", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem", "jetbrains.mps.console.base.structure.NewLineResponseItem", "jetbrains.mps.console.base.structure.NodeReferencePresentation", "jetbrains.mps.console.base.structure.NodeReferenceString", "jetbrains.mps.console.base.structure.NodeResponseItem", "jetbrains.mps.console.base.structure.NodeWithClosure", "jetbrains.mps.console.base.structure.OutputConsoleRoot", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.Response", "jetbrains.mps.console.base.structure.ResponseItem", "jetbrains.mps.console.base.structure.TextResponseItem"};
 }

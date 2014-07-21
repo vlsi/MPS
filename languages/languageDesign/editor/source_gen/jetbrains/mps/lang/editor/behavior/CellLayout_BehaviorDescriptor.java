@@ -10,5 +10,5 @@ public abstract class CellLayout_BehaviorDescriptor extends BaseConcept_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellLayout";
-  };;
-;}
+  }
+}

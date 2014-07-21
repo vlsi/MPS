@@ -10,5 +10,5 @@ public class IncludeRightTransformForNodePart_BehaviorDescriptor extends BaseCon
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart";
-  };;
-;}
+  }
+}

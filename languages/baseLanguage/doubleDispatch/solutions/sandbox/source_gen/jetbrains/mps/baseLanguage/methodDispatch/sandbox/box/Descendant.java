@@ -6,20 +6,16 @@ package jetbrains.mps.baseLanguage.methodDispatch.sandbox.box;
 public class Descendant extends TestClass {
   public Descendant() {
   }
-
   public int hello(Long x, String xxzx) {
     return 4;
   }
-
   public int hello(Float x, String asdsasd) {
     return 5;
   }
-
   @Override
   public int hello(Double x, String aaa) {
     return 6;
   }
-
   public int hello(Number x, String zzz) {
     if (x instanceof Double) {
       return hello((Double) x, zzz);
@@ -34,7 +30,6 @@ public class Descendant extends TestClass {
     }
 
   }
-
   @Override
   public String arg(Arg2 x) {
     if (x instanceof Arg4) {
@@ -44,7 +39,6 @@ public class Descendant extends TestClass {
     }
 
   }
-
   public String arg(Arg4 x) {
     if (x instanceof Arg5) {
       return arg((Arg5) x);
@@ -53,7 +47,6 @@ public class Descendant extends TestClass {
     }
 
   }
-
   @Override
   public void newDisp(Number a) {
     if (a instanceof Integer) {
@@ -62,10 +55,8 @@ public class Descendant extends TestClass {
     }
 
   }
-
   public void newDisp(Integer x) {
   }
-
   public static String stat(Arg4 arg4) {
     return "arg4";
   }

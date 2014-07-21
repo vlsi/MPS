@@ -11,9 +11,9 @@ public class ConstraintFunctionParameter_inEditor_BehaviorDescriptor extends Con
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConstraintFunctionParameter_inEditor_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor";
-  };;
-;}
+  }
+}

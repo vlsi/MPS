@@ -12,7 +12,6 @@ public class SequenceOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createError_kctm0j_a(editorContext, node);
   }
-
   private EditorCell createError_kctm0j_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<oper>");
     editorCell.setCellId("Error_kctm0j_a");

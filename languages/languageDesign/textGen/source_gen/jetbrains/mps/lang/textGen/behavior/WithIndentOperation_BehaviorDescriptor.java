@@ -10,5 +10,5 @@ public class WithIndentOperation_BehaviorDescriptor extends Statement_BehaviorDe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.WithIndentOperation";
-  };;
-;}
+  }
+}

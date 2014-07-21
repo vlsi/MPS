@@ -30,24 +30,19 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 /*package*/ class FindUsagesHelper {
   private Project myProject;
   private boolean myWithDialog;
-
   /*package*/ FindUsagesHelper(Project project, boolean withDialog) {
     myProject = project;
     myWithDialog = withDialog;
   }
-
   protected DefaultOptionsContainer getDefaultOptions() {
     return myProject.getComponent(DefaultSearchOptionsComponent.class).getDefaultOptions();
   }
-
   private UsagesViewTool getTool() {
     return myProject.getComponent(UsagesViewTool.class);
   }
-
   /*package*/ boolean isApplicable() {
     return getTool() != null && getDefaultOptions() != null;
   }
-
   /*package*/ void invoke(final EditorCell cell, final SNode node, Frame frame, final IOperationContext context, final SModel model) {
     // get node 
     final Wrappers._T<SNode> operationNode = new Wrappers._T<SNode>();

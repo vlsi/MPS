@@ -46,10 +46,8 @@ import org.apache.log4j.LogManager;
 
 public class CopyPasteUtil {
   private static CopyPasteUtil.IDataConverter myDataConverter = null;
-
   public CopyPasteUtil() {
   }
-
   private static void processImportsAndLanguages(Set<SModelReference> necessaryImports, Set<SModuleReference> necessaryLanguages, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     necessaryImports.clear();
     necessaryLanguages.clear();
@@ -66,7 +64,6 @@ public class CopyPasteUtil {
       }
     }
   }
-
   public static PasteNodeData createNodeDataIn(List<SNode> sourceNodes, Map<SNode, Set<SNode>> sourceNodesAndAttributes) {
     if (sourceNodes.isEmpty()) {
       return PasteNodeData.emptyPasteNodeData(null);
@@ -93,7 +90,6 @@ public class CopyPasteUtil {
     }
     return new PasteNodeData(result, null, check_lwiaog_c0a31a3(model), necessaryLanguages, necessaryModels);
   }
-
   public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModelReference sourceModel, Set<SModuleReference> necessaryLanguages, Set<SModelReference> necessaryModels) {
     if (sourceNodes.isEmpty()) {
       return PasteNodeData.emptyPasteNodeData(null);
@@ -111,7 +107,6 @@ public class CopyPasteUtil {
     CopyPasteUtil.processReferencesOut(sourceNodesToNewNodes, allReferences, referencesRequireResolve);
     return new PasteNodeData(result, referencesRequireResolve, sourceModel, necessaryLanguages, necessaryModels);
   }
-
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     SNode targetNode = new jetbrains.mps.smodel.SNode(sourceNode.getConcept().getQualifiedName());
     ((jetbrains.mps.smodel.SNode) targetNode).setId(SNodeId.fromString(sourceNode.getNodeId().toString()));
@@ -139,7 +134,6 @@ public class CopyPasteUtil {
     }
     return targetNode;
   }
-
   private static void processReferencesIn(Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     for (SReference sourceReference : allReferences) {
       SNode oldSourceNode = sourceReference.getSourceNode();
@@ -162,7 +156,6 @@ public class CopyPasteUtil {
       newSourceNode.setReference(newReference.getRole(), newReference);
     }
   }
-
   private static void processReferencesOut(Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences, Set<SReference> referencesRequireResolve) {
     for (SReference sourceReference : allReferences) {
       SNode oldSourceNode = sourceReference.getSourceNode();
@@ -195,12 +188,9 @@ public class CopyPasteUtil {
       newSourceNode.setReference(newReference.getRole(), newReference);
     }
   }
-
   public static void copyTextToClipboard(String text) {
     CopyPasteManagerEx.getInstanceEx().setContents(new StringSelection(text));
   }
-
-
 
   /**
    * Deprecated since MPS 3.1 looks like not used anymore
@@ -209,15 +199,12 @@ public class CopyPasteUtil {
   public static void copyNodesAndTextToClipboard(List<SNode> nodes, String text) {
     setClipboardContents(new SNodeTransferable(nodes, text));
   }
-
   public static void copyTextAndNodeToClipboard(String text, SNode node) {
     setClipboardContents(new SNodeTransferable(text, node));
   }
-
   public static void copyNodesAndTextToClipboard(List<SNode> nodes, Map<SNode, Set<SNode>> nodesAndAttributes, String text) {
     setClipboardContents(new SNodeTransferable(nodes, text, nodesAndAttributes));
   }
-
   /**
    * A workaround for the following problem with CopyPasteManagerEx:
    * 
@@ -245,11 +232,9 @@ public class CopyPasteUtil {
     }
     CopyPasteManagerEx.getInstanceEx().setContents(content);
   }
-
   private static String getStringContent(Transferable content) throws UnsupportedFlavorException, IOException {
     return (String) content.getTransferData(DataFlavor.stringFlavor);
   }
-
   public static void copyNodesToClipboard(List<SNode> nodes) {
     StringBuilder stringBuilder = new StringBuilder();
     int i = 1;
@@ -263,17 +248,14 @@ public class CopyPasteUtil {
     }
     setClipboardContents(new SNodeTransferable(nodes, stringBuilder.toString()));
   }
-
   public static void copyNodeToClipboard(SNode node) {
     List<SNode> list = new ArrayList<SNode>();
     list.add(node);
     CopyPasteUtil.copyNodesToClipboard(list);
   }
-
   public static List<SNode> getNodesFromClipboard(SModel model) {
     return CopyPasteUtil.getPasteNodeDataFromClipboard(model).getNodes();
   }
-
   public static PasteNodeData getPasteNodeDataFromClipboard(SModel model) {
     Transferable content = null;
     for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
@@ -302,11 +284,9 @@ public class CopyPasteUtil {
     }
     return PasteNodeData.emptyPasteNodeData(model.getReference());
   }
-
   public static SNode getNodeFromClipboard(SModel model) {
     return CopyPasteUtil.getNodesFromClipboard(model).get(0);
   }
-
   @Nullable
   public static Runnable addImportsWithDialog(final SModel targetModel, final Set<SModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
     if (targetModel.getModule() == null) {
@@ -347,7 +327,6 @@ public class CopyPasteUtil {
       return null;
     }
   }
-
   @Nullable
   public static Runnable addImportsWithDialog(PasteNodeData pasteNodeData, SModel targetModel, IOperationContext context) {
     // shows dialog if necessary and pasted nodes were taken not from the same model 
@@ -359,7 +338,6 @@ public class CopyPasteUtil {
 
     return CopyPasteUtil.addImportsWithDialog(targetModel, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context);
   }
-
   private static Runnable addImports(Project p, final SModel targetModel, @NotNull final SModuleReference[] requiredLanguages, @NotNull final SModelReference[] requiredImports) {
     if (requiredLanguages.length == 0 && requiredImports.length == 0) {
       return null;
@@ -400,7 +378,6 @@ public class CopyPasteUtil {
       }
     };
   }
-
   public static boolean isStringOnTopOfClipboard() {
     // This method was created in accordance with TextPasteUtil.hasStringInClipboard()/.getStringFromClipboard() 
     // methods we should consider reimplementing these methods in order to iterrate over .getAllContents() collection 
@@ -420,7 +397,6 @@ public class CopyPasteUtil {
     }
     return false;
   }
-
   /**
    * Deprecated since MPS 3.1 looks like not used anymore
    */
@@ -435,39 +411,31 @@ public class CopyPasteUtil {
     }
     return false;
   }
-
   public static synchronized void setDataConverter(CopyPasteUtil.IDataConverter dataConverter) {
     myDataConverter = dataConverter;
   }
-
   public static synchronized boolean isConversionAvailable(SModel model, SNode anchor) {
     return myDataConverter != null && myDataConverter.canPasteAsNodes(model, anchor);
   }
-
   public static synchronized PasteNodeData getConvertedFromClipboard(SModel model, Project project) {
     return (myDataConverter == null ? null : myDataConverter.getPasteNodeData(model, project));
   }
-
   public static boolean canPasteNodes(SModel model, SNode anchor) {
     List<SNode> nodes = getNodesFromClipboard(model);
     return ListSequence.fromList(nodes).isNotEmpty() || isConversionAvailable(model, anchor);
   }
-
   public static synchronized void pasteNodes(SModel model, SNode anchor, Project project) {
     if (myDataConverter != null) {
       myDataConverter.pasteAsNodes(model, anchor, project);
     }
   }
-
   @Deprecated
   public static interface IDataConverter {
     public boolean canPasteAsNodes(SModel model, SNode anchor);
     public void pasteAsNodes(SModel model, SNode anchor, Project project);
     public PasteNodeData getPasteNodeData(SModel model, Project project);
   }
-
   protected static Logger LOG = LogManager.getLogger(CopyPasteUtil.class);
-
   private static SModelReference check_lwiaog_c0a31a3(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();

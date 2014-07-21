@@ -40,12 +40,10 @@ import com.intellij.openapi.module.Module;
 public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, ApplicationComponent {
   public ClassifierSuccessorsFinder(MPSCoreComponents coreComponents) {
   }
-
   @Override
   public boolean isIndexReady(Project project) {
     return !(DumbService.getInstance(ProjectHelper.toIdeaProject(project)).isDumb());
   }
-
   @Override
   public List<SNode> getDerivedClassifiers(SNode classifier, org.jetbrains.mps.openapi.module.SearchScope scope) {
     Set<VirtualFile> unModifiedModelFiles = SetSequence.fromSet(new HashSet<VirtualFile>());
@@ -81,24 +79,20 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
     }
     return result;
   }
-
   @Override
   public void initComponent() {
     ClassifierSuccessors.getInstance().setFinder(this);
   }
-
   @Override
   public void disposeComponent() {
     ClassifierSuccessors.getInstance().setFinder(null);
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Classifiers successors finder";
   }
-
   private static class ModifiedsuccessorFinder {
     private List<SNode> myModifiedClasses;
     private List<SNode> myModifiedInterfaces;
@@ -108,14 +102,12 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
     private Map<SNode, List<SNode>> mySuccessorsMap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     private boolean myInterfacesMapped;
     private boolean myClassesMapped;
-
     /*package*/ ModifiedsuccessorFinder(List<SNode> modifiedClasses, List<SNode> modifiedInterfaces, List<SNode> result, Queue<SNode> classifiersQueue) {
       myModifiedClasses = modifiedClasses;
       myModifiedInterfaces = modifiedInterfaces;
       myClassifiersQueue = classifiersQueue;
       myResult = result;
     }
-
     public void process(SNode superClassifier) {
       if (SetSequence.fromSet(myProcessedNodes).contains(superClassifier)) {
         return;
@@ -137,7 +129,6 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         }
       }
     }
-
     private void mapClasses() {
       if (myClassesMapped) {
         return;
@@ -156,7 +147,6 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         }
       }
     }
-
     private void mapInterfaces() {
       if (myInterfacesMapped) {
         return;
@@ -168,7 +158,6 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         }
       }
     }
-
     private void safeMap(SNode predecessor, SNode successor) {
       if (predecessor == null) {
         return;
@@ -181,17 +170,14 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
       ListSequence.fromList(successors).addElement(successor);
     }
   }
-
   private static class ValueProcessor implements FileBasedIndex.ValueProcessor<List<GlobalSNodeId>> {
     private List<SNode> myResult;
     private Queue<SNode> myQueue;
     private Set<GlobalSNodeId> myProcessedNodes = SetSequence.fromSet(new HashSet<GlobalSNodeId>());
-
     /*package*/ ValueProcessor(List<SNode> result, Queue<SNode> queue) {
       myResult = result;
       myQueue = queue;
     }
-
     @Override
     public boolean process(VirtualFile file, List<GlobalSNodeId> successors) {
       for (GlobalSNodeId sNodeId : successors) {
@@ -209,30 +195,24 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
       return true;
     }
   }
-
   private static class SearchScope extends GlobalSearchScope {
     private Set<VirtualFile> myFilesInScope;
-
     /*package*/ SearchScope(Set<VirtualFile> notModifiedModelFiles) {
       super(null);
       myFilesInScope = notModifiedModelFiles;
     }
-
     @Override
     public boolean contains(VirtualFile file) {
       return SetSequence.fromSet(myFilesInScope).contains(file);
     }
-
     @Override
     public int compare(VirtualFile file1, VirtualFile file2) {
       return file1.getPath().compareTo(file2.getPath());
     }
-
     @Override
     public boolean isSearchInModuleContent(@NotNull Module aModule) {
       return true;
     }
-
     @Override
     public boolean isSearchInLibraries() {
       return false;

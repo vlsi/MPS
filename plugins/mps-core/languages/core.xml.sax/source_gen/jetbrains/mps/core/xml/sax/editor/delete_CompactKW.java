@@ -14,42 +14,32 @@ public class delete_CompactKW {
     editorCell.setAction(CellActionType.DELETE, new delete_CompactKW.delete_CompactKW_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new delete_CompactKW.delete_CompactKW_BACKSPACE(node));
   }
-
   public static class delete_CompactKW_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_CompactKW_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "Full view";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "isCompact", "" + (false));
     }
   }
-
   public static class delete_CompactKW_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_CompactKW_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "Full view";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "isCompact", "" + (false));
     }

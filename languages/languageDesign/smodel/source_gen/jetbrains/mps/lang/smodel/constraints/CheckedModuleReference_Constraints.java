@@ -19,7 +19,6 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
   public CheckedModuleReference_Constraints() {
     super("jetbrains.mps.lang.smodel.structure.CheckedModuleReference");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -28,7 +27,6 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "moduleId";
@@ -42,12 +40,10 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
           return (module != null ? module.getModuleName() : moduleReference.getModuleName());
         }
       }
-
       @Override
       public boolean hasOwnSetter() {
         return true;
       }
-
       @Override
       public void setValue(SNode node, String propertyValue) {
         String propertyName = "moduleId";
@@ -56,12 +52,10 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
           SPropertyOperations.set(node, "moduleId", module.getModuleReference().toString());
         }
       }
-
       @Override
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "moduleId";

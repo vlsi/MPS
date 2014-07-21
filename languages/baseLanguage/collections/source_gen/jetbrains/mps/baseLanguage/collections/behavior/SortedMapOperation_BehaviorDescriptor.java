@@ -9,5 +9,5 @@ public abstract class SortedMapOperation_BehaviorDescriptor extends MapOperation
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation";
-  };;
-;}
+  }
+}

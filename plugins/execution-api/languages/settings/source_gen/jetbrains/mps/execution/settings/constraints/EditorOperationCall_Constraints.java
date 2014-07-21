@@ -31,7 +31,6 @@ public class EditorOperationCall_Constraints extends BaseConstraintsDescriptor {
   public EditorOperationCall_Constraints() {
     super("jetbrains.mps.execution.settings.structure.EditorOperationCall");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -40,7 +39,6 @@ public class EditorOperationCall_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -59,7 +57,6 @@ public class EditorOperationCall_Constraints extends BaseConstraintsDescriptor {
               }
             });
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_ow8wt3_a0a1a0a0a1a0b0a1a1;
@@ -69,6 +66,5 @@ public class EditorOperationCall_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_ow8wt3_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067150");
 }

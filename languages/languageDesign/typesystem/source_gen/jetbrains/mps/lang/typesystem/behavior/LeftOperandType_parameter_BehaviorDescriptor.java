@@ -11,9 +11,9 @@ public class LeftOperandType_parameter_BehaviorDescriptor extends ConceptFunctio
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return LeftOperandType_parameter_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter";
-  };;
-;}
+  }
+}

@@ -15,35 +15,27 @@ public class ScopeTest_DeleteExpectedNodes {
     editorCell.setAction(CellActionType.DELETE, new ScopeTest_DeleteExpectedNodes.ScopeTest_DeleteExpectedNodes_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new ScopeTest_DeleteExpectedNodes.ScopeTest_DeleteExpectedNodes_BACKSPACE(node));
   }
-
   public static class ScopeTest_DeleteExpectedNodes_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ScopeTest_DeleteExpectedNodes_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "nodes", true)).clear();
       SLinkOperations.setTarget(node, "checkingReference", null, false);
     }
   }
-
   public static class ScopeTest_DeleteExpectedNodes_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ScopeTest_DeleteExpectedNodes_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "nodes", true)).clear();
       SLinkOperations.setTarget(node, "checkingReference", null, false);

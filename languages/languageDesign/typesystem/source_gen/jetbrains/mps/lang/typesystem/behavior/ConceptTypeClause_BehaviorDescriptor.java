@@ -9,5 +9,5 @@ public class ConceptTypeClause_BehaviorDescriptor extends TypeClause_BehaviorDes
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ConceptTypeClause";
-  };;
-;}
+  }
+}

@@ -23,68 +23,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class TurnToParallelForEachStatement_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public TurnToParallelForEachStatement_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement";
   }
-
   public String getPresentation() {
     return "TurnToParallelForEachStatement";
   }
-
   public String getPersistentStateKey() {
     return "org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention";
   }
-
   public String getLanguageFqName() {
     return "org.jetbrains.mps.samples.ParallelFor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "variable", true)), "jetbrains.mps.baseLanguage.structure.Type");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "5384012304952529816");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new TurnToParallelForEachStatement_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Turn to Parallel";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode parallelFor = SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", null);
       final SNode variable = SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", null);
@@ -107,7 +92,6 @@ public class TurnToParallelForEachStatement_Intention implements IntentionFactor
       SNodeOperations.replaceWithAnother(node, parallelFor);
       editorContext.selectWRTFocusPolicy(variable);
     }
-
     public IntentionDescriptor getDescriptor() {
       return TurnToParallelForEachStatement_Intention.this;
     }

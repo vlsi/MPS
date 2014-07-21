@@ -25,7 +25,6 @@ public class BuildMps_IdeaPluginGroupCustomModule_Constraints extends BaseConstr
   public BuildMps_IdeaPluginGroupCustomModule_Constraints() {
     super("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class BuildMps_IdeaPluginGroupCustomModule_Constraints extends BaseConstr
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -43,7 +41,6 @@ public class BuildMps_IdeaPluginGroupCustomModule_Constraints extends BaseConstr
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_q09jue_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -59,6 +56,5 @@ public class BuildMps_IdeaPluginGroupCustomModule_Constraints extends BaseConstr
     });
     return references;
   }
-
   private static SNodePointer breakingNode_q09jue_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "4034578608468929486");
 }

@@ -11,8 +11,8 @@ import java.util.List;
 
 public class UnrestrictedFunctionType_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+  }
+  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuffer sb = new StringBuffer("{");
     String sep = "";
     for (SNode pt : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
@@ -21,11 +21,11 @@ public class UnrestrictedFunctionType_Behavior {
     }
     sb.append("==>").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "terminateType", true), "virtual_getPresentation_1213877396640", new Object[]{}));
     return sb.append("}").toString();
-  };;
-;  public static String virtual_getRuntimeClassName_1230472987259(SNode thisNode) {
+  }
+  public static String virtual_getRuntimeClassName_1230472987259(SNode thisNode) {
     return "_UnrestrictedFunctionTypes";
-  };;
-;  public static String virtual_getRuntimeSignature_1213877404927(SNode thisNode) {
+  }
+  public static String virtual_getRuntimeSignature_1213877404927(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
     if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
       sb.append("_return");
@@ -40,16 +40,16 @@ public class UnrestrictedFunctionType_Behavior {
     sb.append("_P").append(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterType", true)).count());
     sb.append("_E").append(ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).count());
     return sb.toString();
-  };;
-;  public static String call_getRuntimeAdapterClassName_1231423631922(SNode thisNode) {
+  }
+  public static String call_getRuntimeAdapterClassName_1231423631922(SNode thisNode) {
     return "_UnrestrictedClosures";
-  };;
-;  public static SNode virtual_getTerminateType_1232032188607(SNode thisNode) {
+  }
+  public static SNode virtual_getTerminateType_1232032188607(SNode thisNode) {
     SNode tt = SLinkOperations.getTarget(thisNode, "terminateType", true);
     if (SNodeOperations.isInstanceOf(tt, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       List<SNode> args = SLinkOperations.getTargets(SNodeOperations.cast(tt, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true);
       tt = ListSequence.fromList(args).getElement(0);
     }
     return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, "jetbrains.mps.baseLanguage.structure.VoidType")) ? tt : null);
-  };;
-;}
+  }
+}

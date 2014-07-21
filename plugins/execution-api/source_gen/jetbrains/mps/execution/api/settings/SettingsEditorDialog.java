@@ -14,7 +14,6 @@ import java.awt.event.ActionEvent;
 
 public class SettingsEditorDialog extends JDialog {
   private final SettingsEditorPanel mySettingsPanel;
-
   public SettingsEditorDialog(ITemplatePersistentConfiguration configuration) {
     setModal(true);
     setSize(new Dimension(500, 300));
@@ -23,7 +22,6 @@ public class SettingsEditorDialog extends JDialog {
     add(this.createButtons(mySettingsPanel), BorderLayout.SOUTH);
     setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
   }
-
   private JPanel createButtons(SettingsEditorPanel editor) {
     JPanel buttonsPanel = new JPanel(new FlowLayout());
     buttonsPanel.add(new JButton(new ActionWrapper(editor.getOkAction(), new _FunctionTypes._void_P1_E0<ActionEvent>() {
@@ -40,7 +38,6 @@ public class SettingsEditorDialog extends JDialog {
     })));
     return buttonsPanel;
   }
-
   @Override
   public void dispose() {
     super.dispose();

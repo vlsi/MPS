@@ -20,7 +20,6 @@ public class JavaLocalVariable extends JavaWatchable implements IWatchable {
   private final LocalVariable myLocalVariable;
   private final JavaStackFrame myStackFrame;
   private final JavaValue myCachedValue;
-
   public JavaLocalVariable(LocalVariable variable, JavaStackFrame stackFrame, ThreadReference threadReference) {
     super(threadReference);
     myLocalVariable = variable;
@@ -32,26 +31,21 @@ public class JavaLocalVariable extends JavaWatchable implements IWatchable {
       myCachedValue = null;
     }
   }
-
   public LocalVariable getLocalVariable() {
     return myLocalVariable;
   }
-
   @Override
   public String getName() {
     return myLocalVariable.name();
   }
-
   @Override
   public IValue getValue() {
     return myCachedValue;
   }
-
   @Override
   public Icon getPresentationIcon() {
     return getValue().getPresentationIcon();
   }
-
   @Override
   public SNode getNode() {
     JavaLocation location = myStackFrame.getLocation();
@@ -60,7 +54,6 @@ public class JavaLocalVariable extends JavaWatchable implements IWatchable {
     }
     return TraceInfoUtil.getVar(location.getUnitName(), location.getFileName(), location.getLineNumber(), myLocalVariable.name());
   }
-
   @Override
   public WatchablesCategory getCategory() {
     return JavaWatchablesCategory.LOCAL_VARIABLE;

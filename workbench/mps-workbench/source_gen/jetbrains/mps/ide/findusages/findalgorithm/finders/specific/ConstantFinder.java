@@ -10,15 +10,12 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public class ConstantFinder implements IFinder {
   private SearchResults<SNode> myResults = new SearchResults<SNode>();
-
   public ConstantFinder() {
   }
-
   @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     return myResults;
   }
-
   public String getDescription() {
     return "constant finder";
   }

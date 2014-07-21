@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -80,6 +79,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.execution.configurations.structure.BeforeTaskCall", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.ConsoleCreator", "jetbrains.mps.execution.configurations.structure.ConsoleType", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", "jetbrains.mps.execution.configurations.structure.EnvironmentExpression", "jetbrains.mps.execution.configurations.structure.ExecuteBeforeTask_ConceptFunction", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.GetProjectOperation", "jetbrains.mps.execution.configurations.structure.ModelSource", "jetbrains.mps.execution.configurations.structure.ModuleSource", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.ProjectSource", "jetbrains.mps.execution.configurations.structure.Project_Parameter", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.SModelSource", "jetbrains.mps.execution.configurations.structure.SModuleSource", "jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
 }

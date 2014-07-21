@@ -23,7 +23,6 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_a32wui_a(editorContext, node);
   }
-
   private EditorCell createCollection_a32wui_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_a32wui_a");
@@ -32,7 +31,6 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_a32wui_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_a32wui_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_a32wui_a0");
@@ -42,7 +40,6 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_a32wui_a0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_a32wui_a0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -51,7 +48,6 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_a32wui_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_a32wui_b0");
@@ -62,12 +58,10 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_a32wui_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_a32wui_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createCollection_a32wui_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_a32wui_b1a");
@@ -78,7 +72,6 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_a32wui_b1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_a32wui_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "query");
     editorCell.setCellId("Constant_a32wui_a1b0");
@@ -88,7 +81,6 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_a32wui_b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_a32wui_b1b0");
@@ -99,12 +91,10 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_a32wui_b1b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_a32wui_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNode_a32wui_b1b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("query");

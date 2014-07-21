@@ -10,12 +10,12 @@ public class OrderReference_BehaviorDescriptor extends BaseConcept_BehaviorDescr
   }
   public SNode virtual_getOrder_3038738109029048953(SNode thisNode) {
     return OrderReference_Behavior.virtual_getOrder_3038738109029048953(thisNode);
-  };;
-;  public boolean virtual_presents_1499919975383879508(SNode thisNode, SNode tab) {
+  }
+  public boolean virtual_presents_1499919975383879508(SNode thisNode, SNode tab) {
     return OrderReference_Behavior.virtual_presents_1499919975383879508(thisNode, tab);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.OrderReference";
-  };;
-;}
+  }
+}

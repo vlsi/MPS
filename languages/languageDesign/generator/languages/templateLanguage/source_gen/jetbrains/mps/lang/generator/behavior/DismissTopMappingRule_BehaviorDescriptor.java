@@ -9,5 +9,5 @@ public class DismissTopMappingRule_BehaviorDescriptor extends RuleConsequence_Be
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.DismissTopMappingRule";
-  };;
-;}
+  }
+}

@@ -20,7 +20,6 @@ import com.intellij.openapi.actionSystem.Presentation;
 public class ShowInLogicalView extends AbstractVcsAction {
   public ShowInLogicalView() {
   }
-
   @Override
   protected void actionPerformed(VcsContext e) {
     final Project project = e.getProject();
@@ -53,7 +52,6 @@ public class ShowInLogicalView extends AbstractVcsAction {
       }
     }
   }
-
   private VirtualFile getSelectedFile(VcsContext e) {
     VirtualFile[] selectedFiles = e.getSelectedFiles();
     if (selectedFiles.length == 0) {
@@ -61,7 +59,6 @@ public class ShowInLogicalView extends AbstractVcsAction {
     }
     return selectedFiles[0];
   }
-
   @Override
   protected void update(VcsContext vcsContext, Presentation presentation) {
     VirtualFile selectedFile = getSelectedFile(vcsContext);

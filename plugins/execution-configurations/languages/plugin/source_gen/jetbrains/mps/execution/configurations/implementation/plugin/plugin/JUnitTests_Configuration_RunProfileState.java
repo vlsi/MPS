@@ -32,20 +32,16 @@ public class JUnitTests_Configuration_RunProfileState implements RunProfileState
   private final JUnitTests_Configuration myRunConfiguration;
   @NotNull
   private final ExecutionEnvironment myEnvironment;
-
   public JUnitTests_Configuration_RunProfileState(@NotNull JUnitTests_Configuration configuration, @NotNull Executor executor, @NotNull ExecutionEnvironment environment) {
     myRunConfiguration = configuration;
     myEnvironment = environment;
   }
-
   public ConfigurationPerRunnerSettings getConfigurationSettings() {
     return null;
   }
-
   public RunnerSettings getRunnerSettings() {
     return null;
   }
-
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
@@ -72,7 +68,6 @@ public class JUnitTests_Configuration_RunProfileState implements RunProfileState
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(testViewComponent, disposeHandler));
     }
   }
-
   public static boolean canExecute(String executorId) {
     if (DefaultRunExecutor.EXECUTOR_ID.equals(executorId)) {
       return true;

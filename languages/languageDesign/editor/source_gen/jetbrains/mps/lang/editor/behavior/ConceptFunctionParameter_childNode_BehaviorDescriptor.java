@@ -11,5 +11,5 @@ public class ConceptFunctionParameter_childNode_BehaviorDescriptor extends Conce
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode";
-  };;
-;}
+  }
+}

@@ -12,16 +12,13 @@ public class BuildScript_Configuration_Factory extends ConfigurationFactory {
   public BuildScript_Configuration_Factory(BuildScript_Kind type) {
     super(type);
   }
-
   public RunConfiguration createTemplateConfiguration(Project project) {
     return new BuildScript_Configuration(project, this, "Template Configuration");
   }
-
   @Override
   public String getName() {
     return "Build Script";
   }
-
   @Override
   public Icon getIcon() {
     Icon icon = super.getIcon();

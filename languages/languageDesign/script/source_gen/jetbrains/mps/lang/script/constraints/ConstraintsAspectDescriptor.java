@@ -21,6 +21,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
-  };;
-;  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.script.structure.DirectMethodSpecification", "jetbrains.mps.lang.script.structure.MigrationScriptPart", "jetbrains.mps.lang.script.structure.PullUpMethod"};
+  }
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.script.structure.DirectMethodSpecification", "jetbrains.mps.lang.script.structure.MigrationScriptPart", "jetbrains.mps.lang.script.structure.PullUpMethod"};
 }

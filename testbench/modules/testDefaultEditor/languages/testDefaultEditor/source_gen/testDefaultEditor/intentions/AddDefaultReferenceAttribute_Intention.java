@@ -20,57 +20,44 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddDefaultReferenceAttribute_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddDefaultReferenceAttribute_Intention() {
   }
-
   public String getConcept() {
     return "testDefaultEditor.structure.Developer";
   }
-
   public String getPresentation() {
     return "AddDefaultReferenceAttribute";
   }
-
   public String getPersistentStateKey() {
     return "testDefaultEditor.intentions.AddDefaultReferenceAttribute_Intention";
   }
-
   public String getLanguageFqName() {
     return "testDefaultEditor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:be519384-ff73-407d-8bb6-1d18a1417684(testDefaultEditor.intentions)", "2870455723671213010");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddDefaultReferenceAttribute_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("testDefaultEditor.structure.DefaultReferenceAttribute", "bestFriend")) != null)) {
         return "remove default reference attribute";
@@ -78,7 +65,6 @@ public class AddDefaultReferenceAttribute_Intention implements IntentionFactory 
         return "add default reference attribute";
       }
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("testDefaultEditor.structure.DefaultReferenceAttribute", "bestFriend")) != null)) {
         SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("testDefaultEditor.structure.DefaultReferenceAttribute", "bestFriend")));
@@ -88,7 +74,6 @@ public class AddDefaultReferenceAttribute_Intention implements IntentionFactory 
       }
 
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddDefaultReferenceAttribute_Intention.this;
     }

@@ -27,18 +27,15 @@ import org.apache.log4j.LogManager;
 
 public class NewAccessoryModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Models.AccessoryModel;
-
   public NewAccessoryModel_Action() {
     super("New Accessory Model", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setText(((((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof ProjectModuleTreeNode ? "" : "New ")) + "Accesory Model");
@@ -49,7 +46,6 @@ public class NewAccessoryModel_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -72,7 +68,6 @@ public class NewAccessoryModel_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
@@ -101,6 +96,5 @@ public class NewAccessoryModel_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(NewAccessoryModel_Action.class);
 }

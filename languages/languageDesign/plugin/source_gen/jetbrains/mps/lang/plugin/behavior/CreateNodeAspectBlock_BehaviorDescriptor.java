@@ -12,15 +12,15 @@ public class CreateNodeAspectBlock_BehaviorDescriptor extends ConceptFunction_Be
   }
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return CreateNodeAspectBlock_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  };;
-;  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  }
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return CreateNodeAspectBlock_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  };;
-;  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+  }
+  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return CreateNodeAspectBlock_Behavior.virtual_showName_1262430001741498082(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.CreateNodeAspectBlock";
-  };;
-;}
+  }
+}

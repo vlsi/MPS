@@ -20,7 +20,6 @@ public class BuildLayout_EchoXml_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_b1me0g_a(editorContext, node);
   }
-
   private EditorCell createCollection_b1me0g_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b1me0g_a");
@@ -30,7 +29,6 @@ public class BuildLayout_EchoXml_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_b1me0g_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_b1me0g_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "xml file");
     editorCell.setCellId("Constant_b1me0g_a0");
@@ -40,7 +38,6 @@ public class BuildLayout_EchoXml_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_b1me0g_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fileName");
@@ -63,7 +60,6 @@ public class BuildLayout_EchoXml_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_b1me0g_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("element");

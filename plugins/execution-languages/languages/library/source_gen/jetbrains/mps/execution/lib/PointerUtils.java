@@ -19,7 +19,6 @@ import java.util.ArrayList;
 
 public class PointerUtils {
   public static final String POINTER_SEPARATOR = "%";
-
   @Nullable
   public static SNodeReference stringToPointer(@Nls String pointerString) {
     if ((pointerString == null || pointerString.length() == 0)) {
@@ -28,7 +27,6 @@ public class PointerUtils {
     String[] split = pointerString.split(POINTER_SEPARATOR);
     return new SNodePointer(split[0], split[1]);
   }
-
   public static String pointerToString(@NotNull final SNodeReference pointer) {
     final Wrappers._T<String> value = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -38,7 +36,6 @@ public class PointerUtils {
     });
     return value.value;
   }
-
   public static ClonableList<String> nodesToCloneableList(List<SNode> nodes) {
     return new ClonableList<String>(ListSequence.fromList(nodes).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -46,11 +43,9 @@ public class PointerUtils {
       }
     }).toListSequence());
   }
-
   public static ClonableList<String> nodeToCloneableList(SNode node) {
     return new ClonableList<String>(PointerUtils.pointerToString(new SNodePointer(node)));
   }
-
   public static List<SNodeReference> clonableListToNodes(ClonableList<String> clonableList) {
     List<SNodeReference> list = ListSequence.fromList(new ArrayList<SNodeReference>());
     for (String string : clonableList) {

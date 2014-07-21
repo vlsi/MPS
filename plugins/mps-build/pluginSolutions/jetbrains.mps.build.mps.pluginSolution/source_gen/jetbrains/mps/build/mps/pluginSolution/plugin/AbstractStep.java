@@ -33,15 +33,12 @@ import org.apache.log4j.LogManager;
 
 public abstract class AbstractStep extends StepAdapter {
   protected JPanel myMainPanel;
-
   public AbstractStep() {
   }
-
   @Override
   public void _init() {
     this.createComponent();
   }
-
   public GridBagConstraints createConstraint(int row, int wy) {
     GridBagConstraints c = new GridBagConstraints();
     c.fill = GridBagConstraints.HORIZONTAL;
@@ -52,22 +49,17 @@ public abstract class AbstractStep extends StepAdapter {
     c.insets = new Insets(1, 0, 1, 0);
     return c;
   }
-
   public abstract JComponent createMainComponent();
-
   public abstract String getDescription();
-
   @Override
   public JComponent getComponent() {
     this.createComponent();
     return this.myMainPanel;
   }
-
   @Override
   public Icon getIcon() {
     return null;
   }
-
   protected void createComponent() {
     if (myMainPanel == null) {
 
@@ -100,16 +92,13 @@ public abstract class AbstractStep extends StepAdapter {
     }
     myMainPanel.doLayout();
   }
-
   @NotNull
   public String getImageText() {
     return "";
   }
-
   protected boolean doLimitStepPanelHeight() {
     return false;
   }
-
   protected JPanel createStepPanel() {
     JPanel stepPanel = new JPanel(new GridBagLayout());
     JLabel label = new JLabel(this.getDescription());
@@ -121,7 +110,6 @@ public abstract class AbstractStep extends StepAdapter {
     stepPanel.add(new JPanel(), LayoutUtil.createPanelConstraints(2));
     return stepPanel;
   }
-
   private JComponent createImagePanel() {
     URL imageUrl = MPSApplicationInfo.getInstance().getDialogImageURL();
     String imageText = getImageText();
@@ -149,6 +137,5 @@ public abstract class AbstractStep extends StepAdapter {
     graphics.drawChars(imageText.toCharArray(), 0, imageText.length(), x, y);
     return new JLabel(new ImageIcon(bim));
   }
-
   protected static Logger LOG = LogManager.getLogger(AbstractStep.class);
 }

@@ -16,18 +16,15 @@ import org.apache.log4j.LogManager;
 
 public class Pause_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Pause;
-
   public Pause_Action() {
     super("Pause", "Pause Execution", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -41,7 +38,6 @@ public class Pause_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       DebugActionsUtil.getDebugSession(event).pause();
@@ -51,6 +47,5 @@ public class Pause_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(Pause_Action.class);
 }

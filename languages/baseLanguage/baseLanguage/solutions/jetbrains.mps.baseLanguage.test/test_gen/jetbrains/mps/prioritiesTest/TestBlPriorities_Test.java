@@ -23,28 +23,23 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)");
     this.runTest("jetbrains.mps.prioritiesTest.TestBlPriorities_Test$TestBody", "test_testBitwisePriorities", true);
   }
-
   @Test
   public void test_testBooleanAndWithEqualsOperation() throws Throwable {
     this.initTest("${mps_home}", "r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)");
     this.runTest("jetbrains.mps.prioritiesTest.TestBlPriorities_Test$TestBody", "test_testBooleanAndWithEqualsOperation", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_testBitwisePriorities() throws Exception {
       this.check(_quotation_createNode_hlijcv_a0a0a0(), 1 & 2 | 3 << 4 ^ 5 | 6);
     }
-
     public void test_testBooleanAndWithEqualsOperation() throws Exception {
       this.check(_quotation_createNode_hlijcv_a0a0a1(), true || false == false);
     }
-
     public void check(SNode expr, Object expectedValue) {
       this.expressionPriorityRebalance(expr);
       Assert.assertEquals(expectedValue, this.eval(SLinkOperations.getTarget(expr, "expression", true)));
     }
-
     public void expressionPriorityRebalance(SNode e) {
       for (SNode child : SNodeOperations.getChildren(e)) {
         if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Expression")) {
@@ -55,7 +50,6 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
         ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
       }
     }
-
     public Object eval(SNode e) {
       if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
         return this.evalBinaryOperation(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
@@ -69,7 +63,6 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
 
       throw new UnsupportedOperationException(e.getPresentation());
     }
-
     public Object evalBinaryOperation(SNode e) {
       Object left = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true));
       Object right = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true));
@@ -100,7 +93,6 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
 
       throw new UnsupportedOperationException(e.getPresentation());
     }
-
     private static SNode _quotation_createNode_hlijcv_a0a0a0() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
@@ -146,7 +138,6 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
       quotedNode_1.addChild("expression", quotedNode_2);
       return quotedNode_1;
     }
-
     private static SNode _quotation_createNode_hlijcv_a0a0a1() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
@@ -171,7 +162,6 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
       quotedNode_1.addChild("expression", quotedNode_2);
       return quotedNode_1;
     }
-
     private static boolean eq_p8h609_a0a0l0f2(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }

@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class WatchesToolbarActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(WatchesToolbarActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.debugger.java.runtime.ui.actions.WatchesToolbarActions_ActionGroup";
-
   public WatchesToolbarActions_ActionGroup() {
     super("WatchesToolbarActions", ID);
     this.setIsInternal(false);

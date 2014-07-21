@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
   public BehaviorAspectDescriptor() {
   }
-
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 8:
@@ -34,6 +33,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-
   private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestChild", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentChild", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentChildSubconcept", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentRoot", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestMostSpecificChild", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestMostSpecificRoot", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeListRoot", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeRoot", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRoot"};
 }

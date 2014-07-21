@@ -12,15 +12,12 @@ public enum InstanceIncomingReferencesPolicy {
   forbidden("forbidden", "forbidden");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<InstanceIncomingReferencesPolicy> getConstants() {
     List<InstanceIncomingReferencesPolicy> list = ListSequence.fromList(new LinkedList<InstanceIncomingReferencesPolicy>());
     ListSequence.fromList(list).addElement(InstanceIncomingReferencesPolicy.allowed);
@@ -28,11 +25,9 @@ public enum InstanceIncomingReferencesPolicy {
     ListSequence.fromList(list).addElement(InstanceIncomingReferencesPolicy.forbidden);
     return list;
   }
-
   public static InstanceIncomingReferencesPolicy getDefault() {
     return InstanceIncomingReferencesPolicy.allowed;
   }
-
   public static InstanceIncomingReferencesPolicy parseValue(String value) {
     if (value == null) {
       return InstanceIncomingReferencesPolicy.getDefault();
@@ -48,14 +43,11 @@ public enum InstanceIncomingReferencesPolicy {
     }
     return InstanceIncomingReferencesPolicy.getDefault();
   }
-
   private String myValue;
-
   InstanceIncomingReferencesPolicy(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

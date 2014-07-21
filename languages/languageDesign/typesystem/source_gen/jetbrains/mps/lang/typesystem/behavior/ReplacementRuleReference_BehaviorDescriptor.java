@@ -10,5 +10,5 @@ public class ReplacementRuleReference_BehaviorDescriptor extends BaseConcept_Beh
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference";
-  };;
-;}
+  }
+}

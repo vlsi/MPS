@@ -33,10 +33,8 @@ public class ScriptData {
   private Map<String, String> myMacros = new LinkedHashMap<String, String>();
   private Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private Map<String, Element> myData = new LinkedHashMap<String, Element>();
-
   public ScriptData() {
   }
-
   public void save(File file) throws IOException {
     myXML = new Element(ROOT_TASKDATA);
     if (myWorker != null) {
@@ -62,7 +60,6 @@ public class ScriptData {
 
     JDOMUtil.writeDocument(new Document(myXML), file);
   }
-
   public void load(File file) throws IOException, JDOMException {
     myXML = JDOMUtil.loadDocument(file).getRootElement();
     myWorker = myXML.getAttributeValue(PROP_WORKER);
@@ -85,7 +82,6 @@ public class ScriptData {
       loadLibraries(myData.remove(ELEM_LIBRARIES));
     }
   }
-
   private void loadLibraries(Element libraries) {
     for (Object o : libraries.getChildren(ELEM_LIBRARY)) {
       Element elem = (Element) o;
@@ -93,7 +89,6 @@ public class ScriptData {
       addLibrary(elem.getAttributeValue(NAME), file);
     }
   }
-
   private void saveLibraries() {
     Element elem = new Element(ELEM_LIBRARIES);
     for (String key : myLibraries.keySet()) {
@@ -101,79 +96,60 @@ public class ScriptData {
     }
     setData(ELEM_LIBRARIES, elem);
   }
-
   public void setWorker(String workerClass) {
     myWorker = workerClass;
   }
-
   public String getWorker() {
     return myWorker;
   }
-
   public void setFailOnError(boolean failOnError) {
     myFailOnError = failOnError;
   }
-
   public boolean getFailOnError() {
     return myFailOnError;
   }
-
   public void setLogLevel(Level logLevel) {
     myLogLevel = logLevel;
   }
-
   public Level getLogLevel() {
     return myLogLevel;
   }
-
   public void setLoadBootstrapLibraries(boolean isLoadBootstrapLibraries) {
     myLoadBootstrapLibraries = isLoadBootstrapLibraries;
   }
-
   public boolean getLoadBootstrapLibraries() {
     return myLoadBootstrapLibraries;
   }
-
   public void setProperties(Map<String, String> properties) {
     myProperties = properties;
   }
-
   public Map<String, String> getProperties() {
     return myProperties;
   }
-
   public void addProperty(String key, String value) {
     myProperties.put(key, value);
   }
-
   public void setMacros(Map<String, String> macros) {
     myMacros = macros;
   }
-
   public Map<String, String> getMacros() {
     return myMacros;
   }
-
   public void addMacro(String key, String value) {
     myMacros.put(key, value);
   }
-
   public void setLibraries(Map<String, File> libraries) {
     myLibraries = libraries;
   }
-
   public Map<String, File> getLibraries() {
     return myLibraries;
   }
-
   public void addLibrary(String name, File library) {
     myLibraries.put(name, library);
   }
-
   public Element getData(String key) {
     return (myData.containsKey(key) ? myData.get(key) : null);
   }
-
   public void setData(String key, Element data) {
     if (data == null) {
       myData.remove(key);

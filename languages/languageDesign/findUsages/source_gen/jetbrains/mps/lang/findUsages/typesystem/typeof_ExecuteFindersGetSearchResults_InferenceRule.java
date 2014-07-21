@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_ExecuteFindersGetSearchResults_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ExecuteFindersGetSearchResults_InferenceRule() {
   }
-
   public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
@@ -45,29 +44,24 @@ public class typeof_ExecuteFindersGetSearchResults_InferenceRule extends Abstrac
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "8150507060913379973", true), (SNode) _quotation_createNode_4qk8lm_a0d0b(), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_4qk8lm_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4qk8lm_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -75,7 +69,6 @@ public class typeof_ExecuteFindersGetSearchResults_InferenceRule extends Abstrac
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)"), facade.createNodeId("~SearchScope")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4qk8lm_a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -83,7 +76,6 @@ public class typeof_ExecuteFindersGetSearchResults_InferenceRule extends Abstrac
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), facade.createNodeId("~ProgressMonitor")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4qk8lm_a0d0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

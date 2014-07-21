@@ -8,19 +8,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class BuildMps_Solution_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_hasTestsSources_7354447573575923452(SNode thisNode) {
     return isNotEmptyString(SPropertyOperations.getString_def(thisNode, "sourcesKind", null)) && (SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("sources and tests") || SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("tests"));
   }
-
   public static boolean call_hasSources_7354447573576714831(SNode thisNode) {
     return isEmptyString(SPropertyOperations.getString_def(thisNode, "sourcesKind", null)) || (SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("sources and tests") || SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("sources"));
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

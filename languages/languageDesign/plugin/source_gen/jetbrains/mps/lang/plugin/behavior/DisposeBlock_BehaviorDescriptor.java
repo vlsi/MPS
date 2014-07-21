@@ -12,12 +12,12 @@ public class DisposeBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDes
   }
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return DisposeBlock_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  };;
-;  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+  }
+  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return DisposeBlock_Behavior.virtual_showName_1262430001741498082(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.DisposeBlock";
-  };;
-;}
+  }
+}

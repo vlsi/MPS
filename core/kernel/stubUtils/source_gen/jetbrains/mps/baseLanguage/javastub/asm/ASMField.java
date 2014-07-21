@@ -14,7 +14,6 @@ public class ASMField {
   private List<ASMAnnotation> myAnnotations;
   private ASMType myType;
   private ASMType myGenericType;
-
   /*package*/ ASMField(FieldNode field) {
     myField = field;
     if (myField.visibleAnnotations != null) {
@@ -31,63 +30,48 @@ public class ASMField {
       myGenericType = myType;
     }
   }
-
   public String getName() {
     return myField.name;
   }
-
   public boolean isPrivate() {
     return (Opcodes.ACC_PRIVATE & myField.access) != 0;
   }
-
   public boolean isPublic() {
     return (Opcodes.ACC_PUBLIC & myField.access) != 0;
   }
-
   public boolean isProtected() {
     return (Opcodes.ACC_PROTECTED & myField.access) != 0;
   }
-
   public boolean isDeprecated() {
     return (Opcodes.ACC_DEPRECATED & myField.access) != 0;
   }
-
   public boolean isPackageProtected() {
     return !(isPublic()) && !(isPrivate()) && !(isProtected());
   }
-
   public boolean isStatic() {
     return (Opcodes.ACC_STATIC & myField.access) != 0;
   }
-
   public boolean isFinal() {
     return (Opcodes.ACC_FINAL & myField.access) != 0;
   }
-
   public boolean isEnumConstant() {
     return (Opcodes.ACC_ENUM & myField.access) != 0;
   }
-
   public boolean isCompilerGenerated() {
     return myField.name.equals("$assertionsDisabled");
   }
-
   public boolean hasValue() {
     return null != myField.value;
   }
-
   public Object getValue() {
     return myField.value;
   }
-
   public ASMType getType() {
     return myType;
   }
-
   public ASMType getGenericType() {
     return myGenericType;
   }
-
   public List<ASMAnnotation> getAnnotations() {
     return ((List<ASMAnnotation>) ((myAnnotations == null ? Collections.emptyList() : Collections.unmodifiableList(myAnnotations))));
   }

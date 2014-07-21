@@ -21,23 +21,23 @@
   </root>
   <root nodeRef="r:82bd480c-456f-4470-ab12-9f4f3dd67824(jetbrains.mps.lang.scopes.behavior)/2995585510566823813">
     <file name="UniformScopeProvider_Behavior.java">
-      <node id="2995585510566833899" at="13,104,14,171" concept="0" />
-      <node id="2995585510566833907" at="16,113,17,183" concept="0" />
-      <node id="2995585510566823813" at="11,0,13,1" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2995585510566823813" at="13,1,16,1" concept="1" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <node id="2995585510566823813" at="16,1,19,1" concept="1" trace="virtual_getScope_7722139651431880752#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;I)Ljetbrains/mps/scope/Scope;" />
+      <node id="2995585510566833899" at="13,103,14,171" concept="0" />
+      <node id="2995585510566833907" at="16,112,17,183" concept="0" />
+      <node id="2995585510566823813" at="11,0,13,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2995585510566823813" at="13,0,16,0" concept="1" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <node id="2995585510566823813" at="16,0,19,0" concept="1" trace="virtual_getScope_7722139651431880752#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;I)Ljetbrains/mps/scope/Scope;" />
       <scope id="2995585510566823815" at="11,43,11,43" />
-      <scope id="2995585510566823818" at="13,104,14,171" />
-      <scope id="2995585510566823834" at="16,113,17,183" />
-      <scope id="2995585510566823813" at="11,0,13,1">
+      <scope id="2995585510566823818" at="13,103,14,171" />
+      <scope id="2995585510566823834" at="16,112,17,183" />
+      <scope id="2995585510566823813" at="11,0,13,0">
         <var name="thisNode" id="2995585510566823813" />
       </scope>
-      <scope id="2995585510566823813" at="13,1,16,1">
+      <scope id="2995585510566823813" at="13,0,16,0">
         <var name="context" id="2995585510566823821" />
         <var name="kind" id="2995585510566823819" />
         <var name="thisNode" id="2995585510566823813" />
       </scope>
-      <scope id="2995585510566823813" at="16,1,19,1">
+      <scope id="2995585510566823813" at="16,0,19,0">
         <var name="index" id="2995585510566823839" />
         <var name="kind" id="2995585510566823835" />
         <var name="role" id="2995585510566823837" />

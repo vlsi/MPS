@@ -13,22 +13,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class double_extends_complex_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public double_extends_complex_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode doubleType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return SNodeOperations.copyNode(MathTypeUtil.qComplex);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.DoubleType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }

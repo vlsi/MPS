@@ -11,69 +11,55 @@ import mf.Money;
 public class Customer extends NamedObject implements Subject {
   private ServiceAgreement myServiceAgreement;
   private Map<AccountType, Account> myAccounts;
-
   public Customer(String name) {
     myName = name;
     setUpAccounts();
   }
-
   /*package*/ void setUpAccounts() {
     myAccounts = new HashMap<AccountType, Account>();
     for (AccountType type : AccountType.values()) {
       myAccounts.put(type, new Account(Currency.USD, type));
     }
   }
-
   public Account accountFor(AccountType type) {
     assert myAccounts.containsKey(type);
     return myAccounts.get(type);
   }
-
   @Override
   public void addEntry(Entry arg, AccountType type) {
     accountFor(type).addEntry(arg);
   }
-
   public Money balanceFor(AccountType key) {
     return accountFor(key).balance();
   }
-
   /*package*/ void clearEntries() {
     setUpAccounts();
   }
-
   public Map getAccounts() {
     return myAccounts;
   }
-
   @Override
   public Subject getAdjuster() {
     return this;
   }
-
   public ServiceAgreement getServiceAgreement() {
     return myServiceAgreement;
   }
-
   @Override
   public void reverseEntry(Entry arg) {
     Entry reversingEntry = new Entry(arg.getAmount().negate(), arg.getDate());
     accountFor(arg.getAccount().type()).addEntry(reversingEntry);
   }
-
   @Override
   public void process(AccountingEvent e) {
     myServiceAgreement.process(e);
   }
-
   public void setAccounts(Map arg) {
     myAccounts = arg;
   }
-
   public void setServiceAgreement(ServiceAgreement arg) {
     myServiceAgreement = arg;
   }
-
   @Override
   public String toString() {
     StringBuffer result = new StringBuffer();
@@ -86,7 +72,6 @@ public class Customer extends NamedObject implements Subject {
     }
     return result.toString();
   }
-
   /*package*/ AccountType[] accountTypes() {
     return (AccountType[]) myAccounts.keySet().toArray(new AccountType[0]);
   }

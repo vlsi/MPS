@@ -21,11 +21,9 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_v39yb3_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_v39yb3_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_v39yb3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_v39yb3_a");
@@ -37,7 +35,6 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
     }
     return editorCell;
   }
-
   private EditorCell createConstant_v39yb3_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "external jar");
     editorCell.setCellId("Constant_v39yb3_a0");
@@ -47,7 +44,6 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_v39yb3_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("extJar");
@@ -67,7 +63,6 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_v39yb3_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(reexport)");
     editorCell.setCellId("Constant_v39yb3_c0");
@@ -78,11 +73,9 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_v39yb3_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "reexport");
   }
-
   private EditorCell createCollection_v39yb3_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_v39yb3_a_0");
@@ -91,7 +84,6 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
     editorCell.addEditorCell(this.createProperty_v39yb3_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_v39yb3_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reexport:");
     editorCell.setCellId("Constant_v39yb3_a0_0");
@@ -101,7 +93,6 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_v39yb3_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("reexport");

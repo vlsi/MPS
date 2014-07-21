@@ -31,12 +31,10 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   private MPSInstance_Configuration.MyState myState = new MPSInstance_Configuration.MyState();
   private MpsStartupSettings_Configuration myMpsSettings = new MpsStartupSettings_Configuration();
   private DeployPluginsSettings_Configuration myPluginsSettings = new DeployPluginsSettings_Configuration();
-
   public void checkConfiguration() throws RuntimeConfigurationException {
     this.getMpsSettings().checkConfiguration();
     this.getPluginsSettings().checkConfiguration();
   }
-
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
@@ -51,7 +49,6 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
       element.addContent(fieldElement);
     }
   }
-
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -79,19 +76,15 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
       }
     }
   }
-
   public MpsStartupSettings_Configuration getMpsSettings() {
     return myMpsSettings;
   }
-
   public DeployPluginsSettings_Configuration getPluginsSettings() {
     return myPluginsSettings;
   }
-
   public File getPluginsPath() {
     return new File(this.getMpsSettings().expandPath(this.getMpsSettings().getConfigurationPath()), "plugins");
   }
-
   @Override
   public MPSInstance_Configuration clone() {
     MPSInstance_Configuration clone = null;
@@ -108,56 +101,44 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     }
     return clone;
   }
-
   public class MyState {
     public MyState() {
     }
-
     @Override
     public Object clone() throws CloneNotSupportedException {
       MPSInstance_Configuration.MyState state = new MPSInstance_Configuration.MyState();
       return state;
     }
   }
-
   public MPSInstance_Configuration(Project project, MPSInstance_Configuration_Factory factory, String name) {
     super(project, factory, name);
   }
-
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
     return new MPSInstance_Configuration_RunProfileState(this, executor, environment);
   }
-
   @Nullable
   public SettingsEditor<ConfigurationPerRunnerSettings> getRunnerSettingsEditor(ProgramRunner runner) {
     return null;
   }
-
   public ConfigurationPerRunnerSettings createRunnerSettings(ConfigurationInfoProvider provider) {
     return null;
   }
-
   public SettingsEditorEx<MPSInstance_Configuration> getConfigurationEditor() {
     return (SettingsEditorEx<MPSInstance_Configuration>) getEditor();
   }
-
   public MPSInstance_Configuration createCloneTemplate() {
     return (MPSInstance_Configuration) super.clone();
   }
-
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
     return new MPSInstance_Configuration_Editor(myMpsSettings.getEditor(), myPluginsSettings.getEditor());
   }
-
   @Override
   public boolean canExecute(String executorId) {
     return MPSInstance_Configuration_RunProfileState.canExecute(executorId);
   }
-
   public Object[] createDeployPluginsTask() {
     return new Object[]{this.getPluginsSettings().getPluginsListToDeploy(), this.getPluginsPath()};
   }
-
   protected static Logger LOG = LogManager.getLogger(MPSInstance_Configuration.class);
 }

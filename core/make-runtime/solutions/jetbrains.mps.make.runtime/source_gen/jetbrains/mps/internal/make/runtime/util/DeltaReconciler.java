@@ -15,18 +15,14 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class DeltaReconciler {
   private List<DeltaReconciler.DeltaContainer> topContainer = ListSequence.fromList(new ArrayList<DeltaReconciler.DeltaContainer>());
-
   public DeltaReconciler() {
   }
-
   public DeltaReconciler(Iterable<IDelta> toReconcile) {
     addAll(toReconcile);
   }
-
   public void addDelta(IDelta delta) {
     DeltaReconciler.DeltaContainer.insert(delta, topContainer);
   }
-
   public final void addAll(Iterable<IDelta> toReconcile) {
     Sequence.fromIterable(toReconcile).visitAll(new IVisitor<IDelta>() {
       public void visit(IDelta d) {
@@ -34,7 +30,6 @@ public class DeltaReconciler {
       }
     });
   }
-
   public void reconcileAll() {
     ListSequence.fromList(topContainer).visitAll(new IVisitor<DeltaReconciler.DeltaContainer>() {
       public void visit(DeltaReconciler.DeltaContainer dc) {
@@ -42,7 +37,6 @@ public class DeltaReconciler {
       }
     });
   }
-
   public void visitAll(final IDeltaVisitor visitor) {
     ListSequence.fromList(topContainer).visitAll(new IVisitor<DeltaReconciler.DeltaContainer>() {
       public void visit(DeltaReconciler.DeltaContainer dc) {
@@ -50,15 +44,12 @@ public class DeltaReconciler {
       }
     });
   }
-
   private static class DeltaContainer {
     private IDelta delta;
     private List<DeltaReconciler.DeltaContainer> content = ListSequence.fromList(new ArrayList<DeltaReconciler.DeltaContainer>());
-
     private DeltaContainer(IDelta delta) {
       this.delta = delta;
     }
-
     private IDelta mergeContent() {
       return ListSequence.fromList(content).foldLeft(this.delta, new ILeftCombinator<DeltaReconciler.DeltaContainer, IDelta>() {
         public IDelta combine(IDelta d, DeltaReconciler.DeltaContainer dc) {
@@ -66,7 +57,6 @@ public class DeltaReconciler {
         }
       });
     }
-
     private boolean tryInsert(IDelta delta) {
       if (this.delta.contains(delta)) {
         insert(delta, content);
@@ -74,7 +64,6 @@ public class DeltaReconciler {
       }
       return false;
     }
-
     private static void insert(final IDelta delta, List<DeltaReconciler.DeltaContainer> into) {
       DeltaReconciler.DeltaContainer dc = null;
       for (Iterator<DeltaReconciler.DeltaContainer> it = ListSequence.fromList(into).iterator(); it.hasNext();) {

@@ -35,18 +35,15 @@ import org.apache.log4j.LogManager;
 
 public class ReportModelMergeProblem_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ReportModelMergeProblem_Action() {
     super("Report Model Merge Problem...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     List<VcsDirectoryMapping> mappings = ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getDirectoryMappings();
     return ListSequence.fromList(mappings).any(new IWhereFilter<VcsDirectoryMapping>() {
@@ -55,7 +52,6 @@ public class ReportModelMergeProblem_Action extends BaseAction {
       }
     });
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -69,7 +65,6 @@ public class ReportModelMergeProblem_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -84,7 +79,6 @@ public class ReportModelMergeProblem_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final BlameDialog blameDialog = BlameDialogComponent.getInstance().createDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")));
@@ -142,13 +136,10 @@ public class ReportModelMergeProblem_Action extends BaseAction {
       }
     }
   }
-
   private void showNoBackupsAvailable(final Map<String, Object> _params) {
     Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "No merge backups available, that is MPS merge was not invoked.", "Model Merge Problem");
   }
-
   protected static Logger LOG = LogManager.getLogger(ReportModelMergeProblem_Action.class);
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

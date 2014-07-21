@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class setType_with_vars_subtypeOf_setType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public setType_with_vars_subtypeOf_setType_InequationReplacementRule() {
   }
-
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     return SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(subtype), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(supertype))) && !(ListSequence.fromList(SNodeOperations.getChildren(supertype)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode ch) {
@@ -30,39 +29,32 @@ public class setType_with_vars_subtypeOf_setType_InequationReplacementRule exten
       }
     });
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     // Anyway... there should be the only one child. 
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     // Anyway... there should be the only one child. 
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SetType";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SetType";
   }

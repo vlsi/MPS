@@ -11,14 +11,11 @@ import java.util.ArrayList;
 
 public class Runtime_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.debugger.api.runtime");
-
   public Runtime_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new DeleteBreakpointAction_Action());
@@ -40,17 +37,14 @@ public class Runtime_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new DebugStepsMenu_ActionGroup());
     addGroup(new DebugTool_ActionGroup());
   }
-
   public void adjustInterfaceGroups() {
     insertInterfaceGroupIntoAnother("DebugMuteAction", DebugTool_ActionGroup.ID, DebugTool_ActionGroup.LABEL_ID_MuteAction);
     insertInterfaceGroupIntoAnother("DebugStopAction", DebugTool_ActionGroup.ID, DebugTool_ActionGroup.LABEL_ID_StopAction);
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(DebugRunMenu_ActionGroup.ID, "RunMenu", null);
     insertGroupIntoAnother(DebugStepsMenu_ActionGroup.ID, DebugRunMenu_ActionGroup.ID, DebugRunMenu_ActionGroup.LABEL_ID_steps);
   }
-
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Debugger_KeymapChanges());

@@ -28,22 +28,18 @@ import java.io.ByteArrayOutputStream;
 public class XmlConverterTest extends CoreMpsTest {
   public XmlConverterTest() {
   }
-
   @Test
   public void testXml1() throws Exception {
     testXml("/jetbrains/mps/persistence/xml/testdata/test1.xml");
   }
-
   @Test
   public void testXml2() throws Exception {
     testXml("/jetbrains/mps/persistence/xml/testdata/test2.xml");
   }
-
   @Test
   public void testXml3() throws Exception {
     testXml("/jetbrains/mps/persistence/xml/testdata/test3.xml");
   }
-
   private void testXml(String resource) throws IOException, ModelSaveException {
     final SModelPersistence pers = new XmlModelPersistence();
     final StreamDataSource source = new XmlConverterTest.MyDataSource(resource);
@@ -65,92 +61,73 @@ public class XmlConverterTest extends CoreMpsTest {
     String before = FileUtil.read(new InputStreamReader(source.openInputStream(), FileUtil.DEFAULT_CHARSET)).trim();
     Assert.assertEquals(before, after);
   }
-
   private class MyDataSource implements StreamDataSource {
     private final String resourceName;
-
     private MyDataSource(String resourceName) {
       this.resourceName = resourceName;
     }
-
     @NotNull
     @Override
     public String getLocation() {
       return "test";
     }
-
     @Override
     public InputStream openInputStream() throws IOException {
       InputStream stream = XmlConverterTest.this.getClass().getResourceAsStream(resourceName);
       Assert.assertNotNull(stream);
       return stream;
     }
-
     @Override
     public boolean isReadOnly() {
       return true;
     }
-
     @Override
     public OutputStream openOutputStream() throws IOException {
       throw new UnsupportedOperationException();
     }
-
     @Override
     public void addListener(DataSourceListener listener) {
       throw new UnsupportedOperationException();
     }
-
     @Override
     public void removeListener(DataSourceListener listener) {
       throw new UnsupportedOperationException();
     }
-
     @Override
     public long getTimestamp() {
       return 0;
     }
   }
-
   private static class StringBuilderDataSource implements StreamDataSource {
     /*package*/ ByteArrayOutputStream bos = new ByteArrayOutputStream();
-
     private StringBuilderDataSource() {
     }
-
     public String getResult() {
       return new String(bos.toByteArray(), FileUtil.DEFAULT_CHARSET);
     }
-
     @NotNull
     @Override
     public String getLocation() {
       return "test";
     }
-
     @Override
     public InputStream openInputStream() throws IOException {
       throw new UnsupportedOperationException();
     }
-
     @Override
     public boolean isReadOnly() {
       return false;
     }
-
     @Override
     public OutputStream openOutputStream() throws IOException {
       return bos;
     }
-
     @Override
     public void addListener(DataSourceListener listener) {
     }
-
     @Override
     public void removeListener(DataSourceListener listener) {
     }
-
     @Override
     public long getTimestamp() {
       return 0;

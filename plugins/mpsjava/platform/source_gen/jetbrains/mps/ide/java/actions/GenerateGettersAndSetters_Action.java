@@ -35,23 +35,19 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class GenerateGettersAndSetters_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GenerateGettersAndSetters_Action() {
     super("Getter and Setter", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = GenerateGettersAndSetters_Action.this.getClassConcept(_params);
     return classConcept != null && Sequence.fromIterable(GenerateGettersAndSetters_Action.this.getFieldDeclarationsWithoutGetterOrSetter(classConcept, _params)).isNotEmpty();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -65,7 +61,6 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -80,7 +75,6 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode classConcept = GenerateGettersAndSetters_Action.this.getClassConcept(_params);
@@ -123,11 +117,9 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
       }
     }
   }
-
   private SNode getClassConcept(final Map<String, Object> _params) {
     return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
-
   private Iterable<SNode> getFieldDeclarationsWithoutGetterOrSetter(final SNode classConcept, final Map<String, Object> _params) {
     final Project project = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject();
     return Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).where(new IWhereFilter<SNode>() {
@@ -146,9 +138,7 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
       }
     });
   }
-
   protected static Logger LOG = LogManager.getLogger(GenerateGettersAndSetters_Action.class);
-
   private static SNode _quotation_createNode_5trf1k_a0a4a41a0(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -175,7 +165,6 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
     quotedNode_4.addChild("body", quotedNode_7);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_5trf1k_a0a0i0o0a(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;

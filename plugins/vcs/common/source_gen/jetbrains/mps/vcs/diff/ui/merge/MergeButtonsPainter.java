@@ -18,12 +18,10 @@ import jetbrains.mps.smodel.ModelAccess;
 
 public class MergeButtonsPainter extends ButtonsPainter {
   private MergeRootsPane myPane;
-
   private MergeButtonsPainter(MergeRootsPane pane, EditorComponent editorComponent, ChangeGroupLayout changeGroupLayout) {
     super(2, editorComponent, changeGroupLayout);
     myPane = pane;
   }
-
   @Override
   protected Iterable<FoldingAreaButton> createButtonsForChangeGroup(ChangeGroup changeGroup, int y) {
     int applyX = (isHighlightLeft() ? getX(0) : getX(1));
@@ -40,22 +38,18 @@ public class MergeButtonsPainter extends ButtonsPainter {
     });
     return Arrays.asList(apply, exclude);
   }
-
   public static MergeButtonsPainter addTo(MergeRootsPane pane, DiffEditor diffEditor, ChangeGroupLayout changeGroupLayout, boolean inspector) {
     EditorComponent editorComponent = diffEditor.getEditorComponent(inspector);
     MergeButtonsPainter painter = new MergeButtonsPainter(pane, editorComponent, changeGroupLayout);
     editorComponent.getLeftEditorHighlighter().addFoldingAreaPainter(painter);
     return painter;
   }
-
   private class MyButton extends FoldingAreaButton {
     private _FunctionTypes._void_P2_E0<? super MergeSession, ? super Iterable<ModelChange>> myAction;
-
     private MyButton(ChangeGroup changeGroup, int x, int y, String name, Icon icon, _FunctionTypes._void_P2_E0<? super MergeSession, ? super Iterable<ModelChange>> action) {
       super(changeGroup, x, y, name, icon);
       myAction = action;
     }
-
     @Override
     public void performAction() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {

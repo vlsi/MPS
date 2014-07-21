@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test;
 public class TestComplex {
   public TestComplex() {
   }
-
   public static void main(String[] args) {
     Complex2 a = new Complex2();
     Complex2 b = new Complex2();

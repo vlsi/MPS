@@ -10,5 +10,5 @@ public class IconResourceExpression_BehaviorDescriptor extends Expression_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.resources.structure.IconResourceExpression";
-  };;
-;}
+  }
+}

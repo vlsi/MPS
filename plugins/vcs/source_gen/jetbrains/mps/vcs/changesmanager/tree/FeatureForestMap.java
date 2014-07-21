@@ -32,10 +32,8 @@ public class FeatureForestMap<V> {
   private Map<Feature, Feature[]> myFeatureToAncestors = MapSequence.fromMap(new HashMap<Feature, Feature[]>());
   private CounterMap<Feature> myFeaturesIsAncestorCounterMap = new CounterMap<Feature>(new FeatureForestMap.MyCounterMapHandler());
   private final List<FeatureForestMapListener> myListeners = ListSequence.fromList(new ArrayList<FeatureForestMapListener>());
-
   public FeatureForestMap() {
   }
-
   public void put(@NotNull Feature feature, @NotNull V value) {
     ModelAccess.assertLegalRead();
     if (MapSequence.fromMap(myFeatureToValue).containsKey(feature)) {
@@ -60,7 +58,6 @@ public class FeatureForestMap<V> {
     });
     fireFeatureStateChanged(feature);
   }
-
   public void removeKey(@NotNull Feature feature) {
     if (!(MapSequence.fromMap(myFeatureToValue).containsKey(feature))) {
       log("Trying to remove feature which is not added: " + feature);
@@ -77,16 +74,13 @@ public class FeatureForestMap<V> {
     });
     fireFeatureStateChanged(feature);
   }
-
   @Nullable
   public V get(@NotNull Feature feature) {
     return MapSequence.fromMap(myFeatureToValue).get(feature);
   }
-
   public boolean isAncestorOfAddedFeature(@NotNull Feature feature) {
     return !(myFeaturesIsAncestorCounterMap.isZero(feature));
   }
-
   @Nullable
   public Feature getAddedAncestor(@NotNull Feature feature) {
     ModelAccess.assertLegalRead();
@@ -96,31 +90,26 @@ public class FeatureForestMap<V> {
       }
     });
   }
-
   @Nullable
   public V getAddedAncestorValue(@NotNull Feature feature) {
     return MapSequence.fromMap(myFeatureToValue).get(getAddedAncestor(feature));
   }
-
   public void addListener(@NotNull FeatureForestMapListener listener) {
     synchronized (myListeners) {
       ListSequence.fromList(myListeners).addElement(listener);
     }
   }
-
   public void removeListener(@NotNull FeatureForestMapListener listener) {
     synchronized (myListeners) {
       ListSequence.fromList(myListeners).removeElement(listener);
     }
   }
-
   @NotNull
   private List<FeatureForestMapListener> copyListeners() {
     synchronized (myListeners) {
       return ListSequence.fromListWithValues(new ArrayList<FeatureForestMapListener>(), myListeners);
     }
   }
-
   private void fireFeatureStateChanged(@NotNull Feature feature) {
     for (FeatureForestMapListener listener : ListSequence.fromList(copyListeners())) {
       try {
@@ -136,11 +125,9 @@ public class FeatureForestMap<V> {
       }
     }
   }
-
   public static void setLoggingEnabled(boolean loggingEnabled) {
     ourLoggingEnabled = loggingEnabled;
   }
-
   private static void log(String msg) {
     if (ourLoggingEnabled) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -148,24 +135,19 @@ public class FeatureForestMap<V> {
       }
     }
   }
-
   private class MyCounterMapHandler implements CounterMap.CounterMapHandler<Feature> {
     public MyCounterMapHandler() {
     }
-
     @Override
     public void counterZero(@NotNull Feature feature) {
       fireFeatureStateChanged(feature);
     }
-
     @Override
     public void counterNonZero(@NotNull Feature feature) {
       fireFeatureStateChanged(feature);
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(FeatureForestMap.class);
-
   private static Throwable check_tcy57o_a0a0a0a0a0p(Throwable checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getCause();

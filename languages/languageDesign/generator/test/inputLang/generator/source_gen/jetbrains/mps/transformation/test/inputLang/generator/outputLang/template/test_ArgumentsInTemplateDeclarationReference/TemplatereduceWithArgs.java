@@ -22,21 +22,17 @@ import java.util.Collection;
 @Generated
 public class TemplatereduceWithArgs implements TemplateDeclarationWeavingAware {
   private String myP1;
-
   public TemplatereduceWithArgs(String p1) {
     this.myP1 = p1;
   }
-
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599872860");
   }
-
   private Map<String, Object> getParametersAsMap() {
     Map<String, Object> result = MapSequence.fromMap(new HashMap<String, Object>());
     MapSequence.fromMap(result).put("p1", myP1);
     return result;
   }
-
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
@@ -46,12 +42,10 @@ public class TemplatereduceWithArgs implements TemplateDeclarationWeavingAware {
     }
     return tnode1;
   }
-
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
     return TemplateUtil.singletonList(applyPart0(environment, contextWithParams));
   }
-
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
     SNode tnodepart0 = applyPart0(environment, contextWithParams);
@@ -59,7 +53,6 @@ public class TemplatereduceWithArgs implements TemplateDeclarationWeavingAware {
     environment.weaveNode(outputContextNode, "contentNode", tnodepart0, weaveTf0, contextWithParams.getInput());
     return TemplateUtil.singletonList(tnodepart0);
   }
-
   private static SNodePointer propertyMacro_d0bcmp_c0a0c0b0b0e = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599876333");
   private static SNodePointer weaveTfConst_d0bcmp_a0c0g = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599873037");
 }

@@ -8,11 +8,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public abstract class BaseValidatedAction extends AnAction {
   private Runnable myValidator;
-
   protected BaseValidatedAction(String text, String description, Icon icon) {
     super(text, description, icon);
   }
-
   @Override
   public final void actionPerformed(AnActionEvent e) {
     doPerform(e);
@@ -20,10 +18,8 @@ public abstract class BaseValidatedAction extends AnAction {
       myValidator.run();
     }
   }
-
   public final void setValidator(Runnable validator) {
     myValidator = validator;
   }
-
   protected abstract void doPerform(AnActionEvent e);
 }

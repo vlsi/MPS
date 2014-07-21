@@ -9,5 +9,5 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_BehaviorDescriptor exten
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept";
-  };;
-;}
+  }
+}

@@ -9,5 +9,5 @@ public class CollectionAppendPart_BehaviorDescriptor extends AbstractAppendPart_
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.CollectionAppendPart";
-  };;
-;}
+  }
+}

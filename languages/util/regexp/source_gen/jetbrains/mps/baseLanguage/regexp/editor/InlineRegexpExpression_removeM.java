@@ -16,18 +16,14 @@ public class InlineRegexpExpression_removeM {
     editorCell.setAction(CellActionType.DELETE, new InlineRegexpExpression_removeM.InlineRegexpExpression_removeM_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new InlineRegexpExpression_removeM.InlineRegexpExpression_removeM_BACKSPACE(node));
   }
-
   public static class InlineRegexpExpression_removeM_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public InlineRegexpExpression_removeM_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
       EditorCell toSelect = CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
@@ -35,18 +31,14 @@ public class InlineRegexpExpression_removeM {
       editorContext.getEditorComponent().changeSelection(toSelect);
     }
   }
-
   public static class InlineRegexpExpression_removeM_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public InlineRegexpExpression_removeM_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
       EditorCell toSelect = CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);

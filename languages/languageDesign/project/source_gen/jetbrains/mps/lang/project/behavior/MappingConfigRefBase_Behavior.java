@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MappingConfigRefBase_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
     return true;
   }

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class BuildAspect_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildAspect_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildAspect";

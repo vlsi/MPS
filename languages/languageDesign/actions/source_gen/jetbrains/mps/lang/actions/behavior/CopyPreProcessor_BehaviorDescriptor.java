@@ -10,5 +10,5 @@ public class CopyPreProcessor_BehaviorDescriptor extends BaseConcept_BehaviorDes
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.CopyPreProcessor";
-  };;
-;}
+  }
+}

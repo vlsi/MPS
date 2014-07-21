@@ -20,8 +20,8 @@ import javax.swing.ImageIcon;
 
 public class IconResource_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static void virtual_generate_8974276187400030152(final SNode thisNode) {
+  }
+  public static void virtual_generate_8974276187400030152(final SNode thisNode) {
     ModelAccess.instance().writeFilesInEDT(new Runnable() {
       public void run() {
         SModel model = SNodeOperations.getModel(thisNode);
@@ -34,10 +34,10 @@ public class IconResource_Behavior {
         IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
 
         IFileUtils.copyFileContent(sourceFile, output.getDescendant(sourceFile.getName()));
-      };;
-;    });
-  };;
-;  public static boolean call_isValid_8974276187400030063(SNode thisNode) {
+      }
+    });
+  }
+  public static boolean call_isValid_8974276187400030063(SNode thisNode) {
     SModule module = SNodeOperations.getModel(thisNode).getModule();
     if (!(module instanceof AbstractModule)) {
       return false;
@@ -60,9 +60,9 @@ public class IconResource_Behavior {
     } catch (Throwable t) {
       return false;
     }
-  };;
-;  public static String call_getFilename_8974276187400030131(SNode thisNode) {
+  }
+  public static String call_getFilename_8974276187400030131(SNode thisNode) {
     String fullPath = SPropertyOperations.getString(thisNode, "path");
     return fullPath.substring(fullPath.lastIndexOf("/") + 1);
-  };;
-;}
+  }
+}

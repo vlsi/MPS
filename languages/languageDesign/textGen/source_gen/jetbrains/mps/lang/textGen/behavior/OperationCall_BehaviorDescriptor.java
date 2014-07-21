@@ -9,5 +9,5 @@ public class OperationCall_BehaviorDescriptor extends AbstractAppendPart_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.OperationCall";
-  };;
-;}
+  }
+}

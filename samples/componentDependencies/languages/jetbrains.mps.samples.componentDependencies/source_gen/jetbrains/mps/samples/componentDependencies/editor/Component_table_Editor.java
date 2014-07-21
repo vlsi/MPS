@@ -15,16 +15,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Component_table_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.componentDependencies.editor.views.table"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_oj3928_a(editorContext, node);
   }
-
   private EditorCell createProperty_oj3928_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_Quotation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_Quotation_InferenceRule() {
   }
-
   public void applyRule(final SNode quotation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode quotationNode = quotation;
     {
@@ -37,22 +36,18 @@ public class typeof_Quotation_InferenceRule extends AbstractInferenceRule_Runtim
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "3180306201267192131", true), (SNode) _quotation_createNode_wzo52i_a0d0b(), false, false, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.quotation.structure.Quotation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_wzo52i_a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -60,7 +55,6 @@ public class typeof_Quotation_InferenceRule extends AbstractInferenceRule_Runtim
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_wzo52i_a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -68,7 +62,6 @@ public class typeof_Quotation_InferenceRule extends AbstractInferenceRule_Runtim
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), facade.createNodeId("~SModel")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_wzo52i_a0d0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

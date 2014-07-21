@@ -7,8 +7,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class GenerationContextOp_SessionObjectAccess_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean virtual_lvalue_1262430001741498364(SAbstractConcept thisConcept) {
+  }
+  public static boolean virtual_lvalue_1262430001741498364(SAbstractConcept thisConcept) {
     return true;
-  };;
-;}
+  }
+}

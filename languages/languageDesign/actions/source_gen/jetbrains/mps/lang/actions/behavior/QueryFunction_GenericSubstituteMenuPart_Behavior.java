@@ -14,11 +14,11 @@ import jetbrains.mps.smodel.SReference;
 
 public class QueryFunction_GenericSubstituteMenuPart_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static boolean virtual_usesParameterObject_1262430001741497984(SAbstractConcept thisConcept) {
+  }
+  public static boolean virtual_usesParameterObject_1262430001741497984(SAbstractConcept thisConcept) {
     return true;
-  };;
-;  public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
+  }
+  public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode"));
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode"));
@@ -26,11 +26,11 @@ public class QueryFunction_GenericSubstituteMenuPart_Behavior {
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childConcept"));
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext"));
     return result;
-  };;
-;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  }
+  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_ynjj1y_a0a2();
-  };;
-;  private static SNode _quotation_createNode_ynjj1y_a0a2() {
+  }
+  private static SNode _quotation_createNode_ynjj1y_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -39,5 +39,5 @@ public class QueryFunction_GenericSubstituteMenuPart_Behavior {
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, facade.createModelReference("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)"), facade.createNodeId("~SubstituteAction")));
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
-  };;
-;}
+  }
+}

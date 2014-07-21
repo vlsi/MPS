@@ -9,7 +9,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 public class PropertyPatternVariableDeclaration_DataFlow extends DataFlowBuilder {
   public PropertyPatternVariableDeclaration_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitWrite(_context.getNode(), "r:00000000-0000-4000-0000-011c89590341(jetbrains.mps.lang.pattern.dataFlow)/1207240901305");
   }

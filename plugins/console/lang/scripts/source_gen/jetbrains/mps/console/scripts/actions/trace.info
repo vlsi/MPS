@@ -8,8 +8,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="51,34,61,7" name="jetbrains.mps.console.scripts.actions.QueriesGenerated$1" />
-      <unit at="26,0,78,0" name="jetbrains.mps.console.scripts.actions.QueriesGenerated" />
+      <unit at="49,34,59,7" name="jetbrains.mps.console.scripts.actions.QueriesGenerated$1" />
+      <unit at="26,0,75,0" name="jetbrains.mps.console.scripts.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:2c1c1ba9-9925-4968-a941-24e7e454e210(jetbrains.mps.console.scripts.actions)/2799321329875582952">
@@ -38,36 +38,36 @@
   </root>
   <root nodeRef="r:2c1c1ba9-9925-4968-a941-24e7e454e210(jetbrains.mps.console.scripts.actions)/5932042262275851225">
     <file name="QueriesGenerated.java">
-      <node id="1926293835606250097" at="53,125,54,173" concept="3" />
-      <node id="1926293835606288372" at="55,158,56,27" concept="4" />
-      <node id="1926293835606292566" at="58,11,59,22" concept="4" />
-      <node id="1926293835606285046" at="68,59,69,63" concept="3" />
-      <node id="1926293835606285046" at="69,63,70,30" concept="3" />
-      <node id="1926293835606285046" at="70,30,71,30" concept="3" />
-      <node id="1926293835606285046" at="71,30,72,148" concept="1" />
-      <node id="1926293835606285046" at="72,148,73,132" concept="1" />
-      <node id="1926293835606285046" at="73,132,74,55" concept="1" />
-      <node id="1926293835606285046" at="74,55,75,24" concept="4" />
-      <node id="1926293835606285046" at="72,148,74,55" concept="0" />
-      <node id="1926293835606285046" at="72,148,74,55" concept="0" />
-      <node id="1926293835606259868" at="54,173,57,13" concept="2" />
-      <node id="1926293835606285046" at="71,30,74,55" concept="0" />
-      <node id="1926293835606285046" at="71,30,74,55" concept="0" />
-      <node id="1926293835606179774" at="52,43,58,11" concept="2" />
-      <node id="1926293835606285046" at="68,0,77,0" concept="5" trace="_quotation_createNode_b0a1a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1926293835606259871" at="55,158,56,27" />
-      <scope id="1926293835606285046" at="72,148,74,55" />
-      <scope id="1926293835606285046" at="71,30,74,55" />
-      <scope id="1926293835606179775" at="53,125,57,13">
+      <node id="1926293835606250097" at="51,125,52,173" concept="3" />
+      <node id="1926293835606288372" at="53,158,54,27" concept="4" />
+      <node id="1926293835606292566" at="56,11,57,22" concept="4" />
+      <node id="1926293835606285046" at="65,59,66,63" concept="3" />
+      <node id="1926293835606285046" at="66,63,67,30" concept="3" />
+      <node id="1926293835606285046" at="67,30,68,30" concept="3" />
+      <node id="1926293835606285046" at="68,30,69,148" concept="1" />
+      <node id="1926293835606285046" at="69,148,70,132" concept="1" />
+      <node id="1926293835606285046" at="70,132,71,55" concept="1" />
+      <node id="1926293835606285046" at="71,55,72,24" concept="4" />
+      <node id="1926293835606285046" at="69,148,71,55" concept="0" />
+      <node id="1926293835606285046" at="69,148,71,55" concept="0" />
+      <node id="1926293835606259868" at="52,173,55,13" concept="2" />
+      <node id="1926293835606285046" at="68,30,71,55" concept="0" />
+      <node id="1926293835606285046" at="68,30,71,55" concept="0" />
+      <node id="1926293835606179774" at="50,43,56,11" concept="2" />
+      <node id="1926293835606285046" at="65,0,74,0" concept="5" trace="_quotation_createNode_b0a1a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1926293835606259871" at="53,158,54,27" />
+      <scope id="1926293835606285046" at="69,148,71,55" />
+      <scope id="1926293835606285046" at="68,30,71,55" />
+      <scope id="1926293835606179775" at="51,125,55,13">
         <var name="operand" id="1926293835606250100" />
       </scope>
-      <scope id="5932042262275851849" at="52,43,59,22" />
-      <scope id="1926293835606285046" at="68,59,75,24">
+      <scope id="5932042262275851849" at="50,43,57,22" />
+      <scope id="1926293835606285046" at="65,59,72,24">
         <var name="facade" id="1926293835606285046" />
         <var name="quotedNode_1" id="1926293835606285046" />
         <var name="quotedNode_2" id="1926293835606285046" />
       </scope>
-      <scope id="1926293835606285046" at="68,0,77,0" />
+      <scope id="1926293835606285046" at="65,0,74,0" />
     </file>
   </root>
 </debug-info>

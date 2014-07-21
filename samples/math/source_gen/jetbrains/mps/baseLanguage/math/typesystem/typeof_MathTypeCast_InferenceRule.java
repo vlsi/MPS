@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_MathTypeCast_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_MathTypeCast_InferenceRule() {
   }
-
   public void applyRule(final SNode cast, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     switch (SPropertyOperations.getInteger_def(cast, "target", "1")) {
       case 1:
@@ -109,18 +108,15 @@ public class typeof_MathTypeCast_InferenceRule extends AbstractInferenceRule_Run
       default:
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.MathTypeCast";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

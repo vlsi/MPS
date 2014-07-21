@@ -9,5 +9,5 @@ public class ControlClosureLiteral_BehaviorDescriptor extends UnrestrictedClosur
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral";
-  };;
-;}
+  }
+}

@@ -10,5 +10,5 @@ public class PropertyPatternVariableReference_BehaviorDescriptor extends Express
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference";
-  };;
-;}
+  }
+}

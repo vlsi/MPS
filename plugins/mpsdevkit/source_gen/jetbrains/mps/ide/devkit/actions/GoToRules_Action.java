@@ -22,18 +22,15 @@ import org.apache.log4j.LogManager;
 
 public class GoToRules_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GoToRules_Action() {
     super("Go to Typesystem Rules", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -44,7 +41,6 @@ public class GoToRules_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -75,7 +71,6 @@ public class GoToRules_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       GoToRulesHelper.go(((Frame) MapSequence.fromMap(_params).get("frame")), ((EditorCell) MapSequence.fromMap(_params).get("cell")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")));
@@ -85,6 +80,5 @@ public class GoToRules_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(GoToRules_Action.class);
 }

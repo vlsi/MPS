@@ -9,12 +9,10 @@ import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder
 public class DebuggerInitializer {
   public DebuggerInitializer() {
   }
-
   public static void init() {
     new TransformatorBuilderImpl().init();
     new MirrorUtilImpl().init();
   }
-
   public static void dispose() {
     MirrorUtilImpl.getInstance().dispose();
     TransformatorBuilder.getInstance().dispose();

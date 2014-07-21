@@ -2,13 +2,13 @@
 <debug-info>
   <root>
     <file name="AnsotherGoodConcept_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="testRefactoringTargetLang.behavior.AnsotherGoodConcept_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="testRefactoringTargetLang.behavior.AnsotherGoodConcept_BehaviorDescriptor" />
     </file>
     <file name="AbstractGoodConcept_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="testRefactoringTargetLang.behavior.AbstractGoodConcept_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="testRefactoringTargetLang.behavior.AbstractGoodConcept_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,22,0" name="testRefactoringTargetLang.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,20,0" name="testRefactoringTargetLang.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
 </debug-info>

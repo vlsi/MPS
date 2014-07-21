@@ -20,18 +20,15 @@ public class DemoApp {
     frame.setLocationRelativeTo(null);
     frame.setVisible(true);
   }
-
   public static void addContent(Container container) {
     container.add(createComponent_a());
     container.add(createComponent_b());
   }
-
   public static Component createComponent_a() {
     JButton component = new JButton();
     component.setText("Hello");
     return component;
   }
-
   public static Component createComponent_b() {
     JLabel component = new JLabel();
     component.setText("world!");

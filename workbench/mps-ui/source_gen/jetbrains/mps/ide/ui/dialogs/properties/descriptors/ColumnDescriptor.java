@@ -9,26 +9,20 @@ public abstract class ColumnDescriptor {
   private String myName;
   private String myHeader;
   private int myWidth;
-
   public ColumnDescriptor(String name, String header, int width) {
     myName = name;
     myHeader = header;
     myWidth = width;
   }
-
   public String getName() {
     return myName;
   }
-
   public String getHeader() {
     return myHeader;
   }
-
   public int getWidth() {
     return myWidth;
   }
-
   public abstract TableCellRenderer createRenderer();
-
   public abstract TableCellEditor createEditor();
 }

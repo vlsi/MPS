@@ -41,7 +41,6 @@ import java.util.concurrent.ExecutionException;
 public class TextPreviewUtil {
   public TextPreviewUtil() {
   }
-
   public static void previewModelText(final MakeSession session, final IOperationContext context, final SModel md, @Nullable final SNode contextNode) {
     IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();
 
@@ -100,14 +99,12 @@ public class TextPreviewUtil {
       }
     });
   }
-
   private static SNodeReference check_yiwzzi_a0a0a0a6a1(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-
   private static SNode check_yiwzzi_a0a0a0a0g0b(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getContainingRoot();

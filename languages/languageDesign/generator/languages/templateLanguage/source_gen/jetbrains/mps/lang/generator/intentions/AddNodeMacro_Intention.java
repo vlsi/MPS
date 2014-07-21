@@ -18,77 +18,61 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddNodeMacro_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddNodeMacro_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
   public String getPresentation() {
     return "AddNodeMacro";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.AddNodeMacro_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (!(MacroIntentionsUtil.isInGeneratorModel(node))) {
       return false;
     }
     return EditingUtil.isNodeMacroApplicable(node);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1207152859258");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddNodeMacro_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Node Macro";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode nodeMacro = EditingUtil.addNodeMacro(node);
       // set caret 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, nodeMacro, SelectionManager.FIRST_CELL, 1);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddNodeMacro_Intention.this;
     }

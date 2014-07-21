@@ -24,7 +24,6 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_53ih5o_a(editorContext, node);
   }
-
   private EditorCell createCollection_53ih5o_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_53ih5o_a");
@@ -35,7 +34,6 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     editorCell.addEditorCell(this.createRefNode_53ih5o_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_53ih5o_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -44,16 +42,13 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenerationContextOp_ShowMessageBase_Editor.ReplaceWith_GenerationContextOp_ShowMessageBase_cellMenu_53ih5o_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_GenerationContextOp_ShowMessageBase_cellMenu_53ih5o_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_GenerationContextOp_ShowMessageBase_cellMenu_53ih5o_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase";
     }
   }
-
   private EditorCell createRefNode_53ih5o_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("messageText");
@@ -73,7 +68,6 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_53ih5o_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_53ih5o_c0");
@@ -84,7 +78,6 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_53ih5o_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("referenceNode");

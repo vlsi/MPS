@@ -13,74 +13,74 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590330(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util)/1241087826068">
     <file name="Keys.java">
       <node id="1241087826090" at="9,0,10,0" concept="2" trace="name" />
-      <node id="1241087826108" at="11,21,12,29" concept="1" />
-      <node id="1241087826073" at="15,35,16,47" concept="7" />
-      <node id="1241087826096" at="19,44,20,69" concept="7" />
-      <node id="1241087826104" at="11,0,14,0" concept="0" trace="Keys#(Ljava/lang/String;)V" />
-      <node id="1241087826069" at="15,0,18,0" concept="5" trace="compose#(Ljava/lang/Object;)Ljava/lang/String;" />
-      <node id="1241087826093" at="19,0,22,0" concept="9" trace="PREFIX#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1241087826107" at="11,21,12,29" />
-      <scope id="1241087826072" at="15,35,16,47" />
-      <scope id="1241087826095" at="19,44,20,69" />
-      <scope id="1241087826104" at="11,0,14,0">
+      <node id="1241087826108" at="10,21,11,29" concept="1" />
+      <node id="1241087826073" at="13,35,14,47" concept="7" />
+      <node id="1241087826096" at="16,44,17,69" concept="7" />
+      <node id="1241087826104" at="10,0,13,0" concept="0" trace="Keys#(Ljava/lang/String;)V" />
+      <node id="1241087826069" at="13,0,16,0" concept="5" trace="compose#(Ljava/lang/Object;)Ljava/lang/String;" />
+      <node id="1241087826093" at="16,0,19,0" concept="9" trace="PREFIX#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="1241087826107" at="10,21,11,29" />
+      <scope id="1241087826072" at="13,35,14,47" />
+      <scope id="1241087826095" at="16,44,17,69" />
+      <scope id="1241087826104" at="10,0,13,0">
         <var name="name" id="1241087826115" />
       </scope>
-      <scope id="1241087826069" at="15,0,18,0">
+      <scope id="1241087826069" at="13,0,16,0">
         <var name="o" id="1241087826082" />
       </scope>
-      <scope id="1241087826093" at="19,0,22,0">
+      <scope id="1241087826093" at="16,0,19,0">
         <var name="str" id="1241087826101" />
       </scope>
-      <unit id="1241087826068" at="6,0,23,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Keys" />
+      <unit id="1241087826068" at="6,0,20,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Keys" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590330(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util)/3444116434173277154">
     <file name="Values.java">
       <node id="3444116434173277238" at="14,0,15,0" concept="2" trace="name" />
-      <node id="3444116434173277229" at="16,23,17,29" concept="1" />
-      <node id="3444116434173277163" at="20,45,21,36" concept="1" />
-      <node id="3444116434173277173" at="24,33,25,36" concept="7" />
-      <node id="3444116434173277185" at="28,36,29,44" concept="7" />
-      <node id="3002214349487398206" at="33,40,34,33" concept="1" />
-      <node id="3444116434173277199" at="38,44,39,69" concept="7" />
-      <node id="3444116434173277225" at="16,0,19,0" concept="0" trace="Values#(Ljava/lang/String;)V" />
-      <node id="3444116434173277155" at="20,0,23,0" concept="5" trace="set#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)V" />
-      <node id="3444116434173277170" at="24,0,27,0" concept="5" trace="get#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="3444116434173277182" at="28,0,31,0" concept="5" trace="isSet#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3002214349487398187" at="32,49,35,5" concept="3" />
-      <node id="3444116434173277196" at="38,0,41,0" concept="9" trace="PREFIX#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="3002214349487398171" at="32,0,37,0" concept="9" trace="copy#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="3444116434173277228" at="16,23,17,29" />
-      <scope id="3444116434173277162" at="20,45,21,36" />
-      <scope id="3444116434173277172" at="24,33,25,36" />
-      <scope id="3444116434173277184" at="28,36,29,44" />
-      <scope id="3002214349487398188" at="33,40,34,33" />
-      <scope id="3444116434173277198" at="38,44,39,69" />
-      <scope id="3444116434173277225" at="16,0,19,0">
+      <node id="3444116434173277229" at="15,23,16,29" concept="1" />
+      <node id="3444116434173277163" at="18,45,19,36" concept="1" />
+      <node id="3444116434173277173" at="21,33,22,36" concept="7" />
+      <node id="3444116434173277185" at="24,36,25,44" concept="7" />
+      <node id="3002214349487398206" at="28,40,29,33" concept="1" />
+      <node id="3444116434173277199" at="32,44,33,69" concept="7" />
+      <node id="3444116434173277225" at="15,0,18,0" concept="0" trace="Values#(Ljava/lang/String;)V" />
+      <node id="3444116434173277155" at="18,0,21,0" concept="5" trace="set#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)V" />
+      <node id="3444116434173277170" at="21,0,24,0" concept="5" trace="get#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="3444116434173277182" at="24,0,27,0" concept="5" trace="isSet#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3002214349487398187" at="27,49,30,5" concept="3" />
+      <node id="3444116434173277196" at="32,0,35,0" concept="9" trace="PREFIX#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="3002214349487398171" at="27,0,32,0" concept="9" trace="copy#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="3444116434173277228" at="15,23,16,29" />
+      <scope id="3444116434173277162" at="18,45,19,36" />
+      <scope id="3444116434173277172" at="21,33,22,36" />
+      <scope id="3444116434173277184" at="24,36,25,44" />
+      <scope id="3002214349487398188" at="28,40,29,33" />
+      <scope id="3444116434173277198" at="32,44,33,69" />
+      <scope id="3444116434173277225" at="15,0,18,0">
         <var name="name" id="3444116434173277236" />
       </scope>
-      <scope id="3444116434173277155" at="20,0,23,0">
+      <scope id="3444116434173277155" at="18,0,21,0">
         <var name="node" id="3444116434173277156" />
         <var name="value" id="3444116434173277158" />
       </scope>
-      <scope id="3444116434173277170" at="24,0,27,0">
+      <scope id="3444116434173277170" at="21,0,24,0">
         <var name="node" id="3444116434173277180" />
       </scope>
-      <scope id="3444116434173277182" at="28,0,31,0">
+      <scope id="3444116434173277182" at="24,0,27,0">
         <var name="node" id="3444116434173277194" />
       </scope>
-      <scope id="3002214349487398174" at="32,49,35,5" />
-      <scope id="3002214349487398187" at="32,49,35,5">
+      <scope id="3002214349487398174" at="27,49,30,5" />
+      <scope id="3002214349487398187" at="27,49,30,5">
         <var name="val" id="3002214349487398191" />
       </scope>
-      <scope id="3444116434173277196" at="38,0,41,0">
+      <scope id="3444116434173277196" at="32,0,35,0">
         <var name="str" id="3444116434173277204" />
       </scope>
-      <scope id="3002214349487398171" at="32,0,37,0">
+      <scope id="3002214349487398171" at="27,0,32,0">
         <var name="from" id="3002214349487398175" />
         <var name="to" id="3002214349487398178" />
       </scope>
-      <unit id="3444116434173277154" at="7,0,42,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Values" />
+      <unit id="3444116434173277154" at="7,0,36,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Values" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590330(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util)/3446310095634935953">

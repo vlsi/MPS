@@ -23,7 +23,6 @@ public class CommonModuleActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_idealocalhistory = ID + "idealocalhistory";
   public static final String LABEL_ID_ideavcs = ID + "ideavcs";
   public static final String LABEL_ID_run = ID + "run";
-
   public CommonModuleActions_ActionGroup() {
     super("CommonModuleActions", ID);
     this.setIsInternal(false);

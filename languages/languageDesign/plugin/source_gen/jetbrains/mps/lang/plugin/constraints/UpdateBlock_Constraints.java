@@ -10,5 +10,5 @@ public class UpdateBlock_Constraints extends BaseConstraintsDescriptor {
   }
   public String getDefaultConcreteConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.IsApplicableBlock";
-  };;
-;}
+  }
+}

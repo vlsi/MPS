@@ -11,9 +11,9 @@ public class ConceptFunctionParameter_targetNode_BehaviorDescriptor extends Conc
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConceptFunctionParameter_targetNode_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_targetNode";
-  };;
-;}
+  }
+}

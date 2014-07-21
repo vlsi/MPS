@@ -37,11 +37,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QuotationConverter {
   private SNode quotation;
-
   public QuotationConverter(SNode quotation) {
     this.quotation = quotation;
   }
-
   public SNode convert() {
     SNode node = convert(SLinkOperations.getTarget(quotation, "quotedNode", true));
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"))) {
@@ -53,7 +51,6 @@ public class QuotationConverter {
     SLinkOperations.setTarget(q, "modelToCreate", SLinkOperations.getTarget(quotation, "modelToCreate", true), true);
     return q;
   }
-
   private SNode convert(SNode quotationNode) {
     if (quotationNode == null) {
       return null;
@@ -161,9 +158,7 @@ public class QuotationConverter {
     }
     return result;
   }
-
   protected static Logger LOG = LogManager.getLogger(QuotationConverter.class);
-
   private static SNode _quotation_createNode_aytayy_a0a1a0d0l0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -171,7 +166,6 @@ public class QuotationConverter {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_aytayy_a0a0b0a3a11a3(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -179,7 +173,6 @@ public class QuotationConverter {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_aytayy_a0a0b0a3a11a3_0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

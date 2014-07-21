@@ -30,12 +30,10 @@ public class IStyle_Constraints extends BaseConstraintsDescriptor {
   public IStyle_Constraints() {
     super("jetbrains.mps.lang.editor.structure.IStyle");
   }
-
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
   }
-
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseReferenceScopeProvider() {
@@ -66,13 +64,11 @@ public class IStyle_Constraints extends BaseConstraintsDescriptor {
 
         return Sequence.fromIterable(styles).toListSequence();
       }
-
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_56bmov_a0a1a0a0a2;
       }
     };
   }
-
   private static SNodePointer breakingNode_56bmov_a0a1a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1873972548978322667");
 }

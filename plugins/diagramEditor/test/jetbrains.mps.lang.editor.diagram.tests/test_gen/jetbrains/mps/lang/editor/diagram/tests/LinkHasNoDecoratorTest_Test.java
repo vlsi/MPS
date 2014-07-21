@@ -19,18 +19,15 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecorator
 public class LinkHasNoDecoratorTest_Test extends BaseTransformationTest {
   public LinkHasNoDecoratorTest_Test() {
   }
-
   @Test
   public void test_LinkHasNoDecoratorTest() throws Throwable {
     this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
     this.runTest("jetbrains.mps.lang.editor.diagram.tests.LinkHasNoDecoratorTest_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("83003444452668150", "83003444452668142");

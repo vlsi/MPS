@@ -11,9 +11,9 @@ public class ConstraintFunctionParameter_contextRole_BehaviorDescriptor extends 
   }
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConstraintFunctionParameter_contextRole_Behavior.virtual_getType_2443692612523876968(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextRole";
-  };;
-;}
+  }
+}

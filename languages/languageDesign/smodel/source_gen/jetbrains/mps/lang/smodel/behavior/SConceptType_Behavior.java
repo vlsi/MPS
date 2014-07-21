@@ -12,16 +12,16 @@ import jetbrains.mps.util.NameUtil;
 
 public class SConceptType_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+  }
+  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode concept = SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false);
     if (concept == null) {
       return "concept< >";
     } else {
       return "concept<" + SPropertyOperations.getString(concept, "name") + ">";
     }
-  };;
-;  public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
+  }
+  public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "concept");
     if ((SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false) != null)) {
       String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false), "name"));
@@ -30,5 +30,5 @@ public class SConceptType_Behavior {
       }
     }
     return variableSuffixes;
-  };;
-;}
+  }
+}

@@ -92,36 +92,25 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   protected Highlighter myHighlighter;
   protected String myTabTitle;
 
-
   public String getTitle() {
     return myTabTitle;
   }
-
-
 
   public SModel getConsoleModel() {
     return myModel;
   }
 
-
-
   public EditorComponent getEditorComponent() {
     return myEditor;
   }
-
-
 
   public SNode getRoot() {
     return myRoot;
   }
 
-
-
   public ConsoleTool getConsoleTool() {
     return myTool;
   }
-
-
 
   protected void addBuiltInImports() {
     Language base = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)"), Language.class);
@@ -139,8 +128,6 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     ((AbstractModule) myModel.getModule()).addUsedDevkit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
   }
 
-
-
   protected void validateImports() {
     for (SModuleReference devKit : ListSequence.fromListWithValues(new ArrayList<SModuleReference>(), ((SModelInternal) myModel).importedDevkits())) {
       ((SModelInternal) myModel).deleteDevKit(devKit);
@@ -155,20 +142,14 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     TemporaryModels.getInstance().addMissingImports(myModel);
   }
 
-
-
   protected BaseAction registerKeyShortcut(BaseAction a, int key) {
     return registerShortcutSet(a, new CustomShortcutSet(KeyStroke.getKeyStroke(key, KeyEvent.CTRL_MASK)));
   }
-
-
 
   protected BaseAction registerShortcutSet(BaseAction a, ShortcutSet shortcutSet) {
     a.registerCustomShortcutSet(shortcutSet, myEditor);
     return a;
   }
-
-
 
   protected void createEditor() {
     this.myEditor = new UIEditorComponent(check_6q36mf_a0a0a0a62(ProjectHelper.toMPSProject(myTool.getProject())), null) {
@@ -189,8 +170,6 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
 
-
-
   protected void createConsoleModel() {
     this.myModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModuleWithSourceAndClassesGen());
     if (myModel == null) {
@@ -201,13 +180,9 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     }
   }
 
-
-
   public void dispose() {
     disposeConsoleTab();
   }
-
-
 
   public void disposeConsoleTab() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -221,30 +196,22 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     myHighlighter.removeAdditionalEditorComponent(myEditor);
   }
 
-
-
   protected class ExecuteClosureAction extends BaseAction {
     public ExecuteClosureAction() {
       super("Execute Closure");
     }
-
     protected void doExecute(AnActionEvent event, Map<String, Object> map) {
       ActionUtils.updateAndPerformAction(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action")), event);
     }
   }
 
-
-
   public class MyPasteProvider implements PasteProvider {
 
     private PasteProvider myDefaultPasteProvider;
 
-
     public MyPasteProvider(PasteProvider defaultPasteProvider) {
       myDefaultPasteProvider = defaultPasteProvider;
     }
-
-
 
     public void performPaste(@NotNull final DataContext context) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -278,21 +245,15 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
         }
       });
     }
-
     public boolean isPastePossible(@NotNull DataContext context) {
       return true;
     }
-
     public boolean isPasteEnabled(@NotNull DataContext context) {
       return true;
     }
   }
 
-
-
   protected abstract void loadHistory(String state);
-
-
 
   @Nullable
   public String saveHistory() {
@@ -311,21 +272,16 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     return result.value;
   }
 
-
-
   protected ConsoleContext getConsoleContext() {
     return new ConsoleContext() {
       public Project getProject() {
         return ProjectHelper.toMPSProject(myTool.getProject());
       }
-
       public BaseConsoleTab getConsoleTab() {
         return BaseConsoleTab.this;
       }
     };
   }
-
-
 
   protected SNode getLastReponse() {
     SNode last = SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myRoot, "history", true), "item", true)).last(), "jetbrains.mps.console.base.structure.Response");
@@ -334,8 +290,6 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     }
     return SLinkOperations.addNewChild(SLinkOperations.getTarget(myRoot, "history", true), "item", "jetbrains.mps.console.base.structure.Response");
   }
-
-
 
   protected void addNodeImports(SNode node) {
     for (SNode subNode : ListSequence.fromList(SNodeOperations.getDescendants(node, null, true, new String[]{}))) {
@@ -354,8 +308,6 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     }
   }
 
-
-
   public ConsoleStream getConsoleStream() {
     return new ConsoleStream() {
       public void addText(String text) {
@@ -370,7 +322,6 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
           }
         }
       }
-
       public void addNode(SNode node) {
         addNodeImports(node);
         SLinkOperations.setTarget(SLinkOperations.addNewChild(getLastReponse(), "item", "jetbrains.mps.console.base.structure.NodeResponseItem"), "node", node, true);
@@ -379,21 +330,15 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
 
-
-
   public BaseConsoleTab(ConsoleTool tool, String title, @Nullable String history) {
     myTool = tool;
     myTabTitle = title;
     initConsoleTab(history);
   }
 
-
-
   protected void registerActions(DefaultActionGroup group) {
     registerShortcutSet(new BaseConsoleTab.ExecuteClosureAction(), new CustomShortcutSet(new MouseShortcut(MouseEvent.BUTTON1, 0, 1)));
   }
-
-
 
   protected void initConsoleTab(@Nullable final String history) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -421,7 +366,6 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
       public boolean getScrollableTracksViewportHeight() {
         return getParent() instanceof JViewport && getPreferredSize().height < getParent().getHeight();
       }
-
       @Override
       public boolean getScrollableTracksViewportWidth() {
         return getParent() instanceof JViewport && getPreferredSize().width < getParent().getWidth();
@@ -435,8 +379,6 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     myHighlighter = check_6q36mf_a0s0ec(myTool.getProject());
     myHighlighter.addAdditionalEditorComponent(myEditor);
   }
-
-
 
   public void execute(@Nullable SNode command, @Nullable final Runnable executeBefore, @Nullable final Runnable executeAfter) {
     final SNode typedCommand = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.CommandHolder", null);
@@ -460,8 +402,6 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     }});
   }
 
-
-
   public void selectNode(final SNode nodeToSelect) {
     myTool.getToolWindow().activate(new Runnable() {
       public void run() {
@@ -476,8 +416,6 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     });
     myTool.selectTab(this);
   }
-
-
 
   protected SModel loadHistoryModel(String state) {
     if (state != null) {
@@ -514,44 +452,37 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     }
   }
 
-
   protected static Logger LOG = LogManager.getLogger(BaseConsoleTab.class);
-
   private static SRepository check_6q36mf_a0a0a0a62(Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRepository();
     }
     return null;
   }
-
   private static SNode check_6q36mf_a0d0a0a5lb(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }
-
   private static boolean check_6q36mf_a0a4a0a0f73(SModelReference checkedDotOperand, SModel myModel) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(myModel.getReference());
     }
     return false;
   }
-
   private static SModelReference check_6q36mf_a0a0e0a0a5lb(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelReference();
     }
     return null;
   }
-
   private static void check_6q36mf_a0a0e0a0a5lb_0(PasteProvider checkedDotOperand, DataContext context) {
     if (null != checkedDotOperand) {
       checkedDotOperand.performPaste(context);
     }
 
   }
-
   private static SNode _quotation_createNode_6q36mf_a0a0a1a1a0a0a0a94(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -559,28 +490,24 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     SNodeAccessUtil.setProperty(quotedNode_2, "text", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static Highlighter check_6q36mf_a0s0ec(com.intellij.openapi.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(Highlighter.class);
     }
     return null;
   }
-
   private static void check_6q36mf_a2a0a0c0a3a85(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
 
   }
-
   private static void check_6q36mf_a1a0a0d0a3a85(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
 
   }
-
   private static <T> T as_6q36mf_a0a0a1a0a0a0a0ab(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

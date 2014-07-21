@@ -22,11 +22,9 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_g44azu_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_g44azu_a(editorContext, node);
   }
-
   private EditorCell createComponent_g44azu_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.collections.editor.HashMapCreator_editorComponent");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
@@ -35,7 +33,6 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_g44azu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_g44azu_a");
@@ -43,7 +40,6 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_g44azu_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_g44azu_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_g44azu_a0");
@@ -54,14 +50,12 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_g44azu_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_g44azu_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "iteration order:");
     editorCell.setCellId("Constant_g44azu_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_g44azu_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("order");

@@ -10,5 +10,5 @@ public class SEnum_MemberOperation_BehaviorDescriptor extends BaseConcept_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation";
-  };;
-;}
+  }
+}

@@ -36,14 +36,12 @@ public class ChangeModelProcessor {
   private EditableSModel myTestModel;
   private EditableSModel myModelToChange;
   private ChangeModel myChangeModel;
-
   public ChangeModelProcessor(Project project, String baseModelName, ChangeModel changeModel) {
     this.myProject = project;
     this.myTestModel = ((EditableSModel) this.getModelDescriptorByName(baseModelName + '1'));
     this.myModelToChange = ((EditableSModel) this.getModelDescriptorByName(baseModelName + '2'));
     this.myChangeModel = changeModel;
   }
-
   public boolean changeStep(IGenerationHandler generationHandler) {
     final SModel modelToChange = this.getModelToChange();
     return this.step(new Runnable() {
@@ -52,7 +50,6 @@ public class ChangeModelProcessor {
       }
     }, STEP_TYPE_CHANGE, generationHandler);
   }
-
   public boolean revertStep(IGenerationHandler generationHandler) {
     final SModel modelToChange = this.getModelToChange();
     return this.step(new Runnable() {
@@ -61,7 +58,6 @@ public class ChangeModelProcessor {
       }
     }, STEP_TYPE_REVERT, generationHandler);
   }
-
   private boolean step(final Runnable runnable, String type, IGenerationHandler generationHandler) {
     this.generateModelToChange(generationHandler);
     final MPSCompilationResult[] cr = new MPSCompilationResult[]{null};
@@ -83,15 +79,12 @@ public class ChangeModelProcessor {
     System.out.println("Model " + this.myModelToChange.getModelName() + " " + type);
     return cr[0].isOk();
   }
-
   public List<String> generateTestModel(IGenerationHandler generationHandler) {
     return this.generate(this.myTestModel, generationHandler);
   }
-
   public List<String> generateModelToChange(IGenerationHandler generationHandler) {
     return this.generate(this.myModelToChange, generationHandler);
   }
-
   private List<String> generate(EditableSModel model, IGenerationHandler generationHandler) {
     final List<String> results = ListSequence.fromList(new ArrayList<String>());
     List<EditableSModel> models = Collections.singletonList(model);
@@ -102,7 +95,6 @@ public class ChangeModelProcessor {
           ListSequence.fromList(results).addElement(msg.getText());
         }
       }
-
       @Override
       public void clear() {
       }
@@ -110,21 +102,17 @@ public class ChangeModelProcessor {
     GenerationFacade.generateModels(this.myProject.getComponent(MPSProject.class), models, new ModuleContext(model.getModule(), ProjectHelper.toMPSProject(this.myProject)), generationHandler, new EmptyProgressMonitor(), handler, GenerationOptions.getDefaults().create(), this.myProject.getComponent(TransientModelsComponent.class));
     return results;
   }
-
   public SModel getModelDescriptorByName(String name) {
     String path = TEST_RESOURCES_PATH + name + ".mps";
     IFile file = FileSystem.getInstance().getFileByPath(path);
     return SModelFileTracker.getInstance().findModel(file);
   }
-
   public SModel getTestModel() {
     return this.getModel(this.myTestModel);
   }
-
   public SModel getModelToChange() {
     return this.getModel(this.myModelToChange);
   }
-
   private SModel getModel(final SModel modelDescriptor) {
     final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
     ModelAccess.instance().runReadAction(new Runnable() {

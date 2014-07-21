@@ -13,18 +13,15 @@ import javax.swing.JPanel;
 
 public class IntroduceConstantDialog extends IntroduceVariableDialog {
   private IntroduceConstantRefactoring myRefactoring;
-
   public IntroduceConstantDialog(Project project, IntroduceConstantRefactoring refactoring, EditorContext editorContext) {
     super(project, "Introduce Constant", editorContext);
     myRefactoring = refactoring;
     init();
   }
-
   @Override
   public IntroduceVariableRefactoring getRefactoring() {
     return this.myRefactoring;
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
@@ -45,8 +42,6 @@ public class IntroduceConstantDialog extends IntroduceVariableDialog {
     myPanel.add(new JPanel(), c);
     return myPanel;
   }
-
-
 
   @Nullable
   @Override

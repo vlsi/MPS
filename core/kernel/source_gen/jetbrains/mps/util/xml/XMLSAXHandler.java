@@ -7,7 +7,6 @@ import org.xml.sax.helpers.DefaultHandler;
 public class XMLSAXHandler<R> extends DefaultHandler {
   public XMLSAXHandler() {
   }
-
   public R getResult() {
     return null;
   }

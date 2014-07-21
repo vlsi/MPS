@@ -10,5 +10,5 @@ public class ApplicableNodeReference_BehaviorDescriptor extends Expression_Behav
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference";
-  };;
-;}
+  }
+}

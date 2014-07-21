@@ -15,11 +15,9 @@ import java.util.Date;
 
 public class MergeDriverBackupUtil {
   private static String backupDirPath;
-
   public MergeDriverBackupUtil() {
     // Used in MergeProviderDecorator 
   }
-
   public static File zipModel(byte[][] contents, @Nullable String modelName) throws IOException {
     String shortFileName = "unknown.mps";
     if (modelName != null) {
@@ -35,12 +33,10 @@ public class MergeDriverBackupUtil {
     FileUtil.delete(tmp);
     return zipfile;
   }
-
   public static void writeContentsToFile(byte[] contents, String name, File tmpDir, String suffix) throws IOException {
     File file = new File(tmpDir.getAbsolutePath() + File.separator + name + "." + suffix);
     FileUtil.write(file, contents);
   }
-
   public static File chooseZipFileForModelLongName(@NotNull String defaultFileName, @Nullable String modelLongName) {
     String fileName = defaultFileName;
     if (modelLongName != null) {
@@ -56,11 +52,9 @@ public class MergeDriverBackupUtil {
     }
     return zipfile;
   }
-
   public static String getMergeBackupDirPath() {
     return backupDirPath;
   }
-
   public static void setMergeBackupDirPath(String path) {
     backupDirPath = path;
   }

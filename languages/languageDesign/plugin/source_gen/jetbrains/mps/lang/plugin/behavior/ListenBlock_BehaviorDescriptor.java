@@ -10,9 +10,9 @@ public class ListenBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDesc
   }
   public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return ListenBlock_Behavior.virtual_showName_1262430001741498082(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ListenBlock";
-  };;
-;}
+  }
+}

@@ -17,15 +17,12 @@ public class MfDateTester extends TestCase {
   private MfDate myJustBefore;
   private MfDate myJustAfter;
   private DateRange myJan1To10;
-
   public MfDateTester(String arg) {
     super(arg);
   }
-
   private GregorianCalendar jan1() {
     return new GregorianCalendar(1999, 0, 1, 0, 0, 0);
   }
-
   @Override
   public void setUp() {
     myJan1 = new MfDate(jan1());
@@ -42,7 +39,6 @@ public class MfDateTester extends TestCase {
     myJan10 = new MfDate(new GregorianCalendar(1999, 0, 10, 7, 8, 9));
     myJan1To10 = new DateRange(myJan1, myJan10);
   }
-
   public void testAfter() {
     Assert.assertTrue(myJan1.after(myJustBefore));
     Assert.assertTrue(myJustBefore.before(myJan1));
@@ -50,38 +46,31 @@ public class MfDateTester extends TestCase {
     Assert.assertTrue(myJustAfter.after(myJustBefore));
     Assert.assertTrue(!(myJan1.before(myJan1)));
   }
-
   public void testDateRange() {
     Assert.assertTrue(myJan1To10.includes(myJan1));
     Assert.assertTrue(myJan1To10.includes(myJan10));
     Assert.assertTrue(!(myJan1To10.includes(myJustBefore)));
   }
-
   public void testEquals() {
     Assert.assertEquals(myJan1, myJan1a);
     Assert.assertEquals("next day -1s", myJan1, myJan1b);
   }
-
   public void testJustBefore() {
     Assert.assertTrue(myJan1 != myJustBefore);
   }
-
   public void testSimple() {
     Assert.assertEquals(new MfDate(), new MfDate());
     Assert.assertEquals(myJan1, myJustAfter);
   }
-
   public void testToday() {
     MfDate.setToday(1999, 12, 1);
     Assert.assertEquals(new MfDate(1999, 12, 1), MfDate.today());
   }
-
   public void testCompare() {
     Assert.assertTrue(myJan1.compareTo(myJan10) < 0);
     Assert.assertTrue(myJan10.compareTo(myJan1) > 0);
     Assert.assertTrue(myJan1.compareTo(myJan1) == 0);
   }
-
   public static void main(String[] args) {
     TestRunner.run(new TestSuite(MfDateTester.class));
   }

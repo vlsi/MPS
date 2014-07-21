@@ -10,9 +10,9 @@ public class EqualsStructurallyExpression_BehaviorDescriptor extends BinaryOpera
   }
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return EqualsStructurallyExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression";
-  };;
-;}
+  }
+}

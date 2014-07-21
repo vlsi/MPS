@@ -14,21 +14,18 @@ import java.util.HashSet;
 public class DisjointSets<T> {
   private Map<T, T> myParent = MapSequence.fromMap(new HashMap<T, T>());
   private Map<T, Integer> myRank = MapSequence.fromMap(new HashMap<T, Integer>());
-
   public DisjointSets(Iterable<T> elements) {
     for (T e : Sequence.fromIterable(elements)) {
       MapSequence.fromMap(myParent).put(e, e);
       MapSequence.fromMap(myRank).put(e, 0);
     }
   }
-
   private T getRoot(T x) {
     if (MapSequence.fromMap(myParent).get(x) != x) {
       MapSequence.fromMap(myParent).put(x, getRoot(MapSequence.fromMap(myParent).get(x)));
     }
     return MapSequence.fromMap(myParent).get(x);
   }
-
   public void unite(T a, T b) {
     a = getRoot(a);
     b = getRoot(b);
@@ -41,7 +38,6 @@ public class DisjointSets<T> {
       }
     }
   }
-
   public Iterable<Set<T>> getSets() {
     final Map<T, Set<T>> rootToSet = MapSequence.fromMap(new HashMap<T, Set<T>>());
     SetSequence.fromSet(MapSequence.fromMap(myParent).keySet()).visitAll(new IVisitor<T>() {

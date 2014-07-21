@@ -15,18 +15,15 @@ import java.util.ArrayList;
 public class GoToReference_Test extends BaseTransformationTest {
   public GoToReference_Test() {
   }
-
   @Test
   public void test_GoToReference() throws Throwable {
     this.initTest("${mps_home}", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
     this.runTest("jetbrains.mps.lang.editor.selection.test.GoToReference_Test$TestBody", "testMethod", false);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public TestBody() {
     }
-
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("2399036385470603863", "");

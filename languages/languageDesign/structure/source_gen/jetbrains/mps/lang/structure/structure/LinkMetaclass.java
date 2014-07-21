@@ -11,26 +11,21 @@ public enum LinkMetaclass {
   aggregation("aggregation", "aggregation");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<LinkMetaclass> getConstants() {
     List<LinkMetaclass> list = ListSequence.fromList(new LinkedList<LinkMetaclass>());
     ListSequence.fromList(list).addElement(LinkMetaclass.reference);
     ListSequence.fromList(list).addElement(LinkMetaclass.aggregation);
     return list;
   }
-
   public static LinkMetaclass getDefault() {
     return LinkMetaclass.reference;
   }
-
   public static LinkMetaclass parseValue(String value) {
     if (value == null) {
       return LinkMetaclass.getDefault();
@@ -43,14 +38,11 @@ public enum LinkMetaclass {
     }
     return LinkMetaclass.getDefault();
   }
-
   private String myValue;
-
   LinkMetaclass(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

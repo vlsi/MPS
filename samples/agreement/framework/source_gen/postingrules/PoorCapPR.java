@@ -9,7 +9,6 @@ public class PoorCapPR extends PostingRule {
   public PoorCapPR(AccountType type, boolean isTaxable) {
     super(type, isTaxable);
   }
-
   @Override
   protected Money calculateAmount(AccountingEvent evt) {
     Quantity amountUsed = ((Usage) evt).getAmount();

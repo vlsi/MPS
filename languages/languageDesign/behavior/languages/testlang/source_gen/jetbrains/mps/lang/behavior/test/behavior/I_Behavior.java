@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class I_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_nonVirtualFromInterfaceConcept_4731970554577186854(SNode thisNode, String in, int dummy) {
     return in;
   }
-
   public static String virtual_virtualFromInterfaceConcept_4731970554577186975(SNode thisNode, String in) {
     return in;
   }

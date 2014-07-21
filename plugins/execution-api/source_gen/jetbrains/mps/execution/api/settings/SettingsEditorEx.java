@@ -10,11 +10,9 @@ import com.intellij.openapi.ui.Messages;
 public abstract class SettingsEditorEx<Settings> extends SettingsEditor<Settings> {
   public SettingsEditorEx() {
   }
-
   public SettingsEditorEx(Factory<Settings> factory) {
     super(factory);
   }
-
   public void apply(Settings settings) {
     try {
       applyTo(settings);

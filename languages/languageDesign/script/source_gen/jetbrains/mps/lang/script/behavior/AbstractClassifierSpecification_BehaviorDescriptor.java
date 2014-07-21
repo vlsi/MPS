@@ -11,7 +11,7 @@ public abstract class AbstractClassifierSpecification_BehaviorDescriptor extends
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.AbstractClassifierSpecification";
-  };;
-;  public abstract String virtual_getClassifierFqName_5434557751112930827(SNode thisNode);
+  }
+  public abstract String virtual_getClassifierFqName_5434557751112930827(SNode thisNode);
   public abstract String virtual_getSModelReference_5434557751113441014(SNode thisNode);
 }

@@ -21,7 +21,6 @@ public class MethodDuplicatesFinder {
   private final List<SNode> myParameterOrder;
   private Set<SNode> myOutputRefs;
   private Set<SNode> myUsedNodes = SetSequence.fromSet(new HashSet<SNode>());
-
   public MethodDuplicatesFinder(List<SNode> nodesToFind, Map<SNode, SNode> mapping, List<SNode> parametersOrder, Set<SNode> outputReferences) {
     this.myNodesToFind = nodesToFind;
     this.myMapping = mapping;
@@ -29,7 +28,6 @@ public class MethodDuplicatesFinder {
     myOutputRefs = outputReferences;
     SetSequence.fromSet(this.myUsedNodes).addSequence(ListSequence.fromList(this.myNodesToFind));
   }
-
   public List<MethodMatch> findDuplicates(SNode root) {
     List<MethodMatch> found = new ArrayList<MethodMatch>();
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
@@ -62,17 +60,13 @@ public class MethodDuplicatesFinder {
     }
     return found;
   }
-
   public void matchNodes(SNode candidate, SNode node) {
   }
-
   public class MethodMatchModifier implements IMatchModifier {
     private MethodMatch myMatch;
-
     public MethodMatchModifier() {
       this.myMatch = new MethodMatch(MethodDuplicatesFinder.this.myParameterOrder);
     }
-
     @Override
     public boolean accept(SNode candidate, SNode original) {
       if (SetSequence.fromSet(myOutputRefs).contains(original)) {
@@ -83,21 +77,17 @@ public class MethodDuplicatesFinder {
       }
       return false;
     }
-
     @Override
     public boolean acceptList(List<SNode> list1, List<SNode> list2) {
       return false;
     }
-
     @Override
     public void performAction(SNode candidate, SNode original) {
       this.myMatch.putMapping(candidate, MapSequence.fromMap(MethodDuplicatesFinder.this.myMapping).get(original));
     }
-
     @Override
     public void performGroupAction(List<SNode> list1, List<SNode> list2) {
     }
-
     public MethodMatch getMatch() {
       return this.myMatch;
     }

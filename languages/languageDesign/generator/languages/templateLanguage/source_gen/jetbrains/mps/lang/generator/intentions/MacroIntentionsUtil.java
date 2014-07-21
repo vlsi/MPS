@@ -31,7 +31,6 @@ public final class MacroIntentionsUtil {
     }
     return null;
   }
-
   private static SNode getConceptFrom(SNode macro) {
     SNode query = QueriesUtil.getQueryFunction_fromSourceSubstituteMacro(macro);
     SNode returnType = TypeChecker.getInstance().getTypeOf(query);
@@ -61,7 +60,6 @@ public final class MacroIntentionsUtil {
       return getContextNodeConcept(macroOuterNode);
     }
   }
-
   private static SNode findOuterMacro(SNode contextNode) {
     if (contextNode == null) {
       return null;
@@ -71,7 +69,6 @@ public final class MacroIntentionsUtil {
     }
     return findOuterMacro(SNodeOperations.getParent(contextNode));
   }
-
   public static List<SNode> getLinks(SNode sourceNode, boolean inCollection) {
     if (sourceNode == null) {
       return null;
@@ -90,7 +87,6 @@ public final class MacroIntentionsUtil {
     }
     return result;
   }
-
   public static String getPresentaion(SNode intentionParam) {
     //  characters '_' and '&' are treated as mnemonics in AnAction that is created for each intention, 
     //  however it's common to see '_' in link/property/conecept/template names, and removing this char 
@@ -100,21 +96,16 @@ public final class MacroIntentionsUtil {
     // (i.e. without mnemonics processing). 
     return BehaviorReflection.invokeVirtual(String.class, intentionParam, "virtual_getPresentation_1213877396640", new Object[]{}).replaceAll("_{1}", "__");
   }
-
   public static void copyVirtualPackage(SNode to, SNode from) {
     SPropertyOperations.set(to, "virtualPackage", SPropertyOperations.getString(SNodeOperations.getContainingRoot(from), "virtualPackage"));
   }
-
   public static boolean isInGeneratorModel(SNode node) {
     return SNodeOperations.isInstanceOf(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), "jetbrains.mps.lang.project.structure.Generator");
   }
-
   public static class Pattern_iiuth6_a0a0a0a3a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
-
     public Pattern_iiuth6_a0a0a0a3a1() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_iiuth6_a0a0a3a1 = nodeToMatch;
@@ -125,34 +116,27 @@ public final class MacroIntentionsUtil {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_concept".equals(fieldName)) {
         return patternVar_concept;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_iiuth6_a0a0a0a0d0b extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
-
     public Pattern_iiuth6_a0a0a0a0d0b() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_iiuth6_a0a0a0d0b = nodeToMatch;
@@ -178,24 +162,20 @@ public final class MacroIntentionsUtil {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_concept".equals(fieldName)) {
         return patternVar_concept;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }

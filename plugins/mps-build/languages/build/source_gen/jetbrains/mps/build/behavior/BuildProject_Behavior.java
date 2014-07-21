@@ -35,12 +35,10 @@ import jetbrains.mps.scope.CompositeScope;
 public class BuildProject_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_isPackaged_4129895186893455885(SNode thisNode, Context context) {
     RelativePathHelper relativePathHelper = context.getRelativePathHelper(SNodeOperations.getModel(thisNode));
     return relativePathHelper == null;
   }
-
   @Nullable
   public static String call_getBasePath_4959435991187146924(SNode thisNode, Context context) {
     RelativePathHelper relativePathHelper = context.getRelativePathHelper(SNodeOperations.getModel(thisNode));
@@ -57,7 +55,6 @@ public class BuildProject_Behavior {
     }
     return relativePathHelper.getBasePath();
   }
-
   @Nullable
   public static String call_getScriptsPath_4796668409958419284(SNode thisNode, Context context) {
     if ((SLinkOperations.getTarget(thisNode, "scriptsDir", true) != null)) {
@@ -65,11 +62,9 @@ public class BuildProject_Behavior {
     }
     return BuildProject_Behavior.call_getBasePath_4959435991187146924(thisNode, context);
   }
-
   public static String call_getOutputFileName_4915877860351551360(SNode thisNode) {
     return (isEmptyString(SPropertyOperations.getString(thisNode, "fileName")) ? "build.xml" : SPropertyOperations.getString(thisNode, "fileName"));
   }
-
   public static String call_getBasePathRelativeToScriptsPath_5178006408628632053(SNode thisNode, Context context) {
     String scriptsPath = BuildProject_Behavior.call_getScriptsPath_4796668409958419284(thisNode, context);
     String basePath = BuildProject_Behavior.call_getBasePath_4959435991187146924(thisNode, context);
@@ -83,7 +78,6 @@ public class BuildProject_Behavior {
       return null;
     }
   }
-
   public static Scope call_getScope_1224588814561808649(SNode thisNode, SNode kind, String role) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildExternalLayout")) {
       return new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, NameUtil.nodeFQName(kind));
@@ -120,7 +114,6 @@ public class BuildProject_Behavior {
     }
     return new EmptyScope();
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildMacro")) {
       return BuildProject_Behavior.call_getBuildMacroScope_3767587139141108514(thisNode, child, SetSequence.fromSet(new HashSet<SNode>()));
@@ -131,11 +124,9 @@ public class BuildProject_Behavior {
     }
     return new EmptyScope();
   }
-
   public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return BuildProject_Behavior.call_getScope_1224588814561808649(thisNode, kind, role);
   }
-
   public static Iterable<SNode> call_getVisibleProjects_1224588814561807665(final SNode thisNode, boolean directDependenciesOnly) {
     if (directDependenciesOnly) {
       return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dependencies", true)).where(new IWhereFilter<SNode>() {
@@ -154,7 +145,6 @@ public class BuildProject_Behavior {
       return result;
     }
   }
-
   public static void call_collectVisibleProjects_1224588814561808211(SNode thisNode, Set<SNode> result, SNode current) {
     if (!(result.add(current))) {
       return;
@@ -166,7 +156,6 @@ public class BuildProject_Behavior {
       BuildProject_Behavior.call_collectVisibleProjects_1224588814561808211(thisNode, result, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.structure.BuildProjectDependency"), "script", false));
     }
   }
-
   public static Scope call_getBuildMacroScope_3767587139141108514(SNode thisNode, final SNode child, final Set<SNode> visited) {
     if (SetSequence.fromSet(visited).contains(thisNode)) {
       return new EmptyScope();
@@ -227,23 +216,18 @@ public class BuildProject_Behavior {
       }
     };
   }
-
   public static boolean call_canEditBaseDir_631271972590018330(SNode thisNode) {
     return true;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-
   private static boolean neq_save77_a0e0l(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean eq_save77_a0a0a0a0a1a0b0c0f0l(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

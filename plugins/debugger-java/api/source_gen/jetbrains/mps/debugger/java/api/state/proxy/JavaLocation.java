@@ -13,7 +13,6 @@ public class JavaLocation implements ILocation {
   private final String myUnitName;
   private final String myRoutineName;
   private final int myLineNumber;
-
   public JavaLocation(@NotNull Location location) throws AbsentInformationException {
     assert !(ModelAccess.instance().isInEDT());
     myFileName = location.sourceName();
@@ -21,27 +20,22 @@ public class JavaLocation implements ILocation {
     myRoutineName = location.method().name();
     myLineNumber = location.lineNumber();
   }
-
   @Override
   public String getFileName() {
     return myFileName;
   }
-
   @Override
   public String getUnitName() {
     return myUnitName;
   }
-
   @Override
   public String getRoutineName() {
     return myRoutineName;
   }
-
   @Override
   public int getLineNumber() {
     return myLineNumber;
   }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -67,7 +61,6 @@ public class JavaLocation implements ILocation {
 
     return true;
   }
-
   @Override
   public int hashCode() {
     int result = 0;

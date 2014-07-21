@@ -34,8 +34,8 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      };;
-;      @Nullable
+      }
+      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseReferenceScopeProvider() {
@@ -46,24 +46,24 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
               return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(contents, "jetbrains.mps.lang.plugin.structure.ElementListContents"), "reference", true)).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.GroupAnchor");
-                };;
-;              }).toListSequence();
+                }
+              }).toListSequence();
             }
             return new ArrayList<SNode>();
-          };;
-;          @Override
+          }
+          @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_184bjp_a0a1a0a0a1a0b0a1a1;
-          };;
-;        };
-      };;
-;    });
+          }
+        };
+      }
+    });
     references.put("modifiedGroup", new BaseReferenceConstraintsDescriptor("modifiedGroup", this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      };;
-;      @Nullable
+      }
+      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseReferenceScopeProvider() {
@@ -74,20 +74,20 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
             List<SNode> thisGroupChildGroups = ((List<SNode>) ListSequence.fromList(SNodeOperations.getDescendants(groupDeclaration, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
-              };;
-;            }).toListSequence());
+              }
+            }).toListSequence());
             ListSequence.fromList(thisGroupChildGroups).addElement(groupDeclaration);
             return ListSequence.fromList(actionGroupDeclarations).subtract(ListSequence.fromList(thisGroupChildGroups)).toListSequence();
-          };;
-;          @Override
+          }
+          @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_184bjp_a0a1a0a0a1a0b0a2a1;
-          };;
-;        };
-      };;
-;    });
+          }
+        };
+      }
+    });
     return references;
-  };;
-;  private static SNodePointer breakingNode_184bjp_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860270");
+  }
+  private static SNodePointer breakingNode_184bjp_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860270");
   private static SNodePointer breakingNode_184bjp_a0a1a0a0a1a0b0a2a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860311");
 }

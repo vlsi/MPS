@@ -24,12 +24,10 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
   public InstanceMethodDeclarationScope(SNode classifierNode, Iterable<SNode> extendedClassifiers) {
     super(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), classifierNode, extendedClassifiers);
   }
-
   @Override
   public String getSignatureForOverriding(SNode method, SNode contextClassifier) {
     return ClassifierScopeUtils.getMethodSignatureForOverriding(contextClassifier, method);
   }
-
   @Nullable
   @Override
   public SNode resolveMethod(SNode contextNode, @NotNull String refText, List<SNode> actualArguments, List<SNode> methods) {
@@ -45,7 +43,6 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
       return MethodResolveUtil.chooseByParameterType(methods, actualArguments, typeByTypeVar);
     }
   }
-
   @Override
   public Iterable<SNode> getMethodsFromGroup(Iterable<SNode> groupWithEqualSignature) {
     // if != nonAbstract - use it 

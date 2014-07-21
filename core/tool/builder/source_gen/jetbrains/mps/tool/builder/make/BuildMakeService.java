@@ -32,41 +32,33 @@ import jetbrains.mps.make.facet.IFacet;
 public class BuildMakeService extends AbstractMakeService implements IMakeService {
   public BuildMakeService() {
   }
-
   @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
     return doMake(session, resources, script, controller, monitor);
   }
-
   @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
     return make(session, resources, defaultMakeScript(), null, new EmptyProgressMonitor());
   }
-
   @Override
   public boolean isSessionActive() {
     return false;
   }
-
   @Override
   public boolean openNewSession(MakeSession session) {
     return false;
   }
-
   @Override
   public void closeSession(MakeSession session) {
   }
-
   @Override
   public void addListener(IMakeNotificationListener listener) {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public void removeListener(IMakeNotificationListener listener) {
     throw new UnsupportedOperationException();
   }
-
   private Future<IResult> doMake(MakeSession makeSession, Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
     String scrName = "Build";
 
@@ -85,7 +77,6 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     task.run(monitor);
     return new FutureValue<IResult>(task.getResult());
   }
-
   /**
    * Assume if client supplied IScriptController, he knows what he's doing
    * and bears full responsibility (except for generator properties initialization, but only for now)
@@ -105,7 +96,6 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
           super.runJobWithMonitor(code);
         }
       }
-
       @Override
       public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
         if (ctl != null) {
@@ -114,7 +104,6 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
           super.runConfigWithMonitor(code);
         }
       }
-
       @Override
       public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
         gfi.populate(pp);
@@ -126,7 +115,6 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
       }
     };
   }
-
   public static IScript defaultMakeScript() {
     return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
   }

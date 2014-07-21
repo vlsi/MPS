@@ -25,18 +25,15 @@ import org.apache.log4j.LogManager;
 
 public class MigrationScript_MigrationToReplaceNodePropertiesContainer_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public MigrationScript_MigrationToReplaceNodePropertiesContainer_Action() {
     super("Replace NodePropertiesContainer with NodeOperationsContainer", "Find and replace NodePropertiesContainer concept", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -47,7 +44,6 @@ public class MigrationScript_MigrationToReplaceNodePropertiesContainer_Action ex
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -63,7 +59,6 @@ public class MigrationScript_MigrationToReplaceNodePropertiesContainer_Action ex
     MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNodeReference script = new SNodePointer("r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)", "6090235207264650098");
@@ -80,6 +75,5 @@ public class MigrationScript_MigrationToReplaceNodePropertiesContainer_Action ex
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(MigrationScript_MigrationToReplaceNodePropertiesContainer_Action.class);
 }

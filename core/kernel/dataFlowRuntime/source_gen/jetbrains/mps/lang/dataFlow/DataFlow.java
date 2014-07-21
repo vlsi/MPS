@@ -13,18 +13,14 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 
 public class DataFlow {
   /*package*/ static final String MAY_BE_UNREACHABLE = "mayBeUnreachable";
-
   public DataFlow() {
   }
-
   private static boolean mayBeUnreachable(Instruction instruction) {
     return Boolean.TRUE.equals(instruction.getUserObject(MAY_BE_UNREACHABLE));
   }
-
   public static Program buildProgram(SNode node) {
     return DataFlowManager.getInstance().buildProgramFor(node);
   }
-
   public static Set<SNode> getUnreachableNodes(Program program) {
     Set<Instruction> unreachable = program.getUnreachableInstructions();
     Set<SNode> unreachableNodes = new HashSet<SNode>();
@@ -46,7 +42,6 @@ public class DataFlow {
     }
     return unreachableNodes;
   }
-
   public static Set<SNode> getExpectedReturns(Program program) {
     Set<Instruction> expectedReturns = program.getExpectedReturns();
     Set<SNode> result = new HashSet<SNode>();
@@ -55,7 +50,6 @@ public class DataFlow {
     }
     return result;
   }
-
   public static Set<SNode> getUninitializedReads(Program program) {
     Set<SNode> reads = new HashSet<SNode>();
     for (ReadInstruction read : program.getUninitializedReads()) {
@@ -63,7 +57,6 @@ public class DataFlow {
     }
     return reads;
   }
-
   public static boolean isInitializedRewritten(Program program, SNode write) {
     WriteInstruction writeInstruction = null;
     for (Instruction instruction : program.getInstructionsFor(write)) {
@@ -77,7 +70,6 @@ public class DataFlow {
     }
     return false;
   }
-
   public static Set<SNode> getUsedVariables(Program program, SNode node) {
     Set<SNode> readVars = new HashSet<SNode>();
     for (Instruction i : program.getInstructions()) {
@@ -87,11 +79,9 @@ public class DataFlow {
     }
     return readVars;
   }
-
   public static Set<SNode> getUnusedAssignments(SNode node) {
     return DataFlow.getUnusedAssignments(DataFlow.buildProgram(node));
   }
-
   public static Set<SNode> getUnusedAssignments(Program program) {
     Set<SNode> unusedAssignments = new HashSet<SNode>();
     for (WriteInstruction write : program.getUnusedAssignments()) {

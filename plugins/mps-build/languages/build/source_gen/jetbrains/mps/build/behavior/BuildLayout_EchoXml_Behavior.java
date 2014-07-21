@@ -11,11 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class BuildLayout_EchoXml_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     return !(propertyValue.contains("$") || propertyValue.contains("/") || propertyValue.contains("\\"));
   }
-
   public static String call_getOutputPath_WithMacro_4643216374596143062(SNode thisNode, Context context) {
     if ((SNodeOperations.getParent(thisNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_Container")) {
       String parentChildrenTargetDir = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{context});

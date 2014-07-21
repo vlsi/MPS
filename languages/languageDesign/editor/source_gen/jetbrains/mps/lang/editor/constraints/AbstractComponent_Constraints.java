@@ -22,7 +22,6 @@ public class AbstractComponent_Constraints extends BaseConstraintsDescriptor {
   public AbstractComponent_Constraints() {
     super("jetbrains.mps.lang.editor.structure.AbstractComponent");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -31,7 +30,6 @@ public class AbstractComponent_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -40,7 +38,6 @@ public class AbstractComponent_Constraints extends BaseConstraintsDescriptor {
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_wal8bd_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new LanguageConceptsScope(_context.getModel(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
@@ -50,6 +47,5 @@ public class AbstractComponent_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_wal8bd_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "609408910514949305");
 }

@@ -18,36 +18,29 @@ public class PrimitiveWrapperFactory extends ValueWrapperFactory {
   public boolean canWrapValue(@NotNull IValueProxy value) {
     return value instanceof PrimitiveValueProxy;
   }
-
   @Override
   public String getWrappedType() {
     return EvaluationUtils.JAVA_LANG_OBJECT;
   }
-
   @Override
   public String getName() {
     return "Primitive";
   }
-
   public ValueWrapper createValueWrapper(IValueProxy value, ThreadReference threadReference) {
     return new PrimitiveWrapperFactory.JavaPrimitiveValue((PrimitiveValueProxy) value, threadReference);
   }
-
   private static class JavaPrimitiveValue extends ValueWrapper<PrimitiveValueProxy> {
     public JavaPrimitiveValue(PrimitiveValueProxy value, ThreadReference threadReference) {
       super(value, threadReference);
     }
-
     @Override
     public boolean isStructure() {
       return false;
     }
-
     @Override
     public List<IWatchable> getSubvaluesImpl() {
       return new ArrayList<IWatchable>();
     }
   }
-
 
 }

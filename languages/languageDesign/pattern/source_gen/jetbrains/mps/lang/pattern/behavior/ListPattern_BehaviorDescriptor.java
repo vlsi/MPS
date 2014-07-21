@@ -9,5 +9,5 @@ public class ListPattern_BehaviorDescriptor extends AsPattern_BehaviorDescriptor
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.ListPattern";
-  };;
-;}
+  }
+}

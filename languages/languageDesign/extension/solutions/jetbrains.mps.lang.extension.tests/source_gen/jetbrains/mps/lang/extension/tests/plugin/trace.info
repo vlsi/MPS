@@ -9,110 +9,110 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ExtensionDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.lang.extension.tests.plugin.ExtensionDescriptor" />
+      <unit at="10,0,24,0" name="jetbrains.mps.lang.extension.tests.plugin.ExtensionDescriptor" />
     </file>
   </root>
   <root nodeRef="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)/2622946712629256035">
     <file name="LazyTestObject.java">
       <node id="2622946712629256041" at="7,0,8,0" concept="5" trace="INSTANCE" />
-      <node id="2622946712629256045" at="9,27,10,20" concept="1" />
-      <node id="2622946712629256037" at="9,0,12,0" concept="0" trace="LazyTestObject#()V" />
-      <scope id="2622946712629256040" at="9,27,10,20" />
-      <scope id="2622946712629256037" at="9,0,12,0" />
-      <unit id="2622946712629256035" at="6,0,13,0" name="jetbrains.mps.lang.extension.tests.plugin.LazyTestObject" />
+      <node id="2622946712629256045" at="8,27,9,20" concept="1" />
+      <node id="2622946712629256037" at="8,0,11,0" concept="0" trace="LazyTestObject#()V" />
+      <scope id="2622946712629256040" at="8,27,9,20" />
+      <scope id="2622946712629256037" at="8,0,11,0" />
+      <unit id="2622946712629256035" at="6,0,12,0" name="jetbrains.mps.lang.extension.tests.plugin.LazyTestObject" />
     </file>
   </root>
   <root nodeRef="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)/2622946712629256054">
     <file name="Extension_lazyTestExtensionPoint2622946712629256054_.java">
       <node id="2622946712629256054" at="8,65,9,71" concept="6" />
-      <node id="2622946712629256057" at="12,31,13,32" concept="4" />
+      <node id="2622946712629256057" at="11,31,12,32" concept="4" />
       <node id="2622946712629256054" at="8,0,11,0" concept="0" trace="Extension_lazyTestExtensionPoint2622946712629256054_#()V" />
-      <node id="2622946712629256054" at="12,0,15,0" concept="3" trace="get#()Ljetbrains/mps/lang/extension/tests/plugin/LazyTestObject;" />
+      <node id="2622946712629256054" at="11,0,14,0" concept="3" trace="get#()Ljetbrains/mps/lang/extension/tests/plugin/LazyTestObject;" />
       <scope id="2622946712629256054" at="8,65,9,71" />
-      <scope id="2622946712629256054" at="12,31,13,32" />
+      <scope id="2622946712629256054" at="11,31,12,32" />
       <scope id="2622946712629256054" at="8,0,11,0" />
-      <scope id="2622946712629256054" at="12,0,15,0" />
-      <unit id="2622946712629256054" at="7,0,16,0" name="jetbrains.mps.lang.extension.tests.plugin.Extension_lazyTestExtensionPoint2622946712629256054_" />
+      <scope id="2622946712629256054" at="11,0,14,0" />
+      <unit id="2622946712629256054" at="7,0,15,0" name="jetbrains.mps.lang.extension.tests.plugin.Extension_lazyTestExtensionPoint2622946712629256054_" />
     </file>
   </root>
   <root nodeRef="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)/4451661519483734260">
     <file name="Extension_multiExtensionPoint4451661519483734260_.java">
       <node id="4451661519483734260" at="8,62,9,68" concept="6" />
-      <node id="4451661519483734263" at="12,23,13,19" concept="4" />
+      <node id="4451661519483734263" at="11,23,12,19" concept="4" />
       <node id="4451661519483734260" at="8,0,11,0" concept="0" trace="Extension_multiExtensionPoint4451661519483734260_#()V" />
-      <node id="4451661519483734260" at="12,0,15,0" concept="3" trace="get#()Ljava/lang/String;" />
+      <node id="4451661519483734260" at="11,0,14,0" concept="3" trace="get#()Ljava/lang/String;" />
       <scope id="4451661519483734260" at="8,62,9,68" />
-      <scope id="4451661519483734260" at="12,23,13,19" />
+      <scope id="4451661519483734260" at="11,23,12,19" />
       <scope id="4451661519483734260" at="8,0,11,0" />
-      <scope id="4451661519483734260" at="12,0,15,0" />
-      <unit id="4451661519483734260" at="7,0,16,0" name="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint4451661519483734260_" />
+      <scope id="4451661519483734260" at="11,0,14,0" />
+      <unit id="4451661519483734260" at="7,0,15,0" name="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint4451661519483734260_" />
     </file>
   </root>
   <root nodeRef="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)/4451661519483734265">
     <file name="Extension_multiExtensionPoint4451661519483734265_.java">
       <node id="4451661519483734265" at="8,62,9,68" concept="6" />
-      <node id="4451661519483734268" at="12,23,13,19" concept="4" />
+      <node id="4451661519483734268" at="11,23,12,19" concept="4" />
       <node id="4451661519483734265" at="8,0,11,0" concept="0" trace="Extension_multiExtensionPoint4451661519483734265_#()V" />
-      <node id="4451661519483734265" at="12,0,15,0" concept="3" trace="get#()Ljava/lang/String;" />
+      <node id="4451661519483734265" at="11,0,14,0" concept="3" trace="get#()Ljava/lang/String;" />
       <scope id="4451661519483734265" at="8,62,9,68" />
-      <scope id="4451661519483734265" at="12,23,13,19" />
+      <scope id="4451661519483734265" at="11,23,12,19" />
       <scope id="4451661519483734265" at="8,0,11,0" />
-      <scope id="4451661519483734265" at="12,0,15,0" />
-      <unit id="4451661519483734265" at="7,0,16,0" name="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint4451661519483734265_" />
+      <scope id="4451661519483734265" at="11,0,14,0" />
+      <unit id="4451661519483734265" at="7,0,15,0" name="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint4451661519483734265_" />
     </file>
   </root>
   <root nodeRef="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)/7036359038356246776">
     <file name="TestObject.java">
-      <node id="7036359038356271889" at="10,0,11,0" concept="2" trace="myShutDown" />
-      <node id="7036359038356271889" at="12,31,13,27" concept="4" />
-      <node id="7036359038356271889" at="16,42,17,28" concept="1" />
-      <node id="7036359038356271907" at="20,0,21,0" concept="2" trace="myValue" />
-      <node id="7036359038356271907" at="22,28,23,24" concept="4" />
-      <node id="7036359038356271907" at="26,38,27,25" concept="1" />
+      <node id="7036359038356271889" at="9,0,10,0" concept="2" trace="myShutDown" />
+      <node id="7036359038356271889" at="10,31,11,27" concept="4" />
+      <node id="7036359038356271889" at="13,42,14,28" concept="1" />
+      <node id="7036359038356271907" at="16,0,17,0" concept="2" trace="myValue" />
+      <node id="7036359038356271907" at="17,28,18,24" concept="4" />
+      <node id="7036359038356271907" at="20,38,21,25" concept="1" />
       <node id="7036359038356246778" at="7,0,9,0" concept="0" trace="TestObject#()V" />
-      <node id="7036359038356271889" at="12,0,15,0" concept="3" trace="isShutDown#()Z" />
-      <node id="7036359038356271889" at="16,0,19,0" concept="3" trace="setShutDown#(Z)V" />
-      <node id="7036359038356271907" at="22,0,25,0" concept="3" trace="getValue#()Ljava/lang/String;" />
-      <node id="7036359038356271907" at="26,0,29,0" concept="3" trace="setValue#(Ljava/lang/String;)V" />
+      <node id="7036359038356271889" at="10,0,13,0" concept="3" trace="isShutDown#()Z" />
+      <node id="7036359038356271889" at="13,0,16,0" concept="3" trace="setShutDown#(Z)V" />
+      <node id="7036359038356271907" at="17,0,20,0" concept="3" trace="getValue#()Ljava/lang/String;" />
+      <node id="7036359038356271907" at="20,0,23,0" concept="3" trace="setValue#(Ljava/lang/String;)V" />
       <scope id="7036359038356246781" at="7,23,7,23" />
-      <scope id="7036359038356271889" at="12,31,13,27" />
-      <scope id="7036359038356271889" at="16,42,17,28" />
-      <scope id="7036359038356271907" at="22,28,23,24" />
-      <scope id="7036359038356271907" at="26,38,27,25" />
+      <scope id="7036359038356271889" at="10,31,11,27" />
+      <scope id="7036359038356271889" at="13,42,14,28" />
+      <scope id="7036359038356271907" at="17,28,18,24" />
+      <scope id="7036359038356271907" at="20,38,21,25" />
       <scope id="7036359038356246778" at="7,0,9,0" />
-      <scope id="7036359038356271889" at="12,0,15,0" />
-      <scope id="7036359038356271889" at="16,0,19,0">
+      <scope id="7036359038356271889" at="10,0,13,0" />
+      <scope id="7036359038356271889" at="13,0,16,0">
         <var name="value" id="7036359038356271889" />
       </scope>
-      <scope id="7036359038356271907" at="22,0,25,0" />
-      <scope id="7036359038356271907" at="26,0,29,0">
+      <scope id="7036359038356271907" at="17,0,20,0" />
+      <scope id="7036359038356271907" at="20,0,23,0">
         <var name="value" id="7036359038356271907" />
       </scope>
-      <unit id="7036359038356246776" at="6,0,30,0" name="jetbrains.mps.lang.extension.tests.plugin.TestObject" />
+      <unit id="7036359038356246776" at="6,0,24,0" name="jetbrains.mps.lang.extension.tests.plugin.TestObject" />
     </file>
   </root>
   <root nodeRef="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)/7036359038356253986">
     <file name="Extension_testExtensionPoint7036359038356253986_.java">
       <node id="7036359038356253986" at="8,0,9,0" concept="2" trace="myTestObject" />
-      <node id="7036359038356253986" at="10,61,11,67" concept="6" />
-      <node id="7036359038356262452" at="14,27,15,24" concept="4" />
-      <node id="7036359038356253995" at="18,26,19,36" concept="1" />
-      <node id="2622946712629175335" at="19,36,20,36" concept="1" />
-      <node id="2622946712629175355" at="23,28,24,35" concept="1" />
-      <node id="2622946712629175373" at="24,35,25,24" concept="1" />
-      <node id="7036359038356253986" at="10,0,13,0" concept="0" trace="Extension_testExtensionPoint7036359038356253986_#()V" />
-      <node id="7036359038356253986" at="14,0,17,0" concept="3" trace="get#()Ljetbrains/mps/lang/extension/tests/plugin/TestObject;" />
-      <node id="7036359038356253986" at="18,0,22,0" concept="3" trace="activate#()V" />
-      <node id="7036359038356253986" at="23,0,27,0" concept="3" trace="deactivate#()V" />
-      <scope id="7036359038356253986" at="10,61,11,67" />
-      <scope id="7036359038356253986" at="14,27,15,24" />
-      <scope id="7036359038356253994" at="18,26,20,36" />
-      <scope id="2622946712629175354" at="23,28,25,24" />
-      <scope id="7036359038356253986" at="10,0,13,0" />
-      <scope id="7036359038356253986" at="14,0,17,0" />
-      <scope id="7036359038356253986" at="18,0,22,0" />
-      <scope id="7036359038356253986" at="23,0,27,0" />
-      <unit id="7036359038356253986" at="7,0,28,0" name="jetbrains.mps.lang.extension.tests.plugin.Extension_testExtensionPoint7036359038356253986_" />
+      <node id="7036359038356253986" at="9,61,10,67" concept="6" />
+      <node id="7036359038356262452" at="12,27,13,24" concept="4" />
+      <node id="7036359038356253995" at="15,26,16,36" concept="1" />
+      <node id="2622946712629175335" at="16,36,17,36" concept="1" />
+      <node id="2622946712629175355" at="19,28,20,35" concept="1" />
+      <node id="2622946712629175373" at="20,35,21,24" concept="1" />
+      <node id="7036359038356253986" at="9,0,12,0" concept="0" trace="Extension_testExtensionPoint7036359038356253986_#()V" />
+      <node id="7036359038356253986" at="12,0,15,0" concept="3" trace="get#()Ljetbrains/mps/lang/extension/tests/plugin/TestObject;" />
+      <node id="7036359038356253986" at="15,0,19,0" concept="3" trace="activate#()V" />
+      <node id="7036359038356253986" at="19,0,23,0" concept="3" trace="deactivate#()V" />
+      <scope id="7036359038356253986" at="9,61,10,67" />
+      <scope id="7036359038356253986" at="12,27,13,24" />
+      <scope id="7036359038356253994" at="15,26,17,36" />
+      <scope id="2622946712629175354" at="19,28,21,24" />
+      <scope id="7036359038356253986" at="9,0,12,0" />
+      <scope id="7036359038356253986" at="12,0,15,0" />
+      <scope id="7036359038356253986" at="15,0,19,0" />
+      <scope id="7036359038356253986" at="19,0,23,0" />
+      <unit id="7036359038356253986" at="7,0,24,0" name="jetbrains.mps.lang.extension.tests.plugin.Extension_testExtensionPoint7036359038356253986_" />
     </file>
   </root>
 </debug-info>

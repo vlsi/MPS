@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SReference;
 public class IResource_subtypeOf_ResourceType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public IResource_subtypeOf_ResourceType_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode ct, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(ct, "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_f565s9_a0a0a0b(), "classifier", false)})) {
       SNode rt = SConceptOperations.createNewNode("jetbrains.mps.make.script.structure.ResourceType", null);
@@ -27,22 +26,18 @@ public class IResource_subtypeOf_ResourceType_SubtypingRule extends SubtypingRul
     }
     return null;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_f565s9_a0a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

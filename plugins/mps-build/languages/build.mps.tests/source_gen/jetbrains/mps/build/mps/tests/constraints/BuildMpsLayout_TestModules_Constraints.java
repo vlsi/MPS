@@ -20,12 +20,10 @@ public class BuildMpsLayout_TestModules_Constraints extends BaseConstraintsDescr
   public BuildMpsLayout_TestModules_Constraints() {
     super("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -36,7 +34,6 @@ public class BuildMpsLayout_TestModules_Constraints extends BaseConstraintsDescr
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     if (parentNode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator")) {
       // anything in generator 
@@ -59,6 +56,5 @@ public class BuildMpsLayout_TestModules_Constraints extends BaseConstraintsDescr
     }
     return false;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)", "3655813416643587820");
 }

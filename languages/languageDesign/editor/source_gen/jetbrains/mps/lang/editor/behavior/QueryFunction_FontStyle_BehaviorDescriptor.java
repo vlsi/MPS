@@ -9,9 +9,9 @@ public class QueryFunction_FontStyle_BehaviorDescriptor extends QueryFunction_St
   }
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_FontStyle_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle";
-  };;
-;}
+  }
+}

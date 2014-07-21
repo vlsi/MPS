@@ -30,11 +30,9 @@ public class ModuleDependencyNode extends MPSTreeNode {
   private List<SModule> myModules;
   private boolean myInitialized;
   private boolean myCyclic;
-
   public ModuleDependencyNode(SModule module, IOperationContext context) {
     this(ListSequence.fromListAndArray(new ArrayList<SModule>(), module), context);
   }
-
   public ModuleDependencyNode(List<SModule> modules, IOperationContext context) {
     super(context);
     myModules = modules;
@@ -51,23 +49,18 @@ public class ModuleDependencyNode extends MPSTreeNode {
     }
     setNodeIdentifier(text);
   }
-
   public List<SModule> getModules() {
     return myModules;
   }
-
   public boolean isUsedLanguage() {
     return false;
   }
-
   public void setCyclic() {
     myCyclic = true;
   }
-
   public boolean isCyclic() {
     return myCyclic;
   }
-
   public ModuleDependencyNode getFromNode() {
     TreeNode node = getParent();
     if (node != null && isUsedLanguage()) {
@@ -78,12 +71,10 @@ public class ModuleDependencyNode extends MPSTreeNode {
     }
     return null;
   }
-
   @Override
   public boolean isLeaf() {
     return false;
   }
-
   @Override
   protected void doInit() {
     Set<SModule> reqModules = SetSequence.fromSet(new HashSet<SModule>());
@@ -137,19 +128,16 @@ public class ModuleDependencyNode extends MPSTreeNode {
     }
     myInitialized = true;
   }
-
   @Override
   public boolean isInitialized() {
     return myInitialized;
   }
-
   @Override
   public void doubleClick() {
     if (ListSequence.fromList(myModules).count() == 1) {
       ProjectPane.getInstance(check_lba8jw_a0a0a0a51(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
     }
   }
-
   public static class DepDependencyNode extends ModuleDependencyNode {
     public DepDependencyNode(SModule module, boolean isRuntime, boolean isCyclic, IOperationContext context) {
       super(module, context);
@@ -161,13 +149,11 @@ public class ModuleDependencyNode extends MPSTreeNode {
         addTreeMessage(HAS_CYCLE);
       }
     }
-
     @Override
     public boolean isUsedLanguage() {
       return false;
     }
   }
-
   public static class ULangDependencyNode extends ModuleDependencyNode {
     public ULangDependencyNode(SModule module, boolean isBootstrap, IOperationContext context) {
       super(module, context);
@@ -176,13 +162,11 @@ public class ModuleDependencyNode extends MPSTreeNode {
         addTreeMessage(BOOTSTRAP_DEPENDENCY);
       }
     }
-
     @Override
     public boolean isUsedLanguage() {
       return true;
     }
   }
-
   private static Project check_lba8jw_a0a0a0a51(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProject();

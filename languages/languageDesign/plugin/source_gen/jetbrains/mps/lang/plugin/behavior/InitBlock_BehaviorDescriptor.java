@@ -12,12 +12,12 @@ public class InitBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescri
   }
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return InitBlock_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  };;
-;  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
+  }
+  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return InitBlock_Behavior.virtual_showName_1262430001741498082(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.InitBlock";
-  };;
-;}
+  }
+}

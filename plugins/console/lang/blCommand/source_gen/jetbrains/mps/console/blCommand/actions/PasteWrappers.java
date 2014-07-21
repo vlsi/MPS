@@ -21,11 +21,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.Expression";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.console.base.structure.Command";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         return createBLExpression_sma98h_a0a0a(SNodeOperations.cast(HUtil.copyIfNecessary(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.Expression"));
       }
@@ -34,18 +32,15 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.console.blCommand.structure.BLExpression";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.Expression";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         return SLinkOperations.getTarget(_context.getSourceNode(), "expression", true);
       }
     });
     return result;
   }
-
   private static SNode createBLExpression_sma98h_a0a0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.blCommand.structure.BLExpression", null, false);

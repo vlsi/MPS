@@ -22,11 +22,9 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_py9i4r_a(editorContext, node);
   }
-
   private EditorCell createCollection_py9i4r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_py9i4r_a");
@@ -39,14 +37,12 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
     editorCell.addEditorCell(this.createConstant_py9i4r_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_py9i4r_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child");
     editorCell.setCellId("Constant_py9i4r_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_py9i4r_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -64,7 +60,6 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_py9i4r_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_py9i4r_c0");
@@ -75,7 +70,6 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_py9i4r_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default property");
     editorCell.setCellId("Constant_py9i4r_d0");
@@ -85,7 +79,6 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_py9i4r_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_py9i4r_e0");
@@ -95,7 +88,6 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_py9i4r_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("defaultProperty");
@@ -116,7 +108,6 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_py9i4r_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_py9i4r_g0");

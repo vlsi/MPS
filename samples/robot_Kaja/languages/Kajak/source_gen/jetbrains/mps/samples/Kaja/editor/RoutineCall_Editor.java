@@ -25,7 +25,6 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_wwx4md_a(editorContext, node);
   }
-
   private EditorCell createCollection_wwx4md_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wwx4md_a");
@@ -36,7 +35,6 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createRefCell_wwx4md_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("definition");
@@ -58,20 +56,16 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_wwx4md_a0a extends InlineCellProvider {
     public _Inline_wwx4md_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_wwx4md_a0a0(editorContext, node);
     }
-
     private EditorCell createProperty_wwx4md_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -95,7 +89,6 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_wwx4md_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Library call");
     editorCell.setCellId("Constant_wwx4md_b0");
@@ -105,7 +98,6 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_wwx4md_a1a(SNode node, EditorContext editorContext) {
     return SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "definition", false), "jetbrains.mps.samples.Kaja.structure.Library", false, false) != null;
   }

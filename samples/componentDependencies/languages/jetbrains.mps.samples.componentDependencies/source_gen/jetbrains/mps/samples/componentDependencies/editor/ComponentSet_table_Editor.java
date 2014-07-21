@@ -22,16 +22,13 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
 public class ComponentSet_table_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.componentDependencies.editor.views.table"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createTable_y763qk_a(editorContext, node);
   }
-
   private EditorCell createTable_y763qk_a(EditorContext editorContext, SNode node) {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
@@ -39,14 +36,11 @@ public class ComponentSet_table_Editor extends DefaultNodeEditor {
           public int getColumnCount() {
             return SLinkOperations.getTargets(node, "component", true).size() + 1;
           }
-
           public int getRowCount() {
             return SLinkOperations.getTargets(node, "component", true).size() + 1;
           }
-
           public void deleteRow(int rowNumber) {
           }
-
           public SNode getValueAt(int row, final int column) {
             if (row == 0 && column == 0) {
               return null;
@@ -67,45 +61,34 @@ public class ComponentSet_table_Editor extends DefaultNodeEditor {
               }
             });
           }
-
           public void createElement(int row, int column) {
           }
-
           public SubstituteInfo getSubstituteInfo(int row, int column) {
             return new SubstituteInfo() {
               public List<SubstituteAction> getMatchingActions(String p0, boolean p1) {
                 return new ArrayList<SubstituteAction>();
               }
-
               public List<SubstituteAction> getSmartMatchingActions(String p0, boolean p1, EditorCell p2) {
                 return new ArrayList<SubstituteAction>();
               }
-
               public void invalidateActions() {
               }
-
               public void setOriginalText(String p0) {
               }
-
               public String getOriginalText() {
                 return "";
               }
-
               public boolean hasExactlyNActions(String p0, boolean p1, int p2) {
                 return false;
               }
             };
           }
-
           public void insertRow(int rowNumber) {
           }
-
           public void deleteColumn(int columnNumber) {
           }
-
           public void insertColumn(int columnNumber) {
           }
-
           public int getMaxColumnWidth(int columnNumber) {
             return (columnNumber == 0 ? 100 : 20);
           }

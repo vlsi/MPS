@@ -13,30 +13,24 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class SimpleMathFloatType_subtypeOf_Number_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public SimpleMathFloatType_subtypeOf_Number_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return createSimpleMathNumberType_mxid1z_a0a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   public boolean surelyKeepsConcept() {
     return true;
   }
-
   private static SNode createSimpleMathNumberType_mxid1z_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathNumberType", null, false);

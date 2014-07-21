@@ -9,11 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class Shape_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_drawShape_1082824515535573731(SNode thisNode, Graphics graphics) {
     graphics.setColor(ColorReference_Behavior.call_findColor_2097561739636344968(SLinkOperations.getTarget(thisNode, "color", true)));
   }
-
   public static void virtual_drawShapeAt_4001135958238383544(SNode thisNode, Graphics graphics, int x, int y) {
     graphics.setColor(ColorReference_Behavior.call_findColor_2097561739636344968(SLinkOperations.getTarget(thisNode, "color", true)));
   }

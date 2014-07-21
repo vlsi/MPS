@@ -12,9 +12,9 @@ public class MigrationScriptPart_Instance_Updater_BehaviorDescriptor extends Con
   }
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return MigrationScriptPart_Instance_Updater_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  };;
-;  @Override
+  }
+  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater";
-  };;
-;}
+  }
+}

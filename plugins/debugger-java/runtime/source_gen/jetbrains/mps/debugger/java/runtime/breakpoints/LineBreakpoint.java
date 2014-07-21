@@ -27,16 +27,13 @@ import jetbrains.mps.smodel.SModelStereotype;
 public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = LogManager.getLogger(LineBreakpoint.class);
   protected final BreakpointLocation myLocation;
-
   public LineBreakpoint(@NotNull SNodeReference nodePointer, Project project) {
     super(project);
     myLocation = new BreakpointLocation(nodePointer);
   }
-
   public LineBreakpoint(@NotNull SNode node, Project project) {
     this(new SNodePointer(node), project);
   }
-
   @Override
   protected void createRequestForPreparedClass(EventsProcessor debugProcess, final ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
@@ -69,7 +66,6 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
       LOG.error(null, ex);
     }
   }
-
   @Nullable
   @Override
   protected String getClassNameToPrepare() {
@@ -86,29 +82,24 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
     }
     return className;
   }
-
   @NotNull
   @Override
   public JavaBreakpointKind getKind() {
     return JavaBreakpointKind.LINE_BREAKPOINT;
   }
-
   @Override
   public boolean isValid() {
     return myLocation.getTargetCodePosition() != null && (isNotEmptyString(myLocation.getTargetUnitName()) || isNotEmptyString(myLocation.getFileName()));
   }
-
   @Override
   public String getPresentation() {
     return myLocation.getPresentation();
   }
-
   @NotNull
   @Override
   public BreakpointLocation getLocation() {
     return myLocation;
   }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -120,18 +111,15 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
 
     return eq_owwtjm_a0d0k(myLocation, ((LineBreakpoint) o).myLocation);
   }
-
   @Override
   public int hashCode() {
     int result = 0;
     result = 31 * result + ((myLocation != null ? ((Object) myLocation).hashCode() : 0));
     return result;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
-
   private static boolean eq_owwtjm_a0d0k(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

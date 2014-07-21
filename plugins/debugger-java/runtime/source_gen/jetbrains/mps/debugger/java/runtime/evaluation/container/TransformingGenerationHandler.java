@@ -20,17 +20,14 @@ import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder
 
 public class TransformingGenerationHandler extends InMemoryJavaGenerationHandler {
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
-
   public TransformingGenerationHandler(boolean reloadClasses, boolean keepSources, Iterable<_FunctionTypes._void_P1_E0<? super SNode>> listeners) {
     super(reloadClasses, keepSources);
     ListSequence.fromList(myGenerationListeners).addSequence(Sequence.fromIterable(listeners));
   }
-
   @Override
   public boolean canHandle(SModel inputModel) {
     return inputModel != null;
   }
-
   @Override
   public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext context, ProgressMonitor monitor) {
     SModel model = status.getOutputModel();

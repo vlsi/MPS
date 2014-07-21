@@ -44,7 +44,6 @@ public class EditorHighlighter implements EditorMessageOwner {
   private EditorHighlighter.MyCurrentDifferenceListener myListener;
   private final Object myDisposedLock = new Object();
   private boolean myDisposed = false;
-
   public EditorHighlighter(@NotNull final Project project, @NotNull final EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
 
@@ -107,7 +106,6 @@ public class EditorHighlighter implements EditorMessageOwner {
       }
     });
   }
-
   private List<ChangeEditorMessage> createMessages(final ModelChange change) {
     final Wrappers._T<List<ChangeEditorMessage>> messages = new Wrappers._T<List<ChangeEditorMessage>>(null);
     if (!(change instanceof AddRootChange)) {
@@ -132,7 +130,6 @@ public class EditorHighlighter implements EditorMessageOwner {
     }
     return messages.value;
   }
-
   private List<ChangeEditorMessage> removeMessages(ModelChange change) {
     synchronized (myChangesMessages) {
       List<ChangeEditorMessage> messages = MapSequence.fromMap(myChangesMessages).get(change);
@@ -147,13 +144,11 @@ public class EditorHighlighter implements EditorMessageOwner {
       return messages;
     }
   }
-
   /*package*/ List<ChangeEditorMessage> getMessages(ModelChange change) {
     synchronized (myChangesMessages) {
       return MapSequence.fromMap(myChangesMessages).get(change);
     }
   }
-
   public void dispose() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -182,49 +177,39 @@ public class EditorHighlighter implements EditorMessageOwner {
       }
     });
   }
-
   @Nullable
   /*package*/ ChangeSet getChangeSet() {
     return check_urq9my_a0a21(myCurrentDifference);
   }
-
   /*package*/ ChangeStripsPainter getStripsPainter() {
     return myStripsPainter;
   }
-
   /*package*/ EditorComponent getEditorComponent() {
     return myEditorComponent;
   }
-
   /*package*/ NodeHighlightManager getHighlightManager() {
     return myEditorComponent.getHighlightManager();
   }
-
   /*package*/ LeftEditorHighlighter getLeftEditorHighlighter() {
     return myEditorComponent.getLeftEditorHighlighter();
   }
-
   public class MyCurrentDifferenceListener extends CurrentDifferenceAdapter {
     private List<ChangeEditorMessage> myAddedMessages = ListSequence.fromList(new ArrayList<ChangeEditorMessage>());
     private List<ChangeEditorMessage> myRemovedMessages = ListSequence.fromList(new ArrayList<ChangeEditorMessage>());
-
     public MyCurrentDifferenceListener() {
     }
-
     @Override
     public void changeAdded(@NotNull ModelChange change) {
       List<ChangeEditorMessage> messages = createMessages(change);
       ListSequence.fromList(myRemovedMessages).removeSequence(ListSequence.fromList(messages));
       ListSequence.fromList(myAddedMessages).addSequence(ListSequence.fromList(messages));
     }
-
     @Override
     public void changeRemoved(@NotNull ModelChange change) {
       List<ChangeEditorMessage> messages = removeMessages(change);
       ListSequence.fromList(myRemovedMessages).addSequence(ListSequence.fromList(messages));
       ListSequence.fromList(myAddedMessages).removeSequence(ListSequence.fromList(messages));
     }
-
     @Override
     public void changeUpdateFinished() {
       if (!(ListSequence.fromList(myAddedMessages).isEmpty()) || !(ListSequence.fromList(myRemovedMessages).isEmpty())) {
@@ -242,14 +227,12 @@ public class EditorHighlighter implements EditorMessageOwner {
       }
     }
   }
-
   private static ChangeSet check_urq9my_a0a21(CurrentDifference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getChangeSet();
     }
     return null;
   }
-
   private static void check_urq9my_a3a0a5r(ChangeStripsPainter checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.relayout();

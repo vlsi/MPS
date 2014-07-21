@@ -69,7 +69,6 @@ public class TreeHighlighter implements TreeMessageOwner {
   private TreeHighlighter.MyModelListener myGlobalModelListener;
   private final TreeHighlighter.FeaturesHolder myFeaturesHolder = new TreeHighlighter.FeaturesHolder();
   private MergingUpdateQueue myQueue = new MergingUpdateQueue("MPS Changes Manager RehighlightAll Watcher Queue", 500, true, null);
-
   public TreeHighlighter(@NotNull CurrentDifferenceRegistry registry, @NotNull FeatureForestMapSupport featureForestMapSupport, @NotNull MPSTree tree, @NotNull TreeNodeFeatureExtractor featureExtractor, boolean removeNodesOnModelDisposal) {
     myRegistry = registry;
     myCommandQueue = registry.getCommandQueue();
@@ -80,7 +79,6 @@ public class TreeHighlighter implements TreeMessageOwner {
       myGlobalModelListener = new TreeHighlighter.MyModelListener();
     }
   }
-
   public synchronized void init() {
     if (myInitialized) {
       return;
@@ -100,7 +98,6 @@ public class TreeHighlighter implements TreeMessageOwner {
       }
     });
   }
-
   public synchronized void dispose() {
     if (!(myInitialized)) {
       return;
@@ -115,14 +112,12 @@ public class TreeHighlighter implements TreeMessageOwner {
     myMap.removeListener(myFeatureListener);
     myQueue.dispose();
   }
-
   private void registerNodeRecursively(@NotNull MPSTreeNode node) {
     registerNode(node);
     for (MPSTreeNode child : Sequence.fromIterable(node)) {
       registerNodeRecursively(child);
     }
   }
-
   private void registerNode(@NotNull final MPSTreeNode node) {
     final Feature feature = myFeatureExtractor.getFeature(node);
     if (feature != null) {
@@ -145,7 +140,6 @@ public class TreeHighlighter implements TreeMessageOwner {
       });
     }
   }
-
   private void unregisterNode(@NotNull MPSTreeNode node) {
     Feature feature = myFeatureExtractor.getFeature(node);
     if (feature != null) {
@@ -161,11 +155,9 @@ public class TreeHighlighter implements TreeMessageOwner {
       unhighlightNode(node);
     }
   }
-
   private void unhighlightNode(@NotNull MPSTreeNode node) {
     node.removeTreeMessages(this, true);
   }
-
   private void rehighlightNode(@NotNull MPSTreeNode node, @NotNull Feature feature) {
     unhighlightNode(node);
 
@@ -194,13 +186,11 @@ public class TreeHighlighter implements TreeMessageOwner {
       }
     }
   }
-
   private void rehighlightFeature(@NotNull Feature feature) {
     for (MPSTreeNode node : CollectionSequence.fromCollection(myFeaturesHolder.getNodesByFeature(feature))) {
       rehighlightNode(node, feature);
     }
   }
-
   private void rehighlightFeatureAndDescendants(@NotNull final Feature feature) {
     if (myTree.isDisposed()) {
       return;
@@ -224,7 +214,6 @@ public class TreeHighlighter implements TreeMessageOwner {
     });
   }
 
-
   private final Update rehighlightAllFeaturesUpdate = new Update(this) {
     @Override
     public void run() {
@@ -244,11 +233,9 @@ public class TreeHighlighter implements TreeMessageOwner {
       }
     }
   };
-
   private void rehighlightAllFeaturesLater() {
     myQueue.queue(rehighlightAllFeaturesUpdate);
   }
-
   private void rehighlightAllFeaturesNow() {
     ModelAccess.assertLegalRead();
     synchronized (myFeaturesHolder) {
@@ -258,8 +245,6 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
   }
 
-
-
   @NotNull
   private TreeMessage getMessage(@NotNull FileStatus fileStatus) {
     if (!(MapSequence.fromMap(myTreeMessages).containsKey(fileStatus))) {
@@ -267,7 +252,6 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
     return MapSequence.fromMap(myTreeMessages).get(fileStatus);
   }
-
   @NotNull
   private TreeMessage getMessage(@NotNull ModelChange modelChange, @NotNull EditableSModel modelDescriptor) {
     switch (modelChange.getType()) {
@@ -289,7 +273,6 @@ public class TreeHighlighter implements TreeMessageOwner {
         return getMessage(FileStatus.MERGED_WITH_CONFLICTS);
     }
   }
-
   @Nullable
   private TreeMessage getMessage(@NotNull ModelFeature modelFeature) {
     SModel md = SModelRepository.getInstance().getModelDescriptor(modelFeature.getModelReference());
@@ -300,7 +283,6 @@ public class TreeHighlighter implements TreeMessageOwner {
       return null;
     }
   }
-
   @Nullable
   private static FileStatus getModelFileStatus(@NotNull EditableSModel ed, @NotNull Project project) {
     DataSource ds = ed.getSource();
@@ -313,45 +295,36 @@ public class TreeHighlighter implements TreeMessageOwner {
     VirtualFile vf = VirtualFileUtils.getVirtualFile(file);
     return (vf == null ? null : FileStatusManager.getInstance(project).getStatus(vf));
   }
-
   private class MyTreeNodeListener implements MPSTreeNodeListener {
     public MyTreeNodeListener() {
     }
-
     @Override
     public void treeNodeAdded(MPSTreeNode node, MPSTree tree) {
       registerNode(node);
     }
-
     @Override
     public void treeNodeRemoved(MPSTreeNode node, MPSTree tree) {
       unregisterNode(node);
     }
-
     @Override
     public void treeNodeUpdated(MPSTreeNode node, MPSTree tree) {
     }
-
     @Override
     public void beforeTreeDisposed(MPSTree tree) {
       TreeHighlighterFactory.getInstance(myRegistry.getProject()).unhighlightTree(myTree);
     }
   }
-
   private class MyFeatureForestMapListener implements FeatureForestMapListener {
     public MyFeatureForestMapListener() {
     }
-
     @Override
     public void featureStateChanged(Feature feature) {
       rehighlightFeatureAndDescendants(feature);
     }
   }
-
   private class MyFileStatusListener implements FileStatusListener {
     public MyFileStatusListener() {
     }
-
     @Override
     public void fileStatusChanged(@NotNull VirtualFile file) {
       IFile ifile = VirtualFileUtils.toIFile(file);
@@ -360,17 +333,14 @@ public class TreeHighlighter implements TreeMessageOwner {
         rehighlightFeatureAndDescendants(new ModelFeature(emd.getReference()));
       }
     }
-
     @Override
     public void fileStatusesChanged() {
       rehighlightAllFeaturesLater();
     }
   }
-
   private class MyModelListener extends SModelAdapter {
     public MyModelListener() {
     }
-
     @Override
     public void beforeModelDisposed(SModel model) {
       SModelReference modelRef = model.getReference();
@@ -390,41 +360,33 @@ public class TreeHighlighter implements TreeMessageOwner {
       });
     }
   }
-
   private class FeaturesHolder {
     private final MultiMap<Feature, MPSTreeNode> myFeatureToNodes = new MultiMap<Feature, MPSTreeNode>();
     private final MultiMap<SModelReference, Feature> myModelRefToFeatures = new MultiMap<SModelReference, Feature>();
-
     public FeaturesHolder() {
     }
-
     public void putNodeWithFeature(Feature feature, MPSTreeNode node) {
       myFeatureToNodes.putValue(feature, node);
       myModelRefToFeatures.putValue(feature.getModelReference(), feature);
     }
-
     public void removeNodeWithFeature(Feature feature, MPSTreeNode node) {
       myFeatureToNodes.removeValue(feature, node);
       if (myFeatureToNodes.get(feature).isEmpty()) {
         myModelRefToFeatures.removeValue(feature.getModelReference(), feature);
       }
     }
-
     public void removeFeature(Feature feature) {
       myFeatureToNodes.remove(feature);
       myModelRefToFeatures.removeValue(feature.getModelReference(), feature);
     }
-
     public Collection<MPSTreeNode> getNodesByFeature(Feature feature) {
       return myFeatureToNodes.get(feature);
     }
-
     public List<Feature> getFeaturesByModelReference(SModelReference modelRef) {
       List<Feature> features = ListSequence.fromList(new ArrayList<Feature>());
       ListSequence.fromList(features).addSequence(CollectionSequence.fromCollection(myModelRefToFeatures.get(modelRef)));
       return features;
     }
-
     public List<Feature> getAllModelFeatures() {
       List<Feature> features = ListSequence.fromList(new ArrayList<Feature>());
       for (Feature f : SetSequence.fromSet(myFeatureToNodes.keySet())) {
@@ -435,6 +397,5 @@ public class TreeHighlighter implements TreeMessageOwner {
       return features;
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(TreeHighlighter.class);
 }
