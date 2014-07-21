@@ -1024,7 +1024,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Deprecated//since 3.1, remove after next release
   public SNode(@NotNull String conceptFqName) {
     myConceptFqName = conceptFqName;
-    myConceptId = name2cid(conceptFqName);
+    if (MPSModuleRepository.getInstance() != null) {
+      myConceptId = name2cid(conceptFqName);
+    }
     myId = SModel.generateUniqueId();
   }
 
