@@ -19,25 +19,36 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.IOException;
 
+/**
+ * Persistence and editing of SDependency
+ */
 public class Dependency {
-  public static final String MODULEREF = "moduleRef";
-  public static final String REEXPORT = "reexport";
-
   @NotNull
   private SModuleReference myModuleRef;
+  private SDependencyScope myScope = SDependencyScope.DEFAULT;
   private boolean myReexport;
 
   public Dependency() {
-
   }
 
   public Dependency(SModuleReference ref, boolean reexport) {
-    myModuleRef = ref;
+    this(ref, SDependencyScope.DEFAULT);
     myReexport = reexport;
+  }
+
+  public Dependency(@NotNull SModuleReference ref, @NotNull SDependencyScope scope, boolean reexport) {
+    this(ref, scope);
+    myReexport = reexport;
+  }
+
+  public Dependency(@NotNull SModuleReference ref, @NotNull SDependencyScope scope) {
+    myModuleRef = ref;
+    myScope = scope;
   }
 
   @NotNull
@@ -57,10 +68,21 @@ public class Dependency {
     myReexport = reexport;
   }
 
+  @NotNull
+  public SDependencyScope getScope() {
+    return myScope;
+  }
+
+  public void setScope(@NotNull SDependencyScope scope) {
+    myScope = scope;
+  }
+
+
   public Dependency getCopy() {
     Dependency result = new Dependency();
     result.myModuleRef = myModuleRef;
     result.myReexport = myReexport;
+    result.myScope = myScope;
 
     return result;
   }
@@ -70,7 +92,7 @@ public class Dependency {
     if(!(obj instanceof Dependency))
       return false;
     Dependency dependency = (Dependency)obj;
-    return myReexport == dependency.myReexport && myModuleRef.equals(dependency.myModuleRef);
+    return myReexport == dependency.myReexport && myScope == dependency.myScope&& myModuleRef.equals(dependency.myModuleRef);
   }
 
   @Override

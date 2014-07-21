@@ -47,6 +47,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.iterable.TranslatingIterator;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -337,6 +338,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
    * @deprecated use {@link #getDeclaredDependencies()} instead
    */
   @Deprecated
+  @ToRemove(version = 3.2)
   public final List<Dependency> getDependencies() {
     assertCanRead();
     ArrayList<Dependency> rv = new ArrayList<Dependency>();

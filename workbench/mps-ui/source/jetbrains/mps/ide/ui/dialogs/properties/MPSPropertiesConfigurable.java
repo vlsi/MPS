@@ -43,7 +43,6 @@ import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageOrDevKitChooser;
-import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItemRole;
@@ -216,7 +215,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected JTextField myTextFieldName;
 
     public CommonTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.commontab.title"), AllIcons.General.ProjectSettings, PropertiesBundle.message("mps.properties.configurable.common.commontab.tip"));
+      super(PropertiesBundle.message("mps.properties.common.title"), AllIcons.General.ProjectSettings, PropertiesBundle.message("mps.properties.common.tip"));
       init();
     }
 
@@ -235,14 +234,14 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       JPanel sourcesTab = new JPanel();
       sourcesTab.setLayout(new GridLayoutManager(topComponent != null ? 4 : 3, 2, INSETS, -1, -1));
 
-      JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.namelabel"));
+      JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.common.namelabel"));
       sourcesTab.add(label, new GridConstraints(rowCount++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       myTextFieldName = new JTextField();
       myTextFieldName.setText(getConfigItemName());
       sourcesTab.add(myTextFieldName, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
 
-      label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.filepathlabel"));
+      label = new JBLabel(PropertiesBundle.message("mps.properties.common.filepathlabel"));
       sourcesTab.add(label, new GridConstraints(rowCount, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       JTextField textField = new JTextField();
@@ -268,11 +267,12 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected DependTableModel myDependTableModel;
 
     public DependenciesTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.title"), General.Dependencies, PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.tip"));
+      super(PropertiesBundle.message("mps.properties.dependencies.title"), General.Dependencies, PropertiesBundle.message("mps.properties.dependencies.tip"));
       init();
     }
 
     protected abstract DependTableModel getDependTableModel();
+    /*CellEditor for scope cell */
     protected abstract TableCellEditor getTableCellEditor();
 
     @Override
@@ -315,12 +315,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
         column.setPreferredWidth(200);
       }
 
-
-      tableDepend.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-        }
-      });
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(tableDepend);
       decorator.setAddAction(getAnActionButtonRunnable()).setRemoveAction(new AnActionButtonRunnable() {
@@ -394,9 +388,8 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       }.setComparator(new SpeedSearchComparator(false, true));
     }
 
-    protected TableCellRenderer getTableCellRender() {
-      return new DependencyTableCellRender();
-    }
+    /*CellRenderer for DependenciesTableItem, actual value supplied to renderer is */
+    protected abstract TableCellRenderer getTableCellRender();
 
     protected boolean confirmRemove(final Object value) {
       return true;
@@ -425,7 +418,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected UsedLangsTableModel myUsedLangsTableModel;
 
     public UsedLanguagesTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.usedlanguagestab.title"), IdeIcons.PROJECT_LANGUAGE_ICON, PropertiesBundle.message("mps.properties.configurable.common.usedlanguagestab.tip"));
+      super(PropertiesBundle.message("mps.properties.usedlanguages.title"), IdeIcons.PROJECT_LANGUAGE_ICON, PropertiesBundle.message("mps.properties.usedlanguages.tip"));
       init();
     }
 

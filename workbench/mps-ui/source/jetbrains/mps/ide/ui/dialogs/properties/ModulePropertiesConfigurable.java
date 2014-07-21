@@ -182,12 +182,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     addTab(new ModuleCommonTab());
     if (!(myModule instanceof DevKit)) {
-      addTab(new ModuleDependenciesTab());
+      final ModuleDependenciesTab moduleDependenciesTab = new ModuleDependenciesTab();
+      addTab(moduleDependenciesTab);
       addTab(new ModuleUsedLanguagesTab());
       if (myModule instanceof Language)
         addTab(new RuntimeTab());
       if (myModule instanceof Generator)
-        addTab(new GeneratorAdvancesTab());
+        addTab(new GeneratorAdvancesTab(new GeneratorDependencyProvider(moduleDependenciesTab)));
     }
     for (SModuleFacet moduleFacet : myModule.getFacets()) {
       if (!(moduleFacet instanceof ModuleFacetBase))
@@ -217,11 +218,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   @Nls
   @Override
   public String getDisplayName() {
-    StringBuilder builder = new StringBuilder();
-    builder.append(myModule.getClass().getSimpleName());
-    builder.append(PropertiesBundle.message("mps.properties.configurable.module.title"));
-    builder.append(myModule.getModuleName());
-    return builder.toString();
+    return String.format(PropertiesBundle.message("mps.properties.module.title"), myModule.getClass().getSimpleName(), myModule.getModuleName());
   }
 
   public class ModuleCommonTab extends CommonTab {
@@ -327,6 +324,15 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
   public class ModuleDependenciesTab extends DependenciesTab {
 
+    /*package*/ List<DependenciesTableItem> getActualDependencies() {
+      int x = myDependTableModel.getRowCount();
+      ArrayList<DependenciesTableItem> rv = new ArrayList<DependenciesTableItem>(x);
+      for (int i = 0; i < x; i++) {
+        rv.add(myDependTableModel.getValueAt(i));
+      }
+      return rv;
+    }
+
     @Override
     protected DependTableModel getDependTableModel() {
       return new ModuleDependTableModel(myModuleDescriptor);
@@ -349,18 +355,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
               public void run() {
                 for (Dependency dependency : list) {
                   SModuleReference moduleReference = dependency.getModuleRef();
-                  if (MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Language)
-                    myDependTableModel.addItem(
-                      new DependenciesTableItem<SModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT,
-                        dependency.isReexport()).setModuleType(ModuleType.LANGUAGE));
-                  else if (MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Generator)
-                    myDependTableModel.addItem(
-                      new DependenciesTableItem<SModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT,
-                        dependency.isReexport()).setModuleType(ModuleType.GENERATOR));
-                  else
-                    myDependTableModel.addItem(
-                      new DependenciesTableItem<SModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT,
-                        dependency.isReexport()));
+                  final SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName());
+                  if (module instanceof Language) {
+                    myDependTableModel.addLanguageItem(dependency);
+                  } else if (module instanceof Generator) {
+                    myDependTableModel.addGeneratorItem(dependency);
+                  } else {
+                    myDependTableModel.addUnsecifiedItem(dependency);
+                  }
                 }
               }
             });
@@ -375,18 +377,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
               @Override
               public void run() {
                 for (SModuleReference moduleReference : list) {
-                  if (MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Language)
-                    myDependTableModel.addItem(
-                      new DependenciesTableItem<SModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(
-                        ModuleType.LANGUAGE));
-                  else if (MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof DevKit)
-                    myDependTableModel.addItem(
-                      new DependenciesTableItem<SModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(
-                        ModuleType.DEVKIT));
-                  else if (MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Solution)
-                    myDependTableModel.addItem(
-                      new DependenciesTableItem<SModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(
-                        ModuleType.SOLUTION));
+                  final SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName());
+                  if (module instanceof Language)
+                    myDependTableModel.addLanguageItem(new Dependency(moduleReference, SDependencyScope.EXTENDS));
+                  else if (module instanceof DevKit)
+                    myDependTableModel.addDevkitItem(new Dependency(moduleReference, SDependencyScope.EXTENDS));
+                  else if (module instanceof Solution)
+                    myDependTableModel.addSolutionItem(new Dependency(moduleReference, SDependencyScope.EXTENDS));
                 }
               }
             });
@@ -436,7 +433,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                 }
               }
 
-              ModulesHolder modulesHolder = new ModulesHolder((List) modules, null) {
+              ModulesHolder modulesHolder = new ModulesHolder(modules, null) {
                 @Override
                 public void read(Element element, Project project) throws CantLoadSomethingException {
                 }
@@ -453,7 +450,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                   ModulesHolder modulesHolder = (ModulesHolder) query.getObjectHolder();
                   for (SModule searchedModule : modulesHolder.getObject()) {
                     searchResults.getSearchedNodes().add(searchedModule);
-                    SearchQuery searchQuery = new SearchQuery((SModule) searchedModule, query.getScope());
+                    SearchQuery searchQuery = new SearchQuery(searchedModule, query.getScope());
                     searchResults.addAll(super.find(searchQuery, monitor));
                   }
 
@@ -463,7 +460,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             }
           });
           UsagesViewTool usagesViewTool = ProjectHelper.toIdeaProject(myProject).getComponent(UsagesViewTool.class);
-          usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
+          if (usagesViewTool != null) {
+            usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
+          }
           forceCancelCloseDialog();
         }
       };
@@ -498,12 +497,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
       private boolean isLangToLang(int row) {
         DependenciesTableItem item = myDependTableModel.getValueAt(row);
-        return myDependTableModel.getItem() instanceof LanguageDescriptor && item.getModuleType().equals(ModuleType.LANGUAGE);
+        return myDependTableModel.getSource() instanceof LanguageDescriptor && item.getModuleType().equals(ModuleType.LANGUAGE);
       }
 
       private boolean isGenToGen(int row) {
         DependenciesTableItem item = myDependTableModel.getValueAt(row);
-        return myDependTableModel.getItem() instanceof GeneratorDescriptor && item.getModuleType().equals(ModuleType.GENERATOR);
+        return myDependTableModel.getSource() instanceof GeneratorDescriptor && item.getModuleType().equals(ModuleType.GENERATOR);
       }
     }
   }
@@ -513,8 +512,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private AccessoriesModelsTableModel myAccessoriesModelsTableModel;
 
     public RuntimeTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.runtimetab.title"), General.Runtime,
-        PropertiesBundle.message("mps.properties.configurable.common.runtimetab.tip"));
+      super(PropertiesBundle.message("mps.properties.runtime.title"), General.Runtime,
+        PropertiesBundle.message("mps.properties.runtime.tip"));
       init();
     }
 
@@ -796,7 +795,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
       @Override
       public String getColumnName(int column) {
-        return PropertiesBundle.message("mps.properties.configurable.common.runtimetab.solutionstable.header");
+        return PropertiesBundle.message("mps.properties.runtime.solutionstable.header");
       }
 
       @Override
@@ -867,7 +866,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
       @Override
       public String getColumnName(int column) {
-        return PropertiesBundle.message("mps.properties.configurable.common.runtimetab.accessorytable.header");
+        return PropertiesBundle.message("mps.properties.runtime.accessorytable.header");
       }
 
       private LinkedList<jetbrains.mps.smodel.SModelReference> getAccessoryModels() {
@@ -929,19 +928,41 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
   }
 
+  /**
+   * Supply set of accessible/visible generators, so that Advanced tab could utilize actual dependencies from ModuleDependenciesTab
+   */
+  static class GeneratorDependencyProvider {
+    private final ModuleDependenciesTab myDependenciesTab;
+
+    GeneratorDependencyProvider(ModuleDependenciesTab dependenciesTab) {
+      myDependenciesTab = dependenciesTab;
+    }
+
+    Set<SModuleReference> getGenerators() {
+      final HashSet<SModuleReference> depGenerators = new LinkedHashSet<SModuleReference>();
+      for (DependenciesTableItem dependencyItem : myDependenciesTab.getActualDependencies()) {
+        if(dependencyItem.getModuleType() == ModuleType.GENERATOR && dependencyItem.getItem().getScope() == SDependencyScope.EXTENDS) {
+          depGenerators.add(dependencyItem.getItem().getModuleRef());
+        }
+      }
+      return depGenerators;
+    }
+  }
+
   public class GeneratorAdvancesTab extends BaseTab {
 
+    private final GeneratorDependencyProvider myDepGenerators;
     private GenPrioritiesTableModel myPrioritiesTableModel;
     private JBCheckBox myGenerateTemplates;
     private JBCheckBox myReflectiveQueries;
     private JBCheckBox myNeedOpContext;
-    private final Map<MappingConfig_AbstractRef, GeneratorPrioritiesTree> myMappings =
-      new java.util.HashMap<MappingConfig_AbstractRef, GeneratorPrioritiesTree>();
+    private final Map<MappingConfig_AbstractRef, GeneratorPrioritiesTree> myMappings = new java.util.HashMap<MappingConfig_AbstractRef, GeneratorPrioritiesTree>();
     private JBTable myTable;
 
-    public GeneratorAdvancesTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.module.generatortab.title"), IdeIcons.DEFAULT_ICON,
-        PropertiesBundle.message("mps.properties.configurable.module.generatortab.tip"));
+    public GeneratorAdvancesTab(GeneratorDependencyProvider depGenerators) {
+      super(PropertiesBundle.message("mps.properties.module.generator.title"), IdeIcons.DEFAULT_ICON,
+        PropertiesBundle.message("mps.properties.module.generator.tip"));
+      myDepGenerators = depGenerators;
       init();
     }
 
@@ -981,23 +1002,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           if (value instanceof MappingConfig_AbstractRef) {
             MappingConfig_AbstractRef mapping = (MappingConfig_AbstractRef) value;
 
-            final Set<SModuleReference> depGenerators = new LinkedHashSet<SModuleReference>(((GeneratorDescriptor) myModuleDescriptor).getDepGenerators());
-            for(int i = 0;  i < ModulePropertiesConfigurable.this.getTabsCount(); i++) {
-              if(!(ModulePropertiesConfigurable.this.getTab(i) instanceof ModuleDependenciesTab))
-                continue;
-
-              ModuleDependenciesTab moduleDependenciesTab = (ModuleDependenciesTab) ModulePropertiesConfigurable.this.getTab(i);
-              for(int j = 0; j < moduleDependenciesTab.myDependTableModel.getRowCount(); j++) {
-                final DependenciesTableItem dependenciesTableItem = moduleDependenciesTab.myDependTableModel.getValueAt(j);
-                if(dependenciesTableItem.getModuleType() == ModuleType.GENERATOR
-                  && dependenciesTableItem.getRole() == SDependencyScope.EXTENDS) {
-                  depGenerators.add((SModuleReference)dependenciesTableItem.getItem());
-                }
-              }
-
-              break;
-            }
-            myCurrentTree = new GeneratorPrioritiesTree((GeneratorDescriptor) myModuleDescriptor, mapping, column == 0, depGenerators);
+            myCurrentTree = new GeneratorPrioritiesTree((GeneratorDescriptor) myModuleDescriptor, mapping, column == 0, myDepGenerators.getGenerators());
             myMappings.put(mapping, myCurrentTree);
 
             CheckedTreeNode rootNode = (CheckedTreeNode) myCurrentTree.getTree().getModel().getRoot();
@@ -1067,23 +1072,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           if (value instanceof MappingConfig_AbstractRef) {
             MappingConfig_AbstractRef mapping = (MappingConfig_AbstractRef) value;
 
-            final Set<SModuleReference> depGenerators = new LinkedHashSet<SModuleReference>(((GeneratorDescriptor) myModuleDescriptor).getDepGenerators());
-            for(int i = 0;  i < ModulePropertiesConfigurable.this.getTabsCount(); i++) {
-              if(!(ModulePropertiesConfigurable.this.getTab(i) instanceof ModuleDependenciesTab))
-                continue;
-
-              ModuleDependenciesTab moduleDependenciesTab = (ModuleDependenciesTab) ModulePropertiesConfigurable.this.getTab(i);
-              for(int j = 0; j < moduleDependenciesTab.myDependTableModel.getRowCount(); j++) {
-                final DependenciesTableItem dependenciesTableItem = moduleDependenciesTab.myDependTableModel.getValueAt(j);
-                if(dependenciesTableItem.getModuleType() == ModuleType.GENERATOR
-                  && dependenciesTableItem.getRole() == SDependencyScope.EXTENDS) {
-                  depGenerators.add((SModuleReference)dependenciesTableItem.getItem());
-                }
-              }
-
-              break;
-            }
-            myCurrentTree = new GeneratorPrioritiesTree((GeneratorDescriptor) myModuleDescriptor, mapping, column == 0, depGenerators);
+            myCurrentTree = new GeneratorPrioritiesTree((GeneratorDescriptor) myModuleDescriptor, mapping, column == 0, myDepGenerators.getGenerators());
 
             final DialogWrapper dialogWrapper = new DialogWrapper(ProjectHelper.toIdeaProject(myProject)) {
               {
@@ -1178,8 +1167,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       final GeneratorDescriptor genDescr = (GeneratorDescriptor) myModule.getModuleDescriptor();
       JPanel generationOptions = new JPanel();
       generationOptions.setLayout(new FlowLayout(FlowLayout.LEFT));
-      myGenerateTemplates = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.module.generatortab.gentempcheckbox"), genDescr.isGenerateTemplates());
-      myGenerateTemplates.setToolTipText("Generated templates are regular Java classes");
+      myGenerateTemplates = new JBCheckBox(PropertiesBundle.message("mps.properties.module.generator.gentemplates.name"), genDescr.isGenerateTemplates());
+      myGenerateTemplates.setToolTipText(PropertiesBundle.message("mps.properties.module.generator.gentemplates.tip"));
       myReflectiveQueries = new JBCheckBox("Reflective queries", genDescr.isReflectiveQueries());
       myReflectiveQueries.setToolTipText("Invoke generated queries via reflection. Compatibility option, turn off and rebuild generator");
       myNeedOpContext = new JBCheckBox("IOperationContext parameter", genDescr.needsOperationContext());

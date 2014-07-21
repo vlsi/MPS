@@ -16,35 +16,64 @@
 package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 
 import com.intellij.util.ui.ItemRemovable;
-import org.jetbrains.mps.openapi.ui.Modifiable;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem.ModuleType;
+import jetbrains.mps.project.structure.modules.Dependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
+import org.jetbrains.mps.openapi.ui.Modifiable;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class DependTableModel<T> extends AbstractTableModel implements ItemRemovable,Modifiable {
-  protected List<DependenciesTableItem<?>> myTableItems = new ArrayList<DependenciesTableItem<?>>();
+/**
+ * Collection of Dependency objects as content of a table. Dependency is wrapped into DependenciesTableItem
+ * to track additional values (model kind and is re-exportable).
+ * @param <T> WTF?
+ */
+public abstract class DependTableModel<T> extends AbstractTableModel implements ItemRemovable, Modifiable {
+  protected List<DependenciesTableItem> myTableItems = new ArrayList<DependenciesTableItem>();
   protected T myItem;
 
-  public static final String EXPORT_COLUMN_NAME = PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.column.export");
-  private static final String ROLE_COLUMN_NAME = PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.column.scope");
+  private final String myExportColumnName = PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.column.export");
+  private final String myRoleColumnName = PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.column.scope");
 
   public DependTableModel(T item) {
     myItem = item;
     init();
   }
   
-  public void addItem(DependenciesTableItem<?> item) {
-    if(myTableItems.contains(item))
+  public void addItem(DependenciesTableItem item) {
+    if(myTableItems.contains(item)) {
+      // I know it's linear, once proves to take noticeable time, refactor.
       return;
+    }
     myTableItems.add(item);
     fireTableDataChanged();
   }
 
-  public T getItem() {
+  public void addLanguageItem(Dependency dep) {
+    addItem(new DependenciesTableItem(dep).setModuleType(ModuleType.LANGUAGE));
+  }
+
+  public void addGeneratorItem(Dependency dep) {
+    addItem(new DependenciesTableItem(dep).setModuleType(ModuleType.GENERATOR));
+  }
+
+  public void addDevkitItem(Dependency dep) {
+    addItem(new DependenciesTableItem(dep).setModuleType(ModuleType.DEVKIT));
+  }
+
+  public void addSolutionItem(Dependency dep) {
+    addItem(new DependenciesTableItem(dep).setModuleType(ModuleType.SOLUTION));
+  }
+
+  public void addUnsecifiedItem(Dependency dep) {
+    addItem(new DependenciesTableItem(dep).setModuleType(ModuleType.UNSPECIFIED));
+  }
+
+  public T getSource() {
     return myItem;
   }
 
@@ -66,16 +95,16 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
   @Override
   public String getColumnName(int column) {
     if(column == this.getRoleColumnIndex())
-      return ROLE_COLUMN_NAME;
+      return myRoleColumnName;
     if(column == this.getExportColumnIndex())
-      return EXPORT_COLUMN_NAME;
+      return myExportColumnName;
     return "";
   }
 
   @Override
   public Class<?> getColumnClass(int columnIndex) {
     if(columnIndex == this.getItemColumnIndex())
-      return DependenciesTableItem.class;
+      return DependenciesTableItem.class; // @see getValueAt, below
     if(columnIndex == this.getExportColumnIndex())
       return Boolean.class;
     if(columnIndex == this.getRoleColumnIndex())
@@ -89,13 +118,17 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
 
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
-    DependenciesTableItem<?> item = myTableItems.get(rowIndex);
-    if(columnIndex == this.getItemColumnIndex())
-      return item.getItem();
+    final DependenciesTableItem tableItem = myTableItems.get(rowIndex);
+    Dependency item = tableItem.getItem();
+    if(columnIndex == this.getItemColumnIndex()) {
+      // There's ugly hack in MPSPropertiesConfigurable, where CellRenderer(SModuleReference) is installed for DependenciesTableItem.
+      // I'm not aware of a reason for that.
+      return item.getModuleRef();
+    }
     if(columnIndex == this.getRoleColumnIndex())
-      return item.getRole().toString();
-    if(columnIndex == this.getExportColumnIndex() && item.isReExportable()) {
-      return item.isReExport();
+      return item.getScope().toString();
+    if(columnIndex == this.getExportColumnIndex() && tableItem.isReExportable()) {
+      return item.isReexport();
     }
 
     return null;
@@ -103,15 +136,16 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
 
   @Override
   public boolean isCellEditable(int rowIndex, int columnIndex) {
-    final DependenciesTableItem<?> item = myTableItems.get(rowIndex);
-    if(columnIndex == this.getExportColumnIndex())
-      return item != null && item.getRole() == SDependencyScope.DEFAULT;
+    if(columnIndex == this.getExportColumnIndex()) {
+      final DependenciesTableItem item = myTableItems.get(rowIndex);
+      return item != null && item.isReExportable();
+    }
     return false;
   }
 
   @Override
   public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-    final DependenciesTableItem<?> item = myTableItems.get(rowIndex);
+    final DependenciesTableItem item = myTableItems.get(rowIndex);
     if (columnIndex == this.getExportColumnIndex() && aValue instanceof Boolean) {
       item.setReExport((Boolean)aValue);
     }
