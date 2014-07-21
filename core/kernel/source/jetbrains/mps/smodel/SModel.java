@@ -60,6 +60,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -81,7 +82,7 @@ public class SModel implements SModelData {
   private List<SModuleReference> myLanguages = new ArrayList<SModuleReference>();
   private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
 
-  private Map<SLanguageId, Integer> myLanguagesIds = new HashMap<SLanguageId, Integer>();
+  private Map<SLanguageId, Integer> myLanguagesIds = new LinkedHashMap<SLanguageId, Integer>();
 
   private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
