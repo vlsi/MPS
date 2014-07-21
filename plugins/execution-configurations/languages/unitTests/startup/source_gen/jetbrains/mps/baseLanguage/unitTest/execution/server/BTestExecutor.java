@@ -13,17 +13,22 @@ import org.junit.runner.notification.Failure;
 public class BTestExecutor extends AbstractTestExecutor {
   private final String[] myArgs;
   private final CommandOutputStream myOutStream;
+  private final CommandOutputStream myErrStream;
+
   public BTestExecutor(String[] args) {
     myArgs = args;
     myOutStream = new CommandOutputStream(System.out);
+    myErrStream = new CommandOutputStream(System.err);
   }
 
   public void init() {
     System.setOut(new PrintStream(myOutStream));
+    System.setErr(new PrintStream(myErrStream));
   }
 
   public void dispose() {
     System.setOut(myOutStream.getOldStream());
+    System.setErr(myErrStream.getOldStream());
   }
 
   @NotNull
@@ -41,7 +46,6 @@ public class BTestExecutor extends AbstractTestExecutor {
       throw new RuntimeException(e);
     }
   }
-
 
   public static void main(String[] args) throws ClassNotFoundException, IOException {
     BTestExecutor executor = new BTestExecutor(args);

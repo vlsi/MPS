@@ -138,13 +138,6 @@
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6802204119295527946" nodeInfo="in" />
     </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpee.JavaImports" typeId="tpee.6050519299856556786" id="6802204119295527947" nodeInfo="ng">
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="6802204119295527948" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="true" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="pkg" />
-      </node>
-    </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6802204119305916004" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Statements" />
@@ -278,13 +271,6 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6802204119305916055" nodeInfo="in" />
-    </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpee.JavaImports" typeId="tpee.6050519299856556786" id="6802204119305916056" nodeInfo="ng">
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="6802204119305916057" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="true" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="pkg" />
-      </node>
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4190636643601425279" nodeInfo="ig">
@@ -420,13 +406,6 @@
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="4190636643601425330" nodeInfo="in" />
     </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpee.JavaImports" typeId="tpee.6050519299856556786" id="4190636643601425331" nodeInfo="ng">
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="4190636643601425332" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="true" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="pkg" />
-      </node>
-    </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4190636643601563935" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Statements" />
@@ -560,13 +539,6 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="4190636643601563986" nodeInfo="in" />
-    </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpee.JavaImports" typeId="tpee.6050519299856556786" id="4190636643601563987" nodeInfo="ng">
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="4190636643601563988" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="true" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="pkg" />
-      </node>
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2790039039257311059" nodeInfo="ig">
@@ -702,13 +674,6 @@
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="2790039039257311110" nodeInfo="in" />
     </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpee.JavaImports" typeId="tpee.6050519299856556786" id="2790039039257311111" nodeInfo="ng">
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="2790039039257311112" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="true" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="pkg" />
-      </node>
-    </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3181349427684867081" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Statements" />
@@ -842,13 +807,6 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="3181349427684867132" nodeInfo="in" />
-    </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpee.JavaImports" typeId="tpee.6050519299856556786" id="3181349427684867133" nodeInfo="ng">
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="3181349427684867134" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="true" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="pkg" />
-      </node>
     </node>
   </root>
 </model>

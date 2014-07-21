@@ -14,11 +14,13 @@ public class CommandOutputStream extends FilterOutputStream {
     super(out);
     this.myPrintStream = out;
   }
+
   @Override
   public void write(int b) throws IOException {
     this.myLastChar = b;
     this.out.write(b);
   }
+
   @Override
   public void write(byte[] b) throws IOException {
     if (b.length > 0) {
@@ -26,6 +28,7 @@ public class CommandOutputStream extends FilterOutputStream {
     }
     this.out.write(b);
   }
+
   @Override
   public void write(byte[] b, int off, int len) throws IOException {
     int lastIndex = off + len - 1;
@@ -34,6 +37,7 @@ public class CommandOutputStream extends FilterOutputStream {
     }
     this.out.write(b, off, len);
   }
+
   public void writeCommand(String command) {
     if (this.myLastChar != '\n' && this.myLastChar != '\r') {
       this.myPrintStream.println();
@@ -41,6 +45,7 @@ public class CommandOutputStream extends FilterOutputStream {
     this.myPrintStream.println(command);
     this.myLastChar = '\n';
   }
+
   public void flushSafe() {
     try {
       flush();

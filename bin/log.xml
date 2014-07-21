@@ -90,7 +90,6 @@
         <priority value="INFO"/>
         <appender-ref ref="DIALOG"/>
         <appender-ref ref="CONSOLE-WARN"/>
-        <appender-ref ref="CONSOLE-ALL"/>
         <appender-ref ref="FILE"/>
     </root>
 </log4j:configuration>

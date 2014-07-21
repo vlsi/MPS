@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.lang.test.util.TestLightRunState;
+import java.io.PrintStream;
 import jetbrains.mps.lang.test.util.TestLightRunStateEnum;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Request;
@@ -19,15 +20,29 @@ import org.apache.log4j.LogManager;
 
 public class TestLightExecutor extends AbstractTestExecutor {
   private static final int TERMINATION_CODE = 137;
+
+  private final CommandOutputStream myOutStream;
+  private final CommandOutputStream myErrStream;
+
   private final TestEventsDispatcher myDispatcher;
   private final Iterable<? extends ITestNodeWrapper> myNodes;
   private final TestsClassStorage myTestClassStorage = new TestsClassStorage();
   private boolean myReadyFlag = false;
   private final TestLightRunState myTestRunState;
   public TestLightExecutor(TestEventsDispatcher dispatcher, Iterable<? extends ITestNodeWrapper> nodes) {
+    myOutStream = new CommandOutputStream(System.out);
+    myErrStream = new CommandOutputStream(System.err);
     myTestRunState = TestLightRunState.create();
     myDispatcher = dispatcher;
     myNodes = nodes;
+  }
+
+  private void redirectOutput() {
+    CompositeOutputStream newOutStream = new CompositeOutputStream(myOutStream, System.out);
+    System.setOut(new PrintStream(newOutStream));
+
+    CompositeOutputStream newErrStream = new CompositeOutputStream(myErrStream, System.err);
+    System.setErr(new PrintStream(newErrStream));
   }
 
   @Override
@@ -35,7 +50,22 @@ public class TestLightExecutor extends AbstractTestExecutor {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing TestLightExecutor");
     }
+    redirectOutput();
     getRunState().advance(TestLightRunStateEnum.INITIALIZED);
+  }
+
+  @Override
+  public void dispose() {
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Disposing TestLightExecutor");
+    }
+    restoreOutput();
+    getRunState().advance(TestLightRunStateEnum.TERMINATED);
+  }
+
+  private void restoreOutput() {
+    System.setOut(myOutStream.getOldStream());
+    System.setErr(myErrStream.getOldStream());
   }
 
   public void setReady() {
@@ -82,11 +112,6 @@ public class TestLightExecutor extends AbstractTestExecutor {
     AbstractTestExecutor.StoppableRunner currentRunner = this.getCurrentRunner();
     assert currentRunner != null;
     currentRunner.pleaseStop();
-  }
-
-  @Override
-  public void dispose() {
-    getRunState().advance(TestLightRunStateEnum.TERMINATED);
   }
 
   @NotNull
