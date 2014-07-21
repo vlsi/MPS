@@ -604,6 +604,7 @@ public class SModel implements SModelData {
     }
     return myModelDependenciesManager;
   }
+
   private void invalidateModelDepsManager() {
     if (myModelDependenciesManager != null) {
       myModelDependenciesManager.invalidate();
@@ -620,7 +621,7 @@ public class SModel implements SModelData {
       Set<Language> langs = conceptLang.getAllExtendedLanguages();
       langs.add(conceptLang);
 
-      for (Language l : langs){
+      for (Language l : langs) {
         SLanguageId lid = IdHelper.getLanguageId(l);
         if (!myLanguagesIds.containsKey(lid)) {
           res.put(lid, l.getLanguageVersion());
@@ -893,7 +894,9 @@ public class SModel implements SModelData {
   }
 
   private ModuleReference convertLanguageRef(SLanguageId ref) {
-    return new ModuleReference(MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(ref), ModuleId.regular(ref.getId()));
+    SModule module = MPSModuleRepository.getInstance().getModule(IdHelper.getModuleReference(ref));
+    String name = module != null ? module.getModuleName() : MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(ref);
+    return new ModuleReference(name, ModuleId.regular(ref.getId()));
   }
 
   public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
