@@ -188,7 +188,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myModule instanceof Language)
         addTab(new RuntimeTab());
       if (myModule instanceof Generator)
-        addTab(new GeneratorAdvancesTab(new GeneratorDependencyProvider(moduleDependenciesTab)));
+        addTab(new GeneratorAdvancesTab((Generator) myModule, new GeneratorDependencyProvider(moduleDependenciesTab)));
     }
     for (SModuleFacet moduleFacet : myModule.getFacets()) {
       if (!(moduleFacet instanceof ModuleFacetBase))
@@ -951,6 +951,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
   public class GeneratorAdvancesTab extends BaseTab {
 
+    private final Generator myGenerator;
     private final GeneratorDependencyProvider myDepGenerators;
     private GenPrioritiesTableModel myPrioritiesTableModel;
     private JBCheckBox myGenerateTemplates;
@@ -959,9 +960,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private final Map<MappingConfig_AbstractRef, GeneratorPrioritiesTree> myMappings = new java.util.HashMap<MappingConfig_AbstractRef, GeneratorPrioritiesTree>();
     private JBTable myTable;
 
-    public GeneratorAdvancesTab(GeneratorDependencyProvider depGenerators) {
+    public GeneratorAdvancesTab(Generator generator, GeneratorDependencyProvider depGenerators) {
       super(PropertiesBundle.message("mps.properties.module.generator.title"), IdeIcons.DEFAULT_ICON,
         PropertiesBundle.message("mps.properties.module.generator.tip"));
+      myGenerator = generator;
       myDepGenerators = depGenerators;
       init();
     }
@@ -1002,7 +1004,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           if (value instanceof MappingConfig_AbstractRef) {
             MappingConfig_AbstractRef mapping = (MappingConfig_AbstractRef) value;
 
-            myCurrentTree = new GeneratorPrioritiesTree((GeneratorDescriptor) myModuleDescriptor, mapping, column == 0, myDepGenerators.getGenerators());
+            myCurrentTree = new GeneratorPrioritiesTree(myGenerator, mapping, column == 0, myDepGenerators.getGenerators());
             myMappings.put(mapping, myCurrentTree);
 
             CheckedTreeNode rootNode = (CheckedTreeNode) myCurrentTree.getTree().getModel().getRoot();
@@ -1072,7 +1074,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           if (value instanceof MappingConfig_AbstractRef) {
             MappingConfig_AbstractRef mapping = (MappingConfig_AbstractRef) value;
 
-            myCurrentTree = new GeneratorPrioritiesTree((GeneratorDescriptor) myModuleDescriptor, mapping, column == 0, myDepGenerators.getGenerators());
+            myCurrentTree = new GeneratorPrioritiesTree(myGenerator, mapping, column == 0, myDepGenerators.getGenerators());
 
             final DialogWrapper dialogWrapper = new DialogWrapper(ProjectHelper.toIdeaProject(myProject)) {
               {
