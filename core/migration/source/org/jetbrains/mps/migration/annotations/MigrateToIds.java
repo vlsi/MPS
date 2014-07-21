@@ -15,8 +15,6 @@
  */
 package org.jetbrains.mps.migration.annotations;
 
-import com.sun.istack.internal.Nullable;
-
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
