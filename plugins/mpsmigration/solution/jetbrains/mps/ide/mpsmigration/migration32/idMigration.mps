@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:78975c1c-5d20-4b6d-8542-15df2bc9a786(jetbrains.mps.smodel.persistence.def.v9.idMigration)" doNotGenerate="true">
+<model modelUID="r:78975c1c-5d20-4b6d-8542-15df2bc9a786(jetbrains.mps.ide.mpsmigration.migration32.idMigration)" doNotGenerate="true">
   <persistence version="8" />
   <language namespace="a5e4de53-46a3-44da-aab3-68fdf1c34ed0(jetbrains.mps.console.ideCommands)" />
   <language namespace="f26691d2-0def-4c06-aec6-2cb90c4af0a4(jetbrains.mps.console.scripts)" />
