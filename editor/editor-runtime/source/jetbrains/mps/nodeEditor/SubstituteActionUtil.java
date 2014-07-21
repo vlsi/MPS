@@ -164,7 +164,7 @@ public class SubstituteActionUtil {
 
   public static String createText(@NotNull SubstituteAction action, @Nullable String pattern, @NotNull String color) {
     String visibleMatchingText = action.getVisibleMatchingText(pattern);
-    if (pattern == null) {
+    if (pattern == null || visibleMatchingText == null) {
       return visibleMatchingText;
     }
     List<Integer> indexes = getIndexes(action, pattern, visibleMatchingText);
