@@ -163,7 +163,7 @@
   </void>
   <void method="put">
    <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getChildren(java.lang.String)</string>
-   <int>0</int>
+   <int>1</int>
   </void>
   <void method="put">
    <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLinkId)</string>
@@ -642,7 +642,7 @@
     <int>1</int>
   </void>
   <void method="put">
-    <string>public java.lang.Iterable jetbrains.mps.smodel.SNode.getPropertyIds()</string>
+    <string>public java.lang.Iterable&lt;org.jetbrains.mps.openapi.language.SPropertyId&gt; jetbrains.mps.smodel.SNode.getPropertyIds()</string>
     <int>1</int>
   </void>
   <void method="put">
