@@ -521,14 +521,14 @@
     <nodeInfo nodeId="1231693361386" fileName="SimplePropertyAttributeActions.java" startLine="33" startPosition="75" endLine="34" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1231694249737" fileName="SimplePropertyAttributeActions.java" startLine="34" startPosition="61" endLine="35" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1231694405061" fileName="SimplePropertyAttributeActions.java" startLine="35" startPosition="221" endLine="36" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4510086454784748857" fileName="SimplePropertyAttributeActions.java" startLine="36" startPosition="39" endLine="37" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4510086454784748857" fileName="SimplePropertyAttributeActions.java" startLine="36" startPosition="39" endLine="37" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3447504547918701881" fileName="SimplePropertyAttributeActions.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="3447504547918701881" fileName="SimplePropertyAttributeActions.java" startLine="44" startPosition="65" endLine="45" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3447504547918701881" fileName="SimplePropertyAttributeActions.java" startLine="48" startPosition="54" endLine="49" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1231693361386" fileName="SimplePropertyAttributeActions.java" startLine="52" startPosition="75" endLine="53" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1231694249737" fileName="SimplePropertyAttributeActions.java" startLine="53" startPosition="61" endLine="54" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1231694405061" fileName="SimplePropertyAttributeActions.java" startLine="54" startPosition="221" endLine="55" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4510086454784748857" fileName="SimplePropertyAttributeActions.java" startLine="55" startPosition="39" endLine="56" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4510086454784748857" fileName="SimplePropertyAttributeActions.java" startLine="55" startPosition="39" endLine="56" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3447504547918701881" fileName="SimplePropertyAttributeActions.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimplePropertyAttributeActions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="3447504547918701881" fileName="SimplePropertyAttributeActions.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="3447504547918701881" fileName="SimplePropertyAttributeActions.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimplePropertyAttributeActions_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -558,11 +558,11 @@
       <varInfo nodeId="3447504547918701881" varName="editorCell" />
       <varInfo nodeId="3447504547918701881" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3447504547918702510" fileName="SimplePropertyAttributeActions.java" startLine="33" startPosition="75" endLine="37" endPosition="154">
+    <scopeInfo nodeId="3447504547918702510" fileName="SimplePropertyAttributeActions.java" startLine="33" startPosition="75" endLine="37" endPosition="160">
       <varInfo nodeId="1231693361387" varName="attributedNode" />
       <varInfo nodeId="1231694249738" varName="propertyDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="3447504547918702510" fileName="SimplePropertyAttributeActions.java" startLine="52" startPosition="75" endLine="56" endPosition="154">
+    <scopeInfo nodeId="3447504547918702510" fileName="SimplePropertyAttributeActions.java" startLine="52" startPosition="75" endLine="56" endPosition="160">
       <varInfo nodeId="1231693361387" varName="attributedNode" />
       <varInfo nodeId="1231694249738" varName="propertyDeclaration" />
     </scopeInfo>
