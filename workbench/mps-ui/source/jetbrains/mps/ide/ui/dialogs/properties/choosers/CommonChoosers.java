@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,20 +15,12 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.choosers;
 
-import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.IdeFrame;
-import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.awt.Component;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class CommonChoosers {
@@ -38,14 +30,6 @@ public class CommonChoosers {
     ModelChooserDialog dialog = new ModelChooserDialog(project, models, nonProjectModels, multiSelection);
     dialog.show();
     return dialog.getResult();
-  }
-
-  private static List<SModuleReference> showDialogModuleChooser_internal(Project project, String entityString, final Collection<? extends SModuleReference> modules,
-                                                                        @Nullable Collection<? extends SModuleReference> nonProjectModules,
-                                                                        boolean multiSelection) {
-    ModuleChooserDialog dialog = new ModuleChooserDialog(project, modules, nonProjectModules, entityString, multiSelection);
-    dialog.show();
-    return new ArrayList<SModuleReference>(dialog.getResult());
   }
 
   public static List<SModelReference> showDialogModelCollectionChooser(Project project, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
@@ -59,12 +43,15 @@ public class CommonChoosers {
   }
 
   public static SModuleReference showDialogModuleChooser(Project project, String entityString, List<? extends SModuleReference> modules, @Nullable List<? extends SModuleReference> nonProjectModules) {
-    List<SModuleReference> result = showDialogModuleChooser_internal(project,entityString, modules, nonProjectModules, false);
-    if (result == null || result.isEmpty()) return null;
-    return result.get(0);
+    ModuleChooserDialog dialog = new ModuleChooserDialog(project, modules, nonProjectModules, "Choose " + entityString, false);
+    dialog.show();
+    List<SModuleReference> result = dialog.getResult();
+    return result.isEmpty() ? null : result.get(0);
   }
 
-  public static List<SModuleReference> showDialogModuleCollectionChooser(Project project, String entityString, List<SModuleReference> modules, @Nullable List<SModuleReference> nonProjectModules) {
-    return showDialogModuleChooser_internal(project, entityString, modules, nonProjectModules, true);
+  public static List<SModuleReference> showModuleSetChooser(jetbrains.mps.project.Project mpsProject, String title, List<SModuleReference> modules) {
+    ModuleChooserDialog dialog = new ModuleChooserDialog(ProjectHelper.toIdeaProject(mpsProject), modules, null, title, true);
+    dialog.show();
+    return dialog.getResult();
   }
 }

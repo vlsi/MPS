@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,8 +43,11 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleCollector;
+import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleInstanceCondition;
+import jetbrains.mps.ide.ui.dialogs.properties.input.VisibleModuleCondition;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyCellState;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModelTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
@@ -58,9 +61,12 @@ import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ComputeRunnable;
+import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
@@ -171,8 +177,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     public ModelDependenciesComponent() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.title"), General.Dependencies,
-          PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.tip"));
+      super(PropertiesBundle.message("mps.properties.dependencies.title"), General.Dependencies,
+          PropertiesBundle.message("mps.properties.dependencies.tip"));
       myImportedModels = new ModelImportedModelsTableModel(myModelProperties);
       init();
     }
@@ -488,8 +494,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     private ModelsLangEngagedOnGenTM myLangEngagedOnGenTM;
 
     public InfoTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.model.infotab.title"), IdeIcons.DEFAULT_ICON,
-          PropertiesBundle.message("mps.properties.configurable.model.infotab.tip"));
+      super(PropertiesBundle.message("mps.properties.model.info.title"), IdeIcons.DEFAULT_ICON,
+          PropertiesBundle.message("mps.properties.model.info.tip"));
       myIsDefSModelDescr = myInPlugin && myModelDescriptor instanceof DefaultSModelDescriptor;
       init();
     }
@@ -502,13 +508,13 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       final JPanel panel = new JPanel();
       panel.setLayout(new GridLayoutManager(rowsCount, 1, INSETS, -1, -1));
 
-      myDoNotGenerateCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.model.infotab.checkboxDNG"),
+      myDoNotGenerateCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.model.info.checkboxDNG"),
           myModelProperties.isDoNotGenerate());
       panel.add(myDoNotGenerateCheckBox, new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
           GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       if (myIsDefSModelDescr) {
-        myGenerateIntoModelFolderCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.model.infotab.checkboxGIMF"),
+        myGenerateIntoModelFolderCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.model.info.checkboxGIMF"),
             myModelProperties.isGenerateIntoModelFolder());
         panel.add(myGenerateIntoModelFolderCheckBox,
             new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
@@ -516,7 +522,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
                 0, false));
       }
 
-      panel.add(new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.filepathlabel")),
+      panel.add(new JBLabel(PropertiesBundle.message("mps.properties.common.filepathlabel")),
           new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
               GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
@@ -551,9 +557,14 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<SModuleReference> list = (new LanguageChooser()).compute();
-          for (SModuleReference reference : list)
+          Iterable<SModule> modules = new ConditionalIterable<SModule>(getProjectModules(), new ModuleInstanceCondition(Language.class));
+          modules = new ConditionalIterable<SModule>(modules, new VisibleModuleCondition());
+          ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<List<SModuleReference>>(new ModuleCollector(modules));
+          myProject.getModelAccess().runReadAction(c);
+          List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, "Choose languages", c.getResult());
+          for (SModuleReference reference : list) {
             myLangEngagedOnGenTM.addItem(reference);
+          }
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override

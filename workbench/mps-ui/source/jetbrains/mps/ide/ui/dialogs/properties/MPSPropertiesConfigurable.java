@@ -42,17 +42,26 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageOrDevKitChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
+import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleCollector;
+import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleInstanceCondition;
+import jetbrains.mps.ide.ui.dialogs.properties.input.VisibleModuleCondition;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItemRole;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.ComputeRunnable;
+import jetbrains.mps.util.ConditionalIterable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 
@@ -210,6 +219,14 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
    */
   protected void save() {}
 
+  /**
+   * FIXME [SRepository] ProjectRepository.getModules() gives empty list of modules at the moment,
+   * and I have no other way to access all visible modules but to use global MPSModuleRepository
+   */
+  protected final Iterable<SModule> getProjectModules() {
+    //return myProject.getRepository().getModules();
+    return MPSModuleRepository.getInstance().getModules();
+  }
   public abstract class CommonTab extends BaseTab {
 
     protected JTextField myTextFieldName;
@@ -451,19 +468,18 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
             }
           });
 
-      usedLangsTable.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-        }
-      });
-
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(usedLangsTable);
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<SModuleReference> list = (new LanguageOrDevKitChooser()).compute();
-          for (SModuleReference reference : list)
+          Iterable<SModule> modules = new ConditionalIterable<SModule>(getProjectModules(), new ModuleInstanceCondition(Language.class, DevKit.class));
+          modules = new ConditionalIterable<SModule>(modules, new VisibleModuleCondition());
+          ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<List<SModuleReference>>(new ModuleCollector(modules));
+          myProject.getModelAccess().runReadAction(c);
+          List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, "Choose Language or DevKit", c.getResult());
+          for (SModuleReference reference : list) {
             myUsedLangsTableModel.addItem(reference);
+          }
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override

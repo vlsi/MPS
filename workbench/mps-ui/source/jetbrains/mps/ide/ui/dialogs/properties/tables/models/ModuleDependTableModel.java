@@ -54,7 +54,8 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
             } else if(module instanceof Generator) {
               addGeneratorItem(dependency);
             } else {
-              addUnsecifiedItem(dependency);
+              // XXX why not checked for Solution?
+              addUnspecifiedItem(dependency);
             }
           }
         }
