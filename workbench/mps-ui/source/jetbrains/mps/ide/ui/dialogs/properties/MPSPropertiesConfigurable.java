@@ -77,9 +77,8 @@ import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import java.awt.Dimension;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -225,7 +224,16 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
    */
   protected final Iterable<SModule> getProjectModules() {
     //return myProject.getRepository().getModules();
-    return MPSModuleRepository.getInstance().getModules();
+
+    // wrap into Iterable to ensure lazy construction of module sequence.
+    // getModules operation requires read access, but I don't see a reason to
+    // move creation of conditional sequence into a read runnable.
+    return new Iterable<SModule>() {
+      @Override
+      public Iterator<SModule> iterator() {
+        return MPSModuleRepository.getInstance().getModules().iterator();
+      }
+    };
   }
   public abstract class CommonTab extends BaseTab {
 
