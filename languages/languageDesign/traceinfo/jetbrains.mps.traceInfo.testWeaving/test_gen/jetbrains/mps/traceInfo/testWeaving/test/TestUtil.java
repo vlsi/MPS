@@ -19,7 +19,7 @@ public class TestUtil {
   }
   public static void testWeave(final SNode root, List<SNode> nodes, int startLine) {
     final Wrappers._int line = new Wrappers._int(startLine);
-    final int delta = 4;
+    final int delta = 3;
     ListSequence.fromList(nodes).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         {
@@ -33,7 +33,7 @@ public class TestUtil {
   }
   public static void testWeaveMany(final SNode root, List<SNode> nodes, int startLine) {
     final Wrappers._int line = new Wrappers._int(startLine);
-    final int delta = 4;
+    final int delta = 3;
     final int howMany = 3;
     ListSequence.fromList(nodes).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {

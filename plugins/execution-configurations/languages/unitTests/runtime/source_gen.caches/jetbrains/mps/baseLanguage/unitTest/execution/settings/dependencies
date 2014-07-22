@@ -62,15 +62,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="com.intellij.ui.components.JBPanel" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitJavaEditorSynchronizer" file="JUnitJavaEditorSynchronizer.java">
-    <classNode dependClassName="com.intellij.ui.components.JBCheckBox" />
-    <classNode dependClassName="java.awt.Component" />
-    <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="java.awt.event.ActionListener" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.Synchronizer" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes" file="JUnitRunTypes.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />

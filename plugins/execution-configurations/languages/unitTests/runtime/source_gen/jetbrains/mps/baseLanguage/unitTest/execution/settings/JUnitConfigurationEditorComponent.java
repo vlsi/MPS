@@ -286,9 +286,10 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   }
 
   private void updateCheckBoxes(JUnitSettings_Configuration configuration) {
-    myLightExecCheckBox.setSelected(configuration.getLightExec());
+    do {
+      myLightExecCheckBox.doClick();
+    } while (myLightExecCheckBox.isSelected() != configuration.getLightExec());
     myReuseCachesCheckBox.setSelected(configuration.getReuseCaches() && !(RunCachesManager.isLocked()));
-    myReuseCachesCheckBox.setEnabled(!(configuration.getLightExec()) && !(RunCachesManager.isLocked()));
   }
 
   public void resetEditorModelWith(final String modelName) {

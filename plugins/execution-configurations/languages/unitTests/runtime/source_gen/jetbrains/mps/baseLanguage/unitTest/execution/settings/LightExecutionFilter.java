@@ -29,7 +29,7 @@ public class LightExecutionFilter implements Filter<ITestNodeWrapper> {
         ListSequence.fromList(seq).addSequence(Sequence.fromIterable(ts).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
             SNode root = SNodeOperations.getContainingRoot(it.getNode());
-            return SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.test.structure.EditorTestCase");
+            return SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.test.structure.EditorTestCase") || SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.test.structure.NodesTestCase");
           }
         }));
       }
