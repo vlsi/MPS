@@ -402,6 +402,10 @@
    <int>2</int>
   </void>
   <void method="put">
+   <string>public java.util.Set&lt;java.lang.String&gt; jetbrains.mps.smodel.SNode.getPropertyNames()</string>
+   <int>2</int>
+  </void>
+  <void method="put">
    <string>public void jetbrains.mps.smodel.SNode.removeUserObject(java.lang.Object)</string>
    <null/>
   </void>
