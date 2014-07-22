@@ -6,7 +6,6 @@ import com.intellij.execution.process.ProcessHandler;
 import java.util.concurrent.Future;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor;
 import java.io.OutputStream;
-import com.intellij.openapi.util.Key;
 
 public class FakeProcessHandler extends ProcessHandler {
   private final Future<?> myFuture;
@@ -50,9 +49,5 @@ public class FakeProcessHandler extends ProcessHandler {
   @Override
   public OutputStream getProcessInput() {
     return null;
-  }
-
-  @Override
-  public void notifyTextAvailable(String string, Key key) {
   }
 }

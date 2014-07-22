@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class TypeToTypeof_Test extends BaseTransformationTest {
@@ -24,9 +22,8 @@ public class TypeToTypeof_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("1234447269499", "1234447864256");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "of");
+      initEditor("1234447269499", "1234447864256");
+      this.typeString("of");
     }
   }
 }

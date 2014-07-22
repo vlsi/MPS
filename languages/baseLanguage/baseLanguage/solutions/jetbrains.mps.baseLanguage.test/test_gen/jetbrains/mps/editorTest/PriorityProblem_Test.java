@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class PriorityProblem_Test extends BaseTransformationTest {
@@ -24,9 +22,8 @@ public class PriorityProblem_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("6778605776625982935", "6778605776625982939");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, ">4+5&&true");
+      initEditor("6778605776625982935", "6778605776625982939");
+      this.typeString(">4+5&&true");
     }
   }
 }

@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import junit.framework.Assert;
@@ -27,13 +25,12 @@ public class TryingToLeftTransformNewExpression_Test extends BaseTransformationT
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("2907839077756812217", "2907839077756812221");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, " ");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
-      Assert.assertTrue(editorComponent.getNodeSubstituteChooser().isVisible());
-      editorComponent.getNodeSubstituteChooser().setVisible(false);
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      initEditor("2907839077756812217", "2907839077756812221");
+      this.typeString(" ");
+      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      Assert.assertTrue(this.getCurrentEditorComponent().getNodeSubstituteChooser().isVisible());
+      this.getCurrentEditorComponent().getNodeSubstituteChooser().setVisible(false);
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
     }
   }
 }

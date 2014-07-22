@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class DeleteIfPossibleMethod_Test extends BaseTransformationTest {
@@ -24,10 +22,9 @@ public class DeleteIfPossibleMethod_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("2707740038604205732", "2707740038604205738");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Backspace_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Backspace_Action");
+      initEditor("2707740038604205732", "2707740038604205738");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
     }
   }
 }

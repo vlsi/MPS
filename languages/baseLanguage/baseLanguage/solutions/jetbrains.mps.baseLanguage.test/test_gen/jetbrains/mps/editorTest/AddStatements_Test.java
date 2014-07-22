@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class AddStatements_Test extends BaseTransformationTest {
@@ -24,11 +22,10 @@ public class AddStatements_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("6007318803034322734", "6007318803034322741");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "System.out.println");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Insert_Action");
-      BaseEditorTestBody.typeString(editorComponent, "System.out.println");
+      initEditor("6007318803034322734", "6007318803034322741");
+      this.typeString("System.out.println");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      this.typeString("System.out.println");
     }
   }
 }

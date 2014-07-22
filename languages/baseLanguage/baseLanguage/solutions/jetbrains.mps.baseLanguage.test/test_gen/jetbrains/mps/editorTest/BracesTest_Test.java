@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class BracesTest_Test extends BaseTransformationTest {
@@ -24,10 +22,9 @@ public class BracesTest_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("8497577741385040369", "3167392541572926816");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Backspace_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      initEditor("8497577741385040369", "3167392541572926816");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
 
     }
   }

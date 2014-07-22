@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test extends BaseTransformationTest {
@@ -24,9 +22,8 @@ public class NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Tes
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("1528454294471625117", "1528454294471625127");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "&");
+      initEditor("1528454294471625117", "1528454294471625127");
+      this.typeString("&");
     }
   }
 }

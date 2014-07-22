@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class LT_PlusExpressionWithCaretOnPlus_Test extends BaseTransformationTest {
@@ -24,9 +22,8 @@ public class LT_PlusExpressionWithCaretOnPlus_Test extends BaseTransformationTes
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("2350996240757299163", "2350996240757331011");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "+3");
+      initEditor("2350996240757299163", "2350996240757331011");
+      this.typeString("+3");
     }
   }
 }

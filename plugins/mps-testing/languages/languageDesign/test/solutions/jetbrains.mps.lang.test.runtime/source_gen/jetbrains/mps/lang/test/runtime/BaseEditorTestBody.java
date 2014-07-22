@@ -5,71 +5,41 @@ package jetbrains.mps.lang.test.runtime;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.impl.DataManagerImpl;
 import jetbrains.mps.openapi.editor.Editor;
-import com.intellij.openapi.command.impl.UndoManagerImpl;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.SwingUtilities;
-import com.intellij.openapi.command.undo.UndoManager;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import com.intellij.openapi.command.impl.CurrentEditorProvider;
-import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.actionSystem.DataContext;
-import java.awt.Component;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import java.awt.KeyboardFocusManager;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.ide.editor.MPSFileNodeEditor;
+import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import java.lang.reflect.InvocationTargetException;
+import java.awt.Component;
 import jetbrains.mps.intentions.IntentionsManager;
 import java.util.Collection;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.intentions.IntentionExecutable;
-import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import jetbrains.mps.ide.editor.MPSFileNodeEditor;
-import com.intellij.openapi.fileEditor.FileEditorManager;
-import java.lang.reflect.InvocationTargetException;
-import java.awt.event.KeyEvent;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ArrayUtils;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.lang.reflect.Method;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import javax.swing.JComponent;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import javax.swing.KeyStroke;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import java.util.Queue;
-import jetbrains.mps.internal.collections.runtime.QueueSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import java.awt.event.MouseEvent;
-import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 
 public abstract class BaseEditorTestBody extends BaseTestBody {
   private static DataManager DATA_MANAGER = new DataManagerImpl();
   public Editor myEditor;
-  private UndoManagerImpl undoManager;
   private SNode myBefore;
   private SNode myResult;
   protected CellReference myStart;
@@ -78,13 +48,13 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   public BaseEditorTestBody() {
   }
 
-  public Editor initEditor(final String before, final String after) throws Exception {
+  protected Editor initEditor(final String before, final String after) throws Exception {
     final Exception[] exception = new Exception[1];
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
       public void run() {
         try {
-          BaseEditorTestBody.this.initEditor_internal(before, after);
+          BaseEditorTestBody.this.doInitEditor(before, after);
         } catch (Exception e) {
           exception[0] = e;
         }
@@ -96,7 +66,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     return this.myEditor;
   }
 
-  private void initEditor_internal(final String before, final String after) throws Exception {
+  private void doInitEditor(final String before, final String after) throws Exception {
     this.addNodeById(before);
     if (!(after.equals(""))) {
       this.addNodeById(after);
@@ -112,34 +82,13 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
           BaseEditorTestBody.this.myResult = BaseEditorTestBody.this.getNodeById(after);
           BaseEditorTestBody.this.myFinish = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(after));
         }
-        BaseEditorTestBody.this.myEditor = BaseEditorTestBody.openEditor(BaseEditorTestBody.this.myProject, BaseEditorTestBody.this.myModel, BaseEditorTestBody.this.myBefore);
-        undoManager = (UndoManagerImpl) UndoManager.getInstance(ProjectHelper.toIdeaProject(myProject));
-        hackUndoManager(BaseEditorTestBody.this.myEditor);
+        BaseEditorTestBody.this.myEditor = BaseEditorTestBody.this.openEditor();
         if (BaseEditorTestBody.this.myEditor.getCurrentEditorComponent() instanceof EditorComponent) {
           EditorComponent component = ((EditorComponent) BaseEditorTestBody.this.myEditor.getCurrentEditorComponent());
           component.addNotify();
           component.validate();
         }
         BaseEditorTestBody.this.myStart.setupSelection(BaseEditorTestBody.this.myEditor);
-      }
-    });
-  }
-
-  private void hackUndoManager(final Editor editor) {
-    undoManager.setEditorProvider(new CurrentEditorProvider() {
-      public FileEditor getCurrentEditor() {
-        DataContext context = DataManager.getInstance().getDataContext((Component) editor.getCurrentEditorComponent());
-        return MPSCommonDataKeys.FILE_EDITOR.getData(context);
-      }
-    });
-  }
-
-  private void unhackUndoManager() {
-    // the dirtiest hack : copy of the platform's FocusBasedCurrentEditorProvider 
-    undoManager.setEditorProvider(new CurrentEditorProvider() {
-      public FileEditor getCurrentEditor() {
-        final Component owner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
-        return PlatformDataKeys.FILE_EDITOR.getData(DataManager.getInstance().getDataContext(owner));
       }
     });
   }
@@ -152,14 +101,14 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     return new CellReference(this.getNodeById(SNodeOperations.getParent(ListSequence.fromList(annotations).first()).getNodeId().toString()), ListSequence.fromList(annotations).first(), this.myMap);
   }
 
-  public void checkAssertion() throws Throwable {
+  protected void checkAssertion() throws Throwable {
     final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
     ModelAccess.instance().flushEventQueue();
     myProject.getModelAccess().executeCommandInEDT(new Runnable() {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
           try {
-            SNode editedNode = ((SNodePointer) BaseEditorTestBody.this.myEditor.getCurrentlyEditedNode()).resolve(MPSModuleRepository.getInstance());
+            SNode editedNode = ((SNodePointer) BaseEditorTestBody.this.myEditor.getCurrentlyEditedNode()).resolve(myProject.getRepository());
             Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
             Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map) map));
             if (BaseEditorTestBody.this.myFinish != null) {
@@ -181,7 +130,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     try {
       this.testMethodImpl();
       this.checkAssertion();
-
     } finally {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
@@ -194,19 +142,51 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
 
   public abstract void testMethodImpl() throws Exception;
 
-  public void invokeIntention(final String name, final Editor editor, final SNode node) throws Exception {
-    SwingUtilities.invokeAndWait(new Runnable() {
-      @Override
+  private Editor openEditor() {
+    assert ModelAccess.instance().isInEDT();
+    MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(this.myBefore);
+    return new MPSFileNodeEditor(ProjectHelper.toIdeaProject(myProject), file).getNodeEditor();
+  }
+
+  private void closeEditor() {
+    assert ModelAccess.instance().isInEDT();
+    FileEditorManager editorManager = FileEditorManager.getInstance(ProjectHelper.toIdeaProject(myProject));
+    editorManager.closeFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(myBefore));
+  }
+
+  protected EditorComponent getEditorComponent() {
+    return (EditorComponent) myEditor.getCurrentEditorComponent();
+  }
+
+  protected void typeString(final String text) throws InterruptedException, InvocationTargetException {
+    new KeyEventsDispatcher(myProject, getEditorComponent()).typeString(text);
+  }
+
+  protected void pressKeys(final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
+    new KeyEventsDispatcher(myProject, getEditorComponent()).pressKeys(keyStrokes);
+  }
+
+  protected Component processMouseEvent(int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
+    return new MouseEventsDispatcher(myProject, getEditorComponent()).processMouseEvent(x, y, eventType);
+  }
+
+  protected void processSecondaryMouseEvent(final Component targetComponent, int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
+    new MouseEventsDispatcher(myProject, getEditorComponent()).processSecondaryMouseEvent(targetComponent, x, y, eventType);
+  }
+
+  protected void invokeIntention(final String name, final SNode node) throws InterruptedException, InvocationTargetException {
+    UndoHelper undoHelper = new UndoHelper(myProject, getEditorComponent());
+    undoHelper.runUndoableInEDTAndWait(new Runnable() {
       public void run() {
         myProject.getModelAccess().executeCommand(new Runnable() {
           public void run() {
-            editor.getEditorContext().select(node);
+            myEditor.getEditorContext().select(node);
             IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
             query.setCurrentNodeOnly(true);
-            Collection<Pair<IntentionExecutable, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, editor.getEditorContext());
+            Collection<Pair<IntentionExecutable, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, myEditor.getEditorContext());
             for (Pair<IntentionExecutable, SNode> intention : intentions) {
               if (intention.o1.getDescriptor().getPersistentStateKey().equals(name)) {
-                intention.o1.execute(intention.o2, editor.getEditorContext());
+                intention.o1.execute(intention.o2, myEditor.getEditorContext());
               }
             }
           }
@@ -215,182 +195,19 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-  public static Editor openEditor(Project project, SModel model, SNode node) {
-    MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
-    return new MPSFileNodeEditor(ProjectHelper.toIdeaProject(project), file).getNodeEditor();
-  }
-
-  public void closeEditor() {
-    unhackUndoManager();
-    FileEditorManager editorManager = FileEditorManager.getInstance(ProjectHelper.toIdeaProject(myProject));
-    editorManager.closeFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(myBefore));
-  }
-
-  public static void typeString(Editor editor, String text) throws InterruptedException, InvocationTargetException {
-    typeString((EditorComponent) editor.getCurrentEditorComponent(), text);
-  }
-
-  public static void typeString(final EditorComponent editorComponent, final String text) throws InterruptedException, InvocationTargetException {
-    Iterable<KeyEvent> events = Sequence.fromIterable(ArrayUtils.fromCharacterArray(text.toCharArray())).select(new ISelector<Character, KeyEvent>() {
-      public KeyEvent select(Character it) {
-        return new KeyEvent(editorComponent, KeyEvent.KEY_TYPED, 0, 0, 0, it);
-      }
-    });
-    processKeyEvents(editorComponent, events);
-  }
-
-  private static void processKeyEvents(final EditorComponent editorComponent, final Iterable<KeyEvent> events) throws InterruptedException, InvocationTargetException {
-    final Component eventTargetComponent = getKeyEventTargetComponent(editorComponent);
-    final Method processKeyEventMethod = getProcessKeyEventMethod(eventTargetComponent);
-    final boolean[] eventsWerePassed = new boolean[]{true};
-    SwingUtilities.invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        if (eventTargetComponent == null) {
-          Sequence.fromIterable(events).visitAll(new IVisitor<KeyEvent>() {
-            public void visit(KeyEvent it) {
-              if (it.getID() == KeyEvent.KEY_TYPED) {
-                editorComponent.processKeyTyped(it);
-              } else if (it.getID() == KeyEvent.KEY_PRESSED) {
-                editorComponent.processKeyPressed(it);
-              } else {
-                editorComponent.processKeyReleased(it);
-              }
-            }
-          });
-        } else {
-          for (KeyEvent event : Sequence.fromIterable(events)) {
-            try {
-              processKeyEventMethod.invoke(eventTargetComponent, event);
-            } catch (InvocationTargetException e) {
-              eventsWerePassed[0] = false;
-            } catch (IllegalAccessException e) {
-              eventsWerePassed[0] = false;
-            }
-          }
-        }
-      }
-    });
-    Assert.assertTrue("Keyboard events were not passed to corresponding component", eventsWerePassed[0]);
-  }
-
-  private static Component getKeyEventTargetComponent(EditorComponent editorComponent) {
-    EditorCell selectedCell = editorComponent.getSelectedCell();
-    if (selectedCell == null) {
-      // TODO: return editorComponent here 
-      return null;
-    }
-    Component eventTarget = getEventTargetComponent(selectedCell, editorComponent);
-    if (eventTarget == editorComponent) {
-      // TODO: return editorComponent here 
-      return null;
-    }
-    while ((eventTarget instanceof JComponent) && ((JComponent) eventTarget).getComponentCount() > 0) {
-      eventTarget = ((JComponent) eventTarget).getComponent(((JComponent) eventTarget).getComponentCount() - 1);
-    }
-    return eventTarget;
-  }
-
-  private static Method getProcessKeyEventMethod(Component eventTargetComponent) {
-    if (eventTargetComponent == null) {
-      return null;
-    }
-    Class<?> clazz = eventTargetComponent.getClass();
-    Method theMethod = null;
-    while (theMethod == null && clazz != null) {
-      try {
-        theMethod = clazz.getDeclaredMethod("processKeyEvent", KeyEvent.class);
-        theMethod.setAccessible(true);
-        return theMethod;
-      } catch (NoSuchMethodException e) {
-      }
-      clazz = clazz.getSuperclass();
-    }
-    Assert.fail("Cannot find processKeyEvent method in " + eventTargetComponent.getClass() + "class");
-    return null;
-  }
-
-  public static void pressKeys(Editor editor, List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
-    BaseEditorTestBody.pressKeys((EditorComponent) editor.getCurrentEditorComponent(), keyStrokes);
-  }
-
-  public static void pressKeys(final EditorComponent editorComponent, final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
-    Iterable<KeyEvent> events = ListSequence.fromList(keyStrokes).translate(new ITranslator2<String, KeyEvent>() {
-      public Iterable<KeyEvent> translate(final String it) {
-        return new Iterable<KeyEvent>() {
-          public Iterator<KeyEvent> iterator() {
-            return new YieldingIterator<KeyEvent>() {
-              private int __CP__ = 0;
-              protected boolean moveToNext() {
-__loop__:
-                do {
-__switch__:
-                  switch (this.__CP__) {
-                    case -1:
-                      assert false : "Internal error";
-                      return false;
-                    case 6:
-                      if (_5_keyChar == KeyEvent.CHAR_UNDEFINED && _4_keyCode != KeyEvent.VK_UNDEFINED && ((_4_keyCode >= KeyEvent.VK_0 && _4_keyCode <= KeyEvent.VK_9) || (_4_keyCode >= KeyEvent.VK_A && _4_keyCode <= KeyEvent.VK_Z))) {
-                        this.__CP__ = 7;
-                        break;
-                      }
-                      this.__CP__ = 8;
-                      break;
-                    case 8:
-                      this.__CP__ = 10;
-                      this.yield(new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, _3_stroke.getModifiers(), _4_keyCode, _5_keyChar));
-                      return true;
-                    case 10:
-                      this.__CP__ = 1;
-                      this.yield(new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, _3_stroke.getModifiers(), _4_keyCode, _5_keyChar));
-                      return true;
-                    case 0:
-                      this._3_stroke = KeyStroke.getKeyStroke(it);
-                      this._4_keyCode = _3_stroke.getKeyCode();
-                      this._5_keyChar = _3_stroke.getKeyChar();
-                      this.__CP__ = 6;
-                      break;
-                    case 7:
-                      // todo it may be worthwhile to also detect other unicode chars from keyCode and supply them into keyChar 
-                      // There is currently no good complete cross-platform code to char conversion utility, it seems 
-                      // KEY_PRESSED events may or may not contain a concrete keyChar. Its presence is definitely not a problem 
-                      _5_keyChar = (char) _4_keyCode;
-                      this.__CP__ = 8;
-                      break;
-                    default:
-                      break __loop__;
-                  }
-                } while (true);
-                return false;
-              }
-              private KeyStroke _3_stroke;
-              private int _4_keyCode;
-              private char _5_keyChar;
-            };
-          }
-        };
-      }
-    });
-    processKeyEvents(editorComponent, events);
-  }
-
-  public static void invokeAction(Editor editor, String actionId) throws InvocationTargetException, InterruptedException {
-    invokeAction((EditorComponent) editor.getCurrentEditorComponent(), actionId);
-  }
-
-  public static void invokeAction(final EditorComponent editorComponent, final String actionId) throws InvocationTargetException, InterruptedException {
-    SwingUtilities.invokeAndWait(new Runnable() {
-      @Override
+  protected void invokeAction(final String actionId) throws InvocationTargetException, InterruptedException {
+    UndoHelper undoHelper = new UndoHelper(myProject, getEditorComponent());
+    undoHelper.runUndoableInEDTAndWait(new Runnable() {
       public void run() {
         AnAction action = ActionManager.getInstance().getAction(actionId);
-        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.MAIN_MENU, BaseEditorTestBody.DATA_MANAGER.getDataContext(editorComponent));
+        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.MAIN_MENU, DATA_MANAGER.getDataContext(getEditorComponent()));
         action.actionPerformed(event);
       }
     });
     flushEventQueueAfterAction();
   }
 
-  protected static void flushEventQueueAfterAction() throws InvocationTargetException, InterruptedException {
+  private static void flushEventQueueAfterAction() throws InvocationTargetException, InterruptedException {
     // flush queue 
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
@@ -407,61 +224,6 @@ __switch__:
         // empty task 
       }
     });
-    ModelAccess.instance().flushEventQueue();
-  }
-
-  public static Component processMouseEvent(final EditorComponent editorComponent, int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
-    assert editorComponent.getRootCell() != null;
-
-    Queue<EditorCell> cellCandidates = QueueSequence.fromQueue(new LinkedList<EditorCell>());
-    QueueSequence.fromQueue(cellCandidates).addLastElement(editorComponent.getRootCell());
-    int absoluteX = x + editorComponent.getRootCell().getX();
-    int absoluteY = y + editorComponent.getRootCell().getY();
-    EditorCell eventTargetCell = null;
-    while (QueueSequence.fromQueue(cellCandidates).isNotEmpty()) {
-      EditorCell nextCell = QueueSequence.fromQueue(cellCandidates).removeFirstElement();
-      if (nextCell.getX() <= absoluteX && nextCell.getY() <= absoluteY && nextCell.getX() + nextCell.getWidth() > absoluteX && nextCell.getY() + nextCell.getHeight() > absoluteY) {
-        eventTargetCell = nextCell;
-        if (nextCell instanceof EditorCell_Collection) {
-          QueueSequence.fromQueue(cellCandidates).addSequence(Sequence.fromIterable((EditorCell_Collection) nextCell));
-        }
-      }
-    }
-    assert eventTargetCell != null;
-
-    final Wrappers._T<Component> targetComponent = new Wrappers._T<Component>(getEventTargetComponent(eventTargetCell, editorComponent));
-    targetComponent.value = targetComponent.value.getComponentAt(x, y);
-    assert targetComponent.value != null;
-
-    final MouseEvent e = createMouseEvent(targetComponent.value, eventType, x, y);
-    SwingUtilities.invokeAndWait(new Runnable() {
-      public void run() {
-        targetComponent.value.dispatchEvent(e);
-      }
-    });
-    return targetComponent.value;
-  }
-
-  public static void processSecondaryMouseEvent(final Component targetComponent, int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
-    final MouseEvent e = createMouseEvent(targetComponent, eventType, x, y);
-    SwingUtilities.invokeAndWait(new Runnable() {
-      public void run() {
-        targetComponent.dispatchEvent(e);
-      }
-    });
-  }
-
-  private static JComponent getEventTargetComponent(EditorCell currentCell, EditorComponent editorComponent) {
-    while (currentCell != null) {
-      if (currentCell instanceof EditorCell_WithComponent) {
-        return ((EditorCell_WithComponent) currentCell).getComponent();
-      }
-      currentCell = currentCell.getParent();
-    }
-    return editorComponent;
-  }
-
-  private static MouseEvent createMouseEvent(Component targetComponent, int id, int x, int y) {
-    return new MouseEvent(targetComponent, id, System.currentTimeMillis(), 0, x, y, x, y, 1, false, MouseEvent.BUTTON1);
+    // <node> 
   }
 }

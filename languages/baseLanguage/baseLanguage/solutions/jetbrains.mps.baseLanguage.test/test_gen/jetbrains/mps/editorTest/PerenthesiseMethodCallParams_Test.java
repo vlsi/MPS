@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class PerenthesiseMethodCallParams_Test extends BaseTransformationTest {
@@ -24,23 +22,22 @@ public class PerenthesiseMethodCallParams_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("341917192555009729", "341917192555031992");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("341917192555009729", "341917192555031992");
       for (int i = 0; i < 17; i++) {
-        BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
+        this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
       }
-      BaseEditorTestBody.typeString(editorComponent, "(");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      BaseEditorTestBody.typeString(editorComponent, ")");
+      this.typeString("(");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      this.typeString(")");
     }
   }
 }

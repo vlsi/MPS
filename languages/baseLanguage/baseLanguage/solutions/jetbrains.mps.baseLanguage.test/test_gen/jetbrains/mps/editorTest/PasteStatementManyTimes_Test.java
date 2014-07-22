@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class PasteStatementManyTimes_Test extends BaseTransformationTest {
@@ -24,12 +22,11 @@ public class PasteStatementManyTimes_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("8030715741824220900", "8030715741824220911");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
-      BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
-      BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
-      BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
+      initEditor("8030715741824220900", "8030715741824220911");
+      this.invokeAction("$Copy");
+      this.invokeAction("$Paste");
+      this.invokeAction("$Paste");
+      this.invokeAction("$Paste");
     }
   }
 }

@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class LT_PostfixIncrementExpression_with_PrefixIncrement_Test extends BaseTransformationTest {
@@ -24,9 +22,8 @@ public class LT_PostfixIncrementExpression_with_PrefixIncrement_Test extends Bas
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("4507831107787893760", "4507831107787903379");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "++");
+      initEditor("4507831107787893760", "4507831107787903379");
+      this.typeString("++");
     }
   }
 }

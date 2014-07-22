@@ -7,7 +7,6 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class MovingNode_Test extends BaseTransformationTest {
@@ -24,10 +23,9 @@ public class MovingNode_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("1452412866770394613", "1452412866770394617");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      final Editor editorVar = editor;
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
+      initEditor("1452412866770394613", "1452412866770394617");
+      final Editor editorVar = this.myEditor;
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
     }
   }
 }

@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class MoveOutOfTheBlock_Test extends BaseTransformationTest {
@@ -24,12 +22,11 @@ public class MoveOutOfTheBlock_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("6231723267717086110", "6231723267717188957");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
+      initEditor("6231723267717086110", "6231723267717188957");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
     }
   }
 }

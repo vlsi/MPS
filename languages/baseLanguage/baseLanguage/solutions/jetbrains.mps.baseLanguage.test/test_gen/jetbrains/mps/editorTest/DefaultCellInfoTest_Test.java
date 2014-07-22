@@ -6,9 +6,8 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.util.Condition;
@@ -29,9 +28,8 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("5560058483159205760", "5560058483159208304");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      IOperationContext operationContext = editor.getCurrentEditorComponent().getOperationContext();
+      initEditor("5560058483159205760", "5560058483159208304");
+      IOperationContext operationContext = this.myEditor.getCurrentEditorComponent().getOperationContext();
       EditorComponent inspector = operationContext.getComponent(InspectorTool.class).getInspector();
       EditorCell editorCell = inspector.getRootCell().getFirstLeaf(new Condition<EditorCell>() {
         @Override
@@ -40,7 +38,7 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
         }
       });
       inspector.getSelectionManager().setSelection(editorCell);
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
     }
   }
 }

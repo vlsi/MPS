@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.lang.test.util.TestLightRunState;
-import java.io.PrintStream;
 import jetbrains.mps.lang.test.util.TestLightRunStateEnum;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Request;
@@ -38,11 +37,12 @@ public class TestLightExecutor extends AbstractTestExecutor {
   }
 
   private void redirectOutput() {
-    CompositeOutputStream newOutStream = new CompositeOutputStream(myOutStream, System.out);
-    System.setOut(new PrintStream(newOutStream));
+    // <node> 
+    // <node> 
+    System.out.println("FUCK");
 
-    CompositeOutputStream newErrStream = new CompositeOutputStream(myErrStream, System.err);
-    System.setErr(new PrintStream(newErrStream));
+    // <node> 
+    // <node> 
   }
 
   @Override
@@ -50,7 +50,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing TestLightExecutor");
     }
-    redirectOutput();
+    // <node> 
     getRunState().advance(TestLightRunStateEnum.INITIALIZED);
   }
 
@@ -59,7 +59,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
     if (LOG.isInfoEnabled()) {
       LOG.info("Disposing TestLightExecutor");
     }
-    restoreOutput();
+    // <node> 
     getRunState().advance(TestLightRunStateEnum.TERMINATED);
   }
 

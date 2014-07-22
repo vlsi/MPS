@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class UndoSustitutionOfExpressionWithIntContant_Test extends BaseTransformationTest {
@@ -24,11 +22,10 @@ public class UndoSustitutionOfExpressionWithIntContant_Test extends BaseTransfor
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("1954244792706921827", "9094339164685417440");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "1234");
-      BaseEditorTestBody.invokeAction(editorComponent, "$Undo");
-      BaseEditorTestBody.invokeAction(editorComponent, "$Undo");
+      initEditor("1954244792706921827", "9094339164685417440");
+      this.typeString("1234");
+      this.invokeAction("$Undo");
+      this.invokeAction("$Undo");
 
 
     }

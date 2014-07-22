@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class PasteTextToLabelStart_Test extends BaseTransformationTest {
@@ -24,16 +22,15 @@ public class PasteTextToLabelStart_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("7591654183801452940", "7591654183801452949");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.End_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
+      initEditor("7591654183801452940", "7591654183801452949");
+      this.invokeAction("$Copy");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.End_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      this.invokeAction("$Paste");
     }
   }
 }

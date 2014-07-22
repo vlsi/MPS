@@ -271,10 +271,8 @@
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcessHandler" file="FakeProcessHandler.java">
-    <classNode dependClassName="com.intellij.openapi.util.Key" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.concurrent.Future" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor" />
     <classNode extendsClassName="com.intellij.execution.process.ProcessHandler" />

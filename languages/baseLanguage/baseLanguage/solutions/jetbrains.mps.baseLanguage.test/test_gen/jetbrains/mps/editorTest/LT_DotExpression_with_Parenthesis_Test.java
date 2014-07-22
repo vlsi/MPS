@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class LT_DotExpression_with_Parenthesis_Test extends BaseTransformationTest {
@@ -24,13 +22,12 @@ public class LT_DotExpression_with_Parenthesis_Test extends BaseTransformationTe
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("6042072087468737362", "6042072087468737385");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "(");
+      initEditor("6042072087468737362", "6042072087468737385");
+      this.typeString("(");
       for (int i = 0; i < 12; i++) {
-        BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
+        this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
       }
-      BaseEditorTestBody.typeString(editorComponent, ")");
+      this.typeString(")");
     }
   }
 }

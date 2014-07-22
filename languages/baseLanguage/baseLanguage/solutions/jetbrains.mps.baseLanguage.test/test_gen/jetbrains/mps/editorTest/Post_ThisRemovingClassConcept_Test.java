@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -26,15 +24,14 @@ public class Post_ThisRemovingClassConcept_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("2671731496587878891", "2671731496587878925");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveUp_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveUp_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveUp_Action");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " HOME"));
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Insert_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
+      initEditor("2671731496587878891", "2671731496587878925");
+      this.invokeAction("$Copy");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " HOME"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      this.invokeAction("$Paste");
     }
   }
 }
