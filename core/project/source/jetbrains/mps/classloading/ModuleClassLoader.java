@@ -168,10 +168,7 @@ public class ModuleClassLoader extends ClassLoader {
       }
     }
 
-    boolean contains = getDependencyClassLoaders().contains(getParent());
-    if (!contains) throw new ClassNotFoundException(name);
-
-    return loadFromParent(name);
+    return getDependencyClassLoaders().contains(getParent()) ? null : loadFromParent(name);
   }
 
   @Override
