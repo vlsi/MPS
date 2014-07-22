@@ -17,6 +17,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import java.util.Collection;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -121,6 +122,9 @@ public class ModuleDescriptorPersistence {
             result_dxyzb6_a0a0a0a0a0a4.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a4);
             final boolean result_dxyzb6_a1a0a0a0a0a0a4 = XmlUtil.booleanWithDefault(d, "reexport", true);
             result_dxyzb6_a0a0a0a0a0a4.setReexport(result_dxyzb6_a1a0a0a0a0a0a4);
+            SDependencyScope s = SDependencyScope.fromIdentity(d.getAttributeValue("scope"));
+            final SDependencyScope result_dxyzb6_a3a0a0a0a0a0a4 = (s == null ? SDependencyScope.DEFAULT : s);
+            result_dxyzb6_a0a0a0a0a0a4.setScope(result_dxyzb6_a3a0a0a0a0a0a4);
             return result_dxyzb6_a0a0a0a0a0a4;
           }
         }.invoke();
@@ -130,9 +134,19 @@ public class ModuleDescriptorPersistence {
 
   private static void saveDependencyList(Element result, Collection<Dependency> dependencies) {
     for (Dependency md : CollectionSequence.fromCollection(dependencies)) {
-      XmlUtil.tagWithAttributeAndText(result, "dependency", "reexport", Boolean.toString(md.isReexport()), md.getModuleRef().toString());
+      Element child = new Element("dependency");
+      child.setAttribute("reexport", Boolean.toString(md.isReexport()));
+      child.setText(md.getModuleRef().toString());
+      if (md.getScope() != SDependencyScope.DEFAULT) {
+        // the only reason not to serialize DEFIAULT for now is to avoid extra diff with existing descriptors meanwhile 
+        // Once there's migration action, it might be reasonable to serialize each scope 
+        child.setAttribute("scope", md.getScope().identify());
+      }
+      result.addContent(child);
     }
   }
+
+
 
   public static ModelRootDescriptor createDescriptor(String type, Memento m, @Nullable String moduleContentRoot, ModelRootDescriptor[] cache) {
     if (type != null) {
