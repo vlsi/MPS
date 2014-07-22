@@ -69,7 +69,7 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
     addItem(new DependenciesTableItem(dep).setModuleType(ModuleType.SOLUTION));
   }
 
-  public void addUnsecifiedItem(Dependency dep) {
+  public void addUnspecifiedItem(Dependency dep) {
     addItem(new DependenciesTableItem(dep).setModuleType(ModuleType.UNSPECIFIED));
   }
 

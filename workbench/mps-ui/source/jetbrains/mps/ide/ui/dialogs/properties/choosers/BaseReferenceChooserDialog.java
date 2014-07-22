@@ -15,16 +15,13 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.choosers;
 
-import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.MultiElementsCallback;
-import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
-import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
@@ -52,16 +49,6 @@ public abstract class BaseReferenceChooserDialog<T> extends DialogWrapper {
     doInit(set1, set2);
 
     init();
-  }
-
-  /**
-   * @deprecated setTitle("Choose " + entityString) ?! ORLY?!
-   * Will be removed in a few days.
-   */
-  @Deprecated
-  BaseReferenceChooserDialog(Project project, Collection<? extends T> modules, @Nullable Collection<? extends T> nonProjectModules, String entityString, boolean multiSelection) {
-    this(project, modules, nonProjectModules, multiSelection);
-    setTitle("Choose " + entityString);
   }
 
   private void doInit(final Collection<? extends T> options, Collection<? extends T> nonProjectLanguages) {

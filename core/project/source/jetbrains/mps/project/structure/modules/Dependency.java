@@ -37,8 +37,7 @@ public class Dependency {
   }
 
   public Dependency(SModuleReference ref, boolean reexport) {
-    this(ref, SDependencyScope.DEFAULT);
-    myReexport = reexport;
+    this(ref, SDependencyScope.DEFAULT, reexport);
   }
 
   public Dependency(@NotNull SModuleReference ref, @NotNull SDependencyScope scope, boolean reexport) {
@@ -104,11 +103,13 @@ public class Dependency {
     stream.writeByte(0x75);
     stream.writeModuleReference(myModuleRef);
     stream.writeBoolean(myReexport);
+    stream.writeByte(myScope.ordinal());
   }
 
   public void load(ModelInputStream stream) throws IOException {
     if (stream.readByte() != 0x75) throw new IOException("bad stream: no dependency start marker");
     myModuleRef = stream.readModuleReference();
     myReexport = stream.readBoolean();
+    myScope = SDependencyScope.values()[stream.readByte()];
   }
 }

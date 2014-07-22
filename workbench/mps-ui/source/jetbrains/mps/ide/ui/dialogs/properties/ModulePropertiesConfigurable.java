@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,13 +60,13 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.DependencyChooser;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.LDSChooser;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.MappingRuleCreator;
+import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor;
 import jetbrains.mps.ide.ui.dialogs.properties.genpriorities.GeneratorPrioritiesTree;
+import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleCollector;
+import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleInstanceCondition;
+import jetbrains.mps.ide.ui.dialogs.properties.input.VisibleModuleCondition;
 import jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyCellState;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModelTableCellRender;
@@ -103,6 +103,8 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.ComputeRunnable;
+import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
@@ -345,54 +347,44 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected AnActionButtonRunnable getAnActionButtonRunnable() {
-      if (myModule instanceof Language || myModule instanceof Solution || myModule instanceof Generator) {
-        return new AnActionButtonRunnable() {
-          @Override
-          public void run(AnActionButton anActionButton) {
-            final List<Dependency> list = (new DependencyChooser()).compute();
-            ModelAccess.instance().runReadAction(new Runnable() {
-              @Override
-              public void run() {
-                for (Dependency dependency : list) {
-                  SModuleReference moduleReference = dependency.getModuleRef();
-                  final SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName());
-                  if (module instanceof Language) {
-                    myDependTableModel.addLanguageItem(dependency);
-                  } else if (module instanceof Generator) {
-                    myDependTableModel.addGeneratorItem(dependency);
-                  } else {
-                    myDependTableModel.addUnsecifiedItem(dependency);
-                  }
-                }
-              }
-            });
-          }
-        };
-      } else if (myModule instanceof DevKit) {
-        return new AnActionButtonRunnable() {
-          @Override
-          public void run(AnActionButton anActionButton) {
-            final List<SModuleReference> list = (new LDSChooser()).compute();
-            ModelAccess.instance().runReadAction(new Runnable() {
-              @Override
-              public void run() {
-                for (SModuleReference moduleReference : list) {
-                  final SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName());
-                  if (module instanceof Language)
-                    myDependTableModel.addLanguageItem(new Dependency(moduleReference, SDependencyScope.EXTENDS));
-                  else if (module instanceof DevKit)
-                    myDependTableModel.addDevkitItem(new Dependency(moduleReference, SDependencyScope.EXTENDS));
-                  else if (module instanceof Solution)
-                    myDependTableModel.addSolutionItem(new Dependency(moduleReference, SDependencyScope.EXTENDS));
-                }
-              }
-            });
-          }
-        };
-      }
       return new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
+          final boolean isDevkit = myModule instanceof DevKit;
+          Iterable<SModule> selectionSet = getProjectModules();
+          if (isDevkit) {
+            selectionSet = new ConditionalIterable<SModule>(selectionSet, new VisibleModuleCondition());
+          }
+          ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<List<SModuleReference>>(new ModuleCollector(selectionSet));
+          myProject.getModelAccess().runReadAction(c);
+          final String dialogTitle = isDevkit ? "Choose DevKit contents" : "Choose modules";
+          final List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, dialogTitle, c.getResult());
+          if (list.isEmpty()) {
+            return;
+          }
+          myProject.getModelAccess().runReadAction(new Runnable() {
+            @Override
+            public void run() {
+              for (SModuleReference moduleReference : list) {
+                final SModule module = moduleReference.resolve(MPSModuleRepository.getInstance());
+                final Dependency dep;
+                if (isDevkit) {
+                  dep = new Dependency(moduleReference, SDependencyScope.EXTENDS);
+                } else {
+                  dep = new Dependency(moduleReference, SDependencyScope.DEFAULT, false);
+                }
+                if (module instanceof Language) {
+                  myDependTableModel.addLanguageItem(dep);
+                } else if (module instanceof Generator) {
+                  myDependTableModel.addGeneratorItem(dep);
+                } else if (module instanceof  Solution) {
+                  myDependTableModel.addSolutionItem(dep);
+                } else {
+                  myDependTableModel.addUnspecifiedItem(dep);
+                }
+              } // foreach moduleReference
+            }
+          });
         }
       };
     }
@@ -490,7 +482,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       private List getItemsForCell(int row, int column) {
         List<SDependencyScope> scopes = new ArrayList<SDependencyScope>(Arrays.asList(SDependencyScope.DEFAULT));
         if (isLangToLang(row) || isGenToGen(row)) {
-          scopes.addAll(Arrays.asList(SDependencyScope.EXTENDS));
+          scopes.add(SDependencyScope.EXTENDS);
+        }
+        if (isGenToGen(row)) {
+          // DESIGN dependencies between generators allows use of referenced generators in priority rules without
+          // imposing any run-time dependency between generators.
+          scopes.add(SDependencyScope.DESIGN);
         }
         return scopes;
       }
@@ -544,9 +541,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<SModuleReference> list = (new SolutionChooser()).compute();
-          for (SModuleReference reference : list)
+          Iterable<SModule> modules = new ConditionalIterable<SModule>(getProjectModules(), new ModuleInstanceCondition(Solution.class));
+          modules = new ConditionalIterable<SModule>(modules, new VisibleModuleCondition());
+          ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<List<SModuleReference>>(new ModuleCollector(modules));
+          myProject.getModelAccess().runReadAction(c);
+          List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, "Choose solutions", c.getResult());
+          for (SModuleReference reference : list) {
             myRuntimeTableModel.addItem(reference);
+          }
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override
@@ -941,7 +943,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     Set<SModuleReference> getGenerators() {
       final HashSet<SModuleReference> depGenerators = new LinkedHashSet<SModuleReference>();
       for (DependenciesTableItem dependencyItem : myDependenciesTab.getActualDependencies()) {
-        if(dependencyItem.getModuleType() == ModuleType.GENERATOR && dependencyItem.getItem().getScope() == SDependencyScope.EXTENDS) {
+        if(dependencyItem.getModuleType() == ModuleType.GENERATOR) {
           depGenerators.add(dependencyItem.getItem().getModuleRef());
         }
       }
@@ -1149,7 +1151,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          myPrioritiesTableModel.addItem(new MappingRuleCreator().compute());
+          myPrioritiesTableModel.addItem(new MappingPriorityRule());
           myPrioritiesTableModel.fireTableDataChanged();
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
