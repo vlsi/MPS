@@ -59,7 +59,6 @@ public class WorkbenchModelAccess extends ModelAccess {
   public static final int WAIT_FOR_WRITE_LOCK_MILLIS = 200;
   private final AtomicInteger myWritesScheduled = new AtomicInteger();
   private EDTExecutor myEDTExecutor = new EDTExecutor(this);
-  private Set<Thread> myIndexingThreads = new ConcurrentHashSet<Thread>();
 
   // changed only in EDT
   private volatile boolean myDistributedLocksMode = false;
@@ -566,18 +565,6 @@ public class WorkbenchModelAccess extends ModelAccess {
     // TODO remove this method
     if (!canRead() /* && !myIndexingThreads.contains(Thread.currentThread())*/) {
       throw new IllegalModelAccessError("You can read model only inside read actions");
-    }
-  }
-
-  @Override
-  public void runIndexing(Runnable r) {
-    boolean needToRemove = myIndexingThreads.add(Thread.currentThread());
-    try {
-      r.run();
-    } finally {
-      if (needToRemove) {
-        myIndexingThreads.remove(Thread.currentThread());
-      }
     }
   }
 

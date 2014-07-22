@@ -51,8 +51,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.util.Base64Converter;
 import jetbrains.mps.persistence.PersistenceUtil;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -300,7 +300,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         try {
-          result.value = (myModel == null ? null : PersistenceUtil.saveModel(myModel, MPSExtentions.MODEL));
+          result.value = (myModel == null ? null : Base64Converter.encode(PersistenceUtil.saveBinaryModel(myModel)));
         } catch (Exception e) {
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Error on console model saving", e);
@@ -482,7 +482,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   protected SModel loadHistoryModel(String state) {
     if (state != null) {
       try {
-        final Wrappers._T<SModel> loadedModel = new Wrappers._T<SModel>(PersistenceUtil.loadModel(state, MPSExtentions.MODEL));
+        final Wrappers._T<SModel> loadedModel = new Wrappers._T<SModel>(PersistenceUtil.loadBinaryModel(Base64Converter.decode(state.getBytes())));
         ListSequence.fromList(SModelOperations.getNodes(loadedModel.value, null)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return ConceptRegistry.getInstance().getConceptDescriptor(it.getConcept().getQualifiedName()) instanceof IllegalConceptDescriptor;
@@ -503,7 +503,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
           }
         });
         return loadedModel.value;
-      } catch (Exception e) {
+      } catch (Throwable e) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Error on loading console history", e);
         }

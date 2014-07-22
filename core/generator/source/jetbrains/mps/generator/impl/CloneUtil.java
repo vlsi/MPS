@@ -23,6 +23,8 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelInternal;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -32,6 +34,8 @@ import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+
+import java.util.Map.Entry;
 
 public class CloneUtil {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(CloneUtil.class));
@@ -78,6 +82,9 @@ public class CloneUtil {
     }
     for (SModuleReference devKit : inputModel.importedDevkits()) {
       outputModel.addDevKit(devKit);
+    }
+    for (Entry<SLanguageId, Integer> lang : inputModel.importedLanguageIdsWithVersions().entrySet()) {
+      outputModel.addLanguageId(lang.getKey(), lang.getValue());
     }
   }
 

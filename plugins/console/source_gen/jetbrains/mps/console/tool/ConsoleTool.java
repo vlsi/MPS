@@ -64,9 +64,19 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
 
 
 
+  public void clearAll() {
+    while (!myTabs.isEmpty()) {
+      closeTab(myTabs.get(0));
+    }
+    loadedState = null;
+    initTabs();
+  }
+
+
+
   public BaseConsoleTab addConsoleTab(@Nullable ConsoleTool.TabState tabState, @Nullable Icon icon, boolean openTool) {
-    String title = check_xg3v07_a0a0q(tabState);
-    String history = check_xg3v07_a0b0q(tabState);
+    String title = check_xg3v07_a0a0s(tabState);
+    String history = check_xg3v07_a0b0s(tabState);
     if (icon == null) {
       icon = MPSIcons.ToolWindows.OpenTerminal_13x13;
     }
@@ -74,7 +84,7 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
       title = "Console";
     }
     BaseConsoleTab tab;
-    if (check_xg3v07_a5a61(tabState)) {
+    if (check_xg3v07_a5a81(tabState)) {
       tab = new HistoryConsoleTab(this, title, history);
     } else {
       tab = new ConsoleTab(this, title, history);
@@ -109,7 +119,7 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
       BaseConsoleTab tab = addConsoleTab(null, null, false);
       getContentManager().getContent(tab).setPinned(true);
     }
-    check_xg3v07_a2a02(getContentManager().getContent(0), this);
+    check_xg3v07_a2a22(getContentManager().getContent(0), this);
     getContentManager().setSelectedContent(getContentManager().getContent(0));
   }
 
@@ -161,9 +171,9 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
 
   public ConsoleTab getCurrentEditableTab() {
     if (ListSequence.fromList(myTabs).getElement(this.getCurrentTabIndex()) instanceof ConsoleTab) {
-      return as_xg3v07_a0a0a0gb(ListSequence.fromList(myTabs).getElement(this.getCurrentTabIndex()), ConsoleTab.class);
+      return as_xg3v07_a0a0a0ib(ListSequence.fromList(myTabs).getElement(this.getCurrentTabIndex()), ConsoleTab.class);
     }
-    return as_xg3v07_a0b0gb(ListSequence.fromList(myTabs).getElement(0), ConsoleTab.class);
+    return as_xg3v07_a0b0ib(ListSequence.fromList(myTabs).getElement(0), ConsoleTab.class);
   }
 
 
@@ -189,39 +199,39 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
 
 
 
-  private static String check_xg3v07_a0a0q(ConsoleTool.TabState checkedDotOperand) {
+  private static String check_xg3v07_a0a0s(ConsoleTool.TabState checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.title;
     }
     return null;
   }
 
-  private static String check_xg3v07_a0b0q(ConsoleTool.TabState checkedDotOperand) {
+  private static String check_xg3v07_a0b0s(ConsoleTool.TabState checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.history;
     }
     return null;
   }
 
-  private static boolean check_xg3v07_a5a61(ConsoleTool.TabState checkedDotOperand) {
+  private static boolean check_xg3v07_a5a81(ConsoleTool.TabState checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isHistoryTab;
     }
     return false;
   }
 
-  private static void check_xg3v07_a2a02(Content checkedDotOperand, ConsoleTool checkedDotThisExpression) {
+  private static void check_xg3v07_a2a22(Content checkedDotOperand, ConsoleTool checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setCloseable(false);
     }
 
   }
 
-  private static <T> T as_xg3v07_a0a0a0gb(Object o, Class<T> type) {
+  private static <T> T as_xg3v07_a0a0a0ib(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 
-  private static <T> T as_xg3v07_a0b0gb(Object o, Class<T> type) {
+  private static <T> T as_xg3v07_a0b0ib(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

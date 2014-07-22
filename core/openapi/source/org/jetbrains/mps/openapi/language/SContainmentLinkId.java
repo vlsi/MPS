@@ -15,6 +15,46 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-public interface SContainmentLinkId extends SAbstractLinkId {
-  public int getContainmentLinkId();
+public final class SContainmentLinkId extends SAbstractLinkId {
+  private final long myLinkId;
+
+  public SContainmentLinkId(SConceptId conceptId, long linkId) {
+    super(conceptId);
+    myLinkId = linkId;
+  }
+
+  public long getContainmentLinkId() {
+    return myLinkId;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    SContainmentLinkId that = (SContainmentLinkId) o;
+
+    if (myLinkId != that.myLinkId) return false;
+    if (!myConceptId.equals(that.myConceptId)) return false;
+
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    int result = myConceptId.hashCode();
+    result = 31 * result + (int) (myLinkId ^ (myLinkId >>> 32));
+    return result;
+  }
+
+  public String serialize() {
+    return myConceptId.serialize() + "/" + myLinkId;
+  }
+
+  public static SContainmentLinkId deserialize(String s) {
+    int split = s.lastIndexOf("/");
+    SConceptId concept = SConceptId.deserialize(s.substring(0, split));
+    long ref = Long.parseLong(s.substring(split + 1));
+    return new SContainmentLinkId(concept, ref);
+  }
 }

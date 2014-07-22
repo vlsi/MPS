@@ -82,6 +82,10 @@
    <int>0</int>
   </void>
   <void method="put">
+   <string>public void jetbrains.mps.smodel.SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLinkId,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string>
+   <int>0</int>
+  </void>
+  <void method="put">
    <string>public boolean java.lang.Object.equals(java.lang.Object)</string>
    <null/>
   </void>
@@ -159,6 +163,10 @@
   </void>
   <void method="put">
    <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getChildren(java.lang.String)</string>
+   <int>1</int>
+  </void>
+  <void method="put">
+   <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLinkId)</string>
    <int>0</int>
   </void>
   <void method="put">
@@ -274,7 +282,15 @@
    <int>1</int>
   </void>
   <void method="put">
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLinkId)</string>
+   <int>1</int>
+  </void>
+  <void method="put">
    <string>public void jetbrains.mps.smodel.SNode.setReference(java.lang.String,org.jetbrains.mps.openapi.model.SReference)</string>
+   <int>9</int>
+  </void>
+  <void method="put">
+   <string>public void jetbrains.mps.smodel.SNode.setReference(org.jetbrains.mps.openapi.language.SReferenceLinkId,org.jetbrains.mps.openapi.model.SReference)</string>
    <int>9</int>
   </void>
   <void method="put">
@@ -362,6 +378,10 @@
    <int>0</int>
   </void>
   <void method="put">
+   <string>public org.jetbrains.mps.openapi.language.SConceptId jetbrains.mps.smodel.SNode.getConceptId()</string>
+   <int>0</int>
+  </void>
+  <void method="put">
    <string>public jetbrains.mps.smodel.Language jetbrains.mps.smodel.SNode.getNodeLanguage()</string>
    <int>1</int>
   </void>
@@ -374,7 +394,11 @@
    <int>4</int>
   </void>
   <void method="put">
-   <string>public java.lang.Iterable&lt;java.lang.String&gt; jetbrains.mps.smodel.SNode.getPropertyNames()</string>
+   <string>public final java.lang.String jetbrains.mps.smodel.SNode.getProperty(org.jetbrains.mps.openapi.language.SPropertyId)</string>
+   <int>4</int>
+  </void>
+  <void method="put">
+   <string>public java.lang.Iterablelt;java.lang.String&gt; jetbrains.mps.smodel.SNode.getPropertyNames()</string>
    <int>2</int>
   </void>
   <void method="put">
@@ -395,6 +419,10 @@
   </void>
   <void method="put">
    <string>public void jetbrains.mps.smodel.SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode)</string>
+   <int>0</int>
+  </void>
+  <void method="put">
+   <string>public void jetbrains.mps.smodel.SNode.addChild(org.jetbrains.mps.openapi.language.SContainmentLinkId,org.jetbrains.mps.openapi.model.SNode)</string>
    <int>0</int>
   </void>
   <void method="put">
@@ -466,11 +494,19 @@
    <int>1</int>
   </void>
   <void method="put">
+   <string>public jetbrains.mps.smodel.SReference jetbrains.mps.smodel.SNode.getReference(org.jetbrains.mps.openapi.language.SReferenceLinkId)</string>
+   <int>1</int>
+  </void>
+  <void method="put">
    <string>public java.lang.String jetbrains.mps.smodel.SNode.getConceptShortName()</string>
    <int>0</int>
   </void>
   <void method="put">
    <string>public void jetbrains.mps.smodel.SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode)</string>
+   <int>0</int>
+  </void>
+  <void method="put">
+   <string>public void jetbrains.mps.smodel.SNode.setReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLinkId,org.jetbrains.mps.openapi.model.SNode)</string>
    <int>0</int>
   </void>
   <void method="put">
@@ -522,6 +558,10 @@
    <int>4</int>
   </void>
   <void method="put">
+   <string>public final boolean jetbrains.mps.smodel.SNode.hasProperty(org.jetbrains.mps.openapi.language.SPropertyId)</string>
+   <int>4</int>
+  </void>
+  <void method="put">
    <string>public org.jetbrains.mps.openapi.reference.SNodeReference jetbrains.mps.smodel.SNode.getReference()</string>
    <int>0</int>
   </void>
@@ -547,6 +587,10 @@
   </void>
   <void method="put">
    <string>public void jetbrains.mps.smodel.SNode.setProperty(java.lang.String,java.lang.String)</string>
+   <int>0</int>
+  </void>
+  <void method="put">
+   <string>public void jetbrains.mps.smodel.SNode.setProperty(org.jetbrains.mps.openapi.language.SPropertyId,java.lang.String)</string>
    <int>0</int>
   </void>
   <void method="put">
@@ -582,6 +626,10 @@
     <int>0</int>
   </void>
   <void method="put">
+    <string>public org.jetbrains.mps.openapi.language.SContainmentLinkId jetbrains.mps.smodel.SNode.getRoleInParentId()</string>
+    <int>0</int>
+  </void>
+  <void method="put">
     <string>public java.lang.Iterable&lt;java.lang.Object&gt; jetbrains.mps.smodel.SNode.getUserObjectKeys()</string>
     <int>0</int>
   </void>
@@ -591,6 +639,10 @@
   </void>
   <void method="put">
     <string>public java.lang.Iterable jetbrains.mps.smodel.SNode.getPropertyNames()</string>
+    <int>1</int>
+  </void>
+  <void method="put">
+    <string>public java.lang.Iterable&lt;org.jetbrains.mps.openapi.language.SPropertyId&gt; jetbrains.mps.smodel.SNode.getPropertyIds()</string>
     <int>1</int>
   </void>
   <void method="put">

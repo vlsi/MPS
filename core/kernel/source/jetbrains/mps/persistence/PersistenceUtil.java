@@ -87,6 +87,22 @@ public class PersistenceUtil {
     }
   }
 
+  public static SModel loadBinaryModel(final byte[] content) {
+    ModelFactory factory = new BinaryModelPersistence();
+    try {
+      SModel model = factory.load(new StreamDataSourceBase() {
+        @Override
+        public InputStream openInputStream() throws IOException {
+          return new ByteArrayInputStream(content);
+        }
+      }, Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
+      model.load();
+      return model;
+    } catch (IOException ex) {
+      return null;
+    }
+  }
+
   public static SModel loadModel(IFile file) {
     return loadModel(file, FileUtil.getExtension(file.getName()));
   }
@@ -121,6 +137,20 @@ public class PersistenceUtil {
       InMemoryStreamDataSource source = new InMemoryStreamDataSource();
       factory.save(model, source);
       return source.getContent(FileUtil.DEFAULT_CHARSET_NAME);
+    } catch (ModelSaveException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+
+  public static byte[] saveBinaryModel(final SModel model) {
+    ModelFactory factory = new BinaryModelPersistence();
+    try {
+      InMemoryStreamDataSource source = new InMemoryStreamDataSource();
+      factory.save(model, source);
+      return source.myStream.toByteArray();
     } catch (ModelSaveException e) {
       e.printStackTrace();
     } catch (IOException e) {

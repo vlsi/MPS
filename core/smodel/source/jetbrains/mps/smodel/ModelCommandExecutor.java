@@ -95,8 +95,6 @@ public interface ModelCommandExecutor {
 
   boolean isInsideCommand();
 
-  void runIndexing(Runnable r);
-
   void addCommandListener(ModelAccessListener l);
 
   void removeCommandListener(ModelAccessListener l);

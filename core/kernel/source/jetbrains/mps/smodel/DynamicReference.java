@@ -68,10 +68,18 @@ public class DynamicReference extends SReferenceBase {
    * create 'mature' reference
    */
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, String resolveInfo) {
+    this(role, sourceNode, targetModelReference == null ? null : targetModelReference.getModelName(), resolveInfo);
+  }
+
+  public static DynamicReference createDynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
+    return new DynamicReference(role, sourceNode, modelName, resolveInfo);
+  }
+
+  private DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
     super(role, sourceNode, null, null);
-    if (targetModelReference != null && !resolveInfo.startsWith(SModelStereotype.withoutStereotype(targetModelReference.getModelName())) && isTargetClassifier(sourceNode, role)) {
+    if (modelName != null && !resolveInfo.startsWith(SModelStereotype.withoutStereotype(modelName)) && isTargetClassifier(sourceNode, role)) {
       // hack for classifiers resolving with specified targetModelReference. For now (18/04/2012) targetModelReference used only for Classifiers (in stubs and [model]node construction).
-      setResolveInfo(SModelStereotype.withoutStereotype(targetModelReference.getModelName()) + "." + resolveInfo);
+      setResolveInfo(SModelStereotype.withoutStereotype(modelName) + "." + resolveInfo);
     } else {
       setResolveInfo(resolveInfo);
     }

@@ -29,6 +29,7 @@ import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -42,6 +43,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import static jetbrains.mps.smodel.SModel.ImportElement;
 
@@ -125,7 +128,11 @@ public class BinaryPersistence {
   }
 
   private static void loadModelProperties(BinarySModel model, ModelInputStream is) throws IOException {
-    for (SModuleReference ref : loadModuleRefList(is)) model.addLanguage(ref);
+    for (Pair<Pair<SLanguageId, Integer>, Boolean> ref : loadUsedLanguagesList(is)) {
+      if (!ref.o2) {
+        model.addLanguage(ref.o1.o1, ref.o1.o2);
+      }
+    }
     for (SModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
     for (SModuleReference ref : loadModuleRefList(is)) model.addDevKit(ref);
 
@@ -182,9 +189,9 @@ public class BinaryPersistence {
     os.writeBoolean((md instanceof GeneratableSModel) && ((GeneratableSModel) md).isDoNotGenerate());
     os.writeInt(0xabab);
 
-    saveModuleRefList((model).importedLanguages(), os);
-    saveModuleRefList((model).engagedOnGenerationLanguages(), os);
-    saveModuleRefList((model).importedDevkits(), os);
+    saveUsedLanguagesList(model.usedLanguagesWithVersions(), model.implicitlyUsedLanguagesWithVersions(), os);
+    saveModuleRefList(model.engagedOnGenerationLanguages(), os);
+    saveModuleRefList(model.importedDevkits(), os);
 
     // imports
     saveImports((model).importedModels(), os);
@@ -193,11 +200,37 @@ public class BinaryPersistence {
     os.writeInt(0xbaba);
   }
 
+  private static void saveUsedLanguagesList(Map<SLanguageId, Integer> refs, Map<SLanguageId, Integer> implicit, ModelOutputStream os) throws IOException {
+    os.writeInt(refs.size() + implicit.size());
+    for (Entry<SLanguageId, Integer> ref : refs.entrySet()) {
+      os.writeString(ref.getKey().serialize());
+      os.writeInt(ref.getValue());
+      os.writeBoolean(false);
+    }
+    for (Entry<SLanguageId, Integer> ref : implicit.entrySet()) {
+      os.writeString(ref.getKey().serialize());
+      os.writeInt(ref.getValue());
+      os.writeBoolean(true);
+    }
+  }
+
   private static void saveModuleRefList(Collection<SModuleReference> refs, ModelOutputStream os) throws IOException {
     os.writeInt(refs.size());
     for (SModuleReference ref : refs) {
       os.writeModuleReference(ref);
     }
+  }
+
+  private static Collection<Pair<Pair<SLanguageId, Integer>, Boolean>> loadUsedLanguagesList(ModelInputStream is) throws IOException {
+    int size = is.readInt();
+    List<Pair<Pair<SLanguageId, Integer>, Boolean>> result = new ArrayList<Pair<Pair<SLanguageId, Integer>, Boolean>>();
+    for (int i = 0; i < size; i++) {
+      SLanguageId id = SLanguageId.deserialize(is.readString());
+      int version = is.readInt();
+      boolean implicit = is.readBoolean();
+      result.add(new Pair<Pair<SLanguageId, Integer>, Boolean>(new Pair<SLanguageId, Integer>(id, version), implicit));
+    }
+    return result;
   }
 
   private static Collection<SModuleReference> loadModuleRefList(ModelInputStream is) throws IOException {

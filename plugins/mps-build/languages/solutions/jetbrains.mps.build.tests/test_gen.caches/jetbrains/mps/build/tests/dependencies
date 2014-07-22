@@ -48,7 +48,6 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_NamedContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.tests.TestContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.Test" />

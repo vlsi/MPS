@@ -15,81 +15,53 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 @ImmutableObject
 public final class SModelReference implements org.jetbrains.mps.openapi.model.SModelReference {
-  /**
-   * use {@link org.jetbrains.mps.openapi.persistence.PersistenceFacade#createModelReference(String)}
-   */
-  @Deprecated
-  public static SModelReference fromString(String s) {
-    return parseReference(s);
-  }
+
+  public static boolean replaceModuleReferences = false;
+  private static long thrownWarnings = 0;
+  private static Logger LOG = Logger.getLogger(SModelReference.class);
 
   @NotNull
   private final SModelId myModelId;
   @NotNull
   private final String myModelName;
   @Nullable
-  private final SModuleReference myModuleReference;
+  public final SModuleReference myModuleReference;
 
-  /**
-   * @param module can be null only if modelId is globally unique (i.e. can be resolved without a module)
-   */
   public SModelReference(@Nullable SModuleReference module, @NotNull SModelId modelId, @NotNull String modelName) {
-    if (module == null && !modelId.isGloballyUnique()) {
-      throw new IllegalArgumentException();
-    }
-    myModuleReference = module;
     myModelId = modelId;
     myModelName = modelName;
-  }
-
-  /**
-   * use {@link org.jetbrains.mps.openapi.persistence.PersistenceFacade#createModelReference(org.jetbrains.mps.openapi.module.SModuleReference, org.jetbrains.mps.openapi.model.SModelId, String)}
-   */
-  @Deprecated
-  public SModelReference(@NotNull String longName, @Nullable String stereotype) {
-    this(new SModelFqName(longName, stereotype), null);
-  }
-
-  /**
-   * use {@link org.jetbrains.mps.openapi.persistence.PersistenceFacade#createModelReference(org.jetbrains.mps.openapi.module.SModuleReference, org.jetbrains.mps.openapi.model.SModelId, String)}
-   */
-  @Deprecated
-  public SModelReference(@NotNull SModelFqName fqName, @Nullable SModelId modelId) {
-    String moduleFqName = fqName.getModuleFqName();
-    myModuleReference = moduleFqName == null || moduleFqName.isEmpty() ? null : new jetbrains.mps.project.structure.modules.ModuleReference(moduleFqName);
-    myModelName = fqName.getModelName();
-    myModelId = modelId != null ? modelId : new ModelNameSModelId(myModelName);
-  }
-
-  /**
-   * @deprecated use {@link #getModelId()}
-   */
-  @Deprecated
-  public SModelId getSModelId() {
-    return myModelId;
-  }
-
-  @Deprecated
-  public SModelFqName getSModelFqName() {
-    int atIndex = myModelName.lastIndexOf('@');
-    return new SModelFqName(myModuleReference != null ? myModuleReference.getModuleName() : null,
-        atIndex == -1 ? myModelName : myModelName.substring(0, atIndex),
-        atIndex == -1 ? null : myModelName.substring(atIndex + 1));
+    if (module == null) {
+      if (!modelId.isGloballyUnique()) {
+        throw new IllegalArgumentException();
+      }
+      if (thrownWarnings < 10) {
+        if (InternalFlag.isInternalMode()) {
+          LOG.error("Creating model reference without module reference.", new Throwable());
+        } else {
+          LOG.warn("Creating model reference without module reference.", new Throwable());
+        }
+        thrownWarnings ++;
+      }
+    }
+    myModuleReference = replaceModuleReferences ? calculateModuleReference() : module;
   }
 
   @NotNull
@@ -106,7 +78,23 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
 
   @Override
   public SModuleReference getModuleReference() {
+    if (replaceModuleReferences) {
+      return calculateModuleReference();
+    }
     return myModuleReference;
+  }
+
+  //remove after MPS 3.2
+  private SModuleReference calculateModuleReference() {
+    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myModelId);
+    if (modelDescriptor != null) {
+      return modelDescriptor.getModule().getModuleReference();
+    } else {
+      LOG.error("Could not resolve model `" + myModelName + "'. While migrating all models should be available.", new Throwable());
+      return null;
+      //can be for deleted models when references to them still exist
+      //throw new IllegalStateException("Could not replace module reference");
+    }
   }
 
   @Override
@@ -125,7 +113,8 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     SModelReference that = (SModelReference) o;
 
     if (!myModelId.equals(that.myModelId)) return false;
-    if (myModuleReference != null ? !myModuleReference.equals(that.myModuleReference) : that.myModuleReference != null) return false;
+    if (getModuleReference() != null && that.getModuleReference() != null && !getModuleReference().equals(that.getModuleReference())) return false;
+    if (getModuleReference() == null || that.getModuleReference() == null) return myModelId.isGloballyUnique() && that.myModelId.isGloballyUnique();
 
     return true;
   }
@@ -133,7 +122,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   @Override
   public int hashCode() {
     int result = myModelId.hashCode();
-    result = 31 * result + (myModuleReference != null ? myModuleReference.hashCode() : 0);
+    result = 31 * result + (myModelId.isGloballyUnique() ? 0 : myModuleReference.hashCode());
     return result;
   }
 
@@ -156,7 +145,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       throw new IllegalArgumentException("parentheses do not match in: `" + s + "'");
     }
 
-    ModuleId moduleId = null;
+    SModuleId moduleId = null;
     int slash = s.indexOf('/');
     if (slash >= 0) {
       moduleId = ModuleId.fromString(StringUtil.unescapeRefChars(s.substring(0, slash)));
@@ -202,21 +191,21 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   public String toString() {
     StringBuilder sb = new StringBuilder();
 
-    if (myModuleReference != null && myModuleReference.getModuleId() != null) {
-      sb.append(StringUtil.escapeRefChars(myModuleReference.getModuleId().toString()));
+    if (getModuleReference() != null && getModuleReference().getModuleId() != null) {
+      sb.append(StringUtil.escapeRefChars(getModuleReference().getModuleId().toString()));
       sb.append("/");
     }
 
     String modelId = myModelId instanceof ModelNameSModelId ? myModelId.getModelName() : myModelId.toString();
     sb.append(StringUtil.escapeRefChars(modelId));
 
-    if (myModuleReference == null && myModelName.equals(myModelId.getModelName())) {
+    if (getModuleReference() == null && myModelName.equals(myModelId.getModelName())) {
       return sb.toString();
     }
 
     sb.append("(");
-    if (myModuleReference != null && myModuleReference.getModuleName() != null) {
-      sb.append(StringUtil.escapeRefChars(myModuleReference.getModuleName()));
+    if (getModuleReference() != null && getModuleReference().getModuleName() != null) {
+      sb.append(StringUtil.escapeRefChars(getModuleReference().getModuleName()));
       sb.append("/");
     }
     sb.append(StringUtil.escapeRefChars(myModelName));
@@ -224,34 +213,21 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     return sb.toString();
   }
 
-  @Deprecated
-  public String getLongName() {
-    return SModelStereotype.withoutStereotype(myModelName);
-  }
-
-  public String getCompactPresentation() {
-    return NameUtil.compactNamespace(myModelName);
-  }
-
   public String getStereotype() {
     return SModelStereotype.getStereotype(myModelName);
-  }
-
-  public boolean hasStereotype() {
-    return myModelName.contains("@");
   }
 
   public SModelReference update() {
     SModel sm = SModelRepository.getInstance().getModelDescriptor(this);
     if (sm == null) return this;
-    return (SModelReference) sm.getReference();
+    SModelReference reference = (SModelReference) sm.getReference();
+    return new SModelReference(reference.getModuleReference(), reference.getModelId(), reference.getModelName());
   }
 
   public boolean differs(SModelReference that) {
-    if (!myModelId.equals(that.myModelId)) return true;
+    if (replaceModuleReferences) return true;
+    if (!this.equals(that)) return true;
     if (!myModelName.equals(that.myModelName)) return true;
-    // TODO add
-    //if (myModuleReference != null ? !myModuleReference.equals(that.myModuleReference) : that.myModuleReference != null) return true;
     return false;
   }
 }

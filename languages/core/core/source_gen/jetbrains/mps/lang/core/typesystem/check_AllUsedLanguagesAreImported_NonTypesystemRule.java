@@ -15,6 +15,7 @@ import java.util.HashSet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -35,7 +36,7 @@ public class check_AllUsedLanguagesAreImported_NonTypesystemRule extends Abstrac
     }
     Set<SLanguage> importedLanguages = new HashSet<SLanguage>();
     for (SModuleReference importedLanguageReference : CollectionSequence.fromCollection(((SModelBase) SNodeOperations.getModel(root)).getModelDepsManager().getAllImportedLanguages())) {
-      SLanguage language = SConceptRepository.getInstance().getLanguage(importedLanguageReference.getModuleName());
+      SLanguage language = SConceptRepository.getInstance().getLanguage(IdHelper.getLanguageId(importedLanguageReference.getModuleId()));
       importedLanguages.add(language);
     }
 

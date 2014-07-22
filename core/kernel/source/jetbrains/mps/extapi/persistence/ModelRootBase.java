@@ -19,7 +19,9 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -33,6 +35,8 @@ import java.util.Set;
  * evgeny, 10/23/12
  */
 public abstract class ModelRootBase implements ModelRoot {
+
+  private static Logger LOG = Logger.getLogger(ModelRootBase.class);
 
   private SModule myModule;
   private volatile SRepository myRepository;
@@ -62,6 +66,8 @@ public abstract class ModelRootBase implements ModelRoot {
     return new ArrayList<SModel>(myModels);
   }
 
+  //returns all models under the model root
+  //if some model is already loaded and registered, it is recommended to return the loaded one instead of loading another time
   public abstract Iterable<SModel> loadModels();
 
   @Override
@@ -105,21 +111,20 @@ public abstract class ModelRootBase implements ModelRoot {
   protected void register(SModel model) {
     SModuleBase module = (SModuleBase) getModule();
     assert module != null;
+    assert module.getModel(model.getModelId()) == null;
 
-    if (module.getModel(model.getModelId()) == null) {
-      module.registerModel((SModelBase) model);
-      myModels.add(model);
-    }
+    module.registerModel((SModelBase) model);
+    myModels.add(model);
   }
 
   protected void unregister(SModel model) {
     SModuleBase module = (SModuleBase) getModule();
     assert module != null;
+    assert module.getModel(model.getModelId()) != null;
+    assert myModels.contains(model);
 
-    if (module.getModel(model.getModelId()) != null) {
-      module.unregisterModel((SModelBase) model);
-      myModels.remove(model);
-    }
+    module.unregisterModel((SModelBase) model);
+    myModels.remove(model);
   }
 
   public void update() {
@@ -127,15 +132,27 @@ public abstract class ModelRootBase implements ModelRoot {
     SModuleBase module = (SModuleBase) getModule();
     assert module != null;
 
-    Set<org.jetbrains.mps.openapi.model.SModelReference> loaded = new HashSet<org.jetbrains.mps.openapi.model.SModelReference>();
-    for (SModel model : loadModels()) {
-      loaded.add(model.getReference());
-      register(model);
+    Set<SModelId> loaded = new HashSet<SModelId>();
+    Iterable<SModel> allModels = loadModels();
+    for (SModel model : allModels) {
+      SModel oldModel = module.getModel(model.getModelId());
+      if (oldModel == null) {
+        register(model);
+      } else if (oldModel == model) {
+        //do nothing
+      } else if (oldModel.getModelRoot() != model.getModelRoot()) {
+        LOG.error("Trying to load model `" + model.getModelName() + "' which is already loaded by another model root");
+      } else if (loaded.contains(model.getModelId())) {
+        LOG.error("loadModels() returned model `" + model.getModelName() + "' twice");
+      } else {
+        LOG.warn("loadModels() loaded model `" + model.getModelName() + "' which was already loaded. Ignoring.");
+      }
+      loaded.add(model.getModelId());
     }
     Iterator<SModel> it = myModels.iterator();
     while (it.hasNext()) {
       SModel model = it.next();
-      if (loaded.contains(model.getReference())) continue;
+      if (loaded.contains(model.getModelId())) continue;
       module.unregisterModel((SModelBase) model);
       it.remove();
     }
