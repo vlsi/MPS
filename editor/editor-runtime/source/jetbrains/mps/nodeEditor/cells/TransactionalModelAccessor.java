@@ -16,5 +16,9 @@
 package jetbrains.mps.nodeEditor.cells;
 
 public interface TransactionalModelAccessor extends ModelAccessor {
-  void commit();  
+  void commit();
+
+  boolean hasValueToCommit();
+
+  void resetUncommittedValue();
 }

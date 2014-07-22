@@ -100,9 +100,7 @@ class Memento {
     for (EditorCell cell : editor.getCellTracker().getErrorCells()) {
       if (cell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) cell;
-        if (!"".equals(label.getText())) {
           myErrorTexts.put(label.getCellInfo(), label.getText());
-        }
       }
     }
   }
