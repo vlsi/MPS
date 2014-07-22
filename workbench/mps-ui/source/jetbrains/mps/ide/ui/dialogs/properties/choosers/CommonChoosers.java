@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public class CommonChoosers {
   private static List<SModuleReference> showDialogModuleChooser_internal(Project project, String entityString, final Collection<? extends SModuleReference> modules,
                                                                         @Nullable Collection<? extends SModuleReference> nonProjectModules,
                                                                         boolean multiSelection) {
-    ModuleChooserDialog dialog = new ModuleChooserDialog(project, modules, nonProjectModules, entityString, multiSelection);
+    ModuleChooserDialog dialog = new ModuleChooserDialog(project, modules, nonProjectModules, "Choose " + entityString, multiSelection);
     dialog.show();
     return new ArrayList<SModuleReference>(dialog.getResult());
   }

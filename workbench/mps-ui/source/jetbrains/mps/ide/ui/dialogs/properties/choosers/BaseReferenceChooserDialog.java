@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
@@ -40,21 +41,30 @@ public abstract class BaseReferenceChooserDialog<T> extends DialogWrapper {
   protected boolean myIsCancelled = true;
   protected boolean myOkDone = false;
   protected boolean myIsMultipleSelection = false;
-  private Project myProject;
+  protected final Project myProject;
   private List<Object> mySelectedElements;
 
-  BaseReferenceChooserDialog(Project project, Collection<? extends T> modules, @Nullable Collection<? extends T> nonProjectModules, String entityString, boolean multiSelection) {
+  BaseReferenceChooserDialog(Project project, Collection<? extends T> set1, @Nullable Collection<? extends T> set2, boolean multiSelection) {
     super(project);
     myProject = project;
-    setTitle("Choose " + entityString);
     myIsMultipleSelection = multiSelection;
     getContentPane().addNotify();
-    doInit(modules, nonProjectModules, entityString);
+    doInit(set1, set2);
 
     init();
   }
 
-  private void doInit(final Collection<? extends T> options, Collection<? extends T> nonProjectLanguages, String entityString) {
+  /**
+   * @deprecated setTitle("Choose " + entityString) ?! ORLY?!
+   * Will be removed in a few days.
+   */
+  @Deprecated
+  BaseReferenceChooserDialog(Project project, Collection<? extends T> modules, @Nullable Collection<? extends T> nonProjectModules, String entityString, boolean multiSelection) {
+    this(project, modules, nonProjectModules, multiSelection);
+    setTitle("Choose " + entityString);
+  }
+
+  private void doInit(final Collection<? extends T> options, Collection<? extends T> nonProjectLanguages) {
     //      final List<SModelReference> options, @Nullable List<SModelReference> nonProjectModels
     setModal(true);
     myReferences.addAll(options);
@@ -62,9 +72,7 @@ public abstract class BaseReferenceChooserDialog<T> extends DialogWrapper {
       myNonProjectReferences.addAll(nonProjectLanguages);
     }
 
-    DataContext dataContext = DataManager.getInstance().getDataContext();
-
-    BaseMPSChooseModel<T> goToModuleModel = getMPSChooseModel(myProject, entityString);
+    BaseMPSChooseModel<T> goToModuleModel = getMPSChooseModel();
 
     myChooser = MpsPopupFactory.createPanelForPackage(goToModuleModel, !myNonProjectReferences.isEmpty());
     myChooser.invoke(new MultiElementsCallback() {
@@ -96,7 +104,7 @@ public abstract class BaseReferenceChooserDialog<T> extends DialogWrapper {
   protected abstract boolean checkType(Object item);
   protected abstract T convert(Object item);
 
-  protected abstract BaseMPSChooseModel<T> getMPSChooseModel(final Project project, String entityString);
+  protected abstract BaseMPSChooseModel<T> getMPSChooseModel();
 
   @Override
   protected void doOKAction() {
