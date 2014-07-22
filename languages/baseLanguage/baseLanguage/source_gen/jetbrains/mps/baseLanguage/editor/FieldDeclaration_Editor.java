@@ -10,12 +10,19 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -80,10 +87,12 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_2sbeba_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    Styles_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteFinalInField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FieldDeclaration_Editor.FieldDeclaration_component_cellMenu_2sbeba_a0d0()}));
     return editorCell;
   }
 
@@ -91,14 +100,28 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
+  public static class FieldDeclaration_component_cellMenu_2sbeba_a0d0 implements SubstituteInfoPartExt {
+    private AddFieldModifiers myComponent;
+
+    public FieldDeclaration_component_cellMenu_2sbeba_a0d0() {
+      this.myComponent = new AddFieldModifiers();
+    }
+
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
+    }
+  }
+
   private EditorCell createConstant_2sbeba_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transient");
     editorCell.setCellId("Constant_2sbeba_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    Styles_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteTransient.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FieldDeclaration_Editor.FieldDeclaration_component_cellMenu_2sbeba_a0e0()}));
     return editorCell;
   }
 
@@ -106,19 +129,45 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isTransient");
   }
 
+  public static class FieldDeclaration_component_cellMenu_2sbeba_a0e0 implements SubstituteInfoPartExt {
+    private AddFieldModifiers myComponent;
+
+    public FieldDeclaration_component_cellMenu_2sbeba_a0e0() {
+      this.myComponent = new AddFieldModifiers();
+    }
+
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
+    }
+  }
+
   private EditorCell createConstant_2sbeba_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "volatile");
     editorCell.setCellId("Constant_2sbeba_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    Styles_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteVolatile.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FieldDeclaration_Editor.FieldDeclaration_component_cellMenu_2sbeba_a0f0()}));
     return editorCell;
   }
 
   private static boolean renderingCondition_2sbeba_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isVolatile");
+  }
+
+  public static class FieldDeclaration_component_cellMenu_2sbeba_a0f0 implements SubstituteInfoPartExt {
+    private AddFieldModifiers myComponent;
+
+    public FieldDeclaration_component_cellMenu_2sbeba_a0f0() {
+      this.myComponent = new AddFieldModifiers();
+    }
+
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
+    }
   }
 
   private EditorCell createRefNode_2sbeba_g0(EditorContext editorContext, SNode node) {
