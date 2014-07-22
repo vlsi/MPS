@@ -8,11 +8,11 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.xml.XmlUtil;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
-import org.apache.log4j.Level;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -22,8 +22,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GeneratorDescriptorPersistence {
   private GeneratorDescriptorPersistence() {
@@ -45,8 +43,8 @@ public class GeneratorDescriptorPersistence {
 
         String uuid = generatorElement.getAttributeValue("uuid");
         if (uuid != null) {
-          final String result_wk2vdq_a0a7a0a0a0b = uuid;
-          result_wk2vdq_a0a0a0b.setUUID(result_wk2vdq_a0a7a0a0a0b);
+          final ModuleId result_wk2vdq_a0a7a0a0a0b = ModuleId.fromString(uuid);
+          result_wk2vdq_a0a0a0b.setId(result_wk2vdq_a0a7a0a0a0b);
         }
 
         String generatorName = generatorElement.getAttributeValue("name");
@@ -77,27 +75,17 @@ public class GeneratorDescriptorPersistence {
 
         for (Element ruleElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(generatorElement, "mapping-priorities"), "mapping-priority-rule"))) {
           final MappingPriorityRule result_wk2vdq_a0a32a0a0a0b = new MappingPriorityRule();
-          // TODO: remove when the error disappear. 
-          try {
-            final RuleType result_wk2vdq_a0a1a0a32a0a0a0b = RuleType.parse(ruleElement.getAttributeValue("kind"));
-            result_wk2vdq_a0a32a0a0a0b.setType(result_wk2vdq_a0a1a0a32a0a0a0b);
-          } catch (IllegalArgumentException e) {
-            if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error(e.getMessage() + " Rule type for generator " + genUID + " is set to EQUALS. You can change this in Generator Properties dialog.", e);
-            }
-            final RuleType result_wk2vdq_a1a0b0a0x0a0a0a1 = RuleType.STRICTLY_TOGETHER;
-            result_wk2vdq_a0a32a0a0a0b.setType(result_wk2vdq_a1a0b0a0x0a0a0a1);
-          }
-
+          final RuleType result_wk2vdq_a0a0a32a0a0a0b = RuleType.parse(ruleElement.getAttributeValue("kind"));
+          result_wk2vdq_a0a32a0a0a0b.setType(result_wk2vdq_a0a0a32a0a0a0b);
           Element greaterPM = XmlUtil.first(ruleElement, "greater-priority-mapping");
           if (greaterPM != null) {
-            final MappingConfig_AbstractRef result_wk2vdq_a0a4a0a32a0a0a0b = loadGeneratorMappingConfigRef(greaterPM, genUID, false);
-            result_wk2vdq_a0a32a0a0a0b.setLeft(result_wk2vdq_a0a4a0a32a0a0a0b);
+            final MappingConfig_AbstractRef result_wk2vdq_a0a2a0a32a0a0a0b = loadGeneratorMappingConfigRef(greaterPM, genUID, false);
+            result_wk2vdq_a0a32a0a0a0b.setLeft(result_wk2vdq_a0a2a0a32a0a0a0b);
           }
           Element lesserPM = XmlUtil.first(ruleElement, "lesser-priority-mapping");
           if (lesserPM != null) {
-            final MappingConfig_AbstractRef result_wk2vdq_a0a6a0a32a0a0a0b = loadGeneratorMappingConfigRef(lesserPM, genUID, false);
-            result_wk2vdq_a0a32a0a0a0b.setRight(result_wk2vdq_a0a6a0a32a0a0a0b);
+            final MappingConfig_AbstractRef result_wk2vdq_a0a4a0a32a0a0a0b = loadGeneratorMappingConfigRef(lesserPM, genUID, false);
+            result_wk2vdq_a0a32a0a0a0b.setRight(result_wk2vdq_a0a4a0a32a0a0a0b);
           }
           result_wk2vdq_a0a0a0b.getPriorityRules().add(result_wk2vdq_a0a32a0a0a0b);
         }
@@ -116,8 +104,8 @@ public class GeneratorDescriptorPersistence {
     if (descriptor.getGeneratorUID() != null) {
       generator.setAttribute("generatorUID", descriptor.getGeneratorUID());
     }
-    if (descriptor.getUUID() != null) {
-      generator.setAttribute("uuid", descriptor.getUUID());
+    if (descriptor.getId() != null) {
+      generator.setAttribute("uuid", descriptor.getId().toString());
     }
     if (descriptor.isGenerateTemplates()) {
       generator.setAttribute("generate-templates", Boolean.toString(descriptor.isGenerateTemplates()));
@@ -275,6 +263,4 @@ public class GeneratorDescriptorPersistence {
     // empty? 
     return new MappingConfig_AbstractRef();
   }
-
-  protected static Logger LOG = LogManager.getLogger(GeneratorDescriptorPersistence.class);
 }

@@ -32,7 +32,7 @@ import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import org.jdom.Attribute;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.IFile;
-import java.util.UUID;
+import jetbrains.mps.project.ModuleId;
 import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
@@ -307,7 +307,7 @@ public class ModuleDescriptorPersistence {
 
   public static void loadBrokenModule(ModuleDescriptor md, IFile file, ModuleReadException exception) {
     md.setNamespace(FileUtil.getNameWithoutExtension(file.getName()));
-    md.setUUID(UUID.randomUUID().toString());
+    md.setId(ModuleId.regular());
 
     InputStreamReader r = null;
     try {
@@ -321,7 +321,7 @@ public class ModuleDescriptorPersistence {
           Matcher m = pattern.matcher(line);
           if (m.matches()) {
             md.setNamespace(m.group(3));
-            md.setUUID(m.group(4));
+            md.setId(ModuleId.fromString(m.group(4)));
           }
         }
       }

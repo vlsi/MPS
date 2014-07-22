@@ -92,7 +92,7 @@ public class FacetDescriptorsIO_Test extends TestCase {
   }
 
   private void assertSolutionDescriptor(IFile moduleFile, SolutionDescriptor sd) {
-    Assert.assertEquals("4f50af0c-4cd4-11e1-a072-6cf049e62fe5", sd.getUUID());
+    Assert.assertEquals("4f50af0c-4cd4-11e1-a072-6cf049e62fe5", String.valueOf(sd.getId()));
     Assert.assertEquals(moduleFile.getParent().getDescendant("source_gen").getPath(), sd.getOutputPath());
     Assert.assertSame(1, sd.getModelRootDescriptors().size());
     Assert.assertEquals(moduleFile.getParent().getDescendant("models").getPath(), Sequence.fromIterable(((Iterable<ModelRootDescriptor>) sd.getModelRootDescriptors())).first().getMemento().get("contentPath"));
