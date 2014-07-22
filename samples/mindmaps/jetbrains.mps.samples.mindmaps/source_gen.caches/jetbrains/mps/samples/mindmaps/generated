@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-hak7opl14eyzhqfgizlgqy3kla0bup">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:1ac15270-5dd7-4487-b5dd-b54b735cd330(jetbrains.mps.samples.mindmaps.constraints)" hash="7o8khjteum9ttn5mzziiftl2yw4k9a" />
+  <dep model="r:91a2c042-3f07-4aab-ac1d-2c62da638af5(jetbrains.mps.samples.mindmaps.typesystem)" hash="899u42uyk8tvbz9kb1f1wbj2o16ws49" />
+  <dep model="r:9940e5b3-dd3d-44ad-a9dd-ff43afa4bdfe(jetbrains.mps.samples.mindmaps.behavior)" hash="-9wu0wnynitoyty3lu3f7xr8axaiq5md" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)" hash="9didmdwx61yug7ur6pux70o8yl5i7qu" />
+  <dep model="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)" hash="-e194mren7ar2ebde8rq5n9t38wy0omf" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common dependsOnNodes="true">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:1ac15270-5dd7-4487-b5dd-b54b735cd330(jetbrains.mps.samples.mindmaps.constraints)" />
+    <dep model="r:91a2c042-3f07-4aab-ac1d-2c62da638af5(jetbrains.mps.samples.mindmaps.typesystem)" />
+    <dep model="r:9940e5b3-dd3d-44ad-a9dd-ff43afa4bdfe(jetbrains.mps.samples.mindmaps.behavior)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)" />
+    <dep model="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
+
