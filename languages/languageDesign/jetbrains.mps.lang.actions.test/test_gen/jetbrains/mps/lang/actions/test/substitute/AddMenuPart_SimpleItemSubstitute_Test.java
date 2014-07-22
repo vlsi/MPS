@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class AddMenuPart_SimpleItemSubstitute_Test extends BaseTransformationTest {
@@ -24,9 +22,8 @@ public class AddMenuPart_SimpleItemSubstitute_Test extends BaseTransformationTes
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("2534942168331329397", "5164819300891517121");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "newChild2");
+      initEditor("2534942168331329397", "5164819300891517121");
+      this.typeString("newChild2");
     }
   }
 }

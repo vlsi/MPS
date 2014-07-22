@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -35,13 +33,12 @@ public class SelectAnotherNodeFromCode_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("8041297453110598745", "8041297453110598749");
-      final EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("8041297453110598745", "8041297453110598749");
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              editorComponent.selectNode(SNodeOperations.cast(TestBody.this.getNodeById("8041297453110598748"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize"));
+              TestBody.this.getEditorComponent().selectNode(SNodeOperations.cast(TestBody.this.getNodeById("8041297453110598748"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize"));
             }
           });
         }
@@ -49,9 +46,9 @@ public class SelectAnotherNodeFromCode_Test extends BaseTransformationTest {
       final Wrappers._T<Mapper<? super SNode, ?>> descendantMapper = new Wrappers._T<Mapper<? super SNode, ?>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          EditorCell selectedCell = editorComponent.getSelectedCell();
+          EditorCell selectedCell = TestBody.this.getEditorComponent().getSelectedCell();
           Assert.assertTrue(selectedCell != null);
-          DiagramCell diagramCell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), DiagramCell.class, true);
+          DiagramCell diagramCell = CellFinderUtil.findChildByClass(TestBody.this.getEditorComponent().getRootCell(), DiagramCell.class, true);
           descendantMapper.value = diagramCell.getRootMapper().getDescendantMapper(selectedCell.getSNode());
         }
       });

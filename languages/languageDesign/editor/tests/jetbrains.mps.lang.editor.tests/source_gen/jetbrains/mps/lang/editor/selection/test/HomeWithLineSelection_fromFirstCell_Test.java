@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class HomeWithLineSelection_fromFirstCell_Test extends BaseTransformationTest {
@@ -24,10 +22,9 @@ public class HomeWithLineSelection_fromFirstCell_Test extends BaseTransformation
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("9080919888312354540", "9080919888312354548");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Home_Action");
+      initEditor("9080919888312354540", "9080919888312354548");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Home_Action");
     }
   }
 }

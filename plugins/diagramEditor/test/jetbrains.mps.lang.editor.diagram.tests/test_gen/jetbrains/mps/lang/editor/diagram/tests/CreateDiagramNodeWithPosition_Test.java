@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -28,24 +26,23 @@ public class CreateDiagramNodeWithPosition_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("8794120090375902403", "8794120090375978070");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("8794120090375902403", "8794120090375978070");
       {
         int x_rbsw50_a0 = 150;
         int y_rbsw50_a0 = 150;
-        Component eventTargetComponent_rbsw50_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_rbsw50_a0, y_rbsw50_a0, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rbsw50_a0, x_rbsw50_a0, y_rbsw50_a0, MouseEvent.MOUSE_RELEASED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rbsw50_a0, x_rbsw50_a0, y_rbsw50_a0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_rbsw50_a0 = this.processMouseEvent(x_rbsw50_a0, y_rbsw50_a0, MouseEvent.MOUSE_PRESSED);
+        this.processSecondaryMouseEvent(eventTargetComponent_rbsw50_a0, x_rbsw50_a0, y_rbsw50_a0, MouseEvent.MOUSE_RELEASED);
+        this.processSecondaryMouseEvent(eventTargetComponent_rbsw50_a0, x_rbsw50_a0, y_rbsw50_a0, MouseEvent.MOUSE_CLICKED);
       }
       {
         int x_rbsw50_b0 = 150;
         int y_rbsw50_b0 = 150;
-        Component eventTargetComponent_rbsw50_b0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_rbsw50_b0, y_rbsw50_b0, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rbsw50_b0, x_rbsw50_b0, y_rbsw50_b0, MouseEvent.MOUSE_RELEASED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rbsw50_b0, x_rbsw50_b0, y_rbsw50_b0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_rbsw50_b0 = this.processMouseEvent(x_rbsw50_b0, y_rbsw50_b0, MouseEvent.MOUSE_PRESSED);
+        this.processSecondaryMouseEvent(eventTargetComponent_rbsw50_b0, x_rbsw50_b0, y_rbsw50_b0, MouseEvent.MOUSE_RELEASED);
+        this.processSecondaryMouseEvent(eventTargetComponent_rbsw50_b0, x_rbsw50_b0, y_rbsw50_b0, MouseEvent.MOUSE_CLICKED);
       }
-      BaseEditorTestBody.typeString(editorComponent, "Node");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      this.typeString("Node");
+      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }

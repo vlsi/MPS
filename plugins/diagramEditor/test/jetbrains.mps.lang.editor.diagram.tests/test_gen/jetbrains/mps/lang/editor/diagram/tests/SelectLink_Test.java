@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 
@@ -26,14 +24,13 @@ public class SelectLink_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("822550549814490015", "822550549814494166");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("822550549814490015", "822550549814494166");
       {
         int x_2seftn_a0 = 120;
         int y_2seftn_a0 = 60;
-        Component eventTargetComponent_2seftn_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_2seftn_a0, y_2seftn_a0, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_2seftn_a0, x_2seftn_a0, y_2seftn_a0, MouseEvent.MOUSE_RELEASED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_2seftn_a0, x_2seftn_a0, y_2seftn_a0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_2seftn_a0 = this.processMouseEvent(x_2seftn_a0, y_2seftn_a0, MouseEvent.MOUSE_PRESSED);
+        this.processSecondaryMouseEvent(eventTargetComponent_2seftn_a0, x_2seftn_a0, y_2seftn_a0, MouseEvent.MOUSE_RELEASED);
+        this.processSecondaryMouseEvent(eventTargetComponent_2seftn_a0, x_2seftn_a0, y_2seftn_a0, MouseEvent.MOUSE_CLICKED);
       }
     }
   }

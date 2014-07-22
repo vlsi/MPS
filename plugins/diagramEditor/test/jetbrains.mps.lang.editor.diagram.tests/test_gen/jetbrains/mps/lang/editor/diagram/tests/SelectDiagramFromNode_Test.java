@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 
@@ -26,17 +24,16 @@ public class SelectDiagramFromNode_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("4459951312287602254", "4459951312287602272");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("4459951312287602254", "4459951312287602272");
 
       {
         int x_vp76dd_b0 = 60;
         int y_vp76dd_b0 = 60;
-        Component eventTargetComponent_vp76dd_b0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_vp76dd_b0, x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_RELEASED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_vp76dd_b0, x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_vp76dd_b0 = this.processMouseEvent(x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_PRESSED);
+        this.processSecondaryMouseEvent(eventTargetComponent_vp76dd_b0, x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_RELEASED);
+        this.processSecondaryMouseEvent(eventTargetComponent_vp76dd_b0, x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_CLICKED);
       }
-      assert !(editorComponent.getNodeSubstituteChooser().isVisible());
+      assert !(this.getEditorComponent().getNodeSubstituteChooser().isVisible());
 
     }
   }

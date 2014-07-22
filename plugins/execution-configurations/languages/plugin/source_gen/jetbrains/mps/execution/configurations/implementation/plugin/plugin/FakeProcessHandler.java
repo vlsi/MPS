@@ -5,6 +5,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import com.intellij.execution.process.ProcessHandler;
 import java.util.concurrent.Future;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor;
+import org.jetbrains.annotations.Nullable;
 import java.io.OutputStream;
 
 public class FakeProcessHandler extends ProcessHandler {
@@ -46,7 +47,7 @@ public class FakeProcessHandler extends ProcessHandler {
     return false;
   }
 
-  @Override
+  @Nullable
   public OutputStream getProcessInput() {
     return null;
   }

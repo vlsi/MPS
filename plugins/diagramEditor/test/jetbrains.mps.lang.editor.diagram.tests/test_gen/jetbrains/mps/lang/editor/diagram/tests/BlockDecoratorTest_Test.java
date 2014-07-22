@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -37,8 +35,7 @@ public class BlockDecoratorTest_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("141381309807688262", "141381309807688282");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("141381309807688262", "141381309807688282");
       Mapper descendantMapper;
       final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -46,7 +43,7 @@ public class BlockDecoratorTest_Test extends BaseTransformationTest {
           node.value = SNodeOperations.cast(TestBody.this.getNodeById("141381309807688263"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName");
         }
       });
-      descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, editorComponent, BlockCell.class);
+      descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, this.getEditorComponent(), BlockCell.class);
       Assert.assertTrue(descendantMapper != null);
       Assert.assertTrue(descendantMapper.getTarget() != null);
       Assert.assertTrue(descendantMapper.getTarget() instanceof NodeDecoratorView);

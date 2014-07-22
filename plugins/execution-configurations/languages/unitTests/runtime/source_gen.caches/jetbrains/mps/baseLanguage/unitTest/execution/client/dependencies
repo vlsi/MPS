@@ -200,10 +200,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TempRunIdManager" file="TempRunIdManager.java">
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager" file="RunCachesManager.java">
+    <classNode dependClassName="java.util.concurrent.atomic.AtomicBoolean" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" file="TestEventsDispatcher.java">
     <classNode dependClassName="com.intellij.openapi.util.Key" />

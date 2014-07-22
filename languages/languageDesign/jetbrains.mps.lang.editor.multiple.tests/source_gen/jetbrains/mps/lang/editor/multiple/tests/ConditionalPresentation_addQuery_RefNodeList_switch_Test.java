@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class ConditionalPresentation_addQuery_RefNodeList_switch_Test extends BaseTransformationTest {
@@ -24,12 +22,11 @@ public class ConditionalPresentation_addQuery_RefNodeList_switch_Test extends Ba
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("554589055677214880", "554589055677215040");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "rich");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      BaseEditorTestBody.typeString(editorComponent, "richPropertyValue");
+      initEditor("554589055677214880", "554589055677215040");
+      this.typeString("rich");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      this.typeString("richPropertyValue");
     }
   }
 }

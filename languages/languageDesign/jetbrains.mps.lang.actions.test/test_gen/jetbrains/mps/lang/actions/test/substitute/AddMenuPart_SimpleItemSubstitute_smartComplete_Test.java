@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import junit.framework.Assert;
@@ -27,13 +25,12 @@ public class AddMenuPart_SimpleItemSubstitute_smartComplete_Test extends BaseTra
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("5164819300891972345", "5164819300891972348");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "new");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
-      Assert.assertTrue(editorComponent.getNodeSubstituteChooser().isVisible());
-      editorComponent.getNodeSubstituteChooser().setVisible(false);
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl shift SPACE"));
+      initEditor("5164819300891972345", "5164819300891972348");
+      this.typeString("new");
+      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isVisible());
+      this.getEditorComponent().getNodeSubstituteChooser().setVisible(false);
+      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl shift SPACE"));
 
     }
   }

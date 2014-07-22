@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.ModelAccess;
@@ -29,9 +27,8 @@ public class CreatePort_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("2278461409093572745", "2278461409093572838");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      editorComponent.getOperationContext().getProject().getModelAccess().executeCommandInEDT(new Runnable() {
+      initEditor("2278461409093572745", "2278461409093572838");
+      this.getEditorComponent().getOperationContext().getProject().getModelAccess().executeCommandInEDT(new Runnable() {
         public void run() {
           SNodeFactoryOperations.addNewChild(SNodeOperations.cast(TestBody.this.getNodeById("2278461409093572746"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts"), "outputs", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort");
         }
@@ -40,9 +37,9 @@ public class CreatePort_Test extends BaseTransformationTest {
       {
         int x_rszpwe_c0 = 87;
         int y_rszpwe_c0 = 42;
-        Component eventTargetComponent_rszpwe_c0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_rszpwe_c0, y_rszpwe_c0, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rszpwe_c0, x_rszpwe_c0, y_rszpwe_c0, MouseEvent.MOUSE_RELEASED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rszpwe_c0, x_rszpwe_c0, y_rszpwe_c0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_rszpwe_c0 = this.processMouseEvent(x_rszpwe_c0, y_rszpwe_c0, MouseEvent.MOUSE_PRESSED);
+        this.processSecondaryMouseEvent(eventTargetComponent_rszpwe_c0, x_rszpwe_c0, y_rszpwe_c0, MouseEvent.MOUSE_RELEASED);
+        this.processSecondaryMouseEvent(eventTargetComponent_rszpwe_c0, x_rszpwe_c0, y_rszpwe_c0, MouseEvent.MOUSE_CLICKED);
       }
 
     }

@@ -36,6 +36,8 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public abstract class BaseEditorTestBody extends BaseTestBody {
   private static DataManager DATA_MANAGER = new DataManagerImpl();
@@ -49,6 +51,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   }
 
   protected Editor initEditor(final String before, final String after) throws Exception {
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Initializing editor");
+    }
     final Exception[] exception = new Exception[1];
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
@@ -103,8 +108,8 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
 
   protected void checkAssertion() throws Throwable {
     final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
-    ModelAccess.instance().flushEventQueue();
-    myProject.getModelAccess().executeCommandInEDT(new Runnable() {
+    // <node> 
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
           try {
@@ -197,10 +202,10 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
 
   protected void invokeAction(final String actionId) throws InvocationTargetException, InterruptedException {
     UndoHelper undoHelper = new UndoHelper(myProject, getEditorComponent());
+    final AnAction action = ActionManager.getInstance().getAction(actionId);
+    final AnActionEvent event = ActionUtils.createEvent(ActionPlaces.MAIN_MENU, DATA_MANAGER.getDataContext(getEditorComponent()));
     undoHelper.runUndoableInEDTAndWait(new Runnable() {
       public void run() {
-        AnAction action = ActionManager.getInstance().getAction(actionId);
-        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.MAIN_MENU, DATA_MANAGER.getDataContext(getEditorComponent()));
         action.actionPerformed(event);
       }
     });
@@ -226,4 +231,5 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
     // <node> 
   }
+  protected static Logger LOG = LogManager.getLogger(BaseEditorTestBody.class);
 }

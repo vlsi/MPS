@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class LeftTransformWithAddConcept_Test extends BaseTransformationTest {
@@ -24,9 +22,8 @@ public class LeftTransformWithAddConcept_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("4886882084760491504", "4886882084760491507");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, " addConceptChild");
+      initEditor("4886882084760491504", "4886882084760491507");
+      this.typeString(" addConceptChild");
     }
   }
 }

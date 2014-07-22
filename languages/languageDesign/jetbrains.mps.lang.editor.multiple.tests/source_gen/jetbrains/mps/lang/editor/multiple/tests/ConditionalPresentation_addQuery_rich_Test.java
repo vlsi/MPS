@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class ConditionalPresentation_addQuery_rich_Test extends BaseTransformationTest {
@@ -24,9 +22,8 @@ public class ConditionalPresentation_addQuery_rich_Test extends BaseTransformati
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("7636045212390401569", "7636045212390411176");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "Property");
+      initEditor("7636045212390401569", "7636045212390411176");
+      this.typeString("Property");
     }
   }
 }

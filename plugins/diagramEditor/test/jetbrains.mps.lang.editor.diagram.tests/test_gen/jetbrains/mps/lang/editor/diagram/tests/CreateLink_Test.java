@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 
@@ -26,19 +24,18 @@ public class CreateLink_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("5540569706414443798", "5540569706415669333");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("5540569706414443798", "5540569706415669333");
       {
         int x_rsydnf_a0 = 105;
         int y_rsydnf_a0 = 60;
-        Component eventTargetComponent_rsydnf_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_rsydnf_a0, y_rsydnf_a0, MouseEvent.MOUSE_PRESSED);
+        Component eventTargetComponent_rsydnf_a0 = this.processMouseEvent(x_rsydnf_a0, y_rsydnf_a0, MouseEvent.MOUSE_PRESSED);
         // This is a work-around for existing problem with connection creation: 
         // for now connection source will be selected on receiving first mouse drag event 
         // in general connection source should be selected on mouse-pressed event 
         // TODO: remove first drag mouse statement. 
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rsydnf_a0, x_rsydnf_a0 = 106, y_rsydnf_a0 = 60, MouseEvent.MOUSE_DRAGGED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rsydnf_a0, x_rsydnf_a0 = 195, y_rsydnf_a0 = 240, MouseEvent.MOUSE_DRAGGED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rsydnf_a0, x_rsydnf_a0, y_rsydnf_a0, MouseEvent.MOUSE_RELEASED);
+        this.processSecondaryMouseEvent(eventTargetComponent_rsydnf_a0, x_rsydnf_a0 = 106, y_rsydnf_a0 = 60, MouseEvent.MOUSE_DRAGGED);
+        this.processSecondaryMouseEvent(eventTargetComponent_rsydnf_a0, x_rsydnf_a0 = 195, y_rsydnf_a0 = 240, MouseEvent.MOUSE_DRAGGED);
+        this.processSecondaryMouseEvent(eventTargetComponent_rsydnf_a0, x_rsydnf_a0, y_rsydnf_a0, MouseEvent.MOUSE_RELEASED);
       }
     }
   }

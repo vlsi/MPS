@@ -28,8 +28,8 @@ public class TryingToLeftTransformNewExpression_Test extends BaseTransformationT
       initEditor("2907839077756812217", "2907839077756812221");
       this.typeString(" ");
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
-      Assert.assertTrue(this.getCurrentEditorComponent().getNodeSubstituteChooser().isVisible());
-      this.getCurrentEditorComponent().getNodeSubstituteChooser().setVisible(false);
+      Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isVisible());
+      this.getEditorComponent().getNodeSubstituteChooser().setVisible(false);
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
     }
   }

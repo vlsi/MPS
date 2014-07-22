@@ -27,9 +27,11 @@ import java.util.ArrayList;
 import jetbrains.mps.execution.lib.ClonableList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.lib.PointerUtils;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager;
 
 public class JUnitConfigurationEditorComponent extends JBPanel {
   private final JBLightExecCheckBox myLightExecCheckBox = new JBLightExecCheckBox("Try to execute in the same process ", true);
+  private JBReuseCachesCheckBox myReuseCachesCheckBox = new JBReuseCachesCheckBox(myLightExecCheckBox, "Reuse caches", true);
 
   private final ModuleChooser myModuleChooser;
   private final ModelChooser myModelChooser;
@@ -146,6 +148,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     add(myClassesList, LayoutUtil.createPanelConstraints(1));
     add(myMethodsList, LayoutUtil.createPanelConstraints(1));
     add(myLightExecCheckBox, LayoutUtil.createFieldConstraints(2));
+    add(myReuseCachesCheckBox, LayoutUtil.createFieldConstraints(3));
   }
 
   private void setModuleValue(final String moduleName) {
@@ -165,8 +168,8 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   }
 
   public void attachJavaComponent(final JavaConfigurationEditorComponent javaEditorComponent) {
-    myLightExecCheckBox.registerJavaComp(javaEditorComponent);
-    myLightExecCheckBox.update(javaEditorComponent);
+    myLightExecCheckBox.registerComponents(Sequence.fromArray(javaEditorComponent.getComponents()));
+    myLightExecCheckBox.update();
   }
 
   private void updatePanels() {
@@ -215,6 +218,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     configuration.setModel(model.value);
     configuration.setModule(module.value);
     configuration.setLightExec(myLightExecCheckBox.isSelected());
+    configuration.setReuseCaches(myReuseCachesCheckBox.isSelected());
   }
 
   public void reset(final JUnitSettings_Configuration configuration) {
@@ -277,11 +281,14 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
       myModuleChooser.setText(configuration.getModule());
     }
 
-    if (myLightExecCheckBox.isSelected() != configuration.getLightExec()) {
-      myLightExecCheckBox.doClick();
-    }
-
+    updateCheckBoxes(configuration);
     updatePanels();
+  }
+
+  private void updateCheckBoxes(JUnitSettings_Configuration configuration) {
+    myLightExecCheckBox.setSelected(configuration.getLightExec());
+    myReuseCachesCheckBox.setSelected(configuration.getReuseCaches() && !(RunCachesManager.isLocked()));
+    myReuseCachesCheckBox.setEnabled(!(configuration.getLightExec()) && !(RunCachesManager.isLocked()));
   }
 
   public void resetEditorModelWith(final String modelName) {

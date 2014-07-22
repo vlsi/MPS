@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test extends BaseTransformationTest {
@@ -24,9 +22,8 @@ public class EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test extends
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("7279578193769147477", "5613016763942494875");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "New");
+      initEditor("7279578193769147477", "5613016763942494875");
+      this.typeString("New");
     }
   }
 }

@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.mps.smodel.ModelAccess;
@@ -30,12 +28,11 @@ public class LinkHasNoDecoratorTest_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("83003444452668150", "83003444452668142");
-      final EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("83003444452668150", "83003444452668142");
       final Wrappers._T<Mapper> descendantMapper = new Wrappers._T<Mapper>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          descendantMapper.value = DecoratorTestRunner.getMapper(SNodeOperations.cast(TestBody.this.getNodeById("1560508619093671384"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"), editorComponent);
+          descendantMapper.value = DecoratorTestRunner.getMapper(SNodeOperations.cast(TestBody.this.getNodeById("1560508619093671384"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"), TestBody.this.getEditorComponent());
         }
       });
       Assert.assertTrue(descendantMapper.value != null);

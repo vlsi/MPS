@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 
@@ -26,14 +24,13 @@ public class ResizeNode_top_left_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("7604889971551653126", "7604889971551653129");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("7604889971551653126", "7604889971551653129");
       {
         int x_gfax2l_a0 = 10;
         int y_gfax2l_a0 = 10;
-        Component eventTargetComponent_gfax2l_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_gfax2l_a0, y_gfax2l_a0, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_gfax2l_a0, x_gfax2l_a0 = 5, y_gfax2l_a0 = 15, MouseEvent.MOUSE_DRAGGED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_gfax2l_a0, x_gfax2l_a0, y_gfax2l_a0, MouseEvent.MOUSE_RELEASED);
+        Component eventTargetComponent_gfax2l_a0 = this.processMouseEvent(x_gfax2l_a0, y_gfax2l_a0, MouseEvent.MOUSE_PRESSED);
+        this.processSecondaryMouseEvent(eventTargetComponent_gfax2l_a0, x_gfax2l_a0 = 5, y_gfax2l_a0 = 15, MouseEvent.MOUSE_DRAGGED);
+        this.processSecondaryMouseEvent(eventTargetComponent_gfax2l_a0, x_gfax2l_a0, y_gfax2l_a0, MouseEvent.MOUSE_RELEASED);
       }
     }
   }

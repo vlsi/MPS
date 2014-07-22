@@ -20,29 +20,15 @@ import org.apache.log4j.LogManager;
 public class TestLightExecutor extends AbstractTestExecutor {
   private static final int TERMINATION_CODE = 137;
 
-  private final CommandOutputStream myOutStream;
-  private final CommandOutputStream myErrStream;
-
   private final TestEventsDispatcher myDispatcher;
   private final Iterable<? extends ITestNodeWrapper> myNodes;
   private final TestsClassStorage myTestClassStorage = new TestsClassStorage();
   private boolean myReadyFlag = false;
   private final TestLightRunState myTestRunState;
   public TestLightExecutor(TestEventsDispatcher dispatcher, Iterable<? extends ITestNodeWrapper> nodes) {
-    myOutStream = new CommandOutputStream(System.out);
-    myErrStream = new CommandOutputStream(System.err);
     myTestRunState = TestLightRunState.create();
     myDispatcher = dispatcher;
     myNodes = nodes;
-  }
-
-  private void redirectOutput() {
-    // <node> 
-    // <node> 
-    System.out.println("FUCK");
-
-    // <node> 
-    // <node> 
   }
 
   @Override
@@ -50,7 +36,6 @@ public class TestLightExecutor extends AbstractTestExecutor {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing TestLightExecutor");
     }
-    // <node> 
     getRunState().advance(TestLightRunStateEnum.INITIALIZED);
   }
 
@@ -59,13 +44,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
     if (LOG.isInfoEnabled()) {
       LOG.info("Disposing TestLightExecutor");
     }
-    // <node> 
     getRunState().advance(TestLightRunStateEnum.TERMINATED);
-  }
-
-  private void restoreOutput() {
-    System.setOut(myOutStream.getOldStream());
-    System.setErr(myErrStream.getOldStream());
   }
 
   public void setReady() {

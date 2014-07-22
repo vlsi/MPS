@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -28,18 +26,17 @@ public class StopShowCompletionOnTheDiagram_Test extends BaseTransformationTest 
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("2278461409094282964", "2278461409094282966");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("2278461409094282964", "2278461409094282966");
       {
         int x_hpnf0e_a0 = 10;
         int y_hpnf0e_a0 = 10;
-        Component eventTargetComponent_hpnf0e_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_hpnf0e_a0, y_hpnf0e_a0, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_hpnf0e_a0, x_hpnf0e_a0, y_hpnf0e_a0, MouseEvent.MOUSE_RELEASED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_hpnf0e_a0, x_hpnf0e_a0, y_hpnf0e_a0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_hpnf0e_a0 = this.processMouseEvent(x_hpnf0e_a0, y_hpnf0e_a0, MouseEvent.MOUSE_PRESSED);
+        this.processSecondaryMouseEvent(eventTargetComponent_hpnf0e_a0, x_hpnf0e_a0, y_hpnf0e_a0, MouseEvent.MOUSE_RELEASED);
+        this.processSecondaryMouseEvent(eventTargetComponent_hpnf0e_a0, x_hpnf0e_a0, y_hpnf0e_a0, MouseEvent.MOUSE_CLICKED);
       }
-      assert editorComponent.getNodeSubstituteChooser().isVisible();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ESCAPE"));
-      assert !(editorComponent.getNodeSubstituteChooser().isVisible());
+      assert this.getEditorComponent().getNodeSubstituteChooser().isVisible();
+      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ESCAPE"));
+      assert !(this.getEditorComponent().getNodeSubstituteChooser().isVisible());
 
     }
   }

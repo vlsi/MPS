@@ -30,10 +30,14 @@ public class TransformationTestExecutor extends BTestExecutor {
       executor.execute();
     } catch (Throwable t) {
       t.printStackTrace(System.err);
-      CachesUtil.cleanupCaches();
-      System.exit(1);
+      cleanUpAndExit(1);
     }
-    System.exit(0);
+    cleanUpAndExit(0);
+  }
+
+  private static void cleanUpAndExit(int code) {
+    CachesUtil.cleanupCaches();
+    System.exit(code);
   }
 
   private static void exitApp() {

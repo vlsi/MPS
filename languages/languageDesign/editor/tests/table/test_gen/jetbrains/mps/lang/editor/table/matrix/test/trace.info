@@ -3,109 +3,92 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root nodeRef="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)/1310272842909633660">
     <file name="CreateX_Test.java">
-      <node id="1310272842909633660" at="17,47,18,126" concept="1" />
-      <node id="1310272842909633660" at="18,126,19,107" concept="1" />
-      <node id="1310272842909633660" at="26,51,27,99" concept="3" />
-      <node id="1310272842909633660" at="27,99,28,93" concept="3" />
-      <node id="1310272842909656081" at="28,93,29,105" concept="1" />
-      <node id="1310272842909633660" at="14,0,16,0" concept="0" trace="CreateX_Test#()V" />
-      <node id="1310272842909633660" at="23,0,25,0" concept="0" trace="TestBody#()V" />
-      <node id="1310272842909633660" at="16,0,21,0" concept="2" trace="test_CreateX#()V" />
-      <node id="1310272842909633660" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="1310272842909633660" at="14,25,14,25" />
-      <scope id="1310272842909633660" at="23,23,23,23" />
-      <scope id="1310272842909633660" at="14,0,16,0" />
-      <scope id="1310272842909633660" at="17,47,19,107" />
-      <scope id="1310272842909633660" at="23,0,25,0" />
-      <scope id="1310272842909633660" at="26,51,29,105">
-        <var name="editor" id="1310272842909633660" />
-        <var name="editorComponent" id="1310272842909633660" />
-      </scope>
-      <scope id="1310272842909633660" at="16,0,21,0" />
-      <scope id="1310272842909633660" at="25,0,31,0" />
-      <unit id="1310272842909633660" at="21,0,32,0" name="jetbrains.mps.lang.editor.table.matrix.test.CreateX_Test$TestBody" />
-      <unit id="1310272842909633660" at="12,0,33,0" name="jetbrains.mps.lang.editor.table.matrix.test.CreateX_Test" />
+      <node id="1310272842909633660" at="15,47,16,126" concept="1" />
+      <node id="1310272842909633660" at="16,126,17,107" concept="1" />
+      <node id="1310272842909633660" at="24,51,25,63" concept="1" />
+      <node id="1310272842909656081" at="25,63,26,74" concept="1" />
+      <node id="1310272842909633660" at="12,0,14,0" concept="0" trace="CreateX_Test#()V" />
+      <node id="1310272842909633660" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="1310272842909633660" at="14,0,19,0" concept="2" trace="test_CreateX#()V" />
+      <node id="1310272842909633660" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="1310272842909633660" at="12,25,12,25" />
+      <scope id="1310272842909633660" at="21,23,21,23" />
+      <scope id="1310272842909633660" at="12,0,14,0" />
+      <scope id="1310272842909633660" at="15,47,17,107" />
+      <scope id="1310272842909633660" at="21,0,23,0" />
+      <scope id="1310272842909633660" at="24,51,26,74" />
+      <scope id="1310272842909633660" at="14,0,19,0" />
+      <scope id="1310272842909633660" at="23,0,28,0" />
+      <unit id="1310272842909633660" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.matrix.test.CreateX_Test$TestBody" />
+      <unit id="1310272842909633660" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.matrix.test.CreateX_Test" />
     </file>
   </root>
   <root nodeRef="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)/1310272842909656084">
     <file name="CreateY_Test.java">
-      <node id="1310272842909656084" at="17,47,18,126" concept="1" />
-      <node id="1310272842909656084" at="18,126,19,107" concept="1" />
-      <node id="1310272842909656084" at="26,51,27,99" concept="3" />
-      <node id="1310272842909656084" at="27,99,28,93" concept="3" />
-      <node id="1310272842909656104" at="28,93,29,105" concept="1" />
-      <node id="1310272842909656084" at="14,0,16,0" concept="0" trace="CreateY_Test#()V" />
-      <node id="1310272842909656084" at="23,0,25,0" concept="0" trace="TestBody#()V" />
-      <node id="1310272842909656084" at="16,0,21,0" concept="2" trace="test_CreateY#()V" />
-      <node id="1310272842909656084" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="1310272842909656084" at="14,25,14,25" />
-      <scope id="1310272842909656084" at="23,23,23,23" />
-      <scope id="1310272842909656084" at="14,0,16,0" />
-      <scope id="1310272842909656084" at="17,47,19,107" />
-      <scope id="1310272842909656084" at="23,0,25,0" />
-      <scope id="1310272842909656084" at="26,51,29,105">
-        <var name="editor" id="1310272842909656084" />
-        <var name="editorComponent" id="1310272842909656084" />
-      </scope>
-      <scope id="1310272842909656084" at="16,0,21,0" />
-      <scope id="1310272842909656084" at="25,0,31,0" />
-      <unit id="1310272842909656084" at="21,0,32,0" name="jetbrains.mps.lang.editor.table.matrix.test.CreateY_Test$TestBody" />
-      <unit id="1310272842909656084" at="12,0,33,0" name="jetbrains.mps.lang.editor.table.matrix.test.CreateY_Test" />
+      <node id="1310272842909656084" at="15,47,16,126" concept="1" />
+      <node id="1310272842909656084" at="16,126,17,107" concept="1" />
+      <node id="1310272842909656084" at="24,51,25,63" concept="1" />
+      <node id="1310272842909656104" at="25,63,26,74" concept="1" />
+      <node id="1310272842909656084" at="12,0,14,0" concept="0" trace="CreateY_Test#()V" />
+      <node id="1310272842909656084" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="1310272842909656084" at="14,0,19,0" concept="2" trace="test_CreateY#()V" />
+      <node id="1310272842909656084" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="1310272842909656084" at="12,25,12,25" />
+      <scope id="1310272842909656084" at="21,23,21,23" />
+      <scope id="1310272842909656084" at="12,0,14,0" />
+      <scope id="1310272842909656084" at="15,47,17,107" />
+      <scope id="1310272842909656084" at="21,0,23,0" />
+      <scope id="1310272842909656084" at="24,51,26,74" />
+      <scope id="1310272842909656084" at="14,0,19,0" />
+      <scope id="1310272842909656084" at="23,0,28,0" />
+      <unit id="1310272842909656084" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.matrix.test.CreateY_Test$TestBody" />
+      <unit id="1310272842909656084" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.matrix.test.CreateY_Test" />
     </file>
   </root>
   <root nodeRef="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)/4379396156287837027">
     <file name="Create_Test.java">
-      <node id="4379396156287837027" at="17,46,18,126" concept="1" />
-      <node id="4379396156287837027" at="18,126,19,106" concept="1" />
-      <node id="4379396156287837027" at="26,51,27,99" concept="3" />
-      <node id="4379396156287837027" at="27,99,28,93" concept="3" />
-      <node id="4379396156287837038" at="28,93,29,105" concept="1" />
-      <node id="4379396156287837027" at="14,0,16,0" concept="0" trace="Create_Test#()V" />
-      <node id="4379396156287837027" at="23,0,25,0" concept="0" trace="TestBody#()V" />
-      <node id="4379396156287837027" at="16,0,21,0" concept="2" trace="test_Create#()V" />
-      <node id="4379396156287837027" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="4379396156287837027" at="14,24,14,24" />
-      <scope id="4379396156287837027" at="23,23,23,23" />
-      <scope id="4379396156287837027" at="14,0,16,0" />
-      <scope id="4379396156287837027" at="17,46,19,106" />
-      <scope id="4379396156287837027" at="23,0,25,0" />
-      <scope id="4379396156287837027" at="26,51,29,105">
-        <var name="editor" id="4379396156287837027" />
-        <var name="editorComponent" id="4379396156287837027" />
-      </scope>
-      <scope id="4379396156287837027" at="16,0,21,0" />
-      <scope id="4379396156287837027" at="25,0,31,0" />
-      <unit id="4379396156287837027" at="21,0,32,0" name="jetbrains.mps.lang.editor.table.matrix.test.Create_Test$TestBody" />
-      <unit id="4379396156287837027" at="12,0,33,0" name="jetbrains.mps.lang.editor.table.matrix.test.Create_Test" />
+      <node id="4379396156287837027" at="15,46,16,126" concept="1" />
+      <node id="4379396156287837027" at="16,126,17,106" concept="1" />
+      <node id="4379396156287837027" at="24,51,25,63" concept="1" />
+      <node id="4379396156287837038" at="25,63,26,74" concept="1" />
+      <node id="4379396156287837027" at="12,0,14,0" concept="0" trace="Create_Test#()V" />
+      <node id="4379396156287837027" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="4379396156287837027" at="14,0,19,0" concept="2" trace="test_Create#()V" />
+      <node id="4379396156287837027" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="4379396156287837027" at="12,24,12,24" />
+      <scope id="4379396156287837027" at="21,23,21,23" />
+      <scope id="4379396156287837027" at="12,0,14,0" />
+      <scope id="4379396156287837027" at="15,46,17,106" />
+      <scope id="4379396156287837027" at="21,0,23,0" />
+      <scope id="4379396156287837027" at="24,51,26,74" />
+      <scope id="4379396156287837027" at="14,0,19,0" />
+      <scope id="4379396156287837027" at="23,0,28,0" />
+      <unit id="4379396156287837027" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.matrix.test.Create_Test$TestBody" />
+      <unit id="4379396156287837027" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.matrix.test.Create_Test" />
     </file>
   </root>
   <root nodeRef="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)/8748948598094995664">
     <file name="RemoveY_Test.java">
-      <node id="8748948598094995664" at="17,47,18,126" concept="1" />
-      <node id="8748948598094995664" at="18,126,19,107" concept="1" />
-      <node id="8748948598094995664" at="26,51,27,99" concept="3" />
-      <node id="8748948598094995664" at="27,99,28,93" concept="3" />
-      <node id="1315230867830196353" at="28,93,29,108" concept="1" />
-      <node id="8748948598094995664" at="14,0,16,0" concept="0" trace="RemoveY_Test#()V" />
-      <node id="8748948598094995664" at="23,0,25,0" concept="0" trace="TestBody#()V" />
-      <node id="8748948598094995664" at="16,0,21,0" concept="2" trace="test_RemoveY#()V" />
-      <node id="8748948598094995664" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="8748948598094995664" at="14,25,14,25" />
-      <scope id="8748948598094995664" at="23,23,23,23" />
-      <scope id="8748948598094995664" at="14,0,16,0" />
-      <scope id="8748948598094995664" at="17,47,19,107" />
-      <scope id="8748948598094995664" at="23,0,25,0" />
-      <scope id="8748948598094995664" at="26,51,29,108">
-        <var name="editor" id="8748948598094995664" />
-        <var name="editorComponent" id="8748948598094995664" />
-      </scope>
-      <scope id="8748948598094995664" at="16,0,21,0" />
-      <scope id="8748948598094995664" at="25,0,31,0" />
-      <unit id="8748948598094995664" at="21,0,32,0" name="jetbrains.mps.lang.editor.table.matrix.test.RemoveY_Test$TestBody" />
-      <unit id="8748948598094995664" at="12,0,33,0" name="jetbrains.mps.lang.editor.table.matrix.test.RemoveY_Test" />
+      <node id="8748948598094995664" at="15,47,16,126" concept="1" />
+      <node id="8748948598094995664" at="16,126,17,107" concept="1" />
+      <node id="8748948598094995664" at="24,51,25,63" concept="1" />
+      <node id="1315230867830196353" at="25,63,26,77" concept="1" />
+      <node id="8748948598094995664" at="12,0,14,0" concept="0" trace="RemoveY_Test#()V" />
+      <node id="8748948598094995664" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="8748948598094995664" at="14,0,19,0" concept="2" trace="test_RemoveY#()V" />
+      <node id="8748948598094995664" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8748948598094995664" at="12,25,12,25" />
+      <scope id="8748948598094995664" at="21,23,21,23" />
+      <scope id="8748948598094995664" at="12,0,14,0" />
+      <scope id="8748948598094995664" at="15,47,17,107" />
+      <scope id="8748948598094995664" at="21,0,23,0" />
+      <scope id="8748948598094995664" at="24,51,26,77" />
+      <scope id="8748948598094995664" at="14,0,19,0" />
+      <scope id="8748948598094995664" at="23,0,28,0" />
+      <unit id="8748948598094995664" at="19,0,29,0" name="jetbrains.mps.lang.editor.table.matrix.test.RemoveY_Test$TestBody" />
+      <unit id="8748948598094995664" at="10,0,30,0" name="jetbrains.mps.lang.editor.table.matrix.test.RemoveY_Test" />
     </file>
   </root>
 </debug-info>

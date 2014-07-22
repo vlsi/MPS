@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import junit.framework.Assert;
@@ -27,14 +25,13 @@ public class LeftTransformWithAddConcept_checkCanBeAncestor_Test extends BaseTra
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("6500338114639041775", "6500338114639041779");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, " ");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
-      Assert.assertTrue(editorComponent.getNodeSubstituteChooser().isVisible());
-      Assert.assertTrue(editorComponent.getNodeSubstituteChooser().isMenuEmpty());
-      editorComponent.getNodeSubstituteChooser().setVisible(false);
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ESCAPE"));
+      initEditor("6500338114639041775", "6500338114639041779");
+      this.typeString(" ");
+      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isVisible());
+      Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isMenuEmpty());
+      this.getEditorComponent().getNodeSubstituteChooser().setVisible(false);
+      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ESCAPE"));
     }
   }
 }

@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -36,21 +34,20 @@ public class SelectPortQuery_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("2278461409091838099", "2278461409091838103");
-      final EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("2278461409091838099", "2278461409091838103");
       {
         int x_vw537p_a0 = 67;
         int y_vw537p_a0 = 32;
-        Component eventTargetComponent_vw537p_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_vw537p_a0, y_vw537p_a0, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_vw537p_a0, x_vw537p_a0, y_vw537p_a0, MouseEvent.MOUSE_RELEASED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_vw537p_a0, x_vw537p_a0, y_vw537p_a0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_vw537p_a0 = this.processMouseEvent(x_vw537p_a0, y_vw537p_a0, MouseEvent.MOUSE_PRESSED);
+        this.processSecondaryMouseEvent(eventTargetComponent_vw537p_a0, x_vw537p_a0, y_vw537p_a0, MouseEvent.MOUSE_RELEASED);
+        this.processSecondaryMouseEvent(eventTargetComponent_vw537p_a0, x_vw537p_a0, y_vw537p_a0, MouseEvent.MOUSE_CLICKED);
       }
       final Wrappers._T<Mapper> descendantMapper = new Wrappers._T<Mapper>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          EditorCell selectedCell = editorComponent.getSelectedCell();
+          EditorCell selectedCell = TestBody.this.getEditorComponent().getSelectedCell();
           Assert.assertTrue(selectedCell != null);
-          DiagramCell diagramCell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), DiagramCell.class, true);
+          DiagramCell diagramCell = CellFinderUtil.findChildByClass(TestBody.this.getEditorComponent().getRootCell(), DiagramCell.class, true);
           descendantMapper.value = diagramCell.getRootMapper().getDescendantMapper(SPropertyOperations.getString(SNodeOperations.cast(TestBody.this.getNodeById("2278461409092334466"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort"), "name"));
         }
       });

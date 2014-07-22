@@ -6,69 +6,91 @@ package jetbrains.mps.traceInfo.testWeaving.data;
 public class TestGenerated {
   public TestGenerated() {
   }
+
   public void ChildConceptWeave_a() {
     System.out.println("I'm" + "1");
   }
+
   public void ChildConceptWeave_b() {
     System.out.println("I'm" + "2");
   }
+
   public void ChildConceptWeaveEach_a() {
     System.out.println("I'm" + "each 1");
   }
+
   public void ChildConceptWeaveEach_b() {
     System.out.println("I'm" + "each 2");
   }
+
   public void ChildConceptWeaveMany_a() {
     System.out.println("I'm" + "many 1" + "#0");
   }
+
   public void ChildConceptWeaveMany_a_0() {
     System.out.println("I'm" + "many 1" + "#1");
   }
+
   public void ChildConceptWeaveMany_a_1() {
     System.out.println("I'm" + "many 1" + "#2");
   }
+
   public void ChildConceptWeaveMany_b() {
     System.out.println("I'm" + "many 2" + "#0");
   }
+
   public void ChildConceptWeaveMany_b_0() {
     System.out.println("I'm" + "many 2" + "#1");
   }
+
   public void ChildConceptWeaveMany_b_1() {
     System.out.println("I'm" + "many 2" + "#2");
   }
+
   public void ChildConceptWeaveMany_c() {
     System.out.println("I'm" + "many 3" + "#0");
   }
+
   public void ChildConceptWeaveMany_c_0() {
     System.out.println("I'm" + "many 3" + "#1");
   }
+
   public void ChildConceptWeaveMany_c_1() {
     System.out.println("I'm" + "many 3" + "#2");
   }
+
   public void ChildConceptWeaveEachMany_a() {
     System.out.println("I'm" + "each many 1" + "#0");
   }
+
   public void ChildConceptWeaveEachMany_a_0() {
     System.out.println("I'm" + "each many 1" + "#1");
   }
+
   public void ChildConceptWeaveEachMany_a_1() {
     System.out.println("I'm" + "each many 1" + "#2");
   }
+
   public void ChildConceptWeaveEachMany_b() {
     System.out.println("I'm" + "each many 2" + "#0");
   }
+
   public void ChildConceptWeaveEachMany_b_0() {
     System.out.println("I'm" + "each many 2" + "#1");
   }
+
   public void ChildConceptWeaveEachMany_b_1() {
     System.out.println("I'm" + "each many 2" + "#2");
   }
+
   public void ChildConceptWeaveEachMany_c() {
     System.out.println("I'm" + "each many 3" + "#0");
   }
+
   public void ChildConceptWeaveEachMany_c_0() {
     System.out.println("I'm" + "each many 3" + "#1");
   }
+
   public void ChildConceptWeaveEachMany_c_1() {
     System.out.println("I'm" + "each many 3" + "#2");
   }

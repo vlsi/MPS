@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class DelOnChild1ReplaceItWithLinkTarget_Test extends BaseTransformationTest {
@@ -24,9 +22,8 @@ public class DelOnChild1ReplaceItWithLinkTarget_Test extends BaseTransformationT
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("7803854675610517462", "7803854675610518814");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Delete_Action");
+      initEditor("7803854675610517462", "7803854675610518814");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
     }
   }
 }

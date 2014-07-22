@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
@@ -37,8 +35,7 @@ public class LinkDecoratorTest_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("1638882350373488135", "1560508619093517333");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("1638882350373488135", "1560508619093517333");
       final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -46,7 +43,7 @@ public class LinkDecoratorTest_Test extends BaseTransformationTest {
         }
       });
       Mapper descendantMapper;
-      descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, editorComponent, ConnectorCell.class);
+      descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, this.getEditorComponent(), ConnectorCell.class);
       Assert.assertTrue(descendantMapper != null);
       Assert.assertTrue(descendantMapper.getTarget() != null);
       Assert.assertTrue(descendantMapper.getTarget() instanceof ConnectorDecoratorView);

@@ -1589,8 +1589,8 @@
       <node id="2345623147105465521" at="29,51,30,63" concept="2" />
       <node id="8262891670217997174" at="30,63,31,77" concept="2" />
       <node id="297555905489768634" at="33,27,34,153" concept="6" />
-      <node id="297555905489768638" at="34,153,35,138" concept="6" />
-      <node id="297555905489768646" at="35,138,36,96" concept="2" />
+      <node id="297555905489768638" at="34,153,35,131" concept="6" />
+      <node id="297555905489768646" at="35,131,36,96" concept="2" />
       <node id="2345623147105465521" at="17,0,19,0" concept="1" trace="SmartReferenseUpdateOnChange_Test#()V" />
       <node id="2345623147105465521" at="26,0,28,0" concept="1" trace="TestBody#()V" />
       <node id="2345623147105465521" at="19,0,24,0" concept="5" trace="test_SmartReferenseUpdateOnChange#()V" />
@@ -1827,9 +1827,9 @@
       <node id="2907839077756756657" at="27,51,28,63" concept="2" />
       <node id="2907839077757040116" at="28,63,29,27" concept="2" />
       <node id="2907839077757049951" at="29,27,30,91" concept="2" />
-      <node id="2907839077757057119" at="30,91,31,97" concept="2" />
-      <node id="2907839077757066996" at="31,97,32,84" concept="2" />
-      <node id="403806536168445210" at="32,84,33,74" concept="2" />
+      <node id="2907839077757057119" at="30,91,31,90" concept="2" />
+      <node id="2907839077757066996" at="31,90,32,77" concept="2" />
+      <node id="403806536168445210" at="32,77,33,74" concept="2" />
       <node id="2907839077756756657" at="15,0,17,0" concept="1" trace="TryingToLeftTransformNewExpression_Test#()V" />
       <node id="2907839077756756657" at="24,0,26,0" concept="1" trace="TestBody#()V" />
       <node id="2907839077756756657" at="17,0,22,0" concept="5" trace="test_TryingToLeftTransformNewExpression#()V" />

@@ -15,8 +15,6 @@ import com.intellij.openapi.util.InvalidDataException;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
-import jetbrains.mps.util.test.CachesUtil;
 import jetbrains.mps.baseLanguage.unitTest.execution.tool.UnitTestViewComponent;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import com.intellij.execution.process.ProcessHandler;
@@ -97,17 +95,6 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   }
   public List<SNodeReference> getTestsToMake() {
     return this.getJUnitSettings().getTestsToMake(ProjectHelper.toMPSProject(this.getProject()));
-  }
-  public JavaRunParameters prepareJavaParamsForTests(int runId) {
-    String runIdString = "-D" + CachesUtil.PROPERTY_RUN_ID + "=\"" + runId + "\"";
-    JavaRunParameters_Configuration javaRunParams = this.getJavaRunParameters();
-    JavaRunParameters parameters = javaRunParams.getJavaRunParameters().clone();
-    String vmFromJava = javaRunParams.getJavaRunParameters().getVmOptions();
-    if (vmFromJava == null) {
-      vmFromJava = "";
-    }
-    parameters.setVmOptions(vmFromJava + " " + runIdString);
-    return parameters;
   }
   public UnitTestViewComponent createTestViewComponent(TestRunState runState, final ProcessHandler process) {
     ConsoleView console = ConsoleCreator.createConsoleView(this.getProject(), false);

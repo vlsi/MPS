@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class StyleAttributeTest_Test extends BaseTransformationTest {
@@ -24,9 +22,8 @@ public class StyleAttributeTest_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("8422442021223409310", "8422442021223410181");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      invokeIntention("jetbrains.mps.lang.editor.styleTests.intentions.TestAttributeIntention_Intention", editor, myStart.getNode());
+      initEditor("8422442021223409310", "8422442021223410181");
+      invokeIntention("jetbrains.mps.lang.editor.styleTests.intentions.TestAttributeIntention_Intention", myStart.getNode());
     }
   }
 }

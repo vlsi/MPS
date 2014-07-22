@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class InsertPrevSiblingOperation_Focus_Test extends BaseTransformationTest {
@@ -24,10 +22,9 @@ public class InsertPrevSiblingOperation_Focus_Test extends BaseTransformationTes
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("1835794636205189194", "1835794636205189199");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "node.add next-sibling");
-      BaseEditorTestBody.typeString(editorComponent, "new");
+      initEditor("1835794636205189194", "1835794636205189199");
+      this.typeString("node.add next-sibling");
+      this.typeString("new");
     }
   }
 }

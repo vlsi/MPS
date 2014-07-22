@@ -67,6 +67,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public boolean getLightExec() {
     return myState.myLightExec;
   }
+  public boolean getReuseCaches() {
+    return myState.myReuseCaches;
+  }
   public ClonableList<String> getTestCases() {
     return myState.myTestCases;
   }
@@ -84,6 +87,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   }
   public void setLightExec(boolean value) {
     myState.myLightExec = value;
+  }
+  public void setReuseCaches(boolean value) {
+    myState.myReuseCaches = value;
   }
   public void setTestCases(ClonableList<String> value) {
     myState.myTestCases = value;
@@ -163,6 +169,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     public String myModel;
     public String myModule;
     public boolean myLightExec = true;
+    public boolean myReuseCaches = true;
     public ClonableList<String> myTestCases = new ClonableList<String>();
     public ClonableList<String> myTestMethods = new ClonableList<String>();
     public JUnitRunTypes myRunType = JUnitRunTypes.PROJECT;
@@ -174,6 +181,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       state.myModel = myModel;
       state.myModule = myModule;
       state.myLightExec = myLightExec;
+      state.myReuseCaches = myReuseCaches;
       if (myTestCases != null) {
         state.myTestCases = myTestCases.clone();
       }

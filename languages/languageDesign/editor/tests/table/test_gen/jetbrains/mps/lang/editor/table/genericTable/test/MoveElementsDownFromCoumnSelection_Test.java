@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class MoveElementsDownFromCoumnSelection_Test extends BaseTransformationTest {
@@ -24,10 +22,9 @@ public class MoveElementsDownFromCoumnSelection_Test extends BaseTransformationT
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("2025581204008533797", "2025581204008533819");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      initEditor("2025581204008533797", "2025581204008533819");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
     }
   }
 }

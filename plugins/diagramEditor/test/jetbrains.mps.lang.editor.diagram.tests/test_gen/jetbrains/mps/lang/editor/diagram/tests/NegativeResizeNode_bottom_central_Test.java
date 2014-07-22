@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 
@@ -26,14 +24,13 @@ public class NegativeResizeNode_bottom_central_Test extends BaseTransformationTe
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("5540569706412486832", "5540569706412486835");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("5540569706412486832", "5540569706412486835");
       {
         int x_dddoqy_a0 = 50;
         int y_dddoqy_a0 = 90;
-        Component eventTargetComponent_dddoqy_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_dddoqy_a0, y_dddoqy_a0, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_dddoqy_a0, x_dddoqy_a0 = 50, y_dddoqy_a0 = -30, MouseEvent.MOUSE_DRAGGED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_dddoqy_a0, x_dddoqy_a0, y_dddoqy_a0, MouseEvent.MOUSE_RELEASED);
+        Component eventTargetComponent_dddoqy_a0 = this.processMouseEvent(x_dddoqy_a0, y_dddoqy_a0, MouseEvent.MOUSE_PRESSED);
+        this.processSecondaryMouseEvent(eventTargetComponent_dddoqy_a0, x_dddoqy_a0 = 50, y_dddoqy_a0 = -30, MouseEvent.MOUSE_DRAGGED);
+        this.processSecondaryMouseEvent(eventTargetComponent_dddoqy_a0, x_dddoqy_a0, y_dddoqy_a0, MouseEvent.MOUSE_RELEASED);
       }
     }
   }

@@ -17,75 +17,41 @@ package jetbrains.mps.util.test;
 
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathUtil;
+import jetbrains.mps.util.test.Checker.Result;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOError; import java.util.ArrayList; import java.util.List;
 
-// TODO: refactor this
 public final class CachesUtil {
-  private static final String MPS_TEST_DIR = "mps_test_dir";
-  private static final String PROPERTY_SYSTEM_PATH = "idea.system.path";
   private static final String PROPERTY_CONFIG_PATH = "idea.config.path";
-  public static final String PROPERTY_RUN_ID = "mps.test.run.id";
+  private static final String PROPERTY_SYSTEM_PATH = "idea.system.path";
+  private static final String MPS_TEST_DIR = "mps_test_dir";
+  public static final String REUSE_CACHES = "mps.test.reuse_caches";
+
   private static final List<File> TO_REMOVE = new ArrayList<File>();
 
   // we need to check that caches dirs are writable
   // idea does not have the necessary api, @see our PathManager class
   public static void setupCaches() {
-    boolean success = trySetTestCachesFromOptions();
-    if (!success)
-      success = trySetTestCachesPath(MPS_TEST_DIR);
-    if (!success)
-      setTestCachesInTempDir();
-  }
+    final Checker cachesPathChecker = new CachesPathChecker(System.getProperty(PROPERTY_CONFIG_PATH), System.getProperty(PROPERTY_SYSTEM_PATH));
+    final Checker reusableCachesChecker = new MPSReusableCachesChecker(MPS_TEST_DIR);
+    final Checker oneTimeCachesChecker = new MPSOneTimeCachesChecker();
+    Checker[] checkers = {cachesPathChecker, reusableCachesChecker, oneTimeCachesChecker};
 
-  private static boolean trySetTestCachesFromOptions() {
-    boolean result = useTemporalFolderIfNotSet(PROPERTY_CONFIG_PATH);
-    result &= useTemporalFolderIfNotSet(PROPERTY_SYSTEM_PATH);
-    return result;
-  }
-
-  private static boolean useTemporalFolderIfNotSet(String propertyName) {
-    String path = System.getProperty(propertyName);
-    if (path == null)
-      return false;
-    path = PathUtil.trimPathQuotes(path);
-    path = PathUtil.getAbsolutePath(path);
-    return FileUtil.canWrite(new File(path));
-  }
-
-  private static boolean trySetTestCachesPath(String testDirName) {
-    File tmpDir = FileUtil.getTempDir();
-    final String idRunProperty = System.getProperty(PROPERTY_RUN_ID);
-    if (idRunProperty != null) {
-      int runId = Integer.parseInt(idRunProperty);
-      testDirName += "_" + runId;
+    Result result = null;
+    for (Checker checker : checkers) {
+      result = checker.check();
+      if (result.isSuccessful()) break;
     }
-    System.out.println("Saving caches in the " + testDirName + " directory");
-    File testDirPath = new File(tmpDir.getAbsolutePath(), testDirName);
-    File testConfigPath = new File(testDirPath, "config");
-    File testSystemPath = new File(testDirPath, "system");
-    if (FileUtil.canWrite(testConfigPath) && FileUtil.canWrite(testSystemPath)) {
-      testConfigPath.mkdirs();
-      testSystemPath.mkdir();
-      TO_REMOVE.add(testDirPath);
-      System.setProperty(PROPERTY_CONFIG_PATH, testConfigPath.getAbsolutePath());
-      System.setProperty(PROPERTY_SYSTEM_PATH, testSystemPath.getAbsolutePath());
-      return true;
+    if (result.isSuccessful()) {
+      System.out.println("Saving ''config'' caches in the " + result.getConfigPath() + " directory");
+      System.out.println("Saving ''system'' caches in the " + result.getSystemPath() + " directory");
+      System.setProperty(PROPERTY_CONFIG_PATH, result.getConfigPath());
+      System.setProperty(PROPERTY_SYSTEM_PATH, result.getSystemPath());
+    } else {
+      throw new IOError(new Throwable("Cannot find a place to write caches"));
     }
-    return false;
-  }
-
-  private static void setTestCachesInTempDir() {
-    setTempFolder(PROPERTY_CONFIG_PATH);
-    setTempFolder(PROPERTY_SYSTEM_PATH);
-  }
-
-  private static void setTempFolder(String propertyName) {
-    File tmpDir = FileUtil.createTmpDir();
-    TO_REMOVE.add(tmpDir);
-    System.setProperty(propertyName, tmpDir.getAbsolutePath());
   }
 
   public static void cleanupCaches() {
@@ -97,5 +63,81 @@ public final class CachesUtil {
       }
     }
     TO_REMOVE.clear();
+  }
+
+  private static class CachesPathChecker implements Checker {
+    private final String myConfigPath;
+    private final String mySystemPath;
+
+    public CachesPathChecker(@Nullable String configPath, @Nullable String systemPath) {
+      myConfigPath = configPath;
+      mySystemPath = systemPath;
+    }
+
+    @Override
+    public Result check() {
+      boolean result = canWrite(myConfigPath);
+      result &= canWrite(mySystemPath);
+      return Result.create(result, myConfigPath, mySystemPath);
+    }
+
+    private static boolean canWrite(@Nullable String path) {
+      if (path == null)
+        return false;
+      path = PathUtil.trimPathQuotes(path);
+      path = PathUtil.getAbsolutePath(path);
+      return FileUtil.canWrite(new File(path));
+    }
+  }
+
+  private static class MPSReusableCachesChecker implements Checker {
+    private final String myCachesDir;
+
+    public MPSReusableCachesChecker(String cachesDir) {
+      myCachesDir = cachesDir;
+    }
+
+    @Override
+    public Result check() {
+      final String idRunProperty = System.getProperty(REUSE_CACHES);
+      if (idRunProperty == null) {
+        return Result.UNSUCCESSFUL;
+      }
+      File tmpDir = FileUtil.getTempDir();
+      File testDirPath = new File(tmpDir.getAbsolutePath(), myCachesDir);
+      File testConfigPath = new File(testDirPath, "config");
+      File testSystemPath = new File(testDirPath, "system");
+      if (FileUtil.canWrite(testConfigPath) && FileUtil.canWrite(testSystemPath)) {
+        testConfigPath.mkdirs();
+        testSystemPath.mkdir();
+        return Result.create(true, testConfigPath.getAbsolutePath(), testSystemPath.getAbsolutePath());
+      }
+      return Result.UNSUCCESSFUL;
+    }
+  }
+
+  private static class MPSOneTimeCachesChecker implements Checker {
+    public MPSOneTimeCachesChecker() {
+    }
+
+    @Override
+    public Result check() {
+      final String configPath = setTempFolder();
+      final String systemPath = setTempFolder();
+
+      boolean result = canWrite(configPath);
+      result &= canWrite(systemPath);
+      return Result.create(result, configPath, systemPath);
+    }
+
+    private static boolean canWrite(@Nullable String path) {
+      return FileUtil.canWrite(new File(path));
+    }
+
+    private static String setTempFolder() {
+      File tmpDir = FileUtil.createTmpDir();
+      TO_REMOVE.add(tmpDir);
+      return tmpDir.getAbsolutePath();
+    }
   }
 }

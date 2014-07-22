@@ -13,6 +13,7 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -45,14 +46,15 @@ public class JUnitTests_Configuration_RunProfileState implements RunProfileState
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    List<ITestNodeWrapper> testNodes = myRunConfiguration.getJUnitSettings().getTests(ProjectHelper.toMPSProject(project));
+    JUnitSettings_Configuration jUnitSettings = myRunConfiguration.getJUnitSettings();
+    List<ITestNodeWrapper> testNodes = jUnitSettings.getTests(ProjectHelper.toMPSProject(project));
     TestRunState runState = new TestRunState(testNodes);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
     jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor processExecutor;
-    if (myRunConfiguration.getJUnitSettings().canLightExecute(testNodes)) {
+    if (jUnitSettings.canLightExecute(testNodes)) {
       processExecutor = new JUnitLightExecutor(testNodes, eventsDispatcher);
     } else {
-      processExecutor = new JUnitExecutor(myRunConfiguration.getJavaRunParameters(), testNodes);
+      processExecutor = new JUnitExecutor(jUnitSettings, myRunConfiguration.getJavaRunParameters(), testNodes);
     }
     ProcessHandler process = processExecutor.execute();
     final UnitTestViewComponent testViewComponent = myRunConfiguration.createTestViewComponent(runState, process);

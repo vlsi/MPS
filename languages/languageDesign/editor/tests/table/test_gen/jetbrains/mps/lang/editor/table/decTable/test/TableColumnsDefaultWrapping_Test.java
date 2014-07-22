@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
 public class TableColumnsDefaultWrapping_Test extends BaseTransformationTest {
@@ -24,8 +22,7 @@ public class TableColumnsDefaultWrapping_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("7651593722933722506", "8377126844275870351");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("7651593722933722506", "8377126844275870351");
       // =================================================================== 
       // FIXME 
       // This test is a draft, it is not testing any actual functionality. 

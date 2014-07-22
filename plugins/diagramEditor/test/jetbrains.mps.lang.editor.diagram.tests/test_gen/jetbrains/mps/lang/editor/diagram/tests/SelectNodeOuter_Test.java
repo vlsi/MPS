@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 
@@ -26,14 +24,13 @@ public class SelectNodeOuter_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("8095638845859348585", "8095638845859348589");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      initEditor("8095638845859348585", "8095638845859348589");
       {
         int x_qi7d9q_a0 = 20;
         int y_qi7d9q_a0 = 20;
-        Component eventTargetComponent_qi7d9q_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_qi7d9q_a0, y_qi7d9q_a0, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_qi7d9q_a0, x_qi7d9q_a0, y_qi7d9q_a0, MouseEvent.MOUSE_RELEASED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_qi7d9q_a0, x_qi7d9q_a0, y_qi7d9q_a0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_qi7d9q_a0 = this.processMouseEvent(x_qi7d9q_a0, y_qi7d9q_a0, MouseEvent.MOUSE_PRESSED);
+        this.processSecondaryMouseEvent(eventTargetComponent_qi7d9q_a0, x_qi7d9q_a0, y_qi7d9q_a0, MouseEvent.MOUSE_RELEASED);
+        this.processSecondaryMouseEvent(eventTargetComponent_qi7d9q_a0, x_qi7d9q_a0, y_qi7d9q_a0, MouseEvent.MOUSE_CLICKED);
       }
     }
   }
