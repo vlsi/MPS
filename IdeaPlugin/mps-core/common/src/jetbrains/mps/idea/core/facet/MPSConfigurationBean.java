@@ -27,6 +27,7 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.persistence.ModuleDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -47,7 +48,7 @@ public class MPSConfigurationBean {
 
   public MPSConfigurationBean() {
     myDescriptor = new SolutionDescriptor();
-    myDescriptor.setUUID(UUID.randomUUID().toString());
+    myDescriptor.setId(ModuleId.regular());
   }
 
   @Transient
@@ -56,11 +57,11 @@ public class MPSConfigurationBean {
   }
 
   public String getUUID() {
-    return myDescriptor.getUUID();
+    return myDescriptor.getId().toString();
   }
 
   public void setUUID(String uuid) {
-    myDescriptor.setUUID(uuid);
+    myDescriptor.setId(ModuleId.fromString(uuid));
   }
 
   public void setUseModuleSourceFolder(boolean use) {
@@ -173,7 +174,7 @@ public class MPSConfigurationBean {
 
   public State toState() {
     State result = new State();
-    result.UUID = myDescriptor.getUUID();
+    result.UUID = getUUID();
     result.generatorOutputPath = myDescriptor.getOutputPath();
     result.useModuleSourceFolder = myUseModuleSourceFolder;
     result.useTransientOutputFolder = myUseTransientOutputFolder;

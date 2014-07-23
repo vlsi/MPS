@@ -225,7 +225,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
       SolutionDescriptor descriptor = extension.getConfiguration().getSolutionDescriptor();
       descriptor.setNamespace(mod.getName());
-      MPSCompilerUtil.debug(context, "UUID " + descriptor.getUUID());
+      MPSCompilerUtil.debug(context, "UUID " + descriptor.getId());
       // Commeted out. See SolutionIdea: solutions don't have foreign ids, rather regular
 //      descriptor.setId(ModuleId.foreign(mod.getName()));
 

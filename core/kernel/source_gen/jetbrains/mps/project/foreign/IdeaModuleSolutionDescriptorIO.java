@@ -8,6 +8,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.io.DescriptorIOException;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -34,8 +35,8 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
         final String result_56japk_a1a0a0e0b = file.getName();
         result_56japk_a0a0e0b.setNamespace(result_56japk_a1a0a0e0b);
 
-        final String result_56japk_a3a0a0e0b = mpsConf.UUID;
-        result_56japk_a0a0e0b.setUUID(result_56japk_a3a0a0e0b);
+        final ModuleId result_56japk_a3a0a0e0b = ModuleId.fromString(mpsConf.UUID);
+        result_56japk_a0a0e0b.setId(result_56japk_a3a0a0e0b);
 
         // TODO: pluginKind 
 

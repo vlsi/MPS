@@ -974,7 +974,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     public void apply() {
       if (myTable.isEditing())
         myTable.getCellEditor().stopCellEditing();
-      final GeneratorDescriptor genDescr = (GeneratorDescriptor) myModuleDescriptor;
+      final GeneratorDescriptor genDescr = myGenerator.getModuleDescriptor();
       genDescr.setGenerateTemplates(myGenerateTemplates.isSelected());
       genDescr.setReflectiveQueries(myReflectiveQueries.isSelected());
       genDescr.setNeedOperationContext(myNeedOpContext.isSelected());
@@ -991,7 +991,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myTable.getTableHeader().setReorderingAllowed(false);
 
 
-      myPrioritiesTableModel = new GenPrioritiesTableModel();
+      myPrioritiesTableModel = new GenPrioritiesTableModel(myGenerator.getModuleDescriptor());
       myTable.setModel(myPrioritiesTableModel);
 
       myTable.setDefaultRenderer(RuleType.class, new RuleTypeRenderer());
@@ -1168,7 +1168,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
         GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
-      final GeneratorDescriptor genDescr = (GeneratorDescriptor) myModule.getModuleDescriptor();
+      final GeneratorDescriptor genDescr = myGenerator.getModuleDescriptor();
       JPanel generationOptions = new JPanel();
       generationOptions.setLayout(new FlowLayout(FlowLayout.LEFT));
       myGenerateTemplates = new JBCheckBox(PropertiesBundle.message("mps.properties.module.generator.gentemplates.name"), genDescr.isGenerateTemplates());
@@ -1189,122 +1189,134 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public boolean isModified() {
-      final GeneratorDescriptor genDescr = (GeneratorDescriptor) myModuleDescriptor;
+      final GeneratorDescriptor genDescr = myGenerator.getModuleDescriptor();
       final boolean b1 = genDescr.isGenerateTemplates();
       final boolean b2 = genDescr.isReflectiveQueries();
       final boolean b3 = genDescr.needsOperationContext();
       return myPrioritiesTableModel.isModified()
         || myGenerateTemplates.isSelected() != b1 || myReflectiveQueries.isSelected() != b2 || myNeedOpContext.isSelected() != b3;
     }
+  }
 
-    private class GenPrioritiesTableModel extends AbstractTableModel implements ItemRemovable {
+  private static class GenPrioritiesTableModel extends AbstractTableModel implements ItemRemovable {
 
-      private List<MappingPriorityRule> myMappingPriorityRules = new LinkedList<MappingPriorityRule>();
+    private final GeneratorDescriptor myModuleDescriptor;
+    private List<MappingPriorityRule> myMappingPriorityRules = new LinkedList<MappingPriorityRule>();
 
-      public GenPrioritiesTableModel() {
-        super();
-        for (MappingPriorityRule rule : ((GeneratorDescriptor) myModuleDescriptor).getPriorityRules())
-          myMappingPriorityRules.add(rule.getCopy());
+    public GenPrioritiesTableModel(GeneratorDescriptor moduleDescriptor) {
+      super();
+      myModuleDescriptor = moduleDescriptor;
+      for (MappingPriorityRule rule : myModuleDescriptor.getPriorityRules())
+        myMappingPriorityRules.add(rule.getCopy());
+    }
+
+    @Override
+    public int getColumnCount() {
+      return 3;
+    }
+
+    @Override
+    public int getRowCount() {
+      return myMappingPriorityRules.size();
+    }
+
+    public void addItem(MappingPriorityRule mappingPriorityRule) {
+      if (mappingPriorityRule != null)
+        myMappingPriorityRules.add(mappingPriorityRule);
+    }
+
+    @Override
+    public Object getValueAt(int rowIndex, int columnIndex) {
+      MappingPriorityRule rule = myMappingPriorityRules.get(rowIndex);
+      if (columnIndex == 0)
+        return rule.getLeft();
+      if (columnIndex == 1)
+        return rule.getType();
+      if (columnIndex == 2)
+        return rule.getRight();
+      return null;
+    }
+
+    @Override
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+      MappingPriorityRule rule = myMappingPriorityRules.get(rowIndex);
+      if (columnIndex == 0 && aValue instanceof MappingConfig_AbstractRef)
+        rule.setLeft((MappingConfig_AbstractRef) aValue);
+      if (columnIndex == 1 && aValue instanceof RuleType)
+        rule.setType((RuleType) aValue);
+      if (columnIndex == 2 && aValue instanceof MappingConfig_AbstractRef)
+        rule.setRight((MappingConfig_AbstractRef) aValue);
+    }
+
+    @Override
+    public void removeRow(int idx) {
+      myMappingPriorityRules.remove(idx);
+    }
+
+    @Override
+    public Class<?> getColumnClass(int columnIndex) {
+      if (columnIndex == 0 || columnIndex == 2)
+        return MappingConfig_AbstractRef.class;
+      if (columnIndex == 1)
+        return RuleType.class;
+      return super.getColumnClass(columnIndex);
+    }
+
+    @Override
+    public String getColumnName(int column) {
+      switch (column) {
+        case 0:
+          return "Language Generator";
+        case 1:
+          return "Rule";
+        case 2:
+          return "Extended Generators";
+        default:
+          return "";
       }
+    }
 
-      @Override
-      public int getColumnCount() {
-        return 3;
-      }
+    @Override
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+      return true;
+    }
 
-      @Override
-      public int getRowCount() {
-        return myMappingPriorityRules.size();
-      }
+    public boolean isModified() {
+      return !(myModuleDescriptor.getPriorityRules().containsAll(myMappingPriorityRules)
+          && myMappingPriorityRules.containsAll(myModuleDescriptor.getPriorityRules())
+      );
+    }
 
-      public void addItem(MappingPriorityRule mappingPriorityRule) {
-        if (mappingPriorityRule != null)
-          myMappingPriorityRules.add(mappingPriorityRule);
-      }
-
-      @Override
-      public Object getValueAt(int rowIndex, int columnIndex) {
-        MappingPriorityRule rule = myMappingPriorityRules.get(rowIndex);
-        if (columnIndex == 0)
-          return rule.getLeft();
-        if (columnIndex == 1)
-          return rule.getType();
-        if (columnIndex == 2)
-          return rule.getRight();
-        return null;
-      }
-
-      @Override
-      public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-        MappingPriorityRule rule = myMappingPriorityRules.get(rowIndex);
-        if (columnIndex == 0 && aValue instanceof MappingConfig_AbstractRef)
-          rule.setLeft((MappingConfig_AbstractRef) aValue);
-        if (columnIndex == 1 && aValue instanceof RuleType)
-          rule.setType((RuleType) aValue);
-        if (columnIndex == 2 && aValue instanceof MappingConfig_AbstractRef)
-          rule.setRight((MappingConfig_AbstractRef) aValue);
-      }
-
-      @Override
-      public void removeRow(int idx) {
-        myMappingPriorityRules.remove(idx);
-      }
-
-      @Override
-      public Class<?> getColumnClass(int columnIndex) {
-        if (columnIndex == 0 || columnIndex == 2)
-          return MappingConfig_AbstractRef.class;
-        if (columnIndex == 1)
-          return RuleType.class;
-        return super.getColumnClass(columnIndex);
-      }
-
-      @Override
-      public String getColumnName(int column) {
-        switch (column) {
-          case 0:
-            return "Language Generator";
-          case 1:
-            return "Rule";
-          case 2:
-            return "Extended Generators";
-          default:
-            return "";
-        }
-      }
-
-      @Override
-      public boolean isCellEditable(int rowIndex, int columnIndex) {
-        return true;
-      }
-
-      public boolean isModified() {
-        GeneratorDescriptor generatorDescriptor = (GeneratorDescriptor) myModuleDescriptor;
-        return !(generatorDescriptor.getPriorityRules().containsAll(myMappingPriorityRules)
-          && myMappingPriorityRules.containsAll(generatorDescriptor.getPriorityRules())
-        );
-      }
-
-      public void apply() {
-        GeneratorDescriptor descriptor = (GeneratorDescriptor) myModuleDescriptor;
-        for (MappingPriorityRule rule : myMappingPriorityRules) {
-          Queue<Pair<MappingConfig_AbstractRef, MappingConfig_AbstractRef>> queue = new LinkedList<Pair<MappingConfig_AbstractRef, MappingConfig_AbstractRef>>();
-          queue.add(new Pair<MappingConfig_AbstractRef, MappingConfig_AbstractRef>(rule.getRight(), null));
-          while (!queue.isEmpty()) {
-            Pair<MappingConfig_AbstractRef, MappingConfig_AbstractRef> ref = queue.poll();
-            if(ref.o1 instanceof MappingConfig_RefSet) {
-              for(MappingConfig_AbstractRef ref1 : ((MappingConfig_RefSet) ref.o1).getMappingConfigs())
-                queue.add(new Pair<MappingConfig_AbstractRef, MappingConfig_AbstractRef>(ref1,ref.o1));
-            } else if(ref.o1 instanceof MappingConfig_ExternalRef) {
-              if(!descriptor.getDepGenerators().contains(((MappingConfig_ExternalRef) ref.o1).getGenerator()) && !descriptor.getModuleReference().equals(((MappingConfig_ExternalRef) ref.o1).getGenerator()))
-                if(ref.o2 != null && ref.o2 instanceof MappingConfig_RefSet)
-                  ((MappingConfig_RefSet)ref.o2).getMappingConfigs().remove(ref.o1);
+    public void apply() {
+      // Dubious code. The idea seems to be to remove rules when module import is gone. However:
+      // (a) it's not nice to alter user data without notice;
+      // (b) external refs inside RefSet only are considered for removal, ExternalRef with missing generator right in a rule (not under RefSet) is ignored
+      // (c) use of moduleDescriptor.getDepGenerators implies dependenciesTab#apply() has been called. If tabs are in different order - won't hold true.
+      // Would be better to warn user instead.
+      for (MappingPriorityRule rule : myMappingPriorityRules) {
+        Queue<Pair<MappingConfig_AbstractRef, MappingConfig_RefSet>> queue = new LinkedList<Pair<MappingConfig_AbstractRef, MappingConfig_RefSet>>();
+        // map entry to set it lives in
+        queue.add(new Pair<MappingConfig_AbstractRef, MappingConfig_RefSet>(rule.getRight(), null));
+        while (!queue.isEmpty()) {
+          Pair<MappingConfig_AbstractRef, MappingConfig_RefSet> ref = queue.poll();
+          if(ref.o1 instanceof MappingConfig_RefSet) {
+            final MappingConfig_RefSet refSet = (MappingConfig_RefSet) ref.o1;
+            for(MappingConfig_AbstractRef ref1 : refSet.getMappingConfigs()) {
+              // record children of RefSet along with RefSet itself for further processing
+              queue.add(new Pair<MappingConfig_AbstractRef, MappingConfig_RefSet>(ref1, refSet));
+            }
+          } else if(ref.o1 instanceof MappingConfig_ExternalRef) {
+            final MappingConfig_ExternalRef extRef = (MappingConfig_ExternalRef) ref.o1;
+            if(!myModuleDescriptor.getDepGenerators().contains(extRef.getGenerator()) && !myModuleDescriptor.getModuleReference().equals(extRef.getGenerator())) {
+              if (ref.o2 != null) {
+                ref.o2.getMappingConfigs().remove(ref.o1);
+              }
             }
           }
         }
-        descriptor.getPriorityRules().clear();
-        descriptor.getPriorityRules().addAll(myMappingPriorityRules);
       }
+      myModuleDescriptor.getPriorityRules().clear();
+      myModuleDescriptor.getPriorityRules().addAll(myMappingPriorityRules);
     }
   }
 
