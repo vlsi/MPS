@@ -16,9 +16,8 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
-import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
+import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -34,7 +33,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.generator.internal.PrimaryReplaceChildMenuCellMenuPart;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -131,7 +129,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     DeleteFinalInBaseMethod.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InstanceMethodDeclaration_Editor.InstanceMethodDeclaration_component_cellMenu_359zr8_a0b2a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InstanceMethodDeclaration_Editor.ApplySideTransforms_null_cellMenu_359zr8_a0b2a()}));
     return editorCell;
   }
 
@@ -139,15 +137,9 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
-  public static class InstanceMethodDeclaration_component_cellMenu_359zr8_a0b2a implements SubstituteInfoPartExt {
-    private AddMethodModifiers myComponent;
-
-    public InstanceMethodDeclaration_component_cellMenu_359zr8_a0b2a() {
-      this.myComponent = new AddMethodModifiers();
-    }
-
-    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createSubstituteActions(cellContext, editorContext);
+  public static class ApplySideTransforms_null_cellMenu_359zr8_a0b2a extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_359zr8_a0b2a() {
+      super(CellSide.RIGHT);
     }
   }
 
@@ -160,7 +152,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     _InstanceMethodDeclaration_RemoveAbstract.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InstanceMethodDeclaration_Editor.InstanceMethodDeclaration_component_cellMenu_359zr8_a0c2a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InstanceMethodDeclaration_Editor.ApplySideTransforms_null_cellMenu_359zr8_a0c2a()}));
     return editorCell;
   }
 
@@ -168,15 +160,9 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isAbstract");
   }
 
-  public static class InstanceMethodDeclaration_component_cellMenu_359zr8_a0c2a implements SubstituteInfoPartExt {
-    private AddMethodModifiers myComponent;
-
-    public InstanceMethodDeclaration_component_cellMenu_359zr8_a0c2a() {
-      this.myComponent = new AddMethodModifiers();
-    }
-
-    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createSubstituteActions(cellContext, editorContext);
+  public static class ApplySideTransforms_null_cellMenu_359zr8_a0c2a extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_359zr8_a0c2a() {
+      super(CellSide.RIGHT);
     }
   }
 
@@ -189,7 +175,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     DeleteSynchronizedInBaseMethod.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InstanceMethodDeclaration_Editor.InstanceMethodDeclaration_component_cellMenu_359zr8_a0d2a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InstanceMethodDeclaration_Editor.ApplySideTransforms_null_cellMenu_359zr8_a0d2a()}));
     return editorCell;
   }
 
@@ -197,15 +183,9 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isSynchronized");
   }
 
-  public static class InstanceMethodDeclaration_component_cellMenu_359zr8_a0d2a implements SubstituteInfoPartExt {
-    private AddMethodModifiers myComponent;
-
-    public InstanceMethodDeclaration_component_cellMenu_359zr8_a0d2a() {
-      this.myComponent = new AddMethodModifiers();
-    }
-
-    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createSubstituteActions(cellContext, editorContext);
+  public static class ApplySideTransforms_null_cellMenu_359zr8_a0d2a extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_359zr8_a0d2a() {
+      super(CellSide.RIGHT);
     }
   }
 
@@ -279,7 +259,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new InstanceMethodDeclaration_Editor.InstanceMethodDeclaration_returnType_cellMenu_359zr8_a0e0(), new InstanceMethodDeclaration_Editor.InstanceMethodDeclaration_component_cellMenu_359zr8_b0e0()}));
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -288,23 +268,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  public static class InstanceMethodDeclaration_returnType_cellMenu_359zr8_a0e0 extends PrimaryReplaceChildMenuCellMenuPart {
-    public InstanceMethodDeclaration_returnType_cellMenu_359zr8_a0e0() {
-    }
-  }
-
-  public static class InstanceMethodDeclaration_component_cellMenu_359zr8_b0e0 implements SubstituteInfoPartExt {
-    private AddMethodModifiers myComponent;
-
-    public InstanceMethodDeclaration_component_cellMenu_359zr8_b0e0() {
-      this.myComponent = new AddMethodModifiers();
-    }
-
-    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createSubstituteActions(cellContext, editorContext);
-    }
   }
 
   private EditorCell createComponent_359zr8_f0(EditorContext editorContext, SNode node) {

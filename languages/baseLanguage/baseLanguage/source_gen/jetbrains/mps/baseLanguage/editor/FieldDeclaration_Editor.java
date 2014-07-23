@@ -7,18 +7,17 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
-import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
+import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -80,6 +79,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createComponent_2sbeba_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._Component_Visibility");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{}));
     return editorCell;
   }
 
@@ -92,7 +92,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     DeleteFinalInField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FieldDeclaration_Editor.FieldDeclaration_component_cellMenu_2sbeba_a0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FieldDeclaration_Editor.ApplySideTransforms_null_cellMenu_2sbeba_a0d0()}));
     return editorCell;
   }
 
@@ -100,15 +100,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
-  public static class FieldDeclaration_component_cellMenu_2sbeba_a0d0 implements SubstituteInfoPartExt {
-    private AddFieldModifiers myComponent;
-
-    public FieldDeclaration_component_cellMenu_2sbeba_a0d0() {
-      this.myComponent = new AddFieldModifiers();
-    }
-
-    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createSubstituteActions(cellContext, editorContext);
+  public static class ApplySideTransforms_null_cellMenu_2sbeba_a0d0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_2sbeba_a0d0() {
+      super(CellSide.RIGHT);
     }
   }
 
@@ -121,7 +115,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     DeleteTransient.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FieldDeclaration_Editor.FieldDeclaration_component_cellMenu_2sbeba_a0e0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FieldDeclaration_Editor.ApplySideTransforms_null_cellMenu_2sbeba_a0e0()}));
     return editorCell;
   }
 
@@ -129,15 +123,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isTransient");
   }
 
-  public static class FieldDeclaration_component_cellMenu_2sbeba_a0e0 implements SubstituteInfoPartExt {
-    private AddFieldModifiers myComponent;
-
-    public FieldDeclaration_component_cellMenu_2sbeba_a0e0() {
-      this.myComponent = new AddFieldModifiers();
-    }
-
-    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createSubstituteActions(cellContext, editorContext);
+  public static class ApplySideTransforms_null_cellMenu_2sbeba_a0e0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_2sbeba_a0e0() {
+      super(CellSide.RIGHT);
     }
   }
 
@@ -150,7 +138,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     DeleteVolatile.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FieldDeclaration_Editor.FieldDeclaration_component_cellMenu_2sbeba_a0f0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FieldDeclaration_Editor.ApplySideTransforms_null_cellMenu_2sbeba_a0f0()}));
     return editorCell;
   }
 
@@ -158,15 +146,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isVolatile");
   }
 
-  public static class FieldDeclaration_component_cellMenu_2sbeba_a0f0 implements SubstituteInfoPartExt {
-    private AddFieldModifiers myComponent;
-
-    public FieldDeclaration_component_cellMenu_2sbeba_a0f0() {
-      this.myComponent = new AddFieldModifiers();
-    }
-
-    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createSubstituteActions(cellContext, editorContext);
+  public static class ApplySideTransforms_null_cellMenu_2sbeba_a0f0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_2sbeba_a0f0() {
+      super(CellSide.RIGHT);
     }
   }
 

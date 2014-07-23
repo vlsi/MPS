@@ -15,9 +15,8 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import java.util.List;
-import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
+import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -96,19 +95,13 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     DeleteStaticInField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.StaticFieldDeclaration_component_cellMenu_t6d1qn_a0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.ApplySideTransforms_null_cellMenu_t6d1qn_a0d0()}));
     return editorCell;
   }
 
-  public static class StaticFieldDeclaration_component_cellMenu_t6d1qn_a0d0 implements SubstituteInfoPartExt {
-    private AddStaticFieldModifiers myComponent;
-
-    public StaticFieldDeclaration_component_cellMenu_t6d1qn_a0d0() {
-      this.myComponent = new AddStaticFieldModifiers();
-    }
-
-    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createSubstituteActions(cellContext, editorContext);
+  public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0d0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_t6d1qn_a0d0() {
+      super(CellSide.RIGHT);
     }
   }
 
@@ -121,7 +114,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     DeleteFinalInStaticField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.StaticFieldDeclaration_component_cellMenu_t6d1qn_a0e0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.ApplySideTransforms_null_cellMenu_t6d1qn_a0e0()}));
     return editorCell;
   }
 
@@ -129,15 +122,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
-  public static class StaticFieldDeclaration_component_cellMenu_t6d1qn_a0e0 implements SubstituteInfoPartExt {
-    private AddStaticFieldModifiers myComponent;
-
-    public StaticFieldDeclaration_component_cellMenu_t6d1qn_a0e0() {
-      this.myComponent = new AddStaticFieldModifiers();
-    }
-
-    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createSubstituteActions(cellContext, editorContext);
+  public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0e0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_t6d1qn_a0e0() {
+      super(CellSide.RIGHT);
     }
   }
 
@@ -150,7 +137,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     DeleteStaticTransient.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.StaticFieldDeclaration_component_cellMenu_t6d1qn_a0f0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.ApplySideTransforms_null_cellMenu_t6d1qn_a0f0()}));
     return editorCell;
   }
 
@@ -158,15 +145,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isTransient");
   }
 
-  public static class StaticFieldDeclaration_component_cellMenu_t6d1qn_a0f0 implements SubstituteInfoPartExt {
-    private AddStaticFieldModifiers myComponent;
-
-    public StaticFieldDeclaration_component_cellMenu_t6d1qn_a0f0() {
-      this.myComponent = new AddStaticFieldModifiers();
-    }
-
-    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createSubstituteActions(cellContext, editorContext);
+  public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0f0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_t6d1qn_a0f0() {
+      super(CellSide.RIGHT);
     }
   }
 
@@ -179,7 +160,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     DeleteStaticVolatile.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.StaticFieldDeclaration_component_cellMenu_t6d1qn_a0g0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.ApplySideTransforms_null_cellMenu_t6d1qn_a0g0()}));
     return editorCell;
   }
 
@@ -187,15 +168,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "isVolatile");
   }
 
-  public static class StaticFieldDeclaration_component_cellMenu_t6d1qn_a0g0 implements SubstituteInfoPartExt {
-    private AddStaticFieldModifiers myComponent;
-
-    public StaticFieldDeclaration_component_cellMenu_t6d1qn_a0g0() {
-      this.myComponent = new AddStaticFieldModifiers();
-    }
-
-    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createSubstituteActions(cellContext, editorContext);
+  public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0g0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_t6d1qn_a0g0() {
+      super(CellSide.RIGHT);
     }
   }
 
