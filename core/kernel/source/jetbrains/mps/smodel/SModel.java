@@ -595,16 +595,18 @@ public class SModel implements SModelData {
 
   public Map<SLanguageId, Integer> implicitlyUsedLanguagesWithVersions() {
     Map<SLanguageId, Integer> res = new HashMap<SLanguageId, Integer>();
-    for (org.jetbrains.mps.openapi.model.SNode node : SNodeUtil.getDescendants(getModelDescriptor())) {
-      Language conceptLang = (Language) node.getConcept().getLanguage().getSourceModule();
+    for (org.jetbrains.mps.openapi.model.SNode root: getRootNodes()){
+      for (org.jetbrains.mps.openapi.model.SNode node : SNodeUtil.getDescendants(root)) {
+        Language conceptLang = (Language) node.getConcept().getLanguage().getSourceModule();
 
-      Set<Language> langs = conceptLang.getAllExtendedLanguages();
-      langs.add(conceptLang);
+        Set<Language> langs = conceptLang.getAllExtendedLanguages();
+        langs.add(conceptLang);
 
-      for (Language l : langs) {
-        SLanguageId lid = IdHelper.getLanguageId(l);
-        if (!myLanguagesIds.containsKey(lid)) {
-          res.put(lid, l.getLanguageVersion());
+        for (Language l : langs) {
+          SLanguageId lid = IdHelper.getLanguageId(l);
+          if (!myLanguagesIds.containsKey(lid)) {
+            res.put(lid, l.getLanguageVersion());
+          }
         }
       }
     }
