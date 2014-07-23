@@ -1482,7 +1482,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     was reloaded, but current editor instance was not
     updated yet.
    */
-  private boolean isInvalid() {
+  public boolean isInvalid() {
     return isInvalidLightweight() || !SNodeUtil.isAccessible(getEditedNode(), myRepository);
   }
 

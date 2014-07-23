@@ -17,7 +17,6 @@
   </source>
   <source id="1802459475176571473" name="EditorResolver" hash="10fpyo8xfsjdzfhfxqb9lq28s56gh2m">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="EditorResolver.java" />
   </source>
 </dependencies>
