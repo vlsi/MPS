@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,7 +160,12 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   private Set<Dependency> getDependencies() {
     Set<Dependency> dependencies = new HashSet<Dependency>();
     for(DependenciesTableItem tableItem : myTableItems) {
-      if (tableItem.getItem().getScope() == SDependencyScope.DEFAULT) {
+      // FIXME here's comes a hack. We used to save only 'DEFAULT' SDependency with Dependency,
+      // FIXME        and 'EXTENDS' as SModuleReference (@see getExtendedModules, below).
+      // FIXME        However, with support for other dependency scopes introduced, we are going to transit
+      // FIXME        to single Dependency presentation. Meanwhile (as there no scopes but EXTENDS and DEFAULT in legacy descriptors)
+      // FIXME        this code simply leaves EXTENDS processing as it was, but saves all other dependencies with Dependency object
+      if (tableItem.getItem().getScope() != SDependencyScope.EXTENDS) {
         dependencies.add(tableItem.getItem().getCopy()); // XXX not sure copy is needed here
       }
     }
@@ -170,7 +175,7 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   private Set<SModuleReference> getExtendedModules() {
     Set<SModuleReference> set = new HashSet<SModuleReference>();
     for(DependenciesTableItem tableItem : myTableItems)
-      if(tableItem.getItem().getScope() == SDependencyScope.EXTENDS)
+      if(tableItem.getItem().getScope() == SDependencyScope.EXTENDS) // XXX see getDependencies() above
         set.add(tableItem.getItem().getModuleRef());
 
     return set;

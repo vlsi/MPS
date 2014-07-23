@@ -469,22 +469,24 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
         JComboBox combo = (JComboBox) super.getTableCellEditorComponent(table, value, isSelected, row, column);
         combo.removeAllItems();
-        if (row < 0 || row >= table.getModel().getRowCount())
+        if (row < 0 || row >= table.getModel().getRowCount()) {
           return combo;
-
-        List items = getItemsForCell(row, column);
-        for (Object item : items) {
-          combo.addItem(item);
         }
+        DependenciesTableItem rowItem = myDependTableModel.getValueAt(row);
+        List items = getItemsForCell(rowItem);
+        for (Object o : items) {
+          combo.addItem(o);
+        }
+        combo.setSelectedItem(rowItem.getItem().getScope());
         return combo;
       }
 
-      private List getItemsForCell(int row, int column) {
+      private List<SDependencyScope> getItemsForCell(DependenciesTableItem item) {
         List<SDependencyScope> scopes = new ArrayList<SDependencyScope>(Arrays.asList(SDependencyScope.DEFAULT));
-        if (isLangToLang(row) || isGenToGen(row)) {
+        if (isLangToLang(item) || isGenToGen(item)) {
           scopes.add(SDependencyScope.EXTENDS);
         }
-        if (isGenToGen(row)) {
+        if (isGenToGen(item)) {
           // DESIGN dependencies between generators allows use of referenced generators in priority rules without
           // imposing any run-time dependency between generators.
           scopes.add(SDependencyScope.DESIGN);
@@ -492,13 +494,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         return scopes;
       }
 
-      private boolean isLangToLang(int row) {
-        DependenciesTableItem item = myDependTableModel.getValueAt(row);
+      private boolean isLangToLang(DependenciesTableItem item) {
         return myDependTableModel.getSource() instanceof LanguageDescriptor && item.getModuleType().equals(ModuleType.LANGUAGE);
       }
 
-      private boolean isGenToGen(int row) {
-        DependenciesTableItem item = myDependTableModel.getValueAt(row);
+      private boolean isGenToGen(DependenciesTableItem item) {
         return myDependTableModel.getSource() instanceof GeneratorDescriptor && item.getModuleType().equals(ModuleType.GENERATOR);
       }
     }
@@ -978,7 +978,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       genDescr.setGenerateTemplates(myGenerateTemplates.isSelected());
       genDescr.setReflectiveQueries(myReflectiveQueries.isSelected());
       genDescr.setNeedOperationContext(myNeedOpContext.isSelected());
-      myPrioritiesTableModel.apply();
+      myPrioritiesTableModel.apply(myDepGenerators);
     }
 
     @Override
@@ -1287,12 +1287,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       );
     }
 
-    public void apply() {
+    public void apply(GeneratorDependencyProvider generatorDependencies) {
       // Dubious code. The idea seems to be to remove rules when module import is gone. However:
       // (a) it's not nice to alter user data without notice;
       // (b) external refs inside RefSet only are considered for removal, ExternalRef with missing generator right in a rule (not under RefSet) is ignored
-      // (c) use of moduleDescriptor.getDepGenerators implies dependenciesTab#apply() has been called. If tabs are in different order - won't hold true.
       // Would be better to warn user instead.
+      final Set<SModuleReference> accessibleGenerators = generatorDependencies.getGenerators();
+      accessibleGenerators.add(myModuleDescriptor.getModuleReference()); // generator module being edited is always accessible
       for (MappingPriorityRule rule : myMappingPriorityRules) {
         Queue<Pair<MappingConfig_AbstractRef, MappingConfig_RefSet>> queue = new LinkedList<Pair<MappingConfig_AbstractRef, MappingConfig_RefSet>>();
         // map entry to set it lives in
@@ -1307,10 +1308,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             }
           } else if(ref.o1 instanceof MappingConfig_ExternalRef) {
             final MappingConfig_ExternalRef extRef = (MappingConfig_ExternalRef) ref.o1;
-            if(!myModuleDescriptor.getDepGenerators().contains(extRef.getGenerator()) && !myModuleDescriptor.getModuleReference().equals(extRef.getGenerator())) {
-              if (ref.o2 != null) {
-                ref.o2.getMappingConfigs().remove(ref.o1);
-              }
+            if(!accessibleGenerators.contains(extRef.getGenerator()) && ref.o2 != null) {
+              ref.o2.getMappingConfigs().remove(ref.o1);
             }
           }
         }
