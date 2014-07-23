@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode.Mode;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
@@ -48,23 +47,24 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @Deprecated
   protected SReference(String role, SNode sourceNode) {
     myRole = role;
-    if ((sourceNode instanceof jetbrains.mps.smodel.SNode) && ((jetbrains.mps.smodel.SNode) sourceNode).workingMode()==Mode.ID)
-      myRoleId = IdUtil.getReferenceLinkId(sourceNode.getConceptId(), myRole);
+    if (((SReferenceSource) sourceNode).workingMode() == IdMigrationMode.ID){
+      myRoleId = ((SReferenceSource) sourceNode).getReferenceLinkId(sourceNode.getConceptId(), myRole);
+    }
     mySourceNode = sourceNode;
   }
 
   protected SReference(SReferenceLinkId role, SNode sourceNode) {
     myRoleId = role;
-    if ((sourceNode instanceof jetbrains.mps.smodel.SNode) && ((jetbrains.mps.smodel.SNode) sourceNode).workingMode()==Mode.NAME){
-      myRole = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(myRoleId);
+    if (((SReferenceSource) sourceNode).workingMode() == IdMigrationMode.NAME) {
+      myRole = ((SReferenceSource) sourceNode).getLinkName(myRoleId);
     }
     mySourceNode = sourceNode;
   }
 
   @Override
   public String getRole() {
-    if (workingMode() == Mode.ID) {
-      return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(myRoleId);
+    if (workingMode() == IdMigrationMode.ID) {
+      return ((SReferenceSource) mySourceNode).getLinkName(myRoleId);
     } else {
       return myRole;
     }
@@ -72,8 +72,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
   @Override
   public SReferenceLinkId getRoleId() {
-    if (workingMode() == Mode.NAME) {
-      return IdUtil.getReferenceLinkId(mySourceNode.getConceptId(), myRole);
+    if (workingMode() == IdMigrationMode.NAME) {
+      return ((SReferenceSource) mySourceNode).getReferenceLinkId(mySourceNode.getConceptId(), myRole);
     } else {
       return myRoleId;
     }
@@ -127,8 +127,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   public void setRole(String newRole) {
-    if (workingMode() == Mode.ID) {
-      myRoleId = IdUtil.getReferenceLinkId(mySourceNode.getConceptId(), newRole);
+    if (workingMode() == IdMigrationMode.ID) {
+      myRoleId = ((SReferenceSource) mySourceNode).getReferenceLinkId(mySourceNode.getConceptId(), newRole);
     } else {
       if (newRole == null) {
         myRole = null;
@@ -139,14 +139,14 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   public void setRoleId(SReferenceLinkId newRole) {
-    if (workingMode() == Mode.NAME) {
-      myRole = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(newRole);
+    if (workingMode() == IdMigrationMode.NAME) {
+      myRole = ((SReferenceSource) mySourceNode).getLinkName(newRole);
     } else {
       myRoleId = newRole;
     }
   }
 
-  public void setRoleId_direct(SReferenceLinkId newRole){
+  public void setRoleId_direct(SReferenceLinkId newRole) {
     myRoleId = newRole;
   }
 
@@ -249,9 +249,9 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     }
   }
 
-  protected Mode workingMode() {
-    if (!(mySourceNode instanceof jetbrains.mps.smodel.SNode)) return Mode.UNKNOWN;
-    return ((jetbrains.mps.smodel.SNode) mySourceNode).workingMode();
+  protected IdMigrationMode workingMode() {
+    if (!(mySourceNode instanceof SReferenceSource)) return IdMigrationMode.UNKNOWN;
+    return ((SReferenceSource) mySourceNode).workingMode();
   }
 
   @Immutable

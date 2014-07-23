@@ -39,7 +39,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -53,9 +52,8 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.UUID;
 
-public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode {
+public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode, SReferenceSource {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNode.class));
   private static final String[] EMPTY_ARRAY = new String[0];
   private static final Object USER_OBJECT_LOCK = new Object();
@@ -93,7 +91,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     // 1) without read action 2) we must not use deployed version of the concept
     // ?? may be we need a separate getConceptQualifiedName() method here
     if (RuntimeFlags.isMergeDriverMode() || /* for indexing */ !ModelAccess.instance().canRead()) {
-      if (workingMode() == Mode.NAME) {
+      if (workingMode() == IdMigrationMode.NAME) {
         return new SConceptAdapter(myConceptFqName);
       } else {
         return new SConceptAdapter(myConceptId);
@@ -797,7 +795,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   public void setRoleInParentId(SContainmentLinkId newRole) {//todo add undo
-    if (workingMode() == Mode.NAME) {
+    if (workingMode() == IdMigrationMode.NAME) {
       setRoleInParent_byId(newRole);
     } else {
       setRoleInParent_byName(lid2name(newRole));
@@ -807,7 +805,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public SContainmentLinkId getRoleInParentId() {
     nodeRead();
-    if (workingMode() == Mode.NAME) {
+    if (workingMode() == IdMigrationMode.NAME) {
       return name2lid(getParent(), getRoleInParent_byName());
     } else {
       return getRoleInParentId_byId();
@@ -828,7 +826,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     firePropertyReadAccessInEditor(property, false);
 
     String propertyValue;
-    if (workingMode() == Mode.NAME) {
+    if (workingMode() == IdMigrationMode.NAME) {
       propertyValue = getProperty_byName(pid2name(property));
     } else {
       propertyValue = getProperty_byId(property);
@@ -843,7 +841,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     propertyValue = InternUtil.intern(propertyValue);
     final Pair<Boolean, String> isSet;
-    if (workingMode() == Mode.NAME) {
+    if (workingMode() == IdMigrationMode.NAME) {
       isSet = setProperty_byName(pid2name(property), propertyValue);
     } else {
       isSet = setProperty_byId(property, propertyValue);
@@ -871,7 +869,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     List<SPropertyId> result = new ArrayList<SPropertyId>(5);
-    if (workingMode() == Mode.NAME) {
+    if (workingMode() == IdMigrationMode.NAME) {
       if (myProperties == null) return result;
       for (int i = 0; i < myProperties.length; i += 2) {
         result.add(name2pid((String) myNewProperties[i]));
@@ -890,7 +888,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanChange();
 
     Pair<SReference, SReference> res;
-    if (workingMode() == Mode.NAME) {
+    if (workingMode() == IdMigrationMode.NAME) {
       res = setReferenceTarget_byName(rid2name(role), target);
     } else {
       res = setReferenceTarget_byId(role, target);
@@ -922,7 +920,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     SReference result;
 
-    if (workingMode() == Mode.NAME) {
+    if (workingMode() == IdMigrationMode.NAME) {
       result = getReference_byName(rid2name(role));
     } else {
       result = getReference_byId(role);
@@ -937,7 +935,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanChange();
 
     SReference toRemove;
-    if (workingMode() == Mode.NAME) {
+    if (workingMode() == IdMigrationMode.NAME) {
       toRemove = setReference_byName(rid2name(role), reference);
     } else {
       toRemove = setReference_byId(role, reference);
@@ -951,7 +949,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanChange();
 
     SNode schild;
-    if (workingMode() == Mode.NAME) {
+    if (workingMode() == IdMigrationMode.NAME) {
       schild = insertChildBefore_byName(lid2name(role), child, anchor);
     } else {
       schild = insertChildBefore_byId(role, child, anchor);
@@ -971,7 +969,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public List<SNode> getChildren(SContainmentLinkId role) {
-    if (workingMode() == Mode.NAME) {
+    if (workingMode() == IdMigrationMode.NAME) {
       return getChildren_byName(lid2name(role));
     } else {
       return getChildren_byId(role);
@@ -980,7 +978,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
 
   private int getPropertyIndex(SPropertyId id) {
-    if (workingMode() == Mode.NAME) {
+    if (workingMode() == IdMigrationMode.NAME) {
       return getPropertyIndex_byName(pid2name(id));
     } else {
       return getPropertyIndex_byId(id);
@@ -1032,7 +1030,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Deprecated
   public void setRoleInParent(String newRole) {
-    if (workingMode() == Mode.ID) {
+    if (workingMode() == IdMigrationMode.ID) {
       setRoleInParent_byId(name2lid(getParent(), newRole));
     } else {
       setRoleInParent_byName(newRole);
@@ -1043,7 +1041,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public String getRoleInParent() {
     nodeRead();
-    if (workingMode() == Mode.ID) {
+    if (workingMode() == IdMigrationMode.ID) {
       return lid2name(getRoleInParentId_byId());
     } else {
       return getRoleInParent_byName();
@@ -1065,7 +1063,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     propertyRead(propertyName);
     firePropertyReadAccessInEditor(propertyName, false);
     String propertyValue;
-    if (workingMode() == Mode.ID) {
+    if (workingMode() == IdMigrationMode.ID) {
       propertyValue = getProperty_byId(name2pid(propertyName));
     } else {
       propertyValue = getProperty_byName(propertyName);
@@ -1083,7 +1081,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     String pname = ourMemberAccessModifier != null ? ourMemberAccessModifier.getNewPropertyName(getModel(), myConceptFqName, propertyName) :
         InternUtil.intern(propertyName);
     final Pair<Boolean, String> isSet;
-    if (workingMode() == Mode.ID) {
+    if (workingMode() == IdMigrationMode.ID) {
       isSet = setProperty_byId(name2pid(propertyName), propertyValue);
     } else {
       isSet = setProperty_byName(propertyName, propertyValue);
@@ -1113,7 +1111,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     LinkedHashSet<String> result = new LinkedHashSet<String>();
-    if (workingMode() == Mode.ID) {
+    if (workingMode() == IdMigrationMode.ID) {
       if (myNewProperties == null) return result;
       for (int i = 0; i < myNewProperties.length; i += 2) {
         result.add(pid2name(((SPropertyId) myNewProperties[i])));
@@ -1134,7 +1132,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
 
     Pair<SReference, SReference> res;
-    if (workingMode() == Mode.ID) {
+    if (workingMode() == IdMigrationMode.ID) {
       res = setReferenceTarget_byId(name2rid(role), target);
     } else {
       String correctedRole =
@@ -1168,7 +1166,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     SReference result;
 
-    if (workingMode() == Mode.ID) {
+    if (workingMode() == IdMigrationMode.ID) {
       result = getReference_byId(name2rid(role));
     } else {
       if (ourMemberAccessModifier != null) {
@@ -1187,7 +1185,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanChange();
 
     SReference toRemove;
-    if (workingMode() == Mode.ID) {
+    if (workingMode() == IdMigrationMode.ID) {
       toRemove = setReference_byId(name2rid(role), reference);
     } else {
       toRemove = setReference_byName(role, reference);
@@ -1202,7 +1200,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanChange();
 
     SNode schild;
-    if (workingMode() == Mode.ID) {
+    if (workingMode() == IdMigrationMode.ID) {
       schild = insertChildBefore_byId(name2lid(this, role), child, anchor);
     } else {
       if (ourMemberAccessModifier != null) {
@@ -1227,7 +1225,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public List<SNode> getChildren(String role) {
-    if (workingMode() == Mode.ID) {
+    if (workingMode() == IdMigrationMode.ID) {
       return getChildren_byId(name2lid(this, role));
     } else {
       return getChildren_byName(role);
@@ -1235,7 +1233,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private int getPropertyIndex(String propertyName) {
-    if (workingMode() == Mode.ID) {
+    if (workingMode() == IdMigrationMode.ID) {
       return getPropertyIndex_byId(name2pid(propertyName));
     } else {
       return getPropertyIndex_byName(propertyName);
@@ -1831,11 +1829,19 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
 //-------------tmp private methods to help migrating to ids--------------
 
-  public enum Mode {ID, NAME, UNKNOWN}
+  public IdMigrationMode workingMode() {
+    if (!(myModel instanceof DefaultSModel)) return IdMigrationMode.UNKNOWN;
+    return ((DefaultSModel) myModel).getSModelHeader().getPersistenceVersion() > 8 ? IdMigrationMode.ID : IdMigrationMode.NAME;
+  }
 
-  public Mode workingMode() {
-    if (!(myModel instanceof DefaultSModel)) return Mode.UNKNOWN;
-    return ((DefaultSModel) myModel).getSModelHeader().getPersistenceVersion() > 8 ? Mode.ID : Mode.NAME;
+  @Override
+  public String getLinkName(SReferenceLinkId roleId) {
+    return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(roleId);
+  }
+
+  @Override
+  public SReferenceLinkId getReferenceLinkId(SConceptId conceptId, String role) {
+    return IdUtil.getReferenceLinkId(conceptId, role);
   }
 
   private SConceptId name2cid(String name) {

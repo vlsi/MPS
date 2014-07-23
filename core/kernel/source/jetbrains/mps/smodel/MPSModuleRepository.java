@@ -72,6 +72,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   public MPSModuleRepository() {
     myGlobalModelAccess = new GlobalModelAccess();
+
   }
 
   @Override
