@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SEnumeration;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Set;
 import java.util.HashSet;
@@ -148,7 +149,12 @@ public class SLanguageAdapter implements SLanguage {
       myLanguage = IdHelper.getLanguageId(ModuleRepositoryFacade.getInstance().getModule(myLanguageFqName, Language.class));
       assert myLanguage != null;
     } else {
-      myLanguageFqName = ModuleRepositoryFacade.getInstance().getModule(IdHelper.getModuleReference(myLanguage)).getModuleName();
+      SModule module = ModuleRepositoryFacade.getInstance().getModule(IdHelper.getModuleReference(myLanguage));
+      if (module!=null){
+        myLanguageFqName = module.getModuleName();
+      } else {
+        myLanguageFqName = MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(myLanguage);
+      }
     }
   }
 
