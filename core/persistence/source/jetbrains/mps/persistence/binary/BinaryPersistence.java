@@ -29,6 +29,8 @@ import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -155,8 +157,8 @@ public class BinaryPersistence {
     loadModelProperties(model, is);
 
     NodesReader reader = new NodesReader(modelReference, interfaceOnly);
-    List<Pair<String, SNode>> roots = reader.readNodes(is);
-    for (Pair<String, SNode> r : roots) {
+    List<Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode>> roots = reader.readNodes(is);
+    for (Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode> r : roots) {
       model.addRootNode(r.o2);
     }
 
@@ -272,9 +274,9 @@ public class BinaryPersistence {
       }
       new NodesReader(modelHeader.getReference(), false) {
         @Override
-        protected String readConceptQualifiedName(ModelInputStream is) throws IOException {
-          String name = super.readConceptQualifiedName(is);
-          consumer.consume(NameUtil.shortNameFromLongName(name));
+        protected SConceptId readConceptId(ModelInputStream is) throws IOException {
+          SConceptId name = super.readConceptId(is);
+          consumer.consume(name.serialize());
           return name;
         }
 

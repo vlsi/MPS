@@ -24,6 +24,10 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -48,19 +52,19 @@ public class NodesReader {
     return hasSkippedNodes;
   }
 
-  public List<Pair<String, SNode>> readNodes(ModelInputStream is) throws IOException {
+  public List<Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode>> readNodes(ModelInputStream is) throws IOException {
     int size = is.readInt();
-    List<Pair<String, SNode>> nodes = new ArrayList<Pair<String, SNode>>(size);
+    List<Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode>> nodes = new ArrayList<Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode>>(size);
     for (int i = 0; i < size; i++) {
       nodes.add(readNode(is));
     }
     return nodes;
   }
 
-  public Pair<String, SNode> readNode(ModelInputStream is) throws IOException {
-    String conceptFqName = readConceptQualifiedName(is);
+  public Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode> readNode(ModelInputStream is) throws IOException {
+    SConceptId cid = readConceptId(is);
     SNodeId nodeId = is.readNodeId();
-    String nodeRole = is.readString();
+    SContainmentLinkId nodeRole = SContainmentLinkId.deserialize(is.readString());
     byte nodeInfo = is.readByte();
     if (is.readByte() != '{') {
       throw new IOException("bad stream, no '{'");
@@ -74,8 +78,8 @@ public class NodesReader {
     // TODO report if (nodeInfo != 0 && myEnv != null) .. myEnv.nodeRoleRead/conceptRead();
 
     jetbrains.mps.smodel.SNode node = interfaceNode
-        ? new InterfaceSNode(InternUtil.intern(conceptFqName))
-        : new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFqName));
+        ? new InterfaceSNode(cid)
+        : new jetbrains.mps.smodel.SNode(cid);
     node.setId(nodeId);
 
     readProperties(is, node);
@@ -89,7 +93,7 @@ public class NodesReader {
     if (is.readByte() != '}') {
       throw new IOException("bad stream, no '}'");
     }
-    return new Pair<String, SNode>(nodeRole, node);
+    return new Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode>(nodeRole, node);
   }
 
   private ConceptKind getConceptKind(byte nodeInfo) {
@@ -97,13 +101,13 @@ public class NodesReader {
     return i == 1 ? ConceptKind.INTERFACE : i == 3 ? ConceptKind.IMPLEMENTATION_WITH_STUB : i == 2 ? ConceptKind.IMPLEMENTATION : ConceptKind.NORMAL;
   }
 
-  protected String readConceptQualifiedName(ModelInputStream is) throws IOException {
-    return is.readString();
+  protected SConceptId readConceptId(ModelInputStream is) throws IOException {
+    return SConceptId.deserialize(is.readString());
   }
 
   protected void readChildren(ModelInputStream is, SNode node) throws IOException {
-    List<Pair<String, SNode>> children = readNodes(is);
-    for (Pair<String, SNode> child : children) {
+    List<Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode>> children = readNodes(is);
+    for (Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode> child : children) {
       if (!(node instanceof InterfaceSNode) || child.o2 instanceof InterfaceSNode) {
         node.addChild(child.o1, child.o2);
       } else {
@@ -119,7 +123,7 @@ public class NodesReader {
       int kind = is.readInt();
       SNodeId targetNodeId = kind == 1 ? readTargetNodeId(is) : null;
       DynamicReferenceOrigin origin = kind == 3 ? new DynamicReferenceOrigin(is.readNodePointer(), is.readNodePointer()) : null;
-      String role = is.readString();
+      SReferenceLinkId role = SReferenceLinkId.deserialize(is.readString());
       SModelReference modelRef = is.readByte() == 18 ? is.readModelReference() : myModelReference;
       String resolveInfo = is.readString();
       if (kind == 1) {
@@ -139,7 +143,7 @@ public class NodesReader {
         if (origin != null) {
           reference.setOrigin(origin);
         }
-        node.setReference(reference.getRole(), reference);
+        node.setReference(reference.getRoleId(), reference);
       } else {
         throw new IOException("unknown reference type");
       }
@@ -153,9 +157,9 @@ public class NodesReader {
   protected void readProperties(ModelInputStream is, SNode node) throws IOException {
     int properties = is.readInt();
     for (; properties > 0; properties--) {
-      String key = is.readString();
+      SPropertyId prop = SPropertyId.deserialize(is.readString());
       String value = is.readString();
-      node.setProperty(InternUtil.intern(key), InternUtil.intern(value));
+      node.setProperty(prop, InternUtil.intern(value));
     }
   }
 
