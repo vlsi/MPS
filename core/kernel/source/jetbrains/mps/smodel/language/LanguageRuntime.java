@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.language;
 
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.make.facet.IFacetManifest;
 import jetbrains.mps.smodel.Language;
@@ -40,8 +39,11 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -63,7 +65,8 @@ import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNam
 public abstract class LanguageRuntime {
   private final Map<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor> myAspectDescriptors =
       new HashMap<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor>();
-  private final List<LanguageRuntime> myExtendingLanguages = new LinkedList<LanguageRuntime>();
+  private final List<LanguageRuntime> myExtendingLanguages = new ArrayList<LanguageRuntime>();
+  private final List<LanguageRuntime> myExtendedLanguages = new ArrayList<LanguageRuntime>();
 
   public abstract String getNamespace();
 
@@ -246,21 +249,40 @@ public abstract class LanguageRuntime {
     return null;
   }
 
+  /**
+   * Closure of all languages that extend this one, exclusive.
+   * @return unmodifiable collection of languages
+   */
+  @NotNull
   public Iterable<LanguageRuntime> getExtendingLanguages() {
     return myExtendingLanguages;
   }
 
-  // TODO: make abstract after MPS 3.0
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{};
+  /**
+   * Closure of all languages this language extends, exclusive.
+   * Referenced languages are from the same LanguageRegistry as this one.
+   * (Although there's only one LanguageRegistry at the moment, it's likely to change in the future)
+   *
+   * Collection captures only languages actually available, and might not reflect all dependencies of the language, i.e.
+   * presents state of language relationship through a LanguageRegistry perspective. E.g. if language descriptor states 'extends' dependency
+   * from a language missing in the LanguageRegistry instance, that extended language will be ignored and collection returned won't mention it.
+   *
+   * @return unmodifiable collection of languages
+   */
+  @NotNull
+  public Collection<LanguageRuntime> getExtendedLanguages() {
+    return Collections.unmodifiableCollection(myExtendedLanguages);
   }
+
+  protected abstract String[] getExtendedLanguageIDs();
 
   private void registerExtendingLanguage(LanguageRuntime extendingLanguage) {
     myExtendingLanguages.add(extendingLanguage);
+    extendingLanguage.myExtendedLanguages.add(this);
   }
 
   void initialize(LanguageRegistry registry) {
-    Queue<String> extendedLanguageIDs = new java.util.LinkedList<String>(Arrays.asList(getExtendedLanguageIDs()));
+    Queue<String> extendedLanguageIDs = new ArrayDeque<String>(Arrays.asList(getExtendedLanguageIDs()));
     Set<String> visitedLanguages = new HashSet<String>();
     visitedLanguages.add(getNamespace());
     while (!extendedLanguageIDs.isEmpty()) {
@@ -273,18 +295,22 @@ public abstract class LanguageRuntime {
         }
       }
     }
-  }
-
-  private Language getLanguage() {
-    return ModuleRepositoryFacade.getInstance().getModule(getNamespace(), Language.class);
+    // generally, should never happen, but doesn't hurt to ensure exclusive contract of getExtended/getExtendingLanguages()
+    myExtendedLanguages.remove(this);
+    myExtendingLanguages.remove(this);
   }
 
   void deinitialize() {
     myExtendingLanguages.clear();
+    myExtendedLanguages.clear();
   }
 
   @Override
   public String toString() {
     return getNamespace() + " runtime";
+  }
+
+  private Language getLanguage() {
+    return ModuleRepositoryFacade.getInstance().getModule(getNamespace(), Language.class);
   }
 }
