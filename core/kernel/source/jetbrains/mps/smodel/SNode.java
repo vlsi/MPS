@@ -875,7 +875,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (workingMode() == IdMigrationMode.NAME) {
       if (myProperties == null) return result;
       for (int i = 0; i < myProperties.length; i += 2) {
-        result.add(name2pid((String) myNewProperties[i]));
+        result.add(name2pid((String) myProperties[i]));
       }
     } else {
       if (myNewProperties == null) return result;
