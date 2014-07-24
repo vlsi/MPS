@@ -19,6 +19,7 @@ import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.generator.runtime.TemplateModuleBase;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -34,7 +35,7 @@ import java.util.*;
 /**
  * evgeny, 3/10/11
  */
-public class TemplateModuleInterpreted implements TemplateModule {
+public class TemplateModuleInterpreted extends TemplateModuleBase {
 
   private LanguageRuntime sourceLanguage;
   private Generator generator;

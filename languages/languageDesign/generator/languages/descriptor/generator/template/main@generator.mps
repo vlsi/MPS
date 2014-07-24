@@ -1119,9 +1119,6 @@
         </node>
       </node>
     </node>
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5102832340571646252" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="icf3.~TemplateModule" resolveInfo="TemplateModule" />
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="7633657384060768604" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="MODULE_REF" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7633657384060768605" nodeInfo="nn" />
@@ -2343,6 +2340,9 @@
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
         </node>
       </node>
+    </node>
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6509264768608431317" nodeInfo="in">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="icf3.~TemplateModuleBase" resolveInfo="TemplateModuleBase" />
     </node>
   </root>
   <root type="yv2q.LanguageDescriptor" typeId="yv2q.9020561928507175845" id="1698302279987411125" nodeInfo="ng">

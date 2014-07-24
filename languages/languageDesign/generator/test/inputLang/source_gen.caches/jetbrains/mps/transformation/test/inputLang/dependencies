@@ -11,13 +11,14 @@
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingPriorityRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModel" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.Language" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModule" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModuleBase" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.Language" file="Language.java">
     <classNode dependClassName="java.lang.Class" />
