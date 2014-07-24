@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
@@ -143,73 +144,7 @@ public class ModelWriter9 implements IModelWriter {
     Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
     Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
 
-    for (SNode root : sourceModel.getRootNodes()) {
-      for (SNode n : SNodeUtil.getDescendants(root)) {
-        SConceptId conceptId = n.getConcept().getId();
-        SNode conceptNode = new SConceptAdapter(conceptId).getConceptDeclarationNode();
-        String conceptName = conceptNode != null ? conceptNode.getName() : debugRegistry.getConceptName(conceptId);
-        conceptIds.put(conceptId, conceptName);
-
-        if (n.getParent() != null) {
-          SContainmentLinkId roleId = n.getRoleInParentId();
-          SContainmentLinkAdapter role = new SContainmentLinkAdapter(roleId);
-          SConceptId linkConceptId = roleId.getConceptId();
-          SNode roleNode = role.getLinkNode();
-          String roleName;
-          if (roleNode != null) {
-            SNode linkConcept = roleNode.getContainingRoot();
-            if (linkConcept != conceptNode) {
-              String linkConceptName = linkConcept.getName();
-              conceptIds.put(linkConceptId, linkConceptName);
-            }
-            roleName = roleNode.getProperty("role");
-          } else {
-            conceptIds.put(linkConceptId, debugRegistry.getConceptName(linkConceptId));
-            roleName = debugRegistry.getLinkName(roleId);
-          }
-          roleIds.put(roleId, roleName);
-        }
-
-        for (SPropertyId pid : n.getPropertyIds()) {
-          SPropertyAdapter propId = new SPropertyAdapter(pid);
-          SConceptId propConceptId = pid.getConceptId();
-          SNode propNode = propId.getPropertyNode();
-          String propName;
-          if (propNode != null) {
-            SNode propConcept = propNode.getContainingRoot();
-            if (propConcept != conceptNode) {
-              String propConceptName = propConcept.getName();
-              conceptIds.put(propConceptId, propConceptName);
-            }
-            propName = propNode.getName();
-          } else {
-            conceptIds.put(propConceptId, debugRegistry.getConceptName(propConceptId));
-            propName = debugRegistry.getPropertyName(pid);
-          }
-          propIds.put(pid, propName);
-        }
-
-        for (SReference ref : n.getReferences()) {
-          SReferenceLinkId refId = ref.getRoleId();
-          SReferenceLinkAdapter refRole = new SReferenceLinkAdapter(refId);
-          SNode refNode = refRole.getLinkNode();
-          SConceptId refConceptId = refId.getConceptId();
-          String refName;
-          if (refNode != null) {
-            SNode refConcept = refNode.getContainingRoot();
-            if (refConcept != conceptNode) {
-              String propConceptName = refConcept.getName();
-              conceptIds.put(refConceptId, propConceptName);
-            }
-            refName = refNode.getProperty("role");
-          } else {
-            conceptIds.put(refConceptId, debugRegistry.getConceptName(refConceptId));
-            refName = debugRegistry.getLinkName(refId);
-          }
-          refIds.put(refId, refName);
-        }
-      }
-    }
+    SModelOperations.fillDebugInfo(sourceModel.getRootNodes(), debugRegistry, conceptIds, propIds, refIds, roleIds);
 
     // write concepts
     for (Entry<SConceptId, String> e : conceptIds.entrySet()) {
