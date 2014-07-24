@@ -21,6 +21,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -51,9 +52,9 @@ public class TransientModelPersistence {
       return null;
     }
 
-    List<Pair<String, SNode>> roots = new NodesReader(myModelReference, false).readNodes(is);
+    List<Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode>> roots = new NodesReader(myModelReference, false).readNodes(is);
     List<SNode> res = new ArrayList<SNode>(roots.size());
-    for (Pair<String, SNode> r : roots) {
+    for (Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode> r : roots) {
       res.add(r.o2);
     }
     return res;
