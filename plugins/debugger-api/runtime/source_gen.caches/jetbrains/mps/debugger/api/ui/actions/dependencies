@@ -344,6 +344,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
