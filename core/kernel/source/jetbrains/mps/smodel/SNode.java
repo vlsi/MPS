@@ -808,7 +808,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public SContainmentLinkId getRoleInParentId() {
     nodeRead();
     if (workingMode() == IdMigrationMode.NAME) {
-      return name2lid(getParent(), getRoleInParent_byName());
+      SNode parent = getParent();
+      return parent == null ? null : name2lid(parent, getRoleInParent_byName());
     } else {
       return getRoleInParentId_byId();
     }
