@@ -64,7 +64,8 @@ public class NodesReader {
   public Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode> readNode(ModelInputStream is) throws IOException {
     SConceptId cid = readConceptId(is);
     SNodeId nodeId = is.readNodeId();
-    SContainmentLinkId nodeRole = SContainmentLinkId.deserialize(is.readString());
+    String linkStr = is.readString();
+    SContainmentLinkId nodeRole = linkStr == null ? null : SContainmentLinkId.deserialize(linkStr);
     byte nodeInfo = is.readByte();
     if (is.readByte() != '{') {
       throw new IOException("bad stream, no '{'");

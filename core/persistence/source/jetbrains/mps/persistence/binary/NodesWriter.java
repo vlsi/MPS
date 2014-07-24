@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -70,7 +71,8 @@ public class NodesWriter {
   public void writeNode(SNode node, ModelOutputStream os) throws IOException {
     os.writeString(node.getConcept().getId().serialize());
     os.writeNodeId(node.getNodeId());
-    os.writeString(node.getRoleInParentId().serialize());
+    SContainmentLinkId roleInParentId = node.getRoleInParentId();
+    os.writeString(roleInParentId == null ? null :  roleInParentId.serialize());
     os.writeByte(getNodeInfo(node));
     os.writeByte('{');
 
