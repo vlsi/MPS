@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -185,8 +184,20 @@ public class ChildSubstituteActionsHelper {
     return (List) createDefaultSubstituteActions(applicableConcept, parentNode, currentChild, setter, operationContext);
   }
 
+  /**
+   * @deprecated since MPS 3.0 use:
+   * createDefaultSubstituteActions(@NotNull SNode applicableConcept, SNode parentNode, SNode currentChild, IChildNodeSetter setter)
+   *
+   * Should be removed when all user code is migrated to new method
+   */
+  @Deprecated
   public static List<SubstituteAction> createDefaultSubstituteActions(@NotNull SNode applicableConcept, SNode parentNode, SNode currentChild,
       IChildNodeSetter setter, IOperationContext operationContext) {
+    return createDefaultSubstituteActions(applicableConcept, parentNode, currentChild, setter);
+  }
+
+  public static List<SubstituteAction> createDefaultSubstituteActions(@NotNull SNode applicableConcept, SNode parentNode, SNode currentChild,
+      IChildNodeSetter setter) {
     String conceptFqName = NameUtil.nodeFQName(applicableConcept);
     SNode link = null;
     if (setter instanceof DefaultChildNodeSetter) {
@@ -200,14 +211,14 @@ public class ChildSubstituteActionsHelper {
 
     SNode smartRef = ReferenceConceptUtil.getCharacteristicReference(applicableConcept);
     if (smartRef != null) {
-      return createSmartReferenceActions(applicableConcept, smartRef, parentNode, currentChild, setter, operationContext);
+      return createSmartReferenceActions(applicableConcept, smartRef, parentNode, currentChild, setter);
     } else {
       return Collections.<SubstituteAction>singletonList(new DefaultChildNodeSubstituteAction(applicableConcept, parentNode, currentChild, setter));
     }
   }
 
   private static List<SubstituteAction> createSmartReferenceActions(final SNode smartConcept, final SNode smartReference, final SNode parentNode,
-      final SNode currentChild, final IChildNodeSetter childSetter, final IOperationContext context) {
+      final SNode currentChild, final IChildNodeSetter childSetter) {
     if (parentNode == null) {
       return Collections.emptyList();
     }
@@ -324,10 +335,9 @@ public class ChildSubstituteActionsHelper {
 
     @Override
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-      SNode childNode = SModelUtil_new.instantiateConceptDeclaration(NameUtil.nodeFQName(mySmartConcept), model);
+      SNode childNode = NodeFactoryManager.createNode(NameUtil.nodeFQName(mySmartConcept), myCurrentChild, myParentNode, model);
       String referentRole = SModelUtil.getGenuineLinkRole(mySmartReference);
       SNodeAccessUtil.setReferenceTarget(childNode, referentRole, myReferentNode);
-      NodeFactoryManager.setupNode(mySmartConcept, childNode, myCurrentChild, myParentNode, model);
       return childNode;
     }
   }
