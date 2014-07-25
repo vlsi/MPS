@@ -11,6 +11,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class LightExecutionFilter implements Filter<ITestNodeWrapper> {
   @Override
@@ -29,7 +33,13 @@ public class LightExecutionFilter implements Filter<ITestNodeWrapper> {
         ListSequence.fromList(seq).addSequence(Sequence.fromIterable(ts).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
             SNode root = SNodeOperations.getContainingRoot(it.getNode());
-            return SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.test.structure.EditorTestCase") || SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.test.structure.NodesTestCase");
+            if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.test.structure.EditorTestCase")) && !(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.test.structure.NodesTestCase"))) {
+              return false;
+            }
+            if (BehaviorReflection.invokeNonVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), "call_reOpenProject_1031873601093419509", new Object[]{SNodeOperations.getModel(root)})) {
+              return false;
+            }
+            return true;
           }
         }));
       }

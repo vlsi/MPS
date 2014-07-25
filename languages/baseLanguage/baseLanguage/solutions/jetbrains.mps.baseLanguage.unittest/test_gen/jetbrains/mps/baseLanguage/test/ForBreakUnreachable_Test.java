@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class ForBreakUnreachable_Test extends BaseTransformationTest {
   @Test
   public void test_ErrorMessagesCheck9092976468699800071() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ForBreakUnreachable_Test$TestBody", "test_ErrorMessagesCheck9092976468699800071", true);
   }
   @MPSLaunch

@@ -14,37 +14,37 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class InstanceMethodDeclarationThrownExceptions_Test extends BaseTransformationTest {
   @Test
   public void test_NodeUnnamedErrorCheck143797558343291602() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_NodeUnnamedErrorCheck143797558343291602", true);
   }
   @Test
   public void test_ErrorMessagesCheck3983029200623373599() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_ErrorMessagesCheck3983029200623373599", true);
   }
   @Test
   public void test_NodeUnnamedErrorCheck143797558343290023() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_NodeUnnamedErrorCheck143797558343290023", true);
   }
   @Test
   public void test_ErrorMessagesCheck3983029200623379445() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_ErrorMessagesCheck3983029200623379445", true);
   }
   @Test
   public void test_ErrorMessagesCheck3983029200623468570() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_ErrorMessagesCheck3983029200623468570", true);
   }
   @Test
   public void test_NodeOverridenMethodDoesNotCheck143797558343280410() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_NodeOverridenMethodDoesNotCheck143797558343280410", true);
   }
   @Test
   public void test_NodeOverridenMethodDoesNotCheck143797558343288436() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodDeclarationThrownExceptions_Test$TestBody", "test_NodeOverridenMethodDoesNotCheck143797558343288436", true);
   }
   @MPSLaunch

@@ -14,37 +14,37 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class WildCardTypeIsAValidSubstituteForBoundedParameter_Test extends BaseTransformationTest {
   @Test
   public void test_NodeWarningCheck595838485961914360() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_NodeWarningCheck595838485961914360", true);
   }
   @Test
   public void test_NodeErrorCheck595838485955120512() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_NodeErrorCheck595838485955120512", true);
   }
   @Test
   public void test_NodeWarningCheck595838485961915035() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_NodeWarningCheck595838485961915035", true);
   }
   @Test
   public void test_NodeWarningCheck595838485961916732() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_NodeWarningCheck595838485961916732", true);
   }
   @Test
   public void test_NodeWarningCheck595838485961917399() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_NodeWarningCheck595838485961917399", true);
   }
   @Test
   public void test_NodeWarningCheck595838485961918062() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_NodeWarningCheck595838485961918062", true);
   }
   @Test
   public void test_ErrorMessagesCheck595838485955141760() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody", "test_ErrorMessagesCheck595838485955141760", true);
   }
   @MPSLaunch

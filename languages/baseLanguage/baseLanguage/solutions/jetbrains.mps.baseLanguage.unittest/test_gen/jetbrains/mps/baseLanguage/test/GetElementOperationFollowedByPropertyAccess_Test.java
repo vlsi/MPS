@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class GetElementOperationFollowedByPropertyAccess_Test extends BaseTransformationTest {
   @Test
   public void test_ErrorMessagesCheck5679018521759346994() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.GetElementOperationFollowedByPropertyAccess_Test$TestBody", "test_ErrorMessagesCheck5679018521759346994", true);
   }
   @MPSLaunch

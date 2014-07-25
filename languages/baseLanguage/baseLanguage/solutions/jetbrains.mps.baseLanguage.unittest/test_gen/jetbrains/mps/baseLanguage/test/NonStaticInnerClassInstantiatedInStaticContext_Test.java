@@ -14,32 +14,32 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class NonStaticInnerClassInstantiatedInStaticContext_Test extends BaseTransformationTest {
   @Test
   public void test_NodeNoEnclosingInstanceOfCheck6923385624927702653() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.NonStaticInnerClassInstantiatedInStaticContext_Test$TestBody", "test_NodeNoEnclosingInstanceOfCheck6923385624927702653", true);
   }
   @Test
   public void test_NodeNoEnclosingInstanceOfCheck6923385624929324173() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.NonStaticInnerClassInstantiatedInStaticContext_Test$TestBody", "test_NodeNoEnclosingInstanceOfCheck6923385624929324173", true);
   }
   @Test
   public void test_NodeNoEnclosingInstanceOfCheck6923385624929631137() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.NonStaticInnerClassInstantiatedInStaticContext_Test$TestBody", "test_NodeNoEnclosingInstanceOfCheck6923385624929631137", true);
   }
   @Test
   public void test_NodeNoEnclosingInstanceOfCheck6923385624929879922() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.NonStaticInnerClassInstantiatedInStaticContext_Test$TestBody", "test_NodeNoEnclosingInstanceOfCheck6923385624929879922", true);
   }
   @Test
   public void test_NodeNoEnclosingInstanceOfCheck6923385624929258956() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.NonStaticInnerClassInstantiatedInStaticContext_Test$TestBody", "test_NodeNoEnclosingInstanceOfCheck6923385624929258956", true);
   }
   @Test
   public void test_ErrorMessagesCheck966837649722301965() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.NonStaticInnerClassInstantiatedInStaticContext_Test$TestBody", "test_ErrorMessagesCheck966837649722301965", true);
   }
   @MPSLaunch

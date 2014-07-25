@@ -7,8 +7,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:43a3062d-cf3d-40ad-9c9d-c7da54cc927b(jetbrains.mps.testActions.test@tests)/3197704031717961581">
     <file name="ActionsTest_Test.java">
-      <node id="3197704031717961581" at="16,50,17,125" concept="0" />
-      <node id="3197704031717961581" at="17,125,18,102" concept="0" />
+      <node id="3197704031717961581" at="16,50,17,119" concept="0" />
+      <node id="3197704031717961581" at="17,119,18,102" concept="0" />
       <node id="6926353569063795876" at="22,52,23,72" concept="3" />
       <node id="6926353569063831698" at="23,72,24,0" concept="4" />
       <node id="4484885613884976024" at="24,0,25,76" concept="3" />

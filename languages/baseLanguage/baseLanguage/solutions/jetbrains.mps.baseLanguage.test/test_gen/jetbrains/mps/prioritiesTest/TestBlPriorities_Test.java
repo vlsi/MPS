@@ -20,12 +20,12 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class TestBlPriorities_Test extends BaseTransformationTest {
   @Test
   public void test_testBitwisePriorities() throws Throwable {
-    this.initTest("${mps_home}", "r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)");
+    this.initTest("${mps_home}", "r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)", false);
     this.runTest("jetbrains.mps.prioritiesTest.TestBlPriorities_Test$TestBody", "test_testBitwisePriorities", true);
   }
   @Test
   public void test_testBooleanAndWithEqualsOperation() throws Throwable {
-    this.initTest("${mps_home}", "r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)");
+    this.initTest("${mps_home}", "r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)", false);
     this.runTest("jetbrains.mps.prioritiesTest.TestBlPriorities_Test$TestBody", "test_testBooleanAndWithEqualsOperation", true);
   }
   @MPSLaunch

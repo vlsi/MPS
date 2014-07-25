@@ -14,22 +14,22 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class FieldCanBeLocalVar_Test extends BaseTransformationTest {
   @Test
   public void test_NodeFieldCanBeConvertedIntoCheck6923385624929411102() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck6923385624929411102", true);
   }
   @Test
   public void test_NodeFieldCanBeConvertedIntoCheck6923385624927778166() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck6923385624927778166", true);
   }
   @Test
   public void test_NodeIsAssignedButNeverAccessedCheck6923385624927778168() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeIsAssignedButNeverAccessedCheck6923385624927778168", true);
   }
   @Test
   public void test_ErrorMessagesCheck6640766779615226140() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_ErrorMessagesCheck6640766779615226140", true);
   }
   @MPSLaunch

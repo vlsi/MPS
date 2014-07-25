@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class CheckInlineWithThrow_Test extends BaseTransformationTest {
   @Test
   public void test_CheckInlineWithThrow() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
+    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     this.runTest("jetbrains.mps.refactoringTest.CheckInlineWithThrow_Test$TestBody", "test_CheckInlineWithThrow", true);
   }
   @MPSLaunch

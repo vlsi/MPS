@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class SimpleUnreachable_Test extends BaseTransformationTest {
   @Test
   public void test_NodeUnreachableCheck2702384151999129566() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.SimpleUnreachable_Test$TestBody", "test_NodeUnreachableCheck2702384151999129566", true);
   }
   @MPSLaunch

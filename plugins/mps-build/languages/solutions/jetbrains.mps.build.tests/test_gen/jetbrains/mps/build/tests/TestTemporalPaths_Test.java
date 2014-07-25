@@ -16,32 +16,32 @@ import jetbrains.mps.smodel.SModelReference;
 public class TestTemporalPaths_Test extends BaseTransformationTest {
   @Test
   public void test_topLevelJar() throws Throwable {
-    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)");
+    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
     this.runTest("jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody", "test_topLevelJar", true);
   }
   @Test
   public void test_topLevelFolder() throws Throwable {
-    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)");
+    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
     this.runTest("jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody", "test_topLevelFolder", true);
   }
   @Test
   public void test_topInternalFolder() throws Throwable {
-    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)");
+    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
     this.runTest("jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody", "test_topInternalFolder", true);
   }
   @Test
   public void test_jarInFolder() throws Throwable {
-    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)");
+    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
     this.runTest("jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody", "test_jarInFolder", true);
   }
   @Test
   public void test_folderInJar() throws Throwable {
-    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)");
+    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
     this.runTest("jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody", "test_folderInJar", true);
   }
   @Test
   public void test_duplicatedNames() throws Throwable {
-    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)");
+    this.initTest("${mps_home}", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)", false);
     this.runTest("jetbrains.mps.build.tests.TestTemporalPaths_Test$TestBody", "test_duplicatedNames", true);
   }
   @MPSLaunch

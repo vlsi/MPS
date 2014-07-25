@@ -6,10 +6,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:040810da-2115-47c4-899f-bb0a7342e4e5(jetbrains.mps.lang.traceable.operations.tests@tests)/7327404875649026840">
     <file name="CopyWithTrace_Test.java">
-      <node id="7327404875649026840" at="23,57,24,128" concept="0" />
-      <node id="7327404875649026840" at="24,128,25,126" concept="0" />
-      <node id="7327404875649026840" at="28,58,29,128" concept="0" />
-      <node id="7327404875649026840" at="29,128,30,127" concept="0" />
+      <node id="7327404875649026840" at="23,57,24,135" concept="0" />
+      <node id="7327404875649026840" at="24,135,25,126" concept="0" />
+      <node id="7327404875649026840" at="28,58,29,135" concept="0" />
+      <node id="7327404875649026840" at="29,135,30,127" concept="0" />
       <node id="7327404875649026893" at="34,59,35,46" concept="0" />
       <node id="7327404875649059184" at="35,46,36,372" concept="0" />
       <node id="7327404875649026944" at="38,60,39,46" concept="0" />

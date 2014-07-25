@@ -5,8 +5,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root nodeRef="r:3b93a80b-8267-4154-a2f6-29cf728da0a5(jetbrains.mps.internalCollections.test.types)/6699137465481734229">
     <file name="GenericCollections_Test.java">
-      <node id="6699137465481734229" at="16,77,17,220" concept="0" />
-      <node id="6699137465481734229" at="17,220,18,150" concept="0" />
+      <node id="6699137465481734229" at="16,77,17,227" concept="0" />
+      <node id="6699137465481734229" at="17,227,18,150" concept="0" />
       <node id="6699137465481734229" at="22,79,23,146" concept="2" />
       <node id="6699137465481734229" at="23,146,24,159" concept="0" />
       <node id="6699137465481734229" at="22,0,26,0" concept="1" trace="test_ErrorMessagesCheck6699137465481874845#()V" />

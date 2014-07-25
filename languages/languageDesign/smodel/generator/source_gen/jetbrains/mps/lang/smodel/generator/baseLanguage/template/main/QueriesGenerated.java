@@ -745,7 +745,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "isStatic") && !(Node_ConceptMethodCall_Behavior.call_isSuperMethodCall_1521124695248146659(_context.getNode()));
   }
   public static boolean ifMacro_Condition_1423329322227367857(final IfMacroContext _context) {
-    return Node_ConceptMethodCall_Behavior.call_isSuperMethodCall_1521124695248146659(_context.getNode()) || !(Node_ConceptMethodCall_Behavior.call_isVirtualMethodCall_1213877437823(_context.getNode()));
+    return Node_ConceptMethodCall_Behavior.call_isSuperMethodCall_1521124695248146659(_context.getNode()) || (!(Node_ConceptMethodCall_Behavior.call_isVirtualMethodCall_1213877437823(_context.getNode())) && !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "isStatic")));
   }
   public static boolean ifMacro_Condition_8317913688490056938(final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true)), "jetbrains.mps.lang.smodel.structure.SConceptType");

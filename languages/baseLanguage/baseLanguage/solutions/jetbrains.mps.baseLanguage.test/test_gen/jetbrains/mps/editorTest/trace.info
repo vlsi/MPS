@@ -2367,10 +2367,10 @@
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3852894662483077199">
     <file name="SurroundWithParenthesisTest_Test.java">
-      <node id="3852894662483077199" at="21,57,22,107" concept="2" />
-      <node id="3852894662483077199" at="22,107,23,119" concept="2" />
-      <node id="3852894662483077199" at="26,65,27,107" concept="2" />
-      <node id="3852894662483077199" at="27,107,28,127" concept="2" />
+      <node id="3852894662483077199" at="21,57,22,114" concept="2" />
+      <node id="3852894662483077199" at="22,114,23,119" concept="2" />
+      <node id="3852894662483077199" at="26,65,27,114" concept="2" />
+      <node id="3852894662483077199" at="27,114,28,127" concept="2" />
       <node id="3852894662483077213" at="32,59,33,46" concept="2" />
       <node id="3852894662483077213" at="33,46,34,46" concept="2" />
       <node id="3852894662483077213" at="34,46,35,46" concept="2" />
@@ -2418,8 +2418,8 @@
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3852894662483397197">
     <file name="PriorityCheckTest_Test.java">
-      <node id="3852894662483397197" at="24,52,25,107" concept="2" />
-      <node id="3852894662483397197" at="25,107,26,104" concept="2" />
+      <node id="3852894662483397197" at="24,52,25,114" concept="2" />
+      <node id="3852894662483397197" at="25,114,26,104" concept="2" />
       <node id="3852894662483449723" at="30,54,31,46" concept="2" />
       <node id="3852894662483449723" at="31,46,32,46" concept="2" />
       <node id="3852894662483449727" at="32,46,33,111" concept="6" />
@@ -4900,8 +4900,8 @@
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/818296778579227381">
     <file name="PriorityCheckTestMulFirst_Test.java">
-      <node id="818296778579227381" at="24,52,25,107" concept="2" />
-      <node id="818296778579227381" at="25,107,26,112" concept="2" />
+      <node id="818296778579227381" at="24,52,25,114" concept="2" />
+      <node id="818296778579227381" at="25,114,26,112" concept="2" />
       <node id="818296778579227401" at="30,54,31,45" concept="2" />
       <node id="818296778579227401" at="31,45,32,45" concept="2" />
       <node id="818296778579227404" at="32,45,33,110" concept="6" />
@@ -4934,8 +4934,8 @@
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/818296778579245154">
     <file name="PriorityCheckTestPlusFirst_Test.java">
-      <node id="818296778579245154" at="24,52,25,107" concept="2" />
-      <node id="818296778579245154" at="25,107,26,113" concept="2" />
+      <node id="818296778579245154" at="24,52,25,114" concept="2" />
+      <node id="818296778579245154" at="25,114,26,113" concept="2" />
       <node id="818296778579245174" at="30,54,31,45" concept="2" />
       <node id="818296778579245174" at="31,45,32,45" concept="2" />
       <node id="818296778579245177" at="32,45,33,111" concept="6" />

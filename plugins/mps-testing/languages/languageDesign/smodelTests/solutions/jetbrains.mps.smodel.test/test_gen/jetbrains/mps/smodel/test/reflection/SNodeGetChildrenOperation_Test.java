@@ -22,42 +22,42 @@ import java.util.List;
 public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
   @Test
   public void test_childContainingLinks() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
+    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContainingLinks", true);
   }
   @Test
   public void test_childContaininLinksForSpecializedChildren() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
+    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContaininLinksForSpecializedChildren", true);
   }
   @Test
   public void test_childContainingRoles() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
+    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContainingRoles", true);
   }
   @Test
   public void test_unspecifiedChildren() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
+    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_unspecifiedChildren", true);
   }
   @Test
   public void test_childOperationsOnNull() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
+    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childOperationsOnNull", true);
   }
   @Test
   public void test_childrenByLinkDeclaration() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
+    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclaration", true);
   }
   @Test
   public void test_childrenByLinkDeclarationSpecialized() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
+    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclarationSpecialized", true);
   }
   @Test
   public void test_childrenByLinkDeclarationOnNull() throws Throwable {
-    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)");
+    this.initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclarationOnNull", true);
   }
   @MPSLaunch

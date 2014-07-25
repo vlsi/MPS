@@ -14,42 +14,42 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class BoundedTypeOnIllegalPositions_Test extends BaseTransformationTest {
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck6923385624929132045() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck6923385624929132045", true);
   }
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck6923385624928848231() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck6923385624928848231", true);
   }
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck5450156852674012813() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck5450156852674012813", true);
   }
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck6923385624928692345() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck6923385624928692345", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624928162737() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeTypeSystemCheck6923385624928162737", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624927429026() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeTypeSystemCheck6923385624927429026", true);
   }
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck6923385624928299118() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck6923385624928299118", true);
   }
   @Test
   public void test_ErrorMessagesCheck6510041824235646887() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_ErrorMessagesCheck6510041824235646887", true);
   }
   @MPSLaunch

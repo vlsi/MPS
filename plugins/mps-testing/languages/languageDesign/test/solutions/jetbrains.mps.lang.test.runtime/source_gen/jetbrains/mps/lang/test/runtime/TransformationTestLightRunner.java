@@ -17,7 +17,7 @@ import org.apache.log4j.LogManager;
 public class TransformationTestLightRunner extends TransformationTestRunner {
 
   @Override
-  public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean uiTest, boolean reopenProject) throws Exception {
+  public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean reopenProject) throws Exception {
     final Project testProject = findProject(projectPath);
     doInitTest(test, testProject, modelName);
     // todo: try removing this line 

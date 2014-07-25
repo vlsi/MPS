@@ -14,27 +14,27 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class ArrayCreatorTest_Test extends BaseTransformationTest {
   @Test
   public void test_NodeErrorCheck1100850602766327583() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ArrayCreatorTest_Test$TestBody", "test_NodeErrorCheck1100850602766327583", true);
   }
   @Test
   public void test_NodeErrorCheck1100850602766335141() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ArrayCreatorTest_Test$TestBody", "test_NodeErrorCheck1100850602766335141", true);
   }
   @Test
   public void test_NodeErrorCheck1100850602766345812() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ArrayCreatorTest_Test$TestBody", "test_NodeErrorCheck1100850602766345812", true);
   }
   @Test
   public void test_NodeErrorCheck1100850602766347329() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ArrayCreatorTest_Test$TestBody", "test_NodeErrorCheck1100850602766347329", true);
   }
   @Test
   public void test_ErrorMessagesCheck1100850602766276669() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ArrayCreatorTest_Test$TestBody", "test_ErrorMessagesCheck1100850602766276669", true);
   }
   @MPSLaunch

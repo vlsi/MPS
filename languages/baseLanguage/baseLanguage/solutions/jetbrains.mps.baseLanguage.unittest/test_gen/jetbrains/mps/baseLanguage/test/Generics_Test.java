@@ -14,222 +14,222 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class Generics_Test extends BaseTransformationTest {
   @Test
   public void test_ErrorMessagesCheck4246614868164066795() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck4246614868164066795", true);
   }
   @Test
   public void test_ErrorMessagesCheck4246614868164066847() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck4246614868164066847", true);
   }
   @Test
   public void test_ErrorMessagesCheck4246614868164066877() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck4246614868164066877", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929210654() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929210654", true);
   }
   @Test
   public void test_ErrorMessagesCheck4246614868164066940() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck4246614868164066940", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624928769094() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeTypeSystemCheck6923385624928769094", true);
   }
   @Test
   public void test_ErrorMessagesCheck4246614868164066979() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck4246614868164066979", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624928697593() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeTypeSystemCheck6923385624928697593", true);
   }
   @Test
   public void test_ErrorMessagesCheck75433039838559829() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck75433039838559829", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488315187() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488315187", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488449834() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488449834", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488320706() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488320706", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583492117057() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583492117057", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583489448272() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583489448272", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583489437018() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583489437018", true);
   }
   @Test
   public void test_ErrorMessagesCheck2989670514234060636() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck2989670514234060636", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488337419() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488337419", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488343374() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488343374", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488470122() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488470122", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488407475() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488407475", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488467292() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488467292", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583493095176() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583493095176", true);
   }
   @Test
   public void test_ErrorMessagesCheck2989670514234102966() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck2989670514234102966", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488519701() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488519701", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583489284037() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583489284037", true);
   }
   @Test
   public void test_ErrorMessagesCheck2989670514234103616() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck2989670514234103616", true);
   }
   @Test
   public void test_NodeWildcardTypeArgumentExplicitlyCheck2432481583493875687() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeWildcardTypeArgumentExplicitlyCheck2432481583493875687", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488437090() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488437090", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488437096() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488437096", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488572526() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488572526", true);
   }
   @Test
   public void test_NodeErrorCheck5450156852667865188() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck5450156852667865188", true);
   }
   @Test
   public void test_NodeErrorCheck5450156852667875900() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck5450156852667875900", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583489259581() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583489259581", true);
   }
   @Test
   public void test_ErrorMessagesCheck2989670514234103631() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck2989670514234103631", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488625033() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488625033", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583489271447() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583489271447", true);
   }
   @Test
   public void test_ErrorMessagesCheck2989670514234104686() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck2989670514234104686", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck2432481583489075236() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck2432481583489075236", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488758535() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488758535", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck2432481583489092952() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck2432481583489092952", true);
   }
   @Test
   public void test_NodeErrorCheck2432481583488776292() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_NodeErrorCheck2432481583488776292", true);
   }
   @Test
   public void test_ErrorMessagesCheck2989670514234105331() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck2989670514234105331", true);
   }
   @Test
   public void test_ErrorMessagesCheck7817233971112259125() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck7817233971112259125", true);
   }
   @Test
   public void test_ErrorMessagesCheck9160103748839840155() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.Generics_Test$TestBody", "test_ErrorMessagesCheck9160103748839840155", true);
   }
   @MPSLaunch

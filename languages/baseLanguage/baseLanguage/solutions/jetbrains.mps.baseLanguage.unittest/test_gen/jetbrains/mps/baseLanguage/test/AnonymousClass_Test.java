@@ -15,17 +15,17 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class AnonymousClass_Test extends BaseTransformationTest {
   @Test
   public void test_AnonymousClass() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_AnonymousClass", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927142051() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927142051", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929101294() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929101294", true);
   }
   @MPSLaunch

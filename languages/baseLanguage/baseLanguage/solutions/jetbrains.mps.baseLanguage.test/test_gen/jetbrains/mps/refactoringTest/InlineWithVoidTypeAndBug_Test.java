@@ -19,7 +19,7 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class InlineWithVoidTypeAndBug_Test extends BaseTransformationTest {
   @Test
   public void test_InlineWithVoidTypeAndBug() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
+    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     this.runTest("jetbrains.mps.refactoringTest.InlineWithVoidTypeAndBug_Test$TestBody", "test_InlineWithVoidTypeAndBug", true);
   }
   @MPSLaunch

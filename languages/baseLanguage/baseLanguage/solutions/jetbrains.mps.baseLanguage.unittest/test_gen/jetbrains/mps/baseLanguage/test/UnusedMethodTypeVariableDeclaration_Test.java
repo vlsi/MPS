@@ -14,17 +14,17 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class UnusedMethodTypeVariableDeclaration_Test extends BaseTransformationTest {
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929723209() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.UnusedMethodTypeVariableDeclaration_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929723209", true);
   }
   @Test
   public void test_NodeTypeVariableIsNotNeededCheck6923385624928495830() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.UnusedMethodTypeVariableDeclaration_Test$TestBody", "test_NodeTypeVariableIsNotNeededCheck6923385624928495830", true);
   }
   @Test
   public void test_ErrorMessagesCheck7430872850884076184() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.UnusedMethodTypeVariableDeclaration_Test$TestBody", "test_ErrorMessagesCheck7430872850884076184", true);
   }
   @MPSLaunch

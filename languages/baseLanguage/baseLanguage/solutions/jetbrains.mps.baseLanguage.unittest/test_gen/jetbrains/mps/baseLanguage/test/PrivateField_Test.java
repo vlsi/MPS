@@ -14,22 +14,22 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class PrivateField_Test extends BaseTransformationTest {
   @Test
   public void test_NodeFieldIsNeverUsedCheck6923385624929265058() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_NodeFieldIsNeverUsedCheck6923385624929265058", true);
   }
   @Test
   public void test_NodeIsAssignedButNeverAccessedCheck6923385624927087560() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_NodeIsAssignedButNeverAccessedCheck6923385624927087560", true);
   }
   @Test
   public void test_NodeIsNeverAssignedCheck6923385624929108909() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_NodeIsNeverAssignedCheck6923385624929108909", true);
   }
   @Test
   public void test_ErrorMessagesCheck7970711249077314345() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_ErrorMessagesCheck7970711249077314345", true);
   }
   @MPSLaunch

@@ -124,7 +124,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 54:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.SwitchToInspector").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").alias("switch to inspector", "").staticScope(StaticScope.NONE).create();
       case 55:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.TestInfo").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("projectPath", "uiTest", "reOpenProject").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.TestInfo").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("projectPath", "reOpenProject").create();
       case 56:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.TestNode").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"nodeToCheck"}, new boolean[]{false}).alias("test node", "").create();
       case 57:

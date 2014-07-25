@@ -14,17 +14,17 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class FloatLiteral_Test extends BaseTransformationTest {
   @Test
   public void test_ErrorMessagesCheck290469496750263895() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FloatLiteral_Test$TestBody", "test_ErrorMessagesCheck290469496750263895", true);
   }
   @Test
   public void test_NodeErrorCheck290469496750368664() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FloatLiteral_Test$TestBody", "test_NodeErrorCheck290469496750368664", true);
   }
   @Test
   public void test_ErrorMessagesCheck290469496750333115() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FloatLiteral_Test$TestBody", "test_ErrorMessagesCheck290469496750333115", true);
   }
   @MPSLaunch

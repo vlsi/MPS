@@ -21,7 +21,7 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class ExtractMethodWithOutputVaryableFromStatement_Test extends BaseTransformationTest {
   @Test
   public void test_ExtractMethodWithOutputVaryableFromStatementTest() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
+    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     this.runTest("jetbrains.mps.refactoringTest.ExtractMethodWithOutputVaryableFromStatement_Test$TestBody", "test_ExtractMethodWithOutputVaryableFromStatementTest", true);
   }
   @MPSLaunch

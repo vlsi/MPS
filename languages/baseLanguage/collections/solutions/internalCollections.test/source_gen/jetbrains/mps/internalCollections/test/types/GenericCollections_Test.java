@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class GenericCollections_Test extends BaseTransformationTest {
   @Test
   public void test_ErrorMessagesCheck6699137465481874845() throws Throwable {
-    this.initTest("${mps_home}/languages/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.mpr", "r:3b93a80b-8267-4154-a2f6-29cf728da0a5(jetbrains.mps.internalCollections.test.types)");
+    this.initTest("${mps_home}/languages/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.mpr", "r:3b93a80b-8267-4154-a2f6-29cf728da0a5(jetbrains.mps.internalCollections.test.types)", false);
     this.runTest("jetbrains.mps.internalCollections.test.types.GenericCollections_Test$TestBody", "test_ErrorMessagesCheck6699137465481874845", true);
   }
   @MPSLaunch

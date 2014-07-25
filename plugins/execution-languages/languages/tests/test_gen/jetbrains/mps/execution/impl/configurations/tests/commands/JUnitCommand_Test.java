@@ -36,12 +36,12 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFacto
 public class JUnitCommand_Test extends BaseTransformationTest {
   @Test
   public void test_startSimpleBTestCase() throws Throwable {
-    this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)");
+    this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
     this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startSimpleBTestCase", true);
   }
   @Test
   public void test_startFailedBTestCase() throws Throwable {
-    this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)");
+    this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
     this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startFailedBTestCase", true);
   }
   @MPSLaunch

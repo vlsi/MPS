@@ -91,17 +91,8 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_4484885613884807191(final PropertyMacroContext _context) {
     return _context.getOriginalInputModel().getReference().toString();
   }
-  public static Object propertyMacro_GetPropertyValue_4484885613884830953(final PropertyMacroContext _context) {
-    return TestInfo_Behavior.call_isUITest_4484885613884830715(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), SNodeOperations.getModel(_context.getNode()));
-  }
   public static Object propertyMacro_GetPropertyValue_1031873601093426077(final PropertyMacroContext _context) {
     return TestInfo_Behavior.call_reOpenProject_1031873601093419509(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), SNodeOperations.getModel(_context.getNode()));
-  }
-  public static Object propertyMacro_GetPropertyValue_1221570038142(final PropertyMacroContext _context) {
-    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()), _context.getGenerator().getGeneratorSessionContext());
-  }
-  public static Object propertyMacro_GetPropertyValue_1221570038189(final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getReference().toString();
   }
   public static Object propertyMacro_GetPropertyValue_1224603580889(final PropertyMacroContext _context) {
     return TestsUtil.getTestBodyClassName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTestCase_1216134500045", new Object[]{}));
@@ -187,9 +178,6 @@ public class QueriesGenerated {
   }
   public static boolean ifMacro_Condition_1863298100471541195(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "statementList", true), "statement", true)).isEmpty();
-  }
-  public static boolean ifMacro_Condition_4484885613884740503(final IfMacroContext _context) {
-    return !(TestInfo_Behavior.call_isUITest_4484885613884830715(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), SNodeOperations.getModel(_context.getNode())) || TestInfo_Behavior.call_reOpenProject_1031873601093419509(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), SNodeOperations.getModel(_context.getNode())));
   }
   public static SNode sourceNodeQuery_4277730795458378995(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true);

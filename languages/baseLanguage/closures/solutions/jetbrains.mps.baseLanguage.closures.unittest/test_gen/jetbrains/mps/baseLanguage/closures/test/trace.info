@@ -4,8 +4,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)/1227886714745">
     <file name="ClosureDataFlow_Test.java">
-      <node id="1227886714745" at="15,55,16,123" concept="0" />
-      <node id="1227886714745" at="16,123,17,121" concept="0" />
+      <node id="1227886714745" at="15,55,16,130" concept="0" />
+      <node id="1227886714745" at="16,130,17,121" concept="0" />
       <node id="1227886714778" at="21,57,22,40" concept="0" />
       <node id="1227886714781" at="22,40,23,182" concept="0" />
       <node id="1227886714778" at="21,0,25,0" concept="1" trace="test_ClosureDataFlow#()V" />
@@ -20,8 +20,8 @@
   </root>
   <root nodeRef="r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)/1227886714783">
     <file name="ClosureLiteralDataFlow_Test.java">
-      <node id="1227886714783" at="15,62,16,123" concept="0" />
-      <node id="1227886714783" at="16,123,17,135" concept="0" />
+      <node id="1227886714783" at="15,62,16,130" concept="0" />
+      <node id="1227886714783" at="16,130,17,135" concept="0" />
       <node id="1227886714803" at="21,64,22,40" concept="0" />
       <node id="1227886714806" at="22,40,23,182" concept="0" />
       <node id="1227886714803" at="21,0,25,0" concept="1" trace="test_ClosureLiteralDataFlow#()V" />

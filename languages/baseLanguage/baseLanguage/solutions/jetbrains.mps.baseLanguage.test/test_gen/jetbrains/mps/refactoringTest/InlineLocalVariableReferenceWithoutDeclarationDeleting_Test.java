@@ -19,7 +19,7 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class InlineLocalVariableReferenceWithoutDeclarationDeleting_Test extends BaseTransformationTest {
   @Test
   public void test_InlineLocalVariableReferenceWithoutDeclarationDeleting() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
+    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     this.runTest("jetbrains.mps.refactoringTest.InlineLocalVariableReferenceWithoutDeclarationDeleting_Test$TestBody", "test_InlineLocalVariableReferenceWithoutDeclarationDeleting", true);
   }
   @MPSLaunch

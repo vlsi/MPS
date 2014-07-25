@@ -5,6 +5,6 @@ package jetbrains.mps.lang.test.runtime;
 import org.jetbrains.annotations.NotNull;
 
 public interface TestRunner {
-  public void initTest(final TransformationTest test, @NotNull String projectPath, String modelName, boolean uiTest, boolean reOpenProject) throws Exception;
+  public void initTest(final TransformationTest test, @NotNull String projectPath, String modelName, boolean reOpenProject) throws Exception;
   public void runTest(final TransformationTest test, String className, final String methodName, boolean runInCommand) throws Throwable;
 }

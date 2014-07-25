@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class ListWithConceptFunction_Test extends BaseTransformationTest {
   @Test
   public void test_ErrorMessagesCheck1222443330005() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ListWithConceptFunction_Test$TestBody", "test_ErrorMessagesCheck1222443330005", true);
   }
   @MPSLaunch

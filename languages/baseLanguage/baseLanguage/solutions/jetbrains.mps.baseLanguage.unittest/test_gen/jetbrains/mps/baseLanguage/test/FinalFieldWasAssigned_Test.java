@@ -14,17 +14,17 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class FinalFieldWasAssigned_Test extends BaseTransformationTest {
   @Test
   public void test_ErrorMessagesCheck843236768048178247() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalFieldWasAssigned_Test$TestBody", "test_ErrorMessagesCheck843236768048178247", true);
   }
   @Test
   public void test_NodeVariableHasNotBeenInitializedCheck6923385624928056097() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalFieldWasAssigned_Test$TestBody", "test_NodeVariableHasNotBeenInitializedCheck6923385624928056097", true);
   }
   @Test
   public void test_NodeVariableHasNotBeenInitializedCheck6923385624928725296() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalFieldWasAssigned_Test$TestBody", "test_NodeVariableHasNotBeenInitializedCheck6923385624928725296", true);
   }
   @MPSLaunch

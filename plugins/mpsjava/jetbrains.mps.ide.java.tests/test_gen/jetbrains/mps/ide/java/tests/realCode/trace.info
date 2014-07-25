@@ -5,8 +5,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root nodeRef="r:160abcc6-9e67-4700-883d-b19377a315a7(jetbrains.mps.ide.java.tests.realCode@tests)/7016215775330902578">
     <file name="BytecodeVsSourceStubs_Test.java">
-      <node id="7016215775330902578" at="15,45,16,120" concept="0" />
-      <node id="7016215775330902578" at="16,120,17,114" concept="0" />
+      <node id="7016215775330902578" at="15,45,16,127" concept="0" />
+      <node id="7016215775330902578" at="16,127,17,114" concept="0" />
       <node id="8083368042256451495" at="21,47,22,50" concept="2" />
       <node id="8083368042256451508" at="22,50,23,88" concept="2" />
       <node id="7016215775330902589" at="23,88,24,85" concept="0" />

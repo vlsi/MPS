@@ -14,10 +14,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)/8128243960970298224">
     <file name="JUnitCommand_Test.java">
-      <node id="8128243960970298224" at="38,60,39,141" concept="2" />
-      <node id="8128243960970298224" at="39,141,40,141" concept="2" />
-      <node id="8128243960970298224" at="43,60,44,141" concept="2" />
-      <node id="8128243960970298224" at="44,141,45,141" concept="2" />
+      <node id="8128243960970298224" at="38,60,39,148" concept="2" />
+      <node id="8128243960970298224" at="39,148,40,141" concept="2" />
+      <node id="8128243960970298224" at="43,60,44,148" concept="2" />
+      <node id="8128243960970298224" at="44,148,45,141" concept="2" />
       <node id="7120092006645143181" at="49,62,50,168" concept="2" />
       <node id="7120092006645143714" at="52,62,53,168" concept="2" />
       <node id="7120092006645143164" at="56,11,57,128" concept="7" />
@@ -121,8 +121,8 @@
   </root>
   <root nodeRef="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)/8128243960970298272">
     <file name="JavaCommand_Test.java">
-      <node id="8128243960970298272" at="35,55,36,141" concept="2" />
-      <node id="8128243960970298272" at="36,141,37,135" concept="2" />
+      <node id="8128243960970298272" at="35,55,36,148" concept="2" />
+      <node id="8128243960970298272" at="36,148,37,135" concept="2" />
       <node id="8128243960970298482" at="41,57,42,84" concept="7" />
       <node id="2034046503361578121" at="44,27,45,175" concept="7" />
       <node id="2034046503361578135" at="47,45,48,126" concept="8" />

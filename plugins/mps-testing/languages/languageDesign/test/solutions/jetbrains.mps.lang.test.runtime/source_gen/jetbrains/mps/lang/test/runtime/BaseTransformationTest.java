@@ -50,11 +50,11 @@ public abstract class BaseTransformationTest implements TransformationTest {
   }
 
   public void initTest(@NotNull String projectName, final String model) throws Exception {
-    initTest(projectName, model, false, false);
+    initTest(projectName, model, false);
   }
 
-  public void initTest(@NotNull String projectName, final String model, boolean uiTest, boolean reOpenProject) throws Exception {
-    myRunner.initTest(this, projectName, model, uiTest, reOpenProject);
+  public void initTest(@NotNull String projectName, final String model, boolean reOpenProject) throws Exception {
+    myRunner.initTest(this, projectName, model, reOpenProject);
   }
 
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {

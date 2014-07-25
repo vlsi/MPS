@@ -21,12 +21,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class CopyWithTrace_Test extends BaseTransformationTest {
   @Test
   public void test_copyNodeWithTrace() throws Throwable {
-    this.initTest("${mps_home}", "r:040810da-2115-47c4-899f-bb0a7342e4e5(jetbrains.mps.lang.traceable.operations.tests@tests)");
+    this.initTest("${mps_home}", "r:040810da-2115-47c4-899f-bb0a7342e4e5(jetbrains.mps.lang.traceable.operations.tests@tests)", false);
     this.runTest("jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$TestBody", "test_copyNodeWithTrace", true);
   }
   @Test
   public void test_copyNListWithTrace() throws Throwable {
-    this.initTest("${mps_home}", "r:040810da-2115-47c4-899f-bb0a7342e4e5(jetbrains.mps.lang.traceable.operations.tests@tests)");
+    this.initTest("${mps_home}", "r:040810da-2115-47c4-899f-bb0a7342e4e5(jetbrains.mps.lang.traceable.operations.tests@tests)", false);
     this.runTest("jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$TestBody", "test_copyNListWithTrace", true);
   }
   @MPSLaunch

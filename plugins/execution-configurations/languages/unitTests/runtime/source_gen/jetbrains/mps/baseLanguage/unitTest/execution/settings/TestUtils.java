@@ -111,7 +111,6 @@ __switch__:
     if ((modelName == null || modelName.length() == 0)) {
       return null;
     }
-
     return SModelRepository.getInstance().getModelDescriptor(modelName);
   }
 

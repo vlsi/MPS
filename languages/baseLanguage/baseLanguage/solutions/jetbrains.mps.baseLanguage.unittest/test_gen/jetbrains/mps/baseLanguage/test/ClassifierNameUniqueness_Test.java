@@ -14,37 +14,37 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class ClassifierNameUniqueness_Test extends BaseTransformationTest {
   @Test
   public void test_NodeTheNestedTypeCheck2654404125187272997() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ClassifierNameUniqueness_Test$TestBody", "test_NodeTheNestedTypeCheck2654404125187272997", true);
   }
   @Test
   public void test_NodeDuplicatedNameOfNestedCheck2654404125187273794() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ClassifierNameUniqueness_Test$TestBody", "test_NodeDuplicatedNameOfNestedCheck2654404125187273794", true);
   }
   @Test
   public void test_NodeDuplicatedNameOfNestedCheck2654404125187284431() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ClassifierNameUniqueness_Test$TestBody", "test_NodeDuplicatedNameOfNestedCheck2654404125187284431", true);
   }
   @Test
   public void test_NodeDuplicatedNameOfNestedCheck2654404125187284693() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ClassifierNameUniqueness_Test$TestBody", "test_NodeDuplicatedNameOfNestedCheck2654404125187284693", true);
   }
   @Test
   public void test_NodeDuplicatedNameOfNestedCheck2654404125187284994() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ClassifierNameUniqueness_Test$TestBody", "test_NodeDuplicatedNameOfNestedCheck2654404125187284994", true);
   }
   @Test
   public void test_NodeDuplicatedNameOfNestedCheck2654404125187285270() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ClassifierNameUniqueness_Test$TestBody", "test_NodeDuplicatedNameOfNestedCheck2654404125187285270", true);
   }
   @Test
   public void test_ErrorMessagesCheck2654404125187259971() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.ClassifierNameUniqueness_Test$TestBody", "test_ErrorMessagesCheck2654404125187259971", true);
   }
   @MPSLaunch

@@ -14,12 +14,12 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class CommentCanBeUnreachable_Test extends BaseTransformationTest {
   @Test
   public void test_NodeUnusedVariableWarningCheck6923385624928604784() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.CommentCanBeUnreachable_Test$TestBody", "test_NodeUnusedVariableWarningCheck6923385624928604784", true);
   }
   @Test
   public void test_ErrorMessagesCheck1226936244308() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.CommentCanBeUnreachable_Test$TestBody", "test_ErrorMessagesCheck1226936244308", true);
   }
   @MPSLaunch

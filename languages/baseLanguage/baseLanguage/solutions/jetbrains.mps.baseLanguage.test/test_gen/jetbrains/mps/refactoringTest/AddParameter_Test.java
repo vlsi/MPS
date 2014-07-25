@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class AddParameter_Test extends BaseTransformationTest {
   @Test
   public void test_AddParameter() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
+    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     this.runTest("jetbrains.mps.refactoringTest.AddParameter_Test$TestBody", "test_AddParameter", true);
   }
   @MPSLaunch

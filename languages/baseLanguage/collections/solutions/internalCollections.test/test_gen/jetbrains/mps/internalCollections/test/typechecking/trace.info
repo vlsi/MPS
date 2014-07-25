@@ -5,16 +5,16 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root nodeRef="r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)/1301553664999174713">
     <file name="TypeCheckingErrors_Test.java">
-      <node id="1301553664999174713" at="17,48,18,134" concept="0" />
-      <node id="1301553664999174713" at="18,134,19,128" concept="0" />
-      <node id="1301553664999174713" at="22,49,23,134" concept="0" />
-      <node id="1301553664999174713" at="23,134,24,129" concept="0" />
-      <node id="1301553664999174713" at="27,59,28,134" concept="0" />
-      <node id="1301553664999174713" at="28,134,29,139" concept="0" />
-      <node id="1301553664999174713" at="32,76,33,134" concept="0" />
-      <node id="1301553664999174713" at="33,134,34,156" concept="0" />
-      <node id="1301553664999174713" at="37,73,38,134" concept="0" />
-      <node id="1301553664999174713" at="38,134,39,153" concept="0" />
+      <node id="1301553664999174713" at="17,48,18,141" concept="0" />
+      <node id="1301553664999174713" at="18,141,19,128" concept="0" />
+      <node id="1301553664999174713" at="22,49,23,141" concept="0" />
+      <node id="1301553664999174713" at="23,141,24,129" concept="0" />
+      <node id="1301553664999174713" at="27,59,28,141" concept="0" />
+      <node id="1301553664999174713" at="28,141,29,139" concept="0" />
+      <node id="1301553664999174713" at="32,76,33,141" concept="0" />
+      <node id="1301553664999174713" at="33,141,34,156" concept="0" />
+      <node id="1301553664999174713" at="37,73,38,141" concept="0" />
+      <node id="1301553664999174713" at="38,141,39,153" concept="0" />
       <node id="2169032458071765481" at="43,50,44,46" concept="0" />
       <node id="2169032458071765481" at="44,46,45,46" concept="0" />
       <node id="2169032458071765481" at="45,46,46,46" concept="0" />

@@ -14,37 +14,37 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class FinalVarRefs_Test extends BaseTransformationTest {
   @Test
   public void test_ErrorMessagesCheck4705425356438246964() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_ErrorMessagesCheck4705425356438246964", true);
   }
   @Test
   public void test_NodeVariableHasNotBeenInitializedCheck6923385624929711095() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeVariableHasNotBeenInitializedCheck6923385624929711095", true);
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6923385624928162026() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6923385624928162026", true);
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6923385624929647060() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6923385624929647060", true);
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6923385624929358438() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6923385624929358438", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927750488() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927750488", true);
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6923385624927704204() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6923385624927704204", true);
   }
   @MPSLaunch

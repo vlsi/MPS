@@ -14,372 +14,372 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class StaticMethodTypeArgumentsMatch_Test extends BaseTransformationTest {
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929474538() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929474538", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929093688() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929093688", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929759489() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929759489", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624928064214() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624928064214", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624928338237() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624928338237", true);
   }
   @Test
   public void test_NodeIncorrectNumberOfTypeCheck6923385624927076212() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIncorrectNumberOfTypeCheck6923385624927076212", true);
   }
   @Test
   public void test_NodeIncorrectNumberOfTypeCheck6923385624929568518() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIncorrectNumberOfTypeCheck6923385624929568518", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929085682() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929085682", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928071609() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928071609", true);
   }
   @Test
   public void test_NodeIncorrectNumberOfTypeCheck6923385624928055987() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIncorrectNumberOfTypeCheck6923385624928055987", true);
   }
   @Test
   public void test_NodeIncorrectNumberOfTypeCheck6923385624927893669() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIncorrectNumberOfTypeCheck6923385624927893669", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929638636() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929638636", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929730930() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929730930", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929887428() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929887428", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927598052() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927598052", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928310878() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928310878", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929108750() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929108750", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928705021() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928705021", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929718802() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929718802", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928278524() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928278524", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929553520() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929553520", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927168694() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927168694", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929458730() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929458730", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927571014() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927571014", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927967241() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927967241", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928022542() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928022542", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929545255() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929545255", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927353265() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927353265", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928511526() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928511526", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927691379() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927691379", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929451186() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929451186", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927094868() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927094868", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928345644() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928345644", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928520364() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928520364", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927654739() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927654739", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929837753() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929837753", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624926987486() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624926987486", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927974629() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927974629", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927227663() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927227663", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929696443() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929696443", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928504098() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928504098", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927017247() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927017247", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928985887() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928985887", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927265973() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927265973", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929787619() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929787619", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927360609() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927360609", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927176656() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927176656", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929116365() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929116365", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927698774() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927698774", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929482011() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929482011", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929403419() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929403419", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929131303() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929131303", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928993331() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928993331", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927551638() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927551638", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929561019() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929561019", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929537722() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929537722", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929584760() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929584760", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929101144() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929101144", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928475774() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928475774", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927395599() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927395599", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927254316() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927254316", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927904368() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927904368", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929466208() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929466208", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927637065() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927637065", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927622344() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927622344", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927273298() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927273298", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929123839() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929123839", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927149353() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927149353", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928919630() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928919630", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927757855() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927757855", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927387513() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927387513", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929225321() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929225321", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928353046() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928353046", true);
   }
   @Test
   public void test_ErrorMessagesCheck7430872850884083577() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.StaticMethodTypeArgumentsMatch_Test$TestBody", "test_ErrorMessagesCheck7430872850884083577", true);
   }
   @MPSLaunch

@@ -14,42 +14,42 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class FieldDeclarationCanBeLocalVariable_Test extends BaseTransformationTest {
   @Test
   public void test_ErrorMessagesCheck4914675704512537909() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_ErrorMessagesCheck4914675704512537909", true);
   }
   @Test
   public void test_NodeFieldCanBeConvertedIntoCheck6923385624929133464() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck6923385624929133464", true);
   }
   @Test
   public void test_ErrorMessagesCheck4914675704512538465() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_ErrorMessagesCheck4914675704512538465", true);
   }
   @Test
   public void test_NodeFieldCanBeConvertedIntoCheck6923385624927428315() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck6923385624927428315", true);
   }
   @Test
   public void test_ErrorMessagesCheck4914675704512541562() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_ErrorMessagesCheck4914675704512541562", true);
   }
   @Test
   public void test_ErrorMessagesCheck4914675704512555962() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_ErrorMessagesCheck4914675704512555962", true);
   }
   @Test
   public void test_NodeFieldCanBeConvertedIntoCheck6923385624929216447() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck6923385624929216447", true);
   }
   @Test
   public void test_ErrorMessagesCheck4914675704512587973() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_ErrorMessagesCheck4914675704512587973", true);
   }
   @MPSLaunch

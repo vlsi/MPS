@@ -45,10 +45,10 @@ public class TransformationTestRunner implements TestRunner {
   }
 
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName) throws Exception {
-    initTest(test, projectPath, modelName, false, false);
+    initTest(test, projectPath, modelName, false);
   }
 
-  public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean uiTest, boolean reopenProject) throws Exception {
+  public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean reopenProject) throws Exception {
     // todo: create configuration pack for TransformationTest 
     startMps();
 

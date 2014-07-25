@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SReference;
 public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest {
   @Test
   public void test_throwsOrder() throws Throwable {
-    this.initTest("${mps_home}", "r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)");
+    this.initTest("${mps_home}", "r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)", false);
     this.runTest("jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test$TestBody", "test_throwsOrder", true);
   }
   @MPSLaunch

@@ -19,42 +19,42 @@ import jetbrains.mps.smodel.SModelReference;
 public class JavaToMps_Test extends BaseTransformationTest {
   @Test
   public void test_SelfRef() throws Throwable {
-    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_SelfRef", true);
   }
   @Test
   public void test_ClassWInnerInterace() throws Throwable {
-    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_ClassWInnerInterace", true);
   }
   @Test
   public void test_Imports1() throws Throwable {
-    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_Imports1", true);
   }
   @Test
   public void test_Imports2() throws Throwable {
-    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_Imports2", true);
   }
   @Test
   public void test_Imports3() throws Throwable {
-    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_Imports3", true);
   }
   @Test
   public void test_ClassNesting() throws Throwable {
-    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_ClassNesting", true);
   }
   @Test
   public void test_FullSource() throws Throwable {
-    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_FullSource", true);
   }
   @Test
   public void test_LittleSource() throws Throwable {
-    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody", "test_LittleSource", true);
   }
   @MPSLaunch

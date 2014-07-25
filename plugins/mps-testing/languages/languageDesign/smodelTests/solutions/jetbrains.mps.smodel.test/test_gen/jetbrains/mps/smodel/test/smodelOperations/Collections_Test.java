@@ -14,17 +14,17 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class Collections_Test extends BaseTransformationTest {
   @Test
   public void test_NodeUnnamedWarningCheck6405893568802055213() throws Throwable {
-    this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
+    this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.Collections_Test$TestBody", "test_NodeUnnamedWarningCheck6405893568802055213", true);
   }
   @Test
   public void test_NodeUnnamedWarningCheck9095983673872173449() throws Throwable {
-    this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
+    this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.Collections_Test$TestBody", "test_NodeUnnamedWarningCheck9095983673872173449", true);
   }
   @Test
   public void test_ErrorMessagesCheck6405539316368555030() throws Throwable {
-    this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)");
+    this.initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
     this.runTest("jetbrains.mps.smodel.test.smodelOperations.Collections_Test$TestBody", "test_ErrorMessagesCheck6405539316368555030", true);
   }
   @MPSLaunch

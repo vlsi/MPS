@@ -15,12 +15,12 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class UnusedAssignment_Test extends BaseTransformationTest {
   @Test
   public void test_UnusedAssignment() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody", "test_UnusedAssignment", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624928924551() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624928924551", true);
   }
   @MPSLaunch

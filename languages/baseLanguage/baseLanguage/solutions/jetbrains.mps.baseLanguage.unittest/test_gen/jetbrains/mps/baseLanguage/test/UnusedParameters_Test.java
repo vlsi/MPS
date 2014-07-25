@@ -14,17 +14,17 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class UnusedParameters_Test extends BaseTransformationTest {
   @Test
   public void test_ErrorMessagesCheck1220265437276() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.UnusedParameters_Test$TestBody", "test_ErrorMessagesCheck1220265437276", true);
   }
   @Test
   public void test_NodeUnusedParameterWarningCheck6923385624929809514() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.UnusedParameters_Test$TestBody", "test_NodeUnusedParameterWarningCheck6923385624929809514", true);
   }
   @Test
   public void test_NodeUnusedParameterWarningCheck6923385624927380174() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.UnusedParameters_Test$TestBody", "test_NodeUnusedParameterWarningCheck6923385624927380174", true);
   }
   @MPSLaunch

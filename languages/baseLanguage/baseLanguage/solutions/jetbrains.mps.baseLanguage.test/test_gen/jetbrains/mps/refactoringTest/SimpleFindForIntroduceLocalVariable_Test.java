@@ -19,7 +19,7 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class SimpleFindForIntroduceLocalVariable_Test extends BaseTransformationTest {
   @Test
   public void test_SimpleFindAndMoveForIntroduceLocalVariableTest() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
+    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     this.runTest("jetbrains.mps.refactoringTest.SimpleFindForIntroduceLocalVariable_Test$TestBody", "test_SimpleFindAndMoveForIntroduceLocalVariableTest", true);
   }
   @MPSLaunch

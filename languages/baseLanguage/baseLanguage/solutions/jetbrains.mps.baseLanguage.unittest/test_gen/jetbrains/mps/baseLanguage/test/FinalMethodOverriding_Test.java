@@ -14,22 +14,22 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class FinalMethodOverriding_Test extends BaseTransformationTest {
   @Test
   public void test_NodeMethodCanNotOverrideFinalCheck7471623575883490516() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_NodeMethodCanNotOverrideFinalCheck7471623575883490516", true);
   }
   @Test
   public void test_ErrorMessagesCheck7471623575883346737() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_ErrorMessagesCheck7471623575883346737", true);
   }
   @Test
   public void test_NodeMethodCanNotOverrideFinalCheck7471623575883519854() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_NodeMethodCanNotOverrideFinalCheck7471623575883519854", true);
   }
   @Test
   public void test_ErrorMessagesCheck7471623575883519712() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_ErrorMessagesCheck7471623575883519712", true);
   }
   @MPSLaunch

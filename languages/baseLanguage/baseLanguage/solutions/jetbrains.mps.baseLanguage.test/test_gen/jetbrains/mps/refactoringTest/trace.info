@@ -11,8 +11,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052406553">
     <file name="ChangeMethodParametersForStatement_Test.java">
-      <node id="1230052406553" at="26,74,27,112" concept="1" />
-      <node id="1230052406553" at="27,112,28,148" concept="1" />
+      <node id="1230052406553" at="26,74,27,119" concept="1" />
+      <node id="1230052406553" at="27,119,28,148" concept="1" />
       <node id="1230052406639" at="32,76,33,40" concept="1" />
       <node id="1230052406639" at="33,40,34,40" concept="1" />
       <node id="1230052406644" at="35,7,36,119" concept="5" />
@@ -56,8 +56,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052406741">
     <file name="ConceptFunctioParameterTest_Test.java">
-      <node id="1230052406741" at="19,67,20,112" concept="1" />
-      <node id="1230052406741" at="20,112,21,134" concept="1" />
+      <node id="1230052406741" at="19,67,20,119" concept="1" />
+      <node id="1230052406741" at="20,119,21,134" concept="1" />
       <node id="1230052406767" at="25,69,26,40" concept="1" />
       <node id="1230052406770" at="26,40,27,368" concept="5" />
       <node id="1230052406780" at="27,368,28,90" concept="1" />
@@ -75,8 +75,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052406933">
     <file name="ExtractFromAnonymous_Test.java">
-      <node id="1230052406933" at="23,60,24,112" concept="1" />
-      <node id="1230052406933" at="24,112,25,120" concept="1" />
+      <node id="1230052406933" at="23,60,24,119" concept="1" />
+      <node id="1230052406933" at="24,119,25,120" concept="1" />
       <node id="1230052406934" at="29,62,30,40" concept="1" />
       <node id="1230052406934" at="30,40,31,40" concept="1" />
       <node id="1230052406937" at="31,40,32,397" concept="5" />
@@ -106,8 +106,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052407024">
     <file name="ExtractFromStatements_Test.java">
-      <node id="1230052407024" at="23,61,24,112" concept="1" />
-      <node id="1230052407024" at="24,112,25,122" concept="1" />
+      <node id="1230052407024" at="23,61,24,119" concept="1" />
+      <node id="1230052407024" at="24,119,25,122" concept="1" />
       <node id="1230052407103" at="29,63,30,40" concept="1" />
       <node id="1230052407103" at="30,40,31,40" concept="1" />
       <node id="1230052407106" at="31,40,32,494" concept="5" />
@@ -137,8 +137,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052407134">
     <file name="ExtractMethodFromConstructor_Test.java">
-      <node id="1230052407134" at="23,68,24,112" concept="1" />
-      <node id="1230052407134" at="24,112,25,136" concept="1" />
+      <node id="1230052407134" at="23,68,24,119" concept="1" />
+      <node id="1230052407134" at="24,119,25,136" concept="1" />
       <node id="1230052407164" at="29,70,30,40" concept="1" />
       <node id="1230052407164" at="30,40,31,40" concept="1" />
       <node id="1230052407167" at="31,40,32,260" concept="5" />
@@ -168,8 +168,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052444309">
     <file name="FindInputVariables_Test.java">
-      <node id="1230052444309" at="21,58,22,112" concept="1" />
-      <node id="1230052444309" at="22,112,23,116" concept="1" />
+      <node id="1230052444309" at="21,58,22,119" concept="1" />
+      <node id="1230052444309" at="22,119,23,116" concept="1" />
       <node id="1230052444345" at="27,60,28,40" concept="1" />
       <node id="1230052444348" at="28,40,29,500" concept="5" />
       <node id="1230052444359" at="29,500,30,57" concept="5" />
@@ -190,14 +190,14 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052480263">
     <file name="BreakStatement_Test.java">
-      <node id="1230052480263" at="19,48,20,112" concept="1" />
-      <node id="1230052480263" at="20,112,21,102" concept="1" />
-      <node id="1230052480263" at="24,48,25,112" concept="1" />
-      <node id="1230052480263" at="25,112,26,102" concept="1" />
-      <node id="1230052480263" at="29,52,30,112" concept="1" />
-      <node id="1230052480263" at="30,112,31,106" concept="1" />
-      <node id="1230052480263" at="34,56,35,112" concept="1" />
-      <node id="1230052480263" at="35,112,36,110" concept="1" />
+      <node id="1230052480263" at="19,48,20,119" concept="1" />
+      <node id="1230052480263" at="20,119,21,102" concept="1" />
+      <node id="1230052480263" at="24,48,25,119" concept="1" />
+      <node id="1230052480263" at="25,119,26,102" concept="1" />
+      <node id="1230052480263" at="29,52,30,119" concept="1" />
+      <node id="1230052480263" at="30,119,31,106" concept="1" />
+      <node id="1230052480263" at="34,56,35,119" concept="1" />
+      <node id="1230052480263" at="35,119,36,110" concept="1" />
       <node id="1230052480293" at="40,50,41,40" concept="1" />
       <node id="1230052480296" at="41,40,42,223" concept="1" />
       <node id="1230052480302" at="44,50,45,40" concept="1" />
@@ -236,8 +236,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052480332">
     <file name="ExtractBreak_Test.java">
-      <node id="1230052480332" at="24,52,25,112" concept="1" />
-      <node id="1230052480332" at="25,112,26,104" concept="1" />
+      <node id="1230052480332" at="24,52,25,119" concept="1" />
+      <node id="1230052480332" at="25,119,26,104" concept="1" />
       <node id="1230052480405" at="30,54,31,40" concept="1" />
       <node id="1230052480405" at="31,40,32,40" concept="1" />
       <node id="1230052480408" at="32,40,33,252" concept="5" />
@@ -268,8 +268,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052480438">
     <file name="ExtractContinue_Test.java">
-      <node id="1230052480438" at="24,55,25,112" concept="1" />
-      <node id="1230052480438" at="25,112,26,110" concept="1" />
+      <node id="1230052480438" at="24,55,25,119" concept="1" />
+      <node id="1230052480438" at="25,119,26,110" concept="1" />
       <node id="1230052480494" at="30,57,31,40" concept="1" />
       <node id="1230052480494" at="31,40,32,40" concept="1" />
       <node id="1230052480497" at="32,40,33,252" concept="5" />
@@ -300,10 +300,10 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052509258">
     <file name="ExtractDefaultClassifierMethodDeclaration_Test.java">
-      <node id="1230052509258" at="23,57,24,112" concept="1" />
-      <node id="1230052509258" at="24,112,25,138" concept="1" />
-      <node id="1230052509258" at="28,58,29,112" concept="1" />
-      <node id="1230052509258" at="29,112,30,139" concept="1" />
+      <node id="1230052509258" at="23,57,24,119" concept="1" />
+      <node id="1230052509258" at="24,119,25,138" concept="1" />
+      <node id="1230052509258" at="28,58,29,119" concept="1" />
+      <node id="1230052509258" at="29,119,30,139" concept="1" />
       <node id="1230052509344" at="34,59,35,40" concept="1" />
       <node id="1230052509344" at="35,40,36,40" concept="1" />
       <node id="1230052509344" at="36,40,37,40" concept="1" />
@@ -358,8 +358,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052551970">
     <file name="ExtractFromExpression_Test.java">
-      <node id="1230052551970" at="23,61,24,112" concept="1" />
-      <node id="1230052551970" at="24,112,25,122" concept="1" />
+      <node id="1230052551970" at="23,61,24,119" concept="1" />
+      <node id="1230052551970" at="24,119,25,122" concept="1" />
       <node id="1230052552031" at="29,63,30,40" concept="1" />
       <node id="1230052552031" at="30,40,31,40" concept="1" />
       <node id="1230052552034" at="31,40,32,254" concept="5" />
@@ -389,8 +389,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052552060">
     <file name="ExtractFromExpressionWithoutReturn_Test.java">
-      <node id="1230052552060" at="23,74,24,112" concept="1" />
-      <node id="1230052552060" at="24,112,25,148" concept="1" />
+      <node id="1230052552060" at="23,74,24,119" concept="1" />
+      <node id="1230052552060" at="24,119,25,148" concept="1" />
       <node id="1230052552101" at="29,76,30,40" concept="1" />
       <node id="1230052552101" at="30,40,31,40" concept="1" />
       <node id="1230052552104" at="31,40,32,254" concept="5" />
@@ -420,8 +420,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052641811">
     <file name="ExtractDifferentReturns_Test.java">
-      <node id="1230052641811" at="24,63,25,112" concept="1" />
-      <node id="1230052641811" at="25,112,26,126" concept="1" />
+      <node id="1230052641811" at="24,63,25,119" concept="1" />
+      <node id="1230052641811" at="25,119,26,126" concept="1" />
       <node id="1230052641880" at="30,65,31,40" concept="1" />
       <node id="1230052641880" at="31,40,32,40" concept="1" />
       <node id="1230052641883" at="32,40,33,252" concept="5" />
@@ -452,8 +452,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052641913">
     <file name="ExtractFromStatementWithReturnValue_Test.java">
-      <node id="1230052641913" at="23,75,24,112" concept="1" />
-      <node id="1230052641913" at="24,112,25,150" concept="1" />
+      <node id="1230052641913" at="23,75,24,119" concept="1" />
+      <node id="1230052641913" at="24,119,25,150" concept="1" />
       <node id="1230052642008" at="29,77,30,40" concept="1" />
       <node id="1230052642008" at="30,40,31,40" concept="1" />
       <node id="1230052642011" at="31,40,32,508" concept="5" />
@@ -483,8 +483,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052642039">
     <file name="ExtractFromStatementsEndsWithReturn_Test.java">
-      <node id="1230052642039" at="23,75,24,112" concept="1" />
-      <node id="1230052642039" at="24,112,25,150" concept="1" />
+      <node id="1230052642039" at="23,75,24,119" concept="1" />
+      <node id="1230052642039" at="24,119,25,150" concept="1" />
       <node id="1230052642071" at="29,77,30,40" concept="1" />
       <node id="1230052642071" at="30,40,31,40" concept="1" />
       <node id="1230052642074" at="31,40,32,256" concept="5" />
@@ -514,8 +514,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052642100">
     <file name="MethodsWithoutReturnStatement_Test.java">
-      <node id="1230052642100" at="23,64,24,112" concept="1" />
-      <node id="1230052642100" at="24,112,25,133" concept="1" />
+      <node id="1230052642100" at="23,64,24,119" concept="1" />
+      <node id="1230052642100" at="24,119,25,133" concept="1" />
       <node id="1230052642145" at="29,66,30,40" concept="1" />
       <node id="1230052642145" at="30,40,31,40" concept="1" />
       <node id="1230052642148" at="31,40,32,260" concept="5" />
@@ -545,10 +545,10 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052642174">
     <file name="OneReturnStatement_Test.java">
-      <node id="1230052642174" at="19,58,20,112" concept="1" />
-      <node id="1230052642174" at="20,112,21,116" concept="1" />
-      <node id="1230052642174" at="24,60,25,112" concept="1" />
-      <node id="1230052642174" at="25,112,26,118" concept="1" />
+      <node id="1230052642174" at="19,58,20,119" concept="1" />
+      <node id="1230052642174" at="20,119,21,116" concept="1" />
+      <node id="1230052642174" at="24,60,25,119" concept="1" />
+      <node id="1230052642174" at="25,119,26,118" concept="1" />
       <node id="1230052642234" at="30,60,31,40" concept="1" />
       <node id="1230052642237" at="31,40,32,220" concept="1" />
       <node id="1230052642243" at="34,62,35,40" concept="1" />
@@ -571,8 +571,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052642255">
     <file name="OneReturnTransformation_Test.java">
-      <node id="1230052642255" at="23,63,24,112" concept="1" />
-      <node id="1230052642255" at="24,112,25,126" concept="1" />
+      <node id="1230052642255" at="23,63,24,119" concept="1" />
+      <node id="1230052642255" at="24,119,25,126" concept="1" />
       <node id="1230052642315" at="29,65,30,40" concept="1" />
       <node id="1230052642315" at="30,40,31,40" concept="1" />
       <node id="1230052642318" at="31,40,32,252" concept="5" />
@@ -602,12 +602,12 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052642344">
     <file name="ReturnStatement_Test.java">
-      <node id="1230052642344" at="19,52,20,112" concept="1" />
-      <node id="1230052642344" at="20,112,21,107" concept="1" />
-      <node id="1230052642344" at="24,61,25,112" concept="1" />
-      <node id="1230052642344" at="25,112,26,116" concept="1" />
-      <node id="1230052642344" at="29,55,30,112" concept="1" />
-      <node id="1230052642344" at="30,112,31,110" concept="1" />
+      <node id="1230052642344" at="19,52,20,119" concept="1" />
+      <node id="1230052642344" at="20,119,21,107" concept="1" />
+      <node id="1230052642344" at="24,61,25,119" concept="1" />
+      <node id="1230052642344" at="25,119,26,116" concept="1" />
+      <node id="1230052642344" at="29,55,30,119" concept="1" />
+      <node id="1230052642344" at="30,119,31,110" concept="1" />
       <node id="1230052642421" at="35,54,36,40" concept="1" />
       <node id="1230052642424" at="36,40,37,220" concept="1" />
       <node id="1230052642430" at="37,220,38,333" concept="1" />
@@ -639,8 +639,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052684456">
     <file name="ExtractFromIntention_Test.java">
-      <node id="1230052684456" at="25,57,26,112" concept="1" />
-      <node id="1230052684456" at="26,112,27,117" concept="1" />
+      <node id="1230052684456" at="25,57,26,119" concept="1" />
+      <node id="1230052684456" at="26,119,27,117" concept="1" />
       <node id="1230052684457" at="31,59,32,40" concept="1" />
       <node id="1230052684457" at="32,40,33,40" concept="1" />
       <node id="1230052684457" at="33,40,34,40" concept="1" />
@@ -676,8 +676,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052684686">
     <file name="staticContainerClassTest_Test.java">
-      <node id="1230052684686" at="25,64,26,112" concept="1" />
-      <node id="1230052684686" at="26,112,27,128" concept="1" />
+      <node id="1230052684686" at="25,64,26,119" concept="1" />
+      <node id="1230052684686" at="26,119,27,128" concept="1" />
       <node id="1230052684722" at="31,66,32,40" concept="1" />
       <node id="1230052684722" at="32,40,33,40" concept="1" />
       <node id="1230052684722" at="33,40,34,40" concept="1" />
@@ -715,8 +715,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052902925">
     <file name="AddThrowDeclaration_Test.java">
-      <node id="1230052902925" at="26,59,27,112" concept="1" />
-      <node id="1230052902925" at="27,112,28,118" concept="1" />
+      <node id="1230052902925" at="26,59,27,119" concept="1" />
+      <node id="1230052902925" at="27,119,28,118" concept="1" />
       <node id="1230052902944" at="32,61,33,40" concept="1" />
       <node id="1230052902944" at="33,40,34,40" concept="1" />
       <node id="1230052902947" at="34,40,35,206" concept="5" />
@@ -760,8 +760,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052902977">
     <file name="ChangeMethodName_Test.java">
-      <node id="1230052902977" at="23,56,24,112" concept="1" />
-      <node id="1230052902977" at="24,112,25,112" concept="1" />
+      <node id="1230052902977" at="23,56,24,119" concept="1" />
+      <node id="1230052902977" at="24,119,25,112" concept="1" />
       <node id="1230052902995" at="29,58,30,40" concept="1" />
       <node id="1230052902995" at="30,40,31,40" concept="1" />
       <node id="1230052902998" at="31,40,32,206" concept="5" />
@@ -791,8 +791,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052903026">
     <file name="ChangeReturningType_Test.java">
-      <node id="1230052903026" at="23,59,24,112" concept="1" />
-      <node id="1230052903026" at="24,112,25,118" concept="1" />
+      <node id="1230052903026" at="23,59,24,119" concept="1" />
+      <node id="1230052903026" at="24,119,25,118" concept="1" />
       <node id="1230052903045" at="29,61,30,40" concept="1" />
       <node id="1230052903045" at="30,40,31,40" concept="1" />
       <node id="1230052903048" at="31,40,32,206" concept="5" />
@@ -822,8 +822,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052903078">
     <file name="ChangeSignatureOfStaticMethod_Test.java">
-      <node id="1230052903078" at="23,69,24,112" concept="1" />
-      <node id="1230052903078" at="24,112,25,138" concept="1" />
+      <node id="1230052903078" at="23,69,24,119" concept="1" />
+      <node id="1230052903078" at="24,119,25,138" concept="1" />
       <node id="1230052903138" at="29,71,30,40" concept="1" />
       <node id="1230052903138" at="30,40,31,40" concept="1" />
       <node id="1230052903141" at="31,40,32,204" concept="5" />
@@ -864,8 +864,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052943763">
     <file name="AddParameter_Test.java">
-      <node id="1230052943763" at="26,52,27,112" concept="1" />
-      <node id="1230052943763" at="27,112,28,104" concept="1" />
+      <node id="1230052943763" at="26,52,27,119" concept="1" />
+      <node id="1230052943763" at="27,119,28,104" concept="1" />
       <node id="1230052943783" at="32,54,33,40" concept="1" />
       <node id="1230052943783" at="33,40,34,40" concept="1" />
       <node id="1230052943786" at="34,40,35,206" concept="5" />
@@ -916,8 +916,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052943817">
     <file name="ChangeParameterName_Test.java">
-      <node id="1230052943817" at="24,59,25,112" concept="1" />
-      <node id="1230052943817" at="25,112,26,118" concept="1" />
+      <node id="1230052943817" at="24,59,25,119" concept="1" />
+      <node id="1230052943817" at="25,119,26,118" concept="1" />
       <node id="1230052943847" at="30,61,31,40" concept="1" />
       <node id="1230052943847" at="31,40,32,40" concept="1" />
       <node id="1230052943850" at="32,40,33,206" concept="5" />
@@ -947,8 +947,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052943883">
     <file name="ChangeParameterType_Test.java">
-      <node id="1230052943883" at="25,59,26,112" concept="1" />
-      <node id="1230052943883" at="26,112,27,118" concept="1" />
+      <node id="1230052943883" at="25,59,26,119" concept="1" />
+      <node id="1230052943883" at="26,119,27,118" concept="1" />
       <node id="1230052943909" at="31,61,32,40" concept="1" />
       <node id="1230052943909" at="32,40,33,40" concept="1" />
       <node id="1230052943912" at="33,40,34,206" concept="5" />
@@ -991,8 +991,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052943946">
     <file name="ChangeParametersOrder_Test.java">
-      <node id="1230052943946" at="23,61,24,112" concept="1" />
-      <node id="1230052943946" at="24,112,25,122" concept="1" />
+      <node id="1230052943946" at="23,61,24,119" concept="1" />
+      <node id="1230052943946" at="24,119,25,122" concept="1" />
       <node id="1230052943993" at="29,63,30,40" concept="1" />
       <node id="1230052943993" at="30,40,31,40" concept="1" />
       <node id="1230052943996" at="31,40,32,206" concept="5" />
@@ -1032,8 +1032,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052944081">
     <file name="RemoveParameter_Test.java">
-      <node id="1230052944081" at="23,55,24,112" concept="1" />
-      <node id="1230052944081" at="24,112,25,110" concept="1" />
+      <node id="1230052944081" at="23,55,24,119" concept="1" />
+      <node id="1230052944081" at="24,119,25,110" concept="1" />
       <node id="1230052944101" at="29,57,30,40" concept="1" />
       <node id="1230052944101" at="30,40,31,40" concept="1" />
       <node id="1230052944104" at="31,40,32,206" concept="5" />
@@ -1063,8 +1063,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052944132">
     <file name="TwoParametersWithSameType_Test.java">
-      <node id="1230052944132" at="24,65,25,112" concept="1" />
-      <node id="1230052944132" at="25,112,26,130" concept="1" />
+      <node id="1230052944132" at="24,65,25,119" concept="1" />
+      <node id="1230052944132" at="25,119,26,130" concept="1" />
       <node id="1230052944162" at="30,67,31,40" concept="1" />
       <node id="1230052944162" at="31,40,32,40" concept="1" />
       <node id="1230052944165" at="32,40,33,206" concept="5" />
@@ -1095,8 +1095,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052989007">
     <file name="DeclarationVariablesInMethod_Test.java">
-      <node id="1230052989007" at="21,68,22,112" concept="1" />
-      <node id="1230052989007" at="22,112,23,136" concept="1" />
+      <node id="1230052989007" at="21,68,22,119" concept="1" />
+      <node id="1230052989007" at="22,119,23,136" concept="1" />
       <node id="1230052989065" at="27,70,28,40" concept="1" />
       <node id="1230052989065" at="28,40,29,40" concept="1" />
       <node id="1230052989068" at="29,40,30,189" concept="5" />
@@ -1123,8 +1123,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052989081">
     <file name="InlineFromAnotherClass_Test.java">
-      <node id="1230052989081" at="21,62,22,112" concept="1" />
-      <node id="1230052989081" at="22,112,23,124" concept="1" />
+      <node id="1230052989081" at="21,62,22,119" concept="1" />
+      <node id="1230052989081" at="22,119,23,124" concept="1" />
       <node id="1230052989156" at="27,64,28,40" concept="1" />
       <node id="1230052989156" at="28,40,29,40" concept="1" />
       <node id="1230052989159" at="29,40,30,189" concept="5" />
@@ -1151,8 +1151,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052989172">
     <file name="InlineFromExpression_Test.java">
-      <node id="1230052989172" at="21,60,22,112" concept="1" />
-      <node id="1230052989172" at="22,112,23,120" concept="1" />
+      <node id="1230052989172" at="21,60,22,119" concept="1" />
+      <node id="1230052989172" at="22,119,23,120" concept="1" />
       <node id="1230052989266" at="27,62,28,40" concept="1" />
       <node id="1230052989266" at="28,40,29,40" concept="1" />
       <node id="1230052989269" at="29,40,30,189" concept="5" />
@@ -1179,8 +1179,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052989282">
     <file name="InlineRecursiveMethod_Test.java">
-      <node id="1230052989282" at="16,61,17,112" concept="1" />
-      <node id="1230052989282" at="17,112,18,122" concept="1" />
+      <node id="1230052989282" at="16,61,17,119" concept="1" />
+      <node id="1230052989282" at="17,119,18,122" concept="1" />
       <node id="1230052989295" at="22,63,23,40" concept="1" />
       <node id="1230052989298" at="23,40,24,190" concept="1" />
       <node id="1230052989295" at="22,0,26,0" concept="4" trace="test_InlineRecursiveMethod#()V" />
@@ -1195,8 +1195,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052989306">
     <file name="InlineWithNoSourcesAttached_Test.java">
-      <node id="1230052989306" at="16,67,17,112" concept="1" />
-      <node id="1230052989306" at="17,112,18,134" concept="1" />
+      <node id="1230052989306" at="16,67,17,119" concept="1" />
+      <node id="1230052989306" at="17,119,18,134" concept="1" />
       <node id="1230052989322" at="22,69,23,40" concept="1" />
       <node id="1230052989325" at="23,40,24,192" concept="1" />
       <node id="1230052989322" at="22,0,26,0" concept="4" trace="test_InlineWithNoSourcesAttached#()V" />
@@ -1211,8 +1211,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052989334">
     <file name="SimpleInlineWithOneReturn_Test.java">
-      <node id="1230052989334" at="21,65,22,112" concept="1" />
-      <node id="1230052989334" at="22,112,23,130" concept="1" />
+      <node id="1230052989334" at="21,65,22,119" concept="1" />
+      <node id="1230052989334" at="22,119,23,130" concept="1" />
       <node id="1230052989378" at="27,67,28,40" concept="1" />
       <node id="1230052989378" at="28,40,29,40" concept="1" />
       <node id="1230052989381" at="29,40,30,189" concept="5" />
@@ -1239,8 +1239,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053040715">
     <file name="InlineFromBehavior_Test.java">
-      <node id="1230053040715" at="21,58,22,112" concept="1" />
-      <node id="1230053040715" at="22,112,23,116" concept="1" />
+      <node id="1230053040715" at="21,58,22,119" concept="1" />
+      <node id="1230053040715" at="22,119,23,116" concept="1" />
       <node id="1230053040751" at="27,60,28,40" concept="1" />
       <node id="1230053040751" at="28,40,29,40" concept="1" />
       <node id="1230053040754" at="29,40,30,183" concept="5" />
@@ -1267,8 +1267,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053040767">
     <file name="InlineFromBehaviorWithMethods_Test.java">
-      <node id="1230053040767" at="21,69,22,112" concept="1" />
-      <node id="1230053040767" at="22,112,23,138" concept="1" />
+      <node id="1230053040767" at="21,69,22,119" concept="1" />
+      <node id="1230053040767" at="22,119,23,138" concept="1" />
       <node id="1230053040872" at="27,71,28,40" concept="1" />
       <node id="1230053040872" at="28,40,29,40" concept="1" />
       <node id="1230053040872" at="29,40,30,40" concept="1" />
@@ -1297,8 +1297,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053040888">
     <file name="InlineInBehaviorWithThis_Test.java">
-      <node id="1230053040888" at="21,64,22,112" concept="1" />
-      <node id="1230053040888" at="22,112,23,128" concept="1" />
+      <node id="1230053040888" at="21,64,22,119" concept="1" />
+      <node id="1230053040888" at="22,119,23,128" concept="1" />
       <node id="1230053040922" at="27,66,28,40" concept="1" />
       <node id="1230053040922" at="28,40,29,40" concept="1" />
       <node id="1230053040925" at="29,40,30,183" concept="5" />
@@ -1325,8 +1325,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053073153">
     <file name="InlineMethodThatChangesParameters_Test.java">
-      <node id="1230053073153" at="21,73,22,112" concept="1" />
-      <node id="1230053073153" at="22,112,23,146" concept="1" />
+      <node id="1230053073153" at="21,73,22,119" concept="1" />
+      <node id="1230053073153" at="22,119,23,146" concept="1" />
       <node id="1230053073230" at="27,75,28,40" concept="1" />
       <node id="1230053073230" at="28,40,29,40" concept="1" />
       <node id="1230053073233" at="29,40,30,189" concept="5" />
@@ -1353,8 +1353,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053073246">
     <file name="InlineModelWithConstants_Test.java">
-      <node id="1230053073246" at="21,64,22,112" concept="1" />
-      <node id="1230053073246" at="22,112,23,128" concept="1" />
+      <node id="1230053073246" at="21,64,22,119" concept="1" />
+      <node id="1230053073246" at="22,119,23,128" concept="1" />
       <node id="1230053073320" at="27,66,28,40" concept="1" />
       <node id="1230053073320" at="28,40,29,40" concept="1" />
       <node id="1230053073323" at="29,40,30,189" concept="5" />
@@ -1381,8 +1381,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053073336">
     <file name="OneReturnWithNotVariableParameters_Test.java">
-      <node id="1230053073336" at="21,74,22,112" concept="1" />
-      <node id="1230053073336" at="22,112,23,148" concept="1" />
+      <node id="1230053073336" at="21,74,22,119" concept="1" />
+      <node id="1230053073336" at="22,119,23,148" concept="1" />
       <node id="1230053073419" at="27,76,28,40" concept="1" />
       <node id="1230053073419" at="28,40,29,40" concept="1" />
       <node id="1230053073422" at="29,40,30,189" concept="5" />
@@ -1409,8 +1409,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053073435">
     <file name="OneReturnWithParameteres_Test.java">
-      <node id="1230053073435" at="21,64,22,112" concept="1" />
-      <node id="1230053073435" at="22,112,23,128" concept="1" />
+      <node id="1230053073435" at="21,64,22,119" concept="1" />
+      <node id="1230053073435" at="22,119,23,128" concept="1" />
       <node id="1230053073498" at="27,66,28,40" concept="1" />
       <node id="1230053073498" at="28,40,29,40" concept="1" />
       <node id="1230053073501" at="29,40,30,189" concept="5" />
@@ -1437,8 +1437,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053114801">
     <file name="CheckStaticVisibility_Test.java">
-      <node id="1230053114801" at="16,61,17,112" concept="1" />
-      <node id="1230053114801" at="17,112,18,122" concept="1" />
+      <node id="1230053114801" at="16,61,17,119" concept="1" />
+      <node id="1230053114801" at="17,119,18,122" concept="1" />
       <node id="1230053114842" at="22,63,23,40" concept="1" />
       <node id="1230053114842" at="23,40,24,40" concept="1" />
       <node id="1230053114842" at="24,40,25,40" concept="1" />
@@ -1460,8 +1460,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053114873">
     <file name="CheckVisibility_Test.java">
-      <node id="1230053114873" at="16,55,17,112" concept="1" />
-      <node id="1230053114873" at="17,112,18,110" concept="1" />
+      <node id="1230053114873" at="16,55,17,119" concept="1" />
+      <node id="1230053114873" at="17,119,18,110" concept="1" />
       <node id="1230053114946" at="22,57,23,40" concept="1" />
       <node id="1230053114946" at="23,40,24,40" concept="1" />
       <node id="1230053114949" at="24,40,25,189" concept="5" />
@@ -1484,8 +1484,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053187317">
     <file name="CheckInlineCanBePerformed_Test.java">
-      <node id="1230053187317" at="16,65,17,112" concept="1" />
-      <node id="1230053187317" at="17,112,18,130" concept="1" />
+      <node id="1230053187317" at="16,65,17,119" concept="1" />
+      <node id="1230053187317" at="17,119,18,130" concept="1" />
       <node id="1230053187445" at="22,67,23,40" concept="1" />
       <node id="1230053187448" at="23,40,24,184" concept="1" />
       <node id="1230053187454" at="24,184,25,192" concept="1" />
@@ -1505,8 +1505,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053187488">
     <file name="CheckInlineWithThrow_Test.java">
-      <node id="1230053187488" at="16,60,17,112" concept="1" />
-      <node id="1230053187488" at="17,112,18,120" concept="1" />
+      <node id="1230053187488" at="16,60,17,119" concept="1" />
+      <node id="1230053187488" at="17,119,18,120" concept="1" />
       <node id="1230053187522" at="22,62,23,40" concept="1" />
       <node id="1230053187525" at="23,40,24,184" concept="1" />
       <node id="1230053187522" at="22,0,26,0" concept="4" trace="test_CheckInlineWithThrow#()V" />
@@ -1521,8 +1521,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053187531">
     <file name="InlineManyReturns_Test.java">
-      <node id="1230053187531" at="21,57,22,112" concept="1" />
-      <node id="1230053187531" at="22,112,23,114" concept="1" />
+      <node id="1230053187531" at="21,57,22,119" concept="1" />
+      <node id="1230053187531" at="22,119,23,114" concept="1" />
       <node id="1230053187631" at="27,59,28,40" concept="1" />
       <node id="1230053187631" at="28,40,29,40" concept="1" />
       <node id="1230053187634" at="29,40,30,189" concept="5" />
@@ -1549,8 +1549,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053187647">
     <file name="InlineMethodWithReturnAtTheEnd_Test.java">
-      <node id="1230053187647" at="21,70,22,112" concept="1" />
-      <node id="1230053187647" at="22,112,23,140" concept="1" />
+      <node id="1230053187647" at="21,70,22,119" concept="1" />
+      <node id="1230053187647" at="22,119,23,140" concept="1" />
       <node id="1230053187736" at="27,72,28,40" concept="1" />
       <node id="1230053187736" at="28,40,29,40" concept="1" />
       <node id="1230053187739" at="29,40,30,189" concept="5" />
@@ -1577,8 +1577,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053187752">
     <file name="InlineMethodWithVoidType_Test.java">
-      <node id="1230053187752" at="21,64,22,112" concept="1" />
-      <node id="1230053187752" at="22,112,23,128" concept="1" />
+      <node id="1230053187752" at="21,64,22,119" concept="1" />
+      <node id="1230053187752" at="22,119,23,128" concept="1" />
       <node id="1230053187828" at="27,66,28,40" concept="1" />
       <node id="1230053187828" at="28,40,29,40" concept="1" />
       <node id="1230053187831" at="29,40,30,189" concept="5" />
@@ -1605,8 +1605,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053187844">
     <file name="InlineWithVoidTypeAndBug_Test.java">
-      <node id="1230053187844" at="21,64,22,112" concept="1" />
-      <node id="1230053187844" at="22,112,23,128" concept="1" />
+      <node id="1230053187844" at="21,64,22,119" concept="1" />
+      <node id="1230053187844" at="22,119,23,128" concept="1" />
       <node id="1230053187884" at="27,66,28,40" concept="1" />
       <node id="1230053187884" at="28,40,29,40" concept="1" />
       <node id="1230053187887" at="29,40,30,189" concept="5" />
@@ -1633,8 +1633,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053187900">
     <file name="InlineWithoutReturnStatement_Test.java">
-      <node id="1230053187900" at="21,68,22,112" concept="1" />
-      <node id="1230053187900" at="22,112,23,136" concept="1" />
+      <node id="1230053187900" at="21,68,22,119" concept="1" />
+      <node id="1230053187900" at="22,119,23,136" concept="1" />
       <node id="1230053187901" at="27,70,28,40" concept="1" />
       <node id="1230053187901" at="28,40,29,40" concept="1" />
       <node id="1230053187904" at="29,40,30,189" concept="5" />
@@ -1661,8 +1661,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053223832">
     <file name="InlineStaticFromAnotherClass_Test.java">
-      <node id="1230053223832" at="21,68,22,112" concept="1" />
-      <node id="1230053223832" at="22,112,23,136" concept="1" />
+      <node id="1230053223832" at="21,68,22,119" concept="1" />
+      <node id="1230053223832" at="22,119,23,136" concept="1" />
       <node id="1230053223867" at="27,70,28,40" concept="1" />
       <node id="1230053223867" at="28,40,29,40" concept="1" />
       <node id="1230053223867" at="29,40,30,40" concept="1" />
@@ -1690,8 +1690,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053223883">
     <file name="StaticMethod_Test.java">
-      <node id="1230053223883" at="21,52,22,112" concept="1" />
-      <node id="1230053223883" at="22,112,23,104" concept="1" />
+      <node id="1230053223883" at="21,52,22,119" concept="1" />
+      <node id="1230053223883" at="22,119,23,104" concept="1" />
       <node id="1230053223936" at="27,54,28,40" concept="1" />
       <node id="1230053223936" at="28,40,29,40" concept="1" />
       <node id="1230053223939" at="29,40,30,177" concept="5" />
@@ -1718,10 +1718,10 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053266365">
     <file name="InlineFromConceptFunction_Test.java">
-      <node id="1230053266365" at="23,49,24,112" concept="1" />
-      <node id="1230053266365" at="24,112,25,114" concept="1" />
-      <node id="1230053266365" at="28,49,29,112" concept="1" />
-      <node id="1230053266365" at="29,112,30,114" concept="1" />
+      <node id="1230053266365" at="23,49,24,119" concept="1" />
+      <node id="1230053266365" at="24,119,25,114" concept="1" />
+      <node id="1230053266365" at="28,49,29,119" concept="1" />
+      <node id="1230053266365" at="29,119,30,114" concept="1" />
       <node id="1230053266388" at="34,51,35,40" concept="1" />
       <node id="1230053266388" at="35,40,36,40" concept="1" />
       <node id="1230053266391" at="36,40,37,200" concept="5" />
@@ -1768,8 +1768,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053266420">
     <file name="InlineLocalVariableReferenceWithoutDeclarationDeleting_Test.java">
-      <node id="1230053266420" at="21,94,22,112" concept="1" />
-      <node id="1230053266420" at="22,112,23,188" concept="1" />
+      <node id="1230053266420" at="21,94,22,119" concept="1" />
+      <node id="1230053266420" at="22,119,23,188" concept="1" />
       <node id="1230053266421" at="27,96,28,40" concept="1" />
       <node id="1230053266421" at="28,40,29,40" concept="1" />
       <node id="1230053266424" at="29,40,30,197" concept="5" />
@@ -1796,8 +1796,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053266477">
     <file name="InlineLocalVariableReferense_Test.java">
-      <node id="1230053266477" at="21,68,22,112" concept="1" />
-      <node id="1230053266477" at="22,112,23,136" concept="1" />
+      <node id="1230053266477" at="21,68,22,119" concept="1" />
+      <node id="1230053266477" at="22,119,23,136" concept="1" />
       <node id="1230053266511" at="27,70,28,40" concept="1" />
       <node id="1230053266511" at="28,40,29,40" concept="1" />
       <node id="1230053266514" at="29,40,30,197" concept="5" />
@@ -1824,8 +1824,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053266526">
     <file name="InlineReferenceWithAssignment_Test.java">
-      <node id="1230053266526" at="21,69,22,112" concept="1" />
-      <node id="1230053266526" at="22,112,23,138" concept="1" />
+      <node id="1230053266526" at="21,69,22,119" concept="1" />
+      <node id="1230053266526" at="22,119,23,138" concept="1" />
       <node id="1230053266527" at="27,71,28,40" concept="1" />
       <node id="1230053266527" at="28,40,29,40" concept="1" />
       <node id="1230053266530" at="29,40,30,197" concept="5" />
@@ -1852,8 +1852,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053266582">
     <file name="InlineWithoutDeclarationDeletion_Test.java">
-      <node id="1230053266582" at="21,72,22,112" concept="1" />
-      <node id="1230053266582" at="22,112,23,144" concept="1" />
+      <node id="1230053266582" at="21,72,22,119" concept="1" />
+      <node id="1230053266582" at="22,119,23,144" concept="1" />
       <node id="1230053266623" at="27,74,28,40" concept="1" />
       <node id="1230053266623" at="28,40,29,40" concept="1" />
       <node id="1230053266626" at="29,40,30,204" concept="5" />
@@ -1880,8 +1880,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053266638">
     <file name="SimpleInlineVariable_Test.java">
-      <node id="1230053266638" at="21,60,22,112" concept="1" />
-      <node id="1230053266638" at="22,112,23,120" concept="1" />
+      <node id="1230053266638" at="21,60,22,119" concept="1" />
+      <node id="1230053266638" at="22,119,23,120" concept="1" />
       <node id="1230053266639" at="27,62,28,40" concept="1" />
       <node id="1230053266639" at="28,40,29,40" concept="1" />
       <node id="1230053266642" at="29,40,30,204" concept="5" />
@@ -1908,8 +1908,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053302505">
     <file name="MoveMethodWithFields_Test.java">
-      <node id="1230053302505" at="21,60,22,112" concept="1" />
-      <node id="1230053302505" at="22,112,23,120" concept="1" />
+      <node id="1230053302505" at="21,60,22,119" concept="1" />
+      <node id="1230053302505" at="22,119,23,120" concept="1" />
       <node id="1230053302506" at="27,62,28,40" concept="1" />
       <node id="1230053302506" at="28,40,29,40" concept="1" />
       <node id="1230053302506" at="29,40,30,40" concept="1" />
@@ -1938,8 +1938,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053302564">
     <file name="MoveMethodWithMethods_Test.java">
-      <node id="1230053302564" at="21,61,22,112" concept="1" />
-      <node id="1230053302564" at="22,112,23,122" concept="1" />
+      <node id="1230053302564" at="21,61,22,119" concept="1" />
+      <node id="1230053302564" at="22,119,23,122" concept="1" />
       <node id="1230053302565" at="27,63,28,40" concept="1" />
       <node id="1230053302565" at="28,40,29,40" concept="1" />
       <node id="1230053302565" at="29,40,30,40" concept="1" />
@@ -1968,8 +1968,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053302625">
     <file name="MoveMethodWithUssages_Test.java">
-      <node id="1230053302625" at="21,45,22,112" concept="1" />
-      <node id="1230053302625" at="22,112,23,106" concept="1" />
+      <node id="1230053302625" at="21,45,22,119" concept="1" />
+      <node id="1230053302625" at="22,119,23,106" concept="1" />
       <node id="1230053302626" at="27,47,28,40" concept="1" />
       <node id="1230053302626" at="28,40,29,40" concept="1" />
       <node id="1230053302626" at="29,40,30,40" concept="1" />
@@ -1999,8 +1999,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230053302691">
     <file name="SimpleMoveMethod_Test.java">
-      <node id="1230053302691" at="21,45,22,112" concept="1" />
-      <node id="1230053302691" at="22,112,23,101" concept="1" />
+      <node id="1230053302691" at="21,45,22,119" concept="1" />
+      <node id="1230053302691" at="22,119,23,101" concept="1" />
       <node id="1230053302692" at="27,47,28,40" concept="1" />
       <node id="1230053302692" at="28,40,29,40" concept="1" />
       <node id="1230053302692" at="29,40,30,40" concept="1" />
@@ -2029,8 +2029,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230057984816">
     <file name="InlineMethodInTest_Test.java">
-      <node id="1230057984816" at="21,56,22,112" concept="1" />
-      <node id="1230057984816" at="22,112,23,114" concept="1" />
+      <node id="1230057984816" at="21,56,22,119" concept="1" />
+      <node id="1230057984816" at="22,119,23,114" concept="1" />
       <node id="1230057984846" at="27,58,28,40" concept="1" />
       <node id="1230057984846" at="28,40,29,40" concept="1" />
       <node id="1230057984849" at="29,40,30,210" concept="5" />
@@ -2057,8 +2057,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1300615610528534002">
     <file name="FindForMethodWithIVariableLikeNodes_Test.java">
-      <node id="1300615610528534002" at="24,79,25,112" concept="1" />
-      <node id="1300615610528534002" at="25,112,26,154" concept="1" />
+      <node id="1300615610528534002" at="24,79,25,119" concept="1" />
+      <node id="1300615610528534002" at="25,119,26,154" concept="1" />
       <node id="1300615610528534093" at="30,81,31,46" concept="1" />
       <node id="1300615610528534093" at="31,46,32,46" concept="1" />
       <node id="1300615610528534096" at="32,46,33,258" concept="5" />
@@ -2098,8 +2098,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1998477585418803771">
     <file name="SimpleFindForExtractWithReturn_Test.java">
-      <node id="1998477585418803771" at="24,74,25,112" concept="1" />
-      <node id="1998477585418803771" at="25,112,26,144" concept="1" />
+      <node id="1998477585418803771" at="24,74,25,119" concept="1" />
+      <node id="1998477585418803771" at="25,119,26,144" concept="1" />
       <node id="1998477585418805710" at="30,76,31,46" concept="1" />
       <node id="1998477585418805710" at="31,46,32,46" concept="1" />
       <node id="1998477585418805713" at="32,46,33,258" concept="5" />
@@ -2139,8 +2139,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/2004738378939035560">
     <file name="ExtractMethodWithUnusedAssignments_Test.java">
-      <node id="2004738378939035560" at="23,78,24,112" concept="1" />
-      <node id="2004738378939035560" at="24,112,25,152" concept="1" />
+      <node id="2004738378939035560" at="23,78,24,119" concept="1" />
+      <node id="2004738378939035560" at="24,119,25,152" concept="1" />
       <node id="2004738378939038667" at="29,80,30,46" concept="1" />
       <node id="2004738378939038667" at="30,46,31,46" concept="1" />
       <node id="2004738378939038794" at="31,46,32,677" concept="5" />
@@ -2172,8 +2172,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/2163048091639854868">
     <file name="IntroduceConstantFromAnonimousClass_Test.java">
-      <node id="2163048091639854868" at="22,79,23,112" concept="1" />
-      <node id="2163048091639854868" at="23,112,24,154" concept="1" />
+      <node id="2163048091639854868" at="22,79,23,119" concept="1" />
+      <node id="2163048091639854868" at="23,119,24,154" concept="1" />
       <node id="2163048091639855068" at="28,81,29,46" concept="1" />
       <node id="2163048091639855068" at="29,46,30,46" concept="1" />
       <node id="2163048091639855071" at="30,46,31,84" concept="5" />
@@ -2204,8 +2204,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/2230400082817266597">
     <file name="ConvertAnonymousWithTypeVariablesTest_Test.java">
-      <node id="2230400082817266597" at="21,57,22,112" concept="1" />
-      <node id="2230400082817266597" at="22,112,23,134" concept="1" />
+      <node id="2230400082817266597" at="21,57,22,119" concept="1" />
+      <node id="2230400082817266597" at="22,119,23,134" concept="1" />
       <node id="2230400082817279740" at="27,59,28,46" concept="1" />
       <node id="2230400082817279740" at="28,46,29,46" concept="1" />
       <node id="2230400082817279740" at="29,46,30,46" concept="1" />
@@ -2230,8 +2230,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/2230400082818031588">
     <file name="ConvertAnonymousToStaticTest_Test.java">
-      <node id="2230400082818031588" at="21,52,22,112" concept="1" />
-      <node id="2230400082818031588" at="22,112,23,120" concept="1" />
+      <node id="2230400082818031588" at="21,52,22,119" concept="1" />
+      <node id="2230400082818031588" at="22,119,23,120" concept="1" />
       <node id="2230400082818041866" at="27,54,28,46" concept="1" />
       <node id="2230400082818041866" at="28,46,29,46" concept="1" />
       <node id="2230400082818041866" at="29,46,30,46" concept="1" />
@@ -2256,8 +2256,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/3014415391767789119">
     <file name="SimpleMoveStaticMethod_Test.java">
-      <node id="3014415391767789119" at="18,62,19,112" concept="1" />
-      <node id="3014415391767789119" at="19,112,20,124" concept="1" />
+      <node id="3014415391767789119" at="18,62,19,119" concept="1" />
+      <node id="3014415391767789119" at="19,119,20,124" concept="1" />
       <node id="3014415391767789218" at="24,64,25,46" concept="1" />
       <node id="3014415391767789218" at="25,46,26,46" concept="1" />
       <node id="3014415391767789218" at="26,46,27,46" concept="1" />
@@ -2282,8 +2282,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/3109730807963541425">
     <file name="IntroduceVariableFromAnonimousClass_Test.java">
-      <node id="3109730807963541425" at="21,79,22,112" concept="1" />
-      <node id="3109730807963541425" at="22,112,23,154" concept="1" />
+      <node id="3109730807963541425" at="21,79,22,119" concept="1" />
+      <node id="3109730807963541425" at="22,119,23,154" concept="1" />
       <node id="3109730807963545055" at="27,81,28,46" concept="1" />
       <node id="3109730807963545055" at="28,46,29,46" concept="1" />
       <node id="3109730807963545055" at="29,46,30,46" concept="1" />
@@ -2314,8 +2314,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/3109730807963748196">
     <file name="ConvertAnonymousWithLocalVariables_Test.java">
-      <node id="3109730807963748196" at="21,57,22,112" concept="1" />
-      <node id="3109730807963748196" at="22,112,23,131" concept="1" />
+      <node id="3109730807963748196" at="21,57,22,119" concept="1" />
+      <node id="3109730807963748196" at="22,119,23,131" concept="1" />
       <node id="3109730807963748292" at="27,59,28,46" concept="1" />
       <node id="3109730807963748292" at="28,46,29,46" concept="1" />
       <node id="3109730807963748295" at="29,46,30,185" concept="1" />
@@ -2339,8 +2339,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/3145818413496050321">
     <file name="ConvertAnonymousWithLocalVariablesTest_Test.java">
-      <node id="3145818413496050321" at="21,62,22,112" concept="1" />
-      <node id="3145818413496050321" at="22,112,23,140" concept="1" />
+      <node id="3145818413496050321" at="21,62,22,119" concept="1" />
+      <node id="3145818413496050321" at="22,119,23,140" concept="1" />
       <node id="3145818413496514603" at="27,64,28,46" concept="1" />
       <node id="3145818413496514603" at="28,46,29,46" concept="1" />
       <node id="3145818413496514603" at="29,46,30,46" concept="1" />
@@ -2365,8 +2365,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/3145818413497245718">
     <file name="ConvertAnonymousAbstractClassWithConstructorTest_Test.java">
-      <node id="3145818413497245718" at="21,72,22,112" concept="1" />
-      <node id="3145818413497245718" at="22,112,23,160" concept="1" />
+      <node id="3145818413497245718" at="21,72,22,119" concept="1" />
+      <node id="3145818413497245718" at="22,119,23,160" concept="1" />
       <node id="3145818413497708745" at="27,74,28,46" concept="1" />
       <node id="3145818413497708745" at="28,46,29,46" concept="1" />
       <node id="3145818413497708745" at="29,46,30,46" concept="1" />
@@ -2391,8 +2391,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/3925159399320841060">
     <file name="ChangeSigantureOfInterface_Test.java">
-      <node id="3925159399320841060" at="23,66,24,112" concept="1" />
-      <node id="3925159399320841060" at="24,112,25,132" concept="1" />
+      <node id="3925159399320841060" at="23,66,24,119" concept="1" />
+      <node id="3925159399320841060" at="24,119,25,132" concept="1" />
       <node id="418758558327028827" at="29,68,30,45" concept="1" />
       <node id="418758558327028827" at="30,45,31,45" concept="1" />
       <node id="418758558327028827" at="31,45,32,45" concept="1" />
@@ -2423,8 +2423,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/4038232163186978773">
     <file name="IntroduceFinalLocalVariable_Test.java">
-      <node id="4038232163186978773" at="21,67,22,112" concept="1" />
-      <node id="4038232163186978773" at="22,112,23,134" concept="1" />
+      <node id="4038232163186978773" at="21,67,22,119" concept="1" />
+      <node id="4038232163186978773" at="22,119,23,134" concept="1" />
       <node id="4038232163186978816" at="27,69,28,46" concept="1" />
       <node id="4038232163186978816" at="28,46,29,46" concept="1" />
       <node id="4038232163186978819" at="29,46,30,94" concept="5" />
@@ -2454,8 +2454,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/4038232163187008743">
     <file name="IntroduceFinalField_Test.java">
-      <node id="4038232163187008743" at="23,59,24,112" concept="1" />
-      <node id="4038232163187008743" at="24,112,25,118" concept="1" />
+      <node id="4038232163187008743" at="23,59,24,119" concept="1" />
+      <node id="4038232163187008743" at="24,119,25,118" concept="1" />
       <node id="4038232163187008791" at="29,61,30,46" concept="1" />
       <node id="4038232163187008791" at="30,46,31,46" concept="1" />
       <node id="4038232163187008794" at="31,46,32,78" concept="5" />
@@ -2487,8 +2487,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/4412735672778824686">
     <file name="InlineMethodWithUnusedParameters_Test.java">
-      <node id="4412735672778824686" at="21,72,22,112" concept="1" />
-      <node id="4412735672778824686" at="22,112,23,144" concept="1" />
+      <node id="4412735672778824686" at="21,72,22,119" concept="1" />
+      <node id="4412735672778824686" at="22,119,23,144" concept="1" />
       <node id="4412735672778826644" at="27,74,28,46" concept="1" />
       <node id="4412735672778826644" at="28,46,29,46" concept="1" />
       <node id="4412735672778826652" at="29,46,30,183" concept="5" />
@@ -2515,8 +2515,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/4412735672780105517">
     <file name="InlineMethodWithConceptFunctionParameters_Test.java">
-      <node id="4412735672780105517" at="21,81,22,112" concept="1" />
-      <node id="4412735672780105517" at="22,112,23,162" concept="1" />
+      <node id="4412735672780105517" at="21,81,22,119" concept="1" />
+      <node id="4412735672780105517" at="22,119,23,162" concept="1" />
       <node id="4412735672780107327" at="27,83,28,46" concept="1" />
       <node id="4412735672780107327" at="28,46,29,46" concept="1" />
       <node id="4412735672780107327" at="29,46,30,46" concept="1" />
@@ -2544,8 +2544,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/5142438244427169026">
     <file name="MoveMethodWithParameters_Test.java">
-      <node id="5142438244427169026" at="21,45,22,112" concept="1" />
-      <node id="5142438244427169026" at="22,112,23,109" concept="1" />
+      <node id="5142438244427169026" at="21,45,22,119" concept="1" />
+      <node id="5142438244427169026" at="22,119,23,109" concept="1" />
       <node id="5142438244427184232" at="27,47,28,46" concept="1" />
       <node id="5142438244427184232" at="28,46,29,46" concept="1" />
       <node id="5142438244427184232" at="29,46,30,46" concept="1" />
@@ -2575,8 +2575,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/5161277940733600913">
     <file name="ExtractMethodFromClosure_Test.java">
-      <node id="5161277940733600913" at="24,64,25,112" concept="1" />
-      <node id="5161277940733600913" at="25,112,26,128" concept="1" />
+      <node id="5161277940733600913" at="24,64,25,119" concept="1" />
+      <node id="5161277940733600913" at="25,119,26,128" concept="1" />
       <node id="5161277940733601053" at="30,66,31,46" concept="1" />
       <node id="5161277940733601053" at="31,46,32,46" concept="1" />
       <node id="5161277940733601056" at="32,46,33,403" concept="5" />
@@ -2614,8 +2614,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/5907083257159818727">
     <file name="ConvertAnonymousGenGenericFields_Test.java">
-      <node id="5907083257159818727" at="21,58,22,112" concept="1" />
-      <node id="5907083257159818727" at="22,112,23,130" concept="1" />
+      <node id="5907083257159818727" at="21,58,22,119" concept="1" />
+      <node id="5907083257159818727" at="22,119,23,130" concept="1" />
       <node id="5907083257159871973" at="27,60,28,46" concept="1" />
       <node id="5907083257159871973" at="28,46,29,46" concept="1" />
       <node id="5907083257159871976" at="29,46,30,183" concept="1" />
@@ -2639,8 +2639,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6195342755328023609">
     <file name="ExtractAddingNewDeclaration_Test.java">
-      <node id="6195342755328023609" at="23,67,24,112" concept="1" />
-      <node id="6195342755328023609" at="24,112,25,134" concept="1" />
+      <node id="6195342755328023609" at="23,67,24,119" concept="1" />
+      <node id="6195342755328023609" at="24,119,25,134" concept="1" />
       <node id="6195342755328023704" at="29,69,30,46" concept="1" />
       <node id="6195342755328023704" at="30,46,31,46" concept="1" />
       <node id="6195342755328023707" at="31,46,32,389" concept="5" />
@@ -2670,8 +2670,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6195342755328044201">
     <file name="FindForMethodWithOutputVariable_Test.java">
-      <node id="6195342755328044201" at="24,75,25,112" concept="1" />
-      <node id="6195342755328044201" at="25,112,26,146" concept="1" />
+      <node id="6195342755328044201" at="24,75,25,119" concept="1" />
+      <node id="6195342755328044201" at="25,119,26,146" concept="1" />
       <node id="6195342755328044297" at="30,77,31,46" concept="1" />
       <node id="6195342755328044297" at="31,46,32,46" concept="1" />
       <node id="6195342755328044300" at="32,46,33,389" concept="5" />
@@ -2711,8 +2711,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6351584993764365770">
     <file name="InlineAssingmentInClosure_Test.java">
-      <node id="6351584993764365770" at="21,65,22,112" concept="1" />
-      <node id="6351584993764365770" at="22,112,23,130" concept="1" />
+      <node id="6351584993764365770" at="21,65,22,119" concept="1" />
+      <node id="6351584993764365770" at="22,119,23,130" concept="1" />
       <node id="6351584993764365829" at="27,67,28,46" concept="1" />
       <node id="6351584993764365829" at="28,46,29,46" concept="1" />
       <node id="6351584993764365832" at="29,46,30,210" concept="5" />
@@ -2739,8 +2739,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6791439617122300870">
     <file name="ConvertAnonymousInterfaceTest_Test.java">
-      <node id="6791439617122300870" at="21,53,22,112" concept="1" />
-      <node id="6791439617122300870" at="22,112,23,122" concept="1" />
+      <node id="6791439617122300870" at="21,53,22,119" concept="1" />
+      <node id="6791439617122300870" at="22,119,23,122" concept="1" />
       <node id="6791439617122315497" at="27,55,28,46" concept="1" />
       <node id="6791439617122315497" at="28,46,29,46" concept="1" />
       <node id="6791439617122315497" at="29,46,30,46" concept="1" />
@@ -2765,8 +2765,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6791439617122628436">
     <file name="ConvertAnonymousAbstractClassTest_Test.java">
-      <node id="6791439617122628436" at="21,57,22,112" concept="1" />
-      <node id="6791439617122628436" at="22,112,23,130" concept="1" />
+      <node id="6791439617122628436" at="21,57,22,119" concept="1" />
+      <node id="6791439617122628436" at="22,119,23,130" concept="1" />
       <node id="6791439617122640167" at="27,59,28,46" concept="1" />
       <node id="6791439617122640167" at="28,46,29,46" concept="1" />
       <node id="6791439617122640167" at="29,46,30,46" concept="1" />
@@ -2791,8 +2791,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6974242407276765599">
     <file name="IntroduceVariableFromWildcards_Test.java">
-      <node id="6974242407276765599" at="21,74,22,112" concept="1" />
-      <node id="6974242407276765599" at="22,112,23,144" concept="1" />
+      <node id="6974242407276765599" at="21,74,22,119" concept="1" />
+      <node id="6974242407276765599" at="22,119,23,144" concept="1" />
       <node id="6974242407276777307" at="27,76,28,46" concept="1" />
       <node id="6974242407276777307" at="28,46,29,46" concept="1" />
       <node id="6974242407276777311" at="29,46,30,94" concept="5" />
@@ -2830,8 +2830,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/7093131866560585661">
     <file name="InlineInsideClosure_Test.java">
-      <node id="7093131866560585661" at="22,63,23,112" concept="1" />
-      <node id="7093131866560585661" at="23,112,24,122" concept="1" />
+      <node id="7093131866560585661" at="22,63,23,119" concept="1" />
+      <node id="7093131866560585661" at="23,119,24,122" concept="1" />
       <node id="7093131866560585733" at="28,65,29,46" concept="1" />
       <node id="7093131866560585733" at="29,46,30,46" concept="1" />
       <node id="7093131866560585736" at="30,46,31,198" concept="5" />
@@ -2858,8 +2858,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/7093131866560585771">
     <file name="InlineInClosureWithOutsideAssingment_Test.java">
-      <node id="7093131866560585771" at="22,80,23,112" concept="1" />
-      <node id="7093131866560585771" at="23,112,24,156" concept="1" />
+      <node id="7093131866560585771" at="22,80,23,119" concept="1" />
+      <node id="7093131866560585771" at="23,119,24,156" concept="1" />
       <node id="7093131866560585851" at="28,82,29,46" concept="1" />
       <node id="7093131866560585851" at="29,46,30,46" concept="1" />
       <node id="7093131866560585854" at="30,46,31,198" concept="5" />
@@ -2886,8 +2886,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/7568753874916167799">
     <file name="SimpleFindAndMoveForIntroduceLocalVar_Test.java">
-      <node id="7568753874916167799" at="21,81,22,112" concept="1" />
-      <node id="7568753874916167799" at="22,112,23,158" concept="1" />
+      <node id="7568753874916167799" at="21,81,22,119" concept="1" />
+      <node id="7568753874916167799" at="22,119,23,158" concept="1" />
       <node id="7568753874916167933" at="27,83,28,46" concept="1" />
       <node id="7568753874916167933" at="28,46,29,46" concept="1" />
       <node id="7568753874916167990" at="29,46,30,94" concept="5" />
@@ -2917,8 +2917,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/7568753874916187325">
     <file name="SimpleFindForIntroduceConstant_Test.java">
-      <node id="7568753874916187325" at="22,74,23,112" concept="1" />
-      <node id="7568753874916187325" at="23,112,24,144" concept="1" />
+      <node id="7568753874916187325" at="22,74,23,119" concept="1" />
+      <node id="7568753874916187325" at="23,119,24,144" concept="1" />
       <node id="7568753874916187418" at="28,76,29,46" concept="1" />
       <node id="7568753874916187418" at="29,46,30,46" concept="1" />
       <node id="7568753874916187421" at="30,46,31,84" concept="5" />
@@ -2949,8 +2949,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/7568753874916226562">
     <file name="SimpleFindForIntroduceLocalVariable_Test.java">
-      <node id="7568753874916226562" at="21,86,22,112" concept="1" />
-      <node id="7568753874916226562" at="22,112,23,161" concept="1" />
+      <node id="7568753874916226562" at="21,86,22,119" concept="1" />
+      <node id="7568753874916226562" at="22,119,23,161" concept="1" />
       <node id="7568753874916226583" at="27,88,28,46" concept="1" />
       <node id="7568753874916226583" at="28,46,29,46" concept="1" />
       <node id="7568753874916226586" at="29,46,30,94" concept="5" />
@@ -2980,8 +2980,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/7568753874916244224">
     <file name="FindAndMoveFromIfForIntroduceLocalVar_Test.java">
-      <node id="7568753874916244224" at="21,81,22,112" concept="1" />
-      <node id="7568753874916244224" at="22,112,23,158" concept="1" />
+      <node id="7568753874916244224" at="21,81,22,119" concept="1" />
+      <node id="7568753874916244224" at="22,119,23,158" concept="1" />
       <node id="7568753874916244267" at="27,83,28,46" concept="1" />
       <node id="7568753874916244267" at="28,46,29,46" concept="1" />
       <node id="7568753874916244270" at="29,46,30,94" concept="5" />
@@ -3011,8 +3011,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/7793057097608406463">
     <file name="SimpleFindForExtractFromManyStatements_Test.java">
-      <node id="7793057097608406463" at="24,82,25,112" concept="1" />
-      <node id="7793057097608406463" at="25,112,26,160" concept="1" />
+      <node id="7793057097608406463" at="24,82,25,119" concept="1" />
+      <node id="7793057097608406463" at="25,119,26,160" concept="1" />
       <node id="7793057097608416373" at="30,84,31,46" concept="1" />
       <node id="7793057097608416373" at="31,46,32,46" concept="1" />
       <node id="7793057097608416376" at="32,46,33,389" concept="5" />
@@ -3052,8 +3052,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8155843501976326915">
     <file name="ExtractMethodWithOutputVaryableFromStatement_Test.java">
-      <node id="8155843501976326915" at="23,88,24,112" concept="1" />
-      <node id="8155843501976326915" at="24,112,25,172" concept="1" />
+      <node id="8155843501976326915" at="23,88,24,119" concept="1" />
+      <node id="8155843501976326915" at="24,119,25,172" concept="1" />
       <node id="8155843501976328851" at="29,90,30,46" concept="1" />
       <node id="8155843501976328851" at="30,46,31,46" concept="1" />
       <node id="8155843501976328854" at="31,46,32,266" concept="5" />
@@ -3083,8 +3083,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8155843501977546256">
     <file name="ReplaceOutputVaryable_Test.java">
-      <node id="8155843501977546256" at="24,65,25,112" concept="1" />
-      <node id="8155843501977546256" at="25,112,26,126" concept="1" />
+      <node id="8155843501977546256" at="24,65,25,119" concept="1" />
+      <node id="8155843501977546256" at="25,119,26,126" concept="1" />
       <node id="8155843501977560935" at="30,67,31,46" concept="1" />
       <node id="8155843501977560935" at="31,46,32,46" concept="1" />
       <node id="8155843501977560938" at="32,46,33,266" concept="5" />
@@ -3124,8 +3124,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8155843501978460076">
     <file name="ExtractMethodWithOutputVaryableFromExpression_Test.java">
-      <node id="8155843501978460076" at="23,88,24,112" concept="1" />
-      <node id="8155843501978460076" at="24,112,25,173" concept="1" />
+      <node id="8155843501978460076" at="23,88,24,119" concept="1" />
+      <node id="8155843501978460076" at="24,119,25,173" concept="1" />
       <node id="8155843501978461957" at="29,90,30,46" concept="1" />
       <node id="8155843501978461957" at="30,46,31,46" concept="1" />
       <node id="8155843501978461960" at="31,46,32,267" concept="5" />
@@ -3155,8 +3155,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8495840634674645158">
     <file name="MoveStaticFieldSimpleTest_Test.java">
-      <node id="8495840634674645158" at="21,50,22,112" concept="1" />
-      <node id="8495840634674645158" at="22,112,23,115" concept="1" />
+      <node id="8495840634674645158" at="21,50,22,119" concept="1" />
+      <node id="8495840634674645158" at="22,119,23,115" concept="1" />
       <node id="8495840634674645236" at="27,52,28,46" concept="1" />
       <node id="8495840634674645236" at="28,46,29,46" concept="1" />
       <node id="8495840634674645236" at="29,46,30,46" concept="1" />
@@ -3185,8 +3185,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8495840634675243977">
     <file name="MoveStaticFieldWithUsageTest_Test.java">
-      <node id="8495840634675243977" at="21,49,22,112" concept="1" />
-      <node id="8495840634675243977" at="22,112,23,117" concept="1" />
+      <node id="8495840634675243977" at="21,49,22,119" concept="1" />
+      <node id="8495840634675243977" at="22,119,23,117" concept="1" />
       <node id="8495840634675285753" at="27,51,28,46" concept="1" />
       <node id="8495840634675285753" at="28,46,29,46" concept="1" />
       <node id="8495840634675285753" at="29,46,30,46" concept="1" />
@@ -3216,8 +3216,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8556882668095192252">
     <file name="SimpleFindForExtractFromExpression_Test.java">
-      <node id="8556882668095192252" at="24,78,25,112" concept="1" />
-      <node id="8556882668095192252" at="25,112,26,152" concept="1" />
+      <node id="8556882668095192252" at="24,78,25,119" concept="1" />
+      <node id="8556882668095192252" at="25,119,26,152" concept="1" />
       <node id="8556882668095202192" at="30,80,31,46" concept="1" />
       <node id="8556882668095202192" at="31,46,32,46" concept="1" />
       <node id="8556882668095202197" at="32,46,33,260" concept="5" />
@@ -3257,8 +3257,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8556882668095222061">
     <file name="SimpleFindForExtractFromStatement_Test.java">
-      <node id="8556882668095222061" at="24,77,25,112" concept="1" />
-      <node id="8556882668095222061" at="25,112,26,150" concept="1" />
+      <node id="8556882668095222061" at="24,77,25,119" concept="1" />
+      <node id="8556882668095222061" at="25,119,26,150" concept="1" />
       <node id="8556882668095222213" at="30,79,31,46" concept="1" />
       <node id="8556882668095222213" at="31,46,32,46" concept="1" />
       <node id="8556882668095222216" at="32,46,33,266" concept="5" />
@@ -3298,8 +3298,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/8823815475437525602">
     <file name="ExtractMethodWithThrows_Test.java">
-      <node id="8823815475437525602" at="23,67,24,112" concept="1" />
-      <node id="8823815475437525602" at="24,112,25,130" concept="1" />
+      <node id="8823815475437525602" at="23,67,24,119" concept="1" />
+      <node id="8823815475437525602" at="24,119,25,130" concept="1" />
       <node id="8823815475437525729" at="29,69,30,46" concept="1" />
       <node id="8823815475437525729" at="30,46,31,46" concept="1" />
       <node id="8823815475437525732" at="31,46,32,264" concept="5" />
@@ -3329,8 +3329,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/9118878263582083310">
     <file name="InlineAssingmentWithClosures_Test.java">
-      <node id="9118878263582083310" at="21,68,22,112" concept="1" />
-      <node id="9118878263582083310" at="22,112,23,136" concept="1" />
+      <node id="9118878263582083310" at="21,68,22,119" concept="1" />
+      <node id="9118878263582083310" at="22,119,23,136" concept="1" />
       <node id="9118878263582085165" at="27,70,28,46" concept="1" />
       <node id="9118878263582085165" at="28,46,29,46" concept="1" />
       <node id="9118878263582085168" at="29,46,30,210" concept="5" />
@@ -3357,8 +3357,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/9160497614871931685">
     <file name="ConvertAnonymousWithTypeParameters_Test.java">
-      <node id="9160497614871931685" at="21,58,22,112" concept="1" />
-      <node id="9160497614871931685" at="22,112,23,132" concept="1" />
+      <node id="9160497614871931685" at="21,58,22,119" concept="1" />
+      <node id="9160497614871931685" at="22,119,23,132" concept="1" />
       <node id="9160497614872188985" at="27,60,28,46" concept="1" />
       <node id="9160497614872188985" at="28,46,29,46" concept="1" />
       <node id="9160497614872188993" at="29,46,30,183" concept="1" />
@@ -3382,8 +3382,8 @@
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/995475547969867885">
     <file name="ConvertAnonymousWithParameterReference_Test.java">
-      <node id="995475547969867885" at="21,66,22,112" concept="1" />
-      <node id="995475547969867885" at="22,112,23,144" concept="1" />
+      <node id="995475547969867885" at="21,66,22,119" concept="1" />
+      <node id="995475547969867885" at="22,119,23,144" concept="1" />
       <node id="995475547969868020" at="27,68,28,45" concept="1" />
       <node id="995475547969868020" at="28,45,29,45" concept="1" />
       <node id="995475547969868023" at="29,45,30,184" concept="1" />

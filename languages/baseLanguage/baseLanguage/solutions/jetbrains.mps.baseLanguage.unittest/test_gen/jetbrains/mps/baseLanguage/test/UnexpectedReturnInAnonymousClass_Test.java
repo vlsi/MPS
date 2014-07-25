@@ -15,12 +15,12 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class UnexpectedReturnInAnonymousClass_Test extends BaseTransformationTest {
   @Test
   public void test_UnexpectedReturnInAnonymousClass() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody", "test_UnexpectedReturnInAnonymousClass", true);
   }
   @Test
   public void test_NodeReturnExpectedErrorCheck6923385624929494145() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody", "test_NodeReturnExpectedErrorCheck6923385624929494145", true);
   }
   @MPSLaunch

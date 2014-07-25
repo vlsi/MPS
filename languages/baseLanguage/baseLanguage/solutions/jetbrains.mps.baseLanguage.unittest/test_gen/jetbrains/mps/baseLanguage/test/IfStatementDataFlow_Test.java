@@ -15,12 +15,12 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class IfStatementDataFlow_Test extends BaseTransformationTest {
   @Test
   public void test_IfStatementDataFlow() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test$TestBody", "test_IfStatementDataFlow", true);
   }
   @Test
   public void test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test$TestBody", "test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755", true);
   }
   @MPSLaunch

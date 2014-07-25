@@ -11,8 +11,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/6374750171056867477">
     <file name="ClosureLiteraltargetFunType_Test.java">
-      <node id="6374750171056867477" at="24,51,25,117" concept="2" />
-      <node id="6374750171056867477" at="25,117,26,123" concept="2" />
+      <node id="6374750171056867477" at="24,51,25,124" concept="2" />
+      <node id="6374750171056867477" at="25,124,26,123" concept="2" />
       <node id="6374750171056867521" at="30,53,31,46" concept="2" />
       <node id="6374750171056867521" at="31,46,32,46" concept="2" />
       <node id="6374750171056867524" at="32,46,33,58" concept="5" />
@@ -117,10 +117,10 @@
   </root>
   <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/7178287329507546162">
     <file name="ClosureLiteraltargetIface_Test.java">
-      <node id="7178287329507546162" at="23,43,24,117" concept="2" />
-      <node id="7178287329507546162" at="24,117,25,113" concept="2" />
-      <node id="7178287329507546162" at="28,44,29,117" concept="2" />
-      <node id="7178287329507546162" at="29,117,30,114" concept="2" />
+      <node id="7178287329507546162" at="23,43,24,124" concept="2" />
+      <node id="7178287329507546162" at="24,124,25,113" concept="2" />
+      <node id="7178287329507546162" at="28,44,29,124" concept="2" />
+      <node id="7178287329507546162" at="29,124,30,114" concept="2" />
       <node id="7178287329507546203" at="34,45,35,46" concept="2" />
       <node id="7178287329507546203" at="35,46,36,46" concept="2" />
       <node id="7178287329507546210" at="36,46,37,58" concept="5" />
@@ -355,8 +355,8 @@
   </root>
   <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/7289865355732881079">
     <file name="Generics_Test.java">
-      <node id="7289865355732881079" at="16,77,17,117" concept="2" />
-      <node id="7289865355732881079" at="17,117,18,130" concept="2" />
+      <node id="7289865355732881079" at="16,77,17,124" concept="2" />
+      <node id="7289865355732881079" at="17,124,18,130" concept="2" />
       <node id="7289865355732881079" at="22,79,23,146" concept="5" />
       <node id="7289865355732881079" at="23,146,24,159" concept="2" />
       <node id="7289865355732881079" at="22,0,26,0" concept="4" trace="test_ErrorMessagesCheck5419091611223712729#()V" />

@@ -19,7 +19,7 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class InlineStaticFromAnotherClass_Test extends BaseTransformationTest {
   @Test
   public void test_InlineStaticFromAnotherClass() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)");
+    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     this.runTest("jetbrains.mps.refactoringTest.InlineStaticFromAnotherClass_Test$TestBody", "test_InlineStaticFromAnotherClass", true);
   }
   @MPSLaunch

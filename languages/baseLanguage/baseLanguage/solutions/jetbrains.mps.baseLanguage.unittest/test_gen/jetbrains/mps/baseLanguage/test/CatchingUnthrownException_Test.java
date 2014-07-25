@@ -14,17 +14,17 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class CatchingUnthrownException_Test extends BaseTransformationTest {
   @Test
   public void test_NodeCaughtExceptionCheck6923385624927429271() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_NodeCaughtExceptionCheck6923385624927429271", true);
   }
   @Test
   public void test_NodeCaughtExceptionCheck6923385624929290516() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_NodeCaughtExceptionCheck6923385624929290516", true);
   }
   @Test
   public void test_ErrorMessagesCheck1220012521451() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_ErrorMessagesCheck1220012521451", true);
   }
   @MPSLaunch

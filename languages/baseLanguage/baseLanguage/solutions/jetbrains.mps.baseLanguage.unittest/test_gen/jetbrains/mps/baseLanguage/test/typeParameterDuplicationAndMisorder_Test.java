@@ -14,47 +14,47 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class typeParameterDuplicationAndMisorder_Test extends BaseTransformationTest {
   @Test
   public void test_NodeTypeVariableIsNotNeededCheck6923385624929116385() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeTypeVariableIsNotNeededCheck6923385624929116385", true);
   }
   @Test
   public void test_NodeUnnamedErrorCheck6923385624929116387() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeUnnamedErrorCheck6923385624929116387", true);
   }
   @Test
   public void test_NodeUnnamedErrorCheck6923385624929017230() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeUnnamedErrorCheck6923385624929017230", true);
   }
   @Test
   public void test_NodeUnnamedErrorCheck6923385624928447295() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeUnnamedErrorCheck6923385624928447295", true);
   }
   @Test
   public void test_NodeUnnamedErrorCheck6923385624927677357() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeUnnamedErrorCheck6923385624927677357", true);
   }
   @Test
   public void test_ErrorMessagesCheck2970924421778358827() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_ErrorMessagesCheck2970924421778358827", true);
   }
   @Test
   public void test_NodeUnnamedErrorCheck6923385624928047856() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeUnnamedErrorCheck6923385624928047856", true);
   }
   @Test
   public void test_NodeUnnamedErrorCheck6923385624927049758() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_NodeUnnamedErrorCheck6923385624927049758", true);
   }
   @Test
   public void test_ErrorMessagesCheck2970924421778359047() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.typeParameterDuplicationAndMisorder_Test$TestBody", "test_ErrorMessagesCheck2970924421778359047", true);
   }
   @MPSLaunch

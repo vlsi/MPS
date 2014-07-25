@@ -32,52 +32,52 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 public class FileSwapOwnerTests_Test extends BaseTransformationTest {
   @Test
   public void test_justWrite() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
+    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_justWrite", true);
   }
   @Test
   public void test_stringUserObjects() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
+    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_stringUserObjects", true);
   }
   @Test
   public void test_intUserObjects() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
+    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_intUserObjects", true);
   }
   @Test
   public void test_charUserObjects() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
+    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_charUserObjects", true);
   }
   @Test
   public void test_numberUserObjects() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
+    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_numberUserObjects", true);
   }
   @Test
   public void test_booleanUserObjects() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
+    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_booleanUserObjects", true);
   }
   @Test
   public void test_mpsUserObjects() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
+    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_mpsUserObjects", true);
   }
   @Test
   public void test_baseLanguageStructure() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
+    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_baseLanguageStructure", true);
   }
   @Test
   public void test_testOverloadedOperatorsSandbox() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
+    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testOverloadedOperatorsSandbox", true);
   }
   @Test
   public void test_testSkipNodesWhileSaving() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)");
+    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testSkipNodesWhileSaving", true);
   }
   @MPSLaunch

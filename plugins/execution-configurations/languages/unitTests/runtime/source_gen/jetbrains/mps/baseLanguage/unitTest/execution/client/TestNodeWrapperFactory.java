@@ -130,6 +130,7 @@ public enum TestNodeWrapperFactory {
 
   TestNodeWrapperFactory() {
   }
+
   @Nullable
   public abstract ITestNodeWrapper wrap(@NotNull SNode node);
   public boolean canWrap(@NotNull SNode node) {
@@ -137,6 +138,7 @@ public enum TestNodeWrapperFactory {
   }
   public abstract SNode getWrappedConcept();
   public abstract boolean isRoot();
+
   @Nullable
   public static ITestNodeWrapper tryToWrap(@NotNull SNode node) {
     for (TestNodeWrapperFactory factory : Sequence.fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values()))) {
@@ -146,6 +148,7 @@ public enum TestNodeWrapperFactory {
     }
     return null;
   }
+
   private static Iterable<SNode> getWrappedConcepts(final _FunctionTypes._return_P1_E0<? extends Boolean, ? super TestNodeWrapperFactory> condition) {
     return Sequence.fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values())).where(new IWhereFilter<TestNodeWrapperFactory>() {
       public boolean accept(TestNodeWrapperFactory it) {
