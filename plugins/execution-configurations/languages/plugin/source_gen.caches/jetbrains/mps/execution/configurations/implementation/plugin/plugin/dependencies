@@ -270,13 +270,26 @@
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess" file="FakeProcess.java">
+    <classNode dependClassName="com.intellij.util.WaitFor" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
+    <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.io.PipedInputStream" />
+    <classNode dependClassName="java.io.PipedOutputStream" />
+    <classNode dependClassName="java.io.PrintStream" />
+    <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode extendsClassName="java.lang.Process" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcessHandler" file="FakeProcessHandler.java">
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.concurrent.Future" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="com.intellij.execution.process.ProcessHandler" />
+    <classNode extendsClassName="com.intellij.execution.process.OSProcessHandler" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitExecutor" file="JUnitExecutor.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
@@ -298,15 +311,22 @@
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor" file="JUnitLightExecutor.java">
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="java.io.IOError" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.concurrent.Future" />
+    <classNode dependClassName="java.util.concurrent.atomic.AtomicBoolean" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcessHandler" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitTests_Configuration" file="JUnitTests_Configuration.java">

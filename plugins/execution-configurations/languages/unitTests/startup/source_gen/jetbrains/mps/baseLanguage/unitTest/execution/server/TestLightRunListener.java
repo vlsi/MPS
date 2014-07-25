@@ -23,9 +23,6 @@ public class TestLightRunListener extends RunListener {
   private final TestLightRunListener.TestEventFactory myFactory;
   private int currentRequest;
 
-  private boolean isTerminating() {
-    return myTestRunState.isTerminating();
-  }
 
   public TestLightRunListener(TestLightExecutor executor, int requestCount) {
     myExecutor = executor;
@@ -44,18 +41,15 @@ public class TestLightRunListener extends RunListener {
 
   @Override
   public void testRunFinished(Result result) throws Exception {
-    if (isTerminating()) {
-      return;
-    }
     if (++currentRequest == myRequestCount) {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("TESTS WERE SUCCESSFUL " + result.wasSuccessful());
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("TESTS WERE SUCCESSFUL " + result.wasSuccessful());
       }
       int code = result.getFailureCount();
       myExecutor.terminateProcess(code);
     } else {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Request #" + currentRequest + " is finished -- proceeding to the next request");
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("Request #" + currentRequest + " is finished -- proceeding to the next request");
       }
     }
   }
@@ -73,44 +67,32 @@ public class TestLightRunListener extends RunListener {
 
   @Override
   public void testFailure(Failure failure) throws Exception {
-    if (isTerminating()) {
-      return;
-    }
-    if (LOG.isInfoEnabled()) {
-      LOG.info(TestEvent.ERROR_TEST_PREFIX + failure.getDescription());
+    if (LOG.isDebugEnabled()) {
+      LOG.debug(TestEvent.ERROR_TEST_PREFIX + failure.getDescription());
     }
     onTestErrorEvent(TestEvent.ERROR_TEST_PREFIX, TestEvent.ERROR_TEST_SUFFIX, failure);
   }
 
   @Override
   public void testAssumptionFailure(Failure failure) {
-    if (isTerminating()) {
-      return;
-    }
-    if (LOG.isInfoEnabled()) {
-      LOG.info(TestEvent.FAILURE_TEST_PREFIX + failure.getDescription());
+    if (LOG.isDebugEnabled()) {
+      LOG.debug(TestEvent.FAILURE_TEST_PREFIX + failure.getDescription());
     }
     onTestErrorEvent(TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX, failure);
   }
 
   @Override
   public void testStarted(Description description) throws Exception {
-    if (isTerminating()) {
-      return;
-    }
-    if (LOG.isInfoEnabled()) {
-      LOG.info(TestEvent.START_TEST_PREFIX + description.getDisplayName());
+    if (LOG.isDebugEnabled()) {
+      LOG.debug(TestEvent.START_TEST_PREFIX + description.getDisplayName());
     }
     onTestEvent(TestEvent.START_TEST_PREFIX, description);
   }
 
   @Override
   public void testFinished(Description description) throws Exception {
-    if (isTerminating()) {
-      return;
-    }
-    if (LOG.isInfoEnabled()) {
-      LOG.info(TestEvent.END_TEST_PREFIX + description.getDisplayName());
+    if (LOG.isDebugEnabled()) {
+      LOG.debug(TestEvent.END_TEST_PREFIX + description.getDisplayName());
     }
     onTestEvent(TestEvent.END_TEST_PREFIX, description);
   }
@@ -125,6 +107,5 @@ public class TestLightRunListener extends RunListener {
       return new TestEvent(token, fqName, methodName, memory, time);
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(TestLightRunListener.class);
 }

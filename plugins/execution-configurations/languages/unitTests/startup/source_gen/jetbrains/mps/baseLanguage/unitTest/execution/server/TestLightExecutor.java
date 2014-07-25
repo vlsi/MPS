@@ -10,7 +10,6 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Request;
 import org.junit.runner.notification.StoppedByUserException;
 import com.intellij.util.WaitFor;
-import com.intellij.execution.process.ProcessOutputTypes;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -33,16 +32,16 @@ public class TestLightExecutor extends AbstractTestExecutor {
 
   @Override
   public void init() {
-    if (LOG.isInfoEnabled()) {
-      LOG.info("Initializing TestLightExecutor");
+    if (LOG.isDebugEnabled()) {
+      LOG.debug("Initializing TestLightExecutor");
     }
     getRunState().advance(TestLightRunStateEnum.INITIALIZED);
   }
 
   @Override
   public void dispose() {
-    if (LOG.isInfoEnabled()) {
-      LOG.info("Disposing TestLightExecutor");
+    if (LOG.isDebugEnabled()) {
+      LOG.debug("Disposing TestLightExecutor");
     }
     getRunState().advance(TestLightRunStateEnum.TERMINATED);
   }
@@ -83,8 +82,11 @@ public class TestLightExecutor extends AbstractTestExecutor {
   /*package*/ void terminateProcess(int code) {
     getRunState().advance(TestLightRunStateEnum.TERMINATING);
     stopRun();
-    myDispatcher.onSimpleTextAvailable("Process finished with exit code " + code, ProcessOutputTypes.STDOUT);
-    myDispatcher.onProcessTerminated("Process finished with exit code " + code);
+    String terminateMessage = "Process finished with exit code " + code;
+    if (LOG.isInfoEnabled()) {
+      LOG.info(terminateMessage);
+    }
+    myDispatcher.onProcessTerminated(terminateMessage);
   }
 
   private void stopRun() {

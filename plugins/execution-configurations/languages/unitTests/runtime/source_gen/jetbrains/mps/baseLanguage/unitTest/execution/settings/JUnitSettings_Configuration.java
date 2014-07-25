@@ -13,7 +13,6 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.execution.lib.ClonableList;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
-import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor;
 import java.util.List;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -101,22 +100,19 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     myState.myRunType = value;
   }
   public boolean canLightExecute(Iterable<ITestNodeWrapper> testNodes) {
-    if (this.getLightExec() && !(JUnitLightExecutor.isLightRunInProgress())) {
-      if (new LightExecutionFilter().accept(testNodes)) {
-        return true;
-      }
+    if (!(this.getLightExec())) {
+      return false;
     }
-    return false;
+    return new LightExecutionFilter().accept(testNodes);
   }
-  public List<ITestNodeWrapper> getTests(final Project project) {
+  public List<ITestNodeWrapper> getTests(final Project project, boolean lightExecPossible) {
     if (this.getRunType() == null) {
       return null;
     }
     Iterable<ITestNodeWrapper> testNodes = this.getRunType().collect(this, project);
-    if (canLightExecute(testNodes)) {
+    if (lightExecPossible && canLightExecute(testNodes)) {
       return Sequence.fromIterable(new LightExecutionFilter().filter(testNodes)).toListSequence();
     }
-
     return Sequence.fromIterable(testNodes).toListSequence();
   }
   public boolean hasTests(final Project project) {

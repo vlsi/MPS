@@ -4,33 +4,44 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
+import java.util.concurrent.atomic.AtomicBoolean;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor;
 import java.util.concurrent.Future;
+import java.io.IOException;
+import org.apache.log4j.Level;
+import java.io.IOError;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor;
 import com.intellij.openapi.application.ApplicationManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class JUnitLightExecutor implements Executor {
-
   private final Iterable<ITestNodeWrapper> myNodes;
   private final TestEventsDispatcher myDispatcher;
-  private static volatile boolean ourRunInProgress = false;
+  private static AtomicBoolean ourRunInProgress = new AtomicBoolean(false);
+  private final FakeProcess myFakeProcess = new FakeProcess();
 
   public JUnitLightExecutor(Iterable<ITestNodeWrapper> testNodeWrappers, TestEventsDispatcher dispatcher) {
+    assert ourRunInProgress.get() == true;
     myNodes = testNodeWrappers;
     myDispatcher = dispatcher;
-    ourRunInProgress = true;
   }
 
   @Override
   public ProcessHandler execute() {
     try {
+      myFakeProcess.init();
       TestLightExecutor executor = new TestLightExecutor(myDispatcher, myNodes);
       final Future<?> future = doExecute(executor);
-      final FakeProcessHandler process = new FakeProcessHandler(future, executor);
+      final FakeProcessHandler process = new FakeProcessHandler(myFakeProcess, future, executor);
       return process;
-    } finally {
-      dispose();
+    } catch (IOException e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("IOException during process construction", e);
+      }
+      this.dispose();
+      throw new IOError(e);
     }
   }
 
@@ -49,11 +60,16 @@ public class JUnitLightExecutor implements Executor {
   }
 
   private void dispose() {
-    ourRunInProgress = false;
+    myFakeProcess.destroy();
+    releaseLock();
   }
 
-
-  public static boolean isLightRunInProgress() {
-    return ourRunInProgress;
+  public static boolean acquireLock() {
+    return ourRunInProgress.compareAndSet(false, true);
   }
+
+  public static void releaseLock() {
+    ourRunInProgress.set(false);
+  }
+  protected static Logger LOG = LogManager.getLogger(JUnitLightExecutor.class);
 }

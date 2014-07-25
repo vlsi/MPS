@@ -111,7 +111,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.LightExecutionFilter" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ClonableList" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

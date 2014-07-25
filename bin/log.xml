@@ -3,6 +3,7 @@
 
 <log4j:configuration>
     <appender name="CONSOLE-WARN" class="org.apache.log4j.ConsoleAppender">
+        <param name="follow" value="true"/>
         <param name="target" value="System.err"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
@@ -13,6 +14,7 @@
     </appender>
 
     <appender name="CONSOLE-DEBUG" class="org.apache.log4j.ConsoleAppender">
+        <param name="follow" value="true"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
         </layout>
@@ -22,10 +24,24 @@
         </filter>
     </appender>
 
-    <appender name="CONSOLE-ALL" class="org.apache.log4j.ConsoleAppender">
+    <appender name="CONSOLE-ALL" class="org.apache.log4j.ConsoleAppender" >
+        <param name="follow" value="true"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
         </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMax" value="INFO"/>
+        </filter>
+    </appender>
+
+    <appender name="CONSOLE-INFO" class="org.apache.log4j.ConsoleAppender" >
+        <param name="follow" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMax" value="INFO"/>
+        </filter>
     </appender>
 
     <appender name="DIALOG" class="jetbrains.mps.diagnostic.DialogAppender">
@@ -86,10 +102,15 @@
         <appender-ref ref="FILE"/>
     </category>
 
+    <category name="jetbrains.mps" additivity="true">
+      <priority value="INFO"/>
+      <appender-ref ref="CONSOLE-INFO"/>
+    </category>
+
     <root>
-        <priority value="INFO"/>
-        <appender-ref ref="DIALOG"/>
-        <appender-ref ref="CONSOLE-WARN"/>
-        <appender-ref ref="FILE"/>
+      <priority value="INFO"/>
+      <appender-ref ref="CONSOLE-WARN"/>
+      <appender-ref ref="DIALOG"/>
+      <appender-ref ref="FILE"/>
     </root>
 </log4j:configuration>
