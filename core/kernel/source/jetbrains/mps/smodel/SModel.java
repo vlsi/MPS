@@ -25,6 +25,7 @@ import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.smodel.adapter.IdHelper;
+import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
@@ -42,7 +43,10 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -80,6 +84,7 @@ public class SModel implements SModelData {
   private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
 
   private Map<SLanguageId, Integer> myLanguagesIds = new LinkedHashMap<SLanguageId, Integer>();
+  private Map<SLanguageId, Integer> myImplicitLanguagesIds = new LinkedHashMap<SLanguageId, Integer>();
 
   private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
@@ -593,24 +598,50 @@ public class SModel implements SModelData {
 
   //language
 
-  public Map<SLanguageId, Integer> implicitlyUsedLanguagesWithVersions() {
-    Map<SLanguageId, Integer> res = new HashMap<SLanguageId, Integer>();
-    for (org.jetbrains.mps.openapi.model.SNode root: getRootNodes()){
-      for (org.jetbrains.mps.openapi.model.SNode node : SNodeUtil.getDescendants(root)) {
-        Language conceptLang = (Language) node.getConcept().getLanguage().getSourceModule();
+  public void calculateImplicitLanguages() {
+    Set<SLanguageId> myUsedLanguages = new HashSet<SLanguageId>();
 
-        Set<Language> langs = conceptLang.getAllExtendedLanguages();
-        langs.add(conceptLang);
+    for (org.jetbrains.mps.openapi.model.SNode root : getRootNodes()) {
+      for (org.jetbrains.mps.openapi.model.SNode n : SNodeUtil.getDescendants(root)) {
+        SConceptId conceptId = n.getConcept().getId();
+        myUsedLanguages.add(conceptId.getLanguageId());
 
-        for (Language l : langs) {
-          SLanguageId lid = IdHelper.getLanguageId(l);
-          if (!myLanguagesIds.containsKey(lid)) {
-            res.put(lid, l.getLanguageVersion());
-          }
+        if (n.getParent() != null) {
+          SContainmentLinkId roleId = n.getRoleInParentId();
+          myUsedLanguages.add(roleId.getConceptId().getLanguageId());
+        }
+        for (SPropertyId pid : n.getPropertyIds()) {
+          myUsedLanguages.add(pid.getConceptId().getLanguageId());
+        }
+
+        for (SReference ref : n.getReferences()) {
+          myUsedLanguages.add(ref.getRoleId().getConceptId().getLanguageId());
         }
       }
     }
-    return res;
+
+    Map<SLanguageId, Integer> myNewImplicitLanguagesIds = new HashMap<SLanguageId, Integer>(myUsedLanguages.size());
+
+    for (SLanguageId lang : myLanguagesIds.keySet()) {
+      myUsedLanguages.remove(lang);
+    }
+
+    for (Entry<SLanguageId, Integer> lang : myImplicitLanguagesIds.entrySet()) {
+      if (myUsedLanguages.remove(lang.getKey())) {
+        myNewImplicitLanguagesIds.put(lang.getKey(), lang.getValue());
+      }
+    }
+
+    for (SLanguageId lang : myUsedLanguages) {
+      int version = new SLanguageAdapter(lang).getSourceModule().getLanguageVersion();
+      myNewImplicitLanguagesIds.put(lang, version);
+    }
+
+    myImplicitLanguagesIds = myNewImplicitLanguagesIds;
+  }
+
+  public Map<SLanguageId, Integer> implicitlyUsedLanguagesWithVersions() {
+    return myImplicitLanguagesIds;
   }
 
   public Collection<SLanguageId> usedLanguages() {
