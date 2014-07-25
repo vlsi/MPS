@@ -398,9 +398,10 @@ public class BinaryPersistence {
       new NodesReader(modelHeader.getReference(), false) {
         @Override
         protected SConceptId readConceptId(ModelInputStream is) throws IOException {
-          SConceptId name = super.readConceptId(is);
-          consumer.consume(name.serialize());
-          return name;
+          SConceptId cid = super.readConceptId(is);
+          String name = MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(cid);
+          consumer.consume(name);
+          return cid;
         }
 
         @Override
