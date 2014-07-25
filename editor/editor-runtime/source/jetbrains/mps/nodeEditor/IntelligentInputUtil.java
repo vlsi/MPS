@@ -354,7 +354,11 @@ public class IntelligentInputUtil {
     ltAction.execute(editorContext);
 
     EditorCell newCellForNewNode = findNodeCell(editorContext, newNode);
-    prepareSTCell(editorContext, newCellForNewNode, head);
+    final EditorCell_Label ltCell = prepareSTCell(editorContext, newCellForNewNode, head);
+
+    if (ltCell instanceof EditorCell_STHint && canCompleteSmallPatternImmediately(ltCell.getSubstituteInfo(), head, "")) {
+      ltCell.getSubstituteInfo().getMatchingActions(head, true).get(0).substitute(editorContext, head);
+    }
     return true;
   }
 
