@@ -8967,6 +8967,9 @@
             <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="8939513996048536174" resolveInfo="jetbrains.mps.lang.sharedConcepts" />
           </node>
         </node>
+        <node role="runtime" roleId="kdzh.3189788309731917348" type="kdzh.BuildMps_ModuleSolutionRuntime" typeId="kdzh.3189788309731981027" id="1902889182077225598" nodeInfo="ng">
+          <link role="solution" roleId="kdzh.3189788309731981028" targetNodeId="2182758403694705590" resolveInfo="MPS.Core" />
+        </node>
       </node>
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="8939513996048536244" nodeInfo="ng">
         <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
