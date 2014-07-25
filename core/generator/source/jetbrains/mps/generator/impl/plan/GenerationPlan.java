@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.TemplateSwitchGraph;
+import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -28,6 +29,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -137,12 +139,26 @@ public class GenerationPlan {
     return true;
   }
 
+  public boolean hasIgnoredPriorityRules() {
+    return !myConflictingPriorityRules.get(Kind.Invalid).isEmpty();
+  }
+
+  public List<Conflict> getIgnoredPriorityRules() {
+    return new ArrayList<Conflict>(myConflictingPriorityRules.get(Kind.Invalid));
+  }
+
   public boolean hasConflictingPriorityRules() {
-    return myConflictingPriorityRules.hasConflicts();
+    return myConflictingPriorityRules.hasConflicts(deemedConflict());
   }
 
   public List<Conflict> getConflicts() {
-    return myConflictingPriorityRules.getConflicts();
+    return myConflictingPriorityRules.getConflicts(deemedConflict());
+  }
+
+  private static Collection<Kind> deemedConflict() {
+    ArrayList<Kind> deemedConflict = new ArrayList<Kind>(Arrays.asList(Kind.values()));
+    deemedConflict.remove(Kind.Invalid);
+    return deemedConflict;
   }
 
   public String getSignature() {
