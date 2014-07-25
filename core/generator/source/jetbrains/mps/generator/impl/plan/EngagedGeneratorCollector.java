@@ -31,6 +31,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -113,7 +114,7 @@ final class EngagedGeneratorCollector {
 
     Set<String> processedLanguages = new HashSet<String>(initialLanguages);
     // language name to its generators
-    Map<EngagedLanguage, List<TemplateModule>> result = new HashMap<EngagedLanguage, List<TemplateModule>>();
+    Map<EngagedLanguage, List<TemplateModule>> result = new LinkedHashMap<EngagedLanguage, List<TemplateModule>>();
 
     // set of languages either used (and/or demanded) explicitly in the model we're about to generate,
     // and languages that may appear during generation process (e.g. by applying some of generators)
@@ -148,6 +149,20 @@ final class EngagedGeneratorCollector {
           queue.add(o);
         }
       }
+    }
+
+    if (LOG.isDebugEnabled()) {
+      /* To use, update bin/log.xml like that:
+       *    <category name="jetbrains.mps.generator.impl.plan" additivity="false">
+       *      <priority value="DEBUG"/>
+       *      <appender-ref ref="CONSOLE-DEBUG"/>
+       *    </category>
+       */
+      LOG.debug(">>>");
+      for (EngagedLanguage l : result.keySet()) {
+        LOG.debug(new StringBuilder().append(' ').append(processedLanguages.contains(l.getName()) ? '*' : ' ').append(l));
+      }
+      LOG.debug("<<<");
     }
 
     // build accessible generators set and its subset, generators for languages that have a chance to show up in generation for this particular model
