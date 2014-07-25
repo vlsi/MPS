@@ -76,7 +76,7 @@ public abstract class IdUtil {
 
     for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
       rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(c.getId(), refName);
-      if (rid != null) return (SContainmentLinkId) rid;
+      if (rid instanceof SContainmentLinkId) return (SContainmentLinkId) rid;
     }
     return UNKNOWN_LINK_ID;
   }
@@ -87,7 +87,7 @@ public abstract class IdUtil {
 
     for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
       rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(c.getId(), refName);
-      if (rid != null) return (SReferenceLinkId) rid;
+      if (rid instanceof SReferenceLinkId) return (SReferenceLinkId) rid;
     }
     return UNKNOWN_REFERENCE_ID;
   }
