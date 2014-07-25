@@ -413,7 +413,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       }.setComparator(new SpeedSearchComparator(false, true));
     }
 
-    /*CellRenderer for DependenciesTableItem, actual value supplied to renderer is */
+    /*CellRenderer for module column, actual value supplied to renderer is DependenciesTableItem instance */
     protected abstract TableCellRenderer getTableCellRender();
 
     protected boolean confirmRemove(final Object value) {

@@ -191,6 +191,14 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   }
 
   @Override
+  public String getColumnName(int column) {
+    if (getItemColumnIndex() == column) {
+      return "Module";
+    }
+    return super.getColumnName(column);
+  }
+
+  @Override
   public int getColumnCount() {
     if(myItem instanceof DevkitDescriptor) return 2;
     return super.getColumnCount();

@@ -52,7 +52,7 @@ public class DependenciesTableItem {
   }
 
   public boolean isReExportable() {
-    return myItem.getScope() == SDependencyScope.DEFAULT;
+    return myModuleType != ModuleType.GENERATOR && myItem.getScope() == SDependencyScope.DEFAULT;
   }
 
   public void setReExport(boolean reExport) {

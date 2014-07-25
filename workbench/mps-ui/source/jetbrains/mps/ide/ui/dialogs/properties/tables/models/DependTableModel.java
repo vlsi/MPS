@@ -30,6 +30,11 @@ import java.util.List;
 /**
  * Collection of Dependency objects as content of a table. Dependency is wrapped into DependenciesTableItem
  * to track additional values (model kind and is re-exportable).
+ * Though this class initially deemed to hold any DependenciesTableItems (with ModuleDependTableModel to address dependencies
+ * between modules), there seems to be little code reuse with this approach (and high coupling), and new approach is to merge
+ * both classes into one (as well as ModuleDependenciesTab and DependenciesTab). Alternative is to refactor DTM and DT, (e.g. to
+ * split DT.getDependTableModel() into create and get, so that subclasses can override getDependTableModel with correct return type
+ * to use own model without explicit casts; to move ModuleType out from DependenciesTableItem, etc)
  * @param <T> WTF?
  */
 public abstract class DependTableModel<T> extends AbstractTableModel implements ItemRemovable, Modifiable {
