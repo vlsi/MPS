@@ -13695,8 +13695,7 @@
     <nodeInfo nodeId="3313213291215966420" fileName="ParenthesisUtil.java" startLine="401" startPosition="131" endLine="402" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3313213291220804103" fileName="ParenthesisUtil.java" startLine="403" startPosition="423" endLine="404" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3313213291220780848" fileName="ParenthesisUtil.java" startLine="405" startPosition="296" endLine="406" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3313213291220804506" fileName="ParenthesisUtil.java" startLine="406" startPosition="37" endLine="407" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3313213291220804510" fileName="ParenthesisUtil.java" startLine="407" startPosition="0" endLine="408" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8204117424334248120" fileName="ParenthesisUtil.java" startLine="407" startPosition="134" endLine="408" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2329139813945289914" fileName="ParenthesisUtil.java" startLine="409" startPosition="16" endLine="410" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="751045515429049396" fileName="ParenthesisUtil.java" startLine="412" startPosition="7" endLine="413" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="751045515429050349" fileName="ParenthesisUtil.java" startLine="413" startPosition="0" endLine="414" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -13915,6 +13914,8 @@
     <scopeInfo nodeId="7251340091284761909" fileName="ParenthesisUtil.java" startLine="364" startPosition="66" endLine="365" endPosition="43" />
     <scopeInfo nodeId="7251340091287912633" fileName="ParenthesisUtil.java" startLine="375" startPosition="201" endLine="376" endPosition="107" />
     <scopeInfo nodeId="7251340091287912646" fileName="ParenthesisUtil.java" startLine="378" startPosition="203" endLine="379" endPosition="107" />
+    <scopeInfo nodeId="3313213291217561569" fileName="ParenthesisUtil.java" startLine="405" startPosition="296" endLine="406" endPosition="37" />
+    <scopeInfo nodeId="8204117424334153557" fileName="ParenthesisUtil.java" startLine="407" startPosition="134" endLine="408" endPosition="37" />
     <scopeInfo nodeId="3313213291217567508" fileName="ParenthesisUtil.java" startLine="409" startPosition="16" endLine="410" endPosition="16" />
     <scopeInfo nodeId="4830579082341000369" fileName="ParenthesisUtil.java" startLine="430" startPosition="104" endLine="431" endPosition="44" />
     <scopeInfo nodeId="4830579082341000261" fileName="ParenthesisUtil.java" startLine="457" startPosition="50" endLine="458" endPosition="13" />
@@ -13985,7 +13986,6 @@
     <scopeInfo nodeId="751045515425795863" fileName="ParenthesisUtil.java" startLine="209" startPosition="281" endLine="212" endPosition="36" />
     <scopeInfo nodeId="751045515425795951" fileName="ParenthesisUtil.java" startLine="235" startPosition="283" endLine="238" endPosition="37" />
     <scopeInfo nodeId="751045515425796000" fileName="ParenthesisUtil.java" startLine="245" startPosition="12" endLine="248" endPosition="51" />
-    <scopeInfo nodeId="3313213291217561569" fileName="ParenthesisUtil.java" startLine="405" startPosition="296" endLine="408" endPosition="0" />
     <scopeInfo nodeId="4830579082341000184" fileName="ParenthesisUtil.java" startLine="439" startPosition="61" endLine="442" endPosition="43" />
     <scopeInfo nodeId="4830579082341000554" fileName="ParenthesisUtil.java" startLine="507" startPosition="0" endLine="510" endPosition="0">
       <varInfo nodeId="4830579082341000557" varName="child" />
