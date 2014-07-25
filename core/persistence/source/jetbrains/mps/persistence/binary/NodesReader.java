@@ -134,7 +134,7 @@ public class NodesReader {
             modelRef,
             targetNodeId,
             resolveInfo);
-        node.setReference(reference.getRole(), reference);
+        node.setReference(reference.getRoleId(), reference);
       } else if (kind == 2 || kind == 3) {
         DynamicReference reference = new DynamicReference(
             role,

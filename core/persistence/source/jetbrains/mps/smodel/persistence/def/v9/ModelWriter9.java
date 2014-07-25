@@ -23,12 +23,8 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.adapter.SConceptAdapter;
-import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
-import jetbrains.mps.smodel.adapter.SPropertyAdapter;
-import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
+import jetbrains.mps.smodel.DebugRegistryUtil;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -46,7 +42,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -144,7 +139,7 @@ public class ModelWriter9 implements IModelWriter {
     Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
     Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
 
-    SModelOperations.fillDebugInfo(sourceModel.getRootNodes(), debugRegistry, conceptIds, propIds, refIds, roleIds);
+    DebugRegistryUtil.getDebugInfoById(sourceModel.getRootNodes(), conceptIds, propIds, refIds, roleIds);
 
     // write concepts
     for (Entry<SConceptId, String> e : conceptIds.entrySet()) {

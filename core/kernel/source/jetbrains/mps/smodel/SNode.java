@@ -109,7 +109,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public SConceptId getConceptId() {
-    return myConceptId;
+    if (myConceptId != null) {
+      return myConceptId;
+    }
+    return name2cid(myConceptFqName);
   }
 
   @Override
@@ -1025,9 +1028,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Deprecated//since 3.1, remove after next release
   public SNode(@NotNull String conceptFqName) {
     myConceptFqName = conceptFqName;
-    if (MPSModuleRepository.getInstance() != null) {
-      myConceptId = name2cid(conceptFqName);
-    }
     myId = SModel.generateUniqueId();
   }
 
@@ -1835,6 +1835,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public IdMigrationMode workingMode() {
     if (myModel == null) return IdMigrationMode.UNKNOWN;
     if (myModel instanceof BinarySModel) return IdMigrationMode.ID;
+    if (myModel.getClass().getName().equals("jetbrains.mps.smodel.tempmodel.TempModel$1")) return IdMigrationMode.NAME;
     if (myModel.getClass().getName().equals("jetbrains.mps.generator.TransientSModel")) return IdMigrationMode.NAME;
     if (myModel instanceof ProjectStructureSModel) return IdMigrationMode.NAME;
     if (!(myModel instanceof DefaultSModel)) return IdMigrationMode.UNKNOWN;
@@ -1852,7 +1853,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SConceptId name2cid(String name) {
-    return IdUtil.getConceptId(name);
+    SConceptId result = IdUtil.getConceptId(name);
+    if (result == null) {
+      DebugRegistryUtil.fillDebugInfo(myModel);
+      result = IdUtil.getConceptId(name);
+    }
+    return result;
   }
 
   private String cid2name(SConceptId cid) {
@@ -1862,7 +1868,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private SPropertyId name2pid(String name) {
     //this is needed to prevent infinite recursion when getProperty("name") on top of meta-ids
     if (name.equals("name")) return SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001");
-    return IdUtil.getPropId(myConceptId, name);
+
+    SPropertyId result = IdUtil.getPropId(getConceptId(), name);
+    if (result == null) {
+      DebugRegistryUtil.fillDebugInfo(myModel);
+      IdUtil.getPropId(getConceptId(), name);
+    }
+    return result;
   }
 
   private String pid2name(SPropertyId pid) {
@@ -1870,7 +1882,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SReferenceLinkId name2rid(String name) {
-    return IdUtil.getReferenceLinkId(myConceptId, name);
+    SReferenceLinkId result = IdUtil.getReferenceLinkId(getConceptId(), name);
+    if (result == null) {
+      DebugRegistryUtil.fillDebugInfo(myModel);
+      IdUtil.getReferenceLinkId(getConceptId(), name);
+    }
+    return result;
   }
 
   private String rid2name(SReferenceLinkId rid) {
@@ -1878,7 +1895,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SContainmentLinkId name2lid(SNode sNode, String name) {
-    return IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
+    SContainmentLinkId result = IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
+    if (result == null) {
+      DebugRegistryUtil.fillDebugInfo(myModel);
+      IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
+    }
+    return result;
   }
 
   private String lid2name(SContainmentLinkId lid) {

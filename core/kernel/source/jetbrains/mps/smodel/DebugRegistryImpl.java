@@ -15,16 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.containers.BidirectionalMap;
 import org.jetbrains.mps.openapi.language.SAbstractLinkId;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
-import org.jetbrains.mps.openapi.model.*;
-import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
-import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
