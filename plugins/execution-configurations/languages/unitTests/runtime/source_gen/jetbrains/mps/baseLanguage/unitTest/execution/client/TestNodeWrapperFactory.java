@@ -7,8 +7,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import junit.framework.TestCase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
@@ -22,6 +24,9 @@ public enum TestNodeWrapperFactory {
     @Nullable
     public ITestNodeWrapper<SNode> wrap(@NotNull SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase") && SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), "abstractClass")) {
+        return null;
+      }
+      if (ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getTestMethods_2148145109766218395", new Object[]{})).count() == 0) {
         return null;
       }
       return new LanguageTestWrapper(node);
