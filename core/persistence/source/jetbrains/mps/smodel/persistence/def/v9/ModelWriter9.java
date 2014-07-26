@@ -58,6 +58,9 @@ public class ModelWriter9 implements IModelWriter {
 
   @Override
   public Document saveModel(SModel sourceModel) {
+
+    sourceModel.calculateImplicitLanguages();
+
     myHelper = new StorageIndexHelper9(sourceModel.getReference());
 
     // root element

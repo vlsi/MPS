@@ -310,7 +310,6 @@ public class ModelPersistence {
     }
 
     sourceModel.calculateImplicitImports();
-    sourceModel.calculateImplicitLanguages();
     return modelPersistence.getModelWriter().saveModel(sourceModel);
   }
 
