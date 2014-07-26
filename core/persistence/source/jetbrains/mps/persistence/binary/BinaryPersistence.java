@@ -195,7 +195,7 @@ public class BinaryPersistence {
     // write child roles
     int childrenSize = is.readInt();
     for (int i = 0; i < childrenSize; i++) {
-      debugRegistry.addLinkName(SReferenceLinkId.deserialize(is.readString()), is.readString());
+      debugRegistry.addLinkName(SContainmentLinkId.deserialize(is.readString()), is.readString());
     }
   }
 
