@@ -1878,7 +1878,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SPropertyId result = IdUtil.getPropId(getConceptId(), name);
     if (result == IdUtil.UNKNOWN_PROPERTY_ID) {
       DebugRegistryUtil.fillDebugInfo(myModel);
-      IdUtil.getPropId(getConceptId(), name);
+      result = IdUtil.getPropId(getConceptId(), name);
     }
     return result;
   }
@@ -1891,7 +1891,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SReferenceLinkId result = IdUtil.getReferenceLinkId(getConceptId(), name);
     if (result == IdUtil.UNKNOWN_REFERENCE_ID) {
       DebugRegistryUtil.fillDebugInfo(myModel);
-      IdUtil.getReferenceLinkId(getConceptId(), name);
+      result = IdUtil.getReferenceLinkId(getConceptId(), name);
     }
     return result;
   }
@@ -1904,7 +1904,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SContainmentLinkId result = IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
     if (result == IdUtil.UNKNOWN_LINK_ID) {
       DebugRegistryUtil.fillDebugInfo(myModel);
-      IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
+      result = IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
     }
     return result;
   }
