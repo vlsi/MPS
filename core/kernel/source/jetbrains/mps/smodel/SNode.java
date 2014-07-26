@@ -560,6 +560,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
 
+    updateWorkingMode(model);
+
     SRepository repo = model.getRepository();
     if (repo != null) {
       attach(repo);
@@ -1833,13 +1835,17 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 //-------------tmp private methods to help migrating to ids--------------
 
   public IdMigrationMode workingMode() {
-    if (myModel == null) return IdMigrationMode.UNKNOWN;
-    if (myModel instanceof BinarySModel) return IdMigrationMode.ID;
-    if (myModel.getClass().getName().equals("jetbrains.mps.smodel.tempmodel.TempModel$1")) return IdMigrationMode.NAME;
-    if (myModel.getClass().getName().equals("jetbrains.mps.generator.TransientSModel")) return IdMigrationMode.NAME;
-    if (myModel instanceof ProjectStructureSModel) return IdMigrationMode.NAME;
-    if (!(myModel instanceof DefaultSModel)) return IdMigrationMode.UNKNOWN;
-    return ((DefaultSModel) myModel).getSModelHeader().getPersistenceVersion() > 8 ? IdMigrationMode.ID : IdMigrationMode.NAME;
+    return workingMode(myModel);
+  }
+
+  public IdMigrationMode workingMode(SModel model) {
+    if (model == null) return IdMigrationMode.UNKNOWN;
+    if (model instanceof BinarySModel) return IdMigrationMode.ID;
+    if (model.getClass().getName().equals("jetbrains.mps.smodel.tempmodel.TempModel$1")) return IdMigrationMode.NAME;
+    if (model.getClass().getName().equals("jetbrains.mps.generator.TransientSModel")) return IdMigrationMode.NAME;
+    if (model instanceof ProjectStructureSModel) return IdMigrationMode.NAME;
+    if (!(model instanceof DefaultSModel)) return IdMigrationMode.UNKNOWN;
+    return ((DefaultSModel) model).getSModelHeader().getPersistenceVersion() > 8 ? IdMigrationMode.ID : IdMigrationMode.NAME;
   }
 
   @Override
@@ -1870,7 +1876,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (name.equals("name")) return SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001");
 
     SPropertyId result = IdUtil.getPropId(getConceptId(), name);
-    if (result == null) {
+    if (result == IdUtil.UNKNOWN_PROPERTY_ID) {
       DebugRegistryUtil.fillDebugInfo(myModel);
       IdUtil.getPropId(getConceptId(), name);
     }
@@ -1883,7 +1889,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private SReferenceLinkId name2rid(String name) {
     SReferenceLinkId result = IdUtil.getReferenceLinkId(getConceptId(), name);
-    if (result == null) {
+    if (result == IdUtil.UNKNOWN_REFERENCE_ID) {
       DebugRegistryUtil.fillDebugInfo(myModel);
       IdUtil.getReferenceLinkId(getConceptId(), name);
     }
@@ -1896,7 +1902,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private SContainmentLinkId name2lid(SNode sNode, String name) {
     SContainmentLinkId result = IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
-    if (result == null) {
+    if (result == IdUtil.UNKNOWN_LINK_ID) {
       DebugRegistryUtil.fillDebugInfo(myModel);
       IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
     }
@@ -1905,5 +1911,40 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private String lid2name(SContainmentLinkId lid) {
     return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(lid);
+  }
+
+  private void updateWorkingMode(SModel model) {
+    if (workingMode(model) == IdMigrationMode.NAME) {
+      if (myConceptFqName == null) {
+        myConceptFqName = cid2name(myConceptId);
+      }
+      if (myRoleInParent == null && myRoleInParentId != null) {
+        setRoleInParent(lid2name(getRoleInParentId()));
+      }
+      for (SPropertyId prop : getPropertyIds()) {
+        setProperty_byName(pid2name(prop), getProperty_byId(prop));
+      }
+      for (SReference ref : getReferences()) {
+        if (ref.getRole() == null) {
+          ref.setRole(rid2name(ref.getRoleId()));
+        }
+      }
+    }
+    if (workingMode(model) == IdMigrationMode.ID) {
+      if (myConceptId == null) {
+        myConceptId = name2cid(myConceptFqName);
+      }
+      if (myRoleInParentId == null && myRoleInParent != null) {
+        setRoleInParentId(name2lid(getParent(), getRoleInParent_byName()));
+      }
+      for (String prop : getPropertyNames()) {
+        setProperty_byId(name2pid(prop), getProperty_byName(prop));
+      }
+      for (SReference ref : getReferences()) {
+        if (ref.getRoleId() == null) {
+          ref.setRoleId(name2rid(ref.getRole()));
+        }
+      }
+    }
   }
 }
