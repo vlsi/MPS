@@ -63,5 +63,5 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
 
 
 
-  protected abstract void fillBothIds();
+  protected abstract boolean fillBothIds();
 }

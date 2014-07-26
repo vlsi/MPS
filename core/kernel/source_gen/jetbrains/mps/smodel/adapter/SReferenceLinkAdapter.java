@@ -77,7 +77,7 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
 
 
   public SNode getLinkNode() {
-    fillBothIds();
+    if (!fillBothIds()) return null;
     SConceptAdapter adapter = new SConceptAdapter(getRoleId().getConceptId());
     SModel model = adapter.getConceptDeclarationNode().getModel();
     return ((SNode) model.getNode(new SNodeId.Regular(myRoleId.getReferenceLinkId())));
@@ -85,9 +85,9 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
 
 
 
-  public void fillBothIds() {
+  public boolean fillBothIds() {
     if (myRoleId != null && role != null) {
-      return;
+      return true;
     }
     if (myRoleId == null) {
       SNode concept = SModelUtil.findConceptDeclaration(conceptName);
@@ -98,9 +98,11 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
     } else {
       SAbstractConceptAdapter adapter = new SAbstractConceptAdapter(myRoleId.getConceptId());
       conceptName = adapter.getQualifiedName();
-      SModel model = adapter.getConceptDeclarationNode().getModel();
-      role = model.getNode(new SNodeId.Regular(myRoleId.getReferenceLinkId())).getProperty("role");
+      SNode node = adapter.getConceptDeclarationNode();
+      if (node==null) return false;
+      role = node.getModel().getNode(new SNodeId.Regular(myRoleId.getReferenceLinkId())).getProperty("role");
     }
+    return true;
   }
 
 
