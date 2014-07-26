@@ -1868,7 +1868,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private String cid2name(SConceptId cid) {
-    return IdUtil.getConceptFqName(cid);
+    String result = IdUtil.getConceptFqName(cid);
+    if (result == null) {
+      DebugRegistryUtil.fillDebugInfo(myModel);
+      result = IdUtil.getConceptFqName(cid);
+    }
+    return result;
   }
 
   private SPropertyId name2pid(String name) {
@@ -1884,7 +1889,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private String pid2name(SPropertyId pid) {
-    return MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(pid);
+    String result = MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(pid);
+    if (result == null) {
+      DebugRegistryUtil.fillDebugInfo(myModel);
+      result = MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(pid);
+    }
+    return result;
   }
 
   private SReferenceLinkId name2rid(String name) {
@@ -1897,7 +1907,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private String rid2name(SReferenceLinkId rid) {
-    return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
+    String result = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
+    if (result == null) {
+      DebugRegistryUtil.fillDebugInfo(myModel);
+      result = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
+    }
+    return result;
+
   }
 
   private SContainmentLinkId name2lid(SNode sNode, String name) {
@@ -1910,7 +1926,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private String lid2name(SContainmentLinkId lid) {
-    return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(lid);
+    String result = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(lid);
+    if (result == null) {
+      DebugRegistryUtil.fillDebugInfo(myModel);
+      result = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(lid);
+    }
+    return result;
   }
 
   private void updateWorkingMode(SModel model) {
