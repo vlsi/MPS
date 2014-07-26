@@ -9,6 +9,8 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
 import java.io.IOException;
+
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.DefaultSModel;
@@ -42,14 +44,25 @@ public class ConvertToBinaryWorker {
     }
   }
 
-  private void convertModelToBinary(String sourceFile, String destFile, boolean stripImplementation) throws IOException {
+  private void convertModelToBinary(String sourceFile, final String destFile, boolean stripImplementation) throws IOException {
     IFile source = FileSystem.getInstance().getFileByPath(sourceFile);
     try {
-      DefaultSModel model = (stripImplementation ? ModelPersistence.readModelWithoutImplementation(new FileDataSource(source)) : ModelPersistence.readModel(new FileDataSource(source), false));
+      final DefaultSModel model = (stripImplementation ? ModelPersistence.readModelWithoutImplementation(new FileDataSource(source)) : ModelPersistence.readModel(new FileDataSource(source), false));
       if (model.getSModelHeader().getPersistenceVersion() < ModelPersistence.LAST_VERSION) {
         throw new IOException("cannot convert " + sourceFile + ": model persistence is too old, please upgrade");
       }
-      BinaryPersistence.writeModel(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
+      final IOException[] e = {null};
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          try {
+            BinaryPersistence.writeModel(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
+          } catch (IOException e1) {
+            e[0] = e1;
+          }
+        }
+      });
+      if (e[0] !=null) throw e[0];
     } catch (ModelReadException e) {
       throw new IOException("Couldn't parse " + sourceFile + ": " + e.getMessageEx(), e);
     }

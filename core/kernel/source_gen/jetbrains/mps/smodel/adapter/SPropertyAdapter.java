@@ -29,11 +29,9 @@ public class SPropertyAdapter implements SProperty {
   }
 
 
-
   public SPropertyAdapter(SPropertyId propertyId) {
     this.myPropertyId = propertyId;
   }
-
 
 
   @Override
@@ -52,7 +50,6 @@ public class SPropertyAdapter implements SProperty {
   }
 
 
-
   @Override
   public SDataType getType() {
     // TODO reimplement using ConceptDescriptor 
@@ -67,11 +64,14 @@ public class SPropertyAdapter implements SProperty {
     }
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
       SNode pdt = SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration");
-      return new SPrimitiveDataTypeAdapter((BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "call_isBoolean_1220268791641", new Object[]{}) ? SPrimitiveDataType.BOOL : ((BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "call_isInteger_1220268780075", new Object[]{}) ? SPrimitiveDataType.INT : SPrimitiveDataType.STRING))));
+      return new SPrimitiveDataTypeAdapter(
+          (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration",
+              "call_isBoolean_1220268791641", new Object[]{}) ? SPrimitiveDataType.BOOL :
+              ((BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration",
+                  "call_isInteger_1220268780075", new Object[]{}) ? SPrimitiveDataType.INT : SPrimitiveDataType.STRING))));
     }
     return new SDataTypeAdapter();
   }
-
 
 
   @Override
@@ -81,17 +81,16 @@ public class SPropertyAdapter implements SProperty {
   }
 
 
-
   public final SNode getPropertyNode() {
-    fillBothIds();
+    if (!fillBothIds()) return null;
     SConceptAdapter adapter = new SConceptAdapter(myPropertyId.getConceptId());
     SModel model = adapter.getConceptDeclarationNode().getModel();
     return ((SNode) model.getNode(new SNodeId.Regular(myPropertyId.getPropertyId())));
   }
 
-  public void fillBothIds() {
+  public boolean fillBothIds() {
     if (myPropertyId != null && propertyName != null) {
-      return;
+      return true;
     }
     if (myPropertyId == null) {
       SNode concept = SModelUtil.findConceptDeclaration(conceptName);
@@ -102,11 +101,12 @@ public class SPropertyAdapter implements SProperty {
     } else {
       SAbstractConceptAdapter adapter = new SAbstractConceptAdapter(myPropertyId.getConceptId());
       conceptName = adapter.getQualifiedName();
-      SModel model = adapter.getConceptDeclarationNode().getModel();
-      propertyName = model.getNode(new SNodeId.Regular(myPropertyId.getPropertyId())).getName();
+      SNode node = adapter.getConceptDeclarationNode();
+      if (node == null) {
+        return false;
+      }
+      propertyName = node.getModel().getNode(new SNodeId.Regular(myPropertyId.getPropertyId())).getName();
     }
+    return true;
   }
-
-
-
 }
