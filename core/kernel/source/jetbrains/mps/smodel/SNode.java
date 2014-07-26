@@ -1858,7 +1858,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return IdUtil.getReferenceLinkId(conceptId, role);
   }
 
-  private SConceptId name2cid(String name) {
+  private SConceptId name2cid(@NotNull String name) {
     SConceptId result = IdUtil.getConceptId(name);
     if (result == null) {
       DebugRegistryUtil.fillDebugInfo(myModel);
@@ -1867,7 +1867,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return result;
   }
 
-  private String cid2name(SConceptId cid) {
+  private String cid2name(@NotNull SConceptId cid) {
     String result = IdUtil.getConceptFqName(cid);
     if (result == null) {
       DebugRegistryUtil.fillDebugInfo(myModel);
@@ -1876,7 +1876,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return result;
   }
 
-  private SPropertyId name2pid(String name) {
+  private SPropertyId name2pid(@NotNull String name) {
     //this is needed to prevent infinite recursion when getProperty("name") on top of meta-ids
     if (name.equals("name")) return SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001");
 
@@ -1888,7 +1888,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return result;
   }
 
-  private String pid2name(SPropertyId pid) {
+  private String pid2name(@NotNull SPropertyId pid) {
     String result = MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(pid);
     if (result == null) {
       DebugRegistryUtil.fillDebugInfo(myModel);
@@ -1897,7 +1897,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return result;
   }
 
-  private SReferenceLinkId name2rid(String name) {
+  private SReferenceLinkId name2rid(@NotNull String name) {
     SReferenceLinkId result = IdUtil.getReferenceLinkId(getConceptId(), name);
     if (result == IdUtil.UNKNOWN_REFERENCE_ID) {
       DebugRegistryUtil.fillDebugInfo(myModel);
@@ -1906,7 +1906,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return result;
   }
 
-  private String rid2name(SReferenceLinkId rid) {
+  private String rid2name(@NotNull SReferenceLinkId rid) {
     String result = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
     if (result == null) {
       DebugRegistryUtil.fillDebugInfo(myModel);
@@ -1916,7 +1916,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   }
 
-  private SContainmentLinkId name2lid(SNode sNode, String name) {
+  private SContainmentLinkId name2lid(@NotNull SNode sNode, @NotNull String name) {
     SContainmentLinkId result = IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
     if (result == IdUtil.UNKNOWN_LINK_ID) {
       DebugRegistryUtil.fillDebugInfo(myModel);
@@ -1925,7 +1925,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return result;
   }
 
-  private String lid2name(SContainmentLinkId lid) {
+  private String lid2name(@Nullable SContainmentLinkId lid) {
+    if (lid == null) {
+      return null;
+    }
     String result = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(lid);
     if (result == null) {
       DebugRegistryUtil.fillDebugInfo(myModel);
