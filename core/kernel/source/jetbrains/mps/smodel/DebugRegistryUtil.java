@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.SPropertyAdapter;
@@ -23,6 +26,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -31,42 +35,48 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
+import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class DebugRegistryUtil {
+
+  public static boolean initialized = false;
+
+  //remove after 3.2
+  public static void fillDebugRegistry() {
+    DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
+
+    for (SModule module : MPSModuleRepository.getInstance().getModules()) {
+      if (module instanceof Language) {
+        SLanguageId lid = IdHelper.getLanguageId(module.getModuleReference().getModuleId());
+        dr.addLanguageName(lid, module.getModuleName());
+
+        org.jetbrains.mps.openapi.model.SModel structureModel  = LanguageAspect.STRUCTURE.get((Language) module);
+
+        for (SNode root : structureModel.getRootNodes()) {
+          dr.addConceptName(IdHelper.getConceptId((jetbrains.mps.smodel.SNode) root), SPropertyOperations.getString(root, "name"));
+          if (root.getConcept().isSubConceptOf(new SConceptAdapter("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+            for (SNode linkDeclaration : SLinkOperations.getTargets(root, "linkDeclaration", true)) {
+              dr.addLinkName((SPropertyOperations.hasValue(linkDeclaration, "metaClass", "reference", "reference") ? IdHelper.getRefRoleId(((jetbrains.mps.smodel.SNode) linkDeclaration)) : IdHelper.getNodeRoleId(((jetbrains.mps.smodel.SNode) linkDeclaration))), SPropertyOperations.getString(linkDeclaration, "role"));
+            }
+            for (SNode linkDeclaration : SLinkOperations.getTargets(root, "propertyDeclaration", true)) {
+              dr.addPropertyName(IdHelper.getPropId(((jetbrains.mps.smodel.SNode) linkDeclaration)), SPropertyOperations.getString(linkDeclaration, "name"));
+            }
+          }
+        }
+      }
+    }
+
+  }
 
   //remove after 3.2
   public static void fillDebugInfo(SModel model) {
     if (model == null) return;
     if (jetbrains.mps.smodel.SNode.workingMode(model) != IdMigrationMode.NAME) return;
-    DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
-
-    Map<SConceptId, String> conceptIds = new HashMap<SConceptId, String>();
-    Map<SPropertyId, String> propIds = new HashMap<SPropertyId, String>();
-    Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
-    Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
-
-    getDebugInfoByName(model.getRootNodes(), conceptIds, propIds, refIds, roleIds);
-
-    for (Entry<SConceptId, String> e : conceptIds.entrySet()) {
-      debugRegistry.addConceptName(e.getKey(), e.getValue());
-      debugRegistry.addLanguageName(e.getKey().getLanguageId(), new SConceptAdapter(e.getKey()).getLanguage().getQualifiedName());
-    }
-
-    for (Entry<SPropertyId, String> e : propIds.entrySet()) {
-      debugRegistry.addPropertyName(e.getKey(), e.getValue());
-    }
-
-    for (Entry<SReferenceLinkId, String> e : refIds.entrySet()) {
-      debugRegistry.addLinkName(e.getKey(), e.getValue());
-    }
-
-    for (Entry<SContainmentLinkId, String> e : roleIds.entrySet()) {
-      debugRegistry.addLinkName(e.getKey(), e.getValue());
-    }
+    if (initialized) return;
+    fillDebugRegistry();
+    initialized = true;
   }
 
   public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConceptId, String> conceptIds, Map<SPropertyId, String> propIds, Map<SReferenceLinkId, String> refIds, Map<SContainmentLinkId, String> roleIds) {
