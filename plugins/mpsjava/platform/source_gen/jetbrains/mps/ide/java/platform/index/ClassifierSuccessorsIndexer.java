@@ -10,13 +10,13 @@ import com.intellij.util.io.KeyDescriptor;
 import com.intellij.util.io.DataExternalizer;
 import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileContent;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -91,12 +91,11 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
     @Override
     public Map<GlobalSNodeId, List<GlobalSNodeId>> map(final FileContent inputData) {
       final Map<GlobalSNodeId, List<GlobalSNodeId>> result = MapSequence.fromMap(new HashMap<GlobalSNodeId, List<GlobalSNodeId>>());
-      SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
-      for (final SNode nextNode : SNodeUtil.getDescendants(sModel)) {
-        //todo remove this read after 3.2. Needed to get concept fq name from id in 3.2
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          // todo remove this read after 3.2. Needed to get concept fq name from id in 3.2 
+          SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
+          for (final SNode nextNode : SNodeUtil.getDescendants(sModel)) {
             if (isInstanceOfClassConcept(nextNode)) {
               SNode classNode = (SNode) nextNode;
               if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {
@@ -115,9 +114,8 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
               }
             }
           }
-        });
-      }
-
+        }
+      });
       return result;
     }
 

@@ -22,7 +22,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SEnumeration;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Set;
 import java.util.HashSet;
@@ -30,6 +29,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class SLanguageAdapter implements SLanguage {
   private String myLanguageFqName;
@@ -150,7 +150,7 @@ public class SLanguageAdapter implements SLanguage {
       assert myLanguage != null;
     } else {
       SModule module = ModuleRepositoryFacade.getInstance().getModule(IdHelper.getModuleReference(myLanguage));
-      if (module!=null){
+      if (module != null) {
         myLanguageFqName = module.getModuleName();
       } else {
         myLanguageFqName = MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(myLanguage);

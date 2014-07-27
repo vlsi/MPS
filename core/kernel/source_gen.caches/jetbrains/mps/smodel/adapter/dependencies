@@ -173,6 +173,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SEnumeration" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguageId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.language.SLanguage" />
   </dependency>

@@ -65,7 +65,9 @@ public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SCo
 
   @Override
   public SNode getLinkNode() {
-    if (!fillBothIds()) return null;
+    if (!(fillBothIds())) {
+      return null;
+    }
     SConceptAdapter adapter = new SConceptAdapter(getRoleId().getConceptId());
     SModel model = adapter.getConceptDeclarationNode().getModel();
     return ((SNode) model.getNode(new SNodeId.Regular(myRoleId.getContainmentLinkId())));
@@ -87,7 +89,9 @@ public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SCo
       SAbstractConceptAdapter adapter = new SAbstractConceptAdapter(myRoleId.getConceptId());
       conceptName = adapter.getQualifiedName();
       SNode node = adapter.getConceptDeclarationNode();
-      if (node==null) return false;
+      if (node == null) {
+        return false;
+      }
       role = node.getModel().getNode(new SNodeId.Regular(myRoleId.getContainmentLinkId())).getProperty("role");
     }
     return true;

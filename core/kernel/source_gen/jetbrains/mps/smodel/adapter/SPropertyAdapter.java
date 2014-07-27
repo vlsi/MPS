@@ -29,9 +29,11 @@ public class SPropertyAdapter implements SProperty {
   }
 
 
+
   public SPropertyAdapter(SPropertyId propertyId) {
     this.myPropertyId = propertyId;
   }
+
 
 
   @Override
@@ -50,6 +52,7 @@ public class SPropertyAdapter implements SProperty {
   }
 
 
+
   @Override
   public SDataType getType() {
     // TODO reimplement using ConceptDescriptor 
@@ -64,14 +67,11 @@ public class SPropertyAdapter implements SProperty {
     }
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
       SNode pdt = SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration");
-      return new SPrimitiveDataTypeAdapter(
-          (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration",
-              "call_isBoolean_1220268791641", new Object[]{}) ? SPrimitiveDataType.BOOL :
-              ((BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration",
-                  "call_isInteger_1220268780075", new Object[]{}) ? SPrimitiveDataType.INT : SPrimitiveDataType.STRING))));
+      return new SPrimitiveDataTypeAdapter((BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "call_isBoolean_1220268791641", new Object[]{}) ? SPrimitiveDataType.BOOL : ((BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "call_isInteger_1220268780075", new Object[]{}) ? SPrimitiveDataType.INT : SPrimitiveDataType.STRING))));
     }
     return new SDataTypeAdapter();
   }
+
 
 
   @Override
@@ -81,8 +81,11 @@ public class SPropertyAdapter implements SProperty {
   }
 
 
+
   public final SNode getPropertyNode() {
-    if (!fillBothIds()) return null;
+    if (!(fillBothIds())) {
+      return null;
+    }
     SConceptAdapter adapter = new SConceptAdapter(myPropertyId.getConceptId());
     SModel model = adapter.getConceptDeclarationNode().getModel();
     return ((SNode) model.getNode(new SNodeId.Regular(myPropertyId.getPropertyId())));
