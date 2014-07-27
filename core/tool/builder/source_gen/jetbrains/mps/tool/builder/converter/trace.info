@@ -11,67 +11,84 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root nodeRef="r:39e596a9-ed2d-4e2f-b055-9544a1f3a151(jetbrains.mps.tool.builder.converter)/7841036633975757760">
     <file name="ConvertToBinaryWorker.java">
-      <node id="1186687992399814605" at="24,77,25,42" concept="5" />
-      <node id="3563859626232933894" at="25,42,26,19" concept="1" />
-      <node id="2155989524110576221" at="26,19,27,63" concept="5" />
-      <node id="3563859626233054401" at="27,63,28,26" concept="1" />
-      <node id="7841036633989771059" at="28,26,29,42" concept="1" />
-      <node id="4026014303453309061" at="29,42,30,99" concept="1" />
-      <node id="130791456002149247" at="30,99,31,48" concept="1" />
-      <node id="7841036633975757778" at="33,62,34,84" concept="1" />
-      <node id="7841036633975757798" at="36,30,37,37" concept="6" />
-      <node id="4026014303453341230" at="38,15,39,70" concept="1" />
-      <node id="3563859626233070836" at="39,70,40,31" concept="1" />
-      <node id="3563859626233008369" at="40,31,41,24" concept="1" />
-      <node id="7841036633975757811" at="45,121,46,70" concept="5" />
-      <node id="7841036633975757821" at="47,9,48,192" concept="5" />
-      <node id="7841036633975757844" at="49,92,50,113" concept="6" />
-      <node id="5171773620270423448" at="51,7,52,112" concept="1" />
-      <node id="7841036633975757875" at="53,36,54,89" concept="6" />
-      <node id="7841036633975757763" at="21,0,23,0" concept="0" trace="ConvertToBinaryWorker#()V" />
-      <node id="7841036633975757775" at="32,9,35,7" concept="2" />
-      <node id="7841036633975757827" at="48,192,51,7" concept="3" />
-      <node id="7841036633975757876" at="46,70,55,5" concept="7" />
-      <node id="3563859626232997535" at="31,48,42,5" concept="8" />
-      <node id="7841036633975757803" at="45,0,57,0" concept="4" trace="convertModelToBinary#(Ljava/lang/String;Ljava/lang/String;Z)V" />
-      <node id="7841036633975757767" at="24,0,44,0" concept="4" trace="convert#(Ljava/util/Map;Ljava/lang/Boolean;)V" />
-      <scope id="7841036633975757765" at="21,34,21,34" />
-      <scope id="7841036633975757777" at="33,62,34,84" />
-      <scope id="7841036633975757800" at="36,0,37,37">
+      <node id="1186687992399814605" at="26,77,27,42" concept="5" />
+      <node id="3563859626232933894" at="27,42,28,19" concept="1" />
+      <node id="2155989524110576221" at="28,19,29,63" concept="5" />
+      <node id="3563859626233054401" at="29,63,30,26" concept="1" />
+      <node id="7841036633989771059" at="30,26,31,42" concept="1" />
+      <node id="4026014303453309061" at="31,42,32,99" concept="1" />
+      <node id="130791456002149247" at="32,99,33,48" concept="1" />
+      <node id="7841036633975757778" at="35,62,36,84" concept="1" />
+      <node id="7841036633975757798" at="38,30,39,37" concept="6" />
+      <node id="4026014303453341230" at="40,15,41,70" concept="1" />
+      <node id="3563859626233070836" at="41,70,42,31" concept="1" />
+      <node id="3563859626233008369" at="42,31,43,24" concept="1" />
+      <node id="7841036633975757811" at="47,127,48,70" concept="5" />
+      <node id="7841036633975757821" at="49,9,50,198" concept="5" />
+      <node id="7841036633975757844" at="51,92,52,113" concept="6" />
+      <node id="1011243672606527568" at="53,7,54,76" concept="5" />
+      <node id="1011243672606527586" at="57,15,58,118" concept="1" />
+      <node id="1011243672606527599" at="59,36,60,25" concept="1" />
+      <node id="1011243672606527618" at="64,28,65,22" concept="6" />
+      <node id="7841036633975757875" at="67,36,68,89" concept="6" />
+      <node id="7841036633975757763" at="23,0,25,0" concept="0" trace="ConvertToBinaryWorker#()V" />
+      <node id="7841036633975757775" at="34,9,37,7" concept="2" />
+      <node id="7841036633975757827" at="50,198,53,7" concept="3" />
+      <node id="1011243672606527609" at="63,9,66,7" concept="3" />
+      <node id="1011243672606527605" at="56,27,61,11" concept="7" />
+      <node id="1011243672606539557" at="56,0,63,0" concept="4" trace="run#()V" />
+      <node id="1011243672606539555" at="54,76,63,9" concept="1" />
+      <node id="3563859626232997535" at="33,48,44,5" concept="8" />
+      <node id="7841036633975757767" at="26,0,46,0" concept="4" trace="convert#(Ljava/util/Map;Ljava/lang/Boolean;)V" />
+      <node id="7841036633975757876" at="48,70,69,5" concept="7" />
+      <node id="7841036633975757803" at="47,0,71,0" concept="4" trace="convertModelToBinary#(Ljava/lang/String;Ljava/lang/String;Z)V" />
+      <scope id="7841036633975757765" at="23,34,23,34" />
+      <scope id="7841036633975757777" at="35,62,36,84" />
+      <scope id="7841036633975757800" at="38,0,39,37">
         <var name="ex" id="7841036633975757791" />
       </scope>
-      <scope id="7841036633975757795" at="36,30,37,37" />
-      <scope id="7841036633975757837" at="49,92,50,113" />
-      <scope id="7841036633975757877" at="53,0,54,89">
+      <scope id="7841036633975757795" at="38,30,39,37" />
+      <scope id="7841036633975757837" at="51,92,52,113" />
+      <scope id="1011243672606527585" at="57,15,58,118" />
+      <scope id="1011243672606527606" at="59,0,60,25">
+        <var name="e1" id="1011243672606527594" />
+      </scope>
+      <scope id="1011243672606527598" at="59,36,60,25" />
+      <scope id="1011243672606527619" at="64,28,65,22" />
+      <scope id="7841036633975757877" at="67,0,68,89">
         <var name="e" id="7841036633975757866" />
       </scope>
-      <scope id="7841036633975757870" at="53,36,54,89" />
-      <scope id="7841036633975757763" at="21,0,23,0" />
-      <scope id="7841036633975757774" at="32,9,35,7" />
-      <scope id="7841036633975757775" at="32,9,35,7">
+      <scope id="7841036633975757870" at="67,36,68,89" />
+      <scope id="7841036633975757763" at="23,0,25,0" />
+      <scope id="7841036633975757774" at="34,9,37,7" />
+      <scope id="7841036633975757775" at="34,9,37,7">
         <var name="entry" id="7841036633975757784" />
       </scope>
-      <scope id="3563859626232997538" at="38,15,41,24" />
-      <scope id="7841036633975757819" at="47,9,52,112">
+      <scope id="3563859626232997538" at="40,15,43,24" />
+      <scope id="1011243672606539559" at="56,27,61,11" />
+      <scope id="1011243672606539557" at="56,0,63,0" />
+      <scope id="7841036633975757819" at="49,9,66,7">
+        <var name="e" id="1011243672606527567" />
         <var name="model" id="7841036633975757820" />
       </scope>
-      <scope id="7841036633975757809" at="45,121,55,5">
+      <scope id="7841036633975757772" at="26,77,44,5">
+        <var name="mpsCore" id="1186687992399814606" />
+        <var name="mpsPersistence" id="2155989524110576219" />
+      </scope>
+      <scope id="7841036633975757767" at="26,0,46,0">
+        <var name="map" id="7841036633975757768" />
+        <var name="stripImplementation" id="1768088633165482237" />
+      </scope>
+      <scope id="7841036633975757809" at="47,127,69,5">
         <var name="source" id="7841036633975757810" />
       </scope>
-      <scope id="7841036633975757803" at="45,0,57,0">
+      <scope id="7841036633975757803" at="47,0,71,0">
         <var name="destFile" id="7841036633975757806" />
         <var name="sourceFile" id="7841036633975757804" />
         <var name="stripImplementation" id="1768088633165516487" />
       </scope>
-      <scope id="7841036633975757772" at="24,77,42,5">
-        <var name="mpsCore" id="1186687992399814606" />
-        <var name="mpsPersistence" id="2155989524110576219" />
-      </scope>
-      <scope id="7841036633975757767" at="24,0,44,0">
-        <var name="map" id="7841036633975757768" />
-        <var name="stripImplementation" id="1768088633165482237" />
-      </scope>
-      <unit id="7841036633975757760" at="20,0,58,0" name="jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker" />
+      <unit id="1011243672606539557" at="55,47,63,7" name="jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker$1" />
+      <unit id="7841036633975757760" at="22,0,72,0" name="jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker" />
     </file>
   </root>
 </debug-info>
