@@ -10,6 +10,7 @@ import com.intellij.util.io.KeyDescriptor;
 import com.intellij.util.io.DataExternalizer;
 import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileContent;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
@@ -92,23 +93,29 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
       final Map<GlobalSNodeId, List<GlobalSNodeId>> result = MapSequence.fromMap(new HashMap<GlobalSNodeId, List<GlobalSNodeId>>());
       SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
       for (final SNode nextNode : SNodeUtil.getDescendants(sModel)) {
-        if (isInstanceOfClassConcept(nextNode)) {
-          SNode classNode = (SNode) nextNode;
-          if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {
-            safeMap(result, SLinkOperations.getTarget(classNode, "superclass", true), classNode);
+        //todo remove this read after 3.2. Needed to get concept fq name from id in 3.2
+        ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            if (isInstanceOfClassConcept(nextNode)) {
+              SNode classNode = (SNode) nextNode;
+              if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {
+                safeMap(result, SLinkOperations.getTarget(classNode, "superclass", true), classNode);
+              }
+              for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(classNode, "implementedInterface", true))) {
+                safeMap(result, implementedInterface, classNode);
+              }
+              if (isInstanceOfAnonymousClassConcept(classNode)) {
+                safeMap(result, classNode.getReference("classifier"), classNode);
+              }
+            } else if (isInstanceOfInterfaceConcept(nextNode)) {
+              SNode interfaceNode = (SNode) nextNode;
+              for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(interfaceNode, "extendedInterface", true))) {
+                safeMap(result, extendedInterface, interfaceNode);
+              }
+            }
           }
-          for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(classNode, "implementedInterface", true))) {
-            safeMap(result, implementedInterface, classNode);
-          }
-          if (isInstanceOfAnonymousClassConcept(classNode)) {
-            safeMap(result, classNode.getReference("classifier"), classNode);
-          }
-        } else if (isInstanceOfInterfaceConcept(nextNode)) {
-          SNode interfaceNode = (SNode) nextNode;
-          for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(interfaceNode, "extendedInterface", true))) {
-            safeMap(result, extendedInterface, interfaceNode);
-          }
-        }
+        });
       }
 
       return result;
