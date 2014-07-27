@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.language.SConceptUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 
@@ -72,7 +73,7 @@ public abstract class IdUtil {
 
   public static SContainmentLinkId getContainmentLinkId(SConceptId id, String refName) {
     SAbstractLinkId rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(id, refName);
-    if (rid != null) return (SContainmentLinkId) rid;
+    if (rid instanceof SContainmentLinkId) return (SContainmentLinkId) rid;
 
     for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
       rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(c.getId(), refName);
@@ -83,7 +84,7 @@ public abstract class IdUtil {
 
   public static SReferenceLinkId getReferenceLinkId(SConceptId id, String refName) {
     SAbstractLinkId rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(id, refName);
-    if (rid != null) return (SReferenceLinkId) rid;
+    if (rid instanceof SReferenceLinkId) return (SReferenceLinkId) rid;
 
     for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
       rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(c.getId(), refName);
