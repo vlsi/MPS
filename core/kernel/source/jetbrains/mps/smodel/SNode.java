@@ -1934,6 +1934,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SContainmentLinkId name2lid(@NotNull SNode sNode, @NotNull String name) {
+    if ("smodelAttribute".equals(name)) return SContainmentLinkId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170");
     SContainmentLinkId result = IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
     if (result == IdUtil.UNKNOWN_LINK_ID) {
       DebugRegistryUtil.fillDebugInfo(myModel);
