@@ -1011,6 +1011,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private void nodeAdded(SContainmentLinkId role, org.jetbrains.mps.openapi.model.SNode child) {
+    if (myModel == null) return;
     nodeAdded(lid2name(role), child);
   }
 
@@ -1838,7 +1839,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return workingMode(myModel);
   }
 
-  public IdMigrationMode workingMode(SModel model) {
+  public static IdMigrationMode workingMode(SModel model) {
     if (model == null) return IdMigrationMode.UNKNOWN;
     if (model instanceof BinarySModel) return IdMigrationMode.ID;
     if (model.getClass().getName().equals("jetbrains.mps.smodel.tempmodel.TempModel$1")) return IdMigrationMode.NAME;

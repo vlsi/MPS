@@ -40,6 +40,8 @@ public class DebugRegistryUtil {
 
   //remove after 3.2
   public static void fillDebugInfo(SModel model) {
+    if (model == null) return;
+    if (jetbrains.mps.smodel.SNode.workingMode(model) != IdMigrationMode.NAME) return;
     DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
 
     Map<SConceptId, String> conceptIds = new HashMap<SConceptId, String>();
