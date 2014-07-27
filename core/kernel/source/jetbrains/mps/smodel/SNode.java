@@ -1879,7 +1879,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private SPropertyId name2pid(@NotNull String name) {
     //this is needed to prevent infinite recursion when getProperty("name") on top of meta-ids
-    if (name.equals("name")) return SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001");
+    if (name.equals("name") && isConceptDeclaration()) return SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001");
 
     SPropertyId result = IdUtil.getPropId(getConceptId(), name);
     if (result == IdUtil.UNKNOWN_PROPERTY_ID) {
@@ -1887,6 +1887,22 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       result = IdUtil.getPropId(getConceptId(), name);
     }
     return result;
+  }
+
+  private Boolean myIsConceptDeclaration = null;
+
+  private synchronized boolean isConceptDeclaration() {
+    if (myIsConceptDeclaration == null) {
+      if (myConceptFqName != null) {
+        myIsConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration".equals(myConceptFqName) ||
+            "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration".equals(myConceptFqName);
+      } else {
+        myIsConceptDeclaration =
+            "c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640".equals(myConceptId.serialize()) ||
+                "c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551".equals(myConceptId.serialize());
+      }
+    }
+    return myIsConceptDeclaration;
   }
 
   private String pid2name(@NotNull SPropertyId pid) {
