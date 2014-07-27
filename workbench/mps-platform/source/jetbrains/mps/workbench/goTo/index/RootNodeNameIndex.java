@@ -156,17 +156,22 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
     protected List<SNodeDescriptor> computeValue(@NotNull final FileContent inputData) {
       final List<SNodeDescriptor> descriptors = new ArrayList<SNodeDescriptor>();
       try {
-        SModel model = doModelParsing(inputData);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            SModel model = doModelParsing(inputData);
 
-        for (final SNode node : getRootsToIterate(model)) {
-          String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
-          String nodeName = (persistentName == null) ? "null" : persistentName;
-          String conceptFqName = node.getConcept().getQualifiedName();
-          SModelReference modelRef = model.getReference();
-          SNodeId id = node.getNodeId();
-          SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
-          descriptors.add(value);
-        }
+            for (final SNode node : getRootsToIterate(model)) {
+              String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
+              String nodeName = (persistentName == null) ? "null" : persistentName;
+              String conceptFqName = node.getConcept().getQualifiedName();
+              SModelReference modelRef = model.getReference();
+              SNodeId id = node.getNodeId();
+              SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
+              descriptors.add(value);
+            }
+          }
+        });
       } catch (Exception e) {
         LOG.error("Cannot index model file " + inputData.getFileName() + "; " + e.getMessage());
       }
