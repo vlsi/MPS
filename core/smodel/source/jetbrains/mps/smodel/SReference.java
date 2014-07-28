@@ -70,6 +70,18 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     }
   }
 
+  // remove after 3.2
+  //only for SNode.updateReferenceWorkingMode()
+  public String getRole_byName() {
+    return myRole;
+  }
+
+  // remove after 3.2
+  //only for SNode.updateReferenceWorkingMode()
+  public SReferenceLinkId getRoleId_byId() {
+    return myRoleId;
+  }
+
   @Override
   public SReferenceLinkId getRoleId() {
     if (workingMode() == IdMigrationMode.NAME) {

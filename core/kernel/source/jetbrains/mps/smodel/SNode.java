@@ -560,7 +560,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
 
-    updateWorkingMode(model);
+    updateWorkingMode(workingMode(model));
 
     SRepository repo = model.getRepository();
     if (repo != null) {
@@ -942,6 +942,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public void setReference(SReferenceLinkId role, org.jetbrains.mps.openapi.model.SReference reference) {
     assertCanChange();
 
+    if (reference instanceof SReference) {
+      updateReferenceWorkingMode(workingMode(), (SReference) reference);
+    }
+
     SReference toRemove;
     if (workingMode() == IdMigrationMode.NAME) {
       toRemove = setReference_byName(rid2name(role), reference);
@@ -1189,6 +1193,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public void setReference(String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
     assertCanChange();
+
+    if (reference instanceof SReference) {
+      updateReferenceWorkingMode(workingMode(), (SReference) reference);
+    }
 
     SReference toRemove;
     if (workingMode() == IdMigrationMode.ID) {
@@ -1955,8 +1963,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return result;
   }
 
-  private void updateWorkingMode(SModel model) {
-    if (workingMode(model) == IdMigrationMode.NAME) {
+  private void updateWorkingMode(IdMigrationMode mode) {
+    if (mode == IdMigrationMode.NAME) {
       if (myConceptFqName == null) {
         myConceptFqName = cid2name(myConceptId);
       }
@@ -1967,12 +1975,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
         setProperty_byName(pid2name(prop), getProperty_byId(prop));
       }
       for (SReference ref : getReferences()) {
-        if (ref.getRole() == null) {
-          ref.setRole(rid2name(ref.getRoleId()));
-        }
+        updateReferenceWorkingMode(mode, ref);
       }
     }
-    if (workingMode(model) == IdMigrationMode.ID) {
+    if (mode == IdMigrationMode.ID) {
       if (myConceptId == null) {
         myConceptId = name2cid(myConceptFqName);
       }
@@ -1983,10 +1989,22 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
         setProperty_byId(name2pid(prop), getProperty_byName(prop));
       }
       for (SReference ref : getReferences()) {
-        if (ref.getRoleId() == null) {
-          ref.setRoleId(name2rid(ref.getRole()));
-        }
+        updateReferenceWorkingMode(mode, ref);
       }
     }
   }
+
+  private void updateReferenceWorkingMode(IdMigrationMode mode, SReference ref) {
+    if (mode == IdMigrationMode.NAME) {
+      if (ref.getRole() == null) {
+        ref.setRole(rid2name(ref.getRoleId_byId()));
+      }
+    }
+    if (mode == IdMigrationMode.ID) {
+      if (ref.getRoleId() == null) {
+        ref.setRoleId(name2rid(ref.getRole_byName()));
+      }
+    }
+  }
+
 }
