@@ -36,98 +36,98 @@ public class DebugRegistryImpl implements DebugRegistry {
   private BidirectionalMap<SLanguageId, String> myLanguages = new BidirectionalMap<SLanguageId, String>();
 
   @Override
-  public String getModelName(org.jetbrains.mps.openapi.model.SModelReference modelId) {
+  public synchronized String getModelName(org.jetbrains.mps.openapi.model.SModelReference modelId) {
     return myModels.get(modelId);
   }
 
   @Override
-  public String getModuleName(SModuleReference moduleId) {
+  public synchronized String getModuleName(SModuleReference moduleId) {
     return myModules.get(moduleId);
   }
 
   @Override
-  public String getPropertyName(SPropertyId propertyId) {
+  public synchronized String getPropertyName(SPropertyId propertyId) {
     return myProperties.get(propertyId);
   }
 
   @Override
-  public String getLinkName(SAbstractLinkId linkId) {
+  public synchronized String getLinkName(SAbstractLinkId linkId) {
     return myLinks.get(linkId);
   }
 
   @Override
-  public String getConceptName(SConceptId conceptId) {
+  public synchronized String getConceptName(SConceptId conceptId) {
     return myConcepts.get(conceptId);
   }
 
   @Override
-  public String getLanguageName(SLanguageId languageId) {
+  public synchronized String getLanguageName(SLanguageId languageId) {
     return myLanguages.get(languageId);
   }
 
   @Override
-  public void addModelName(org.jetbrains.mps.openapi.model.SModelReference modelId, String name) {
+  public synchronized void addModelName(org.jetbrains.mps.openapi.model.SModelReference modelId, String name) {
     myModels.put(modelId, name);
   }
 
   @Override
-  public void addModuleName(SModuleReference moduleId, String name) {
+  public synchronized void addModuleName(SModuleReference moduleId, String name) {
     myModules.put(moduleId, name);
   }
 
   @Override
-  public void addPropertyName(SPropertyId propertyId, String name) {
+  public synchronized void addPropertyName(SPropertyId propertyId, String name) {
     myProperties.put(propertyId, name);
   }
 
   @Override
-  public void addLinkName(SAbstractLinkId linkId, String name) {
+  public synchronized void addLinkName(SAbstractLinkId linkId, String name) {
     myLinks.put(linkId, name);
   }
 
   @Override
-  public void addConceptName(SConceptId conceptId, String name) {
+  public synchronized void addConceptName(SConceptId conceptId, String name) {
     myConcepts.put(conceptId, name);
   }
 
   @Override
-  public void addLanguageName(SLanguageId languageId, String name) {
+  public synchronized void addLanguageName(SLanguageId languageId, String name) {
     myLanguages.put(languageId, name);
   }
 
 //-----------stuff to remove when we move to ids completely------------
 
-  public org.jetbrains.mps.openapi.model.SModelReference getModelRef(String name) {
+  public synchronized org.jetbrains.mps.openapi.model.SModelReference getModelRef(String name) {
     List<org.jetbrains.mps.openapi.model.SModelReference> ids = myModels.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
     return ids.get(0);
   }
 
-  public SModuleReference getModuleRef(String name) {
+  public synchronized SModuleReference getModuleRef(String name) {
     List<SModuleReference> ids = myModules.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
     return ids.get(0);
   }
 
-  public SPropertyId getPropertyId(SConceptId conceptId, String name) {
+  public synchronized SPropertyId getPropertyId(SConceptId conceptId, String name) {
     List<SPropertyId> ids = myProperties.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
     for (SPropertyId id:ids){
-      if (id.getConceptId().equals(conceptId)) return (SPropertyId) id;
+      if (id.getConceptId().equals(conceptId)) return id;
     }
     return null;
   }
 
-  public SAbstractLinkId getLinkId(SConceptId conceptId, String name) {
+  public synchronized SAbstractLinkId getLinkId(SConceptId conceptId, String name) {
     List<SAbstractLinkId> ids = myLinks.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
     for (SAbstractLinkId id:ids){
-      if (id.getConceptId().equals(conceptId)) return (SAbstractLinkId) id;
+      if (id.getConceptId().equals(conceptId)) return id;
     }
     return null;
   }
 
-  public SConceptId getConceptId(SLanguageId lang, String name) {
+  public synchronized SConceptId getConceptId(SLanguageId lang, String name) {
     List<SConceptId> ids = myConcepts.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
     for (SConceptId id:ids){
@@ -136,9 +136,9 @@ public class DebugRegistryImpl implements DebugRegistry {
     return null;
   }
 
-  public SLanguageId getLanguageId(String name) {
+  public synchronized SLanguageId getLanguageId(String name) {
     List<SLanguageId> ids = myLanguages.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
-    return (SLanguageId) ids.get(0);
+    return ids.get(0);
   }
 }
