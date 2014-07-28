@@ -78,7 +78,7 @@ public class MigrateIds_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       DebugRegistryUtil.fillDebugRegistry();
-      Iterable<SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModules();
+      Iterable<SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
       Iterable<DefaultSModelDescriptor> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
         public Iterable<SModel> translate(SModule it) {
           return it.getModels();
