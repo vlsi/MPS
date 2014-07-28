@@ -73,7 +73,7 @@ public class DebugRegistryUtil {
   //remove after 3.2
   public static void fillDebugInfo(SModel model) {
     if (model == null) return;
-    if (jetbrains.mps.smodel.SNode.workingMode(model) != IdMigrationMode.NAME) return;
+    if (jetbrains.mps.smodel.SNode.workingMode(model) != IdMigrationMode.NAME && jetbrains.mps.smodel.SNode.workingMode(model) != IdMigrationMode.ID) return;
     if (initialized) return;
     fillDebugRegistry();
     initialized = true;
