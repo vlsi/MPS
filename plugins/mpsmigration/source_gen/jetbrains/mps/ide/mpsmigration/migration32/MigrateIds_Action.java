@@ -10,10 +10,9 @@ import java.util.Map;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.smodel.DebugRegistryUtil;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -69,16 +68,8 @@ public class MigrateIds_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     return true;
@@ -87,13 +78,13 @@ public class MigrateIds_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       DebugRegistryUtil.fillDebugRegistry();
-      Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
+      Iterable<SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModules();
       Iterable<DefaultSModelDescriptor> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
         public Iterable<SModel> translate(SModule it) {
           return it.getModels();
         }
       }).ofType(DefaultSModelDescriptor.class);
-      Sequence.fromIterable(models).ofType(DefaultSModelDescriptor.class).visitAll(new IVisitor<DefaultSModelDescriptor>() {
+      Sequence.fromIterable(models).visitAll(new IVisitor<DefaultSModelDescriptor>() {
         public void visit(final DefaultSModelDescriptor model) {
           List<SModuleReference> impLangs = model.importedLanguages();
           ListSequence.fromList(impLangs).visitAll(new IVisitor<SModuleReference>() {
@@ -146,7 +137,7 @@ public class MigrateIds_Action extends BaseAction {
 
         }
       });
-      Sequence.fromIterable(models).ofType(DefaultSModelDescriptor.class).visitAll(new IVisitor<DefaultSModelDescriptor>() {
+      Sequence.fromIterable(models).visitAll(new IVisitor<DefaultSModelDescriptor>() {
         public void visit(DefaultSModelDescriptor model) {
           LazySModel innerModel = model.getSModelInternal();
           if (innerModel instanceof DefaultSModel) {
