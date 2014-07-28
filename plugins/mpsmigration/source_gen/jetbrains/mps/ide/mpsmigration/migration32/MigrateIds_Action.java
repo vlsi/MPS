@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -25,7 +27,6 @@ import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
@@ -35,7 +36,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.LazySModel;
-import jetbrains.mps.smodel.DefaultSModel;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -83,7 +83,11 @@ public class MigrateIds_Action extends BaseAction {
         public Iterable<SModel> translate(SModule it) {
           return it.getModels();
         }
-      }).ofType(DefaultSModelDescriptor.class);
+      }).ofType(DefaultSModelDescriptor.class).where(new IWhereFilter<DefaultSModelDescriptor>() {
+        public boolean accept(DefaultSModelDescriptor it) {
+          return it.getSModelInternal() instanceof DefaultSModel && as_fu9gb8_a0a0a0a0a0a0a0c0a0f(it.getSModelInternal(), DefaultSModel.class).getPersistenceVersion() < 9;
+        }
+      });
       Sequence.fromIterable(models).visitAll(new IVisitor<DefaultSModelDescriptor>() {
         public void visit(final DefaultSModelDescriptor model) {
           List<SModuleReference> impLangs = model.importedLanguages();
@@ -154,4 +158,8 @@ public class MigrateIds_Action extends BaseAction {
   }
 
   protected static Logger LOG = LogManager.getLogger(MigrateIds_Action.class);
+
+  private static <T> T as_fu9gb8_a0a0a0a0a0a0a0c0a0f(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
 }
