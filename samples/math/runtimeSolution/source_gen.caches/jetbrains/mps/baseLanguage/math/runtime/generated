@@ -48,6 +48,7 @@
     <file name="NormKind.java" />
   </source>
   <source id="877422884702867294" name="BigDecimalScalarOperations" hash="-5t68g3i2up1xum8rlkq4bwbqq2ptyu4">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="BigDecimalScalarOperations.java" />
   </source>
 </dependencies>
