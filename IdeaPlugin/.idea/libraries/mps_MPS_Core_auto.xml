@@ -1,10 +1,8 @@
 <component name="libraryTable">
-  <library name="mps.MPS.Core_auto" type="mps.solution.library">
-    <MPS_MODULE_XML>
-      <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-core.jar!/modules/MPS.Core/MPS.Core.msd" />
-    </MPS_MODULE_XML>
+  <library name="mps.MPS.Core_auto">
     <CLASSES>
       <root url="jar://$APPLICATION_HOME_DIR$/lib/asm4-all.jar!/" />
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/asm-all.jar!/" />
       <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-closures.jar!/" />
       <root url="jar://$APPLICATION_HOME_DIR$/lib/trove4j.jar!/" />
       <root url="jar://$APPLICATION_HOME_DIR$/lib/xstream-1.4.3.jar!/" />
