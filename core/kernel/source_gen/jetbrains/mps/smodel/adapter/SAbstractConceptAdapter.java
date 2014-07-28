@@ -38,7 +38,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class SAbstractConceptAdapter implements SAbstractConcept {
-  private static BidirectionalMap<SConceptId, String> ourNames = new BidirectionalMap<SConceptId, String>();
+  private static final BidirectionalMap<SConceptId, String> ourNames = new BidirectionalMap<SConceptId, String>();
 
   protected SConceptId myConceptId;
   protected String myConceptName;
@@ -46,7 +46,10 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
   @Deprecated
   public SAbstractConceptAdapter(@NotNull String conceptName) {
     myConceptName = conceptName;
-    List<SConceptId> ids = ourNames.getKeysByValue(myConceptName);
+    List<SConceptId> ids;
+    synchronized (ourNames) {
+      ids = ourNames.getKeysByValue(myConceptName);
+    }
     if (ids != null && !(ids.isEmpty())) {
       myConceptId = ids.get(0);
     }
@@ -56,7 +59,9 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
   public SAbstractConceptAdapter(@NotNull SConceptId conceptId) {
     myConceptId = conceptId;
-    myConceptName = ourNames.get(myConceptId);
+    synchronized (ourNames) {
+      myConceptName = ourNames.get(myConceptId);
+    }
   }
 
 
@@ -331,7 +336,9 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
         myConceptName = MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(myConceptId);
       }
     }
-    ourNames.put(myConceptId, myConceptName);
+    synchronized (ourNames) {
+      ourNames.put(myConceptId, myConceptName);
+    }
   }
 
 
