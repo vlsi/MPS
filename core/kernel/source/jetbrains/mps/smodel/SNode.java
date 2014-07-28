@@ -803,9 +803,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   public void setRoleInParentId(SContainmentLinkId newRole) {//todo add undo
     if (workingMode() == IdMigrationMode.NAME) {
-      setRoleInParent_byId(newRole);
-    } else {
       setRoleInParent_byName(lid2name(newRole));
+    } else {
+      setRoleInParent_byId(newRole);
     }
   }
 
