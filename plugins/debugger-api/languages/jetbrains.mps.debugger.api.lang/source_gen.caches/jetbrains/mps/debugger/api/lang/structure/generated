@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9jw02v6prs33nzjqheswer3at1a3plt">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+<dependencies version="2" modelHash="balmi865wmggb0kwtcpou80n3mbz0rw">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6coyx9cq8icm86dy9j1trq5a7ubwr79" />
@@ -13,6 +12,7 @@
     <dep root="1270798772176052876" />
     <dep root="1270798772176052880" />
     <dep root="2569394751387978473" />
+    <dep root="3104811047188253540" />
     <dep root="3157158168562217892" />
     <dep root="3157158168562219319" />
     <dep root="3157158168562219322" />
@@ -21,7 +21,6 @@
     <dep root="6720907903633266914" />
     <dep root="8751745335399632073" />
     <dep root="8751745335399632077" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -31,7 +30,7 @@
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="3157158168562217892" name="BreakpointCreator" hash="-29ia3pf6ntu20f7sqexna2bpntj9o2s" />
-  <source id="3157158168562219319" name="BreakpointableNodeItem" hash="-h7uy43yx307qvycw3xv9qyzq77clqn" />
+  <source id="3157158168562219319" name="BreakpointableNodeItem" hash="cedqyv118zqsikz7sa8ugq8eacped1u" />
   <source id="3157158168562219322" name="ConceptFunction_CreateBreakpoint" hash="22m89wgqczbrenrw07oedm275ebnys4" />
   <source id="1270798772176052876" name="ConceptFunctionParameter_Debug_Project" hash="26iadzaiqe4zhmxo93q5a5ir87d8fmu" />
   <source id="1270798772176052880" name="ConceptFunctionParameter_DebuggableNode" hash="2dl4umkhjjyunmk8y44kynodbjwzed7" />
@@ -43,5 +42,6 @@
   <source id="6720907903633266421" name="DebuggerConfiguration" hash="-c1f32ny5ldfquwejv5123ryi28gahvk" />
   <source id="8751745335399632073" name="ConceptFunction_IsApplicableToConcept" hash="956q5fkuyzbgn1v6kj0de53lpejbne9" />
   <source id="8751745335399632077" name="ConceptFunctionParameter_Concept" hash="ehk6l8jte6292nlaf4fjxylapx42eh1" />
+  <source id="3104811047188253540" name="ConceptFunction_IsApplicableBreakpoint" hash="4dtbo830p1c2b07fg90kvuzjyiqsqs9" />
 </dependencies>
 
