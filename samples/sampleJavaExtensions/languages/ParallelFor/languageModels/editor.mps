@@ -47,6 +47,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8923957828369554099" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="parallel for" />
         <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="tpen.6237621519940702717" resolveInfo="Delete_Loop" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3294321158385479603" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="(" />

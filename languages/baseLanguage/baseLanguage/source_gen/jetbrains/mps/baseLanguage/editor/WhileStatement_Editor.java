@@ -154,6 +154,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
+    Delete_Loop.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new WhileStatement_Editor.ReplaceWith_IfStatement_cellMenu_ou8udj_a0c0(), new WhileStatement_Editor.ReplaceWith_DoWhileStatement_cellMenu_ou8udj_b0c0(), new WhileStatement_Editor.ReplaceWith_ForStatement_cellMenu_ou8udj_c0c0(), new WhileStatement_Editor.ReplaceWith_ForeachStatement_cellMenu_ou8udj_d0c0()}));
     return editorCell;

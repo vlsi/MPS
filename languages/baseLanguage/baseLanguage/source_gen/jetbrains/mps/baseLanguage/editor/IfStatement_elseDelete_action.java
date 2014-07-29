@@ -9,6 +9,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class IfStatement_elseDelete_action {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -28,7 +29,19 @@ public class IfStatement_elseDelete_action {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
+      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList"))) {
+        SNodeOperations.detachNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
+      } else {
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+          SNode block = SNodeOperations.cast(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement");
+          while (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(block, "statements", true), "statement", true)).isNotEmpty()) {
+            SNodeOperations.insertNextSiblingChild(node, ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(block, "statements", true), "statement", true)).last());
+          }
+          SNodeOperations.detachNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
+        } else {
+          SNodeOperations.insertNextSiblingChild(node, SLinkOperations.getTarget(node, "ifFalseStatement", true));
+        }
+      }
     }
   }
 
@@ -44,7 +57,19 @@ public class IfStatement_elseDelete_action {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
+      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList"))) {
+        SNodeOperations.detachNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
+      } else {
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+          SNode block = SNodeOperations.cast(SLinkOperations.getTarget(node, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement");
+          while (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(block, "statements", true), "statement", true)).isNotEmpty()) {
+            SNodeOperations.insertNextSiblingChild(node, ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(block, "statements", true), "statement", true)).last());
+          }
+          SNodeOperations.detachNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
+        } else {
+          SNodeOperations.insertNextSiblingChild(node, SLinkOperations.getTarget(node, "ifFalseStatement", true));
+        }
+      }
     }
   }
 }
