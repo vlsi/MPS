@@ -20,12 +20,14 @@ import com.intellij.ide.util.ModuleRendererFactory;
 import com.intellij.ide.util.PlatformModuleRendererFactory.PlatformModuleRenderer;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem;
 
 import javax.swing.DefaultListCellRenderer;
+import javax.swing.Icon;
 import javax.swing.JList;
 import java.awt.Component;
 
@@ -55,11 +57,21 @@ public class MpsRendererFactory extends ModuleRendererFactory {
       final Component component = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
       if (value instanceof BaseNodePointerItem) {
         final BaseNodePointerItem item = (BaseNodePointerItem) value;
-        SModule module = item.getNode().getModel().getModule();
-        if (module instanceof Solution) {
-          setIcon(FileIcons.SOLUTION_ICON);
-        } else if (module instanceof Language) {
-          setIcon(MPSIcons.LANGUAGE_ICON);
+
+        final Icon[] icon = {null};
+        ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            SModule module = item.getNode().getModel().getModule();
+            if (module instanceof Solution) {
+              icon[0] = FileIcons.SOLUTION_ICON;
+            } else if (module instanceof Language) {
+              icon[0] = MPSIcons.LANGUAGE_ICON;
+            }
+          }
+        });
+        if (icon[0] !=null){
+          setIcon(icon[0]);
         }
       }
       return component;
