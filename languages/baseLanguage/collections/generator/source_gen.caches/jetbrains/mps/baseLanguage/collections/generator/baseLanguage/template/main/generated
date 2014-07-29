@@ -96,8 +96,12 @@
   <source id="1201792021422" name="internal" hash="646rfzpsbi2bb28j5xjvkku49pry1p5">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1202904627607" name="convertclosures" hash="-4468uee8tvy5wm6scvn6eb41pqr6t7p" />
-  <source id="1203340411125" name="switch_sequence_operation_toSequence" hash="bsuh1qm8ifv3nozasxiln33xb1d9ksb" />
+  <source id="1202904627607" name="convertclosures" hash="-4468uee8tvy5wm6scvn6eb41pqr6t7p">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1203340411125" name="switch_sequence_operation_toSequence" hash="bsuh1qm8ifv3nozasxiln33xb1d9ksb">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1204989320848" name="legacy" hash="1ysjpd7s116y73zxzxgpq8w30m5uxn7" />
   <source id="1205836166464" name="switch_closure_body" hash="-dpvdiotr1fpiz975r15sfcbqpjqkzyj" />
   <source id="1208440989706" name="switch_sequence_operation_toList" hash="81j4vbd6wn1ftkjvfhljnx99casp4k3" />

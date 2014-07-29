@@ -42,6 +42,16 @@ public class Delete_BlockStatement {
           }
         });
         SNodeOperations.deleteNode(node);
+
+      } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IfStatement") && SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "ifFalseStatement")) {
+        if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.baseLanguage.structure.StatementList"))) {
+          SNodeOperations.detachNode(node);
+        } else {
+          while (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true)).isNotEmpty()) {
+            SNodeOperations.insertNextSiblingChild(SNodeOperations.getParent(node), ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true)).last());
+          }
+          SNodeOperations.detachNode(node);
+        }
       }
     }
   }
@@ -69,6 +79,16 @@ public class Delete_BlockStatement {
           }
         });
         SNodeOperations.deleteNode(node);
+
+      } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IfStatement") && SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.IfStatement", "ifFalseStatement")) {
+        if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.baseLanguage.structure.StatementList"))) {
+          SNodeOperations.detachNode(node);
+        } else {
+          while (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true)).isNotEmpty()) {
+            SNodeOperations.insertNextSiblingChild(SNodeOperations.getParent(node), ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true)).last());
+          }
+          SNodeOperations.detachNode(node);
+        }
       }
     }
   }

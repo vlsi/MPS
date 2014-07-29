@@ -7,12 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class Delete_If {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -32,21 +26,7 @@ public class Delete_If {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList")) {
-        final SNode statementList = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList");
-        final Wrappers._int index = new Wrappers._int(ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).indexOf(node));
-        ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).removeElementAt(index.value);
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true)).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode it) {
-            ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).insertElement(index.value, it);
-            index.value += 1;
-          }
-        });
-      } else {
-        SNode statement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.BlockStatement");
-        SLinkOperations.setTarget(statement, "statements", SLinkOperations.getTarget(node, "ifTrue", true), true);
-      }
-      SNodeOperations.deleteNode(node);
+      DeleteIfUtil.unwrapIf(node);
     }
   }
 
@@ -62,21 +42,7 @@ public class Delete_If {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList")) {
-        final SNode statementList = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList");
-        final Wrappers._int index = new Wrappers._int(ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).indexOf(node));
-        ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).removeElementAt(index.value);
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true)).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode it) {
-            ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).insertElement(index.value, it);
-            index.value += 1;
-          }
-        });
-      } else {
-        SNode statement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.BlockStatement");
-        SLinkOperations.setTarget(statement, "statements", SLinkOperations.getTarget(node, "ifTrue", true), true);
-      }
-      SNodeOperations.deleteNode(node);
+      DeleteIfUtil.unwrapIf(node);
     }
   }
 }
