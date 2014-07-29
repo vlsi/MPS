@@ -54,7 +54,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7796501636717933060(final IfMacroContext _context) {
-    return !(SPropertyOperations.getBoolean(_context.getNode(), "isComplex")) || (SLinkOperations.getTarget(_context.getNode(), "isApplicable", true) == null);
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "isComplex")) || ((SLinkOperations.getTarget(_context.getNode(), "isApplicable", true) == null) && (SLinkOperations.getTarget(_context.getNode(), "isApplicableBreakpoint", true) == null));
   }
 
   public static boolean ifMacro_Condition_7796501636717933370(final IfMacroContext _context) {
@@ -82,7 +82,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7796501636717933148(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isApplicable", true), "body", true);
+    return ((SLinkOperations.getTarget(_context.getNode(), "isApplicable", true) != null) ? SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isApplicable", true), "body", true) : SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isApplicableBreakpoint", true), "body", true));
   }
 
   public static SNode sourceNodeQuery_7796501636717933345(final SourceSubstituteMacroNodeContext _context) {

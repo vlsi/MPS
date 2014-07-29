@@ -30,8 +30,8 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class BreakpointCreatorsManager implements ApplicationComponent {
-  private Set<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myCreators = SetSequence.fromSet(new LinkedHashSet<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>());
-  private Map<String, Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myAddedByConceptCreators = MapSequence.fromMap(new LinkedHashMap<String, Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>(16, (float) 0.75, false));
+  private Set<Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myCreators = SetSequence.fromSet(new LinkedHashSet<Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>());
+  private Map<String, Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myAddedByConceptCreators = MapSequence.fromMap(new LinkedHashMap<String, Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>(16, (float) 0.75, false));
 
   public BreakpointCreatorsManager() {
   }
@@ -43,8 +43,8 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
   }
 
   public void addConceptBreakpointCreator(final String baseConcept, final Mapper2<SNode, Project, ILocationBreakpoint> breakpointCreator) {
-    Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> pair = MultiTuple.<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>,_FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>from(new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
-      public Boolean invoke(SNode concept) {
+    Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> pair = MultiTuple.<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>,_FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>from(new _FunctionTypes._return_P2_E0<Boolean, SNode, SNode>() {
+      public Boolean invoke(SNode concept, SNode n) {
         return SModelUtil.isAssignableConcept(concept, baseConcept);
       }
     }, new _FunctionTypes._return_P2_E0<ILocationBreakpoint, SNode, Project>() {
@@ -61,11 +61,11 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
     MapSequence.fromMap(myAddedByConceptCreators).removeKey(fqName);
   }
 
-  public void addBreakpointCreator(Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator) {
+  public void addBreakpointCreator(Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator) {
     SetSequence.fromSet(myCreators).addElement(creator);
   }
 
-  public void removeBreakpointCreator(Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator) {
+  public void removeBreakpointCreator(Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator) {
     SetSequence.fromSet(myCreators).removeElement(creator);
   }
 
@@ -73,16 +73,16 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
     if (node == null) {
       return false;
     }
-    return SetSequence.fromSet(myCreators).findFirst(new IWhereFilter<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>() {
-      public boolean accept(Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> it) {
-        return it._0().invoke(SNodeOperations.getConceptDeclaration(node));
+    return SetSequence.fromSet(myCreators).findFirst(new IWhereFilter<Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>() {
+      public boolean accept(Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> it) {
+        return it._0().invoke(SNodeOperations.getConceptDeclaration(node), node);
       }
     }) != null;
   }
 
   private ILocationBreakpoint createBreakpoint(SNode concept, SNode node, Project project) {
-    for (Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator : SetSequence.fromSet(myCreators)) {
-      if (creator._0().invoke(concept)) {
+    for (Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator : SetSequence.fromSet(myCreators)) {
+      if (creator._0().invoke(concept, node)) {
         _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project> function = creator._1();
         if (function == null) {
           if (LOG.isEnabledFor(Level.WARN)) {
