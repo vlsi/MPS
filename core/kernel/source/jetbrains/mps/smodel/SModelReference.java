@@ -113,16 +113,14 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     SModelReference that = (SModelReference) o;
 
     if (!myModelId.equals(that.myModelId)) return false;
-    if (getModuleReference() != null && that.getModuleReference() != null && !getModuleReference().equals(that.getModuleReference())) return false;
-    if (getModuleReference() == null || that.getModuleReference() == null) return myModelId.isGloballyUnique() && that.myModelId.isGloballyUnique();
-
-    return true;
+    if (myModelId.isGloballyUnique() && that.myModelId.isGloballyUnique()) return true;
+    return getModuleReference().equals(that.getModuleReference());
   }
 
   @Override
   public int hashCode() {
     int result = myModelId.hashCode();
-    result = 31 * result + (myModelId.isGloballyUnique() ? 0 : myModuleReference.hashCode());
+    result = 31 * result + (myModelId.isGloballyUnique() ? 0 : getModuleReference().hashCode());
     return result;
   }
 
