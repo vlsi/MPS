@@ -12,4 +12,8 @@ public class MigrationScript_Behavior {
   public static String call_getClassName_6547769411406912356(SNode thisNode) {
     return "MigrationScript_" + SPropertyOperations.getInteger(thisNode, "fromVersion") + "_" + SPropertyOperations.getInteger(thisNode, "toVersion");
   }
+
+  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return MigrationScript_Behavior.call_getClassName_6547769411406912356(thisNode);
+  }
 }
