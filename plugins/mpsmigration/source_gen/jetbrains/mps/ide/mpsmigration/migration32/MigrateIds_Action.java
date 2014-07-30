@@ -85,7 +85,11 @@ public class MigrateIds_Action extends BaseAction {
         }
       }).ofType(DefaultSModelDescriptor.class).where(new IWhereFilter<DefaultSModelDescriptor>() {
         public boolean accept(DefaultSModelDescriptor it) {
-          return it.getSModelInternal() instanceof DefaultSModel && as_fu9gb8_a0a0a0a0a0a0a0c0a0f(it.getSModelInternal(), DefaultSModel.class).getPersistenceVersion() < 9;
+          return it.getSModelInternal() instanceof DefaultSModel && as_fu9gb8_a0a0a0a0a0a0a0a2a0a5(it.getSModelInternal(), DefaultSModel.class).getPersistenceVersion() < 9;
+        }
+      }).where(new IWhereFilter<DefaultSModelDescriptor>() {
+        public boolean accept(DefaultSModelDescriptor it) {
+          return !(it.isReadOnly());
         }
       });
       Sequence.fromIterable(models).visitAll(new IVisitor<DefaultSModelDescriptor>() {
@@ -159,7 +163,7 @@ public class MigrateIds_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(MigrateIds_Action.class);
 
-  private static <T> T as_fu9gb8_a0a0a0a0a0a0a0c0a0f(Object o, Class<T> type) {
+  private static <T> T as_fu9gb8_a0a0a0a0a0a0a0a2a0a5(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
