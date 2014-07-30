@@ -4565,7 +4565,11 @@ __switch__:
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_8204117424323238091(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Expression", true)).last(), "jetbrains.mps.baseLanguage.structure.Expression", true, new String[]{})).where(new IWhereFilter<SNode>() {
+    SNode currentNode = _context.getSourceNode();
+    while ((SNodeOperations.getParent(currentNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(currentNode), "jetbrains.mps.baseLanguage.structure.Expression")) {
+      currentNode = SNodeOperations.cast(SNodeOperations.getParent(currentNode), "jetbrains.mps.baseLanguage.structure.Expression");
+    }
+    return ListSequence.fromList(SNodeOperations.getDescendants(currentNode, "jetbrains.mps.baseLanguage.structure.Expression", true, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null) || (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null);
       }
