@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot>
-  <dependency className="jetbrains.mps.console.migration.runtime.util.MigrationScript" file="MigrationScript.java">
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
-  </dependency>
-</dependenciesRoot>
-

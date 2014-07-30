@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <root nodeRef="r:22e3ec81-a192-41cd-83a2-488758bdeedc(jetbrains.mps.console.migration.runtime.util)/3842191445092561685">
+    <file name="MigrationScript.java">
+      <node id="6547769411406863027" at="8,0,9,0" concept="0" trace="getFromVersion#()I" />
+      <node id="6547769411406862987" at="9,0,10,0" concept="0" trace="getToVersion#()I" />
+      <node id="3842191445092561689" at="10,0,11,0" concept="0" trace="execute#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <scope id="6547769411406863027" at="8,0,9,0" />
+      <scope id="6547769411406862987" at="9,0,10,0" />
+      <scope id="3842191445092561689" at="10,0,11,0">
+        <var name="modelToMigrate" id="6547769411406398743" />
+      </scope>
+      <unit id="3842191445092561685" at="7,0,12,0" name="jetbrains.mps.console.migration.runtime.util.MigrationScript" />
+    </file>
+  </root>
+  <root nodeRef="r:22e3ec81-a192-41cd-83a2-488758bdeedc(jetbrains.mps.console.migration.runtime.util)/6547769411406853739">
+    <file name="MigrationDescriptor.java">
+      <node id="6547769411406853743" at="8,0,10,0" concept="0" trace="getScripts#(II)Ljava/lang/Iterable;" />
+      <scope id="6547769411406853743" at="8,0,10,0">
+        <var name="fromVersion" id="6547769411406853764" />
+        <var name="toVersion" id="6547769411406853768" />
+      </scope>
+      <unit id="6547769411406853739" at="7,0,11,0" name="jetbrains.mps.console.migration.runtime.util.MigrationDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:22e3ec81-a192-41cd-83a2-488758bdeedc(jetbrains.mps.console.migration.runtime.util)/6547769411407016197">
+    <file name="MigrationsUtil.java">
+      <node id="6547769411407024830" at="15,64,16,49" concept="1" />
+      <node id="6547769411407078383" at="18,40,19,119" concept="2" />
+      <node id="3571469069288595845" at="26,60,27,107" concept="2" />
+      <node id="6547769411407089601" at="32,63,33,37" concept="2" />
+      <node id="2034046503373010514" at="38,76,39,87" concept="1" />
+      <node id="6547769411407021851" at="40,9,41,87" concept="1" />
+      <node id="6547769411407094910" at="41,87,42,65" concept="2" />
+      <node id="6547769411407122765" at="43,40,44,18" concept="2" />
+      <node id="6547769411407131007" at="45,40,46,18" concept="2" />
+      <node id="6547769411407131017" at="47,40,48,18" concept="2" />
+      <node id="3571469069288613918" at="52,70,53,46" concept="2" />
+      <node id="6547769411407078381" at="18,0,21,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <node id="3571469069288595843" at="26,0,29,0" concept="3" trace="getDescriptorFQName#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/String;" />
+      <node id="6547769411407089532" at="32,0,35,0" concept="3" trace="getDescriptorClassName#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/String;" />
+      <node id="3571469069288613918" at="52,0,55,0" concept="3" trace="eq_7hm1hv_a0a0a0a0a0b0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="6547769411407024877" at="16,49,21,7" concept="2" />
+      <node id="6547769411407023498" at="15,0,23,0" concept="3" trace="getMigrationModel#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="6547769411407120102" at="39,87,49,5" concept="4" />
+      <node id="6547769411407016213" at="38,0,51,0" concept="3" trace="getMigrationDescriptor#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljetbrains/mps/console/migration/runtime/util/MigrationDescriptor;" />
+      <scope id="6547769411407078382" at="18,40,19,119" />
+      <scope id="3571469069288595844" at="26,60,27,107" />
+      <scope id="6547769411407089535" at="32,63,33,37" />
+      <scope id="6547769411407120098" at="43,0,44,18">
+        <var name="e" id="6547769411407120100" />
+      </scope>
+      <scope id="6547769411407120099" at="43,40,44,18" />
+      <scope id="6547769411407130977" at="45,0,46,18">
+        <var name="e" id="6547769411407130979" />
+      </scope>
+      <scope id="6547769411407130978" at="45,40,46,18" />
+      <scope id="6547769411407130981" at="47,0,48,18">
+        <var name="e" id="6547769411407130983" />
+      </scope>
+      <scope id="6547769411407130982" at="47,40,48,18" />
+      <scope id="3571469069288613918" at="52,70,53,46" />
+      <scope id="6547769411407120103" at="40,9,42,65">
+        <var name="descriptorClass" id="6547769411407021852" />
+      </scope>
+      <scope id="6547769411407078381" at="18,0,21,0">
+        <var name="it" id="6547769411407078381" />
+      </scope>
+      <scope id="3571469069288595843" at="26,0,29,0">
+        <var name="module" id="3571469069288595856" />
+      </scope>
+      <scope id="6547769411407089532" at="32,0,35,0">
+        <var name="module" id="6547769411407089592" />
+      </scope>
+      <scope id="3571469069288613918" at="52,0,55,0">
+        <var name="a" id="3571469069288613918" />
+        <var name="b" id="3571469069288613918" />
+      </scope>
+      <scope id="6547769411407023501" at="15,64,21,7">
+        <var name="models" id="6547769411407024833" />
+      </scope>
+      <scope id="6547769411407023498" at="15,0,23,0">
+        <var name="module" id="6547769411407023531" />
+      </scope>
+      <scope id="6547769411407016216" at="38,76,49,5">
+        <var name="loader" id="2034046503373010515" />
+      </scope>
+      <scope id="6547769411407016213" at="38,0,51,0">
+        <var name="module" id="6547769411407016226" />
+      </scope>
+      <unit id="6547769411407078381" at="17,55,21,5" name="jetbrains.mps.console.migration.runtime.util.MigrationsUtil$1" />
+      <unit id="6547769411407016197" at="12,0,56,0" name="jetbrains.mps.console.migration.runtime.util.MigrationsUtil" />
+    </file>
+  </root>
+</debug-info>
+
