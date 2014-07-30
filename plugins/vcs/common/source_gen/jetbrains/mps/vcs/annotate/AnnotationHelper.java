@@ -59,14 +59,15 @@ public class AnnotationHelper {
     }
 
     final LeftEditorHighlighter leftEditorHighlighter = editorComponent.getLeftEditorHighlighter();
-    if (findAnnotationColumn(editorComponent) != null) {
+    AnnotationColumn annotationColumn = findAnnotationColumn(editorComponent);
+    if (annotationColumn != null) {
       if (!(dryRun)) {
-        leftEditorHighlighter.removeLeftColumn(findAnnotationColumn(editorComponent));
+        annotationColumn.close();
       }
       return true;
     }
     final SNode root = editorComponent.getEditedNode();
-    SModel model = check_19hp0u_a0g0d(root);
+    SModel model = check_19hp0u_a0h0d(root);
 
     DataSource source = model.getSource();
     IFile iFile;
@@ -157,7 +158,7 @@ public class AnnotationHelper {
     return annotate(editorComponent, true);
   }
 
-  private static SModel check_19hp0u_a0g0d(SNode checkedDotOperand) {
+  private static SModel check_19hp0u_a0h0d(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
