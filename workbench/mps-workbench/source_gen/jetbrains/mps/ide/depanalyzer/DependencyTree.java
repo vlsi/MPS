@@ -5,18 +5,18 @@ package jetbrains.mps.ide.depanalyzer;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
-import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.ui.tree.TextMPSTreeNode;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.ide.ui.tree.TreeMessage;
+import java.awt.Color;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -24,16 +24,13 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import javax.swing.tree.TreePath;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class DependencyTree extends MPSTree implements DataProvider {
   private Project myProject;
-  private List<SModule> myModules;
+  private SModule myModule;
   private boolean myShowRuntime;
   private boolean myShowUsedLanguage = true;
-  private boolean myHideSourceModules;
-  private Set<SModule> myCycles = SetSequence.fromSet(new HashSet<SModule>());
 
   public DependencyTree(Project project) {
     myProject = project;
@@ -43,17 +40,12 @@ public class DependencyTree extends MPSTree implements DataProvider {
     return myProject;
   }
 
-  public void setModules(List<SModule> modules) {
-    myModules = modules;
-    MPSTreeNode root = getRootNode();
-    if (root != null) {
-      collapseAll();
-      selectNode(getRootNode());
-    }
+  public void setModules(SModule module) {
+    myModule = module;
   }
 
-  public List<SModule> getModules() {
-    return myModules;
+  public SModule getModule() {
+    return myModule;
   }
 
   public boolean isShowRuntime() {
@@ -72,83 +64,150 @@ public class DependencyTree extends MPSTree implements DataProvider {
     myShowUsedLanguage = showUsedLanguage;
   }
 
-  public boolean isHideSourceModules() {
-    return myHideSourceModules;
-  }
-
-  public void setHideSourceModules(boolean hideSourceModules) {
-    myHideSourceModules = hideSourceModules;
-  }
-
-  public Set<SModule> getLoops() {
-    return myCycles;
-  }
-
   @Override
   protected MPSTreeNode rebuild() {
-    SetSequence.fromSet(myCycles).clear();
-    if (myModules == null || ListSequence.fromList(myModules).isEmpty()) {
-      return new TextMPSTreeNode("No Content", null);
+    if (myModule == null) {
+      return new TextTreeNode("No Content");
     }
-    SetSequence.fromSet(myCycles).addSequence(ListSequence.fromList(myModules).translate(new ITranslator2<SModule, Tuples._2<DependencyUtil.Role, SModule>>() {
-      public Iterable<Tuples._2<DependencyUtil.Role, SModule>> translate(SModule m) {
-        return DependencyUtil.getLoops(DependencyUtil.Role.None, m, isShowRuntime());
-      }
-    }).where(new IWhereFilter<Tuples._2<DependencyUtil.Role, SModule>>() {
-      public boolean accept(Tuples._2<DependencyUtil.Role, SModule> dep) {
-        return dep._0().isDependency();
-      }
-    }).select(new ISelector<Tuples._2<DependencyUtil.Role, SModule>, SModule>() {
-      public SModule select(Tuples._2<DependencyUtil.Role, SModule> dep) {
-        return dep._1();
-      }
-    }));
-    ModuleDependencyNode root = new ModuleDependencyNode(myModules, null);
-    expandRoot();
+    DepLink deps = new DependencyUtil().trackRuntime(isShowRuntime()).build(myModule);
+    print(deps, "");
+    TextTreeNode root = new TextTreeNode(myModule.getModuleName());
+    root.setIcon(IconManager.getIconFor(myModule));
+    populate(root, deps.allDependencies());
     return root;
+
+  }
+
+  private static void print(DepLink d, String step) {
+    System.out.print(step);
+    System.out.print(d);
+    if (d.getReused() != null) {
+      System.out.print(" --> (reused) " + d.getReused());
+    }
+    System.out.println();
+    for (DepLink ch : ListSequence.fromList(d.children())) {
+      print(ch, step + "  ");
+    }
+  }
+
+
+
+  private void populate(MPSTreeNode root, Iterable<DepLink> allDependencies) {
+    final TreeMessage HAS_CYCLE = new TreeMessage(Color.RED, "module with dependency cycle", null);
+    final TreeMessage BOOTSTRAP_DEPENDENCY = new TreeMessage(Color.RED, "language with bootstrap dependency", null);
+
+    Iterable<SModule> sortedModules = Sequence.fromIterable(allDependencies).select(new ISelector<DepLink, SModule>() {
+      public SModule select(DepLink it) {
+        return it.module;
+      }
+    }).distinct().sort(new ISelector<SModule, String>() {
+      public String select(SModule it) {
+        return it.getModuleName();
+      }
+    }, true);
+
+    for (final SModule module : Sequence.fromIterable(sortedModules)) {
+      Iterable<DepLink> moduleDeps = Sequence.fromIterable(allDependencies).where(new IWhereFilter<DepLink>() {
+        public boolean accept(DepLink it) {
+          return it.module == module && it.role.isDependency();
+        }
+      });
+      if (Sequence.fromIterable(moduleDeps).isEmpty()) {
+        continue;
+      }
+      ModuleDependencyNode n = new ModuleDependencyNode(module, moduleDeps, false);
+      final CycleBuilder cb = new CycleBuilder(new Condition<DepLink>() {
+        public boolean met(DepLink dl) {
+          return dl.role.isDependency();
+        }
+      });
+      // if there's any dependency with loop to itself, and role of each element of this path isDependency, then it's dependency cycle 
+      Iterable<DepPath> cycles = Sequence.fromIterable(moduleDeps).translate(new ITranslator2<DepLink, DepPath>() {
+        public Iterable<DepPath> translate(DepLink dep) {
+          return cb.cyclePaths(dep);
+        }
+      });
+      if (Sequence.fromIterable(cycles).isNotEmpty()) {
+        n.setCycles(cycles);
+        n.addTreeMessage(HAS_CYCLE);
+      }
+      root.add(n);
+    }
+    if (isShowUsedLanguage()) {
+      MPSTreeNode usedlanguages = new TextTreeNode("Used Languages");
+      boolean hasBootstrapDep = false;
+      for (final SModule module : Sequence.fromIterable(sortedModules)) {
+        Iterable<DepLink> usedLangDeps = Sequence.fromIterable(allDependencies).where(new IWhereFilter<DepLink>() {
+          public boolean accept(DepLink it) {
+            return it.module == module && it.role.isUsedLanguage();
+          }
+        });
+        if (Sequence.fromIterable(usedLangDeps).isEmpty()) {
+          continue;
+        }
+        ModuleDependencyNode n = new ModuleDependencyNode(module, usedLangDeps, true);
+        final CycleBuilder cb = new CycleBuilder(new Condition<DepLink>() {
+          public boolean met(DepLink dl) {
+            return dl.role.isUsedLanguage();
+          }
+        });
+        Iterable<DepPath> cycles = Sequence.fromIterable(usedLangDeps).translate(new ITranslator2<DepLink, DepPath>() {
+          public Iterable<DepPath> translate(DepLink dep) {
+            return cb.cyclePaths(dep);
+          }
+        });
+        if (Sequence.fromIterable(cycles).isNotEmpty()) {
+          hasBootstrapDep = true;
+          n.setCycles(cycles);
+          n.addTreeMessage(BOOTSTRAP_DEPENDENCY);
+        }
+        usedlanguages.add(n);
+      }
+      if (hasBootstrapDep) {
+        usedlanguages.addTreeMessage(BOOTSTRAP_DEPENDENCY);
+      }
+      if (usedlanguages.getChildCount() > 0) {
+        root.add(usedlanguages);
+      }
+    }
   }
 
   @Override
   protected ActionGroup createPopupActionGroup(MPSTreeNode treeNode) {
-    return ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowModuleDependencyLoop_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowModuleBootstrapDependency_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowDependenciesInViewer_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")));
+    return ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowDependenciesInViewer_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.AnalyzeModuleDependencies_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")));
   }
 
   @Nullable
   @Override
   public Object getData(@NonNls String id) {
-    ModuleDependencyNode current = as_he3vmc_a0a0a91(getCurrentNode(), ModuleDependencyNode.class);
+    ModuleDependencyNode current = as_he3vmc_a0a0a71(getCurrentNode(), ModuleDependencyNode.class);
     if (id.equals(MPSCommonDataKeys.TREE_NODE.getName())) {
       return current;
     }
     if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
-      return check_he3vmc_a0a2a91(current);
+      return check_he3vmc_a0a2a71(current);
     }
     if (id.equals(MPSCommonDataKeys.MODULE.getName())) {
-      List<SModule> modules = check_he3vmc_a0a0d0t(current);
-      TreePath[] selection = getSelectionPaths();
-      if (ListSequence.fromList(modules).count() != 1 || (selection != null && selection.length > 1)) {
-        return null;
-      }
-      return ListSequence.fromList(modules).first();
+      return check_he3vmc_a0a3a71(current);
     }
     return null;
   }
 
-  private static IOperationContext check_he3vmc_a0a2a91(ModuleDependencyNode checkedDotOperand) {
+  private static IOperationContext check_he3vmc_a0a2a71(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOperationContext();
     }
     return null;
   }
 
-  private static List<SModule> check_he3vmc_a0a0d0t(ModuleDependencyNode checkedDotOperand) {
+  private static SModule check_he3vmc_a0a3a71(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getModules();
+      return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static <T> T as_he3vmc_a0a0a91(Object o, Class<T> type) {
+  private static <T> T as_he3vmc_a0a0a71(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

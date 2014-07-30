@@ -5,16 +5,15 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import java.util.List;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -32,16 +31,9 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
     return true;
   }
 
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return !(((List<SModule>) MapSequence.fromMap(_params).get("modules")).isEmpty());
-  }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "AnalyzeModuleDependencies", t);
@@ -54,8 +46,8 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSCommonDataKeys.MODULES));
-    if (MapSequence.fromMap(_params).get("modules") == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
@@ -68,7 +60,7 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ModuleDependenies_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class);
-      tool.setModules(((List<SModule>) MapSequence.fromMap(_params).get("modules")));
+      tool.setModules(((SModule) MapSequence.fromMap(_params).get("module")));
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {

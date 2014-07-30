@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.depanalyzer.DepLink;
 
 public class SafeDeleteModuleDependency_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -135,7 +136,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     return null;
   }
 
-  private static DependencyUtil.Link check_bai5av_a0a0c0a(DependencyTreeNode checkedDotOperand) {
+  private static DepLink check_bai5av_a0a0c0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLink();
     }

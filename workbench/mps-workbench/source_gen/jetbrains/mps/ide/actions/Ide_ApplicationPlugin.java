@@ -104,8 +104,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowImplementations_Action());
     addAction(new ShowInDependenciesViewer_Action());
     addAction(new ShowInLogicalView_Action());
-    addAction(new ShowModuleBootstrapDependency_Action());
-    addAction(new ShowModuleDependencyLoop_Action());
     addAction(new ShowNodeInInspector_Action());
     addAction(new ShowNodeInfo_Action());
     addAction(new ShowParameters_Action());
