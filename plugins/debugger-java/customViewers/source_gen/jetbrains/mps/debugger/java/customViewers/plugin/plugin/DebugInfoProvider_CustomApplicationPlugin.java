@@ -90,7 +90,7 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
     manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
     manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
     for (Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator : SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators)) {
-      manager.removeBreakpointCreator(creator);
+      manager.removeCreator(creator);
     }
     SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators).clear();
   }
