@@ -64,6 +64,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1262430001741720248" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.conceptFunctions" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="86gq.8751745335399632073" resolveInfo="ConceptFunction_IsApplicableToConcept" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1262430001741720249" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1262430001741720250" nodeInfo="sn" />
@@ -152,6 +153,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3044950653914719163" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.conceptFunctions" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="86gq.3157158168562219322" resolveInfo="ConceptFunction_CreateBreakpoint" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="3044950653914719164" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3044950653914719165" nodeInfo="sn" />
@@ -290,6 +292,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5452844340287051173" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.conceptFunctions" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="86gq.1270798772176052880" resolveInfo="ConceptFunctionParameter_DebuggableNode" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="5452844340287051174" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5452844340287051175" nodeInfo="sn" />
@@ -313,6 +316,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5452844340287052544" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.conceptFunctions" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="86gq.8751745335399632077" resolveInfo="ConceptFunctionParameter_Concept" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="5452844340287052545" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5452844340287052546" nodeInfo="sn" />
@@ -336,6 +340,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5452844340287052604" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.conceptFunctions" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="86gq.1270798772176052876" resolveInfo="ConceptFunctionParameter_Debug_Project" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="5452844340287052605" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5452844340287052606" nodeInfo="sn" />
@@ -361,7 +366,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3104811047188253888" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.isApplicable" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.conceptFunctions" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="86gq.3104811047188253540" resolveInfo="ConceptFunction_IsApplicableBreakpoint" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="3104811047188255090" nodeInfo="ng">
       <property name="isStatic" nameId="1i04.5864038008284099149" value="true" />
