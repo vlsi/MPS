@@ -21,6 +21,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -41,8 +42,12 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     if (renderingCondition_4n0rw6_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_4n0rw6_b0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_4n0rw6_c0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_4n0rw6_d0(editorContext, node));
+    if (renderingCondition_4n0rw6_a2a(node, editorContext)) {
+      editorCell.addEditorCell(this.createCollection_4n0rw6_c0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createConstant_4n0rw6_d0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_4n0rw6_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4n0rw6_f0(editorContext, node));
     return editorCell;
   }
 
@@ -138,7 +143,7 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_4n0rw6_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isComplex");
+    return SPropertyOperations.getBoolean(node, "isComplex") && (SLinkOperations.getTarget(node, "isApplicable", true) != null);
   }
 
   private EditorCell createConstant_4n0rw6_a1a(EditorContext editorContext, SNode node) {
@@ -181,30 +186,85 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4n0rw6_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create breakpoint:");
-    editorCell.setCellId("Constant_4n0rw6_c0");
+  private EditorCell createCollection_4n0rw6_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_4n0rw6_c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_4n0rw6_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_4n0rw6_b2a(editorContext, node));
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_4n0rw6_a2a(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getBoolean(node, "isComplex") && (SLinkOperations.getTarget(node, "isApplicable", true) == null);
+  }
+
+  private EditorCell createConstant_4n0rw6_a2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is breakpoint applicable:");
+    editorCell.setCellId("Constant_4n0rw6_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createCollection_4n0rw6_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4n0rw6_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4n0rw6_d0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createIndentCell_4n0rw6_a3a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4n0rw6_b3a(editorContext, node));
+    editorCell.setCellId("Collection_4n0rw6_b2a");
+    editorCell.addEditorCell(this.createIndentCell_4n0rw6_a1c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4n0rw6_b1c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createIndentCell_4n0rw6_a3a(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_4n0rw6_a1c0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
 
-  private EditorCell createRefNode_4n0rw6_b3a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4n0rw6_b1c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("isApplicableBreakpoint");
+    provider.setNoTargetText("<no isApplicableBreakpoint>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("isApplicableBreakpoint");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_4n0rw6_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create breakpoint:");
+    editorCell.setCellId("Constant_4n0rw6_d0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_4n0rw6_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_4n0rw6_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createIndentCell_4n0rw6_a4a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4n0rw6_b4a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createIndentCell_4n0rw6_a4a(EditorContext editorContext, SNode node) {
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_4n0rw6_b4a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("createBreakpoint");
     provider.setNoTargetText("<no createBreakpoint>");
@@ -221,6 +281,13 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_4n0rw6_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_4n0rw6_f0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 }
