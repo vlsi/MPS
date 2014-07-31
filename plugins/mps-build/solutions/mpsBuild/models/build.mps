@@ -1073,7 +1073,7 @@
       <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithString" typeId="3ior.2755237150521975431" id="6592112598314709134" nodeInfo="ng">
         <node role="value" roleId="3ior.2755237150521975437" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="6592112598314709135" nodeInfo="ng">
           <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="6592112598314709136" nodeInfo="ng">
-            <property name="text" nameId="3ior.4903714810883755350" value="3.1.1" />
+            <property name="text" nameId="3ior.4903714810883755350" value="3.1.2" />
           </node>
         </node>
       </node>
