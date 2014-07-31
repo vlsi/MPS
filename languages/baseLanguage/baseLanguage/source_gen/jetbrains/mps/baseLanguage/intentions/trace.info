@@ -8428,21 +8428,19 @@
     <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="44" startPosition="34" endLine="45" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="53" startPosition="53" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="56" startPosition="127" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="58" startPosition="5" endLine="59" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="528847182406454406" fileName="CleanUnmatchedParentheses_Intention.java" startLine="64" startPosition="39" endLine="65" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="528847182407122937" fileName="CleanUnmatchedParentheses_Intention.java" startLine="70" startPosition="112" endLine="71" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="74" startPosition="53" endLine="75" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="78" startPosition="35" endLine="79" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="83" startPosition="37" endLine="84" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="85" startPosition="5" endLine="86" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="528847182406422314" fileName="CleanUnmatchedParentheses_Intention.java" startLine="93" startPosition="87" endLine="94" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="528847182406501098" fileName="CleanUnmatchedParentheses_Intention.java" startLine="99" startPosition="41" endLine="100" endPosition="315" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="528847182406506653" fileName="CleanUnmatchedParentheses_Intention.java" startLine="103" startPosition="37" endLine="104" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="528847182406516642" fileName="CleanUnmatchedParentheses_Intention.java" startLine="104" startPosition="153" endLine="105" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="110" startPosition="48" endLine="111" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="55" startPosition="5" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="528847182406454406" fileName="CleanUnmatchedParentheses_Intention.java" startLine="61" startPosition="39" endLine="62" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="67" startPosition="53" endLine="68" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="71" startPosition="35" endLine="72" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="76" startPosition="37" endLine="77" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="78" startPosition="5" endLine="79" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="528847182406422314" fileName="CleanUnmatchedParentheses_Intention.java" startLine="86" startPosition="87" endLine="87" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="528847182406501098" fileName="CleanUnmatchedParentheses_Intention.java" startLine="92" startPosition="41" endLine="93" endPosition="315" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="528847182406506653" fileName="CleanUnmatchedParentheses_Intention.java" startLine="96" startPosition="37" endLine="97" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="528847182406516642" fileName="CleanUnmatchedParentheses_Intention.java" startLine="97" startPosition="153" endLine="98" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="103" startPosition="48" endLine="104" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CleanUnmatchedParentheses_Intention#()V" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="90" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="83" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -8450,24 +8448,22 @@
     <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
     <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="52" startPosition="84" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="55" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="528847182406453223" fileName="CleanUnmatchedParentheses_Intention.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisibleInChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="82" startPosition="99" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="528847182406501096" fileName="CleanUnmatchedParentheses_Intention.java" startLine="99" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="528847182406506214" fileName="CleanUnmatchedParentheses_Intention.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="528847182406429393" fileName="CleanUnmatchedParentheses_Intention.java" startLine="62" startPosition="91" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="82" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="62" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="52" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="528847182406496866" fileName="CleanUnmatchedParentheses_Intention.java" startLine="97" startPosition="78" endLine="107" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="97" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="528847182406453223" fileName="CleanUnmatchedParentheses_Intention.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="75" startPosition="99" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="528847182406501096" fileName="CleanUnmatchedParentheses_Intention.java" startLine="92" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="528847182406506214" fileName="CleanUnmatchedParentheses_Intention.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="528847182406429393" fileName="CleanUnmatchedParentheses_Intention.java" startLine="59" startPosition="91" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="75" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="59" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="528847182406496866" fileName="CleanUnmatchedParentheses_Intention.java" startLine="90" startPosition="78" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="90" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="25" startPosition="48" endLine="25" endPosition="48" />
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="90" startPosition="38" endLine="90" endPosition="38" />
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="83" startPosition="38" endLine="83" endPosition="38" />
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="61" />
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="39" />
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="36" startPosition="41" endLine="37" endPosition="87" />
@@ -8475,70 +8471,63 @@
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="44" startPosition="34" endLine="45" endPosition="31" />
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="16" />
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="53" startPosition="53" endLine="54" endPosition="19" />
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="56" startPosition="127" endLine="57" endPosition="19" />
-    <scopeInfo nodeId="528847182406453224" fileName="CleanUnmatchedParentheses_Intention.java" startLine="64" startPosition="39" endLine="65" endPosition="313" />
-    <scopeInfo nodeId="528847182407121396" fileName="CleanUnmatchedParentheses_Intention.java" startLine="70" startPosition="112" endLine="71" endPosition="102" />
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="74" startPosition="53" endLine="75" endPosition="131" />
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="78" startPosition="35" endLine="79" endPosition="17" />
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="83" startPosition="37" endLine="84" endPosition="141" />
-    <scopeInfo nodeId="528847182406392850" fileName="CleanUnmatchedParentheses_Intention.java" startLine="93" startPosition="87" endLine="94" endPosition="43" />
-    <scopeInfo nodeId="528847182406501097" fileName="CleanUnmatchedParentheses_Intention.java" startLine="99" startPosition="41" endLine="100" endPosition="315" />
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="110" startPosition="48" endLine="111" endPosition="54" />
+    <scopeInfo nodeId="528847182406453224" fileName="CleanUnmatchedParentheses_Intention.java" startLine="61" startPosition="39" endLine="62" endPosition="313" />
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="67" startPosition="53" endLine="68" endPosition="131" />
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="71" startPosition="35" endLine="72" endPosition="17" />
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="76" startPosition="37" endLine="77" endPosition="141" />
+    <scopeInfo nodeId="528847182406392850" fileName="CleanUnmatchedParentheses_Intention.java" startLine="86" startPosition="87" endLine="87" endPosition="43" />
+    <scopeInfo nodeId="528847182406501097" fileName="CleanUnmatchedParentheses_Intention.java" startLine="92" startPosition="41" endLine="93" endPosition="315" />
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="103" startPosition="48" endLine="104" endPosition="54" />
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="90" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="528847182406506215" fileName="CleanUnmatchedParentheses_Intention.java" startLine="103" startPosition="37" endLine="105" endPosition="154" />
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="83" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="528847182406506215" fileName="CleanUnmatchedParentheses_Intention.java" startLine="96" startPosition="37" endLine="98" endPosition="154" />
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="528847182406453223" fileName="CleanUnmatchedParentheses_Intention.java" startLine="64" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="528847182406453223" fileName="CleanUnmatchedParentheses_Intention.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="528847182406453223" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="528847182406392848" varName="childNode" />
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="67" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="71" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="528847182406392848" varName="editorContext" />
       <varInfo nodeId="528847182406392848" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="93" startPosition="0" endLine="96" endPosition="0">
-      <varInfo nodeId="528847182406392848" varName="editorContext" />
-      <varInfo nodeId="528847182406392848" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="528847182406501096" fileName="CleanUnmatchedParentheses_Intention.java" startLine="99" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="528847182406501096" fileName="CleanUnmatchedParentheses_Intention.java" startLine="92" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="528847182406501096" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="110" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="82" startPosition="99" endLine="86" endPosition="30" />
-    <scopeInfo nodeId="528847182406506214" fileName="CleanUnmatchedParentheses_Intention.java" startLine="103" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="103" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="52" startPosition="84" endLine="56" endPosition="16" />
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="75" startPosition="99" endLine="79" endPosition="30" />
+    <scopeInfo nodeId="528847182406506214" fileName="CleanUnmatchedParentheses_Intention.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="528847182406506214" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="528847182406428437" fileName="CleanUnmatchedParentheses_Intention.java" startLine="62" startPosition="91" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="82" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="528847182406428437" fileName="CleanUnmatchedParentheses_Intention.java" startLine="59" startPosition="91" endLine="64" endPosition="7" />
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="528847182406392848" varName="editorContext" />
+      <varInfo nodeId="528847182406392848" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="75" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="528847182406392848" varName="context" />
       <varInfo nodeId="528847182406392848" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="52" startPosition="84" endLine="59" endPosition="16" />
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="62" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="59" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="528847182406392848" varName="editorContext" />
       <varInfo nodeId="528847182406392848" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="52" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="528847182406392852" fileName="CleanUnmatchedParentheses_Intention.java" startLine="90" startPosition="78" endLine="100" endPosition="9" />
+    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="90" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="528847182406392848" varName="editorContext" />
       <varInfo nodeId="528847182406392848" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="528847182406392852" fileName="CleanUnmatchedParentheses_Intention.java" startLine="97" startPosition="78" endLine="107" endPosition="9" />
-    <scopeInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="97" startPosition="0" endLine="109" endPosition="0">
-      <varInfo nodeId="528847182406392848" varName="editorContext" />
-      <varInfo nodeId="528847182406392848" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="528847182406453223" fileName="CleanUnmatchedParentheses_Intention.java" startLine="63" startPosition="317" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.CleanUnmatchedParentheses_Intention$1" />
-    <unitInfo nodeId="528847182406501096" fileName="CleanUnmatchedParentheses_Intention.java" startLine="98" startPosition="150" endLine="102" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.CleanUnmatchedParentheses_Intention$1" />
-    <unitInfo nodeId="528847182406506214" fileName="CleanUnmatchedParentheses_Intention.java" startLine="102" startPosition="22" endLine="107" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.CleanUnmatchedParentheses_Intention$2" />
-    <unitInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="89" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CleanUnmatchedParentheses_Intention$IntentionImplementation" />
-    <unitInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="22" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CleanUnmatchedParentheses_Intention" />
+    <unitInfo nodeId="528847182406453223" fileName="CleanUnmatchedParentheses_Intention.java" startLine="60" startPosition="317" endLine="64" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.CleanUnmatchedParentheses_Intention$1" />
+    <unitInfo nodeId="528847182406501096" fileName="CleanUnmatchedParentheses_Intention.java" startLine="91" startPosition="150" endLine="95" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.CleanUnmatchedParentheses_Intention$1" />
+    <unitInfo nodeId="528847182406506214" fileName="CleanUnmatchedParentheses_Intention.java" startLine="95" startPosition="22" endLine="100" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.CleanUnmatchedParentheses_Intention$2" />
+    <unitInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="82" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CleanUnmatchedParentheses_Intention$IntentionImplementation" />
+    <unitInfo nodeId="528847182406392848" fileName="CleanUnmatchedParentheses_Intention.java" startLine="22" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CleanUnmatchedParentheses_Intention" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/5742179528877834612">
     <nodeInfo nodeId="5742179528877834612" fileName="CreateMethodDeclaration_Intention.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
