@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -127,7 +128,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     Language base = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)"), Language.class);
     Collection<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
     for (Language l : CollectionSequence.fromCollection(languages)) {
-      if (l != base && !(l.getAllExtendedLanguages().contains(base))) {
+      if (l != base && !(LanguageDependenciesManager.getAllExtendedLanguages(l).contains(base))) {
         continue;
       }
       ((SModelInternal) myModel).addLanguage(l.getModuleReference());

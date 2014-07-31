@@ -27,6 +27,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -101,11 +102,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return res;
   }
 
-  @Deprecated //remove after 2.5
-  public List<Language> getExtendedLanguages() {
-    return ModuleUtil.refsToLanguages(getExtendedLanguageRefs());
-  }
-
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
     Set<SDependency> dependencies = new HashSet<SDependency>();
@@ -121,22 +117,20 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return dependencies;
   }
 
+  /**
+   * @deprecated towards consistent approach to language/language runtime 'extends' dependencies - minimize number of ways to
+   * find out these dependencies. Use {@link jetbrains.mps.project.dependency.modules.LanguageDependenciesManager} instead
+   * This method is not intrinsically bad (in fact, quite the opposite, imo), but I decided to remove it
+   * as its counterpart #getExtendedLanguages() has been deprecated since 2.5 (Muhin 987b8942 30.4.12)
+   * and I assume the idea was to keep/calculate closure of module's extends dependencies elsewhere. At the moment,
+   * there's LanguageDependenciesManager to build the closure.
+   * NOTE, perhaps it makes sense to do other way round, let Language build the closure (it's OOP, after all). Need to be careful about
+   * repository boundaries, though (i.e. letuse supply repository or use one from this.getRepository()).
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public Set<Language> getAllExtendedLanguages() {
-    // todo: ?
-    Set<Language> toProcess = new HashSet<Language>();
-    toProcess.add(this);
-    Set<Language> processed = new HashSet<Language>();
-
-    while (!(toProcess.isEmpty())) {
-      Language language = toProcess.iterator().next();
-      toProcess.remove(language);
-      if (!(processed.contains(language))) {
-        processed.add(language);
-        toProcess.addAll(language.getExtendedLanguages());
-      }
-    }
-
-    return processed;
+    return LanguageDependenciesManager.getAllExtendedLanguages(this);
   }
 
   public Collection<SModuleReference> getRuntimeModulesReferences() {

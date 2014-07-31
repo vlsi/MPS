@@ -350,6 +350,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   //----languages & devkits
 
+  /**
+   * @deprecated shall be removed once tests in MPS plugin got fixed (FacetTests.testAddRemoveUsedLanguage(), testFacetInitialized()
+   */
   @Deprecated
   public final Collection<SModuleReference> getUsedLanguagesReferences() {
     assertCanRead();
@@ -829,17 +832,21 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     @Override
     protected Set<Language> getInitialUsedLanguages() {
-      HashSet<Language> result = new HashSet<Language>(ModuleUtil.refsToLanguages(getUsedLanguagesReferences()));
-
+      HashSet<Language> result = new HashSet<Language>();
+      for (SLanguage l : AbstractModule.this.getUsedLanguages()) {
+        SModule langModule = l.getSourceModule();
+        if (langModule instanceof Language) {
+          result.add((Language) langModule);
+        }
+      }
       if (AbstractModule.this instanceof Language) {
         result.add((Language) AbstractModule.this);
-        result.addAll(ModuleUtil.refsToLanguages(Collections.singletonList(BootstrapLanguages.descriptorLanguageRef())));
+        // XXX why Language(SModule)#getUsedLanguages doesn't care about descriptor language being used?
+        result.add(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.descriptorLanguageRef(), Language.class));
       }
-
       if (AbstractModule.this instanceof Generator) {
         result.add(((Generator) AbstractModule.this).getSourceLanguage());
       }
-
       return result;
     }
 

@@ -26,6 +26,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -94,7 +95,7 @@ public class SLanguageAdapter implements SLanguage {
     Set<SModuleReference> runtimes = new HashSet<SModuleReference>();
     Language sourceModule = getSourceModule();
     assert sourceModule != null;
-    for (Language language : SetSequence.fromSet(sourceModule.getAllExtendedLanguages())) {
+    for (Language language : SetSequence.fromSet(LanguageDependenciesManager.getAllExtendedLanguages(sourceModule))) {
       runtimes.addAll(language.getRuntimeModulesReferences());
     }
     return runtimes;
