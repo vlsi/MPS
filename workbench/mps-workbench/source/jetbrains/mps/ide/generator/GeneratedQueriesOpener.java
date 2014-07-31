@@ -53,10 +53,6 @@ public class GeneratedQueriesOpener {
 
   private static String getProjectPath(Project p) {
     if (p == null) return null;
-
-    File mpsProject = p.getProjectFile();
-
-    File projectFile = mpsProject.getParentFile();
-    return projectFile.getAbsolutePath();
+    return p.getProjectFile().getAbsolutePath();
   }
 }
