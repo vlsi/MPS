@@ -30,7 +30,7 @@ import jetbrains.mps.execution.lib.PointerUtils;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager;
 
 public class JUnitConfigurationEditorComponent extends JBPanel {
-  private final JBLightExecCheckBox myLightExecCheckBox = new JBLightExecCheckBox("Try to execute in the same process ", true);
+  private final JBLightExecCheckBox myLightExecCheckBox = new JBLightExecCheckBox("Execute in the same process ", true);
   private JBReuseCachesCheckBox myReuseCachesCheckBox = new JBReuseCachesCheckBox(myLightExecCheckBox, "Reuse caches", true);
 
   private final ModuleChooser myModuleChooser;

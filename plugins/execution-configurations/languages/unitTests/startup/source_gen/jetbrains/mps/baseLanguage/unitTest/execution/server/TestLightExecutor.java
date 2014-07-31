@@ -37,7 +37,6 @@ public class TestLightExecutor extends AbstractTestExecutor {
     }
   }
 
-
   @Override
   public void dispose() {
     if (LOG.isDebugEnabled()) {

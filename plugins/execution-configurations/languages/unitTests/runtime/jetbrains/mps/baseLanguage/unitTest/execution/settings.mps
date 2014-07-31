@@ -4477,7 +4477,7 @@
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="872245157126641813" nodeInfo="nn">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3211742604627792299" resolveInfo="JBLightExecCheckBox" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="872245157126642085" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="Try to execute in the same process " />
+            <property name="value" nameId="tpee.1070475926801" value="Execute in the same process " />
           </node>
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="872245157126646513" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580123138" value="true" />
