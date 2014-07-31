@@ -106,9 +106,13 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     Set<SDependency> dependencies = new HashSet<SDependency>();
     dependencies.addAll(IterableUtil.asCollection(super.getDeclaredDependencies()));
 
-    //todo this needs to be reviewed when we understand what is the extended language (after moving generator out and getting rid of extended language dependency in generator case)
-    for (Language language : getAllExtendedLanguages()) {
-      dependencies.add(new SDependencyImpl(language, SDependencyScope.EXTENDS, true));
+    for (SModuleReference language : getExtendedLanguageRefs()) {
+      // XXX not clear whether it's worth including implicit "extends lang.core" (see getExtendedLanguageRefs())
+      // or adhere to 'declared' in getDeclaredDependencies and use myLanguageDescriptor.getExtendedLanguages() only
+      final SModule langModule = language.resolve(getRepository());
+      if (langModule != null) {
+        dependencies.add(new SDependencyImpl(langModule, SDependencyScope.EXTENDS, true));
+      }
     }
 
     dependencies.add(new SDependencyImpl(BootstrapLanguages.coreLanguage(), SDependencyScope.DEFAULT, true));

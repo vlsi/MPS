@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -163,8 +163,10 @@ public class Generator extends AbstractModule {
     }
 
     //generator sees all modules from source language as non-reexported
-    for (Language language : getSourceLanguage().getAllExtendedLanguages()) {
-      dependencies.add(new SDependencyImpl(language, SDependencyScope.DEFAULT, false));
+    for (SDependency srcLangDep : getSourceLanguage().getDeclaredDependencies()) {
+      if (srcLangDep.getScope() == SDependencyScope.EXTENDS && Language.class.isInstance(srcLangDep.getTarget())) {
+        dependencies.add(new SDependencyImpl(srcLangDep.getTarget(), SDependencyScope.DEFAULT, false));
+      }
     }
 
     //generator sees all dependent generators as non-reexport
