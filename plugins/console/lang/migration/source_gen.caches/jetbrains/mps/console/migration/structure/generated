@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="eiko4qtr0yiqlg1cal5wvn5rxhoq2al">
+<dependencies version="2" modelHash="-5w3x4c2yqvxnmoulg68rhnzjo8vgziv">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="eggblwsr0208cbp174vd3je0pubxy4w" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="-48tbq6vetmpisz2u6avqcnfn5ozzzry" dependsOnNodes="true">
+  <common hash="-8quynk6p2jf48hgwsrqj66b8seu5yc9" dependsOnNodes="true">
+    <dep root="3290421837437511158" />
     <dep root="3735414794051308106" />
     <dep root="3842191445091604225" />
+    <dep root="4436301628118647388" />
+    <dep root="4436301628118948495" />
+    <dep root="4436301628118948507" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -17,7 +21,11 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="3735414794051308106" name="MigrationScriptBody" hash="-2ng5e3v4onc20i573j2hkozog7y1z3p" />
-  <source id="3842191445091604225" name="MigrationScript" hash="2dgnqoykmp31dk7liws62l2f0ixbjf8" />
+  <source id="3735414794051308106" name="PrimaryMigrationScriptBody" hash="-b4blzoemzmxi2rj02wqascs11dhqc6m" />
+  <source id="3842191445091604225" name="SecondaryMigrationScript" hash="63gnqocli50i31xno0zpz3to3swofgm" />
+  <source id="4436301628118647388" name="SecondaryMigrationScriptBody" hash="cw9e9lypadjqz6tc5b5mbvhjm4i9k7s" />
+  <source id="4436301628118948495" name="PrimaryMigrationScript" hash="-7rc8imneqcwe4pwuylzjawvq24ezhge" />
+  <source id="4436301628118948507" name="MigrationScript" hash="nvurzvxazmb0vpyhovkynxowhbe0v" />
+  <source id="3290421837437511158" name="PrimaryigrationScriptApplicable" hash="-9ovcncg28tjx6c7dsu7ndhv4scfn7td" />
 </dependencies>
 

@@ -9,11 +9,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
-public class MigrationScriptBody_Behavior {
+public class PrimaryMigrationScriptBody_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model"));
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule"));
   }
 }

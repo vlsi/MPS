@@ -5,9 +5,7 @@
     <classNode dependClassName="jetbrains.mps.console.migration.runtime.util.MigrationScript" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.console.migration.runtime.util.MigrationScript" file="MigrationScript.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-  </dependency>
+  <dependency className="jetbrains.mps.console.migration.runtime.util.MigrationScript" file="MigrationScript.java" />
   <dependency className="jetbrains.mps.console.migration.runtime.util.MigrationsUtil" file="MigrationsUtil.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassLoader" />
@@ -24,6 +22,14 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.migration.runtime.util.PrimaryMigrationScript" file="PrimaryMigrationScript.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode extendsClassName="jetbrains.mps.console.migration.runtime.util.MigrationScript" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.migration.runtime.util.SecondaryMigrationScript" file="SecondaryMigrationScript.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode extendsClassName="jetbrains.mps.console.migration.runtime.util.MigrationScript" />
   </dependency>
 </dependenciesRoot>
 
