@@ -12,6 +12,8 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.execution.lib.ClonableList;
+import java.io.File;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import java.util.List;
 import jetbrains.mps.project.Project;
@@ -69,6 +71,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public boolean getReuseCaches() {
     return myState.myReuseCaches;
   }
+  public String getCachesDir() {
+    return myState.myCachesDir;
+  }
   public ClonableList<String> getTestCases() {
     return myState.myTestCases;
   }
@@ -90,6 +95,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public void setReuseCaches(boolean value) {
     myState.myReuseCaches = value;
   }
+  public void setCachesDir(String value) {
+    myState.myCachesDir = value;
+  }
   public void setTestCases(ClonableList<String> value) {
     myState.myTestCases = value;
   }
@@ -98,6 +106,11 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   }
   public void setRunType(JUnitRunTypes value) {
     myState.myRunType = value;
+  }
+  private String getDefaultPath() {
+    File tmpDir = FileUtil.getTempDir();
+    File defaultTestDir = new File(tmpDir.getAbsolutePath(), "mps_test_dir");
+    return defaultTestDir.getAbsolutePath();
   }
   public boolean canLightExecute(Iterable<ITestNodeWrapper> testNodes) {
     return this.getLightExec() && new LightExecutionFilter().accept(testNodes);
@@ -163,6 +176,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     public String myModule;
     public boolean myLightExec = true;
     public boolean myReuseCaches = true;
+    public String myCachesDir = getDefaultPath();
     public ClonableList<String> myTestCases = new ClonableList<String>();
     public ClonableList<String> myTestMethods = new ClonableList<String>();
     public JUnitRunTypes myRunType = JUnitRunTypes.PROJECT;
@@ -175,6 +189,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       state.myModule = myModule;
       state.myLightExec = myLightExec;
       state.myReuseCaches = myReuseCaches;
+      state.myCachesDir = myCachesDir;
       if (myTestCases != null) {
         state.myTestCases = myTestCases.clone();
       }

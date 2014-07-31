@@ -39,23 +39,23 @@
       <node id="1353230511309622859" at="24,36,25,44" concept="5" />
       <node id="1353230511309671067" at="25,44,26,28" concept="5" />
       <node id="8221742540280355130" at="30,61,31,99" concept="10" />
-      <node id="1353230511309575869" at="31,99,32,128" concept="10" />
+      <node id="1353230511309575869" at="31,99,32,160" concept="10" />
       <node id="8221742540280419281" at="36,26,37,41" concept="5" />
       <node id="1353230511309683463" at="40,7,41,26" concept="11" />
-      <node id="1353230511309618049" at="44,75,45,72" concept="10" />
+      <node id="1353230511309618049" at="44,93,45,72" concept="10" />
       <node id="1353230511309618054" at="45,72,46,80" concept="10" />
       <node id="1353230511309618062" at="46,80,47,76" concept="10" />
       <node id="1353230511309618072" at="48,29,49,22" concept="5" />
-      <node id="1353230511309618037" at="51,22,52,73" concept="10" />
-      <node id="1353230511309618079" at="52,73,53,62" concept="5" />
+      <node id="1353230511309618037" at="51,22,52,89" concept="10" />
+      <node id="1353230511309618079" at="52,89,53,62" concept="5" />
       <node id="1353230511309618088" at="54,5,55,22" concept="11" />
       <node id="8221742540280397286" at="35,54,38,9" concept="8" />
       <node id="1353230511309618070" at="47,76,50,5" concept="8" />
       <node id="8221742540280379901" at="50,5,54,5" concept="8" />
       <node id="1353230511309587426" at="23,0,28,0" concept="3" trace="JUnitExecutor#(Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;Ljava/util/List;)V" />
       <node id="1353230511309575888" at="34,0,40,0" concept="9" trace="processTerminated#(Lcom/intellij/execution/process/ProcessEvent;)V" />
-      <node id="1353230511309575880" at="32,128,40,7" concept="5" />
-      <node id="1353230511309618031" at="44,0,57,0" concept="9" trace="prepareJavaParamsForTests#(Z)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
+      <node id="1353230511309575880" at="32,160,40,7" concept="5" />
+      <node id="1353230511309618031" at="44,0,57,0" concept="9" trace="prepareJavaParamsForTests#(ZLjava/lang/String;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
       <node id="1353230511309567973" at="29,0,43,0" concept="9" trace="execute#()Lcom/intellij/execution/process/ProcessHandler;" />
       <scope id="8221742540280397289" at="36,26,37,41" />
       <scope id="1353230511309618071" at="48,29,49,22" />
@@ -76,12 +76,13 @@
         <var name="commandProcess" id="1353230511309575870" />
         <var name="reuseCaches" id="8221742540280355133" />
       </scope>
-      <scope id="1353230511309618036" at="44,75,55,22">
+      <scope id="1353230511309618036" at="44,93,55,22">
         <var name="javaRunParams" id="1353230511309618050" />
         <var name="parameters" id="1353230511309618055" />
         <var name="vmFromJava" id="1353230511309618063" />
       </scope>
       <scope id="1353230511309618031" at="44,0,57,0">
+        <var name="cachesDir" id="2481116735934130985" />
         <var name="reuseCaches" id="1353230511309618091" />
       </scope>
       <scope id="1353230511309567973" at="29,0,43,0" />
@@ -3291,7 +3292,7 @@
       <node id="6106412458332569588" at="29,107,30,31" concept="5" />
       <node id="1353230511309551913" at="30,31,31,30" concept="5" />
       <node id="2992055787332442535" at="34,59,35,75" concept="10" />
-      <node id="2992055787332381784" at="36,22,37,61" concept="5" />
+      <node id="2992055787332381784" at="36,19,37,61" concept="5" />
       <node id="2992055787332451799" at="38,5,39,20" concept="11" />
       <node id="2992055787332425004" at="44,40,45,58" concept="11" />
       <node id="6331234706169637587" at="47,9,48,27" concept="5" />
@@ -3336,7 +3337,7 @@
       <node id="6106412458332522980" at="42,0,61,0" concept="9" trace="execute#()Lcom/intellij/execution/process/ProcessHandler;" />
       <scope id="7977758239587012601" at="82,41,82,41" />
       <scope id="7977758239587012607" at="84,40,84,40" />
-      <scope id="2992055787331939806" at="36,22,37,61" />
+      <scope id="2992055787331939806" at="36,19,37,61" />
       <scope id="2992055787332421729" at="44,40,45,58" />
       <scope id="6331234706169647215" at="54,42,55,64" />
       <scope id="8574241230919379987" at="69,19,70,44" />

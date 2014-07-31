@@ -33,7 +33,7 @@ public class JUnitLightExecutor implements Executor {
 
   private synchronized boolean checkExecutionIsPossible() {
     boolean possible = ourTestRunState.get() == TestLightRunStateEnum.IDLE;
-    if (!(possible)) {
+    if (possible) {
       ourTestRunState.set(TestLightRunStateEnum.INITIALIZED);
     }
     return possible;

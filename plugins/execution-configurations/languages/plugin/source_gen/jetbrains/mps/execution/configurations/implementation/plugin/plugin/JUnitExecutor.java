@@ -29,7 +29,7 @@ public class JUnitExecutor implements Executor {
   @Override
   public ProcessHandler execute() throws ExecutionException {
     final boolean reuseCaches = myJUnitSettings.getReuseCaches() && RunCachesManager.acquireLock();
-    ProcessHandler commandProcess = new Junit_Command().createProcess(myTestNodes, this.prepareJavaParamsForTests(reuseCaches));
+    ProcessHandler commandProcess = new Junit_Command().createProcess(myTestNodes, this.prepareJavaParamsForTests(reuseCaches, myJUnitSettings.getCachesDir()));
     commandProcess.addProcessListener(new ProcessAdapter() {
       @Override
       public void processTerminated(ProcessEvent p0) {
@@ -41,7 +41,7 @@ public class JUnitExecutor implements Executor {
     return commandProcess;
   }
 
-  public JavaRunParameters prepareJavaParamsForTests(boolean reuseCaches) {
+  public JavaRunParameters prepareJavaParamsForTests(boolean reuseCaches, String cachesDir) {
     JavaRunParameters_Configuration javaRunParams = myJavaRunParameters;
     JavaRunParameters parameters = javaRunParams.getJavaRunParameters().clone();
     String vmFromJava = javaRunParams.getJavaRunParameters().getVmOptions();
@@ -49,7 +49,7 @@ public class JUnitExecutor implements Executor {
       vmFromJava = "";
     }
     if (reuseCaches) {
-      String runIdString = "-D" + CachesUtil.REUSE_CACHES + "=\"" + "\"";
+      String runIdString = "-D" + CachesUtil.REUSE_CACHES_DIR + "=\"" + cachesDir + "\"";
       parameters.setVmOptions(vmFromJava + " " + runIdString);
     }
     return parameters;

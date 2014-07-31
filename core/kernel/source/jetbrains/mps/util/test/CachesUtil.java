@@ -26,8 +26,7 @@ import java.io.IOError; import java.util.ArrayList; import java.util.List;
 public final class CachesUtil {
   private static final String PROPERTY_CONFIG_PATH = "idea.config.path";
   private static final String PROPERTY_SYSTEM_PATH = "idea.system.path";
-  private static final String MPS_TEST_DIR = "mps_test_dir";
-  public static final String REUSE_CACHES = "mps.test.reuse_caches";
+  public static final String REUSE_CACHES_DIR = "mps.test.reuse_caches_dir";
 
   private static final List<File> TO_REMOVE = new ArrayList<File>();
 
@@ -35,7 +34,7 @@ public final class CachesUtil {
   // idea does not have the necessary api, @see our PathManager class
   public static void setupCaches() {
     final Checker cachesPathChecker = new CachesPathChecker(System.getProperty(PROPERTY_CONFIG_PATH), System.getProperty(PROPERTY_SYSTEM_PATH));
-    final Checker reusableCachesChecker = new MPSReusableCachesChecker(MPS_TEST_DIR);
+    final Checker reusableCachesChecker = new MPSReusableCachesChecker();
     final Checker oneTimeCachesChecker = new MPSOneTimeCachesChecker();
     Checker[] checkers = {cachesPathChecker, reusableCachesChecker, oneTimeCachesChecker};
 
@@ -91,22 +90,18 @@ public final class CachesUtil {
   }
 
   private static class MPSReusableCachesChecker implements Checker {
-    private final String myCachesDir;
 
-    public MPSReusableCachesChecker(String cachesDir) {
-      myCachesDir = cachesDir;
+    public MPSReusableCachesChecker() {
     }
 
     @Override
     public Result check() {
-      final String idRunProperty = System.getProperty(REUSE_CACHES);
-      if (idRunProperty == null) {
+      final String cachesDir = System.getProperty(REUSE_CACHES_DIR);
+      if (cachesDir == null) {
         return Result.UNSUCCESSFUL;
       }
-      File tmpDir = FileUtil.getTempDir();
-      File testDirPath = new File(tmpDir.getAbsolutePath(), myCachesDir);
-      File testConfigPath = new File(testDirPath, "config");
-      File testSystemPath = new File(testDirPath, "system");
+      File testConfigPath = new File(cachesDir, "config");
+      File testSystemPath = new File(cachesDir, "system");
       if (FileUtil.canWrite(testConfigPath) && FileUtil.canWrite(testSystemPath)) {
         testConfigPath.mkdirs();
         testSystemPath.mkdir();

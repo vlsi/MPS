@@ -11187,10 +11187,8 @@
               </node>
             </node>
           </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="822141606825402666" nodeInfo="nn">
-            <node role="expression" roleId="tpee.1081516765348" type="tpee.VariableReference" typeId="tpee.1068498886296" id="822141606825402668" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2992055787332442536" resolveInfo="possible" />
-            </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.VariableReference" typeId="tpee.1068498886296" id="822141606825402668" nodeInfo="nn">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2992055787332442536" resolveInfo="possible" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2992055787332451799" nodeInfo="nn">
@@ -11777,6 +11775,14 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8221742540280367456" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8221742540280355133" resolveInfo="reuseCaches" />
                     </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2481116735934139278" nodeInfo="nn">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2481116735934139063" nodeInfo="nn">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8221742540279279728" resolveInfo="myJUnitSettings" />
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="2481116735934140380" nodeInfo="nn">
+                        <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="tty3.2481116735934009400" resolveInfo="myCachesDir" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -11935,22 +11941,27 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1353230511309618038" nodeInfo="nr">
                 <property name="name" nameId="tpck.1169194664001" value="runIdString" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1353230511309618039" nodeInfo="in" />
-                <node role="initializer" roleId="tpee.1068431790190" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1353230511309618040" nodeInfo="nn">
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2481116735934140753" nodeInfo="nn">
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1353230511309618041" nodeInfo="nn">
                     <property name="value" nameId="tpee.1070475926801" value="\&quot;" />
                   </node>
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1353230511309618043" nodeInfo="nn">
-                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1353230511309618044" nodeInfo="nn">
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1353230511309618045" nodeInfo="nn">
-                        <property name="value" nameId="tpee.1070475926801" value="-D" />
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1353230511309618040" nodeInfo="nn">
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1353230511309618043" nodeInfo="nn">
+                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1353230511309618044" nodeInfo="nn">
+                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1353230511309618045" nodeInfo="nn">
+                          <property name="value" nameId="tpee.1070475926801" value="-D" />
+                        </node>
+                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1353230511309618046" nodeInfo="nn">
+                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="4rkw.~CachesUtil" resolveInfo="CachesUtil" />
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4rkw.~CachesUtil%dREUSE_CACHES_DIR" resolveInfo="REUSE_CACHES_DIR" />
+                        </node>
                       </node>
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1353230511309618046" nodeInfo="nn">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="4rkw.~CachesUtil" resolveInfo="CachesUtil" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4rkw.~CachesUtil%dREUSE_CACHES" resolveInfo="REUSE_CACHES" />
+                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1353230511309618047" nodeInfo="nn">
+                        <property name="value" nameId="tpee.1070475926801" value="=\&quot;" />
                       </node>
                     </node>
-                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1353230511309618047" nodeInfo="nn">
-                      <property name="value" nameId="tpee.1070475926801" value="=\&quot;" />
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2481116735934141386" nodeInfo="nn">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2481116735934130985" resolveInfo="cachesDir" />
                     </node>
                   </node>
                 </node>
@@ -11996,6 +12007,10 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1353230511309618091" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="reuseCaches" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="8221742540280368115" nodeInfo="in" />
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2481116735934130985" nodeInfo="ir">
+        <property name="name" nameId="tpck.1169194664001" value="cachesDir" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2481116735934136662" nodeInfo="in" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1353230511309618093" nodeInfo="nn" />
     </node>
