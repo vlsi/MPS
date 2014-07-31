@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
@@ -38,6 +39,7 @@ public class DeleteParenthesisLeft_Actions {
       SNodeOperations.replaceWithAnother(node, replacing);
 
       SNode leftMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, false);
+      ParenthesisUtil.checkExpressionPriorities(replacing);
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, leftMostNode, SelectionManager.FIRST_EDITABLE_CELL, 0);
     }
   }
@@ -59,6 +61,7 @@ public class DeleteParenthesisLeft_Actions {
       SNodeOperations.replaceWithAnother(node, replacing);
 
       SNode leftMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, false);
+      ParenthesisUtil.checkExpressionPriorities(replacing);
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, leftMostNode, SelectionManager.FIRST_EDITABLE_CELL, 0);
     }
   }

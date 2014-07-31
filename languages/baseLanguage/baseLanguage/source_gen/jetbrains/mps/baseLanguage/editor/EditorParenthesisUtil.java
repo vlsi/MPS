@@ -92,11 +92,33 @@ public class EditorParenthesisUtil {
   }
 
   public static SNode findRightmostOrLeftmostLeafExpression(SNode root, boolean rightmost) {
-    if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
-      return root;
+    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+      SNode binOp = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
+      return findRightmostOrLeftmostLeafExpression((rightmost ? SLinkOperations.getTarget(binOp, "rightExpression", true) : SLinkOperations.getTarget(binOp, "leftExpression", true)), rightmost);
     }
-    SNode binOp = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-    return findRightmostOrLeftmostLeafExpression((rightmost ? SLinkOperations.getTarget(binOp, "rightExpression", true) : SLinkOperations.getTarget(binOp, "leftExpression", true)), rightmost);
+    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.CastExpression")) {
+      SNode castExpr = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.CastExpression");
+      if (rightmost) {
+        return findRightmostOrLeftmostLeafExpression(SLinkOperations.getTarget(castExpr, "expression", true), rightmost);
+      }
+    }
+    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+      SNode dotExpr = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.DotExpression");
+      if (!(rightmost)) {
+        return findRightmostOrLeftmostLeafExpression(SLinkOperations.getTarget(dotExpr, "operand", true), rightmost);
+      }
+    }
+    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) {
+      SNode ternOp = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
+      return findRightmostOrLeftmostLeafExpression((rightmost ? SLinkOperations.getTarget(ternOp, "ifFalse", true) : SLinkOperations.getTarget(ternOp, "condition", true)), rightmost);
+    }
+    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.UnaryMinus")) {
+      SNode unaryMinusOp = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.UnaryMinus");
+      if (rightmost) {
+        return findRightmostOrLeftmostLeafExpression(SLinkOperations.getTarget(unaryMinusOp, "expression", true), rightmost);
+      }
+    }
+    return root;
   }
 
 

@@ -4637,6 +4637,511 @@
     <unitInfo nodeId="7247887419163198990" fileName="MoveNodeRange_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.MoveNodeRange_Test$TestBody" />
     <unitInfo nodeId="7247887419163198990" fileName="MoveNodeRange_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.MoveNodeRange_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578514861995">
+    <nodeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="18" startPosition="66" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578514883262" fileName="ReAddParensToDotExpression_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578515350797" fileName="ReAddParensToDotExpression_Test.java" startLine="32" startPosition="108" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578533494626" fileName="ReAddParensToDotExpression_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578515350808" fileName="ReAddParensToDotExpression_Test.java" startLine="34" startPosition="107" endLine="35" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578515350821" fileName="ReAddParensToDotExpression_Test.java" startLine="35" startPosition="107" endLine="36" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578515350836" fileName="ReAddParensToDotExpression_Test.java" startLine="36" startPosition="107" endLine="37" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578515350853" fileName="ReAddParensToDotExpression_Test.java" startLine="37" startPosition="107" endLine="38" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578515350872" fileName="ReAddParensToDotExpression_Test.java" startLine="38" startPosition="107" endLine="39" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578515350893" fileName="ReAddParensToDotExpression_Test.java" startLine="39" startPosition="107" endLine="40" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578515350916" fileName="ReAddParensToDotExpression_Test.java" startLine="40" startPosition="107" endLine="41" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514862028" fileName="ReAddParensToDotExpression_Test.java" startLine="41" startPosition="107" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514862029" fileName="ReAddParensToDotExpression_Test.java" startLine="42" startPosition="58" endLine="43" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReAddParensToDotExpression_Test#()V" />
+    <nodeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ReAddParensToDotExpression#()V" />
+    <nodeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="28" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="14" startPosition="44" endLine="14" endPosition="44" />
+    <scopeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="18" startPosition="66" endLine="20" endPosition="107" />
+    <scopeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="29" startPosition="51" endLine="43" endPosition="107">
+      <varInfo nodeId="7247988578514861995" varName="editor" />
+      <varInfo nodeId="7247988578514861995" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="28" startPosition="0" endLine="45" endPosition="0" />
+    <unitInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="23" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.editorTest.ReAddParensToDotExpression_Test$TestBody" />
+    <unitInfo nodeId="7247988578514861995" fileName="ReAddParensToDotExpression_Test.java" startLine="12" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.editorTest.ReAddParensToDotExpression_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578514883308">
+    <nodeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="18" startPosition="67" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578514883341" fileName="ReAddParensToCastExpression_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514883343" fileName="ReAddParensToCastExpression_Test.java" startLine="32" startPosition="108" endLine="33" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578515392690" fileName="ReAddParensToCastExpression_Test.java" startLine="33" startPosition="108" endLine="34" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578515392709" fileName="ReAddParensToCastExpression_Test.java" startLine="34" startPosition="108" endLine="35" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578515392730" fileName="ReAddParensToCastExpression_Test.java" startLine="35" startPosition="108" endLine="36" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578515392753" fileName="ReAddParensToCastExpression_Test.java" startLine="36" startPosition="108" endLine="37" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514883361" fileName="ReAddParensToCastExpression_Test.java" startLine="37" startPosition="108" endLine="38" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514883362" fileName="ReAddParensToCastExpression_Test.java" startLine="38" startPosition="58" endLine="39" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReAddParensToCastExpression_Test#()V" />
+    <nodeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ReAddParensToCastExpression#()V" />
+    <nodeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="28" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="14" startPosition="45" endLine="14" endPosition="45" />
+    <scopeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="18" startPosition="67" endLine="20" endPosition="108" />
+    <scopeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="29" startPosition="51" endLine="39" endPosition="107">
+      <varInfo nodeId="7247988578514883308" varName="editor" />
+      <varInfo nodeId="7247988578514883308" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="28" startPosition="0" endLine="41" endPosition="0" />
+    <unitInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="23" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.editorTest.ReAddParensToCastExpression_Test$TestBody" />
+    <unitInfo nodeId="7247988578514883308" fileName="ReAddParensToCastExpression_Test.java" startLine="12" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.editorTest.ReAddParensToCastExpression_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578514903356">
+    <nodeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578514903389" fileName="ReAddParensToUnaryMinus_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514903409" fileName="ReAddParensToUnaryMinus_Test.java" startLine="32" startPosition="108" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514903410" fileName="ReAddParensToUnaryMinus_Test.java" startLine="33" startPosition="58" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReAddParensToUnaryMinus_Test#()V" />
+    <nodeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ReAddParensToUnaryMinus#()V" />
+    <nodeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="29" startPosition="51" endLine="34" endPosition="107">
+      <varInfo nodeId="7247988578514903356" varName="editor" />
+      <varInfo nodeId="7247988578514903356" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="23" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.ReAddParensToUnaryMinus_Test$TestBody" />
+    <unitInfo nodeId="7247988578514903356" fileName="ReAddParensToUnaryMinus_Test.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.ReAddParensToUnaryMinus_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578514919060">
+    <nodeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="18" startPosition="71" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578514919093" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514933307" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="32" startPosition="108" endLine="33" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514919095" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="33" startPosition="102" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514919097" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="34" startPosition="107" endLine="35" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514919099" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="35" startPosition="107" endLine="36" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514919101" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="36" startPosition="107" endLine="37" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514919103" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="37" startPosition="107" endLine="38" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514919105" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="38" startPosition="107" endLine="39" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514919107" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="39" startPosition="107" endLine="40" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514919113" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="40" startPosition="107" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514919114" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="41" startPosition="58" endLine="42" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReAddParensToTernaryExpression1_Test#()V" />
+    <nodeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ReAddParensToTernaryExpression1#()V" />
+    <nodeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="28" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="14" startPosition="49" endLine="14" endPosition="49" />
+    <scopeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="18" startPosition="71" endLine="20" endPosition="112" />
+    <scopeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="29" startPosition="51" endLine="42" endPosition="107">
+      <varInfo nodeId="7247988578514919060" varName="editor" />
+      <varInfo nodeId="7247988578514919060" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="28" startPosition="0" endLine="44" endPosition="0" />
+    <unitInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="23" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.editorTest.ReAddParensToTernaryExpression1_Test$TestBody" />
+    <unitInfo nodeId="7247988578514919060" fileName="ReAddParensToTernaryExpression1_Test.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.editorTest.ReAddParensToTernaryExpression1_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578514959229">
+    <nodeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="18" startPosition="71" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578514959252" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514959256" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="33" startPosition="36" endLine="34" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514959272" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="35" startPosition="7" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514959273" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="36" startPosition="58" endLine="37" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReAddParensToTernaryExpression2_Test#()V" />
+    <nodeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578514961853" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="32" startPosition="108" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ReAddParensToTernaryExpression2#()V" />
+    <nodeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="14" startPosition="49" endLine="14" endPosition="49" />
+    <scopeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578514961856" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="33" startPosition="36" endLine="34" endPosition="109" />
+    <scopeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="18" startPosition="71" endLine="20" endPosition="112" />
+    <scopeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578514961853" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="32" startPosition="108" endLine="35" endPosition="7">
+      <varInfo nodeId="7247988578514961859" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="29" startPosition="51" endLine="37" endPosition="107">
+      <varInfo nodeId="7247988578514959229" varName="editor" />
+      <varInfo nodeId="7247988578514959229" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
+    <unitInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="23" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.editorTest.ReAddParensToTernaryExpression2_Test$TestBody" />
+    <unitInfo nodeId="7247988578514959229" fileName="ReAddParensToTernaryExpression2_Test.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.editorTest.ReAddParensToTernaryExpression2_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578516151424">
+    <nodeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="18" startPosition="62" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516151457" fileName="AddParensToUnaryMinus1_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516151458" fileName="AddParensToUnaryMinus1_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToUnaryMinus1_Test#()V" />
+    <nodeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToUnaryMinus1#()V" />
+    <nodeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="14" startPosition="40" endLine="14" endPosition="40" />
+    <scopeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="18" startPosition="62" endLine="20" endPosition="103" />
+    <scopeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="7247988578516151424" varName="editor" />
+      <varInfo nodeId="7247988578516151424" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryMinus1_Test$TestBody" />
+    <unitInfo nodeId="7247988578516151424" fileName="AddParensToUnaryMinus1_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryMinus1_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578516267584">
+    <nodeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="18" startPosition="62" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516267586" fileName="AddParensToUnaryMinus2_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516267587" fileName="AddParensToUnaryMinus2_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToUnaryMinus2_Test#()V" />
+    <nodeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToUnaryMinus2#()V" />
+    <nodeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="14" startPosition="40" endLine="14" endPosition="40" />
+    <scopeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="18" startPosition="62" endLine="20" endPosition="103" />
+    <scopeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="7247988578516267584" varName="editor" />
+      <varInfo nodeId="7247988578516267584" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryMinus2_Test$TestBody" />
+    <unitInfo nodeId="7247988578516267584" fileName="AddParensToUnaryMinus2_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryMinus2_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578516271265">
+    <nodeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="18" startPosition="62" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516271267" fileName="AddParensToUnaryMinus3_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516271268" fileName="AddParensToUnaryMinus3_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToUnaryMinus3_Test#()V" />
+    <nodeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToUnaryMinus3#()V" />
+    <nodeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="14" startPosition="40" endLine="14" endPosition="40" />
+    <scopeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="18" startPosition="62" endLine="20" endPosition="103" />
+    <scopeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="7247988578516271265" varName="editor" />
+      <varInfo nodeId="7247988578516271265" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryMinus3_Test$TestBody" />
+    <unitInfo nodeId="7247988578516271265" fileName="AddParensToUnaryMinus3_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryMinus3_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578516284676">
+    <nodeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="18" startPosition="62" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516284678" fileName="AddParensToUnaryMinus4_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516284679" fileName="AddParensToUnaryMinus4_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToUnaryMinus4_Test#()V" />
+    <nodeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToUnaryMinus4#()V" />
+    <nodeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="14" startPosition="40" endLine="14" endPosition="40" />
+    <scopeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="18" startPosition="62" endLine="20" endPosition="103" />
+    <scopeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="7247988578516284676" varName="editor" />
+      <varInfo nodeId="7247988578516284676" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryMinus4_Test$TestBody" />
+    <unitInfo nodeId="7247988578516284676" fileName="AddParensToUnaryMinus4_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryMinus4_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578516294151">
+    <nodeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="18" startPosition="62" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516294153" fileName="AddParensToUnaryMinus5_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516294154" fileName="AddParensToUnaryMinus5_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToUnaryMinus5_Test#()V" />
+    <nodeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToUnaryMinus5#()V" />
+    <nodeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="14" startPosition="40" endLine="14" endPosition="40" />
+    <scopeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="18" startPosition="62" endLine="20" endPosition="103" />
+    <scopeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="7247988578516294151" varName="editor" />
+      <varInfo nodeId="7247988578516294151" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryMinus5_Test$TestBody" />
+    <unitInfo nodeId="7247988578516294151" fileName="AddParensToUnaryMinus5_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryMinus5_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578516316506">
+    <nodeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="18" startPosition="66" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516316508" fileName="AddParensToUnaryOperation1_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516316509" fileName="AddParensToUnaryOperation1_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToUnaryOperation1_Test#()V" />
+    <nodeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToUnaryOperation1#()V" />
+    <nodeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="14" startPosition="44" endLine="14" endPosition="44" />
+    <scopeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="18" startPosition="66" endLine="20" endPosition="107" />
+    <scopeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="7247988578516316506" varName="editor" />
+      <varInfo nodeId="7247988578516316506" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryOperation1_Test$TestBody" />
+    <unitInfo nodeId="7247988578516316506" fileName="AddParensToUnaryOperation1_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryOperation1_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578516321608">
+    <nodeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="18" startPosition="66" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516321610" fileName="AddParensToUnaryOperation2_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516321611" fileName="AddParensToUnaryOperation2_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToUnaryOperation2_Test#()V" />
+    <nodeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToUnaryOperation2#()V" />
+    <nodeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="14" startPosition="44" endLine="14" endPosition="44" />
+    <scopeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="18" startPosition="66" endLine="20" endPosition="107" />
+    <scopeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="7247988578516321608" varName="editor" />
+      <varInfo nodeId="7247988578516321608" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryOperation2_Test$TestBody" />
+    <unitInfo nodeId="7247988578516321608" fileName="AddParensToUnaryOperation2_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryOperation2_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578516331946">
+    <nodeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="18" startPosition="66" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516331948" fileName="AddParensToUnaryOperation3_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516331949" fileName="AddParensToUnaryOperation3_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToUnaryOperation3_Test#()V" />
+    <nodeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToUnaryOperation3#()V" />
+    <nodeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="14" startPosition="44" endLine="14" endPosition="44" />
+    <scopeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="18" startPosition="66" endLine="20" endPosition="107" />
+    <scopeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="7247988578516331946" varName="editor" />
+      <varInfo nodeId="7247988578516331946" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryOperation3_Test$TestBody" />
+    <unitInfo nodeId="7247988578516331946" fileName="AddParensToUnaryOperation3_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryOperation3_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578516359505">
+    <nodeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="18" startPosition="66" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516359507" fileName="AddParensToUnaryOperation4_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516359508" fileName="AddParensToUnaryOperation4_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToUnaryOperation4_Test#()V" />
+    <nodeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToUnaryOperation4#()V" />
+    <nodeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="14" startPosition="44" endLine="14" endPosition="44" />
+    <scopeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="18" startPosition="66" endLine="20" endPosition="107" />
+    <scopeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="7247988578516359505" varName="editor" />
+      <varInfo nodeId="7247988578516359505" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryOperation4_Test$TestBody" />
+    <unitInfo nodeId="7247988578516359505" fileName="AddParensToUnaryOperation4_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToUnaryOperation4_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578516371522">
+    <nodeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="18" startPosition="67" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578516371524" fileName="ReAddParensToUnaryOperation_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516371526" fileName="ReAddParensToUnaryOperation_Test.java" startLine="32" startPosition="108" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516371527" fileName="ReAddParensToUnaryOperation_Test.java" startLine="33" startPosition="58" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReAddParensToUnaryOperation_Test#()V" />
+    <nodeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ReAddParensToUnaryOperation#()V" />
+    <nodeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="14" startPosition="45" endLine="14" endPosition="45" />
+    <scopeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="18" startPosition="67" endLine="20" endPosition="108" />
+    <scopeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="29" startPosition="51" endLine="34" endPosition="107">
+      <varInfo nodeId="7247988578516371522" varName="editor" />
+      <varInfo nodeId="7247988578516371522" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="23" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.ReAddParensToUnaryOperation_Test$TestBody" />
+    <unitInfo nodeId="7247988578516371522" fileName="ReAddParensToUnaryOperation_Test.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.ReAddParensToUnaryOperation_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578522080740">
+    <nodeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="18" startPosition="70" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578522080771" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveParenUnaryMinusRebalance_Test#()V" />
+    <nodeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RemoveParenUnaryMinusRebalance#()V" />
+    <nodeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="14" startPosition="48" endLine="14" endPosition="48" />
+    <scopeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="18" startPosition="70" endLine="20" endPosition="111" />
+    <scopeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="108">
+      <varInfo nodeId="7247988578522080740" varName="editor" />
+      <varInfo nodeId="7247988578522080740" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.RemoveParenUnaryMinusRebalance_Test$TestBody" />
+    <unitInfo nodeId="7247988578522080740" fileName="RemoveParenUnaryMinusRebalance_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.RemoveParenUnaryMinusRebalance_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578522162332">
+    <nodeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="18" startPosition="74" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578522162349" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveParenDotExpressionRebalance1_Test#()V" />
+    <nodeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RemoveParenDotExpressionRebalance1#()V" />
+    <nodeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="14" startPosition="52" endLine="14" endPosition="52" />
+    <scopeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="18" startPosition="74" endLine="20" endPosition="115" />
+    <scopeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="108">
+      <varInfo nodeId="7247988578522162332" varName="editor" />
+      <varInfo nodeId="7247988578522162332" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.RemoveParenDotExpressionRebalance1_Test$TestBody" />
+    <unitInfo nodeId="7247988578522162332" fileName="RemoveParenDotExpressionRebalance1_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.RemoveParenDotExpressionRebalance1_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578522288943">
+    <nodeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="18" startPosition="74" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578522288945" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveParenDotExpressionRebalance2_Test#()V" />
+    <nodeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RemoveParenDotExpressionRebalance2#()V" />
+    <nodeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="14" startPosition="52" endLine="14" endPosition="52" />
+    <scopeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="18" startPosition="74" endLine="20" endPosition="115" />
+    <scopeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="108">
+      <varInfo nodeId="7247988578522288943" varName="editor" />
+      <varInfo nodeId="7247988578522288943" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.RemoveParenDotExpressionRebalance2_Test$TestBody" />
+    <unitInfo nodeId="7247988578522288943" fileName="RemoveParenDotExpressionRebalance2_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.RemoveParenDotExpressionRebalance2_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7247988578522301345">
+    <nodeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="18" startPosition="77" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7247988578522301362" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveParenTernaryExpressionRebalance_Test#()V" />
+    <nodeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RemoveParenTernaryExpressionRebalance#()V" />
+    <nodeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="14" startPosition="55" endLine="14" endPosition="55" />
+    <scopeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="18" startPosition="77" endLine="20" endPosition="118" />
+    <scopeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="108">
+      <varInfo nodeId="7247988578522301345" varName="editor" />
+      <varInfo nodeId="7247988578522301345" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.RemoveParenTernaryExpressionRebalance_Test$TestBody" />
+    <unitInfo nodeId="7247988578522301345" fileName="RemoveParenTernaryExpressionRebalance_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.RemoveParenTernaryExpressionRebalance_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7301049412170069060">
     <nodeInfo nodeId="7301049412170069060" fileName="RestoreCellSelection_Test.java" startLine="20" startPosition="60" endLine="21" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7301049412170069060" fileName="RestoreCellSelection_Test.java" startLine="21" startPosition="107" endLine="22" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5407,6 +5912,156 @@
     <scopeInfo nodeId="8030715741824232266" fileName="PasteParameterManyTimes_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
     <unitInfo nodeId="8030715741824232266" fileName="PasteParameterManyTimes_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.PasteParameterManyTimes_Test$TestBody" />
     <unitInfo nodeId="8030715741824232266" fileName="PasteParameterManyTimes_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.PasteParameterManyTimes_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8152288095120900997">
+    <nodeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095120901026" fileName="AddParensToDotExpression1_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095120901027" fileName="AddParensToDotExpression1_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToDotExpression1_Test#()V" />
+    <nodeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToDotExpression1#()V" />
+    <nodeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="8152288095120900997" varName="editor" />
+      <varInfo nodeId="8152288095120900997" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToDotExpression1_Test$TestBody" />
+    <unitInfo nodeId="8152288095120900997" fileName="AddParensToDotExpression1_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToDotExpression1_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8152288095121305820">
+    <nodeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095121305835" fileName="AddParensToDotExpression2_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121305836" fileName="AddParensToDotExpression2_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToDotExpression2_Test#()V" />
+    <nodeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToDotExpression2#()V" />
+    <nodeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="8152288095121305820" varName="editor" />
+      <varInfo nodeId="8152288095121305820" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToDotExpression2_Test$TestBody" />
+    <unitInfo nodeId="8152288095121305820" fileName="AddParensToDotExpression2_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToDotExpression2_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8152288095121320816">
+    <nodeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095121320847" fileName="AddParensToDotExpression3_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121320848" fileName="AddParensToDotExpression3_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToDotExpression3_Test#()V" />
+    <nodeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToDotExpression3#()V" />
+    <nodeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="8152288095121320816" varName="editor" />
+      <varInfo nodeId="8152288095121320816" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToDotExpression3_Test$TestBody" />
+    <unitInfo nodeId="8152288095121320816" fileName="AddParensToDotExpression3_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToDotExpression3_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8152288095121329820">
+    <nodeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095121329851" fileName="AddParensToDotExpression4_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121329852" fileName="AddParensToDotExpression4_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToDotExpression4_Test#()V" />
+    <nodeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToDotExpression4#()V" />
+    <nodeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="8152288095121329820" varName="editor" />
+      <varInfo nodeId="8152288095121329820" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToDotExpression4_Test$TestBody" />
+    <unitInfo nodeId="8152288095121329820" fileName="AddParensToDotExpression4_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToDotExpression4_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8152288095121343084">
+    <nodeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095121343115" fileName="AddParensToDotExpression5_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121343116" fileName="AddParensToDotExpression5_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToDotExpression5_Test#()V" />
+    <nodeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToDotExpression5#()V" />
+    <nodeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="8152288095121343084" varName="editor" />
+      <varInfo nodeId="8152288095121343084" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToDotExpression5_Test$TestBody" />
+    <unitInfo nodeId="8152288095121343084" fileName="AddParensToDotExpression5_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToDotExpression5_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8152288095121352630">
+    <nodeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095121352661" fileName="AddParensToDotExpression6_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121352662" fileName="AddParensToDotExpression6_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToDotExpression6_Test#()V" />
+    <nodeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToDotExpression6#()V" />
+    <nodeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="8152288095121352630" varName="editor" />
+      <varInfo nodeId="8152288095121352630" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToDotExpression6_Test$TestBody" />
+    <unitInfo nodeId="8152288095121352630" fileName="AddParensToDotExpression6_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToDotExpression6_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/818296778579227381">
     <nodeInfo nodeId="818296778579227381" fileName="PriorityCheckTestMulFirst_Test.java" startLine="24" startPosition="52" endLine="25" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
