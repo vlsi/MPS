@@ -115,7 +115,7 @@ public class InlineMethodRefactoring {
     if (!(SNodeOperations.isInstanceOf(this.myOperand, "jetbrains.mps.baseLanguage.structure.IThisExpression") || SNodeOperations.isInstanceOf(this.myOperand, "jetbrains.mps.baseLanguage.structure.VariableReference") || SNodeOperations.isInstanceOf(this.myOperand, "jetbrains.mps.baseLanguage.structure.StringLiteral"))) {
       SNode statement = SNodeOperations.getAncestor(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
       SNode typeForMethodCall = getTypeForMethodCall(myMethodCall);
-      SNode type = (typeForMethodCall != null ? typeForMethodCall : getTypeForOperand(myOperand));
+      SNode type = (typeForMethodCall != null ? typeForMethodCall : SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(myOperand), "jetbrains.mps.baseLanguage.structure.Type"));
       this.myOperand = this.createVariable(statement, "instance", type, this.myOperand);
     }
     for (SNode thisExpr : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.IThisExpression", false, new String[]{}))) {
@@ -131,14 +131,6 @@ public class InlineMethodRefactoring {
     } else {
       return null;
     }
-  }
-
-  private SNode getTypeForOperand(SNode operand) {
-    SNode type = TypeChecker.getInstance().getTypeOf(operand);
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.Type")) {
-      return SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.Type");
-    }
-    return null;
   }
 
   private SNode createAssignmentExpression(SNode returnVar, SNode returnExpression) {
