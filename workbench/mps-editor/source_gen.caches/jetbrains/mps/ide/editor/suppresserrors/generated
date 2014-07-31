@@ -34,7 +34,6 @@
     <file name="SuppressErrorsChecker.java" />
   </source>
   <source id="7348309840067517756" name="SuppressErrorsMessage" hash="-8sag3khitfvk60tym260ocn7zmqqhpx">
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="SuppressErrorsMessage.java" />
   </source>
