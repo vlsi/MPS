@@ -592,14 +592,23 @@ public class ParenthesisUtil {
 
   public static void checkExpressionPriorities(SNode expr) {
     SNode current = expr;
+    // find the top-most expression 
     while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Expression")) {
       current = SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Expression");
     }
-    ListSequence.fromList(SNodeOperations.getDescendants(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation", true, new String[]{})).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        checkOperationWRTPriority(it);
-      }
-    });
+
+    List<SNode> descendants = SNodeOperations.getDescendants(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation", true, new String[]{});
+    List<SNode> previousDescendants = null;
+    // repeat until descendants keep changing 
+    while (neq_a65dpo_a0h0ic(previousDescendants, descendants)) {
+      ListSequence.fromList(descendants).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          checkOperationWRTPriority(it);
+        }
+      });
+      previousDescendants = descendants;
+      descendants = SNodeOperations.getDescendants(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation", true, new String[]{});
+    }
   }
 
 
@@ -747,5 +756,9 @@ public class ParenthesisUtil {
 
   private static boolean eq_a65dpo_a0a0a0vb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean neq_a65dpo_a0h0ic(Object a, Object b) {
+    return !((a != null ? a.equals(b) : a == b));
   }
 }
