@@ -1579,7 +1579,7 @@
     </node>
   </root>
   <root type="tpee.Interface" typeId="tpee.1107796713796" id="6796535740154099794" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="transformation" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <property name="name" nameId="tpck.1169194664001" value="TestsContributor" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6796535740154099795" nodeInfo="igu">
       <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
@@ -1610,7 +1610,7 @@
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6796535740154099805" nodeInfo="nn" />
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6796535740154099806" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="transformation" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <property name="name" nameId="tpck.1169194664001" value="AbstractTestExecutor" />
     <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5097223082294237073" nodeInfo="igu">
@@ -2087,7 +2087,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6796535740154099918" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="TestLightRunListener" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="transformation" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="6796535740154099919" nodeInfo="igu">
       <property name="isVolatile" nameId="tpee.1240249534625" value="false" />
       <property name="isTransient" nameId="tpee.8606350594693632173" value="false" />
@@ -2911,7 +2911,7 @@
     </node>
   </root>
   <root type="tpee.Interface" typeId="tpee.1107796713796" id="6796535740154100250" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="transformation" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <property name="name" nameId="tpck.1169194664001" value="TestExecutor" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6796535740154100251" nodeInfo="igu">
       <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
@@ -2943,7 +2943,7 @@
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6796535740154100267" nodeInfo="nn" />
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6796535740154100268" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="transformation" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <property name="name" nameId="tpck.1169194664001" value="NodeWrappersTestsContributor" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="6796535740154100269" nodeInfo="igu">
       <property name="isVolatile" nameId="tpee.1240249534625" value="false" />
@@ -3504,7 +3504,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6796535740154100326" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="TestsClassStorage" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="transformation" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6796535740154100336" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="tryLoadTestClass" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
@@ -3655,7 +3655,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6796535740154100420" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="TestLightExecutor" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="transformation" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="6796535740154100421" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="TERMINATION_CODE" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -4253,7 +4253,7 @@
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6796535740154100653" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="transformation" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <property name="name" nameId="tpck.1169194664001" value="CommandLineTestsContributor" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="6796535740154100654" nodeInfo="igu">
       <property name="isVolatile" nameId="tpee.1240249534625" value="false" />
