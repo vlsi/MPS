@@ -46,18 +46,14 @@ public class JUnitTests_Configuration_RunProfileState implements RunProfileState
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    boolean hasLock = JUnitLightExecutor.acquireLock();
     JUnitSettings_Configuration jUnitSettings = myRunConfiguration.getJUnitSettings();
-    List<ITestNodeWrapper> testNodes = jUnitSettings.getTests(ProjectHelper.toMPSProject(project), hasLock);
+    List<ITestNodeWrapper> testNodes = jUnitSettings.getTests(ProjectHelper.toMPSProject(project));
     TestRunState runState = new TestRunState(testNodes);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
     jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor processExecutor;
-    if (hasLock && jUnitSettings.canLightExecute(testNodes)) {
+    if (jUnitSettings.canLightExecute(testNodes)) {
       processExecutor = new JUnitLightExecutor(testNodes, eventsDispatcher);
     } else {
-      if (hasLock) {
-        JUnitLightExecutor.releaseLock();
-      }
       processExecutor = new JUnitExecutor(jUnitSettings, myRunConfiguration.getJavaRunParameters(), testNodes);
     }
     ProcessHandler process = processExecutor.execute();

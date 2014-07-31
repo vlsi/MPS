@@ -22,12 +22,12 @@ public class TestLightExecutor extends AbstractTestExecutor {
   private final TestEventsDispatcher myDispatcher;
   private final Iterable<? extends ITestNodeWrapper> myNodes;
   private final TestsClassStorage myTestClassStorage = new TestsClassStorage();
-  private boolean myReadyFlag = false;
   private final TestLightRunState myTestRunState;
-  public TestLightExecutor(TestEventsDispatcher dispatcher, Iterable<? extends ITestNodeWrapper> nodes) {
-    myTestRunState = TestLightRunState.create();
+
+  public TestLightExecutor(TestEventsDispatcher dispatcher, Iterable<? extends ITestNodeWrapper> nodes, TestLightRunState testRunState) {
     myDispatcher = dispatcher;
     myNodes = nodes;
+    myTestRunState = testRunState;
   }
 
   @Override
@@ -35,26 +35,26 @@ public class TestLightExecutor extends AbstractTestExecutor {
     if (LOG.isDebugEnabled()) {
       LOG.debug("Initializing TestLightExecutor");
     }
-    getRunState().advance(TestLightRunStateEnum.INITIALIZED);
   }
+
 
   @Override
   public void dispose() {
     if (LOG.isDebugEnabled()) {
       LOG.debug("Disposing TestLightExecutor");
     }
-    getRunState().advance(TestLightRunStateEnum.TERMINATED);
+    myTestRunState.advance(TestLightRunStateEnum.TERMINATED);
   }
 
   public void setReady() {
-    myReadyFlag = true;
+    myTestRunState.advance(TestLightRunStateEnum.READYTOEXECUTE);
   }
 
   @Override
   protected void doExecute(JUnitCore core, Iterable<Request> requests) throws Throwable {
-    assert getRunState().isInitialized();
+    assert myTestRunState.isInitialized();
     waitWhileNotReady();
-    getRunState().advance(TestLightRunStateEnum.RUNNING);
+    myTestRunState.advance(TestLightRunStateEnum.RUNNING);
     System.setProperty(TestLightRunState.LIGHT_EXEC_FLAG, "true");
     try {
       super.doExecute(core, requests);
@@ -67,20 +67,20 @@ public class TestLightExecutor extends AbstractTestExecutor {
     new WaitFor() {
       @Override
       protected boolean condition() {
-        return myReadyFlag;
+        return myTestRunState.get() == TestLightRunStateEnum.READYTOEXECUTE;
       }
     };
   }
 
   public void terminateRun() {
-    if (getRunState().isTerminated()) {
+    if (myTestRunState.isTerminated()) {
       return;
     }
     stopRun();
   }
 
   /*package*/ void terminateProcess(int code) {
-    getRunState().advance(TestLightRunStateEnum.TERMINATING);
+    myTestRunState.advance(TestLightRunStateEnum.TERMINATING);
     stopRun();
     String terminateMessage = "Process finished with exit code " + code;
     if (LOG.isInfoEnabled()) {
@@ -109,10 +109,6 @@ public class TestLightExecutor extends AbstractTestExecutor {
 
   public TestEventsDispatcher getDispatcher() {
     return myDispatcher;
-  }
-
-  public TestLightRunState getRunState() {
-    return myTestRunState;
   }
 
   protected static Logger LOG = LogManager.getLogger(TestLightExecutor.class);

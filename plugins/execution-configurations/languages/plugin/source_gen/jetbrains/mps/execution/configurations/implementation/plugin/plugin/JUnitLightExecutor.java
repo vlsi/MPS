@@ -4,7 +4,8 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
-import java.util.concurrent.atomic.AtomicBoolean;
+import jetbrains.mps.lang.test.util.TestLightRunState;
+import jetbrains.mps.lang.test.util.TestLightRunStateEnum;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor;
 import java.util.concurrent.Future;
@@ -13,26 +14,39 @@ import org.apache.log4j.Level;
 import java.io.IOError;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor;
 import com.intellij.openapi.application.ApplicationManager;
+import org.jetbrains.annotations.Nullable;
+import java.io.OutputStream;
+import com.intellij.execution.process.ProcessOutputTypes;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class JUnitLightExecutor implements Executor {
   private final Iterable<ITestNodeWrapper> myNodes;
   private final TestEventsDispatcher myDispatcher;
-  private static AtomicBoolean ourRunInProgress = new AtomicBoolean(false);
   private final FakeProcess myFakeProcess = new FakeProcess();
+  private static volatile TestLightRunState ourTestRunState = new TestLightRunState();
 
   public JUnitLightExecutor(Iterable<ITestNodeWrapper> testNodeWrappers, TestEventsDispatcher dispatcher) {
-    assert ourRunInProgress.get() == true;
     myNodes = testNodeWrappers;
     myDispatcher = dispatcher;
   }
 
+  private synchronized boolean checkExecutionIsPossible() {
+    boolean possible = ourTestRunState.get() == TestLightRunStateEnum.IDLE;
+    if (!(possible)) {
+      ourTestRunState.set(TestLightRunStateEnum.INITIALIZED);
+    }
+    return possible;
+  }
+
   @Override
   public ProcessHandler execute() {
+    if (!(checkExecutionIsPossible())) {
+      return new JUnitLightExecutor.EmptyProcessHandler();
+    }
     try {
       myFakeProcess.init();
-      TestLightExecutor executor = new TestLightExecutor(myDispatcher, myNodes);
+      TestLightExecutor executor = new TestLightExecutor(myDispatcher, myNodes, ourTestRunState);
       final Future<?> future = doExecute(executor);
       final FakeProcessHandler process = new FakeProcessHandler(myFakeProcess, future, executor);
       return process;
@@ -61,15 +75,32 @@ public class JUnitLightExecutor implements Executor {
 
   private void dispose() {
     myFakeProcess.destroy();
-    releaseLock();
+    ourTestRunState.reset();
   }
 
-  public static boolean acquireLock() {
-    return ourRunInProgress.compareAndSet(false, true);
-  }
-
-  public static void releaseLock() {
-    ourRunInProgress.set(false);
+  private class EmptyProcessHandler extends ProcessHandler {
+    protected void destroyProcessImpl() {
+    }
+    protected void detachProcessImpl() {
+    }
+    public boolean detachIsDefault() {
+      return true;
+    }
+    @Nullable
+    public OutputStream getProcessInput() {
+      return null;
+    }
+    @Override
+    public boolean isProcessTerminated() {
+      return true;
+    }
+    @Override
+    public void startNotify() {
+      super.startNotify();
+      String terminateMessage = "Only one test instance is allowed to run in process.\n" + "To run in the outer process change the corresponding property in the junit run configuration.\n" + "Process finished with exit code " + -1 + ".\n";
+      myDispatcher.onSimpleTextAvailable(terminateMessage, ProcessOutputTypes.STDERR);
+      myDispatcher.onProcessTerminated(terminateMessage);
+    }
   }
   protected static Logger LOG = LogManager.getLogger(JUnitLightExecutor.class);
 }

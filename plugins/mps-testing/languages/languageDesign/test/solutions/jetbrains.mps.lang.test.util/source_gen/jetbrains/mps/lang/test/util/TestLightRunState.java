@@ -7,12 +7,13 @@ import org.jetbrains.annotations.NotNull;
 public class TestLightRunState implements Comparable<TestLightRunState> {
   public static final String LIGHT_EXEC_FLAG = "mps.light.execution";
 
-  private TestLightRunStateEnum myValue;
-  private TestLightRunState() {
+  private volatile TestLightRunStateEnum myValue;
+
+  public TestLightRunState() {
     myValue = TestLightRunStateEnum.IDLE;
   }
-  public static TestLightRunState create() {
-    return new TestLightRunState();
+  public TestLightRunStateEnum get() {
+    return myValue;
   }
   public void set(TestLightRunStateEnum value) {
     myValue = value;
@@ -21,7 +22,11 @@ public class TestLightRunState implements Comparable<TestLightRunState> {
     assert myValue.compareTo(value) < 0;
     set(value);
   }
-  public int ordinal() {
+  public void reset() {
+    assert isTerminated();
+    set(TestLightRunStateEnum.IDLE);
+  }
+  private int ordinal() {
     return myValue.ordinal();
   }
   public boolean greater(TestLightRunStateEnum another) {

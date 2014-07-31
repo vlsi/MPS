@@ -100,17 +100,14 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     myState.myRunType = value;
   }
   public boolean canLightExecute(Iterable<ITestNodeWrapper> testNodes) {
-    if (!(this.getLightExec())) {
-      return false;
-    }
-    return new LightExecutionFilter().accept(testNodes);
+    return this.getLightExec() && new LightExecutionFilter().accept(testNodes);
   }
-  public List<ITestNodeWrapper> getTests(final Project project, boolean lightExecPossible) {
+  public List<ITestNodeWrapper> getTests(final Project project) {
     if (this.getRunType() == null) {
       return null;
     }
     Iterable<ITestNodeWrapper> testNodes = this.getRunType().collect(this, project);
-    if (lightExecPossible && canLightExecute(testNodes)) {
+    if (canLightExecute(testNodes)) {
       return Sequence.fromIterable(new LightExecutionFilter().filter(testNodes)).toListSequence();
     }
     return Sequence.fromIterable(testNodes).toListSequence();

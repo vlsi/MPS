@@ -125,7 +125,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor" />
-    <classNode dependClassName="jetbrains.mps.lang.test.util.TestLightRunState" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.junit.runner.Description" />

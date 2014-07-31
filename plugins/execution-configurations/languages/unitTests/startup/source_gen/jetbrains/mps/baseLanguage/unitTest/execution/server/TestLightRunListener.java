@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 import org.junit.runner.notification.RunListener;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
-import jetbrains.mps.lang.test.util.TestLightRunState;
 import org.junit.runner.notification.Failure;
 import java.io.StringWriter;
 import java.io.PrintWriter;
@@ -18,7 +17,6 @@ import org.apache.log4j.LogManager;
 public class TestLightRunListener extends RunListener {
   private final TestLightExecutor myExecutor;
   private final TestEventsDispatcher myDispatcher;
-  private final TestLightRunState myTestRunState;
   private final int myRequestCount;
   private final TestLightRunListener.TestEventFactory myFactory;
   private int currentRequest;
@@ -27,7 +25,6 @@ public class TestLightRunListener extends RunListener {
   public TestLightRunListener(TestLightExecutor executor, int requestCount) {
     myExecutor = executor;
     myDispatcher = executor.getDispatcher();
-    myTestRunState = executor.getRunState();
     myRequestCount = requestCount;
     myFactory = new TestLightRunListener.TestEventFactory();
   }

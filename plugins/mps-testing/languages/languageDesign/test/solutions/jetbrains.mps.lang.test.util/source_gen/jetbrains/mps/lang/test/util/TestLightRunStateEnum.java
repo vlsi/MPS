@@ -6,8 +6,10 @@ package jetbrains.mps.lang.test.util;
 public enum TestLightRunStateEnum {
   IDLE(),
   INITIALIZED(),
+  READYTOEXECUTE(),
   RUNNING(),
   TERMINATING(),
   TERMINATED();
+
 
 }
