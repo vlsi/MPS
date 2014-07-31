@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,25 +15,23 @@
  */
 package jetbrains.mps.ide.classpath;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
-import jetbrains.mps.project.ClasspathCollector;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.ide.tools.BaseProjectTool;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -42,6 +40,7 @@ import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 public class ClassPathViewerTool extends BaseProjectTool {
   private MyClassPathTree myTree;
@@ -50,7 +49,6 @@ public class ClassPathViewerTool extends BaseProjectTool {
 
   public ClassPathViewerTool(Project project) {
     super(project, "Classpath Explorer", -1, IdeIcons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
-
   }
 
   @Override
@@ -88,45 +86,16 @@ public class ClassPathViewerTool extends BaseProjectTool {
       }
 
       TextTreeNode root = new TextTreeNode("ClassPath of module " + myInspectedModule.getModuleName());
-      ClasspathCollector collector = new ClasspathCollector(CollectionUtil.set(myInspectedModule));
-      collector.collect(false);
+      final Set<String> classPath = JavaModuleOperations.collectCompileClasspath(Collections.singleton(myInspectedModule), true);
+      CompositeClassPathItem cpItem = JavaModuleOperations.createClassPathItem(classPath, ClassPathViewerTool.class.getName());
 
-      List<IClassPathItem> items = new ArrayList<IClassPathItem>(collector.getResult());
+      List<IClassPathItem> items = new ArrayList<IClassPathItem>(cpItem.optimize().getChildren());
       Collections.sort(items, new ToStringComparator());
 
       for (IClassPathItem item : items) {
-        TextTreeNode itemNode = new TextTreeNode(item.toString());
-        root.add(itemNode);
-        for (SModule pathItem : collector.getPathFor(item)) {
-          itemNode.add(new ModuleTreeNode(pathItem));
-        }
+        root.add(new TextTreeNode(item.toString()));
       }
-
       return root;
-    }
-
-    @Override
-    protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
-      return null;
-    }
-
-    private class ModuleTreeNode extends MPSTreeNode {
-      private SModule myModule;
-
-      private ModuleTreeNode(SModule module) {
-        super(null);
-        myModule = module;
-
-        setNodeIdentifier(myModule.getModuleName());
-
-        setText(myModule.getModuleName());
-        setIcon(IconManager.getIconFor(myModule));
-      }
-
-      @Override
-      public boolean isLeaf() {
-        return true;
-      }
     }
   }
 }
