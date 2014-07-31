@@ -145,7 +145,7 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
         SNodeFactoryOperations.setNewChild(node, "compositePart", "jetbrains.mps.build.structure.BuildCompositePath");
       }
       SPropertyOperations.set(SLinkOperations.getTarget(node, "compositePart", true), "head", parameterObject);
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(node, "compositePart", true), CellIdManager.createPropertyId("head"), -1);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(node, "compositePart", true), "*" + CellIdManager.createPropertyId("head"), -1);
     }
 
     public boolean isReferentPresentation() {

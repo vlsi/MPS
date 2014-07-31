@@ -27,7 +27,7 @@
   </common>
   <source id="144575100359734006" name="JavaConsoleCreator" hash="-dwg06duiunwi1j6h7l673e8f91imaug">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="JavaConsoleCreator.java" />
   </source>
   <source id="8606486054003576517" name="LayoutUtil" hash="-4jjbinkdfstesm1ayvmxgvh0mlgtuao">
@@ -42,7 +42,6 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.plaf.basic(JDK/javax.swing.plaf.basic@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ReadComboBoxEditor.java" />
   </source>
   <source id="4251154893541691639" name="ReadComboBoxRenderrer" hash="-b36hr90ocoxrtsr651bw8llune43zp6">

@@ -8,8 +8,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.awt.Point;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -18,7 +19,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import java.awt.Component;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.ToolTipData;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
@@ -74,7 +74,13 @@ public class ShowParameters_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editor", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("editor", editorComponent);
+    }
     if (MapSequence.fromMap(_params).get("editor") == null) {
       return false;
     }

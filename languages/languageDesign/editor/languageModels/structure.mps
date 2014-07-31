@@ -2456,6 +2456,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent_old" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1106270491082" resolveInfo="CellLayout" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="7945085613660522985" nodeInfo="ig" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1219226236603" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />

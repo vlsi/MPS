@@ -9,11 +9,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import java.awt.Point;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Frame;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.NodeInformationDialog;
@@ -53,7 +53,13 @@ public class ShowNodeInfo_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editor", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("editor", editorComponent);
+    }
     if (MapSequence.fromMap(_params).get("editor") == null) {
       return false;
     }

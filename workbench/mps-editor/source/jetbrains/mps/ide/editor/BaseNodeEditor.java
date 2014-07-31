@@ -186,12 +186,24 @@ public abstract class BaseNodeEditor implements Editor {
   //---state---
 
   @Override
+  public EditorState saveState() {
+    return saveState(true);
+  }
+
+
+  /**
+   * Implementation should be moved to saveState()
+   *
+   * @deprecated since MPS 3.1
+   */
+  @Deprecated
+  @Override
   @Nullable
   public EditorState saveState(boolean full) {
     BaseEditorState result = new BaseEditorState();
     EditorContext editorContext = getEditorContext();
     if (editorContext != null) {
-      result.myMemento = editorContext.createMemento(full);
+      result.myMemento = editorContext.createMemento();
       EditorComponent editorComponent = getCurrentEditorComponent();
       if (editorComponent instanceof NodeEditorComponent) {
         NodeEditorComponent nodeEditorComponent = (NodeEditorComponent) editorComponent;
@@ -199,7 +211,7 @@ public abstract class BaseNodeEditor implements Editor {
         if (inspector != null) {
           EditorContext inspectorContext = inspector.getEditorContext();
           if (inspectorContext != null) {
-            result.myInspectorMemento = inspectorContext.createMemento(full);
+            result.myInspectorMemento = inspectorContext.createMemento();
           }
         }
       }
@@ -239,7 +251,7 @@ public abstract class BaseNodeEditor implements Editor {
       @Override
       public void performTask() {
         inspectorEditorContext.setMemento(s.myInspectorMemento);
-        editorContext.getEditorComponent().rebuildEditorContent();
+        inspectorEditorContext.getEditorComponent().rebuildEditorContent();
       }
     });
   }

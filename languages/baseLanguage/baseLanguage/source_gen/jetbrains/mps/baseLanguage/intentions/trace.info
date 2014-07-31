@@ -2256,7 +2256,7 @@
     <nodeInfo nodeId="1202131050789" fileName="MergeStringConcatenation_Intention.java" startLine="87" startPosition="131" endLine="88" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1202131053728" fileName="MergeStringConcatenation_Intention.java" startLine="88" startPosition="192" endLine="89" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1202130329637" fileName="MergeStringConcatenation_Intention.java" startLine="89" startPosition="194" endLine="90" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4461169032988970550" fileName="MergeStringConcatenation_Intention.java" startLine="90" startPosition="68" endLine="91" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4461169032988970550" fileName="MergeStringConcatenation_Intention.java" startLine="90" startPosition="68" endLine="91" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1202130221457" fileName="MergeStringConcatenation_Intention.java" startLine="94" startPosition="48" endLine="95" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1202130221457" fileName="MergeStringConcatenation_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeStringConcatenation_Intention#()V" />
     <nodeInfo nodeId="1202130221457" fileName="MergeStringConcatenation_Intention.java" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
@@ -2312,7 +2312,7 @@
     <scopeInfo nodeId="1202130221457" fileName="MergeStringConcatenation_Intention.java" startLine="94" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="1202130221457" fileName="MergeStringConcatenation_Intention.java" startLine="52" startPosition="84" endLine="56" endPosition="16" />
     <scopeInfo nodeId="1202130221457" fileName="MergeStringConcatenation_Intention.java" startLine="71" startPosition="99" endLine="75" endPosition="30" />
-    <scopeInfo nodeId="1202130221463" fileName="MergeStringConcatenation_Intention.java" startLine="86" startPosition="78" endLine="91" endPosition="132">
+    <scopeInfo nodeId="1202130221463" fileName="MergeStringConcatenation_Intention.java" startLine="86" startPosition="78" endLine="91" endPosition="138">
       <varInfo nodeId="1202131050790" varName="left" />
       <varInfo nodeId="1202131053729" varName="right" />
       <varInfo nodeId="1202130310989" varName="stringLiteral" />

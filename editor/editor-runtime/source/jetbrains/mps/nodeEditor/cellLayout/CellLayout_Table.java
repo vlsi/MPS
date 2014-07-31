@@ -18,30 +18,27 @@ package jetbrains.mps.nodeEditor.cellLayout;
 import jetbrains.mps.editor.runtime.style.DefaultBaseLine;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.TableComponent;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 /**
  * Sergey.Sinchuk, Oct 30, 2009
  */
 public class CellLayout_Table extends AbstractCellLayout {
 
-  private EditorCell_Collection myParentCollection = null;
   private CellLayout_Table myParentLayout = null;
-  private EditorCell_Collection[] myDescendants = null;
-  private int[] myRowAscents = null;
-  private int[] myRowDescents = null;
-  private int[] myColumnWidths = null;
+  private int[] myColumnAscents = null;
+  private int[] myColumnDescents = null;
 
   @Override
   public boolean canBeFolded() {
     return true;
-  }
-
-  private static TableComponent rotate(TableComponent c) {
-    if (c == TableComponent.HORIZONTAL_COLLECTION) return TableComponent.VERTICAL_COLLECTION;
-    return TableComponent.HORIZONTAL_COLLECTION;
   }
 
   private EditorCell_Collection findCollection(EditorCell cell, TableComponent tc) {
@@ -60,168 +57,160 @@ public class CellLayout_Table extends AbstractCellLayout {
     return null;
   }
 
-  public void findPairingCollections(EditorCell_Collection editorCells) {
-    if (myParentCollection == null) {
-      TableComponent tc = editorCells.getStyle().get(StyleAttributes.TABLE_COMPONENT);
-      myDescendants = new EditorCell_Collection[editorCells.getCellsCount()];
-      for (int i = 0; i < editorCells.getCellsCount(); i++) {
-        EditorCell_Collection col = findCollection(editorCells.getCellAt(i), rotate(tc));
-        if (col != null) {
-          myDescendants[i] = col;
-          ((CellLayout_Table) col.getCellLayout()).myParentCollection = editorCells;
-          ((CellLayout_Table) col.getCellLayout()).myParentLayout = this;
-        } else {
-          myDescendants[i] = null;
-        }
+  private Iterable<EditorCell_Collection> getRowsCollection(EditorCell_Collection editorCells) {
+    TableComponent tc = editorCells.getStyle().get(StyleAttributes.TABLE_COMPONENT);
+    List<EditorCell_Collection> result = new LinkedList<EditorCell_Collection>();
+    for (EditorCell childCell : editorCells) {
+      EditorCell_Collection col = findCollection(childCell, tc.transpose());
+      result.add(col);
+      if (col != null) {
+        ((CellLayout_Table) col.getCellLayout()).myParentLayout = this;
       }
     }
+    return result;
   }
 
   @Override
   public void doLayout(EditorCell_Collection editorCells) {
+    if (myParentLayout != null) {
+      doLayoutInner(editorCells);
+    } else {
+      doLayoutOuter(editorCells);
+    }
+  }
+
+  private void doLayoutOuter(EditorCell_Collection editorCells) {
+    assert myParentLayout == null;
+
     final int x = editorCells.getX();
     final int y = editorCells.getY();
-
-    if (CellLayout_Indent_Old.DO_INDENT_EVERYWHERE) {
-      CellLayout_Indent_Old._doLayout(editorCells);
-      return;
-    }
-
     TableComponent tc = editorCells.getStyle().get(StyleAttributes.TABLE_COMPONENT);
-    findPairingCollections(editorCells);
 
-    int cellCount = editorCells.getCellsCount();
+    Iterable<EditorCell_Collection> rowsCollection = getRowsCollection(editorCells);
+    fillAscentsDescents(rowsCollection, tc);
 
-    if (myDescendants != null && tc == TableComponent.HORIZONTAL_COLLECTION) {
-      int maxCellsInColumn = 0;
-      for (int i = 0; i < cellCount; i++) {
-        EditorCell_Collection col = myDescendants[i];
-        if (col != null) maxCellsInColumn = Math.max(maxCellsInColumn, col.getCellsCount());
-      }
+    for (EditorCell c : editorCells) {
+      c.relayout();
+    }
 
-      myRowAscents = new int[maxCellsInColumn];
-      myRowDescents = new int[maxCellsInColumn];
-      for (int i = 0; i < cellCount; i++) {
-        EditorCell_Collection col = myDescendants[i];
-        if (col != null) for (int j = 0; j < col.getCellsCount(); j++) {
-          col.getCellAt(j).relayout();
-          myRowAscents[j] = Math.max(myRowAscents[j], col.getCellAt(j).getAscent());
-          myRowDescents[j] = Math.max(myRowDescents[j], col.getCellAt(j).getDescent());
-        }
+    int leftMargin = 0;
+    int rightMargin = 0;
+    int gridWidth = 0;
+
+    Iterator<EditorCell_Collection> rowsIterator = rowsCollection.iterator();
+    for (EditorCell childCell : editorCells) {
+      EditorCell innerCollection = rowsIterator.next();
+      if (innerCollection == null) {
+        gridWidth = Math.max(gridWidth, tc.getWidth(childCell));
+      } else {
+        gridWidth = Math.max(gridWidth, tc.getWidth(innerCollection));
+        leftMargin = Math.max(leftMargin, tc.getX(innerCollection) - tc.getX(childCell));
+        rightMargin = Math.max(rightMargin, (tc.getX(childCell) + tc.getWidth(childCell)) - (tc.getX(innerCollection) + tc.getWidth(innerCollection)));
       }
     }
 
-    if (myDescendants != null && tc == TableComponent.VERTICAL_COLLECTION) {
-      int maxCellsInRow = 0;
-      for (int i = 0; i < cellCount; i++) {
-        EditorCell_Collection col = myDescendants[i];
-        if (col != null) maxCellsInRow = Math.max(maxCellsInRow, col.getCellsCount());
-      }
+    int currentWidth = leftMargin + gridWidth + rightMargin;
+    int currentHeight = 0;
 
-      myColumnWidths = new int[maxCellsInRow];
-      for (int i = 0; i < cellCount; i++) {
-        EditorCell_Collection col = myDescendants[i];
-        if (col != null) for (int j = 0; j < col.getCellsCount(); j++) {
-          col.getCellAt(j).relayout();
-          myColumnWidths[j] = Math.max(myColumnWidths[j], col.getCellAt(j).getWidth());
-        }
+    rowsIterator = rowsCollection.iterator();
+    for (EditorCell childCell : editorCells) {
+      EditorCell innerCollection = rowsIterator.next();
+
+      int deltaX;
+      if (innerCollection == null) {
+        deltaX = leftMargin + (gridWidth - tc.getWidth(childCell)) / 2;
+      } else {
+        deltaX = leftMargin - (tc.getX(innerCollection) - tc.getX(childCell));
       }
+      int deltaY = currentHeight;
+
+      childCell.setX(x + tc.getX(deltaX, deltaY));
+      childCell.setY(y + tc.getY(deltaX, deltaY));
+      currentHeight += tc.getX(childCell.getHeight(), childCell.getWidth());
     }
 
-    for (EditorCell c : editorCells) c.relayout();
+    for (EditorCell c : editorCells) {
+      c.relayout();
+    }
 
-    int width = 0;
-    int height = 0;
+    editorCells.setWidth(tc.getX(currentWidth, currentHeight));
+    editorCells.setHeight(tc.getY(currentWidth, currentHeight));
+  }
 
-    if (tc == TableComponent.VERTICAL_COLLECTION) {
-      int leftMargin = 0;
-      int rightMargin = 0;
-      int gridWidth = 0;
-
-      for (int i = 0; i < cellCount; i++) {
-        EditorCell innerCollection = null;
-        if (myDescendants != null) innerCollection = myDescendants[i];
-        EditorCell outerCell = editorCells.getCellAt(i);
-        if (innerCollection == null) {
-          gridWidth = Math.max(gridWidth, outerCell.getWidth());
+  private void fillAscentsDescents(Iterable<EditorCell_Collection> rowCollections, TableComponent tc) {
+    List<Integer> columnAscents = new LinkedList<Integer>();
+    List<Integer> columnDescents = new LinkedList<Integer>();
+    for (EditorCell_Collection row : rowCollections) {
+      if (row == null) {
+        continue;
+      }
+      ListIterator<Integer> columnAscentsIterator = columnAscents.listIterator();
+      ListIterator<Integer> columnDescentsIterator = columnDescents.listIterator();
+      for (EditorCell column : row) {
+        column.relayout();
+        if (columnAscentsIterator.hasNext()) {
+          columnAscentsIterator.set(Math.max(columnAscentsIterator.next(), tc.transpose().getAccent(column)));
         } else {
-          gridWidth = Math.max(gridWidth, innerCollection.getWidth());
-          leftMargin = Math.max(leftMargin, innerCollection.getX() - outerCell.getX());
-          rightMargin = Math.max(rightMargin, (outerCell.getX() + outerCell.getWidth()) -
-            (innerCollection.getX() + innerCollection.getWidth()));
+          columnAscentsIterator.add(tc.transpose().getAccent(column));
         }
-      }
-
-      for (int i = 0; i < cellCount; i++) {
-        EditorCell innerCollection = null;
-        if (myDescendants != null) innerCollection = myDescendants[i];
-        EditorCell outerCell = editorCells.getCellAt(i);
-        int tm;
-        if (innerCollection == null) tm = 0;
-        else tm = innerCollection.getX() - outerCell.getX();
-
-        if (innerCollection == null) outerCell.setX(x + (leftMargin - tm) + (gridWidth - outerCell.getWidth()) / 2);
-        else
-          outerCell.setX(x + (leftMargin - tm));
-
-        int myStripeHeight = outerCell.getHeight();
-        int myStripeAscent = outerCell.getAscent();
-        if (myParentLayout != null) {
-          myStripeHeight = myParentLayout.myRowAscents[i] + myParentLayout.myRowDescents[i];
-          myStripeAscent = myParentLayout.myRowAscents[i];
-        }
-
-        outerCell.setY(y + height + (myStripeAscent - outerCell.getAscent()));
-        height += myStripeHeight;
-      }
-
-      width += leftMargin + rightMargin + gridWidth;
-    }
-
-    if (tc == TableComponent.HORIZONTAL_COLLECTION) {
-      int topMargin = 0;
-      int bottomMargin = 0;
-      int maxAscent = 0;
-      int maxDescent = 0;
-      for (int i = 0; i < cellCount; i++) {
-        EditorCell innerCollection = null;
-        if (myDescendants != null) innerCollection = myDescendants[i];
-        EditorCell outerCell = editorCells.getCellAt(i);
-        if (innerCollection == null) {
-          maxAscent = Math.max(maxAscent, outerCell.getAscent());
-          maxDescent = Math.max(maxDescent, outerCell.getDescent());
+        if (columnDescentsIterator.hasNext()) {
+          columnDescentsIterator.set(Math.max(columnDescentsIterator.next(), tc.transpose().getDescent(column)));
         } else {
-          maxAscent = Math.max(maxAscent, innerCollection.getHeight());
-          topMargin = Math.max(topMargin, innerCollection.getY() - outerCell.getY());
-          bottomMargin = Math.max(bottomMargin, (outerCell.getY() + outerCell.getHeight()) -
-            (innerCollection.getY() + innerCollection.getHeight()));
+          columnDescentsIterator.add(tc.transpose().getDescent(column));
         }
       }
-      height = topMargin + maxAscent + maxDescent + bottomMargin;
-      for (int i = 0; i < cellCount; i++) {
-        EditorCell innerCollection = null;
-        if (myDescendants != null) innerCollection = myDescendants[i];
-        EditorCell outerCell = editorCells.getCellAt(i);
-        int tm;
-        if (innerCollection == null) tm = 0;
-        else tm = innerCollection.getY() - outerCell.getY();
-        int myStripeWidth = outerCell.getWidth();
-        if (myParentLayout != null) myStripeWidth = myParentLayout.myColumnWidths[i];
-        outerCell.setX(x + width + (myStripeWidth - outerCell.getWidth()) / 2);
-        width += myStripeWidth;
-
-        if (innerCollection == null) {
-          if (myParentLayout == null)
-            outerCell.setY(y + (topMargin - tm) + (maxAscent + maxDescent - outerCell.getHeight()) / 2);
-          else
-            outerCell.setY(y + (topMargin - tm) + (maxAscent - outerCell.getAscent()));
-        } else outerCell.setY(y + (topMargin - tm));
-      }
     }
-    for (EditorCell c : editorCells) c.relayout();
+    myColumnAscents = new int[columnAscents.size()];
+    myColumnDescents = new int[columnDescents.size()];
+    assert columnAscents.size() == columnDescents.size();
+    Iterator<Integer> columnAscentsIterator = columnAscents.iterator();
+    Iterator<Integer> columnDescentsIterator = columnAscents.iterator();
+    for (int i = 0; i < columnAscents.size(); i++) {
+      myColumnDescents[i] = columnAscentsIterator.next();
+      myColumnAscents[i] = columnDescentsIterator.next();
+    }
+  }
 
-    editorCells.setWidth(width);
-    editorCells.setHeight(height);
+  private void doLayoutInner(EditorCell_Collection editorCells) {
+    assert myParentLayout != null;
+
+    final int x = editorCells.getX();
+    final int y = editorCells.getY();
+    TableComponent tc = editorCells.getStyle().get(StyleAttributes.TABLE_COMPONENT);
+
+    for (EditorCell c : editorCells) {
+      c.relayout();
+    }
+
+    int maxWidth = 0;
+    for (EditorCell childCell : editorCells) {
+      maxWidth = Math.max(maxWidth, tc.getWidth(childCell));
+    }
+
+    int currentHeight = 0;
+    int counter = 0;
+    for (EditorCell childCell : editorCells) {
+      int deltaX = (maxWidth - tc.getWidth(childCell)) / 2;
+
+      int ascent = myParentLayout.myColumnAscents[counter];
+      int descent = myParentLayout.myColumnDescents[counter];
+      int cellAscent = tc.getAccent(childCell);
+
+      int deltaY = currentHeight + (ascent - cellAscent);
+      currentHeight += ascent + descent;
+
+      childCell.setX(x + tc.getX(deltaX, deltaY));
+      childCell.setY(y + tc.getY(deltaX, deltaY));
+      counter++;
+    }
+
+    // TODO: looks like we don't need it here for "inner" table cells (rows/columns)
+    for (EditorCell c : editorCells) {
+      c.relayout();
+    }
+
+    editorCells.setWidth(tc.getX(maxWidth, currentHeight));
+    editorCells.setHeight(tc.getY(maxWidth, currentHeight));
   }
 
   @Override
