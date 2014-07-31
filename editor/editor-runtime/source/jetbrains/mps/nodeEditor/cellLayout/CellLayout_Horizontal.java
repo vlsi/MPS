@@ -27,11 +27,6 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
 
   @Override
   public void doLayout(EditorCell_Collection editorCells) {
-    if (CellLayout_Indent_Old.DO_INDENT_EVERYWHERE) {
-      CellLayout_Indent_Old._doLayout(editorCells);
-      return;
-    }
-
     int width = 0;
     final int x = editorCells.getX();
     final int y = editorCells.getY();

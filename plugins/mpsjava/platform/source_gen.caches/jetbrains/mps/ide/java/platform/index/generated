@@ -58,8 +58,6 @@
     <file name="ClassifierSuccessorsIndexer.java" />
   </source>
   <source id="4183391441819864880" name="GlobalSNodeId" hash="-1mkk7wemp26adg567fmwgcrm631nnqj">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="GlobalSNodeId.java" />
   </source>
   <source id="4183391441819865064" name="GlobalSNodeIdDescriptor" hash="-ccczwp1u05wum102i87go7tgcsst7b6">

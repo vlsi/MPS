@@ -137,7 +137,7 @@ public class QueriesGenerated {
 
               @Override
               protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
-                SelectionUtil.selectLabelCellAnSetCaret(editorContext, createdNode, CellIdManager.createPropertyId("head"), -1);
+                SelectionUtil.selectLabelCellAnSetCaret(editorContext, createdNode, "*" + CellIdManager.createPropertyId("head"), -1);
                 return null;
               }
             });
@@ -529,7 +529,7 @@ public class QueriesGenerated {
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SLinkOperations.setTarget(_context.getSourceNode(), "tail", _quotation_createNode_i7jjd8_a0a0a0a0b(SLinkOperations.getTarget(_context.getSourceNode(), "tail", true)), true);
-        SelectionUtil.selectCell(editorContext, SLinkOperations.getTarget(_context.getSourceNode(), "tail", true), CellIdManager.createPropertyId("head"));
+        SelectionUtil.selectCell(editorContext, SLinkOperations.getTarget(_context.getSourceNode(), "tail", true), "*" + CellIdManager.createPropertyId("head"));
         return null;
       }
 

@@ -79,7 +79,13 @@ public class IntroduceConstant_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("component", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("component", editorComponent);
+    }
     if (MapSequence.fromMap(_params).get("component") == null) {
       return false;
     }

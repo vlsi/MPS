@@ -29,13 +29,13 @@
       <node id="103203307808601011" at="28,54,29,56" concept="3" />
       <node id="103203307808601142" at="32,75,33,62" concept="7" />
       <node id="103203307808603023" at="33,62,34,94" concept="3" />
-      <node id="103203307808609823" at="34,94,35,107" concept="3" />
+      <node id="103203307808609823" at="34,94,35,113" concept="3" />
       <node id="103203307808601011" at="40,0,41,0" concept="4" trace="myNode" />
       <node id="103203307808601011" at="42,61,43,25" concept="3" />
       <node id="103203307808601011" at="46,54,47,56" concept="3" />
       <node id="103203307808601142" at="50,75,51,62" concept="7" />
       <node id="103203307808603023" at="51,62,52,94" concept="3" />
-      <node id="103203307808609823" at="52,94,53,107" concept="3" />
+      <node id="103203307808609823" at="52,94,53,113" concept="3" />
       <node id="103203307808601011" at="24,0,27,0" concept="2" trace="BuildCompositePath_Actions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="103203307808601011" at="28,0,31,0" concept="6" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="103203307808601011" at="42,0,45,0" concept="2" trace="BuildCompositePath_Actions_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -54,7 +54,7 @@
       <scope id="103203307808601011" at="28,0,31,0">
         <var name="editorContext" id="103203307808601011" />
       </scope>
-      <scope id="103203307808601020" at="32,75,35,107">
+      <scope id="103203307808601020" at="32,75,35,113">
         <var name="n" id="103203307808601145" />
       </scope>
       <scope id="103203307808601011" at="42,0,45,0">
@@ -63,7 +63,7 @@
       <scope id="103203307808601011" at="46,0,49,0">
         <var name="editorContext" id="103203307808601011" />
       </scope>
-      <scope id="103203307808601020" at="50,75,53,107">
+      <scope id="103203307808601020" at="50,75,53,113">
         <var name="n" id="103203307808601145" />
       </scope>
       <scope id="103203307808601011" at="16,0,20,0">
@@ -1946,7 +1946,7 @@
       <node id="2896281290945209188" at="139,148,140,101" concept="3" />
       <node id="2896281290945231237" at="144,77,145,118" concept="3" />
       <node id="2896281290945231296" at="146,7,147,111" concept="3" />
-      <node id="103203307806807538" at="147,111,148,161" concept="3" />
+      <node id="103203307806807538" at="147,111,148,167" concept="3" />
       <node id="2896281290945209188" at="151,45,152,19" concept="8" />
       <node id="2896281290945209188" at="115,0,117,0" concept="2" trace="BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0#()V" />
       <node id="2539347366864648270" at="39,0,42,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -2012,7 +2012,7 @@
         <var name="parameterObject" id="2896281290945209188" />
       </scope>
       <scope id="2896281290945209188" at="151,0,154,0" />
-      <scope id="2896281290945209192" at="143,150,148,161" />
+      <scope id="2896281290945209192" at="143,150,148,167" />
       <scope id="2539347366864648270" at="43,89,50,22">
         <var name="editorCell" id="2539347366864648270" />
       </scope>
