@@ -5,17 +5,14 @@ package jetbrains.mps.lang.test.runtime;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.command.impl.UndoManagerImpl;
+import com.intellij.openapi.command.impl.CurrentEditorProvider;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.command.impl.CurrentEditorProvider;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import java.awt.Component;
-import java.awt.KeyboardFocusManager;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.lang.reflect.InvocationTargetException;
 import javax.swing.SwingUtilities;
 
@@ -23,6 +20,7 @@ public class UndoHelper {
   private final Project myProject;
   private final EditorComponent myEditorComponent;
   private UndoManagerImpl myUndoManager = null;
+  private CurrentEditorProvider oldEditorProvider = null;
 
   public UndoHelper(Project project, EditorComponent component) {
     myProject = project;
@@ -38,6 +36,8 @@ public class UndoHelper {
   }
 
   private void hackUndoManager() {
+    assert oldEditorProvider == null;
+    oldEditorProvider = getUndoManager().getEditorProvider();
     getUndoManager().setEditorProvider(new CurrentEditorProvider() {
       public FileEditor getCurrentEditor() {
         DataContext context = DataManager.getInstance().getDataContext(myEditorComponent);
@@ -47,13 +47,8 @@ public class UndoHelper {
   }
 
   private void unhackUndoManager() {
-    // the dirtiest hack : copy of the platform's FocusBasedCurrentEditorProvider 
-    getUndoManager().setEditorProvider(new CurrentEditorProvider() {
-      public FileEditor getCurrentEditor() {
-        final Component owner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
-        return PlatformDataKeys.FILE_EDITOR.getData(DataManager.getInstance().getDataContext(owner));
-      }
-    });
+    assert oldEditorProvider != null;
+    getUndoManager().setEditorProvider(oldEditorProvider);
   }
 
   public void runUndoableInEDTAndWait(final Runnable runnable) throws InvocationTargetException, InterruptedException {

@@ -1240,63 +1240,58 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/6270156512828708695">
     <file name="UndoHelper.java">
-      <node id="6270156512829846226" at="23,0,24,0" concept="7" trace="myProject" />
-      <node id="6270156512829858586" at="24,0,25,0" concept="7" trace="myEditorComponent" />
-      <node id="6270156512829733944" at="25,0,26,0" concept="7" trace="myUndoManager" />
-      <node id="6270156512829847884" at="27,65,28,24" concept="6" />
-      <node id="6270156512829860409" at="28,24,29,34" concept="6" />
-      <node id="2649902159919587452" at="34,32,35,104" concept="6" />
-      <node id="6270156512829772323" at="36,5,37,25" concept="12" />
+      <node id="6270156512829846226" at="20,0,21,0" concept="7" trace="myProject" />
+      <node id="6270156512829858586" at="21,0,22,0" concept="7" trace="myEditorComponent" />
+      <node id="6270156512829733944" at="22,0,23,0" concept="7" trace="myUndoManager" />
+      <node id="3715694376314425094" at="23,0,24,0" concept="7" trace="oldEditorProvider" />
+      <node id="6270156512829847884" at="25,65,26,24" concept="6" />
+      <node id="6270156512829860409" at="26,24,27,34" concept="6" />
+      <node id="2649902159919587452" at="32,32,33,104" concept="6" />
+      <node id="6270156512829772323" at="34,5,35,25" concept="12" />
+      <node id="3715694376314430832" at="38,34,39,37" concept="0" />
+      <node id="3715694376314442344" at="39,37,40,61" concept="6" />
       <node id="1788530288992713226" at="42,44,43,90" concept="11" />
       <node id="1788530288992742481" at="43,90,44,62" concept="12" />
-      <node id="5130705610344101257" at="49,36,50,82" concept="13" />
-      <node id="5130705610344090447" at="52,44,53,102" concept="11" />
-      <node id="5130705610344090452" at="53,102,54,101" concept="12" />
-      <node id="6270156512830044889" at="61,25,62,42" concept="6" />
-      <node id="6270156512830048526" at="62,42,63,23" concept="6" />
-      <node id="6270156512830048016" at="63,23,64,44" concept="6" />
-      <node id="6270156512829770730" at="33,44,36,5" concept="9" />
-      <node id="6270156512829832115" at="27,0,31,0" concept="3" trace="UndoHelper#(Ljetbrains/mps/project/Project;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+      <node id="3715694376314458399" at="49,36,50,37" concept="0" />
+      <node id="5130705610344053873" at="50,37,51,58" concept="6" />
+      <node id="6270156512830044889" at="56,25,57,42" concept="6" />
+      <node id="6270156512830048526" at="57,42,58,23" concept="6" />
+      <node id="6270156512830048016" at="58,23,59,44" concept="6" />
+      <node id="6270156512829770730" at="31,44,34,5" concept="9" />
+      <node id="6270156512829832115" at="25,0,29,0" concept="3" trace="UndoHelper#(Ljetbrains/mps/project/Project;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
       <node id="1788530288992708973" at="42,0,46,0" concept="10" trace="getCurrentEditor#()Lcom/intellij/openapi/fileEditor/FileEditor;" />
-      <node id="5130705610344053881" at="52,0,56,0" concept="10" trace="getCurrentEditor#()Lcom/intellij/openapi/fileEditor/FileEditor;" />
-      <node id="6270156512830044342" at="61,0,66,0" concept="10" trace="run#()V" />
-      <node id="1788530288992572048" at="40,34,46,7" concept="6" />
-      <node id="5130705610344053873" at="50,82,56,7" concept="6" />
-      <node id="6270156512829769141" at="32,0,39,0" concept="10" trace="getUndoManager#()Lcom/intellij/openapi/command/impl/UndoManagerImpl;" />
-      <node id="6270156512830039448" at="59,119,66,7" concept="6" />
-      <node id="8312018550392265442" at="40,0,48,0" concept="10" trace="hackUndoManager#()V" />
-      <node id="8312018550392256426" at="49,0,58,0" concept="10" trace="unhackUndoManager#()V" />
-      <node id="6270156512830034939" at="59,0,68,0" concept="10" trace="runUndoableInEDTAndWait#(Ljava/lang/Runnable;)V" />
-      <scope id="6270156512829770731" at="34,32,35,104" />
-      <scope id="6270156512829832118" at="27,65,29,34" />
+      <node id="8312018550392256426" at="49,0,53,0" concept="10" trace="unhackUndoManager#()V" />
+      <node id="6270156512830044342" at="56,0,61,0" concept="10" trace="run#()V" />
+      <node id="1788530288992572048" at="40,61,46,7" concept="6" />
+      <node id="6270156512829769141" at="30,0,37,0" concept="10" trace="getUndoManager#()Lcom/intellij/openapi/command/impl/UndoManagerImpl;" />
+      <node id="6270156512830039448" at="54,119,61,7" concept="6" />
+      <node id="6270156512830034939" at="54,0,63,0" concept="10" trace="runUndoableInEDTAndWait#(Ljava/lang/Runnable;)V" />
+      <node id="8312018550392265442" at="38,0,48,0" concept="10" trace="hackUndoManager#()V" />
+      <scope id="6270156512829770731" at="32,32,33,104" />
+      <scope id="6270156512829832118" at="25,65,27,34" />
       <scope id="1788530288992708977" at="42,44,44,62">
         <var name="context" id="1788530288992713227" />
       </scope>
-      <scope id="5130705610344053884" at="52,44,54,101">
-        <var name="owner" id="5130705610344090446" />
-      </scope>
-      <scope id="6270156512830044346" at="61,25,64,44" />
-      <scope id="6270156512829832115" at="27,0,31,0">
+      <scope id="1788530288992780550" at="49,36,51,58" />
+      <scope id="6270156512830044346" at="56,25,59,44" />
+      <scope id="6270156512829832115" at="25,0,29,0">
         <var name="component" id="6270156512829860236" />
         <var name="project" id="6270156512829847841" />
       </scope>
-      <scope id="6270156512829769144" at="33,44,37,25" />
+      <scope id="6270156512829769144" at="31,44,35,25" />
       <scope id="1788530288992708973" at="42,0,46,0" />
-      <scope id="5130705610344053881" at="52,0,56,0" />
-      <scope id="6270156512830044342" at="61,0,66,0" />
-      <scope id="1788530288992431859" at="40,34,46,7" />
-      <scope id="6270156512829769141" at="32,0,39,0" />
-      <scope id="1788530288992780550" at="49,36,56,7" />
-      <scope id="6270156512830034942" at="59,119,66,7" />
-      <scope id="8312018550392265442" at="40,0,48,0" />
-      <scope id="8312018550392256426" at="49,0,58,0" />
-      <scope id="6270156512830034939" at="59,0,68,0">
+      <scope id="8312018550392256426" at="49,0,53,0" />
+      <scope id="6270156512830044342" at="56,0,61,0" />
+      <scope id="6270156512829769141" at="30,0,37,0" />
+      <scope id="6270156512830034942" at="54,119,61,7" />
+      <scope id="1788530288992431859" at="38,34,46,7" />
+      <scope id="6270156512830034939" at="54,0,63,0">
         <var name="runnable" id="6270156512830037371" />
       </scope>
+      <scope id="8312018550392265442" at="38,0,48,0" />
       <unit id="1788530288992708971" at="41,43,46,5" name="jetbrains.mps.lang.test.runtime.UndoHelper$1" />
-      <unit id="5130705610344053879" at="51,43,56,5" name="jetbrains.mps.lang.test.runtime.UndoHelper$2" />
-      <unit id="6270156512830044340" at="60,37,66,5" name="jetbrains.mps.lang.test.runtime.UndoHelper$3" />
-      <unit id="6270156512828708695" at="22,0,70,0" name="jetbrains.mps.lang.test.runtime.UndoHelper" />
+      <unit id="6270156512830044340" at="55,37,61,5" name="jetbrains.mps.lang.test.runtime.UndoHelper$2" />
+      <unit id="6270156512828708695" at="19,0,65,0" name="jetbrains.mps.lang.test.runtime.UndoHelper" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/6270156512828877125">

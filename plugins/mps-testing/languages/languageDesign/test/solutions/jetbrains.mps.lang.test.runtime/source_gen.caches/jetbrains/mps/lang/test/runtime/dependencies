@@ -332,13 +332,10 @@
   <dependency className="jetbrains.mps.lang.test.runtime.UndoHelper" file="UndoHelper.java">
     <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataContext" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.command.impl.CurrentEditorProvider" />
     <classNode dependClassName="com.intellij.openapi.command.impl.UndoManagerImpl" />
     <classNode dependClassName="com.intellij.openapi.command.undo.UndoManager" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditor" />
-    <classNode dependClassName="java.awt.Component" />
-    <classNode dependClassName="java.awt.KeyboardFocusManager" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
