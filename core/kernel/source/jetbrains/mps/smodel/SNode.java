@@ -1853,7 +1853,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (model.getClass().getName().equals("jetbrains.mps.smodel.tempmodel.TempModel$1")) return IdMigrationMode.NAME;
     if (model.getClass().getName().equals("jetbrains.mps.generator.TransientSModel")) return IdMigrationMode.NAME;
     if (model instanceof ProjectStructureSModel) return IdMigrationMode.NAME;
-    if (!(model instanceof DefaultSModel)) return IdMigrationMode.UNKNOWN;
+    if (!(model instanceof DefaultSModel)) return IdMigrationMode.NAME;
     return ((DefaultSModel) model).getSModelHeader().getPersistenceVersion() > 8 ? IdMigrationMode.ID : IdMigrationMode.NAME;
   }
 
