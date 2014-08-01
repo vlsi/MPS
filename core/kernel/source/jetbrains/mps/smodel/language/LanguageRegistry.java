@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
@@ -136,6 +137,25 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   public LanguageRuntime getLanguage(Language language) {
     return getLanguage(language.getModuleName());
+  }
+
+  /**
+   * PROVISIONAL API, DO NOT USE
+   * Find respective runtime presentation of generator module
+   * FIXME shall decide whether need standalone GeneratorRegistry to supply GeneratorRuntimes
+   * FIXME or access to GeneratorRuntime through LanguageRegistry is enough.
+   */
+  public GeneratorRuntime getGenerator(Generator generator) {
+    LanguageRuntime lr = getLanguage(generator.getSourceLanguage());
+    if (lr == null) {
+      return null;
+    }
+    for (GeneratorRuntime grt : lr.getGenerators()) {
+      if (grt.getModuleReference().equals(generator.getModuleReference())) {
+        return grt;
+      }
+    }
+    return null;
   }
 
   // MPSClassesListener part

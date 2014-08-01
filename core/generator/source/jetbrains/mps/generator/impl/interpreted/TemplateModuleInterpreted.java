@@ -20,7 +20,11 @@ import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateModuleBase;
+import jetbrains.mps.smodel.language.GeneratorRuntime;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -73,9 +77,6 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
     return Collections.unmodifiableCollection(models);
   }
 
-  /**
-   * @deprecated Existence of API method that returns dependency information as two string with "/" delimiter could be hardly justified.
-   */
   @Override
   @Deprecated
   @ToRemove(version = 3.2)
@@ -106,5 +107,51 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
   @Override
   public String getAlias() {
     return generator.getAlias();
+  }
+
+  @Override
+  public Collection<TemplateModule> getExtendedGenerators() {
+    List<TemplateModule> result = new ArrayList<TemplateModule>(2);
+    for (Pair<SDependencyScope, TemplateModule> p : getReferencedGenerators()) {
+      if (p.o1 == SDependencyScope.EXTENDS) {
+        result.add(p.o2);
+      }
+    }
+    return result;
+  }
+
+  @Override
+  public Collection<TemplateModule> getEmployedGenerators() {
+    List<TemplateModule> result = new ArrayList<TemplateModule>(4);
+    for (Pair<SDependencyScope, TemplateModule> p : getReferencedGenerators()) {
+      if (p.o1 == SDependencyScope.DEFAULT) {
+        result.add(p.o2);
+      }
+    }
+    return result;
+  }
+
+  @Override
+  public Set<SLanguage> getQueryLanguages() {
+    return super.getQueryLanguages();
+  }
+
+  @Override
+  public Set<SLanguage> getTargetLanguages() {
+    return super.getTargetLanguages();
+  }
+
+  private Collection<Pair<SDependencyScope, TemplateModule>> getReferencedGenerators() {
+    List<Pair<SDependencyScope, TemplateModule>> result = new ArrayList<Pair<SDependencyScope, TemplateModule>>(5);
+    for (SDependency dep : generator.getDeclaredDependencies()) {
+      SModule referencedGenerator = dep.getTarget();
+      if (referencedGenerator instanceof Generator) {
+        GeneratorRuntime grt = LanguageRegistry.getInstance().getGenerator((Generator) referencedGenerator);
+        if (grt instanceof TemplateModule) {
+          result.add(new Pair<SDependencyScope, TemplateModule>(dep.getScope(), (TemplateModule) grt));
+        }
+      }
+    }
+    return result;
   }
 }
