@@ -23,18 +23,17 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
@@ -47,18 +46,13 @@ final class EngagedGeneratorCollector {
   @NotNull
   private final SModel myModel;
   private final List<String> myAdditionalLanguages;
-  // true to restrict engagedGenerators to languages actually met in the model or any generator thereof
-  // (i.e. excluding (unless in use) explicitly referenced by extended generators
-  private final boolean myOnlyLanguageRealUses;
   private Collection<String> myDirectLangUse;
-  private Collection<TemplateModule> myAccessibleGenerators;
   private Collection<TemplateModule> myEngagedGenerators;
   private final Set<String> myBadLanguages = new HashSet<String>();
 
   public EngagedGeneratorCollector(@NotNull SModel model, Collection<String> additionalLanguages) {
     myModel = model;
     myAdditionalLanguages = additionalLanguages == null ? Collections.<String>emptyList() : new ArrayList<String>(additionalLanguages);
-    myOnlyLanguageRealUses = Boolean.getBoolean("mps.internal.generator.plan.extended-languages");
   }
 
   /**
@@ -85,36 +79,23 @@ final class EngagedGeneratorCollector {
     return rv;
   }
 
-  // all generators involved into prioritizing rules of model's generation process
-  public Collection<TemplateModule> getAccessibleGenerators() {
-    // Given generators G1, G2 and G3, with priority rules between G1 < G2 and G2 < G3
-    // and desire to drop L2 (with G2) if there are no concepts thereof, we still have to consider G2
-    // when building generation phases, to ensure G1 < G3 once we drop G2.
-    if (myAccessibleGenerators == null) {
-      build();
-    }
-    assert myAccessibleGenerators != null;
-    return myAccessibleGenerators;
-  }
-
-  public Collection<TemplateModule> getDirectlyEngagedGenerators() {
-    // engaged shall respect languages and generators based on new (yet to be defined) generator extensibility/dependency management model
-    // e.g. we shall respect L1 extends L2, and include G2 (from L2) if encounter C1 (from L1). C==Concept, L==Language, G==Generator.
+  public Collection<TemplateModule> getGenerators() {
     if (myEngagedGenerators == null) {
-      build();
+      myEngagedGenerators = build();
     }
-    assert myEngagedGenerators != null;
     return myEngagedGenerators;
   }
 
-  private void build() {
+  @NotNull
+  private Collection<TemplateModule> build() {
     myBadLanguages.clear();
     final Collection<String> initialLanguages = getAllLanguages();
     Queue<EngagedLanguage> queue = new ArrayDeque<EngagedLanguage>(resolveLanguages(initialLanguages, null, null));
 
     Set<String> processedLanguages = new HashSet<String>(initialLanguages);
-    // language name to its generators
-    Map<EngagedLanguage, List<TemplateModule>> result = new LinkedHashMap<EngagedLanguage, List<TemplateModule>>();
+    // all generators found during the process, with possible duplicates
+    // e.g. L1 with G1 and L2 with G2, both G1 and G2 extend G3, which would show up twice in this case
+    List<EngagedGenerator> result = new ArrayList<EngagedGenerator>();
 
     // set of languages either used (and/or demanded) explicitly in the model we're about to generate,
     // and languages that may appear during generation process (e.g. by applying some of generators)
@@ -133,10 +114,9 @@ final class EngagedGeneratorCollector {
       }
 
       HashSet<EngagedLanguage> targetLanguages = new HashSet<EngagedLanguage>();
-      HashSet<EngagedLanguage> extraLanguages = new HashSet<EngagedLanguage>();
 
       // collect extra languages from generator module description
-      result.put(next, collectLanguagesFromGenerators(next, targetLanguages, extraLanguages));
+      result.addAll(collectGeneratorsAndTargetLanguages(next, targetLanguages));
 
       for (EngagedLanguage t : targetLanguages) {
         if (processedLanguages.add(t.getName())) {
@@ -144,54 +124,31 @@ final class EngagedGeneratorCollector {
           queue.add(t);
         }
       }
-      for (EngagedLanguage o : extraLanguages) {
-        if (processedLanguages.add(o.getName())) {
-          queue.add(o);
-        }
-      }
     }
 
     if (LOG.isDebugEnabled()) {
-      /* To use, update bin/log.xml like that:
-       *    <category name="jetbrains.mps.generator.impl.plan" additivity="false">
-       *      <priority value="DEBUG"/>
-       *      <appender-ref ref="CONSOLE-DEBUG"/>
-       *    </category>
-       */
-      LOG.debug(">>>");
-      for (EngagedLanguage l : result.keySet()) {
-        LOG.debug(new StringBuilder().append(' ').append(processedLanguages.contains(l.getName()) ? '*' : ' ').append(l));
-      }
-      LOG.debug("<<<");
+      dump(result);
     }
 
-    // build accessible generators set and its subset, generators for languages that have a chance to show up in generation for this particular model
+    // collect unique template models
     ArrayList<TemplateModule> all = new ArrayList<TemplateModule>();
-    for (Collection<TemplateModule> m : result.values()) {
-      all.addAll(m);
-    }
-    myAccessibleGenerators = Collections.unmodifiableList(all);
-
-    if (myOnlyLanguageRealUses) {
-      // for now, use languages that participate in the process (either in use in initial model or output of some involved generator)
-      ArrayList<TemplateModule> engaged = new ArrayList<TemplateModule>();
-      participatingLanguages.retainAll(result.keySet());
-      for (EngagedLanguage pl : participatingLanguages) {
-        engaged.addAll(result.get(pl));
+    HashSet<SModuleReference> processedGenerators = new HashSet<SModuleReference>(result.size() * 2);
+    for (EngagedGenerator m : result) {
+      final TemplateModule tm = m.getGenerator();
+      if (processedGenerators.add(tm.getModuleReference())) {
+        all.add(tm);
       }
-      myEngagedGenerators = Collections.unmodifiableList(engaged);
-    } else {
-      myEngagedGenerators = myAccessibleGenerators;
     }
+    return Collections.unmodifiableList(all);
   }
 
-  private List<TemplateModule> collectLanguagesFromGenerators(EngagedLanguage lang, Set<EngagedLanguage> targetLanguages, Set<EngagedLanguage> moreLanguages) {
+  private List<EngagedGenerator> collectGeneratorsAndTargetLanguages(EngagedLanguage lang, Set<EngagedLanguage> targetLanguages) {
     Collection<? extends  GeneratorRuntime> generators = lang.getLanguage().getGenerators();
     if (generators == null) {
       return Collections.emptyList();
     }
 
-    ArrayList<TemplateModule> langGenerators = new ArrayList<TemplateModule>(generators.size());
+    ArrayList<EngagedGenerator> langGenerators = new ArrayList<EngagedGenerator>(2 + generators.size());
 
 
     // collect extra languages from generator module description
@@ -200,36 +157,22 @@ final class EngagedGeneratorCollector {
         continue;
       }
       final TemplateModule generator = (TemplateModule) gr;
-      langGenerators.add(generator);
-
       EngagedGenerator eg = new EngagedGenerator(generator, lang, "OWNED");
+      langGenerators.add(eg);
+
 
       // handle Used languages
-      targetLanguages.addAll(resolveLanguages(generator.getUsedLanguages(), eg, "GENERATES INTO"));
+      targetLanguages.addAll(resolveLanguages(toQualifiedName(generator.getTargetLanguages()), eg, "GENERATES INTO"));
       //
-      // handle Referenced generators
-      // XXX I can process generators here directly (generator.getReferencedModules() gives list of generators), but this requires careful refactoring
-      final Collection<String> refGenLangs = getLanguagesFromReferencedModules(generator);
-      // some generator extends another generator (G) (likely to specify rule priorities)
-      // unless it's actually employed, there's little sense to include language of G (except for very few scenarios, where it seems to be
-      // a workaround to overcome inability to specify dependency between the languages in any other way)
-      moreLanguages.addAll(resolveLanguages(refGenLangs, eg, "EXTENDED GENERATOR"));
+      // handle referenced generators
+      for (TemplateModule tm : generator.getExtendedGenerators()) {
+        langGenerators.add(new EngagedGenerator(tm, eg, "EXTENDED GENERATOR"));
+      }
+      for (TemplateModule tm : generator.getEmployedGenerators()) {
+        langGenerators.add(new EngagedGenerator(tm, eg, "EMPLOYED GENERATOR"));
+      }
     }
     return langGenerators;
-  }
-
-  private static Collection<String> getLanguagesFromReferencedModules(TemplateModule generator) {
-    Collection<String> referencedModules = generator.getReferencedModules();
-    if (referencedModules == null || referencedModules.isEmpty()) {
-      return Collections.emptyList();
-    }
-    ArrayList<String> rv = new ArrayList<String>(referencedModules.size());
-    for (String referenced : referencedModules) {
-      int slash = referenced.indexOf('/');
-      String sourceLanguage = referenced.substring(0, slash);
-      rv.add(sourceLanguage);
-    }
-    return rv;
   }
 
   private Collection<EngagedLanguage> resolveLanguages(Collection<String> languages, EngagedElement origin, Object engagementKind) {
@@ -248,6 +191,31 @@ final class EngagedGeneratorCollector {
       } else {
         rv.add(new EngagedLanguage(language, origin, engagementKind));
       }
+    }
+    return rv;
+  }
+
+  /* To use, update bin/log.xml like that:
+   * <pre>
+   *    <category name="jetbrains.mps.generator.impl.plan" additivity="false">
+   *      <priority value="DEBUG"/>
+   *      <appender-ref ref="CONSOLE-DEBUG"/>
+   *    </category>
+   * </pre>
+   */
+  private static void dump(Collection<? extends EngagedElement> elements) {
+    LOG.debug(">>>");
+    for (EngagedElement l : elements) {
+      LOG.debug(new StringBuilder().append(' ').append(l));
+    }
+    LOG.debug("<<<");
+  }
+
+  // cease existence once we get rid of strings completely
+  private static Collection<String> toQualifiedName(Collection<SLanguage> languages) {
+    ArrayList<String> rv = new ArrayList<String>();
+    for (SLanguage l : languages) {
+      rv.add(l.getQualifiedName());
     }
     return rv;
   }
@@ -298,6 +266,10 @@ final class EngagedGeneratorCollector {
     public EngagedGenerator(@NotNull TemplateModule generator, @NotNull EngagedElement origin, @Nullable Object engagementKind) {
       super(origin, engagementKind);
       myGenerator = generator;
+    }
+
+    public TemplateModule getGenerator() {
+      return myGenerator;
     }
 
     public String getName() {

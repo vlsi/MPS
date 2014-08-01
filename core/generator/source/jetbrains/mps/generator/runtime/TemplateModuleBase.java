@@ -17,6 +17,7 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -27,6 +28,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -77,12 +79,16 @@ public abstract class TemplateModuleBase implements TemplateModule {
   @Override
   @ToRemove(version = 3.2)
   public Set<SLanguage> getQueryLanguages() {
-    return null;
+    return Collections.emptySet();
   }
 
   @Override
   @ToRemove(version = 3.2)
   public Set<SLanguage> getTargetLanguages() {
-    return null;
+    HashSet<SLanguage> rv = new HashSet<SLanguage>();
+    for (String l : getUsedLanguages()) {
+      rv.add(ConceptRepository.getInstance().getLanguage(l));
+    }
+    return rv;
   }
 }

@@ -33,7 +33,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -61,21 +60,9 @@ public class GenerationPlan {
     try {
       EngagedGeneratorCollector c = new EngagedGeneratorCollector(inputModel, additionalLanguages);
 
-      GenerationPartitioner partitioner = new GenerationPartitioner(c.getAccessibleGenerators());
-      final List<List<TemplateMappingConfiguration>> mappingSets = partitioner.createMappingSets();
-      myGenerators = c.getDirectlyEngagedGenerators();
-      myPlan = new ArrayList<List<TemplateMappingConfiguration>>();
-      for (List<TemplateMappingConfiguration> l : mappingSets) {
-        for (Iterator<TemplateMappingConfiguration> it = l.iterator(); it.hasNext(); ) {
-          final TemplateMappingConfiguration tmc = it.next();
-          if (!myGenerators.contains(tmc.getModel().getModule())) {
-            it.remove();
-          }
-        }
-        if (!l.isEmpty()) {
-          myPlan.add(l);
-        }
-      }
+      GenerationPartitioner partitioner = new GenerationPartitioner(c.getGenerators());
+      myGenerators = c.getGenerators();
+      myPlan = partitioner.createMappingSets();
       if (myPlan.isEmpty()) {
         myPlan.add(Collections.<TemplateMappingConfiguration>emptyList());
       }
@@ -96,11 +83,11 @@ public class GenerationPlan {
         myGenerators.add(templateMappingConfiguration.getModel().getModule());
       }
     }
+    myConflictingPriorityRules = new PriorityConflicts(myGenerators);
     initTemplateModels();
     if (myPlan.isEmpty()) {
       myPlan.add(new ArrayList<TemplateMappingConfiguration>());
     }
-    myConflictingPriorityRules = new PriorityConflicts(myGenerators);
   }
 
   public Collection<TemplateModule> getGenerators() {
@@ -128,7 +115,7 @@ public class GenerationPlan {
     //
     // disable checking temporarily:
     // when generating model jetbrains.mps.baseLanguage.closures.dataFlow,
-    // type SetType (from collections lang) uppears at some moment inside InternalStaticMethodCall node.
+    // type SetType (from collections lang) appears at some moment inside InternalStaticMethodCall node.
     // While language 'jetbrains.mps.baseLanguage.collections' wasn't detected when computing generation steps,
     // this is harmless for generation (because no text is generated for that node)
     // but it sets off the alarms in generator.
