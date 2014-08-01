@@ -133,6 +133,16 @@ public class ClassLoaderManager implements CoreComponent {
 
   @Nullable
   public Class getClass(SModule module, String classFqName) {
+    return getClass(module, classFqName, false);
+  }
+
+  @Nullable
+  public Class getOwnClass(SModule module, String classFqName) {
+    return getClass(module, classFqName, true);
+  }
+
+  @Nullable
+  private Class getClass(SModule module, String classFqName, boolean ownClassOnly) {
     // todo: make version without possible exception and with Language instead of SModule argument?
     // todo: add onlyFromSelf argument?
     if (!canLoad(module)) {
@@ -155,13 +165,15 @@ public class ClassLoaderManager implements CoreComponent {
       return null;
     }
     try {
-      try {
-        return classLoader.loadClass(InternUtil.intern(classFqName));
-      } catch (ClassNotFoundException e) {
-        return null;
+      String internClassName = InternUtil.intern(classFqName);
+      if (ownClassOnly && classLoader instanceof ModuleClassLoader) {
+        return ((ModuleClassLoader) classLoader).loadOwnClass(internClassName);
       }
+      return classLoader.loadClass(internClassName);
     } catch (Throwable t) {
-      LOG.error(t);
+      if (!(t instanceof ClassNotFoundException) || !ownClassOnly) {
+        LOG.error(t);
+      }
       return null;
     }
   }
@@ -186,7 +198,7 @@ public class ClassLoaderManager implements CoreComponent {
       LOG.warning("Module " + module.getModuleName() + " is not compiled in mps and doesn't have non-reloadable facet");
       return ClassLoaderManager.class.getClassLoader();
     }
-    
+
     return myClassLoaders.get(module);
   }
 
@@ -332,10 +344,11 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   /**
-   *  This method is called from ModuleClassLoader
-   *  perform a consistency check for loaded modules
-   *  @link {myLoadedClasses}
-   *  TODO: remove it
+   * This method is called from ModuleClassLoader
+   * perform a consistency check for loaded modules
+   *
+   * @link {myLoadedClasses}
+   * TODO: remove it
    */
   @ToRemove(version = 3.2)
   /* package */ void classLoaded(String name, SModuleReference id) {

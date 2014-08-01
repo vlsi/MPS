@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel.runtime.impl;
 
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -33,11 +33,10 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
 
     Method[] virtualMethods = this.getClass().getMethods();
     Method[] nonVirtualMethods;
-    try {
-//      nonVirtualMethods = Class.forName(behaviorClassByConceptFqName(getConceptFqName())).getMethods();
-      nonVirtualMethods = this.getClass().getClassLoader().loadClass(behaviorClassByConceptFqName(getConceptFqName())).getMethods();
-    } catch (ClassNotFoundException e) {
-      // it's okay? just class without behavior?
+    Class<?> behaviorClass = getGeneratedClass(getConceptFqName(), behaviorClassByConceptFqName(getConceptFqName()));
+    if (behaviorClass != null) {
+      nonVirtualMethods = behaviorClass.getMethods();
+    } else {
       nonVirtualMethods = new Method[0];
     }
 
