@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class EditorParenthesisUtil {
   public EditorParenthesisUtil() {
@@ -92,31 +93,11 @@ public class EditorParenthesisUtil {
   }
 
   public static SNode findRightmostOrLeftmostLeafExpression(SNode root, boolean rightmost) {
-    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-      SNode binOp = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-      return findRightmostOrLeftmostLeafExpression((rightmost ? SLinkOperations.getTarget(binOp, "rightExpression", true) : SLinkOperations.getTarget(binOp, "leftExpression", true)), rightmost);
+    if (rightmost && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getRightSideExpression_7583777362095256690", new Object[]{}) != null) {
+      return findRightmostOrLeftmostLeafExpression(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getRightSideExpression_7583777362095256690", new Object[]{}), rightmost);
     }
-    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.CastExpression")) {
-      SNode castExpr = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.CastExpression");
-      if (rightmost) {
-        return findRightmostOrLeftmostLeafExpression(SLinkOperations.getTarget(castExpr, "expression", true), rightmost);
-      }
-    }
-    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      SNode dotExpr = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.DotExpression");
-      if (!(rightmost)) {
-        return findRightmostOrLeftmostLeafExpression(SLinkOperations.getTarget(dotExpr, "operand", true), rightmost);
-      }
-    }
-    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) {
-      SNode ternOp = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
-      return findRightmostOrLeftmostLeafExpression((rightmost ? SLinkOperations.getTarget(ternOp, "ifFalse", true) : SLinkOperations.getTarget(ternOp, "condition", true)), rightmost);
-    }
-    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.UnaryMinus")) {
-      SNode unaryMinusOp = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.UnaryMinus");
-      if (rightmost) {
-        return findRightmostOrLeftmostLeafExpression(SLinkOperations.getTarget(unaryMinusOp, "expression", true), rightmost);
-      }
+    if (!(rightmost) && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getLeftSideExpression_7583777362095214544", new Object[]{}) != null) {
+      return findRightmostOrLeftmostLeafExpression(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getLeftSideExpression_7583777362095214544", new Object[]{}), rightmost);
     }
     return root;
   }

@@ -11,4 +11,8 @@ public class AbstractUnaryNumberOperation_Behavior {
   public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return false;
   }
+
+  public static boolean virtual_canPropagateUnmatchedParenUp_2572626204612659829(SNode thisNode, SNode leaf, boolean rightParen) {
+    return true;
+  }
 }

@@ -19574,9 +19574,9 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7247988578516371549" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="b" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="7247988578516371550" nodeInfo="in" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7247988578516400274" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1079359253376" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="7247988578516398430" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7247988578516398432" nodeInfo="nn">
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="7247988578516398430" nodeInfo="nn">
+              <node role="expression" roleId="tpee.1239714902950" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2441191009821754158" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1079359253376" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7247988578516398432" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7247988578516371545" resolveInfo="a" />
                 </node>
               </node>

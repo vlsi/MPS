@@ -4,6 +4,12 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BinaryOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +17,57 @@ public class BinaryOperation_Behavior {
 
   public static int virtual_getPriority_1262430001741497858(SAbstractConcept thisConcept) {
     return 0;
+  }
+
+  public static boolean virtual_canPropagateUnmatchedParenUp_2572626204612659829(SNode thisNode, SNode leaf, boolean rightParen) {
+    return true;
+  }
+
+  public static void virtual_setLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
+    SLinkOperations.setTarget(thisNode, "leftExpression", expr, true);
+  }
+
+  public static void virtual_setRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
+    SLinkOperations.setTarget(thisNode, "rightExpression", expr, true);
+  }
+
+  public static SNode virtual_getLeftSideExpression_7583777362095214544(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "leftExpression", true);
+  }
+
+  public static SNode virtual_getRightSideExpression_7583777362095256690(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "rightExpression", true);
+  }
+
+  public static List<SNode> virtual_getOrderedChildExpressions_7583777362095257106(SNode thisNode) {
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "leftExpression", true), SLinkOperations.getTarget(thisNode, "rightExpression", true));
+  }
+
+  public static void virtual_rebalanceAfterParething_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
+    if (leftTurn == rightTurn) {
+      SNodeOperations.replaceWithAnother(thisNode, parens);
+      SLinkOperations.setTarget(thisNode, "leftExpression", leftAccumulator, true);
+      SLinkOperations.setTarget(thisNode, "rightExpression", rightAccumulator, true);
+      SLinkOperations.setTarget(parens, "expression", thisNode, true);
+      return;
+    }
+    SNode leftSide = SLinkOperations.getTarget(thisNode, "leftExpression", true);
+    SNode rightSide = SLinkOperations.getTarget(thisNode, "rightExpression", true);
+    assert leftSide != null || rightSide != null;
+    SNode head = (rightSide != null ? rightSide : leftSide);
+    SNodeOperations.replaceWithAnother(thisNode, head);
+    SLinkOperations.setTarget(parens, "expression", thisNode, true);
+    SLinkOperations.setTarget(thisNode, "leftExpression", leftAccumulator, true);
+    SLinkOperations.setTarget(thisNode, "rightExpression", rightAccumulator, true);
+    SNode subtree;
+    if (leftSide != null) {
+      subtree = leftSide;
+      BehaviorReflection.invokeVirtual(Void.class, leftTurn, "virtual_setRightSideExpression_7583777362102706555", new Object[]{parens});
+    } else {
+      subtree = parens;
+    }
+    if (rightSide != null) {
+      BehaviorReflection.invokeVirtual(Void.class, rightTurn, "virtual_setLeftSideExpression_7583777362102629706", new Object[]{subtree});
+    }
   }
 }
