@@ -155,20 +155,15 @@ public class Generator extends AbstractModule {
     final SRepository repo = getRepository();
     Set<SDependency> dependencies = new HashSet<SDependency>();
     dependencies.addAll(IterableUtil.asCollection(super.getDeclaredDependencies()));
+    //generator sees its source language
+    dependencies.add(new SDependencyImpl(getSourceLanguage(), SDependencyScope.DEFAULT, false));
+    // and runtimes thereof  (XXX also why not through getDeclaredDependencies() with Scope==RUNTIME instead?
     for (SModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
       SModule rt = repo == null ? ModuleRepositoryFacade.getInstance().getModule(ref) : ref.resolve(repo);
       if (rt != null) {
         dependencies.add(new SDependencyImpl(rt, SDependencyScope.RUNTIME, false));
       }
     }
-
-    //generator sees all modules from source language as non-reexported
-    for (SDependency srcLangDep : getSourceLanguage().getDeclaredDependencies()) {
-      if (srcLangDep.getScope() == SDependencyScope.EXTENDS && Language.class.isInstance(srcLangDep.getTarget())) {
-        dependencies.add(new SDependencyImpl(srcLangDep.getTarget(), SDependencyScope.DEFAULT, false));
-      }
-    }
-
     //generator sees all dependent generators as non-reexport
     for (SModuleReference refGenerator : getReferencedGeneratorUIDs()) {
       // XXX not sure it's right to resolve modules through global repository if this module is not attached anywhere
