@@ -26,6 +26,8 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 
 @MPSLaunch
 public class FileSwapOwnerTests_Test extends BaseTransformationTest4 {
@@ -200,20 +202,26 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest4 {
         }
 
         SNode readNode = FileSwapOwner.writeAndReadNode(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
-        {
-          List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
-          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), readNode);
-          Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
-        }
+        SModel model = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
 
-        for (IMapping<Object, Object> object : MapSequence.fromMap(userObjects)) {
-          if (MapSequence.fromMap(userObjectsToLoose).contains(object)) {
-            Assert.assertNull("User object " + object + " should have been lost.", readNode.getUserObject(object.key()));
-          } else {
-            Assert.assertEquals("User object " + object + " was lost.", object.value(), readNode.getUserObject(object.key()));
+        try {
+          model.addRootNode(readNode);
+          {
+            List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
+            List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), readNode);
+            Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
           }
-        }
 
+          for (IMapping<Object, Object> object : MapSequence.fromMap(userObjects)) {
+            if (MapSequence.fromMap(userObjectsToLoose).contains(object)) {
+              Assert.assertNull("User object " + object + " should have been lost.", readNode.getUserObject(object.key()));
+            } else {
+              Assert.assertEquals("User object " + object + " was lost.", object.value(), readNode.getUserObject(object.key()));
+            }
+          }
+        } finally {
+          TemporaryModels.getInstance().dispose(model);
+        }
       } catch (IOException e) {
         e.printStackTrace();
         org.junit.Assert.fail(e.getMessage());
