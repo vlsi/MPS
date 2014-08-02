@@ -169,7 +169,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
-          state.setEditorState(myNodeEditor.saveState(level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL));
+          state.setEditorState(myNodeEditor.saveState());
         }
       });
     }
