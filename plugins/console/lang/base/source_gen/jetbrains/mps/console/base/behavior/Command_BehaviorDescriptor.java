@@ -28,6 +28,10 @@ public abstract class Command_BehaviorDescriptor extends BaseConcept_BehaviorDes
     return Command_Behavior.virtual_getKind_7006261637493126084(thisConcept);
   }
 
+  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
+    return ConsoleHelpProvider_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.Command";

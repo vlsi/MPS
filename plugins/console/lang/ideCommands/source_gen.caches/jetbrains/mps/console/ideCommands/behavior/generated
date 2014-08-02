@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1blp0kfkqk5mmu0874812m5d490xia6">
+<dependencies version="2" modelHash="2ulsuruvasntrx8m00mkzcrs6731o7d">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(MPS.IDEA/com.intellij.openapi.extensions@java_stub)" />
@@ -36,14 +36,14 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="eao7ue458y7tcq2dzwkfpbwu1m1iuda" />
   <dep model="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" hash="b191pf4c0lufra3dgp4lwo3xaz5u4hj" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-5c9372bioqlvwzsdgj6hvtzmfw6cdqh" />
-  <dep model="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)" hash="-26pmpxo4suvx4ne3m1sx3i5t6rwdc2h" />
+  <dep model="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)" hash="-6kxoiq1fglj59j7vxhltgod48dkrimp" />
   <dep model="r:12b75774-ad08-4482-bae3-756b26633092(jetbrains.mps.console.ideCommands.util)" hash="6xu30zi6l3beyrrfk0y6bt845py18ny" />
-  <dep model="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" hash="5o8x76t5orrrzr3860vp47s95hj3s43" />
-  <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" hash="-2j48f1wl0mjgmzwdcadgi99kpwzpkex" />
+  <dep model="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" hash="7qh3gdvb9nov9fyp4lpbajbrbg7vec5" />
+  <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" hash="99pn83hbam70nxbss5j71sucpg0773x" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="10j9fpm4vzf616grwjwo6h4yg4p13k6" />
   <dep model="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)" hash="-eny3si76dlgw8x1a60tjys88hy65vqw" />
   <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-a1p5gm2tk74jwijgkkw53yaon9dv2r7" />
-  <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="-5xo40eytr1sacqnd7w4vnphe61k90fl" />
+  <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="bpoyts5jlyi15t2xcqj5xqf6tr3yy2t" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-97haq6mod2irdk9qmfglcveeob6klwu" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-b5j65z7mcybbtesos0omxqxxxx2nv6e" />
@@ -137,7 +137,7 @@
     <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <file name="UnloadModelsCommand_Behavior.java" />
   </source>
-  <source id="7490254719522983804" name="StatCommand_Behavior" hash="-748zye7644usj41a45h5yhck1m5afbf">
+  <source id="7490254719522983804" name="StatCommand_Behavior" hash="af1qmtl38nxgt5g92mzzhsriajxstew">
     <dep root="7490254719527247598" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -227,7 +227,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ProjectStatisticsTarget_Behavior.java" />
   </source>
-  <source id="2087237500458009230" name="ShowBrokenReferences_Behavior" hash="-45nmsbgfazm9suobrc8wc1j542roy3h">
+  <source id="2087237500458009230" name="ShowBrokenReferences_Behavior" hash="-4nihiwq9nge708pf0wy7ghs66qbkfz">
     <dep root="5207260697411458160" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -271,7 +271,7 @@
     <dep model="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)" />
     <file name="INodeSetReference_Behavior.java" />
   </source>
-  <source id="7057947030097947524" name="ShowGenPlan_Behavior" hash="-c6lwdjp2svzp9peysby17jwnnd0f8pp">
+  <source id="7057947030097947524" name="ShowGenPlan_Behavior" hash="-pv1llo1wbedl1jy7em73dlxqjqbxfa">
     <dep root="7057947030098579391" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
@@ -330,10 +330,9 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ClickableGenerator_Behavior.java" />
   </source>
-  <source id="5582028874769074454" name="CallActionExpression_Behavior" hash="aisfxh27nnyqqz3p1ax8iyk6g4h7x87">
+  <source id="5582028874769074454" name="CallActionExpression_Behavior" hash="-ejgthh6f3puw1drbyvhnohrhhzjuolk">
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" />
-    <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <file name="CallActionExpression_Behavior.java" />
   </source>
   <source id="5582028874769074463" name="ModelProperties_Behavior" hash="4meeh7czdn75bf2010u8c707oxz3m5">
@@ -367,16 +366,15 @@
     <dep model="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" />
     <file name="ModuleProperties_Behavior.java" />
   </source>
-  <source id="5582028874771853135" name="Make_Behavior" hash="1evzzqkr6mzxloccu8261emfbrqv6zt">
+  <source id="5582028874771853135" name="Make_Behavior" hash="-zoggocufz729g2pbb16qe6rt0kdwp2">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)" />
     <dep model="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" />
     <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <file name="Make_Behavior.java" />
   </source>
-  <source id="2840424593938231406" name="Clean_Behavior" hash="2guab9u46unaamx0t5py7ue25zhk1cu">
+  <source id="2840424593938231406" name="Clean_Behavior" hash="-3fxynh6z4q9mn6l4gya8lyv2d2urpv9">
     <dep model="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" />
-    <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <file name="Clean_Behavior.java" />
   </source>
   <source id="2840424593984889709" name="AbsractMake_Behavior" hash="-edgj0jpi0xjdb4b32ploddkcg6rfe79">
@@ -391,9 +389,8 @@
     <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <file name="RemoveGenSources_Behavior.java" />
   </source>
-  <source id="5932042262275694881" name="OfAspectOperation_Behavior" hash="7raeq812yy4s1u55lw33wgbu12l6mn0">
+  <source id="5932042262275694881" name="OfAspectOperation_Behavior" hash="cxotkd7bo5uguzdxsb7uame55xqr2l5">
     <dep model="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" />
-    <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <file name="OfAspectOperation_Behavior.java" />
   </source>
 </dependencies>
