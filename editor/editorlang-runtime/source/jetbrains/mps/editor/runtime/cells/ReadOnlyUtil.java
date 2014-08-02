@@ -43,7 +43,7 @@ public class ReadOnlyUtil {
       return true;
     }
     for (jetbrains.mps.openapi.editor.cells.EditorCell cell : cells) {
-      if (isCellOrSelectionReadOnlyInEditor(editorComponent, cell)) {
+      if (cell == null || isCellReadOnly(cell)) {
         return true;
       }
     }
