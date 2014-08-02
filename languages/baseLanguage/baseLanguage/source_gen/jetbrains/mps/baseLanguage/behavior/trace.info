@@ -5,7 +5,7 @@
   <unitInfo fileName="AbstractForStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractForStatement_BehaviorDescriptor" />
   <unitInfo fileName="AbstractLoopStatement_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor" />
   <unitInfo fileName="AbstractOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractOperation_BehaviorDescriptor" />
-  <unitInfo fileName="AbstractUnaryNumberOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractUnaryNumberOperation_BehaviorDescriptor" />
+  <unitInfo fileName="AbstractUnaryNumberOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractUnaryNumberOperation_BehaviorDescriptor" />
   <unitInfo fileName="AdditionalForLoopVariable_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AdditionalForLoopVariable_BehaviorDescriptor" />
   <unitInfo fileName="AndAssignmentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AndAssignmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="AndExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AndExpression_BehaviorDescriptor" />
@@ -37,7 +37,7 @@
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="426" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BinaryBitwiseOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BinaryBitwiseOperation_BehaviorDescriptor" />
   <unitInfo fileName="BinaryCompareOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BinaryCompareOperation_BehaviorDescriptor" />
-  <unitInfo fileName="BinaryOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BinaryOperation_BehaviorDescriptor" />
+  <unitInfo fileName="BinaryOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BinaryOperation_BehaviorDescriptor" />
   <unitInfo fileName="BitwiseAndExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BitwiseAndExpression_BehaviorDescriptor" />
   <unitInfo fileName="BitwiseNotExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BitwiseNotExpression_BehaviorDescriptor" />
   <unitInfo fileName="BitwiseOrExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BitwiseOrExpression_BehaviorDescriptor" />
@@ -199,10 +199,10 @@
   <unitInfo fileName="PlaceholderMethodDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PlaceholderMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="PlusAssignmentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PlusAssignmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="PlusExpression_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PlusExpression_BehaviorDescriptor" />
-  <unitInfo fileName="PostfixDecrementExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixDecrementExpression_BehaviorDescriptor" />
-  <unitInfo fileName="PostfixIncrementExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixIncrementExpression_BehaviorDescriptor" />
-  <unitInfo fileName="PrefixDecrementExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixDecrementExpression_BehaviorDescriptor" />
-  <unitInfo fileName="PrefixIncrementExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixIncrementExpression_BehaviorDescriptor" />
+  <unitInfo fileName="PostfixDecrementExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixDecrementExpression_BehaviorDescriptor" />
+  <unitInfo fileName="PostfixIncrementExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixIncrementExpression_BehaviorDescriptor" />
+  <unitInfo fileName="PrefixDecrementExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixDecrementExpression_BehaviorDescriptor" />
+  <unitInfo fileName="PrefixIncrementExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixIncrementExpression_BehaviorDescriptor" />
   <unitInfo fileName="PrimitiveClassExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrimitiveClassExpression_BehaviorDescriptor" />
   <unitInfo fileName="PrimitiveType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrimitiveType_BehaviorDescriptor" />
   <unitInfo fileName="PrivateVisibility_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrivateVisibility_BehaviorDescriptor" />
@@ -245,7 +245,7 @@
   <unitInfo fileName="SwitchCase_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SwitchCase_BehaviorDescriptor" />
   <unitInfo fileName="SwitchStatement_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SwitchStatement_BehaviorDescriptor" />
   <unitInfo fileName="SynchronizedStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SynchronizedStatement_BehaviorDescriptor" />
-  <unitInfo fileName="TernaryOperatorExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TernaryOperatorExpression_BehaviorDescriptor" />
+  <unitInfo fileName="TernaryOperatorExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TernaryOperatorExpression_BehaviorDescriptor" />
   <unitInfo fileName="TextCommentPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TextCommentPart_BehaviorDescriptor" />
   <unitInfo fileName="ThisConstructorInvocation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ThisConstructorInvocation_BehaviorDescriptor" />
   <unitInfo fileName="ThisConstructorKind_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ThisConstructorKind_BehaviorDescriptor" />
@@ -12163,25 +12163,17 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1239714994837">
     <nodeInfo nodeId="1239714999029" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2572626204612698121" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="15" startPosition="130" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239714994837" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1239714994837" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1239714994837" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_2572626204612659829#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
     <scopeInfo nodeId="1239714994839" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1239714999028" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="17" />
-    <scopeInfo nodeId="2572626204612697945" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="15" startPosition="130" endLine="16" endPosition="16" />
     <scopeInfo nodeId="1239714994837" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="1239714994837" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1239714994837" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="1239714994837" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1239714994837" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="2572626204616206304" varName="leaf" />
-      <varInfo nodeId="2572626204616206306" varName="rightParen" />
-      <varInfo nodeId="1239714994837" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1239714994837" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractUnaryNumberOperation_Behavior" />
+    <unitInfo nodeId="1239714994837" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractUnaryNumberOperation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1244292059682911437">
     <nodeInfo nodeId="1244292059682912441" fileName="CommentedStatementsBlock_Behavior.java" startLine="14" startPosition="92" endLine="15" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -12210,54 +12202,48 @@
     <nodeInfo nodeId="2572626204612709620" fileName="BinaryOperation_Behavior.java" startLine="22" startPosition="130" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7583777362102723279" fileName="BinaryOperation_Behavior.java" startLine="26" startPosition="100" endLine="27" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7583777362102728539" fileName="BinaryOperation_Behavior.java" startLine="30" startPosition="101" endLine="31" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2572626204577975702" fileName="BinaryOperation_Behavior.java" startLine="34" startPosition="89" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2572626204577977594" fileName="BinaryOperation_Behavior.java" startLine="38" startPosition="90" endLine="39" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2572626204597970703" fileName="BinaryOperation_Behavior.java" startLine="42" startPosition="100" endLine="43" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4985347495062762256" fileName="BinaryOperation_Behavior.java" startLine="47" startPosition="32" endLine="48" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062762261" fileName="BinaryOperation_Behavior.java" startLine="48" startPosition="59" endLine="49" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062762267" fileName="BinaryOperation_Behavior.java" startLine="49" startPosition="83" endLine="50" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062762273" fileName="BinaryOperation_Behavior.java" startLine="50" startPosition="85" endLine="51" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062762279" fileName="BinaryOperation_Behavior.java" startLine="51" startPosition="70" endLine="52" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4985347495062780246" fileName="BinaryOperation_Behavior.java" startLine="53" startPosition="5" endLine="54" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495062780252" fileName="BinaryOperation_Behavior.java" startLine="54" startPosition="81" endLine="55" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495062780258" fileName="BinaryOperation_Behavior.java" startLine="55" startPosition="83" endLine="56" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4985347495062780266" fileName="BinaryOperation_Behavior.java" startLine="56" startPosition="49" endLine="57" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495062780275" fileName="BinaryOperation_Behavior.java" startLine="57" startPosition="60" endLine="58" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062780280" fileName="BinaryOperation_Behavior.java" startLine="58" startPosition="55" endLine="59" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062780287" fileName="BinaryOperation_Behavior.java" startLine="59" startPosition="68" endLine="60" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062780294" fileName="BinaryOperation_Behavior.java" startLine="60" startPosition="81" endLine="61" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062780301" fileName="BinaryOperation_Behavior.java" startLine="61" startPosition="83" endLine="62" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495062780306" fileName="BinaryOperation_Behavior.java" startLine="63" startPosition="27" endLine="64" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062780310" fileName="BinaryOperation_Behavior.java" startLine="64" startPosition="25" endLine="65" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062780320" fileName="BinaryOperation_Behavior.java" startLine="66" startPosition="12" endLine="67" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062780326" fileName="BinaryOperation_Behavior.java" startLine="69" startPosition="28" endLine="70" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2572626204597970703" fileName="BinaryOperation_Behavior.java" startLine="34" startPosition="100" endLine="35" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4985347495062762256" fileName="BinaryOperation_Behavior.java" startLine="39" startPosition="32" endLine="40" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062762261" fileName="BinaryOperation_Behavior.java" startLine="40" startPosition="59" endLine="41" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062762267" fileName="BinaryOperation_Behavior.java" startLine="41" startPosition="83" endLine="42" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062762273" fileName="BinaryOperation_Behavior.java" startLine="42" startPosition="85" endLine="43" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062762279" fileName="BinaryOperation_Behavior.java" startLine="43" startPosition="70" endLine="44" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4985347495062780246" fileName="BinaryOperation_Behavior.java" startLine="45" startPosition="5" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495062780252" fileName="BinaryOperation_Behavior.java" startLine="46" startPosition="81" endLine="47" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495062780258" fileName="BinaryOperation_Behavior.java" startLine="47" startPosition="83" endLine="48" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4985347495062780266" fileName="BinaryOperation_Behavior.java" startLine="48" startPosition="49" endLine="49" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495062780275" fileName="BinaryOperation_Behavior.java" startLine="49" startPosition="60" endLine="50" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062780280" fileName="BinaryOperation_Behavior.java" startLine="50" startPosition="55" endLine="51" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062780287" fileName="BinaryOperation_Behavior.java" startLine="51" startPosition="68" endLine="52" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062780294" fileName="BinaryOperation_Behavior.java" startLine="52" startPosition="81" endLine="53" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062780301" fileName="BinaryOperation_Behavior.java" startLine="53" startPosition="83" endLine="54" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495062780306" fileName="BinaryOperation_Behavior.java" startLine="55" startPosition="27" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062780310" fileName="BinaryOperation_Behavior.java" startLine="56" startPosition="25" endLine="57" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062780320" fileName="BinaryOperation_Behavior.java" startLine="58" startPosition="12" endLine="59" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062780326" fileName="BinaryOperation_Behavior.java" startLine="61" startPosition="28" endLine="62" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4985347495062780318" fileName="BinaryOperation_Behavior.java" startLine="66" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4985347495062780318" fileName="BinaryOperation_Behavior.java" startLine="58" startPosition="10" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
     <nodeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_2572626204612659829#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
     <nodeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setLeftSideExpression_7583777362102629706#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setRightSideExpression_7583777362102706555#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getLeftSideExpression_7583777362095214544#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRightSideExpression_7583777362095256690#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOrderedChildExpressions_7583777362095257106#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="4985347495062780324" fileName="BinaryOperation_Behavior.java" startLine="68" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4985347495062780304" fileName="BinaryOperation_Behavior.java" startLine="62" startPosition="18" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4985347495062762254" fileName="BinaryOperation_Behavior.java" startLine="46" startPosition="184" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="46" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_rebalanceAfterParething_4985347495062678851#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOrderedChildExpressions_7583777362095257106#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="4985347495062780324" fileName="BinaryOperation_Behavior.java" startLine="60" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4985347495062780304" fileName="BinaryOperation_Behavior.java" startLine="54" startPosition="18" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4985347495062762254" fileName="BinaryOperation_Behavior.java" startLine="38" startPosition="184" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="38" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_rebalanceAfterParething_4985347495062678851#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1262430001741497863" fileName="BinaryOperation_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1262430001741497860" fileName="BinaryOperation_Behavior.java" startLine="18" startPosition="91" endLine="19" endPosition="13" />
     <scopeInfo nodeId="2572626204612709326" fileName="BinaryOperation_Behavior.java" startLine="22" startPosition="130" endLine="23" endPosition="16" />
     <scopeInfo nodeId="7583777362102723145" fileName="BinaryOperation_Behavior.java" startLine="26" startPosition="100" endLine="27" endPosition="70" />
     <scopeInfo nodeId="7583777362102728336" fileName="BinaryOperation_Behavior.java" startLine="30" startPosition="101" endLine="31" endPosition="71" />
-    <scopeInfo nodeId="2572626204577975497" fileName="BinaryOperation_Behavior.java" startLine="34" startPosition="89" endLine="35" endPosition="71" />
-    <scopeInfo nodeId="2572626204577977357" fileName="BinaryOperation_Behavior.java" startLine="38" startPosition="90" endLine="39" endPosition="72" />
-    <scopeInfo nodeId="2572626204597970391" fileName="BinaryOperation_Behavior.java" startLine="42" startPosition="100" endLine="43" endPosition="188" />
-    <scopeInfo nodeId="4985347495062780319" fileName="BinaryOperation_Behavior.java" startLine="66" startPosition="12" endLine="67" endPosition="23" />
-    <scopeInfo nodeId="4985347495062780325" fileName="BinaryOperation_Behavior.java" startLine="69" startPosition="28" endLine="70" endPosition="138" />
+    <scopeInfo nodeId="2572626204597970391" fileName="BinaryOperation_Behavior.java" startLine="34" startPosition="100" endLine="35" endPosition="188" />
+    <scopeInfo nodeId="4985347495062780319" fileName="BinaryOperation_Behavior.java" startLine="58" startPosition="12" endLine="59" endPosition="23" />
+    <scopeInfo nodeId="4985347495062780325" fileName="BinaryOperation_Behavior.java" startLine="61" startPosition="28" endLine="62" endPosition="138" />
     <scopeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1262430001741497861" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495062780305" fileName="BinaryOperation_Behavior.java" startLine="63" startPosition="27" endLine="65" endPosition="137" />
+    <scopeInfo nodeId="4985347495062780305" fileName="BinaryOperation_Behavior.java" startLine="55" startPosition="27" endLine="57" endPosition="137" />
     <scopeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1262430001741497861" varName="thisConcept" />
     </scopeInfo>
@@ -12277,20 +12263,14 @@
     <scopeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1262430001741497861" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="1262430001741497861" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="1262430001741497861" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4985347495062762255" fileName="BinaryOperation_Behavior.java" startLine="47" startPosition="32" endLine="52" endPosition="13" />
-    <scopeInfo nodeId="4985347495062705089" fileName="BinaryOperation_Behavior.java" startLine="46" startPosition="184" endLine="71" endPosition="5">
+    <scopeInfo nodeId="4985347495062762255" fileName="BinaryOperation_Behavior.java" startLine="39" startPosition="32" endLine="44" endPosition="13" />
+    <scopeInfo nodeId="4985347495062705089" fileName="BinaryOperation_Behavior.java" startLine="38" startPosition="184" endLine="63" endPosition="5">
       <varInfo nodeId="4985347495062780267" varName="head" />
       <varInfo nodeId="4985347495062780247" varName="leftSide" />
       <varInfo nodeId="4985347495062780253" varName="rightSide" />
       <varInfo nodeId="4985347495062780302" varName="subtree" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="46" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="38" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="4985347495062705100" varName="leftAccumulator" />
       <varInfo nodeId="4985347495062705094" varName="leftTurn" />
       <varInfo nodeId="4985347495062705096" varName="parens" />
@@ -12298,7 +12278,7 @@
       <varInfo nodeId="4985347495062705092" varName="rightTurn" />
       <varInfo nodeId="1262430001741497861" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="14" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BinaryOperation_Behavior" />
+    <unitInfo nodeId="1262430001741497861" fileName="BinaryOperation_Behavior.java" startLine="14" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BinaryOperation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1262430001741522229">
     <nodeInfo nodeId="1262430001741522227" fileName="LocalInstanceFieldReference_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -12777,18 +12757,20 @@
     <unitInfo nodeId="2102329369853775247" fileName="VoidType_Behavior.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VoidType_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/2441191009815017419">
-    <nodeInfo nodeId="2441191009815017443" fileName="UnaryMinus_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2572626204612698121" fileName="UnaryMinus_Behavior.java" startLine="12" startPosition="130" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2441191009815020659" fileName="UnaryMinus_Behavior.java" startLine="16" startPosition="101" endLine="17" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2441191009815017419" fileName="UnaryMinus_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2441191009815017419" fileName="UnaryMinus_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRightSideExpression_7583777362095256690#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2441191009815017419" fileName="UnaryMinus_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_2572626204612659829#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
     <nodeInfo nodeId="2441191009815017419" fileName="UnaryMinus_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setRightSideExpression_7583777362102706555#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="2441191009815017421" fileName="UnaryMinus_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="2441191009815017442" fileName="UnaryMinus_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="67" />
+    <scopeInfo nodeId="2572626204612697945" fileName="UnaryMinus_Behavior.java" startLine="12" startPosition="130" endLine="13" endPosition="16" />
     <scopeInfo nodeId="2441191009815020439" fileName="UnaryMinus_Behavior.java" startLine="16" startPosition="101" endLine="17" endPosition="66" />
     <scopeInfo nodeId="2441191009815017419" fileName="UnaryMinus_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="2441191009815017419" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="2441191009815017419" fileName="UnaryMinus_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="2572626204616206304" varName="leaf" />
+      <varInfo nodeId="2572626204616206306" varName="rightParen" />
       <varInfo nodeId="2441191009815017419" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="2441191009815017419" fileName="UnaryMinus_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
@@ -12927,90 +12909,77 @@
     <unitInfo nodeId="2496361171403550978" fileName="CatchClause_Behavior.java" startLine="18" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CatchClause_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/2572626204577884822">
-    <nodeInfo nodeId="2572626204577972178" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="89" endLine="18" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4985347495069590319" fileName="TernaryOperatorExpression_Behavior.java" startLine="21" startPosition="130" endLine="22" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2572626204612741199" fileName="TernaryOperatorExpression_Behavior.java" startLine="22" startPosition="38" endLine="23" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4985347495059467874" fileName="TernaryOperatorExpression_Behavior.java" startLine="26" startPosition="100" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495057936801" fileName="TernaryOperatorExpression_Behavior.java" startLine="30" startPosition="101" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495069647001" fileName="TernaryOperatorExpression_Behavior.java" startLine="34" startPosition="90" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2572626204577924711" fileName="TernaryOperatorExpression_Behavior.java" startLine="35" startPosition="28" endLine="36" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2572626204598029510" fileName="TernaryOperatorExpression_Behavior.java" startLine="39" startPosition="100" endLine="40" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4985347495062974204" fileName="TernaryOperatorExpression_Behavior.java" startLine="43" startPosition="184" endLine="44" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495062974212" fileName="TernaryOperatorExpression_Behavior.java" startLine="45" startPosition="28" endLine="46" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974221" fileName="TernaryOperatorExpression_Behavior.java" startLine="47" startPosition="29" endLine="48" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974228" fileName="TernaryOperatorExpression_Behavior.java" startLine="48" startPosition="187" endLine="49" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974238" fileName="TernaryOperatorExpression_Behavior.java" startLine="50" startPosition="14" endLine="51" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974250" fileName="TernaryOperatorExpression_Behavior.java" startLine="54" startPosition="29" endLine="55" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974257" fileName="TernaryOperatorExpression_Behavior.java" startLine="55" startPosition="109" endLine="56" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974267" fileName="TernaryOperatorExpression_Behavior.java" startLine="57" startPosition="14" endLine="58" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974272" fileName="TernaryOperatorExpression_Behavior.java" startLine="60" startPosition="5" endLine="61" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974279" fileName="TernaryOperatorExpression_Behavior.java" startLine="61" startPosition="84" endLine="62" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062938750" fileName="TernaryOperatorExpression_Behavior.java" startLine="66" startPosition="171" endLine="67" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062938763" fileName="TernaryOperatorExpression_Behavior.java" startLine="68" startPosition="5" endLine="69" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4985347495069590319" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="130" endLine="18" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2572626204612741199" fileName="TernaryOperatorExpression_Behavior.java" startLine="18" startPosition="38" endLine="19" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4985347495059467874" fileName="TernaryOperatorExpression_Behavior.java" startLine="22" startPosition="100" endLine="23" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495057936801" fileName="TernaryOperatorExpression_Behavior.java" startLine="26" startPosition="101" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2572626204598029510" fileName="TernaryOperatorExpression_Behavior.java" startLine="30" startPosition="100" endLine="31" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4985347495062974204" fileName="TernaryOperatorExpression_Behavior.java" startLine="34" startPosition="184" endLine="35" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495062974212" fileName="TernaryOperatorExpression_Behavior.java" startLine="36" startPosition="28" endLine="37" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974221" fileName="TernaryOperatorExpression_Behavior.java" startLine="38" startPosition="29" endLine="39" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974228" fileName="TernaryOperatorExpression_Behavior.java" startLine="39" startPosition="187" endLine="40" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974238" fileName="TernaryOperatorExpression_Behavior.java" startLine="41" startPosition="14" endLine="42" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974250" fileName="TernaryOperatorExpression_Behavior.java" startLine="45" startPosition="29" endLine="46" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974257" fileName="TernaryOperatorExpression_Behavior.java" startLine="46" startPosition="109" endLine="47" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974267" fileName="TernaryOperatorExpression_Behavior.java" startLine="48" startPosition="14" endLine="49" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974272" fileName="TernaryOperatorExpression_Behavior.java" startLine="51" startPosition="5" endLine="52" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974279" fileName="TernaryOperatorExpression_Behavior.java" startLine="52" startPosition="84" endLine="53" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062938750" fileName="TernaryOperatorExpression_Behavior.java" startLine="57" startPosition="171" endLine="58" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062938763" fileName="TernaryOperatorExpression_Behavior.java" startLine="59" startPosition="5" endLine="60" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4985347495062974236" fileName="TernaryOperatorExpression_Behavior.java" startLine="50" startPosition="12" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4985347495062974265" fileName="TernaryOperatorExpression_Behavior.java" startLine="57" startPosition="12" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getLeftSideExpression_7583777362095214544#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setLeftSideExpression_7583777362102629706#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setRightSideExpression_7583777362102706555#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOrderedChildExpressions_7583777362095257106#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="4985347495062938748" fileName="TernaryOperatorExpression_Behavior.java" startLine="65" startPosition="111" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_2572626204612659829#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRightSideExpression_7583777362095256690#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4985347495062974219" fileName="TernaryOperatorExpression_Behavior.java" startLine="46" startPosition="114" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4985347495062974248" fileName="TernaryOperatorExpression_Behavior.java" startLine="53" startPosition="12" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="65" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_findBottomMostTernary_4985347495062938743#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4985347495062974246" fileName="TernaryOperatorExpression_Behavior.java" startLine="53" startPosition="10" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4985347495062974210" fileName="TernaryOperatorExpression_Behavior.java" startLine="44" startPosition="132" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="43" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_rebalanceAfterParething_4985347495062678851#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4985347495062974236" fileName="TernaryOperatorExpression_Behavior.java" startLine="41" startPosition="12" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4985347495062974265" fileName="TernaryOperatorExpression_Behavior.java" startLine="48" startPosition="12" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setLeftSideExpression_7583777362102629706#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setRightSideExpression_7583777362102706555#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOrderedChildExpressions_7583777362095257106#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="4985347495062938748" fileName="TernaryOperatorExpression_Behavior.java" startLine="56" startPosition="111" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_2572626204612659829#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
+    <nodeInfo nodeId="4985347495062974219" fileName="TernaryOperatorExpression_Behavior.java" startLine="37" startPosition="114" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4985347495062974248" fileName="TernaryOperatorExpression_Behavior.java" startLine="44" startPosition="12" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="56" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_findBottomMostTernary_4985347495062938743#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4985347495062974246" fileName="TernaryOperatorExpression_Behavior.java" startLine="44" startPosition="10" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4985347495062974210" fileName="TernaryOperatorExpression_Behavior.java" startLine="35" startPosition="132" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="34" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_rebalanceAfterParething_4985347495062678851#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="2572626204577884824" fileName="TernaryOperatorExpression_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="2572626204577971983" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="89" endLine="18" endPosition="66" />
-    <scopeInfo nodeId="4985347495059467501" fileName="TernaryOperatorExpression_Behavior.java" startLine="26" startPosition="100" endLine="27" endPosition="65" />
-    <scopeInfo nodeId="4985347495057936451" fileName="TernaryOperatorExpression_Behavior.java" startLine="30" startPosition="101" endLine="31" endPosition="63" />
-    <scopeInfo nodeId="2572626204598029250" fileName="TernaryOperatorExpression_Behavior.java" startLine="39" startPosition="100" endLine="40" endPosition="228" />
-    <scopeInfo nodeId="4985347495062974237" fileName="TernaryOperatorExpression_Behavior.java" startLine="50" startPosition="14" endLine="51" endPosition="139" />
-    <scopeInfo nodeId="4985347495062974266" fileName="TernaryOperatorExpression_Behavior.java" startLine="57" startPosition="14" endLine="58" endPosition="61" />
-    <scopeInfo nodeId="4985347495062938749" fileName="TernaryOperatorExpression_Behavior.java" startLine="66" startPosition="171" endLine="67" endPosition="176" />
+    <scopeInfo nodeId="4985347495059467501" fileName="TernaryOperatorExpression_Behavior.java" startLine="22" startPosition="100" endLine="23" endPosition="65" />
+    <scopeInfo nodeId="4985347495057936451" fileName="TernaryOperatorExpression_Behavior.java" startLine="26" startPosition="101" endLine="27" endPosition="63" />
+    <scopeInfo nodeId="2572626204598029250" fileName="TernaryOperatorExpression_Behavior.java" startLine="30" startPosition="100" endLine="31" endPosition="228" />
+    <scopeInfo nodeId="4985347495062974237" fileName="TernaryOperatorExpression_Behavior.java" startLine="41" startPosition="14" endLine="42" endPosition="139" />
+    <scopeInfo nodeId="4985347495062974266" fileName="TernaryOperatorExpression_Behavior.java" startLine="48" startPosition="14" endLine="49" endPosition="61" />
+    <scopeInfo nodeId="4985347495062938749" fileName="TernaryOperatorExpression_Behavior.java" startLine="57" startPosition="171" endLine="58" endPosition="176" />
     <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204612740855" fileName="TernaryOperatorExpression_Behavior.java" startLine="21" startPosition="130" endLine="23" endPosition="147" />
-    <scopeInfo nodeId="2572626204577924706" fileName="TernaryOperatorExpression_Behavior.java" startLine="34" startPosition="90" endLine="36" endPosition="64" />
-    <scopeInfo nodeId="4985347495062974220" fileName="TernaryOperatorExpression_Behavior.java" startLine="47" startPosition="29" endLine="49" endPosition="139" />
-    <scopeInfo nodeId="4985347495062974249" fileName="TernaryOperatorExpression_Behavior.java" startLine="54" startPosition="29" endLine="56" endPosition="139" />
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="2572626204577884822" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="2572626204612740855" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="130" endLine="19" endPosition="147" />
+    <scopeInfo nodeId="4985347495062974220" fileName="TernaryOperatorExpression_Behavior.java" startLine="38" startPosition="29" endLine="40" endPosition="139" />
+    <scopeInfo nodeId="4985347495062974249" fileName="TernaryOperatorExpression_Behavior.java" startLine="45" startPosition="29" endLine="47" endPosition="139" />
+    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="4985347495059467502" varName="expr" />
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="4985347495057936452" varName="expr" />
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="2572626204612740856" varName="leaf" />
       <varInfo nodeId="2572626204612740858" varName="rightParen" />
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="2572626204577884822" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4985347495062938747" fileName="TernaryOperatorExpression_Behavior.java" startLine="65" startPosition="111" endLine="69" endPosition="29" />
-    <scopeInfo nodeId="4985347495062974247" fileName="TernaryOperatorExpression_Behavior.java" startLine="53" startPosition="12" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="65" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="4985347495062938747" fileName="TernaryOperatorExpression_Behavior.java" startLine="56" startPosition="111" endLine="60" endPosition="29" />
+    <scopeInfo nodeId="4985347495062974247" fileName="TernaryOperatorExpression_Behavior.java" startLine="44" startPosition="12" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="56" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="4985347495062938766" varName="bottomMostTernary" />
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495062974211" fileName="TernaryOperatorExpression_Behavior.java" startLine="45" startPosition="28" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="4985347495062973465" fileName="TernaryOperatorExpression_Behavior.java" startLine="43" startPosition="184" endLine="62" endPosition="76">
+    <scopeInfo nodeId="4985347495062974211" fileName="TernaryOperatorExpression_Behavior.java" startLine="36" startPosition="28" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="4985347495062973465" fileName="TernaryOperatorExpression_Behavior.java" startLine="34" startPosition="184" endLine="53" endPosition="76">
       <varInfo nodeId="4985347495062974205" varName="bottomMostTernary" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="43" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="34" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="4985347495062973474" varName="leftAccumulator" />
       <varInfo nodeId="4985347495062973468" varName="leftTurn" />
       <varInfo nodeId="4985347495062973470" varName="parens" />
@@ -13018,53 +12987,52 @@
       <varInfo nodeId="4985347495062973466" varName="rightTurn" />
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="13" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TernaryOperatorExpression_Behavior" />
+    <unitInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="13" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TernaryOperatorExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/2572626204612779323">
-    <nodeInfo nodeId="4985347495069645926" fileName="CastExpression_Behavior.java" startLine="14" startPosition="130" endLine="15" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2572626204612779490" fileName="CastExpression_Behavior.java" startLine="15" startPosition="29" endLine="16" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2572626204612789701" fileName="CastExpression_Behavior.java" startLine="20" startPosition="104" endLine="21" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2572626204612814459" fileName="CastExpression_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4985347495062920677" fileName="CastExpression_Behavior.java" startLine="27" startPosition="28" endLine="28" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062920682" fileName="CastExpression_Behavior.java" startLine="28" startPosition="62" endLine="29" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062920692" fileName="CastExpression_Behavior.java" startLine="30" startPosition="12" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062920697" fileName="CastExpression_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062920704" fileName="CastExpression_Behavior.java" startLine="33" startPosition="68" endLine="34" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2572626204612789702" fileName="CastExpression_Behavior.java" startLine="37" startPosition="64" endLine="38" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2572626204612779490" fileName="CastExpression_Behavior.java" startLine="14" startPosition="130" endLine="15" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2572626204612789701" fileName="CastExpression_Behavior.java" startLine="19" startPosition="104" endLine="20" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2572626204612814459" fileName="CastExpression_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4985347495062920677" fileName="CastExpression_Behavior.java" startLine="26" startPosition="28" endLine="27" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062920682" fileName="CastExpression_Behavior.java" startLine="27" startPosition="62" endLine="28" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062920692" fileName="CastExpression_Behavior.java" startLine="29" startPosition="12" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062920697" fileName="CastExpression_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062920704" fileName="CastExpression_Behavior.java" startLine="32" startPosition="68" endLine="33" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2572626204612789702" fileName="CastExpression_Behavior.java" startLine="36" startPosition="64" endLine="37" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4985347495062920690" fileName="CastExpression_Behavior.java" startLine="30" startPosition="10" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2572626204612789694" fileName="CastExpression_Behavior.java" startLine="19" startPosition="127" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2572626204612789702" fileName="CastExpression_Behavior.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_fzg371_a0a0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_2572626204612659829#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
-    <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isTheRightMostExpression_2572626204612789689#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4985347495062920675" fileName="CastExpression_Behavior.java" startLine="26" startPosition="184" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="26" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_rebalanceAfterParething_4985347495062678851#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4985347495062920690" fileName="CastExpression_Behavior.java" startLine="29" startPosition="10" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_2572626204612659829#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
+    <nodeInfo nodeId="2572626204612789694" fileName="CastExpression_Behavior.java" startLine="18" startPosition="127" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2572626204612789702" fileName="CastExpression_Behavior.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_fzg371_a0a0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isTheRightMostExpression_2572626204612789689#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4985347495062920675" fileName="CastExpression_Behavior.java" startLine="25" startPosition="184" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="25" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_rebalanceAfterParething_4985347495062678851#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="2572626204612779325" fileName="CastExpression_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="2572626204612789700" fileName="CastExpression_Behavior.java" startLine="20" startPosition="104" endLine="21" endPosition="43" />
-    <scopeInfo nodeId="4985347495062920691" fileName="CastExpression_Behavior.java" startLine="30" startPosition="12" endLine="31" endPosition="59" />
-    <scopeInfo nodeId="2572626204612789702" fileName="CastExpression_Behavior.java" startLine="37" startPosition="64" endLine="38" endPosition="46" />
+    <scopeInfo nodeId="2572626204612779336" fileName="CastExpression_Behavior.java" startLine="14" startPosition="130" endLine="15" endPosition="172" />
+    <scopeInfo nodeId="2572626204612789700" fileName="CastExpression_Behavior.java" startLine="19" startPosition="104" endLine="20" endPosition="43" />
+    <scopeInfo nodeId="4985347495062920691" fileName="CastExpression_Behavior.java" startLine="29" startPosition="12" endLine="30" endPosition="59" />
+    <scopeInfo nodeId="2572626204612789702" fileName="CastExpression_Behavior.java" startLine="36" startPosition="64" endLine="37" endPosition="46" />
     <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="2572626204612779323" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204612779336" fileName="CastExpression_Behavior.java" startLine="14" startPosition="130" endLine="16" endPosition="172" />
-    <scopeInfo nodeId="4985347495062920676" fileName="CastExpression_Behavior.java" startLine="27" startPosition="28" endLine="29" endPosition="137" />
-    <scopeInfo nodeId="2572626204612789702" fileName="CastExpression_Behavior.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="2572626204612789702" varName="a" />
-      <varInfo nodeId="2572626204612789702" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="4985347495062920676" fileName="CastExpression_Behavior.java" startLine="26" startPosition="28" endLine="28" endPosition="137" />
+    <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="2572626204612779337" varName="leaf" />
       <varInfo nodeId="2572626204612779339" varName="rightParen" />
       <varInfo nodeId="2572626204612779323" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204612789693" fileName="CastExpression_Behavior.java" startLine="19" startPosition="127" endLine="23" endPosition="237" />
-    <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="19" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="2572626204612789702" fileName="CastExpression_Behavior.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="2572626204612789702" varName="a" />
+      <varInfo nodeId="2572626204612789702" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2572626204612789693" fileName="CastExpression_Behavior.java" startLine="18" startPosition="127" endLine="22" endPosition="237" />
+    <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="2572626204612789719" varName="leaf" />
       <varInfo nodeId="2572626204612789717" varName="root" />
       <varInfo nodeId="2572626204612779323" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495062920255" fileName="CastExpression_Behavior.java" startLine="26" startPosition="184" endLine="34" endPosition="78" />
-    <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="26" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="4985347495062920255" fileName="CastExpression_Behavior.java" startLine="25" startPosition="184" endLine="33" endPosition="78" />
+    <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="25" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="4985347495062920264" varName="leftAccumulator" />
       <varInfo nodeId="4985347495062920258" varName="leftTurn" />
       <varInfo nodeId="4985347495062920260" varName="parens" />
@@ -13072,7 +13040,7 @@
       <varInfo nodeId="4985347495062920256" varName="rightTurn" />
       <varInfo nodeId="2572626204612779323" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CastExpression_Behavior" />
+    <unitInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="10" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CastExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/2622108313341288809">
     <nodeInfo nodeId="2622108313341288931" fileName="PropertyValueReference_Behavior.java" startLine="11" startPosition="72" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -14866,14 +14834,17 @@
     <nodeInfo nodeId="6155185097904814168" fileName="PostfixDecrementExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2441191009815050492" fileName="PostfixDecrementExpression_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2441191009815052383" fileName="PostfixDecrementExpression_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645633669421481378" fileName="PostfixDecrementExpression_Behavior.java" startLine="24" startPosition="130" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getLeftSideExpression_7583777362095214544#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRightSideExpression_7583777362095256690#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_2572626204612659829#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
     <scopeInfo nodeId="6155185097904814048" fileName="PostfixDecrementExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="6155185097904814055" fileName="PostfixDecrementExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" />
     <scopeInfo nodeId="2441191009815050369" fileName="PostfixDecrementExpression_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="67" />
     <scopeInfo nodeId="2441191009815052172" fileName="PostfixDecrementExpression_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="16" />
+    <scopeInfo nodeId="1645633669421481110" fileName="PostfixDecrementExpression_Behavior.java" startLine="24" startPosition="130" endLine="25" endPosition="25" />
     <scopeInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="6155185097904814046" varName="thisNode" />
     </scopeInfo>
@@ -14886,20 +14857,28 @@
     <scopeInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="6155185097904814046" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixDecrementExpression_Behavior" />
+    <scopeInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1645633669421481111" varName="leaf" />
+      <varInfo nodeId="1645633669421481113" varName="rightParen" />
+      <varInfo nodeId="6155185097904814046" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixDecrementExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/6155185097904815822">
     <nodeInfo nodeId="6155185097904815944" fileName="PostfixIncrementExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2441191009815052466" fileName="PostfixIncrementExpression_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2441191009815052474" fileName="PostfixIncrementExpression_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645633669421481923" fileName="PostfixIncrementExpression_Behavior.java" startLine="24" startPosition="130" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getLeftSideExpression_7583777362095214544#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRightSideExpression_7583777362095256690#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_2572626204612659829#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
     <scopeInfo nodeId="6155185097904815824" fileName="PostfixIncrementExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="6155185097904815831" fileName="PostfixIncrementExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" />
     <scopeInfo nodeId="2441191009815052465" fileName="PostfixIncrementExpression_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="67" />
     <scopeInfo nodeId="2441191009815052473" fileName="PostfixIncrementExpression_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="16" />
+    <scopeInfo nodeId="1645633669421481654" fileName="PostfixIncrementExpression_Behavior.java" startLine="24" startPosition="130" endLine="25" endPosition="25" />
     <scopeInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="6155185097904815822" varName="thisNode" />
     </scopeInfo>
@@ -14912,59 +14891,56 @@
     <scopeInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="6155185097904815822" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixIncrementExpression_Behavior" />
+    <scopeInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1645633669421481655" varName="leaf" />
+      <varInfo nodeId="1645633669421481657" varName="rightParen" />
+      <varInfo nodeId="6155185097904815822" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixIncrementExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/6155185097904817598">
-    <nodeInfo nodeId="6155185097904817720" fileName="PrefixDecrementExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2441191009815055049" fileName="PrefixDecrementExpression_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2441191009815055055" fileName="PrefixDecrementExpression_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getLeftSideExpression_7583777362095214544#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRightSideExpression_7583777362095256690#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="6155185097904817600" fileName="PrefixDecrementExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="6155185097904817607" fileName="PrefixDecrementExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" />
-    <scopeInfo nodeId="2441191009815055048" fileName="PrefixDecrementExpression_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="2441191009815055054" fileName="PrefixDecrementExpression_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="67" />
-    <scopeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="6155185097904817720" fileName="PrefixDecrementExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645633669421480023" fileName="PrefixDecrementExpression_Behavior.java" startLine="15" startPosition="130" endLine="16" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_2572626204612659829#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
+    <scopeInfo nodeId="6155185097904817600" fileName="PrefixDecrementExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="6155185097904817607" fileName="PrefixDecrementExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="1645633669421478877" fileName="PrefixDecrementExpression_Behavior.java" startLine="15" startPosition="130" endLine="16" endPosition="22" />
+    <scopeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="6155185097904817598" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="6155185097904817598" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1645633669421478878" varName="leaf" />
+      <varInfo nodeId="1645633669421478880" varName="rightParen" />
       <varInfo nodeId="6155185097904817598" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="6155185097904817598" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixDecrementExpression_Behavior" />
+    <unitInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixDecrementExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/6155185097904819374">
-    <nodeInfo nodeId="6155185097904819496" fileName="PrefixIncrementExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2441191009815052822" fileName="PrefixIncrementExpression_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2441191009815052830" fileName="PrefixIncrementExpression_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getLeftSideExpression_7583777362095214544#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRightSideExpression_7583777362095256690#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="6155185097904819376" fileName="PrefixIncrementExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="6155185097904819383" fileName="PrefixIncrementExpression_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" />
-    <scopeInfo nodeId="2441191009815052821" fileName="PrefixIncrementExpression_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="2441191009815052829" fileName="PrefixIncrementExpression_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="67" />
-    <scopeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="6155185097904819496" fileName="PrefixIncrementExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645633669421480230" fileName="PrefixIncrementExpression_Behavior.java" startLine="15" startPosition="130" endLine="16" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_2572626204612659829#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
+    <scopeInfo nodeId="6155185097904819376" fileName="PrefixIncrementExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="6155185097904819383" fileName="PrefixIncrementExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="1645633669421480067" fileName="PrefixIncrementExpression_Behavior.java" startLine="15" startPosition="130" endLine="16" endPosition="22" />
+    <scopeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="6155185097904819374" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="6155185097904819374" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1645633669421480068" varName="leaf" />
+      <varInfo nodeId="1645633669421480070" varName="rightParen" />
       <varInfo nodeId="6155185097904819374" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="6155185097904819374" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixIncrementExpression_Behavior" />
+    <unitInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixIncrementExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/6307653274956830892">
     <nodeInfo nodeId="6307653274956830908" fileName="ParenthesizedExpression_Behavior.java" startLine="14" startPosition="83" endLine="15" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -9,8 +9,8 @@ public class UnaryMinus_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static SNode virtual_getRightSideExpression_7583777362095256690(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "expression", true);
+  public static boolean virtual_canPropagateUnmatchedParenUp_2572626204612659829(SNode thisNode, SNode leaf, boolean rightParen) {
+    return true;
   }
 
   public static void virtual_setRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {

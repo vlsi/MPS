@@ -14,20 +14,12 @@ public abstract class BinaryOperation_BehaviorDescriptor extends Expression_Beha
     return BinaryOperation_Behavior.virtual_canPropagateUnmatchedParenUp_2572626204612659829(thisNode, leaf, rightParen);
   }
 
-  public SNode virtual_getLeftSideExpression_7583777362095214544(SNode thisNode) {
-    return BinaryOperation_Behavior.virtual_getLeftSideExpression_7583777362095214544(thisNode);
-  }
-
   public List<SNode> virtual_getOrderedChildExpressions_7583777362095257106(SNode thisNode) {
     return BinaryOperation_Behavior.virtual_getOrderedChildExpressions_7583777362095257106(thisNode);
   }
 
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return BinaryOperation_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  }
-
-  public SNode virtual_getRightSideExpression_7583777362095256690(SNode thisNode) {
-    return BinaryOperation_Behavior.virtual_getRightSideExpression_7583777362095256690(thisNode);
   }
 
   public void virtual_rebalanceAfterParething_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {

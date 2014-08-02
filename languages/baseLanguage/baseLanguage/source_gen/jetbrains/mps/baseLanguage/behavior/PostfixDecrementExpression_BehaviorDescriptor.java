@@ -8,6 +8,10 @@ public class PostfixDecrementExpression_BehaviorDescriptor extends AbstractUnary
   public PostfixDecrementExpression_BehaviorDescriptor() {
   }
 
+  public boolean virtual_canPropagateUnmatchedParenUp_2572626204612659829(SNode thisNode, SNode leaf, boolean rightParen) {
+    return PostfixDecrementExpression_Behavior.virtual_canPropagateUnmatchedParenUp_2572626204612659829(thisNode, leaf, rightParen);
+  }
+
   public SNode virtual_getLeftSideExpression_7583777362095214544(SNode thisNode) {
     return PostfixDecrementExpression_Behavior.virtual_getLeftSideExpression_7583777362095214544(thisNode);
   }

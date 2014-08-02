@@ -44,6 +44,7 @@
   </source>
   <source id="1152552655480" name="class_ClosureContext" hash="4xzghnav1suzs3gbk443g9zxwjf5ou8">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1152719449373" name="reduce_bodyOfContextOwner_insertClosureContextVar" hash="2ipd6z0vyqsk4ifdert9zd5pd6khanb" />
   <source id="1152729181498" name="weave_ClosureAdapter_members" hash="c89nmoyw9wr7z1trtdds0zhebz5j5xr" />

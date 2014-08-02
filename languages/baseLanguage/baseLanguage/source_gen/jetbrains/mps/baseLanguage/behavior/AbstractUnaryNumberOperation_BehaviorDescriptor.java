@@ -8,10 +8,6 @@ public class AbstractUnaryNumberOperation_BehaviorDescriptor extends Expression_
   public AbstractUnaryNumberOperation_BehaviorDescriptor() {
   }
 
-  public boolean virtual_canPropagateUnmatchedParenUp_2572626204612659829(SNode thisNode, SNode leaf, boolean rightParen) {
-    return AbstractUnaryNumberOperation_Behavior.virtual_canPropagateUnmatchedParenUp_2572626204612659829(thisNode, leaf, rightParen);
-  }
-
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return AbstractUnaryNumberOperation_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
   }

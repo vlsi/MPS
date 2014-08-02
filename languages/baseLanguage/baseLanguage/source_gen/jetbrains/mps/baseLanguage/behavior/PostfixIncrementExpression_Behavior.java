@@ -20,4 +20,8 @@ public class PostfixIncrementExpression_Behavior {
   public static SNode virtual_getRightSideExpression_7583777362095256690(SNode thisNode) {
     return null;
   }
+
+  public static boolean virtual_canPropagateUnmatchedParenUp_2572626204612659829(SNode thisNode, SNode leaf, boolean rightParen) {
+    return !(rightParen);
+  }
 }

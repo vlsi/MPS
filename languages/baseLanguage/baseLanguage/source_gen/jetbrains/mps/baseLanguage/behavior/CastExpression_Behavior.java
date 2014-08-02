@@ -12,7 +12,6 @@ public class CastExpression_Behavior {
   }
 
   public static boolean virtual_canPropagateUnmatchedParenUp_2572626204612659829(SNode thisNode, SNode leaf, boolean rightParen) {
-    // todo can return true? 
     return rightParen && CastExpression_Behavior.call_isTheRightMostExpression_2572626204612789689(thisNode, SLinkOperations.getTarget(thisNode, "expression", true), leaf);
   }
 

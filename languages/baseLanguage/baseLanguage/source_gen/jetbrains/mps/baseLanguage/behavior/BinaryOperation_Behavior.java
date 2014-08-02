@@ -31,14 +31,6 @@ public class BinaryOperation_Behavior {
     SLinkOperations.setTarget(thisNode, "rightExpression", expr, true);
   }
 
-  public static SNode virtual_getLeftSideExpression_7583777362095214544(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "leftExpression", true);
-  }
-
-  public static SNode virtual_getRightSideExpression_7583777362095256690(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "rightExpression", true);
-  }
-
   public static List<SNode> virtual_getOrderedChildExpressions_7583777362095257106(SNode thisNode) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "leftExpression", true), SLinkOperations.getTarget(thisNode, "rightExpression", true));
   }
