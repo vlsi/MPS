@@ -70,10 +70,7 @@
               <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="2840424593938661463" nodeInfo="nn">
                 <node role="elementType" roleId="tp2q.1237721435807" type="tp25.SConceptType" typeId="tp25.1172420572800" id="2840424593938663466" nodeInfo="in" />
                 <node role="initValue" roleId="tp2q.1237721435808" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="2840424593938669409" nodeInfo="nn">
-                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="caxt.2087237500458009228" resolveInfo="ShowBrokenReferences" />
-                </node>
-                <node role="initValue" roleId="tp2q.1237721435808" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="2840424593938672173" nodeInfo="nn">
-                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="caxt.7490254719522540696" resolveInfo="StatCommand" />
+                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="caxt.7490254719523007894" resolveInfo="ModelStatisticsTarget" />
                 </node>
                 <node role="initValue" roleId="tp2q.1237721435808" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="2840424593938675005" nodeInfo="nn">
                   <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="caxt.7057947030097724900" resolveInfo="ShowGenPlan" />
