@@ -2527,296 +2527,333 @@
     <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="27" startPosition="43" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="28" startPosition="35" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="33" startPosition="32" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4136679964555916320" fileName="PasteAsJavaClass_Action.java" startLine="37" startPosition="87" endLine="38" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4136679964555917983" fileName="PasteAsJavaClass_Action.java" startLine="38" startPosition="68" endLine="39" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="44" startPosition="7" endLine="45" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="45" startPosition="60" endLine="46" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="49" startPosition="42" endLine="50" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="51" startPosition="7" endLine="52" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="59" startPosition="5" endLine="60" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="61" startPosition="71" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="63" startPosition="5" endLine="64" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="65" startPosition="60" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="68" startPosition="158" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="70" startPosition="5" endLine="71" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="72" startPosition="65" endLine="73" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="74" startPosition="5" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502656" fileName="PasteAsJavaClass_Action.java" startLine="79" startPosition="9" endLine="80" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="82" startPosition="42" endLine="83" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="88" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="56" startPosition="95" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="60" startPosition="109" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="64" startPosition="86" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="67" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="71" startPosition="97" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="81" startPosition="27" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="81" startPosition="27" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1433263869221424798" fileName="PasteAsJavaClass_Action.java" startLine="38" startPosition="76" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4136679964555916320" fileName="PasteAsJavaClass_Action.java" startLine="40" startPosition="5" endLine="41" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4136679964555917983" fileName="PasteAsJavaClass_Action.java" startLine="41" startPosition="68" endLine="42" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="47" startPosition="7" endLine="48" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="48" startPosition="60" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="52" startPosition="42" endLine="53" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="54" startPosition="7" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="60" startPosition="53" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="62" startPosition="5" endLine="63" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="64" startPosition="71" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="68" startPosition="60" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="71" startPosition="158" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="73" startPosition="5" endLine="74" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="75" startPosition="65" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="77" startPosition="5" endLine="78" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502656" fileName="PasteAsJavaClass_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="85" startPosition="42" endLine="86" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="91" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1433263869221415009" fileName="PasteAsJavaClass_Action.java" startLine="37" startPosition="87" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="59" startPosition="95" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="63" startPosition="109" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="67" startPosition="86" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="70" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="74" startPosition="97" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="84" startPosition="27" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="84" startPosition="27" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="43" startPosition="9" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="46" startPosition="9" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteAsJavaClass_Action#()V" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="63" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="78" startPosition="96" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="78" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="42" startPosition="89" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="42" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="56" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="66" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="81" startPosition="96" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="81" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="45" startPosition="89" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="45" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="59" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="33" startPosition="32" endLine="34" endPosition="16" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="49" startPosition="42" endLine="50" endPosition="91" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="61" startPosition="71" endLine="62" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="65" startPosition="60" endLine="66" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="68" startPosition="158" endLine="69" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="72" startPosition="65" endLine="73" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="79" startPosition="9" endLine="80" endPosition="233" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="82" startPosition="42" endLine="83" endPosition="90" />
-    <scopeInfo nodeId="4136679964555903952" fileName="PasteAsJavaClass_Action.java" startLine="37" startPosition="87" endLine="39" endPosition="223">
-      <varInfo nodeId="4136679964555916321" varName="m" />
-    </scopeInfo>
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="44" startPosition="7" endLine="46" endPosition="63">
+    <scopeInfo nodeId="1433263869221415012" fileName="PasteAsJavaClass_Action.java" startLine="38" startPosition="76" endLine="39" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="52" startPosition="42" endLine="53" endPosition="91" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="60" startPosition="53" endLine="61" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="64" startPosition="71" endLine="65" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="68" startPosition="60" endLine="69" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="71" startPosition="158" endLine="72" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="75" startPosition="65" endLine="76" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="233" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="85" startPosition="42" endLine="86" endPosition="90" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="47" startPosition="7" endLine="49" endPosition="63">
       <varInfo nodeId="2872212824181502651" varName="enabled" />
     </scopeInfo>
     <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="26" startPosition="36" endLine="29" endPosition="41" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="81" startPosition="0" endLine="84" endPosition="7">
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="84" startPosition="0" endLine="87" endPosition="7">
       <varInfo nodeId="2872212824181502651" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="81" startPosition="27" endLine="84" endPosition="7" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="84" startPosition="27" endLine="87" endPosition="7" />
     <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="2872212824181502651" varName="_params" />
-      <varInfo nodeId="2872212824181502651" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="43" startPosition="9" endLine="47" endPosition="7" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="48" startPosition="0" endLine="52" endPosition="44">
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="46" startPosition="9" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="51" startPosition="0" endLine="55" endPosition="44">
       <varInfo nodeId="2872212824181502651" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="48" startPosition="27" endLine="52" endPosition="44" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="51" startPosition="27" endLine="55" endPosition="44" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" />
     <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="63" startPosition="5" endLine="70" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="78" startPosition="96" endLine="85" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="78" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="4136679964555903952" fileName="PasteAsJavaClass_Action.java" startLine="37" startPosition="87" endLine="42" endPosition="223">
+      <varInfo nodeId="4136679964555916321" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="2872212824181502651" varName="_params" />
       <varInfo nodeId="2872212824181502651" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="42" startPosition="89" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="42" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="66" startPosition="5" endLine="73" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="81" startPosition="96" endLine="88" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="81" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="2872212824181502651" varName="_params" />
       <varInfo nodeId="2872212824181502651" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="56" startPosition="95" endLine="75" endPosition="16" />
-    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="56" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="45" startPosition="89" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="45" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="2872212824181502651" varName="_params" />
       <varInfo nodeId="2872212824181502651" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="23" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="59" startPosition="95" endLine="78" endPosition="16" />
+    <scopeInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="59" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="2872212824181502651" varName="_params" />
+      <varInfo nodeId="2872212824181502651" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="2872212824181502651" fileName="PasteAsJavaClass_Action.java" startLine="23" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action" />
   </root>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/2872212824181502669">
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="26" startPosition="38" endLine="27" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="27" startPosition="51" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="28" startPosition="35" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="33" startPosition="32" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1254338965550494526" fileName="PasteAsJavaMethods_Action.java" startLine="37" startPosition="87" endLine="38" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="43" startPosition="7" endLine="44" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="44" startPosition="60" endLine="45" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="48" startPosition="42" endLine="49" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="50" startPosition="7" endLine="51" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="56" startPosition="53" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="58" startPosition="5" endLine="59" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="60" startPosition="71" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="62" startPosition="5" endLine="63" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="64" startPosition="65" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="68" startPosition="60" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="71" startPosition="158" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="73" startPosition="5" endLine="74" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="75" startPosition="65" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="77" startPosition="5" endLine="78" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502674" fileName="PasteAsJavaMethods_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="85" startPosition="42" endLine="86" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="91" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="55" startPosition="95" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="59" startPosition="109" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="63" startPosition="90" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="67" startPosition="94" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="70" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="74" startPosition="97" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="84" startPosition="27" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="84" startPosition="27" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="42" startPosition="9" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteAsJavaMethods_Action#()V" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="66" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="81" startPosition="96" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="81" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="41" startPosition="89" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="41" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="55" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="33" startPosition="32" endLine="34" endPosition="16" />
-    <scopeInfo nodeId="1254338965550442361" fileName="PasteAsJavaMethods_Action.java" startLine="37" startPosition="87" endLine="38" endPosition="225" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="48" startPosition="42" endLine="49" endPosition="93" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="56" startPosition="53" endLine="57" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="60" startPosition="71" endLine="61" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="64" startPosition="65" endLine="65" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="68" startPosition="60" endLine="69" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="71" startPosition="158" endLine="72" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="75" startPosition="65" endLine="76" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="257" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="85" startPosition="42" endLine="86" endPosition="92" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="43" startPosition="7" endLine="45" endPosition="63">
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="29" startPosition="38" endLine="30" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="30" startPosition="51" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="31" startPosition="35" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="36" startPosition="32" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1433263869221341707" fileName="PasteAsJavaMethods_Action.java" startLine="41" startPosition="124" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1254338965550494526" fileName="PasteAsJavaMethods_Action.java" startLine="43" startPosition="5" endLine="44" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="49" startPosition="7" endLine="50" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="50" startPosition="60" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="54" startPosition="42" endLine="55" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="56" startPosition="7" endLine="57" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="62" startPosition="53" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="66" startPosition="71" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="68" startPosition="5" endLine="69" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="70" startPosition="65" endLine="71" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="72" startPosition="5" endLine="73" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="74" startPosition="60" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="77" startPosition="158" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="79" startPosition="5" endLine="80" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="81" startPosition="65" endLine="82" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="84" startPosition="5" endLine="85" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="86" startPosition="67" endLine="87" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="88" startPosition="7" endLine="89" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="91" startPosition="70" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="93" startPosition="5" endLine="94" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502674" fileName="PasteAsJavaMethods_Action.java" startLine="98" startPosition="9" endLine="99" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="101" startPosition="42" endLine="102" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="107" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1433263869221341705" fileName="PasteAsJavaMethods_Action.java" startLine="40" startPosition="87" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="53" startPosition="27" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="53" startPosition="27" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="61" startPosition="95" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="65" startPosition="109" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="69" startPosition="90" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="73" startPosition="94" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="76" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="80" startPosition="97" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="85" startPosition="90" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="90" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="100" startPosition="27" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="100" startPosition="27" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="48" startPosition="9" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="64" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="68" startPosition="5" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="79" startPosition="5" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteAsJavaMethods_Action#()V" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="72" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="83" startPosition="5" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="97" startPosition="96" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="97" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="83" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="47" startPosition="89" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="47" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="61" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="36" startPosition="32" endLine="37" endPosition="16" />
+    <scopeInfo nodeId="1433263869221341706" fileName="PasteAsJavaMethods_Action.java" startLine="41" startPosition="124" endLine="42" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="54" startPosition="42" endLine="55" endPosition="93" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="62" startPosition="53" endLine="63" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="66" startPosition="71" endLine="67" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="70" startPosition="65" endLine="71" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="74" startPosition="60" endLine="75" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="77" startPosition="158" endLine="78" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="81" startPosition="65" endLine="82" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="86" startPosition="67" endLine="87" endPosition="31" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="91" startPosition="70" endLine="92" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="98" startPosition="9" endLine="99" endPosition="257" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="101" startPosition="42" endLine="102" endPosition="92" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="49" startPosition="7" endLine="51" endPosition="63">
       <varInfo nodeId="2872212824181502669" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="26" startPosition="38" endLine="29" endPosition="41" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="2872212824181502669" varName="_params" />
-      <varInfo nodeId="2872212824181502669" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="84" startPosition="0" endLine="87" endPosition="7">
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="29" startPosition="38" endLine="32" endPosition="41" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="53" startPosition="27" endLine="56" endPosition="7" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="100" startPosition="0" endLine="103" endPosition="7">
       <varInfo nodeId="2872212824181502669" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="84" startPosition="27" endLine="87" endPosition="7" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="42" startPosition="9" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44">
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="100" startPosition="27" endLine="103" endPosition="7" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1254338965550442361" fileName="PasteAsJavaMethods_Action.java" startLine="40" startPosition="87" endLine="44" endPosition="225" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="48" startPosition="9" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="53" startPosition="0" endLine="57" endPosition="44">
       <varInfo nodeId="2872212824181502669" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="47" startPosition="27" endLine="51" endPosition="44" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="66" startPosition="5" endLine="73" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="81" startPosition="96" endLine="88" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="81" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="53" startPosition="27" endLine="57" endPosition="44" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="64" startPosition="5" endLine="68" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="68" startPosition="5" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="79" startPosition="5" endLine="83" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="84" startPosition="5" endLine="89" endPosition="75">
+      <varInfo nodeId="2872212824181502669" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="40" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="2872212824181502669" varName="_params" />
       <varInfo nodeId="2872212824181502669" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="41" startPosition="89" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="41" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="72" startPosition="5" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="97" startPosition="96" endLine="104" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="97" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="2872212824181502669" varName="_params" />
       <varInfo nodeId="2872212824181502669" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="55" startPosition="95" endLine="78" endPosition="16" />
-    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="55" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="83" startPosition="5" endLine="93" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="47" startPosition="89" endLine="58" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="47" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="2872212824181502669" varName="_params" />
       <varInfo nodeId="2872212824181502669" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="23" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="61" startPosition="95" endLine="94" endPosition="16" />
+    <scopeInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="61" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="2872212824181502669" varName="_params" />
+      <varInfo nodeId="2872212824181502669" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="2872212824181502669" fileName="PasteAsJavaMethods_Action.java" startLine="26" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action" />
   </root>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/2872212824181502686">
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="26" startPosition="41" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="27" startPosition="48" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="28" startPosition="35" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="33" startPosition="32" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="407833149325246221" fileName="PasteAsJavaStatements_Action.java" startLine="37" startPosition="87" endLine="38" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="43" startPosition="7" endLine="44" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="44" startPosition="60" endLine="45" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="48" startPosition="42" endLine="49" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="50" startPosition="7" endLine="51" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="56" startPosition="53" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="58" startPosition="5" endLine="59" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="60" startPosition="71" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="62" startPosition="5" endLine="63" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="64" startPosition="65" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="68" startPosition="60" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="71" startPosition="158" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="73" startPosition="5" endLine="74" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="75" startPosition="65" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="77" startPosition="5" endLine="78" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2872212824181502691" fileName="PasteAsJavaStatements_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="85" startPosition="42" endLine="86" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="91" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="55" startPosition="95" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="59" startPosition="109" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="63" startPosition="90" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="67" startPosition="94" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="70" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="74" startPosition="97" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="84" startPosition="27" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="84" startPosition="27" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="42" startPosition="9" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteAsJavaStatements_Action#()V" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="66" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="81" startPosition="96" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="81" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="41" startPosition="89" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="41" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="55" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="33" startPosition="32" endLine="34" endPosition="16" />
-    <scopeInfo nodeId="407833149325246220" fileName="PasteAsJavaStatements_Action.java" startLine="37" startPosition="87" endLine="38" endPosition="228" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="48" startPosition="42" endLine="49" endPosition="96" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="56" startPosition="53" endLine="57" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="60" startPosition="71" endLine="61" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="64" startPosition="65" endLine="65" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="68" startPosition="60" endLine="69" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="71" startPosition="158" endLine="72" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="75" startPosition="65" endLine="76" endPosition="19" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="254" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="85" startPosition="42" endLine="86" endPosition="95" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="43" startPosition="7" endLine="45" endPosition="63">
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="29" startPosition="41" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="30" startPosition="48" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="31" startPosition="35" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="36" startPosition="32" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1433263869220985864" fileName="PasteAsJavaStatements_Action.java" startLine="41" startPosition="124" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="407833149325246221" fileName="PasteAsJavaStatements_Action.java" startLine="43" startPosition="5" endLine="44" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="49" startPosition="7" endLine="50" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="50" startPosition="60" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="54" startPosition="42" endLine="55" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="56" startPosition="7" endLine="57" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="62" startPosition="53" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="66" startPosition="71" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="68" startPosition="5" endLine="69" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="70" startPosition="65" endLine="71" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="72" startPosition="5" endLine="73" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="74" startPosition="60" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="77" startPosition="158" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="79" startPosition="5" endLine="80" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="81" startPosition="65" endLine="82" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="84" startPosition="5" endLine="85" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="86" startPosition="67" endLine="87" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="88" startPosition="7" endLine="89" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="91" startPosition="70" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="93" startPosition="5" endLine="94" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2872212824181502691" fileName="PasteAsJavaStatements_Action.java" startLine="98" startPosition="9" endLine="99" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="101" startPosition="42" endLine="102" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="107" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1433263869220962023" fileName="PasteAsJavaStatements_Action.java" startLine="40" startPosition="87" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="53" startPosition="27" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="53" startPosition="27" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="61" startPosition="95" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="65" startPosition="109" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="69" startPosition="90" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="73" startPosition="94" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="76" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="80" startPosition="97" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="85" startPosition="90" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="90" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="100" startPosition="27" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="100" startPosition="27" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="48" startPosition="9" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="64" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="68" startPosition="5" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="79" startPosition="5" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteAsJavaStatements_Action#()V" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="72" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="83" startPosition="5" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="97" startPosition="96" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="97" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="83" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="47" startPosition="89" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="47" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="61" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="36" startPosition="32" endLine="37" endPosition="16" />
+    <scopeInfo nodeId="1433263869220962026" fileName="PasteAsJavaStatements_Action.java" startLine="41" startPosition="124" endLine="42" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="54" startPosition="42" endLine="55" endPosition="96" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="62" startPosition="53" endLine="63" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="66" startPosition="71" endLine="67" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="70" startPosition="65" endLine="71" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="74" startPosition="60" endLine="75" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="77" startPosition="158" endLine="78" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="81" startPosition="65" endLine="82" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="86" startPosition="67" endLine="87" endPosition="31" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="91" startPosition="70" endLine="92" endPosition="19" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="98" startPosition="9" endLine="99" endPosition="254" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="101" startPosition="42" endLine="102" endPosition="95" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="49" startPosition="7" endLine="51" endPosition="63">
       <varInfo nodeId="2872212824181502686" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="26" startPosition="41" endLine="29" endPosition="41" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="2872212824181502686" varName="_params" />
-      <varInfo nodeId="2872212824181502686" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="84" startPosition="0" endLine="87" endPosition="7">
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="29" startPosition="41" endLine="32" endPosition="41" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="53" startPosition="27" endLine="56" endPosition="7" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="100" startPosition="0" endLine="103" endPosition="7">
       <varInfo nodeId="2872212824181502686" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="84" startPosition="27" endLine="87" endPosition="7" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="42" startPosition="9" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44">
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="100" startPosition="27" endLine="103" endPosition="7" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="407833149325246220" fileName="PasteAsJavaStatements_Action.java" startLine="40" startPosition="87" endLine="44" endPosition="228" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="48" startPosition="9" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="53" startPosition="0" endLine="57" endPosition="44">
       <varInfo nodeId="2872212824181502686" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="47" startPosition="27" endLine="51" endPosition="44" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="66" startPosition="5" endLine="73" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="81" startPosition="96" endLine="88" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="81" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="53" startPosition="27" endLine="57" endPosition="44" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="64" startPosition="5" endLine="68" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="68" startPosition="5" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="79" startPosition="5" endLine="83" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="84" startPosition="5" endLine="89" endPosition="75">
+      <varInfo nodeId="2872212824181502686" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="40" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="2872212824181502686" varName="_params" />
       <varInfo nodeId="2872212824181502686" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="41" startPosition="89" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="41" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="72" startPosition="5" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="97" startPosition="96" endLine="104" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="97" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="2872212824181502686" varName="_params" />
       <varInfo nodeId="2872212824181502686" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="55" startPosition="95" endLine="78" endPosition="16" />
-    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="55" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="83" startPosition="5" endLine="93" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="47" startPosition="89" endLine="58" endPosition="5" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="47" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="2872212824181502686" varName="_params" />
       <varInfo nodeId="2872212824181502686" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="23" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="61" startPosition="95" endLine="94" endPosition="16" />
+    <scopeInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="61" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="2872212824181502686" varName="_params" />
+      <varInfo nodeId="2872212824181502686" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="2872212824181502686" fileName="PasteAsJavaStatements_Action.java" startLine="26" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action" />
   </root>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/4193578441192301505">
     <unitInfo nodeId="4193578441192301505" fileName="JavaActions.xml" startLine="1" startPosition="0" endLine="150" endPosition="13" unitName="jetbrains.mps.ide.java.actions.JavaActions" />
