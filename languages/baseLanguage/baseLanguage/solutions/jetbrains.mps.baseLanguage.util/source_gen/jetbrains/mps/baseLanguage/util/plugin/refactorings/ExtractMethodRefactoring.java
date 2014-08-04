@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.HashSet;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -247,6 +248,7 @@ public abstract class ExtractMethodRefactoring {
     return myParameters.getAnalyzer();
   }
 
+  @Nullable
   public abstract SNode getMethodType();
 
   public boolean canBeStatic() {

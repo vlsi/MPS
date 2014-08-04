@@ -45,11 +45,9 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
     });
   }
 
-  @NotNull
   @Override
   public SNode getMethodType() {
     SNode typeOf = TypeChecker.getInstance().getTypeOf(this.myExpression);
-    assert typeOf != null;
     return SNodeOperations.cast(typeOf, "jetbrains.mps.baseLanguage.structure.Type");
   }
 }
