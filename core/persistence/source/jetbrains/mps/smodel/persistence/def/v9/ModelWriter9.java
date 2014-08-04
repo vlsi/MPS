@@ -59,7 +59,7 @@ public class ModelWriter9 implements IModelWriter {
   @Override
   public Document saveModel(SModel sourceModel) {
 
-    sourceModel.calculateImplicitLanguages();
+    sourceModel.validateImplicitlyUsedLanguages();
 
     myHelper = new StorageIndexHelper9(sourceModel.getReference());
 

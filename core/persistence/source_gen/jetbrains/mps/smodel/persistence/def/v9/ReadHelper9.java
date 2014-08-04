@@ -57,7 +57,8 @@ public class ReadHelper9 {
     MapSequence.fromMap(myLanguageByIx).put(index, ref);
   }
 
-  public void addImplicitlyUsedLanguage(String index, SLanguageId ref) {
+  public void addImplicitlyUsedLanguage(SModel model, String index, SLanguageId ref, int version) {
+    model.addImplicitlyUsedLanguage(ref, version);
     MapSequence.fromMap(myLanguageByIx).put(index, ref);
   }
 
