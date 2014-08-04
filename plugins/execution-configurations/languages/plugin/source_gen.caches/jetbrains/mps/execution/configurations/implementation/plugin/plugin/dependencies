@@ -303,9 +303,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit_Command" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
     <classNode dependClassName="jetbrains.mps.util.test.CachesUtil" />
     <classNode extendsClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor" />
   </dependency>

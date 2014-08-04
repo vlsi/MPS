@@ -23,7 +23,7 @@ public class ExecuteConfiguration_Function_Behavior {
   }
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor") && (SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"), "debuggerConfiguration", true) != null)) {
-      return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.Project_Parameter"), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"));
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.Project_Parameter"), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.Executor_Parameter"));
     }
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.Project_Parameter"));
   }

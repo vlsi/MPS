@@ -29,6 +29,9 @@
     <file name="ConfigurationFromExecutorReference_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.execution.configurations.behavior.ConfigurationFromExecutorReference_BehaviorDescriptor" />
     </file>
+    <file name="Executor_Parameter_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.execution.configurations.behavior.Executor_Parameter_BehaviorDescriptor" />
+    </file>
     <file name="NodeListSource_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.execution.configurations.behavior.NodeListSource_BehaviorDescriptor" />
     </file>
@@ -63,7 +66,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.execution.configurations.behavior.Source_ConceptFunctionParameter_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,78,0" name="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,80,0" name="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConsoleType_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.execution.configurations.behavior.ConsoleType_BehaviorDescriptor" />
@@ -388,7 +391,7 @@
   <root nodeRef="r:36b91d42-5119-45a8-b801-6a4d645ce20b(jetbrains.mps.execution.configurations.behavior)/6538811202682334474">
     <file name="ExecuteConfiguration_Function_Behavior.java">
       <node id="6538811202682341883" at="21,92,22,206" concept="5" />
-      <node id="3091009652595831569" at="25,375,26,302" concept="5" />
+      <node id="3091009652595831569" at="25,375,26,416" concept="5" />
       <node id="3091009652595831585" at="27,5,28,178" concept="5" />
       <node id="6764660826575793265" at="30,83,31,47" concept="5" />
       <node id="1262430001741717419" at="33,92,34,16" concept="5" />
@@ -418,7 +421,7 @@
       <node id="6764660826575793266" at="36,0,49,0" concept="6" trace="_quotation_createNode_cw5ucd_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="6538811202682334476" at="19,43,19,43" />
       <scope id="6538811202682334480" at="21,92,22,206" />
-      <scope id="3091009652595830750" at="25,375,26,302" />
+      <scope id="3091009652595830750" at="25,375,26,416" />
       <scope id="1810236057992684681" at="30,83,31,47" />
       <scope id="1262430001741717418" at="33,92,34,16" />
       <scope id="6538811202682334474" at="19,0,21,0">

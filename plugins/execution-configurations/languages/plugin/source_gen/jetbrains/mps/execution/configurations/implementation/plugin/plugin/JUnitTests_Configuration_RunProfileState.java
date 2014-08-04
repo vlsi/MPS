@@ -15,6 +15,7 @@ import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration;
+import com.intellij.execution.executors.DefaultDebugExecutor;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -33,7 +34,6 @@ import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
 import com.intellij.execution.executors.DefaultRunExecutor;
-import com.intellij.execution.executors.DefaultDebugExecutor;
 
 public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfileState implements RunProfileState {
   @NotNull
@@ -54,6 +54,8 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
     JUnitSettings_Configuration jUnitSettings = myRunConfiguration.getJUnitSettings();
+    boolean debugExecutor = executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID);
+    jUnitSettings.setDebug(debugExecutor);
     List<ITestNodeWrapper> testNodes = jUnitSettings.getTests(ProjectHelper.toMPSProject(project));
     TestRunState runState = new TestRunState(testNodes);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
@@ -61,7 +63,7 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
     if (jUnitSettings.canLightExecute(testNodes)) {
       processExecutor = new JUnitLightExecutor(testNodes, eventsDispatcher);
     } else {
-      processExecutor = new JUnitExecutor(jUnitSettings, myRunConfiguration.getJavaRunParameters(), testNodes);
+      processExecutor = new JUnitExecutor(jUnitSettings, myDebuggerSettings, myRunConfiguration.getJavaRunParameters(), testNodes);
     }
     ProcessHandler process = processExecutor.execute();
     final UnitTestViewComponent testViewComponent = myRunConfiguration.createTestViewComponent(runState, process);

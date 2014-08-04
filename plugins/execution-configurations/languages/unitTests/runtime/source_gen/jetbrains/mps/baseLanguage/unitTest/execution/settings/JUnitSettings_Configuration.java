@@ -71,6 +71,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public boolean getReuseCaches() {
     return myState.myReuseCaches;
   }
+  public boolean getDebug() {
+    return myState.myDebug;
+  }
   public String getCachesDir() {
     return myState.myCachesDir;
   }
@@ -95,6 +98,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public void setReuseCaches(boolean value) {
     myState.myReuseCaches = value;
   }
+  public void setDebug(boolean value) {
+    myState.myDebug = value;
+  }
   public void setCachesDir(String value) {
     myState.myCachesDir = value;
   }
@@ -113,7 +119,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     return defaultTestDir.getAbsolutePath();
   }
   public boolean canLightExecute(Iterable<ITestNodeWrapper> testNodes) {
-    return this.getLightExec() && new LightExecutionFilter().accept(testNodes);
+    return this.getLightExec() && !(this.getDebug()) && new LightExecutionFilter().accept(testNodes);
   }
   public List<ITestNodeWrapper> getTests(final Project project) {
     if (this.getRunType() == null) {
@@ -176,6 +182,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     public String myModule;
     public boolean myLightExec = true;
     public boolean myReuseCaches = true;
+    public boolean myDebug = false;
     public String myCachesDir = getDefaultPath();
     public ClonableList<String> myTestCases = new ClonableList<String>();
     public ClonableList<String> myTestMethods = new ClonableList<String>();
@@ -189,6 +196,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       state.myModule = myModule;
       state.myLightExec = myLightExec;
       state.myReuseCaches = myReuseCaches;
+      state.myDebug = myDebug;
       state.myCachesDir = myCachesDir;
       if (myTestCases != null) {
         state.myTestCases = myTestCases.clone();

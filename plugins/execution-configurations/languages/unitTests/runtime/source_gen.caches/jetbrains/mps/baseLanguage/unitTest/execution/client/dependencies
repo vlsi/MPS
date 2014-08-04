@@ -116,7 +116,40 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command" file="Junit_Command.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnitLight_Command" file="JUnitLight_Command.java">
+    <classNode dependClassName="com.intellij.execution.ExecutionException" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.Java_Command" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
+    <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
+    <classNode dependClassName="jetbrains.mps.debug.api.run.IDebuggerConfiguration" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit_Command" file="JUnit_Command.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="java.io.File" />

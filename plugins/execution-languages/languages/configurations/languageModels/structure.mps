@@ -469,5 +469,11 @@
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="execution environment" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="181393747410936990" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+    <property name="name" nameId="tpck.1169194664001" value="Executor_Parameter" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="executor" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </root>
 </model>
 
