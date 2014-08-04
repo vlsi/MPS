@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BreakpointCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.BreakpointCreator_BehaviorDescriptor" />
   <unitInfo fileName="BreakpointableNodeItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.BreakpointableNodeItem_BehaviorDescriptor" />
   <unitInfo fileName="ConceptDeclarationReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptDeclarationReference_BehaviorDescriptor" />
@@ -8,6 +8,7 @@
   <unitInfo fileName="ConceptFunctionParameter_Debug_Project_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Debug_Project_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFunction_CreateBreakpoint_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFunction_IsApplicableToConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableToConcept_BehaviorDescriptor" />
   <unitInfo fileName="CreateBreakpointOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.CreateBreakpointOperation_BehaviorDescriptor" />
   <unitInfo fileName="DebuggerConfiguration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.DebuggerConfiguration_BehaviorDescriptor" />
@@ -161,6 +162,50 @@
     <scopeInfo nodeId="658365993682017039" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="658365993682200128" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
     <unitInfo nodeId="3044950653914719163" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint_Behavior" />
+  </root>
+  <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/3104811047188253888">
+    <nodeInfo nodeId="3104811047188255094" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="18" startPosition="92" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3104811047188255101" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="22" startPosition="125" endLine="23" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104811047188255108" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="23" startPosition="261" endLine="24" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104811047188259161" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="24" startPosition="178" endLine="25" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104811047188255113" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="25" startPosition="178" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3104811047188255118" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="29" startPosition="83" endLine="30" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3104811047188255119" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="33" startPosition="60" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104811047188255119" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="34" startPosition="63" endLine="35" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104811047188255119" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3104811047188255119" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3104811047188255119" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104811047188255119" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="36" startPosition="135" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3104811047188253888" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3104811047188253888" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+    <nodeInfo nodeId="3104811047188253888" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3104811047188253888" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="3104811047188255119" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_9uj0f0_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="3104811047188254041" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="3104811047188255093" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="18" startPosition="92" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="3104811047188255117" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="29" startPosition="83" endLine="30" endPosition="47" />
+    <scopeInfo nodeId="3104811047188255119" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="135" />
+    <scopeInfo nodeId="3104811047188253888" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="3104811047188253888" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3104811047188253888" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="3104811047188253888" varName="thisConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="3104811047188253888" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="3104811047188253888" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3104811047188255100" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="22" startPosition="125" endLine="26" endPosition="18">
+      <varInfo nodeId="3104811047188255102" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3104811047188255119" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="33" startPosition="60" endLine="37" endPosition="24">
+      <varInfo nodeId="3104811047188255119" varName="facade" />
+      <varInfo nodeId="3104811047188255119" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="3104811047188253888" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="22" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="3104811047188253888" varName="thisConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="3104811047188255119" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
+    <unitInfo nodeId="3104811047188253888" fileName="ConceptFunction_IsApplicableBreakpoint_Behavior.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableBreakpoint_Behavior" />
   </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/5452844340287051173">
     <nodeInfo nodeId="5452844340287051289" fileName="ConceptFunctionParameter_DebuggableNode_Behavior.java" startLine="13" startPosition="75" endLine="14" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

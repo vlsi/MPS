@@ -9,13 +9,13 @@
     <nodeInfo nodeId="103203307808601011" fileName="BuildCompositePath_Actions.java" startLine="28" startPosition="54" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="103203307808601142" fileName="BuildCompositePath_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="103203307808603023" fileName="BuildCompositePath_Actions.java" startLine="33" startPosition="62" endLine="34" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="103203307808609823" fileName="BuildCompositePath_Actions.java" startLine="34" startPosition="94" endLine="35" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="103203307808609823" fileName="BuildCompositePath_Actions.java" startLine="34" startPosition="94" endLine="35" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="103203307808601011" fileName="BuildCompositePath_Actions.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="103203307808601011" fileName="BuildCompositePath_Actions.java" startLine="42" startPosition="61" endLine="43" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="103203307808601011" fileName="BuildCompositePath_Actions.java" startLine="46" startPosition="54" endLine="47" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="103203307808601142" fileName="BuildCompositePath_Actions.java" startLine="50" startPosition="75" endLine="51" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="103203307808603023" fileName="BuildCompositePath_Actions.java" startLine="51" startPosition="62" endLine="52" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="103203307808609823" fileName="BuildCompositePath_Actions.java" startLine="52" startPosition="94" endLine="53" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="103203307808609823" fileName="BuildCompositePath_Actions.java" startLine="52" startPosition="94" endLine="53" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="103203307808601011" fileName="BuildCompositePath_Actions.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildCompositePath_Actions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="103203307808601011" fileName="BuildCompositePath_Actions.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="103203307808601011" fileName="BuildCompositePath_Actions.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildCompositePath_Actions_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -34,7 +34,7 @@
     <scopeInfo nodeId="103203307808601011" fileName="BuildCompositePath_Actions.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="103203307808601011" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="103203307808601020" fileName="BuildCompositePath_Actions.java" startLine="32" startPosition="75" endLine="35" endPosition="107">
+    <scopeInfo nodeId="103203307808601020" fileName="BuildCompositePath_Actions.java" startLine="32" startPosition="75" endLine="35" endPosition="113">
       <varInfo nodeId="103203307808601145" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="103203307808601011" fileName="BuildCompositePath_Actions.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
@@ -43,7 +43,7 @@
     <scopeInfo nodeId="103203307808601011" fileName="BuildCompositePath_Actions.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="103203307808601011" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="103203307808601020" fileName="BuildCompositePath_Actions.java" startLine="50" startPosition="75" endLine="53" endPosition="107">
+    <scopeInfo nodeId="103203307808601020" fileName="BuildCompositePath_Actions.java" startLine="50" startPosition="75" endLine="53" endPosition="113">
       <varInfo nodeId="103203307808601145" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="103203307808601011" fileName="BuildCompositePath_Actions.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
@@ -1898,7 +1898,7 @@
     <nodeInfo nodeId="2896281290945209188" fileName="BuildSourceArchiveRelativePath_Editor.java" startLine="139" startPosition="148" endLine="140" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2896281290945231237" fileName="BuildSourceArchiveRelativePath_Editor.java" startLine="144" startPosition="77" endLine="145" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2896281290945231296" fileName="BuildSourceArchiveRelativePath_Editor.java" startLine="146" startPosition="7" endLine="147" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="103203307806807538" fileName="BuildSourceArchiveRelativePath_Editor.java" startLine="147" startPosition="111" endLine="148" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="103203307806807538" fileName="BuildSourceArchiveRelativePath_Editor.java" startLine="147" startPosition="111" endLine="148" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2896281290945209188" fileName="BuildSourceArchiveRelativePath_Editor.java" startLine="151" startPosition="45" endLine="152" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2896281290945209188" fileName="BuildSourceArchiveRelativePath_Editor.java" startLine="115" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0#()V" />
     <nodeInfo nodeId="2539347366864648270" fileName="BuildSourceArchiveRelativePath_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -1964,7 +1964,7 @@
       <varInfo nodeId="2896281290945209188" varName="parameterObject" />
     </scopeInfo>
     <scopeInfo nodeId="2896281290945209188" fileName="BuildSourceArchiveRelativePath_Editor.java" startLine="151" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="2896281290945209192" fileName="BuildSourceArchiveRelativePath_Editor.java" startLine="143" startPosition="150" endLine="148" endPosition="161" />
+    <scopeInfo nodeId="2896281290945209192" fileName="BuildSourceArchiveRelativePath_Editor.java" startLine="143" startPosition="150" endLine="148" endPosition="167" />
     <scopeInfo nodeId="2539347366864648270" fileName="BuildSourceArchiveRelativePath_Editor.java" startLine="43" startPosition="89" endLine="50" endPosition="22">
       <varInfo nodeId="2539347366864648270" varName="editorCell" />
     </scopeInfo>

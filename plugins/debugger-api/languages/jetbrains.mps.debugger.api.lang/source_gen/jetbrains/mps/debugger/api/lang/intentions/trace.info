@@ -17,11 +17,13 @@
     <nodeInfo nodeId="8751745335399771399" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="72" startPosition="62" endLine="73" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8751745335399771403" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="74" startPosition="7" endLine="75" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8751745335399772214" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="78" startPosition="78" endLine="79" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7796501636717810931" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="80" startPosition="129" endLine="81" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7796501636717827562" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="81" startPosition="141" endLine="82" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="86" startPosition="48" endLine="87" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796501636717810931" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="81" startPosition="78" endLine="82" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7796501636717827562" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="82" startPosition="154" endLine="83" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104811047188453437" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="85" startPosition="14" endLine="86" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="90" startPosition="48" endLine="91" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SwitchToComplexIsApplicable_Intention#()V" />
     <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="68" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="3104811047188452659" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="85" startPosition="12" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -33,11 +35,12 @@
     <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
     <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="60" startPosition="99" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8751745335399771342" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="71" startPosition="87" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="7796501636717810798" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="79" startPosition="110" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="3104811047188443448" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="80" startPosition="62" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="60" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
     <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="71" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="78" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7796501636717810798" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="79" startPosition="110" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="78" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="21" startPosition="50" endLine="21" endPosition="50" />
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="68" startPosition="38" endLine="68" endPosition="38" />
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="78" />
@@ -51,10 +54,11 @@
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="56" startPosition="35" endLine="57" endPosition="17" />
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="61" startPosition="37" endLine="62" endPosition="143" />
     <scopeInfo nodeId="8751745335399771344" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="72" startPosition="62" endLine="73" endPosition="34" />
-    <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="86" startPosition="48" endLine="87" endPosition="56" />
+    <scopeInfo nodeId="3104811047188452660" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="85" startPosition="14" endLine="86" endPosition="78" />
+    <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="90" startPosition="48" endLine="91" endPosition="56" />
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="68" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="7796501636717810799" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="80" startPosition="129" endLine="82" endPosition="153" />
+    <scopeInfo nodeId="3104811047188443451" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="81" startPosition="78" endLine="83" endPosition="165" />
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
@@ -67,10 +71,10 @@
     </scopeInfo>
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="60" startPosition="99" endLine="64" endPosition="30" />
     <scopeInfo nodeId="8751745335399757637" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="71" startPosition="87" endLine="75" endPosition="41" />
-    <scopeInfo nodeId="8751745335399757639" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="78" startPosition="78" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="7796501636717810799" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="80" startPosition="62" endLine="84" endPosition="9" />
     <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="60" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="8751745335399757635" varName="context" />
       <varInfo nodeId="8751745335399757635" varName="node" />
@@ -79,12 +83,13 @@
       <varInfo nodeId="8751745335399757635" varName="editorContext" />
       <varInfo nodeId="8751745335399757635" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="78" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="8751745335399757639" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="78" startPosition="78" endLine="87" endPosition="7" />
+    <scopeInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="78" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="8751745335399757635" varName="editorContext" />
       <varInfo nodeId="8751745335399757635" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="67" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.intentions.SwitchToComplexIsApplicable_Intention$IntentionImplementation" />
-    <unitInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="18" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.intentions.SwitchToComplexIsApplicable_Intention" />
+    <unitInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="67" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.intentions.SwitchToComplexIsApplicable_Intention$IntentionImplementation" />
+    <unitInfo nodeId="8751745335399757635" fileName="SwitchToComplexIsApplicable_Intention.java" startLine="18" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.intentions.SwitchToComplexIsApplicable_Intention" />
   </root>
 </debugInfo>
 

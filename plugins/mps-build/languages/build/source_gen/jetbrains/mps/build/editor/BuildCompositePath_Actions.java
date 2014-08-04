@@ -32,7 +32,7 @@ public class BuildCompositePath_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode n = SLinkOperations.getTarget(node, "tail", true);
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "tail", true));
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, n, CellIdManager.createPropertyId("head"), 0);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, n, "*" + CellIdManager.createPropertyId("head"), 0);
     }
   }
 
@@ -50,7 +50,7 @@ public class BuildCompositePath_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode n = SLinkOperations.getTarget(node, "tail", true);
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "tail", true));
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, n, CellIdManager.createPropertyId("head"), 0);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, n, "*" + CellIdManager.createPropertyId("head"), 0);
     }
   }
 }

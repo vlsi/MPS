@@ -357,61 +357,65 @@
     <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="65" startPosition="53" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="67" startPosition="5" endLine="68" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="69" startPosition="71" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="72" startPosition="101" endLine="73" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7064627997011532324" fileName="EvaluateExpression_Action.java" startLine="77" startPosition="9" endLine="78" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2666603886872191706" fileName="EvaluateExpression_Action.java" startLine="79" startPosition="39" endLine="80" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4789587624734726843" fileName="EvaluateExpression_Action.java" startLine="81" startPosition="88" endLine="82" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361593572" fileName="EvaluateExpression_Action.java" startLine="87" startPosition="53" endLine="88" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503361593579" fileName="EvaluateExpression_Action.java" startLine="91" startPosition="56" endLine="92" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7064627997011532331" fileName="EvaluateExpression_Action.java" startLine="98" startPosition="9" endLine="99" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="102" startPosition="42" endLine="103" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="108" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="72" startPosition="5" endLine="73" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="74" startPosition="67" endLine="75" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="76" startPosition="7" endLine="77" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="78" startPosition="5" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7064627997011532324" fileName="EvaluateExpression_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2666603886872191706" fileName="EvaluateExpression_Action.java" startLine="85" startPosition="39" endLine="86" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4789587624734726843" fileName="EvaluateExpression_Action.java" startLine="87" startPosition="88" endLine="88" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361593572" fileName="EvaluateExpression_Action.java" startLine="93" startPosition="53" endLine="94" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2034046503361593579" fileName="EvaluateExpression_Action.java" startLine="97" startPosition="56" endLine="98" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7064627997011532331" fileName="EvaluateExpression_Action.java" startLine="104" startPosition="9" endLine="105" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="108" startPosition="42" endLine="109" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="114" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="56" startPosition="27" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="56" startPosition="27" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="64" startPosition="95" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="68" startPosition="109" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503361593570" fileName="EvaluateExpression_Action.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2034046503361593577" fileName="EvaluateExpression_Action.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="101" startPosition="27" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="101" startPosition="27" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="73" startPosition="90" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2034046503361593570" fileName="EvaluateExpression_Action.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2034046503361593577" fileName="EvaluateExpression_Action.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="107" startPosition="27" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="107" startPosition="27" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="51" startPosition="9" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="67" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EvaluateExpression_Action#()V" />
-    <nodeInfo nodeId="2034046503361593562" fileName="EvaluateExpression_Action.java" startLine="85" startPosition="33" endLine="94" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="71" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="71" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2034046503361593562" fileName="EvaluateExpression_Action.java" startLine="91" startPosition="33" endLine="100" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="50" startPosition="89" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="64" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="2034046503361593560" fileName="EvaluateExpression_Action.java" startLine="85" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2034046503361593560" fileName="EvaluateExpression_Action.java" startLine="91" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="50" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="2034046503361593556" fileName="EvaluateExpression_Action.java" startLine="83" startPosition="275" endLine="96" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4336756357323848017" fileName="EvaluateExpression_Action.java" startLine="82" startPosition="141" endLine="97" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4789587624734695235" fileName="EvaluateExpression_Action.java" startLine="80" startPosition="105" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7064627997011532329" fileName="EvaluateExpression_Action.java" startLine="78" startPosition="93" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="76" startPosition="96" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="76" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="2034046503361593556" fileName="EvaluateExpression_Action.java" startLine="89" startPosition="275" endLine="102" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4336756357323848017" fileName="EvaluateExpression_Action.java" startLine="88" startPosition="141" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="64" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="4789587624734695235" fileName="EvaluateExpression_Action.java" startLine="86" startPosition="105" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7064627997011532329" fileName="EvaluateExpression_Action.java" startLine="84" startPosition="93" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="82" startPosition="96" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="82" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="46" startPosition="32" endLine="47" endPosition="16" />
     <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="57" startPosition="42" endLine="58" endPosition="93" />
     <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="65" startPosition="53" endLine="66" endPosition="19" />
     <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="69" startPosition="71" endLine="70" endPosition="19" />
-    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="101" />
-    <scopeInfo nodeId="2034046503361593571" fileName="EvaluateExpression_Action.java" startLine="87" startPosition="53" endLine="88" endPosition="56" />
-    <scopeInfo nodeId="2034046503361593578" fileName="EvaluateExpression_Action.java" startLine="91" startPosition="56" endLine="92" endPosition="48" />
-    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="102" startPosition="42" endLine="103" endPosition="92" />
+    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="74" startPosition="67" endLine="75" endPosition="31" />
+    <scopeInfo nodeId="2034046503361593571" fileName="EvaluateExpression_Action.java" startLine="93" startPosition="53" endLine="94" endPosition="56" />
+    <scopeInfo nodeId="2034046503361593578" fileName="EvaluateExpression_Action.java" startLine="97" startPosition="56" endLine="98" endPosition="48" />
+    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="108" startPosition="42" endLine="109" endPosition="92" />
     <scopeInfo nodeId="7064627997011532342" fileName="EvaluateExpression_Action.java" startLine="52" startPosition="7" endLine="54" endPosition="107">
       <varInfo nodeId="7064627997011532344" varName="evaluationProvider" />
     </scopeInfo>
     <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="39" startPosition="38" endLine="42" endPosition="40" />
     <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="56" startPosition="27" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="2034046503361593570" fileName="EvaluateExpression_Action.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="2034046503361593577" fileName="EvaluateExpression_Action.java" startLine="91" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="2034046503361593570" fileName="EvaluateExpression_Action.java" startLine="93" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="2034046503361593577" fileName="EvaluateExpression_Action.java" startLine="97" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="2034046503361593577" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="101" startPosition="0" endLine="104" endPosition="7">
+    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="107" startPosition="0" endLine="110" endPosition="7">
       <varInfo nodeId="7064627997011532320" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="101" startPosition="27" endLine="104" endPosition="7" />
+    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="107" startPosition="27" endLine="110" endPosition="7" />
     <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="51" startPosition="9" endLine="55" endPosition="7" />
     <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="56" startPosition="0" endLine="60" endPosition="44">
@@ -420,37 +424,41 @@
     <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="56" startPosition="27" endLine="60" endPosition="44" />
     <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="67" startPosition="5" endLine="71" endPosition="5" />
     <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="64" startPosition="95" endLine="73" endPosition="16" />
-    <scopeInfo nodeId="2034046503361593561" fileName="EvaluateExpression_Action.java" startLine="85" startPosition="33" endLine="94" endPosition="20" />
-    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="50" startPosition="89" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="64" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="7064627997011532320" varName="_params" />
-      <varInfo nodeId="7064627997011532320" varName="event" />
+    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="72" startPosition="5" endLine="77" endPosition="69">
+      <varInfo nodeId="7064627997011532320" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="2034046503361593560" fileName="EvaluateExpression_Action.java" startLine="85" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="71" startPosition="5" endLine="78" endPosition="5" />
+    <scopeInfo nodeId="2034046503361593561" fileName="EvaluateExpression_Action.java" startLine="91" startPosition="33" endLine="100" endPosition="20" />
+    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="50" startPosition="89" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="2034046503361593560" fileName="EvaluateExpression_Action.java" startLine="91" startPosition="0" endLine="102" endPosition="0" />
     <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="50" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="7064627997011532320" varName="_params" />
       <varInfo nodeId="7064627997011532320" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="4336756357323848018" fileName="EvaluateExpression_Action.java" startLine="83" startPosition="275" endLine="96" endPosition="15" />
-    <scopeInfo nodeId="4789587624734695236" fileName="EvaluateExpression_Action.java" startLine="81" startPosition="88" endLine="97" endPosition="11">
+    <scopeInfo nodeId="4336756357323848018" fileName="EvaluateExpression_Action.java" startLine="89" startPosition="275" endLine="102" endPosition="15" />
+    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="64" startPosition="95" endLine="79" endPosition="16" />
+    <scopeInfo nodeId="4789587624734695236" fileName="EvaluateExpression_Action.java" startLine="87" startPosition="88" endLine="103" endPosition="11">
       <varInfo nodeId="4789587624734726844" varName="selection" />
     </scopeInfo>
-    <scopeInfo nodeId="7064627997011532330" fileName="EvaluateExpression_Action.java" startLine="79" startPosition="39" endLine="99" endPosition="138">
-      <varInfo nodeId="2666603886872191707" varName="nodePointers" />
-    </scopeInfo>
-    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="77" startPosition="9" endLine="100" endPosition="7">
-      <varInfo nodeId="7064627997011532325" varName="evaluationProvider" />
-    </scopeInfo>
-    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="76" startPosition="96" endLine="105" endPosition="5" />
-    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="76" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="64" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="7064627997011532320" varName="_params" />
       <varInfo nodeId="7064627997011532320" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="2034046503361593570" fileName="EvaluateExpression_Action.java" startLine="86" startPosition="111" endLine="90" endPosition="17" unitName="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action$2" />
-    <unitInfo nodeId="2034046503361593577" fileName="EvaluateExpression_Action.java" startLine="90" startPosition="31" endLine="94" endPosition="17" unitName="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action$2" />
-    <unitInfo nodeId="2034046503361593560" fileName="EvaluateExpression_Action.java" startLine="84" startPosition="53" endLine="96" endPosition="13" unitName="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action$1" />
-    <unitInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="36" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action" />
+    <scopeInfo nodeId="7064627997011532330" fileName="EvaluateExpression_Action.java" startLine="85" startPosition="39" endLine="105" endPosition="138">
+      <varInfo nodeId="2666603886872191707" varName="nodePointers" />
+    </scopeInfo>
+    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="83" startPosition="9" endLine="106" endPosition="7">
+      <varInfo nodeId="7064627997011532325" varName="evaluationProvider" />
+    </scopeInfo>
+    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="82" startPosition="96" endLine="111" endPosition="5" />
+    <scopeInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="82" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="7064627997011532320" varName="_params" />
+      <varInfo nodeId="7064627997011532320" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="2034046503361593570" fileName="EvaluateExpression_Action.java" startLine="92" startPosition="111" endLine="96" endPosition="17" unitName="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action$2" />
+    <unitInfo nodeId="2034046503361593577" fileName="EvaluateExpression_Action.java" startLine="96" startPosition="31" endLine="100" endPosition="17" unitName="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action$2" />
+    <unitInfo nodeId="2034046503361593560" fileName="EvaluateExpression_Action.java" startLine="90" startPosition="53" endLine="102" endPosition="13" unitName="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action$1" />
+    <unitInfo nodeId="7064627997011532320" fileName="EvaluateExpression_Action.java" startLine="36" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action" />
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7064627997011532361">
     <nodeInfo nodeId="7064627997011532361" fileName="ExportThreads_Action.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -940,88 +948,96 @@
     <unitInfo nodeId="7064627997011532759" fileName="StepOver_Action.java" startLine="17" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.StepOver_Action" />
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7064627997011532788">
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="23" startPosition="36" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="24" startPosition="41" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="25" startPosition="35" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="30" startPosition="32" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7064714451792151223" fileName="ToggleBreakpoint_Action.java" startLine="36" startPosition="7" endLine="37" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7064627997011532808" fileName="ToggleBreakpoint_Action.java" startLine="37" startPosition="143" endLine="38" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="41" startPosition="42" endLine="42" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="43" startPosition="7" endLine="44" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="51" startPosition="5" endLine="52" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="53" startPosition="67" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="55" startPosition="5" endLine="56" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="57" startPosition="70" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="59" startPosition="5" endLine="60" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="61" startPosition="62" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="63" startPosition="5" endLine="64" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7064627997011532791" fileName="ToggleBreakpoint_Action.java" startLine="68" startPosition="9" endLine="69" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="71" startPosition="42" endLine="72" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="77" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="48" startPosition="95" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="52" startPosition="99" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="56" startPosition="107" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="60" startPosition="87" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="70" startPosition="27" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="70" startPosition="27" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="35" startPosition="9" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="51" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="55" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ToggleBreakpoint_Action#()V" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="67" startPosition="96" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="67" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="34" startPosition="89" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="34" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="48" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="30" startPosition="32" endLine="31" endPosition="16" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="41" startPosition="42" endLine="42" endPosition="91" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="53" startPosition="67" endLine="54" endPosition="19" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="57" startPosition="70" endLine="58" endPosition="19" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="61" startPosition="62" endLine="62" endPosition="19" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="68" startPosition="9" endLine="69" endPosition="180" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="71" startPosition="42" endLine="72" endPosition="90" />
-    <scopeInfo nodeId="7064627997011532807" fileName="ToggleBreakpoint_Action.java" startLine="36" startPosition="7" endLine="38" endPosition="169">
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="24" startPosition="36" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="25" startPosition="41" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="26" startPosition="35" endLine="27" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="31" startPosition="32" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7064714451792151223" fileName="ToggleBreakpoint_Action.java" startLine="37" startPosition="7" endLine="38" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7064627997011532808" fileName="ToggleBreakpoint_Action.java" startLine="38" startPosition="143" endLine="39" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="42" startPosition="42" endLine="43" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="44" startPosition="7" endLine="45" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="50" startPosition="53" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="52" startPosition="5" endLine="53" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="54" startPosition="67" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="57" startPosition="5" endLine="58" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="59" startPosition="67" endLine="60" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="61" startPosition="7" endLine="62" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="64" startPosition="70" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="68" startPosition="62" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="70" startPosition="5" endLine="71" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7064627997011532791" fileName="ToggleBreakpoint_Action.java" startLine="75" startPosition="9" endLine="76" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="78" startPosition="42" endLine="79" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="84" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="49" startPosition="95" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="53" startPosition="99" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="58" startPosition="90" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="63" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="67" startPosition="87" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="77" startPosition="27" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="77" startPosition="27" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="36" startPosition="9" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="52" startPosition="5" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="24" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ToggleBreakpoint_Action#()V" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="56" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="74" startPosition="96" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="74" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="56" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="35" startPosition="89" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="35" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="49" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="31" startPosition="32" endLine="32" endPosition="16" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="42" startPosition="42" endLine="43" endPosition="91" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="50" startPosition="53" endLine="51" endPosition="19" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="54" startPosition="67" endLine="55" endPosition="19" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="59" startPosition="67" endLine="60" endPosition="31" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="64" startPosition="70" endLine="65" endPosition="19" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="68" startPosition="62" endLine="69" endPosition="19" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="75" startPosition="9" endLine="76" endPosition="180" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="78" startPosition="42" endLine="79" endPosition="90" />
+    <scopeInfo nodeId="7064627997011532807" fileName="ToggleBreakpoint_Action.java" startLine="37" startPosition="7" endLine="39" endPosition="169">
       <varInfo nodeId="7064714451792151224" varName="breakpointManager" />
     </scopeInfo>
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="23" startPosition="36" endLine="26" endPosition="41" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="70" startPosition="0" endLine="73" endPosition="7">
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="24" startPosition="36" endLine="27" endPosition="41" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="77" startPosition="0" endLine="80" endPosition="7">
       <varInfo nodeId="7064627997011532788" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="70" startPosition="27" endLine="73" endPosition="7" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="35" startPosition="9" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="40" startPosition="0" endLine="44" endPosition="44">
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="77" startPosition="27" endLine="80" endPosition="7" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="36" startPosition="9" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="41" startPosition="0" endLine="45" endPosition="44">
       <varInfo nodeId="7064627997011532788" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="40" startPosition="27" endLine="44" endPosition="44" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="51" startPosition="5" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="55" startPosition="5" endLine="59" endPosition="5" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="67" startPosition="96" endLine="74" endPosition="5" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="67" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="41" startPosition="27" endLine="45" endPosition="44" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="52" startPosition="5" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="24" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="57" startPosition="5" endLine="62" endPosition="75">
+      <varInfo nodeId="7064627997011532788" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="74" startPosition="96" endLine="81" endPosition="5" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="74" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="7064627997011532788" varName="_params" />
       <varInfo nodeId="7064627997011532788" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="34" startPosition="89" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="34" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="56" startPosition="5" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="35" startPosition="89" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="35" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="7064627997011532788" varName="_params" />
       <varInfo nodeId="7064627997011532788" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="48" startPosition="95" endLine="64" endPosition="16" />
-    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="48" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="49" startPosition="95" endLine="71" endPosition="16" />
+    <scopeInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="49" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="7064627997011532788" varName="_params" />
       <varInfo nodeId="7064627997011532788" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="20" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.ToggleBreakpoint_Action" />
+    <unitInfo nodeId="7064627997011532788" fileName="ToggleBreakpoint_Action.java" startLine="21" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.ToggleBreakpoint_Action" />
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7064627997011532825">
     <nodeInfo nodeId="7064627997011532825" fileName="ViewBreakpoints_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
