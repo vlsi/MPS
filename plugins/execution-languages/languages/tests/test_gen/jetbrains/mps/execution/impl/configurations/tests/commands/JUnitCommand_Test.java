@@ -14,7 +14,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.FailedBTestCase_Test;
 import java.util.List;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit_Command;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
@@ -55,7 +55,7 @@ public class JUnitCommand_Test extends BaseTransformationTest {
     public void checkTests(List<ITestNodeWrapper> success, List<ITestNodeWrapper> failure) {
       try {
         List<ITestNodeWrapper> allTests = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();
-        ProcessHandler process = new Junit_Command().createProcess(allTests);
+        ProcessHandler process = new JUnit_Command().createProcess(allTests);
         TestRunState runState = new TestRunState(allTests);
         CheckTestStateListener checkListener = new CheckTestStateListener(success, failure);
         runState.addListener(checkListener);
