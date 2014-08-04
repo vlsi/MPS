@@ -2403,415 +2403,415 @@
     <unitInfo nodeId="8492459591399162985" fileName="IntroduceLocalVariableRefactoring.java" startLine="17" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceLocalVariableRefactoring" />
   </root>
   <root nodeRef="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)/8492459591399163659">
-    <nodeInfo nodeId="8492459591399163660" fileName="ExtractMethodRefactoring.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameters" />
-    <nodeInfo nodeId="8492459591399163663" fileName="ExtractMethodRefactoring.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAnalyzer" />
-    <nodeInfo nodeId="8492459591399163666" fileName="ExtractMethodRefactoring.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStaticContainer" />
-    <nodeInfo nodeId="5159544814168932141" fileName="ExtractMethodRefactoring.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMatches" />
-    <nodeInfo nodeId="8492459591399163673" fileName="ExtractMethodRefactoring.java" startLine="34" startPosition="82" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163679" fileName="ExtractMethodRefactoring.java" startLine="35" startPosition="35" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8823815475437247091" fileName="ExtractMethodRefactoring.java" startLine="40" startPosition="29" endLine="41" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437264245" fileName="ExtractMethodRefactoring.java" startLine="41" startPosition="36" endLine="42" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437264251" fileName="ExtractMethodRefactoring.java" startLine="42" startPosition="48" endLine="43" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437264261" fileName="ExtractMethodRefactoring.java" startLine="43" startPosition="79" endLine="44" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437264275" fileName="ExtractMethodRefactoring.java" startLine="44" startPosition="125" endLine="45" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8823815475437345487" fileName="ExtractMethodRefactoring.java" startLine="45" startPosition="318" endLine="46" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8823815475437265587" fileName="ExtractMethodRefactoring.java" startLine="46" startPosition="111" endLine="47" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437381758" fileName="ExtractMethodRefactoring.java" startLine="47" startPosition="105" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8823815475437265596" fileName="ExtractMethodRefactoring.java" startLine="48" startPosition="0" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8823815475437265601" fileName="ExtractMethodRefactoring.java" startLine="49" startPosition="30" endLine="50" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437265614" fileName="ExtractMethodRefactoring.java" startLine="50" startPosition="108" endLine="51" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8823815475437265620" fileName="ExtractMethodRefactoring.java" startLine="51" startPosition="45" endLine="52" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8823815475437247080" fileName="ExtractMethodRefactoring.java" startLine="52" startPosition="35" endLine="53" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8823815475437247084" fileName="ExtractMethodRefactoring.java" startLine="56" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodBody#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5159544814167901888" fileName="ExtractMethodRefactoring.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceMatch#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodMatch;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3762128617127246804" fileName="ExtractMethodRefactoring.java" startLine="60" startPosition="117" endLine="61" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3762128617127246817" fileName="ExtractMethodRefactoring.java" startLine="62" startPosition="53" endLine="63" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3762128617127246828" fileName="ExtractMethodRefactoring.java" startLine="65" startPosition="88" endLine="66" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3762128617127246842" fileName="ExtractMethodRefactoring.java" startLine="67" startPosition="5" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399163702" fileName="ExtractMethodRefactoring.java" startLine="71" startPosition="85" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399163707" fileName="ExtractMethodRefactoring.java" startLine="73" startPosition="41" endLine="74" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163722" fileName="ExtractMethodRefactoring.java" startLine="75" startPosition="12" endLine="76" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3633468495172338732" fileName="ExtractMethodRefactoring.java" startLine="77" startPosition="75" endLine="78" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163730" fileName="ExtractMethodRefactoring.java" startLine="79" startPosition="7" endLine="80" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163736" fileName="ExtractMethodRefactoring.java" startLine="81" startPosition="5" endLine="82" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195342755327832409" fileName="ExtractMethodRefactoring.java" startLine="82" startPosition="71" endLine="83" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8823815475437384361" fileName="ExtractMethodRefactoring.java" startLine="83" startPosition="41" endLine="84" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163744" fileName="ExtractMethodRefactoring.java" startLine="84" startPosition="37" endLine="85" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8823815475437382943" fileName="ExtractMethodRefactoring.java" startLine="88" startPosition="48" endLine="89" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437382971" fileName="ExtractMethodRefactoring.java" startLine="90" startPosition="147" endLine="91" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8823815475437438022" fileName="ExtractMethodRefactoring.java" startLine="94" startPosition="37" endLine="95" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6195342755327829827" fileName="ExtractMethodRefactoring.java" startLine="100" startPosition="54" endLine="101" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6195342755327829845" fileName="ExtractMethodRefactoring.java" startLine="102" startPosition="172" endLine="103" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6601191024568171572" fileName="ExtractMethodRefactoring.java" startLine="104" startPosition="228" endLine="105" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6601191024568171573" fileName="ExtractMethodRefactoring.java" startLine="106" startPosition="7" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6195342755327829862" fileName="ExtractMethodRefactoring.java" startLine="109" startPosition="98" endLine="110" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195342755327829877" fileName="ExtractMethodRefactoring.java" startLine="111" startPosition="9" endLine="112" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195342755327829890" fileName="ExtractMethodRefactoring.java" startLine="115" startPosition="90" endLine="116" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6195342755327829906" fileName="ExtractMethodRefactoring.java" startLine="116" startPosition="198" endLine="117" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6970965131508709551" fileName="ExtractMethodRefactoring.java" startLine="118" startPosition="100" endLine="119" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163752" fileName="ExtractMethodRefactoring.java" startLine="125" startPosition="101" endLine="126" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399163757" fileName="ExtractMethodRefactoring.java" startLine="126" startPosition="116" endLine="127" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163773" fileName="ExtractMethodRefactoring.java" startLine="128" startPosition="5" endLine="129" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399163777" fileName="ExtractMethodRefactoring.java" startLine="129" startPosition="42" endLine="130" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163783" fileName="ExtractMethodRefactoring.java" startLine="130" startPosition="107" endLine="131" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163793" fileName="ExtractMethodRefactoring.java" startLine="131" startPosition="84" endLine="132" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163800" fileName="ExtractMethodRefactoring.java" startLine="132" startPosition="135" endLine="133" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163806" fileName="ExtractMethodRefactoring.java" startLine="133" startPosition="69" endLine="134" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399163824" fileName="ExtractMethodRefactoring.java" startLine="138" startPosition="41" endLine="139" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399163832" fileName="ExtractMethodRefactoring.java" startLine="139" startPosition="109" endLine="140" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163844" fileName="ExtractMethodRefactoring.java" startLine="141" startPosition="12" endLine="142" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163859" fileName="ExtractMethodRefactoring.java" startLine="146" startPosition="89" endLine="147" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399163872" fileName="ExtractMethodRefactoring.java" startLine="149" startPosition="41" endLine="150" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399163878" fileName="ExtractMethodRefactoring.java" startLine="150" startPosition="126" endLine="151" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163888" fileName="ExtractMethodRefactoring.java" startLine="151" startPosition="112" endLine="152" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163898" fileName="ExtractMethodRefactoring.java" startLine="153" startPosition="40" endLine="154" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163907" fileName="ExtractMethodRefactoring.java" startLine="155" startPosition="9" endLine="156" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163912" fileName="ExtractMethodRefactoring.java" startLine="156" startPosition="64" endLine="157" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399163929" fileName="ExtractMethodRefactoring.java" startLine="159" startPosition="5" endLine="160" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1300615610528723671" fileName="ExtractMethodRefactoring.java" startLine="163" startPosition="95" endLine="164" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="420882727001940181" fileName="ExtractMethodRefactoring.java" startLine="165" startPosition="86" endLine="166" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1769066237347367105" fileName="ExtractMethodRefactoring.java" startLine="170" startPosition="125" endLine="171" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1300615610528497339" fileName="ExtractMethodRefactoring.java" startLine="174" startPosition="58" endLine="175" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1300615610528516247" fileName="ExtractMethodRefactoring.java" startLine="176" startPosition="88" endLine="177" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1769066237347367235" fileName="ExtractMethodRefactoring.java" startLine="181" startPosition="165" endLine="182" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1769066237347367247" fileName="ExtractMethodRefactoring.java" startLine="183" startPosition="91" endLine="184" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1769066237347367262" fileName="ExtractMethodRefactoring.java" startLine="187" startPosition="5" endLine="188" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399164079" fileName="ExtractMethodRefactoring.java" startLine="191" startPosition="51" endLine="192" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399164088" fileName="ExtractMethodRefactoring.java" startLine="195" startPosition="48" endLine="196" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399164098" fileName="ExtractMethodRefactoring.java" startLine="198" startPosition="35" endLine="199" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399164114" fileName="ExtractMethodRefactoring.java" startLine="201" startPosition="5" endLine="202" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399164131" fileName="ExtractMethodRefactoring.java" startLine="206" startPosition="41" endLine="207" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399164139" fileName="ExtractMethodRefactoring.java" startLine="207" startPosition="109" endLine="208" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399164152" fileName="ExtractMethodRefactoring.java" startLine="209" startPosition="12" endLine="210" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3762128617127288068" fileName="ExtractMethodRefactoring.java" startLine="214" startPosition="77" endLine="215" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399164167" fileName="ExtractMethodRefactoring.java" startLine="219" startPosition="98" endLine="220" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399164185" fileName="ExtractMethodRefactoring.java" startLine="221" startPosition="119" endLine="222" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399164190" fileName="ExtractMethodRefactoring.java" startLine="222" startPosition="124" endLine="223" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399164201" fileName="ExtractMethodRefactoring.java" startLine="224" startPosition="12" endLine="225" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6195342755328034355" fileName="ExtractMethodRefactoring.java" startLine="229" startPosition="43" endLine="230" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6195342755328034380" fileName="ExtractMethodRefactoring.java" startLine="230" startPosition="66" endLine="231" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6195342755328034343" fileName="ExtractMethodRefactoring.java" startLine="234" startPosition="133" endLine="235" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195342755328034399" fileName="ExtractMethodRefactoring.java" startLine="238" startPosition="5" endLine="239" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5159544814168932176" fileName="ExtractMethodRefactoring.java" startLine="242" startPosition="41" endLine="243" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6195342755328034294" fileName="ExtractMethodRefactoring.java" startLine="246" startPosition="57" endLine="247" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399164206" fileName="ExtractMethodRefactoring.java" startLine="250" startPosition="0" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethodType#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3633468495172172095" fileName="ExtractMethodRefactoring.java" startLine="252" startPosition="32" endLine="253" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3633468495172172108" fileName="ExtractMethodRefactoring.java" startLine="256" startPosition="35" endLine="257" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="260" startPosition="85" endLine="261" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="261" startPosition="63" endLine="262" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="262" startPosition="30" endLine="263" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="263" startPosition="138" endLine="264" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="264" startPosition="88" endLine="265" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="268" startPosition="101" endLine="269" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="269" startPosition="63" endLine="270" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="270" startPosition="30" endLine="271" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="271" startPosition="30" endLine="272" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="272" startPosition="148" endLine="273" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="273" startPosition="76" endLine="274" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="275" startPosition="31" endLine="276" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="277" startPosition="5" endLine="278" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="281" startPosition="83" endLine="282" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="282" startPosition="63" endLine="283" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="283" startPosition="30" endLine="284" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="284" startPosition="30" endLine="285" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="285" startPosition="30" endLine="286" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="286" startPosition="157" endLine="287" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="288" startPosition="31" endLine="289" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="290" startPosition="5" endLine="291" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="294" startPosition="83" endLine="295" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="295" startPosition="63" endLine="296" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="296" startPosition="30" endLine="297" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="297" startPosition="141" endLine="298" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="298" startPosition="97" endLine="299" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399163842" fileName="ExtractMethodRefactoring.java" startLine="141" startPosition="10" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399164150" fileName="ExtractMethodRefactoring.java" startLine="209" startPosition="10" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399164199" fileName="ExtractMethodRefactoring.java" startLine="224" startPosition="10" endLine="226" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="262" startPosition="30" endLine="264" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="262" startPosition="30" endLine="264" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="296" startPosition="30" endLine="298" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="296" startPosition="30" endLine="298" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3762128617127246809" fileName="ExtractMethodRefactoring.java" startLine="61" startPosition="57" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3762128617127246822" fileName="ExtractMethodRefactoring.java" startLine="64" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3633468495172338696" fileName="ExtractMethodRefactoring.java" startLine="76" startPosition="109" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8823815475437382950" fileName="ExtractMethodRefactoring.java" startLine="89" startPosition="52" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8823815475437438017" fileName="ExtractMethodRefactoring.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7170526453716714493" fileName="ExtractMethodRefactoring.java" startLine="103" startPosition="93" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6195342755327829860" fileName="ExtractMethodRefactoring.java" startLine="108" startPosition="110" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6195342755327829922" fileName="ExtractMethodRefactoring.java" startLine="117" startPosition="228" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399163896" fileName="ExtractMethodRefactoring.java" startLine="152" startPosition="78" endLine="155" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8823815475437189836" fileName="ExtractMethodRefactoring.java" startLine="164" startPosition="84" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1300615610528497349" fileName="ExtractMethodRefactoring.java" startLine="175" startPosition="113" endLine="178" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1769066237347367173" fileName="ExtractMethodRefactoring.java" startLine="182" startPosition="167" endLine="185" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399164076" fileName="ExtractMethodRefactoring.java" startLine="191" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReference#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8492459591399164096" fileName="ExtractMethodRefactoring.java" startLine="197" startPosition="96" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3762128617127247019" fileName="ExtractMethodRefactoring.java" startLine="214" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodCall#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodMatch;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6195342755328034341" fileName="ExtractMethodRefactoring.java" startLine="233" startPosition="175" endLine="236" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5159544814168932162" fileName="ExtractMethodRefactoring.java" startLine="242" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatches#()Ljava/util/List;" />
-    <nodeInfo nodeId="6195342755328034288" fileName="ExtractMethodRefactoring.java" startLine="246" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnalyzer#()Ljetbrains/mps/baseLanguage/util/plugin/refactorings/ExtractMethodRefactoringAnalyzer;" />
-    <nodeInfo nodeId="1642079203062558803" fileName="ExtractMethodRefactoring.java" startLine="252" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeStatic#()Z" />
-    <nodeInfo nodeId="3633468495172172087" fileName="ExtractMethodRefactoring.java" startLine="256" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shouldBeStatic#()Z" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="274" startPosition="39" endLine="277" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="287" startPosition="39" endLine="290" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399163669" fileName="ExtractMethodRefactoring.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractMethodRefactoring#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/ExtractMethodRefactoringParameters;)V" />
-    <nodeInfo nodeId="8492459591399163750" fileName="ExtractMethodRefactoring.java" startLine="124" startPosition="114" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="273" startPosition="76" endLine="277" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="273" startPosition="76" endLine="277" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="286" startPosition="157" endLine="290" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="286" startPosition="157" endLine="290" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8823815475437437980" fileName="ExtractMethodRefactoring.java" startLine="92" startPosition="5" endLine="97" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399164094" fileName="ExtractMethodRefactoring.java" startLine="196" startPosition="48" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6195342755328034333" fileName="ExtractMethodRefactoring.java" startLine="232" startPosition="81" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="285" startPosition="30" endLine="290" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="285" startPosition="30" endLine="290" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399163720" fileName="ExtractMethodRefactoring.java" startLine="75" startPosition="10" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6195342755327829851" fileName="ExtractMethodRefactoring.java" startLine="107" startPosition="0" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399163822" fileName="ExtractMethodRefactoring.java" startLine="137" startPosition="40" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1300615610528705309" fileName="ExtractMethodRefactoring.java" startLine="163" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceInputVariablesByParameters#(Ljava/util/List;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="1300615610528497335" fileName="ExtractMethodRefactoring.java" startLine="173" startPosition="163" endLine="179" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1769066237347367165" fileName="ExtractMethodRefactoring.java" startLine="180" startPosition="7" endLine="186" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399164129" fileName="ExtractMethodRefactoring.java" startLine="205" startPosition="85" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="271" startPosition="30" endLine="277" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="271" startPosition="30" endLine="277" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6195342755327829884" fileName="ExtractMethodRefactoring.java" startLine="114" startPosition="5" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6195342755328034329" fileName="ExtractMethodRefactoring.java" startLine="231" startPosition="82" endLine="238" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="260" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_jq3ovj_a0a0a0a0c0k#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="294" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_jq3ovj_a0a0a1a51#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8492459591399163818" fileName="ExtractMethodRefactoring.java" startLine="137" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMethod#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1300615610528497327" fileName="ExtractMethodRefactoring.java" startLine="172" startPosition="53" endLine="180" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399164118" fileName="ExtractMethodRefactoring.java" startLine="205" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodCall#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8492459591399164165" fileName="ExtractMethodRefactoring.java" startLine="218" startPosition="46" endLine="226" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399163705" fileName="ExtractMethodRefactoring.java" startLine="72" startPosition="19" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399164086" fileName="ExtractMethodRefactoring.java" startLine="195" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCallParameters#()Ljava/util/List;" />
-    <nodeInfo nodeId="3762128617127221657" fileName="ExtractMethodRefactoring.java" startLine="60" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMatch#(Ljava/util/List;Ljava/util/Map;Ljava/util/List;)Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodMatch;" />
-    <nodeInfo nodeId="8492459591399163870" fileName="ExtractMethodRefactoring.java" startLine="148" startPosition="102" endLine="158" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399164161" fileName="ExtractMethodRefactoring.java" startLine="218" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStaticContainer#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8823815475437381760" fileName="ExtractMethodRefactoring.java" startLine="88" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="correctThrowsList#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8492459591399163748" fileName="ExtractMethodRefactoring.java" startLine="124" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillBaseMethodDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8492459591399163868" fileName="ExtractMethodRefactoring.java" startLine="147" startPosition="80" endLine="159" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6195342755328034315" fileName="ExtractMethodRefactoring.java" startLine="229" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOutputReferences#()Ljava/util/Set;" />
-    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="268" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_jq3ovj_a0a0c0l#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="281" startPosition="0" endLine="293" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_jq3ovj_a0a1a2a11#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6195342755327829836" fileName="ExtractMethodRefactoring.java" startLine="101" startPosition="93" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399163689" fileName="ExtractMethodRefactoring.java" startLine="39" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactor#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8492459591399163694" fileName="ExtractMethodRefactoring.java" startLine="71" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewMethod#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8492459591399163853" fileName="ExtractMethodRefactoring.java" startLine="146" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInputParameters#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/util/Map;" />
-    <nodeInfo nodeId="1769066237347336301" fileName="ExtractMethodRefactoring.java" startLine="171" startPosition="81" endLine="187" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1769066237347324108" fileName="ExtractMethodRefactoring.java" startLine="170" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInputVaryablesMapping#(Ljava/util/Map;Ljava/util/List;)Ljava/util/Map;" />
-    <nodeInfo nodeId="6195342755327829821" fileName="ExtractMethodRefactoring.java" startLine="100" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewDeclarations#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="8823815475437247084" fileName="ExtractMethodRefactoring.java" startLine="56" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="5159544814167901888" fileName="ExtractMethodRefactoring.java" startLine="58" startPosition="0" endLine="59" endPosition="0">
+    <nodeInfo nodeId="8492459591399163660" fileName="ExtractMethodRefactoring.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameters" />
+    <nodeInfo nodeId="8492459591399163663" fileName="ExtractMethodRefactoring.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAnalyzer" />
+    <nodeInfo nodeId="8492459591399163666" fileName="ExtractMethodRefactoring.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStaticContainer" />
+    <nodeInfo nodeId="5159544814168932141" fileName="ExtractMethodRefactoring.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMatches" />
+    <nodeInfo nodeId="8492459591399163673" fileName="ExtractMethodRefactoring.java" startLine="35" startPosition="82" endLine="36" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163679" fileName="ExtractMethodRefactoring.java" startLine="36" startPosition="35" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8823815475437247091" fileName="ExtractMethodRefactoring.java" startLine="41" startPosition="29" endLine="42" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8823815475437264245" fileName="ExtractMethodRefactoring.java" startLine="42" startPosition="36" endLine="43" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8823815475437264251" fileName="ExtractMethodRefactoring.java" startLine="43" startPosition="48" endLine="44" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8823815475437264261" fileName="ExtractMethodRefactoring.java" startLine="44" startPosition="79" endLine="45" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8823815475437264275" fileName="ExtractMethodRefactoring.java" startLine="45" startPosition="125" endLine="46" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8823815475437345487" fileName="ExtractMethodRefactoring.java" startLine="46" startPosition="318" endLine="47" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8823815475437265587" fileName="ExtractMethodRefactoring.java" startLine="47" startPosition="111" endLine="48" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8823815475437381758" fileName="ExtractMethodRefactoring.java" startLine="48" startPosition="105" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8823815475437265596" fileName="ExtractMethodRefactoring.java" startLine="49" startPosition="0" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8823815475437265601" fileName="ExtractMethodRefactoring.java" startLine="50" startPosition="30" endLine="51" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8823815475437265614" fileName="ExtractMethodRefactoring.java" startLine="51" startPosition="108" endLine="52" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8823815475437265620" fileName="ExtractMethodRefactoring.java" startLine="52" startPosition="45" endLine="53" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8823815475437247080" fileName="ExtractMethodRefactoring.java" startLine="53" startPosition="35" endLine="54" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8823815475437247084" fileName="ExtractMethodRefactoring.java" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodBody#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5159544814167901888" fileName="ExtractMethodRefactoring.java" startLine="59" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceMatch#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodMatch;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3762128617127246804" fileName="ExtractMethodRefactoring.java" startLine="61" startPosition="117" endLine="62" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3762128617127246817" fileName="ExtractMethodRefactoring.java" startLine="63" startPosition="53" endLine="64" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3762128617127246828" fileName="ExtractMethodRefactoring.java" startLine="66" startPosition="88" endLine="67" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3762128617127246842" fileName="ExtractMethodRefactoring.java" startLine="68" startPosition="5" endLine="69" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399163702" fileName="ExtractMethodRefactoring.java" startLine="72" startPosition="85" endLine="73" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399163707" fileName="ExtractMethodRefactoring.java" startLine="74" startPosition="41" endLine="75" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163722" fileName="ExtractMethodRefactoring.java" startLine="76" startPosition="12" endLine="77" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3633468495172338732" fileName="ExtractMethodRefactoring.java" startLine="78" startPosition="75" endLine="79" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163730" fileName="ExtractMethodRefactoring.java" startLine="80" startPosition="7" endLine="81" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163736" fileName="ExtractMethodRefactoring.java" startLine="82" startPosition="5" endLine="83" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195342755327832409" fileName="ExtractMethodRefactoring.java" startLine="83" startPosition="71" endLine="84" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8823815475437384361" fileName="ExtractMethodRefactoring.java" startLine="84" startPosition="41" endLine="85" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163744" fileName="ExtractMethodRefactoring.java" startLine="85" startPosition="37" endLine="86" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8823815475437382943" fileName="ExtractMethodRefactoring.java" startLine="89" startPosition="48" endLine="90" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8823815475437382971" fileName="ExtractMethodRefactoring.java" startLine="91" startPosition="147" endLine="92" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8823815475437438022" fileName="ExtractMethodRefactoring.java" startLine="95" startPosition="37" endLine="96" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6195342755327829827" fileName="ExtractMethodRefactoring.java" startLine="101" startPosition="54" endLine="102" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6195342755327829845" fileName="ExtractMethodRefactoring.java" startLine="103" startPosition="172" endLine="104" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6601191024568171572" fileName="ExtractMethodRefactoring.java" startLine="105" startPosition="228" endLine="106" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6601191024568171573" fileName="ExtractMethodRefactoring.java" startLine="107" startPosition="7" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6195342755327829862" fileName="ExtractMethodRefactoring.java" startLine="110" startPosition="98" endLine="111" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195342755327829877" fileName="ExtractMethodRefactoring.java" startLine="112" startPosition="9" endLine="113" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195342755327829890" fileName="ExtractMethodRefactoring.java" startLine="116" startPosition="90" endLine="117" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6195342755327829906" fileName="ExtractMethodRefactoring.java" startLine="117" startPosition="198" endLine="118" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6970965131508709551" fileName="ExtractMethodRefactoring.java" startLine="119" startPosition="100" endLine="120" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163752" fileName="ExtractMethodRefactoring.java" startLine="126" startPosition="101" endLine="127" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399163757" fileName="ExtractMethodRefactoring.java" startLine="127" startPosition="116" endLine="128" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163773" fileName="ExtractMethodRefactoring.java" startLine="129" startPosition="5" endLine="130" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399163777" fileName="ExtractMethodRefactoring.java" startLine="130" startPosition="42" endLine="131" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163783" fileName="ExtractMethodRefactoring.java" startLine="131" startPosition="107" endLine="132" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163793" fileName="ExtractMethodRefactoring.java" startLine="132" startPosition="84" endLine="133" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163800" fileName="ExtractMethodRefactoring.java" startLine="133" startPosition="135" endLine="134" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163806" fileName="ExtractMethodRefactoring.java" startLine="134" startPosition="69" endLine="135" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399163824" fileName="ExtractMethodRefactoring.java" startLine="139" startPosition="41" endLine="140" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399163832" fileName="ExtractMethodRefactoring.java" startLine="140" startPosition="109" endLine="141" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163844" fileName="ExtractMethodRefactoring.java" startLine="142" startPosition="12" endLine="143" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163859" fileName="ExtractMethodRefactoring.java" startLine="147" startPosition="89" endLine="148" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399163872" fileName="ExtractMethodRefactoring.java" startLine="150" startPosition="41" endLine="151" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399163878" fileName="ExtractMethodRefactoring.java" startLine="151" startPosition="126" endLine="152" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163888" fileName="ExtractMethodRefactoring.java" startLine="152" startPosition="112" endLine="153" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163898" fileName="ExtractMethodRefactoring.java" startLine="154" startPosition="40" endLine="155" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163907" fileName="ExtractMethodRefactoring.java" startLine="156" startPosition="9" endLine="157" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163912" fileName="ExtractMethodRefactoring.java" startLine="157" startPosition="64" endLine="158" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399163929" fileName="ExtractMethodRefactoring.java" startLine="160" startPosition="5" endLine="161" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1300615610528723671" fileName="ExtractMethodRefactoring.java" startLine="164" startPosition="95" endLine="165" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="420882727001940181" fileName="ExtractMethodRefactoring.java" startLine="166" startPosition="86" endLine="167" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1769066237347367105" fileName="ExtractMethodRefactoring.java" startLine="171" startPosition="125" endLine="172" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1300615610528497339" fileName="ExtractMethodRefactoring.java" startLine="175" startPosition="58" endLine="176" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1300615610528516247" fileName="ExtractMethodRefactoring.java" startLine="177" startPosition="88" endLine="178" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1769066237347367235" fileName="ExtractMethodRefactoring.java" startLine="182" startPosition="165" endLine="183" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1769066237347367247" fileName="ExtractMethodRefactoring.java" startLine="184" startPosition="91" endLine="185" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1769066237347367262" fileName="ExtractMethodRefactoring.java" startLine="188" startPosition="5" endLine="189" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399164079" fileName="ExtractMethodRefactoring.java" startLine="192" startPosition="51" endLine="193" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399164088" fileName="ExtractMethodRefactoring.java" startLine="196" startPosition="48" endLine="197" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399164098" fileName="ExtractMethodRefactoring.java" startLine="199" startPosition="35" endLine="200" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399164114" fileName="ExtractMethodRefactoring.java" startLine="202" startPosition="5" endLine="203" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399164131" fileName="ExtractMethodRefactoring.java" startLine="207" startPosition="41" endLine="208" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399164139" fileName="ExtractMethodRefactoring.java" startLine="208" startPosition="109" endLine="209" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399164152" fileName="ExtractMethodRefactoring.java" startLine="210" startPosition="12" endLine="211" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3762128617127288068" fileName="ExtractMethodRefactoring.java" startLine="215" startPosition="77" endLine="216" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399164167" fileName="ExtractMethodRefactoring.java" startLine="220" startPosition="98" endLine="221" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399164185" fileName="ExtractMethodRefactoring.java" startLine="222" startPosition="119" endLine="223" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399164190" fileName="ExtractMethodRefactoring.java" startLine="223" startPosition="124" endLine="224" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399164201" fileName="ExtractMethodRefactoring.java" startLine="225" startPosition="12" endLine="226" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6195342755328034355" fileName="ExtractMethodRefactoring.java" startLine="230" startPosition="43" endLine="231" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6195342755328034380" fileName="ExtractMethodRefactoring.java" startLine="231" startPosition="66" endLine="232" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6195342755328034343" fileName="ExtractMethodRefactoring.java" startLine="235" startPosition="133" endLine="236" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195342755328034399" fileName="ExtractMethodRefactoring.java" startLine="239" startPosition="5" endLine="240" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5159544814168932176" fileName="ExtractMethodRefactoring.java" startLine="243" startPosition="41" endLine="244" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6195342755328034294" fileName="ExtractMethodRefactoring.java" startLine="247" startPosition="57" endLine="248" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3633468495172172095" fileName="ExtractMethodRefactoring.java" startLine="254" startPosition="32" endLine="255" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3633468495172172108" fileName="ExtractMethodRefactoring.java" startLine="258" startPosition="35" endLine="259" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="262" startPosition="85" endLine="263" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="263" startPosition="63" endLine="264" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="264" startPosition="30" endLine="265" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="265" startPosition="138" endLine="266" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="266" startPosition="88" endLine="267" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="270" startPosition="101" endLine="271" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="271" startPosition="63" endLine="272" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="272" startPosition="30" endLine="273" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="273" startPosition="30" endLine="274" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="274" startPosition="148" endLine="275" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="275" startPosition="76" endLine="276" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="277" startPosition="31" endLine="278" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="279" startPosition="5" endLine="280" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="283" startPosition="83" endLine="284" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="284" startPosition="63" endLine="285" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="285" startPosition="30" endLine="286" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="286" startPosition="30" endLine="287" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="287" startPosition="30" endLine="288" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="288" startPosition="157" endLine="289" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="290" startPosition="31" endLine="291" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="292" startPosition="5" endLine="293" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="296" startPosition="83" endLine="297" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="297" startPosition="63" endLine="298" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="298" startPosition="30" endLine="299" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="299" startPosition="141" endLine="300" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="300" startPosition="97" endLine="301" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399163842" fileName="ExtractMethodRefactoring.java" startLine="142" startPosition="10" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399164150" fileName="ExtractMethodRefactoring.java" startLine="210" startPosition="10" endLine="212" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399164199" fileName="ExtractMethodRefactoring.java" startLine="225" startPosition="10" endLine="227" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399164206" fileName="ExtractMethodRefactoring.java" startLine="251" startPosition="0" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethodType#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="264" startPosition="30" endLine="266" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="264" startPosition="30" endLine="266" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="298" startPosition="30" endLine="300" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="298" startPosition="30" endLine="300" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3762128617127246809" fileName="ExtractMethodRefactoring.java" startLine="62" startPosition="57" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3762128617127246822" fileName="ExtractMethodRefactoring.java" startLine="65" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3633468495172338696" fileName="ExtractMethodRefactoring.java" startLine="77" startPosition="109" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8823815475437382950" fileName="ExtractMethodRefactoring.java" startLine="90" startPosition="52" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8823815475437438017" fileName="ExtractMethodRefactoring.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7170526453716714493" fileName="ExtractMethodRefactoring.java" startLine="104" startPosition="93" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6195342755327829860" fileName="ExtractMethodRefactoring.java" startLine="109" startPosition="110" endLine="112" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6195342755327829922" fileName="ExtractMethodRefactoring.java" startLine="118" startPosition="228" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8492459591399163896" fileName="ExtractMethodRefactoring.java" startLine="153" startPosition="78" endLine="156" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8823815475437189836" fileName="ExtractMethodRefactoring.java" startLine="165" startPosition="84" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1300615610528497349" fileName="ExtractMethodRefactoring.java" startLine="176" startPosition="113" endLine="179" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1769066237347367173" fileName="ExtractMethodRefactoring.java" startLine="183" startPosition="167" endLine="186" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399164076" fileName="ExtractMethodRefactoring.java" startLine="192" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReference#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8492459591399164096" fileName="ExtractMethodRefactoring.java" startLine="198" startPosition="96" endLine="201" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3762128617127247019" fileName="ExtractMethodRefactoring.java" startLine="215" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodCall#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodMatch;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6195342755328034341" fileName="ExtractMethodRefactoring.java" startLine="234" startPosition="175" endLine="237" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5159544814168932162" fileName="ExtractMethodRefactoring.java" startLine="243" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatches#()Ljava/util/List;" />
+    <nodeInfo nodeId="6195342755328034288" fileName="ExtractMethodRefactoring.java" startLine="247" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnalyzer#()Ljetbrains/mps/baseLanguage/util/plugin/refactorings/ExtractMethodRefactoringAnalyzer;" />
+    <nodeInfo nodeId="1642079203062558803" fileName="ExtractMethodRefactoring.java" startLine="254" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeStatic#()Z" />
+    <nodeInfo nodeId="3633468495172172087" fileName="ExtractMethodRefactoring.java" startLine="258" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shouldBeStatic#()Z" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="276" startPosition="39" endLine="279" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="289" startPosition="39" endLine="292" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399163669" fileName="ExtractMethodRefactoring.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractMethodRefactoring#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/ExtractMethodRefactoringParameters;)V" />
+    <nodeInfo nodeId="8492459591399163750" fileName="ExtractMethodRefactoring.java" startLine="125" startPosition="114" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="275" startPosition="76" endLine="279" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="275" startPosition="76" endLine="279" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="288" startPosition="157" endLine="292" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="288" startPosition="157" endLine="292" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8823815475437437980" fileName="ExtractMethodRefactoring.java" startLine="93" startPosition="5" endLine="98" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399164094" fileName="ExtractMethodRefactoring.java" startLine="197" startPosition="48" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6195342755328034333" fileName="ExtractMethodRefactoring.java" startLine="233" startPosition="81" endLine="238" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="287" startPosition="30" endLine="292" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="287" startPosition="30" endLine="292" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399163720" fileName="ExtractMethodRefactoring.java" startLine="76" startPosition="10" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6195342755327829851" fileName="ExtractMethodRefactoring.java" startLine="108" startPosition="0" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399163822" fileName="ExtractMethodRefactoring.java" startLine="138" startPosition="40" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1300615610528705309" fileName="ExtractMethodRefactoring.java" startLine="164" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceInputVariablesByParameters#(Ljava/util/List;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1300615610528497335" fileName="ExtractMethodRefactoring.java" startLine="174" startPosition="163" endLine="180" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1769066237347367165" fileName="ExtractMethodRefactoring.java" startLine="181" startPosition="7" endLine="187" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8492459591399164129" fileName="ExtractMethodRefactoring.java" startLine="206" startPosition="85" endLine="212" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="273" startPosition="30" endLine="279" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="273" startPosition="30" endLine="279" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6195342755327829884" fileName="ExtractMethodRefactoring.java" startLine="115" startPosition="5" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6195342755328034329" fileName="ExtractMethodRefactoring.java" startLine="232" startPosition="82" endLine="239" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="262" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_jq3ovj_a0a0a0a0c0k#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="296" startPosition="0" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_jq3ovj_a0a0a1a51#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8492459591399163818" fileName="ExtractMethodRefactoring.java" startLine="138" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMethod#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1300615610528497327" fileName="ExtractMethodRefactoring.java" startLine="173" startPosition="53" endLine="181" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8492459591399164118" fileName="ExtractMethodRefactoring.java" startLine="206" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodCall#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8492459591399164165" fileName="ExtractMethodRefactoring.java" startLine="219" startPosition="46" endLine="227" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399163705" fileName="ExtractMethodRefactoring.java" startLine="73" startPosition="19" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399164086" fileName="ExtractMethodRefactoring.java" startLine="196" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCallParameters#()Ljava/util/List;" />
+    <nodeInfo nodeId="3762128617127221657" fileName="ExtractMethodRefactoring.java" startLine="61" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMatch#(Ljava/util/List;Ljava/util/Map;Ljava/util/List;)Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodMatch;" />
+    <nodeInfo nodeId="8492459591399163870" fileName="ExtractMethodRefactoring.java" startLine="149" startPosition="102" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399164161" fileName="ExtractMethodRefactoring.java" startLine="219" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStaticContainer#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8823815475437381760" fileName="ExtractMethodRefactoring.java" startLine="89" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="correctThrowsList#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8492459591399163748" fileName="ExtractMethodRefactoring.java" startLine="125" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillBaseMethodDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8492459591399163868" fileName="ExtractMethodRefactoring.java" startLine="148" startPosition="80" endLine="160" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6195342755328034315" fileName="ExtractMethodRefactoring.java" startLine="230" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOutputReferences#()Ljava/util/Set;" />
+    <nodeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="270" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_jq3ovj_a0a0c0l#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="283" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_jq3ovj_a0a1a2a11#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6195342755327829836" fileName="ExtractMethodRefactoring.java" startLine="102" startPosition="93" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8492459591399163689" fileName="ExtractMethodRefactoring.java" startLine="40" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactor#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8492459591399163694" fileName="ExtractMethodRefactoring.java" startLine="72" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewMethod#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8492459591399163853" fileName="ExtractMethodRefactoring.java" startLine="147" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInputParameters#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/util/Map;" />
+    <nodeInfo nodeId="1769066237347336301" fileName="ExtractMethodRefactoring.java" startLine="172" startPosition="81" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1769066237347324108" fileName="ExtractMethodRefactoring.java" startLine="171" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInputVaryablesMapping#(Ljava/util/Map;Ljava/util/List;)Ljava/util/Map;" />
+    <nodeInfo nodeId="6195342755327829821" fileName="ExtractMethodRefactoring.java" startLine="101" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewDeclarations#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="8823815475437247084" fileName="ExtractMethodRefactoring.java" startLine="57" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="5159544814167901888" fileName="ExtractMethodRefactoring.java" startLine="59" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="5159544814167958076" varName="match" />
       <varInfo nodeId="5159544814167958080" varName="methodDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="3762128617127246816" fileName="ExtractMethodRefactoring.java" startLine="62" startPosition="53" endLine="63" endPosition="26" />
-    <scopeInfo nodeId="3762128617127246827" fileName="ExtractMethodRefactoring.java" startLine="65" startPosition="88" endLine="66" endPosition="74" />
-    <scopeInfo nodeId="8492459591399163706" fileName="ExtractMethodRefactoring.java" startLine="73" startPosition="41" endLine="74" endPosition="58" />
-    <scopeInfo nodeId="3633468495172338697" fileName="ExtractMethodRefactoring.java" startLine="77" startPosition="75" endLine="78" endPosition="104" />
-    <scopeInfo nodeId="8823815475437382953" fileName="ExtractMethodRefactoring.java" startLine="90" startPosition="147" endLine="91" endPosition="283" />
-    <scopeInfo nodeId="8823815475437438018" fileName="ExtractMethodRefactoring.java" startLine="94" startPosition="37" endLine="95" endPosition="60" />
-    <scopeInfo nodeId="7170526453716714494" fileName="ExtractMethodRefactoring.java" startLine="104" startPosition="228" endLine="105" endPosition="17" />
-    <scopeInfo nodeId="6195342755327829861" fileName="ExtractMethodRefactoring.java" startLine="109" startPosition="98" endLine="110" endPosition="80" />
-    <scopeInfo nodeId="6195342755327829927" fileName="ExtractMethodRefactoring.java" startLine="118" startPosition="100" endLine="119" endPosition="200" />
-    <scopeInfo nodeId="8492459591399163843" fileName="ExtractMethodRefactoring.java" startLine="141" startPosition="12" endLine="142" endPosition="45" />
-    <scopeInfo nodeId="8492459591399163897" fileName="ExtractMethodRefactoring.java" startLine="153" startPosition="40" endLine="154" endPosition="69" />
-    <scopeInfo nodeId="8823815475437189839" fileName="ExtractMethodRefactoring.java" startLine="165" startPosition="86" endLine="166" endPosition="130" />
-    <scopeInfo nodeId="1300615610528497354" fileName="ExtractMethodRefactoring.java" startLine="176" startPosition="88" endLine="177" endPosition="121" />
-    <scopeInfo nodeId="1769066237347367174" fileName="ExtractMethodRefactoring.java" startLine="183" startPosition="91" endLine="184" endPosition="124" />
-    <scopeInfo nodeId="8492459591399164078" fileName="ExtractMethodRefactoring.java" startLine="191" startPosition="51" endLine="192" endPosition="150" />
-    <scopeInfo nodeId="8492459591399164097" fileName="ExtractMethodRefactoring.java" startLine="198" startPosition="35" endLine="199" endPosition="75" />
-    <scopeInfo nodeId="8492459591399164151" fileName="ExtractMethodRefactoring.java" startLine="209" startPosition="12" endLine="210" endPosition="84" />
-    <scopeInfo nodeId="3762128617127247028" fileName="ExtractMethodRefactoring.java" startLine="214" startPosition="77" endLine="215" endPosition="79" />
-    <scopeInfo nodeId="8492459591399164166" fileName="ExtractMethodRefactoring.java" startLine="219" startPosition="98" endLine="220" endPosition="71" />
-    <scopeInfo nodeId="8492459591399164200" fileName="ExtractMethodRefactoring.java" startLine="224" startPosition="12" endLine="225" endPosition="43" />
-    <scopeInfo nodeId="6195342755328034342" fileName="ExtractMethodRefactoring.java" startLine="234" startPosition="133" endLine="235" endPosition="63" />
-    <scopeInfo nodeId="5159544814168932165" fileName="ExtractMethodRefactoring.java" startLine="242" startPosition="41" endLine="243" endPosition="26" />
-    <scopeInfo nodeId="6195342755328034291" fileName="ExtractMethodRefactoring.java" startLine="246" startPosition="57" endLine="247" endPosition="38" />
-    <scopeInfo nodeId="8492459591399164206" fileName="ExtractMethodRefactoring.java" startLine="250" startPosition="0" endLine="251" endPosition="0" />
-    <scopeInfo nodeId="1642079203062558806" fileName="ExtractMethodRefactoring.java" startLine="252" startPosition="32" endLine="253" endPosition="41" />
-    <scopeInfo nodeId="3633468495172172090" fileName="ExtractMethodRefactoring.java" startLine="256" startPosition="35" endLine="257" endPosition="44" />
-    <scopeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="275" startPosition="31" endLine="276" endPosition="73" />
-    <scopeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="288" startPosition="31" endLine="289" endPosition="93" />
-    <scopeInfo nodeId="8492459591399163672" fileName="ExtractMethodRefactoring.java" startLine="34" startPosition="82" endLine="36" endPosition="47" />
-    <scopeInfo nodeId="8492459591399163751" fileName="ExtractMethodRefactoring.java" startLine="125" startPosition="101" endLine="127" endPosition="122">
+    <scopeInfo nodeId="3762128617127246816" fileName="ExtractMethodRefactoring.java" startLine="63" startPosition="53" endLine="64" endPosition="26" />
+    <scopeInfo nodeId="3762128617127246827" fileName="ExtractMethodRefactoring.java" startLine="66" startPosition="88" endLine="67" endPosition="74" />
+    <scopeInfo nodeId="8492459591399163706" fileName="ExtractMethodRefactoring.java" startLine="74" startPosition="41" endLine="75" endPosition="58" />
+    <scopeInfo nodeId="3633468495172338697" fileName="ExtractMethodRefactoring.java" startLine="78" startPosition="75" endLine="79" endPosition="104" />
+    <scopeInfo nodeId="8823815475437382953" fileName="ExtractMethodRefactoring.java" startLine="91" startPosition="147" endLine="92" endPosition="283" />
+    <scopeInfo nodeId="8823815475437438018" fileName="ExtractMethodRefactoring.java" startLine="95" startPosition="37" endLine="96" endPosition="60" />
+    <scopeInfo nodeId="7170526453716714494" fileName="ExtractMethodRefactoring.java" startLine="105" startPosition="228" endLine="106" endPosition="17" />
+    <scopeInfo nodeId="6195342755327829861" fileName="ExtractMethodRefactoring.java" startLine="110" startPosition="98" endLine="111" endPosition="80" />
+    <scopeInfo nodeId="6195342755327829927" fileName="ExtractMethodRefactoring.java" startLine="119" startPosition="100" endLine="120" endPosition="200" />
+    <scopeInfo nodeId="8492459591399163843" fileName="ExtractMethodRefactoring.java" startLine="142" startPosition="12" endLine="143" endPosition="45" />
+    <scopeInfo nodeId="8492459591399163897" fileName="ExtractMethodRefactoring.java" startLine="154" startPosition="40" endLine="155" endPosition="69" />
+    <scopeInfo nodeId="8823815475437189839" fileName="ExtractMethodRefactoring.java" startLine="166" startPosition="86" endLine="167" endPosition="130" />
+    <scopeInfo nodeId="1300615610528497354" fileName="ExtractMethodRefactoring.java" startLine="177" startPosition="88" endLine="178" endPosition="121" />
+    <scopeInfo nodeId="1769066237347367174" fileName="ExtractMethodRefactoring.java" startLine="184" startPosition="91" endLine="185" endPosition="124" />
+    <scopeInfo nodeId="8492459591399164078" fileName="ExtractMethodRefactoring.java" startLine="192" startPosition="51" endLine="193" endPosition="150" />
+    <scopeInfo nodeId="8492459591399164097" fileName="ExtractMethodRefactoring.java" startLine="199" startPosition="35" endLine="200" endPosition="75" />
+    <scopeInfo nodeId="8492459591399164151" fileName="ExtractMethodRefactoring.java" startLine="210" startPosition="12" endLine="211" endPosition="84" />
+    <scopeInfo nodeId="3762128617127247028" fileName="ExtractMethodRefactoring.java" startLine="215" startPosition="77" endLine="216" endPosition="79" />
+    <scopeInfo nodeId="8492459591399164166" fileName="ExtractMethodRefactoring.java" startLine="220" startPosition="98" endLine="221" endPosition="71" />
+    <scopeInfo nodeId="8492459591399164200" fileName="ExtractMethodRefactoring.java" startLine="225" startPosition="12" endLine="226" endPosition="43" />
+    <scopeInfo nodeId="6195342755328034342" fileName="ExtractMethodRefactoring.java" startLine="235" startPosition="133" endLine="236" endPosition="63" />
+    <scopeInfo nodeId="5159544814168932165" fileName="ExtractMethodRefactoring.java" startLine="243" startPosition="41" endLine="244" endPosition="26" />
+    <scopeInfo nodeId="6195342755328034291" fileName="ExtractMethodRefactoring.java" startLine="247" startPosition="57" endLine="248" endPosition="38" />
+    <scopeInfo nodeId="1642079203062558806" fileName="ExtractMethodRefactoring.java" startLine="254" startPosition="32" endLine="255" endPosition="41" />
+    <scopeInfo nodeId="3633468495172172090" fileName="ExtractMethodRefactoring.java" startLine="258" startPosition="35" endLine="259" endPosition="44" />
+    <scopeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="277" startPosition="31" endLine="278" endPosition="73" />
+    <scopeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="290" startPosition="31" endLine="291" endPosition="93" />
+    <scopeInfo nodeId="8492459591399163672" fileName="ExtractMethodRefactoring.java" startLine="35" startPosition="82" endLine="37" endPosition="47" />
+    <scopeInfo nodeId="8492459591399163751" fileName="ExtractMethodRefactoring.java" startLine="126" startPosition="101" endLine="128" endPosition="122">
       <varInfo nodeId="8492459591399163753" varName="visibleDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399163823" fileName="ExtractMethodRefactoring.java" startLine="138" startPosition="41" endLine="140" endPosition="32">
+    <scopeInfo nodeId="8492459591399163823" fileName="ExtractMethodRefactoring.java" startLine="139" startPosition="41" endLine="141" endPosition="32">
       <varInfo nodeId="8492459591399163825" varName="processor" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399164130" fileName="ExtractMethodRefactoring.java" startLine="206" startPosition="41" endLine="208" endPosition="71">
+    <scopeInfo nodeId="8492459591399164130" fileName="ExtractMethodRefactoring.java" startLine="207" startPosition="41" endLine="209" endPosition="71">
       <varInfo nodeId="8492459591399164132" varName="processor" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399164184" fileName="ExtractMethodRefactoring.java" startLine="221" startPosition="119" endLine="223" endPosition="187">
+    <scopeInfo nodeId="8492459591399164184" fileName="ExtractMethodRefactoring.java" startLine="222" startPosition="119" endLine="224" endPosition="187">
       <varInfo nodeId="8492459591399164186" varName="staticContainer" />
     </scopeInfo>
-    <scopeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="262" startPosition="30" endLine="264" endPosition="88" />
-    <scopeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="296" startPosition="30" endLine="298" endPosition="97" />
-    <scopeInfo nodeId="3762128617127246809" fileName="ExtractMethodRefactoring.java" startLine="61" startPosition="57" endLine="64" endPosition="5">
+    <scopeInfo nodeId="8492459591399164206" fileName="ExtractMethodRefactoring.java" startLine="251" startPosition="0" endLine="253" endPosition="0" />
+    <scopeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="264" startPosition="30" endLine="266" endPosition="88" />
+    <scopeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="298" startPosition="30" endLine="300" endPosition="97" />
+    <scopeInfo nodeId="3762128617127246809" fileName="ExtractMethodRefactoring.java" startLine="62" startPosition="57" endLine="65" endPosition="5">
       <varInfo nodeId="3762128617127246810" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3762128617127246822" fileName="ExtractMethodRefactoring.java" startLine="64" startPosition="5" endLine="67" endPosition="5">
+    <scopeInfo nodeId="3762128617127246822" fileName="ExtractMethodRefactoring.java" startLine="65" startPosition="5" endLine="68" endPosition="5">
       <varInfo nodeId="3762128617127246823" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8823815475437382950" fileName="ExtractMethodRefactoring.java" startLine="89" startPosition="52" endLine="92" endPosition="5">
+    <scopeInfo nodeId="8823815475437382950" fileName="ExtractMethodRefactoring.java" startLine="90" startPosition="52" endLine="93" endPosition="5">
       <varInfo nodeId="8823815475437382951" varName="statement" />
     </scopeInfo>
-    <scopeInfo nodeId="8823815475437438017" fileName="ExtractMethodRefactoring.java" startLine="94" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="8823815475437438017" fileName="ExtractMethodRefactoring.java" startLine="95" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="8823815475437438017" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755327829922" fileName="ExtractMethodRefactoring.java" startLine="117" startPosition="228" endLine="120" endPosition="7">
+    <scopeInfo nodeId="6195342755327829922" fileName="ExtractMethodRefactoring.java" startLine="118" startPosition="228" endLine="121" endPosition="7">
       <varInfo nodeId="6195342755327829923" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="8823815475437189836" fileName="ExtractMethodRefactoring.java" startLine="164" startPosition="84" endLine="167" endPosition="5">
+    <scopeInfo nodeId="8823815475437189836" fileName="ExtractMethodRefactoring.java" startLine="165" startPosition="84" endLine="168" endPosition="5">
       <varInfo nodeId="8823815475437189837" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399164076" fileName="ExtractMethodRefactoring.java" startLine="191" startPosition="0" endLine="194" endPosition="0">
+    <scopeInfo nodeId="8492459591399164076" fileName="ExtractMethodRefactoring.java" startLine="192" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="8492459591399164083" varName="variable" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399164095" fileName="ExtractMethodRefactoring.java" startLine="197" startPosition="96" endLine="200" endPosition="7" />
-    <scopeInfo nodeId="3762128617127247019" fileName="ExtractMethodRefactoring.java" startLine="214" startPosition="0" endLine="217" endPosition="0">
+    <scopeInfo nodeId="8492459591399164095" fileName="ExtractMethodRefactoring.java" startLine="198" startPosition="96" endLine="201" endPosition="7" />
+    <scopeInfo nodeId="3762128617127247019" fileName="ExtractMethodRefactoring.java" startLine="215" startPosition="0" endLine="218" endPosition="0">
       <varInfo nodeId="3762128617127247022" varName="match" />
       <varInfo nodeId="3762128617127247026" varName="methodDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755328034340" fileName="ExtractMethodRefactoring.java" startLine="233" startPosition="175" endLine="236" endPosition="9" />
-    <scopeInfo nodeId="5159544814168932162" fileName="ExtractMethodRefactoring.java" startLine="242" startPosition="0" endLine="245" endPosition="0" />
-    <scopeInfo nodeId="6195342755328034288" fileName="ExtractMethodRefactoring.java" startLine="246" startPosition="0" endLine="249" endPosition="0" />
-    <scopeInfo nodeId="1642079203062558803" fileName="ExtractMethodRefactoring.java" startLine="252" startPosition="0" endLine="255" endPosition="0" />
-    <scopeInfo nodeId="3633468495172172087" fileName="ExtractMethodRefactoring.java" startLine="256" startPosition="0" endLine="259" endPosition="0" />
-    <scopeInfo nodeId="8492459591399163669" fileName="ExtractMethodRefactoring.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="6195342755328034340" fileName="ExtractMethodRefactoring.java" startLine="234" startPosition="175" endLine="237" endPosition="9" />
+    <scopeInfo nodeId="5159544814168932162" fileName="ExtractMethodRefactoring.java" startLine="243" startPosition="0" endLine="246" endPosition="0" />
+    <scopeInfo nodeId="6195342755328034288" fileName="ExtractMethodRefactoring.java" startLine="247" startPosition="0" endLine="250" endPosition="0" />
+    <scopeInfo nodeId="1642079203062558803" fileName="ExtractMethodRefactoring.java" startLine="254" startPosition="0" endLine="257" endPosition="0" />
+    <scopeInfo nodeId="3633468495172172087" fileName="ExtractMethodRefactoring.java" startLine="258" startPosition="0" endLine="261" endPosition="0" />
+    <scopeInfo nodeId="8492459591399163669" fileName="ExtractMethodRefactoring.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="8492459591399163670" varName="parameters" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755327829859" fileName="ExtractMethodRefactoring.java" startLine="108" startPosition="110" endLine="112" endPosition="99" />
-    <scopeInfo nodeId="1300615610528705312" fileName="ExtractMethodRefactoring.java" startLine="163" startPosition="95" endLine="167" endPosition="5">
+    <scopeInfo nodeId="6195342755327829859" fileName="ExtractMethodRefactoring.java" startLine="109" startPosition="110" endLine="113" endPosition="99" />
+    <scopeInfo nodeId="1300615610528705312" fileName="ExtractMethodRefactoring.java" startLine="164" startPosition="95" endLine="168" endPosition="5">
       <varInfo nodeId="1300615610528723672" varName="anotherMap" />
     </scopeInfo>
-    <scopeInfo nodeId="1300615610528497338" fileName="ExtractMethodRefactoring.java" startLine="174" startPosition="58" endLine="178" endPosition="11">
+    <scopeInfo nodeId="1300615610528497338" fileName="ExtractMethodRefactoring.java" startLine="175" startPosition="58" endLine="179" endPosition="11">
       <varInfo nodeId="1300615610528497340" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="1769066237347367172" fileName="ExtractMethodRefactoring.java" startLine="181" startPosition="165" endLine="185" endPosition="9">
+    <scopeInfo nodeId="1769066237347367172" fileName="ExtractMethodRefactoring.java" startLine="182" startPosition="165" endLine="186" endPosition="9">
       <varInfo nodeId="1769066237347367236" varName="declaration" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="273" startPosition="76" endLine="277" endPosition="5" />
-    <scopeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="286" startPosition="157" endLine="290" endPosition="5" />
-    <scopeInfo nodeId="8492459591399163721" fileName="ExtractMethodRefactoring.java" startLine="75" startPosition="12" endLine="80" endPosition="45">
+    <scopeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="275" startPosition="76" endLine="279" endPosition="5" />
+    <scopeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="288" startPosition="157" endLine="292" endPosition="5" />
+    <scopeInfo nodeId="8492459591399163721" fileName="ExtractMethodRefactoring.java" startLine="76" startPosition="12" endLine="81" endPosition="45">
       <varInfo nodeId="8492459591399163723" varName="processor" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755327829889" fileName="ExtractMethodRefactoring.java" startLine="115" startPosition="90" endLine="120" endPosition="7">
+    <scopeInfo nodeId="6195342755327829889" fileName="ExtractMethodRefactoring.java" startLine="116" startPosition="90" endLine="121" endPosition="7">
       <varInfo nodeId="6195342755327829891" varName="newDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399164094" fileName="ExtractMethodRefactoring.java" startLine="196" startPosition="48" endLine="201" endPosition="5">
+    <scopeInfo nodeId="8492459591399164094" fileName="ExtractMethodRefactoring.java" startLine="197" startPosition="48" endLine="202" endPosition="5">
       <varInfo nodeId="8492459591399164113" varName="parameter" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755328034332" fileName="ExtractMethodRefactoring.java" startLine="232" startPosition="81" endLine="237" endPosition="7" />
-    <scopeInfo nodeId="6195342755328034333" fileName="ExtractMethodRefactoring.java" startLine="232" startPosition="81" endLine="237" endPosition="7">
+    <scopeInfo nodeId="6195342755328034332" fileName="ExtractMethodRefactoring.java" startLine="233" startPosition="81" endLine="238" endPosition="7" />
+    <scopeInfo nodeId="6195342755328034333" fileName="ExtractMethodRefactoring.java" startLine="233" startPosition="81" endLine="238" endPosition="7">
       <varInfo nodeId="6195342755328034334" varName="varReference" />
     </scopeInfo>
-    <scopeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="260" startPosition="85" endLine="265" endPosition="24">
+    <scopeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="262" startPosition="85" endLine="267" endPosition="24">
       <varInfo nodeId="8823815475437438023" varName="facade" />
       <varInfo nodeId="8823815475437438023" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="285" startPosition="30" endLine="290" endPosition="5" />
-    <scopeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="294" startPosition="83" endLine="299" endPosition="24">
+    <scopeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="287" startPosition="30" endLine="292" endPosition="5" />
+    <scopeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="296" startPosition="83" endLine="301" endPosition="24">
       <varInfo nodeId="420882727001940217" varName="facade" />
       <varInfo nodeId="420882727001940217" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399163821" fileName="ExtractMethodRefactoring.java" startLine="137" startPosition="40" endLine="143" endPosition="5" />
-    <scopeInfo nodeId="1300615610528705309" fileName="ExtractMethodRefactoring.java" startLine="163" startPosition="0" endLine="169" endPosition="0">
+    <scopeInfo nodeId="8492459591399163821" fileName="ExtractMethodRefactoring.java" startLine="138" startPosition="40" endLine="144" endPosition="5" />
+    <scopeInfo nodeId="1300615610528705309" fileName="ExtractMethodRefactoring.java" startLine="164" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="1300615610528705318" varName="mapping" />
       <varInfo nodeId="1300615610528705316" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1300615610528497334" fileName="ExtractMethodRefactoring.java" startLine="173" startPosition="163" endLine="179" endPosition="9" />
-    <scopeInfo nodeId="1769066237347367165" fileName="ExtractMethodRefactoring.java" startLine="180" startPosition="7" endLine="186" endPosition="7">
+    <scopeInfo nodeId="1300615610528497334" fileName="ExtractMethodRefactoring.java" startLine="174" startPosition="163" endLine="180" endPosition="9" />
+    <scopeInfo nodeId="1769066237347367165" fileName="ExtractMethodRefactoring.java" startLine="181" startPosition="7" endLine="187" endPosition="7">
       <varInfo nodeId="1769066237347367166" varName="parameter" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399164122" fileName="ExtractMethodRefactoring.java" startLine="205" startPosition="85" endLine="211" endPosition="5" />
-    <scopeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="271" startPosition="30" endLine="277" endPosition="5" />
-    <scopeInfo nodeId="6195342755327829884" fileName="ExtractMethodRefactoring.java" startLine="114" startPosition="5" endLine="121" endPosition="5">
+    <scopeInfo nodeId="8492459591399164122" fileName="ExtractMethodRefactoring.java" startLine="206" startPosition="85" endLine="212" endPosition="5" />
+    <scopeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="273" startPosition="30" endLine="279" endPosition="5" />
+    <scopeInfo nodeId="6195342755327829884" fileName="ExtractMethodRefactoring.java" startLine="115" startPosition="5" endLine="122" endPosition="5">
       <varInfo nodeId="6195342755327829885" varName="declaration" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399164087" fileName="ExtractMethodRefactoring.java" startLine="195" startPosition="48" endLine="202" endPosition="18">
+    <scopeInfo nodeId="8492459591399164087" fileName="ExtractMethodRefactoring.java" startLine="196" startPosition="48" endLine="203" endPosition="18">
       <varInfo nodeId="8492459591399164089" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755328034329" fileName="ExtractMethodRefactoring.java" startLine="231" startPosition="82" endLine="238" endPosition="5">
+    <scopeInfo nodeId="6195342755328034329" fileName="ExtractMethodRefactoring.java" startLine="232" startPosition="82" endLine="239" endPosition="5">
       <varInfo nodeId="6195342755328034330" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="260" startPosition="0" endLine="267" endPosition="0">
+    <scopeInfo nodeId="8823815475437438023" fileName="ExtractMethodRefactoring.java" startLine="262" startPosition="0" endLine="269" endPosition="0">
       <varInfo nodeId="8823815475437438023" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="294" startPosition="0" endLine="301" endPosition="0">
+    <scopeInfo nodeId="420882727001940217" fileName="ExtractMethodRefactoring.java" startLine="296" startPosition="0" endLine="303" endPosition="0">
       <varInfo nodeId="420882727001940217" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="3762128617127221660" fileName="ExtractMethodRefactoring.java" startLine="60" startPosition="117" endLine="68" endPosition="17">
+    <scopeInfo nodeId="3762128617127221660" fileName="ExtractMethodRefactoring.java" startLine="61" startPosition="117" endLine="69" endPosition="17">
       <varInfo nodeId="3762128617127246805" varName="match" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399163818" fileName="ExtractMethodRefactoring.java" startLine="137" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="8492459591399163818" fileName="ExtractMethodRefactoring.java" startLine="138" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="8492459591399163819" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399163871" fileName="ExtractMethodRefactoring.java" startLine="149" startPosition="41" endLine="157" endPosition="85">
+    <scopeInfo nodeId="8492459591399163871" fileName="ExtractMethodRefactoring.java" startLine="150" startPosition="41" endLine="158" endPosition="85">
       <varInfo nodeId="8492459591399163873" varName="parameter" />
     </scopeInfo>
-    <scopeInfo nodeId="1300615610528497327" fileName="ExtractMethodRefactoring.java" startLine="172" startPosition="53" endLine="180" endPosition="7">
+    <scopeInfo nodeId="1300615610528497327" fileName="ExtractMethodRefactoring.java" startLine="173" startPosition="53" endLine="181" endPosition="7">
       <varInfo nodeId="1300615610528497328" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399164118" fileName="ExtractMethodRefactoring.java" startLine="205" startPosition="0" endLine="213" endPosition="0">
+    <scopeInfo nodeId="8492459591399164118" fileName="ExtractMethodRefactoring.java" startLine="206" startPosition="0" endLine="214" endPosition="0">
       <varInfo nodeId="8492459591399164119" varName="methodDeclaration" />
       <varInfo nodeId="1939461217142866633" varName="parameters" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399164164" fileName="ExtractMethodRefactoring.java" startLine="218" startPosition="46" endLine="226" endPosition="5" />
-    <scopeInfo nodeId="8823815475437381763" fileName="ExtractMethodRefactoring.java" startLine="88" startPosition="48" endLine="97" endPosition="8">
+    <scopeInfo nodeId="8492459591399164164" fileName="ExtractMethodRefactoring.java" startLine="219" startPosition="46" endLine="227" endPosition="5" />
+    <scopeInfo nodeId="8823815475437381763" fileName="ExtractMethodRefactoring.java" startLine="89" startPosition="48" endLine="98" endPosition="8">
       <varInfo nodeId="8823815475437382944" varName="throwables" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399164086" fileName="ExtractMethodRefactoring.java" startLine="195" startPosition="0" endLine="204" endPosition="0" />
-    <scopeInfo nodeId="3762128617127221657" fileName="ExtractMethodRefactoring.java" startLine="60" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="8492459591399164086" fileName="ExtractMethodRefactoring.java" startLine="196" startPosition="0" endLine="205" endPosition="0" />
+    <scopeInfo nodeId="3762128617127221657" fileName="ExtractMethodRefactoring.java" startLine="61" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="3762128617127246853" varName="inputMapping" />
       <varInfo nodeId="5159544814170273716" varName="nodes" />
       <varInfo nodeId="5159544814167517114" varName="parametersOrder" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399163749" fileName="ExtractMethodRefactoring.java" startLine="124" startPosition="114" endLine="134" endPosition="29">
+    <scopeInfo nodeId="8492459591399163749" fileName="ExtractMethodRefactoring.java" startLine="125" startPosition="114" endLine="135" endPosition="29">
       <varInfo nodeId="8492459591399163774" varName="methodDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399163869" fileName="ExtractMethodRefactoring.java" startLine="148" startPosition="102" endLine="158" endPosition="7" />
-    <scopeInfo nodeId="8492459591399164161" fileName="ExtractMethodRefactoring.java" startLine="218" startPosition="0" endLine="228" endPosition="0">
+    <scopeInfo nodeId="8492459591399163869" fileName="ExtractMethodRefactoring.java" startLine="149" startPosition="102" endLine="159" endPosition="7" />
+    <scopeInfo nodeId="8492459591399164161" fileName="ExtractMethodRefactoring.java" startLine="219" startPosition="0" endLine="229" endPosition="0">
       <varInfo nodeId="8492459591399164162" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755328034318" fileName="ExtractMethodRefactoring.java" startLine="229" startPosition="43" endLine="239" endPosition="18">
+    <scopeInfo nodeId="6195342755328034318" fileName="ExtractMethodRefactoring.java" startLine="230" startPosition="43" endLine="240" endPosition="18">
       <varInfo nodeId="6195342755328034381" varName="outputVariables" />
       <varInfo nodeId="6195342755328034356" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="268" startPosition="101" endLine="278" endPosition="24">
+    <scopeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="270" startPosition="101" endLine="280" endPosition="24">
       <varInfo nodeId="6195342755327829893" varName="facade" />
       <varInfo nodeId="6195342755327829893" varName="quotedNode_3" />
       <varInfo nodeId="6195342755327829893" varName="quotedNode_4" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="281" startPosition="83" endLine="291" endPosition="24">
+    <scopeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="283" startPosition="83" endLine="293" endPosition="24">
       <varInfo nodeId="6195342755327829916" varName="facade" />
       <varInfo nodeId="6195342755327829916" varName="quotedNode_2" />
       <varInfo nodeId="6195342755327829916" varName="quotedNode_3" />
       <varInfo nodeId="6195342755327829916" varName="quotedNode_4" />
     </scopeInfo>
-    <scopeInfo nodeId="8823815475437381760" fileName="ExtractMethodRefactoring.java" startLine="88" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="8823815475437381760" fileName="ExtractMethodRefactoring.java" startLine="89" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="8823815475437382939" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755327829844" fileName="ExtractMethodRefactoring.java" startLine="102" startPosition="172" endLine="113" endPosition="7">
+    <scopeInfo nodeId="6195342755327829844" fileName="ExtractMethodRefactoring.java" startLine="103" startPosition="172" endLine="114" endPosition="7">
       <varInfo nodeId="6195342755327829846" varName="declaration" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399163748" fileName="ExtractMethodRefactoring.java" startLine="124" startPosition="0" endLine="136" endPosition="0">
+    <scopeInfo nodeId="8492459591399163748" fileName="ExtractMethodRefactoring.java" startLine="125" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="8492459591399163816" varName="body" />
       <varInfo nodeId="8492459591399163810" varName="declaration" />
       <varInfo nodeId="8492459591399163814" varName="params" />
       <varInfo nodeId="8492459591399163812" varName="returnType" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399163868" fileName="ExtractMethodRefactoring.java" startLine="147" startPosition="80" endLine="159" endPosition="5">
+    <scopeInfo nodeId="8492459591399163868" fileName="ExtractMethodRefactoring.java" startLine="148" startPosition="80" endLine="160" endPosition="5">
       <varInfo nodeId="8492459591399163923" varName="methodParameter" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755328034315" fileName="ExtractMethodRefactoring.java" startLine="229" startPosition="0" endLine="241" endPosition="0" />
-    <scopeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="268" startPosition="0" endLine="280" endPosition="0">
+    <scopeInfo nodeId="6195342755328034315" fileName="ExtractMethodRefactoring.java" startLine="230" startPosition="0" endLine="242" endPosition="0" />
+    <scopeInfo nodeId="6195342755327829893" fileName="ExtractMethodRefactoring.java" startLine="270" startPosition="0" endLine="282" endPosition="0">
       <varInfo nodeId="6195342755327829893" varName="parameter_1" />
       <varInfo nodeId="6195342755327829893" varName="parameter_2" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="281" startPosition="0" endLine="293" endPosition="0">
+    <scopeInfo nodeId="6195342755327829916" fileName="ExtractMethodRefactoring.java" startLine="283" startPosition="0" endLine="295" endPosition="0">
       <varInfo nodeId="6195342755327829916" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399163692" fileName="ExtractMethodRefactoring.java" startLine="40" startPosition="29" endLine="53" endPosition="21">
+    <scopeInfo nodeId="8492459591399163692" fileName="ExtractMethodRefactoring.java" startLine="41" startPosition="29" endLine="54" endPosition="21">
       <varInfo nodeId="8823815475437247092" varName="body" />
       <varInfo nodeId="8823815475437265602" varName="exactMatch" />
       <varInfo nodeId="8823815475437264262" varName="inputMapping" />
@@ -2819,44 +2819,44 @@
       <varInfo nodeId="8823815475437265588" varName="newMethod" />
       <varInfo nodeId="8823815475437264246" varName="params" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755327829836" fileName="ExtractMethodRefactoring.java" startLine="101" startPosition="93" endLine="114" endPosition="5">
+    <scopeInfo nodeId="6195342755327829836" fileName="ExtractMethodRefactoring.java" startLine="102" startPosition="93" endLine="115" endPosition="5">
       <varInfo nodeId="6195342755327829837" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399163701" fileName="ExtractMethodRefactoring.java" startLine="71" startPosition="85" endLine="85" endPosition="20">
+    <scopeInfo nodeId="8492459591399163701" fileName="ExtractMethodRefactoring.java" startLine="72" startPosition="85" endLine="86" endPosition="20">
       <varInfo nodeId="8492459591399163703" varName="myMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399163858" fileName="ExtractMethodRefactoring.java" startLine="146" startPosition="89" endLine="160" endPosition="18">
+    <scopeInfo nodeId="8492459591399163858" fileName="ExtractMethodRefactoring.java" startLine="147" startPosition="89" endLine="161" endPosition="18">
       <varInfo nodeId="8492459591399163860" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1769066237347336304" fileName="ExtractMethodRefactoring.java" startLine="172" startPosition="53" endLine="186" endPosition="7" />
-    <scopeInfo nodeId="8492459591399163689" fileName="ExtractMethodRefactoring.java" startLine="39" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="8492459591399163694" fileName="ExtractMethodRefactoring.java" startLine="71" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="1769066237347336304" fileName="ExtractMethodRefactoring.java" startLine="173" startPosition="53" endLine="187" endPosition="7" />
+    <scopeInfo nodeId="8492459591399163689" fileName="ExtractMethodRefactoring.java" startLine="40" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="8492459591399163694" fileName="ExtractMethodRefactoring.java" startLine="72" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="8492459591399163699" varName="body" />
       <varInfo nodeId="8492459591399163697" varName="params" />
       <varInfo nodeId="8492459591399163695" varName="returnType" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399163853" fileName="ExtractMethodRefactoring.java" startLine="146" startPosition="0" endLine="162" endPosition="0">
+    <scopeInfo nodeId="8492459591399163853" fileName="ExtractMethodRefactoring.java" startLine="147" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="8492459591399163854" varName="body" />
       <varInfo nodeId="8492459591399163856" varName="parameters" />
     </scopeInfo>
-    <scopeInfo nodeId="1769066237347336301" fileName="ExtractMethodRefactoring.java" startLine="171" startPosition="81" endLine="187" endPosition="5">
+    <scopeInfo nodeId="1769066237347336301" fileName="ExtractMethodRefactoring.java" startLine="172" startPosition="81" endLine="188" endPosition="5">
       <varInfo nodeId="1769066237347336302" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1769066237347336289" fileName="ExtractMethodRefactoring.java" startLine="170" startPosition="125" endLine="188" endPosition="19">
+    <scopeInfo nodeId="1769066237347336289" fileName="ExtractMethodRefactoring.java" startLine="171" startPosition="125" endLine="189" endPosition="19">
       <varInfo nodeId="1769066237347367106" varName="mapping" />
     </scopeInfo>
-    <scopeInfo nodeId="1769066237347324108" fileName="ExtractMethodRefactoring.java" startLine="170" startPosition="0" endLine="190" endPosition="0">
+    <scopeInfo nodeId="1769066237347324108" fileName="ExtractMethodRefactoring.java" startLine="171" startPosition="0" endLine="191" endPosition="0">
       <varInfo nodeId="1300615610528601108" varName="nodes" />
       <varInfo nodeId="1769066237347336268" varName="variableDeclarationToParameter" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755327829824" fileName="ExtractMethodRefactoring.java" startLine="100" startPosition="54" endLine="121" endPosition="5">
+    <scopeInfo nodeId="6195342755327829824" fileName="ExtractMethodRefactoring.java" startLine="101" startPosition="54" endLine="122" endPosition="5">
       <varInfo nodeId="6195342755327829828" varName="mapping" />
     </scopeInfo>
-    <scopeInfo nodeId="6195342755327829821" fileName="ExtractMethodRefactoring.java" startLine="100" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="6195342755327829821" fileName="ExtractMethodRefactoring.java" startLine="101" startPosition="0" endLine="124" endPosition="0">
       <varInfo nodeId="6195342755327831108" varName="method" />
     </scopeInfo>
-    <unitInfo nodeId="8823815475437438017" fileName="ExtractMethodRefactoring.java" startLine="93" startPosition="139" endLine="97" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring$1" />
-    <unitInfo nodeId="8492459591399163659" fileName="ExtractMethodRefactoring.java" startLine="28" startPosition="0" endLine="302" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring" />
+    <unitInfo nodeId="8823815475437438017" fileName="ExtractMethodRefactoring.java" startLine="94" startPosition="139" endLine="98" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring$1" />
+    <unitInfo nodeId="8492459591399163659" fileName="ExtractMethodRefactoring.java" startLine="29" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring" />
   </root>
   <root nodeRef="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)/8492459591399164277">
     <nodeInfo nodeId="8492459591399164337" fileName="ExtractMethodWithReturn.java" startLine="14" startPosition="82" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
