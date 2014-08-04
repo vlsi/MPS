@@ -4,13 +4,13 @@ package jetbrains.mps.migration.generator.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -20,11 +20,11 @@ public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
 
   public static Object propertyMacro_GetPropertyValue_3571469069288471972(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "fromVersion");
+    return MigrationScript_Behavior.call_getFromVersion_3932724607434564575(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_3571469069288475196(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "toVersion");
+    return MigrationScript_Behavior.call_getToVersion_3932724607434563104(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_4436301628119009646(final PropertyMacroContext _context) {
@@ -44,11 +44,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4436301628118955263(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "fromVersion");
+    return MigrationScript_Behavior.call_getFromVersion_3932724607434564575(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_4436301628118955276(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "toVersion");
+    return MigrationScript_Behavior.call_getFromVersion_3932724607434564575(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_4436301628118955289(final PropertyMacroContext _context) {

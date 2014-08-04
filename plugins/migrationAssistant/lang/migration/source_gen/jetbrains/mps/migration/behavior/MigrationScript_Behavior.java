@@ -9,8 +9,16 @@ public class MigrationScript_Behavior {
   public static void init(SNode thisNode) {
   }
 
+  public static int call_getFromVersion_3932724607434564575(SNode thisNode) {
+    return SPropertyOperations.getInteger(thisNode, "fromVersion");
+  }
+
+  public static int call_getToVersion_3932724607434563104(SNode thisNode) {
+    return SPropertyOperations.getInteger(thisNode, "fromVersion") + 1;
+  }
+
   public static String call_getClassName_6547769411406912356(SNode thisNode) {
-    return "MigrationScript_" + SPropertyOperations.getInteger(thisNode, "fromVersion") + "_" + SPropertyOperations.getInteger(thisNode, "toVersion");
+    return "MigrationScript_" + MigrationScript_Behavior.call_getFromVersion_3932724607434564575(thisNode) + "_" + MigrationScript_Behavior.call_getToVersion_3932724607434563104(thisNode);
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {

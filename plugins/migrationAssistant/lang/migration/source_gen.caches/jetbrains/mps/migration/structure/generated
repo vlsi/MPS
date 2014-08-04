@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d35q6w6b4qdgc569cle83og30xfjf98">
+<dependencies version="2" modelHash="-20kopl089ha06cm0i72hnci651nl2m1">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="eggblwsr0208cbp174vd3je0pubxy4w" />
@@ -24,8 +24,8 @@
   <source id="3735414794051308106" name="PrimaryMigrationScriptBody" hash="-b4blzoemzmxi2rj02wqascs11dhqc6m" />
   <source id="3842191445091604225" name="SecondaryMigrationScript" hash="63gnqocli50i31xno0zpz3to3swofgm" />
   <source id="4436301628118647388" name="SecondaryMigrationScriptBody" hash="cw9e9lypadjqz6tc5b5mbvhjm4i9k7s" />
-  <source id="4436301628118948495" name="PrimaryMigrationScript" hash="-7rc8imneqcwe4pwuylzjawvq24ezhge" />
-  <source id="4436301628118948507" name="MigrationScript" hash="nvurzvxazmb0vpyhovkynxowhbe0v" />
-  <source id="3290421837437511158" name="PrimaryigrationScriptApplicable" hash="-9ovcncg28tjx6c7dsu7ndhv4scfn7td" />
+  <source id="4436301628118948495" name="PrimaryMigrationScript" hash="-c9yfpdol4zcgxi9d3l150io1y5xv943" />
+  <source id="4436301628118948507" name="MigrationScript" hash="1t6gbxctz7xvnrk81rbwfir8itvilzh" />
+  <source id="3290421837437511158" name="PrimaryMigrationScriptApplicable" hash="et93f689e0x978kg3m1waeqas0buo5b" />
 </dependencies>
 

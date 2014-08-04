@@ -8,6 +8,8 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.migration.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
@@ -35,6 +37,9 @@ public class Language extends LanguageRuntime {
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {
       return (T) new jetbrains.mps.migration.behavior.BehaviorAspectDescriptor();
+    }
+    if (descriptorClass == EditorAspectDescriptor.class) {
+      return (T) new EditorAspectDescriptorImpl();
     }
     if (descriptorClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.migration.structure.StructureAspectDescriptor();

@@ -54,7 +54,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="applicable" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3290421837437511158" resolveInfo="PrimaryigrationScriptApplicable" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3290421837437511158" resolveInfo="PrimaryMigrationScriptApplicable" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4436301628118948507" nodeInfo="ig">
@@ -66,13 +66,9 @@
       <property name="name" nameId="tpck.1169194664001" value="fromVersion" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4436301628118948498" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="toVersion" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
-    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3290421837437511158" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="PrimaryigrationScriptApplicable" />
+    <property name="name" nameId="tpck.1169194664001" value="PrimaryMigrationScriptApplicable" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
   </root>
 </model>
