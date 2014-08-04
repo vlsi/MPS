@@ -178,4 +178,8 @@ public class SLanguageAdapter implements SLanguage {
       return myLanguage.equals(((SLanguageAdapter) object).myLanguage);
     }
   }
+
+  public int getLanguageVersion() {
+    return getSourceModule().getLanguageVersion();
+  }
 }

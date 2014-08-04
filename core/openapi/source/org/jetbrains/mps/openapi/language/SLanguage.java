@@ -49,4 +49,6 @@ public interface SLanguage {
    */
   SModule getSourceModule();
 
+  int getLanguageVersion();
+
 }

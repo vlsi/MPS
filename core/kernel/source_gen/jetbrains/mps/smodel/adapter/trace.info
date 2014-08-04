@@ -418,6 +418,7 @@
       <node id="1134727823185957000" at="172,50,173,19" concept="10" />
       <node id="1134727823185957009" at="175,29,176,83" concept="10" />
       <node id="1134727823185957019" at="177,12,178,71" concept="10" />
+      <node id="4423371905550168036" at="182,35,183,50" concept="10" />
       <node id="1883068367456431336" at="155,12,157,7" concept="1" />
       <node id="1134727823185956983" at="165,10,167,5" concept="1" />
       <node id="1134727823185957017" at="177,10,179,5" concept="1" />
@@ -433,6 +434,7 @@
       <node id="2447771473064614405" at="128,32,131,5" concept="6" />
       <node id="1134727823185956928" at="144,30,147,5" concept="7" />
       <node id="1134727823185956994" at="171,40,174,5" concept="7" />
+      <node id="4423371905550136495" at="182,0,185,0" concept="8" trace="getLanguageVersion#()I" />
       <node id="1134727823185909259" at="52,0,57,0" concept="8" trace="getId#()Lorg/jetbrains/mps/openapi/language/SLanguageId;" />
       <node id="1883068367456431326" at="152,111,157,7" concept="7" />
       <node id="1134727823185956975" at="162,25,167,5" concept="7" />
@@ -468,6 +470,7 @@
       <scope id="1134727823185957002" at="172,50,173,19" />
       <scope id="1134727823185957008" at="175,29,176,83" />
       <scope id="1134727823185957018" at="177,12,178,71" />
+      <scope id="4423371905550136499" at="182,35,183,50" />
       <scope id="1134727823185909261" at="53,30,55,22" />
       <scope id="1134727823185956943" at="148,29,150,32" />
       <scope id="1134727823185893615" at="40,0,43,0">
@@ -498,6 +501,7 @@
         <var name="language" id="2447771473064614407" />
       </scope>
       <scope id="1134727823185956913" at="138,37,141,0" />
+      <scope id="4423371905550136495" at="182,0,185,0" />
       <scope id="1134727823185909259" at="52,0,57,0" />
       <scope id="1134727823185909270" at="61,36,66,28" />
       <scope id="1134727823185956974" at="162,25,167,5" />
@@ -535,7 +539,7 @@
       <unit id="2601097456319899426" at="95,18,99,5" name="jetbrains.mps.smodel.adapter.SLanguageAdapter$4" />
       <unit id="9029962061611635597" at="109,80,113,5" name="jetbrains.mps.smodel.adapter.SLanguageAdapter$5" />
       <unit id="9029962061611635607" at="113,18,117,5" name="jetbrains.mps.smodel.adapter.SLanguageAdapter$6" />
-      <unit id="2601097456319851251" at="34,0,182,0" name="jetbrains.mps.smodel.adapter.SLanguageAdapter" />
+      <unit id="2601097456319851251" at="34,0,186,0" name="jetbrains.mps.smodel.adapter.SLanguageAdapter" />
     </file>
   </root>
   <root nodeRef="r:74a06cc2-db96-4e19-8301-ff85828f9c7b(jetbrains.mps.smodel.adapter)/2601097456319899832">
