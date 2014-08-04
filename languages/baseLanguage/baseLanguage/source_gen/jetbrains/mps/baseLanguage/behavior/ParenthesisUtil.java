@@ -174,7 +174,7 @@ public class ParenthesisUtil {
     assert rightAccumulator != null;
 
     SNode parens = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
-    BehaviorReflection.invokeVirtual(Void.class, firstCommonAncestor, "virtual_rebalanceAfterParething_4985347495062678851", new Object[]{rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator});
+    BehaviorReflection.invokeVirtual(Void.class, firstCommonAncestor, "virtual_rebalanceAfterParenthing_4985347495062678851", new Object[]{rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator});
     SLinkOperations.setTarget(parens, "expression", firstCommonAncestor, true);
     return parens;
   }

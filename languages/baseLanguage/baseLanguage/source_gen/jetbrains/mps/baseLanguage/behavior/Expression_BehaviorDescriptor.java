@@ -64,8 +64,8 @@ public abstract class Expression_BehaviorDescriptor extends BaseConcept_Behavior
     return Expression_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
   }
 
-  public void virtual_rebalanceAfterParething_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
-    Expression_Behavior.virtual_rebalanceAfterParething_4985347495062678851(thisNode, rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
+  public void virtual_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
+    Expression_Behavior.virtual_rebalanceAfterParenthing_4985347495062678851(thisNode, rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
   }
 
   public void virtual_setLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {

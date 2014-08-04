@@ -94,7 +94,7 @@ public class Expression_Behavior {
     }).toListSequence();
   }
 
-  public static void virtual_rebalanceAfterParething_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
+  public static void virtual_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
     throw new UnsupportedOperationException("This expression cannot be a root of tree rebalancing after setting parentheses: " + jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(thisNode));
   }
 
@@ -219,12 +219,12 @@ public class Expression_Behavior {
   }
 
   @Deprecated
-  public static void call_rebalanceAfterParething_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_rebalanceAfterParething_4985347495062678851", new Object[]{rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator});
+  public static void call_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_rebalanceAfterParenthing_4985347495062678851", new Object[]{rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator});
   }
 
   @Deprecated
-  public static void callSuper_rebalanceAfterParething_4985347495062678851(SNode thisNode, String callerConceptFqName, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_rebalanceAfterParething_4985347495062678851", new Class[]{SNode.class, SNode.class, SNode.class, SNode.class, SNode.class, SNode.class}, new Object[]{rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator});
+  public static void callSuper_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, String callerConceptFqName, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
+    BehaviorManager.getInstance().invokeSuper(Void.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_rebalanceAfterParenthing_4985347495062678851", new Class[]{SNode.class, SNode.class, SNode.class, SNode.class, SNode.class, SNode.class}, new Object[]{rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator});
   }
 }

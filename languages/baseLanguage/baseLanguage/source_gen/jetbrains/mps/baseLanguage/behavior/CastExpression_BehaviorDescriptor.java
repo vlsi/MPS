@@ -13,8 +13,8 @@ public class CastExpression_BehaviorDescriptor extends Expression_BehaviorDescri
     return CastExpression_Behavior.virtual_canPropagateUnmatchedParenUp_2572626204612659829(thisNode, leaf, rightParen);
   }
 
-  public void virtual_rebalanceAfterParething_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
-    CastExpression_Behavior.virtual_rebalanceAfterParething_4985347495062678851(thisNode, rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
+  public void virtual_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
+    CastExpression_Behavior.virtual_rebalanceAfterParenthing_4985347495062678851(thisNode, rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
   }
 
   @Override

@@ -35,7 +35,7 @@ public class BinaryOperation_Behavior {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "leftExpression", true), SLinkOperations.getTarget(thisNode, "rightExpression", true));
   }
 
-  public static void virtual_rebalanceAfterParething_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
+  public static void virtual_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
     if (leftTurn == rightTurn) {
       SNodeOperations.replaceWithAnother(thisNode, parens);
       SLinkOperations.setTarget(thisNode, "leftExpression", leftAccumulator, true);

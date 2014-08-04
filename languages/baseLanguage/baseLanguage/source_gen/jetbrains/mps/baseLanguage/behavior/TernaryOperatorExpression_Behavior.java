@@ -31,7 +31,7 @@ public class TernaryOperatorExpression_Behavior {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "condition", true), SLinkOperations.getTarget(thisNode, "ifTrue", true), SLinkOperations.getTarget(thisNode, "ifFalse", true));
   }
 
-  public static void virtual_rebalanceAfterParething_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
+  public static void virtual_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
     SNode bottomMostTernary = TernaryOperatorExpression_Behavior.call_findBottomMostTernary_4985347495062938743(thisNode, thisNode);
     if (rightTurn != null) {
       SNodeOperations.replaceWithAnother(thisNode, SLinkOperations.getTarget(bottomMostTernary, "ifFalse", true));

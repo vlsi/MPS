@@ -22,7 +22,7 @@ public class CastExpression_Behavior {
     return CastExpression_Behavior.call_isTheRightMostExpression_2572626204612789689(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), leaf);
   }
 
-  public static void virtual_rebalanceAfterParething_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
+  public static void virtual_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
     if (rightTurn != null) {
       SNodeOperations.replaceWithAnother(thisNode, rightTurn);
       BehaviorReflection.invokeVirtual(Void.class, rightTurn, "virtual_setLeftSideExpression_7583777362102629706", new Object[]{parens});
