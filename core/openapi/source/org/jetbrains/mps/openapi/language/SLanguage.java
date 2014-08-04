@@ -48,4 +48,5 @@ public interface SLanguage {
    * It may be null.
    */
   SModule getSourceModule();
+
 }
