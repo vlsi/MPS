@@ -64,14 +64,14 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
   @Override
   public HintsState getState() {
     HintsState state = new HintsState();
-    state.addEnabledHints(myState.getEnabledHints());
+    state.setEnabledHints(myState.getEnabledHints());
     return state;
   }
 
   @Override
   public void loadState(HintsState state) {
     myState = new HintsState();
-    myState.addEnabledHints(state.getEnabledHints());
+    myState.setEnabledHints(state.getEnabledHints());
   }
 
   @Override
@@ -95,8 +95,8 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
       return myEnabledHints;
     }
 
-    public void addEnabledHints(Set<String> enabledHints) {
-      myEnabledHints.addAll(enabledHints);
+    public void setEnabledHints(Set<String> enabledHints) {
+      myEnabledHints = new HashSet<String>(enabledHints);
     }
   }
 }

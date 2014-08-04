@@ -116,7 +116,7 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable {
     }
     myPage.commit();
     HintsState newState = new HintsState();
-    newState.addEnabledHints(mySettings.getEnabledHints());
+    newState.setEnabledHints(mySettings.getEnabledHints());
     ConceptEditorHintSettingsComponent.getInstance(myProject).loadState(newState);
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
