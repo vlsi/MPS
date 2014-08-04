@@ -42,7 +42,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod").interface_().parents("jetbrains.mps.baseLanguage.unitTest.structure.ITestable").create();
       case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.ITestable").interface_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.ITestable").interface_().properties("canNotRunInProcess").create();
       case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.Message").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"message"}, new boolean[]{false}).alias("message", "").create();
       case 16:

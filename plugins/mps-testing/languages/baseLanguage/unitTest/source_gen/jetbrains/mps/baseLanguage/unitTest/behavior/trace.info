@@ -234,18 +234,24 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)/1215620458415">
     <file name="ITestable_Behavior.java">
-      <node id="3310779261129403094" at="10,88,11,17" concept="6" />
-      <node id="1215620458415" at="8,0,10,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1215620458415" at="10,0,13,0" concept="7" trace="virtual_isMpsStartRequired_3310779261129403089#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1215620458417" at="8,43,8,43" />
-      <scope id="3310779261129403092" at="10,88,11,17" />
-      <scope id="1215620458415" at="8,0,10,0">
+      <node id="3310779261129403094" at="11,88,12,17" concept="6" />
+      <node id="6436735966448788408" at="14,82,15,77" concept="6" />
+      <node id="1215620458415" at="9,0,11,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1215620458415" at="11,0,14,0" concept="7" trace="virtual_isMpsStartRequired_3310779261129403089#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1215620458415" at="14,0,17,0" concept="7" trace="call_canRunInProcess_6436735966448788391#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="1215620458417" at="9,43,9,43" />
+      <scope id="3310779261129403092" at="11,88,12,17" />
+      <scope id="6436735966448788394" at="14,82,15,77" />
+      <scope id="1215620458415" at="9,0,11,0">
         <var name="thisNode" id="1215620458415" />
       </scope>
-      <scope id="1215620458415" at="10,0,13,0">
+      <scope id="1215620458415" at="11,0,14,0">
         <var name="thisNode" id="1215620458415" />
       </scope>
-      <unit id="1215620458415" at="7,0,14,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior" />
+      <scope id="1215620458415" at="14,0,17,0">
+        <var name="thisNode" id="1215620458415" />
+      </scope>
+      <unit id="1215620458415" at="8,0,18,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)/1216130717292">

@@ -32,14 +32,18 @@ public class LightExecutionFilter implements Filter<ITestNodeWrapper> {
       public void run() {
         ListSequence.fromList(seq).addSequence(Sequence.fromIterable(ts).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
-            SNode root = SNodeOperations.getContainingRoot(it.getNode());
-            if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.test.structure.EditorTestCase")) && !(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.test.structure.NodesTestCase"))) {
+            SNode testNode = it.getNode();
+            SNode rootNode = SNodeOperations.getContainingRoot(testNode);
+            if (!(SNodeOperations.isInstanceOf(testNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"))) {
               return false;
             }
-            if (BehaviorReflection.invokeNonVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), "call_reOpenProject_1031873601093419509", new Object[]{SNodeOperations.getModel(root)})) {
+            if (!(SNodeOperations.isInstanceOf(rootNode, "jetbrains.mps.lang.test.structure.EditorTestCase")) && !(SNodeOperations.isInstanceOf(rootNode, "jetbrains.mps.lang.test.structure.NodesTestCase"))) {
               return false;
             }
-            return true;
+            if (BehaviorReflection.invokeNonVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), "call_reOpenProject_1031873601093419509", new Object[]{SNodeOperations.getModel(rootNode)})) {
+              return false;
+            }
+            return BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(testNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), "jetbrains.mps.baseLanguage.unitTest.structure.ITestable", "call_canRunInProcess_6436735966448788391", new Object[]{});
           }
         }));
       }
