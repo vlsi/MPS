@@ -33,6 +33,9 @@
     <component>
       <implementation-class>jetbrains.mps.ide.migration.storage.StorageAssistant</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.migration.component.util.MigrationComponent</implementation-class>
+    </component>
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
