@@ -15,6 +15,7 @@
       </models>
       <external-templates />
       <dependencies>
+        <dependency reexport="false" scope="design">5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)</dependency>
         <dependency reexport="false">7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</dependency>
         <dependency reexport="true">a5b1c28d-abeb-49a6-a58c-559039616d64(jetbrains.mps.migration.component)</dependency>
       </dependencies>
@@ -26,7 +27,22 @@
       <usedDevKits>
         <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
       </usedDevKits>
-      <mapping-priorities />
+      <mapping-priorities>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <generator generatorUID="1500dd24-6c0b-4efb-bf73-cc8384a27d84(jetbrains.mps.migration#3735414794051522719)" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
     </generator>
   </generators>
   <sourcePath />
