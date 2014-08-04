@@ -12435,36 +12435,30 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/5916754392152578755">
     <file name="TodoFinder.java">
-      <node id="5916754392152578770" at="23,73,24,258" concept="12" />
-      <node id="5916754392152578783" at="24,258,25,62" concept="12" />
-      <node id="5916754392152578792" at="26,30,27,64" concept="12" />
-      <node id="5916754392152578800" at="28,25,29,17" concept="5" />
-      <node id="5916754392152578806" at="31,51,32,84" concept="6" />
-      <node id="5916754392152578826" at="34,5,35,19" concept="13" />
-      <node id="5916754392152578757" at="19,0,21,0" concept="4" trace="TodoFinder#()V" />
-      <node id="5916754392152578798" at="27,64,30,7" concept="10" />
-      <node id="5916754392152578804" at="30,7,33,7" concept="10" />
-      <node id="5916754392152578790" at="25,62,34,5" concept="9" />
-      <node id="5916754392152578762" at="22,0,37,0" concept="11" trace="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-      <scope id="5916754392152578760" at="19,23,19,23" />
-      <scope id="5916754392152578799" at="28,25,29,17" />
-      <scope id="5916754392152578805" at="31,51,32,84" />
-      <scope id="5916754392152578757" at="19,0,21,0" />
-      <scope id="5916754392152578791" at="26,30,33,7">
-        <var name="text" id="5916754392152578793" />
-      </scope>
-      <scope id="5916754392152578790" at="25,62,34,5">
+      <node id="5916754392152578770" at="24,73,25,258" concept="12" />
+      <node id="5916754392152578783" at="25,258,26,62" concept="12" />
+      <node id="5916754392152578806" at="28,195,29,84" concept="6" />
+      <node id="5916754392152578826" at="31,5,32,19" concept="13" />
+      <node id="5916754392152578757" at="20,0,22,0" concept="4" trace="TodoFinder#()V" />
+      <node id="5916754392152578804" at="27,30,30,7" concept="10" />
+      <node id="5916754392152578790" at="26,62,31,5" concept="9" />
+      <node id="5916754392152578762" at="23,0,34,0" concept="11" trace="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+      <scope id="5916754392152578760" at="20,23,20,23" />
+      <scope id="5916754392152578805" at="28,195,29,84" />
+      <scope id="5916754392152578757" at="20,0,22,0" />
+      <scope id="5916754392152578791" at="27,30,30,7" />
+      <scope id="5916754392152578790" at="26,62,31,5">
         <var name="node" id="5916754392152578824" />
       </scope>
-      <scope id="5916754392152578769" at="23,73,35,19">
+      <scope id="5916754392152578769" at="24,73,32,19">
         <var name="nodes" id="5916754392152578771" />
         <var name="results" id="5916754392152578784" />
       </scope>
-      <scope id="5916754392152578762" at="22,0,37,0">
+      <scope id="5916754392152578762" at="23,0,34,0">
         <var name="monitor" id="5916754392152578767" />
         <var name="query" id="5916754392152578765" />
       </scope>
-      <unit id="5916754392152578755" at="18,0,38,0" name="jetbrains.mps.ide.actions.TodoFinder" />
+      <unit id="5916754392152578755" at="19,0,35,0" name="jetbrains.mps.ide.actions.TodoFinder" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/592892991208959069">
