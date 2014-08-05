@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,19 +15,10 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.util.annotation.ToRemove;
-
 /**
- * This interface was replaced with IntentionFactory in MPS 3.0
- * Should be removed after MPS 3.0
+ * Superclass for all IntentionFactory subclasses to facilitate future API changes.
+ * FIXME update generated code to use this class
+ * @author Artem Tikhomirov
  */
-@Deprecated
-@ToRemove(version = 3.2)
-public interface Intention extends IntentionExecutable, IntentionDescriptor {
-  /**
-   * Was deprecated in MPS 3.0
-   * This method should be removed after MPS 3.0
-   */
-  @Deprecated
-  boolean isParameterized();
+public abstract class BaseIntentionFactory implements IntentionFactory {
 }

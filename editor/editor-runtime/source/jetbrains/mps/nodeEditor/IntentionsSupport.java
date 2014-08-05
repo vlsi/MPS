@@ -403,7 +403,6 @@ public class IntentionsSupport {
     final EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
       final QueryDescriptor query = new QueryDescriptor();
-      query.setIntentionClass(BaseIntention.class);
       query.setEnabledOnly(true);
       final Collection<Pair<IntentionExecutable, SNode>> availableIntentions =
           TypeContextManager.getInstance().runTypeCheckingComputation(myEditor.getTypecheckingContextOwner(), myEditor.getEditedNode(),
