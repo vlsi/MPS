@@ -126,13 +126,13 @@
       <node id="8267733531687412050" at="23,32,24,23" concept="10" />
       <node id="8267733531687412057" at="27,31,28,78" concept="9" />
       <node id="8267733531687412069" at="29,25,30,18" concept="10" />
-      <node id="8267733531687412071" at="31,5,32,87" concept="9" />
+      <node id="8267733531687412071" at="31,5,32,90" concept="9" />
       <node id="8267733531687412083" at="33,30,34,18" concept="10" />
       <node id="8267733531687412085" at="35,5,36,34" concept="10" />
       <node id="8267733531687412040" at="19,0,22,0" concept="8" trace="getModuleRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
       <node id="8267733531687412046" at="23,0,26,0" concept="8" trace="getClassName#()Ljava/lang/String;" />
       <node id="8267733531687412064" at="28,78,31,5" concept="7" />
-      <node id="8267733531687412078" at="32,87,35,5" concept="7" />
+      <node id="8267733531687412078" at="32,90,35,5" concept="7" />
       <node id="8267733531687412024" at="14,0,18,0" concept="2" trace="ModuleClassReference#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Ljava/lang/String;)V" />
       <node id="8267733531687412052" at="27,0,38,0" concept="8" trace="loadClass#()Ljava/lang/Class;" />
       <scope id="8267733531687412043" at="19,42,20,23" />

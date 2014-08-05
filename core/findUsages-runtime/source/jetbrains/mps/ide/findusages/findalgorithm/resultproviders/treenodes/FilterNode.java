@@ -106,7 +106,7 @@ public class FilterNode extends BaseNode {
     try {
       Class filterClass = null;
       for (Language l : project.getProjectModules(Language.class)) {
-        filterClass = ClassLoaderManager.getInstance().getClass(l, filterName);
+        filterClass = ClassLoaderManager.getInstance().getOwnClass(l, filterName);
         if (filterClass != null) break;
       }
       if (filterClass == null) {

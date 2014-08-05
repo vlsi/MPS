@@ -66,7 +66,7 @@
       <node id="2434140849679604645" at="187,60,188,50" concept="7" />
       <node id="2434140849679604662" at="189,9,190,100" concept="7" />
       <node id="2434140849679604722" at="191,29,192,56" concept="3" />
-      <node id="2434140849679604675" at="193,14,194,85" concept="7" />
+      <node id="2434140849679604675" at="193,14,194,88" concept="7" />
       <node id="2434140849679604687" at="195,28,196,24" concept="7" />
       <node id="2434140849679604698" at="197,15,198,56" concept="3" />
       <node id="2434140849679604693" at="199,45,200,30" concept="8" />
@@ -187,7 +187,7 @@
       <node id="2434140849679604497" at="144,0,154,0" concept="10" trace="getIconForConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/Icon;" />
       <node id="2194967571179864532" at="214,0,225,0" concept="10" trace="getIconForModelReference#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Ljavax/swing/Icon;" />
       <node id="2434140849679604965" at="307,0,318,0" concept="10" trace="loadIcon#(Ljava/lang/String;Z)Ljavax/swing/Icon;" />
-      <node id="2434140849679604682" at="194,85,206,9" concept="5" />
+      <node id="2434140849679604682" at="194,88,206,9" concept="5" />
       <node id="2434140849679604747" at="230,59,242,5" concept="5" />
       <node id="2434140849679604531" at="155,0,168,0" concept="10" trace="getIconForConcept#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljavax/swing/Icon;" />
       <node id="2434140849679604673" at="193,12,207,7" concept="0" />
