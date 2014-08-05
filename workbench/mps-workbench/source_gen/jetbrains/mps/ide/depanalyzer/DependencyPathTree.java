@@ -29,15 +29,11 @@ import jetbrains.mps.smodel.IOperationContext;
 
 public class DependencyPathTree extends MPSTree implements DataProvider {
   private List<DepLink> myAllDependencies = ListSequence.fromList(new ArrayList<DepLink>());
-  private Project myProject;
+  private final Project myProject;
 
   public DependencyPathTree(Project project) {
     myProject = project;
     getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
-  }
-
-  public Project getProject() {
-    return myProject;
   }
 
   public void resetDependencies() {
@@ -63,7 +59,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
       DependencyPathTree.LinkFrom e = MapSequence.fromMap(visited).get(key);
       if (e == null || e.parent != parent) {
         // we didn't yet see that dep link anywhere, or have seen it under another branch 
-        DependencyPathTree.LinkFrom f = new DependencyPathTree.LinkFrom(n, parent);
+        DependencyPathTree.LinkFrom f = new DependencyPathTree.LinkFrom(n, parent, myProject);
         MapSequence.fromMap(visited).put(key, f);
         parent = f;
       } else {
@@ -103,15 +99,15 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   @Nullable
   @Override
   public Object getData(@NonNls String id) {
-    DependencyTreeNode current = as_9bg0dz_a0a0a9(getCurrentNode(), DependencyTreeNode.class);
+    DependencyTreeNode current = as_9bg0dz_a0a0a8(getCurrentNode(), DependencyTreeNode.class);
     if (id.equals(MPSCommonDataKeys.TREE_NODE.getName())) {
       return current;
     }
     if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
-      return check_9bg0dz_a0a2a9(current);
+      return check_9bg0dz_a0a2a8(current);
     }
     if (id.equals(MPSCommonDataKeys.MODULE.getName())) {
-      return check_9bg0dz_a0a3a9(current);
+      return check_9bg0dz_a0a3a8(current);
     }
     return null;
   }
@@ -125,31 +121,31 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     /*package*/ DependencyPathTree.LinkFrom parent;
     /*package*/ DependencyTreeNode node;
 
-    public LinkFrom(DepLink link, DependencyPathTree.LinkFrom from) {
+    public LinkFrom(DepLink link, DependencyPathTree.LinkFrom from, Project project) {
       this.link = link;
       this.parent = from;
-      node = new DependencyTreeNode(link);
+      node = new DependencyTreeNode(project, link);
       if (from != null) {
         from.node.add(node);
       }
     }
   }
 
-  private static IOperationContext check_9bg0dz_a0a2a9(DependencyTreeNode checkedDotOperand) {
+  private static IOperationContext check_9bg0dz_a0a2a8(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOperationContext();
     }
     return null;
   }
 
-  private static SModule check_9bg0dz_a0a3a9(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_9bg0dz_a0a3a8(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static <T> T as_9bg0dz_a0a0a9(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a8(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -50,4 +50,21 @@ public class DepPath {
   public String toString() {
     return String.valueOf(myPath);
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof DepPath)) {
+      return false;
+    }
+    DepPath p = (DepPath) o;
+    List l1 = myPath;
+    List l2 = p.myPath;
+    return l1.equals(l2);
+  }
+
+  @Override
+  public int hashCode() {
+    List l = myPath;
+    return l.hashCode();
+  }
 }

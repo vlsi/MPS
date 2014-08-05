@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.ui.tree.TreeMessage;
 import java.awt.Color;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -36,7 +35,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     myProject = project;
   }
 
-  public Project getProject() {
+  /*package*/ Project getProject() {
     return myProject;
   }
 
@@ -70,27 +69,12 @@ public class DependencyTree extends MPSTree implements DataProvider {
       return new TextTreeNode("No Content");
     }
     DepLink deps = new DependencyUtil().trackRuntime(isShowRuntime()).build(myModule);
-    print(deps, "");
     TextTreeNode root = new TextTreeNode(myModule.getModuleName());
     root.setIcon(IconManager.getIconFor(myModule));
     populate(root, deps.allDependencies());
     return root;
 
   }
-
-  private static void print(DepLink d, String step) {
-    System.out.print(step);
-    System.out.print(d);
-    if (d.getReused() != null) {
-      System.out.print(" --> (reused) " + d.getReused());
-    }
-    System.out.println();
-    for (DepLink ch : ListSequence.fromList(d.children())) {
-      print(ch, step + "  ");
-    }
-  }
-
-
 
   private void populate(MPSTreeNode root, Iterable<DepLink> allDependencies) {
     final TreeMessage HAS_CYCLE = new TreeMessage(Color.RED, "module with dependency cycle", null);
@@ -180,34 +164,34 @@ public class DependencyTree extends MPSTree implements DataProvider {
   @Nullable
   @Override
   public Object getData(@NonNls String id) {
-    ModuleDependencyNode current = as_he3vmc_a0a0a71(getCurrentNode(), ModuleDependencyNode.class);
+    ModuleDependencyNode current = as_he3vmc_a0a0a51(getCurrentNode(), ModuleDependencyNode.class);
     if (id.equals(MPSCommonDataKeys.TREE_NODE.getName())) {
       return current;
     }
     if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
-      return check_he3vmc_a0a2a71(current);
+      return check_he3vmc_a0a2a51(current);
     }
     if (id.equals(MPSCommonDataKeys.MODULE.getName())) {
-      return check_he3vmc_a0a3a71(current);
+      return check_he3vmc_a0a3a51(current);
     }
     return null;
   }
 
-  private static IOperationContext check_he3vmc_a0a2a71(ModuleDependencyNode checkedDotOperand) {
+  private static IOperationContext check_he3vmc_a0a2a51(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOperationContext();
     }
     return null;
   }
 
-  private static SModule check_he3vmc_a0a3a71(ModuleDependencyNode checkedDotOperand) {
+  private static SModule check_he3vmc_a0a3a51(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static <T> T as_he3vmc_a0a0a71(Object o, Class<T> type) {
+  private static <T> T as_he3vmc_a0a0a51(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

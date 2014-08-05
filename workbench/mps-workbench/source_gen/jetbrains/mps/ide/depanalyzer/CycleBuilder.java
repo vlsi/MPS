@@ -29,17 +29,14 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
     List<DepPath> cycles = ListSequence.fromList(new ArrayList<DepPath>());
     myCurrent = new DepPath();
     myCurrent.push(depLink);
-    nextPathLevel();
+    nextPathLevel(depLink);
     return myCycles;
   }
 
-  private void nextPathLevel() {
-    DepLink l = myCurrent.peek();
+  private void nextPathLevel(DepLink l) {
     if (ListSequence.fromList(l.children()).isEmpty() && l.getReused() != null) {
       // reused is identical to the referencing node, don't check key equality to avoid false cycles 
-      myCurrent.push(l.getReused());
-      nextPathLevel();
-      myCurrent.pop();
+      nextPathLevel(l.getReused());
       return;
     }
     for (DepLink ch : ListSequence.fromList(l.children()).where(new IWhereFilter<DepLink>() {
@@ -48,7 +45,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
       }
     })) {
       if (myCurrent.seen(ch)) {
-        if (eq_tn82ka_a0a0a0c0g(ch.getRoleModuleKey(), myTarget.getRoleModuleKey())) {
+        if (eq_tn82ka_a0a0a0b0g(ch.getRoleModuleKey(), myTarget.getRoleModuleKey())) {
           // cycle found 
           myCurrent.push(ch);
           ListSequence.fromList(myCycles).addElement(new DepPath(myCurrent));
@@ -57,12 +54,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
         continue;
       }
       myCurrent.push(ch);
-      nextPathLevel();
+      nextPathLevel(ch);
       myCurrent.pop();
     }
   }
 
-  private static boolean eq_tn82ka_a0a0a0c0g(Object a, Object b) {
+  private static boolean eq_tn82ka_a0a0a0b0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

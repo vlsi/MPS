@@ -56,13 +56,14 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
   @Override
   protected void doInit() {
-    for (DepPath c : Sequence.fromIterable(myCycles)) {
+    DependencyTree tree = (DependencyTree) getTree();
+    for (DepPath c : Sequence.fromIterable(myCycles).distinct()) {
       Iterator<DepLink> itr = Sequence.fromIterable(c.elements()).iterator();
       // skip first path element, which is always the one from my getCapturedDependencies() 
       itr.next();
       MPSTreeNode parent = this;
       while (itr.hasNext()) {
-        DependencyTreeNode dtn = new DependencyTreeNode(itr.next());
+        DependencyTreeNode dtn = new DependencyTreeNode(tree.getProject(), itr.next());
         parent.add(dtn);
         parent = dtn;
       }
