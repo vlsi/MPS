@@ -16,6 +16,9 @@
 package jetbrains.mps.nodeEditor.hintsSettings;
 
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.EditorHintsProvider;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -35,6 +38,19 @@ public class ConceptEditorHintSettings {
   public ConceptEditorHintSettings() {
   }
 
+  public ConceptEditorHintSettings(Iterable<LanguageRuntime> availableLanguages) {
+    for (LanguageRuntime language : availableLanguages) {
+      EditorAspectDescriptor editorDescriptor = language.getAspect(EditorAspectDescriptor.class);
+      if (editorDescriptor instanceof EditorHintsProvider) {
+        String lang = language.getNamespace();
+        for (ConceptEditorHint hint : ((EditorHintsProvider) editorDescriptor).getHints()) {
+          if (hint.showInUI()) {
+            put(lang, hint, false);
+          }
+        }
+      }
+    }
+  }
 
   @NotNull
   public Set<String> getEnabledHints() {
@@ -88,14 +104,6 @@ public class ConceptEditorHintSettings {
     mySettings.clear();
   }
 
-  public boolean containsLang(String langName) {
-    return mySettings.containsKey(langName);
-  }
-
-  public int sizeForLang(String langName) {
-    return mySettings.get(langName).size();
-  }
-
   public int size() {
     return mySettings.size();
   }
@@ -110,10 +118,6 @@ public class ConceptEditorHintSettings {
       }
       return result;
     }
-  }
-
-  public synchronized void removeLang(String lang) {
-    mySettings.remove(lang);
   }
 
   public Boolean get(String lang, ConceptEditorHint hint) {

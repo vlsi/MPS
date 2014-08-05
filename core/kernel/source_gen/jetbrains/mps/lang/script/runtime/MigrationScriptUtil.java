@@ -73,7 +73,7 @@ public class MigrationScriptUtil {
       LOG.error("Module can't load classes: " + languageNamespace);
       return null;
     }
-    aClass = ClassLoaderManager.getInstance().getClass(mod, fqClassName);
+    aClass = ClassLoaderManager.getInstance().getOwnClass(mod, fqClassName);
     if (aClass == null) {
       return null;
     }

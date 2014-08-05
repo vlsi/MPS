@@ -117,7 +117,7 @@ public class FindUtils {
       for (SModel model : models) {
         SModule module = model.getModule();
         if (ClassLoaderManager.getInstance().canLoad(module)) {
-          c = ClassLoaderManager.getInstance().getClass(module, className);
+          c = ClassLoaderManager.getInstance().getOwnClass(module, className);
           if (c != null) break;
         }
       }

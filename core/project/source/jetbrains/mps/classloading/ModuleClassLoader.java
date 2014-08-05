@@ -16,14 +16,14 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.library.LibraryInitializer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.iterable.IterableEnumeration;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
@@ -66,6 +66,13 @@ public class ModuleClassLoader extends ClassLoader {
     mySupport = classLoaderSupport;
   }
 
+  public Class<?> loadOwnClass(String name) throws ClassNotFoundException {
+    if (mySupport.canFindClass(name)) {
+      return loadClass(name);
+    }
+    throw new ClassNotFoundException(name);
+  }
+
   @Override
   protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
 //    checkNotDisposed();
@@ -100,6 +107,9 @@ public class ModuleClassLoader extends ClassLoader {
       } finally {
         if (clazz != null) {
           myClasses.put(name, clazz);
+        } else {
+          LOG.warn("Unable to load class: " + name + " using ModuleClassLoader of " + mySupport.getModule().getModuleName() +
+              " module. It is recommended to use loadOwnClass() in such cases.", new Throwable());
         }
         myLoadedClasses.add(name);
       }
