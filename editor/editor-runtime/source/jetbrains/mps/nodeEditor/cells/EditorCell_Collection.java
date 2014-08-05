@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Flow;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent_Old;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Superscript;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
@@ -693,7 +692,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     if (isNeedsRelayout()) {
       return;
     }
-    if (oldX != newX && (myCellLayout instanceof CellLayout_Indent || myCellLayout instanceof CellLayout_Indent_Old)) {
+    if (oldX != newX && (myCellLayout instanceof CellLayout_Indent)) {
       markNeedsRelayout();
     }
   }

@@ -68,6 +68,14 @@ public class EditorManager {
   private Stack<SNode> myAttributesStack = new Stack<SNode>();
 
   @Nullable
+  public static EditorManager getInstanceFromContext(EditorContext editorContext) {
+    // TODO: Create API interface for EditorManager & move this method to EditorContext
+    // TODO: get rid of all usages of getInstanceFromContext(Project project) / getInstanceFromContext(IOperationContext context) methods
+    IOperationContext operationContext = editorContext.getOperationContext();
+    return operationContext.getComponent(EditorManager.class);
+  }
+
+  @Nullable
   public static EditorManager getInstanceFromContext(Project project) {
     if (project == null) return null;
     com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);

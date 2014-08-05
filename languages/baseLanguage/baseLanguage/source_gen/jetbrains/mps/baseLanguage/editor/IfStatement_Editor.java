@@ -63,6 +63,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
+    Delete_If.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IfStatement_Editor.ReplaceWith_WhileStatement_cellMenu_eb7h0d_a0a0(), new IfStatement_Editor.ReplaceWith_DoWhileStatement_cellMenu_eb7h0d_b0a0(), new IfStatement_Editor.ReplaceWith_ForStatement_cellMenu_eb7h0d_c0a0(), new IfStatement_Editor.ReplaceWith_ForeachStatement_cellMenu_eb7h0d_d0a0()}));
     return editorCell;

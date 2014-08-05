@@ -2737,6 +2737,34 @@
       <unit id="6351584993764365770" at="18,0,41,0" name="jetbrains.mps.refactoringTest.InlineAssingmentInClosure_Test" />
     </file>
   </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/668606183334155391">
+    <file name="InlineFromAnotherBehavior_Test.java">
+      <node id="668606183334155391" at="21,64,22,112" concept="1" />
+      <node id="668606183334155391" at="22,112,23,129" concept="1" />
+      <node id="668606183334155425" at="28,66,29,45" concept="1" />
+      <node id="668606183334155425" at="29,45,30,45" concept="1" />
+      <node id="668606183334155428" at="30,45,31,188" concept="5" />
+      <node id="668606183334155434" at="31,188,32,23" concept="1" />
+      <node id="668606183334155438" at="33,7,34,207" concept="5" />
+      <node id="668606183334155438" at="34,207,35,206" concept="5" />
+      <node id="668606183334155438" at="35,206,36,146" concept="1" />
+      <node id="668606183334155391" at="20,0,25,0" concept="4" trace="test_InlineInBehaviorWithThis#()V" />
+      <node id="668606183334155438" at="32,23,37,7" concept="0" />
+      <node id="668606183334155425" at="28,0,39,0" concept="4" trace="test_InlineInBehaviorWithThis#()V" />
+      <scope id="668606183334155391" at="21,64,23,129" />
+      <scope id="668606183334155438" at="33,7,36,146">
+        <var name="nodesAfter" id="668606183334155438" />
+        <var name="nodesBefore" id="668606183334155438" />
+      </scope>
+      <scope id="668606183334155391" at="20,0,25,0" />
+      <scope id="668606183334155425" at="28,66,37,7">
+        <var name="ref" id="668606183334155429" />
+      </scope>
+      <scope id="668606183334155425" at="28,0,39,0" />
+      <unit id="668606183334155391" at="26,0,40,0" name="jetbrains.mps.refactoringTest.InlineFromAnotherBehavior_Test$TestBody" />
+      <unit id="668606183334155391" at="18,0,41,0" name="jetbrains.mps.refactoringTest.InlineFromAnotherBehavior_Test" />
+    </file>
+  </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6791439617122300870">
     <file name="ConvertAnonymousInterfaceTest_Test.java">
       <node id="6791439617122300870" at="21,53,22,112" concept="1" />

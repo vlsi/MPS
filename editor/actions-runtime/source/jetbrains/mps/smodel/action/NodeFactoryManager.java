@@ -37,7 +37,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NodeFactoryManager extends NodeFactoryManager_deprecated {
+public class NodeFactoryManager {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(NodeFactoryManager.class));
 
   public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
@@ -104,14 +104,6 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   }
 
   public static void setupNode(SNode nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model) {
-    boolean done = setupNode_internal(nodeConcept, node, sampleNode, enclosingNode, model);
-    if (!done) {
-      // TODO: remove adapter here
-      setupNode_deprecated(nodeConcept, node, sampleNode);
-    }
-  }
-
-  private static boolean setupNode_internal(SNode nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     List<SNode> nodeFactories = new ArrayList<SNode>();
     for (String ancestor : ConceptRegistry.getInstance().getConceptDescriptor(NameUtil.nodeFQName(nodeConcept)).getAncestorsNames()) {
       SNode acd = SModelUtil.findConceptDeclaration(ancestor);
@@ -120,12 +112,11 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
       nodeFactories.addAll(NodeFactoryUtil.getApplicableNodeFactories(acd, language));
     }
 
-    if (nodeFactories.isEmpty()) return false;
+    if (nodeFactories.isEmpty()) return;
 
     // setup node
     for (SNode factory : nodeFactories) {
-      NodeFactoryUtil.invokeNodeSetupFunction(factory, newNode, sampleNode, enclosingNode, model);
+      NodeFactoryUtil.invokeNodeSetupFunction(factory, node, sampleNode, enclosingNode, model);
     }
-    return true;
   }
 }

@@ -52,7 +52,7 @@ import java.util.List;
  */
 public class GenerationPartitioningUtil {
   public static Collection<TemplateModule> getTemplateModules(SModel inputModel) {
-    return new EngagedGeneratorCollector(inputModel, null).getAccessibleGenerators();
+    return new EngagedGeneratorCollector(inputModel, null).getGenerators();
   }
 
   public static List<Pair<String, TemplateMappingConfiguration>> toStrings(List<TemplateMappingConfiguration> mappings) {

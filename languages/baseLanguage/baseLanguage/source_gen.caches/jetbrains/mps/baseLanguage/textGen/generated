@@ -11,6 +11,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-e9d5nh0v10iyyec2hlwv9sastebu16m" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8i4kafnhzm6u2y3283i1oew7gy4ynjm" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-96pmamskw71lhns4kqtz6rhvyplg3sd" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="eggblwsr0208cbp174vd3je0pubxy4w" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
@@ -30,6 +31,155 @@
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5g3rtdo35mi5yfu1kii2pegdk4kei4n" />
   <common hash="77m1ki4j70xr068jvjc6cl4af9qtoak" dependsOnNodes="true">
+    <dep root="1214046978376812376" />
+    <dep root="1234796104060" />
+    <dep root="1234803609335" />
+    <dep root="1234886608901" />
+    <dep root="1234886915639" />
+    <dep root="1234887379769" />
+    <dep root="1234887419578" />
+    <dep root="1234887488963" />
+    <dep root="1234887555845" />
+    <dep root="1234888787417" />
+    <dep root="1234888829413" />
+    <dep root="1234888870976" />
+    <dep root="1234888916067" />
+    <dep root="1234889016866" />
+    <dep root="1234889037948" />
+    <dep root="1234890240213" />
+    <dep root="1234890261494" />
+    <dep root="1234890392776" />
+    <dep root="1234890432474" />
+    <dep root="1234890471522" />
+    <dep root="1234890501829" />
+    <dep root="1234890557996" />
+    <dep root="1234890802087" />
+    <dep root="1234890826228" />
+    <dep root="1234890841265" />
+    <dep root="1234890924622" />
+    <dep root="1234890940910" />
+    <dep root="1234890997638" />
+    <dep root="1234891066969" />
+    <dep root="1234891149163" />
+    <dep root="1234891178357" />
+    <dep root="1234891338660" />
+    <dep root="1234892337624" />
+    <dep root="1234892420461" />
+    <dep root="1234892447096" />
+    <dep root="1234892549516" />
+    <dep root="1234892777974" />
+    <dep root="1234892820096" />
+    <dep root="1235067626785" />
+    <dep root="1235067670076" />
+    <dep root="1235067710648" />
+    <dep root="1235067749472" />
+    <dep root="1235068025775" />
+    <dep root="1235068084774" />
+    <dep root="1235068110028" />
+    <dep root="1235068603610" />
+    <dep root="1235068647697" />
+    <dep root="1235068672666" />
+    <dep root="1235068684876" />
+    <dep root="1235130112612" />
+    <dep root="1235130149678" />
+    <dep root="1235130247219" />
+    <dep root="1235130339063" />
+    <dep root="1235130354959" />
+    <dep root="1235130431827" />
+    <dep root="1235130467132" />
+    <dep root="1235130500647" />
+    <dep root="1235130548876" />
+    <dep root="1235130597164" />
+    <dep root="1235130615183" />
+    <dep root="1235130646085" />
+    <dep root="1235130699507" />
+    <dep root="1235130778882" />
+    <dep root="1235130814902" />
+    <dep root="1235130845453" />
+    <dep root="1235130883519" />
+    <dep root="1235130950225" />
+    <dep root="1235130986968" />
+    <dep root="1235131071246" />
+    <dep root="1235131109350" />
+    <dep root="1235131150614" />
+    <dep root="1235131198738" />
+    <dep root="1235131598665" />
+    <dep root="1235131688885" />
+    <dep root="1235131758155" />
+    <dep root="1235131802112" />
+    <dep root="1235132901797" />
+    <dep root="1235133002982" />
+    <dep root="1235133040740" />
+    <dep root="1235133147898" />
+    <dep root="1235133163324" />
+    <dep root="1235133645843" />
+    <dep root="1235133778848" />
+    <dep root="1235133911716" />
+    <dep root="1235134015467" />
+    <dep root="1235134113124" />
+    <dep root="1235134154741" />
+    <dep root="1235134292973" />
+    <dep root="1235148827560" />
+    <dep root="1235149154430" />
+    <dep root="1235149177249" />
+    <dep root="1235149213342" />
+    <dep root="1235149266702" />
+    <dep root="1235149361338" />
+    <dep root="1235149549592" />
+    <dep root="1235149638269" />
+    <dep root="1235149653150" />
+    <dep root="1235149803040" />
+    <dep root="1235567804739" />
+    <dep root="1235567952587" />
+    <dep root="1235570534877" />
+    <dep root="1235570593532" />
+    <dep root="1235588368122" />
+    <dep root="1235590065729" />
+    <dep root="1235739414982" />
+    <dep root="1235739850731" />
+    <dep root="1235740038236" />
+    <dep root="1235740077306" />
+    <dep root="1235740133835" />
+    <dep root="1235740153717" />
+    <dep root="1235740434208" />
+    <dep root="1235740524220" />
+    <dep root="1235740896598" />
+    <dep root="1235741062707" />
+    <dep root="1235741237980" />
+    <dep root="1235741309022" />
+    <dep root="1235741389634" />
+    <dep root="1235741412435" />
+    <dep root="1235741566211" />
+    <dep root="1235743565312" />
+    <dep root="1236013739107" />
+    <dep root="1237807733680" />
+    <dep root="1239710466732" />
+    <dep root="1239710558961" />
+    <dep root="1251851371723517310" />
+    <dep root="1465982738260537463" />
+    <dep root="1465982738277807934" />
+    <dep root="1830039279190474291" />
+    <dep root="2580416627845806804" />
+    <dep root="2820489544401960245" />
+    <dep root="320030840061144158" />
+    <dep root="3408882292339889057" />
+    <dep root="3409542372145539379" />
+    <dep root="4269842503727610175" />
+    <dep root="4564374268190746435" />
+    <dep root="4571635105384638795" />
+    <dep root="5205855332950472840" />
+    <dep root="5245668348356342300" />
+    <dep root="6136230684045923685" />
+    <dep root="6227066020986630956" />
+    <dep root="6329021646629175165" />
+    <dep root="7024111702304495342" />
+    <dep root="764900287025024925" />
+    <dep root="7671513720556341061" />
+    <dep root="7812454656619184158" />
+    <dep root="8064396509828214712" />
+    <dep root="8803274112754353727" />
+    <dep root="8803274112754355374" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="1234796104060" name="BaseLanguageTextGen" hash="2nkshh99vickjzql9hoy8ugkyufwydw">
@@ -57,6 +207,7 @@
   <source id="1234803609335" name="AndExpression_TextGen" hash="-a5qzz9qi4ovdwdrbsln020knnzs4v9f">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" />
@@ -80,7 +231,6 @@
     <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" />
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Annotation_TextGen.java" />
   </source>
   <source id="1234886915639" name="AnnotationInstance_TextGen" hash="-emibg8mqwcfjz48isshx3fyi3c5psvy">
@@ -95,6 +245,7 @@
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AnnotationInstance_TextGen.java" />
   </source>
@@ -143,7 +294,6 @@
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />
     <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" />
     <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" />
-    <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AnonymousClass_TextGen.java" />
   </source>

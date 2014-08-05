@@ -14,13 +14,16 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -70,10 +73,22 @@ public class BuildAllEditors_Action extends BaseAction {
       final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          Iterable<SModel> allModels = SModelRepository.getInstance().getModelDescriptors();
-          models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
+          Iterable<SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules();
+          models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).where(new IWhereFilter<SModule>() {
+            public boolean accept(SModule it) {
+              return it instanceof Language;
+            }
+          }).select(new ISelector<SModule, SModel>() {
+            public SModel select(SModule it) {
+              return LanguageAspect.EDITOR.get((Language) it);
+            }
+          }).where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
-              return SNodeOperations.isGeneratable(it) && LanguageAspect.EDITOR.is(it);
+              return it != null;
+            }
+          }).where(new IWhereFilter<SModel>() {
+            public boolean accept(SModel it) {
+              return SNodeOperations.isGeneratable(it);
             }
           }));
         }

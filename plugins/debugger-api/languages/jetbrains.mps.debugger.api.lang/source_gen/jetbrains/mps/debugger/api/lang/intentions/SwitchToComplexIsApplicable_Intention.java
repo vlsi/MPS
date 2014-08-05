@@ -77,9 +77,13 @@ public class SwitchToComplexIsApplicable_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "isComplex", "" + (!(SPropertyOperations.getBoolean(node, "isComplex"))));
-      if (SPropertyOperations.getBoolean(node, "isComplex") && (SLinkOperations.getTarget(node, "isApplicable", true) == null)) {
-        SLinkOperations.setNewChild(node, "isApplicable", "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableToConcept");
-        SLinkOperations.setNewChild(SLinkOperations.getTarget(node, "isApplicable", true), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+      if (SPropertyOperations.getBoolean(node, "isComplex")) {
+        if ((SLinkOperations.getTarget(node, "isApplicable", true) == null)) {
+          SLinkOperations.setNewChild(node, "isApplicableBreakpoint", "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableBreakpoint");
+          SLinkOperations.setNewChild(SLinkOperations.getTarget(node, "isApplicableBreakpoint", true), "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+        }
+      } else {
+        SLinkOperations.setTarget(node, "isApplicableBreakpoint", null, true);
       }
     }
 

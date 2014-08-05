@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.references.UnregisteredNodes;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -169,7 +170,7 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor {
 
   @SuppressWarnings("unchecked")
   @Override
-//  @Nullable
+  @NotNull
   public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(String repositoryKey) {
     assertLegalRead();
 //    if (canWrite()) {

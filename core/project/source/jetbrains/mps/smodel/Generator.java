@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,18 +155,15 @@ public class Generator extends AbstractModule {
     final SRepository repo = getRepository();
     Set<SDependency> dependencies = new HashSet<SDependency>();
     dependencies.addAll(IterableUtil.asCollection(super.getDeclaredDependencies()));
+    //generator sees its source language
+    dependencies.add(new SDependencyImpl(getSourceLanguage(), SDependencyScope.DEFAULT, false));
+    // and runtimes thereof  (XXX also why not through getDeclaredDependencies() with Scope==RUNTIME instead?
     for (SModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
       SModule rt = repo == null ? ModuleRepositoryFacade.getInstance().getModule(ref) : ref.resolve(repo);
       if (rt != null) {
         dependencies.add(new SDependencyImpl(rt, SDependencyScope.RUNTIME, false));
       }
     }
-
-    //generator sees all modules from source language as non-reexported
-    for (Language language : getSourceLanguage().getAllExtendedLanguages()) {
-      dependencies.add(new SDependencyImpl(language, SDependencyScope.DEFAULT, false));
-    }
-
     //generator sees all dependent generators as non-reexport
     for (SModuleReference refGenerator : getReferencedGeneratorUIDs()) {
       // XXX not sure it's right to resolve modules through global repository if this module is not attached anywhere

@@ -16,9 +16,9 @@
 package jetbrains.mps.openapi.editor;
 
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.NotNull;
 
 public interface Editor {
 
@@ -38,7 +38,15 @@ public interface Editor {
 
   //---state
 
+  /**
+   * should be removed after MPS 3.1
+   *
+   * @deprecated since MPS 3.1 use saveState() instead
+   */
+  @Deprecated
   EditorState saveState(boolean full);
+
+  EditorState saveState();
 
   void loadState(@NotNull EditorState state);
 }

@@ -7,8 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class IfStatement_elseDelete_action {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -28,7 +26,7 @@ public class IfStatement_elseDelete_action {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
+      DeleteIfUtil.unwrapElse(node);
     }
   }
 
@@ -44,7 +42,7 @@ public class IfStatement_elseDelete_action {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
+      DeleteIfUtil.unwrapElse(node);
     }
   }
 }

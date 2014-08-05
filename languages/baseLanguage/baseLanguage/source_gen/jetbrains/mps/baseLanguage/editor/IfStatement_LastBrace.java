@@ -30,7 +30,11 @@ public class IfStatement_LastBrace {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
-        SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).last());
+        SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());
+      } else if ((SLinkOperations.getTarget(node, "ifFalseStatement", true) != null)) {
+        DeleteIfUtil.unwrapElse(node);
+      } else if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true)).isNotEmpty()) {
+        DeleteIfUtil.unwrapIf(node);
       } else {
         SNodeOperations.deleteNode(node);
       }
@@ -50,7 +54,11 @@ public class IfStatement_LastBrace {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
-        SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).last());
+        SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());
+      } else if ((SLinkOperations.getTarget(node, "ifFalseStatement", true) != null)) {
+        DeleteIfUtil.unwrapElse(node);
+      } else if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true)).isNotEmpty()) {
+        DeleteIfUtil.unwrapIf(node);
       } else {
         SNodeOperations.deleteNode(node);
       }
