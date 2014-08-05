@@ -24,8 +24,8 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class DependencyPathTree extends MPSTree implements DataProvider {
   private List<DepLink> myAllDependencies = ListSequence.fromList(new ArrayList<DepLink>());
@@ -109,10 +109,6 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     if (id.equals(MPSCommonDataKeys.MODULE.getName())) {
       return check_9bg0dz_a0a3a8(current);
     }
-    return null;
-  }
-
-  public DependencyTreeNode testBuildTree(SModule source, SModule target, SModule lang, boolean showRuntime) {
     return null;
   }
 
