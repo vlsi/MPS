@@ -56,7 +56,6 @@
     <file name="ProjectPropertiesComponent.java" />
   </source>
   <source id="3201642974933586123" name="ProjectPropertiesPrefsPage" hash="-8mf0pywe9oqtbyry8qw839h38xog6m1">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="ProjectPropertiesPrefsPage.java" />
   </source>
   <source id="3201642974933587319" name="ProjectPropertiesDialog" hash="-epakxwydpl5r9f1wzyuwvleecscg66g">
