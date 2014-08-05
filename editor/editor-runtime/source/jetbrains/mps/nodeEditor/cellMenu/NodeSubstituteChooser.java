@@ -240,12 +240,23 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     final String pattern = getPatternEditor().getPattern();
 
     List<SubstituteAction> matchingActions = getMatchingActions(pattern, false);
-    if (matchingActions.isEmpty()) {
-      matchingActions = getMatchingActions(IntelligentInputUtil.trimLeft(pattern), false);
+    boolean needToTrim = true;
+    if (!matchingActions.isEmpty()) {
+      for (SubstituteAction action : matchingActions) {
+        if (action.canSubstitute(pattern)) {
+          needToTrim = false;
+          break;
+        }
+      }
+    }
+    String patternToFind = pattern;
+    if (needToTrim) {
+      patternToFind = IntelligentInputUtil.trimLeft(pattern);
+      matchingActions = getMatchingActions(patternToFind, false);
     }
 
     try {
-      Collections.sort(matchingActions, SubstituteActionUtil.createComparator(pattern));
+      Collections.sort(matchingActions, SubstituteActionUtil.createComparator(patternToFind));
 
       if (myIsSmart /*&& false*/) {
         sortSmartActions(matchingActions);

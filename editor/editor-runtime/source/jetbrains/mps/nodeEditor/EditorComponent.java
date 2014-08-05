@@ -2723,7 +2723,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     // 1st - try to do substitution with current pattern (if cursor at the end of text)
     if (originalTextChanged || atTheEndOfLine) {
       List<SubstituteAction> matchingActions = getMatchingActions(editorCell, substituteInfo, isSmart, pattern);
-      if (matchingActions.size() == 1 && pattern.length() > 0) {
+      if (matchingActions.size() == 1 && pattern.length() > 0 && matchingActions.get(0).canSubstitute(pattern)) {
         // Just one applicable action in the completion menu
         SubstituteAction theAction = matchingActions.get(0);
         // Invoking this action immediately if originalText was changed or

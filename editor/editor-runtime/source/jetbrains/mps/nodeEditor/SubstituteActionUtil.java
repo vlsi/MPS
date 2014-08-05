@@ -169,6 +169,9 @@ public class SubstituteActionUtil {
     }
     List<Integer> indexes = getIndexes(action, pattern, visibleMatchingText);
     if (indexes.isEmpty()) {
+      indexes = getIndexes(action, IntelligentInputUtil.trimLeft(pattern), visibleMatchingText);
+    }
+    if (indexes.isEmpty()) {
       return visibleMatchingText;
     }
     StringBuilder builder = new StringBuilder("<html>");
