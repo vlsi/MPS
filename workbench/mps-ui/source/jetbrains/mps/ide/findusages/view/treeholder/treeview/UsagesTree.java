@@ -158,15 +158,11 @@ public class UsagesTree extends MPSTree {
         }
       }
     });
+  }
 
-    addMouseListener(new MouseAdapter() {
-      @Override
-      public void mouseClicked(MouseEvent e) {
-        if (e.getClickCount() == 2 && e.getButton() == MouseEvent.BUTTON1) {
-          openCurrentNodeLink(false, true);
-        }
-      }
-    });
+  @Override
+  public int getToggleClickCount() {
+    return -1;
   }
 
   @Override
@@ -690,18 +686,24 @@ public class UsagesTree extends MPSTree {
     return myAutoscroll;
   }
 
-  public static class UsagesTreeNode extends MPSTreeNode {
+  public class UsagesTreeNode extends MPSTreeNode {
     private int mySubresultsCount = 0;
 
     public UsagesTreeNode(IOperationContext ctx) {
       super(ctx);
       setNodeIdentifier("");
     }
+
     public UsagesTreeNode(DataNode userObj, IOperationContext ctx) {
       super(userObj, ctx);
       if (userObj != null) {
         setNodeIdentifier(userObj.getData().getPlainText());
       }
+    }
+
+    @Override
+    public void doubleClick() {
+      openCurrentNodeLink(false, true);
     }
 
     public int getSubresultsCount() {
