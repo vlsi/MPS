@@ -25,7 +25,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AddMissingImports_Action());
     addAction(new AddModuleToProject_Action());
     addAction(new AddToNewFavoritesList_Action());
-    addAction(new AnalyzeClasspath_Action());
     addAction(new AnalyzeModuleDependencies_Action());
     addAction(new AnalyzeStacktrace_Action());
     addAction(new CalcClassifiersInRootsStatistic_Action());
@@ -195,6 +194,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertInterfaceGroupIntoAnother("RunContextGroup", NodeActions_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_runConfig);
     insertInterfaceGroupIntoAnother("RunContextGroup", "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.workbench.actions.AnalyzeJavaActions_ActionGroup", AnalyzeModule_ActionGroup.ID, AnalyzeModule_ActionGroup.LABEL_ID_analyze);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.workbench.actions.AnalyzeJavaActions_ActionGroup", DevkitActions_ActionGroup.ID, DevkitActions_ActionGroup.LABEL_ID_analyze);
     insertInterfaceGroupIntoAnother("jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_refactoring);
   }
 

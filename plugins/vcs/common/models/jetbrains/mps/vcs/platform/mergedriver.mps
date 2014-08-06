@@ -7277,6 +7277,9 @@
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4416609728987298270" nodeInfo="nn">
           <property name="value" nameId="tpee.1070475926801" value="asm4-all.jar" />
         </node>
+        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5716359503159660216" nodeInfo="nn">
+          <property name="value" nameId="tpee.1070475926801" value="asm-all.jar" />
+        </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7211226859971706322" nodeInfo="nn">
           <property name="value" nameId="tpee.1070475926801" value="xstream-1.4.3.jar" />
         </node>
