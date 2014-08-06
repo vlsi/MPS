@@ -3026,10 +3026,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       getEditorContext().pushTracerTask("Hanlding events", true);
     }
     try {
-      if (EventUtil.isDetachedOnlyChange(events)) {
-        return;
-      }
-
       SNode lastSelectedNode = getSelectedNode();
 
       if (!EventUtil.isDramaticalChange(events)) {
