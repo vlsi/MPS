@@ -63,12 +63,15 @@ public class TestLightExecutor extends AbstractTestExecutor {
   }
 
   private void waitWhileNotReady() {
-    new WaitFor() {
+    new WaitFor(5 * 1000) {
       @Override
       protected boolean condition() {
         return myTestRunState.get() == TestLightRunStateEnum.READYTOEXECUTE;
       }
     };
+    if (myTestRunState.get() != TestLightRunStateEnum.READYTOEXECUTE) {
+      throw new IllegalStateException("Process is not ready");
+    }
   }
 
   public void terminateRun() {

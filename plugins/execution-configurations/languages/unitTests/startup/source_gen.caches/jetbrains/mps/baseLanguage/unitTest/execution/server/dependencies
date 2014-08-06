@@ -89,6 +89,7 @@
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor" file="TestExecutor.java" />
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor" file="TestLightExecutor.java">
     <classNode dependClassName="com.intellij.util.WaitFor" />
+    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
