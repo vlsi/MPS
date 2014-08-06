@@ -6,7 +6,6 @@ import org.jetbrains.annotations.Nullable;
 import org.junit.runner.Request;
 import org.junit.runner.JUnitCore;
 import org.apache.log4j.Level;
-import jetbrains.mps.RuntimeFlags;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.Runner;
@@ -35,7 +34,6 @@ public abstract class AbstractTestExecutor implements TestExecutor {
         LOG.error("Exception in the test framework", t);
       }
     } finally {
-      assert !(RuntimeFlags.isTestMode());
       this.dispose();
     }
   }

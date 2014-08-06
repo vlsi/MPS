@@ -201,7 +201,6 @@
   </root>
   <root type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="4484885613884465103" nodeInfo="ng">
     <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
-    <property name="uiTest" nameId="tp5g.4484885613884808424" value="true" />
     <property name="reOpenProject" nameId="tp5g.1031873601093404121" value="true" />
   </root>
 </model>

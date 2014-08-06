@@ -80,11 +80,13 @@ public class JUnitLightExecutor implements Executor {
 
   private class EmptyProcessHandler extends ProcessHandler {
     protected void destroyProcessImpl() {
+      notifyProcessTerminated(137);
     }
     protected void detachProcessImpl() {
+      notifyProcessTerminated(137);
     }
     public boolean detachIsDefault() {
-      return true;
+      return false;
     }
     @Nullable
     public OutputStream getProcessInput() {
@@ -100,6 +102,7 @@ public class JUnitLightExecutor implements Executor {
       String terminateMessage = "Only one test instance is allowed to run in process.\n" + "To run in the outer process change the corresponding property in the junit run configuration.\n" + "Process finished with exit code " + -1 + ".\n";
       myDispatcher.onSimpleTextAvailable(terminateMessage, ProcessOutputTypes.STDERR);
       myDispatcher.onProcessTerminated(terminateMessage);
+      destroyProcessImpl();
     }
   }
   protected static Logger LOG = LogManager.getLogger(JUnitLightExecutor.class);

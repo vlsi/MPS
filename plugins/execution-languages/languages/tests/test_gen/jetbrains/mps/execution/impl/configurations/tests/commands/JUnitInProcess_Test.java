@@ -13,10 +13,11 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.FailedBTestCase_Test;
 import java.util.List;
-import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit_Command;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
+import jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor;
+import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor;
+import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
@@ -33,16 +34,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 
 @MPSLaunch
-public class JUnitCommand_Test extends BaseTransformationTest {
+public class JUnitInProcess_Test extends BaseTransformationTest {
   @Test
   public void test_startSimpleBTestCase() throws Throwable {
     this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startSimpleBTestCase", false);
+    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitInProcess_Test$TestBody", "test_startSimpleBTestCase", false);
   }
   @Test
   public void test_startFailedBTestCase() throws Throwable {
     this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startFailedBTestCase", false);
+    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitInProcess_Test$TestBody", "test_startFailedBTestCase", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
@@ -54,21 +55,23 @@ public class JUnitCommand_Test extends BaseTransformationTest {
     }
     public void checkTests(List<ITestNodeWrapper> success, List<ITestNodeWrapper> failure) {
       try {
-        List<ITestNodeWrapper> allTests = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();
-        ProcessHandler process = new JUnit_Command().createProcess(allTests);
-        TestRunState runState = new TestRunState(allTests);
+        List<ITestNodeWrapper> testNodes = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();
+        TestRunState runState = new TestRunState(testNodes);
+        TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
+
+        Executor processExecutor;
+        processExecutor = new JUnitLightExecutor(testNodes, eventsDispatcher);
+        ProcessHandler process = processExecutor.execute();
         CheckTestStateListener checkListener = new CheckTestStateListener(success, failure);
         runState.addListener(checkListener);
-        TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
         OutputRedirector.redirect(process, new UnitTestProcessListener(eventsDispatcher));
-        // 5 minutes 
-        int exitcode = ProcessHandlerBuilder.startAndWait(process, 5 * 60 * 1000);
+        int exitcode = ProcessHandlerBuilder.startAndWait(process, 300 * 100);
         if (exitcode > 0) {
           Assert.fail("Exit code is not 0 but " + exitcode);
         } else if (exitcode < 0) {
           Assert.fail("Process running too long.");
         }
-        if (isNotEmptyString(checkListener.getMessages())) {
+        if (!(checkListener.getMessages().equals(""))) {
           Assert.fail(checkListener.getMessages());
         }
       } catch (ExecutionException e) {
@@ -83,7 +86,7 @@ public class JUnitCommand_Test extends BaseTransformationTest {
           for (final String name : names) {
             SNode mainNode = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.core.structure.INamedConcept")).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return eq_16es9m_a0a0a0a0a0a0a1a0a0a0a1a3c(SPropertyOperations.getString(it, "name"), name);
+                return eq_a45m2_a0a0a0a0a0a0a1a0a0a0a1a3c(SPropertyOperations.getString(it, "name"), name);
               }
             });
             ListSequence.fromList(result).addElement(TestNodeWrapperFactory.tryToWrap(mainNode));
@@ -92,10 +95,7 @@ public class JUnitCommand_Test extends BaseTransformationTest {
       });
       return result;
     }
-    private static boolean isNotEmptyString(String str) {
-      return str != null && str.length() > 0;
-    }
-    private static boolean eq_16es9m_a0a0a0a0a0a0a1a0a0a0a1a3c(Object a, Object b) {
+    private static boolean eq_a45m2_a0a0a0a0a0a0a1a0a0a0a1a3c(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

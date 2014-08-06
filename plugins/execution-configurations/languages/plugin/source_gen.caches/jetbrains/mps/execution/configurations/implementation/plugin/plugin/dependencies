@@ -290,7 +290,7 @@
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="com.intellij.execution.process.OSProcessHandler" />
+    <classNode extendsClassName="com.intellij.execution.process.BaseOSProcessHandler" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitExecutor" file="JUnitExecutor.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
