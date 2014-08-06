@@ -55,13 +55,11 @@ class FontRegistry {
       return;
     }
     GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
-    if (SystemInfo.isMac) {
-      Font[] allFonts = graphicsEnvironment.getAllFonts();
-      for (Font font : allFonts) {
-        String name = font.getName();
-        if (name.endsWith("-Italic") || name.endsWith("-Bold") || name.endsWith("-BoldItalic")) {
-          myStyledFonts.add(font.getName());
-        }
+    Font[] allFonts = graphicsEnvironment.getAllFonts();
+    for (Font font : allFonts) {
+      String name = font.getName();
+      if (name.endsWith("-Italic") || name.endsWith("-Bold") || name.endsWith("-BoldItalic")) {
+        myStyledFonts.add(font.getName());
       }
     }
   }
