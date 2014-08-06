@@ -161,11 +161,6 @@ public class UsagesTree extends MPSTree {
   }
 
   @Override
-  public int getToggleClickCount() {
-    return -1;
-  }
-
-  @Override
   public boolean isDisposed() {
     return super.isDisposed() || myProject.isDisposed();
   }
@@ -702,8 +697,19 @@ public class UsagesTree extends MPSTree {
     }
 
     @Override
+    public int getToggleClickCount() {
+      return isResult() ? -1 : 2;
+    }
+
+    private boolean isResult() {
+      return getUserObject().getData().isResultNode();
+    }
+
+    @Override
     public void doubleClick() {
-      openCurrentNodeLink(false, true);
+      if (isResult()) {
+        openCurrentNodeLink(false, true);
+      }
     }
 
     public int getSubresultsCount() {
