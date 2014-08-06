@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.rules;
 
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
 
@@ -24,8 +25,7 @@ public class LanguageScopeExecutor {
 
   public static <T> T execWithModelScope(SModel sModel, Computable<T> computable) {
     LanguageScope languageScope = sModel == null ? LanguageScope.getGlobal() :
-      LanguageScopeFactory.getInstance().getLanguageScope(
-        ((jetbrains.mps.smodel.SModelInternal) sModel).getModelDepsManager().getAllImportedLanguages());
+      LanguageScopeFactory.getInstance().getLanguageScope(SModelOperations.getAllImportedLanguages(sModel));
     try{
       LanguageScope.pushCurrent(languageScope, computable);
       return computable.compute();

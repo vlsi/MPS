@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
@@ -112,7 +113,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   public List<SubstituteAction> getSmartMatchingActions(final String pattern, final boolean strictMatching, EditorCell contextCell) {
     // TODO make this thread local maybe?
     ourModelForTypechecking = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
-    for (SModuleReference l : ((SModelBase) getEditorContext().getModel()).getSModel().getModelDepsManager().getAllImportedLanguages()) {
+    for (SModuleReference l : SModelOperations.getAllImportedLanguages(getEditorContext().getModel())) {
       ((SModelBase) ourModelForTypechecking).getSModel().addLanguage(l);
     }
 

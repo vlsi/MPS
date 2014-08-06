@@ -86,10 +86,7 @@ public class SModelOperations {
     final ModelDependencyScanner modelScanner = new ModelDependencyScanner();
     modelScanner.crossModelReferences(true).usedLanguages(true).walk(model);
     for (SLanguage language : modelScanner.getUsedLanguages()) {
-      // XXX SLanguage.getModule shall be there (we need SModule regardless of whether module is in the project/workspace or is bundled
-      // as it's MPS way to declare dependencies), shall use it instead of ModuleRepositoryFacade. Couldn't use getSourceModule as it
-      // implies 'source' of the language.
-      Language lang = ModuleRepositoryFacade.getInstance().getModule(language.getQualifiedName(), Language.class);
+      Language lang = findModule(language);
       if (lang == null) {
         LOG.error("Can't find language " + language.getQualifiedName());
         continue;
@@ -123,34 +120,30 @@ public class SModelOperations {
     return getAllImportedLanguages(model).contains(ref);
   }
 
-  //todo rewrite using iterators
+  /**
+   * All languages visible for the model, including imported and languages they extend
+   * @param model
+   * @return
+   */
   @NotNull
   public static List<Language> getLanguages(SModel model) {
     Set<Language> languages = new LinkedHashSet<Language>();
 
-    for (SModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) model).importedLanguages()) {
+    for (SModuleReference lang : getAllImportedLanguages(model)) {
       Language language = (Language) lang.resolve(MPSModuleRepository.getInstance());
-
-      if (language != null) {
-        languages.add(language);
-        languages.addAll(LanguageDependenciesManager.getAllExtendedLanguages(language));
+      if (language == null) {
+        continue;
       }
+      languages.add(language);
+      languages.addAll(LanguageDependenciesManager.getAllExtendedLanguages(language));
     }
-
-    for (SModuleReference dk : ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits()) {
-      DevKit devKit = (DevKit) dk.resolve(MPSModuleRepository.getInstance());
-      if (devKit != null) {
-        for (Language l : devKit.getAllExportedLanguages()) {
-          if (languages.add(l)) {
-            languages.addAll(LanguageDependenciesManager.getAllExtendedLanguages(l));
-          }
-        }
-      }
-    }
-
     return new ArrayList<Language>(languages);
   }
 
+  /**
+   * All languages imported to the model, either as explicit import or through devkits.
+   * Note, languages extended by these imported languages (although visible) are not reported.
+   */
   @NotNull
   public static Set<SModuleReference> getAllImportedLanguages(SModel model) {
     return new HashSet<SModuleReference>(((SModelInternal) model).getModelDepsManager().getAllImportedLanguages());
@@ -159,8 +152,10 @@ public class SModelOperations {
   // FIXME there's only 1 use of the method, does it justify its extraction here?
   public static Set<SModuleReference> getUsedLanguages(@NotNull SModel model) {
     Set<SModuleReference> result = new HashSet<SModuleReference>();
-    for (SNode node : SNodeUtil.getDescendants(model)) {
-      Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
+    final ModelDependencyScanner ms = new ModelDependencyScanner().usedLanguages(true).crossModelReferences(false);
+    ms.walk(model);
+    for (SLanguage l : ms.getUsedLanguages()) {
+      Language lang = findModule(l);
       if (lang == null) continue;
       result.add(lang.getModuleReference());
     }
@@ -241,6 +236,14 @@ public class SModelOperations {
       }
     }
     return modelsList;
+  }
+
+  @Nullable
+  private static Language findModule(SLanguage language) {
+    // XXX SLanguage.getModule shall be there (we need SModule regardless of whether module is in the project/workspace or is bundled
+    // as it's MPS way to declare dependencies), shall use it instead of ModuleRepositoryFacade. Couldn't use getSourceModule as it
+    // implies 'source' of the language.
+    return ModuleRepositoryFacade.getInstance().getModule(language.getQualifiedName(), Language.class);
   }
 
   //-----------------------------------------------------

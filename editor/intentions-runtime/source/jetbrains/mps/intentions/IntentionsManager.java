@@ -24,7 +24,6 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.intentions.IntentionsVisitor.CollectAvailableIntentionsVisitor;
 import jetbrains.mps.intentions.IntentionsVisitor.GetHighestAvailableIntentionTypeVisitor;
@@ -40,6 +39,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -335,10 +335,9 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   //-------------visiting registered intentions---------------
 
   private boolean visitIntentions(SNode node, IntentionsVisitor visitor, Filter filter, boolean isAncestor, EditorContext editorContext) {
-    if (!SNodeUtil.isAccessible(node,MPSModuleRepository.getInstance())) return true;
-    Collection<SModuleReference> languages = ((SModelBase) node.getModel()).getModelDepsManager().getAllImportedLanguages();
+    if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return true;
     Set<String> langNames = new HashSet<String>();
-    for (SModuleReference l : languages) {
+    for (Language l : SModelOperations.getLanguages(node.getModel())) {
       langNames.add(l.getModuleName());
     }
 

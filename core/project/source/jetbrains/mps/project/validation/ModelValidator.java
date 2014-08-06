@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,10 @@ import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
@@ -70,7 +69,7 @@ public class ModelValidator {
     }
 
     List<SModuleReference> langsToCheck = new ArrayList<SModuleReference>();
-    langsToCheck.addAll(IterableUtil.asCollection(((jetbrains.mps.smodel.SModelInternal) myModel).getModelDepsManager().getAllImportedLanguages()));
+    langsToCheck.addAll(SModelOperations.getAllImportedLanguages(myModel));
     langsToCheck.addAll(((jetbrains.mps.smodel.SModelInternal) myModel).engagedOnGenerationLanguages());
     for (SModuleReference lang : langsToCheck) {
       if (repository.getModule(lang.getModuleId()) == null) {
