@@ -1955,17 +1955,6 @@
   <root type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="5583449408398401138" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="JUnitInProcess" />
     <property name="needsNoWriteAction" nameId="tp5g.6339244025081158986" value="true" />
-    <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="7219123000460888029" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="aaaa" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7219123000460888030" nodeInfo="in" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7219123000460888034" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.AssertStatement" typeId="tpee.1160998861373" id="7219123000460909178" nodeInfo="nn">
-          <node role="condition" roleId="tpee.1160998896846" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7219123000460909194" nodeInfo="nn">
-            <property name="value" nameId="tpee.1068580123138" value="false" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="methods" roleId="tp5g.1216993439383" type="tp4f.DefaultClassifierMethodDeclaration" typeId="tp4f.1205769003971" id="5583449408398401139" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="checkTests" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5583449408398401140" nodeInfo="in" />
@@ -2482,7 +2471,7 @@
       </node>
     </node>
     <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="5583449408398401323" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="startFailedBTestCase" />
+      <property name="name" nameId="tpck.1169194664001" value="startFailedTestCase" />
       <property name="canNotRunInProcess" nameId="tpe3.6436735966448189373" value="true" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5583449408398401324" nodeInfo="in" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5583449408398401325" nodeInfo="sn">
@@ -2505,13 +2494,8 @@
                   <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5583449408398401336" nodeInfo="nn">
                     <node role="creator" roleId="tpee.1145553007750" type="tp2q.SingletonSequenceCreator" typeId="tp2q.1235573135402" id="5583449408398401337" nodeInfo="nn">
                       <node role="elementType" roleId="tp2q.1235573175711" type="tpee.StringType" typeId="tpee.1225271177708" id="5583449408398401338" nodeInfo="in" />
-                      <node role="singletonValue" roleId="tp2q.1235573187520" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5583449408398401339" nodeInfo="nn">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="5583449408398401340" nodeInfo="nn">
-                          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="u9u1.7120092006645143730" resolveInfo="FailedBTestCase_Test" />
-                        </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5583449408398401341" nodeInfo="nn">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Class%dgetSimpleName()%cjava%dlang%dString" resolveInfo="getSimpleName" />
-                        </node>
+                      <node role="singletonValue" roleId="tp2q.1235573187520" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6339244025082052540" nodeInfo="nn">
+                        <property name="value" nameId="tpee.1070475926801" value="FailedTestCase_Test" />
                       </node>
                     </node>
                   </node>

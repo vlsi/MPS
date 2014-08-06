@@ -78,7 +78,6 @@
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor" />
     <classNode dependClassName="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener" />
-    <classNode dependClassName="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.FailedBTestCase_Test" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />

@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
-import jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.FailedBTestCase_Test;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
@@ -38,30 +37,22 @@ import org.apache.log4j.LogManager;
 @MPSLaunch
 public class JUnitInProcess_Test extends BaseTransformationTest {
   @Test
-  public void test_aaaa() throws Throwable {
-    this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitInProcess_Test$TestBody", "test_aaaa", false);
-  }
-  @Test
   public void test_startSimpleTestCase() throws Throwable {
     this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
     this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitInProcess_Test$TestBody", "test_startSimpleTestCase", false);
   }
   @Test
-  public void test_startFailedBTestCase() throws Throwable {
+  public void test_startFailedTestCase() throws Throwable {
     this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitInProcess_Test$TestBody", "test_startFailedBTestCase", false);
+    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitInProcess_Test$TestBody", "test_startFailedTestCase", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_aaaa() throws Exception {
-      assert false;
-    }
     public void test_startSimpleTestCase() throws Exception {
       this.checkTests(this.wrapTests(Sequence.<String>singleton("SimpleTestCase_Test")), ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     }
-    public void test_startFailedBTestCase() throws Exception {
-      this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), this.wrapTests(Sequence.<String>singleton(FailedBTestCase_Test.class.getSimpleName())));
+    public void test_startFailedTestCase() throws Exception {
+      this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), this.wrapTests(Sequence.<String>singleton("FailedTestCase_Test")));
     }
     public void checkTests(final List<ITestNodeWrapper> success, final List<ITestNodeWrapper> failure) {
       try {
@@ -104,7 +95,7 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
           for (final String name : names) {
             SNode mainNode = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.core.structure.INamedConcept")).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return eq_a45m2_a0a0a0a0a0a0a1a0a0a0a1a4d(SPropertyOperations.getString(it, "name"), name);
+                return eq_a45m2_a0a0a0a0a0a0a1a0a0a0a1a3c(SPropertyOperations.getString(it, "name"), name);
               }
             });
             assert mainNode != null;
@@ -114,7 +105,7 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
       });
       return result;
     }
-    private static boolean eq_a45m2_a0a0a0a0a0a0a1a0a0a0a1a4d(Object a, Object b) {
+    private static boolean eq_a45m2_a0a0a0a0a0a0a1a0a0a0a1a3c(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }
