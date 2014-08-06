@@ -167,10 +167,8 @@ public class SubstituteActionUtil {
     if (pattern == null || visibleMatchingText == null) {
       return visibleMatchingText;
     }
-    List<Integer> indexes = getIndexes(action, pattern, visibleMatchingText);
-    if (indexes.isEmpty()) {
-      indexes = getIndexes(action, IntelligentInputUtil.trimLeft(pattern), visibleMatchingText);
-    }
+    //whitespaces are not highlighted
+    List<Integer> indexes = getIndexes(action, IntelligentInputUtil.trimLeft(pattern), visibleMatchingText);
     if (indexes.isEmpty()) {
       return visibleMatchingText;
     }

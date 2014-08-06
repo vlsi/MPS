@@ -104,7 +104,10 @@ public class APICellAdapter {
             });
       }
     });
+    return substituteIfPossible(cell, canActivatePopup, pattern, matchingActions);
+  }
 
+  static boolean substituteIfPossible(EditorCell cell, boolean canActivatePopup, final String pattern, List<SubstituteAction> matchingActions) {
     if (matchingActions.size() == 0 && canActivatePopup) {
       return false;
     }
@@ -116,9 +119,19 @@ public class APICellAdapter {
       }
       return true;
     }
-
-    matchingActions.get(0).substitute(cell.getContext(), pattern);
-    return true;
+    final SubstituteAction action = matchingActions.get(0);
+    Boolean canSubstitute = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return action.canSubstitute(pattern);
+      }
+    });
+    if (canSubstitute) {
+      action.substitute(cell.getContext(), pattern);
+      return true;
+    } else {
+      return false;
+    }
   }
 
   public static boolean isFirstPositionInBigCell(EditorCell cell) {
