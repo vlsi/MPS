@@ -13,6 +13,11 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomProjectPlugin" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CompositeStream" file="CompositeStream.java">
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode extendsClassName="java.io.FilterOutputStream" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPluginsSettings_Configuration" file="DeployPluginsSettings_Configuration.java">
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
@@ -280,6 +285,7 @@
     <classNode dependClassName="java.io.PrintStream" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CompositeStream" />
     <classNode extendsClassName="java.lang.Process" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcessHandler" file="FakeProcessHandler.java">

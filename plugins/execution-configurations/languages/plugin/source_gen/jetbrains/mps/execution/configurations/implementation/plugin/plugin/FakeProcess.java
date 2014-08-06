@@ -25,8 +25,11 @@ public class FakeProcess extends Process {
   }
 
   public void init() throws IOException {
-    System.setOut(new PrintStream(new PipedOutputStream(myInputOut), true));
-    System.setErr(new PrintStream(new PipedOutputStream(myInputErr), true));
+    PrintStream newOut = new PrintStream(new PipedOutputStream(myInputOut), true);
+    PrintStream newErr = new PrintStream(new PipedOutputStream(myInputErr), true);
+
+    System.setOut(new PrintStream(new CompositeStream(myOldOut, newOut)));
+    System.setErr(new PrintStream(new CompositeStream(myOldErr, newErr)));
   }
 
   public void destroy() {

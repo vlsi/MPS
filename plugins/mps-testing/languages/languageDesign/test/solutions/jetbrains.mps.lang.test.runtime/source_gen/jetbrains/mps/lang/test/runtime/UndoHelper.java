@@ -49,6 +49,7 @@ public class UndoHelper {
   private void unhackUndoManager() {
     assert oldEditorProvider != null;
     getUndoManager().setEditorProvider(oldEditorProvider);
+    oldEditorProvider = null;
   }
 
   public void runUndoableInEDTAndWait(final Runnable runnable) throws InvocationTargetException, InterruptedException {

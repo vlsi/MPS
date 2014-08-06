@@ -20,9 +20,8 @@ import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnit
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener;
-import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
-import junit.framework.Assert;
 import com.intellij.execution.ExecutionException;
+import junit.framework.Assert;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -65,15 +64,9 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
         CheckTestStateListener checkListener = new CheckTestStateListener(success, failure);
         runState.addListener(checkListener);
         OutputRedirector.redirect(process, new UnitTestProcessListener(eventsDispatcher));
-        int exitcode = ProcessHandlerBuilder.startAndWait(process, 300 * 100);
-        if (exitcode > 0) {
-          Assert.fail("Exit code is not 0 but " + exitcode);
-        } else if (exitcode < 0) {
-          Assert.fail("Process running too long.");
-        }
-        if (!(checkListener.getMessages().equals(""))) {
-          Assert.fail(checkListener.getMessages());
-        }
+        // <node> 
+        // <node> 
+        // <node> 
       } catch (ExecutionException e) {
         Assert.fail(e.getMessage());
       }
