@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.generator.crossmodel.generator.test.ExportLabelFunctions" file="ExportLabelFunctions.java">
+  <dependency className="jetbrains.mps.generator.test.crossmodel.entity.generator.template.main.ExportLabelFunctions" file="ExportLabelFunctions.java">
     <classNode dependClassName="jetbrains.mps.generator.crossmodel.ExportLabelContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.crossmodel.generator.test.QueriesGenerated" file="QueriesGenerated.java">
+  <dependency className="jetbrains.mps.generator.test.crossmodel.entity.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
