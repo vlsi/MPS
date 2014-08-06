@@ -37,9 +37,6 @@ public class LightExecutionFilter implements Filter<ITestNodeWrapper> {
             if (!(SNodeOperations.isInstanceOf(testNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"))) {
               return false;
             }
-            if (!(SNodeOperations.isInstanceOf(rootNode, "jetbrains.mps.lang.test.structure.EditorTestCase")) && !(SNodeOperations.isInstanceOf(rootNode, "jetbrains.mps.lang.test.structure.NodesTestCase"))) {
-              return false;
-            }
             if (BehaviorReflection.invokeNonVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), "call_reOpenProject_1031873601093419509", new Object[]{SNodeOperations.getModel(rootNode)})) {
               return false;
             }

@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NodesTestCase_Behavior {
   public static void init(SNode thisNode) {
@@ -35,5 +36,8 @@ public class NodesTestCase_Behavior {
   }
   public static String call_getTestBodyName_1224602741295(SAbstractConcept thisConcept) {
     return "TestBody";
+  }
+  public static boolean call_needsWriteAction_6339244025081193722(SNode thisNode) {
+    return !(SPropertyOperations.getBoolean(thisNode, "needsNoWriteAction"));
   }
 }

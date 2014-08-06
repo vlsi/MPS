@@ -28,12 +28,13 @@ public class TransformationTestExecutor extends BTestExecutor {
     try {
       executor.init();
       executor.execute();
+      executor.dispose();
     } catch (Throwable t) {
       t.printStackTrace(System.err);
       CachesUtil.cleanupCaches();
-      System.exit(1);
+      System.exit(123);
     }
-    System.exit(0);
+    System.exit(((DefaultRunListener) executor.getListener()).getFailureCount());
   }
 
   private static void exitApp() {

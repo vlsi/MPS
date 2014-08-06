@@ -100,6 +100,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1221573038180(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getTestName_1216136419751", new Object[]{});
   }
+  public static Object propertyMacro_GetPropertyValue_6339244025081889711(final PropertyMacroContext _context) {
+    return NodesTestCase_Behavior.call_needsWriteAction_6339244025081193722(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTestCase_1216134500045", new Object[]{}), "jetbrains.mps.lang.test.structure.NodesTestCase"));
+  }
   public static Object propertyMacro_GetPropertyValue_1224603647998(final PropertyMacroContext _context) {
     return NodesTestCase_Behavior.call_getTestBodyName_1224602741295(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase"))));
   }

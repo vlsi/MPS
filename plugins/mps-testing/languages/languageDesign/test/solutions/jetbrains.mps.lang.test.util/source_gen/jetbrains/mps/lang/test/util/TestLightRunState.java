@@ -49,6 +49,9 @@ public class TestLightRunState implements Comparable<TestLightRunState> {
   public boolean isInitialized() {
     return myValue == TestLightRunStateEnum.INITIALIZED;
   }
+  public boolean isReady() {
+    return myValue == TestLightRunStateEnum.READYTOEXECUTE;
+  }
   public boolean isRunning() {
     return myValue == TestLightRunStateEnum.RUNNING;
   }

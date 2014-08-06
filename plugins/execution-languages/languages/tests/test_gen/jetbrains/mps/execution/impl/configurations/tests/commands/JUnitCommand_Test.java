@@ -37,12 +37,12 @@ public class JUnitCommand_Test extends BaseTransformationTest {
   @Test
   public void test_startSimpleBTestCase() throws Throwable {
     this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startSimpleBTestCase", false);
+    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startSimpleBTestCase", true);
   }
   @Test
   public void test_startFailedBTestCase() throws Throwable {
     this.initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startFailedBTestCase", false);
+    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startFailedBTestCase", true);
   }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
@@ -61,12 +61,11 @@ public class JUnitCommand_Test extends BaseTransformationTest {
         runState.addListener(checkListener);
         TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
         OutputRedirector.redirect(process, new UnitTestProcessListener(eventsDispatcher));
-        // 5 minutes 
-        int exitcode = ProcessHandlerBuilder.startAndWait(process, 5 * 60 * 1000);
-        if (exitcode > 0) {
-          Assert.fail("Exit code is not 0 but " + exitcode);
+        int exitcode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
+        if (exitcode != ListSequence.fromList(failure).count()) {
+          Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", but " + exitcode);
         } else if (exitcode < 0) {
-          Assert.fail("Process running too long.");
+          Assert.fail("Process is running for too long");
         }
         if (isNotEmptyString(checkListener.getMessages())) {
           Assert.fail(checkListener.getMessages());

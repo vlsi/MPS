@@ -7,8 +7,6 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.Request;
 import java.io.IOException;
-import org.junit.runner.Description;
-import org.junit.runner.notification.Failure;
 
 public class BTestExecutor extends AbstractTestExecutor {
   private final String[] myArgs;
@@ -34,7 +32,7 @@ public class BTestExecutor extends AbstractTestExecutor {
   @NotNull
   @Override
   protected RunListener createListener(Iterable<Request> iterable) {
-    return new BTestExecutor.BTestRunListener(myOutStream);
+    return new DefaultRunListener(myOutStream);
   }
 
   @NotNull
@@ -55,54 +53,8 @@ public class BTestExecutor extends AbstractTestExecutor {
       executor.dispose();
     } catch (Throwable t) {
       t.printStackTrace(System.err);
-      System.exit(1);
+      System.exit(123);
     }
-  }
-
-  private static class BTestRunListener extends RunListener {
-    private final CommandOutputStream myOutput;
-    public BTestRunListener(CommandOutputStream out) {
-      myOutput = out;
-    }
-    @Override
-    public void testFinished(Description description) throws Exception {
-      this.printSyncToken(("<END_TEST>"), description);
-      super.testFinished(description);
-    }
-    @Override
-    public void testFailure(Failure failure) throws Exception {
-      this.printSyncToken(("<TEST_ERROR_BEGIN>"), failure.getDescription());
-      failure.getException().printStackTrace(System.out);
-      this.printSyncToken(("<TEST_ERROR_END>"), failure.getDescription());
-      super.testFailure(failure);
-    }
-    @Override
-    public void testAssumptionFailure(Failure failure) {
-      this.printSyncToken(("<TEST_FAILURE_BEGIN>"), failure.getDescription());
-      failure.getException().printStackTrace(System.out);
-      this.printSyncToken(("<TEST_FAILURE_END>"), failure.getDescription());
-      super.testAssumptionFailure(failure);
-    }
-    @Override
-    public void testStarted(Description description) throws Exception {
-      printSyncToken(("<START_TEST>"), description);
-      super.testStarted(description);
-    }
-    private void printSyncToken(String tokenPrefix, Description description) {
-      StringBuilder builder = new StringBuilder();
-      builder.append(tokenPrefix);
-      builder.append(description.getTestClass().getName());
-      if (description.getMethodName() != null) {
-        builder.append(':').append(description.getMethodName());
-      }
-      Runtime runtime = Runtime.getRuntime();
-      builder.append(":memory=").append(runtime.totalMemory() - runtime.freeMemory());
-      builder.append(":time=").append(System.currentTimeMillis());
-
-      synchronized (this.myOutput) {
-        this.myOutput.writeCommand(builder.toString());
-        myOutput.flushSafe();
-      }
-    }
+    System.exit(((DefaultRunListener) executor.getListener()).getFailureCount());
   }
 }

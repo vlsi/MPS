@@ -15,6 +15,7 @@ public class FakeProcess extends Process {
   private final PrintStream myOldErr;
   private final PipedInputStream myInputOut;
   private final PipedInputStream myInputErr;
+  private int myExitCode = -1;
   private boolean myDestroyed = false;
 
   public FakeProcess() {
@@ -32,6 +33,10 @@ public class FakeProcess extends Process {
     System.setErr(new PrintStream(new CompositeStream(myOldErr, newErr)));
   }
 
+  public void setExitCode(int code) {
+    myExitCode = code;
+  }
+
   public void destroy() {
     assert !(myDestroyed);
     myDestroyed = true;
@@ -40,7 +45,7 @@ public class FakeProcess extends Process {
   }
   public int exitValue() {
     assert false;
-    return 0;
+    return myExitCode;
   }
   public InputStream getErrorStream() {
     return myInputErr;
@@ -58,6 +63,6 @@ public class FakeProcess extends Process {
         return myDestroyed;
       }
     };
-    return 0;
+    return myExitCode;
   }
 }

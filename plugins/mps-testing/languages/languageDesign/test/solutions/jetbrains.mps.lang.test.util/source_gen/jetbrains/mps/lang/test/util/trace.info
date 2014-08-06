@@ -25,10 +25,11 @@
       <node id="1813663789079454635" at="42,53,43,46" concept="7" />
       <node id="1813663789079454651" at="46,60,47,46" concept="7" />
       <node id="1813663789079454662" at="49,34,50,56" concept="7" />
-      <node id="1813663789079454670" at="52,30,53,52" concept="7" />
-      <node id="1813663789079454678" at="55,34,56,56" concept="7" />
-      <node id="1813663789079454686" at="58,33,59,55" concept="7" />
-      <node id="1813663789079454564" at="62,0,63,0" concept="8" trace="LOG" />
+      <node id="3488529421156595115" at="52,28,53,59" concept="7" />
+      <node id="1813663789079454670" at="55,30,56,52" concept="7" />
+      <node id="1813663789079454678" at="58,34,59,56" concept="7" />
+      <node id="1813663789079454686" at="61,33,62,55" concept="7" />
+      <node id="1813663789079454564" at="65,0,66,0" concept="8" trace="LOG" />
       <node id="1813663789079454568" at="15,0,18,0" concept="2" trace="TestLightRunState#()V" />
       <node id="2992055787332343263" at="18,0,21,0" concept="6" trace="get#()Ljetbrains/mps/lang/test/util/TestLightRunStateEnum;" />
       <node id="1813663789079454583" at="21,0,24,0" concept="6" trace="set#(Ljetbrains/mps/lang/test/util/TestLightRunStateEnum;)V" />
@@ -38,9 +39,10 @@
       <node id="1813663789079454617" at="39,0,42,0" concept="6" trace="greater#(Ljetbrains/mps/lang/test/util/TestLightRunStateEnum;)Z" />
       <node id="1813663789079454631" at="42,0,45,0" concept="6" trace="greater#(Ljetbrains/mps/lang/test/util/TestLightRunState;)Z" />
       <node id="1813663789079454660" at="49,0,52,0" concept="6" trace="isInitialized#()Z" />
-      <node id="1813663789079454668" at="52,0,55,0" concept="6" trace="isRunning#()Z" />
-      <node id="1813663789079454676" at="55,0,58,0" concept="6" trace="isTerminating#()Z" />
-      <node id="1813663789079454684" at="58,0,61,0" concept="6" trace="isTerminated#()Z" />
+      <node id="3488529421156593412" at="52,0,55,0" concept="6" trace="isReady#()Z" />
+      <node id="1813663789079454668" at="55,0,58,0" concept="6" trace="isRunning#()Z" />
+      <node id="1813663789079454676" at="58,0,61,0" concept="6" trace="isTerminating#()Z" />
+      <node id="1813663789079454684" at="61,0,64,0" concept="6" trace="isTerminated#()Z" />
       <node id="1813663789079454593" at="24,0,28,0" concept="6" trace="advance#(Ljetbrains/mps/lang/test/util/TestLightRunStateEnum;)V" />
       <node id="1813663789079454645" at="45,0,49,0" concept="6" trace="compareTo#(Ljetbrains/mps/lang/test/util/TestLightRunState;)I" />
       <node id="4451088350021332594" at="28,23,33,5" concept="5" />
@@ -54,9 +56,10 @@
       <scope id="1813663789079454634" at="42,53,43,46" />
       <scope id="1813663789079454650" at="46,60,47,46" />
       <scope id="1813663789079454661" at="49,34,50,56" />
-      <scope id="1813663789079454669" at="52,30,53,52" />
-      <scope id="1813663789079454677" at="55,34,56,56" />
-      <scope id="1813663789079454685" at="58,33,59,55" />
+      <scope id="3488529421156593415" at="52,28,53,59" />
+      <scope id="1813663789079454669" at="55,30,56,52" />
+      <scope id="1813663789079454677" at="58,34,59,56" />
+      <scope id="1813663789079454685" at="61,33,62,55" />
       <scope id="1813663789079454596" at="24,52,26,15" />
       <scope id="1813663789079454568" at="15,0,18,0" />
       <scope id="2992055787332343263" at="18,0,21,0" />
@@ -73,9 +76,10 @@
         <var name="another" id="1813663789079454632" />
       </scope>
       <scope id="1813663789079454660" at="49,0,52,0" />
-      <scope id="1813663789079454668" at="52,0,55,0" />
-      <scope id="1813663789079454676" at="55,0,58,0" />
-      <scope id="1813663789079454684" at="58,0,61,0" />
+      <scope id="3488529421156593412" at="52,0,55,0" />
+      <scope id="1813663789079454668" at="55,0,58,0" />
+      <scope id="1813663789079454676" at="58,0,61,0" />
+      <scope id="1813663789079454684" at="61,0,64,0" />
       <scope id="1813663789079454593" at="24,0,28,0">
         <var name="value" id="1813663789079454594" />
       </scope>
@@ -84,7 +88,7 @@
       </scope>
       <scope id="2992055787332479196" at="28,23,34,36" />
       <scope id="2992055787332479193" at="28,0,36,0" />
-      <unit id="1813663789079454564" at="10,0,64,0" name="jetbrains.mps.lang.test.util.TestLightRunState" />
+      <unit id="1813663789079454564" at="10,0,67,0" name="jetbrains.mps.lang.test.util.TestLightRunState" />
     </file>
   </root>
   <root nodeRef="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)/1813663789079454696">

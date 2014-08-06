@@ -5,11 +5,15 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.lang.test.util.TestLightRunState;
+import jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess;
+import com.intellij.util.WaitFor;
+import java.io.IOException;
+import org.apache.log4j.Level;
+import java.io.IOError;
 import jetbrains.mps.lang.test.util.TestLightRunStateEnum;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Request;
 import org.junit.runner.notification.StoppedByUserException;
-import com.intellij.util.WaitFor;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -18,11 +22,13 @@ import org.apache.log4j.LogManager;
 
 public class TestLightExecutor extends AbstractTestExecutor {
   private static final int TERMINATION_CODE = 137;
+  private static final int TIME_TO_WAIT_FOR_START = 5 * 1000;
 
   private final TestEventsDispatcher myDispatcher;
   private final Iterable<? extends ITestNodeWrapper> myNodes;
   private final TestsClassStorage myTestClassStorage = new TestsClassStorage();
   private final TestLightRunState myTestRunState;
+  private final FakeProcess myFakeProcess = new FakeProcess();
 
   public TestLightExecutor(TestEventsDispatcher dispatcher, Iterable<? extends ITestNodeWrapper> nodes, TestLightRunState testRunState) {
     myDispatcher = dispatcher;
@@ -30,10 +36,31 @@ public class TestLightExecutor extends AbstractTestExecutor {
     myTestRunState = testRunState;
   }
 
+  private void waitWhileNotReady() {
+    new WaitFor(TIME_TO_WAIT_FOR_START) {
+      @Override
+      protected boolean condition() {
+        return myTestRunState.isReady();
+      }
+    };
+    if (!(myTestRunState.isReady())) {
+      throw new TestLightExecutor.IllegalProcessStateError("Process is not ready");
+    }
+  }
+
   @Override
   public void init() {
     if (LOG.isDebugEnabled()) {
       LOG.debug("Initializing TestLightExecutor");
+    }
+    waitWhileNotReady();
+    try {
+      myFakeProcess.init();
+    } catch (IOException e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("IOException during process construction", e);
+      }
+      throw new IOError(e);
     }
   }
 
@@ -42,7 +69,12 @@ public class TestLightExecutor extends AbstractTestExecutor {
     if (LOG.isDebugEnabled()) {
       LOG.debug("Disposing TestLightExecutor");
     }
+    myFakeProcess.destroy();
     myTestRunState.advance(TestLightRunStateEnum.TERMINATED);
+  }
+
+  public FakeProcess getProcess() {
+    return myFakeProcess;
   }
 
   public void setReady() {
@@ -51,8 +83,13 @@ public class TestLightExecutor extends AbstractTestExecutor {
 
   @Override
   protected void doExecute(JUnitCore core, Iterable<Request> requests) throws Throwable {
-    assert myTestRunState.isInitialized();
-    waitWhileNotReady();
+    assert myTestRunState.isReady();
+    // TODO: remove this when the feature to skip and ignore tests on-the-fly is available 
+    if (hasAnyRequests(requests)) {
+      if (LOG.isInfoEnabled()) {
+        LOG.info("Executing tests in-process...");
+      }
+    }
     myTestRunState.advance(TestLightRunStateEnum.RUNNING);
     System.setProperty(TestLightRunState.LIGHT_EXEC_FLAG, "true");
     try {
@@ -62,16 +99,8 @@ public class TestLightExecutor extends AbstractTestExecutor {
     }
   }
 
-  private void waitWhileNotReady() {
-    new WaitFor(5 * 1000) {
-      @Override
-      protected boolean condition() {
-        return myTestRunState.get() == TestLightRunStateEnum.READYTOEXECUTE;
-      }
-    };
-    if (myTestRunState.get() != TestLightRunStateEnum.READYTOEXECUTE) {
-      throw new IllegalStateException("Process is not ready");
-    }
+  private boolean hasAnyRequests(Iterable<Request> requests) {
+    return requests.iterator().hasNext();
   }
 
   public void terminateRun() {
@@ -83,7 +112,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
 
   /*package*/ void terminateProcess(int code) {
     myTestRunState.advance(TestLightRunStateEnum.TERMINATING);
-    stopRun();
+    myFakeProcess.setExitCode(code);
     String terminateMessage = "Process finished with exit code " + code;
     if (LOG.isInfoEnabled()) {
       LOG.info(terminateMessage);
@@ -113,5 +142,10 @@ public class TestLightExecutor extends AbstractTestExecutor {
     return myDispatcher;
   }
 
+  private static class IllegalProcessStateError extends Error {
+    public IllegalProcessStateError(String msg) {
+      super(msg);
+    }
+  }
   protected static Logger LOG = LogManager.getLogger(TestLightExecutor.class);
 }

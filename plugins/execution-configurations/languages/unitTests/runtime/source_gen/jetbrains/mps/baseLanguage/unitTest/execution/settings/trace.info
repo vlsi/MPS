@@ -32,44 +32,41 @@
       <node id="6436735966450347896" at="34,54,35,42" concept="11" />
       <node id="607988455141841263" at="35,42,36,73" concept="11" />
       <node id="6436735966450336966" at="37,119,38,27" concept="12" />
-      <node id="3592741776850117404" at="40,208,41,27" concept="12" />
-      <node id="3592741776850134447" at="43,321,44,27" concept="12" />
-      <node id="3592741776850136991" at="45,13,46,279" concept="12" />
-      <node id="6106412458332681828" at="50,7,51,15" concept="12" />
+      <node id="3592741776850134447" at="40,321,41,27" concept="12" />
+      <node id="3592741776850136991" at="42,13,43,279" concept="12" />
+      <node id="6106412458332681828" at="47,7,48,15" concept="12" />
       <node id="6436735966450314883" at="36,73,39,13" concept="9" />
-      <node id="3592741776850111752" at="39,13,42,13" concept="9" />
-      <node id="3592741776850120636" at="42,13,45,13" concept="9" />
+      <node id="3592741776850120636" at="39,13,42,13" concept="9" />
       <node id="6106412458332677663" at="20,0,26,0" concept="10" trace="accept#(Ljava/lang/Iterable;)Z" />
-      <node id="607988455141841261" at="34,0,48,0" concept="10" trace="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
-      <node id="5745550179875647224" at="32,25,48,12" concept="6" />
-      <node id="5745550179875670458" at="31,0,50,0" concept="10" trace="run#()V" />
-      <node id="5745550179875656688" at="29,97,50,7" concept="6" />
-      <node id="6106412458332680465" at="27,0,53,0" concept="10" trace="filter#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+      <node id="607988455141841261" at="34,0,45,0" concept="10" trace="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
+      <node id="5745550179875647224" at="32,25,45,12" concept="6" />
+      <node id="5745550179875670458" at="31,0,47,0" concept="10" trace="run#()V" />
+      <node id="5745550179875656688" at="29,97,47,7" concept="6" />
+      <node id="6106412458332680465" at="27,0,50,0" concept="10" trace="filter#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
       <scope id="6436735966450314886" at="37,119,38,27" />
-      <scope id="3592741776850111755" at="40,208,41,27" />
-      <scope id="3592741776850120639" at="43,321,44,27" />
+      <scope id="3592741776850120639" at="40,321,41,27" />
       <scope id="6106412458332677671" at="21,56,24,14" />
       <scope id="6106412458332677663" at="20,0,26,0">
         <var name="ts" id="6106412458332677667" />
       </scope>
-      <scope id="607988455141841262" at="34,54,46,279">
+      <scope id="607988455141841262" at="34,54,43,279">
         <var name="rootNode" id="607988455141841264" />
         <var name="testNode" id="6436735966450347897" />
       </scope>
-      <scope id="607988455141841261" at="34,0,48,0">
+      <scope id="607988455141841261" at="34,0,45,0">
         <var name="it" id="607988455141841261" />
       </scope>
-      <scope id="5745550179875670462" at="32,25,48,12" />
-      <scope id="5745550179875670458" at="31,0,50,0" />
-      <scope id="6106412458332680468" at="28,81,51,15">
+      <scope id="5745550179875670462" at="32,25,45,12" />
+      <scope id="5745550179875670458" at="31,0,47,0" />
+      <scope id="6106412458332680468" at="28,81,48,15">
         <var name="seq" id="5745550179875642062" />
       </scope>
-      <scope id="6106412458332680465" at="27,0,53,0">
+      <scope id="6106412458332680465" at="27,0,50,0">
         <var name="ts" id="6106412458333055825" />
       </scope>
-      <unit id="607988455141841261" at="33,83,48,9" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.LightExecutionFilter$2" />
-      <unit id="5745550179875670456" at="30,45,50,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.LightExecutionFilter$1" />
-      <unit id="1353230511307473344" at="19,0,54,0" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.LightExecutionFilter" />
+      <unit id="607988455141841261" at="33,83,45,9" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.LightExecutionFilter$2" />
+      <unit id="5745550179875670456" at="30,45,47,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.LightExecutionFilter$1" />
+      <unit id="1353230511307473344" at="19,0,51,0" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.LightExecutionFilter" />
     </file>
   </root>
   <root nodeRef="r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)/1675938269731119414">

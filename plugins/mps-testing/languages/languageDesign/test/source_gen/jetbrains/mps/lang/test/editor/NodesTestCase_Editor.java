@@ -30,6 +30,7 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 
 public class NodesTestCase_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -314,20 +315,27 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     }
   }
   private EditorCell createCollection_58c6e4_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_58c6e4_a_0");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_58c6e4_a0(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_58c6e4_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_58c6e4_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_58c6e4_b0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_58c6e4_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_58c6e4_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_58c6e4_a0_0");
+    editorCell.addEditorCell(this.createConstant_58c6e4_a0a_0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_58c6e4_b0a(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createConstant_58c6e4_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Can execute-in-process:");
-    editorCell.setCellId("Constant_58c6e4_a0");
+    editorCell.setCellId("Constant_58c6e4_a0a_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_58c6e4_b0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_58c6e4_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return ITestable_Behavior.call_canRunInProcess_6436735966448788391(node) + "";
@@ -340,7 +348,36 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_58c6e4_b0");
+    editorCell.setCellId("ReadOnlyModelAccessor_58c6e4_b0a");
+    return editorCell;
+  }
+  private EditorCell createCollection_58c6e4_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_58c6e4_b0");
+    editorCell.addEditorCell(this.createConstant_58c6e4_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_58c6e4_b1a(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createConstant_58c6e4_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Needs write action to run:");
+    editorCell.setCellId("Constant_58c6e4_a1a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createReadOnlyModelAccessor_58c6e4_b1a(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return NodesTestCase_Behavior.call_needsWriteAction_6339244025081193722(node) + "";
+      }
+      public void setText(String s) {
+      }
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
+    editorCell.setCellId("ReadOnlyModelAccessor_58c6e4_b1a");
     return editorCell;
   }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root nodeRef="r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)/6937584626643047380">
+    <file name="SimpleTestCase_Test_Test.java">
+      <node id="6937584626643047380" at="14,45,15,157" concept="0" />
+      <node id="6937584626643047380" at="15,157,16,142" concept="0" />
+      <node id="6937584626643053816" at="20,47,21,31" concept="0" />
+      <node id="6937584626643053783" at="20,0,23,0" concept="1" trace="test_test1#()V" />
+      <node id="6937584626643047380" at="13,0,18,0" concept="1" trace="test_test1#()V" />
+      <scope id="6937584626643053783" at="20,47,21,31" />
+      <scope id="6937584626643047380" at="14,45,16,142" />
+      <scope id="6937584626643053783" at="20,0,23,0" />
+      <scope id="6937584626643047380" at="13,0,18,0" />
+      <unit id="6937584626643047380" at="18,0,24,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.SimpleTestCase_Test_Test$TestBody" />
+      <unit id="6937584626643047380" at="11,0,25,0" name="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.SimpleTestCase_Test_Test" />
+    </file>
+  </root>
+</debug-info>
+
