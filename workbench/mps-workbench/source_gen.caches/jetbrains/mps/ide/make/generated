@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-be9hei3kv1zxbcxjowq2cxjrde5r2qo">
+<dependencies version="2" modelHash="an8j5i0fcxk07iekftfc62fj5xnla13">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide(MPS.IDEA/com.intellij.ide@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.fileEditor(MPS.IDEA/com.intellij.openapi.fileEditor@java_stub)" />
@@ -69,7 +69,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MakeTask.java" />
   </source>
-  <source id="173672751428922365" name="TextPreviewFile" hash="2ow08ob3aafk3t53990tm07yhzfsn3l">
+  <source id="173672751428922365" name="TextPreviewFile" hash="umw74oi62rzpqjzcanur020evj7gvx">
     <file name="TextPreviewFile.java" />
   </source>
   <source id="173672751428922919" name="TextPreviewUtil" hash="-an2kz6lg6ewzwyxa74hei0tqwo7byhf">

@@ -3560,6 +3560,7 @@
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.ParametersInformation" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyledTextPrinter" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Line" />
     <classNode dependClassName="jetbrains.mps.ide.actions.StyledTextPrinterImpl" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />

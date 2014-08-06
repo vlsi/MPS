@@ -181,7 +181,12 @@
   <import index="wlgq" modelUID="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.plugins(MPS.IDEA/com.intellij.ide.plugins@java_stub)" version="-1" />
   <import index="osf5" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.tree(JDK/javax.swing.tree@java_stub)" version="-1" />
   <import index="k04z" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.datatransfer(MPS.Core/jetbrains.mps.datatransfer@java_stub)" version="-1" />
-  <import index="gjkq" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view.optionseditor.components(jetbrains.mps.ide.findusages.view.optionseditor.components@java_stub)" version="-1" />
+  <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="gjkq" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view.optionseditor.components(MPS.Workbench/jetbrains.mps.ide.findusages.view.optionseditor.components@java_stub)" version="-1" />
+  <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
+  <import index="gcfa" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.projectPane(MPS.Workbench/jetbrains.mps.ide.projectPane@java_stub)" version="-1" />
+  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
+  <import index="i5c6" modelUID="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -195,12 +200,7 @@
   <import index="1oap" modelUID="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" version="0" implicit="yes" />
   <import index="tgbt" modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="1" implicit="yes" />
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
-  <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
-  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" implicit="yes" />
-  <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" implicit="yes" />
-  <import index="gjkr" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view.optionseditor.components(MPS.Workbench/jetbrains.mps.ide.findusages.view.optionseditor.components@java_stub)" version="-1" implicit="yes" />
-  <import index="gcfa" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.projectPane(MPS.Workbench/jetbrains.mps.ide.projectPane@java_stub)" version="-1" implicit="yes" />
   <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1204991218714" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ModelActions" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Model" />
@@ -8534,8 +8534,13 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="7546597551782580120" nodeInfo="nn">
                     <link role="variable" roleId="tp2q.1153944258490" targetNodeId="7546597551782304749" resolveInfo="method" />
                   </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7546597551782583042" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7546597551782304752" resolveInfo="printer" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3033945804840557770" nodeInfo="nn">
+                    <node role="expression" roleId="tpee.1070534934092" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3033945804840555318" nodeInfo="nn">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7546597551782304752" resolveInfo="printer" />
+                    </node>
+                    <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3033945804840557771" nodeInfo="in">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ejnv.~StyledTextPrinter" resolveInfo="StyledTextPrinter" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -21794,7 +21799,7 @@
             <property name="isFinal" nameId="tpee.1176718929932" value="false" />
             <property name="name" nameId="tpck.1169194664001" value="scopeEditor" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6549907336953199085" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gjkr.~ScopeEditor" resolveInfo="ScopeEditor" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gjkq.~ScopeEditor" resolveInfo="ScopeEditor" />
             </node>
           </node>
         </node>
@@ -21803,7 +21808,7 @@
             <property name="isFinal" nameId="tpee.1176718929932" value="false" />
             <property name="name" nameId="tpck.1169194664001" value="findersEditor" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6549907336953216179" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gjkr.~FindersEditor" resolveInfo="FindersEditor" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gjkq.~FindersEditor" resolveInfo="FindersEditor" />
             </node>
           </node>
         </node>
@@ -21812,7 +21817,7 @@
             <property name="isFinal" nameId="tpee.1176718929932" value="false" />
             <property name="name" nameId="tpck.1169194664001" value="viewOptionsEditor" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6549907336953234051" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gjkr.~ViewOptionsEditor" resolveInfo="ViewOptionsEditor" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gjkq.~ViewOptionsEditor" resolveInfo="ViewOptionsEditor" />
             </node>
           </node>
         </node>
@@ -21866,7 +21871,7 @@
                       </node>
                       <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6549907336953255435" nodeInfo="nn">
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6549907336953255436" nodeInfo="nn">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gjkr.~ScopeEditor%d&lt;init&gt;(jetbrains%dmps%dide%dfindusages%dview%doptionseditor%doptions%dScopeOptions)" resolveInfo="ScopeEditor" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gjkq.~ScopeEditor%d&lt;init&gt;(jetbrains%dmps%dide%dfindusages%dview%doptionseditor%doptions%dScopeOptions)" resolveInfo="ScopeEditor" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6549907336953295206" nodeInfo="nn">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6549907336953279177" nodeInfo="nn">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2557058267217516291" resolveInfo="options" />
@@ -21891,8 +21896,8 @@
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="6549907336953386976" nodeInfo="nn">
                           <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="6549907336953386979" nodeInfo="ig">
                             <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="gjkr.~FindersEditor" resolveInfo="FindersEditor" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gjkr.~FindersEditor%d&lt;init&gt;(jetbrains%dmps%dide%dfindusages%dview%doptionseditor%doptions%dFindersOptions,org%djetbrains%dmps%dopenapi%dmodel%dSNode)" resolveInfo="FindersEditor" />
+                            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="gjkq.~FindersEditor" resolveInfo="FindersEditor" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gjkq.~FindersEditor%d&lt;init&gt;(jetbrains%dmps%dide%dfindusages%dview%doptionseditor%doptions%dFindersOptions,org%djetbrains%dmps%dopenapi%dmodel%dSNode)" resolveInfo="FindersEditor" />
                             <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6549907336953386980" nodeInfo="nn" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6549907336953421577" nodeInfo="nn">
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6549907336953338171" nodeInfo="nn">
@@ -21935,7 +21940,7 @@
                       </node>
                       <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6549907336953255440" nodeInfo="nn">
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6549907336953255441" nodeInfo="nn">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gjkr.~ViewOptionsEditor%d&lt;init&gt;(jetbrains%dmps%dide%dfindusages%dview%doptionseditor%doptions%dViewOptions)" resolveInfo="ViewOptionsEditor" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gjkq.~ViewOptionsEditor%d&lt;init&gt;(jetbrains%dmps%dide%dfindusages%dview%doptionseditor%doptions%dViewOptions)" resolveInfo="ViewOptionsEditor" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6549907336953308515" nodeInfo="nn">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6549907336953308516" nodeInfo="nn">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2557058267217516291" resolveInfo="options" />
@@ -21966,7 +21971,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6549907336953216177" resolveInfo="findersEditor" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6549907336953470251" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gjkr.~BaseEditor%dgetOptions()%cjetbrains%dmps%dide%dfindusages%dview%doptionseditor%doptions%dBaseOptions" resolveInfo="getOptions" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gjkq.~BaseEditor%dgetOptions()%cjetbrains%dmps%dide%dfindusages%dview%doptionseditor%doptions%dBaseOptions" resolveInfo="getOptions" />
                   </node>
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6549907336953452900" nodeInfo="nn">
@@ -21974,7 +21979,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6549907336953196256" resolveInfo="scopeEditor" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6549907336953455706" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gjkr.~ScopeEditor%dgetOptions()%cjetbrains%dmps%dide%dfindusages%dview%doptionseditor%doptions%dScopeOptions" resolveInfo="getOptions" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gjkq.~ScopeEditor%dgetOptions()%cjetbrains%dmps%dide%dfindusages%dview%doptionseditor%doptions%dScopeOptions" resolveInfo="getOptions" />
                   </node>
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6549907336953475988" nodeInfo="nn">
@@ -21982,7 +21987,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6549907336953234049" resolveInfo="viewOptionsEditor" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6549907336953481538" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gjkr.~BaseEditor%dgetOptions()%cjetbrains%dmps%dide%dfindusages%dview%doptionseditor%doptions%dBaseOptions" resolveInfo="getOptions" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gjkq.~BaseEditor%dgetOptions()%cjetbrains%dmps%dide%dfindusages%dview%doptionseditor%doptions%dBaseOptions" resolveInfo="getOptions" />
                   </node>
                 </node>
               </node>
@@ -24527,9 +24532,6 @@
           <node role="body" roleId="tpee.1164879758292" type="tpee.StatementList" typeId="tpee.1068580123136" id="1818770337282919839" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1818770337282919840" nodeInfo="nn">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1818770337282919841" nodeInfo="nn">
-                <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120246853" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1818770337282919817" resolveInfo="myOptions" />
-                </node>
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1818770337282919842" nodeInfo="nn">
                   <node role="operation" roleId="tpee.1197027833540" type="tgbt.GetPreferencesComponentInProjectOperation" typeId="tgbt.681855071694758168" id="1818770337282919844" nodeInfo="nn">
                     <link role="componentDeclaration" roleId="tgbt.681855071694758169" targetNodeId="1818770337282919795" resolveInfo="BehaviorDialogsPersistentOptions" />
@@ -24537,6 +24539,9 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120251034" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="tveq.~GroupedNodesChooser%dmyProject" resolveInfo="myProject" />
                   </node>
+                </node>
+                <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120246853" nodeInfo="nn">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1818770337282919817" resolveInfo="myOptions" />
                 </node>
               </node>
             </node>

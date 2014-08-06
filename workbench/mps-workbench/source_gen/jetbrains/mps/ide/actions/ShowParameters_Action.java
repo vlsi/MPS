@@ -26,6 +26,7 @@ import jetbrains.mps.ide.tooltips.ToolTip;
 import javax.swing.border.EmptyBorder;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 import javax.swing.JTextPane;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import com.intellij.ui.JBColor;
@@ -129,7 +130,7 @@ public class ShowParameters_Action extends BaseAction {
     int lineNumber = 0;
     for (T method : Sequence.fromIterable(methods)) {
       StyledTextPrinterImpl printer = new StyledTextPrinterImpl();
-      parametersInformation.getStyledMethodPresentation(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), method, printer);
+      parametersInformation.getStyledMethodPresentation(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), method, (StyledTextPrinter) printer);
       JTextPane textPane = new JTextPane(printer.getDocument());
       textPane.setBorder(null);
       textPane.setFont(EditorSettings.getInstance().getDefaultEditorFont());
