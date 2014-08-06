@@ -32,9 +32,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
-import java.awt.Toolkit;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 
 public class TextLine {
@@ -42,29 +39,6 @@ public class TextLine {
   private static final Color ERROR_COLOR =
       StyleRegistry.getInstance() != null && StyleRegistry.getInstance().isDarkTheme() ? StyleRegistry.getInstance().getEditorBackground() :
           new Color(255, 220, 220);
-
-  private static Map<Font, FontMetrics> ourFontMetricsCache = new HashMap<Font, FontMetrics>();
-  private static Map<String, Font> ourFontsCache = new HashMap<String, Font>();
-
-  private static FontMetrics getFontMetrics(Font font) {
-    FontMetrics result = ourFontMetricsCache.get(font);
-    if (result == null) {
-      result = Toolkit.getDefaultToolkit().getFontMetrics(font);
-    }
-    ourFontMetricsCache.put(font, result);
-    return result;
-  }
-
-
-  private static Font getFont(String fontName, int style, int size) {
-    String key = fontName + "#" + style + "#" + size;
-    Font result = ourFontsCache.get(key);
-    if (result == null) {
-      result = new Font(fontName, style, size);
-      ourFontsCache.put(key, result);
-    }
-    return result;
-  }
 
   private String myText;
   private int myDescent = 0;
@@ -197,7 +171,7 @@ public class TextLine {
       String family = settings.getFontFamily();
       Integer style = myStyle.get(StyleAttributes.FONT_STYLE);
       int fontSize = styleFontSize != null ? styleFontSize : settings.getFontSize();
-      myFont = getFont(family, style, fontSize);
+      myFont = FontRegistry.getInstance().getFont(family, style, fontSize);
       myFontMetrics = null;
     }
 
@@ -576,7 +550,7 @@ public class TextLine {
 
   public FontMetrics getFontMetrics() {
     if (myFontMetrics == null) {
-      myFontMetrics = getFontMetrics(getFont());
+      myFontMetrics = FontRegistry.getInstance().getFontMetrics(getFont());
     }
     return myFontMetrics;
   }
