@@ -37,7 +37,7 @@ public class OutputConsoleRoot_Editor extends DefaultNodeEditor {
       editorCell.setRole("history");
     }
     Style style = new StyleImpl();
-    Console_Styles_StyleSheet.apply_readOnly(style, editorCell);
+    ConsoleStyle_StyleSheet.apply_ReadOnly(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
