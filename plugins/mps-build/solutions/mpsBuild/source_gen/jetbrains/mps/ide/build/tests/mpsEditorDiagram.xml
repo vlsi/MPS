@@ -64,7 +64,9 @@
       <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.figures.sandbox-src.jar">
-      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/source_gen" />
+      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/jetbrains.mps.lang.editor.figures.sandbox.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-test-jetbrains.mps.lang.editor.figures.sandbox-models" prefix="module/models" />
     </jar>
@@ -99,7 +101,9 @@
       <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.diagram.testLanguage-src.jar">
-      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/source_gen" />
+      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/jetbrains.mps.lang.editor.diagram.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-test-jetbrains.mps.lang.editor.diagram.testLanguage-languageModels" prefix="module/languageModels" />
     </jar>

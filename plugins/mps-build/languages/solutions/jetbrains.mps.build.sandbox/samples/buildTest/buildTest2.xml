@@ -60,7 +60,9 @@
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/plugins/mps-buildTest2/languages/jetbrains.mps.build.sandbox-src.jar">
-      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" />
+      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${basedir}/jetbrains.mps.build.sandbox/jetbrains.mps.build.sandbox.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.sandbox-models" prefix="module/models" />
     </jar>

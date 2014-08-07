@@ -4977,6 +4977,9 @@
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="2540145662854694632" nodeInfo="ng">
               <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputFiles" typeId="3ior.5248329904287794596" id="2540145662854694633" nodeInfo="ng">
+                <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="1945623170512632099" nodeInfo="ng">
+                  <property name="pattern" nameId="3ior.5248329904288051112" value="**/trace.info" />
+                </node>
                 <node role="dir" roleId="3ior.5248329904287794598" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2540145662854694634" nodeInfo="ng">
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2540145662854694673" nodeInfo="nn">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2540145662854694674" nodeInfo="nn">
