@@ -24,6 +24,8 @@ import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.LayeredIcon;
+import jetbrains.mps.icons.MPSIcons;
+import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.ProjectPane;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
@@ -421,7 +423,7 @@ public class UsagesTree extends MPSTree {
     if (data.isResultNode()) {
       final LayeredIcon result = new LayeredIcon(2);
       result.setIcon(icon, 0);
-      result.setIcon(Debugger.BreakpointAlert, 1);
+      result.setIcon(Nodes.UsagesResultOverlay, 1);
 
       icon = result;
     }

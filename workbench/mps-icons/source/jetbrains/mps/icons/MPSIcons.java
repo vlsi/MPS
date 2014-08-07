@@ -123,8 +123,9 @@ public class MPSIcons {
     public static final Icon TransientModelsDisable = IconLoader.getIcon("/nodes/transientModelsDisable.png");
     public static final Icon Type = IconLoader.getIcon("/nodes/type.png");
     public static final Icon Unknown = IconLoader.getIcon("/nodes/unknown.png");
+    public static final Icon UsagesResultOverlay = IconLoader.getIcon("/nodes/usages-result-overlay.png");
     public static final Icon UsagesFinder = IconLoader.getIcon("/nodes/usagesFinder.png");
-    
+
     public static class Models {
       public static final Icon StructureModel = IconLoader.getIcon("/nodes/models/structureModel.png");
       public static final Icon EditorModel = IconLoader.getIcon("/nodes/models/editorModel.png");
