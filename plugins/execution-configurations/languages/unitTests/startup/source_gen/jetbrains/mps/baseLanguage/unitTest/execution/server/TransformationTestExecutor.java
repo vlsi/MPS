@@ -19,22 +19,24 @@ public class TransformationTestExecutor extends BTestExecutor {
   }
 
   public void dispose() {
-    TransformationTestExecutor.exitApp();
+    // <node> 
     super.dispose();
   }
 
   public static void main(String[] args) {
     TransformationTestExecutor executor = new TransformationTestExecutor(args);
     try {
-      executor.init();
-      executor.execute();
-      executor.dispose();
+      executor.run();
     } catch (Throwable t) {
-      t.printStackTrace(System.err);
-      CachesUtil.cleanupCaches();
-      System.exit(123);
+      executor.processThrowable(t);
     }
-    System.exit(((DefaultRunListener) executor.getListener()).getFailureCount());
+    executor.exit();
+  }
+
+  @Override
+  protected void processThrowable(Throwable t) {
+    CachesUtil.cleanupCaches();
+    super.processThrowable(t);
   }
 
   private static void exitApp() {

@@ -19,6 +19,7 @@ import java.util.concurrent.CountDownLatch;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import java.util.concurrent.TimeUnit;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class ProcessHandlerBuilder {
   private final List<String> myCommandLine = ListSequence.fromList(new ArrayList<String>());
@@ -138,6 +139,7 @@ public class ProcessHandlerBuilder {
     }
     return exitCode[0];
   }
+
   public static int startAndWait(ProcessHandler process, long timeout) {
     final int[] exitCode = new int[]{-1};
     try {
@@ -149,5 +151,14 @@ public class ProcessHandlerBuilder {
       process.destroyProcess();
     }
     return exitCode[0];
+  }
+
+  public static void startLater(final ProcessHandler process, final long timeout, final int[] exitCode) {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      @Override
+      public void run() {
+        exitCode[0] = ProcessHandlerBuilder.startAndWait(process, timeout);
+      }
+    });
   }
 }

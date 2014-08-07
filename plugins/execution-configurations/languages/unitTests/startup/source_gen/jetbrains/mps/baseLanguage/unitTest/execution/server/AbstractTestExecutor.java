@@ -7,6 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import org.junit.runner.Request;
 import org.junit.runner.JUnitCore;
 import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.Runner;
 import org.junit.runner.notification.RunNotifier;
@@ -38,9 +39,13 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   }
 
   protected JUnitCore prepareJUnitCore(Iterable<Request> requests) {
+    Iterable<Request> reqSeq = Sequence.fromIterable(requests);
     JUnitCore core = new JUnitCore();
     myListener = createListener(requests);
     core.addListener(myListener);
+    if (Sequence.fromIterable(reqSeq).count() > 0) {
+      myCurrentRunner = new AbstractTestExecutor.StoppableRunner(Sequence.fromIterable(reqSeq).first().getRunner());
+    }
     return core;
   }
 

@@ -21,7 +21,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class TestLightExecutor extends AbstractTestExecutor {
-  private static final int TERMINATION_CODE = 137;
   private static final int TIME_TO_WAIT_FOR_START = 5 * 1000;
 
   private final TestEventsDispatcher myDispatcher;
@@ -95,7 +94,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
     try {
       super.doExecute(core, requests);
     } catch (StoppedByUserException exception) {
-      terminateProcess(TERMINATION_CODE);
+      terminateProcess(FakeProcess.TERMINATION_CODE);
     }
   }
 

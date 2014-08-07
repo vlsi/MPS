@@ -25,7 +25,7 @@ public class FakeProcessHandler extends BaseOSProcessHandler {
     myExecutor.setReady();
   }
 
-  public void terminate() {
+  private void terminate() {
     myExecutor.terminateRun();
   }
 

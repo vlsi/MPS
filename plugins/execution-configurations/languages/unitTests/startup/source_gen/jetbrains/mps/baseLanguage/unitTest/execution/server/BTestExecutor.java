@@ -48,13 +48,30 @@ public class BTestExecutor extends AbstractTestExecutor {
   public static void main(String[] args) throws ClassNotFoundException, IOException {
     BTestExecutor executor = new BTestExecutor(args);
     try {
-      executor.init();
-      executor.execute();
-      executor.dispose();
+      executor.run();
     } catch (Throwable t) {
-      t.printStackTrace(System.err);
-      System.exit(123);
+      executor.processThrowable(t);
     }
-    System.exit(((DefaultRunListener) executor.getListener()).getFailureCount());
+    executor.exit();
+  }
+
+  protected void run() {
+    init();
+    execute();
+    dispose();
+  }
+
+  protected void processThrowable(Throwable t) {
+    t.printStackTrace(System.err);
+    System.exit(123);
+  }
+
+  protected void exit() {
+    DefaultRunListener listener = ((DefaultRunListener) this.getListener());
+    if (listener == null) {
+      System.exit(-123);
+    } else {
+      System.exit(listener.getFailureCount());
+    }
   }
 }

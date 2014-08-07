@@ -60,6 +60,13 @@ public class JUnitLightExecutor implements Executor {
     });
   }
 
+  /**
+   * FOR TEST USE ONLY
+   */
+  public static TestLightRunState getRunState() {
+    return ourTestRunState;
+  }
+
   private void dispose() {
     ourTestRunState.reset();
   }

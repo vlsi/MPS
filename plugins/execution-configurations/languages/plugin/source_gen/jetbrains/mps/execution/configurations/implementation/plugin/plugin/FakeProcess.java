@@ -11,6 +11,8 @@ import java.io.OutputStream;
 import com.intellij.util.WaitFor;
 
 public class FakeProcess extends Process {
+  public static final int TERMINATION_CODE = 137;
+
   private final PrintStream myOldOut;
   private final PrintStream myOldErr;
   private final PipedInputStream myInputOut;
