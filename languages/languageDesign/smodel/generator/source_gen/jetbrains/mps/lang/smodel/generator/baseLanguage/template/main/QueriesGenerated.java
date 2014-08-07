@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.lang.smodel.generator.baseLanguage.util.ConceptMethodCallUtils;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.IdHelper;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -332,6 +333,10 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_2644386474300332552(final PropertyMacroContext _context) {
+    return IdHelper.getConceptId((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false)).serialize();
+  }
+
   public static Object propertyMacro_GetPropertyValue_1219355399537(final PropertyMacroContext _context) {
     SModelReference targetModelRef = SNodeOperations.getModel(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTargetNode_3575813534625153815", new Object[]{})).getReference();
     SModelReference sourceModelRef = SNodeOperations.getModel(_context.getNode()).getReference();
@@ -368,6 +373,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5253134957341701124(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false), "role");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2644386474301603013(final PropertyMacroContext _context) {
+    return IdHelper.getNodeRoleId((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false)).serialize();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2644386474301626956(final PropertyMacroContext _context) {
+    return IdHelper.getRefRoleId((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false)).serialize();
   }
 
   public static Object propertyMacro_GetPropertyValue_5253134957341870752(final PropertyMacroContext _context) {
@@ -900,6 +913,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_2832018561208930317(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "concept", true), "concept", false);
+  }
+
+  public static boolean ifMacro_Condition_2644386474301602049(final IfMacroContext _context) {
+    return SPropertyOperations.hasValue(SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false), "metaClass", "aggregation", "reference");
   }
 
   public static boolean ifMacro_Condition_161004399424375886(final IfMacroContext _context) {

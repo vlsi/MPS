@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8zn0p31kgcm5kwd48y8dlfq8nro6roy">
+<dependencies version="2" modelHash="-9s2xf7cn2ibprtdz3cusm2xhvpci5x0">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="eggblwsr0208cbp174vd3je0pubxy4w" />
@@ -112,6 +112,7 @@
     <dep root="1883223317721107059" />
     <dep root="1960721196051541146" />
     <dep root="2644386474300074836" />
+    <dep root="2644386474301421077" />
     <dep root="2788452359612124330" />
     <dep root="2788452359612124331" />
     <dep root="2788452359612124332" />
@@ -299,5 +300,6 @@
   <source id="6955116391921790598" name="CheckedModuleQualifiedName" hash="-243yt55qd1o0xmj5yy6vu3kqm0snocg" />
   <source id="4693937538533521280" name="OfConceptOperation" hash="-52o5s14tafev4fbku1mclx2uh21zndd" />
   <source id="2644386474300074836" name="ConceptIdRefExpression" hash="3jw1deyxbytny9xfgtxt36i8qzf7c40" />
+  <source id="2644386474301421077" name="LinkIdRefExpression" hash="ewki0sszr3m4wie7ocfli4df1qk9q61" />
 </dependencies>
 
