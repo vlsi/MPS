@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="9didmdwx61yug7ur6pux70o8yl5i7qu">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="-1vt6sc5fyryb793rw2o9twxvsptrjzg" dependsOnNodes="true">
+    <dep root="5058522826399262785" />
+    <dep root="5058522826399342676" />
+    <dep root="79242395703866767" />
+    <dep root="79242395703884488" />
+    <dep root="79242395703884499" />
+    <dep root="79242395703953958" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="79242395703866767" name="MindMap" hash="50w2gteh67liydgtclp96d01oiv7dti" />
+  <source id="79242395703884488" name="Thought" hash="4w6qsrqrjrbhjinioqsezre5dus7sdo" />
+  <source id="79242395703884499" name="Relationship" hash="-7umz5l7vp82zem8h7xlvw9as4qsfc1h" />
+  <source id="79242395703953958" name="VisualBox" hash="u10wqw1wit242sxmud3pxvsjvsz3sh" />
+  <source id="5058522826399262785" name="Specializes" hash="d4gaxatnbxd4qfl1mqqv8hpr36o77uf" />
+  <source id="5058522826399342676" name="CoreThrought" hash="-4m27m4ikztjuy6xo7sn29xp8v9cxr6w" />
+</dependencies>
+

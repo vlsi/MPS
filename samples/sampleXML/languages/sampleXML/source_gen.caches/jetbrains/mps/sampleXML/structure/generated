@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="d3xj5dljf56vxuf3gp4cllwlmcoe61a">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="7smanm904d6omfy8ba5l3ndvgmtktji" dependsOnNodes="true">
+    <dep root="1225239603361" />
+    <dep root="1225239603382" />
+    <dep root="1225239603385" />
+    <dep root="1225239603390" />
+    <dep root="1225239603393" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1225239603361" name="Attribute" hash="-cqiqwrg12pn412ig0t4k0km28h58gni" />
+  <source id="1225239603382" name="Document" hash="5j2cj9jche67k39x4m2xwt65p710ra5" />
+  <source id="1225239603385" name="Element" hash="7qj48wgkk9waiwpupdhszjnkk0w6kky" />
+  <source id="1225239603390" name="ElementPart" hash="-85ovmnkelfj322hh41pj15l64exrmoc" />
+  <source id="1225239603393" name="Text" hash="-1cwweaarjgdfjprpsu08in80v5y7iv5" />
+</dependencies>
+
