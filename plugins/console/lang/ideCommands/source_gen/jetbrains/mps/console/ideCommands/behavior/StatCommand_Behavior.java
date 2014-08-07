@@ -10,7 +10,6 @@ import jetbrains.mps.console.ideCommands.util.OutputUtils;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class StatCommand_Behavior {
   public static void init(SNode thisNode) {
@@ -23,9 +22,5 @@ public class StatCommand_Behavior {
       }
     });
 
-  }
-
-  public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "display some AST statistics";
   }
 }
