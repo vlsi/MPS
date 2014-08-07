@@ -93,7 +93,7 @@ public class NodeNodeData extends BaseNodeData {
 
   @Override
   public Object getIdObject() {
-    return isResultNode() ? (jetbrains.mps.smodel.SNodePointer.serialize(getNodePointer()) + "/" + getPlainText()) : getNode();
+    return jetbrains.mps.smodel.SNodePointer.serialize(getNodePointer()) + "/" + getPlainText();
   }
 
   @Override

@@ -86,7 +86,7 @@ public class ModuleNodeData extends BaseNodeData {
 
   @Override
   public Object getIdObject() {
-    return isResultNode() ? (getModuleReference().toString() + "/" + getPlainText()) : getModule();
+    return getModuleReference().toString() + "/" + getPlainText();
   }
 
   @Override
