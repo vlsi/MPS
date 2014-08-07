@@ -68,7 +68,6 @@
   </source>
   <source id="3308300503039570165" name="map_Script" hash="9q7txmeq05luw1yft1h3ma4lkmtb11x">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="3308300503039580716" name="reduce_Step" hash="avkkym8mgyh3ms4hvsneieu9r4g9b3n" />
   <source id="3308300503039647645" name="reduce_LeftTurn" hash="9w9y7t61jw2d244odcv52h616wj3w86" />

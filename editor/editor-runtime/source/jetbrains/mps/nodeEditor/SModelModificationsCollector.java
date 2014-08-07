@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -54,6 +55,25 @@ public class SModelModificationsCollector extends SModelEventVisitorAdapter {
 
   public List<Pair<SNode, SNodeReference>> getModifications() {
     return myModifications == null ? null : new ArrayList<Pair<SNode, SNodeReference>>(myModifications);
+  }
+
+  @Override
+  public void visitRootEvent(SModelRootEvent event) {
+    if (event.isAdded()) {
+      return;
+    }
+    addModification(event.getRoot(), event);
+    if (event.isRemoved()) {
+      Queue<SNode> removedNodes = new LinkedList<SNode>();
+      removedNodes.add(event.getRoot());
+      while (!removedNodes.isEmpty()) {
+        SNode removedNode = removedNodes.remove();
+        for (SNode removedChild : removedNode.getChildren()) {
+          removedNodes.add(removedChild);
+        }
+        addModification(removedNode, event);
+      }
+    }
   }
 
   @Override

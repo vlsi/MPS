@@ -13,10 +13,6 @@ public class Make_BehaviorDescriptor extends AbsractMake_BehaviorDescriptor {
     return Make_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
   }
 
-  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
-    return Make_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
-  }
-
   public Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SConcept thisConcept) {
     return Make_Behavior.virtual_getSupportedParameters_4307205004146936444(thisConcept);
   }

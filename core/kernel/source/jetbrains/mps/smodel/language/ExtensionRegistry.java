@@ -177,11 +177,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
         return null;
       }
 
-      if (!(ClassLoaderManager.getInstance().canLoad(module))) {
-        return null;
-      }
-
-      Class clazz = ClassLoaderManager.getInstance().getClass(module, className);
+      Class clazz = ClassLoaderManager.getInstance().getOwnClass(module, className);
       if (clazz == null) {
         return null;
       }

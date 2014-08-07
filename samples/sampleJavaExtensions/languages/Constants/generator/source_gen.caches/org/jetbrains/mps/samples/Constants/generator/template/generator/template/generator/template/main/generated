@@ -28,12 +28,9 @@
   <source id="1494751830319061783" name="main" hash="4vcg46yazp8n3jb4o5dlog7sio2lx6o">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1494751830319061784" name="reduce_Constant" hash="-3khlqahqbxo6i3aco8hh6xmbcszw6by">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1494751830319061784" name="reduce_Constant" hash="-3khlqahqbxo6i3aco8hh6xmbcszw6by" />
   <source id="1494751830319065468" name="map_Constants" hash="ayhp4fumb3thplz75u06sr21v9r32ho">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="3990190717072400634" name="reduce_ConstantReference" hash="1ctkaz88skai7hxabpzrsscll3oht9o" />
 </dependencies>

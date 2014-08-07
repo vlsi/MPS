@@ -10,13 +10,12 @@
   <source id="3308300503039980203" name="Karel" hash="9t5de7qho3lm1j47fko497jueswgw3l">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Karel.java" />
   </source>
   <source id="7446293342517103305" name="Sample" hash="-7q6488ike8wa4o01inxxpt2fng5pwr8">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Sample.java" />
   </source>
   <source id="859008965969243552" name="Dog" hash="-8268jrk64ts72r7rmxeatvmu98x07vt">
@@ -27,7 +26,6 @@
   <source id="4394627182935280567" name="Filling" hash="avqxh9sikdj9i3bplln3n0drbiyh8g0" />
   <source id="3210697320273759353" name="PlaygroundDefinition" hash="77dcfhldgx5txs4g7dcs048fb3tmdqs" />
   <source id="3210697320273799179" name="MarkSniffer" hash="-7t7iq3k7gf2mxmh1ohq0chw7i73tr9z">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
     <file name="MarkSniffer.java" />
   </source>

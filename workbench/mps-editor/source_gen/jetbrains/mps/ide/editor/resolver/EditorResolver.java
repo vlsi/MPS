@@ -42,9 +42,23 @@ public class EditorResolver implements IResolver {
       editNode(node);
     }
 
+
+
     @Override
     protected EditorCell createRootCell(List<SModelEvent> events) {
       return getEditorContext().createRootCell(getEditedNode(), events);
+    }
+
+
+
+    @Override
+    protected void attachListeners() {
+    }
+
+
+
+    @Override
+    protected void detachListeners() {
     }
   }
 }

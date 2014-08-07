@@ -38,12 +38,8 @@
   <source id="1196260169254" name="main" hash="-5k1fshejror3zkkf57mscqxu8zrljc6">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1196260333791" name="reduction_Complex" hash="-8qsd2vq9ag4ssr4flpd7vivkikohzzw">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
-  <source id="1196264987680" name="reduction_ComplexRe" hash="-9kj3duhiiq1haldtgdl0xn3nq7ujlnc">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1196260333791" name="reduction_Complex" hash="-8qsd2vq9ag4ssr4flpd7vivkikohzzw" />
+  <source id="1196264987680" name="reduction_ComplexRe" hash="-9kj3duhiiq1haldtgdl0xn3nq7ujlnc" />
   <source id="1196265307237" name="reduction_ComplexIm" hash="2uyhodmu78qna54g5n812w539zokpgt" />
   <source id="1196269825846" name="reduction_ComplexAbs" hash="-23xp2exylhqt8mc2uqkfod5rkkg69ks" />
   <source id="1196269971283" name="reduction_ComplexArg" hash="49amo6g2b74rxpdsr7a7gia28r3kdx6" />

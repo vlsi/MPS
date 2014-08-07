@@ -706,8 +706,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       }
     });
-    EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+    attachListeners();
 
     addFocusListener(new FocusAdapter() {
       @Override
@@ -729,6 +728,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     SModelRepository.getInstance().addModelRepositoryListener(mySimpleModelListener);
   }
+
+  protected void attachListeners() {
+    EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
+    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+  }
+
 
   protected void notifyCreation() {
     jetbrains.mps.project.Project project = ProjectHelper.getProject(myRepository);
@@ -1393,8 +1398,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     removeOurListeners();
     SModelRepository.getInstance().removeModelRepositoryListener(mySimpleModelListener);
 
-    EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+    detachListeners();
     KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myFocusListener);
 
     clearCaches();
@@ -1415,6 +1419,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     mySelectionManager.dispose();
 
     myLeftMarginPressListeners.clear();
+  }
+
+  protected void detachListeners() {
+    EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
+    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
   }
 
   public boolean hasValidSelectedNode() {
@@ -3039,10 +3048,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       getEditorContext().pushTracerTask("Hanlding events", true);
     }
     try {
-      if (EventUtil.isDetachedOnlyChange(events)) {
-        return;
-      }
-
       SNode lastSelectedNode = getSelectedNode();
 
       if (!EventUtil.isDramaticalChange(events)) {
@@ -3589,10 +3594,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     @Override
     public boolean isCutEnabled(@NotNull DataContext dataContext) {
-      return !(isDisposed() ||
-          isInvalidLightweight() ||
-          ReadOnlyUtil.isSelectionReadOnlyInEditor(EditorComponent.this) ||
-          getSelectionManager().getSelection() == null);
+      return !(isDisposed() || isInvalidLightweight() || getSelectionManager().getSelection() == null ||
+          ReadOnlyUtil.canDeleteNodes(EditorComponent.this, getSelectedNodes()));
     }
 
     @Override

@@ -32,6 +32,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
 import jetbrains.mps.internal.make.runtime.util.DirUtil;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.JpsMPSModuleExtension;
@@ -40,6 +41,7 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IConfigMonitor.Stub;
+import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScript;
@@ -47,6 +49,8 @@ import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.resources.IMResource;
@@ -104,6 +108,7 @@ public class MPSMakeMediator {
   private OutputConsumer myOutputConsumer;
 
   private MyMessageHandler myMessageHandler = new MyMessageHandler();
+  private final MessageFeedbackStrategy myMessageFeedbackStrategy = new MessageFeedbackStrategy(myMessageHandler);
 
   private MyRedirects myRedirects;
   private MyForeignRootPaths myForeignRootPaths;
@@ -182,7 +187,12 @@ public class MPSMakeMediator {
     };
 
     ReducedMakeFacetConfiguration makeFacetConfiguration = new ReducedMakeFacetConfiguration(
-      myRedirects, !myContext.getCompileContext().isMake(), new Stub(), new IJobMonitor.Stub());
+      myRedirects, !myContext.getCompileContext().isMake(), new Stub(), new IJobMonitor.Stub() {
+      @Override
+      public void reportFeedback(IFeedback fdbk) {
+        myMessageFeedbackStrategy.reportFeedback(fdbk);
+      }
+    });
     IScriptController scriptCtl = makeFacetConfiguration.configureFacets(ms);
     boolean success;
 

@@ -76,7 +76,7 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
       return null;
     }
     String editorClassName = LanguageAspect.getAspectNodeFqName(concept.getConceptFqName(), LanguageAspect.EDITOR) + "_Editor";
-    Class<? extends ConceptEditor> editorClass = ClassLoaderManager.getInstance().getClass(language, editorClassName);
+    Class<? extends ConceptEditor> editorClass = ClassLoaderManager.getInstance().getOwnClass(language, editorClassName);
     if (editorClass == null) {
       return null;
     }
