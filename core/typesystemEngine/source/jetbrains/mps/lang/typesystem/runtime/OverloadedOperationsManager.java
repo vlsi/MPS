@@ -94,7 +94,4 @@ public class OverloadedOperationsManager {
   public void clear() {
     myOperationsToTypeProviders = new RuleSet<IOverloadedOpsTypesProvider>();
   }
-
-  public void makeConsistent() {
-  }
 }

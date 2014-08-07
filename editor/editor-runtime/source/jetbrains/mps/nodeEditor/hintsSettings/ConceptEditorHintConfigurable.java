@@ -20,22 +20,29 @@ import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistryListener;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
+import javax.swing.JOptionPane;
 
 /**
  * Semen Alperovich
  * 05 15, 2013
  */
 public class ConceptEditorHintConfigurable implements SearchableConfigurable {
+  private ConceptEditorHintSettings mySettings;
   private ConceptEditorHintPreferencesPage myPage;
   private final Project myProject;
-
+  private LanguageRegistryListener myLanguageReloadListener;
+  private boolean myLanguageRegistryChanged = false;
 
   public ConceptEditorHintConfigurable(Project project) {
     myProject = project;
@@ -71,21 +78,46 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable {
     return getPage().getComponent();
   }
 
-  public ConceptEditorHintPreferencesPage getPage() {
+  private ConceptEditorHintPreferencesPage getPage() {
     if (myPage == null) {
-      myPage = new ConceptEditorHintPreferencesPage(ConceptEditorHintSettingsComponent.getInstance(myProject).getSettings());
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          mySettings = new ConceptEditorHintSettings(LanguageRegistry.getInstance().getAvailableLanguages());
+        }
+      });
+      mySettings.updateSettings(ConceptEditorHintSettingsComponent.getInstance(myProject).getState().getEnabledHints());
+      myPage = new ConceptEditorHintPreferencesPage(mySettings);
+      LanguageRegistry.getInstance().addRegistryListener(myLanguageReloadListener = new LanguageRegistryListener() {
+        @Override
+        public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
+          myLanguageRegistryChanged = true;
+        }
+
+        @Override
+        public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
+          myLanguageRegistryChanged = true;
+        }
+      });
     }
     return myPage;
   }
 
   @Override
   public boolean isModified() {
-    return myPage.isModified();
+    return myPage.isModified() || myLanguageRegistryChanged;
   }
 
   @Override
   public void apply() throws ConfigurationException {
+    if (myLanguageRegistryChanged) {
+      showRegistryChangedDialog();
+      return;
+    }
     myPage.commit();
+    HintsState newState = new HintsState();
+    newState.setEnabledHints(mySettings.getEnabledHints());
+    ConceptEditorHintSettingsComponent.getInstance(myProject).loadState(newState);
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -96,13 +128,24 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable {
     });
   }
 
+  private void showRegistryChangedDialog() {
+    JOptionPane.showMessageDialog(myPage.getComponent(), "Some languages have been reloaded.\nPlease reopen settings page", "Error",
+        JOptionPane.ERROR_MESSAGE);
+  }
+
   @Override
   public void reset() {
+    if (myLanguageRegistryChanged) {
+      showRegistryChangedDialog();
+      return;
+    }
     myPage.reset();
   }
 
   @Override
   public void disposeUIResources() {
     myPage = null;
+    LanguageRegistry.getInstance().removeRegistryListener(myLanguageReloadListener);
+    myLanguageReloadListener = null;
   }
 }

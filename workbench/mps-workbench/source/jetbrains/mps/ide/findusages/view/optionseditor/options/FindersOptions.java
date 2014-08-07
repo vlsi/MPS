@@ -85,7 +85,7 @@ public class FindersOptions extends BaseOptions {
         continue;
       }
 
-      Class finderClass = ClassLoaderManager.getInstance().getClass(module, finderClassName);
+      Class finderClass = ClassLoaderManager.getInstance().getOwnClass(module, finderClassName);
       if (finderClass != null) {
         try {
           IFinder finder = (IFinder) finderClass.newInstance();

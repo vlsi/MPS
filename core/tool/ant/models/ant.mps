@@ -4066,6 +4066,9 @@
           <node role="initValue" roleId="tpee.1154542803372" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7757477914029220616" nodeInfo="nn">
             <property name="value" nameId="tpee.1070475926801" value="asm4-all.jar" />
           </node>
+          <node role="initValue" roleId="tpee.1154542803372" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5716359503160010343" nodeInfo="nn">
+            <property name="value" nameId="tpee.1070475926801" value="asm-all.jar" />
+          </node>
           <node role="initValue" roleId="tpee.1154542803372" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7757477914028964032" nodeInfo="nn">
             <property name="value" nameId="tpee.1070475926801" value="diffutils-1.2.1.jar" />
           </node>

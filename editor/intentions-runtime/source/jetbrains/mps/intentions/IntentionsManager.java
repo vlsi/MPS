@@ -428,7 +428,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private void initIntentionsDescriptor(Language language, LanguageAspect aspect, String classShortName) {
     try {
-      Class<?> cls = ClassLoaderManager.getInstance().getClass(language, language.getModuleName() + "." + aspect.getName() + "." + classShortName);
+      Class<?> cls = ClassLoaderManager.getInstance().getOwnClass(language, language.getModuleName() + "." + aspect.getName() + "." + classShortName);
       if (cls != null) {
         BaseIntentionsDescriptor desc = (BaseIntentionsDescriptor) cls.newInstance();
         desc.init();

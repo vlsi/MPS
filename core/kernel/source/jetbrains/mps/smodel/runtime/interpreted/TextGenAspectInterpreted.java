@@ -56,7 +56,7 @@ public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
       String packageName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(concept));
       String className = concept.getName();
       String textgenClassname = packageName + ".textGen." + className + "_TextGen";
-      Class textgenClass = ClassLoaderManager.getInstance().getClass(l, textgenClassname);
+      Class textgenClass = ClassLoaderManager.getInstance().getOwnClass(l, textgenClassname);
       if (textgenClass != null) {
         return new SNodeTextGenAdapter(conceptFqName, textgenClass);
       }
