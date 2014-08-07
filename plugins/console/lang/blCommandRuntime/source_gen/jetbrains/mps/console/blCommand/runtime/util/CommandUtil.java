@@ -126,11 +126,15 @@ public class CommandUtil {
 
 
   public static void printSequence(ConsoleStream console, final Project project, final _FunctionTypes._return_P0_E0<? extends SearchResults> results, int resultsCount, String resultDescription) {
-    CommandUtil.printClosure(console, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        CommandUtil.show(project, results.invoke());
-      }
-    }, (resultsCount == 0 ? "empty sequence" : resultsCount + " " + resultDescription));
+    if (resultsCount == 0) {
+      console.addText("empty sequence");
+    } else {
+      CommandUtil.printClosure(console, new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
+          CommandUtil.show(project, results.invoke());
+        }
+      }, resultsCount + " " + resultDescription);
+    }
   }
 
 

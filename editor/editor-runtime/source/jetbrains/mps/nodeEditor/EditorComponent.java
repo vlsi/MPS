@@ -3572,10 +3572,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     @Override
     public boolean isCutEnabled(@NotNull DataContext dataContext) {
-      return !(isDisposed() ||
-          isInvalidLightweight() ||
-          ReadOnlyUtil.isSelectionReadOnlyInEditor(EditorComponent.this) ||
-          getSelectionManager().getSelection() == null);
+      return !(isDisposed() || isInvalidLightweight() || getSelectionManager().getSelection() == null ||
+          ReadOnlyUtil.canDeleteNodes(EditorComponent.this, getSelectedNodes()));
     }
 
     @Override

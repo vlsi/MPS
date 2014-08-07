@@ -30,7 +30,7 @@ public class ModelStatisticsTarget_Behavior {
     List<Tuples._2<String, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, Integer>>());
     SModel model = ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(thisNode, "target", true));
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Roots", ListSequence.fromList(SModelOperations.getRoots(model, null)).count()));
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Nodes", SNodeOperations.nodesCount(model)));
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Nodes", (model == null ? 0 : SNodeOperations.nodesCount(model))));
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("References", references));
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Properties", properties));
 

@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.ide.editor.actions.EditorActionUtils;
+import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -45,7 +45,7 @@ public class IntroduceField_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("component")), Sequence.<EditorCell>singleton(((EditorComponent) MapSequence.fromMap(_params).get("component")).findNodeCell(((SNode) MapSequence.fromMap(_params).get("node"))))))) {
+    if (ReadOnlyUtil.isCellsReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("component")), Sequence.<EditorCell>singleton(((EditorComponent) MapSequence.fromMap(_params).get("component")).findNodeCell(((SNode) MapSequence.fromMap(_params).get("node")))))) {
       return false;
     }
     return IntroduceFieldRefactoring.isApplicable(((SNode) MapSequence.fromMap(_params).get("node")));

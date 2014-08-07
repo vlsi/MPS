@@ -62,15 +62,15 @@ public class HelpCommand_Behavior {
       List<List<String>> resultList = ListSequence.fromListWithValues(new ArrayList<List<String>>(), LinkedListSequence.fromLinkedList(groupedConstructions).select(new ISelector<SNode, IListSequence<String>>() {
         public IListSequence<String> select(SNode it) {
           try {
-            return ListSequence.fromListAndArray(new ArrayList<String>(), (isNotEmptyString(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getHelpPage_7006261637493125297", new Object[]{})) ? "+" : " "), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getKind_7006261637493126084", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getShortHelp_473081947982699339", new Object[]{}));
+            return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getShortHelp_473081947982699339", new Object[]{}));
           } catch (RuntimeException e) {
             if (LOG.isEnabledFor(Level.WARN)) {
               LOG.warn("Concept " + BehaviorReflection.invokeVirtual(String.class, it, "virtual_getFqName_1213877404258", new Object[]{}) + " implements ConsoleHelpProvider but does not implement getHelp() method", e);
             }
             try {
-              return ListSequence.fromListAndArray(new ArrayList<String>(), " ", BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), "", "");
+              return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), "");
             } catch (RuntimeException e1) {
-              return ListSequence.fromListAndArray(new ArrayList<String>(), " ", SPropertyOperations.getString(it, "name"), "", "");
+              return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(it, "name"), "");
             }
           }
         }
@@ -114,10 +114,11 @@ public class HelpCommand_Behavior {
       try {
         SNode chp = (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "target", true), "command", false);
         helpPage = BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getHelpPage_7006261637493125297", new Object[]{});
+        String helpHead = BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getDisplayString_7006261637493126103", new Object[]{}) + " : " + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getKind_7006261637493126084", new Object[]{}) + "\n" + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getShortHelp_473081947982699339", new Object[]{});
         if ((helpPage != null && helpPage.length() > 0)) {
-          console.addText(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getDisplayString_7006261637493126103", new Object[]{}) + " : " + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getKind_7006261637493126084", new Object[]{}) + "\n\n" + helpPage);
+          console.addText(helpHead + "\n\n" + helpPage);
         } else {
-          console.addText(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getDisplayString_7006261637493126103", new Object[]{}) + " : " + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getKind_7006261637493126084", new Object[]{}) + "\n" + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getShortHelp_473081947982699339", new Object[]{}));
+          console.addText(helpHead);
         }
       } catch (RuntimeException ignored) {
       }
@@ -125,7 +126,7 @@ public class HelpCommand_Behavior {
   }
 
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "display this help or command help";
+    return "display this help or help page for a command";
   }
 
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
@@ -153,9 +154,5 @@ public class HelpCommand_Behavior {
       return checkedDotOperand.length();
     }
     return 0;
-  }
-
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
   }
 }

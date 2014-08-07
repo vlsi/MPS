@@ -22,9 +22,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ActionCallParameter").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"value"}, new boolean[]{false}).abstract_().create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.CallActionExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").references("action").children(new String[]{"parameter"}, new boolean[]{true}).alias("#callAction", "execute mps action with custom parameters").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.CallActionExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").references("action").children(new String[]{"parameter"}, new boolean[]{true}).alias("#callAction", "call IDE action with custom parameters").create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.Clean").super_("jetbrains.mps.console.ideCommands.structure.AbsractMake").parents("jetbrains.mps.console.ideCommands.structure.AbsractMake").alias("#clean", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.Clean").super_("jetbrains.mps.console.ideCommands.structure.AbsractMake").parents("jetbrains.mps.console.ideCommands.structure.AbsractMake").alias("#clean", "clean files *.generated").create();
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ClickableGenerator").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.IClickable").properties("moduleId").create();
       case 7:
@@ -34,7 +34,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.IStatisticsTarget").interface_().create();
       case 10:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.Make").super_("jetbrains.mps.console.ideCommands.structure.AbsractMake").parents("jetbrains.mps.console.ideCommands.structure.AbsractMake").alias("#make", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.Make").super_("jetbrains.mps.console.ideCommands.structure.AbsractMake").parents("jetbrains.mps.console.ideCommands.structure.AbsractMake").alias("#make", "make models").create();
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ModelProperties").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"targetModel"}, new boolean[]{false}).alias("#modelProperties", "").create();
       case 12:
@@ -46,19 +46,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.NodeReference").super_("jetbrains.mps.lang.smodel.structure.NodeRefExpression").parents("jetbrains.mps.lang.smodel.structure.NodeRefExpression").alias("node", "").create();
       case 16:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.OfAspectOperation").super_("jetbrains.mps.baseLanguage.collections.structure.SequenceOperation").parents("jetbrains.mps.baseLanguage.collections.structure.SequenceOperation", "jetbrains.mps.console.blCommand.structure.ConsoleOperation").references("requestedAspect").alias("ofAspect", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.OfAspectOperation").super_("jetbrains.mps.baseLanguage.collections.structure.SequenceOperation").parents("jetbrains.mps.baseLanguage.collections.structure.SequenceOperation", "jetbrains.mps.console.blCommand.structure.ConsoleOperation").references("requestedAspect").alias("ofAspect", "filter models by aspect").create();
       case 17:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.INodeSetReference").alias("project", "").create();
       case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.RebuildProjectCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"model"}, new boolean[]{false}).abstract_().alias("#rebuild project", "clean and make").create();
       case 19:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.RemoveGenSources").super_("jetbrains.mps.console.ideCommands.structure.AbsractMake").parents("jetbrains.mps.console.ideCommands.structure.AbsractMake").alias("#removeGenSources", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.RemoveGenSources").super_("jetbrains.mps.console.ideCommands.structure.AbsractMake").parents("jetbrains.mps.console.ideCommands.structure.AbsractMake").alias("#removeGenSources", "remove source_gen").create();
       case 20:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"target"}, new boolean[]{false}).alias("#showBrokenRefs", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"target"}, new boolean[]{false}).alias("#showBrokenRefs", "show broken references").create();
       case 21:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ShowGenPlan").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"targetModel"}, new boolean[]{false}).alias("#showGenPlan", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ShowGenPlan").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"targetModel"}, new boolean[]{false}).alias("#showGenPlan", "show generation plan").create();
       case 22:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.StatCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"target"}, new boolean[]{false}).alias("#stat", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.StatCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"target"}, new boolean[]{false}).alias("#stat", "display statistics").create();
       case 23:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.INodeSetReference").children(new String[]{"target"}, new boolean[]{false}).alias("node", "").create();
       case 24:

@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.ide.editor.actions.EditorActionUtils;
+import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -42,7 +42,7 @@ public class RenameVariable_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), Sequence.<EditorCell>singleton(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(((SNode) MapSequence.fromMap(_params).get("node")))));
+    return !(ReadOnlyUtil.isCellsReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), Sequence.<EditorCell>singleton(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(((SNode) MapSequence.fromMap(_params).get("node"))))));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
