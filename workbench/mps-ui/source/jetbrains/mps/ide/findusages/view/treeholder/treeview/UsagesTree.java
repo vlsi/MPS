@@ -15,13 +15,18 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
+import com.intellij.icons.AllIcons;
+import com.intellij.icons.AllIcons.Debugger;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.SystemInfo;
+import com.intellij.ui.LayeredIcon;
+import jetbrains.mps.icons.MPSIcons.ProjectPane;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.findusages.view.icons.IconManager;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
@@ -30,6 +35,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNode
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
+import jetbrains.mps.ide.messages.Icons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
@@ -47,6 +53,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.AbstractAction;
+import javax.swing.Icon;
 import javax.swing.KeyStroke;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
@@ -410,7 +417,16 @@ public class UsagesTree extends MPSTree {
   private void setUIProperties(UsagesTreeNode root) {
     BaseNodeData data = root.getUserObject().getData();
 
-    root.setIcon(data.getIcon());
+    Icon icon = data.getIcon();
+    if (data.isResultNode()) {
+      final LayeredIcon result = new LayeredIcon(2);
+      result.setIcon(icon, 0);
+      result.setIcon(Debugger.BreakpointAlert, 1);
+
+      icon = result;
+    }
+
+    root.setIcon(icon);
 
     String invalid = data.isInvalid() ? "<font color=red>[Invalid]</font> " : "";
     String caption = data.getText(new TextOptions(myAdditionalInfoNeeded, !root.isLeaf(), root.getSubresultsCount()));
