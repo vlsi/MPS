@@ -39,7 +39,7 @@
       <unit at="7,0,16,0" name="jetbrains.mps.lang.smodel.behavior.EnumMemberValueRefExpression_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,278,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,280,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Model_RootsOperation_BehaviorDescriptor.java">
       <unit at="7,0,20,0" name="jetbrains.mps.lang.smodel.behavior.Model_RootsOperation_BehaviorDescriptor" />
@@ -277,6 +277,9 @@
     </file>
     <file name="SearchScope_ContainsOperation_BehaviorDescriptor.java">
       <unit at="11,0,40,0" name="jetbrains.mps.lang.smodel.behavior.SearchScope_ContainsOperation_BehaviorDescriptor" />
+    </file>
+    <file name="PropertyIdRefExpression_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.smodel.behavior.PropertyIdRefExpression_BehaviorDescriptor" />
     </file>
     <file name="Model_CreateNewRootNodeOperation_BehaviorDescriptor.java">
       <unit at="7,0,20,0" name="jetbrains.mps.lang.smodel.behavior.Model_CreateNewRootNodeOperation_BehaviorDescriptor" />

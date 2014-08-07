@@ -387,6 +387,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "propertyDeclaration", false), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_2644386474302437701(final PropertyMacroContext _context) {
+    return IdHelper.getPropId((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(_context.getNode(), "propertyDeclaration", false)).serialize();
+  }
+
   public static Object propertyMacro_GetPropertyValue_3778812090364386842(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "member", false), "internalValue");
   }
