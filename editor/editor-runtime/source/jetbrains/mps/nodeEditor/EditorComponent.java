@@ -2711,7 +2711,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (resetPattern) {
       patternEditor.toggleReplaceMode();
     }
-    String pattern = patternEditor.getPattern();
+    final String pattern = patternEditor.getPattern();
 
     // user changed text within this cell before pressing Ctrl+Space
     // or cell has no text at this moment
@@ -2723,11 +2723,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       List<SubstituteAction> matchingActions = getMatchingActions(editorCell, substituteInfo, isSmart, pattern);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
         // Just one applicable action in the completion menu
-        SubstituteAction theAction = matchingActions.get(0);
+        final SubstituteAction theAction = matchingActions.get(0);
+        Boolean canSubstitute = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            return theAction.canSubstitute(pattern);
+          }
+        });
+        Boolean canSubstituteStrictly = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            return theAction.canSubstituteStrictly(pattern);
+          }
+        });
         // Invoking this action immediately if originalText was changed or
         // the cursor is at the end of line and !theAction.canSubstituteStrictly(pattern)
         // [means, action will change underlying code]
-        if (originalTextChanged || editorCell.isErrorState() || (atTheEndOfLine && !theAction.canSubstituteStrictly(pattern))) {
+        if (canSubstitute && (originalTextChanged || editorCell.isErrorState() || (atTheEndOfLine && !canSubstituteStrictly))) {
           theAction.substitute(this.getEditorContext(), pattern);
           return true;
         }
