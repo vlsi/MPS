@@ -64,6 +64,11 @@ public abstract class IdUtil {
     SPropertyId pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(id, propName);
     if (pid != null) return pid;
 
+    // this hack is needed until SConcept works by name
+    if ((SNodeUtil.concept_ConceptDeclaration_id.equals(id) || SNodeUtil.concept_InterfaceConceptDeclaration_id.equals(id)) && propName.equals("name")) {
+      return SNodeUtil.property_INamedConcept_name_id;
+    }
+
     for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
       pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(c.getId(), propName);
       if (pid != null) return pid;

@@ -1868,99 +1868,47 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SConceptId name2cid(@NotNull String name) {
-    SConceptId result = IdUtil.getConceptId(name);
-    if (result == null) {
-      DebugRegistryUtil.fillDebugInfo(myModel);
-      result = IdUtil.getConceptId(name);
-    }
-    return result;
+    DebugRegistryUtil.fillDebugInfo(myModel);
+    return IdUtil.getConceptId(name);
   }
 
   private String cid2name(@NotNull SConceptId cid) {
-    String result = IdUtil.getConceptFqName(cid);
-    if (result == null) {
-      DebugRegistryUtil.fillDebugInfo(myModel);
-      result = IdUtil.getConceptFqName(cid);
-    }
-    return result;
+    DebugRegistryUtil.fillDebugInfo(myModel);
+    return IdUtil.getConceptFqName(cid);
   }
 
   private SPropertyId name2pid(@NotNull String name) {
-    //this is needed to prevent infinite recursion when getProperty("name") on top of meta-ids
-    if (name.equals("name") && isConceptDeclaration()) return SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001");
-
-    SPropertyId result = IdUtil.getPropId(getConceptId(), name);
-    if (result == IdUtil.UNKNOWN_PROPERTY_ID) {
-      DebugRegistryUtil.fillDebugInfo(myModel);
-      result = IdUtil.getPropId(getConceptId(), name);
-    }
-    return result;
-  }
-
-  private Boolean myIsConceptDeclaration = null;
-
-  private synchronized boolean isConceptDeclaration() {
-    if (myIsConceptDeclaration == null) {
-      if (myConceptFqName != null) {
-        myIsConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration".equals(myConceptFqName) ||
-            "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration".equals(myConceptFqName);
-      } else {
-        myIsConceptDeclaration =
-            "c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640".equals(myConceptId.serialize()) ||
-                "c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551".equals(myConceptId.serialize());
-      }
-    }
-    return myIsConceptDeclaration;
+    DebugRegistryUtil.fillDebugInfo(myModel);
+    return IdUtil.getPropId(getConceptId(), name);
   }
 
   private String pid2name(@NotNull SPropertyId pid) {
-    String result = MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(pid);
-    if (result == null) {
-      DebugRegistryUtil.fillDebugInfo(myModel);
-      result = MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(pid);
-    }
-    return result;
+    DebugRegistryUtil.fillDebugInfo(myModel);
+    return MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(pid);
   }
 
   private SReferenceLinkId name2rid(@NotNull String name) {
-    SReferenceLinkId result = IdUtil.getReferenceLinkId(getConceptId(), name);
-    if (result == IdUtil.UNKNOWN_REFERENCE_ID) {
-      DebugRegistryUtil.fillDebugInfo(myModel);
-      result = IdUtil.getReferenceLinkId(getConceptId(), name);
-    }
-    return result;
+    DebugRegistryUtil.fillDebugInfo(myModel);
+    return IdUtil.getReferenceLinkId(getConceptId(), name);
   }
 
   private String rid2name(@NotNull SReferenceLinkId rid) {
-    String result = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
-    if (result == null) {
-      DebugRegistryUtil.fillDebugInfo(myModel);
-      result = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
-    }
-    return result;
-
+    DebugRegistryUtil.fillDebugInfo(myModel);
+    return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
   }
 
   private SContainmentLinkId name2lid(@NotNull SNode sNode, @NotNull String name) {
     if ("smodelAttribute".equals(name)) return SContainmentLinkId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170");
-    SContainmentLinkId result = IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
-    if (result == IdUtil.UNKNOWN_LINK_ID) {
-      DebugRegistryUtil.fillDebugInfo(myModel);
-      result = IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
-    }
-    return result;
+    DebugRegistryUtil.fillDebugInfo(myModel);
+    return IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
   }
 
   private String lid2name(@Nullable SContainmentLinkId lid) {
     if (lid == null) {
       return null;
     }
-    String result = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(lid);
-    if (result == null) {
-      DebugRegistryUtil.fillDebugInfo(myModel);
-      result = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(lid);
-    }
-    return result;
+    DebugRegistryUtil.fillDebugInfo(myModel);
+    return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(lid);
   }
 
   private void updateWorkingMode(IdMigrationMode mode) {
