@@ -24,8 +24,6 @@
   <source id="1119983655225" name="MAPPING_main" hash="7we22beb98qaa3e2ju1r7a6yt9qkazy">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="8981739865593580305" name="_reader_configuration_" hash="d5bfnc8o3h3x280pkv17trd3g176qr5">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="8981739865593580305" name="_reader_configuration_" hash="d5bfnc8o3h3x280pkv17trd3g176qr5" />
 </dependencies>
 
