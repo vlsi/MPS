@@ -25,7 +25,7 @@
       <link role="use1" roleId="qz7j.4355167635271952392" targetNodeId="4355167635272070329" resolveInfo="EntryOne" />
       <link role="use2" roleId="qz7j.4355167635271952394" targetNodeId="4355167635272070331" resolveInfo="EntryTwo" />
       <link role="owner" roleId="qz7j.3003826652066045294" targetNodeId="4355167635272070340" resolveInfo="Second" />
-      <link role="use3" roleId="qz7j.4355167635271952397" targetNodeId="4355167635272070329" resolveInfo="EntryOne" />
+      <link role="use3" roleId="qz7j.4355167635271952397" targetNodeId="4355167635272070341" resolveInfo="EntryThree" />
     </node>
   </root>
 </model>

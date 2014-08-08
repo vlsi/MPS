@@ -22,10 +22,13 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.MultiMap;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.lang.reflect.InvocationTargetException;
@@ -104,7 +107,7 @@ public class ExportsVault {
       for (ExportEntry ctx : myVault.get(exportLabel)) {
         // FIXME input at EXPOSE is from transient model K, while input at query time is from (transient) model L. How do we match them?
         // Perhaps, there should be match function in addition to marshal/unmarshal
-        if (inputNode.getReference().equals(ctx.myValue.getInput().getReference())) {
+        if (ctx.match(inputNode)) {
           rv.add(ctx);
         }
       }
@@ -115,6 +118,8 @@ public class ExportsVault {
   public SNode instantiateOutputProxy(ExportEntry entry, SNode input) {
     SNode marshalFunction = entry.myExportLabel.getChildren("unmarshal").iterator().next();
     String functionName = "unmarshal_" + marshalFunction.getNodeId().toString();
+    // XXX perhaps, we shall record actual concept of outpuy node, and use it instead of outputKind, which
+    // will be still there for label validation/code completion purposes
     SNode outputConcept = entry.myExportLabel.getReferenceTarget("outputKind");
     SNode outputProxy;
     synchronized (myTempModels) {
@@ -123,7 +128,7 @@ public class ExportsVault {
         proxyModel = myContext.getModule().createTransientModel(entry.myModelReference);
         myTempModels.put(entry.myModelReference, proxyModel);
       }
-      outputProxy = SModelUtil_new.instantiateConceptDeclaration(outputConcept, proxyModel);
+      outputProxy = SModelUtil_new.instantiateConceptDeclaration(NameUtil.nodeFQName(outputConcept), proxyModel, entry.myOutputNodeId, false);
       if (outputProxy.getModel() == null) {
         proxyModel.addRootNode(outputProxy);
       }
@@ -138,11 +143,24 @@ public class ExportsVault {
     final SNode/*node<ExportLabel>*/ myExportLabel;
     final ExportLabelContext myValue;
     final SModelReference myModelReference;
+    // these are to match input node of a label being created vs input node of label being queried
+    final SConcept myInputConcept;
+    final SNodeId myInputNodeId;
+    final SNodeId myOutputNodeId;
 
     /*package*/ ExportEntry(SNode exportLabel, ExportLabelContext ctx, SModelReference modelReference) {
       myExportLabel = exportLabel;
       myValue = ctx;
       myModelReference = modelReference;
+      myInputConcept = ctx.getInput().getConcept();
+      myInputNodeId = ctx.getInput().getNodeId();
+      myOutputNodeId = ctx.getOutput().getNodeId();
+    }
+
+    public boolean match(SNode inputNode) {
+      SConcept c = inputNode.getConcept();
+      SNodeId id = inputNode.getNodeId();
+      return myInputConcept.equals(c) && myInputNodeId.equals(id);
     }
   }
   private static class ExportLabelContextImpl implements ExportLabelContext {

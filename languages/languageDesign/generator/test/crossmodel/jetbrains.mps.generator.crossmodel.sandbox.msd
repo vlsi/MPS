@@ -8,9 +8,11 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">4d14758c-3ecb-486d-b8c8-ea5beb8ae408(jetbrains.mps.generator.test.crossmodel.entity)</dependency>
+    <dependency reexport="false">dc1cc948-6f43-4687-90cb-17dd5cb27219(jetbrains.mps.generator.test.crossmodel.property)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>4d14758c-3ecb-486d-b8c8-ea5beb8ae408(jetbrains.mps.generator.test.crossmodel.entity)</usedLanguage>
+    <usedLanguage>dc1cc948-6f43-4687-90cb-17dd5cb27219(jetbrains.mps.generator.test.crossmodel.property)</usedLanguage>
     <usedLanguage>f38a23f6-1479-4dff-b11e-822003fa9d94(jetbrains.mps.lang.generator.crossmodel)</usedLanguage>
   </usedLanguages>
 </solution>

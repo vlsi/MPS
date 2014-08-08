@@ -8,9 +8,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.generator.template.IfMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 @Generated
 public class QueriesGenerated {
@@ -24,71 +25,39 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), "kind", "2", "1");
   }
 
-  public static Object propertyMacro_GetPropertyValue_4355167635272259509(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_5176577547833443850(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_4355167635272123028(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+  public static Object propertyMacro_GetPropertyValue_5176577547833543228(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name").length();
   }
 
-  public static Object propertyMacro_GetPropertyValue_4355167635272142236(final PropertyMacroContext _context) {
-    return "get_" + SPropertyOperations.getString(_context.getNode(), "name");
+  public static Object propertyMacro_GetPropertyValue_5176577547833750247(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name") + "Bean";
   }
 
-  public static Object propertyMacro_GetPropertyValue_4355167635272161393(final PropertyMacroContext _context) {
-    return "set_" + SPropertyOperations.getString(_context.getNode(), "name");
+  public static Object referenceMacro_GetReferent_5176577547833570998(final ReferenceMacroContext _context) {
+    return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), "use1", false), "EntryToBeanProperty");
   }
 
-  public static Object referenceMacro_GetReferent_8915420221430192739(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), "use1", false), "MethodLabel");
+  public static Object referenceMacro_GetReferent_5176577547833821221(final ReferenceMacroContext _context) {
+    return _context.getOutputNodeProxy(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "use1", false), "owner", false), "NodeToBean");
   }
 
-  public static Object referenceMacro_GetReferent_5533782486491957875(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), "use1", false), "MethodLabel");
+  public static Iterable<SNode> sourceNodesQuery_5176577547833432907(final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "entries", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.hasValue(it, "kind", "1", "1");
+      }
+    });
   }
 
-  public static Object referenceMacro_GetReferent_8915420221430202755(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeProxy(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "use1", false), "owner", false), "ClassLabel");
-  }
-
-  public static Object referenceMacro_GetReferent_5533782486491959423(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), "use2", false), "MethodLabel");
-  }
-
-  public static Object referenceMacro_GetReferent_5533782486491959433(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), "use1", false), "MethodLabel");
-  }
-
-  public static Object referenceMacro_GetReferent_5533782486491959443(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeProxy(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "use2", false), "owner", false), "ClassLabel");
-  }
-
-  public static Object referenceMacro_GetReferent_5533782486491961146(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), "use3", false), "MethodLabel");
-  }
-
-  public static Object referenceMacro_GetReferent_5533782486491961156(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), "use1", false), "MethodLabel");
-  }
-
-  public static Object referenceMacro_GetReferent_5533782486491961166(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeProxy(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "use3", false), "owner", false), "ClassLabel");
-  }
-
-  public static boolean ifMacro_Condition_8915420221430180396(final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "use1", false) != null;
-  }
-
-  public static boolean ifMacro_Condition_5533782486491959414(final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "use2", false) != null;
-  }
-
-  public static boolean ifMacro_Condition_5533782486491961137(final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "use3", false) != null;
-  }
-
-  public static Iterable<SNode> sourceNodesQuery_4355167635272269705(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "entries", true);
+  public static Iterable<SNode> sourceNodesQuery_5176577547833431181(final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "entries", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.hasValue(it, "kind", "2", "1");
+      }
+    });
   }
 }
