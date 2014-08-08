@@ -4023,9 +4023,6 @@
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
             <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="1216755869996" resolveInfo="mappingLabelReference" />
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PaddingLeftStyleClassItem" typeId="tpc2.1215007883204" id="7359536273012566755" nodeInfo="nn">
-              <property name="value" nameId="tpc2.1215007802031" value="1" />
-            </node>
           </node>
         </node>
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="1200912701981" nodeInfo="nn">

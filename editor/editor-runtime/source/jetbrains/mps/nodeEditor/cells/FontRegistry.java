@@ -16,22 +16,27 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.openapi.util.SystemInfo;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * User: shatalin
  * Date: 06/08/14
  */
 class FontRegistry {
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(FontRegistry.class));
+
   private static FontRegistry ourInstance;
 
   static FontRegistry getInstance() {
@@ -41,7 +46,7 @@ class FontRegistry {
     return ourInstance;
   }
 
-  private Set<String> myStyledFonts;
+  private Map<String, FontFamily> myAvailableFonts;
   private Map<String, Font> myFontsCache = new HashMap<String, Font>();
   private Map<Font, FontMetrics> myFontMetricsCache = new HashMap<Font, FontMetrics>();
 
@@ -50,16 +55,25 @@ class FontRegistry {
   }
 
   private void loadStyledFonts() {
-    myStyledFonts = new HashSet<String>();
     if (!SystemInfo.isMac) {
       return;
     }
+    myAvailableFonts = new HashMap<String, FontFamily>();
     GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
-    Font[] allFonts = graphicsEnvironment.getAllFonts();
-    for (Font font : allFonts) {
-      String name = font.getName();
-      if (name.endsWith("-Italic") || name.endsWith("-Bold") || name.endsWith("-BoldItalic")) {
-        myStyledFonts.add(font.getName());
+
+    for (Font font : graphicsEnvironment.getAllFonts()) {
+      String fontFamilyName = font.getFamily();
+      FontFamily fontFamily = myAvailableFonts.get(fontFamilyName);
+      if (fontFamily == null) {
+        fontFamily = new FontFamily(fontFamilyName);
+        myAvailableFonts.put(fontFamilyName, fontFamily);
+      }
+      fontFamily.addFont(font.getName());
+    }
+    for (String fontFamilyName : myAvailableFonts.keySet().toArray(new String[myAvailableFonts.size()])) {
+      FontFamily fontFamily = myAvailableFonts.get(fontFamilyName);
+      if (!fontFamily.isValid()) {
+        myAvailableFonts.remove(fontFamilyName);
       }
     }
   }
@@ -75,6 +89,14 @@ class FontRegistry {
     return result;
   }
 
+  boolean isFakeItalic(String fontName, int style) {
+    if (!SystemInfo.isMac || (style & Font.ITALIC) == 0) {
+      return false;
+    }
+    FontFamily fontEntry = myAvailableFonts.get(fontName);
+    return fontEntry == null || fontEntry.getFontName(style) == null;
+  }
+
   FontMetrics getFontMetrics(Font font) {
     FontMetrics result = myFontMetricsCache.get(font);
     if (result == null) {
@@ -84,22 +106,143 @@ class FontRegistry {
     return result;
   }
 
-
   private Pair<String, Integer> getRealFontNameAndStyle(String fontName, int style) {
-    if (!SystemInfo.isMac || style == 0) {
-      return new Pair<String, Integer>(fontName, style);
+    if (SystemInfo.isMac && myAvailableFonts.containsKey(fontName)) {
+      FontFamily fontEntry = myAvailableFonts.get(fontName);
+      String styledFontName = fontEntry.getFontName(style);
+      if (styledFontName != null) {
+        return new Pair<String, Integer>(styledFontName, 0);
+      } else {
+        return new Pair<String, Integer>(fontEntry.getRegularFontName(), style);
+      }
+    }
+    return new Pair<String, Integer>(fontName, style);
+  }
+
+  private class FontFamily {
+    private String myFamilyName;
+    private List<String> myFontNames = new ArrayList<String>();
+
+    private String myRegularFontName;
+    private String myBoldFontName;
+    private String myItalicFontName;
+    private String myBoldItalicFontName;
+
+    public FontFamily(@NotNull String familyName) {
+      myFamilyName = familyName;
     }
 
-    StringBuilder st = new StringBuilder(fontName).append('-');
-    if ((style & Font.BOLD) != 0) {
-      st.append("Bold");
+    public void addFont(String fontName) {
+      myFontNames.add(fontName);
     }
 
-    if ((style & Font.ITALIC) != 0) {
-      st.append("Italic");
+    private String getCommonPrefix() {
+      assert myFontNames.size() > 1;
+      String commonPrefix = null;
+      for (String fontName : myFontNames) {
+        if (commonPrefix == null) {
+          commonPrefix = fontName;
+          continue;
+        }
+        while (!fontName.startsWith(commonPrefix) && !commonPrefix.isEmpty()) {
+          commonPrefix = commonPrefix.substring(0, commonPrefix.length() - 1);
+        }
+      }
+      return commonPrefix;
     }
 
-    String realFontName = st.toString();
-    return myStyledFonts.contains(realFontName) ? new Pair<String, Integer>(realFontName, Font.PLAIN) : new Pair<String, Integer>(fontName, style);
+    private void loadFontNames() {
+      if (myFontNames.isEmpty()) {
+        return;
+      }
+      if (myFontNames.size() == 1) {
+        myRegularFontName = myFontNames.get(0);
+        return;
+      }
+
+      String prefix = getCommonPrefix();
+      if (prefix.isEmpty()) {
+        myRegularFontName = myFontNames.get(0);
+        LOG.error(
+            "Common prefix was not found for font family \"" + myFamilyName + "\" using first available font as regular one: \"" + myRegularFontName + "\"");
+        return;
+      }
+
+      int prefixLength = prefix.length();
+      int regularSuffixLen = -1;
+      int italicSuffixLen = -1;
+      int boldSuffixLen = -1;
+      int boldItalicSuffixLen = -1;
+      for (String fontName : myFontNames) {
+        if (fontName.length() < prefixLength) {
+          LOG.error(
+              "Font name \"" + fontName + "\" registered in font family \"" + myFamilyName + "\" is shorter that the length of common prefix \"" + prefix +
+                  "\". Skipping it.");
+          continue;
+        }
+
+        String fontSuffix = fontName.substring(prefixLength);
+        if (fontSuffix.isEmpty() || fontSuffix.contains("Regular") || fontSuffix.contains("Plain")) {
+          if (myRegularFontName == null || fontSuffix.length() < regularSuffixLen) {
+            myRegularFontName = fontName;
+            regularSuffixLen = fontSuffix.length();
+          }
+          continue;
+        }
+
+        boolean bold = fontSuffix.contains("Bold");
+        boolean italic = fontSuffix.contains("Italic") || fontSuffix.contains("Oblique");
+        if (bold & italic) {
+          if (myBoldItalicFontName == null || fontSuffix.length() < boldItalicSuffixLen) {
+            myBoldItalicFontName = fontName;
+            boldItalicSuffixLen = fontSuffix.length();
+          }
+        } else if (bold) {
+          if (myBoldFontName == null || fontSuffix.length() < boldSuffixLen) {
+            myBoldFontName = fontName;
+            boldSuffixLen = fontSuffix.length();
+          }
+        } else if (italic) {
+          if (myItalicFontName == null || fontSuffix.length() < italicSuffixLen) {
+            myItalicFontName = fontName;
+            italicSuffixLen = fontSuffix.length();
+          }
+        }
+      }
+
+      if (myRegularFontName == null) {
+        if (myBoldFontName != null) {
+          myRegularFontName = myBoldFontName;
+        } else if (myItalicFontName != null) {
+          myRegularFontName = myItalicFontName;
+        } else if (myBoldItalicFontName != null) {
+          myRegularFontName = myBoldItalicFontName;
+        } else {
+          myRegularFontName = myFontNames.get(0);
+        }
+      }
+    }
+
+    public boolean isValid() {
+      loadFontNames();
+      return myRegularFontName != null;
+    }
+
+    public String getRegularFontName() {
+      return myRegularFontName;
+    }
+
+    public String getFontName(int style) {
+      boolean bold = (style & Font.BOLD) != 0;
+      boolean italic = (style & Font.ITALIC) != 0;
+      if (bold & italic) {
+        return myBoldItalicFontName;
+      } else if (bold) {
+        return myBoldFontName;
+      } else if (italic) {
+        return myItalicFontName;
+      }
+      return myRegularFontName;
+    }
   }
 }

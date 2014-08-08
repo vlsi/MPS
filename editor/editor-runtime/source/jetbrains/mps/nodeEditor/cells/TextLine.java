@@ -92,6 +92,8 @@ public class TextLine {
   private boolean myShowCaret;
   private boolean mySelected;
   private boolean myInitialized;
+  private int myFontCorrectionRightGap;
+  private int myFontCorrectionTextShift;
 
   public TextLine(String text) {
     this(text, new StyleImpl(), false);
@@ -173,6 +175,8 @@ public class TextLine {
       int fontSize = styleFontSize != null ? styleFontSize : settings.getFontSize();
       myFont = FontRegistry.getInstance().getFont(family, style, fontSize);
       myFontMetrics = null;
+      myFontCorrectionRightGap = FontRegistry.getInstance().isFakeItalic(family, style) ? 1 : 0;
+      myFontCorrectionTextShift = (style & Font.ITALIC) > 0 ? -1 : 0;
     }
 
     myPaddingLeft = getHorizontalInternalInset(myStyle.get(StyleAttributes.PADDING_LEFT));
@@ -213,7 +217,8 @@ public class TextLine {
     myHeight = (int) (metrics.getHeight() * myLineSpacing + getPaddingTop() + getPaddingBottom());
     myTextHeight = (int) (metrics.getHeight() * myLineSpacing);
     int minWidth = calculateMinWidth();
-    int width = metrics.charsWidth(myText.toCharArray(), 0, myText.length()) + getPaddingLeft() + getPaddingRight();
+    int width =
+        metrics.charsWidth(myText.toCharArray(), 0, myText.length()) + myFontCorrectionRightGap + getPaddingLeft() + getPaddingRight();
     myWidth = Math.max(minWidth, width);
     myDescent = metrics.getDescent();
   }
@@ -453,7 +458,7 @@ public class TextLine {
     int centerLineY = shiftY + (myHeight - getPaddingBottom() + getPaddingTop()) / 2;
 
     if (getStartTextSelectionPosition() > 0) {
-      g.drawString(myText.substring(0, getStartTextSelectionPosition()), shiftX + getPaddingLeft(), baselineY);
+      g.drawString(myText.substring(0, getStartTextSelectionPosition()), shiftX + getPaddingLeft() + myFontCorrectionTextShift, baselineY);
       if (isUnderlined()) {
         g.drawLine(shiftX + getPaddingLeft(), baselineY + 1, selectionStartX, baselineY + 1);
       }
@@ -463,7 +468,7 @@ public class TextLine {
     }
 
     if (getEndTextSelectionPosition() <= myText.length()) {
-      g.drawString(myText.substring(getEndTextSelectionPosition()), selectionEndX, baselineY);
+      g.drawString(myText.substring(getEndTextSelectionPosition()), selectionEndX + myFontCorrectionTextShift, baselineY);
       if (isUnderlined()) {
         g.drawLine(selectionEndX, baselineY + 1, endLineX, baselineY + 1);
       }
@@ -477,12 +482,13 @@ public class TextLine {
       String selectedText = getTextuallySelectedText();
       g.setColor(myTextSelectedBackgroundColor);
       // Filling smaller rectangle to not cover frames created by other messages
-      if (selectionEndX - selectionStartX - 2 > 0) {
-        g.fillRect(selectionStartX + 1, shiftY + getPaddingTop() + 1, selectionEndX - selectionStartX - 2, myTextHeight - 2);
+      if (selectionEndX - selectionStartX - 2 + myFontCorrectionRightGap > 0) {
+        g.fillRect(selectionStartX + 1, shiftY + getPaddingTop() + 1,
+            selectionEndX - selectionStartX - 2 + myFontCorrectionRightGap, myTextHeight - 2);
       }
 
       g.setColor(myTextSelectedTextColor != null ? myTextSelectedTextColor : getTextColor());
-      g.drawString(selectedText, selectionStartX, baselineY);
+      g.drawString(selectedText, selectionStartX + myFontCorrectionTextShift, baselineY);
       if (isUnderlined()) {
         g.drawLine(selectionStartX, baselineY + 1, selectionEndX, baselineY + 1);
       }
