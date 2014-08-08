@@ -47,16 +47,25 @@ public final class ModelDependencyScanner {
     myConcepts = new HashSet<SConcept>();
   }
 
+  /**
+   * Default: <code>true</code>
+   */
   public ModelDependencyScanner usedLanguages(boolean collectUsedLanguages) {
     myNeedLanguages = collectUsedLanguages;
     return this;
   }
 
+  /**
+   * Default: <code>true</code>
+   */
   public ModelDependencyScanner crossModelReferences(boolean crossModelReferences) {
     myNeedCrossModel = crossModelReferences;
     return this;
   }
 
+  /**
+   * Default: <code>false</code>
+   */
   public ModelDependencyScanner usedConcepts(boolean collectConcepts) {
     myNeedConcepts = collectConcepts;
     return this;
