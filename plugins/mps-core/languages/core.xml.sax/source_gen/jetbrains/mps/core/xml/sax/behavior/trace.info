@@ -7,50 +7,26 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
+    <file name="XMLSAXDefaultChildRule_BehaviorDescriptor.java">
+      <unit at="11,0,28,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXDefaultChildRule_BehaviorDescriptor" />
+    </file>
     <file name="XMLSAXLocatorExpression_BehaviorDescriptor.java">
       <unit at="7,0,16,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXLocatorExpression_BehaviorDescriptor" />
-    </file>
-    <file name="XMLSAXParser_BehaviorDescriptor.java">
-      <unit at="13,0,34,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXParser_BehaviorDescriptor" />
-    </file>
-    <file name="XMLSAXAttributeReference_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeReference_BehaviorDescriptor" />
     </file>
     <file name="XMLSAXChildHandler_childObject_BehaviorDescriptor.java">
       <unit at="7,0,16,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildHandler_childObject_BehaviorDescriptor" />
     </file>
-    <file name="XMLSAXNodeRuleParamRef_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeRuleParamRef_BehaviorDescriptor" />
-    </file>
-    <file name="XMLSAXChildHandler_BehaviorDescriptor.java">
-      <unit at="9,0,22,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildHandler_BehaviorDescriptor" />
+    <file name="XMLSAXAttributeRule_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeRule_BehaviorDescriptor" />
     </file>
     <file name="XMLSAXNodeRuleParam_BehaviorDescriptor.java">
       <unit at="7,0,16,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeRuleParam_BehaviorDescriptor" />
     </file>
-    <file name="XMLSAXAttributeRule_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeRule_BehaviorDescriptor" />
-    </file>
     <file name="XMLSAXNodeRule_BehaviorDescriptor.java">
       <unit at="13,0,34,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeRule_BehaviorDescriptor" />
     </file>
-    <file name="XMLSAXChildRule_BehaviorDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildRule_BehaviorDescriptor" />
-    </file>
-    <file name="XMLSAXNodeCreator_BehaviorDescriptor.java">
-      <unit at="11,0,36,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeCreator_BehaviorDescriptor" />
-    </file>
-    <file name="XMLSAXTextHandler_BehaviorDescriptor.java">
-      <unit at="9,0,22,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler_BehaviorDescriptor" />
-    </file>
     <file name="XMLSAXAttributeHandler_BehaviorDescriptor.java">
       <unit at="9,0,22,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler_BehaviorDescriptor" />
-    </file>
-    <file name="XMLSAXHandler_resultObject_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandler_resultObject_BehaviorDescriptor" />
-    </file>
-    <file name="XMLSAXFieldDeclaration_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXFieldDeclaration_BehaviorDescriptor" />
     </file>
     <file name="XMLSAXFieldReference_BehaviorDescriptor.java">
       <unit at="8,0,21,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXFieldReference_BehaviorDescriptor" />
@@ -64,17 +40,50 @@
     <file name="XMLSAXHandlerFunction_BehaviorDescriptor.java">
       <unit at="10,0,31,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandlerFunction_BehaviorDescriptor" />
     </file>
-    <file name="XMLSAXNodeValidator_BehaviorDescriptor.java">
-      <unit at="8,0,25,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeValidator_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,66,0" name="jetbrains.mps.core.xml.sax.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="XMLSAXChildRuleCondition_BehaviorDescriptor.java">
-      <unit at="10,0,31,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildRuleCondition_BehaviorDescriptor" />
+      <unit at="9,0,72,0" name="jetbrains.mps.core.xml.sax.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="XMLSAXTextHandler_value_BehaviorDescriptor.java">
       <unit at="8,0,21,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler_value_BehaviorDescriptor" />
+    </file>
+    <file name="XMLSAXAttributeReference_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeReference_BehaviorDescriptor" />
+    </file>
+    <file name="XMLSAXParser_BehaviorDescriptor.java">
+      <unit at="13,0,34,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXParser_BehaviorDescriptor" />
+    </file>
+    <file name="XMLSAXChildHandler_BehaviorDescriptor.java">
+      <unit at="9,0,22,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildHandler_BehaviorDescriptor" />
+    </file>
+    <file name="XMLSAXNodeRuleParamRef_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeRuleParamRef_BehaviorDescriptor" />
+    </file>
+    <file name="XMLSAXChildRule_BehaviorDescriptor.java">
+      <unit at="10,0,27,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildRule_BehaviorDescriptor" />
+    </file>
+    <file name="XMLSAXDefaultChildHandler_BehaviorDescriptor.java">
+      <unit at="9,0,22,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXDefaultChildHandler_BehaviorDescriptor" />
+    </file>
+    <file name="XMLSAXNodeCreator_BehaviorDescriptor.java">
+      <unit at="11,0,36,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeCreator_BehaviorDescriptor" />
+    </file>
+    <file name="XMLSAXTextHandler_BehaviorDescriptor.java">
+      <unit at="9,0,22,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler_BehaviorDescriptor" />
+    </file>
+    <file name="XMLSAXHandler_resultObject_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandler_resultObject_BehaviorDescriptor" />
+    </file>
+    <file name="XMLSAXDefaultChildHandler_tagName_BehaviorDescriptor.java">
+      <unit at="8,0,21,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXDefaultChildHandler_tagName_BehaviorDescriptor" />
+    </file>
+    <file name="XMLSAXFieldDeclaration_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXFieldDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="XMLSAXNodeValidator_BehaviorDescriptor.java">
+      <unit at="8,0,25,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeValidator_BehaviorDescriptor" />
+    </file>
+    <file name="XMLSAXChildRuleCondition_BehaviorDescriptor.java">
+      <unit at="10,0,31,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildRuleCondition_BehaviorDescriptor" />
     </file>
     <file name="XMLSAXTextRule_BehaviorDescriptor.java">
       <unit at="7,0,16,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextRule_BehaviorDescriptor" />
@@ -130,11 +139,11 @@
       <node id="658365993682200088" at="51,64,52,63" concept="3" />
       <node id="658365993682200088" at="52,63,53,30" concept="3" />
       <node id="658365993682200088" at="53,30,54,138" concept="1" />
-      <node id="658365993682200088" at="54,138,55,249" concept="1" />
-      <node id="658365993682200088" at="55,249,56,24" concept="4" />
+      <node id="658365993682200088" at="54,138,55,286" concept="1" />
+      <node id="658365993682200088" at="55,286,56,24" concept="4" />
       <node id="2264311582634140588" at="22,0,24,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="658365993682200088" at="53,30,55,249" concept="0" />
-      <node id="658365993682200088" at="53,30,55,249" concept="0" />
+      <node id="658365993682200088" at="53,30,55,286" concept="0" />
+      <node id="658365993682200088" at="53,30,55,286" concept="0" />
       <node id="2264311582634140588" at="30,0,33,0" concept="5" trace="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
       <node id="4720003541456809658" at="36,130,39,7" concept="2" />
       <node id="2264311582634140588" at="25,0,29,0" concept="5" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -151,7 +160,7 @@
       <scope id="2264311582634140593" at="25,83,27,74">
         <var name="rule" id="2264311582634140595" />
       </scope>
-      <scope id="658365993682200088" at="53,30,55,249" />
+      <scope id="658365993682200088" at="53,30,55,286" />
       <scope id="2264311582634140588" at="30,0,33,0">
         <var name="thisConcept" id="2264311582634140588" />
       </scope>
@@ -289,11 +298,11 @@
       <node id="2264311582634140667" at="29,61,30,63" concept="3" />
       <node id="2264311582634140667" at="30,63,31,30" concept="3" />
       <node id="2264311582634140667" at="31,30,32,138" concept="1" />
-      <node id="2264311582634140667" at="32,138,33,239" concept="1" />
-      <node id="2264311582634140667" at="33,239,34,24" concept="4" />
+      <node id="2264311582634140667" at="32,138,33,276" concept="1" />
+      <node id="2264311582634140667" at="33,276,34,24" concept="4" />
       <node id="2264311582634140652" at="15,0,17,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2264311582634140667" at="31,30,33,239" concept="0" />
-      <node id="2264311582634140667" at="31,30,33,239" concept="0" />
+      <node id="2264311582634140667" at="31,30,33,276" concept="0" />
+      <node id="2264311582634140667" at="31,30,33,276" concept="0" />
       <node id="2264311582634140652" at="18,0,21,0" concept="5" trace="call_getType_2264311582634140653#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="980633948652580814" at="22,101,25,5" concept="2" />
       <node id="2264311582634140652" at="22,0,28,0" concept="5" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
@@ -304,7 +313,7 @@
       <scope id="2264311582634140652" at="15,0,17,0">
         <var name="thisNode" id="2264311582634140652" />
       </scope>
-      <scope id="2264311582634140667" at="31,30,33,239" />
+      <scope id="2264311582634140667" at="31,30,33,276" />
       <scope id="2264311582634140652" at="18,0,21,0">
         <var name="thisNode" id="2264311582634140652" />
       </scope>
@@ -356,11 +365,11 @@
       <node id="658365993682200148" at="43,63,44,63" concept="3" />
       <node id="658365993682200148" at="44,63,45,30" concept="3" />
       <node id="658365993682200148" at="45,30,46,138" concept="1" />
-      <node id="658365993682200148" at="46,138,47,249" concept="1" />
-      <node id="658365993682200148" at="47,249,48,24" concept="4" />
+      <node id="658365993682200148" at="46,138,47,286" concept="1" />
+      <node id="658365993682200148" at="47,286,48,24" concept="4" />
       <node id="3044950653914718200" at="17,0,19,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="658365993682200148" at="45,30,47,249" concept="0" />
-      <node id="658365993682200148" at="45,30,47,249" concept="0" />
+      <node id="658365993682200148" at="45,30,47,286" concept="0" />
+      <node id="658365993682200148" at="45,30,47,286" concept="0" />
       <node id="3044950653914718200" at="26,0,29,0" concept="5" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3044950653914718200" at="20,0,25,0" concept="5" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
       <node id="3044950653914718200" at="30,0,35,0" concept="5" trace="virtual_getThrowableTypes_6204026822016975623#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
@@ -372,7 +381,7 @@
       <scope id="3044950653914718200" at="17,0,19,0">
         <var name="thisNode" id="3044950653914718200" />
       </scope>
-      <scope id="658365993682200148" at="45,30,47,249" />
+      <scope id="658365993682200148" at="45,30,47,286" />
       <scope id="3044950653914718178" at="20,125,23,18">
         <var name="result" id="3044950653914718180" />
       </scope>
@@ -461,6 +470,55 @@
       <unit id="3044950653914724663" at="12,0,22,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler_Behavior" />
     </file>
   </root>
+  <root nodeRef="r:9196d39f-1499-4498-ba0c-ace961a07bab(jetbrains.mps.core.xml.sax.behavior)/4250669309762112518">
+    <file name="XMLSAXDefaultChildHandler_Behavior.java">
+      <node id="4250669309762161493" at="16,125,17,71" concept="3" />
+      <node id="4250669309762163421" at="17,71,18,173" concept="1" />
+      <node id="4250669309762256983" at="18,173,19,18" concept="4" />
+      <node id="4250669309762112518" at="13,0,15,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4250669309762112518" at="16,0,21,0" concept="5" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <scope id="4250669309762112671" at="13,43,13,43" />
+      <scope id="4250669309762112518" at="13,0,15,0">
+        <var name="thisNode" id="4250669309762112518" />
+      </scope>
+      <scope id="4250669309762113219" at="16,125,19,18">
+        <var name="result" id="4250669309762161496" />
+      </scope>
+      <scope id="4250669309762112518" at="16,0,21,0">
+        <var name="thisConcept" id="4250669309762112518" />
+      </scope>
+      <unit id="4250669309762112518" at="12,0,22,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXDefaultChildHandler_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:9196d39f-1499-4498-ba0c-ace961a07bab(jetbrains.mps.core.xml.sax.behavior)/4250669309762246014">
+    <file name="XMLSAXDefaultChildHandler_tagName_Behavior.java">
+      <node id="4250669309762246181" at="13,75,14,47" concept="4" />
+      <node id="4250669309762246171" at="17,60,18,63" concept="3" />
+      <node id="4250669309762246171" at="18,63,19,30" concept="3" />
+      <node id="4250669309762246171" at="19,30,20,134" concept="0" />
+      <node id="4250669309762246171" at="19,30,20,134" concept="0" />
+      <node id="4250669309762246171" at="19,30,20,134" concept="1" />
+      <node id="4250669309762246171" at="20,134,21,24" concept="4" />
+      <node id="4250669309762246014" at="10,0,12,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4250669309762246014" at="13,0,16,0" concept="5" trace="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4250669309762246171" at="17,0,23,0" concept="5" trace="_quotation_createNode_oot9fr_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="4250669309762246016" at="10,43,10,43" />
+      <scope id="4250669309762246023" at="13,75,14,47" />
+      <scope id="4250669309762246171" at="19,30,20,134" />
+      <scope id="4250669309762246014" at="10,0,12,0">
+        <var name="thisNode" id="4250669309762246014" />
+      </scope>
+      <scope id="4250669309762246014" at="13,0,16,0">
+        <var name="thisNode" id="4250669309762246014" />
+      </scope>
+      <scope id="4250669309762246171" at="17,60,21,24">
+        <var name="facade" id="4250669309762246171" />
+        <var name="quotedNode_1" id="4250669309762246171" />
+      </scope>
+      <scope id="4250669309762246171" at="17,0,23,0" />
+      <unit id="4250669309762246014" at="9,0,24,0" name="jetbrains.mps.core.xml.sax.behavior.XMLSAXDefaultChildHandler_tagName_Behavior" />
+    </file>
+  </root>
   <root nodeRef="r:9196d39f-1499-4498-ba0c-ace961a07bab(jetbrains.mps.core.xml.sax.behavior)/4720003541470387532">
     <file name="XMLSAXChildRuleCondition_Behavior.java">
       <node id="4720003541470387597" at="20,125,21,261" concept="3" />
@@ -479,11 +537,11 @@
       <node id="658365993682200108" at="43,64,44,63" concept="3" />
       <node id="658365993682200108" at="44,63,45,30" concept="3" />
       <node id="658365993682200108" at="45,30,46,138" concept="1" />
-      <node id="658365993682200108" at="46,138,47,249" concept="1" />
-      <node id="658365993682200108" at="47,249,48,24" concept="4" />
+      <node id="658365993682200108" at="46,138,47,286" concept="1" />
+      <node id="658365993682200108" at="47,286,48,24" concept="4" />
       <node id="4720003541470387532" at="17,0,19,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="658365993682200108" at="45,30,47,249" concept="0" />
-      <node id="658365993682200108" at="45,30,47,249" concept="0" />
+      <node id="658365993682200108" at="45,30,47,286" concept="0" />
+      <node id="658365993682200108" at="45,30,47,286" concept="0" />
       <node id="4720003541470387532" at="26,0,29,0" concept="5" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4720003541470387532" at="20,0,25,0" concept="5" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
       <node id="4720003541470387532" at="30,0,35,0" concept="5" trace="virtual_getThrowableTypes_6204026822016975623#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
@@ -495,7 +553,7 @@
       <scope id="4720003541470387532" at="17,0,19,0">
         <var name="thisNode" id="4720003541470387532" />
       </scope>
-      <scope id="658365993682200108" at="45,30,47,249" />
+      <scope id="658365993682200108" at="45,30,47,286" />
       <scope id="4720003541470387596" at="20,125,23,18">
         <var name="result" id="4720003541470387598" />
       </scope>
