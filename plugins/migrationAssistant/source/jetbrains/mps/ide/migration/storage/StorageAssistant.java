@@ -42,6 +42,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * This migrates the project from an old file-based format to a directory-based
+ */
 @State(
     name = "StorageAssistant",
     storages = { @Storage(file = StoragePathMacros.WORKSPACE_FILE) }
@@ -115,7 +118,6 @@ public class StorageAssistant extends AbstractProjectComponent implements Persis
                 else {
                   Messages.showErrorDialog(myProject, String.format("Unable to create '.idea' directory (%s)", ideaDir), "Error saving project!");
                 }
-
               }
             });
           }
