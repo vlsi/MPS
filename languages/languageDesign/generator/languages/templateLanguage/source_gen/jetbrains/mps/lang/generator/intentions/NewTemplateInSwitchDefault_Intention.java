@@ -16,6 +16,8 @@ import jetbrains.mps.nodeEditor.CreateFromUsageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class NewTemplateInSwitchDefault_Intention implements IntentionFactory {
@@ -94,6 +96,7 @@ public class NewTemplateInSwitchDefault_Intention implements IntentionFactory {
       SNode tr = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", null);
       SLinkOperations.setTarget(tr, "template", t, false);
       SLinkOperations.setTarget(node, "defaultConsequence", tr, true);
+      SelectionUtil.selectCell(editorContext, tr, SelectionManager.FIRST_EDITABLE_CELL);
     }
 
     public IntentionDescriptor getDescriptor() {

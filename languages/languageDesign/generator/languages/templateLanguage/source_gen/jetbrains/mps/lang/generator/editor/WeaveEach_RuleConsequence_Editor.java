@@ -160,7 +160,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("templateName");
       Style style = new StyleImpl();
       Styles_StyleSheet.apply_reference(style, editorCell);
       editorCell.getStyle().putAll(style);

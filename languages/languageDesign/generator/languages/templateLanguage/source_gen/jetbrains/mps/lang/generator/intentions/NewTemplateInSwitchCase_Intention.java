@@ -18,6 +18,8 @@ import java.util.Collections;
 import jetbrains.mps.nodeEditor.CreateFromUsageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class NewTemplateInSwitchCase_Intention implements IntentionFactory {
@@ -107,6 +109,7 @@ public class NewTemplateInSwitchCase_Intention implements IntentionFactory {
       // make reference 
       SNode tr = SNodeFactoryOperations.setNewChild(node, "ruleConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
       SLinkOperations.setTarget(tr, "template", t, false);
+      SelectionUtil.selectCell(editorContext, tr, SelectionManager.FIRST_EDITABLE_CELL);
     }
 
     public IntentionDescriptor getDescriptor() {
