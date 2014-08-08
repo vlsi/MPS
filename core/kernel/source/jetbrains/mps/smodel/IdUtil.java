@@ -65,8 +65,8 @@ public abstract class IdUtil {
     if (pid != null) return pid;
 
     // this hack is needed until SConcept works by name
-    if ((SNodeUtil.concept_ConceptDeclaration_id.equals(id) || SNodeUtil.concept_InterfaceConceptDeclaration_id.equals(id)) && propName.equals("name")) {
-      return SNodeUtil.property_INamedConcept_name_id;
+    if ((SNodeUtil.conceptId_ConceptDeclaration.equals(id) || SNodeUtil.conceptId_InterfaceConceptDeclaration.equals(id)) && propName.equals("name")) {
+      return SNodeUtil.propertyId_INamedConcept_name;
     }
 
     for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
