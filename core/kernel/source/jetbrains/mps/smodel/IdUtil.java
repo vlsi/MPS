@@ -65,7 +65,7 @@ public abstract class IdUtil {
     if (pid != null) return pid;
 
     // this hack is needed until SConcept works by name
-    if ((SNodeUtil.conceptId_ConceptDeclaration.equals(id) || SNodeUtil.conceptId_InterfaceConceptDeclaration.equals(id)) && propName.equals("name")) {
+    if (propName.equals("name") && isConceptDeclaration(id)) {
       return SNodeUtil.propertyId_INamedConcept_name;
     }
 
@@ -74,6 +74,10 @@ public abstract class IdUtil {
       if (pid != null) return pid;
     }
     return UNKNOWN_PROPERTY_ID;
+  }
+
+  private static boolean isConceptDeclaration(SConceptId id) {
+    return SNodeUtil.conceptId_ConceptDeclaration.equals(id) || SNodeUtil.conceptId_InterfaceConceptDeclaration.equals(id);
   }
 
   public static SContainmentLinkId getContainmentLinkId(SConceptId id, String refName) {

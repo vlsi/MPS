@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.BidirectionalMap;
 import org.jetbrains.mps.openapi.language.SAbstractLinkId;
 import org.jetbrains.mps.openapi.language.SConceptId;
@@ -30,7 +31,7 @@ public class DebugRegistryImpl implements DebugRegistry {
       new BidirectionalMap<org.jetbrains.mps.openapi.model.SModelReference, String>();
   private BidirectionalMap<SModuleReference, String> myModules = new BidirectionalMap<SModuleReference, String>();
 
-  private BidirectionalMap<SPropertyId, String> myProperties = new BidirectionalMap<SPropertyId, String>();
+  private BidirectionalMap<SPropertyId, Pair<SConceptId,String>> myProperties = new BidirectionalMap<SPropertyId, Pair<SConceptId, String>>();
   private BidirectionalMap<SAbstractLinkId, String> myLinks = new BidirectionalMap<SAbstractLinkId, String>();
   private BidirectionalMap<SConceptId, String> myConcepts = new BidirectionalMap<SConceptId, String>();
   private BidirectionalMap<SLanguageId, String> myLanguages = new BidirectionalMap<SLanguageId, String>();
@@ -47,7 +48,7 @@ public class DebugRegistryImpl implements DebugRegistry {
 
   @Override
   public synchronized String getPropertyName(SPropertyId propertyId) {
-    return myProperties.get(propertyId);
+    return myProperties.get(propertyId).o2;
   }
 
   @Override
@@ -77,7 +78,7 @@ public class DebugRegistryImpl implements DebugRegistry {
 
   @Override
   public synchronized void addPropertyName(SPropertyId propertyId, String name) {
-    myProperties.put(propertyId, name);
+    myProperties.put(propertyId, new Pair<SConceptId, String>(propertyId.getConceptId(), name));
   }
 
   @Override
@@ -110,12 +111,10 @@ public class DebugRegistryImpl implements DebugRegistry {
   }
 
   public synchronized SPropertyId getPropertyId(SConceptId conceptId, String name) {
-    List<SPropertyId> ids = myProperties.getKeysByValue(name);
+    //performance fix for "getProperty("name")"
+    List<SPropertyId> ids = myProperties.getKeysByValue(new Pair<SConceptId, String>(conceptId,name));
     if (ids == null || ids.isEmpty()) return null;
-    for (SPropertyId id:ids){
-      if (id.getConceptId().equals(conceptId)) return id;
-    }
-    return null;
+    return ids.get(0);
   }
 
   public synchronized SAbstractLinkId getLinkId(SConceptId conceptId, String name) {
