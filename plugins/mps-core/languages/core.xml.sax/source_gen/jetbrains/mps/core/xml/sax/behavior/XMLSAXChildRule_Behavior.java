@@ -9,6 +9,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.scope.SimpleRoleScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XMLSAXChildRule_Behavior {
@@ -30,7 +31,7 @@ public class XMLSAXChildRule_Behavior {
         return new EmptyScope();
       }
       if (SConceptOperations.isSubConceptOf(concept_a0b, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule")) {
-        return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(thisNode, "rule", false), SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
+        return SimpleRoleScope.forNamedElements(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", false, false), SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
       }
     }
     return null;
