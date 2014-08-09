@@ -11,22 +11,31 @@ import jetbrains.mps.smodel.persistence.def.v5.LineContentAccumulator;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.mps.openapi.language.SLanguageId;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent>> {
   private static String[] EMPTY_ARRAY = new String[0];
   private AnnotationInfoReader9Handler.ModelElementHandler modelhandler = new AnnotationInfoReader9Handler.ModelElementHandler();
+  private AnnotationInfoReader9Handler.LanguagesElementHandler languageshandler = new AnnotationInfoReader9Handler.LanguagesElementHandler();
+  private AnnotationInfoReader9Handler.Used_languageElementHandler used_languagehandler = new AnnotationInfoReader9Handler.Used_languageElementHandler();
+  private AnnotationInfoReader9Handler.ContentsElementHandler contentshandler = new AnnotationInfoReader9Handler.ContentsElementHandler();
   private AnnotationInfoReader9Handler.NodeElementHandler nodehandler = new AnnotationInfoReader9Handler.NodeElementHandler();
   private AnnotationInfoReader9Handler.PropertyElementHandler propertyhandler = new AnnotationInfoReader9Handler.PropertyElementHandler();
-  private AnnotationInfoReader9Handler.LinkElementHandler linkhandler = new AnnotationInfoReader9Handler.LinkElementHandler();
-  private AnnotationInfoReader9Handler.NullElementHandler nullhandler = new AnnotationInfoReader9Handler.NullElementHandler();
+  private AnnotationInfoReader9Handler.ReferenceElementHandler referencehandler = new AnnotationInfoReader9Handler.ReferenceElementHandler();
+  private AnnotationInfoReader9Handler.DefaultElementHandler defaultHandler = new AnnotationInfoReader9Handler.DefaultElementHandler();
   private Stack<AnnotationInfoReader9Handler.ElementHandler> myHandlersStack = new Stack<AnnotationInfoReader9Handler.ElementHandler>();
   private Stack<AnnotationInfoReader9Handler.ChildHandler> myChildHandlersStack = new Stack<AnnotationInfoReader9Handler.ChildHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
   private List<LineContent> myResult;
   private LineContentAccumulator fieldaccumulator;
+  private ReadHelper9 fieldhelper;
 
   public AnnotationInfoReader9Handler() {
   }
@@ -136,7 +145,7 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
   }
 
   public class ModelElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
+    private String[] requiredAttributes = new String[]{"ref"};
 
     public ModelElementHandler() {
     }
@@ -144,7 +153,100 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     @Override
     protected List<LineContent> createObject(Attributes attrs) throws SAXException {
       fieldaccumulator = new LineContentAccumulator();
+      SModelReference ref = PersistenceFacade.getInstance().createModelReference(attrs.getValue("ref"));
+      fieldhelper = new ReadHelper9(ref);
       return fieldaccumulator.getLineToContentMap();
+    }
+
+    @Override
+    protected String[] requiredAttributes() {
+      return requiredAttributes;
+    }
+
+    @Override
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
+      List<LineContent> result = (List<LineContent>) resultObject;
+      if ("ref".equals(name)) {
+        return;
+      }
+      super.handleAttribute(resultObject, name, value);
+    }
+
+    @Override
+    protected AnnotationInfoReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
+      if ("contents".equals(tagName)) {
+        myChildHandlersStack.push(null);
+        return contentshandler;
+      }
+      if ("languages".equals(tagName)) {
+        myChildHandlersStack.push(null);
+        return languageshandler;
+      }
+      myChildHandlersStack.push(null);
+      return defaultHandler;
+    }
+  }
+
+  public class LanguagesElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
+    private String[] requiredAttributes = new String[]{};
+
+    public LanguagesElementHandler() {
+    }
+
+    @Override
+    protected AnnotationInfoReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
+      if ("use".equals(tagName)) {
+        myChildHandlersStack.push(new AnnotationInfoReader9Handler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_8634114485976612315(resultObject, value);
+          }
+        });
+        return used_languagehandler;
+      }
+      myChildHandlersStack.push(null);
+      return defaultHandler;
+    }
+
+    private void handleChild_8634114485976612315(Object resultObject, Object value) throws SAXException {
+      Tuples._2<SLanguageId, String> child = (Tuples._2<SLanguageId, String>) value;
+      fieldhelper.registerLanguage(child._1(), child._0());
+    }
+  }
+
+  public class Used_languageElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
+    private String[] requiredAttributes = new String[]{"id", "index"};
+
+    public Used_languageElementHandler() {
+    }
+
+    @Override
+    protected Tuples._2<SLanguageId, String> createObject(Attributes attrs) throws SAXException {
+      return MultiTuple.<SLanguageId,String>from(SLanguageId.deserialize(attrs.getValue("id")), attrs.getValue("index"));
+    }
+
+    @Override
+    protected String[] requiredAttributes() {
+      return requiredAttributes;
+    }
+
+    @Override
+    protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
+      Tuples._2<SLanguageId, String> result = (Tuples._2<SLanguageId, String>) resultObject;
+      if ("id".equals(name)) {
+        return;
+      }
+      if ("index".equals(name)) {
+        return;
+      }
+      super.handleAttribute(resultObject, name, value);
+    }
+  }
+
+  public class ContentsElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
+    private String[] requiredAttributes = new String[]{};
+
+    public ContentsElementHandler() {
     }
 
     @Override
@@ -162,20 +264,25 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     }
 
     private void handleChild_7167172773708891016(Object resultObject, Object value) throws SAXException {
-      SNode child = (SNode) value;
+      Void child = (Void) value;
       fieldaccumulator.popNode(myLocator);
     }
   }
 
   public class NodeElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
+    private String[] requiredAttributes = new String[]{"id"};
 
     public NodeElementHandler() {
     }
 
     @Override
+    protected String[] requiredAttributes() {
+      return requiredAttributes;
+    }
+
+    @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      SNode result = (SNode) resultObject;
+      Void result = (Void) resultObject;
       if ("id".equals(name)) {
         fieldaccumulator.pushNode(SNodeId.fromString(value), myLocator);
         return;
@@ -194,14 +301,14 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
         });
         return propertyhandler;
       }
-      if ("link".equals(tagName)) {
+      if ("reference".equals(tagName)) {
         myChildHandlersStack.push(new AnnotationInfoReader9Handler.ChildHandler() {
           @Override
           public void apply(Object resultObject, Object value) throws SAXException {
             handleChild_7167172773708891052(resultObject, value);
           }
         });
-        return linkhandler;
+        return referencehandler;
       }
       if ("node".equals(tagName)) {
         myChildHandlersStack.push(new AnnotationInfoReader9Handler.ChildHandler() {
@@ -230,20 +337,20 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     }
 
     private void handleChild_7167172773708891066(Object resultObject, Object value) throws SAXException {
-      SNode child = (SNode) value;
+      Void child = (Void) value;
       fieldaccumulator.popNode(myLocator);
     }
   }
 
   public class PropertyElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"id"};
+    private String[] requiredAttributes = new String[]{"role"};
 
     public PropertyElementHandler() {
     }
 
     @Override
     protected String createObject(Attributes attrs) throws SAXException {
-      return attrs.getValue("id");
+      return MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(fieldhelper.readPropId(attrs.getValue("role")));
     }
 
     @Override
@@ -254,22 +361,23 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String result = (String) resultObject;
-      if ("id".equals(name)) {
+      if ("role".equals(name)) {
         return;
       }
       super.handleAttribute(resultObject, name, value);
     }
   }
 
-  public class LinkElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"id"};
+  public class ReferenceElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
+    private String[] requiredAttributes = new String[]{"role"};
 
-    public LinkElementHandler() {
+    public ReferenceElementHandler() {
     }
 
     @Override
     protected String createObject(Attributes attrs) throws SAXException {
-      return attrs.getValue("id");
+      MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(fieldhelper.readRefRole(attrs.getValue("role")));
+      return attrs.getValue("role");
     }
 
     @Override
@@ -280,17 +388,21 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String result = (String) resultObject;
-      if ("id".equals(name)) {
+      if ("role".equals(name)) {
         return;
       }
       super.handleAttribute(resultObject, name, value);
     }
   }
 
-  public class NullElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
+  public class DefaultElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
+    @Override
+    protected AnnotationInfoReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
+      return this;
+    }
 
-    public NullElementHandler() {
+    @Override
+    protected void handleText(Object resultObject, String value) throws SAXException {
     }
   }
 }
