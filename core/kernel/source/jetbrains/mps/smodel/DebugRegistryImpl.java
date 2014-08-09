@@ -31,8 +31,8 @@ public class DebugRegistryImpl implements DebugRegistry {
       new BidirectionalMap<org.jetbrains.mps.openapi.model.SModelReference, String>();
   private BidirectionalMap<SModuleReference, String> myModules = new BidirectionalMap<SModuleReference, String>();
 
-  private BidirectionalMap<SPropertyId, Pair<SConceptId,String>> myProperties = new BidirectionalMap<SPropertyId, Pair<SConceptId, String>>();
-  private BidirectionalMap<SAbstractLinkId, String> myLinks = new BidirectionalMap<SAbstractLinkId, String>();
+  private BidirectionalMap<SPropertyId, Pair<SConceptId, String>> myProperties = new BidirectionalMap<SPropertyId, Pair<SConceptId, String>>();
+  private BidirectionalMap<SAbstractLinkId, Pair<SConceptId, String>> myLinks = new BidirectionalMap<SAbstractLinkId, Pair<SConceptId, String>>();
   private BidirectionalMap<SConceptId, String> myConcepts = new BidirectionalMap<SConceptId, String>();
   private BidirectionalMap<SLanguageId, String> myLanguages = new BidirectionalMap<SLanguageId, String>();
 
@@ -53,7 +53,7 @@ public class DebugRegistryImpl implements DebugRegistry {
 
   @Override
   public synchronized String getLinkName(SAbstractLinkId linkId) {
-    return myLinks.get(linkId);
+    return myLinks.get(linkId).o2;
   }
 
   @Override
@@ -83,7 +83,7 @@ public class DebugRegistryImpl implements DebugRegistry {
 
   @Override
   public synchronized void addLinkName(SAbstractLinkId linkId, String name) {
-    myLinks.put(linkId, name);
+    myLinks.put(linkId, new Pair<SConceptId, String>(linkId.getConceptId(), name));
   }
 
   @Override
@@ -118,7 +118,7 @@ public class DebugRegistryImpl implements DebugRegistry {
   }
 
   public synchronized SAbstractLinkId getLinkId(SConceptId conceptId, String name) {
-    List<SAbstractLinkId> ids = myLinks.getKeysByValue(name);
+    List<SAbstractLinkId> ids = myLinks.getKeysByValue(new Pair<SConceptId, String>(conceptId, name));
     if (ids == null || ids.isEmpty()) return null;
     for (SAbstractLinkId id:ids){
       if (id.getConceptId().equals(conceptId)) return id;
