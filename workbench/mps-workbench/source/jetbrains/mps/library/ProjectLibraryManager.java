@@ -28,7 +28,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.MPSProjectMigrationComponent;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
@@ -47,7 +46,7 @@ import java.io.File;
 public class ProjectLibraryManager extends BaseLibraryManager implements ProjectComponent {
   private Project myProject;
 
-  public ProjectLibraryManager(Project project, MPSProject mpsProject, DumbService dumbService, MPSCoreComponents coreComponents, MPSProjectMigrationComponent migrationState) {
+  public ProjectLibraryManager(Project project, MPSProject mpsProject, DumbService dumbService, MPSCoreComponents coreComponents) {
     super(coreComponents.getModuleRepository());
     myProject = project;
   }

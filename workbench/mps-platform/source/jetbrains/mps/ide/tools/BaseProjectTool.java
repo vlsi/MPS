@@ -19,8 +19,6 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.project.MPSProjectMigrationComponent;
-import jetbrains.mps.project.MPSProjectMigrationListener;
 
 import javax.swing.Icon;
 
@@ -35,23 +33,7 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
 
   @Override
   public void projectOpened() {
-    final MPSProjectMigrationComponent migrationState = getProject().getComponent(MPSProjectMigrationComponent.class);
-    if (migrationState != null && migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
-      migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
-        @Override
-        public void migrationFinished(Project mpsProject) {
-          migrationState.removeMigrationListener(this);
-          createAndRegisterTool(false);
-        }
-        @Override
-        public void migrationAborted(Project project) {
-          migrationState.removeMigrationListener(this);
-        }
-      });
-    }
-    else {
-      createAndRegisterTool(true);
-    }
+    createAndRegisterTool(true);
   }
 
   @Override
@@ -72,8 +54,7 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
           registerLater();
         }
       });
-    }
-    else {
+    } else {
       registerLater();
     }
   }
@@ -83,13 +64,17 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
     unregister();
   }
 
-  /** Either this method or the one without parameters must be implemented. Not both.*/
-  protected void createTool (boolean early) {
+  /**
+   * Either this method or the one without parameters must be implemented. Not both.
+   */
+  protected void createTool(boolean early) {
     createTool();
   }
 
-  /** Either this method or the one with boolean parameter must be implemented. Not both.*/
-  protected void createTool () {
+  /**
+   * Either this method or the one with boolean parameter must be implemented. Not both.
+   */
+  protected void createTool() {
     throw new UnsupportedOperationException();
   }
 }

@@ -21,8 +21,6 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProjectMigrationComponent;
-import jetbrains.mps.project.MPSProjectMigrationListener;
 import jetbrains.mps.project.MPSProjectVersion;
 import jetbrains.mps.project.Version;
 import org.jetbrains.annotations.Nullable;

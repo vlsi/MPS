@@ -21,22 +21,10 @@ import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowFactory;
-import jetbrains.mps.project.MPSProjectMigrationComponent;
-import jetbrains.mps.project.MPSProjectMigrationListener.DEFAULT;
 
 public class MPSProjectViewToolWindowFactory implements ToolWindowFactory, DumbAware {
   @Override
   public void createToolWindowContent(final Project project, final ToolWindow toolWindow) {
-    MPSProjectMigrationComponent migrationState = project.getComponent(MPSProjectMigrationComponent.class);
-    if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
-      migrationState.addMigrationListener(new DEFAULT() {
-        @Override
-        public void migrationFinished(Project mpsProject) {
-          ((ProjectViewImpl) ProjectView.getInstance(project)).setupImpl(toolWindow);
-        }
-      });
-    } else {
-      ((ProjectViewImpl) ProjectView.getInstance(project)).setupImpl(toolWindow);
-    }
+    ((ProjectViewImpl) ProjectView.getInstance(project)).setupImpl(toolWindow);
   }
 }

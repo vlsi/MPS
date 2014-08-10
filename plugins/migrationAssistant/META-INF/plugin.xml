@@ -25,7 +25,7 @@
   <depends>jetbrains.mps.ide.mpsmigration</depends>
   <project-components>
     <component>
-      <interface-class>jetbrains.mps.project.MPSProjectMigrationComponent</interface-class>
+      <interface-class>jetbrains.mps.ide.migration.assistant.MPSProjectMigrationComponent</interface-class>
       <implementation-class>jetbrains.mps.ide.migration.assistant.MPSProjectMigrationComponentImpl</implementation-class>
     </component>
 
