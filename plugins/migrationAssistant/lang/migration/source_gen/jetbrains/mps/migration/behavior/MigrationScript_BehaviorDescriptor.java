@@ -5,7 +5,7 @@ package jetbrains.mps.migration.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public abstract class MigrationScript_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+public class MigrationScript_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public MigrationScript_BehaviorDescriptor() {
   }
 

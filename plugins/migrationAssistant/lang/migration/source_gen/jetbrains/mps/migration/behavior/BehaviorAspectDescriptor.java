@@ -13,19 +13,15 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 2:
-        return new PrimaryMigrationScriptBody_BehaviorDescriptor();
-      case 3:
-        return new SecondaryMigrationScript_BehaviorDescriptor();
-      case 4:
-        return new SecondaryMigrationScriptBody_BehaviorDescriptor();
+        return new MigrationScriptBody_BehaviorDescriptor();
       case 0:
-        return new PrimaryMigrationScript_BehaviorDescriptor();
+        return new MigrationScript_BehaviorDescriptor();
       case 1:
-        return new PrimaryMigrationScriptApplicable_BehaviorDescriptor();
+        return new MigrationScriptApplicable_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.migration.structure.PrimaryMigrationScript", "jetbrains.mps.migration.structure.PrimaryMigrationScriptApplicable", "jetbrains.mps.migration.structure.PrimaryMigrationScriptBody", "jetbrains.mps.migration.structure.SecondaryMigrationScript", "jetbrains.mps.migration.structure.SecondaryMigrationScriptBody"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.migration.structure.MigrationScript", "jetbrains.mps.migration.structure.MigrationScriptApplicable", "jetbrains.mps.migration.structure.MigrationScriptBody"};
 }

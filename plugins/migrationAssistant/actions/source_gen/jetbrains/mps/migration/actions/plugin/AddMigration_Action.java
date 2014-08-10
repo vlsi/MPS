@@ -125,7 +125,7 @@ public class AddMigration_Action extends BaseAction {
         ((SModelInternal) (SModel) migrationModel).addModelImport(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.smodel.adapter").getReference(), true);
         ((AbstractModule) module).addDependency(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)")).getModuleReference(), false);
       }
-      SNode script = SModelOperations.createNewRootNode(migrationModel, "jetbrains.mps.migration.structure.PrimaryMigrationScript", null);
+      SNode script = SModelOperations.createNewRootNode(migrationModel, "jetbrains.mps.migration.structure.MigrationScript", null);
       SPropertyOperations.set(script, "fromVersion", "" + (currentVersion));
       SLanguageAdapter lang = new SLanguageAdapter(IdHelper.getLanguageId((Language) module));
       SLinkOperations.setTarget(script, "body", _quotation_createNode_sorkti_a0k0a(), true);
@@ -155,7 +155,7 @@ public class AddMigration_Action extends BaseAction {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.migration.structure.PrimaryMigrationScriptBody", null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.migration.structure.MigrationScriptBody", null, null, false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
     quotedNode_1.addChild("body", quotedNode_2);
     return quotedNode_1;
@@ -190,7 +190,7 @@ public class AddMigration_Action extends BaseAction {
     SNode quotedNode_27 = null;
     SNode quotedNode_28 = null;
     SNode quotedNode_29 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.migration.structure.PrimaryMigrationScriptApplicable", null, null, false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.migration.structure.MigrationScriptApplicable", null, null, false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, false);

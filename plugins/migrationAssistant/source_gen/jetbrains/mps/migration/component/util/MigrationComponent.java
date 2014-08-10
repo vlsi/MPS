@@ -11,18 +11,12 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.Collections;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.IListSequence;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import java.util.ArrayList;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -55,113 +49,80 @@ public class MigrationComponent extends AbstractProjectComponent {
     return MapSequence.fromMap(loadedDescriptors).get(module);
   }
 
-  public Iterable<? extends Iterable<MigrationScript>> fetchPrimaryScripts(final jetbrains.mps.project.Project project, AbstractModule module) {
-    Iterable<? extends Iterable<MigrationScript>> scriptSeqs = Sequence.fromIterable(MigrationsUtil.checkDependenciesVersions(module)).select(new ISelector<Tuples._3<SModule, Integer, Integer>, Iterable<MigrationScript>>() {
-      public Iterable<MigrationScript> select(Tuples._3<SModule, Integer, Integer> dep) {
-        MigrationDescriptor md = getMigrationDescriptor(dep._0());
-        int from = (int) dep._1();
-        int to = (int) dep._2();
-        return check_gd1mrb_a3a0a0a0a4(md, from, to);
-      }
-    });
-    return Sequence.fromIterable(scriptSeqs).select(new ISelector<Iterable<MigrationScript>, Iterable<MigrationScript>>() {
-      public Iterable<MigrationScript> select(Iterable<MigrationScript> scripts) {
-        while (Sequence.fromIterable(scripts).where(new IWhereFilter<MigrationScript>() {
-          public boolean accept(MigrationScript it) {
-            return it instanceof SecondaryMigrationScript;
-          }
-        }).isNotEmpty()) {
-          scripts = Sequence.fromIterable(scripts).translate(new ITranslator2<MigrationScript, MigrationScript>() {
-            public Iterable<MigrationScript> translate(MigrationScript script) {
-              if (script instanceof SecondaryMigrationScript) {
-                SModule parentModule = as_gd1mrb_a0a0a0a0a0a0a0a0a0a0a0a0a0b0e(script, SecondaryMigrationScript.class).getPrimaryScriptModule().resolve(project.getRepository());
-                if (parentModule != null) {
-                  MigrationDescriptor parentDescriptor = getMigrationDescriptor(parentModule);
-                  int primaryFromVersion = ((SecondaryMigrationScript) script).primaryFromVersion();
-                  int primaryToVersion = ((SecondaryMigrationScript) script).primaryToVersion();
-                  return check_gd1mrb_a3a1a0a0a0a0a0a0a0b0e(parentDescriptor, primaryFromVersion, primaryToVersion);
-                }
-                return Sequence.fromIterable(Collections.<MigrationScript>emptyList());
-              } else {
-                return Sequence.<MigrationScript>singleton(script);
-              }
-            }
-          });
-        }
-        return scripts;
+  public boolean isApplied(final MigrationScriptReference script, AbstractModule module) {
+    return Sequence.fromIterable(MigrationsUtil.checkDependenciesVersions(module)).any(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
+      public boolean accept(Tuples._3<SModule, Integer, Integer> it) {
+        return eq_gd1mrb_a0a0a0a0a0a0a4(it._0().getModuleReference(), script.getModuleReference()) && (int) it._1() > script.getFromVersion();
       }
     });
   }
 
-  public Iterable<MigrationScript> sortScripts(jetbrains.mps.project.Project project, final AbstractModule module) {
-    List<? extends List<MigrationScript>> primaryScripts = Sequence.fromIterable(fetchPrimaryScripts(project, module)).select(new ISelector<Iterable<MigrationScript>, IListSequence<MigrationScript>>() {
-      public IListSequence<MigrationScript> select(Iterable<MigrationScript> it) {
-        return Sequence.fromIterable(it).where(new IWhereFilter<MigrationScript>() {
-          public boolean accept(MigrationScript it) {
-            return ((PrimaryMigrationScript) it).applicableToModule(module);
-          }
-        }).toListSequence();
+  public boolean isAppliedForAllMyDeps(final MigrationScriptReference script, final AbstractModule module) {
+    Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();
+    return Sequence.fromIterable(declaredDependencies).translate(new ITranslator2<SDependency, SModule>() {
+      public Iterable<SModule> translate(SDependency it) {
+        return new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
       }
-    }).toListSequence();
-    Map<MigrationScript, Set<MigrationScript>> dependencies = MapSequence.fromMap(new HashMap<MigrationScript, Set<MigrationScript>>());
-    for (List<MigrationScript> seq : ListSequence.fromList(primaryScripts)) {
-      for (int i = 0; i < ListSequence.fromList(seq).count() - 1; i++) {
-        if (MapSequence.fromMap(dependencies).get(ListSequence.fromList(seq).getElement(i + 1)) == null) {
-          MapSequence.fromMap(dependencies).put(ListSequence.fromList(seq).getElement(i + 1), SetSequence.fromSet(new HashSet<MigrationScript>()));
-        }
-        SetSequence.fromSet(MapSequence.fromMap(dependencies).get(ListSequence.fromList(seq).getElement(i + 1))).addElement(ListSequence.fromList(seq).getElement(i));
+    }).all(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
+        return isApplied(script, (AbstractModule) it);
       }
-    }
-    List<MigrationScript> result = ListSequence.fromList(new ArrayList<MigrationScript>());
-    int maxBreak = 0;
-    while (ListSequence.fromList(primaryScripts).translate(new ITranslator2<List<MigrationScript>, MigrationScript>() {
-      public Iterable<MigrationScript> translate(List<MigrationScript> it) {
-        return it;
-      }
-    }).isNotEmpty()) {
-      boolean progress = false;
-      for (List<MigrationScript> seq : ListSequence.fromList(primaryScripts)) {
-        while (ListSequence.fromList(seq).isNotEmpty() && SetSequence.fromSet(MapSequence.fromMap(dependencies).get(ListSequence.fromList(seq).first())).count() <= maxBreak) {
-          for (MigrationScript breaking : SetSequence.fromSet(MapSequence.fromMap(dependencies).get(ListSequence.fromList(seq).first()))) {
-            if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error("Breaking dependency " + ListSequence.fromList(seq).first() + " < " + breaking);
-            }
-          }
-          maxBreak = 0;
-          MigrationScript script = ListSequence.fromList(seq).removeElementAt(0);
-          if (!(ListSequence.fromList(result).contains(script))) {
-            ListSequence.fromList(result).addElement(script);
-          }
-          progress = true;
-        }
-      }
-      if (progress == false) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Cycle in migration script dependencies");
-        }
-        maxBreak = 1;
-      }
-    }
-    return result;
+    });
   }
+
+  public Iterable<MigrationScript> fetchAvailableScriptsForModule(final AbstractModule module) {
+    return Sequence.fromIterable(MigrationsUtil.getDependenciesToMigrate(module)).select(new ISelector<Tuples._3<SModule, Integer, Integer>, MigrationScript>() {
+      public MigrationScript select(Tuples._3<SModule, Integer, Integer> dep) {
+        SModule depModule = dep._0();
+        int current = (int) dep._1();
+        MigrationDescriptor md = getMigrationDescriptor(depModule);
+        if (md == null) {
+          if (LOG.isEnabledFor(Level.WARN)) {
+            LOG.warn("Could not load migration descriptor for language " + depModule + ".");
+          }
+        }
+        MigrationScript script = check_gd1mrb_a0e0a0a0a6(md, current);
+        if (script == null) {
+          if (LOG.isEnabledFor(Level.WARN)) {
+            LOG.warn("Could not load migration script for language " + depModule + ", version " + current + ".");
+          }
+        }
+        if (!(script.applicableToModule(module))) {
+          return script;
+        }
+        boolean available = Sequence.fromIterable(script.requiresData()).all(new IWhereFilter<MigrationScriptReference>() {
+          public boolean accept(MigrationScriptReference it) {
+            return isAppliedForAllMyDeps(it, module);
+          }
+        });
+        if (available) {
+          return script;
+        }
+        return null;
+      }
+    });
+  }
+
+  public Iterable<MigrationScript> fetchAvailableScripts(jetbrains.mps.project.Project project) {
+    Iterable<? extends SModule> projectModules = project.getModules();
+    return Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, MigrationScript>() {
+      public Iterable<MigrationScript> translate(SModule it) {
+        return fetchAvailableScriptsForModule((AbstractModule) it);
+      }
+    });
+  }
+
 
   protected static Logger LOG = LogManager.getLogger(MigrationComponent.class);
 
-  private static Iterable<MigrationScript> check_gd1mrb_a3a0a0a0a4(MigrationDescriptor checkedDotOperand, int from, int to) {
+  private static MigrationScript check_gd1mrb_a0e0a0a0a6(MigrationDescriptor checkedDotOperand, int current) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getScripts(from, to);
+      return checkedDotOperand.getScript(current);
     }
     return null;
   }
 
-  private static Iterable<MigrationScript> check_gd1mrb_a3a1a0a0a0a0a0a0a0b0e(MigrationDescriptor checkedDotOperand, int primaryFromVersion, int primaryToVersion) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getScripts(primaryFromVersion, primaryToVersion);
-    }
-    return null;
-  }
-
-  private static <T> T as_gd1mrb_a0a0a0a0a0a0a0a0a0a0a0a0a0b0e(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
+  private static boolean eq_gd1mrb_a0a0a0a0a0a0a4(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

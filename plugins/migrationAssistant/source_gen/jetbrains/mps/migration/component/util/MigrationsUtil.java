@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.AbstractModule;
+import org.apache.log4j.Level;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -16,6 +17,8 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.Language;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MigrationsUtil {
 
@@ -52,24 +55,40 @@ public class MigrationsUtil {
 
 
 
+  public static Iterable<Tuples._3<SModule, Integer, Integer>> getDependenciesToMigrate(final AbstractModule module) {
+    return Sequence.fromIterable(checkDependenciesVersions(module)).where(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
+      public boolean accept(Tuples._3<SModule, Integer, Integer> item) {
+        if ((int) item._1() > (int) item._2()) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
+            LOG.error("Module " + module + " depends on version " + (int) item._1() + " of module " + item._0() + " which is higher than available version (" + (int) item._2() + ")");
+          }
+        } else if ((int) item._1() < (int) item._2()) {
+          return true;
+        }
+        return false;
+      }
+    });
+  }
+
   public static Iterable<Tuples._3<SModule, Integer, Integer>> checkDependenciesVersions(AbstractModule module) {
     module.validateLanguageVersions();
     List<Tuples._3<SModule, Integer, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._3<SModule, Integer, Integer>>());
     for (SLanguage lang : SetSequence.fromSet(module.getUsedLanguages())) {
       if (module.getModuleDescriptor().getLanguageVersions().get(lang.getId()) != lang.getLanguageVersion()) {
-        ListSequence.fromList(result).addElement(MultiTuple.<SModule,Integer,Integer>from(lang.getSourceModule(), module.getModuleDescriptor().getLanguageVersions().get(lang.getId()), as_7hm1hv_a0c0a0a0a0c0m(lang.getSourceModule(), Language.class).getLanguageVersion()));
+        ListSequence.fromList(result).addElement(MultiTuple.<SModule,Integer,Integer>from(lang.getSourceModule(), module.getModuleDescriptor().getLanguageVersions().get(lang.getId()), as_7hm1hv_a0c0a0a0a0c0n(lang.getSourceModule(), Language.class).getLanguageVersion()));
       }
     }
     return result;
   }
 
 
+  protected static Logger LOG = LogManager.getLogger(MigrationsUtil.class);
 
   private static boolean eq_7hm1hv_a0a0a0a0a0b0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static <T> T as_7hm1hv_a0c0a0a0a0c0m(Object o, Class<T> type) {
+  private static <T> T as_7hm1hv_a0c0a0a0a0c0n(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

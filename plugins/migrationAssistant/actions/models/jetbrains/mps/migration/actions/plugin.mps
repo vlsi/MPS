@@ -574,14 +574,14 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3932724607434522933" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="script" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3932724607434522928" nodeInfo="in">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="53vh.4436301628118948495" resolveInfo="PrimaryMigrationScript" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="53vh.4436301628118948495" resolveInfo="MigrationScript" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3932724607434456592" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3932724607434456342" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="894677141330324239" resolveInfo="migrationModel" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_CreateNewRootNodeOperation" typeId="tp25.1166648550386" id="3932724607434485163" nodeInfo="nn">
-                <link role="concept" roleId="tp25.1143235391024" targetNodeId="53vh.4436301628118948495" resolveInfo="PrimaryMigrationScript" />
+                <link role="concept" roleId="tp25.1143235391024" targetNodeId="53vh.4436301628118948495" resolveInfo="MigrationScript" />
               </node>
             </node>
           </node>
@@ -637,7 +637,7 @@
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3932724607435354065" nodeInfo="nn">
-              <node role="quotedNode" roleId="tp3r.1196350785114" type="53vh.PrimaryMigrationScriptBody" typeId="53vh.3735414794051308106" id="3932724607435355472" nodeInfo="ng">
+              <node role="quotedNode" roleId="tp3r.1196350785114" type="53vh.MigrationScriptBody" typeId="53vh.3735414794051308106" id="3932724607435355472" nodeInfo="ng">
                 <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3932724607435355474" nodeInfo="sn" />
               </node>
             </node>
@@ -646,7 +646,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3932724607434696778" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="3932724607434699401" nodeInfo="nn">
             <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3932724607434704515" nodeInfo="nn">
-              <node role="quotedNode" roleId="tp3r.1196350785114" type="53vh.PrimaryMigrationScriptApplicable" typeId="53vh.3290421837437511158" id="3932724607434712726" nodeInfo="ng">
+              <node role="quotedNode" roleId="tp3r.1196350785114" type="53vh.MigrationScriptApplicable" typeId="53vh.3290421837437511158" id="3932724607434712726" nodeInfo="ng">
                 <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3932724607434712728" nodeInfo="sn">
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3932724607434748920" nodeInfo="nn">
                     <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3932724607434748921" nodeInfo="nr">
