@@ -154,6 +154,18 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return dependencies;
   }
 
+  public Set<SLanguage> getAllUsedLanguages() {
+    Set<SLanguage> directlyUsed = getUsedLanguages();
+    Set<SLanguage> result = getUsedLanguages();
+    for (SLanguage direct : directlyUsed) {
+      result.add(direct);
+      for (Language ext : ((Language) direct.getSourceModule()).getAllExtendedLanguages()) {
+        result.add(ConceptRepository.getInstance().getLanguage(ext.getModuleName()));
+      }
+    }
+    return result;
+  }
+
   @Override
   public Set<SLanguage> getUsedLanguages() {
     assertCanRead();
@@ -881,7 +893,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void validateLanguageVersions() {
     Map<SLanguageId, Integer> oldLanguageVersions = getModuleDescriptor().getLanguageVersions();
     Map<SLanguageId, Integer> newLanguageVersions = new HashMap<SLanguageId, Integer>();
-    for (SLanguage lang : getUsedLanguages()) {
+    for (SLanguage lang : getAllUsedLanguages()) {
       if (oldLanguageVersions.containsKey(lang.getId())) {
         newLanguageVersions.put(lang.getId(), oldLanguageVersions.get(lang.getId()));
       } else {
