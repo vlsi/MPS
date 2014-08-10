@@ -46,23 +46,23 @@ public class MigrationAssistant extends AbstractProjectComponent {
 
   @Override
   public void initComponent() {
-    if (myMigrationState instanceof MPSProjectMigrationComponentImpl) {
-      ((MPSProjectMigrationComponentImpl) myMigrationState).setMigrationAgent(this);
+    if (myMigrationState instanceof MPSProjectMigrationComponent) {
+      ((MPSProjectMigrationComponent) myMigrationState).setMigrationAgent(this);
     }
   }
 
   @Override
   public void disposeComponent() {
-    if (myMigrationState instanceof MPSProjectMigrationComponentImpl) {
-      ((MPSProjectMigrationComponentImpl) myMigrationState).setMigrationAgent(null);
+    if (myMigrationState instanceof MPSProjectMigrationComponent) {
+      ((MPSProjectMigrationComponent) myMigrationState).setMigrationAgent(null);
     }
   }
 
   @Override
   public void projectOpened() {
     final MPSProjectMigrationComponent migrationState = myProject.getComponent(MPSProjectMigrationComponent.class);
-    if (migrationState.isMigrationRequired() && migrationState instanceof MPSProjectMigrationComponentImpl) {
-      initiateMigration((MPSProjectMigrationComponentImpl) migrationState);
+    if (migrationState.isMigrationRequired() && migrationState instanceof MPSProjectMigrationComponent) {
+      initiateMigration((MPSProjectMigrationComponent) migrationState);
     }
   }
 
@@ -84,7 +84,7 @@ public class MigrationAssistant extends AbstractProjectComponent {
     });
   }
 
-  private void initiateMigration(final MPSProjectMigrationComponentImpl migrationState) {
+  private void initiateMigration(final MPSProjectMigrationComponent migrationState) {
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
 
@@ -112,7 +112,6 @@ public class MigrationAssistant extends AbstractProjectComponent {
                 if (ok) {
                   migrationState.migrationFinished();
                 } else {
-                  migrationState.migrationAborted();
                   forceCloseProject();
                 }
               }

@@ -26,7 +26,7 @@
   <project-components>
     <component>
       <interface-class>jetbrains.mps.ide.migration.assistant.MPSProjectMigrationComponent</interface-class>
-      <implementation-class>jetbrains.mps.ide.migration.assistant.MPSProjectMigrationComponentImpl</implementation-class>
+      <implementation-class>jetbrains.mps.ide.migration.assistant.MPSProjectMigrationComponent</implementation-class>
     </component>
 
     <component>

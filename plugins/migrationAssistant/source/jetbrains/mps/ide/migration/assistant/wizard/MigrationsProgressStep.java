@@ -29,7 +29,6 @@ import jetbrains.mps.ide.migration.assistant.MigrationProcessor;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.ide.migration.assistant.MPSProjectMigrationComponent;
-import jetbrains.mps.ide.migration.assistant.MPSProjectMigrationComponentImpl;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 
 import javax.swing.BorderFactory;
@@ -158,8 +157,6 @@ class MigrationsProgressStep extends MigrationStep {
       public void run() {
         if (!myStarted) {
           // launch migration
-          MPSProjectMigrationComponentImpl migrationState = (MPSProjectMigrationComponentImpl) myProject.getComponent(MPSProjectMigrationComponent.class);
-          migrationState.migrationStarted();
           myStarted = true;
           runProcessWithProgressSynchronously(myTask, myProgressIndicator);
         }
