@@ -29,7 +29,7 @@ import jetbrains.mps.ide.migration.assistant.MigrationProcessor;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.MPSProjectMigrationComponent;
-import jetbrains.mps.project.MPSProjectMigrationComponentImpl;
+import jetbrains.mps.ide.migration.assistant.MPSProjectMigrationComponentImpl;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 
 import javax.swing.BorderFactory;

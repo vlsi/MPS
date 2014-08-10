@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.ide.migration.assistant;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
@@ -21,6 +21,10 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProjectMigrationComponent;
+import jetbrains.mps.project.MPSProjectMigrationListener;
+import jetbrains.mps.project.MPSProjectVersion;
+import jetbrains.mps.project.Version;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;

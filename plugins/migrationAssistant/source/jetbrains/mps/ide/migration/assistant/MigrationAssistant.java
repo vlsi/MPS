@@ -31,7 +31,6 @@ import jetbrains.mps.ide.migration.assistant.wizard.MigrationAssistantWizard;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.project.MPSProjectMigrationComponent;
-import jetbrains.mps.project.MPSProjectMigrationComponentImpl;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;

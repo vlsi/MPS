@@ -129,10 +129,6 @@
       <implementation-class>jetbrains.mps.project.MPSProjectVersion</implementation-class>
     </component>
     <component>
-      <interface-class>jetbrains.mps.project.MPSProjectMigrationComponent</interface-class>
-      <implementation-class>jetbrains.mps.project.MPSProjectMigrationComponentImpl</implementation-class>
-    </component>
-    <component>
       <interface-class>jetbrains.mps.project.MPSProject</interface-class>
       <implementation-class>jetbrains.mps.project.StandaloneMPSProject</implementation-class>
     </component>
