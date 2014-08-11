@@ -62,6 +62,8 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   private Set<FolderModelFactory> myFolderModelFactories = new LinkedHashSet<FolderModelFactory>();
   private ModelEnvironmentInfo myModelEnvironmentInfo = new ModelEnvironmentInfoImpl();
 
+  private boolean isDisabled = false;
+
   public static PersistenceRegistry getInstance() {
     return (PersistenceRegistry) INSTANCE;
   }
@@ -212,7 +214,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
   @Override
   public Set<FindUsagesParticipant> getFindUsagesParticipants() {
-    return Collections.unmodifiableSet(myFindUsagesParticipants);
+    return isDisabled ? Collections.<FindUsagesParticipant>emptySet() : Collections.unmodifiableSet(myFindUsagesParticipants);
   }
 
   @Override
@@ -316,5 +318,13 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   @Override
   public void dispose() {
     INSTANCE = null;
+  }
+
+  public void disableFastFindUsages() {
+    isDisabled = true;
+  }
+
+  public void enableFastFindUsages() {
+    isDisabled = false;
   }
 }
