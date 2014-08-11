@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.ide.migration;
 
+import com.intellij.openapi.util.Pair;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.ide.migration.wizard.MigrationStep;
+import jetbrains.mps.migration.component.util.MigrationScript;
+import jetbrains.mps.project.AbstractModule;
 
 public interface MigrationManager {
   boolean isMigrationRequired();
@@ -23,6 +27,10 @@ public interface MigrationManager {
   MigrationState step();
 
   String currentStep();
+
+  Iterable<Pair<MigrationScript, AbstractModule>> getConflictingScripts();
+
+  void forceExecution(Pair<MigrationScript, AbstractModule> next);
 
   public enum MigrationState {
     STEP, CONFLICT, FINISHED

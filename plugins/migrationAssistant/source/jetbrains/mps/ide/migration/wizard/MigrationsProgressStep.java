@@ -22,12 +22,15 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.ide.migration.MigrationManager.MigrationState;
+import jetbrains.mps.migration.component.util.MigrationScript;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 
 import javax.swing.BorderFactory;
@@ -85,13 +88,13 @@ public class MigrationsProgressStep extends MigrationStep {
     PersistenceRegistry.getInstance().disableFastFindUsages();
     while (result != MigrationState.FINISHED) {
       DefaultListModel model = (DefaultListModel) myList.getModel();
-      String step  = myManager.currentStep();
+      String step = myManager.currentStep();
       model.addElement(step);
       myList.ensureIndexIsVisible(model.indexOf(step));
       myList.repaint();
 
       result = myManager.step();
-      if (result==MigrationState.CONFLICT){
+      if (result == MigrationState.CONFLICT) {
         resolveConflict();
       }
     }
@@ -101,7 +104,9 @@ public class MigrationsProgressStep extends MigrationStep {
   }
 
   private void resolveConflict() {
-
+    Iterable<Pair<MigrationScript, AbstractModule>> conflicts = myManager.getConflictingScripts();
+    //todo ui
+    myManager.forceExecution(conflicts.iterator().next());
   }
 
   @Override
