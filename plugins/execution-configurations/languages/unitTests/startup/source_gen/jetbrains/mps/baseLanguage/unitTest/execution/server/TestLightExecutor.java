@@ -10,7 +10,7 @@ import com.intellij.util.WaitFor;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import java.io.IOError;
-import jetbrains.mps.lang.test.util.TestLightRunStateEnum;
+import jetbrains.mps.lang.test.util.RunStateEnum;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Request;
 import org.junit.runner.notification.StoppedByUserException;
@@ -70,7 +70,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
       LOG.debug("Disposing TestLightExecutor");
     }
     myFakeProcess.destroy();
-    myTestRunState.advance(TestLightRunStateEnum.TERMINATED);
+    myTestRunState.set(RunStateEnum.TERMINATED);
   }
 
   public FakeProcess getProcess() {
@@ -78,7 +78,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
   }
 
   public void setReady() {
-    myTestRunState.advance(TestLightRunStateEnum.READYTOEXECUTE);
+    myTestRunState.advance(RunStateEnum.INITIALIZED, RunStateEnum.READYTOEXECUTE);
   }
 
   @Override
@@ -87,7 +87,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
     if (LOG.isInfoEnabled()) {
       LOG.info("Executing tests in-process...");
     }
-    myTestRunState.advance(TestLightRunStateEnum.RUNNING);
+    myTestRunState.advance(RunStateEnum.READYTOEXECUTE, RunStateEnum.RUNNING);
     System.setProperty(TestLightRunState.LIGHT_EXEC_FLAG, "true");
     try {
       super.doExecute(core, requests);
@@ -104,7 +104,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
   }
 
   /*package*/ void terminateProcess(int code) {
-    myTestRunState.advance(TestLightRunStateEnum.TERMINATING);
+    myTestRunState.advance(RunStateEnum.RUNNING, RunStateEnum.TERMINATING);
     myFakeProcess.setExitCode(code);
     String terminateMessage = "Process finished with exit code " + code;
     if (LOG.isInfoEnabled()) {

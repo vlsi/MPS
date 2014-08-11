@@ -338,8 +338,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcessHandler" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.util.RunStateEnum" />
     <classNode dependClassName="jetbrains.mps.lang.test.util.TestLightRunState" />
-    <classNode dependClassName="jetbrains.mps.lang.test.util.TestLightRunStateEnum" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode extendsClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor" />

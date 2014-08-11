@@ -4066,10 +4066,10 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2992055787331721716" resolveInfo="myTestRunState" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6796535740154100594" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnd7.1813663789079454593" resolveInfo="advance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnd7.1813663789079454583" resolveInfo="set" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="6796535740154100595" nodeInfo="nn">
                 <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="fnd7.1813663789079454701" resolveInfo="TERMINATED" />
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fnd7.1813663789079454696" resolveInfo="TestLightRunStateEnum" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fnd7.1813663789079454696" resolveInfo="RunStateEnum" />
               </node>
             </node>
           </node>
@@ -4109,9 +4109,13 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2992055787332541424" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnd7.1813663789079454593" resolveInfo="advance" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="6316468760760023393" nodeInfo="nn">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="fnd7.1813663789079454698" resolveInfo="INITIALIZED" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fnd7.1813663789079454696" resolveInfo="RunStateEnum" />
+              </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="2992055787332542871" nodeInfo="nn">
                 <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="fnd7.2992055787332068200" resolveInfo="READYTOEXECUTE" />
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fnd7.1813663789079454696" resolveInfo="TestLightRunStateEnum" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fnd7.1813663789079454696" resolveInfo="RunStateEnum" />
               </node>
             </node>
           </node>
@@ -4172,9 +4176,13 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6796535740154100510" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnd7.1813663789079454593" resolveInfo="advance" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="6316468760760031408" nodeInfo="nn">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="fnd7.2992055787332068200" resolveInfo="READYTOEXECUTE" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fnd7.1813663789079454696" resolveInfo="RunStateEnum" />
+              </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="6796535740154100511" nodeInfo="nn">
                 <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="fnd7.1813663789079454699" resolveInfo="RUNNING" />
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fnd7.1813663789079454696" resolveInfo="TestLightRunStateEnum" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fnd7.1813663789079454696" resolveInfo="RunStateEnum" />
               </node>
             </node>
           </node>
@@ -4276,9 +4284,13 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6796535740154100566" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnd7.1813663789079454593" resolveInfo="advance" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="6316468760760032600" nodeInfo="nn">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="fnd7.1813663789079454699" resolveInfo="RUNNING" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fnd7.1813663789079454696" resolveInfo="RunStateEnum" />
+              </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="6796535740154100567" nodeInfo="nn">
                 <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="fnd7.1813663789079454700" resolveInfo="TERMINATING" />
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fnd7.1813663789079454696" resolveInfo="TestLightRunStateEnum" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="fnd7.1813663789079454696" resolveInfo="RunStateEnum" />
               </node>
             </node>
           </node>
@@ -6171,6 +6183,49 @@
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="321825573151186358" nodeInfo="nn">
                               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="321825573151186423" nodeInfo="nn">
+                                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpe3.1216130694486" resolveInfo="ITestCase" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="782510062348480759" nodeInfo="nn">
+                          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="782510062348481281" nodeInfo="nn">
+                            <property name="text" nameId="tpee.6329021646629104958" value="cannot run (in-process) test methods from TestCase, which is not executable in the same process" />
+                          </node>
+                        </node>
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="782510062348408665" nodeInfo="nn">
+                          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="782510062348408668" nodeInfo="sn">
+                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="782510062348411483" nodeInfo="nn">
+                              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="782510062348411484" nodeInfo="nn">
+                                <node role="lValue" roleId="tpee.1068498886295" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="782510062348411485" nodeInfo="nn">
+                                  <node role="index" roleId="tpee.1173175577737" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="782510062348411486" nodeInfo="nn">
+                                    <property name="value" nameId="tpee.1068580320021" value="0" />
+                                  </node>
+                                  <node role="array" roleId="tpee.1173175590490" type="tpee.VariableReference" typeId="tpee.1068498886296" id="782510062348411487" nodeInfo="nn">
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7466470118076994256" resolveInfo="result" />
+                                  </node>
+                                </node>
+                                <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="782510062348411488" nodeInfo="nn">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="782510062348411489" nodeInfo="nn">
+                                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpe3.1216130694486" resolveInfo="ITestCase" />
+                                    <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.VariableReference" typeId="tpee.1068498886296" id="782510062348411490" nodeInfo="nn">
+                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7466470118076973610" resolveInfo="testNode" />
+                                    </node>
+                                  </node>
+                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="782510062348411491" nodeInfo="nn">
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpe5.6436735966448788391" resolveInfo="canRunInProcess" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="782510062348411492" nodeInfo="nn" />
+                          </node>
+                          <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="782510062348409436" nodeInfo="nn">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="782510062348409242" nodeInfo="nn">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7466470118076973616" resolveInfo="rootNode" />
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="782510062348410393" nodeInfo="nn">
+                              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="782510062348410458" nodeInfo="nn">
                                 <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpe3.1216130694486" resolveInfo="ITestCase" />
                               </node>
                             </node>

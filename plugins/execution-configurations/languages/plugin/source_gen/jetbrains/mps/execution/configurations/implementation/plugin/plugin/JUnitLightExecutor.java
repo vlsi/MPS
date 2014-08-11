@@ -6,7 +6,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor;
 import jetbrains.mps.lang.test.util.TestLightRunState;
-import jetbrains.mps.lang.test.util.TestLightRunStateEnum;
+import jetbrains.mps.lang.test.util.RunStateEnum;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -29,11 +29,8 @@ public class JUnitLightExecutor implements Executor {
   }
 
   private synchronized boolean checkExecutionIsPossible() {
-    boolean possible = ourTestRunState.get() == TestLightRunStateEnum.IDLE;
-    if (possible) {
-      ourTestRunState.set(TestLightRunStateEnum.INITIALIZED);
-    }
-    return possible;
+    boolean isPossible = ourTestRunState.advance(RunStateEnum.IDLE, RunStateEnum.INITIALIZED);
+    return isPossible;
   }
 
   @Override
