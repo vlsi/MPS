@@ -69,7 +69,7 @@ public class JUnitCommand_Test extends BaseTransformationTest {
           Assert.fail(checkListener.getMessages());
         }
       } catch (ExecutionException e) {
-        Assert.fail(e.getMessage());
+        Assert.fail();
       }
     }
     private static boolean isNotEmptyString(String str) {

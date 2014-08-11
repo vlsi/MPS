@@ -15,7 +15,7 @@ public class ActionsTest_Test extends BaseTransformationTest {
   @Test
   public void test_checkRoots() throws Throwable {
     this.initTest("${mps_home}", "r:43a3062d-cf3d-40ad-9c9d-c7da54cc927b(jetbrains.mps.testActions.test@tests)", true);
-    this.runTest("jetbrains.mps.testActions.test.ActionsTest_Test$TestBody", "test_checkRoots", false);
+    this.runTest("jetbrains.mps.testActions.test.ActionsTest_Test$TestBody", "test_checkRoots", true);
   }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {

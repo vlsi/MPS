@@ -37,7 +37,7 @@
   <root type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="8128243960970298224" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="JUnitCommand" />
     <property name="needsNoWriteAction" nameId="tp5g.6339244025081158986" value="false" />
-    <property name="canNotRunInProcess" nameId="tpe3.6436735966448189373" value="false" />
+    <property name="canNotRunInProcess" nameId="tpe3.6427619394892729757" value="false" />
     <node role="methods" roleId="tp5g.1216993439383" type="tp4f.DefaultClassifierMethodDeclaration" typeId="tp4f.1205769003971" id="4154239884395915009" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getMyModel" />
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SModelType" typeId="tp25.1143226024141" id="4154239884395918462" nodeInfo="in" />
@@ -88,7 +88,7 @@
                   <link role="commandDeclaration" roleId="rzqf.612376536074296996" targetNodeId="sfqd.6062668769034832918" resolveInfo="jUnit" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="rzqf.CommandBuilderExpression" typeId="rzqf.856705193941281780" id="7120092006645143077" nodeInfo="nn">
-                  <link role="commandPart" roleId="rzqf.6129022259108621329" targetNodeId="sfqd.6062668769034832957" resolveInfo="junit" />
+                  <link role="commandPart" roleId="rzqf.6129022259108621329" targetNodeId="sfqd.6062668769034832957" resolveInfo="jUnit" />
                   <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="7120092006645143078" nodeInfo="ng">
                     <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="sfqd.6062668769034832958" resolveInfo="tests" />
                     <node role="value" roleId="rzqf.856705193941281766" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363087799" nodeInfo="nn">
@@ -293,18 +293,7 @@
               </node>
             </node>
             <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="7120092006645245956" nodeInfo="sn">
-              <node role="statement" roleId="tpee.1068581517665" type="tpe3.Fail" typeId="tpe3.1172017222794" id="7120092006645245958" nodeInfo="nn">
-                <node role="message" roleId="tpe3.1172075534298" type="tpe3.Message" typeId="tpe3.1172073500303" id="7120092006645245959" nodeInfo="ng">
-                  <node role="message" roleId="tpe3.1172073511101" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7120092006645245961" nodeInfo="nn">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363078148" nodeInfo="nn">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7120092006645245954" resolveInfo="e" />
-                    </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7120092006645245965" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Throwable%dgetMessage()%cjava%dlang%dString" resolveInfo="getMessage" />
-                    </node>
-                  </node>
-                </node>
-              </node>
+              <node role="statement" roleId="tpee.1068581517665" type="tpe3.Fail" typeId="tpe3.1172017222794" id="7120092006645245958" nodeInfo="nn" />
             </node>
           </node>
         </node>

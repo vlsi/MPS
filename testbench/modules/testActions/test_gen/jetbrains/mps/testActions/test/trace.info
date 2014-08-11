@@ -8,7 +8,7 @@
   <root nodeRef="r:43a3062d-cf3d-40ad-9c9d-c7da54cc927b(jetbrains.mps.testActions.test@tests)/3197704031717961581">
     <file name="ActionsTest_Test.java">
       <node id="3197704031717961581" at="16,50,17,119" concept="0" />
-      <node id="3197704031717961581" at="17,119,18,103" concept="0" />
+      <node id="3197704031717961581" at="17,119,18,102" concept="0" />
       <node id="6926353569063795876" at="22,52,23,72" concept="3" />
       <node id="6926353569063831698" at="23,72,24,0" concept="4" />
       <node id="4484885613884976024" at="24,0,25,76" concept="3" />
@@ -26,7 +26,7 @@
       <node id="1031873601093444874" at="33,34,37,7" concept="1" />
       <node id="3197704031717961581" at="15,0,20,0" concept="2" trace="test_checkRoots#()V" />
       <node id="3197704031717961592" at="22,0,41,0" concept="2" trace="test_checkRoots#()V" />
-      <scope id="3197704031717961581" at="16,50,18,103" />
+      <scope id="3197704031717961581" at="16,50,18,102" />
       <scope id="4484885613884977625" at="28,38,30,36" />
       <scope id="1031873601093444875" at="34,66,36,36" />
       <scope id="4484885613884977624" at="27,34,31,7">

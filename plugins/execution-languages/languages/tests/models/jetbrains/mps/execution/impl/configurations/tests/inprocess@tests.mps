@@ -387,7 +387,6 @@
     </node>
     <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="6339244025082257499" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="startSimpleTestCase" />
-      <property name="canNotRunInProcess" nameId="tpe3.6436735966448189373" value="true" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6339244025082257500" nodeInfo="in" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6339244025082257501" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6339244025082257502" nodeInfo="nn">
@@ -427,7 +426,6 @@
     </node>
     <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="6339244025082257516" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="startFailedTestCase" />
-      <property name="canNotRunInProcess" nameId="tpe3.6436735966448189373" value="true" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6339244025082257517" nodeInfo="in" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6339244025082257518" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6339244025082257519" nodeInfo="nn">
@@ -472,7 +470,7 @@
   <root type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="6339244025082286079" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="JUnitInProcessTermination" />
     <property name="needsNoWriteAction" nameId="tp5g.6339244025081158986" value="true" />
-    <property name="canNotRunInProcess" nameId="tpe3.6436735966448189373" value="true" />
+    <property name="canNotRunInProcess" nameId="tpe3.6427619394892729757" value="true" />
     <node role="methods" roleId="tp5g.1216993439383" type="tp4f.DefaultClassifierMethodDeclaration" typeId="tp4f.1205769003971" id="6339244025082286080" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="startAndTerminate" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6339244025082286081" nodeInfo="in" />
@@ -1021,7 +1019,6 @@
     </node>
     <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="6339244025082286276" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="terminate" />
-      <property name="canNotRunInProcess" nameId="tpe3.6436735966448189373" value="true" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6339244025082286277" nodeInfo="in" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6339244025082286278" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4154239884395906537" nodeInfo="nn">
