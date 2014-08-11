@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
@@ -31,6 +33,8 @@ public class DeleteParenthesisLeft_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
+      boolean hasLeftUnmatchedParen = (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null);
+
       SNode replacing = SLinkOperations.getTarget(node, "expression", true);
       SNode rightMost = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
       SNodeOperations.replaceWithAnother(node, replacing);
@@ -39,6 +43,9 @@ public class DeleteParenthesisLeft_Actions {
       ParenthesisUtil.checkExpressionPriorities(replacing);
 
       ParenthesisUtil.createUnmatchedRightParenthesis(rightMost);
+      if (hasLeftUnmatchedParen) {
+        ParenthesisUtil.createUnmatchedLeftParenthesis(leftMostNode);
+      }
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, leftMostNode, SelectionManager.FIRST_EDITABLE_CELL, 0);
     }
   }
@@ -55,6 +62,8 @@ public class DeleteParenthesisLeft_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
+      boolean hasLeftUnmatchedParen = (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null);
+
       SNode replacing = SLinkOperations.getTarget(node, "expression", true);
       SNode rightMost = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
       SNodeOperations.replaceWithAnother(node, replacing);
@@ -63,6 +72,9 @@ public class DeleteParenthesisLeft_Actions {
       ParenthesisUtil.checkExpressionPriorities(replacing);
 
       ParenthesisUtil.createUnmatchedRightParenthesis(rightMost);
+      if (hasLeftUnmatchedParen) {
+        ParenthesisUtil.createUnmatchedLeftParenthesis(leftMostNode);
+      }
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, leftMostNode, SelectionManager.FIRST_EDITABLE_CELL, 0);
     }
   }
