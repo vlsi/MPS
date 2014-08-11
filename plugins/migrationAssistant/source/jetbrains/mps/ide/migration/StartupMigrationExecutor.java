@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.migration;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.impl.LaterInvocator;
 import com.intellij.openapi.components.AbstractProjectComponent;
@@ -45,31 +46,13 @@ public class StartupMigrationExecutor extends AbstractProjectComponent {
 
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
-        LaterInvocator.invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            VirtualFileManager.getInstance().syncRefresh();
+        ApplicationManager.getApplication().assertWriteAccessAllowed();
 
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              @Override
-              public void run() {
-                for (SModule module : myMpsProject.getModulesWithGenerators()) {
-                  for (SModel md : module.getModels()) {
-                    if (!(md instanceof EditableSModel)) continue;
-                    if (md.isReadOnly()) continue;
+        VirtualFileManager.getInstance().syncRefresh();
+        ProjectManagerEx.getInstance().reloadProject(myProject);
 
-                    ((EditableSModel) md).reloadFromSource();
-                  }
-                }
-              }
-            });
-
-            ProjectManagerEx.getInstance().reloadProject(myProject);
-
-            MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject);
-            wizard.showAndGetOk();
-          }
-        }, ModalityState.NON_MODAL);
+        MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject);
+        wizard.showAndGetOk();
       }
     });
   }
