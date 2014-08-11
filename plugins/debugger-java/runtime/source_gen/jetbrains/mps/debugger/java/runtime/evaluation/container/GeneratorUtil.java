@@ -17,7 +17,7 @@ import java.util.Collections;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
-import jetbrains.mps.ide.generator.TransientModelsComponent;
+import jetbrains.mps.generator.TransientModelsProvider;
 import com.intellij.openapi.util.Disposer;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException;
@@ -38,7 +38,7 @@ public class GeneratorUtil {
       handler.setCompilationListener(compilationResult);
       IMessageHandler messageHandler = new GeneratorUtil.MyMessageHandler(project, developerMode);
       ProgressWindow progressWindow = new ProgressWindow(false, ProjectHelper.toIdeaProject(project));
-      boolean successful = GenerationFacade.generateModels(context.getProject(), Collections.singletonList(modelDescriptor), context, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new DefaultNonIncrementalStrategy()).saveTransientModels(developerMode).rebuildAll(false).reporting(false, false, false, 0).create(), context.getProject().getComponent(TransientModelsComponent.class));
+      boolean successful = GenerationFacade.generateModels(context.getProject(), Collections.singletonList(modelDescriptor), context, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new DefaultNonIncrementalStrategy()).saveTransientModels(developerMode).rebuildAll(false).reporting(false, false, false, 0).create(), context.getProject().getComponent(TransientModelsProvider.class));
 
       Disposer.dispose(progressWindow);
 

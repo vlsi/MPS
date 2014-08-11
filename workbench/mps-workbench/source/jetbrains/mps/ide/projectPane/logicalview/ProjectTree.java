@@ -16,22 +16,26 @@
 package jetbrains.mps.ide.projectPane.logicalview;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.generator.TransientModelsProvider;
+import jetbrains.mps.ide.ui.tree.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.module.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModulesPoolTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.module.TransientModelsTreeNode;
-import jetbrains.mps.ide.ui.tree.MPSTree;
-import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeNotificationListener.Stub;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeNotification;
-import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
@@ -90,7 +94,7 @@ public class ProjectTree extends MPSTree {
     root.add(projectRoot);
     root.add(myModulesPoolTreeNode);
     if (!IMakeService.INSTANCE.isSessionActive()) {
-      for(TransientModelsModule module : myProject.getComponent(TransientModelsComponent.class).getModules()) {
+      for(TransientModelsModule module : myProject.getComponent(TransientModelsProvider.class).getModules()) {
         root.add(new TransientModelsTreeNode(myProject, module));
       }
     }
