@@ -75,9 +75,4 @@ public class MigrationsFinishedStep extends MigrationStep {
     // next step is the error report
     return null;
   }
-
-  @Override
-  public boolean isComplete() {
-    return true;
-  }
 }

@@ -65,9 +65,4 @@ public class InitialStep extends MigrationStep {
 
     myComponent.add(pagePanel, BorderLayout.CENTER);
   }
-
-  @Override
-  public boolean isComplete() {
-    return true;
-  }
 }

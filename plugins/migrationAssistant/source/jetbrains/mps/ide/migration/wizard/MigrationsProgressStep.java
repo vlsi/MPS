@@ -25,10 +25,13 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
+import jetbrains.mps.ide.migration.MigrationManager;
+import jetbrains.mps.ide.migration.MigrationManager.MigrationState;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 
 import javax.swing.BorderFactory;
+import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -39,36 +42,23 @@ import java.util.List;
 import java.util.Set;
 
 public class MigrationsProgressStep extends MigrationStep {
-  private boolean myStarted;
   private boolean myFinished;
-  private boolean myDoneAny;
-  private final Task myTask;
-  private InlineProgressIndicator myProgressIndicator;
-  private final Set<Object> myMarked = Collections.synchronizedSet(new HashSet<Object>());
-  private final Set<Object> myExcluded = Collections.synchronizedSet(new HashSet<Object>());
+  private MigrationManager myManager;
   private JBList myList;
 
-  public MigrationsProgressStep(Project project) {
+  public MigrationsProgressStep(Project project, MigrationManager manager) {
     super(project, "Migration In Progress", "progress");
-    myTask = createTask();
-    myProgressIndicator = new InlineProgressIndicator(true, myTask) {
-      @Override
-      protected boolean isFinished() {
-        return myFinished;
-      }
-    };
+    myManager = manager;
     createComponent();
   }
 
   @Override
   protected final void createComponent() {
     super.createComponent();
-    MigrationProcessor processor = myProject.getComponent(MigrationProcessor.class);
+    myComponent.add(new JLabel("Applying migrations:"), BorderLayout.NORTH);
 
-    myComponent.add(new JLabel("Applying migration actions:"), BorderLayout.NORTH);
-
-    myList = new JBList(processor.getActions());
-    myList.setCellRenderer(new MigrationsListRenderer(myExcluded, myMarked, myFailed));
+    myList = new JBList(new DefaultListModel());
+    myList.setCellRenderer(new MigrationsListRenderer(Collections.emptySet(), Collections.emptySet()));
 
     JPanel listPanel = new JPanel(new BorderLayout(5, 5));
     listPanel.setBorder(BorderFactory.createCompoundBorder(
@@ -77,99 +67,41 @@ public class MigrationsProgressStep extends MigrationStep {
     listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
 
     myComponent.add(listPanel, BorderLayout.CENTER);
-
-    myComponent.add(myProgressIndicator.getComponent(), BorderLayout.SOUTH);
-  }
-
-  private Task createTask() {
-    return new Modal(myProject, "Executing", false) {
-      @Override
-      public void run(final ProgressIndicator indicator) {
-        final MigrationProcessor processor = myProject.getComponent(MigrationProcessor.class);
-        final List<?> actions = processor.getActions();
-        myExcluded.addAll(actions);
-        myExcluded.removeAll(processor.getSelectedActions());
-
-        //disable fast find usages
-        final Set<FindUsagesParticipant> participants = new HashSet<FindUsagesParticipant>();
-        participants.addAll(PersistenceRegistry.getInstance().getFindUsagesParticipants());
-        for (FindUsagesParticipant p:participants){
-          PersistenceRegistry.getInstance().removeFindUsagesParticipant(p);
-        }
-
-        processor.addCallback(new Callback() {
-          @Override
-          public void startingAction(Object action) {
-            myDoneAny = true;
-            indicator.setIndeterminate(false);
-            indicator.setFraction(0.0);
-            myList.ensureIndexIsVisible(actions.indexOf(action));
-            myList.repaint();
-          }
-
-          @Override
-          public void finishedAction(Object action) {
-            myMarked.add(action);
-            advance(action);
-          }
-
-          @Override
-          public void failedAction(Object action) {
-            myFailed.add(action);
-            advance(action);
-          }
-
-          @Override
-          public void finishedAll() {
-            myFinished = true;
-            processor.removeCallback(this);
-            indicator.setFraction(1.0);
-            indicator.setText("Done");
-
-            //enable fast find usages
-            for (FindUsagesParticipant p:participants){
-              PersistenceRegistry.getInstance().addFindUsagesParticipant(p);
-            }
-            fireStateChanged();
-          }
-
-          private void advance(Object action) {
-            indicator.setFraction((double) (actions.indexOf(action) + 1) / actions.size());
-            myList.ensureIndexIsVisible(actions.indexOf(action));
-            myList.repaint();
-          }
-        });
-        processor.startProcessing(SwingUtilities.getRootPane(getComponent()));
-      }
-    };
   }
 
   @Override
   public void onAfterUpdate() {
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
+    super.onAfterUpdate();
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
-        if (!myStarted) {
-          // launch migration
-          myStarted = true;
-          runProcessWithProgressSynchronously(myTask, myProgressIndicator);
-        }
+        doRun();
       }
     });
   }
 
-  private void runProcessWithProgressSynchronously(final Task task, final ProgressIndicator progressIndicator) {
-    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-      public void run() {
-        ProgressManager.getInstance().runProcess(new Runnable() {
-          @Override
-          public void run() {
-            task.run(progressIndicator);
+  private void doRun() {
+    MigrationState result = MigrationState.STEP;
 
-          }
-        }, progressIndicator);
+    PersistenceRegistry.getInstance().disableFastFindUsages();
+    while (result != MigrationState.FINISHED) {
+      DefaultListModel model = (DefaultListModel) myList.getModel();
+      String step  = myManager.currentStep();
+      model.addElement(step);
+      myList.ensureIndexIsVisible(model.indexOf(step));
+      myList.repaint();
+
+      result = myManager.step();
+      if (result==MigrationState.CONFLICT){
+        resolveConflict();
       }
-    });
+    }
+    PersistenceRegistry.getInstance().enableFastFindUsages();
+
+    myFinished = true;
+  }
+
+  private void resolveConflict() {
+    123123
   }
 
   @Override
@@ -180,18 +112,16 @@ public class MigrationsProgressStep extends MigrationStep {
 
   @Override
   public boolean isComplete() {
-    return myStarted && myFinished && myDoneAny;
+    return myFinished;
   }
 
   @Override
   public boolean isPostComplete() {
-    return myStarted && myFinished && myDoneAny;
+    return myFinished;
   }
 
   @Override
   public void commit(CommitType commitType) throws CommitStepException {
-    if (CommitType.Next == commitType || CommitType.Finish == commitType) {
-      if (!myDoneAny) throw new CommitStepException("Nothing done");
-    }
+
   }
 }

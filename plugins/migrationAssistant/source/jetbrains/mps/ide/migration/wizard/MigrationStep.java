@@ -99,7 +99,7 @@ public abstract class MigrationStep extends AbstractWizardStepEx {
 
   @Override
   public boolean isComplete() {
-    return false;
+    return true;
   }
 
   public boolean isPostComplete() {

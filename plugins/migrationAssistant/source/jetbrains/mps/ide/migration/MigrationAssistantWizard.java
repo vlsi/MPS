@@ -28,10 +28,10 @@ import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
 import java.util.Arrays;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
-  public MigrationAssistantWizard(Project project, MigrationManager migrationManager) {
+  public MigrationAssistantWizard(Project project, MigrationManager manager) {
     super("Migration Assistant Wizard", project, Arrays.asList(
         new InitialStep(project),
-        new MigrationsProgressStep(project),
+        new MigrationsProgressStep(project,manager),
         new MigrationsFinishedStep(project)));
   }
 
