@@ -63,7 +63,7 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
     if (jUnitSettings.canLightExecute(testNodes)) {
       processExecutor = new JUnitLightExecutor(testNodes, eventsDispatcher);
     } else {
-      processExecutor = new JUnitExecutor(jUnitSettings, myDebuggerSettings, myRunConfiguration.getJavaRunParameters(), testNodes);
+      processExecutor = new JUnitExecutor(project, executor, jUnitSettings, myDebuggerSettings, myRunConfiguration.getJavaRunParameters(), testNodes);
     }
     ProcessHandler process = processExecutor.execute();
     final UnitTestViewComponent testViewComponent = myRunConfiguration.createTestViewComponent(runState, process);

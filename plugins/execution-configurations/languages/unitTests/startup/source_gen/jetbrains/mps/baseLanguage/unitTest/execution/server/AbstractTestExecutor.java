@@ -10,7 +10,6 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.Runner;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.Description;
 import org.junit.runner.notification.Failure;
@@ -61,8 +60,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   }
 
   private void updateRunner(Request request) {
-    assert request instanceof TestNodeRequest;
-    myCurrentRunner = new AbstractTestExecutor.StoppableIgnoringRunner(((TestNodeRequest) request), myFilter);
+    myCurrentRunner = new AbstractTestExecutor.StoppableIgnoringRunner(request, myFilter);
   }
 
   @NotNull
@@ -77,11 +75,11 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   protected abstract RunListener createListener(Iterable<Request> requests);
 
   protected static class StoppableIgnoringRunner extends Runner {
-    private final TestNodeRequest myRequest;
-    private final Filter<ITestNodeWrapper> myIgnoringFilter;
+    private final Request myRequest;
+    private final Filter myIgnoringFilter;
     private volatile RunNotifier myNotifier = null;
 
-    public StoppableIgnoringRunner(TestNodeRequest request, Filter ignoringFilter) {
+    public StoppableIgnoringRunner(Request request, Filter ignoringFilter) {
       myRequest = request;
       myIgnoringFilter = ignoringFilter;
     }
@@ -94,7 +92,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
       // FIXME: no guarantee during concurrent access 
       myNotifier = notifier;
 
-      if (myIgnoringFilter.accept(myRequest.getTestNode())) {
+      if (myIgnoringFilter.accept(myRequest)) {
         myRequest.getRunner().run(notifier);
       } else {
         ignoreRequest(notifier);
