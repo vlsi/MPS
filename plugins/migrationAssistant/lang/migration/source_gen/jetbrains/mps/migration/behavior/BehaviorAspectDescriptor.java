@@ -12,16 +12,24 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 2:
+      case 4:
         return new MigrationScriptBody_BehaviorDescriptor();
-      case 0:
+      case 2:
         return new MigrationScript_BehaviorDescriptor();
-      case 1:
+      case 3:
         return new MigrationScriptApplicable_BehaviorDescriptor();
+      case 6:
+        return new MigrationScriptSerialize_BehaviorDescriptor();
+      case 0:
+        return new ConceptFunctionParameter_MigrationScriptData_BehaviorDescriptor();
+      case 5:
+        return new MigrationScriptDeserialize_BehaviorDescriptor();
+      case 1:
+        return new ConceptFunctionParameter_MigrationScriptPersistedData_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.migration.structure.MigrationScript", "jetbrains.mps.migration.structure.MigrationScriptApplicable", "jetbrains.mps.migration.structure.MigrationScriptBody"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptData", "jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptPersistedData", "jetbrains.mps.migration.structure.MigrationScript", "jetbrains.mps.migration.structure.MigrationScriptApplicable", "jetbrains.mps.migration.structure.MigrationScriptBody", "jetbrains.mps.migration.structure.MigrationScriptDeserialize", "jetbrains.mps.migration.structure.MigrationScriptSerialize"};
 }

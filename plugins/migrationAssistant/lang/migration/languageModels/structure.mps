@@ -15,6 +15,12 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4436301628118948495" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MigrationScript" />
     <property name="rootable" nameId="tpce.1096454100552" value="true" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="586712031919708271" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="dataType" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
+    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4436301628118948497" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="fromVersion" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
@@ -31,10 +37,39 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3290421837437511158" resolveInfo="MigrationScriptApplicable" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="586712031919985975" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="serialize" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="586712031919981082" resolveInfo="MigrationScriptSerialize" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="586712031920000762" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="deserialize" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="586712031919985984" resolveInfo="MigrationScriptDeserialize" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3290421837437511158" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MigrationScriptApplicable" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="586712031919981082" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="MigrationScriptSerialize" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="586712031919984868" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_MigrationScriptData" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="data" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="586712031919985984" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="MigrationScriptDeserialize" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="586712031919995751" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_MigrationScriptPersistedData" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="dataString" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
   </root>
 </model>
 

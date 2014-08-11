@@ -5,12 +5,13 @@ package jetbrains.mps.migration.generator.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.migration.behavior.MigrationScript_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.generator.template.IfMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 @Generated
 public class QueriesGenerated {
@@ -25,19 +26,23 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5712848521226184887(final PropertyMacroContext _context) {
-    return MigrationScript_Behavior.call_getClassName_6547769411406912356(_context.getNode());
+    return SModelOperations.getModelName(_context.getInputModel()) + "." + MigrationScript_Behavior.call_getClassName_6547769411406912356(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_6547769411407089660(final PropertyMacroContext _context) {
     return MigrationsUtil.getDescriptorClassName(_context.getOriginalInputModel().getModule());
   }
 
-  public static SNode sourceNodeQuery_6547769411406518448(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "body", true), "body", true);
+  public static boolean ifMacro_Condition_586712031919893211(final IfMacroContext _context) {
+    return !(MigrationScript_Behavior.call_hasData_586712031920013598(_context.getNode()));
   }
 
   public static SNode sourceNodeQuery_3290421837437864010(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicable", true), "body", true);
+  }
+
+  public static Iterable<SNode> sourceNodesQuery_586712031919867933(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "body", true), "body", true), "statement", true);
   }
 
   public static Iterable<SNode> sourceNodesQuery_5712848521226160537(final SourceSubstituteMacroNodesContext _context) {

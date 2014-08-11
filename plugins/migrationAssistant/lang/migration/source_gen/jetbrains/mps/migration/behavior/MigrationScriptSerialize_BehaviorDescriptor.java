@@ -7,20 +7,20 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class MigrationScriptBody_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
-  public MigrationScriptBody_BehaviorDescriptor() {
+public class MigrationScriptSerialize_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
+  public MigrationScriptSerialize_BehaviorDescriptor() {
   }
 
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
-    return MigrationScriptBody_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
+    return MigrationScriptSerialize_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return MigrationScriptBody_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+    return MigrationScriptSerialize_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.migration.structure.MigrationScriptBody";
+    return "jetbrains.mps.migration.structure.MigrationScriptSerialize";
   }
 }

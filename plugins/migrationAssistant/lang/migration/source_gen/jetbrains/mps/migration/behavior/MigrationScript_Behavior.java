@@ -4,6 +4,8 @@ package jetbrains.mps.migration.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MigrationScript_Behavior {
   public static void init(SNode thisNode) {
@@ -23,5 +25,9 @@ public class MigrationScript_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return MigrationScript_Behavior.call_getClassName_6547769411406912356(thisNode);
+  }
+
+  public static boolean call_hasData_586712031920013598(SNode thisNode) {
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "dataType", true), "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
 }
