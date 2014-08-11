@@ -173,6 +173,9 @@
             <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="ffeo.3740295177886757742" resolveInfo="jetbrains.mps.lang.test.util" />
           </node>
         </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ModuleDependencyOnJavaModule" typeId="kdzh.3189788309731928315" id="5318461172320229202" nodeInfo="ng">
+          <link role="module" roleId="kdzh.3189788309731928317" targetNodeId="ffeo.2501718111710405228" resolveInfo="test-util" />
+        </node>
       </node>
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="3197190366568035751" nodeInfo="ng">
