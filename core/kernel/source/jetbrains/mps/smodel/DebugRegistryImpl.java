@@ -48,12 +48,14 @@ public class DebugRegistryImpl implements DebugRegistry {
 
   @Override
   public synchronized String getPropertyName(SPropertyId propertyId) {
-    return myProperties.get(propertyId).o2;
+    Pair<SConceptId, String> pair = myProperties.get(propertyId);
+    return pair == null ? null : pair.o2;
   }
 
   @Override
   public synchronized String getLinkName(SAbstractLinkId linkId) {
-    return myLinks.get(linkId).o2;
+    Pair<SConceptId, String> pair = myLinks.get(linkId);
+    return pair == null ? null : pair.o2;
   }
 
   @Override
