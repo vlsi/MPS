@@ -14,10 +14,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.module.SDependency;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.log4j.Level;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -59,11 +63,13 @@ public class MigrationComponent extends AbstractProjectComponent {
 
   public boolean isAppliedForAllMyDeps(final MigrationScriptReference script, final AbstractModule module) {
     Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();
-    return Sequence.fromIterable(declaredDependencies).translate(new ITranslator2<SDependency, SModule>() {
+    Set<SModule> dependencies = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable(declaredDependencies).translate(new ITranslator2<SDependency, SModule>() {
       public Iterable<SModule> translate(SDependency it) {
         return new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
       }
-    }).all(new IWhereFilter<SModule>() {
+    }));
+    SetSequence.fromSet(dependencies).addElement(module);
+    return SetSequence.fromSet(dependencies).all(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
         return isApplied(script, (AbstractModule) it);
       }
@@ -104,11 +110,16 @@ public class MigrationComponent extends AbstractProjectComponent {
     });
   }
 
-  public Iterable<MigrationScript> fetchAvailableScripts(jetbrains.mps.project.Project project) {
+  public Iterable<Tuples._2<MigrationScript, AbstractModule>> fetchAvailableScripts(jetbrains.mps.project.Project project) {
     Iterable<? extends SModule> projectModules = project.getModules();
-    return Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, MigrationScript>() {
-      public Iterable<MigrationScript> translate(SModule it) {
-        return fetchAvailableScriptsForModule((AbstractModule) it);
+    return Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, Tuples._2<MigrationScript, AbstractModule>>() {
+      public Iterable<Tuples._2<MigrationScript, AbstractModule>> translate(SModule module) {
+        final AbstractModule abstractModule = (AbstractModule) module;
+        return Sequence.fromIterable(fetchAvailableScriptsForModule(abstractModule)).select(new ISelector<MigrationScript, Tuples._2<MigrationScript, AbstractModule>>() {
+          public Tuples._2<MigrationScript, AbstractModule> select(MigrationScript script) {
+            return MultiTuple.<MigrationScript,AbstractModule>from(script, abstractModule);
+          }
+        });
       }
     });
   }
