@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,9 @@ package jetbrains.mps.project.dependency.modules;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collections;
@@ -29,7 +29,11 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentMap;
 
 /**
+ * NOTE, this class hides cyclic dependencies between languages, e.g if "A extends B extends A",
+ * you'd get "A extends B" for A and "B extends A" for B.
+ *
  * todo: Merge with GlobalModuleDependenciesManager
+ * @see jetbrains.mps.smodel.ModuleRepositoryFacade#getAllExtendingLanguages(jetbrains.mps.smodel.Language)
  */
 public class LanguageDependenciesManager {
   private final Language myLanguage;
@@ -42,10 +46,16 @@ public class LanguageDependenciesManager {
     myExtendedLanguageRefs = Collections.unmodifiableSet(getAllExtendedLanguageReferencesInternal(myExtendedLanguages));
   }
 
+  /**
+   * @return inclusive set of languages extended by the one supplied
+   */
   public static Set<Language> getAllExtendedLanguages(Language language) {
     return getLanguageDependenciesManager(language).myExtendedLanguages;
   }
 
+  /**
+   * @return set identical to {@link #getAllExtendedLanguages(jetbrains.mps.smodel.Language)} as collection of {@link org.jetbrains.mps.openapi.module.SModuleReference}
+   */
   public static Set<SModuleReference> getAllExtendedLanguageReferences(Language language) {
     return getLanguageDependenciesManager(language).myExtendedLanguageRefs;
   }
@@ -78,27 +88,17 @@ public class LanguageDependenciesManager {
 
     while (!queue.isEmpty()) {
       Language current = queue.poll();
-      if (langs.contains(current)) continue;
-
-      langs.add(current);
-      for (Language l : ModuleUtil.refsToLanguages(current.getExtendedLanguageRefs())) {
-        queue.add(l);
+      if (!langs.add(current)) {
+        continue;
+      }
+      for (SModuleReference lr : current.getExtendedLanguageRefs()) {
+        Language l = ModuleRepositoryFacade.getInstance().getModule(lr, Language.class);
+        if (l != null) {
+          queue.add(l);
+        }
       }
     }
 
     return langs;
-  }
-
-  // deprecated
-  @Deprecated
-  public void collectAllExtendedLanguages(Set<Language> result) {
-    for (Language language : getAllExtendedLanguages(myLanguage)) {
-      result.add(language);
-    }
-  }
-
-  @Deprecated
-  public Iterable<SModuleReference> getAllExtendedLanguages() {
-    return getAllExtendedLanguageReferences(myLanguage);
   }
 }

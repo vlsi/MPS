@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,14 @@
 package jetbrains.mps.intentions;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.RuntimeInterruptedException;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.intentions.IntentionsVisitor.CollectAvailableIntentionsVisitor;
 import jetbrains.mps.intentions.IntentionsVisitor.GetHighestAvailableIntentionTypeVisitor;
@@ -34,30 +34,29 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -84,9 +83,9 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return "IntentionsDescriptor";
   }
 
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+  private MPSClassesListener myReloadHandler = new MPSClassesListenerAdapter() {
     @Override
-    public void unload() {
+    public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
       clear();
     }
   };
@@ -95,21 +94,15 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return ApplicationManager.getApplication().getComponent(IntentionsManager.class);
   }
 
-  private Map<Intention, SNodeReference> myNodesByIntentions = new HashMap<Intention, SNodeReference>();
-  private Map<String, Set<Intention>> myIntentions = new HashMap<String, Set<Intention>>();
-  private Set<String> myDisabledIntentionsCache = new HashSet<String>();
-  private HashMap<Class, SModuleReference> myIntentionsLanguages = new HashMap<Class, SModuleReference>();
-
   private Set<IntentionFactory> myIntentionFactories = new HashSet<IntentionFactory>();
   private Map<String, Set<IntentionFactory>> myConcept2IntentionFactories = new HashMap<String, Set<IntentionFactory>>();
   private Map<String, Set<IntentionFactory>> myConcept2IntentionFactoriesAvailableInChildNodes = new HashMap<String, Set<IntentionFactory>>();
 
-  private boolean myCachesAreValid = false;
   private boolean myLoaded = false;
 
   private MyState myState = new MyState();
 
-  private ClassLoaderManager myClassLoaderManager;
+  private final ClassLoaderManager myClassLoaderManager;
 
   public IntentionsManager(MPSCoreComponents coreComponents) {
     myClassLoaderManager = coreComponents.getClassLoaderManager();
@@ -122,11 +115,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     TypeContextManager.getInstance().runTypecheckingAction((ITypeContextOwner) editorContext.getEditorComponent(), new Runnable() {
       @Override
       public void run() {
-        Filter filter = new Filter(BaseIntention.class, getDisabledIntentions()) {
-          @Override
-          boolean accept(Intention intention) {
-            return super.accept(intention) && visitor.hasHigherPriority(intention.getType());
-          }
+        Filter filter = new Filter(getDisabledIntentions()) {
 
           @Override
           boolean accept(IntentionFactory intentionFactory) {
@@ -154,12 +143,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
             // Hiding intentions with same IntentionDescriptor
             // important then currently selected element and it's parent has same intention
             final Set<IntentionDescriptor> processedIntentionDescriptors = new HashSet<IntentionDescriptor>();
-            Filter filter = new Filter(query.myIntentionClass, query.myEnabledOnly ? getDisabledIntentions() : null, query.mySurroundWith) {
-              @Override
-              boolean accept(Intention intention) {
-                return super.accept(intention) && !processedIntentionDescriptors.contains(intention.getDescriptor());
-              }
-
+            Filter filter = new Filter(query.myEnabledOnly ? getDisabledIntentions() : null, query.mySurroundWith) {
               @Override
               boolean accept(IntentionFactory intentionFactory) {
                 return super.accept(intentionFactory) && !processedIntentionDescriptors.contains(intentionFactory);
@@ -194,31 +178,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     visitIntentions(node, visitor, filter, isAncestor, context);
 
     List<IntentionExecutable> result = new ArrayList<IntentionExecutable>();
-    // Legacy code for compatibility with generated code.
-    // Should be removed after MPS 3.0
-    for (Intention intention : visitor.getAvailableIntentions()) {
-      if (intention.isParameterized()) {
-        try {
-          Method method = intention.getClass().getMethod("instances", SNode.class, jetbrains.mps.nodeEditor.EditorContext.class);
-          // This cast to jetbrains.mps.nodeEditor.EditorContext was introduced in MPS 3.0 for backward compatibility with generated code.
-          // Should be removed after MPS 3.0
-          Object[] arguments = new Object[]{node, (jetbrains.mps.nodeEditor.EditorContext) context};
-          List<Intention> parameterizedIntentions = (List<Intention>) method.invoke(null, arguments);
-          result.addAll(parameterizedIntentions);
-        } catch (NoSuchMethodException e) {
-          LOG.error(null, e);
-        } catch (IllegalAccessException e) {
-          LOG.error(null, e);
-        } catch (InvocationTargetException e) {
-          if (e.getTargetException() instanceof RuntimeInterruptedException) {
-            throw (RuntimeInterruptedException) e.getTargetException();
-          }
-          LOG.error(null, e);
-        }
-      } else {
-        result.add(intention);
-      }
-    }
 
     for (IntentionFactory factory : visitor.getAvailableIntentionFactories()) {
       result.addAll(factory.instances(node, context));
@@ -229,11 +188,11 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       //TODO remove this cast
       List<QuickFixProvider> intentionProviders = ((EditorMessage) message).getIntentionProviders();
       for (QuickFixProvider intentionProvider : intentionProviders) {
-        Intention intention = new QuickFixAdapter(intentionProvider.getQuickFix(), intentionProvider.isError());
-        if (intention == null || (isAncestor && !intention.isAvailableInChildNodes()) || !intention.isApplicable(node, context)) {
+        QuickFixAdapter intention = new QuickFixAdapter(intentionProvider.getQuickFix(), intentionProvider.isError());
+        if ((isAncestor && !intention.isAvailableInChildNodes()) || !intention.isApplicable(node, context)) {
           continue;
         }
-        result.add(intention);
+        result.addAll(intention.instances(node, context));
       }
     }
     return result;
@@ -245,24 +204,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   private Set<String> getDisabledIntentions() {
-    if (!myCachesAreValid) {
-      myDisabledIntentionsCache.clear();
-      for (Set<Intention> conceptIntentions : myIntentions.values()) {
-        for (Intention intention : conceptIntentions) {
-          if (myState.myDisabledIntentions.contains(intention.getPersistentStateKey())) {
-            myDisabledIntentionsCache.add(intention.getPersistentStateKey());
-          }
-        }
-      }
-
-      myCachesAreValid = true;
-    }
-    return myDisabledIntentionsCache;
-  }
-
-  private void invalidateCaches() {
-    myCachesAreValid = false;
-    myDisabledIntentionsCache.clear();
+    return myState.getDisabledIntentions();
   }
 
   //-------------disabled state control-----------------
@@ -278,47 +220,14 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   public synchronized void disableIntention(String persistentStateKey) {
     checkLoaded();
     myState.myDisabledIntentions.add(persistentStateKey);
-    myDisabledIntentionsCache.add(persistentStateKey);
   }
 
   public synchronized void enableIntention(String persistentStateKey) {
     checkLoaded();
     myState.myDisabledIntentions.remove(persistentStateKey);
-    myDisabledIntentionsCache.remove(persistentStateKey);
   }
 
   //-------------node info by intention-----------------
-
-  /**
-   * Since MPS 3.0 Intention.getLanguageFqName() should be used.
-   * Remove this method after MPS 3.0
-   */
-  @Deprecated
-  @Nullable
-  public synchronized Language getIntentionLanguage(Intention intention) {
-    checkLoaded();
-    SModuleReference ref = myIntentionsLanguages.get(intention.getClass());
-    if (ref == null) return null;
-    return ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
-  }
-
-  /**
-   * Since MPS 3.0 Intention.getIntentionNodeReference() should be used.
-   * Remove this method after MPS 3.0
-   */
-  @Deprecated
-  @Nullable
-  public synchronized SNode getNodeByIntention(Intention intention) {
-    checkLoaded();
-    SNodeReference pointer = myNodesByIntentions.get(intention);
-    return pointer != null ? pointer.resolve(MPSModuleRepository.getInstance()) : null;
-  }
-
-  @NotNull
-  public synchronized Set<Intention> getAllIntentions() {
-    checkLoaded();
-    return Collections.unmodifiableSet(myNodesByIntentions.keySet());
-  }
 
   @NotNull
   public synchronized Set<IntentionFactory> getAllIntentionFactories() {
@@ -327,18 +236,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   //-------------reloading-----------------
-
-  public synchronized void addIntention(Intention intention, @Nullable SModuleReference lang, @Nullable SNodeReference node) {
-    Set<Intention> intentions = myIntentions.get(intention.getConcept());
-    if (intentions == null) {
-      intentions = new HashSet<Intention>();
-      myIntentions.put(InternUtil.intern(intention.getConcept()), intentions);
-    }
-    intentions.add(intention);
-
-    myNodesByIntentions.put(intention, node);
-    myIntentionsLanguages.put(intention.getClass(), lang);
-  }
 
   public synchronized void registerIntentionFactory(IntentionFactory intentionFactory) {
     if (!myIntentionFactories.add(intentionFactory)) {
@@ -402,8 +299,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         if (refactoring.isShowAsIntention()) {
           SModuleReference languageReference = language.getModuleReference();
           SNodeReference migrationReference = migrationScript.getReference();
-          Intention intention = new MigrationRefactoringAdapter(languageReference, refactoring, migrationReference);
-          IntentionsManager.getInstance().addIntention(intention, languageReference, migrationReference);
+          IntentionFactory intention = new MigrationRefactoringAdapter(languageReference, refactoring, migrationReference);
+          IntentionsManager.getInstance().registerIntentionFactory(intention);
         }
       }
     }
@@ -418,10 +315,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         myConcept2IntentionFactories.clear();
         myConcept2IntentionFactoriesAvailableInChildNodes.clear();
 
-        myIntentions.clear();
-        myNodesByIntentions.clear();
-        myIntentionsLanguages.clear();
-        invalidateCaches();
         myLoaded = false;
       }
     });
@@ -429,7 +322,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private void initIntentionsDescriptor(Language language, LanguageAspect aspect, String classShortName) {
     try {
-      Class<?> cls = ClassLoaderManager.getInstance().getClass(language, language.getModuleName() + "." + aspect.getName() + "." + classShortName);
+      Class<?> cls = myClassLoaderManager.getOwnClass(language, language.getModuleName() + "." + aspect.getName() + "." + classShortName);
       if (cls != null) {
         BaseIntentionsDescriptor desc = (BaseIntentionsDescriptor) cls.newInstance();
         desc.init();
@@ -442,10 +335,9 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   //-------------visiting registered intentions---------------
 
   private boolean visitIntentions(SNode node, IntentionsVisitor visitor, Filter filter, boolean isAncestor, EditorContext editorContext) {
-    if (!SNodeUtil.isAccessible(node,MPSModuleRepository.getInstance())) return true;
-    Collection<SModuleReference> languages = ((SModelBase) node.getModel()).getModelDepsManager().getAllImportedLanguages();
+    if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return true;
     Set<String> langNames = new HashSet<String>();
-    for (SModuleReference l : languages) {
+    for (Language l : SModelOperations.getLanguages(node.getModel())) {
       langNames.add(l.getModuleName());
     }
 
@@ -462,47 +354,21 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
           }
         }
       }
-      if (myIntentions.containsKey(conceptId)) {
-        for (Intention intention : myIntentions.get(conceptId)) {
-          if (!langNames.contains(intention.getLanguageFqName())) continue;
-            if (isAncestor && !intention.isAvailableInChildNodes()) {
-              continue;
-            }
-          if (!filter.accept(intention) || !intention.isApplicable(node, editorContext)) {
-            continue;
-          }
-          if (!visitor.visit(intention)) {
-            return false;
-          }
-        }
-      }
     }
     return true;
   }
 
   static class Filter {
-    private Class<? extends Intention> myIntentionClass = null;
     private Set<String> myDisabledIntentions = null;
     private boolean mySurroundWith = false;
 
-    public Filter(Class<? extends Intention> intentionClass, Set<String> disabledIntentions) {
-      myIntentionClass = intentionClass;
+    public Filter(Set<String> disabledIntentions) {
       myDisabledIntentions = disabledIntentions;
     }
 
-    public Filter(Class<? extends Intention> intentionClass, Set<String> disabledIntentions, boolean surroundWith) {
-      this(intentionClass, disabledIntentions);
+    public Filter(Set<String> disabledIntentions, boolean surroundWith) {
+      this(disabledIntentions);
       mySurroundWith = surroundWith;
-    }
-
-    boolean accept(Intention intention) {
-      if (myIntentionClass != null && !myIntentionClass.isAssignableFrom(intention.getClass())) {
-        return false;
-      }
-      if (myDisabledIntentions != null && myDisabledIntentions.contains(intention.getPersistentStateKey())) {
-        return false;
-      }
-      return true;
     }
 
     boolean accept(IntentionFactory intentionFactory) {
@@ -516,7 +382,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   //-------------queryDescriptor-----------------
 
   public static class QueryDescriptor {
-    private Class<? extends Intention> myIntentionClass = null;
     private boolean myEnabledOnly = false;
     private boolean myCurrentNodeOnly = false;
     private boolean mySurroundWith = false;
@@ -524,8 +389,13 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     public QueryDescriptor() {
     }
 
+    /**
+     * @deprecated no-op operation
+     */
+    @Deprecated
+    @ToRemove(version = 3.2)
     public void setIntentionClass(Class<? extends Intention> intentionClass) {
-      myIntentionClass = intentionClass;
+      // no-op
     }
 
     public void setSurroundWith(boolean surroundWith) {
@@ -549,7 +419,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   @Override
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(myReloadHandler);
+    myClassLoaderManager.addClassesHandler(myReloadHandler);
   }
 
   @Override
@@ -561,7 +431,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   @Override
   public void disposeComponent() {
-    myClassLoaderManager.removeReloadHandler(myReloadHandler);
+    myClassLoaderManager.removeClassesHandler(myReloadHandler);
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,7 +87,6 @@ public class IntentionsPreferencesPage implements Configurable {
         return langCompare != 0 ? langCompare : StringUtil.compare(o1.getPresentation().toLowerCase(), o2.getPresentation().toLowerCase());
       }
     });
-    intentionList.addAll(myIntentionsManager.getAllIntentions());
     intentionList.addAll(myIntentionsManager.getAllIntentionFactories());
     for(IntentionDescriptor descriptor : intentionList) {
       final String languageFqName = descriptor.getLanguageFqName() != null ? descriptor.getLanguageFqName() : "Unspecified Language";

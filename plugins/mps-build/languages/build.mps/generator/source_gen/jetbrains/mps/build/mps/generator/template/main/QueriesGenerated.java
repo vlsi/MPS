@@ -556,10 +556,10 @@ public class QueriesGenerated {
     return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(((SNode) _context.getVariable("module")));
   }
   public static boolean ifMacro_Condition_6859736767834870008(final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(((Tuples._2<SNode, String>) _context.getVariable("var:target"))._0(), "jetbrains.mps.build.structure.BuildSource_SingleFile");
+    return (((Tuples._2<SNode, String>) _context.getVariable("var:target")) != null) && (SNodeOperations.isInstanceOf(((Tuples._2<SNode, String>) _context.getVariable("var:target"))._0(), "jetbrains.mps.build.structure.BuildSource_SingleFile"));
   }
   public static boolean ifMacro_Condition_5680938682774241704(final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(((Tuples._2<SNode, String>) _context.getVariable("var:target"))._0(), "jetbrains.mps.build.structure.BuildSource_SingleFolder");
+    return (((Tuples._2<SNode, String>) _context.getVariable("var:target")) != null) && (SNodeOperations.isInstanceOf(((Tuples._2<SNode, String>) _context.getVariable("var:target"))._0(), "jetbrains.mps.build.structure.BuildSource_SingleFolder"));
   }
   public static boolean ifMacro_Condition_7832771629085272620(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true), "icon16", true) != null);

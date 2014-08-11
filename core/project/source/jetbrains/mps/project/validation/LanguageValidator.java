@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project.validation;
 
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
@@ -38,9 +37,20 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     super(module);
   }
 
-  public static boolean checkCyclicInheritance(Language lang) {
+  private static List<Language> refsToLanguages(Iterable<SModuleReference> refs) {
+    List<Language> result = new ArrayList<Language>();
+    for (SModuleReference ref : refs) {
+      Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
+      if (l == null) continue;
+      result.add(l);
+    }
 
-    List<Language> frontier = ModuleUtil.refsToLanguages(lang.getExtendedLanguageRefs());
+    return result;
+  }
+
+  public static boolean checkCyclicInheritance(Language lang) {
+    // FIXME this code seems quite generic to deal with any SModule and #getDeclaredDependencies()
+    List<Language> frontier = refsToLanguages(lang.getExtendedLanguageRefs());
     ArrayList<Language> passed = new ArrayList<Language>();
     while (!frontier.isEmpty()) {
       List<Language> newFrontier = new ArrayList<Language>();
@@ -50,7 +60,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
         }
         if (!passed.contains(extendedLang)) {
 
-          newFrontier.addAll(ModuleUtil.refsToLanguages(extendedLang.getExtendedLanguageRefs()));
+          newFrontier.addAll(refsToLanguages(extendedLang.getExtendedLanguageRefs()));
         }
         passed.add(extendedLang);
       }

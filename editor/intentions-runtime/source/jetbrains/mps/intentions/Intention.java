@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.intentions;
 
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.util.annotation.ToRemove;
 
 /**
  * This interface was replaced with IntentionFactory in MPS 3.0
  * Should be removed after MPS 3.0
  */
 @Deprecated
+@ToRemove(version = 3.2)
 public interface Intention extends IntentionExecutable, IntentionDescriptor {
   /**
    * Was deprecated in MPS 3.0
@@ -29,19 +30,4 @@ public interface Intention extends IntentionExecutable, IntentionDescriptor {
    */
   @Deprecated
   boolean isParameterized();
-
-  /**
-   * Was deprecated in MPS 3.0
-   * This method should be removed after MPS 3.0
-   */
-  @Deprecated
-  String getLocationString();
-
-  /**
-   * Was deprecated in MPS 3.0
-   * <code>getIntentionNodeReference()</code> should be used instead
-   * This method should be removed after MPS 3.0
-   */
-  @Deprecated
-  SNode getNodeByIntention();
 }

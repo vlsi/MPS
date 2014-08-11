@@ -30,7 +30,7 @@ public class SimplePropertyAttributeActions {
       SNode attributedNode = SNodeOperations.getParent(node);
       SNode propertyDeclaration = AbstractConceptDeclaration_Behavior.call_findPropertyDeclaration_1219835742593(SNodeOperations.getConceptDeclaration(attributedNode), SPropertyOperations.getString(node, "propertyName"));
       SNodeOperations.deleteNode(node);
-      SelectionUtil.selectCell(editorContext, attributedNode, CellIdManager.createPropertyId(SPropertyOperations.getString(propertyDeclaration, "name")));
+      SelectionUtil.selectCell(editorContext, attributedNode, "*" + CellIdManager.createPropertyId(SPropertyOperations.getString(propertyDeclaration, "name")));
     }
   }
   public static class SimplePropertyAttributeActions_BACKSPACE extends AbstractCellAction {
@@ -45,7 +45,7 @@ public class SimplePropertyAttributeActions {
       SNode attributedNode = SNodeOperations.getParent(node);
       SNode propertyDeclaration = AbstractConceptDeclaration_Behavior.call_findPropertyDeclaration_1219835742593(SNodeOperations.getConceptDeclaration(attributedNode), SPropertyOperations.getString(node, "propertyName"));
       SNodeOperations.deleteNode(node);
-      SelectionUtil.selectCell(editorContext, attributedNode, CellIdManager.createPropertyId(SPropertyOperations.getString(propertyDeclaration, "name")));
+      SelectionUtil.selectCell(editorContext, attributedNode, "*" + CellIdManager.createPropertyId(SPropertyOperations.getString(propertyDeclaration, "name")));
     }
   }
 }

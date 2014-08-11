@@ -181,7 +181,7 @@ public class IconManager {
       if (language == null) {
         LOG.error("Can't find a language " + namespace);
       } else {
-        Class icons = ClassLoaderManager.getInstance().getClass(language, className);
+        Class icons = ClassLoaderManager.getInstance().getOwnClass(language, className);
         if (icons != null) {
           Method method;
           try {

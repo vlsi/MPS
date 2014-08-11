@@ -16,14 +16,13 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.TemplateModelScanner;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -51,12 +50,12 @@ public class ModelContentUtil {
       namespaces.addAll(templateModelScanner.getQueryLanguages());
       return namespaces;
     }
-    for (SNode child : SNodeUtil.getDescendants(model)) {
-      namespaces.add(child.getConcept().getLanguage().getQualifiedName());
+    for (SLanguage language : new ModelDependencyScanner().usedLanguages(true).crossModelReferences(false).walk(model).getUsedLanguages()) {
+      namespaces.add(language.getQualifiedName());
     }
-    // empty behavior model should have it's behavior aspect descriptor generated
-    if (model.getModule() instanceof Language && LanguageAspect.BEHAVIOR.is(model)) {
-      namespaces.add(BootstrapLanguages.BEHAVIOR_NAMESPACE);
+    // e.g. empty behavior model should have its behavior aspect descriptor generated
+    for (Language language : ModelsAutoImportsManager.getAutoImportedLanguages(model.getModule(), model)) {
+      namespaces.add(language.getModuleName());
     }
     return namespaces;
   }

@@ -11,6 +11,12 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
+import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -78,50 +84,78 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
     editorCell.setCellId("Constant_t6d1qn_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    Styles_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteStaticInField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.ApplySideTransforms_null_cellMenu_t6d1qn_a0d0()}));
     return editorCell;
+  }
+  public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0d0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_t6d1qn_a0d0() {
+      super(CellSide.RIGHT);
+    }
   }
   private EditorCell createConstant_t6d1qn_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_t6d1qn_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    Styles_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteFinalInStaticField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.ApplySideTransforms_null_cellMenu_t6d1qn_a0e0()}));
     return editorCell;
   }
   private static boolean renderingCondition_t6d1qn_a4a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
+  public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0e0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_t6d1qn_a0e0() {
+      super(CellSide.RIGHT);
+    }
+  }
   private EditorCell createConstant_t6d1qn_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transient");
     editorCell.setCellId("Constant_t6d1qn_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    Styles_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteStaticTransient.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.ApplySideTransforms_null_cellMenu_t6d1qn_a0f0()}));
     return editorCell;
   }
   private static boolean renderingCondition_t6d1qn_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isTransient");
   }
+  public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0f0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_t6d1qn_a0f0() {
+      super(CellSide.RIGHT);
+    }
+  }
   private EditorCell createConstant_t6d1qn_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "volatile");
     editorCell.setCellId("Constant_t6d1qn_g0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    Styles_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteStaticVolatile.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.ApplySideTransforms_null_cellMenu_t6d1qn_a0g0()}));
     return editorCell;
   }
   private static boolean renderingCondition_t6d1qn_a6a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isVolatile");
+  }
+  public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0g0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_t6d1qn_a0g0() {
+      super(CellSide.RIGHT);
+    }
   }
   private EditorCell createRefNode_t6d1qn_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);

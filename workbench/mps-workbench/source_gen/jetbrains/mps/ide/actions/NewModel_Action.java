@@ -125,6 +125,8 @@ public class NewModel_Action extends BaseAction {
       if (result != null) {
         SModel modelDescriptor = result;
         ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
+
+        dialog.value.openSettings();
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {

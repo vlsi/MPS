@@ -39,11 +39,28 @@ public class PasteWrappers {
         return SLinkOperations.getTarget(_context.getSourceNode(), "expression", true);
       }
     });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.console.blCommand.structure.BLExpression";
+      }
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.Statement";
+      }
+      public SNode wrap(PasteWrapperContext _context) {
+        return createExpressionStatement_sma98h_a0a0c(SNodeOperations.cast(HUtil.copyIfNecessary(SLinkOperations.getTarget(_context.getSourceNode(), "expression", true)), "jetbrains.mps.baseLanguage.structure.Expression"));
+      }
+    });
     return result;
   }
   private static SNode createBLExpression_sma98h_a0a0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.blCommand.structure.BLExpression", null, false);
+    n1.addChild("expression", (SNode) p0);
+    return n1;
+  }
+  private static SNode createExpressionStatement_sma98h_a0a0c(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, false);
     n1.addChild("expression", (SNode) p0);
     return n1;
   }

@@ -42,18 +42,26 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageOrDevKitChooser;
-import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyTableCellRender;
+import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
+import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleCollector;
+import jetbrains.mps.ide.ui.dialogs.properties.input.ModuleInstanceCondition;
+import jetbrains.mps.ide.ui.dialogs.properties.input.VisibleModuleCondition;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItemRole;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.ComputeRunnable;
+import jetbrains.mps.util.ConditionalIterable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 
@@ -69,9 +77,8 @@ import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import java.awt.Dimension;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -211,12 +218,29 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
    */
   protected void save() {}
 
+  /**
+   * FIXME [SRepository] ProjectRepository.getModules() gives empty list of modules at the moment,
+   * and I have no other way to access all visible modules but to use global MPSModuleRepository
+   */
+  protected final Iterable<SModule> getProjectModules() {
+    //return myProject.getRepository().getModules();
+
+    // wrap into Iterable to ensure lazy construction of module sequence.
+    // getModules operation requires read access, but I don't see a reason to
+    // move creation of conditional sequence into a read runnable.
+    return new Iterable<SModule>() {
+      @Override
+      public Iterator<SModule> iterator() {
+        return MPSModuleRepository.getInstance().getModules().iterator();
+      }
+    };
+  }
   public abstract class CommonTab extends BaseTab {
 
     protected JTextField myTextFieldName;
 
     public CommonTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.commontab.title"), AllIcons.General.ProjectSettings, PropertiesBundle.message("mps.properties.configurable.common.commontab.tip"));
+      super(PropertiesBundle.message("mps.properties.common.title"), AllIcons.General.ProjectSettings, PropertiesBundle.message("mps.properties.common.tip"));
       init();
     }
 
@@ -235,14 +259,14 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       JPanel sourcesTab = new JPanel();
       sourcesTab.setLayout(new GridLayoutManager(topComponent != null ? 4 : 3, 2, INSETS, -1, -1));
 
-      JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.namelabel"));
+      JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.common.namelabel"));
       sourcesTab.add(label, new GridConstraints(rowCount++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       myTextFieldName = new JTextField();
       myTextFieldName.setText(getConfigItemName());
       sourcesTab.add(myTextFieldName, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
 
-      label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.filepathlabel"));
+      label = new JBLabel(PropertiesBundle.message("mps.properties.common.filepathlabel"));
       sourcesTab.add(label, new GridConstraints(rowCount, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       JTextField textField = new JTextField();
@@ -268,11 +292,12 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected DependTableModel myDependTableModel;
 
     public DependenciesTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.title"), General.Dependencies, PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.tip"));
+      super(PropertiesBundle.message("mps.properties.dependencies.title"), General.Dependencies, PropertiesBundle.message("mps.properties.dependencies.tip"));
       init();
     }
 
     protected abstract DependTableModel getDependTableModel();
+    /*CellEditor for scope cell */
     protected abstract TableCellEditor getTableCellEditor();
 
     @Override
@@ -315,12 +340,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
         column.setPreferredWidth(200);
       }
 
-
-      tableDepend.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-        }
-      });
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(tableDepend);
       decorator.setAddAction(getAnActionButtonRunnable()).setRemoveAction(new AnActionButtonRunnable() {
@@ -394,9 +413,8 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       }.setComparator(new SpeedSearchComparator(false, true));
     }
 
-    protected TableCellRenderer getTableCellRender() {
-      return new DependencyTableCellRender();
-    }
+    /*CellRenderer for module column, actual value supplied to renderer is DependenciesTableItem instance */
+    protected abstract TableCellRenderer getTableCellRender();
 
     protected boolean confirmRemove(final Object value) {
       return true;
@@ -425,7 +443,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected UsedLangsTableModel myUsedLangsTableModel;
 
     public UsedLanguagesTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.usedlanguagestab.title"), IdeIcons.PROJECT_LANGUAGE_ICON, PropertiesBundle.message("mps.properties.configurable.common.usedlanguagestab.tip"));
+      super(PropertiesBundle.message("mps.properties.usedlanguages.title"), IdeIcons.PROJECT_LANGUAGE_ICON, PropertiesBundle.message("mps.properties.usedlanguages.tip"));
       init();
     }
 
@@ -458,19 +476,18 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
             }
           });
 
-      usedLangsTable.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-        }
-      });
-
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(usedLangsTable);
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<SModuleReference> list = (new LanguageOrDevKitChooser()).compute();
-          for (SModuleReference reference : list)
+          Iterable<SModule> modules = new ConditionalIterable<SModule>(getProjectModules(), new ModuleInstanceCondition(Language.class, DevKit.class));
+          modules = new ConditionalIterable<SModule>(modules, new VisibleModuleCondition());
+          ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<List<SModuleReference>>(new ModuleCollector(modules));
+          myProject.getModelAccess().runReadAction(c);
+          List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, "Choose Language or DevKit", c.getResult());
+          for (SModuleReference reference : list) {
             myUsedLangsTableModel.addItem(reference);
+          }
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override

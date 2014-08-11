@@ -145,6 +145,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
+    Delete_Loop.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ForeachStatement_Editor.ReplaceWith_IfStatement_cellMenu_j22tlf_a0c0(), new ForeachStatement_Editor.ReplaceWith_WhileStatement_cellMenu_j22tlf_b0c0(), new ForeachStatement_Editor.ReplaceWith_DoWhileStatement_cellMenu_j22tlf_c0c0(), new ForeachStatement_Editor.ReplaceWith_ForStatement_cellMenu_j22tlf_d0c0()}));
     return editorCell;
@@ -281,6 +282,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
+    Delete_Loop.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -17,6 +17,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import java.util.Collection;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -32,7 +33,7 @@ import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import org.jdom.Attribute;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.IFile;
-import java.util.UUID;
+import jetbrains.mps.project.ModuleId;
 import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
@@ -117,6 +118,9 @@ public class ModuleDescriptorPersistence {
             result_dxyzb6_a0a0a0a0a0a4.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a4);
             final boolean result_dxyzb6_a1a0a0a0a0a0a4 = XmlUtil.booleanWithDefault(d, "reexport", true);
             result_dxyzb6_a0a0a0a0a0a4.setReexport(result_dxyzb6_a1a0a0a0a0a0a4);
+            SDependencyScope s = SDependencyScope.fromIdentity(d.getAttributeValue("scope"));
+            final SDependencyScope result_dxyzb6_a3a0a0a0a0a0a4 = (s == null ? SDependencyScope.DEFAULT : s);
+            result_dxyzb6_a0a0a0a0a0a4.setScope(result_dxyzb6_a3a0a0a0a0a0a4);
             return result_dxyzb6_a0a0a0a0a0a4;
           }
         }.invoke();
@@ -125,9 +129,18 @@ public class ModuleDescriptorPersistence {
   }
   private static void saveDependencyList(Element result, Collection<Dependency> dependencies) {
     for (Dependency md : CollectionSequence.fromCollection(dependencies)) {
-      XmlUtil.tagWithAttributeAndText(result, "dependency", "reexport", Boolean.toString(md.isReexport()), md.getModuleRef().toString());
+      Element child = new Element("dependency");
+      child.setAttribute("reexport", Boolean.toString(md.isReexport()));
+      child.setText(md.getModuleRef().toString());
+      if (md.getScope() != SDependencyScope.DEFAULT) {
+        // the only reason not to serialize DEFIAULT for now is to avoid extra diff with existing descriptors meanwhile 
+        // Once there's migration action, it might be reasonable to serialize each scope 
+        child.setAttribute("scope", md.getScope().identify());
+      }
+      result.addContent(child);
     }
   }
+
   public static ModelRootDescriptor createDescriptor(String type, Memento m, @Nullable String moduleContentRoot, ModelRootDescriptor[] cache) {
     if (type != null) {
       return new ModelRootDescriptor(type, m);
@@ -286,7 +299,7 @@ public class ModuleDescriptorPersistence {
   }
   public static void loadBrokenModule(ModuleDescriptor md, IFile file, ModuleReadException exception) {
     md.setNamespace(FileUtil.getNameWithoutExtension(file.getName()));
-    md.setUUID(UUID.randomUUID().toString());
+    md.setId(ModuleId.regular());
 
     InputStreamReader r = null;
     try {
@@ -300,7 +313,7 @@ public class ModuleDescriptorPersistence {
           Matcher m = pattern.matcher(line);
           if (m.matches()) {
             md.setNamespace(m.group(3));
-            md.setUUID(m.group(4));
+            md.setId(ModuleId.fromString(m.group(4)));
           }
         }
       }

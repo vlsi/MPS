@@ -105,7 +105,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     if (language == null) {
       return null;
     }
-    return myClassLoaderManager.getClass(language, fqName);
+    return myClassLoaderManager.getOwnClass(language, fqName);
   }
   private void unregisterLanguageKeyMaps(Language language) {
     MapSequence.fromMap(myLanguagesToKeyMaps).removeKey(language);

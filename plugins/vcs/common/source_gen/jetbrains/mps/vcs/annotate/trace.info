@@ -1420,134 +1420,153 @@
   </root>
   <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/8955628568092674522">
     <file name="AnnotationHelper.java">
-      <node id="700892246829337629" at="42,47,43,43" concept="13" />
-      <node id="700892246829337633" at="45,5,46,16" concept="13" />
-      <node id="700892246829417980" at="48,99,49,99" concept="12" />
-      <node id="700892246829417992" at="51,22,52,86" concept="6" />
-      <node id="700892246829417998" at="53,7,54,18" concept="13" />
-      <node id="700892246829418004" at="55,5,56,55" concept="12" />
-      <node id="700892246829418010" at="56,55,57,44" concept="12" />
-      <node id="7429375960775555282" at="57,44,58,0" concept="15" />
-      <node id="7429375960775491581" at="58,0,59,42" concept="12" />
-      <node id="5600491251796771683" at="59,42,60,16" concept="12" />
-      <node id="5600491251796783049" at="61,43,62,50" concept="6" />
-      <node id="5600491251796826316" at="62,50,63,16" concept="14" />
-      <node id="5600491251796789504" at="64,57,65,116" concept="6" />
-      <node id="5600491251796700767" at="66,12,67,19" concept="13" />
-      <node id="700892246829418047" at="68,5,69,68" concept="12" />
-      <node id="4424432533913329" at="69,68,70,79" concept="12" />
-      <node id="700892246829418052" at="70,79,71,98" concept="12" />
-      <node id="700892246829418060" at="71,98,72,92" concept="12" />
-      <node id="700892246829418073" at="73,41,74,19" concept="13" />
-      <node id="700892246829418075" at="75,5,76,0" concept="15" />
-      <node id="700892246829418085" at="78,44,79,94" concept="13" />
-      <node id="700892246829418099" at="82,93,83,19" concept="13" />
-      <node id="700892246829418119" at="84,5,85,0" concept="15" />
-      <node id="700892246829418120" at="85,0,86,78" concept="12" />
-      <node id="700892246829418131" at="87,37,88,19" concept="13" />
-      <node id="700892246829418133" at="89,5,90,0" concept="15" />
-      <node id="700892246829418136" at="91,17,92,18" concept="13" />
-      <node id="700892246829418223" at="95,0,96,0" concept="7" trace="myFileAnnotation" />
-      <node id="700892246829418226" at="96,0,97,0" concept="7" trace="myException" />
-      <node id="700892246829418155" at="99,13,100,63" concept="6" />
-      <node id="700892246829418166" at="101,34,102,26" concept="6" />
-      <node id="700892246829418174" at="106,30,107,20" concept="6" />
-      <node id="700892246829418183" at="111,34,112,130" concept="6" />
-      <node id="700892246829418194" at="113,9,114,0" concept="15" />
-      <node id="700892246829418200" at="117,31,118,129" concept="12" />
-      <node id="700892246829418210" at="118,129,119,68" concept="6" />
-      <node id="700892246829418229" at="124,6,125,52" concept="6" />
-      <node id="700892246829418234" at="125,52,126,16" concept="13" />
-      <node id="700892246829418260" at="128,64,129,37" concept="6" />
-      <node id="700892246829418273" at="131,73,132,43" concept="13" />
-      <node id="700892246829418013" at="135,36,136,42" concept="13" />
-      <node id="700892246829418013" at="137,5,138,16" concept="13" />
-      <node id="700892246829420097" at="37,0,39,0" concept="3" trace="AnnotationHelper#()V" />
-      <node id="5600491251796695187" at="66,10,68,5" concept="1" />
-      <node id="700892246829337617" at="41,122,44,7" concept="10" />
-      <node id="700892246829417988" at="50,56,53,7" concept="10" />
-      <node id="700892246829418068" at="72,92,75,5" concept="10" />
-      <node id="700892246829418081" at="78,0,81,0" concept="11" trace="invoke#(Lcom/intellij/openapi/vcs/FileStatus;)Ljava/lang/Boolean;" />
-      <node id="700892246829418097" at="81,6,84,5" concept="10" />
-      <node id="700892246829418126" at="86,78,89,5" concept="10" />
-      <node id="700892246829418134" at="90,0,93,5" concept="10" />
-      <node id="700892246829418181" at="110,31,113,9" concept="10" />
-      <node id="700892246829418250" at="128,0,131,0" concept="17" trace="annotate#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-      <node id="700892246829418265" at="131,0,134,0" concept="17" trace="isAnnotateable#(Ljetbrains/mps/nodeEditor/EditorComponent;)Z" />
-      <node id="700892246829418013" at="134,69,137,5" concept="10" />
-      <node id="700892246829418170" at="105,0,109,0" concept="11" trace="onCancel#()V" />
-      <node id="4424432533981484" at="117,0,121,0" concept="11" trace="run#()V" />
-      <node id="700892246829337613" at="40,98,45,5" concept="9" />
-      <node id="700892246829418076" at="76,0,81,6" concept="12" />
-      <node id="700892246829418153" at="98,61,103,9" concept="20" />
-      <node id="700892246829417986" at="49,99,55,5" concept="10" />
-      <node id="4424432533965153" at="115,39,121,13" concept="6" />
-      <node id="700892246829418013" at="134,0,140,0" concept="17" trace="check_19hp0u_a0d0c#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="5600491251796645116" at="60,16,68,5" concept="10" />
-      <node id="700892246829418146" at="97,0,105,0" concept="11" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-      <node id="700892246829418195" at="114,0,122,9" concept="10" />
-      <node id="700892246829309758" at="39,0,48,0" concept="17" trace="findAnnotationColumn#(Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/mps/vcs/annotate/AnnotationColumn;" />
-      <node id="700892246829418177" at="109,0,124,0" concept="11" trace="onSuccess#()V" />
-      <node id="700892246829418139" at="93,5,124,6" concept="12" />
-      <node id="700892246829417953" at="48,0,128,0" concept="17" trace="annotate#(Ljetbrains/mps/nodeEditor/EditorComponent;Z)Z" />
-      <scope id="700892246829420100" at="37,30,37,30" />
-      <scope id="700892246829337619" at="42,47,43,43" />
-      <scope id="700892246829417991" at="51,22,52,86" />
-      <scope id="5600491251796674619" at="64,57,65,116" />
-      <scope id="5600491251796695188" at="66,12,67,19" />
-      <scope id="700892246829418072" at="73,41,74,19" />
-      <scope id="700892246829418084" at="78,44,79,94" />
-      <scope id="700892246829418098" at="82,93,83,19" />
-      <scope id="700892246829418130" at="87,37,88,19" />
-      <scope id="700892246829418135" at="91,17,92,18" />
-      <scope id="700892246829418154" at="99,13,100,63" />
-      <scope id="700892246829418162" at="101,0,102,26">
+      <node id="135957280817173847" at="40,0,41,0" concept="16" trace="ourProgress" />
+      <node id="700892246829337629" at="46,47,47,43" concept="13" />
+      <node id="700892246829337633" at="49,5,50,16" concept="13" />
+      <node id="135957280817804170" at="52,99,53,73" concept="14" />
+      <node id="135957280817793510" at="54,69,55,19" concept="13" />
+      <node id="9193185521109268839" at="56,5,57,0" concept="15" />
+      <node id="700892246829417980" at="57,0,58,99" concept="12" />
+      <node id="9193185521109777310" at="58,99,59,78" concept="12" />
+      <node id="700892246829417992" at="61,22,62,33" concept="6" />
+      <node id="700892246829417998" at="63,7,64,18" concept="13" />
+      <node id="700892246829418004" at="65,5,66,55" concept="12" />
+      <node id="700892246829418010" at="66,55,67,44" concept="12" />
+      <node id="7429375960775555282" at="67,44,68,0" concept="15" />
+      <node id="7429375960775491581" at="68,0,69,42" concept="12" />
+      <node id="5600491251796771683" at="69,42,70,16" concept="12" />
+      <node id="5600491251796783049" at="71,43,72,50" concept="6" />
+      <node id="5600491251796826316" at="72,50,73,16" concept="14" />
+      <node id="5600491251796789504" at="74,57,75,116" concept="6" />
+      <node id="5600491251796700767" at="76,12,77,19" concept="13" />
+      <node id="700892246829418047" at="78,5,79,68" concept="12" />
+      <node id="4424432533913329" at="79,68,80,79" concept="12" />
+      <node id="700892246829418052" at="80,79,81,98" concept="12" />
+      <node id="700892246829418060" at="81,98,82,92" concept="12" />
+      <node id="700892246829418073" at="83,41,84,19" concept="13" />
+      <node id="700892246829418075" at="85,5,86,0" concept="15" />
+      <node id="700892246829418085" at="88,44,89,94" concept="13" />
+      <node id="700892246829418099" at="92,93,93,19" concept="13" />
+      <node id="700892246829418119" at="94,5,95,0" concept="15" />
+      <node id="700892246829418120" at="95,0,96,78" concept="12" />
+      <node id="700892246829418131" at="97,37,98,19" concept="13" />
+      <node id="700892246829418133" at="99,5,100,0" concept="15" />
+      <node id="700892246829418136" at="101,17,102,18" concept="13" />
+      <node id="700892246829418223" at="105,0,106,0" concept="7" trace="myFileAnnotation" />
+      <node id="700892246829418226" at="106,0,107,0" concept="7" trace="myException" />
+      <node id="700892246829418155" at="109,13,110,63" concept="6" />
+      <node id="700892246829418166" at="111,34,112,26" concept="6" />
+      <node id="700892246829418174" at="116,30,117,20" concept="6" />
+      <node id="8971843164420847882" at="120,31,121,26" concept="14" />
+      <node id="135957280817573119" at="121,26,122,72" concept="6" />
+      <node id="8971843164420988417" at="122,72,123,0" concept="15" />
+      <node id="700892246829418183" at="124,34,125,130" concept="6" />
+      <node id="700892246829418194" at="126,9,127,0" concept="15" />
+      <node id="700892246829418200" at="130,31,131,129" concept="12" />
+      <node id="700892246829418210" at="131,129,132,68" concept="6" />
+      <node id="135957280817851130" at="137,6,138,65" concept="6" />
+      <node id="700892246829418229" at="139,9,140,54" concept="6" />
+      <node id="8971843164420942459" at="141,27,142,70" concept="6" />
+      <node id="700892246829418234" at="143,5,144,16" concept="13" />
+      <node id="700892246829418260" at="146,64,147,37" concept="6" />
+      <node id="700892246829418273" at="149,73,150,43" concept="13" />
+      <node id="700892246829418013" at="153,36,154,42" concept="13" />
+      <node id="700892246829418013" at="155,5,156,16" concept="13" />
+      <node id="700892246829420097" at="41,0,43,0" concept="3" trace="AnnotationHelper#()V" />
+      <node id="5600491251796695187" at="76,10,78,5" concept="1" />
+      <node id="700892246829337617" at="45,122,48,7" concept="10" />
+      <node id="135957280817777607" at="53,73,56,5" concept="10" />
+      <node id="700892246829417988" at="60,35,63,7" concept="10" />
+      <node id="700892246829418068" at="82,92,85,5" concept="10" />
+      <node id="700892246829418081" at="88,0,91,0" concept="11" trace="invoke#(Lcom/intellij/openapi/vcs/FileStatus;)Ljava/lang/Boolean;" />
+      <node id="700892246829418097" at="91,6,94,5" concept="10" />
+      <node id="700892246829418126" at="96,78,99,5" concept="10" />
+      <node id="700892246829418134" at="100,0,103,5" concept="10" />
+      <node id="700892246829418181" at="123,0,126,9" concept="10" />
+      <node id="700892246829418250" at="146,0,149,0" concept="17" trace="annotate#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+      <node id="700892246829418265" at="149,0,152,0" concept="17" trace="isAnnotateable#(Ljetbrains/mps/nodeEditor/EditorComponent;)Z" />
+      <node id="700892246829418013" at="152,69,155,5" concept="10" />
+      <node id="700892246829418170" at="115,0,119,0" concept="11" trace="onCancel#()V" />
+      <node id="4424432533981484" at="130,0,134,0" concept="11" trace="run#()V" />
+      <node id="700892246829337613" at="44,98,49,5" concept="9" />
+      <node id="700892246829418076" at="86,0,91,6" concept="12" />
+      <node id="700892246829418153" at="108,61,113,9" concept="20" />
+      <node id="8971843164420920947" at="138,65,143,5" concept="20" />
+      <node id="700892246829417986" at="59,78,65,5" concept="10" />
+      <node id="4424432533965153" at="128,39,134,13" concept="6" />
+      <node id="700892246829418013" at="152,0,158,0" concept="17" trace="check_19hp0u_a0h0d#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="5600491251796645116" at="70,16,78,5" concept="10" />
+      <node id="700892246829418146" at="107,0,115,0" concept="11" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+      <node id="700892246829418195" at="127,0,135,9" concept="10" />
+      <node id="700892246829309758" at="43,0,52,0" concept="17" trace="findAnnotationColumn#(Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/mps/vcs/annotate/AnnotationColumn;" />
+      <node id="700892246829418177" at="119,0,137,0" concept="11" trace="onSuccess#()V" />
+      <node id="700892246829418139" at="103,5,137,6" concept="12" />
+      <node id="700892246829417953" at="52,0,146,0" concept="17" trace="annotate#(Ljetbrains/mps/nodeEditor/EditorComponent;Z)Z" />
+      <scope id="700892246829420100" at="41,30,41,30" />
+      <scope id="700892246829337619" at="46,47,47,43" />
+      <scope id="135957280817777610" at="54,69,55,19" />
+      <scope id="700892246829417991" at="61,22,62,33" />
+      <scope id="5600491251796674619" at="74,57,75,116" />
+      <scope id="5600491251796695188" at="76,12,77,19" />
+      <scope id="700892246829418072" at="83,41,84,19" />
+      <scope id="700892246829418084" at="88,44,89,94" />
+      <scope id="700892246829418098" at="92,93,93,19" />
+      <scope id="700892246829418130" at="97,37,98,19" />
+      <scope id="700892246829418135" at="101,17,102,18" />
+      <scope id="700892246829418154" at="109,13,110,63" />
+      <scope id="700892246829418162" at="111,0,112,26">
         <var name="e" id="700892246829418163" />
       </scope>
-      <scope id="700892246829418165" at="101,34,102,26" />
-      <scope id="700892246829418173" at="106,30,107,20" />
-      <scope id="700892246829418182" at="111,34,112,130" />
-      <scope id="700892246829418253" at="128,64,129,37" />
-      <scope id="700892246829418268" at="131,73,132,43" />
-      <scope id="700892246829418013" at="135,36,136,42" />
-      <scope id="700892246829420097" at="37,0,39,0" />
-      <scope id="5600491251796645119" at="61,43,63,16" />
-      <scope id="4424432533981485" at="117,31,119,68">
+      <scope id="700892246829418165" at="111,34,112,26" />
+      <scope id="700892246829418173" at="116,30,117,20" />
+      <scope id="700892246829418182" at="124,34,125,130" />
+      <scope id="8971843164420920949" at="139,9,140,54" />
+      <scope id="8971843164420920950" at="141,0,142,70">
+        <var name="t" id="8971843164420920952" />
+      </scope>
+      <scope id="8971843164420920956" at="141,27,142,70" />
+      <scope id="700892246829418253" at="146,64,147,37" />
+      <scope id="700892246829418268" at="149,73,150,43" />
+      <scope id="700892246829418013" at="153,36,154,42" />
+      <scope id="700892246829420097" at="41,0,43,0" />
+      <scope id="5600491251796645119" at="71,43,73,16" />
+      <scope id="4424432533981485" at="130,31,132,68">
         <var name="annotationColumn" id="700892246829418201" />
       </scope>
-      <scope id="700892246829337616" at="41,122,44,7" />
-      <scope id="700892246829418081" at="78,0,81,0">
+      <scope id="700892246829337616" at="45,122,48,7" />
+      <scope id="700892246829418081" at="88,0,91,0">
         <var name="fs" id="700892246829418081" />
       </scope>
-      <scope id="700892246829418250" at="128,0,131,0">
+      <scope id="700892246829418250" at="146,0,149,0">
         <var name="editorComponent" id="700892246829418255" />
       </scope>
-      <scope id="700892246829418265" at="131,0,134,0">
+      <scope id="700892246829418265" at="149,0,152,0">
         <var name="editorComponent" id="700892246829418270" />
       </scope>
-      <scope id="700892246829417987" at="50,56,54,18" />
-      <scope id="700892246829418170" at="105,0,109,0" />
-      <scope id="4424432533981484" at="117,0,121,0" />
-      <scope id="700892246829418013" at="134,69,138,16" />
-      <scope id="700892246829337613" at="40,98,45,5">
+      <scope id="700892246829417987" at="60,35,64,18" />
+      <scope id="700892246829418170" at="115,0,119,0" />
+      <scope id="4424432533981484" at="130,0,134,0" />
+      <scope id="700892246829418013" at="152,69,156,16" />
+      <scope id="700892246829337613" at="44,98,49,5">
         <var name="column" id="700892246829337614" />
       </scope>
-      <scope id="700892246829418152" at="98,61,103,9" />
-      <scope id="700892246829309761" at="40,98,46,16" />
-      <scope id="700892246829418196" at="115,39,121,13" />
-      <scope id="700892246829418013" at="134,0,140,0">
+      <scope id="700892246829418152" at="108,61,113,9" />
+      <scope id="700892246829309761" at="44,98,50,16" />
+      <scope id="700892246829418196" at="128,39,134,13" />
+      <scope id="700892246829418013" at="152,0,158,0">
         <var name="checkedDotOperand" id="700892246829418013" />
       </scope>
-      <scope id="700892246829418146" at="97,0,105,0">
+      <scope id="700892246829418146" at="107,0,115,0">
         <var name="indicator" id="700892246829418149" />
       </scope>
-      <scope id="700892246829309758" at="39,0,48,0">
+      <scope id="700892246829309758" at="43,0,52,0">
         <var name="editorComponent" id="700892246829335446" />
       </scope>
-      <scope id="700892246829418180" at="110,31,122,9" />
-      <scope id="700892246829418177" at="109,0,124,0" />
-      <scope id="700892246829417956" at="48,99,126,16">
+      <scope id="700892246829418180" at="120,31,135,9" />
+      <scope id="700892246829418177" at="119,0,137,0" />
+      <scope id="700892246829417956" at="52,99,144,16">
         <var name="annotateTask" id="700892246829418140" />
+        <var name="annotationColumn" id="9193185521109777311" />
         <var name="annotationProvider" id="700892246829418121" />
         <var name="checkFileStatus" id="700892246829418077" />
         <var name="file" id="700892246829418048" />
@@ -1560,14 +1579,14 @@
         <var name="source" id="7429375960775491582" />
         <var name="vcs" id="700892246829418061" />
       </scope>
-      <scope id="700892246829417953" at="48,0,128,0">
+      <scope id="700892246829417953" at="52,0,146,0">
         <var name="dryRun" id="700892246829417961" />
         <var name="editorComponent" id="700892246829417959" />
       </scope>
-      <unit id="700892246829418081" at="77,94,81,5" name="jetbrains.mps.vcs.annotate.AnnotationHelper$1" />
-      <unit id="4424432533981484" at="116,69,121,11" name="jetbrains.mps.vcs.annotate.AnnotationHelper$3" />
-      <unit id="700892246829418144" at="94,43,124,5" name="jetbrains.mps.vcs.annotate.AnnotationHelper$2" />
-      <unit id="8955628568092674522" at="36,0,141,0" name="jetbrains.mps.vcs.annotate.AnnotationHelper" />
+      <unit id="700892246829418081" at="87,94,91,5" name="jetbrains.mps.vcs.annotate.AnnotationHelper$1" />
+      <unit id="4424432533981484" at="129,69,134,11" name="jetbrains.mps.vcs.annotate.AnnotationHelper$3" />
+      <unit id="700892246829418144" at="104,43,137,5" name="jetbrains.mps.vcs.annotate.AnnotationHelper$2" />
+      <unit id="8955628568092674522" at="39,0,159,0" name="jetbrains.mps.vcs.annotate.AnnotationHelper" />
     </file>
   </root>
   <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/8955628568092675853">

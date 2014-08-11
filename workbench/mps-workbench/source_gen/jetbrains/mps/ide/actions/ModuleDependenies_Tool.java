@@ -8,9 +8,7 @@ import com.intellij.icons.AllIcons;
 import jetbrains.mps.ide.depanalyzer.ModuleDependenciesView;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.depanalyzer.ModuleDependencyNode;
 import javax.swing.JComponent;
 
 public class ModuleDependenies_Tool extends GeneratedTool {
@@ -23,17 +21,11 @@ public class ModuleDependenies_Tool extends GeneratedTool {
     super.init(project);
     ModuleDependenies_Tool.this.myComponent = new ModuleDependenciesView(ModuleDependenies_Tool.this, project);
   }
-  /*package*/ void setModules(List<SModule> modules) {
-    ModuleDependenies_Tool.this.myComponent.setModules(modules);
+  /*package*/ void setModules(SModule module) {
+    ModuleDependenies_Tool.this.myComponent.setModules(module);
   }
   public void resetAll() {
     ModuleDependenies_Tool.this.myComponent.resetAll();
-  }
-  public void ShowLoops(ModuleDependencyNode node) {
-    ModuleDependenies_Tool.this.myComponent.showLoops(node);
-  }
-  public void ShowBootstrapDep(ModuleDependencyNode.ULangDependencyNode node) {
-    ModuleDependenies_Tool.this.myComponent.showBootstrapLoop(node);
   }
   public JComponent getComponent() {
     return ModuleDependenies_Tool.this.myComponent;

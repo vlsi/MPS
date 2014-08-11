@@ -59,6 +59,7 @@ public class TextPreviewFile extends StubVirtualFile {
     return 0L;
   }
   @Override
+  @NotNull
   public String getPath() {
     return myModelName + "/" + myName;
   }

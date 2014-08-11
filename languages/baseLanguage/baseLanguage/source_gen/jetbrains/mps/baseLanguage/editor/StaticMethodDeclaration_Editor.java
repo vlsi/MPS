@@ -11,7 +11,13 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
+import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -91,37 +97,58 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_j4vm40_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    Styles_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteFinalInBaseMethod.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticMethodDeclaration_Editor.ApplySideTransforms_null_cellMenu_j4vm40_a0d0()}));
     return editorCell;
   }
   private static boolean renderingCondition_j4vm40_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
+  public static class ApplySideTransforms_null_cellMenu_j4vm40_a0d0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_j4vm40_a0d0() {
+      super(CellSide.RIGHT);
+    }
+  }
   private EditorCell createConstant_j4vm40_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
     editorCell.setCellId("Constant_j4vm40_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    Styles_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteStaticInMethodDeclaration.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticMethodDeclaration_Editor.ApplySideTransforms_null_cellMenu_j4vm40_a0e0()}));
     return editorCell;
+  }
+  public static class ApplySideTransforms_null_cellMenu_j4vm40_a0e0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_j4vm40_a0e0() {
+      super(CellSide.RIGHT);
+    }
   }
   private EditorCell createConstant_j4vm40_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "synchronized");
     editorCell.setCellId("Constant_j4vm40_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    Styles_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteSynchronizedInBaseMethod.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticMethodDeclaration_Editor.ApplySideTransforms_null_cellMenu_j4vm40_a0f0()}));
     return editorCell;
   }
   private static boolean renderingCondition_j4vm40_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isSynchronized");
+  }
+  public static class ApplySideTransforms_null_cellMenu_j4vm40_a0f0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_j4vm40_a0f0() {
+      super(CellSide.RIGHT);
+    }
   }
   private EditorCell createRefNodeList_j4vm40_g0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new StaticMethodDeclaration_Editor.modifiersListHandler_j4vm40_g0(node, "modifiers", editorContext);
@@ -202,7 +229,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("leftParen");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
+    Styles_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -276,7 +303,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("rightParen");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
+    jetbrains.mps.lang.generator.editor.Styles_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
     editorCell.getStyle().putAll(style);
@@ -300,7 +327,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "throws");
     editorCell.setCellId("Constant_j4vm40_a31a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    Styles_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
     DeleteThrowsInMethods.setCellActions(editorCell, node, editorContext);

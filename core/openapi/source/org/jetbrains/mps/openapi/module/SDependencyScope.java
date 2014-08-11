@@ -15,6 +15,9 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 /**
  * There are several types of dependencies between two modules.
  * <ul>
@@ -30,31 +33,57 @@ package org.jetbrains.mps.openapi.module;
  */
 public enum SDependencyScope {
   /* all types of modules */
-  DEFAULT("Default"),
-  DESIGN("Design"),
-  COMPILE("Compile"),
-  RUNTIME("Runtime"),
-  PROVIDED("Provided"),
+  DEFAULT("regular", "Default"),
+  DESIGN("design", "Design"),
+  COMPILE("compile", "Compile"),
+  RUNTIME("rt", "Runtime"),
+  PROVIDED("external", "Provided"),
 
   /* only between language modules  */
 
   /**
    * Applicable between either two language or two generator modules
    */
-  EXTENDS("Extends"),
+  EXTENDS("extend", "Extends"),
 
   /**
    * Applicable only between two language modules
    */
-  GENERATES_INTO("Generates into");
+  GENERATES_INTO("generate-into", "Generates into");
 
+  private final String myIdentity;
   private final String myPresentation;
-  private SDependencyScope(String presentation) {
+  private SDependencyScope(String identity, String presentation) {
+    myIdentity = identity;
     myPresentation = presentation;
   }
 
   @Override
   public String toString() {
     return myPresentation;
+  }
+
+  /**
+   * scope to string
+   * @return identity one may use to persist the {@link #fromIdentity(String) scope}
+   */
+  @NotNull
+  public String identify() {
+    return myIdentity;
+  }
+
+  /**
+   * string to scope
+   * @param identity value obtained from {@link #identify()}
+   * @return scope instance with specified identity
+   */
+  @Nullable
+  public static SDependencyScope fromIdentity(@Nullable String identity) {
+    for (SDependencyScope sd : SDependencyScope.values()) {
+      if (sd.myIdentity.equals(identity)) {
+        return sd;
+      }
+    }
+    return null;
   }
 }

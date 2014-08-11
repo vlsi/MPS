@@ -31,14 +31,11 @@ import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsManager;
 import jetbrains.mps.lang.typesystem.runtime.RuleSet;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
@@ -49,8 +46,6 @@ import java.util.Set;
 
 public class RulesManager {
 
-  private final TypeChecker myTypeChecker;
-  private Set<String> myLoadedLanguages = new THashSet<String>();
   private RuleSet<InferenceRule_Runtime> myInferenceRules = new CheckingRuleSet<InferenceRule_Runtime>();
   private RuleSet<NonTypesystemRule_Runtime> myNonTypesystemRules = new CheckingRuleSet<NonTypesystemRule_Runtime>();
   private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
@@ -58,30 +53,102 @@ public class RulesManager {
   private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<InequationReplacementRule_Runtime>();
   private Set<IVariableConverter_Runtime> myVariableConverters = new THashSet<IVariableConverter_Runtime>();
 
-  private Set<SModelReference> myModelsWithLoadedRules = new THashSet<SModelReference>();
-
   private OverloadedOperationsManager myOverloadedOperationsManager;
 
   private RulesManagerNew myRulesManagerNew;
   private static final Logger LOG = LogManager.getLogger(RulesManager.class);
 
+  private volatile boolean myNeedsLoading = false;
+  private Set<LanguageRuntime> myLoadedLanguages = new HashSet<LanguageRuntime>();
+  private Set<LanguageRuntime> myLanguagesToLoad = new HashSet<LanguageRuntime>();
+  private LanguageRegistry myLanguageRegistry;
+
   public RulesManager(TypeChecker typeChecker) {
-    myTypeChecker = typeChecker;
     myRulesManagerNew = new RulesManagerNew(typeChecker);
-    myOverloadedOperationsManager = new OverloadedOperationsManager(myTypeChecker);
-    SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
-      @Override
-      public void modelRemoved(SModel modelDescriptor) {
-        myModelsWithLoadedRules.remove(modelDescriptor);
-      }
-    });
+    myOverloadedOperationsManager = new OverloadedOperationsManager(typeChecker);
+    myLanguageRegistry = typeChecker.getLanguageRegistry();
   }
 
-  public void clear() {
+  public boolean loadLanguage(final String languageNamespace) {
+    ModelAccess.assertLegalWrite();
+    LanguageRuntime language = myLanguageRegistry.getLanguage(languageNamespace);
+    if (language == null) return false;
+    if (!myLoadedLanguages.contains(language)) {
+      loadLanguages(Collections.singleton(language));
+    }
+    return true;
+  }
+
+  public void loadLanguages(Iterable<LanguageRuntime> languages) {
+    ModelAccess.assertLegalWrite();
+    for (LanguageRuntime language : languages) {
+      assert !myLoadedLanguages.contains(language);
+      myLanguagesToLoad.add(language);
+      myNeedsLoading = true;
+    }
+  }
+
+  private void ensureAllRulesLoaded() {
+    if (!myNeedsLoading) {
+      return;
+    }
+    synchronized (this) {
+      if (!myNeedsLoading) {
+        return;
+      }
+
+//      ModelAccess.assertLegalWrite();
+      for (LanguageRuntime language : myLanguagesToLoad) {
+        assert !myLoadedLanguages.contains(language);
+        myLoadedLanguages.add(language);
+
+        IHelginsDescriptor typesystem = null;
+        try {
+          typesystem = language.getAspect(IHelginsDescriptor.class);
+        } catch (Throwable t) {
+          LOG.error("Error while loading language: " + language.getNamespace(), t);
+        }
+        if (typesystem == null) {
+          continue;
+        }
+        try {
+          myInferenceRules.addRuleSetItem(typesystem.getInferenceRules());
+          myNonTypesystemRules.addRuleSetItem(typesystem.getNonTypesystemRules());
+          mySubtypingRules.addRuleSetItem(typesystem.getSubtypingRules());
+          Set<ComparisonRule_Runtime> comparisonRule_runtimes = typesystem.getComparisonRules();
+          myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
+          myReplacementRules.addRuleSetItem(typesystem.getEliminationRules());
+          myVariableConverters.addAll(typesystem.getVariableConverters());
+          myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(typesystem.getOverloadedOperationsTypesProviders());
+        } catch (RuntimeException t) {
+        }
+      }
+
+      myLanguagesToLoad = new HashSet<LanguageRuntime>();
+      myNeedsLoading = false;
+    }
+  }
+
+  public void unloadLanguages(Iterable<LanguageRuntime> languages) {
+    ModelAccess.assertLegalWrite();
+    for (LanguageRuntime language : languages) {
+      if (myLoadedLanguages.contains(language)) {
+        unloadLoadedAllLoaded();
+      }
+      myLanguagesToLoad.remove(language);
+      myNeedsLoading = true;
+    }
+
+    myRulesManagerNew.clear();
+  }
+
+  private void unloadLoadedAllLoaded() {
     ModelAccess.assertLegalWrite();
 
-    myLoadedLanguages.clear();
-    myModelsWithLoadedRules.clear();
+    myLanguagesToLoad.addAll(myLoadedLanguages);
+    myLoadedLanguages = new HashSet<LanguageRuntime>();
+
+    // TODO: cleanup
     myInferenceRules.clear();
     myNonTypesystemRules.clear();
     mySubtypingRules.clear();
@@ -89,95 +156,10 @@ public class RulesManager {
     myReplacementRules.clear();
     myVariableConverters.clear();
     myOverloadedOperationsManager.clear();
-    myRulesManagerNew.clear();
-  }
-
-  public boolean hasModelLoadedRules(SModelReference modelReference) {
-    return myModelsWithLoadedRules.contains(modelReference);
-  }
-
-  public void markModelHasLoadedRules(SModelReference modelReference) {
-    myModelsWithLoadedRules.add(modelReference);
-  }
-
-  public boolean loadLanguage(final String languageNamespace) {
-    ModelAccess.assertLegalWrite();
-    if (myLoadedLanguages.contains(languageNamespace)) {
-      return true;
-    }
-    LanguageRuntime language = myTypeChecker.getLanguageRegistry().getLanguage(languageNamespace);
-    if (language == null) return false;
-
-    return loadLanguages(Collections.singleton(language));
-  }
-
-  //todo: we should not change language models while loading language
-  public boolean loadLanguages(Iterable<LanguageRuntime> languages) {
-    ModelAccess.assertLegalWrite();
-    boolean success = true;
-
-    for (LanguageRuntime language : languages) {
-      String namespace = language.getNamespace();
-      if (myLoadedLanguages.contains(namespace)) continue;
-      IHelginsDescriptor typesystem = null;
-      try {
-        typesystem = language.getAspect(IHelginsDescriptor.class);
-      } catch (Throwable t) {
-        LOG.error("Error while loading language: " + namespace, t);
-      }
-      if (typesystem == null) {
-        success = false;
-        continue;
-      }
-      try {
-        myInferenceRules.addRuleSetItem(typesystem.getInferenceRules());
-        myNonTypesystemRules.addRuleSetItem(typesystem.getNonTypesystemRules());
-        mySubtypingRules.addRuleSetItem(typesystem.getSubtypingRules());
-        Set<ComparisonRule_Runtime> comparisonRule_runtimes = typesystem.getComparisonRules();
-        myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
-        myReplacementRules.addRuleSetItem(typesystem.getEliminationRules());
-        myVariableConverters.addAll(typesystem.getVariableConverters());
-        myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(typesystem.getOverloadedOperationsTypesProviders());
-      } catch (RuntimeException t) {
-        success = false;
-      } finally {
-        myLoadedLanguages.add(namespace);
-      }
-    }
-    try {
-      myComparisonRules.makeConsistent();
-      myReplacementRules.makeConsistent();
-//      myDependenciesContainer.makeConsistent();
-      myOverloadedOperationsManager.makeConsistent();
-    } catch (RuntimeException ex) {
-      LOG.error("internal error: " + ex.getMessage(), ex);
-      success = false;
-    }
-    return success;
-  }
-
-  public boolean unloadLanguages(Iterable<LanguageRuntime> languages) {
-    ModelAccess.assertLegalWrite();
-
-    // for now: load languages except unloaded languages
-    Set<String> toLoad = new HashSet<String>();
-    toLoad.addAll(myLoadedLanguages);
-    for (LanguageRuntime runtime : languages) {
-      toLoad.remove(runtime.getNamespace());
-    }
-
-    // unload all languages
-    clear();
-
-    // load
-    Set<LanguageRuntime> toLoadRuntimes = new HashSet<LanguageRuntime>();
-    for (String language : toLoad) {
-      toLoadRuntimes.add(myTypeChecker.getLanguageRegistry().getLanguage(language));
-    }
-    return loadLanguages(toLoadRuntimes);
   }
 
   public IVariableConverter_Runtime getVariableConverter(SNode context, String role, SNode variable, boolean isAggregation) {
+    ensureAllRulesLoaded();
     for (IVariableConverter_Runtime converter : myVariableConverters) {
       if (converter.isApplicable(context, role, variable, isAggregation)) return converter;
     }
@@ -185,6 +167,7 @@ public class RulesManager {
   }
 
   public List<Pair<InferenceRule_Runtime, IsApplicableStatus>> getInferenceRules(final SNode node) {
+    ensureAllRulesLoaded();
     List<Pair<InferenceRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<InferenceRule_Runtime, IsApplicableStatus>>();
     Set<InferenceRule_Runtime> ruleSet;
     ruleSet = myInferenceRules.getRules(node);
@@ -212,6 +195,7 @@ public class RulesManager {
   }
 
   public List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> getSubtypingRules(final SNode node, final boolean isWeak) {
+    ensureAllRulesLoaded();
     List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<SubtypingRule_Runtime, IsApplicableStatus>>();
     for (SubtypingRule_Runtime rule : mySubtypingRules.getRules(node)) {
       if ((isWeak || !rule.isWeak())) {
@@ -239,6 +223,7 @@ public class RulesManager {
     }       */
 
   public List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
+    ensureAllRulesLoaded();
     List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> result = new LinkedList<Pair<ComparisonRule_Runtime, IsApplicable2Status>>();
     Set<ComparisonRule_Runtime> ruleSet = myComparisonRules.getRules(node1, node2);
     for (ComparisonRule_Runtime rule : ruleSet) {
@@ -254,6 +239,7 @@ public class RulesManager {
 
 
   public List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> getReplacementRules(final SNode node1, final SNode node2) {
+    ensureAllRulesLoaded();
     List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> result = new LinkedList<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>>();
     Set<InequationReplacementRule_Runtime> ruleSet = myReplacementRules.getRules(node1, node2);
     for (InequationReplacementRule_Runtime rule : ruleSet) {
@@ -270,6 +256,7 @@ public class RulesManager {
   }
 
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType, IRuleConflictWarningProducer warningProducer) {
+    ensureAllRulesLoaded();
     return myOverloadedOperationsManager.getOperationType(operation, leftOperandType, rightOperandType, warningProducer);
   }
 

@@ -22,6 +22,9 @@ public abstract class QueryExpression_BehaviorDescriptor extends Expression_Beha
   public String virtual_getKind_7006261637493126084(SConcept thisConcept) {
     return ConsoleExpression_Behavior.virtual_getKind_7006261637493126084(thisConcept);
   }
+  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
+    return ConsoleHelpProvider_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
+  }
   public boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
     return QueryExpression_Behavior.virtual_legalAsStatement_1262430001741498032(thisConcept);
   }

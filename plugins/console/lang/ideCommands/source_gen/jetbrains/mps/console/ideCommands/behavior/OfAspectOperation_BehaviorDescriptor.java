@@ -24,7 +24,7 @@ public class OfAspectOperation_BehaviorDescriptor extends SequenceOperation_Beha
     return ConsoleOperation_Behavior.virtual_getKind_7006261637493126084(thisConcept);
   }
   public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
-    return OfAspectOperation_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
+    return ConsoleHelpProvider_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
   }
   @Override
   public String getConceptFqName() {

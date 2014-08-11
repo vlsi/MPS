@@ -15,9 +15,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.AbstractPrintExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"object"}, new boolean[]{false}).abstract_().create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.BLCommand").super_("jetbrains.mps.console.base.structure.GeneratedCommand").parents("jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IStatementListContainer").children(new String[]{"body"}, new boolean[]{false}).alias("{", "baseLanguage command").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.BLCommand").super_("jetbrains.mps.console.base.structure.GeneratedCommand").parents("jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IStatementListContainer").children(new String[]{"body"}, new boolean[]{false}).alias("{", "baseLanguage statements").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.BLExpression").super_("jetbrains.mps.console.base.structure.GeneratedCommand").parents("jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.lang.core.structure.IWrapper").children(new String[]{"expression"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.BLExpression").super_("jetbrains.mps.console.base.structure.GeneratedCommand").parents("jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.lang.core.structure.IWrapper").children(new String[]{"expression"}, new boolean[]{false}).alias("", "baseLanguage expression").create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ConsoleExpression").interface_().parents("jetbrains.mps.console.base.structure.ConsoleHelpProvider").create();
       case 4:
@@ -29,7 +29,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.GlobalScope").super_("jetbrains.mps.console.blCommand.structure.ScopeParameter").parents("jetbrains.mps.console.blCommand.structure.ScopeParameter").alias("global", "").create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.InstancesExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").children(new String[]{"conceptArg"}, new boolean[]{false}).alias("#instances", "find instances in scope").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.InstancesExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").children(new String[]{"conceptArg"}, new boolean[]{false}).alias("#instances", "instances in scope").create();
       case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ModelScope").super_("jetbrains.mps.console.blCommand.structure.ScopeParameter").parents("jetbrains.mps.console.blCommand.structure.ScopeParameter").children(new String[]{"model"}, new boolean[]{true}).alias("models", "").create();
       case 10:
@@ -69,9 +69,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 27:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ScopeParameter").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 28:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ShowExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").children(new String[]{"object"}, new boolean[]{false}).alias("#show", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ShowExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").children(new String[]{"object"}, new boolean[]{false}).alias("#show", "show in usage view").create();
       case 29:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.UsagesExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").children(new String[]{"node"}, new boolean[]{false}).alias("#usages", "find direct references in scope").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.UsagesExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").children(new String[]{"node"}, new boolean[]{false}).alias("#usages", "direct references in scope").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

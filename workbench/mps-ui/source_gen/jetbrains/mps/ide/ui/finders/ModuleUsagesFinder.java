@@ -16,12 +16,14 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelOperations;
 import java.util.Set;
 import java.util.HashSet;
-import org.jetbrains.mps.openapi.module.SDependency;
+import java.util.LinkedHashSet;
 
 public class ModuleUsagesFinder implements IFinder {
   private static final String USED_BY = "used by";
@@ -98,10 +100,25 @@ public class ModuleUsagesFinder implements IFinder {
     }
   }
   private void collectUsagesInGenerator(SModule searchedModule, Generator generator, SearchResults searchResults) {
-    if (generator.getReferencedGenerators().contains(searchedModule)) {
-      searchResults.getSearchResults().add(new SearchResult<Generator>(generator, ModuleUsagesFinder.EXTENDING_GENERATORS));
+    boolean depExtends = false;
+    boolean depRuntime = false;
+    boolean depRegular = false;
+    for (SDependency dep : findDependencies(generator, searchedModule)) {
+      if (dep.getScope() == SDependencyScope.EXTENDS) {
+        depExtends = true;
+      } else if (dep.getScope() == SDependencyScope.RUNTIME) {
+        depRuntime = true;
+      } else {
+        depRegular = true;
+      }
     }
-    if (getDeclaredDependenciesTargets(generator).contains(searchedModule)) {
+    if (depExtends) {
+      searchResults.getSearchResults().add(new SearchResult<Generator>(generator, EXTENDING_GENERATORS));
+    }
+    if (depRuntime) {
+      searchResults.getSearchResults().add(new SearchResult<Generator>(generator, ModuleUsagesFinder.RUNTIME_MODULES));
+    }
+    if (depRegular) {
       searchResults.getSearchResults().add(new SearchResult<Generator>(generator, ModuleUsagesFinder.DEPENDENT_MODULES));
     }
     if (new GlobalModuleDependenciesManager(generator).getUsedLanguages().contains(searchedModule)) {
@@ -127,5 +144,16 @@ public class ModuleUsagesFinder implements IFinder {
       result.add(dep.getTarget());
     }
     return result;
+  }
+  private static Set<SDependency> findDependencies(SModule from, SModule to) {
+    // FIXME nice candidate to move into SModule (along with findDependencies(SDependencyKind) 
+    LinkedHashSet<SDependency> rv = new LinkedHashSet<SDependency>();
+    for (SDependency dep : from.getDeclaredDependencies()) {
+      // XXX need to clarify whether SModule.equals or SModule.getReference().equals shall be used 
+      if (dep.getTarget().equals(to)) {
+        rv.add(dep);
+      }
+    }
+    return rv;
   }
 }

@@ -8,6 +8,7 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -30,9 +31,11 @@ public class DevkitDescriptorPersistence {
           final DevkitDescriptor result_raojav_a0a0c0a0b = new DevkitDescriptor();
           final String result_raojav_a0a0a0c0a0b = root.getAttributeValue("name");
           result_raojav_a0a0c0a0b.setNamespace(result_raojav_a0a0a0c0a0b);
-          final String result_raojav_a1a0a0c0a0b = root.getAttributeValue("uuid");
-          result_raojav_a0a0c0a0b.setUUID(result_raojav_a1a0a0c0a0b);
-
+          String uuid = root.getAttributeValue("uuid");
+          if (uuid != null) {
+            final ModuleId result_raojav_a0a2a0a0c0a0b = ModuleId.fromString(uuid);
+            result_raojav_a0a0c0a0b.setId(result_raojav_a0a2a0a0c0a0b);
+          }
           for (Element exportedLang : ListSequence.fromList((List<Element>) root.getChildren("exported-language"))) {
             result_raojav_a0a0c0a0b.getExportedLanguages().add(PersistenceFacade.getInstance().createModuleReference(exportedLang.getAttributeValue("name")));
           }
@@ -65,8 +68,8 @@ public class DevkitDescriptorPersistence {
       public Element invoke() {
         final Element result_raojav_a0a0a0c = new Element("dev-kit");
         result_raojav_a0a0a0c.setAttribute("name", descriptor.getNamespace());
-        if (descriptor.getUUID() != null) {
-          result_raojav_a0a0a0c.setAttribute("uuid", descriptor.getUUID());
+        if (descriptor.getId() != null) {
+          result_raojav_a0a0a0c.setAttribute("uuid", descriptor.getId().toString());
         }
 
         for (final SModuleReference lang : SetSequence.fromSet(descriptor.getExportedLanguages())) {

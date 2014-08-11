@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,19 @@ import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -49,12 +56,18 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
   public List<String> getWarnings() {
     List<String> warnings = new ArrayList<String>(super.getWarnings());
     Set<String> usedLanguages = new HashSet<String>();
-    for (SModel model : myModule.getOwnTemplateModels()) {
+    ModelDependencyScanner depScan = new ModelDependencyScanner();
+    depScan.crossModelReferences(true).usedLanguages(false);
+    for (SModel model : myModule.getModels()) {
       // Note: the following method invocation traverses the whole model.
       // For performance reasons, we perform these checks only for loaded models.
-      if (SModelStereotype.isGeneratorModel(model) && model.isLoaded()) {
+      if (!model.isLoaded()) {
+        continue;
+      }
+      if (SModelStereotype.isGeneratorModel(model)) {
         usedLanguages.addAll(ModelContentUtil.getUsedLanguageNamespacesInTemplateModel(model));
       }
+      depScan.walk(model);
     }
     Set<String> extendedLanguages = new HashSet<String>();
     Language sourceLanguage = myModule.getSourceLanguage();
@@ -70,6 +83,28 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
 
       if (!extendedLanguages.contains(lang) && !language.getRuntimeModulesReferences().isEmpty()) {
         warnings.add(sourceLanguage + " should extend " + lang);
+      }
+    }
+    HashSet<SModule> seen = new HashSet<SModule>();
+    for (SDependency dep : myModule.getDeclaredDependencies()) {
+      if (seen.contains(dep.getTarget()) || (dep.getScope() != SDependencyScope.EXTENDS && dep.getScope() != SDependencyScope.DEFAULT)) {
+        continue;
+      }
+      if (dep.getTarget() instanceof Generator) {
+        HashSet<SModelReference> otherGeneratorModels = new HashSet<SModelReference>();
+        for (SModel m : dep.getTarget().getModels()) {
+          otherGeneratorModels.add(m.getReference());
+        }
+        final Language otherGenLanguage = ((Generator) dep.getTarget()).getSourceLanguage();
+        for (SModel m : (otherGenLanguage == null ? Collections.<SModel>emptySet() : otherGenLanguage.getModels())) {
+          otherGeneratorModels.add(m.getReference());
+        }
+        if (CollectionUtil.intersects(depScan.getCrossModelReferences(), otherGeneratorModels)) {
+          continue;
+        }
+        // models of the dep.target are not referenced, likely superfluous dependency.
+        warnings.add(String.format("Superfluous dependency to generator %s, no generator template nor its source language's node is in use", dep.getTarget().getModuleName()));
+        seen.add(dep.getTarget());
       }
     }
     return warnings;

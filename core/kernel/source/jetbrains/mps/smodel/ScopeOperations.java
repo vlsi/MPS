@@ -58,13 +58,6 @@ public class ScopeOperations {
     });
   }
 
-  // deprecated stuff
-  // remove after MPS 3.0
-  @Deprecated
-  public static SModel getModelDescriptor(SearchScope scope, SModelFqName fqName) {
-    return scope.resolve(PersistenceFacade.getInstance().createModelReference(fqName.getModelName()));
-  }
-
   @Deprecated
   public static Language getLanguage(SearchScope scope, String fqName) {
     return resolveModule(scope, new jetbrains.mps.project.structure.modules.ModuleReference(fqName), Language.class);

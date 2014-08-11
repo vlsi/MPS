@@ -1156,6 +1156,9 @@
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.1230052989334" resolveInfo="SimpleInlineWithOneReturn" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096712" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.668606183334155391" resolveInfo="InlineFromAnotherBehavior" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="668606183334453029" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.1230053040715" resolveInfo="InlineFromBehavior" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096713" nodeInfo="ng">

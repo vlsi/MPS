@@ -28,7 +28,7 @@ public class check_AnnotationTarget_NonTypesystemRule extends AbstractNonTypesys
         break;
       }
     }
-    if (targetAi == null) {
+    if (targetAi == null || (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(annotationInstance), "jetbrains.mps.baseLanguage.structure.HasAnnotation"))) && SNodeOperations.getAncestor(annotationInstance, "jetbrains.mps.baseLanguage.structure.AnnotationInstance", false, false) != null) {
       return;
     }
     boolean goodTarget = AnnotationUtil.accept(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(targetAi, "value", true)).first(), "value", true), SNodeOperations.as(SNodeOperations.getParent(annotationInstance), "jetbrains.mps.baseLanguage.structure.HasAnnotation"));

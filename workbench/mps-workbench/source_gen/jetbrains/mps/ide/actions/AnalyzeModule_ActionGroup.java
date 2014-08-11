@@ -5,16 +5,25 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.actions.GeneratedActionGroup;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.plugins.actions.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class AnalyzeModule_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(AnalyzeModule_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.AnalyzeModule_ActionGroup";
+  public static final String LABEL_ID_analyze = ID + "analyze";
   public AnalyzeModule_ActionGroup() {
     super("Analyze", ID);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      AnalyzeModule_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(AnalyzeModule_ActionGroup.LABEL_ID_analyze);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        AnalyzeModule_ActionGroup.this.addAction(action);
+      }
       AnalyzeModule_ActionGroup.this.addAction("jetbrains.mps.ide.platform.actions.AnalyzeDependencies_Action");
       AnalyzeModule_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeModuleDependencies_Action");
     } catch (Throwable t) {

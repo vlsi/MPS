@@ -15,10 +15,11 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.devkit.util.DeleteGeneratorHelper;
+import jetbrains.mps.util.IStatus;
+import javax.swing.SwingUtilities;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -57,10 +58,6 @@ public class DeleteGenerator_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("contxet", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("contxet") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
@@ -69,8 +66,8 @@ public class DeleteGenerator_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", true, false);
-      final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, false);
+      DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", true, false);
+      DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, false);
 
       DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Generator", "Are you sure you want to delete generator?\n\nThis operation is not undoable.", safeOption, filesOption);
       dialog.show();
@@ -78,17 +75,22 @@ public class DeleteGenerator_Action extends BaseAction {
         return;
       }
 
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess();
+      final DeleteGeneratorHelper butcher = new DeleteGeneratorHelper(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      butcher.safeDelete(safeOption.selected).deleteFiles(filesOption.selected);
       modelAccess.executeCommandInEDT(new Runnable() {
         public void run() {
           Generator generator = ((Generator) ((SModule) MapSequence.fromMap(_params).get("module")));
-          Language sourceLanguage = generator.getSourceLanguage();
-          for (GeneratorDescriptor gen : ListSequence.fromList(sourceLanguage.getModuleDescriptor().getGenerators())) {
-            if (generator.getModuleReference().getModuleId().equals(gen.getId())) {
-              DeleteGeneratorHelper.deleteGenerator(((MPSProject) MapSequence.fromMap(_params).get("project")), sourceLanguage, generator, gen, safeOption.selected, filesOption.selected);
-              break;
-            }
+          final IStatus s = butcher.canDelete(generator);
+          if (!(s.isOk())) {
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                Messages.showErrorDialog(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project"))), s.getMessage(), "Deleting Generator");
+              }
+            });
+            return;
           }
+          butcher.delete(generator);
         }
       });
     } catch (Throwable t) {

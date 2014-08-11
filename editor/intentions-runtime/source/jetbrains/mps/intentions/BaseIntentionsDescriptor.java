@@ -15,30 +15,24 @@
  */
 package jetbrains.mps.intentions;
 
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public abstract class BaseIntentionsDescriptor {
-  private SModuleReference myModuleRef;
-  private SModelReference myModelRef;
+  protected BaseIntentionsDescriptor() {
 
+  }
+
+  /**
+   * @deprecated with direct class instantiations, there's no need in module/model parameters
+   * FIXME update templates and regenerate all intention models
+   * Shall be removed in the release next to one with updated templates
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   protected BaseIntentionsDescriptor(SModuleReference moduleRef, SModelReference modelRef) {
-    myModuleRef = moduleRef;
-    myModelRef = modelRef;
   }
 
   public abstract void init();
-
-  protected void add(Intention intention, @Nullable String nodeId) {
-    SNodeReference np = nodeId == null ? null : new jetbrains.mps.smodel.SNodePointer(myModelRef, PersistenceFacade.getInstance().createNodeId(nodeId));
-    IntentionsManager.getInstance().addIntention(intention, myModuleRef, np);
-  }
-
-  // TODO: remove and used direct call to IntentionsManager from generated code
-  protected void registerIntentionFactory(IntentionFactory intentionFactory) {
-    IntentionsManager.getInstance().registerIntentionFactory(intentionFactory);
-  }
 }

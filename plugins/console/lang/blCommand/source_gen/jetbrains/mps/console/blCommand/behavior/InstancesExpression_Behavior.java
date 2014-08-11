@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class InstancesExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -13,7 +14,7 @@ public class InstancesExpression_Behavior {
   public static Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SAbstractConcept thisConcept) {
     return Sequence.<SNode>singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterScope"));
   }
-  public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "instances of concept (find usages mechanism)";
+  public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
+    return BehaviorReflection.invokeSuperStatic(String.class, thisConcept, "jetbrains.mps.console.blCommand.structure.QueryExpression", "virtual_getHelpPage_7006261637493125297", new Object[]{}) + "\nImplementation of this command uses IDE indexes to speed up execution";
   }
 }

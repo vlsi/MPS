@@ -200,19 +200,29 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public void home() {
+    int textLength = getText().length();
     if (isFirstPositionAllowed()) {
-      setCaretPosition(0);
-    } else if (getText().length() > 0) {
-      setCaretPosition(1);
+      if (textLength > 0 || isLastPositionAllowed()) {
+        setCaretPosition(0);
+      }
+    } else {
+      if (textLength > 0 && (textLength > 1 || isLastPositionAllowed())) {
+        setCaretPosition(1);
+      }
     }
   }
 
   @Override
   public void end() {
+    int textLength = getText().length();
     if (isLastPositionAllowed()) {
-      setCaretPosition(getText().length());
-    } else if (getText().length() > 0) {
-      setCaretPosition(getText().length() - 1);
+      if (textLength > 0 || isFirstPositionAllowed()) {
+        setCaretPosition(getText().length());
+      }
+    } else {
+      if (textLength > 0 && (textLength > 1 || isFirstPositionAllowed())) {
+        setCaretPosition(getText().length() - 1);
+      }
     }
   }
 

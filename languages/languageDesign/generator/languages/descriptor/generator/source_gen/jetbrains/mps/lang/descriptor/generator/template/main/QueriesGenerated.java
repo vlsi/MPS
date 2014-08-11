@@ -323,6 +323,9 @@ public class QueriesGenerated {
   public static SNode insertMacro_Query_1509962061695074412(final TemplateQueryContextWithMacro _context) {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Language");
   }
+  public static Object insertMacro_varValue_931939946132747150(final TemplateQueryContext _context) {
+    return PersistenceFacade.getInstance().createModelReference(ModelReference_Behavior.call_getModelReference_6236774123822284799(_context.getNode()));
+  }
   public static Object insertMacro_varValue_2509399947043525756(final TemplateQueryContext _context) {
     SModuleReference ref = PersistenceFacade.getInstance().createModuleReference(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
     Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
@@ -330,9 +333,6 @@ public class QueriesGenerated {
       _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace"));
     }
     return l;
-  }
-  public static Object insertMacro_varValue_931939946132747150(final TemplateQueryContext _context) {
-    return PersistenceFacade.getInstance().createModelReference(ModelReference_Behavior.call_getModelReference_6236774123822284799(_context.getNode()));
   }
   public static TemplateModel getDescriptor(TemplateModule module) {
     return new TemplateModelImpl(module);

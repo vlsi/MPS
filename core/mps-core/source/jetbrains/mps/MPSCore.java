@@ -115,7 +115,7 @@ public final class MPSCore extends ComponentPlugin {
     init(new StructureAspectInterpreted());
     init(new SModelUtil_new(classLoaderManager, globalSModelEventsManager));
     init(new CachesManager(classLoaderManager, modelRepository));
-    init(new LanguageDescriptorModelProvider());
+    init(new LanguageDescriptorModelProvider(moduleRepository));
     init(new ProjectStructureModule(moduleRepository, modelRepository));
     init(new CopyPasteManager(classLoaderManager));
     init(new PasteWrappersManager(classLoaderManager));

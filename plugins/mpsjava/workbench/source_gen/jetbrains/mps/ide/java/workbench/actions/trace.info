@@ -305,7 +305,7 @@
   </root>
   <root nodeRef="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)/6812098398776640803">
     <file name="JavaWorkbenchActions.xml">
-      <unit id="6812098398776640803" at="1,0,15,13" name="jetbrains.mps.ide.java.workbench.actions.JavaWorkbenchActions" />
+      <unit id="6812098398776640803" at="1,0,19,13" name="jetbrains.mps.ide.java.workbench.actions.JavaWorkbenchActions" />
     </file>
   </root>
   <root nodeRef="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)/6930463558351181264">
@@ -543,6 +543,86 @@
       </scope>
       <unit id="3813618677924499376" at="156,44,169,7" name="jetbrains.mps.ide.java.workbench.actions.NewModelFromSource_Action$1" />
       <unit id="6930463558351181264" at="52,0,204,0" name="jetbrains.mps.ide.java.workbench.actions.NewModelFromSource_Action" />
+    </file>
+  </root>
+  <root nodeRef="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)/8847793363053922247">
+    <file name="AnalyzeClasspath_Action.java">
+      <node id="8847793363053922247" at="20,0,21,0" concept="11" trace="ICON" />
+      <node id="8847793363053922247" at="21,36,22,41" concept="12" />
+      <node id="8847793363053922247" at="22,41,23,34" concept="2" />
+      <node id="8847793363053922247" at="23,34,24,41" concept="2" />
+      <node id="8847793363053922247" at="27,32,28,16" concept="8" />
+      <node id="8847793363053922247" at="31,9,32,43" concept="0" />
+      <node id="8847793363053922247" at="31,9,32,43" concept="2" />
+      <node id="8847793363053922247" at="34,42,35,91" concept="2" />
+      <node id="8847793363053922247" at="36,7,37,44" concept="2" />
+      <node id="8847793363053922247" at="41,53,42,19" concept="8" />
+      <node id="8847793363053922247" at="43,5,44,88" concept="2" />
+      <node id="8847793363053922247" at="45,61,46,19" concept="8" />
+      <node id="8847793363053922247" at="47,5,48,100" concept="2" />
+      <node id="8847793363053922247" at="49,62,50,19" concept="8" />
+      <node id="8847793363053922247" at="51,5,52,16" concept="8" />
+      <node id="8847793363053922250" at="55,9,56,139" concept="7" />
+      <node id="8847793363053922259" at="56,139,57,31" concept="2" />
+      <node id="8847793363053922264" at="57,31,58,81" concept="2" />
+      <node id="8847793363053922247" at="60,42,61,90" concept="2" />
+      <node id="8847793363053922247" at="65,0,66,0" concept="11" trace="LOG" />
+      <node id="8847793363053922247" at="33,27,36,7" concept="0" />
+      <node id="8847793363053922247" at="33,27,36,7" concept="5" />
+      <node id="8847793363053922247" at="40,95,43,5" concept="5" />
+      <node id="8847793363053922247" at="44,88,47,5" concept="5" />
+      <node id="8847793363053922247" at="48,100,51,5" concept="5" />
+      <node id="8847793363053922247" at="59,27,62,7" concept="0" />
+      <node id="8847793363053922247" at="59,27,62,7" concept="5" />
+      <node id="8847793363053922247" at="26,0,30,0" concept="6" trace="isDumbAware#()Z" />
+      <node id="8847793363053922247" at="43,5,47,5" concept="0" />
+      <node id="8847793363053922247" at="47,5,51,5" concept="0" />
+      <node id="8847793363053922247" at="21,0,26,0" concept="1" trace="AnalyzeClasspath_Action#()V" />
+      <node id="8847793363053922247" at="30,89,38,5" concept="14" />
+      <node id="8847793363053922247" at="54,96,63,5" concept="14" />
+      <node id="8847793363053922247" at="30,0,40,0" concept="6" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="8847793363053922247" at="54,0,65,0" concept="6" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="8847793363053922247" at="40,0,54,0" concept="6" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <scope id="8847793363053922247" at="27,32,28,16" />
+      <scope id="8847793363053922247" at="31,9,32,43" />
+      <scope id="8847793363053922247" at="34,42,35,91" />
+      <scope id="8847793363053922247" at="41,53,42,19" />
+      <scope id="8847793363053922247" at="45,61,46,19" />
+      <scope id="8847793363053922247" at="49,62,50,19" />
+      <scope id="8847793363053922247" at="60,42,61,90" />
+      <scope id="8847793363053922247" at="21,36,24,41" />
+      <scope id="8847793363053922247" at="33,27,36,7" />
+      <scope id="8847793363053922247" at="55,9,58,81">
+        <var name="tool" id="8847793363053922251" />
+      </scope>
+      <scope id="8847793363053922247" at="59,0,62,7">
+        <var name="t" id="8847793363053922247" />
+      </scope>
+      <scope id="8847793363053922247" at="59,27,62,7" />
+      <scope id="8847793363053922247" at="26,0,30,0" />
+      <scope id="8847793363053922247" at="33,0,37,44">
+        <var name="t" id="8847793363053922247" />
+      </scope>
+      <scope id="8847793363053922247" at="33,27,37,44" />
+      <scope id="8847793363053922247" at="43,5,47,5" />
+      <scope id="8847793363053922247" at="47,5,51,5" />
+      <scope id="8847793363053922247" at="21,0,26,0" />
+      <scope id="8847793363053922247" at="30,89,38,5" />
+      <scope id="8847793363053922247" at="54,96,63,5" />
+      <scope id="8847793363053922247" at="30,0,40,0">
+        <var name="_params" id="8847793363053922247" />
+        <var name="event" id="8847793363053922247" />
+      </scope>
+      <scope id="8847793363053922247" at="54,0,65,0">
+        <var name="_params" id="8847793363053922247" />
+        <var name="event" id="8847793363053922247" />
+      </scope>
+      <scope id="8847793363053922247" at="40,95,52,16" />
+      <scope id="8847793363053922247" at="40,0,54,0">
+        <var name="_params" id="8847793363053922247" />
+        <var name="event" id="8847793363053922247" />
+      </scope>
+      <unit id="8847793363053922247" at="19,0,67,0" name="jetbrains.mps.ide.java.workbench.actions.AnalyzeClasspath_Action" />
     </file>
   </root>
 </debug-info>

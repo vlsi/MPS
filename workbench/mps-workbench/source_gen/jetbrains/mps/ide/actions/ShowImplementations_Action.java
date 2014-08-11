@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -30,7 +31,6 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.util.Computable;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Point;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.apache.log4j.Logger;
@@ -88,7 +88,13 @@ public class ShowImplementations_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("cell") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+    }
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }

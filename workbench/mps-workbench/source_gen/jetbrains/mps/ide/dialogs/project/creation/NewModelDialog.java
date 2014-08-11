@@ -310,6 +310,13 @@ public class NewModelDialog extends DialogWrapper {
 
     assert myResult != null;
 
+    super.doOKAction();
+  }
+
+  public void openSettings() {
+    if (myResult == null || myProject == null) {
+      return;
+    }
     MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myProject);
     final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myProject), configurable, "#MPSPropertiesConfigurable");
     SwingUtilities.invokeLater(new Runnable() {
@@ -318,10 +325,8 @@ public class NewModelDialog extends DialogWrapper {
         configurableEditor.show();
       }
     });
-
-
-    super.doOKAction();
   }
+
   private String getFqName() {
     String stereo = myModelStereotype.getSelectedItem().toString().trim();
     return myModelName.getText() + ((stereo != null && stereo.length() > 0 ? "@" + stereo : ""));

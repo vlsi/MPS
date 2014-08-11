@@ -14,12 +14,13 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
@@ -65,13 +66,13 @@ public class RebuildRequiredModels_Action extends BaseAction {
       final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          Iterable<SModel> allModels = Sequence.fromIterable(((Iterable<SModel>) SModelRepository.getInstance().getModelDescriptors())).select(new ISelector<SModel, SModel>() {
-            public SModel select(SModel it) {
-              return (SModel) it;
-            }
-          });
+          Iterable<SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules();
           final ModelGenerationStatusManager mgsm = ModelGenerationStatusManager.getInstance();
-          models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
+          models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, SModel>() {
+            public Iterable<SModel> translate(SModule it) {
+              return (Iterable<SModel>) it.getModels();
+            }
+          }).where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
               return mgsm.generationRequired(it);
             }

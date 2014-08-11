@@ -2312,7 +2312,7 @@
       <node id="1202131050789" at="72,131,73,192" concept="8" />
       <node id="1202131053728" at="73,192,74,194" concept="8" />
       <node id="1202130329637" at="74,194,75,68" concept="3" />
-      <node id="4461169032988970550" at="75,68,76,132" concept="3" />
+      <node id="4461169032988970550" at="75,68,76,138" concept="3" />
       <node id="1202130221457" at="78,48,79,53" concept="9" />
       <node id="1202130221457" at="24,0,26,0" concept="2" trace="MergeStringConcatenation_Intention#()V" />
       <node id="1202130221457" at="66,0,68,0" concept="2" trace="IntentionImplementation#()V" />
@@ -2368,7 +2368,7 @@
       <scope id="1202130221457" at="78,0,81,0" />
       <scope id="1202130221457" at="44,84,48,16" />
       <scope id="1202130221457" at="59,99,63,30" />
-      <scope id="1202130221463" at="71,78,76,132">
+      <scope id="1202130221463" at="71,78,76,138">
         <var name="left" id="1202131050790" />
         <var name="right" id="1202131053729" />
         <var name="stringLiteral" id="1202130310989" />

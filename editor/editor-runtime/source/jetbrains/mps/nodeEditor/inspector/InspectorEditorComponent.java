@@ -17,10 +17,13 @@ package jetbrains.mps.nodeEditor.inspector;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.InspectorEditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -40,8 +43,12 @@ public class InspectorEditorComponent extends EditorComponent {
     myNodePointer = null;
     myContainingRoot = null;
     setNoVirtualFile(true);
-    setEditorContext(new EditorContext(this, null, repository));
     rebuildEditorContent();
+  }
+
+  @Override
+  protected EditorContext createEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
+    return new InspectorEditorContext(this, model, repository);
   }
 
   public void editNode(final SNode node) {

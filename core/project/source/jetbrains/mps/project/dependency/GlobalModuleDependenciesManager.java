@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -124,9 +125,9 @@ public class GlobalModuleDependenciesManager {
     Set<SModule> result = new HashSet<SModule>();
     for (SDependency dependency : module.getDeclaredDependencies()) {
       SModule m = dependency.getTarget();
-      if (m == null) continue;
-
-      if (includeNonReexport || dependency.isReexport()) {
+      // if module A extends module B, and module C depends from A, module B shall always be part of C dependencies along with A.
+      boolean isExport = dependency.isReexport() || dependency.getScope() == SDependencyScope.EXTENDS;
+      if (includeNonReexport || isExport) {
         result.add(m);
       }
     }

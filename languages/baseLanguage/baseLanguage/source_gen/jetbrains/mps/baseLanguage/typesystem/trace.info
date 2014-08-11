@@ -23021,166 +23021,178 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/7528226091632192589">
     <file name="check_PostfixIncrementExpression_NonTypesystemRule.java">
-      <node id="7528226091632192629" at="21,185,22,58" concept="12" />
-      <node id="7528226091632192629" at="22,58,23,299" concept="12" />
-      <node id="7528226091632192589" at="26,46,27,77" concept="13" />
-      <node id="7528226091632192589" at="30,5,31,130" concept="12" />
-      <node id="7528226091632192589" at="31,130,32,45" concept="13" />
-      <node id="7528226091632192589" at="35,30,36,17" concept="13" />
+      <node id="5026267176866151914" at="21,94,22,13" concept="13" />
+      <node id="7528226091632192629" at="24,185,25,58" concept="12" />
+      <node id="7528226091632192629" at="25,58,26,299" concept="12" />
+      <node id="7528226091632192589" at="29,46,30,77" concept="13" />
+      <node id="7528226091632192589" at="33,5,34,130" concept="12" />
+      <node id="7528226091632192589" at="34,130,35,45" concept="13" />
+      <node id="7528226091632192589" at="38,30,39,17" concept="13" />
       <node id="7528226091632192589" at="18,0,20,0" concept="3" trace="check_PostfixIncrementExpression_NonTypesystemRule#()V" />
-      <node id="7528226091632192589" at="26,0,29,0" concept="11" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="7528226091632192589" at="35,0,38,0" concept="11" trace="overrides#()Z" />
-      <node id="7528226091632192629" at="20,139,24,5" concept="10" />
-      <node id="7528226091632192589" at="29,68,33,5" concept="1" />
-      <node id="7528226091632192589" at="20,0,26,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <node id="7528226091632192589" at="29,0,35,0" concept="11" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="5026267176866151912" at="20,139,23,5" concept="10" />
+      <node id="7528226091632192589" at="29,0,32,0" concept="11" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="7528226091632192589" at="38,0,41,0" concept="11" trace="overrides#()Z" />
+      <node id="7528226091632192629" at="23,5,27,5" concept="10" />
+      <node id="7528226091632192589" at="32,68,36,5" concept="1" />
+      <node id="7528226091632192589" at="32,0,38,0" concept="11" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="7528226091632192589" at="20,0,29,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="7528226091632192589" at="18,63,18,63" />
-      <scope id="7528226091632192589" at="26,46,27,77" />
-      <scope id="7528226091632192589" at="35,30,36,17" />
+      <scope id="5026267176866151913" at="21,94,22,13" />
+      <scope id="7528226091632192589" at="29,46,30,77" />
+      <scope id="7528226091632192589" at="38,30,39,17" />
       <scope id="7528226091632192589" at="18,0,20,0" />
-      <scope id="7528226091632192629" at="21,185,23,299">
+      <scope id="7528226091632192629" at="24,185,26,299">
         <var name="_reporter_2309309498" id="7528226091632192629" />
         <var name="errorTarget" id="7528226091632192629" />
       </scope>
-      <scope id="7528226091632192589" at="30,5,32,45">
+      <scope id="7528226091632192589" at="33,5,35,45">
         <var name="b" id="7528226091632192589" />
       </scope>
-      <scope id="7528226091632192589" at="26,0,29,0" />
-      <scope id="7528226091632192589" at="35,0,38,0" />
-      <scope id="7528226091632192590" at="20,139,24,5" />
-      <scope id="7528226091632192589" at="29,68,33,5" />
-      <scope id="7528226091632192589" at="20,0,26,0">
+      <scope id="7528226091632192589" at="29,0,32,0" />
+      <scope id="7528226091632192589" at="38,0,41,0" />
+      <scope id="7528226091632192589" at="32,68,36,5" />
+      <scope id="7528226091632192589" at="32,0,38,0">
+        <var name="argument" id="7528226091632192589" />
+      </scope>
+      <scope id="7528226091632192590" at="20,139,27,5" />
+      <scope id="7528226091632192589" at="20,0,29,0">
         <var name="postfixIncrementExpression" id="7528226091632192589" />
         <var name="status" id="7528226091632192589" />
         <var name="typeCheckingContext" id="7528226091632192589" />
       </scope>
-      <scope id="7528226091632192589" at="29,0,35,0">
-        <var name="argument" id="7528226091632192589" />
-      </scope>
-      <unit id="7528226091632192589" at="17,0,39,0" name="jetbrains.mps.baseLanguage.typesystem.check_PostfixIncrementExpression_NonTypesystemRule" />
+      <unit id="7528226091632192589" at="17,0,42,0" name="jetbrains.mps.baseLanguage.typesystem.check_PostfixIncrementExpression_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/7528226091632211441">
     <file name="check_PrefixDecrementExpression_NonTypesystemRule.java">
-      <node id="7528226091632211481" at="21,184,22,58" concept="12" />
-      <node id="7528226091632211481" at="22,58,23,298" concept="12" />
-      <node id="7528226091632211441" at="26,46,27,76" concept="13" />
-      <node id="7528226091632211441" at="30,5,31,130" concept="12" />
-      <node id="7528226091632211441" at="31,130,32,45" concept="13" />
-      <node id="7528226091632211441" at="35,30,36,17" concept="13" />
+      <node id="5026267176866083730" at="21,93,22,13" concept="13" />
+      <node id="7528226091632211481" at="24,184,25,58" concept="12" />
+      <node id="7528226091632211481" at="25,58,26,298" concept="12" />
+      <node id="7528226091632211441" at="29,46,30,76" concept="13" />
+      <node id="7528226091632211441" at="33,5,34,130" concept="12" />
+      <node id="7528226091632211441" at="34,130,35,45" concept="13" />
+      <node id="7528226091632211441" at="38,30,39,17" concept="13" />
       <node id="7528226091632211441" at="18,0,20,0" concept="3" trace="check_PrefixDecrementExpression_NonTypesystemRule#()V" />
-      <node id="7528226091632211441" at="26,0,29,0" concept="11" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="7528226091632211441" at="35,0,38,0" concept="11" trace="overrides#()Z" />
-      <node id="7528226091632211481" at="20,138,24,5" concept="10" />
-      <node id="7528226091632211441" at="29,68,33,5" concept="1" />
-      <node id="7528226091632211441" at="20,0,26,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <node id="7528226091632211441" at="29,0,35,0" concept="11" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="5026267176866038258" at="20,138,23,5" concept="10" />
+      <node id="7528226091632211441" at="29,0,32,0" concept="11" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="7528226091632211441" at="38,0,41,0" concept="11" trace="overrides#()Z" />
+      <node id="7528226091632211481" at="23,5,27,5" concept="10" />
+      <node id="7528226091632211441" at="32,68,36,5" concept="1" />
+      <node id="7528226091632211441" at="32,0,38,0" concept="11" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="7528226091632211441" at="20,0,29,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="7528226091632211441" at="18,62,18,62" />
-      <scope id="7528226091632211441" at="26,46,27,76" />
-      <scope id="7528226091632211441" at="35,30,36,17" />
+      <scope id="5026267176866038261" at="21,93,22,13" />
+      <scope id="7528226091632211441" at="29,46,30,76" />
+      <scope id="7528226091632211441" at="38,30,39,17" />
       <scope id="7528226091632211441" at="18,0,20,0" />
-      <scope id="7528226091632211481" at="21,184,23,298">
+      <scope id="7528226091632211481" at="24,184,26,298">
         <var name="_reporter_2309309498" id="7528226091632211481" />
         <var name="errorTarget" id="7528226091632211481" />
       </scope>
-      <scope id="7528226091632211441" at="30,5,32,45">
+      <scope id="7528226091632211441" at="33,5,35,45">
         <var name="b" id="7528226091632211441" />
       </scope>
-      <scope id="7528226091632211441" at="26,0,29,0" />
-      <scope id="7528226091632211441" at="35,0,38,0" />
-      <scope id="7528226091632211442" at="20,138,24,5" />
-      <scope id="7528226091632211441" at="29,68,33,5" />
-      <scope id="7528226091632211441" at="20,0,26,0">
+      <scope id="7528226091632211441" at="29,0,32,0" />
+      <scope id="7528226091632211441" at="38,0,41,0" />
+      <scope id="7528226091632211441" at="32,68,36,5" />
+      <scope id="7528226091632211441" at="32,0,38,0">
+        <var name="argument" id="7528226091632211441" />
+      </scope>
+      <scope id="7528226091632211442" at="20,138,27,5" />
+      <scope id="7528226091632211441" at="20,0,29,0">
         <var name="prefixDecrementExpression" id="7528226091632211441" />
         <var name="status" id="7528226091632211441" />
         <var name="typeCheckingContext" id="7528226091632211441" />
       </scope>
-      <scope id="7528226091632211441" at="29,0,35,0">
-        <var name="argument" id="7528226091632211441" />
-      </scope>
-      <unit id="7528226091632211441" at="17,0,39,0" name="jetbrains.mps.baseLanguage.typesystem.check_PrefixDecrementExpression_NonTypesystemRule" />
+      <unit id="7528226091632211441" at="17,0,42,0" name="jetbrains.mps.baseLanguage.typesystem.check_PrefixDecrementExpression_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/7528226091632213045">
     <file name="check_PrefixIncrementExpression_NonTypesystemRule.java">
-      <node id="7528226091632213085" at="21,184,22,58" concept="12" />
-      <node id="7528226091632213085" at="22,58,23,298" concept="12" />
-      <node id="7528226091632213045" at="26,46,27,76" concept="13" />
-      <node id="7528226091632213045" at="30,5,31,130" concept="12" />
-      <node id="7528226091632213045" at="31,130,32,45" concept="13" />
-      <node id="7528226091632213045" at="35,30,36,17" concept="13" />
+      <node id="5026267176866149366" at="21,93,22,13" concept="13" />
+      <node id="7528226091632213085" at="24,184,25,58" concept="12" />
+      <node id="7528226091632213085" at="25,58,26,298" concept="12" />
+      <node id="7528226091632213045" at="29,46,30,76" concept="13" />
+      <node id="7528226091632213045" at="33,5,34,130" concept="12" />
+      <node id="7528226091632213045" at="34,130,35,45" concept="13" />
+      <node id="7528226091632213045" at="38,30,39,17" concept="13" />
       <node id="7528226091632213045" at="18,0,20,0" concept="3" trace="check_PrefixIncrementExpression_NonTypesystemRule#()V" />
-      <node id="7528226091632213045" at="26,0,29,0" concept="11" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="7528226091632213045" at="35,0,38,0" concept="11" trace="overrides#()Z" />
-      <node id="7528226091632213085" at="20,138,24,5" concept="10" />
-      <node id="7528226091632213045" at="29,68,33,5" concept="1" />
-      <node id="7528226091632213045" at="20,0,26,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <node id="7528226091632213045" at="29,0,35,0" concept="11" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="5026267176866149364" at="20,138,23,5" concept="10" />
+      <node id="7528226091632213045" at="29,0,32,0" concept="11" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="7528226091632213045" at="38,0,41,0" concept="11" trace="overrides#()Z" />
+      <node id="7528226091632213085" at="23,5,27,5" concept="10" />
+      <node id="7528226091632213045" at="32,68,36,5" concept="1" />
+      <node id="7528226091632213045" at="32,0,38,0" concept="11" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="7528226091632213045" at="20,0,29,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="7528226091632213045" at="18,62,18,62" />
-      <scope id="7528226091632213045" at="26,46,27,76" />
-      <scope id="7528226091632213045" at="35,30,36,17" />
+      <scope id="5026267176866149365" at="21,93,22,13" />
+      <scope id="7528226091632213045" at="29,46,30,76" />
+      <scope id="7528226091632213045" at="38,30,39,17" />
       <scope id="7528226091632213045" at="18,0,20,0" />
-      <scope id="7528226091632213085" at="21,184,23,298">
+      <scope id="7528226091632213085" at="24,184,26,298">
         <var name="_reporter_2309309498" id="7528226091632213085" />
         <var name="errorTarget" id="7528226091632213085" />
       </scope>
-      <scope id="7528226091632213045" at="30,5,32,45">
+      <scope id="7528226091632213045" at="33,5,35,45">
         <var name="b" id="7528226091632213045" />
       </scope>
-      <scope id="7528226091632213045" at="26,0,29,0" />
-      <scope id="7528226091632213045" at="35,0,38,0" />
-      <scope id="7528226091632213046" at="20,138,24,5" />
-      <scope id="7528226091632213045" at="29,68,33,5" />
-      <scope id="7528226091632213045" at="20,0,26,0">
+      <scope id="7528226091632213045" at="29,0,32,0" />
+      <scope id="7528226091632213045" at="38,0,41,0" />
+      <scope id="7528226091632213045" at="32,68,36,5" />
+      <scope id="7528226091632213045" at="32,0,38,0">
+        <var name="argument" id="7528226091632213045" />
+      </scope>
+      <scope id="7528226091632213046" at="20,138,27,5" />
+      <scope id="7528226091632213045" at="20,0,29,0">
         <var name="prefixIncrementExpression" id="7528226091632213045" />
         <var name="status" id="7528226091632213045" />
         <var name="typeCheckingContext" id="7528226091632213045" />
       </scope>
-      <scope id="7528226091632213045" at="29,0,35,0">
-        <var name="argument" id="7528226091632213045" />
-      </scope>
-      <unit id="7528226091632213045" at="17,0,39,0" name="jetbrains.mps.baseLanguage.typesystem.check_PrefixIncrementExpression_NonTypesystemRule" />
+      <unit id="7528226091632213045" at="17,0,42,0" name="jetbrains.mps.baseLanguage.typesystem.check_PrefixIncrementExpression_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/7528226091639928234">
     <file name="check_PostfixDecrementExpression_NonTypesystemRule.java">
-      <node id="7528226091632153215" at="21,185,22,58" concept="12" />
-      <node id="7528226091632153215" at="22,58,23,299" concept="12" />
-      <node id="7528226091639928234" at="26,46,27,77" concept="13" />
-      <node id="7528226091639928234" at="30,5,31,130" concept="12" />
-      <node id="7528226091639928234" at="31,130,32,45" concept="13" />
-      <node id="7528226091639928234" at="35,30,36,17" concept="13" />
+      <node id="5026267176866152742" at="21,94,22,13" concept="13" />
+      <node id="7528226091632153215" at="24,185,25,58" concept="12" />
+      <node id="7528226091632153215" at="25,58,26,299" concept="12" />
+      <node id="7528226091639928234" at="29,46,30,77" concept="13" />
+      <node id="7528226091639928234" at="33,5,34,130" concept="12" />
+      <node id="7528226091639928234" at="34,130,35,45" concept="13" />
+      <node id="7528226091639928234" at="38,30,39,17" concept="13" />
       <node id="7528226091639928234" at="18,0,20,0" concept="3" trace="check_PostfixDecrementExpression_NonTypesystemRule#()V" />
-      <node id="7528226091639928234" at="26,0,29,0" concept="11" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="7528226091639928234" at="35,0,38,0" concept="11" trace="overrides#()Z" />
-      <node id="7528226091632153215" at="20,139,24,5" concept="10" />
-      <node id="7528226091639928234" at="29,68,33,5" concept="1" />
-      <node id="7528226091639928234" at="20,0,26,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <node id="7528226091639928234" at="29,0,35,0" concept="11" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="5026267176866152740" at="20,139,23,5" concept="10" />
+      <node id="7528226091639928234" at="29,0,32,0" concept="11" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="7528226091639928234" at="38,0,41,0" concept="11" trace="overrides#()Z" />
+      <node id="7528226091632153215" at="23,5,27,5" concept="10" />
+      <node id="7528226091639928234" at="32,68,36,5" concept="1" />
+      <node id="7528226091639928234" at="32,0,38,0" concept="11" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="7528226091639928234" at="20,0,29,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="7528226091639928234" at="18,63,18,63" />
-      <scope id="7528226091639928234" at="26,46,27,77" />
-      <scope id="7528226091639928234" at="35,30,36,17" />
+      <scope id="5026267176866152741" at="21,94,22,13" />
+      <scope id="7528226091639928234" at="29,46,30,77" />
+      <scope id="7528226091639928234" at="38,30,39,17" />
       <scope id="7528226091639928234" at="18,0,20,0" />
-      <scope id="7528226091632153215" at="21,185,23,299">
+      <scope id="7528226091632153215" at="24,185,26,299">
         <var name="_reporter_2309309498" id="7528226091632153215" />
         <var name="errorTarget" id="7528226091632153215" />
       </scope>
-      <scope id="7528226091639928234" at="30,5,32,45">
+      <scope id="7528226091639928234" at="33,5,35,45">
         <var name="b" id="7528226091639928234" />
       </scope>
-      <scope id="7528226091639928234" at="26,0,29,0" />
-      <scope id="7528226091639928234" at="35,0,38,0" />
-      <scope id="7528226091639928235" at="20,139,24,5" />
-      <scope id="7528226091639928234" at="29,68,33,5" />
-      <scope id="7528226091639928234" at="20,0,26,0">
+      <scope id="7528226091639928234" at="29,0,32,0" />
+      <scope id="7528226091639928234" at="38,0,41,0" />
+      <scope id="7528226091639928234" at="32,68,36,5" />
+      <scope id="7528226091639928234" at="32,0,38,0">
+        <var name="argument" id="7528226091639928234" />
+      </scope>
+      <scope id="7528226091639928235" at="20,139,27,5" />
+      <scope id="7528226091639928234" at="20,0,29,0">
         <var name="postfixDecrementExpression" id="7528226091639928234" />
         <var name="status" id="7528226091639928234" />
         <var name="typeCheckingContext" id="7528226091639928234" />
       </scope>
-      <scope id="7528226091639928234" at="29,0,35,0">
-        <var name="argument" id="7528226091639928234" />
-      </scope>
-      <unit id="7528226091639928234" at="17,0,39,0" name="jetbrains.mps.baseLanguage.typesystem.check_PostfixDecrementExpression_NonTypesystemRule" />
+      <unit id="7528226091639928234" at="17,0,42,0" name="jetbrains.mps.baseLanguage.typesystem.check_PostfixDecrementExpression_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/7583008504076427363">
@@ -24857,7 +24869,7 @@
       <node id="8695552310380158719" at="23,101,24,26" concept="12" />
       <node id="8695552310380158724" at="26,210,27,22" concept="6" />
       <node id="8695552310380158731" at="27,22,28,14" concept="2" />
-      <node id="8695552310380158742" at="31,27,32,13" concept="13" />
+      <node id="8695552310380158742" at="31,297,32,13" concept="13" />
       <node id="8695552310380242253" at="33,5,34,294" concept="12" />
       <node id="8695552310380242272" at="35,24,36,58" concept="12" />
       <node id="8695552310380242272" at="36,58,37,253" concept="12" />
@@ -24876,7 +24888,7 @@
       <node id="8695552310379793081" at="43,0,49,0" concept="11" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="8695552310379793081" at="22,0,40,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8695552310379793081" at="20,53,20,53" />
-      <scope id="8695552310380158734" at="31,27,32,13" />
+      <scope id="8695552310380158734" at="31,297,32,13" />
       <scope id="8695552310379793081" at="40,46,41,69" />
       <scope id="8695552310379793081" at="49,30,50,17" />
       <scope id="8695552310379793081" at="20,0,22,0" />

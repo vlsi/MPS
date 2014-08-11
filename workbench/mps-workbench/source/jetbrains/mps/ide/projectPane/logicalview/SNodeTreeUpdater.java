@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.ide.projectPane.logicalview;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DependencyRecorder;
@@ -139,8 +138,8 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
         }
       }
 
-      if (treeNode.isInitialized() && showPropertiesAndReferences()) {
-        MPSTreeNodeEx propsNode = (MPSTreeNodeEx) treeNode.getChildAt(0);
+      if (treeNode.isInitialized() && showPropertiesAndReferences() && treeNode.getChildCount() > 0) {
+        MPSTreeNode propsNode = (MPSTreeNode) treeNode.getChildAt(0);
         propsNode.update();
         propsNode.init();
       }
@@ -154,9 +153,9 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
 
     for (SNode sourceNode : nodesWithChangedRefs) {
       MPSTreeNode nodeTreeNode = myTreeNode.findDescendantWith(sourceNode.getNodeId().toString());
-      if (nodeTreeNode == null || !nodeTreeNode.isInitialized()) return;
+      if (nodeTreeNode == null || !nodeTreeNode.isInitialized() || nodeTreeNode.getChildCount() < 2) return;
 
-      MPSTreeNodeEx refsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(1);
+      MPSTreeNode refsNode = (MPSTreeNode) nodeTreeNode.getChildAt(1);
       refsNode.update();
       refsNode.init();
     }

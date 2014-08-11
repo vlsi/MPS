@@ -58,16 +58,29 @@ public final class RuleUtil {
   public static final String concept_TemplateFragment = "jetbrains.mps.lang.generator.structure.TemplateFragment";
   public static final String concept_RootTemplateAnnotation = "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation";
   public static final String concept_InlineTemplate_RuleConsequence = "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence";
+  public static final String concept_MappingScript = "jetbrains.mps.lang.generator.structure.MappingScript";
   public static final String link_MappingConfiguration_preMappingScript = "preMappingScript";
   public static final String link_TemplateSwitch_modifiedSwitch = "modifiedSwitch";
   public static final String link_BaseConcept_attrs = "smodelAttribute";
+
+  public static final String concept_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
+  public static final String concept_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
+
+  private static final String concept_ModelNewNodeOp = "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation";
+  private static final String concept_ModelNewRootOp = "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation";
+  private static final String concept_InsertNewNextOp = "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation";
+  private static final String concept_InsertNextOp = "jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation";
+  private static final String concept_InsertNewPrevOp = "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation";
+  private static final String concept_InsertPrevOp = "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation";
+  private static final String concept_ReplaceNewOp = "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation";
+  private static final String concept_ReplaceOp = "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation";
 
   /**
    * Alternative to isInstanceOf check in isNodeMacro: supported node macros are known at generation time,
    * no reason to perform dynamic check where static check is possible.
    * Plain NodeMacro, although abstract, is included as there were usages of abstract $$ macro to add a label
    */
-  public static final Set<String> NodeMacroConcepts = SetSequence.fromSet(new HashSet<String>());
+  private static final Set<String> NodeMacroConcepts = SetSequence.fromSet(new HashSet<String>());
   static {
     NodeMacroConcepts.add(concept_IfMacro);
     NodeMacroConcepts.add(concept_InsertMacro);
@@ -85,6 +98,20 @@ public final class RuleUtil {
     NodeMacroConcepts.add(concept_VarMacro);
     NodeMacroConcepts.add(concept_WeaveMacro);
     NodeMacroConcepts.add(concept_NodeMacro);
+  }
+  /**
+   * Set of operations that might alter model (insertion of new nodes, replacement)
+   */
+  private static final Set<String> ModelChangeOperations = SetSequence.fromSet(new HashSet<String>());
+  {
+    ModelChangeOperations.add(concept_AbstractConceptDeclaration);
+    ModelChangeOperations.add(concept_ModelNewRootOp);
+    ModelChangeOperations.add(concept_InsertNewNextOp);
+    ModelChangeOperations.add(concept_InsertNewPrevOp);
+    ModelChangeOperations.add(concept_InsertNextOp);
+    ModelChangeOperations.add(concept_InsertPrevOp);
+    ModelChangeOperations.add(concept_ReplaceNewOp);
+    ModelChangeOperations.add(concept_ReplaceOp);
   }
   public static boolean isNodeMacro(SNode n) {
     return isNodeMacro(n.getConcept().getQualifiedName());
@@ -354,5 +381,8 @@ public final class RuleUtil {
   }
   public static SNode getDismissTopRule_message(SNode dismissTopRuleConsequence) {
     return SLinkOperations.getTarget(dismissTopRuleConsequence, "generatorMessage", true);
+  }
+  public static Iterable<String> getModelChangeOperations() {
+    return ModelChangeOperations;
   }
 }

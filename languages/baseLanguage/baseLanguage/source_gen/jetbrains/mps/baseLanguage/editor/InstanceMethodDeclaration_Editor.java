@@ -12,7 +12,12 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
+import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -112,39 +117,60 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_359zr8_b2a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteFinalInBaseMethod.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InstanceMethodDeclaration_Editor.ApplySideTransforms_null_cellMenu_359zr8_a0b2a()}));
     return editorCell;
   }
   private static boolean renderingCondition_359zr8_a1c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isFinal");
+  }
+  public static class ApplySideTransforms_null_cellMenu_359zr8_a0b2a extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_359zr8_a0b2a() {
+      super(CellSide.RIGHT);
+    }
   }
   private EditorCell createConstant_359zr8_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abstract");
     editorCell.setCellId("Constant_359zr8_c2a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     _InstanceMethodDeclaration_RemoveAbstract.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InstanceMethodDeclaration_Editor.ApplySideTransforms_null_cellMenu_359zr8_a0c2a()}));
     return editorCell;
   }
   private static boolean renderingCondition_359zr8_a2c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isAbstract");
+  }
+  public static class ApplySideTransforms_null_cellMenu_359zr8_a0c2a extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_359zr8_a0c2a() {
+      super(CellSide.RIGHT);
+    }
   }
   private EditorCell createConstant_359zr8_d2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "synchronized");
     editorCell.setCellId("Constant_359zr8_d2a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     DeleteSynchronizedInBaseMethod.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InstanceMethodDeclaration_Editor.ApplySideTransforms_null_cellMenu_359zr8_a0d2a()}));
     return editorCell;
   }
   private static boolean renderingCondition_359zr8_a3c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isSynchronized");
+  }
+  public static class ApplySideTransforms_null_cellMenu_359zr8_a0d2a extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_359zr8_a0d2a() {
+      super(CellSide.RIGHT);
+    }
   }
   private EditorCell createRefNodeList_359zr8_e2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new InstanceMethodDeclaration_Editor.modifiersListHandler_359zr8_e2a(node, "modifiers", editorContext);

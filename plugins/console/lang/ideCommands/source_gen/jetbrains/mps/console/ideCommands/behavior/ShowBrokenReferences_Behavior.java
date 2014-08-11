@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ShowBrokenReferences_Behavior {
   public static void init(SNode thisNode) {
@@ -47,8 +46,5 @@ public class ShowBrokenReferences_Behavior {
         }
       }
     });
-  }
-  public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "show broken references";
   }
 }

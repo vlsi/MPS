@@ -106,38 +106,38 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                   try {
                     environment.nodeCopied(context, tnode7, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4644225720241359300");
                     {
-                      final SNode tnode8 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression");
+                      final SNode tnode8 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference");
                       try {
-                        environment.nodeCopied(context, tnode8, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742315531960");
-                        SNodeAccessUtil.setProperty(tnode8, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742315554124(new PropertyMacroContext(context, "EditorAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0b0b0b0b0b0b0c0c0c7))));
+                        environment.nodeCopied(context, tnode8, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4644225720241363019");
+                        environment.resolveInTemplateLater(tnode8, "typeVariableDeclaration", templateNode_2tkj9d_c0a1a1a1a1a1a1a1a1a2a2a2h, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314373512", "T", context);
+                      } finally {
+                      }
+                      if (tnode8 != null) {
+                        tnode7.addChild("type", tnode8);
+                      }
+                      // TODO validate child 
+                    }
+                    {
+                      final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression");
+                      try {
+                        environment.nodeCopied(context, tnode9, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742315531960");
+                        SNodeAccessUtil.setProperty(tnode9, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742315554124(new PropertyMacroContext(context, "EditorAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c7))));
                         {
-                          final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
+                          final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                           try {
-                            environment.nodeCopied(context, tnode9, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742315534670");
-                            tnode9.setReference("classifier", SReference.create("classifier", tnode9, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~LanguageAspectDescriptor")));
+                            environment.nodeCopied(context, tnode10, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742315534670");
+                            tnode10.setReference("classifier", SReference.create("classifier", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~LanguageAspectDescriptor")));
                           } finally {
                           }
-                          if (tnode9 != null) {
-                            tnode8.addChild("type", tnode9);
+                          if (tnode10 != null) {
+                            tnode9.addChild("type", tnode10);
                           }
                           // TODO validate child 
                         }
                       } finally {
                       }
-                      if (tnode8 != null) {
-                        tnode7.addChild("expression", tnode8);
-                      }
-                      // TODO validate child 
-                    }
-                    {
-                      final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference");
-                      try {
-                        environment.nodeCopied(context, tnode10, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4644225720241363019");
-                        environment.resolveInTemplateLater(tnode10, "typeVariableDeclaration", templateNode_2tkj9d_c0a1a1a2a1a1a1a1a1a2a2a2h, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314373512", "T", context);
-                      } finally {
-                      }
-                      if (tnode10 != null) {
-                        tnode7.addChild("type", tnode10);
+                      if (tnode9 != null) {
+                        tnode7.addChild("expression", tnode9);
                       }
                       // TODO validate child 
                     }
@@ -1028,8 +1028,8 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
     }
   }
   private static SNodePointer templateNode_2tkj9d_c0a1a1a2a1a1a2a2h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314403561");
-  private static SNodePointer propertyMacro_2tkj9d_c0a0c0b0b0b0b0b0b0b0b0c0c0c7 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742315554123");
-  private static SNodePointer templateNode_2tkj9d_c0a1a1a2a1a1a1a1a1a2a2a2h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4644225720241363019");
+  private static SNodePointer templateNode_2tkj9d_c0a1a1a1a1a1a1a1a1a2a2a2h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4644225720241363019");
+  private static SNodePointer propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c7 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742315554123");
   private static SNodePointer templateNode_2tkj9d_c0a1a1a2a1a1a2a2i = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2343938651364798390");
   private static SNodePointer templateNode_2tkj9d_c0a1a1a1a1a1a1a1a1a2a2a2i = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2343938651365261207");
   private static SNodePointer propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c8 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2343938651365273196");

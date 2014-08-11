@@ -9,6 +9,7 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.util.xml.XmlUtil;
 import java.util.List;
@@ -40,8 +41,8 @@ public class SolutionDescriptorPersistence {
           result_8ckma3_a0a0g0b0e.setNamespace(result_8ckma3_a0a0a0g0b0e);
 
           if (rootElement.getAttributeValue("uuid") != null) {
-            final String result_8ckma3_a0a2a0a0g0b0e = rootElement.getAttributeValue("uuid");
-            result_8ckma3_a0a0g0b0e.setUUID(result_8ckma3_a0a2a0a0g0b0e);
+            final ModuleId result_8ckma3_a0a2a0a0g0b0e = ModuleId.fromString(rootElement.getAttributeValue("uuid"));
+            result_8ckma3_a0a0g0b0e.setId(result_8ckma3_a0a2a0a0g0b0e);
           }
 
           String pluginKind = rootElement.getAttributeValue("pluginKind");
@@ -103,8 +104,8 @@ public class SolutionDescriptorPersistence {
     if (descriptor.getNamespace() != null) {
       result.setAttribute("name", descriptor.getNamespace());
     }
-    if (descriptor.getUUID() != null) {
-      result.setAttribute("uuid", descriptor.getUUID());
+    if (descriptor.getId() != null) {
+      result.setAttribute("uuid", descriptor.getId().toString());
     }
     if (descriptor.getKind() != SolutionKind.NONE) {
       result.setAttribute("pluginKind", descriptor.getKind().name());

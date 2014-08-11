@@ -120,7 +120,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 52:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.actions.structure.NodeSubstituteActions").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect").children(new String[]{"actionsBuilder"}, new boolean[]{true}).alias("Node Substitute Actions", "").create();
       case 53:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("description").references("applicableConcept").children(new String[]{"precondition", "part", "variable", "commonInitializer"}, new boolean[]{false, true, true, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.ScopeProvider", "jetbrains.mps.lang.core.structure.BaseConcept").properties("description").references("applicableConcept").children(new String[]{"precondition", "part", "variable", "commonInitializer"}, new boolean[]{false, true, true, false}).create();
       case 54:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.actions.structure.NodeSubstituteMenuBuilderPart").interface_().create();
       case 55:
@@ -206,7 +206,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 95:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect").children(new String[]{"actionsBuilder"}, new boolean[]{true}).alias("Transform Menu Actions", "").create();
       case 96:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("description", "transformTag", "side").references("applicableConcept").children(new String[]{"precondition", "part", "variable", "commonInitializer"}, new boolean[]{false, true, true, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.ScopeProvider", "jetbrains.mps.lang.core.structure.BaseConcept").properties("description", "transformTag", "side").references("applicableConcept").children(new String[]{"precondition", "part", "variable", "commonInitializer"}, new boolean[]{false, true, true, false}).create();
       case 97:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("precondition", "").staticScope(StaticScope.NONE).create();
       case 98:

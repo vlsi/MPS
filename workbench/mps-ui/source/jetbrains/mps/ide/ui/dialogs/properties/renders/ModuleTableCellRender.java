@@ -25,6 +25,9 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import javax.swing.BorderFactory;
 import javax.swing.JTable;
 
+/**
+ * TableCellRenderer for SModuleReference
+ */
 public class ModuleTableCellRender extends ColoredTableCellRenderer {
   @Override
   protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {

@@ -1547,7 +1547,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1198503018142(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "renderingCondition", true);
   }
-  public static SNode sourceNodeQuery_4510086454784386942(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_7806908697105214608(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "propertyDeclaration", true);
   }
   public static SNode sourceNodeQuery_3297276508416497773(final SourceSubstituteMacroNodeContext _context) {

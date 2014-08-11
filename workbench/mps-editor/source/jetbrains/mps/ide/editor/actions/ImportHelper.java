@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -57,6 +58,7 @@ import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -185,10 +187,17 @@ public class ImportHelper {
           //this is added in language implicitly, so we don't show this import
           langs.remove(BootstrapLanguages.coreLanguage());
 
+          final Collection<SModuleReference> alreadyImported;
+          if (myModel == null) {
+            alreadyImported = Collections.emptySet();
+          } else {
+            // XXX likely, all imported + all visible (i.e. those extended) shall be considered -
+            // there's no need to import otherwise visible language
+            alreadyImported = SModelOperations.getAllImportedLanguages(myModel);
+          }
           for (Language l : langs) {
-            if (myModel != null) {
-              Collection<SModuleReference> impLangs = ((jetbrains.mps.smodel.SModelInternal) myModel).getModelDepsManager().getAllImportedLanguages();
-              if (impLangs.contains(l.getModuleReference())) continue;
+            if (alreadyImported.contains(l.getModuleReference())) {
+              continue;
             }
             importCandidates.add(l.getModuleReference());
           }

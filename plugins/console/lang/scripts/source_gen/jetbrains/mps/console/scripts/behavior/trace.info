@@ -16,7 +16,7 @@
       <unit at="9,0,26,0" name="jetbrains.mps.console.scripts.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Execute_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.console.scripts.behavior.Execute_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.console.scripts.behavior.Execute_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475491235553">
@@ -69,18 +69,12 @@
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/748410583119789988">
     <file name="Execute_Behavior.java">
-      <node id="748410583119790123" at="11,94,12,28" concept="0" />
-      <node id="748410583119789988" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="748410583119789988" at="11,0,14,0" concept="1" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <scope id="748410583119789990" at="9,43,9,43" />
-      <scope id="748410583119790116" at="11,94,12,28" />
-      <scope id="748410583119789988" at="9,0,11,0">
+      <node id="748410583119789988" at="8,0,10,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="748410583119789990" at="8,43,8,43" />
+      <scope id="748410583119789988" at="8,0,10,0">
         <var name="thisNode" id="748410583119789988" />
       </scope>
-      <scope id="748410583119789988" at="11,0,14,0">
-        <var name="thisConcept" id="748410583119789988" />
-      </scope>
-      <unit id="748410583119789988" at="8,0,15,0" name="jetbrains.mps.console.scripts.behavior.Execute_Behavior" />
+      <unit id="748410583119789988" at="7,0,11,0" name="jetbrains.mps.console.scripts.behavior.Execute_Behavior" />
     </file>
   </root>
 </debug-info>

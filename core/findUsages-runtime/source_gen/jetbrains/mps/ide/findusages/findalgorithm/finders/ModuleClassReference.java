@@ -26,7 +26,7 @@ public class ModuleClassReference<T> {
     if (module == null) {
       return null;
     }
-    Class loadedClass = ClassLoaderManager.getInstance().getClass(module, myClassName);
+    Class loadedClass = ClassLoaderManager.getInstance().getOwnClass(module, myClassName);
     if (loadedClass == null) {
       return null;
     }

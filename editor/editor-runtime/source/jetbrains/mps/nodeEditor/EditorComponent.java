@@ -388,7 +388,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft) {
     setLayout(new EditorComponentLayoutManager(this));
     myRepository = repository;
-    setEditorContext(new EditorContext(this, null, repository));
+    setEditorContext(null, repository);
 
     //TODO: fix problem with NPE
     setBackground(StyleRegistry.getInstance() == null ? Color.white : StyleRegistry.getInstance().getEditorBackground());
@@ -707,8 +707,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       }
     });
-    EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+    attachListeners();
 
     addFocusListener(new FocusAdapter() {
       @Override
@@ -730,6 +729,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     SModelRepository.getInstance().addModelRepositoryListener(mySimpleModelListener);
   }
+
+  protected void attachListeners() {
+    EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
+    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+  }
+
 
   protected void notifyCreation() {
     jetbrains.mps.project.Project project = ProjectHelper.getProject(myRepository);
@@ -1050,12 +1055,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           myVirtualFile = !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
           SModel model = node.getModel();
           assert model != null : "Can't edit a node that is not registered in a model";
-          setEditorContext(new EditorContext(EditorComponent.this, model, myRepository));
+          setEditorContext(model, myRepository);
           myReadOnly = model.isReadOnly();
         } else {
           myNodePointer = null;
           myVirtualFile = null;
-          setEditorContext(new EditorContext(EditorComponent.this, null, myRepository));
+          setEditorContext(null, myRepository);
           myReadOnly = true;
         }
 
@@ -1394,8 +1399,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     removeOurListeners();
     SModelRepository.getInstance().removeModelRepositoryListener(mySimpleModelListener);
 
-    EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+    detachListeners();
     KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myFocusListener);
 
     clearCaches();
@@ -1404,7 +1408,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myLeftHighlighter.dispose();
     myMessagesGutter.dispose();
 
-    setEditorContext(null);
+    myEditorContext = null;
 
     if (myNodeSubstituteChooser != null) {
       myNodeSubstituteChooser.dispose();
@@ -1416,6 +1420,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     mySelectionManager.dispose();
 
     myLeftMarginPressListeners.clear();
+  }
+
+  protected void detachListeners() {
+    EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
+    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
   }
 
   public boolean hasValidSelectedNode() {
@@ -1483,7 +1492,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     was reloaded, but current editor instance was not
     updated yet.
    */
-  private boolean isInvalid() {
+  public boolean isInvalid() {
     return isInvalidLightweight() || !SNodeUtil.isAccessible(getEditedNode(), myRepository);
   }
 
@@ -2703,7 +2712,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (resetPattern) {
       patternEditor.toggleReplaceMode();
     }
-    String pattern = patternEditor.getPattern();
+    final String pattern = patternEditor.getPattern();
 
     // user changed text within this cell before pressing Ctrl+Space
     // or cell has no text at this moment
@@ -2715,11 +2724,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       List<SubstituteAction> matchingActions = getMatchingActions(editorCell, substituteInfo, isSmart, pattern);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
         // Just one applicable action in the completion menu
-        SubstituteAction theAction = matchingActions.get(0);
+        final SubstituteAction theAction = matchingActions.get(0);
+        Boolean canSubstitute = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            return theAction.canSubstitute(pattern);
+          }
+        });
+        Boolean canSubstituteStrictly = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            return theAction.canSubstituteStrictly(pattern);
+          }
+        });
         // Invoking this action immediately if originalText was changed or
         // the cursor is at the end of line and !theAction.canSubstituteStrictly(pattern)
         // [means, action will change underlying code]
-        if (originalTextChanged || editorCell.isErrorState() || (atTheEndOfLine && !theAction.canSubstituteStrictly(pattern))) {
+        if (canSubstitute && (originalTextChanged || editorCell.isErrorState() || (atTheEndOfLine && !canSubstituteStrictly))) {
           theAction.substitute(this.getEditorContext(), pattern);
           return true;
         }
@@ -2740,7 +2761,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return runRead(new Computable<List<SubstituteAction>>() {
       @Override
       public List<SubstituteAction> compute() {
-        final ITypeContextOwner contextOwner = isSmart ? new NonReusableTypecheckingContextOwner(): getTypecheckingContextOwner();
+        final ITypeContextOwner contextOwner = isSmart ? new NonReusableTypecheckingContextOwner() : getTypecheckingContextOwner();
         return TypeContextManager.getInstance().runTypeCheckingComputation(contextOwner, myNode,
             new Computation<List<SubstituteAction>>() {
               @Override
@@ -2834,7 +2855,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void clearNodesCellDependsOn(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorManager editorManager) {
-    if (editorManager == EditorManager.getInstanceFromContext(getCurrentProject())) {
+    if (editorManager == EditorManager.getInstanceFromContext(getEditorContext())) {
       myCellsToNodesToDependOnMap.remove(cell);
       myCellsToRefTargetsToDependOnMap.remove(cell);
       if (myRootCell == cell) {
@@ -2844,7 +2865,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   void registerAsBigCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorManager manager) {
-    if (manager == EditorManager.getInstanceFromContext(getCurrentProject())) {
+    if (manager == EditorManager.getInstanceFromContext(getEditorContext())) {
       myNodesToBigCellsMap.put(cell.getSNode(), new WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell>(cell));
     }
   }
@@ -2890,6 +2911,25 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return toSelect;
   }
 
+  public final void setEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
+    setEditorContext(createEditorContext(model, repository));
+  }
+
+  /**
+   * This method is called from the constructor, so you cannot use local variables and any other
+   * EditorComponent state here!
+   *
+   * @param model
+   * @param repository
+   */
+  protected EditorContext createEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
+    return new EditorContext(this, model, repository);
+  }
+
+  /**
+   * @deprecated since MPS 3.1 use setEditorContext(EditorComponent editorComponent, @Nullable SModel model, @NotNull SRepository repository)
+   */
+  @Deprecated
   protected void setEditorContext(EditorContext editorContext) {
     assert editorContext == null || myRepository == editorContext.getRepository();
     myEditorContext = editorContext;
@@ -2999,10 +3039,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       getEditorContext().pushTracerTask("Hanlding events", true);
     }
     try {
-      if (EventUtil.isDetachedOnlyChange(events)) {
-        return;
-      }
-
       SNode lastSelectedNode = getSelectedNode();
 
       if (!EventUtil.isDramaticalChange(events)) {
@@ -3549,10 +3585,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     @Override
     public boolean isCutEnabled(@NotNull DataContext dataContext) {
-      return !(isDisposed() ||
-          isInvalidLightweight() ||
-          ReadOnlyUtil.isSelectionReadOnlyInEditor(EditorComponent.this) ||
-          getSelectionManager().getSelection() == null);
+      return !(isDisposed() || isInvalidLightweight() || getSelectionManager().getSelection() == null ||
+          ReadOnlyUtil.canDeleteNodes(EditorComponent.this, getSelectedNodes()));
     }
 
     @Override

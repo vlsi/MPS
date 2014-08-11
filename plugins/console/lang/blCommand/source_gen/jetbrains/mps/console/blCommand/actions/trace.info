@@ -14,7 +14,8 @@
     <file name="PasteWrappers.java">
       <unit at="20,49,30,5" name="jetbrains.mps.console.blCommand.actions.PasteWrappers$1" />
       <unit at="31,49,41,5" name="jetbrains.mps.console.blCommand.actions.PasteWrappers$2" />
-      <unit at="17,0,51,0" name="jetbrains.mps.console.blCommand.actions.PasteWrappers" />
+      <unit at="42,49,52,5" name="jetbrains.mps.console.blCommand.actions.PasteWrappers$3" />
+      <unit at="17,0,68,0" name="jetbrains.mps.console.blCommand.actions.PasteWrappers" />
     </file>
   </root>
   <root nodeRef="r:9cef28f0-1d60-4407-a18b-c9fc83b30f67(jetbrains.mps.console.blCommand.actions)/3492877759608901704">
@@ -124,22 +125,38 @@
   <root nodeRef="r:9cef28f0-1d60-4407-a18b-c9fc83b30f67(jetbrains.mps.console.blCommand.actions)/4615018937607083682">
     <file name="PasteWrappers.java">
       <node id="4615018937607084454" at="27,55,28,169" concept="5" />
-      <node id="6081287228602343236" at="38,55,39,87" concept="5" />
-      <node id="4615018937607084452" at="44,67,45,63" concept="4" />
-      <node id="4615018937607084452" at="45,63,46,131" concept="4" />
-      <node id="4615018937607084452" at="46,131,47,42" concept="0" />
-      <node id="4615018937607084452" at="46,131,47,42" concept="1" />
-      <node id="4615018937607084452" at="47,42,48,14" concept="5" />
-      <node id="4615018937607084452" at="44,0,50,0" concept="6" trace="createBLExpression_sma98h_a0a0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1433263869220695697" at="38,55,39,87" concept="5" />
+      <node id="1433263869220697094" at="49,55,50,223" concept="5" />
+      <node id="4615018937607084452" at="55,67,56,63" concept="4" />
+      <node id="4615018937607084452" at="56,63,57,131" concept="4" />
+      <node id="4615018937607084452" at="57,131,58,42" concept="0" />
+      <node id="4615018937607084452" at="57,131,58,42" concept="1" />
+      <node id="4615018937607084452" at="58,42,59,14" concept="5" />
+      <node id="1433263869220697092" at="61,74,62,63" concept="4" />
+      <node id="1433263869220697092" at="62,63,63,133" concept="4" />
+      <node id="1433263869220697092" at="63,133,64,42" concept="0" />
+      <node id="1433263869220697092" at="63,133,64,42" concept="1" />
+      <node id="1433263869220697092" at="64,42,65,14" concept="5" />
+      <node id="4615018937607084452" at="55,0,61,0" concept="6" trace="createBLExpression_sma98h_a0a0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1433263869220697092" at="61,0,67,0" concept="6" trace="createExpressionStatement_sma98h_a0a0c#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="4615018937607083685" at="27,55,28,169" />
-      <scope id="6081287228602317649" at="38,55,39,87" />
-      <scope id="4615018937607084452" at="46,131,47,42" />
-      <scope id="4615018937607084452" at="44,67,48,14">
+      <scope id="1433263869220695696" at="38,55,39,87" />
+      <scope id="6081287228602317649" at="49,55,50,223" />
+      <scope id="4615018937607084452" at="57,131,58,42" />
+      <scope id="1433263869220697092" at="63,133,64,42" />
+      <scope id="4615018937607084452" at="55,67,59,14">
         <var name="facade" id="4615018937607084452" />
         <var name="n1" id="4615018937607084452" />
       </scope>
-      <scope id="4615018937607084452" at="44,0,50,0">
+      <scope id="1433263869220697092" at="61,74,65,14">
+        <var name="facade" id="1433263869220697092" />
+        <var name="n1" id="1433263869220697092" />
+      </scope>
+      <scope id="4615018937607084452" at="55,0,61,0">
         <var name="p0" id="4615018937607084452" />
+      </scope>
+      <scope id="1433263869220697092" at="61,0,67,0">
+        <var name="p0" id="1433263869220697092" />
       </scope>
     </file>
   </root>

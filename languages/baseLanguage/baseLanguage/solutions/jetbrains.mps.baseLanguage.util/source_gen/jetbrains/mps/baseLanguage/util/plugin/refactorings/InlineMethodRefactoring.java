@@ -11,6 +11,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Set;
@@ -75,8 +76,9 @@ public class InlineMethodRefactoring {
       SNodeOperations.replaceWithAnother(this.myMethodCall, ref);
       SNodeOperations.insertNextSiblingChild(callStatement, SNodeOperations.copyNode(callStatement));
     }
-    if (SNodeOperations.getAncestor(this.myMethodDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != SNodeOperations.getAncestor(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) {
-      this.replaceLocalStaticMethodCalls(body);
+    SNode classAncestor = SNodeOperations.getAncestor(this.myMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    if (classAncestor != null && classAncestor != SNodeOperations.getAncestor(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)) {
+      this.replaceLocalStaticMethodCalls(body, classAncestor);
     }
     for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true))) {
       SNodeOperations.insertPrevSiblingChild(callStatement, statement);
@@ -107,17 +109,22 @@ public class InlineMethodRefactoring {
   private void replaceThisByOperand(SNode body) {
     if (!(SNodeOperations.isInstanceOf(this.myOperand, "jetbrains.mps.baseLanguage.structure.IThisExpression") || SNodeOperations.isInstanceOf(this.myOperand, "jetbrains.mps.baseLanguage.structure.VariableReference") || SNodeOperations.isInstanceOf(this.myOperand, "jetbrains.mps.baseLanguage.structure.StringLiteral"))) {
       SNode statement = SNodeOperations.getAncestor(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-      SNode t = this.getClassifierType(SNodeOperations.cast(SNodeOperations.getParent(this.myMethodDeclaration), "jetbrains.mps.baseLanguage.structure.Classifier"));
-      this.myOperand = this.createVariable(statement, "instance", t, this.myOperand);
+      SNode typeForMethodCall = getTypeForMethodCall(myMethodCall);
+      SNode type = (typeForMethodCall != null ? typeForMethodCall : SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(myOperand), "jetbrains.mps.baseLanguage.structure.Type"));
+      this.myOperand = this.createVariable(statement, "instance", type, this.myOperand);
     }
     for (SNode thisExpr : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.IThisExpression", false, new String[]{}))) {
       SNodeOperations.replaceWithAnother(thisExpr, SNodeOperations.copyNode(this.myOperand));
     }
   }
-  private SNode getClassifierType(SNode c) {
-    SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-    SLinkOperations.setTarget(type, "classifier", c, false);
-    return type;
+  private SNode getTypeForMethodCall(SNode methodCall) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(methodCall), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+      SLinkOperations.setTarget(type, "classifier", (SNodeOperations.cast(SNodeOperations.getParent(methodCall), "jetbrains.mps.baseLanguage.structure.Classifier")), false);
+      return type;
+    } else {
+      return null;
+    }
   }
   private SNode createAssignmentExpression(SNode returnVar, SNode returnExpression) {
     SNode expression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
@@ -129,15 +136,14 @@ public class InlineMethodRefactoring {
     SLinkOperations.setTarget(statement, "expression", expression, true);
     return statement;
   }
-  private void replaceLocalStaticMethodCalls(SNode body) {
-    SNode c = SNodeOperations.getAncestor(this.myMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+  private void replaceLocalStaticMethodCalls(SNode body, SNode classAncestor) {
     for (SNode localCall : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
       }
     }).toListSequence()) {
       SNode newCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-      SLinkOperations.setTarget(newCall, "classConcept", c, false);
+      SLinkOperations.setTarget(newCall, "classConcept", classAncestor, false);
       SLinkOperations.setTarget(newCall, "baseMethodDeclaration", SNodeOperations.cast(SLinkOperations.getTarget(localCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
       SNodeOperations.replaceWithAnother(localCall, newCall);
     }
@@ -277,7 +283,7 @@ public class InlineMethodRefactoring {
     Set<SNode> nodesToCheck = ClassRefactoringUtils.getClassMemberRefernce(SLinkOperations.getTarget(this.myMethodDeclaration, "body", true));
     String end = SNodeOperations.getParent(this.myMethodDeclaration) + "." + this.myMethodDeclaration;
     for (SNode node : SetSequence.fromSet(nodesToCheck)) {
-      SNode classifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      SNode iMemberContainer = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.IMemberContainer", false, false);
       if (!(VisibilityUtil.isVisible(this.myMethodCall, node))) {
         String start = "";
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
@@ -286,7 +292,7 @@ public class InlineMethodRefactoring {
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
           start = "Field ";
         }
-        buff.append(start).append(classifier).append(".").append(node);
+        buff.append(start).append(iMemberContainer).append(".").append(node);
         buff.append(" that is used in inlined method is not accessible from ");
         buff.append("call site(s) in method " + end + "\n");
       }

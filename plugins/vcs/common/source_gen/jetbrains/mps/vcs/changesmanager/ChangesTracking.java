@@ -292,7 +292,7 @@ public class ChangesTracking {
   }
   @Nullable
   private SNode getOldNode(@NotNull SNodeId id) {
-    return check_5iuzi5_a0a0a92(myDifference.getChangeSet()).getNode(id);
+    return check_5iuzi5_a0a92(check_5iuzi5_a0a0a92(myDifference.getChangeSet()), id);
   }
   private void runUpdateTask(final _FunctionTypes._void_P0_E0 task, SNode currentNode, final SModelEvent event) {
     myEventConsumingMapping.addEvent(event);
@@ -375,6 +375,10 @@ public class ChangesTracking {
       }
       final SNodeId nodeId = node.getNodeId();
       final String propertyName = event.getPropertyName();
+
+      // get more info for debugging 
+      assert node.getModel().getNode(nodeId) != null : "cannot find node " + nodeId + " in model " + node.getModel();
+
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           removeChanges(nodeId, SetPropertyChange.class, new _FunctionTypes._return_P1_E0<Boolean, SetPropertyChange>() {
@@ -540,6 +544,12 @@ public class ChangesTracking {
     }
   }
   protected static Logger LOG = LogManager.getLogger(ChangesTracking.class);
+  private static SNode check_5iuzi5_a0a92(SModel checkedDotOperand, SNodeId id) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNode(id);
+    }
+    return null;
+  }
   private static SModel check_5iuzi5_a0a0a92(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOldModel();

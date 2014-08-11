@@ -110,7 +110,7 @@ public abstract class ProjectStructureBuilder {
     return result;
   }
   private void fill(SNode module, ModuleDescriptor source) {
-    SPropertyOperations.set(module, "uuid", source.getUUID());
+    SPropertyOperations.set(module, "uuid", (source.getId() == null ? null : source.getId().toString()));
     SPropertyOperations.set(module, "namespace", source.getNamespace());
 
     for (ModelRootDescriptor root : source.getModelRootDescriptors()) {

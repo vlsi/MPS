@@ -43,7 +43,7 @@ public class DescriptorUtils {
       return null;
     }
     try {
-      return (Class<T>) ClassLoaderManager.getInstance().getClass(language, className);
+      return (Class<T>) ClassLoaderManager.getInstance().getOwnClass(language, className);
     } catch (Throwable e) {
       LOG.debug(String.format("error loading class '%s' from module %s", className, language.getModuleName()), e);
     }

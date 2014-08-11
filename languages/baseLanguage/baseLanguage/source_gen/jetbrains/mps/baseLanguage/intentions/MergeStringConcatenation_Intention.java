@@ -73,7 +73,7 @@ public class MergeStringConcatenation_Intention implements IntentionFactory {
       String left = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(node, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
       String right = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(node, "rightExpression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
       SPropertyOperations.set(stringLiteral, "value", left + right);
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, stringLiteral, CellIdManager.createPropertyId("value"), left.length());
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, stringLiteral, "*" + CellIdManager.createPropertyId("value"), left.length());
     }
     public IntentionDescriptor getDescriptor() {
       return MergeStringConcatenation_Intention.this;

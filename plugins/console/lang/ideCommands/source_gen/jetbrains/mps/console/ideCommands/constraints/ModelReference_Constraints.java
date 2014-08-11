@@ -32,7 +32,7 @@ public class ModelReference_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences"), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.StatCommand"), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.ShowGenPlan"))).contains(SNodeOperations.getConceptDeclaration(parentNode));
+    return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget"), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.ShowGenPlan"))).contains(SNodeOperations.getConceptDeclaration(parentNode));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "7820875636627213167");
 }
