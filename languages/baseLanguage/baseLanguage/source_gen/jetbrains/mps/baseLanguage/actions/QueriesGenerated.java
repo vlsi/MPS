@@ -4385,10 +4385,9 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        ParenthesisUtil.createUnmatchedRightParenthesis(_context.getSourceNode());
-        SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpressionIgnoringParens(_context.getSourceNode(), true);
-        SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_EDITABLE_CELL, -1);
-        return rightMostNode;
+        SNode parens = ParenthesisUtil.createUnmatchedRightParenthesis(_context.getSourceNode());
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, parens, SelectionManager.LAST_CELL, -1);
+        return null;
       }
 
       public String getMatchingText(String pattern) {
@@ -4422,8 +4421,10 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        ParenthesisUtil.createUnmatchedLeftParenthesis(_context.getSourceNode());
-        return _context.getSourceNode();
+        SNode parens = ParenthesisUtil.createUnmatchedLeftParenthesis(_context.getSourceNode());
+        SNode leftMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpressionIgnoringParens(parens, false);
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, leftMostNode, SelectionManager.FIRST_CELL, 0);
+        return null;
       }
 
       public String getMatchingText(String pattern) {
