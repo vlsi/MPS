@@ -13,27 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.migration.wizard;
+package jetbrains.mps.ide.migration;
 
 import com.intellij.ide.wizard.AbstractWizardEx;
 import com.intellij.ide.wizard.AbstractWizardStepEx;
 import com.intellij.ide.wizard.AbstractWizardStepEx.Listener;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.ide.migration.wizard.InitialStep;
+import jetbrains.mps.ide.migration.wizard.MigrationStep;
+import jetbrains.mps.ide.migration.wizard.MigrationsFinishedStep;
+import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
 
 import java.util.Arrays;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
-
-
-  public MigrationAssistantWizard(Project project) {
+  public MigrationAssistantWizard(Project project, MigrationManager migrationManager) {
     super("Migration Assistant Wizard", project, Arrays.asList(
         new InitialStep(project),
-        new OldPersistenceDetectedStep(project),
-        new MigrationsActionsStep(project),
         new MigrationsProgressStep(project),
-        new MigrationsFinishedStep(project),
-        new MigrationsFinishedWithErrorsStep(project)));
+        new MigrationsFinishedStep(project)));
   }
 
   @Override

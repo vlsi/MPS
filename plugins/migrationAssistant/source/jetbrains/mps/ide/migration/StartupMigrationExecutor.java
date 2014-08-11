@@ -16,19 +16,12 @@
 package jetbrains.mps.ide.migration;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.application.impl.LaterInvocator;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
-import jetbrains.mps.ide.migration.wizard.MigrationAssistantWizard;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
 
 public class StartupMigrationExecutor extends AbstractProjectComponent {
   private final MPSProject myMpsProject;
@@ -51,7 +44,7 @@ public class StartupMigrationExecutor extends AbstractProjectComponent {
         VirtualFileManager.getInstance().syncRefresh();
         ProjectManagerEx.getInstance().reloadProject(myProject);
 
-        MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject);
+        MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager);
         wizard.showAndGetOk();
       }
     });

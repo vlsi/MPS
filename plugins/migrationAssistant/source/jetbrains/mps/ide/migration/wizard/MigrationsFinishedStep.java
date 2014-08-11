@@ -26,8 +26,7 @@ import javax.swing.event.HyperlinkListener;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
-class MigrationsFinishedStep extends MigrationStep {
-
+public class MigrationsFinishedStep extends MigrationStep {
   public MigrationsFinishedStep(Project project) {
     super(project, "Migration Finished", "finished");
     createComponent();
@@ -81,5 +80,4 @@ class MigrationsFinishedStep extends MigrationStep {
   public boolean isComplete() {
     return true;
   }
-
 }

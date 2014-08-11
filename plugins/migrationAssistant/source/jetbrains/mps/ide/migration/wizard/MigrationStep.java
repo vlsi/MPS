@@ -21,6 +21,7 @@ import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.icons.MPSIcons.Small;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListCellRenderer;
@@ -42,29 +43,10 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-abstract class MigrationStep extends AbstractWizardStepEx {
-  private static Icon EXCLUDE_ICON = Actions.Cross;
-  private static Icon CHECK_ICON = Actions.Checked;
-  private static Icon ERROR_ICON = Small.Error;
-  private static Icon EMPTY_ICON = new Icon() {
-    @Override
-    public void paintIcon(Component component, Graphics graphics, int i, int i1) {
-    }
-
-    @Override
-    public int getIconWidth() {
-      return 12;
-    }
-
-    @Override
-    public int getIconHeight() {
-      return 12;
-    }
-  };
-
+public abstract class MigrationStep extends AbstractWizardStepEx {
   private static final List<String> STEP_IDS = new ArrayList<String>();
 
-  private static Icon WIZARD_ICON = General.NewProject;
+  private static final Icon WIZARD_ICON = General.NewProject;
 
   protected Project myProject;
   protected JComponent myComponent;
@@ -77,6 +59,7 @@ abstract class MigrationStep extends AbstractWizardStepEx {
     STEP_IDS.add(myId);
   }
 
+  @NotNull
   @Override
   public Object getStepId() {
     return myId;
@@ -88,24 +71,9 @@ abstract class MigrationStep extends AbstractWizardStepEx {
     return idx < STEP_IDS.size() ? STEP_IDS.get(idx) : null;
   }
 
-  protected Object getSkipNextStepId() {
-    int idx = STEP_IDS.indexOf(myId) + 2;
-    return idx < STEP_IDS.size() ? STEP_IDS.get(idx) : null;
-  }
-
-  protected Object getSkipNextStepId(int skip) {
-    int idx = STEP_IDS.indexOf(myId) + skip + 1;
-    return idx < STEP_IDS.size() ? STEP_IDS.get(idx) : null;
-  }
-
   @Override
   public Object getPreviousStepId() {
     int idx = STEP_IDS.indexOf(myId) - 1;
-    return idx >= 0 ? STEP_IDS.get(idx) : null;
-  }
-
-  public Object getSkipPreviousStepId() {
-    int idx = STEP_IDS.indexOf(myId) - 2;
     return idx >= 0 ? STEP_IDS.get(idx) : null;
   }
 
@@ -139,6 +107,7 @@ abstract class MigrationStep extends AbstractWizardStepEx {
   }
 
   public void onAfterUpdate() {
+
   }
 
   protected void createComponent() {
@@ -146,79 +115,4 @@ abstract class MigrationStep extends AbstractWizardStepEx {
     myComponent.setBorder(BorderFactory.createCompoundBorder(
         BorderFactory.createEtchedBorder(), BorderFactory.createEmptyBorder(2, 2, 2, 2)));
   }
-
-  protected static class MyListCellRenderer extends DefaultListCellRenderer {
-
-    private Font myErrorFont;
-    private Font myStrikeFont;
-    private Font myOriginalFont;
-    private final Set<?> myExcluded;
-    private final Set<?> myMarked;
-    private final Set<?> myFailed;
-    private static final Pattern ACTION_PRESENTATION = Pattern.compile("(.*).*\\(.*\\)");
-
-    public MyListCellRenderer(Set<?> excluded, Set<?> marked, Set<?> failed) {
-      myExcluded = excluded;
-      myMarked = marked;
-      myFailed = failed;
-    }
-
-    @Override
-    public void setText(String text) {
-      Matcher matcher = ACTION_PRESENTATION.matcher(text);
-      if (matcher.matches()) {
-        text = matcher.group(1);
-      }
-      super.setText(text);
-    }
-
-    @Override
-    public Component getListCellRendererComponent(JList list, Object value, int index, boolean iss, boolean chf) {
-      super.getListCellRendererComponent(list, value, index, iss, chf);
-      if (myExcluded.contains(value)) {
-        setIcon(EXCLUDE_ICON);
-        setEnabled(false);
-        setFont(getStrikeFont());
-      } else if (myMarked.contains(value)) {
-        setIcon(CHECK_ICON);
-        setEnabled(true);
-        setFont(getOriginalFont());
-      } else if (myFailed.contains(value)) {
-        setIcon(ERROR_ICON);
-        setEnabled(true);
-        setFont(getErrorFont());
-      } else {
-        setIcon(EMPTY_ICON);
-        setEnabled(true);
-        setFont(getOriginalFont());
-      }
-      return this;
-    }
-
-    private Font getStrikeFont() {
-      if (myStrikeFont == null) {
-        Map<TextAttribute, Object> attributes = new HashMap<TextAttribute, Object>(getFont().getAttributes());
-        attributes.put(TextAttribute.STRIKETHROUGH, TextAttribute.STRIKETHROUGH_ON);
-        myStrikeFont = getOriginalFont().deriveFont(attributes);
-      }
-      return myStrikeFont;
-    }
-
-    private Font getErrorFont() {
-      if (myErrorFont == null) {
-        Map<TextAttribute, Object> attributes = new HashMap<TextAttribute, Object>(getFont().getAttributes());
-        attributes.put(TextAttribute.FOREGROUND, Color.RED);
-        myErrorFont = getOriginalFont().deriveFont(attributes);
-      }
-      return myErrorFont;
-    }
-
-    private Font getOriginalFont() {
-      if (myOriginalFont == null) {
-        this.myOriginalFont = getFont();
-      }
-      return myOriginalFont;
-    }
-  }
-
 }

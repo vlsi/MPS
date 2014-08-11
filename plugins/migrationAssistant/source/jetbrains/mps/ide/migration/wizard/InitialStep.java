@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.migration.wizard;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.ui.components.JBCheckBox;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
@@ -27,10 +26,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
-class InitialStep extends MigrationStep {
-
-  private JBCheckBox mySelectActions;
-
+public class InitialStep extends MigrationStep {
   public InitialStep(Project project) {
     super(project, "Migration Required", "initial");
     createComponent();
@@ -67,33 +63,11 @@ class InitialStep extends MigrationStep {
     pagePanel.add(infoHolder);
     layout.setConstraints(infoHolder, gbc);
 
-    gbc.gridy++;
-    gbc.anchor = GridBagConstraints.LAST_LINE_START;
-    gbc.weightx = 0.;
-    gbc.weighty = 0.;
-
-    mySelectActions = new JBCheckBox("Select Migration Actions");
-    mySelectActions.setSelected(false);
-
-    pagePanel.add(mySelectActions);
-    layout.setConstraints(mySelectActions, gbc);
-
     myComponent.add(pagePanel, BorderLayout.CENTER);
   }
 
   @Override
   public boolean isComplete() {
     return true;
-  }
-
-  @Override
-  public Object getNextStepId() {
-    if (hasModelsInOldPersistence()) return super.getNextStepId();
-    return mySelectActions.isSelected() ? super.getSkipNextStepId(1) : super.getSkipNextStepId(2);
-  }
-
-  private boolean hasModelsInOldPersistence() {
-    return false;
-//      return new ModelPersistenceDetector(myProject).hasModelsInOldPersistence();
   }
 }

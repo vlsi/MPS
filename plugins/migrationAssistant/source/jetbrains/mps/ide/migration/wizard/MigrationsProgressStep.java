@@ -25,8 +25,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
-import jetbrains.mps.ide.migration.assistant.MigrationProcessor;
-import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 
@@ -40,17 +38,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-class MigrationsProgressStep extends MigrationStep {
-
+public class MigrationsProgressStep extends MigrationStep {
   private boolean myStarted;
   private boolean myFinished;
   private boolean myDoneAny;
   private final Task myTask;
   private InlineProgressIndicator myProgressIndicator;
   private final Set<Object> myMarked = Collections.synchronizedSet(new HashSet<Object>());
-  ;
   private final Set<Object> myExcluded = Collections.synchronizedSet(new HashSet<Object>());
-  private final Set<Object> myFailed = Collections.synchronizedSet(new HashSet<Object>());
   private JBList myList;
 
   public MigrationsProgressStep(Project project) {
@@ -73,7 +68,7 @@ class MigrationsProgressStep extends MigrationStep {
     myComponent.add(new JLabel("Applying migration actions:"), BorderLayout.NORTH);
 
     myList = new JBList(processor.getActions());
-    myList.setCellRenderer(new MyListCellRenderer(myExcluded, myMarked, myFailed));
+    myList.setCellRenderer(new MigrationsListRenderer(myExcluded, myMarked, myFailed));
 
     JPanel listPanel = new JPanel(new BorderLayout(5, 5));
     listPanel.setBorder(BorderFactory.createCompoundBorder(
@@ -181,11 +176,6 @@ class MigrationsProgressStep extends MigrationStep {
   public Object getPreviousStepId() {
     // can't go back now
     return null;
-  }
-
-  @Override
-  public Object getNextStepId() {
-    return myFailed.isEmpty() ? super.getNextStepId() : super.getSkipNextStepId();
   }
 
   @Override
