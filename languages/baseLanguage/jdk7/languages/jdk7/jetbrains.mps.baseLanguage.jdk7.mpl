@@ -7,17 +7,16 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="baseLanguage" generatorUID="jetbrains.mps.baseLanguage.jdk7#616711547384942258" uuid="2ec34c1e-7442-4656-9a59-44fa731a9286" generate-templates="true" needs-opctx="false">
+    <generator name="baseLanguage" generatorUID="jetbrains.mps.baseLanguage.jdk7#616711547384942258" uuid="2ec34c1e-7442-4656-9a59-44fa731a9286" generate-templates="true">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
         </modelRoot>
       </models>
-      <external-templates>
-        <generator generatorUID="46ef3033-ce72-4166-b19e-6ceed23b6844(jetbrains.mps.baseLanguageInternal#1238251529692)" />
-      </external-templates>
+      <external-templates />
       <dependencies>
         <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
+        <dependency reexport="false" scope="design">46ef3033-ce72-4166-b19e-6ceed23b6844(jetbrains.mps.baseLanguageInternal#1238251529692)</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguage>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguage>
