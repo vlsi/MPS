@@ -4,6 +4,10 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.EmptyFilter" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.Filter" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestNodeRequest" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="org.apache.log4j.Level" />
@@ -14,6 +18,7 @@
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.JUnitCore" />
     <classNode dependClassName="org.junit.runner.Request" />
+    <classNode dependClassName="org.junit.runner.notification.Failure" />
     <classNode dependClassName="org.junit.runner.notification.RunListener" />
     <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor" />
@@ -73,6 +78,26 @@
     <classNode dependClassName="org.junit.runner.notification.Failure" />
     <classNode extendsClassName="org.junit.runner.notification.RunListener" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.EmptyFilter" file="EmptyFilter.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.Filter" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.Filter" file="Filter.java" />
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.LightExecutionFilter" file="LightExecutionFilter.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.Filter" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.NodeWrappersTestsContributor" file="NodeWrappersTestsContributor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
@@ -84,6 +109,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestNodeRequest" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsClassStorage" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -107,6 +133,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.LightExecutionFilter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.NodeWrappersTestsContributor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightRunListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsClassStorage" />
@@ -140,10 +167,20 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.junit.internal.AssumptionViolatedException" />
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.Result" />
     <classNode dependClassName="org.junit.runner.notification.Failure" />
     <classNode extendsClassName="org.junit.runner.notification.RunListener" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestNodeRequest" file="TestNodeRequest.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Comparator" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
+    <classNode dependClassName="org.junit.runner.Description" />
+    <classNode dependClassName="org.junit.runner.Runner" />
+    <classNode dependClassName="org.junit.runner.manipulation.Filter" />
+    <classNode extendsClassName="org.junit.runner.Request" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsClassStorage" file="TestsClassStorage.java">
     <classNode dependClassName="java.lang.Class" />

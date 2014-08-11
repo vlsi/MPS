@@ -26,7 +26,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -338,7 +338,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_58c6e4_b0a(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return ITestable_Behavior.call_canRunInProcess_6436735966448788391(node) + "";
+        return ITestCase_Behavior.call_canRunInProcess_6436735966448788391(node) + "";
       }
       public void setText(String text) {
         if (text.equals("true")) {

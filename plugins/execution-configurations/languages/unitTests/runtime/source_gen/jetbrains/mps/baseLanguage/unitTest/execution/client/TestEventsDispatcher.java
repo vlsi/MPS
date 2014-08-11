@@ -38,15 +38,14 @@ public class TestEventsDispatcher {
   public void onTestEvent(TestEvent event) {
     this.myState.setToken(event.getToken());
     if (TestEvent.START_TEST_PREFIX.equals(event.getToken())) {
-      this.myState.startTest(event);
+      this.myState.onTestStarted(event);
     } else if (TestEvent.END_TEST_PREFIX.equals(event.getToken())) {
-      this.myState.endTest(event);
+      this.myState.onTestEnded(event);
     } else if (TestEvent.FAILURE_TEST_PREFIX.equals(event.getToken())) {
-      this.myState.testFailure(event);
+      this.myState.onTestFailure(event);
     } else if (TestEvent.ERROR_TEST_PREFIX.equals(event.getToken())) {
-      this.myState.testError(event);
+      this.myState.onTestError(event);
     }
-    this.myState.completeTestEvent(event);
   }
   private static Pattern REPLREGEXP_a0a0e = Pattern.compile("\\n", 0);
   private static Pattern REGEXP_d0rws9_a0a1a4 = Pattern.compile(".*\\s0(?:\\D+.*|$)", 0);

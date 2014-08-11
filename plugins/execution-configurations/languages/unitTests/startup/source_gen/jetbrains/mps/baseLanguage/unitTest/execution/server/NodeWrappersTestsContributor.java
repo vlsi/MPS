@@ -16,17 +16,13 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 public class NodeWrappersTestsContributor implements TestsContributor {
   private final Iterable<? extends ITestNodeWrapper> myTestNodes;
-  private boolean initialized = false;
   private final TestsClassStorage myTestClassStorage;
+
   public NodeWrappersTestsContributor(Iterable<? extends ITestNodeWrapper> testNodes, TestsClassStorage testClassStorage) {
     myTestNodes = testNodes;
     myTestClassStorage = testClassStorage;
-    initialized = true;
   }
-  @Override
-  public boolean isInitialized() {
-    return initialized;
-  }
+
   @Override
   public Iterable<Request> gatherTests() throws Exception {
     final Exception[] ex = new Exception[1];
@@ -39,13 +35,15 @@ public class NodeWrappersTestsContributor implements TestsContributor {
             final SModule module = getModuleByNode(testNode.getNode());
             if (testNode.isTestCase()) {
               final Class<?> aClass = myTestClassStorage.loadTestClass(fqName, module);
-              requestList.add(Request.aClass(aClass));
+              TestNodeRequest request = new TestNodeRequest(Request.aClass(aClass), testNode);
+              requestList.add(request);
             } else {
               int index = fqName.lastIndexOf('.');
               String testFqName = fqName.substring(0, index);
               final Class aClass = myTestClassStorage.loadTestClass(testFqName, module);
               String method = fqName.substring(index + 1);
-              requestList.add(Request.method(aClass, method));
+              TestNodeRequest request = new TestNodeRequest(Request.method(aClass, method), testNode);
+              requestList.add(request);
             }
           }
         } catch (ClassNotFoundException e) {

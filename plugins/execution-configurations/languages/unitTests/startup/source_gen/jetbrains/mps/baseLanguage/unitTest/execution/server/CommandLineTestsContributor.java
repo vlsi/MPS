@@ -47,10 +47,6 @@ public class CommandLineTestsContributor implements TestsContributor {
     return fileContents;
   }
   @Override
-  public boolean isInitialized() {
-    return true;
-  }
-  @Override
   public Iterable<Request> gatherTests() throws IOException, ClassNotFoundException {
     List<Request> requests = new LinkedList<Request>();
     int i = 0;

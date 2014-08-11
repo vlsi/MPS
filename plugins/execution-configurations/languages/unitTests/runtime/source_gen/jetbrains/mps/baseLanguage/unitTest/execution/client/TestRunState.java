@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public class TestRunState {
   private static final Object lock = new Object();
@@ -96,7 +97,7 @@ public class TestRunState {
   public void addView(TestView testView) {
     SetSequence.fromSet(this.myViewsList).addElement(testView);
   }
-  public void startTest(final TestEvent event) {
+  public void onTestStarted(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestStart(event);
@@ -104,15 +105,16 @@ public class TestRunState {
     });
     this.startTest(event.getTestCaseName(), event.getTestMethodName());
   }
-  public void endTest(final TestEvent event) {
+  public void onTestEnded(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestEnd(event);
       }
     });
     this.endTest();
+    this.completeTestEvent(event);
   }
-  public void testError(final TestEvent event) {
+  public void onTestError(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestError(event);
@@ -120,7 +122,7 @@ public class TestRunState {
     });
     this.defectTest();
   }
-  public void testFailure(final TestEvent event) {
+  public void onTestFailure(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestFailure(event);
@@ -128,6 +130,7 @@ public class TestRunState {
     });
     this.defectTest();
   }
+
   public void looseTest(final String className, final String testName) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
@@ -136,10 +139,9 @@ public class TestRunState {
     });
     this.looseTestInternal(className, testName);
   }
+
   private void startTest(String className, String methodName) {
-    if (className.equals(this.myCurrentClass) && methodName.equals(this.myCurrentMethod)) {
-      return;
-    }
+    assert !((className.equals(this.myCurrentClass) && methodName.equals(this.myCurrentMethod)));
     synchronized (lock) {
       checkConsistency();
       this.myCurrentClass = className;
@@ -192,15 +194,41 @@ public class TestRunState {
       this.myKey = null;
     }
   }
-  public void completeTestEvent(TestEvent event) {
-    String token = event.getToken();
-    if (token.equals(TestEvent.END_TEST_PREFIX) || token.equals(TestEvent.ERROR_TEST_SUFFIX) || token.equals(TestEvent.FAILURE_TEST_SUFFIX)) {
-      String testClassName = event.getTestCaseName();
-      String testMethodName = event.getTestMethodName();
-      String key = testClassName + '.' + testMethodName;
-      synchronized (this.myTestMethods) {
-        if (ListSequence.fromList(this.myTestMethods).contains(key)) {
-          ListSequence.fromList(this.myTestMethods).removeElement(key);
+  private void completeTestEvent(TestEvent event) {
+    String testCaseName = event.getTestCaseName();
+    String testMethodName = event.getTestMethodName();
+    if (testMethodName == null) {
+      removeUsedTestCase(testCaseName);
+    } else {
+      removeUsedMethod(testCaseName, testMethodName);
+    }
+  }
+  private void removeUsedMethod(String testCaseName, String testMethodName) {
+    String methodKey = testCaseName + '.' + testMethodName;
+    synchronized (this.myTestMethods) {
+      if (ListSequence.fromList(this.myTestMethods).contains(methodKey)) {
+        ListSequence.fromList(this.myTestMethods).removeElement(methodKey);
+      }
+    }
+  }
+  private void removeUsedTestCase(final String testCaseName) {
+    final List<String> methodsToRemove = ListSequence.fromList(new LinkedList<String>());
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (ITestNodeWrapper testCase : MapSequence.fromMap(TestRunState.this.myTestToMethodsMap).keySet()) {
+          if (testCase.getFqName().equals(testCaseName)) {
+            for (ITestNodeWrapper testMethod : MapSequence.fromMap(myTestToMethodsMap).get(testCase)) {
+              String methodKey = testCaseName + '.' + testMethod.getName();
+              ListSequence.fromList(methodsToRemove).addElement(methodKey);
+            }
+          }
+        }
+      }
+    });
+    synchronized (this.myTestMethods) {
+      for (String methodKey : methodsToRemove) {
+        if (ListSequence.fromList(this.myTestMethods).contains(methodKey)) {
+          ListSequence.fromList(this.myTestMethods).removeElement(methodKey);
         }
       }
     }

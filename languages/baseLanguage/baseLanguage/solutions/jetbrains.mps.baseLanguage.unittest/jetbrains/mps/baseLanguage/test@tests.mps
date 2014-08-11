@@ -6540,7 +6540,7 @@
   <root type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="4395293866213195826" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="TestExpectedType" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="typeSystem" />
-    <property name="canNotRunInProcess" nameId="tpe3.6436735966448189373" value="true" />
+    <property name="canNotRunInProcess" nameId="tpe3.6427619394892729757" value="false" />
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="4395293866213195827" nodeInfo="ng">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4395293866213195828" nodeInfo="ig">
         <property name="name" nameId="tpck.1169194664001" value="ExpectedTest" />

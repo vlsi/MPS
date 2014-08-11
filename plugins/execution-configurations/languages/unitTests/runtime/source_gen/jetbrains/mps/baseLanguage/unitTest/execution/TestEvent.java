@@ -64,6 +64,9 @@ public class TestEvent {
   public long getTime() {
     return this.myTime;
   }
+  public boolean isTestCaseEvent() {
+    return myTestMethodName == null;
+  }
   @Override
   public boolean equals(Object p0) {
     if (p0 == null || !(p0 instanceof TestEvent)) {
@@ -99,7 +102,7 @@ public class TestEvent {
     if (messageString.startsWith(expectedToken)) {
       String params = messageString.substring(expectedToken.length());
       {
-        Pattern _pattern_0 = REGEXP_6m48zo_a0a0b0b0y;
+        Pattern _pattern_0 = REGEXP_6m48zo_a0a0b0b0z;
         Matcher _matcher_0 = _pattern_0.matcher(params);
         if (_matcher_0.matches()) {
           testEvent = new TestEvent(expectedToken, _matcher_0.group(1), _matcher_0.group(2), Long.parseLong(_matcher_0.group(3)), Long.parseLong(_matcher_0.group(4)));
@@ -111,5 +114,5 @@ public class TestEvent {
   static {
     TestEvent.ALL_TOKENS = ListSequence.fromListAndArray(new ArrayList<String>(), TestEvent.START_TEST_PREFIX, TestEvent.END_TEST_PREFIX, TestEvent.ERROR_TEST_PREFIX, TestEvent.ERROR_TEST_SUFFIX, TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX);
   }
-  private static Pattern REGEXP_6m48zo_a0a0b0b0y = Pattern.compile("([^:]+)(?::([^:]+))?:memory=(\\d+):time=(\\d+)", 0);
+  private static Pattern REGEXP_6m48zo_a0a0b0b0z = Pattern.compile("([^:]+)(?::([^:]+))?:memory=(\\d+):time=(\\d+)", 0);
 }

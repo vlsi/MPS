@@ -21,4 +21,8 @@ public class ITestCase_Behavior {
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
     return new ArrayList<SNode>();
   }
+  public static boolean call_canRunInProcess_6436735966448788391(SNode thisNode) {
+    // method is a property 
+    return !(SPropertyOperations.getBoolean(thisNode, "canNotRunInProcess"));
+  }
 }

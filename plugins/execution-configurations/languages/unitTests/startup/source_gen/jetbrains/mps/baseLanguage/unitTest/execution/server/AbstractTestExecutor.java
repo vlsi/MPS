@@ -10,17 +10,20 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.Runner;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.Description;
+import org.junit.runner.notification.Failure;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public abstract class AbstractTestExecutor implements TestExecutor {
-  private AbstractTestExecutor.StoppableRunner myCurrentRunner = null;
+  protected AbstractTestExecutor.StoppableIgnoringRunner myCurrentRunner = null;
+  protected Filter myFilter = new EmptyFilter();
   private RunListener myListener;
 
   @Nullable
-  public AbstractTestExecutor.StoppableRunner getCurrentRunner() {
+  public AbstractTestExecutor.StoppableIgnoringRunner getCurrentRunner() {
     return myCurrentRunner;
   }
 
@@ -44,16 +47,22 @@ public abstract class AbstractTestExecutor implements TestExecutor {
     myListener = createListener(requests);
     core.addListener(myListener);
     if (Sequence.fromIterable(reqSeq).count() > 0) {
-      myCurrentRunner = new AbstractTestExecutor.StoppableRunner(Sequence.fromIterable(reqSeq).first().getRunner());
+      Request firstRequest = Sequence.fromIterable(reqSeq).first();
+      updateRunner(firstRequest);
     }
     return core;
   }
 
   protected void doExecute(JUnitCore core, Iterable<Request> requests) throws Throwable {
     for (Request request : requests) {
-      myCurrentRunner = new AbstractTestExecutor.StoppableRunner(request.getRunner());
+      updateRunner(request);
       core.run(myCurrentRunner);
     }
+  }
+
+  private void updateRunner(Request request) {
+    assert request instanceof TestNodeRequest;
+    myCurrentRunner = new AbstractTestExecutor.StoppableIgnoringRunner(((TestNodeRequest) request), myFilter);
   }
 
   @NotNull
@@ -67,21 +76,35 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   @NotNull
   protected abstract RunListener createListener(Iterable<Request> requests);
 
-  protected static class StoppableRunner extends Runner {
-    private final Runner myRunner;
-    private RunNotifier myNotifier = null;
+  protected static class StoppableIgnoringRunner extends Runner {
+    private final TestNodeRequest myRequest;
+    private final Filter<ITestNodeWrapper> myIgnoringFilter;
+    private volatile RunNotifier myNotifier = null;
 
-    public StoppableRunner(Runner runner) {
-      myRunner = runner;
+    public StoppableIgnoringRunner(TestNodeRequest request, Filter ignoringFilter) {
+      myRequest = request;
+      myIgnoringFilter = ignoringFilter;
     }
 
     public Description getDescription() {
-      return myRunner.getDescription();
+      return myRequest.getRunner().getDescription();
     }
 
     public void run(RunNotifier notifier) {
+      // FIXME: no guarantee during concurrent access 
       myNotifier = notifier;
-      myRunner.run(notifier);
+
+      if (myIgnoringFilter.accept(myRequest.getTestNode())) {
+        myRequest.getRunner().run(notifier);
+      } else {
+        ignoreRequest(notifier);
+      }
+    }
+
+    private void ignoreRequest(RunNotifier notifier) {
+      notifier.fireTestStarted(getDescription());
+      notifier.fireTestAssumptionFailed(new Failure(getDescription(), new Throwable("Ignoring test " + myRequest.getRunner().getDescription().getDisplayName())));
+      notifier.fireTestFinished(getDescription());
     }
 
     public void pleaseStop() {

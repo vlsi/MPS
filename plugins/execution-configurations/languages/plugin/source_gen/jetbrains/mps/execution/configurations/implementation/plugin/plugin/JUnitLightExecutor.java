@@ -8,6 +8,8 @@ import jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor;
 import jetbrains.mps.lang.test.util.TestLightRunState;
 import jetbrains.mps.lang.test.util.TestLightRunStateEnum;
 import com.intellij.execution.process.ProcessHandler;
+import com.intellij.execution.ExecutionException;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.concurrent.Future;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor;
 import com.intellij.openapi.application.ApplicationManager;
@@ -35,7 +37,10 @@ public class JUnitLightExecutor implements Executor {
   }
 
   @Override
-  public ProcessHandler execute() {
+  public ProcessHandler execute() throws ExecutionException {
+    if (myNodes == null || Sequence.fromIterable(myNodes).isEmpty()) {
+      throw new ExecutionException("Could not find tests to run.");
+    }
     if (!(checkExecutionIsPossible())) {
       return new JUnitLightExecutor.EmptyProcessHandler();
     }

@@ -11,6 +11,7 @@ import org.junit.runner.Result;
 import com.intellij.execution.process.ProcessOutputTypes;
 import org.junit.runner.Description;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
+import org.junit.internal.AssumptionViolatedException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -76,6 +77,19 @@ public class TestLightRunListener extends RunListener {
       LOG.debug(TestEvent.FAILURE_TEST_PREFIX + failure.getDescription());
     }
     onTestErrorEvent(TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX, failure);
+  }
+
+  @Override
+  public void testIgnored(Description description) throws Exception {
+    // testIgnored is the only event which does not come with testStarted and testEnded 
+    // we emulate this behaviour below 
+    Failure failure = new Failure(description, new AssumptionViolatedException("The test was ignored"));
+    if (LOG.isDebugEnabled()) {
+      LOG.debug("Ignore " + TestEvent.FAILURE_TEST_PREFIX + failure.getDescription());
+    }
+    testStarted(description);
+    onTestErrorEvent(TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX, failure);
+    testFinished(description);
   }
 
   @Override

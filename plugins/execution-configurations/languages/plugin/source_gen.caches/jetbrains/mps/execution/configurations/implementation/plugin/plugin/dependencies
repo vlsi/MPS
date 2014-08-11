@@ -317,6 +317,7 @@
     <classNode extendsClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor" file="JUnitLightExecutor.java">
+    <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.io.OutputStream" />
@@ -330,6 +331,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcessHandler" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.util.TestLightRunState" />
     <classNode dependClassName="jetbrains.mps.lang.test.util.TestLightRunStateEnum" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

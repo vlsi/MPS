@@ -169,7 +169,6 @@
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior" file="ITestable_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_BehaviorDescriptor" file="ITestable_BehaviorDescriptor.java">

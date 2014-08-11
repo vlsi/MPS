@@ -11,10 +11,10 @@ public class UnitTestOptions {
   private static final String TRACK_RUNNING = PREFIX + ".trackRunning";
   public UnitTestOptions() {
   }
-  public static boolean isHidePased() {
+  public static boolean isHidePassed() {
     return PropertiesComponent.getInstance().getBoolean(HIDE_PASSED, false);
   }
-  public static void setHidePased(boolean hidePassed) {
+  public static void setHidePassed(boolean hidePassed) {
     PropertiesComponent.getInstance().setValue(HIDE_PASSED, hidePassed + "");
   }
   public static boolean isSelectFirstFailded() {

@@ -45,16 +45,16 @@ public class TestToolbarPanel extends JPanel {
   private ToggleAction createHidePassedAction() {
     return new ToggleAction("Hide Passed", "Hide passed tests", AllIcons.RunConfigurations.HidePassed) {
       {
-        setSelected(null, UnitTestOptions.isHidePased());
+        setSelected(null, UnitTestOptions.isHidePassed());
       }
       @Override
       public void setSelected(AnActionEvent event, boolean value) {
-        UnitTestOptions.setHidePased(value);
+        UnitTestOptions.setHidePassed(value);
         myTree.hidePassed(value);
       }
       @Override
       public boolean isSelected(AnActionEvent p0) {
-        return UnitTestOptions.isHidePased();
+        return UnitTestOptions.isHidePassed();
       }
     };
   }

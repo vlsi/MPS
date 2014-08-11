@@ -119,16 +119,13 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     return defaultTestDir.getAbsolutePath();
   }
   public boolean canLightExecute(Iterable<ITestNodeWrapper> testNodes) {
-    return this.getLightExec() && !(this.getDebug()) && new LightExecutionFilter().accept(testNodes);
+    return this.getLightExec() && !(this.getDebug());
   }
   public List<ITestNodeWrapper> getTests(final Project project) {
     if (this.getRunType() == null) {
       return null;
     }
     Iterable<ITestNodeWrapper> testNodes = this.getRunType().collect(this, project);
-    if (canLightExecute(testNodes)) {
-      return Sequence.fromIterable(new LightExecutionFilter().filter(testNodes)).toListSequence();
-    }
     return Sequence.fromIterable(testNodes).toListSequence();
   }
   public boolean hasTests(final Project project) {

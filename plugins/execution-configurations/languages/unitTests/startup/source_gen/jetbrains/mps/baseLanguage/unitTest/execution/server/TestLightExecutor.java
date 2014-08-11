@@ -33,6 +33,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
     myDispatcher = dispatcher;
     myNodes = nodes;
     myTestRunState = testRunState;
+    myFilter = new LightExecutionFilter();
   }
 
   private void waitWhileNotReady() {
@@ -83,11 +84,8 @@ public class TestLightExecutor extends AbstractTestExecutor {
   @Override
   protected void doExecute(JUnitCore core, Iterable<Request> requests) throws Throwable {
     assert myTestRunState.isReady();
-    // TODO: remove this when the feature to skip and ignore tests on-the-fly is available 
-    if (hasAnyRequests(requests)) {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Executing tests in-process...");
-      }
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Executing tests in-process...");
     }
     myTestRunState.advance(TestLightRunStateEnum.RUNNING);
     System.setProperty(TestLightRunState.LIGHT_EXEC_FLAG, "true");
@@ -96,10 +94,6 @@ public class TestLightExecutor extends AbstractTestExecutor {
     } catch (StoppedByUserException exception) {
       terminateProcess(FakeProcess.TERMINATION_CODE);
     }
-  }
-
-  private boolean hasAnyRequests(Iterable<Request> requests) {
-    return requests.iterator().hasNext();
   }
 
   public void terminateRun() {
@@ -120,7 +114,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
   }
 
   private void stopRun() {
-    AbstractTestExecutor.StoppableRunner currentRunner = this.getCurrentRunner();
+    AbstractTestExecutor.StoppableIgnoringRunner currentRunner = this.getCurrentRunner();
     assert currentRunner != null;
     currentRunner.pleaseStop();
   }

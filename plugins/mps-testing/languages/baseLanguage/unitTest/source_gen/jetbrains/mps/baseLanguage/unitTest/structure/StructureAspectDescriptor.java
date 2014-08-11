@@ -38,11 +38,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.Fail").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder").alias("fail", "").staticScope(StaticScope.NONE).create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase").interface_().parents("jetbrains.mps.baseLanguage.unitTest.structure.ITestable", "jetbrains.mps.lang.core.structure.INamedConcept").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase").interface_().parents("jetbrains.mps.baseLanguage.unitTest.structure.ITestable", "jetbrains.mps.lang.core.structure.INamedConcept").properties("canNotRunInProcess").create();
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod").interface_().parents("jetbrains.mps.baseLanguage.unitTest.structure.ITestable").create();
       case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.ITestable").interface_().properties("canNotRunInProcess").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.ITestable").interface_().create();
       case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.Message").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"message"}, new boolean[]{false}).alias("message", "").create();
       case 16:
