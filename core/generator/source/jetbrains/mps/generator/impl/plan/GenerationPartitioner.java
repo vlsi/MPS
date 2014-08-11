@@ -90,8 +90,8 @@ public class GenerationPartitioner {
 
     // solve
     final List<GenerationPhase> generationPhases = mySolver.solve();
-    return phaseAsPlainList(generationPhases);
-//    return phaseGroupedByGenerator(generationPhases);
+//    return phaseAsPlainList(generationPhases);
+    return phaseGroupedByGenerator(generationPhases);
   }
 
   static List<List<TemplateMappingConfiguration>> phaseAsPlainList(List<GenerationPhase> phases) {

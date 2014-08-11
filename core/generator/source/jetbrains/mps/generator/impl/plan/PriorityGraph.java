@@ -96,6 +96,10 @@ class PriorityGraph {
       boolean weakGotUpdate = false; // if there's any change
       Collection<Entry> toAdd = new ArrayList<Entry>();
       for (Entry entry : myRulePriorityEntries) {
+        if (entry.isTrivial()) {
+          // trivial edges are there just for graph completeness, and should not take part in transformations
+          continue;
+        }
         // entry dependency may be substituted for weak dependency
         final boolean substituteForSooner = entry.later().equals(weak.sooner());
         // entry depends on weak dependency
