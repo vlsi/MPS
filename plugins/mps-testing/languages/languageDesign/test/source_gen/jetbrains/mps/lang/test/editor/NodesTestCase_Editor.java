@@ -30,6 +30,11 @@ import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 
 public class NodesTestCase_Editor extends DefaultNodeEditor {
@@ -356,7 +361,28 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ModelAccess_58c6e4_b0a");
     editorCell.setDefaultText(" ");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NodesTestCase_Editor.NodesTestCase_generic_cellMenu_58c6e4_a0b0a(), new NodesTestCase_Editor.NodesTestCase_generic_cellMenu_58c6e4_b0b0a()}));
     return editorCell;
+  }
+  public static class NodesTestCase_generic_cellMenu_58c6e4_a0b0a extends AbstractCellMenuPart_Generic_Item {
+    public NodesTestCase_generic_cellMenu_58c6e4_a0b0a() {
+    }
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "canNotRunInProcess", "" + (true));
+    }
+    public String getMatchingText() {
+      return "false";
+    }
+  }
+  public static class NodesTestCase_generic_cellMenu_58c6e4_b0b0a extends AbstractCellMenuPart_Generic_Item {
+    public NodesTestCase_generic_cellMenu_58c6e4_b0b0a() {
+    }
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "canNotRunInProcess", "" + (false));
+    }
+    public String getMatchingText() {
+      return "true";
+    }
   }
   private EditorCell createCollection_58c6e4_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
@@ -392,6 +418,27 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ModelAccess_58c6e4_b1a");
     editorCell.setDefaultText(" ");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NodesTestCase_Editor.NodesTestCase_generic_cellMenu_58c6e4_a0b1a(), new NodesTestCase_Editor.NodesTestCase_generic_cellMenu_58c6e4_b0b1a()}));
     return editorCell;
+  }
+  public static class NodesTestCase_generic_cellMenu_58c6e4_a0b1a extends AbstractCellMenuPart_Generic_Item {
+    public NodesTestCase_generic_cellMenu_58c6e4_a0b1a() {
+    }
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "needsNoWriteAction", "" + (true));
+    }
+    public String getMatchingText() {
+      return "false";
+    }
+  }
+  public static class NodesTestCase_generic_cellMenu_58c6e4_b0b1a extends AbstractCellMenuPart_Generic_Item {
+    public NodesTestCase_generic_cellMenu_58c6e4_b0b1a() {
+    }
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "needsNoWriteAction", "" + (false));
+    }
+    public String getMatchingText() {
+      return "true";
+    }
   }
 }

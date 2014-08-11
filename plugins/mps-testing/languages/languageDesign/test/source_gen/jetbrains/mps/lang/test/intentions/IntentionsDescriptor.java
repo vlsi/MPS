@@ -21,8 +21,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new AddScopeExpectedNodes_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddScopeTestAnnotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddTestAnnotation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new DisableWriteAction_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new EnableWriteAction_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SpecifyRuleReferences_Intention());
   }
 }
