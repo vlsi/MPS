@@ -22,6 +22,8 @@ public interface MigrationManager {
 
   MigrationState step();
 
+  String currentStep();
+
   public enum MigrationState {
     STEP, CONFLICT, FINISHED
   }

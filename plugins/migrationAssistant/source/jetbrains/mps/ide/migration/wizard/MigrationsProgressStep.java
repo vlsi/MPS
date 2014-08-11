@@ -101,7 +101,7 @@ public class MigrationsProgressStep extends MigrationStep {
   }
 
   private void resolveConflict() {
-    123123
+
   }
 
   @Override
