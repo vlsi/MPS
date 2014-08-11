@@ -20,6 +20,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   protected AbstractTestExecutor.StoppableIgnoringRunner myCurrentRunner = null;
   protected Filter myFilter = new EmptyFilter();
   private RunListener myListener;
+  private volatile boolean myStopping = false;
 
   @Nullable
   public AbstractTestExecutor.StoppableIgnoringRunner getCurrentRunner() {
@@ -59,8 +60,19 @@ public abstract class AbstractTestExecutor implements TestExecutor {
     }
   }
 
+  protected void stopRun() {
+    AbstractTestExecutor.StoppableIgnoringRunner currentRunner = this.getCurrentRunner();
+    assert currentRunner != null;
+    currentRunner.pleaseStop();
+    myStopping = true;
+  }
+
+
   private void updateRunner(Request request) {
     myCurrentRunner = new AbstractTestExecutor.StoppableIgnoringRunner(request, myFilter);
+    if (myStopping) {
+      myCurrentRunner.pleaseStop();
+    }
   }
 
   @NotNull
@@ -89,7 +101,6 @@ public abstract class AbstractTestExecutor implements TestExecutor {
     }
 
     public void run(RunNotifier notifier) {
-      // FIXME: no guarantee during concurrent access 
       myNotifier = notifier;
 
       if (myIgnoringFilter.accept(myRequest)) {

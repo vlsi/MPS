@@ -113,12 +113,6 @@ public class TestLightExecutor extends AbstractTestExecutor {
     myDispatcher.onProcessTerminated(terminateMessage);
   }
 
-  private void stopRun() {
-    AbstractTestExecutor.StoppableIgnoringRunner currentRunner = this.getCurrentRunner();
-    assert currentRunner != null;
-    currentRunner.pleaseStop();
-  }
-
   @NotNull
   @Override
   protected TestsContributor createTestsContributor() {
