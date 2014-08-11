@@ -86,6 +86,7 @@ public class MigrationComponent extends AbstractProjectComponent {
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Could not load migration script for language " + depModule + ", version " + current + ".");
           }
+          return null;
         }
         if (!(script.applicableToModule(module))) {
           return script;
