@@ -5935,6 +5935,30 @@
     <unitInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.TestNotApplicableConvertToTernaryOperatorIntention_Test$TestBody" />
     <unitInfo nodeId="7737741562085730774" fileName="TestNotApplicableConvertToTernaryOperatorIntention_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.TestNotApplicableConvertToTernaryOperatorIntention_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7862343484843564017">
+    <nodeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="18" startPosition="50" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7862343484843564039" fileName="CreateCast_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateCast_Test#()V" />
+    <nodeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_CreateCast#()V" />
+    <nodeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="14" startPosition="28" endLine="14" endPosition="28" />
+    <scopeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="18" startPosition="50" endLine="20" endPosition="91" />
+    <scopeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="59">
+      <varInfo nodeId="7862343484843564017" varName="editor" />
+      <varInfo nodeId="7862343484843564017" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.CreateCast_Test$TestBody" />
+    <unitInfo nodeId="7862343484843564017" fileName="CreateCast_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.CreateCast_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7888701088960167782">
     <nodeInfo nodeId="7888701088960167782" fileName="AddFieldDeclarationCaret_Test.java" startLine="18" startPosition="64" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7888701088960167782" fileName="AddFieldDeclarationCaret_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
