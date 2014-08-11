@@ -47,7 +47,7 @@ import java.util.Set;
  * Date: Mar 27, 2007
  */
 public class GenerationPartitioner {
-  private static final Logger LOG = LogManager.getLogger(GenerationPartitioner.class);
+  private static final Logger LOG = LogManager.getLogger(GenerationPlan.class);
 
   // generators
   private final Collection<TemplateModule> myGenerators;
@@ -90,8 +90,24 @@ public class GenerationPartitioner {
 
     // solve
     final List<GenerationPhase> generationPhases = mySolver.solve();
+    if (LOG.isDebugEnabled()) {
+      dump(generationPhases);
+    }
 //    return phaseAsPlainList(generationPhases);
     return phaseGroupedByGenerator(generationPhases);
+  }
+
+  private static void dump(Collection<GenerationPhase> generationPhases) {
+    StringBuilder sb = new StringBuilder();
+    for (GenerationPhase gp : generationPhases) {
+      sb.append("Phase\n");
+      for (Group g : gp.getGroups()) {
+        sb.append('\t');
+        sb.append(g);
+        sb.append('\n');
+      }
+    }
+    LOG.debug(sb.toString());
   }
 
   static List<List<TemplateMappingConfiguration>> phaseAsPlainList(List<GenerationPhase> phases) {

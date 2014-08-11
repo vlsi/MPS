@@ -4,9 +4,9 @@ package jetbrains.mps.lang.descriptor;
 
 import jetbrains.mps.generator.runtime.TemplateModuleBase;
 import java.util.Collection;
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -17,11 +17,13 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 public class Generator extends TemplateModuleBase {
   public static String MODULE_REF = "3ac18869-0828-4401-abad-822a47bf83f1(jetbrains.mps.lang.descriptor#9020561928507175817)";
   private Language sourceLanguage;
+  private final Collection<TemplateMappingPriorityRule> priorities;
   private final Collection<TemplateModel> models;
   private Collection<String> usedLanguages;
 
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
+    priorities = TemplateUtil.asCollection(TemplateUtil.createBeforeOrTogetherRule(TemplateUtil.createRefExternal("3ac18869-0828-4401-abad-822a47bf83f1(jetbrains.mps.lang.descriptor#9020561928507175817)", TemplateUtil.createRefNormal("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "8780540425167303785")), TemplateUtil.createRefExternal("985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)", TemplateUtil.createRefLocal())));
     models = TemplateUtil.<TemplateModel>asCollection(getTemplateModel("jetbrains.mps.lang.descriptor.generator.template.main.TemplateModelImpl"));
     usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguageInternal", "jetbrains.mps.lang.descriptor", "jetbrains.mps.lang.project");
   }
@@ -38,7 +40,7 @@ public class Generator extends TemplateModuleBase {
 
   @Override
   public Collection<TemplateMappingPriorityRule> getPriorities() {
-    return null;
+    return priorities;
   }
 
   @Override
