@@ -24,12 +24,10 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.project.MPSProject;
 
 public class StartupMigrationExecutor extends AbstractProjectComponent {
-  private final MPSProject myMpsProject;
   private final MigrationManager myMigrationManager;
 
-  protected StartupMigrationExecutor(Project project, MPSProject mpsProject, MigrationManager migrationManager) {
+  protected StartupMigrationExecutor(Project project, MigrationManager migrationManager) {
     super(project);
-    myMpsProject = mpsProject;
     myMigrationManager = migrationManager;
   }
 
@@ -49,6 +47,4 @@ public class StartupMigrationExecutor extends AbstractProjectComponent {
       }
     });
   }
-
-
 }
