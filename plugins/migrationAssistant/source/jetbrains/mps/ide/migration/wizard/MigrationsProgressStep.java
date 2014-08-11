@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.migration.assistant.wizard;
+package jetbrains.mps.ide.migration.wizard;
 
 import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.openapi.application.ApplicationManager;
@@ -28,7 +28,6 @@ import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.ide.migration.assistant.MPSProjectMigrationComponent;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 
 import javax.swing.BorderFactory;

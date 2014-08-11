@@ -70,14 +70,6 @@ public class MigrationProcessor extends AbstractProjectComponent {
     mySelectedActions = new ArrayList<BaseAction>((List<BaseAction>) actions);
   }
 
-  public boolean isProcessing() {
-    return myStarted.get() && !myFinished.get();
-  }
-
-  public boolean isFinished() {
-    return myStarted.get() && myFinished.get();
-  }
-
   public void startProcessing(final JComponent component) {
     if (!myStarted.compareAndSet(false, true)) throw new IllegalStateException("already processing");
 

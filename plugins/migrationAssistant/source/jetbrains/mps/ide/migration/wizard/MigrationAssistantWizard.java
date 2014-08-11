@@ -13,47 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.migration.assistant.wizard;
+package jetbrains.mps.ide.migration.wizard;
 
-import com.intellij.icons.AllIcons.Actions;
 import com.intellij.ide.wizard.AbstractWizardEx;
 import com.intellij.ide.wizard.AbstractWizardStepEx;
 import com.intellij.ide.wizard.AbstractWizardStepEx.Listener;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.icons.MPSIcons.General;
-import jetbrains.mps.icons.MPSIcons.Small;
-import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.FileUtil;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import javax.swing.DefaultListCellRenderer;
-import javax.swing.Icon;
-import javax.swing.JList;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.font.TextAttribute;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
 

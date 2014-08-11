@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.migration.assistant.wizard;
+package jetbrains.mps.ide.migration.wizard;
 
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.ide.wizard.AbstractWizardStepEx;
