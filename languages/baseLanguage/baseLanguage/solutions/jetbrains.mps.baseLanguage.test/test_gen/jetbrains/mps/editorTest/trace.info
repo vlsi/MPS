@@ -1058,25 +1058,26 @@
     <nodeInfo nodeId="7640611121852165507" fileName="ComplexTransformTest_Test.java" startLine="48" startPosition="107" endLine="49" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7640611121852165546" fileName="ComplexTransformTest_Test.java" startLine="49" startPosition="107" endLine="50" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7640611121852165587" fileName="ComplexTransformTest_Test.java" startLine="50" startPosition="107" endLine="51" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236014863171" fileName="ComplexTransformTest_Test.java" startLine="51" startPosition="107" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1570321191484024614" fileName="ComplexTransformTest_Test.java" startLine="52" startPosition="58" endLine="53" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8795077610868316419" fileName="ComplexTransformTest_Test.java" startLine="51" startPosition="107" endLine="52" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236014863171" fileName="ComplexTransformTest_Test.java" startLine="52" startPosition="107" endLine="53" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1570321191484024614" fileName="ComplexTransformTest_Test.java" startLine="53" startPosition="58" endLine="54" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ComplexTransformTest_Test#()V" />
     <nodeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
     <nodeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ComplexTransformTest#()V" />
-    <nodeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="28" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <nodeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="28" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
     <scopeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="14" startPosition="38" endLine="14" endPosition="38" />
     <scopeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
     <scopeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="18" startPosition="60" endLine="20" endPosition="101" />
     <scopeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="29" startPosition="51" endLine="53" endPosition="107">
+    <scopeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="29" startPosition="51" endLine="54" endPosition="107">
       <varInfo nodeId="1236013278645" varName="editor" />
       <varInfo nodeId="1236013278645" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="28" startPosition="0" endLine="55" endPosition="0" />
-    <unitInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="23" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.editorTest.ComplexTransformTest_Test$TestBody" />
-    <unitInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.editorTest.ComplexTransformTest_Test" />
+    <scopeInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="28" startPosition="0" endLine="56" endPosition="0" />
+    <unitInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="23" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.editorTest.ComplexTransformTest_Test$TestBody" />
+    <unitInfo nodeId="1236013278645" fileName="ComplexTransformTest_Test.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.editorTest.ComplexTransformTest_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1236090523881">
     <nodeInfo nodeId="1236090523881" fileName="SideDeleteAtEndWithBackSpace_Test.java" startLine="18" startPosition="68" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
