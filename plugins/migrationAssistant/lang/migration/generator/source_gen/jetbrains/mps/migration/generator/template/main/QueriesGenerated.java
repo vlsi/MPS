@@ -17,6 +17,14 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
 
+  public static Object propertyMacro_GetPropertyValue_7907688626604071274(final PropertyMacroContext _context) {
+    return _context.getOriginalInputModel().getModule().getModuleId().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7907688626603898426(final PropertyMacroContext _context) {
+    return MigrationScript_Behavior.call_getFromVersion_3932724607434564575(_context.getNode());
+  }
+
   public static Object propertyMacro_GetPropertyValue_4436301628119009646(final PropertyMacroContext _context) {
     return MigrationScript_Behavior.call_getClassName_6547769411406912356(_context.getNode());
   }
@@ -43,6 +51,10 @@ public class QueriesGenerated {
 
   public static Iterable<SNode> sourceNodesQuery_586712031919867933(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "body", true), "body", true), "statement", true);
+  }
+
+  public static Iterable<SNode> sourceNodesQuery_1581864402048792984(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "requiresData", true);
   }
 
   public static Iterable<SNode> sourceNodesQuery_5712848521226160537(final SourceSubstituteMacroNodesContext _context) {

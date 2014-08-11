@@ -22,6 +22,8 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import org.jetbrains.mps.openapi.language.SLanguageId;
+import jetbrains.mps.smodel.adapter.IdHelper;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -53,12 +55,16 @@ public class MigrationComponent extends AbstractProjectComponent {
     return MapSequence.fromMap(loadedDescriptors).get(module);
   }
 
+  public void clearCache() {
+    MapSequence.fromMap(loadedDescriptors).clear();
+  }
+
   public boolean isApplied(final MigrationScriptReference script, AbstractModule module) {
-    return Sequence.fromIterable(MigrationsUtil.checkDependenciesVersions(module)).any(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
+    return !(Sequence.fromIterable(MigrationsUtil.checkDependenciesVersions(module)).any(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
       public boolean accept(Tuples._3<SModule, Integer, Integer> it) {
-        return eq_gd1mrb_a0a0a0a0a0a0a4(it._0().getModuleReference(), script.getModuleReference()) && (int) it._1() > script.getFromVersion();
+        return eq_gd1mrb_a0a0a0a0a0a0a0f(it._0().getModuleReference(), script.getModuleReference()) && (int) it._1() <= script.getFromVersion();
       }
-    });
+    }));
   }
 
   public boolean isAppliedForAllMyDeps(final MigrationScriptReference script, final AbstractModule module) {
@@ -87,7 +93,7 @@ public class MigrationComponent extends AbstractProjectComponent {
             LOG.warn("Could not load migration descriptor for language " + depModule + ".");
           }
         }
-        MigrationScript script = check_gd1mrb_a0e0a0a0a6(md, current);
+        MigrationScript script = check_gd1mrb_a0e0a0a0a0h(md, current);
         if (script == null) {
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Could not load migration script for language " + depModule + ", version " + current + ".");
@@ -107,6 +113,10 @@ public class MigrationComponent extends AbstractProjectComponent {
         }
         return null;
       }
+    }).where(new IWhereFilter<MigrationScript>() {
+      public boolean accept(MigrationScript it) {
+        return it != null;
+      }
     });
   }
 
@@ -124,17 +134,24 @@ public class MigrationComponent extends AbstractProjectComponent {
     });
   }
 
+  public void executeScript(MigrationScript script, AbstractModule module) {
+    SLanguageId languageId = IdHelper.getLanguageId(script.getReference().getModuleReference().getModuleId());
+    assert module.getModuleDescriptor().getLanguageVersions().get(languageId) == script.getReference().getFromVersion();
+    script.execute(module);
+    module.getModuleDescriptor().getLanguageVersions().put(languageId, script.getReference().getFromVersion() + 1);
+  }
+
 
   protected static Logger LOG = LogManager.getLogger(MigrationComponent.class);
 
-  private static MigrationScript check_gd1mrb_a0e0a0a0a6(MigrationDescriptor checkedDotOperand, int current) {
+  private static MigrationScript check_gd1mrb_a0e0a0a0a0h(MigrationDescriptor checkedDotOperand, int current) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(current);
     }
     return null;
   }
 
-  private static boolean eq_gd1mrb_a0a0a0a0a0a0a4(Object a, Object b) {
+  private static boolean eq_gd1mrb_a0a0a0a0a0a0a0f(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
