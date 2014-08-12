@@ -93,6 +93,10 @@ public class EditorParenthesisUtil {
   }
 
   public static SNode findRightmostOrLeftmostLeafExpression(SNode root, boolean rightmost) {
+    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression") || SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.NotExpression")) {
+      return root;
+    }
+
     if (rightmost && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getRightSideExpression_7583777362095256690", new Object[]{}) != null) {
       return findRightmostOrLeftmostLeafExpression(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getRightSideExpression_7583777362095256690", new Object[]{}), rightmost);
     }
