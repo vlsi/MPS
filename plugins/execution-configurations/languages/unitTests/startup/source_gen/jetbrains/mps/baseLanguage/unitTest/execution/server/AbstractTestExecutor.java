@@ -69,10 +69,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
 
 
   private void updateRunner(Request request) {
-    myCurrentRunner = new AbstractTestExecutor.StoppableIgnoringRunner(request, myFilter);
-    if (myStopping) {
-      myCurrentRunner.pleaseStop();
-    }
+    myCurrentRunner = new AbstractTestExecutor.StoppableIgnoringRunner(request, myFilter, myStopping);
   }
 
   @NotNull
@@ -87,13 +84,16 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   protected abstract RunListener createListener(Iterable<Request> requests);
 
   protected static class StoppableIgnoringRunner extends Runner {
+    private final Object myLock = "";
     private final Request myRequest;
     private final Filter myIgnoringFilter;
-    private volatile RunNotifier myNotifier = null;
+    private boolean myStopping;
+    private RunNotifier myNotifier = null;
 
-    public StoppableIgnoringRunner(Request request, Filter ignoringFilter) {
+    public StoppableIgnoringRunner(Request request, Filter ignoringFilter, boolean stopping) {
       myRequest = request;
       myIgnoringFilter = ignoringFilter;
+      myStopping = stopping;
     }
 
     public Description getDescription() {
@@ -101,8 +101,12 @@ public abstract class AbstractTestExecutor implements TestExecutor {
     }
 
     public void run(RunNotifier notifier) {
-      myNotifier = notifier;
-
+      synchronized (myLock) {
+        if (myStopping) {
+          notifier.pleaseStop();
+        }
+        myNotifier = notifier;
+      }
       if (myIgnoringFilter.accept(myRequest)) {
         myRequest.getRunner().run(notifier);
       } else {
@@ -117,8 +121,12 @@ public abstract class AbstractTestExecutor implements TestExecutor {
     }
 
     public void pleaseStop() {
-      assert myNotifier != null;
-      myNotifier.pleaseStop();
+      synchronized (myLock) {
+        if (myNotifier != null) {
+          myNotifier.pleaseStop();
+        }
+        myStopping = true;
+      }
     }
   }
   protected static Logger LOG = LogManager.getLogger(AbstractTestExecutor.class);

@@ -33,6 +33,7 @@
   <root type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="6339244025082257302" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="JUnitInProcess" />
     <property name="needsNoWriteAction" nameId="tp5g.6339244025081158986" value="true" />
+    <property name="canNotRunInProcess" nameId="tpe3.6427619394892729757" value="true" />
     <node role="methods" roleId="tp5g.1216993439383" type="tp4f.DefaultClassifierMethodDeclaration" typeId="tp4f.1205769003971" id="4154239884395915009" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getMyModel" />
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SModelType" typeId="tp25.1143226024141" id="4154239884395918462" nodeInfo="in" />

@@ -71,8 +71,8 @@ public class JUnitExecutor implements Executor {
         // option is not selected 
         runIdString = "-D" + CachesUtil.SAVE_CACHES_DIR + "=\"" + cachesDir + "\"";
       }
-      parameters.setVmOptions(vmFromJava + " " + runIdString);
     }
+    parameters.setVmOptions(vmFromJava + " " + runIdString);
     return parameters;
   }
 
