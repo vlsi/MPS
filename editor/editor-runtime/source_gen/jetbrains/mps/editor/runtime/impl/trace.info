@@ -86,7 +86,7 @@
     <nodeInfo nodeId="1182113674817469847" fileName="LanguagesKeymapManager.java" startLine="110" startPosition="41" endLine="111" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1182113674817469861" fileName="LanguagesKeymapManager.java" startLine="111" startPosition="95" endLine="112" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1182113674817469875" fileName="LanguagesKeymapManager.java" startLine="113" startPosition="27" endLine="114" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1182113674817469877" fileName="LanguagesKeymapManager.java" startLine="115" startPosition="5" endLine="116" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1182113674817469877" fileName="LanguagesKeymapManager.java" startLine="115" startPosition="5" endLine="116" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1182113674817540198" fileName="LanguagesKeymapManager.java" startLine="119" startPosition="61" endLine="120" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817469639" fileName="LanguagesKeymapManager.java" startLine="123" startPosition="54" endLine="124" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1182113674817469591" fileName="LanguagesKeymapManager.java" startLine="133" startPosition="39" endLine="134" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -158,7 +158,7 @@
     <scopeInfo nodeId="1182113674817469791" fileName="LanguagesKeymapManager.java" startLine="89" startPosition="13" endLine="96" endPosition="11">
       <varInfo nodeId="1182113674817469793" varName="keyMapClass" />
     </scopeInfo>
-    <scopeInfo nodeId="1182113674817469831" fileName="LanguagesKeymapManager.java" startLine="107" startPosition="73" endLine="116" endPosition="59">
+    <scopeInfo nodeId="1182113674817469831" fileName="LanguagesKeymapManager.java" startLine="107" startPosition="73" endLine="116" endPosition="62">
       <varInfo nodeId="1182113674817540189" varName="fqName" />
       <varInfo nodeId="1182113674817469862" varName="language" />
       <varInfo nodeId="1182113674817469848" varName="languageNamespace" />

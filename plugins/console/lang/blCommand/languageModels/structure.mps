@@ -10,7 +10,7 @@
   <import index="3xdn" modelUID="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" version="3" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5464054275389846505" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="BLCommand" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="baseLanguage command" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="baseLanguage statements" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="{" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407473" resolveInfo="GeneratedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1769790395579689573" nodeInfo="ig">
@@ -37,7 +37,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.query" />
     <property name="name" nameId="tpck.1169194664001" value="UsagesExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#usages" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="direct references in current scope" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="direct references to node" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307205004131544317" resolveInfo="QueryExpression" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8483375838963816172" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -50,6 +50,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
     <property name="name" nameId="tpck.1169194664001" value="ShowExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#show" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="show in usage view" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7006261637496568757" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7006261637496548496" resolveInfo="ConsoleExpression" />
@@ -65,7 +66,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.query" />
     <property name="name" nameId="tpck.1169194664001" value="InstancesExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#instances" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="instances in current scope" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="instances of concept" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307205004131544317" resolveInfo="QueryExpression" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7738379549910147342" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -112,27 +113,28 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.query" />
     <property name="name" nameId="tpck.1169194664001" value="NodesExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#nodes" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="nodes in current scope" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="all nodes in scope" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307205004131544317" resolveInfo="QueryExpression" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6322385757202370749" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.query" />
     <property name="name" nameId="tpck.1169194664001" value="ReferencesExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#references" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="references in current scope" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="all references in scope" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307205004131544317" resolveInfo="QueryExpression" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6864030874027862829" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.query" />
     <property name="name" nameId="tpck.1169194664001" value="ModelsExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#models" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="models in current scope" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="all models in scope" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307205004131544317" resolveInfo="QueryExpression" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6864030874028745314" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.query" />
     <property name="name" nameId="tpck.1169194664001" value="ModulesExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#modules" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="all modules in scope" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307205004131544317" resolveInfo="QueryExpression" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6558068108107691796" nodeInfo="ig">
@@ -223,6 +225,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7656298970878093785" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="BLExpression" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="baseLanguage expression" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407473" resolveInfo="GeneratedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7656298970878093890" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

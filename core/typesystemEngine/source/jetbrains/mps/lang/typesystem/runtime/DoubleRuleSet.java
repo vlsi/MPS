@@ -82,11 +82,6 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
     return myDoubleTermRules.lookupRules(leftTerm, righTerm);
   }
 
-  @Deprecated
-  public void makeConsistent() {
-    // does nothing
-  }
-
   private Iterable<T> getAllApplicableTo(String leftConceptFQName, String rightConceptFQName, LanguageScope scope) {
     Pair<String, String> conceptPair = new Pair<String, String>(leftConceptFQName, rightConceptFQName);
     if (!myRules.containsKey(conceptPair)) return Collections.emptyList();

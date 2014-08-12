@@ -1222,7 +1222,7 @@
                       <property name="name" nameId="tpck.1169194664001" value="icons" />
                       <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1060708206177683470" nodeInfo="nn">
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1060708206177693176" nodeInfo="nn">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wqua.~ClassLoaderManager%dgetClass(org%djetbrains%dmps%dopenapi%dmodule%dSModule,java%dlang%dString)%cjava%dlang%dClass" resolveInfo="getClass" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wqua.~ClassLoaderManager%dgetOwnClass(org%djetbrains%dmps%dopenapi%dmodule%dSModule,java%dlang%dString)%cjava%dlang%dClass" resolveInfo="getOwnClass" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1060708206177705041" nodeInfo="nn">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2434140849679604663" resolveInfo="language" />
                           </node>

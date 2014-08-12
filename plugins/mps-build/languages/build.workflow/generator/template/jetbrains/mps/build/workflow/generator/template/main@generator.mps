@@ -2772,6 +2772,16 @@
                   </node>
                 </node>
               </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5716359503160147178" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
+                <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="5716359503160147230" nodeInfo="ng">
+                  <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+                  <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="5716359503160147232" nodeInfo="ng">
+                    <property name="text" nameId="iuxj.6666499814681541920" value="asm-all.jar" />
+                  </node>
+                </node>
+              </node>
               <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2059109515400477152" nodeInfo="ng">
                 <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
                 <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />

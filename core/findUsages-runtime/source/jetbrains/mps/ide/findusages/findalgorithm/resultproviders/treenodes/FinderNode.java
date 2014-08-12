@@ -132,7 +132,7 @@ public class FinderNode extends BaseLeaf {
       try {
         //todo make it faster by saving language namespace
         for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
-          if (ClassLoaderManager.getInstance().getClass(l, finderName) != null) {
+          if (ClassLoaderManager.getInstance().getOwnClass(l, finderName) != null) {
             myFinder = new ReloadableFinder(l.getModuleReference(), finderName);
             return;
           }

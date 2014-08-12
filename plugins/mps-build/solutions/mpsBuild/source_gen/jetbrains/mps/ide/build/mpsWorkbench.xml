@@ -17,6 +17,7 @@
       <include name="javac2.jar" />
       <include name="jdom.jar" />
       <include name="asm4-all.jar" />
+      <include name="asm-all.jar" />
       <include name="jgoodies-forms.jar" />
     </fileset>
   </path>
@@ -68,7 +69,9 @@
       <fileset dir="${mps_home}/languages/core/core/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.core.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/languages/core/core/solutions/pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/languages/core/core/solutions/pluginSolution/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${mps_home}/languages/core/core/solutions/pluginSolution/jetbrains.mps.lang.core.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-core-core-solutions-pluginSolution-models" prefix="module/models" />
     </jar>
@@ -100,7 +103,9 @@
       <fileset dir="${mps_home}/languages/languageDesign/script/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.script.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/languages/languageDesign/script/solutions/pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/languages/languageDesign/script/solutions/pluginSolution/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${mps_home}/languages/languageDesign/script/solutions/pluginSolution/jetbrains.mps.lang.script.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-script-solutions-pluginSolution-models" prefix="module/models" />
     </jar>
@@ -132,7 +137,9 @@
       <fileset dir="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.typesystem.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/jetbrains.mps.lang.typesystem.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-typesystem-solutions-pluginSolution-models" prefix="module/models" />
     </jar>
@@ -171,8 +178,12 @@
       <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.plugin.standalone-src.jar">
-      <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/generator/source_gen" />
-      <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/source_gen" />
+      <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/generator/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
+      <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${mps_home}/languages/languageDesign/plugin-standalone/jetbrains.mps.lang.plugin.standalone.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-plugin-standalone-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-plugin-standalone-languageModels" prefix="module/languageModels" />
@@ -373,6 +384,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />
@@ -412,6 +424,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />
@@ -491,6 +504,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
@@ -545,6 +559,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
@@ -599,6 +614,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
@@ -646,6 +662,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
@@ -696,6 +713,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />

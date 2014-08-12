@@ -262,16 +262,42 @@
         </node>
       </node>
     </node>
+    <node role="wrapper" roleId="tpdg.1221135321084" type="tpdg.PasteWrapper" typeId="tpdg.1221135315536" id="1433263869220695694" nodeInfo="ng">
+      <link role="targetConcept" roleId="tpdg.1221137152191" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+      <link role="sourceConcept" roleId="tpdg.1221135563864" targetNodeId="3xdn.7656298970878093785" resolveInfo="BLExpression" />
+      <node role="wrapperFunction" roleId="tpdg.1221137217490" type="tpdg.QueryFunction_PasteWrapper" typeId="tpdg.1221137293320" id="1433263869220695695" nodeInfo="nn">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1433263869220695696" nodeInfo="sn">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1433263869220695697" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1433263869220695698" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_nodeToPasteWrap" typeId="tpdg.1221137268788" id="1433263869220695699" nodeInfo="nn" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1433263869220695700" nodeInfo="nn">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.7656298970878093890" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="wrapper" roleId="tpdg.1221135321084" type="tpdg.PasteWrapper" typeId="tpdg.1221135315536" id="6081287228602305633" nodeInfo="ng">
       <link role="sourceConcept" roleId="tpdg.1221135563864" targetNodeId="3xdn.7656298970878093785" resolveInfo="BLExpression" />
-      <link role="targetConcept" roleId="tpdg.1221137152191" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+      <link role="targetConcept" roleId="tpdg.1221137152191" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
       <node role="wrapperFunction" roleId="tpdg.1221137217490" type="tpdg.QueryFunction_PasteWrapper" typeId="tpdg.1221137293320" id="6081287228602305837" nodeInfo="nn">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6081287228602317649" nodeInfo="sn">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6081287228602343236" nodeInfo="nn">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6081287228602343585" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_nodeToPasteWrap" typeId="tpdg.1221137268788" id="6081287228602343235" nodeInfo="nn" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6081287228602350169" nodeInfo="nn">
-                <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.7656298970878093890" />
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1433263869220697094" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1068580123156" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="1433263869220697092" nodeInfo="nn">
+              <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="1433263869220697312" nodeInfo="nn">
+                <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="tpee.1068580123155" resolveInfo="ExpressionStatement" />
+                <node role="values" roleId="tp3r.5455284157993911099" type="tp3r.NodeBuilderInitLink" typeId="tp3r.5455284157994012186" id="1433263869220697565" nodeInfo="ng">
+                  <link role="link" roleId="tp3r.5455284157994012188" targetNodeId="tpee.1068580123156" />
+                  <node role="expression" roleId="tp3r.5455284157993911094" type="tp3r.NodeBuilderExpression" typeId="tp3r.8182547171709752110" id="1433263869220704588" nodeInfo="nn">
+                    <node role="expression" roleId="tp3r.8182547171709752112" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6081287228602343585" nodeInfo="nn">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_nodeToPasteWrap" typeId="tpdg.1221137268788" id="6081287228602343235" nodeInfo="nn" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6081287228602350169" nodeInfo="nn">
+                        <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.7656298970878093890" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

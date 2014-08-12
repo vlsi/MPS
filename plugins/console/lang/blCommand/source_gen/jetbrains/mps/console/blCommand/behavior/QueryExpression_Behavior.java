@@ -4,6 +4,11 @@ package jetbrains.mps.console.blCommand.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class QueryExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +16,18 @@ public class QueryExpression_Behavior {
 
   public static boolean virtual_legalAsStatement_1262430001741498032(SAbstractConcept thisConcept) {
     return true;
+  }
+
+  public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
+    String result = "Supported parameters:\n";
+    if (Sequence.fromIterable(BehaviorReflection.invokeVirtualStatic((Class<Iterable<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), "virtual_getSupportedParameters_4307205004146936444", new Object[]{})).contains(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterScope"))) {
+      result += "scope  (default = project)   scope where to search\n";
+    }
+    if (Sequence.fromIterable(BehaviorReflection.invokeVirtualStatic((Class<Iterable<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), "virtual_getSupportedParameters_4307205004146936444", new Object[]{})).contains(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterIncludeReadOnly"))) {
+      result += "r/o+   (default = false)     also search in read-only models\n";
+    } else {
+      result += "Note: read-only models are included in search scope\n";
+    }
+    return result;
   }
 }

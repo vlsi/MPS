@@ -348,6 +348,7 @@
           </node>
         </node>
       </node>
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="1806760877632924440" nodeInfo="ngu" />
       <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1802459475176573218" nodeInfo="igu">
         <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
         <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -385,6 +386,32 @@
           </node>
         </node>
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="3998760702359231949" nodeInfo="nn">
+          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
+        </node>
+      </node>
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="1806760877632923507" nodeInfo="ngu" />
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1806760877632907064" nodeInfo="igu">
+        <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+        <property name="name" nameId="tpck.1169194664001" value="attachListeners" />
+        <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+        <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="1806760877632907065" nodeInfo="nn" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1806760877632907067" nodeInfo="in" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1806760877632907068" nodeInfo="sn" />
+        <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="1806760877632919281" nodeInfo="nn">
+          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
+        </node>
+      </node>
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="1806760877632925363" nodeInfo="ngu" />
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1806760877632926682" nodeInfo="igu">
+        <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+        <property name="name" nameId="tpck.1169194664001" value="detachListeners" />
+        <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+        <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="1806760877632926683" nodeInfo="nn" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1806760877632926685" nodeInfo="in" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1806760877632926686" nodeInfo="sn" />
+        <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="1806760877632926687" nodeInfo="nn">
           <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
         </node>
       </node>

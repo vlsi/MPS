@@ -31,7 +31,7 @@ public abstract class MergeDriverPacker {
   private static MergeDriverPacker ourInstance;
   private static final Iterable<String> mpsLibJars = Arrays.asList("mps-closures.jar", "mps-collections.jar", "mps-tuples.jar", "mps-core.jar", "mps-openapi.jar");
   protected static Iterable<String> mpsAddJars = Arrays.asList("diffutils-1.2.1.jar");
-  private static final Iterable<String> ideaLibJars = Arrays.asList("asm4-all.jar", "xstream-1.4.3.jar", "guava-14.0.1.jar", "jdom.jar", "log4j.jar", "trove4j.jar", "annotations.jar", "commons-logging-1.1.4.jar");
+  private static final Iterable<String> ideaLibJars = Arrays.asList("asm4-all.jar", "asm-all.jar", "xstream-1.4.3.jar", "guava-14.0.1.jar", "jdom.jar", "log4j.jar", "trove4j.jar", "annotations.jar", "commons-logging-1.1.4.jar");
   private static final Iterable<String> svnJars = Arrays.asList("svnkit.jar", "sequence-library.jar");
   private static final String MERGEDRIVER_PATH = "mergedriver";
   private static final String MERGER_RT = "merger-rt.jar";

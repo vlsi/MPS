@@ -285,7 +285,7 @@
     <unitInfo nodeId="6812098398776640439" fileName="ChangeMethodSignatureDialog.java" startLine="38" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.ide.java.workbench.actions.ChangeMethodSignatureDialog" />
   </root>
   <root nodeRef="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)/6812098398776640803">
-    <unitInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="1" startPosition="0" endLine="15" endPosition="13" unitName="jetbrains.mps.ide.java.workbench.actions.JavaWorkbenchActions" />
+    <unitInfo nodeId="6812098398776640803" fileName="JavaWorkbenchActions.xml" startLine="1" startPosition="0" endLine="19" endPosition="13" unitName="jetbrains.mps.ide.java.workbench.actions.JavaWorkbenchActions" />
   </root>
   <root nodeRef="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)/6930463558351181264">
     <nodeInfo nodeId="6930463558351181264" fileName="NewModelFromSource_Action.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -521,6 +521,84 @@
     </scopeInfo>
     <unitInfo nodeId="3813618677924499376" fileName="NewModelFromSource_Action.java" startLine="162" startPosition="44" endLine="175" endPosition="7" unitName="jetbrains.mps.ide.java.workbench.actions.NewModelFromSource_Action$1" />
     <unitInfo nodeId="6930463558351181264" fileName="NewModelFromSource_Action.java" startLine="52" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.ide.java.workbench.actions.NewModelFromSource_Action" />
+  </root>
+  <root nodeRef="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)/8847793363053922247">
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="22" startPosition="36" endLine="23" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="23" startPosition="41" endLine="24" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="24" startPosition="34" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="29" startPosition="32" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="34" startPosition="9" endLine="35" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="34" startPosition="9" endLine="35" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="37" startPosition="42" endLine="38" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="39" startPosition="7" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="45" startPosition="53" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="47" startPosition="5" endLine="48" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="49" startPosition="61" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="51" startPosition="5" endLine="52" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="53" startPosition="62" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="55" startPosition="5" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8847793363053922250" fileName="AnalyzeClasspath_Action.java" startLine="60" startPosition="9" endLine="61" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8847793363053922259" fileName="AnalyzeClasspath_Action.java" startLine="61" startPosition="139" endLine="62" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8847793363053922264" fileName="AnalyzeClasspath_Action.java" startLine="62" startPosition="31" endLine="63" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="65" startPosition="42" endLine="66" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="71" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="36" startPosition="27" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="36" startPosition="27" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="44" startPosition="95" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="48" startPosition="88" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="52" startPosition="100" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="47" startPosition="5" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="51" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AnalyzeClasspath_Action#()V" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="33" startPosition="89" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="59" startPosition="96" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="33" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="59" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="44" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="29" startPosition="32" endLine="30" endPosition="16" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="34" startPosition="9" endLine="35" endPosition="43" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="37" startPosition="42" endLine="38" endPosition="91" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="45" startPosition="53" endLine="46" endPosition="19" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="49" startPosition="61" endLine="50" endPosition="19" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="53" startPosition="62" endLine="54" endPosition="19" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="65" startPosition="42" endLine="66" endPosition="90" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="22" startPosition="36" endLine="25" endPosition="41" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="36" startPosition="27" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="60" startPosition="9" endLine="63" endPosition="81">
+      <varInfo nodeId="8847793363053922251" varName="tool" />
+    </scopeInfo>
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="64" startPosition="0" endLine="67" endPosition="7">
+      <varInfo nodeId="8847793363053922247" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="44">
+      <varInfo nodeId="8847793363053922247" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="36" startPosition="27" endLine="40" endPosition="44" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="47" startPosition="5" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="51" startPosition="5" endLine="55" endPosition="5" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="33" startPosition="89" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="59" startPosition="96" endLine="68" endPosition="5" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="33" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="8847793363053922247" varName="_params" />
+      <varInfo nodeId="8847793363053922247" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="59" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="8847793363053922247" varName="_params" />
+      <varInfo nodeId="8847793363053922247" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="44" startPosition="95" endLine="56" endPosition="16" />
+    <scopeInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="44" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="8847793363053922247" varName="_params" />
+      <varInfo nodeId="8847793363053922247" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="8847793363053922247" fileName="AnalyzeClasspath_Action.java" startLine="19" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.java.workbench.actions.AnalyzeClasspath_Action" />
   </root>
 </debugInfo>
 
