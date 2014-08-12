@@ -57,7 +57,7 @@ public class MakeMethodFinal_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface")) {
       return false;
     }
     SNode contextNode = editorContext.getSelectedNode();
