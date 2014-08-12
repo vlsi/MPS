@@ -221,9 +221,9 @@ public class QueriesGenerated {
     return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "unordered"));
   }
 
-  public static List<SubstituteAction> sideTransform_ActionsFactory_ConceptDeclaration_2808343416322937442(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<SubstituteAction> sideTransform_ActionsFactory_AbstractConceptDeclaration_2808343416322937442(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), _context.getSourceNode()) {
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, final String pattern) {
         SNode childLink = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
         SPropertyOperations.set(childLink, "metaClass", "aggregation");
@@ -262,13 +262,13 @@ public class QueriesGenerated {
         SNode sourceNode = getSourceNode();
         SNode parent = SNodeOperations.getParent(sourceNode);
         SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), null));
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), null));
       }
     });
     return result;
   }
 
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ConceptDeclaration_2808343416323286372(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractConceptDeclaration_2808343416323286372(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference");
@@ -276,9 +276,9 @@ public class QueriesGenerated {
     }).isEmpty();
   }
 
-  public static List<SubstituteAction> sideTransform_ActionsFactory_ConceptDeclaration_6526839980494516315(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<SubstituteAction> sideTransform_ActionsFactory_AbstractConceptDeclaration_6526839980494516315(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), _context.getSourceNode()) {
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, final String pattern) {
         SNode childLink = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
         SPropertyOperations.set(childLink, "metaClass", "reference");
@@ -317,13 +317,13 @@ public class QueriesGenerated {
         SNode sourceNode = getSourceNode();
         SNode parent = SNodeOperations.getParent(sourceNode);
         SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), null));
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), null));
       }
     });
     return result;
   }
 
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ConceptDeclaration_6526839980494523333(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractConceptDeclaration_6526839980494523333(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference");

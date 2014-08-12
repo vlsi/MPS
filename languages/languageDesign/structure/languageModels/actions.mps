@@ -544,9 +544,9 @@
     <property name="name" nameId="tpck.1169194664001" value="CreateFirstLinkDeclaration" />
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="2808343416322937442" nodeInfo="ng">
       <property name="transformTag" nameId="tpdg.1140829165817" value="ext_2_RTransform" />
-      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="2808343416322941904" nodeInfo="ng">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="2808343416322941906" nodeInfo="ng">
           <node role="handler" roleId="tpdg.1177498207384" type="tpdg.QueryFunction_SideTransform_Handler" typeId="tpdg.1177498227294" id="2808343416322941907" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2808343416322941908" nodeInfo="sn">
@@ -763,7 +763,7 @@
     </node>
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="6526839980494516315" nodeInfo="ng">
       <property name="transformTag" nameId="tpdg.1140829165817" value="ext_3_RTransform" />
-      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
       <node role="precondition" roleId="tpdg.1154622757656" type="tpdg.SideTransformHintSubstitutePreconditionFunction" typeId="tpdg.1154622616118" id="6526839980494523333" nodeInfo="nn">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6526839980494523334" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6526839980494556961" nodeInfo="nn">
@@ -809,7 +809,7 @@
         </node>
       </node>
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="6526839980494562387" nodeInfo="ng">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="6526839980494565773" nodeInfo="ng">
           <node role="handler" roleId="tpdg.1177498207384" type="tpdg.QueryFunction_SideTransform_Handler" typeId="tpdg.1177498227294" id="6526839980494565774" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6526839980494565775" nodeInfo="sn">
