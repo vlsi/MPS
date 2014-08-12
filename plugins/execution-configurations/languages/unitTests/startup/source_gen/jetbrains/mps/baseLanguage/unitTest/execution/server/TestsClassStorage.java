@@ -4,18 +4,35 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class TestsClassStorage {
   private Class<?> tryLoadTestClass(String fqName, SModule module) throws ClassNotFoundException {
     final ClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoader(module);
-    assert classLoader != null;
-    final Class<?> aClass = classLoader.loadClass(fqName);
-    assert aClass != null;
+    final Class<?> aClass = check_wuqr0i_a0b0a(classLoader, fqName);
     return aClass;
   }
 
-  public Class<?> loadTestClass(String fqName, SModule module) throws ClassNotFoundException {
-    final Class<?> aClass = tryLoadTestClass(fqName, module);
-    return aClass;
+  @Nullable
+  public Class<?> loadTestClass(String fqName, SModule module) {
+    try {
+      final Class<?> aClass = tryLoadTestClass(fqName, module);
+      return aClass;
+    } catch (ClassNotFoundException e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Test class cannot be found!", e);
+      }
+      return null;
+    }
+  }
+  protected static Logger LOG = LogManager.getLogger(TestsClassStorage.class);
+  private static Class<?> check_wuqr0i_a0b0a(ClassLoader checkedDotOperand, String fqName) throws ClassNotFoundException {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.loadClass(fqName);
+    }
+    return null;
   }
 }

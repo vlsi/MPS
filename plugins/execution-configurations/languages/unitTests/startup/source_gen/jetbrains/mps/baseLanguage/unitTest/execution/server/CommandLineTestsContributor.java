@@ -63,12 +63,14 @@ public class CommandLineTestsContributor implements TestsContributor {
     }
     return requests;
   }
+
   private void parseRequestFromMethod(List<Request> requests, String s) throws ClassNotFoundException {
     int index = s.lastIndexOf('.');
     String testCase = s.substring(0, index);
     String method = s.substring(index + 1);
     requests.add(Request.method(Class.forName(testCase), method));
   }
+
   private Request parseRequestFromClass(String className) throws ClassNotFoundException {
     return Request.aClass(Class.forName(className));
   }

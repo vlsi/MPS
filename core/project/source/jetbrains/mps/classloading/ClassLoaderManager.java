@@ -193,7 +193,7 @@ public class ClassLoaderManager implements CoreComponent {
       if (customClassLoadingFacet.isValid()) {
         return customClassLoadingFacet.getClassLoader();
       } else {
-        // todo!
+        LOG.warning("Facet " + module.getModuleName() + " is not valid");
         return null;
       }
     }

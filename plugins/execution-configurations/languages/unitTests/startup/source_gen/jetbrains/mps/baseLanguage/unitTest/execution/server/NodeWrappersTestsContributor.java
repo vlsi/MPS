@@ -8,11 +8,14 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.junit.runner.Description;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.junit.runner.Runner;
+import org.junit.runner.notification.RunNotifier;
 
 public class NodeWrappersTestsContributor implements TestsContributor {
   private final Iterable<? extends ITestNodeWrapper> myTestNodes;
@@ -25,35 +28,39 @@ public class NodeWrappersTestsContributor implements TestsContributor {
 
   @Override
   public Iterable<Request> gatherTests() throws Exception {
-    final Exception[] ex = new Exception[1];
     final List<Request> requestList = new ArrayList<Request>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        try {
-          for (ITestNodeWrapper<?> testNode : myTestNodes) {
-            String fqName = testNode.getFqName();
-            final SModule module = getModuleByNode(testNode.getNode());
-            if (testNode.isTestCase()) {
-              final Class<?> aClass = myTestClassStorage.loadTestClass(fqName, module);
-              TestNodeRequest request = new TestNodeRequest(Request.aClass(aClass), testNode);
-              requestList.add(request);
+        for (ITestNodeWrapper<?> testNode : myTestNodes) {
+          String fqName = testNode.getFqName();
+          final SModule module = getModuleByNode(testNode.getNode());
+          if (testNode.isTestCase()) {
+            final Class<?> aClass = myTestClassStorage.loadTestClass(fqName, module);
+            Request requestForClass;
+            if (aClass == null) {
+              requestForClass = new NodeWrappersTestsContributor.EmptyRequest(Description.createSuiteDescription(fqName));
             } else {
-              int index = fqName.lastIndexOf('.');
-              String testFqName = fqName.substring(0, index);
-              final Class aClass = myTestClassStorage.loadTestClass(testFqName, module);
-              String method = fqName.substring(index + 1);
-              TestNodeRequest request = new TestNodeRequest(Request.method(aClass, method), testNode);
-              requestList.add(request);
+              requestForClass = Request.aClass(aClass);
             }
+            TestNodeRequest request = new TestNodeRequest(requestForClass, testNode);
+            requestList.add(request);
+          } else {
+            int index = fqName.lastIndexOf('.');
+            String testFqName = fqName.substring(0, index);
+            String methodName = fqName.substring(index + 1);
+            final Class aClass = myTestClassStorage.loadTestClass(testFqName, module);
+            Request requestForMethod;
+            if (aClass == null) {
+              requestForMethod = new NodeWrappersTestsContributor.EmptyRequest(Description.createTestDescription(testFqName, methodName));
+            } else {
+              requestForMethod = Request.method(aClass, methodName);
+            }
+            TestNodeRequest request = new TestNodeRequest(requestForMethod, testNode);
+            requestList.add(request);
           }
-        } catch (ClassNotFoundException e) {
-          ex[0] = e;
         }
       }
     });
-    if (ex[0] != null) {
-      throw ex[0];
-    }
     return requestList;
   }
 
@@ -63,4 +70,34 @@ public class NodeWrappersTestsContributor implements TestsContributor {
     return ModuleRepositoryFacade.getInstance().getModule(moduleReference);
   }
 
+
+  private static class EmptyRequest extends Request {
+    private final Description myDescription;
+
+    public EmptyRequest(Description description) {
+      myDescription = description;
+    }
+
+    public Runner getRunner() {
+      return new NodeWrappersTestsContributor.EmptyRequest.IgnoringRunner(myDescription);
+    }
+
+    private static class IgnoringRunner extends Runner {
+      private final Description myDescription;
+
+      public IgnoringRunner(Description displayName) {
+        myDescription = displayName;
+      }
+
+      public Description getDescription() {
+        return myDescription;
+      }
+
+      public void run(RunNotifier notifier) {
+        notifier.fireTestStarted(myDescription);
+        notifier.fireTestIgnored(myDescription);
+        notifier.fireTestFinished(myDescription);
+      }
+    }
+  }
 }

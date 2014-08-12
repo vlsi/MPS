@@ -37,7 +37,7 @@ public class LightExecutionFilter implements Filter {
         }
         // cannot run (in-process) test methods from TestCase, which is not executable in the same process 
         if (SNodeOperations.isInstanceOf(rootNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) {
-          result[0] = BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(testNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "call_canRunInProcess_6436735966448788391", new Object[]{});
+          result[0] = BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(rootNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "call_canRunInProcess_6436735966448788391", new Object[]{});
           return;
         }
       }

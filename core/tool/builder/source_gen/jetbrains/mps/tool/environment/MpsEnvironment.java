@@ -6,8 +6,6 @@ import jetbrains.mps.project.PathMacrosProvider;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.tool.builder.util.MpsPlatform;
 import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.ConsoleAppender;
-import org.apache.log4j.SimpleLayout;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
 import jetbrains.mps.RuntimeFlags;
@@ -43,7 +41,7 @@ public class MpsEnvironment implements Environment {
 
     // todo: plugins, libs 
 
-    BasicConfigurator.configure(new ConsoleAppender(new SimpleLayout()));
+    BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.INFO);
 
     myPlatformLoader = new MpsPlatform();
