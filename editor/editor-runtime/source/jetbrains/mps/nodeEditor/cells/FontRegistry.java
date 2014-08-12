@@ -34,12 +34,12 @@ import java.util.Map;
  * User: shatalin
  * Date: 06/08/14
  */
-class FontRegistry {
+public class FontRegistry {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(FontRegistry.class));
 
   private static FontRegistry ourInstance;
 
-  static FontRegistry getInstance() {
+  public static FontRegistry getInstance() {
     if (ourInstance == null) {
       ourInstance = new FontRegistry();
     }
@@ -78,7 +78,7 @@ class FontRegistry {
     }
   }
 
-  Font getFont(String fontName, int style, int size) {
+  public Font getFont(String fontName, int style, int size) {
     String key = fontName + "#" + style + "#" + size;
     Font result = myFontsCache.get(key);
     if (result == null) {
@@ -89,7 +89,7 @@ class FontRegistry {
     return result;
   }
 
-  boolean isFakeItalic(String fontName, int style) {
+  public boolean isFakeItalic(String fontName, int style) {
     if (!SystemInfo.isMac || (style & Font.ITALIC) == 0) {
       return false;
     }
@@ -97,7 +97,7 @@ class FontRegistry {
     return fontEntry == null || fontEntry.getFontName(style) == null;
   }
 
-  FontMetrics getFontMetrics(Font font) {
+  public FontMetrics getFontMetrics(Font font) {
     FontMetrics result = myFontMetricsCache.get(font);
     if (result == null) {
       result = Toolkit.getDefaultToolkit().getFontMetrics(font);
