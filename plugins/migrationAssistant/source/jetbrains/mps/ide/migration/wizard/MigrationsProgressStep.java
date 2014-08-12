@@ -76,6 +76,8 @@ public class MigrationsProgressStep extends MigrationStep {
   @Override
   public void onAfterUpdate() {
     super.onAfterUpdate();
+    if (myFinished) return;
+
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
         doRun();
@@ -84,6 +86,9 @@ public class MigrationsProgressStep extends MigrationStep {
   }
 
   private void doRun() {
+    //if this assert fails, following invokeLater()s is not needed
+    assert !SwingUtilities.isEventDispatchThread();
+
     MigrationState result = MigrationState.STEP;
 
     PersistenceRegistry.getInstance().disableFastFindUsages();
@@ -91,8 +96,6 @@ public class MigrationsProgressStep extends MigrationStep {
       final DefaultListModel model = (DefaultListModel) myList.getModel();
       final String step = myManager.currentStep();
 
-      //if this assert fails, the following invokeLater() is not needed
-      assert !SwingUtilities.isEventDispatchThread();
       SwingUtilities.invokeLater(new Runnable() {
         @Override
         public void run() {
@@ -110,6 +113,12 @@ public class MigrationsProgressStep extends MigrationStep {
     PersistenceRegistry.getInstance().enableFastFindUsages();
 
     myFinished = true;
+    SwingUtilities.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        fireStateChanged();
+      }
+    });
   }
 
   private void resolveConflict() {

@@ -69,10 +69,4 @@ public class MigrationsFinishedStep extends MigrationStep {
     // too late for that
     return null;
   }
-
-  @Override
-  public Object getNextStepId() {
-    // next step is the error report
-    return null;
-  }
 }
