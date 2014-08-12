@@ -17,14 +17,27 @@ package jetbrains.mps.ide.migration;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.AbstractProjectComponent;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import jetbrains.mps.ide.migration.StartupMigrationExecutor.MyState;
 import jetbrains.mps.project.MPSProject;
+import org.jetbrains.annotations.Nullable;
 
-public class StartupMigrationExecutor extends AbstractProjectComponent {
+@State(
+        name = "StartupMigrationExecutor",
+        storages = {
+            @Storage(file = StoragePathMacros.WORKSPACE_FILE)
+        }
+    )
+public class StartupMigrationExecutor extends AbstractProjectComponent implements PersistentStateComponent<MyState> {
   private final MigrationManager myMigrationManager;
+  private MyState myState = new MyState();
 
   protected StartupMigrationExecutor(Project project, MigrationManager migrationManager) {
     super(project);
@@ -39,12 +52,31 @@ public class StartupMigrationExecutor extends AbstractProjectComponent {
       public void run() {
         ApplicationManager.getApplication().assertWriteAccessAllowed();
 
-        VirtualFileManager.getInstance().syncRefresh();
-        ProjectManagerEx.getInstance().reloadProject(myProject);
-
-        MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager);
-        wizard.showAndGetOk();
+        if (!myState.reloadFinished) {
+          VirtualFileManager.getInstance().syncRefresh();
+          myState.reloadFinished = true;
+          ProjectManagerEx.getInstance().reloadProject(myProject);
+        } else{
+          myState.reloadFinished = false;
+          MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager);
+          wizard.showAndGetOk();
+        }
       }
     });
+  }
+
+  @Nullable
+  @Override
+  public MyState getState() {
+    return myState;
+  }
+
+  @Override
+  public void loadState(MyState state) {
+    myState = state;
+  }
+
+  public static class MyState{
+    public boolean reloadFinished = false;
   }
 }
