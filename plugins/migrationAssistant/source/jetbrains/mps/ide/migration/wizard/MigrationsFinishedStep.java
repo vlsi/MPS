@@ -69,4 +69,9 @@ public class MigrationsFinishedStep extends MigrationStep {
     // too late for that
     return null;
   }
+
+  @Override
+  public boolean canBeCancelled() {
+    return false;
+  }
 }

@@ -39,7 +39,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   @Override
   protected void updateStep() {
     super.updateStep();
-    getCancelAction().setEnabled(((MigrationStep) getCurrentStepObject()).canBeCancelled());
+    getCancelButton().setEnabled(((MigrationStep) getCurrentStepObject()).canBeCancelled());
   }
 
   @Override
@@ -48,11 +48,16 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     final Runnable task = ((MigrationStep) getCurrentStepObject()).getAutostartTask();
     if (task != null) {
-      SwingUtilities.invokeLater(new Runnable() {
+      ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
         @Override
         public void run() {
-          ApplicationManager.getApplication().executeOnPooledThread(task);
-          updateStep();
+          task.run();
+          SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+              updateStep();
+            }
+          });
         }
       });
     }

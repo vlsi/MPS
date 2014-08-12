@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.migration.wizard;
 
 import com.intellij.ide.wizard.CommitStepException;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.components.JBList;
@@ -34,11 +33,14 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class MigrationsProgressStep extends MigrationStep {
   private boolean myFinished;
   private MigrationManager myManager;
   private JBList myList;
+  private Set<String> myExecuted = new HashSet<String>();
 
   public MigrationsProgressStep(Project project, MigrationManager manager) {
     super(project, "Migration In Progress", "progress");
@@ -52,7 +54,7 @@ public class MigrationsProgressStep extends MigrationStep {
     myComponent.add(new JLabel("Applying migrations:"), BorderLayout.NORTH);
 
     myList = new JBList(new DefaultListModel());
-    myList.setCellRenderer(new MigrationsListRenderer(Collections.emptySet(), Collections.emptySet()));
+    myList.setCellRenderer(new MigrationsListRenderer(myExecuted, Collections.emptySet()));
 
     JPanel listPanel = new JPanel(new BorderLayout(5, 5));
     listPanel.setBorder(BorderFactory.createCompoundBorder(
