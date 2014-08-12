@@ -902,17 +902,22 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   public void validateLanguageVersions() {
+    assertCanChange();
     Map<SLanguageId, Integer> oldLanguageVersions = getModuleDescriptor().getLanguageVersions();
     Map<SLanguageId, Integer> newLanguageVersions = new HashMap<SLanguageId, Integer>();
     for (SLanguage lang : getAllUsedLanguages()) {
       if (oldLanguageVersions.containsKey(lang.getId())) {
         newLanguageVersions.put(lang.getId(), oldLanguageVersions.get(lang.getId()));
       } else {
+        setChanged();
         newLanguageVersions.put(lang.getId(), lang.getLanguageVersion());
       }
     }
-    oldLanguageVersions.clear();
-    oldLanguageVersions.putAll(newLanguageVersions);
+    if (oldLanguageVersions.size() != newLanguageVersions.size()) {
+      setChanged();
+      oldLanguageVersions.clear();
+      oldLanguageVersions.putAll(newLanguageVersions);
+    }
   }
 
 }
