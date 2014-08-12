@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
+import jetbrains.mps.util.containers.MultiMap;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ class PriorityGraph {
     final Group lowPriorityGroup = new Group(tmc);
     final Set<MappingPriorityRule> ruleSet = Collections.singleton(rule);
     for (TemplateMappingConfiguration sooner : appliedSooner) {
-      myRulePriorityEntries.add(new Entry(lowPriorityGroup, new Group(sooner), isStrict, ruleSet));
+      myRulePriorityEntries.add(new Entry(new Group(sooner), lowPriorityGroup, isStrict, ruleSet));
     }
     myNonTrivialEdges.add(tmc);
   }
@@ -113,11 +114,11 @@ class PriorityGraph {
         mergedRules.addAll(weak.getRules());
         if (substituteForSooner) {
           // A <= B; X < A, Y <= A   -->  add rules X < B, Y <= B
-          newEntry = new Entry(weak.later(), entry.sooner(), entry.isStrict(), mergedRules);
+          newEntry = new Entry(entry.sooner(), weak.later(), entry.isStrict(), mergedRules);
         } else {
           assert dependsOnWeak;
           // A <= B; B < C, B <= D   --> add rules A < C, A <= D
-          newEntry = new Entry(entry.later(), weak.sooner(), entry.isStrict(), mergedRules);
+          newEntry = new Entry(weak.sooner(), entry.later(), entry.isStrict(), mergedRules);
         }
         toAdd.add(newEntry);
         if (!newEntry.isStrict() && !newEntry.isTrivial()) {
@@ -126,7 +127,7 @@ class PriorityGraph {
       }
       if (!weakGotUpdate) {
         // neither lhs nor rhs of the weak edge is part of any other edge, it's safe to replace it with strict
-        toAdd.add(new Entry(weak.later(), weak.sooner(), true, weak.getRules()));
+        toAdd.add(new Entry(weak.sooner(), weak.later(), true, weak.getRules()));
         // Does A <= B without any dependant rules effectively means A and B are independent?
         // perhaps, shall replace with two edges, later -> empty and sooner -> empty instead?
       }
@@ -154,8 +155,9 @@ class PriorityGraph {
     // if there's no mapping that establish relation for coherent mapping (i.e. only 'trivial' mappings), replace these trivial mappings with single
     // one with the coherent group
     Collection<Entry> toRemove = new HashSet<Entry>();
-    Collection<Entry> toAdd = new HashSet<Entry>();
     for (Group g : coherentMappings) {
+      Collection<Entry> hiPriCoherentToAdd = new HashSet<Entry>();
+      Collection<Entry> loPriCoherentToAdd = new HashSet<Entry>();
       boolean coherentGroupNeedsTrivialEdge = true;
       for (Entry entry : myRulePriorityEntries) {
         final boolean soonerMatches = g.includes(entry.sooner());
@@ -174,24 +176,59 @@ class PriorityGraph {
         }
         toRemove.add(entry);
         if (soonerMatches) {
+          // coherent group matches sooner/hi-pri side
           // introduce a new edge, from entry's later to coherent group
-          toAdd.add(new Entry(entry.later(), g, entry.isStrict(), entry.getRules()));
+          hiPriCoherentToAdd.add(new Entry(g, entry.later(), entry.isStrict(), entry.getRules()));
         }
         if (laterMatches) {
+          // coherent group matches low-pri side.
           // There's little value replacing 'element of coherent'->empty. with 'coherent group'->empty, unless there are no other rules.
           // I use coherentGroupNeedsTrivialEdge to track if there's an entry 'coherent'->non-empty
           if (!entry.isTrivial()) {
-            toAdd.add(new Entry(g, entry.sooner(), entry.isStrict(), entry.getRules()));
+            loPriCoherentToAdd.add(new Entry(entry.sooner(), g, entry.isStrict(), entry.getRules()));
             coherentGroupNeedsTrivialEdge = false;
           }
         }
       }
+
+      HashSet<Entry> toAdd = new HashSet<Entry>();
+      // Remove duplicates, A<X, B<X, C<X, {ABC} is replaced with single {ABC} < X instead of 3 equivalent edges
+      MultiMap<Group, Entry> groupByLater = new MultiMap<Group, Entry>();
+      for (Entry e : hiPriCoherentToAdd) {
+        assert e.sooner().equals(g);
+        groupByLater.putValue(e.later(), e);
+      }
+      for (Group loPri : groupByLater.keySet()) {
+        Set<MappingPriorityRule> involvedRules = new HashSet<MappingPriorityRule>();
+        boolean atLeastOneStrict = false; // A < X, B <= X, {AB} - strict edge if there's at least 1 strict edge
+        for (Entry e : groupByLater.get(loPri)) {
+          involvedRules.addAll(e.getRules());
+          atLeastOneStrict |= e.isStrict();
+        }
+        toAdd.add(new Entry(g, loPri, atLeastOneStrict, involvedRules));
+      }
+      // Remove duplicates, X<A, X<B, X<C, {ABC} is replaced with single X < {ABC} instead of 3 equivalent edges
+      MultiMap<Group, Entry> groupBySooner = new MultiMap<Group, Entry>();
+      for (Entry e : loPriCoherentToAdd) {
+        assert e.later().equals(g);
+        groupBySooner.putValue(e.sooner(), e);
+      }
+      for (Group hiPri : groupBySooner.keySet()) {
+        Set<MappingPriorityRule> involvedRules = new HashSet<MappingPriorityRule>();
+        boolean atLeastOneStrict = false; // X < A, X <= B, {AB} - strict edge if there's at least 1 strict edge
+        for (Entry e : groupBySooner.get(hiPri)) {
+          involvedRules.addAll(e.getRules());
+          atLeastOneStrict |= e.isStrict();
+        }
+        toAdd.add(new Entry(hiPri, g, atLeastOneStrict, involvedRules));
+      }
+      //
+      //
       if (coherentGroupNeedsTrivialEdge) {
         toAdd.add(newTrivialEdge(g));
       }
       myRulePriorityEntries.addAll(toAdd);
       myRulePriorityEntries.removeAll(toRemove);
-      toAdd.clear();
       toRemove.clear();
     }
   }
@@ -279,7 +316,7 @@ class PriorityGraph {
   }
 
   private static Entry newTrivialEdge(Group g) {
-    return new Entry(g, new Group(), false, Collections.<MappingPriorityRule>emptyList());
+    return new Entry(new Group(), g, false, Collections.<MappingPriorityRule>emptyList());
   }
 
   // Edge of dependency graph
@@ -290,7 +327,7 @@ class PriorityGraph {
     // rules this relation originates from
     private final Set<MappingPriorityRule> myRules;
 
-    public Entry(Group lowPriorityGroup, Group highPriorityGroup, boolean strict, Collection<MappingPriorityRule> rules) {
+    public Entry(Group highPriorityGroup, Group lowPriorityGroup, boolean strict, Collection<MappingPriorityRule> rules) {
       myLaterGroup = lowPriorityGroup;
       mySoonerGroup = highPriorityGroup;
       myStrict = strict;

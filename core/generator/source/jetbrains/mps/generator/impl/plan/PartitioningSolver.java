@@ -98,7 +98,7 @@ public class PartitioningSolver {
     List<Group> coherentMappings = joinSameStepMappings();
     myPriorityGraph.updateWithCoherent(coherentMappings, myConflicts);
 
-    myPriorityGraph.replaceWeakEdgesWithStrict();
+//    myPriorityGraph.replaceWeakEdgesWithStrict();
 
     boolean topPriorityGroup = false;
     ArrayDeque<Collection<Group>> stack = new ArrayDeque<Collection<Group>>();
