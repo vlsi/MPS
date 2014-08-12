@@ -68,7 +68,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
   protected boolean canCancel() {
     for (AbstractWizardStepEx step : mySteps) {
-      if (((MigrationStep) step).isPostComplete()) {
+      if (((MigrationStep) step).canBeCancelled()) {
         return false;
       }
     }

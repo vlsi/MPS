@@ -102,8 +102,8 @@ public abstract class MigrationStep extends AbstractWizardStepEx {
     return true;
   }
 
-  public boolean isPostComplete() {
-    return false;
+  public boolean canBeCancelled() {
+    return true;
   }
 
   public void onAfterUpdate() {

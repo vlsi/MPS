@@ -26,6 +26,7 @@ import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.ide.migration.MigrationManager.MigrationState;
 import jetbrains.mps.migration.component.util.MigrationScript;
@@ -87,11 +88,19 @@ public class MigrationsProgressStep extends MigrationStep {
 
     PersistenceRegistry.getInstance().disableFastFindUsages();
     while (result != MigrationState.FINISHED) {
-      DefaultListModel model = (DefaultListModel) myList.getModel();
-      String step = myManager.currentStep();
-      model.addElement(step);
-      myList.ensureIndexIsVisible(model.indexOf(step));
-      myList.repaint();
+      final DefaultListModel model = (DefaultListModel) myList.getModel();
+      final String step = myManager.currentStep();
+
+      //if this assert fails, the following invokeLater() is not needed
+      assert !SwingUtilities.isEventDispatchThread();
+      SwingUtilities.invokeLater(new Runnable() {
+        @Override
+        public void run() {
+          model.addElement(step);
+          myList.ensureIndexIsVisible(model.indexOf(step));
+          myList.repaint();
+        }
+      });
 
       result = myManager.step();
       if (result == MigrationState.CONFLICT) {
@@ -121,8 +130,8 @@ public class MigrationsProgressStep extends MigrationStep {
   }
 
   @Override
-  public boolean isPostComplete() {
-    return myFinished;
+  public boolean canBeCancelled() {
+    return false;
   }
 
   @Override
