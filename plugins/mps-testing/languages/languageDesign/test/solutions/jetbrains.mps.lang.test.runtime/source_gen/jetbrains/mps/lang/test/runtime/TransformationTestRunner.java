@@ -165,7 +165,13 @@ public class TransformationTestRunner implements TestRunner {
     }
     dispose(projectTest);
     if (exception[0] != null) {
+      if (LOG.isInfoEnabled()) {
+        LOG.info("Test failed");
+      }
       throw exception[0];
+    }
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Test passed");
     }
   }
 
