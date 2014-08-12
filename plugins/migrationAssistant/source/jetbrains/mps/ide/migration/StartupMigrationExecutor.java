@@ -62,7 +62,17 @@ public class StartupMigrationExecutor extends AbstractProjectComponent implement
         } else{
           myState.reloadFinished = false;
           MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager);
-          wizard.showAndGetOk();
+          wizard.showAndGetOk().doWhenProcessed(new Runnable() {
+            @Override
+            public void run() {
+              ApplicationManager.getApplication().runWriteAction(new Runnable() {
+                @Override
+                public void run() {
+                  ProjectManagerEx.getInstance().reloadProject(myProject);
+                }
+              });
+            }
+          });
         }
       }
     });
