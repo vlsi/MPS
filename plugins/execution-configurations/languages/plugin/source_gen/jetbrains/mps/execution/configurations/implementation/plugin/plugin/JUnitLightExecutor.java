@@ -36,7 +36,7 @@ public class JUnitLightExecutor implements Executor {
   @Override
   public ProcessHandler execute() throws ExecutionException {
     if (myNodes == null || Sequence.fromIterable(myNodes).isEmpty()) {
-      throw new ExecutionException("Could not find tests to run.");
+      throw new ExecutionException("Could not find tests to run");
     }
     if (!(checkExecutionIsPossible())) {
       return new JUnitLightExecutor.EmptyProcessHandler();

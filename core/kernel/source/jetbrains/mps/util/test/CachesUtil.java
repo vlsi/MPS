@@ -27,6 +27,7 @@ public final class CachesUtil {
   private static final String PROPERTY_CONFIG_PATH = "idea.config.path";
   private static final String PROPERTY_SYSTEM_PATH = "idea.system.path";
   public static final String REUSE_CACHES_DIR = "mps.test.reuse_caches_dir";
+  public static final String SAVE_CACHES_DIR = "mps.test.save_caches_dir";
 
   private static final List<File> TO_REMOVE = new ArrayList<File>();
 
@@ -35,8 +36,9 @@ public final class CachesUtil {
   public static void setupCaches() {
     final Checker cachesPathChecker = new CachesPathChecker(System.getProperty(PROPERTY_CONFIG_PATH), System.getProperty(PROPERTY_SYSTEM_PATH));
     final Checker reusableCachesChecker = new MPSReusableCachesChecker();
+    final Checker saveCachesChecker = new MPSSaveCachesChecker();
     final Checker oneTimeCachesChecker = new MPSOneTimeCachesChecker();
-    Checker[] checkers = {cachesPathChecker, reusableCachesChecker, oneTimeCachesChecker};
+    Checker[] checkers = {cachesPathChecker, reusableCachesChecker, saveCachesChecker, oneTimeCachesChecker};
 
     Result result = null;
     for (Checker checker : checkers) {
@@ -108,6 +110,34 @@ public final class CachesUtil {
         return Result.create(true, testConfigPath.getAbsolutePath(), testSystemPath.getAbsolutePath());
       }
       return Result.UNSUCCESSFUL;
+    }
+  }
+
+  private static class MPSSaveCachesChecker implements Checker {
+
+    public MPSSaveCachesChecker() {
+    }
+
+    @Override
+    public Result check() {
+      final String cachesDir = System.getProperty(SAVE_CACHES_DIR);
+      if (cachesDir == null) {
+        return Result.UNSUCCESSFUL;
+      }
+      File testConfigPath = new File(cachesDir, "config");
+      File testSystemPath = new File(cachesDir, "system");
+      if (FileUtil.canWrite(testConfigPath) && FileUtil.canWrite(testSystemPath)) {
+        testConfigPath.mkdirs();
+        testSystemPath.mkdir();
+        cleanFolders(testConfigPath, testSystemPath);
+        return Result.create(true, testConfigPath.getAbsolutePath(), testSystemPath.getAbsolutePath());
+      }
+      return Result.UNSUCCESSFUL;
+    }
+
+    private void cleanFolders(File testConfigPath, File testSystemPath) {
+      FileUtil.clear(testConfigPath);
+      FileUtil.clear(testSystemPath);
     }
   }
 

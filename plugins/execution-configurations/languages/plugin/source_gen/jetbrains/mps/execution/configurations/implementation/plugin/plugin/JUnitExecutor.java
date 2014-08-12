@@ -59,20 +59,29 @@ public class JUnitExecutor implements Executor {
     if (vmFromJava == null) {
       vmFromJava = "";
     }
+    String runIdString;
     if (reuseCaches) {
-      String runIdString = "-D" + CachesUtil.REUSE_CACHES_DIR + "=\"" + cachesDir + "\"";
-      parameters.setVmOptions(vmFromJava + " " + runIdString);
+      runIdString = "-D" + CachesUtil.REUSE_CACHES_DIR + "=\"" + cachesDir + "\"";
     } else {
       if (myJUnitSettings.getReuseCaches()) {
         // could not acquire the lock 
-        UIUtil.invokeLaterIfNeeded(new Runnable() {
-          public void run() {
-            ToolWindowManager.getInstance(myProject).notifyByBalloon(myExecutor.getId(), MessageType.WARNING, "Cannot reuse caches, because the directory is locked by another run.\nSaving caches in the " + " temp directory...");
-          }
-        });
+        runIdString = "";
+        showWarning();
+      } else {
+        // option is not selected 
+        runIdString = "-D" + CachesUtil.SAVE_CACHES_DIR + "=\"" + cachesDir + "\"";
       }
+      parameters.setVmOptions(vmFromJava + " " + runIdString);
     }
     return parameters;
+  }
+
+  private void showWarning() {
+    UIUtil.invokeLaterIfNeeded(new Runnable() {
+      public void run() {
+        ToolWindowManager.getInstance(myProject).notifyByBalloon(myExecutor.getId(), MessageType.WARNING, "Cannot reuse caches, because the directory is locked by another run.\nSaving caches in the " + " tmp directories");
+      }
+    });
   }
 
 }
