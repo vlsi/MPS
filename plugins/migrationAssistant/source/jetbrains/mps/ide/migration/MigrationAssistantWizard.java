@@ -18,60 +18,43 @@ package jetbrains.mps.ide.migration;
 import com.intellij.ide.wizard.AbstractWizardEx;
 import com.intellij.ide.wizard.AbstractWizardStepEx;
 import com.intellij.ide.wizard.AbstractWizardStepEx.Listener;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.migration.wizard.InitialStep;
 import jetbrains.mps.ide.migration.wizard.MigrationStep;
 import jetbrains.mps.ide.migration.wizard.MigrationsFinishedStep;
 import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
 
+import javax.swing.SwingUtilities;
 import java.util.Arrays;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
   public MigrationAssistantWizard(Project project, MigrationManager manager) {
     super("Migration Assistant Wizard", project, Arrays.asList(
         new InitialStep(project),
-        new MigrationsProgressStep(project,manager),
+        new MigrationsProgressStep(project, manager),
         new MigrationsFinishedStep(project)));
-  }
-
-  @Override
-  public void addStep(AbstractWizardStepEx step) {
-    super.addStep(step);
-    step.addStepListener(new Listener() {
-      @Override
-      public void doNextAction() {
-      }
-
-      @Override
-      public void stateChanged() {
-        updateStep();
-      }
-    });
-  }
-
-  @Override
-  public void doCancelAction() {
-    super.doCancelAction();
-    if (!canCancel()) {
-      Messages.showErrorDialog(getContentPane(), "Migration can't be cancelled at this point. Please select Finish.", "Migration Assistant");
-    }
   }
 
   @Override
   protected void updateStep() {
     super.updateStep();
-    getCancelAction().setEnabled(canCancel());
-    MigrationStep step = (MigrationStep) getCurrentStepObject();
-    step.onAfterUpdate();
+    getCancelAction().setEnabled(((MigrationStep) getCurrentStepObject()).canBeCancelled());
   }
 
-  protected boolean canCancel() {
-    for (AbstractWizardStepEx step : mySteps) {
-      if (((MigrationStep) step).canBeCancelled()) {
-        return false;
-      }
+  @Override
+  protected void doNextAction() {
+    super.doNextAction();
+
+    final Runnable task = ((MigrationStep) getCurrentStepObject()).getAutostartTask();
+    if (task != null) {
+      SwingUtilities.invokeLater(new Runnable() {
+        @Override
+        public void run() {
+          ApplicationManager.getApplication().executeOnPooledThread(task);
+          updateStep();
+        }
+      });
     }
-    return true;
   }
 }

@@ -17,22 +17,15 @@ package jetbrains.mps.ide.migration.wizard;
 
 import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Pair;
-import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.ide.migration.MigrationManager.MigrationState;
 import jetbrains.mps.migration.component.util.MigrationScript;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
@@ -41,9 +34,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 public class MigrationsProgressStep extends MigrationStep {
   private boolean myFinished;
@@ -74,15 +64,12 @@ public class MigrationsProgressStep extends MigrationStep {
   }
 
   @Override
-  public void onAfterUpdate() {
-    super.onAfterUpdate();
-    if (myFinished) return;
-
-    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+  public Runnable getAutostartTask() {
+    return new Runnable() {
       public void run() {
         doRun();
       }
-    });
+    };
   }
 
   private void doRun() {
@@ -113,12 +100,6 @@ public class MigrationsProgressStep extends MigrationStep {
     PersistenceRegistry.getInstance().enableFastFindUsages();
 
     myFinished = true;
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        fireStateChanged();
-      }
-    });
   }
 
   private void resolveConflict() {

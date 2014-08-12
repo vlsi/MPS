@@ -45,7 +45,7 @@ public class MigrationsFinishedStep extends MigrationStep {
         "<br><br>" +
         "Your project files have been upgraded to be used with the latest version of MPS." +
         "<br><br>" +
-        "The wizard can now be closed and your project will be loaded."
+        "The wizard can now be closed and your project will be reloaded."
     );
     info.setEditable(false);
     info.addHyperlinkListener(new HyperlinkListener() {

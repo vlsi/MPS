@@ -38,7 +38,6 @@ public class MigrationsListRenderer extends DefaultListCellRenderer {
   private static Icon EMPTY_ICON = new Icon() {
     @Override
     public void paintIcon(Component component, Graphics graphics, int i, int i1) {
-
     }
 
     @Override
