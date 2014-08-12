@@ -35,16 +35,27 @@ import java.util.List;
  */
 public class AbstractCellMenuPart_ApplySideTransforms implements SubstituteInfoPartExt {
 
-  private final CellSide cellSide;
+  private final CellSide myCellSide;
+  private final String myTag;
 
+  /**
+   * @deprecated since MPS 3.1 remove in MPS 3.2
+   */
+  @Deprecated
   public AbstractCellMenuPart_ApplySideTransforms(CellSide cellSide) {
-    this.cellSide = cellSide;
+    myCellSide = cellSide;
+    myTag = null;
+  }
+
+  public AbstractCellMenuPart_ApplySideTransforms(CellSide cellSide, String tag) {
+    myCellSide = cellSide;
+    myTag = tag;
   }
 
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode node = (SNode) cellContext.get(CellContext.EDITED_NODE);
-    List<SubstituteAction> list = ModelActions.createSideTransformHintSubstituteActions(node, cellSide, null, editorContext.getOperationContext());
+    List<SubstituteAction> list = ModelActions.createSideTransformHintSubstituteActions(node, myCellSide, myTag, editorContext.getOperationContext());
 
     List<SubstituteAction> wrapperList = new ArrayList<SubstituteAction>(list.size());
     for (final SubstituteAction action : list) {
