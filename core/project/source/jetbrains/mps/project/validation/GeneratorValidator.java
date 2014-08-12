@@ -69,20 +69,31 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
       }
       depScan.walk(model);
     }
-    Set<String> extendedLanguages = new HashSet<String>();
     Language sourceLanguage = myModule.getSourceLanguage();
     usedLanguages.remove(sourceLanguage.getModuleName());
 
+    Set<SModule> extendedLanguages = new HashSet<SModule>();
     for (Language language : LanguageDependenciesManager.getAllExtendedLanguages(sourceLanguage)) {
-      extendedLanguages.add(language.getModuleName());
+      extendedLanguages.add(language);
+    }
+    Set<SModule> generatesIntoLanguages = new HashSet<SModule>();
+    for (SDependency dep : sourceLanguage.getDeclaredDependencies()) {
+      if (dep.getScope() == SDependencyScope.GENERATES_INTO) {
+        generatesIntoLanguages.add(dep.getTarget());
+      }
     }
 
     for (String lang : usedLanguages) {
+      // XXX We shall check if sourceLanguage doesn't import runtime dependencies (those demanded by extended languages) explicitly
+      // to avoid false warnings e.g. when we target BaseLanguage (with JDK as run-time) and have MPS.Core (which re-exports JDK) as our own dependency
+      // FIXME why on earth we don't use GlobalModuleDependencyManager here?
       Language language = ModuleRepositoryFacade.getInstance().getModule(lang, Language.class);
-      if (language == null) continue;
-
-      if (!extendedLanguages.contains(lang) && !language.getRuntimeModulesReferences().isEmpty()) {
-        warnings.add(sourceLanguage + " should extend " + lang);
+      if (language == null || language.getRuntimeModulesReferences().isEmpty()) {
+        continue;
+      }
+      // language we generate into (target) has runtime, check we've got appropriate dependency
+      if (!extendedLanguages.contains(language) && !generatesIntoLanguages.contains(language)) {
+        warnings.add(String.format("%s shall specify language %s as generation target", sourceLanguage, lang));
       }
     }
     HashSet<SModule> seen = new HashSet<SModule>();

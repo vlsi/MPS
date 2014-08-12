@@ -482,11 +482,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
 
       private List<SDependencyScope> getItemsForCell(DependenciesTableItem item) {
-        List<SDependencyScope> scopes = new ArrayList<SDependencyScope>(Arrays.asList(SDependencyScope.DEFAULT));
-        if (isLangToLang(item) || isGenToGen(item)) {
+        List<SDependencyScope> scopes = new ArrayList<SDependencyScope>(5);
+        scopes.add(SDependencyScope.DEFAULT);
+        if (isLangToLang(item)) {
           scopes.add(SDependencyScope.EXTENDS);
+          scopes.add(SDependencyScope.GENERATES_INTO);
         }
         if (isGenToGen(item)) {
+          scopes.add(SDependencyScope.EXTENDS);
           // DESIGN dependencies between generators allows use of referenced generators in priority rules without
           // imposing any run-time dependency between generators.
           scopes.add(SDependencyScope.DESIGN);
