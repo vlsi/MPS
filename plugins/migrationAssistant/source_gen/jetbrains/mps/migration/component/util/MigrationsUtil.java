@@ -17,6 +17,13 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.language.SLanguageId;
+import jetbrains.mps.smodel.adapter.IdHelper;
+import org.jetbrains.mps.openapi.module.SDependency;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -29,31 +36,22 @@ public class MigrationsUtil {
     return module.getModuleName() + "." + MIGRATIONS_MODEL_NAME;
   }
 
-
-
-
   public static SModel getMigrationModel(final SModule module) {
     Iterable<SModel> models = module.getModels();
     return Sequence.fromIterable(models).findFirst(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return eq_7hm1hv_a0a0a0a0a0b0g(it.getModelName(), module.getModuleName() + "." + MIGRATIONS_MODEL_NAME);
+        return eq_7hm1hv_a0a0a0a0a0b0e(it.getModelName(), module.getModuleName() + "." + MIGRATIONS_MODEL_NAME);
       }
     });
   }
-
-
 
   public static String getDescriptorFQName(SModule module) {
     return SModelOperations.getModelName(getMigrationModel(module)) + "." + getDescriptorClassName(module);
   }
 
-
-
   public static String getDescriptorClassName(SModule module) {
     return "MigrationDescriptorImpl";
   }
-
-
 
   public static Iterable<Tuples._3<SModule, Integer, Integer>> getDependenciesToMigrate(final AbstractModule module) {
     return Sequence.fromIterable(checkDependenciesVersions(module)).where(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
@@ -75,20 +73,53 @@ public class MigrationsUtil {
     List<Tuples._3<SModule, Integer, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._3<SModule, Integer, Integer>>());
     for (SLanguage lang : SetSequence.fromSet(module.getUsedLanguages())) {
       if (module.getModuleDescriptor().getLanguageVersions().get(lang.getId()) != lang.getLanguageVersion()) {
-        ListSequence.fromList(result).addElement(MultiTuple.<SModule,Integer,Integer>from(lang.getSourceModule(), module.getModuleDescriptor().getLanguageVersions().get(lang.getId()), as_7hm1hv_a0c0a0a0a0c0n(lang.getSourceModule(), Language.class).getLanguageVersion()));
+        ListSequence.fromList(result).addElement(MultiTuple.<SModule,Integer,Integer>from(lang.getSourceModule(), module.getModuleDescriptor().getLanguageVersions().get(lang.getId()), as_7hm1hv_a0c0a0a0a0c0i(lang.getSourceModule(), Language.class).getLanguageVersion()));
       }
     }
     return result;
   }
 
+  public static void executeScript(MigrationScript script, AbstractModule module) {
+    SLanguageId languageId = IdHelper.getLanguageId(script.getReference().getModuleReference().getModuleId());
+    assert module.getModuleDescriptor().getLanguageVersions().get(languageId) == script.getReference().getFromVersion();
+    script.execute(module);
+    module.getModuleDescriptor().getLanguageVersions().put(languageId, script.getReference().getFromVersion() + 1);
+  }
+
+  public static boolean isApplied(final MigrationScriptReference script, AbstractModule module) {
+    return !(Sequence.fromIterable(MigrationsUtil.checkDependenciesVersions(module)).any(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
+      public boolean accept(Tuples._3<SModule, Integer, Integer> it) {
+        return eq_7hm1hv_a0a0a0a0a0a0a0k(it._0().getModuleReference(), script.getModuleReference()) && (int) it._1() <= script.getFromVersion();
+      }
+    }));
+  }
+
+  public static boolean isAppliedForAllMyDeps(final MigrationScriptReference script, final AbstractModule module) {
+    Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();
+    Set<SModule> dependencies = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable(declaredDependencies).translate(new ITranslator2<SDependency, SModule>() {
+      public Iterable<SModule> translate(SDependency it) {
+        return new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
+      }
+    }));
+    SetSequence.fromSet(dependencies).addElement(module);
+    return SetSequence.fromSet(dependencies).all(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
+        return isApplied(script, (AbstractModule) it);
+      }
+    });
+  }
 
   protected static Logger LOG = LogManager.getLogger(MigrationsUtil.class);
 
-  private static boolean eq_7hm1hv_a0a0a0a0a0b0g(Object a, Object b) {
+  private static boolean eq_7hm1hv_a0a0a0a0a0b0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static <T> T as_7hm1hv_a0c0a0a0a0c0n(Object o, Class<T> type) {
+  private static <T> T as_7hm1hv_a0c0a0a0a0c0i(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
+  }
+
+  private static boolean eq_7hm1hv_a0a0a0a0a0a0a0k(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }
