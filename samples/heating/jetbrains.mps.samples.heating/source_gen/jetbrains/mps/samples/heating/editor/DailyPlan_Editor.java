@@ -154,7 +154,7 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
 
   public static class ApplySideTransforms_left_cellMenu_dgzt1x_a0e0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_left_cellMenu_dgzt1x_a0e0() {
-      super(CellSide.LEFT);
+      super(CellSide.LEFT, "");
     }
   }
 

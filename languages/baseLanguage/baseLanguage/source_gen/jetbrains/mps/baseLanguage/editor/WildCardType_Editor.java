@@ -45,7 +45,7 @@ public class WildCardType_Editor extends DefaultNodeEditor {
 
   public static class ApplySideTransforms_null_cellMenu_9alae4_a0a0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_9alae4_a0a0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
 }
