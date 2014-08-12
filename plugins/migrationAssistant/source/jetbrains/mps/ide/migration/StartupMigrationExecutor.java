@@ -25,6 +25,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.util.Consumer;
 import jetbrains.mps.ide.migration.StartupMigrationExecutor.MyState;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
@@ -64,9 +65,10 @@ public class StartupMigrationExecutor extends AbstractProjectComponent implement
           MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager);
 
           //final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence)
-          wizard.showAndGetOk().doWhenProcessed(new Runnable() {
+          wizard.showAndGetOk().doWhenDone(new Consumer<Boolean>() {
             @Override
-            public void run() {
+            public void consume(Boolean finished) {
+              if (!finished) return;
               ApplicationManager.getApplication().runWriteAction(new Runnable() {
                 @Override
                 public void run() {
