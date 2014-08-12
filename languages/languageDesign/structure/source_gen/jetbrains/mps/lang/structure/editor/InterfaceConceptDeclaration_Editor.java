@@ -21,14 +21,13 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -110,8 +109,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         }
       };
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-      editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("TransactionalProperty_7v1nzk_b0a");
       editorCell.setDefaultText("<no name>");
       editorCell.setCommitInCommand(false);
@@ -279,7 +276,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createRefNodeList_7v1nzk_c1c0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new InterfaceConceptDeclaration_Editor.propertyDeclarationListHandler_7v1nzk_c1c0(node, "propertyDeclaration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_propertyDeclaration");
+    editorCell.setCellId("emptyPropertiesPlaceHolder");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
