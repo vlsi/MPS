@@ -18,6 +18,8 @@ import org.apache.log4j.Level;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -114,39 +116,55 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   private MigrationManager.MigrationState lastState = null;
 
   public boolean isMigrationRequired() {
-    if (mpsProject == null) {
-      return false;
-    }
-    Iterable<? extends SModule> modules = mpsProject.getModules();
-    return Sequence.fromIterable(modules).any(new IWhereFilter<SModule>() {
-      public boolean accept(SModule it) {
-        return Sequence.fromIterable(MigrationsUtil.getDependenciesToMigrate((AbstractModule) it)).isNotEmpty();
+    final Wrappers._boolean result = new Wrappers._boolean(false);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        if (mpsProject == null) {
+          result.value = false;
+        }
+        Iterable<? extends SModule> modules = mpsProject.getModules();
+        result.value = Sequence.fromIterable(modules).any(new IWhereFilter<SModule>() {
+          public boolean accept(SModule it) {
+            return Sequence.fromIterable(MigrationsUtil.getDependenciesToMigrate((AbstractModule) it)).isNotEmpty();
+          }
+        });
       }
     });
+    return result.value;
   }
 
   public MigrationManager.MigrationState step() {
-    Iterable<Pair<MigrationScript, AbstractModule>> allStepScripts = fetchScripts();
-    Iterable<Pair<MigrationScript, AbstractModule>> availableScripts = Sequence.fromIterable(allStepScripts).where(new IWhereFilter<Pair<MigrationScript, AbstractModule>>() {
-      public boolean accept(Pair<MigrationScript, AbstractModule> it) {
-        return isAvailable(it);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        Iterable<Pair<MigrationScript, AbstractModule>> allStepScripts = fetchScripts();
+        Iterable<Pair<MigrationScript, AbstractModule>> availableScripts = Sequence.fromIterable(allStepScripts).where(new IWhereFilter<Pair<MigrationScript, AbstractModule>>() {
+          public boolean accept(Pair<MigrationScript, AbstractModule> it) {
+            return isAvailable(it);
+          }
+        });
+        if (Sequence.fromIterable(allStepScripts).isNotEmpty()) {
+          MigrationsUtil.executeScript(Sequence.fromIterable(availableScripts).first().first, Sequence.fromIterable(availableScripts).first().second);
+          lastState = MigrationManager.MigrationState.STEP;
+        } else {
+          if (Sequence.fromIterable(allStepScripts).isEmpty()) {
+            lastState = MigrationManager.MigrationState.FINISHED;
+          } else {
+            lastState = MigrationManager.MigrationState.CONFLICT;
+          }
+        }
       }
     });
-    if (Sequence.fromIterable(allStepScripts).isNotEmpty()) {
-      MigrationsUtil.executeScript(Sequence.fromIterable(availableScripts).first().first, Sequence.fromIterable(availableScripts).first().second);
-      return MigrationManager.MigrationState.STEP;
-    } else {
-      if (Sequence.fromIterable(allStepScripts).isEmpty()) {
-        return MigrationManager.MigrationState.FINISHED;
-      } else {
-        lastState = MigrationManager.MigrationState.CONFLICT;
-        return MigrationManager.MigrationState.CONFLICT;
-      }
-    }
+    return lastState;
   }
 
   public String currentStep() {
-    return Sequence.fromIterable(fetchScripts()).first() + "";
+    final Wrappers._T<String> result = new Wrappers._T<String>();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        result.value = Sequence.fromIterable(fetchScripts()).first() + "";
+      }
+    });
+    return result.value;
   }
 
   public Iterable<Pair<MigrationScript, AbstractModule>> getConflictingScripts() {
@@ -156,8 +174,12 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return fetchScripts();
   }
 
-  public void forceExecution(Pair<MigrationScript, AbstractModule> p) {
-    MigrationsUtil.executeScript(p.first, p.second);
+  public void forceExecution(final Pair<MigrationScript, AbstractModule> p) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        MigrationsUtil.executeScript(p.first, p.second);
+      }
+    });
   }
 
 
