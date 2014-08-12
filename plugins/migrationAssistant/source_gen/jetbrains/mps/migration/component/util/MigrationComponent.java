@@ -15,9 +15,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
@@ -68,7 +68,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
             LOG.warn("Could not load migration descriptor for language " + depModule + ".");
           }
         }
-        MigrationScript script = check_gd1mrb_a0e0a0a0a6(md, current);
+        MigrationScript script = check_gd1mrb_a0e0a0a0a0g(md, current);
         if (script == null) {
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Could not load migration script for language " + depModule + ", version " + current + ".");
@@ -76,6 +76,10 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
           return null;
         }
         return script;
+      }
+    }).where(new IWhereFilter<MigrationScript>() {
+      public boolean accept(MigrationScript script) {
+        return script != null;
       }
     });
   }
@@ -119,9 +123,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     final Wrappers._boolean result = new Wrappers._boolean(false);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        if (mpsProject == null) {
-          result.value = false;
-        }
         Iterable<? extends SModule> modules = mpsProject.getModules();
         result.value = Sequence.fromIterable(modules).any(new IWhereFilter<SModule>() {
           public boolean accept(SModule it) {
@@ -185,7 +186,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
 
   protected static Logger LOG = LogManager.getLogger(MigrationComponent.class);
 
-  private static MigrationScript check_gd1mrb_a0e0a0a0a6(MigrationDescriptor checkedDotOperand, int current) {
+  private static MigrationScript check_gd1mrb_a0e0a0a0a0g(MigrationDescriptor checkedDotOperand, int current) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(current);
     }
