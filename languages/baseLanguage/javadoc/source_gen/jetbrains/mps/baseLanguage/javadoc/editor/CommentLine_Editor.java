@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
@@ -72,11 +72,7 @@ public class CommentLine_Editor extends DefaultNodeEditor {
 
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
-      return this.nodeFactory(listOwner, editorContext);
-    }
-
-    public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      return SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", null);
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
 
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
