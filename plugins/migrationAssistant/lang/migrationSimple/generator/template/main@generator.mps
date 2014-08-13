@@ -28,12 +28,6 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="qiib.1309355481570203576" resolveInfo="PatternMigrationScript" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="1309355481571154599" />
     </node>
-    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1309355481571296710" nodeInfo="ng">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="qiib.1309355481570918579" resolveInfo="MigrationsPatternVariableReference" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1309355481571296711" nodeInfo="nn">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1309355481571296708" resolveInfo="reduce_MigrationsPatternVariableReference" />
-      </node>
-    </node>
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1309355481571296708" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="reduce_MigrationsPatternVariableReference" />
@@ -242,6 +236,16 @@
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="1309355481571545331" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="qiib.1309355481570203576" resolveInfo="PatternMigrationScript" />
+    </node>
+  </root>
+  <root type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="8866965183499244460" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="pattern" />
+    <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="true" />
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1309355481571296710" nodeInfo="ng">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="qiib.1309355481570918579" resolveInfo="MigrationsPatternVariableReference" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1309355481571296711" nodeInfo="nn">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1309355481571296708" resolveInfo="reduce_MigrationsPatternVariableReference" />
+      </node>
     </node>
   </root>
 </model>
