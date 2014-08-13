@@ -1,3 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot />
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.migration.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.migration.constraints.MigrationScript_Constraints" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.migration.constraints.MigrationScript_Constraints" file="MigrationScript_Constraints.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+</dependenciesRoot>
 

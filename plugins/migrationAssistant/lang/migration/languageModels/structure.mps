@@ -51,6 +51,9 @@
       <property name="role" nameId="tpce.1071599776563" value="deserialize" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="586712031919985984" resolveInfo="MigrationScriptDeserialize" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8866965183499033758" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3290421837437511158" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MigrationScriptApplicable" />

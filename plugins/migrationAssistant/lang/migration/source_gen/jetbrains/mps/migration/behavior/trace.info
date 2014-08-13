@@ -25,7 +25,7 @@
       <unit at="9,0,36,0" name="jetbrains.mps.migration.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="MigrationScript_BehaviorDescriptor.java">
-      <unit at="7,0,20,0" name="jetbrains.mps.migration.behavior.MigrationScript_BehaviorDescriptor" />
+      <unit at="9,0,26,0" name="jetbrains.mps.migration.behavior.MigrationScript_BehaviorDescriptor" />
     </file>
     <file name="MigrationScriptSerialize_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.migration.behavior.MigrationScriptSerialize_BehaviorDescriptor" />

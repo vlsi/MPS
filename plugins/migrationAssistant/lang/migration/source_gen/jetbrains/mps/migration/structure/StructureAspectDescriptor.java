@@ -20,7 +20,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptPersistedData").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("dataString", "").create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.MigrationScript").super_("jetbrains.mps.migration.structure.AbstractMigrationScript").parents("jetbrains.mps.migration.structure.AbstractMigrationScript").children(new String[]{"dataType", "body", "applicable", "requiresData", "serialize", "deserialize"}, new boolean[]{false, false, false, true, false, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.MigrationScript").super_("jetbrains.mps.migration.structure.AbstractMigrationScript").parents("jetbrains.mps.migration.structure.AbstractMigrationScript", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"dataType", "body", "applicable", "requiresData", "serialize", "deserialize"}, new boolean[]{false, false, false, true, false, false}).create();
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.MigrationScriptApplicable").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
       case 5:
