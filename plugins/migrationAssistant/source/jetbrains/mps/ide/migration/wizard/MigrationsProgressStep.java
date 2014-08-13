@@ -81,7 +81,7 @@ public class MigrationsProgressStep extends MigrationStep {
     MigrationState result = MigrationState.STEP;
 
     PersistenceRegistry.getInstance().disableFastFindUsages();
-    while (result != MigrationState.FINISHED) {
+    while (result != MigrationState.FINISHED && result != MigrationState.ERROR) {
       final DefaultListModel model = (DefaultListModel) myList.getModel();
       final String step = myManager.currentStep();
 
@@ -101,7 +101,9 @@ public class MigrationsProgressStep extends MigrationStep {
     }
     PersistenceRegistry.getInstance().enableFastFindUsages();
 
-    myFinished = true;
+    if (result == MigrationState.FINISHED) {
+      myFinished = true;
+    }
   }
 
   private void resolveConflict() {

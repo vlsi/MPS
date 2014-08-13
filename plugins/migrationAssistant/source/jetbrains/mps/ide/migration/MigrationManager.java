@@ -33,6 +33,6 @@ public interface MigrationManager {
   void forceExecution(Pair<MigrationScript, AbstractModule> next);
 
   public enum MigrationState {
-    STEP, CONFLICT, FINISHED
+    STEP, CONFLICT, FINISHED, ERROR
   }
 }

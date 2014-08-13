@@ -148,7 +148,11 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
           lastState = MigrationManager.MigrationState.STEP;
         } else {
           if (Sequence.fromIterable(allStepScripts).isEmpty()) {
-            lastState = MigrationManager.MigrationState.FINISHED;
+            if (isMigrationRequired()) {
+              lastState = MigrationManager.MigrationState.FINISHED;
+            } else {
+              lastState = MigrationManager.MigrationState.ERROR;
+            }
           } else {
             lastState = MigrationManager.MigrationState.CONFLICT;
           }
