@@ -22,6 +22,9 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
@@ -121,6 +124,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
       editorCell.getStyle().putAll(style);
+      editorCell.addKeyMap(new InsertAnEmptyCommentLine());
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -149,11 +153,14 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     if (renderingCondition_q2jz9e_a5c0(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNodeList_q2jz9e_f2a(editorContext, node));
     }
+    if (renderingCondition_q2jz9e_a6c0(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_q2jz9e_g2a(editorContext, node));
+    }
     return editorCell;
   }
 
   private static boolean renderingCondition_q2jz9e_a2a(SNode node, EditorContext editorContext) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{})) || SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated");
   }
 
   private EditorCell createConstant_q2jz9e_a2a(EditorContext editorContext, SNode node) {
@@ -435,6 +442,22 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_q2jz9e_a5c0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty();
+  }
+
+  private EditorCell createConstant_q2jz9e_g2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@deprecated");
+    editorCell.setCellId("Constant_q2jz9e_g2a");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
+    DeleteDeprecationOnAttributedNode.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_q2jz9e_a6c0(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated");
   }
 
   private EditorCell createConstant_q2jz9e_d0(EditorContext editorContext, SNode node) {

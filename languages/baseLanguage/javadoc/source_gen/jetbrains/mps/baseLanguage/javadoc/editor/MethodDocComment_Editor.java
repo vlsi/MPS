@@ -23,6 +23,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -130,6 +132,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_ls0i5e_a1a0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_ls0i5e_a1a0");
+      editorCell.addKeyMap(new InsertAnEmptyCommentLine());
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -162,13 +165,16 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createRefNodeList_ls0i5e_g2a0(editorContext, node));
     }
     if (renderingCondition_ls0i5e_a7c0a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNode_ls0i5e_h2a0(editorContext, node));
+      editorCell.addEditorCell(this.createConstant_ls0i5e_h2a0(editorContext, node));
+    }
+    if (renderingCondition_ls0i5e_a8c0a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNode_ls0i5e_i2a0(editorContext, node));
     }
     return editorCell;
   }
 
   private static boolean renderingCondition_ls0i5e_a2a0(SNode node, EditorContext editorContext) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{})) || SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated");
   }
 
   private EditorCell createConstant_ls0i5e_a2a0(EditorContext editorContext, SNode node) {
@@ -506,7 +512,24 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsTag", true)).isNotEmpty();
   }
 
-  private EditorCell createRefNode_ls0i5e_h2a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ls0i5e_h2a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@deprecated");
+    editorCell.setCellId("Constant_ls0i5e_h2a0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    DeleteDeprecationOnAttributedNode.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_ls0i5e_a7c0a(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated");
+  }
+
+  private EditorCell createRefNode_ls0i5e_i2a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("return");
     provider.setNoTargetText("<no return>");
@@ -531,7 +554,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ls0i5e_a7c0a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_ls0i5e_a8c0a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "return", true) != null);
   }
 

@@ -15,6 +15,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new AddAuthorBlockDocTag_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddClassifierDocComment_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddDeprecatedBlockDocTag_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddFieldDocComment_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddMethodDocComment_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddParameterBlockDocTag_Intention());

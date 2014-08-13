@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class IBLDeprecatable_Behavior {
@@ -28,6 +30,10 @@ public class IBLDeprecatable_Behavior {
       }
     }
     return false;
+  }
+
+  public static boolean call_shouldDeprecatedDocBeVisible_8362517669638582065(SNode thisNode) {
+    return (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")) == null)) || (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")) == null)) || (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") && (AttributeOperations.getAttribute(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")) == null)) || (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier") && (AttributeOperations.getAttribute(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")) == null));
   }
 
   public static String virtual_getMessage_1225207468592(SNode thisNode) {

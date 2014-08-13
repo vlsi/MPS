@@ -10100,48 +10100,54 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1224848545824">
     <file name="IBLDeprecatable_Behavior.java">
-      <node id="1224848553385" at="16,67,17,18" concept="13" />
-      <node id="3316774609316125844" at="20,165,21,90" concept="12" />
-      <node id="1224848553393" at="22,128,23,19" concept="5" />
-      <node id="1224848553413" at="25,89,26,22" concept="13" />
-      <node id="1224848553433" at="29,5,30,17" concept="13" />
-      <node id="1225207612515" at="33,73,34,47" concept="12" />
-      <node id="1225207612520" at="34,47,35,133" concept="6" />
-      <node id="1225207612527" at="35,133,36,36" concept="6" />
-      <node id="1225207612587" at="36,36,37,29" concept="13" />
-      <node id="1224848545824" at="12,0,14,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1224848553380" at="15,76,18,5" concept="10" />
-      <node id="1224848553391" at="21,90,24,9" concept="10" />
-      <node id="1224848553411" at="24,9,27,9" concept="10" />
-      <node id="1224848545824" at="33,0,39,0" concept="17" trace="virtual_getMessage_1225207468592#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1224848553389" at="19,103,28,7" concept="9" />
-      <node id="1224848553387" at="18,5,29,5" concept="10" />
-      <node id="1224848545824" at="15,0,32,0" concept="17" trace="virtual_isDeprecated_1224609060727#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1224848545826" at="12,43,12,43" />
-      <scope id="1224848553384" at="16,67,17,18" />
-      <scope id="1224848553392" at="22,128,23,19" />
-      <scope id="1224848553412" at="25,89,26,22" />
-      <scope id="1224848545824" at="12,0,14,0">
+      <node id="1224848553385" at="18,67,19,18" concept="13" />
+      <node id="3316774609316125844" at="22,165,23,90" concept="12" />
+      <node id="1224848553393" at="24,128,25,19" concept="5" />
+      <node id="1224848553413" at="27,89,28,22" concept="13" />
+      <node id="1224848553433" at="31,5,32,17" concept="13" />
+      <node id="8362517669638582158" at="35,95,36,1384" concept="13" />
+      <node id="1225207612515" at="39,73,40,47" concept="12" />
+      <node id="1225207612520" at="40,47,41,133" concept="6" />
+      <node id="1225207612527" at="41,133,42,36" concept="6" />
+      <node id="1225207612587" at="42,36,43,29" concept="13" />
+      <node id="1224848545824" at="14,0,16,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1224848553380" at="17,76,20,5" concept="10" />
+      <node id="1224848553391" at="23,90,26,9" concept="10" />
+      <node id="1224848553411" at="26,9,29,9" concept="10" />
+      <node id="1224848545824" at="35,0,38,0" concept="17" trace="call_shouldDeprecatedDocBeVisible_8362517669638582065#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1224848545824" at="39,0,45,0" concept="17" trace="virtual_getMessage_1225207468592#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1224848553389" at="21,103,30,7" concept="9" />
+      <node id="1224848553387" at="20,5,31,5" concept="10" />
+      <node id="1224848545824" at="17,0,34,0" concept="17" trace="virtual_isDeprecated_1224609060727#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="1224848545826" at="14,43,14,43" />
+      <scope id="1224848553384" at="18,67,19,18" />
+      <scope id="1224848553392" at="24,128,25,19" />
+      <scope id="1224848553412" at="27,89,28,22" />
+      <scope id="8362517669638582068" at="35,95,36,1384" />
+      <scope id="1224848545824" at="14,0,16,0">
         <var name="thisNode" id="1224848545824" />
       </scope>
-      <scope id="1225207555068" at="33,73,37,29">
+      <scope id="1224848545824" at="35,0,38,0">
+        <var name="thisNode" id="1224848545824" />
+      </scope>
+      <scope id="1225207555068" at="39,73,43,29">
         <var name="result" id="1225207612516" />
       </scope>
-      <scope id="1224848545824" at="33,0,39,0">
+      <scope id="1224848545824" at="39,0,45,0">
         <var name="thisNode" id="1224848545824" />
       </scope>
-      <scope id="1224848553390" at="20,165,27,9">
+      <scope id="1224848553390" at="22,165,29,9">
         <var name="annotationLink" id="3316774609316125845" />
       </scope>
-      <scope id="1224848553388" at="19,103,28,7" />
-      <scope id="1224848553389" at="19,103,28,7">
+      <scope id="1224848553388" at="21,103,30,7" />
+      <scope id="1224848553389" at="21,103,30,7">
         <var name="annotation" id="1224848553427" />
       </scope>
-      <scope id="1224848547767" at="15,76,30,17" />
-      <scope id="1224848545824" at="15,0,32,0">
+      <scope id="1224848547767" at="17,76,32,17" />
+      <scope id="1224848545824" at="17,0,34,0">
         <var name="thisNode" id="1224848545824" />
       </scope>
-      <unit id="1224848545824" at="11,0,40,0" name="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_Behavior" />
+      <unit id="1224848545824" at="13,0,46,0" name="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1225271178070">
