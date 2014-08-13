@@ -28,6 +28,8 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.util.Consumer;
 import jetbrains.mps.ide.migration.StartupMigrationExecutor.MyState;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 
 @State(
@@ -69,6 +71,12 @@ public class StartupMigrationExecutor extends AbstractProjectComponent implement
             @Override
             public void consume(Boolean finished) {
               if (!finished) return;
+              ModelAccess.instance().runWriteAction(new Runnable() {
+                @Override
+                public void run() {
+                  MPSModuleRepository.getInstance().saveAll();
+                }
+              });
               ApplicationManager.getApplication().runWriteAction(new Runnable() {
                 @Override
                 public void run() {
