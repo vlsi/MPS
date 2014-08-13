@@ -5,6 +5,7 @@ package jetbrains.mps.migration.component.util;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public interface MigrationScript {
+  public String getCaption();
   public MigrationScriptReference getReference();
   public boolean applicableToModule(SModule module);
   public Object execute(SModule moduleToMigrate);
