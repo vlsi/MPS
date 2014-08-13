@@ -20,8 +20,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
+import com.intellij.ui.popup.WizardPopup;
 import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.ide.migration.MigrationManager.MigrationState;
+import jetbrains.mps.ide.migration.ResolveConflictDialog;
+import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.migration.component.util.MigrationScript;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
@@ -29,6 +32,7 @@ import jetbrains.mps.project.AbstractModule;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
@@ -107,9 +111,19 @@ public class MigrationsProgressStep extends MigrationStep {
   }
 
   private void resolveConflict() {
-    Iterable<Pair<MigrationScript, AbstractModule>> conflicts = myManager.getConflictingScripts();
-    //todo ui
-    myManager.forceExecution(conflicts.iterator().next());
+//    final Iterable<ScriptApplied> conflicts = myManager.getConflictingScripts();
+//    final ScriptApplied[] toApply = {null};
+//    SwingUtilities.invokeAndWait(new Runnable() {
+//      @Override
+//      public void run() {
+//        ResolveConflictDialog d = new ResolveConflictDialog(conflicts);
+//        d.setModal(true);
+//        d.show();
+//        toApply[0] = d.getResult();
+//        d.getDisposable().dispose();
+//      }
+//    });
+//    myManager.forceExecution(toApply[0]);
   }
 
   @Override
