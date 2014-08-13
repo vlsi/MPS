@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.migration.behavior.MigrationScript_Behavior;
+import jetbrains.mps.migration.behavior.AbstractMigrationScript_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.migration.behavior.MigrationScript_Behavior;
 
 public class MigrationScript_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -155,7 +156,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_th2ud5_f2a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return String.valueOf(MigrationScript_Behavior.call_getToVersion_3932724607434563104(node));
+        return String.valueOf(AbstractMigrationScript_Behavior.call_getToVersion_3932724607434563104(node));
       }
 
       public void setText(String s) {

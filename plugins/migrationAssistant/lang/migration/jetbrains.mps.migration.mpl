@@ -15,7 +15,7 @@
       </models>
       <external-templates />
       <dependencies>
-        <dependency reexport="false" scope="design">5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)</dependency>
+        <dependency reexport="false" scope="extend">5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)</dependency>
         <dependency reexport="false">7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</dependency>
         <dependency reexport="true">a5b1c28d-abeb-49a6-a58c-559039616d64(jetbrains.mps.migration.component)</dependency>
       </dependencies>
@@ -56,13 +56,13 @@
   <languageVersions>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" version="0" />
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" version="0" />
-    <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" version="0" />
-    <language id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" version="0" />
     <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="0" />
-    <language id="3ecd7c84-cde3-45de-886c-135ecc69b742" version="0" />
+    <language id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" version="0" />
+    <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" version="0" />
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" />
-    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" version="0" />
+    <language id="3ecd7c84-cde3-45de-886c-135ecc69b742" version="0" />
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" version="0" />
+    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" version="0" />
     <language id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" version="0" />
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" version="0" />
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" version="0" />
@@ -90,7 +90,9 @@
     <dependency reexport="false">a5b1c28d-abeb-49a6-a58c-559039616d64(jetbrains.mps.migration.component)</dependency>
   </runtime>
   <extendedLanguages>
+    <extendedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</extendedLanguage>
     <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
+    <extendedLanguage>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</extendedLanguage>
   </extendedLanguages>
 </language>
 

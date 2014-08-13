@@ -232,6 +232,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/actions/jetbrains.mps.migration.actions.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/jetbrains.mps.migration.component.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/lang/migration/jetbrains.mps.migration.mpl" folder="platform.migration" />
+      <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/lang/migrationSimple/jetbrains.mps.migration.simple.mpl" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/platform/jetbrains.mps.ide.modelchecker.platform.msd" folder="platform.modelchecker" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="platform.modelchecker" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.mps.tests/jetbrains.mps.build.mps.tests.mpl" folder="platform.build" />

@@ -4,6 +4,7 @@ package jetbrains.mps.migration.generator.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.migration.behavior.AbstractMigrationScript_Behavior;
 import jetbrains.mps.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
@@ -22,7 +23,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7907688626603898426(final PropertyMacroContext _context) {
-    return MigrationScript_Behavior.call_getFromVersion_3932724607434564575(_context.getNode());
+    return AbstractMigrationScript_Behavior.call_getFromVersion_3932724607434564575(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_4436301628119009646(final PropertyMacroContext _context) {
@@ -30,7 +31,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5712848521226167741(final PropertyMacroContext _context) {
-    return MigrationScript_Behavior.call_getFromVersion_3932724607434564575(_context.getNode());
+    return AbstractMigrationScript_Behavior.call_getFromVersion_3932724607434564575(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_5712848521226184887(final PropertyMacroContext _context) {

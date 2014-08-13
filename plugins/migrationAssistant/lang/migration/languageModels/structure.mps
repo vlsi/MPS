@@ -15,15 +15,12 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4436301628118948495" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MigrationScript" />
     <property name="rootable" nameId="tpce.1096454100552" value="true" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1309355481571392446" resolveInfo="AbstractMigrationScript" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="586712031919708271" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="dataType" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4436301628118948497" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="fromVersion" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4436301628118948496" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -76,6 +73,16 @@
     <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_MigrationScriptPersistedData" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="dataString" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1309355481571392446" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="AbstractMigrationScript" />
+    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+    <property name="final" nameId="tpce.4628067390765956807" value="false" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4436301628118948497" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="fromVersion" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
   </root>
 </model>
 
