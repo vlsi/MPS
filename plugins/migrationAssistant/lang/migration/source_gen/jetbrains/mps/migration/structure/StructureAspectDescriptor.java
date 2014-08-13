@@ -29,10 +29,12 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.MigrationScriptDeserialize").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.MigrationScriptSerialize").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
+      case 8:
+        return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.RequiredDataItem").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("version").children(new String[]{"module"}, new boolean[]{false}).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.migration.structure.AbstractMigrationScript", "jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptData", "jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptPersistedData", "jetbrains.mps.migration.structure.MigrationScript", "jetbrains.mps.migration.structure.MigrationScriptApplicable", "jetbrains.mps.migration.structure.MigrationScriptBody", "jetbrains.mps.migration.structure.MigrationScriptDeserialize", "jetbrains.mps.migration.structure.MigrationScriptSerialize"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.migration.structure.AbstractMigrationScript", "jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptData", "jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptPersistedData", "jetbrains.mps.migration.structure.MigrationScript", "jetbrains.mps.migration.structure.MigrationScriptApplicable", "jetbrains.mps.migration.structure.MigrationScriptBody", "jetbrains.mps.migration.structure.MigrationScriptDeserialize", "jetbrains.mps.migration.structure.MigrationScriptSerialize", "jetbrains.mps.migration.structure.RequiredDataItem"};
 }

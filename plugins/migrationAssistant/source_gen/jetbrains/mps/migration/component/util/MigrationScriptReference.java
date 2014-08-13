@@ -5,6 +5,7 @@ package jetbrains.mps.migration.component.util;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class MigrationScriptReference {
   private final SModuleReference moduleReference;
@@ -52,6 +53,15 @@ public class MigrationScriptReference {
     result = 31 * result + moduleReference.hashCode();
     result = 31 * result + fromVersion;
     return result;
+  }
+
+  public String serialize() {
+    return moduleReference.toString() + "/" + fromVersion;
+  }
+
+  public static MigrationScriptReference deserialize(String s) {
+    int sepInd = s.indexOf('/');
+    return new MigrationScriptReference(PersistenceFacade.getInstance().createModuleReference(s.substring(0, sepInd)), Integer.parseInt(s.substring(sepInd + 1)));
   }
 
   private static MigrationScript check_dhbyxl_a0a5(MigrationDescriptor checkedDotOperand, int fromVersion) {

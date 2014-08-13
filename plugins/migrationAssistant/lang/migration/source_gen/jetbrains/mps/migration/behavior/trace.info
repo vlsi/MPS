@@ -15,6 +15,9 @@
     <file name="MigrationScriptBody_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.migration.behavior.MigrationScriptBody_BehaviorDescriptor" />
     </file>
+    <file name="RequiredDataItem_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.migration.behavior.RequiredDataItem_BehaviorDescriptor" />
+    </file>
     <file name="MigrationScriptApplicable_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.migration.behavior.MigrationScriptApplicable_BehaviorDescriptor" />
     </file>
@@ -22,7 +25,7 @@
       <unit at="7,0,16,0" name="jetbrains.mps.migration.behavior.AbstractMigrationScript_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,36,0" name="jetbrains.mps.migration.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,38,0" name="jetbrains.mps.migration.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="MigrationScript_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.migration.behavior.MigrationScript_BehaviorDescriptor" />

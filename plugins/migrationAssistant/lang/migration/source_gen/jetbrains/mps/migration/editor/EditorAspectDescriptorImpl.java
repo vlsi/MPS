@@ -17,6 +17,8 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new RequiredDataItem_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -28,5 +30,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.migration.structure.MigrationScript"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.migration.structure.MigrationScript", "jetbrains.mps.migration.structure.RequiredDataItem"};
 }

@@ -8,6 +8,7 @@ import jetbrains.mps.migration.behavior.AbstractMigrationScript_Behavior;
 import jetbrains.mps.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -42,12 +43,20 @@ public class QueriesGenerated {
     return MigrationsUtil.getDescriptorClassName(_context.getOriginalInputModel().getModule());
   }
 
+  public static Object propertyMacro_GetPropertyValue_2009787284780713394(final PropertyMacroContext _context) {
+    return SPropertyOperations.getInteger(_context.getNode(), "version");
+  }
+
   public static boolean ifMacro_Condition_586712031919893211(final IfMacroContext _context) {
     return !(MigrationScript_Behavior.call_hasData_586712031920013598(_context.getNode()));
   }
 
   public static SNode sourceNodeQuery_3290421837437864010(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicable", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_2009787284780713099(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "module", true);
   }
 
   public static Iterable<SNode> sourceNodesQuery_586712031919867933(final SourceSubstituteMacroNodesContext _context) {
