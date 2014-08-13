@@ -35,7 +35,6 @@ public class VariableUninitialized_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_VariableUninitialized() throws Exception {
-      this.addNodeById("1217271587658");
     }
     public void test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928777982() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624928777982"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");

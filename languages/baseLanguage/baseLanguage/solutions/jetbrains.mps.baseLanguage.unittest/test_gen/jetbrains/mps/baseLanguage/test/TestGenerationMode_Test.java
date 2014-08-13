@@ -19,8 +19,7 @@ public class TestGenerationMode_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_GenerationMode() throws Exception {
-      this.addNodeById("7187651930235347759");
-      TypeSystemCheckUtil.checkGenerationMode(SNodeOperations.cast(this.getNodeById("7187651930235347762"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+      TypeSystemCheckUtil.checkGenerationMode(SNodeOperations.cast(this.getRealNodeById("7187651930235347762"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
     }
   }
 }

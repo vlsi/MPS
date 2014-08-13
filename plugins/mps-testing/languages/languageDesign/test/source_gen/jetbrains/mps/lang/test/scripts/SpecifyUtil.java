@@ -7,10 +7,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.test.runtime.TestsErrorsChecker;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.test.behavior.NodeOperationsContainer_Behavior;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.extapi.model.SModelBase;
@@ -21,8 +21,8 @@ public class SpecifyUtil {
   }
 
   public static Iterable<IErrorReporter> getErrorReporters(SNode node) {
-    TestsErrorsChecker checker = new TestsErrorsChecker(node);
-    return checker.getErrors();
+    TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(node));
+    return checker.getErrors(node);
   }
 
   public static void fillContainerWithRuleMessages(SNode node) {

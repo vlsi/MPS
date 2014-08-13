@@ -19,8 +19,7 @@ public class ReturnFromTry_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ReturnFromTry() throws Exception {
-      this.addNodeById("7209837885461546653");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("7209837885461546654"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getRealNodeById("7209837885461546654"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false, false);
     }
   }
 }

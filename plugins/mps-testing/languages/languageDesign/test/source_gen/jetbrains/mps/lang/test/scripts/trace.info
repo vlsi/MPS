@@ -106,8 +106,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)/7796829026680935427">
     <file name="SpecifyUtil.java">
       <node id="7796829026680936666" at="19,58,20,151" concept="7" />
-      <node id="1089663077933662464" at="23,72,24,62" concept="6" />
-      <node id="7796829026680947410" at="24,62,25,31" concept="7" />
+      <node id="1089663077933662464" at="23,72,24,97" concept="6" />
+      <node id="7796829026680947410" at="24,97,25,35" concept="7" />
       <node id="1334460907022745824" at="28,64,29,73" concept="6" />
       <node id="7796829026681387172" at="29,73,30,41" concept="0" />
       <node id="5587533744543826748" at="30,41,31,108" concept="3" />
@@ -127,7 +127,7 @@
       <node id="5587533744543837495" at="32,77,37,5" concept="4" />
       <node id="7796829026681047861" at="28,0,40,0" concept="8" trace="fillContainerWithRuleMessages#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="7796829026680936655" at="19,58,20,151" />
-      <scope id="7796829026680945153" at="23,72,25,31">
+      <scope id="7796829026680945153" at="23,72,25,35">
         <var name="checker" id="1089663077933662465" />
       </scope>
       <scope id="7796829026681259805" at="41,53,43,155">

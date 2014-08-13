@@ -20,8 +20,7 @@ public class hasSameSignatureTest_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_list() throws Exception {
-      this.addNodeById("5157939743593407746");
-      Assert.assertTrue(BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(SNodeOperations.cast(this.getNodeById("5157939743593407754"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), SNodeOperations.cast(this.getNodeById("5157939743593407754"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
+      Assert.assertTrue(BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(SNodeOperations.cast(this.getRealNodeById("5157939743593407754"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), SNodeOperations.cast(this.getRealNodeById("5157939743593407754"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
     }
   }
 }

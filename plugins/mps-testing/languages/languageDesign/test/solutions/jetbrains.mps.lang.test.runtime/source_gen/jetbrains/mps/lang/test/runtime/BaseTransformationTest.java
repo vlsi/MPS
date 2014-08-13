@@ -81,6 +81,10 @@ public abstract class BaseTransformationTest implements TransformationTest {
     myModel = descriptor;
   }
   @Override
+  public void setTransientModelDescriptor(SModel descriptor) {
+    myTransientModel = descriptor;
+  }
+  @Override
   public SModel getTransientModelDescriptor() {
     return myTransientModel;
   }

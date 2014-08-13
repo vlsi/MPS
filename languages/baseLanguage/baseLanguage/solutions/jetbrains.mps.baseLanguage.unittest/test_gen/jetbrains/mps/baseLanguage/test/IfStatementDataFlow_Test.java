@@ -26,8 +26,7 @@ public class IfStatementDataFlow_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_IfStatementDataFlow() throws Exception {
-      this.addNodeById("1217271587920");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444237453"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getRealNodeById("1215444237453"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
     }
     public void test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624928604755"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");

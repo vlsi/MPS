@@ -40,7 +40,6 @@ public class UnusedVariableDeclaration_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_UnusedVariableDeclaration() throws Exception {
-      this.addNodeById("1217271587025");
     }
     public void test_ErrorMessagesCheck5684597377559856228() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("5684597377559856228"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");

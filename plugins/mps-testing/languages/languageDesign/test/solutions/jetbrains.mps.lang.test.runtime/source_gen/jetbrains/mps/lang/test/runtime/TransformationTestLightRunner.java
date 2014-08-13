@@ -5,28 +5,39 @@ package jetbrains.mps.lang.test.runtime;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import jetbrains.mps.project.ProjectManager;
 import java.io.IOException;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class TransformationTestLightRunner extends TransformationTestRunner {
+  private static long ourInitMs = 0;
+  private static long ourRunMs = 0;
 
   @Override
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean reopenProject) throws Exception {
+    long currentTimeMillis = System.currentTimeMillis();
     final Project testProject = findProject(projectPath);
     doInitTest(test, testProject, modelName);
-    // todo: try removing this line 
+    if (LOG.isInfoEnabled()) {
+      LOG.info("flushing");
+    }
     ModelAccess.instance().flushEventQueue();
+    ourInitMs += System.currentTimeMillis() - currentTimeMillis;
   }
 
   @Override
   public void runTest(@NotNull final TransformationTest projectTest, String className, final String methodName, boolean runInCommand) throws Throwable {
+    long currentTimeMillis = System.currentTimeMillis();
     super.runTest(projectTest, className, methodName, runInCommand);
+    ourRunMs += System.currentTimeMillis() - currentTimeMillis;
+    if (LOG.isEnabledFor(Level.WARN)) {
+      LOG.warn("TIMING " + ourInitMs + "ms, " + ourRunMs + "ms");
+    }
   }
 
   @Nullable

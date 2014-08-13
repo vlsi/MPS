@@ -11,6 +11,7 @@ public interface TransformationTest {
   public TestRunner getTestRunner();
   public Project getProject();
   public void setModelDescriptor(SModel descriptor);
+  public void setTransientModelDescriptor(SModel descriptor);
   public SModel getModelDescriptor();
   public SModel getTransientModelDescriptor();
   public void init();
