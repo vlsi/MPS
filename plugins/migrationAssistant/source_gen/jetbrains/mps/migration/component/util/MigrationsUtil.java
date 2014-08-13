@@ -17,6 +17,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.ide.migration.ScriptApplied;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import jetbrains.mps.smodel.adapter.IdHelper;
 import org.jetbrains.mps.openapi.module.SDependency;
@@ -79,7 +80,9 @@ public class MigrationsUtil {
     return result;
   }
 
-  public static void executeScript(MigrationScript script, AbstractModule module) {
+  public static void executeScript(ScriptApplied sa) {
+    MigrationScript script = sa.getScript();
+    AbstractModule module = ((AbstractModule) sa.getModule());
     SLanguageId languageId = IdHelper.getLanguageId(script.getReference().getModuleReference().getModuleId());
     assert module.getModuleDescriptor().getLanguageVersions().get(languageId) == script.getReference().getFromVersion();
     script.execute(module);
@@ -95,7 +98,7 @@ public class MigrationsUtil {
     }));
   }
 
-  public static boolean isAppliedForAllMyDeps(final MigrationScriptReference script, final AbstractModule module) {
+  public static boolean isAppliedForAllMyDeps(final MigrationScriptReference script, final SModule module) {
     Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();
     Set<SModule> dependencies = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable(declaredDependencies).translate(new ITranslator2<SDependency, SModule>() {
       public Iterable<SModule> translate(SDependency it) {

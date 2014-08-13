@@ -28,9 +28,9 @@ public interface MigrationManager {
 
   String currentStep();
 
-  Iterable<Pair<MigrationScript, AbstractModule>> getConflictingScripts();
+  Iterable<ScriptApplied> getConflictingScripts();
 
-  void forceExecution(Pair<MigrationScript, AbstractModule> next);
+  void forceExecution(ScriptApplied next);
 
   public enum MigrationState {
     STEP, CONFLICT, FINISHED, ERROR
