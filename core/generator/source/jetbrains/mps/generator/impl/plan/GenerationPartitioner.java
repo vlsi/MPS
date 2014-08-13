@@ -26,8 +26,13 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.containers.MultiMap;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -129,6 +134,7 @@ public class GenerationPartitioner {
   }
 
   private void loadRules() {
+    // read user-defined rules
     for (TemplateModule generator : myGenerators) {
       Collection<TemplateMappingPriorityRule> priorities = generator.getPriorities();
       if (priorities == null) {
@@ -138,6 +144,71 @@ public class GenerationPartitioner {
         processRule((MappingPriorityRule) rule, generator);
       }
     }
+    // auxiliary rules to ensure generator runs no later than any generator of its target language
+    MultiMap<SLanguage, TemplateModule> lang2gen = new MultiMap<SLanguage, TemplateModule>();
+    for (TemplateModule generator : myGenerators) {
+      SLanguage lang = SConceptRepository.getInstance().getLanguage(generator.getSourceLanguage().getNamespace());
+      lang2gen.putValue(lang, generator);
+    }
+    for (TemplateModule generator : myGenerators) {
+      final RuleHelper lhsHelper = new RuleHelper(generator, new MappingConfig_RefAllLocal());
+      if (lhsHelper.getAllMappings().isEmpty()) {
+        continue;
+      }
+      HashSet<TemplateModule> targetGenerators = new HashSet<TemplateModule>();
+      for (SLanguage targetLang : generator.getTargetLanguages()) {
+        targetGenerators.addAll(lang2gen.get(targetLang));
+      }
+      targetGenerators.remove(generator);
+      if (targetGenerators.isEmpty()) {
+        continue;
+      }
+      // for each target generator,  add a rule {all MC in the current generator} <= {all MC of target generator}, with respect to top-pri MC
+      for (TemplateModule tg : targetGenerators) {
+        RuleHelper rhsHelper = new RuleHelper(tg, new MappingConfig_RefAllLocal());
+        if (rhsHelper.getAllMappings().isEmpty()) {
+          continue;
+        }
+        if (rhsHelper.getTopPriMappings().isEmpty()) {
+          MappingPriorityRule r = new MappingPriorityRule();
+          r.setLeft(new MappingConfig_RefAllLocal());
+          r.setRight(createRefs(tg, rhsHelper.getRegularMappings()));
+          r.setType(RuleType.BEFORE_OR_TOGETHER);
+          processRule(r, generator);
+        } else {
+          if (!lhsHelper.getTopPriMappings().isEmpty()) {
+            // both lhs and rhs with top pri - add two distinct rules, one for top, another for regular
+            MappingPriorityRule r = new MappingPriorityRule();
+            r.setLeft(createRefs(generator, lhsHelper.getTopPriMappings()));
+            r.setRight(createRefs(tg, rhsHelper.getTopPriMappings()));
+            r.setType(RuleType.BEFORE_OR_TOGETHER);
+            processRule(r, generator);
+          } // otherwise don't care, establish 'not later' for regular MC only (top are going to be handled within their own top group)
+          if (!lhsHelper.getRegularMappings().isEmpty() && !rhsHelper.getRegularMappings().isEmpty()) {
+            MappingPriorityRule r = new MappingPriorityRule();
+            r.setLeft(createRefs(generator, lhsHelper.getRegularMappings()));
+            r.setRight(createRefs(tg, rhsHelper.getRegularMappings()));
+            r.setType(RuleType.BEFORE_OR_TOGETHER);
+            processRule(r, generator);
+          }
+        }
+      }
+    }
+  }
+
+  // XXX likely there's similar code in UI and/or TemplateUtil, need to check/refactor
+  private static MappingConfig_AbstractRef createRefs(TemplateModule generator, Collection<TemplateMappingConfiguration> cfgs) {
+    final MappingConfig_ExternalRef ext = new MappingConfig_ExternalRef();
+    ext.setGenerator(generator.getReference());
+    final MappingConfig_RefSet set = new MappingConfig_RefSet();
+    ext.setMappingConfig(set);
+    for (TemplateMappingConfiguration mc : cfgs) {
+      final MappingConfig_SimpleRef e = new MappingConfig_SimpleRef();
+      e.setModelUID(mc.getMappingNode().getModelReference().toString());
+      e.setNodeID(((SNodePointer) mc.getMappingNode()).getNodeId().toString());
+      set.getMappingConfigs().add(e);
+    }
+    return ext;
   }
 
   private void processRule(MappingPriorityRule rule, TemplateModule generator) {
@@ -145,8 +216,8 @@ public class GenerationPartitioner {
     MappingConfig_AbstractRef right = rule.getRight();
     if (left == null || right == null) return;
 
-    Collection<TemplateMappingConfiguration> lhs = getMappingsFromRef(left, generator, generator.getAlias());
-    Collection<TemplateMappingConfiguration> rhs = getMappingsFromRef(right, generator, generator.getAlias());
+    Collection<TemplateMappingConfiguration> lhs = new RuleHelper(generator, left).getAllMappings();
+    Collection<TemplateMappingConfiguration> rhs = new RuleHelper(generator, right).getAllMappings();
     if (lhs.isEmpty() || rhs.isEmpty()) {
       final String lang = generator.getSourceLanguage().getNamespace();
       if (lhs.isEmpty() && rhs.isEmpty()) {
@@ -176,75 +247,116 @@ public class GenerationPartitioner {
     }
   }
 
+  private class RuleHelper {
+    private final TemplateModule myGenerator;
+    private final MappingConfig_AbstractRef myInitialRef;
+    private Collection<TemplateMappingConfiguration> myMapConfigs;
 
-  private Collection<TemplateMappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, TemplateModule refGenerator,
-      String sourceGeneratorID) {
-    if (mappingRef instanceof MappingConfig_RefAllGlobal) {
-      return new ArrayList<TemplateMappingConfiguration>(mySolver.getKnownMapConfigs());
+    public RuleHelper(TemplateModule generator, MappingConfig_AbstractRef mcRef) {
+      myGenerator = generator;
+      myInitialRef = mcRef;
     }
 
-    if (mappingRef instanceof MappingConfig_RefAllLocal) {
-      List<TemplateMappingConfiguration> mappingConf = new ArrayList<TemplateMappingConfiguration>();
-      for (TemplateModel templateModel : refGenerator.getModels()) {
-        for (TemplateMappingConfiguration n : templateModel.getConfigurations()) {
-          mappingConf.add(n);
+    public Collection<TemplateMappingConfiguration> getAllMappings() {
+      build();
+      return myMapConfigs;
+    }
+
+    public Collection<TemplateMappingConfiguration> getTopPriMappings() {
+      ArrayList<TemplateMappingConfiguration> rv = new ArrayList<TemplateMappingConfiguration>();
+      for (TemplateMappingConfiguration mc : getAllMappings()) {
+        if (mc.isTopPriority()) {
+          rv.add(mc);
         }
       }
-      return mappingConf;
+      return rv;
     }
 
-    if (mappingRef instanceof MappingConfig_RefSet) {
-      List<TemplateMappingConfiguration> result = new ArrayList<TemplateMappingConfiguration>();
-      MappingConfig_RefSet refSet = ((MappingConfig_RefSet) mappingRef);
-      for (MappingConfig_AbstractRef simpleRef : refSet.getMappingConfigs()) {
-        result.addAll(getMappingsFromRef(simpleRef, refGenerator, sourceGeneratorID));
-      }
-      return result;
-    }
-
-    if (mappingRef instanceof MappingConfig_ExternalRef) {
-      SModuleReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
-      if (generatorRef != null) {
-        TemplateModule newRefGenerator = myModulesMap.get(generatorRef);
-        if (newRefGenerator != null) {
-          return getMappingsFromRef(((MappingConfig_ExternalRef) mappingRef).getMappingConfig(), newRefGenerator, sourceGeneratorID);
-        } else {
-          // generator is not in the plan - just ignore
-          // LOG.error("couldn't get generator by uid: '" + generatorRef + "'");
+    public Collection<TemplateMappingConfiguration> getRegularMappings() {
+      ArrayList<TemplateMappingConfiguration> rv = new ArrayList<TemplateMappingConfiguration>();
+      for (TemplateMappingConfiguration mc : getAllMappings()) {
+        if (!mc.isTopPriority()) {
+          rv.add(mc);
         }
       }
-      return Collections.emptyList();
+      return rv;
     }
 
-    if (mappingRef instanceof MappingConfig_SimpleRef) {
-      String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
-      String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
-      if (modelUID != null && nodeID != null) {
-        SModelReference reference = PersistenceFacade.getInstance().createModelReference(modelUID);
-        TemplateModel refModel = myModelMap.get(reference);
+    private void build() {
+      if (myMapConfigs == null) {
+        myMapConfigs = getMappingsFromRef(myInitialRef, myGenerator);
+      }
+    }
 
-        if (refModel != null) {
-          if (nodeID.equals("*")) {
-            return refModel.getConfigurations();
-          } else {
-            SNodeReference node = new jetbrains.mps.smodel.SNodePointer(reference, PersistenceFacade.getInstance().createNodeId(nodeID));
-            for (TemplateMappingConfiguration m : refModel.getConfigurations()) {
-              if (node.equals(m.getMappingNode())) {
-                return Collections.singletonList(m);
-              }
-            }
-            LOG.warn(
-                "couldn't get node by id: '" + nodeID + "' in model " + modelUID + " while loading priority rules for generator: " + sourceGeneratorID);
+    private Collection<TemplateMappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, TemplateModule refGenerator) {
+      if (mappingRef instanceof MappingConfig_RefAllGlobal) {
+        return new ArrayList<TemplateMappingConfiguration>(mySolver.getKnownMapConfigs());
+      }
+
+      if (mappingRef instanceof MappingConfig_RefAllLocal) {
+        List<TemplateMappingConfiguration> mappingConf = new ArrayList<TemplateMappingConfiguration>();
+        for (TemplateModel templateModel : refGenerator.getModels()) {
+          for (TemplateMappingConfiguration n : templateModel.getConfigurations()) {
+            mappingConf.add(n);
           }
-        } else {
-          LOG.warn(
-              "couldn't get model by uid: '" + modelUID + "' in generator " + refGenerator.getAlias() + " while loading priority rules for generator: " + sourceGeneratorID);
         }
+        return mappingConf;
       }
+
+      if (mappingRef instanceof MappingConfig_RefSet) {
+        List<TemplateMappingConfiguration> result = new ArrayList<TemplateMappingConfiguration>();
+        MappingConfig_RefSet refSet = ((MappingConfig_RefSet) mappingRef);
+        for (MappingConfig_AbstractRef simpleRef : refSet.getMappingConfigs()) {
+          result.addAll(getMappingsFromRef(simpleRef, refGenerator));
+        }
+        return result;
+      }
+
+      if (mappingRef instanceof MappingConfig_ExternalRef) {
+        SModuleReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
+        if (generatorRef != null) {
+          TemplateModule newRefGenerator = myModulesMap.get(generatorRef);
+          if (newRefGenerator != null) {
+            return getMappingsFromRef(((MappingConfig_ExternalRef) mappingRef).getMappingConfig(), newRefGenerator);
+          } else {
+            // generator is not in the plan - just ignore
+            // LOG.error("couldn't get generator by uid: '" + generatorRef + "'");
+          }
+        }
+        return Collections.emptyList();
+      }
+
+      if (mappingRef instanceof MappingConfig_SimpleRef) {
+        String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
+        String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
+        if (modelUID != null && nodeID != null) {
+          SModelReference reference = PersistenceFacade.getInstance().createModelReference(modelUID);
+          TemplateModel refModel = myModelMap.get(reference);
+
+          if (refModel != null) {
+            if (nodeID.equals("*")) {
+              return refModel.getConfigurations();
+            } else {
+              SNodeReference node = new jetbrains.mps.smodel.SNodePointer(reference, PersistenceFacade.getInstance().createNodeId(nodeID));
+              for (TemplateMappingConfiguration m : refModel.getConfigurations()) {
+                if (node.equals(m.getMappingNode())) {
+                  return Collections.singletonList(m);
+                }
+              }
+              LOG.warn(
+                  "couldn't get node by id: '" + nodeID + "' in model " + modelUID + " while loading priority rules for generator: " + myGenerator.getAlias());
+            }
+          } else {
+            LOG.warn(
+                "couldn't get model by uid: '" + modelUID + "' in generator " + refGenerator.getAlias() + " while loading priority rules for generator: " +
+                    myGenerator.getAlias());
+          }
+        }
+        return Collections.emptyList();
+      }
+
       return Collections.emptyList();
     }
-
-    return Collections.emptyList();
   }
 
   public PriorityConflicts getConflictingPriorityRules() {

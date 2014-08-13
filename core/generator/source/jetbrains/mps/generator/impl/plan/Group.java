@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
@@ -130,6 +129,8 @@ final class Group {
     }
     sb.append("Group[");
     for (TemplateMappingConfiguration c : myMappings) {
+//      sb.append(NameUtil.compactNamespace(SModelStereotype.withoutStereotype(c.getMappingNode().getModelReference().getModelName())));
+//      sb.append('.');
       sb.append(c.getName());
       sb.append(',');
     }

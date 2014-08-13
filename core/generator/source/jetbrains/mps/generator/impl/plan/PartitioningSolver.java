@@ -95,6 +95,9 @@ public class PartitioningSolver {
     myPriorityGraph.checkSelfLocking(myConflicts);
     myPriorityGraph.checkLowPrioLocksTopPrio(myConflicts);
 
+    final Collection<Group> cycles = myPriorityGraph.removeWeakCycles();
+    mySameStepGroups.addAll(cycles);
+
     List<Group> coherentMappings = joinSameStepMappings();
     myPriorityGraph.updateWithCoherent(coherentMappings, myConflicts);
 

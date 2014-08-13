@@ -296,6 +296,61 @@ class PriorityGraph {
     myRulePriorityEntries.removeAll(toDrop);
   }
 
+  /**
+   * Cycle of weak rules A <= B, B <= C, C <= A  is transformed into a single 'same step' group {ABC}.
+   */
+  Collection<Group> removeWeakCycles() {
+    MultiMap<Group, Entry> soonerToEntry = new MultiMap<Group, Entry>();
+    MultiMap<Group, Group> soonerToLater = new MultiMap<Group, Group>();
+    for (Entry edge : myRulePriorityEntries) {
+      if (edge.isTrivial() || edge.isStrict()) {
+        continue;
+      }
+      soonerToEntry.putValue(edge.sooner(), edge);
+      soonerToLater.putValue(edge.sooner(), edge.later());
+    }
+    ArrayList<Group> rv = new ArrayList<Group>();
+    HashSet<Entry> toDrop = new HashSet<Entry>();
+    for (Group g : soonerToLater.keySet()) {
+      // build closure of all possible rhs (later) elements
+      // i.e. for A <= B, B <= C, C <= D, A <= X and given A, builds A := B, C, D, X
+      HashSet<Group> rhsClosure = new HashSet<Group>();
+      ArrayDeque<Group> rhsQueue = new ArrayDeque<Group>();
+      rhsQueue.addAll(soonerToLater.get(g));
+      while (!rhsQueue.isEmpty()) {
+        Group rhs = rhsQueue.removeFirst();
+        if (rhsClosure.add(rhs)) {
+          rhsQueue.addAll(soonerToLater.get(rhs));
+        }
+      }
+      if (!rhsClosure.contains(g)) {
+        continue;
+      }
+      HashSet<Group> actualCycleParticipants = new HashSet<Group>();
+      for (Group cycleElementCandidate : rhsClosure) {
+        boolean isActualCycleElement = false;
+        // element in the rhsClosure not necessarily part of the cycle,
+        // e.g. A <= B, B <= A, A <= C, rhcClosure is B,C,A, but C is not in the cycle
+        for (Entry edge : soonerToEntry.get(cycleElementCandidate)) {
+          assert rhsClosure.contains(edge.sooner()); // that's the way we've built soonerToEntry
+          if (rhsClosure.contains(edge.later())) {
+            // both sides of the rule are in rhsClosure, edge is part of the cycle then
+            toDrop.add(edge);
+            isActualCycleElement = true;
+          }
+        }
+        if (isActualCycleElement) {
+          actualCycleParticipants.add(cycleElementCandidate);
+        }
+      }
+      assert !actualCycleParticipants.isEmpty(); // rhsClosure.contains(g) ensures there's indeed a cycle (at least one-element, A <= A)
+      Group cycle = new Group(actualCycleParticipants);
+      rv.add(cycle);
+    }
+    myRulePriorityEntries.removeAll(toDrop);
+    return rv;
+  }
+
   void reportEdgesLeft(PriorityConflicts conflicts) {
     for (Entry edge : myRulePriorityEntries) {
       if (edge.isTrivial()) {
