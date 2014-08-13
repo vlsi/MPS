@@ -1924,7 +1924,7 @@ public class QueriesGenerated {
     return (Iterable<SNode>) ((MacroHelper) _context.getVariable("var:macroHelper")).getMacrosToImport();
   }
 
-  public static Iterable<SNode> sourceNodesQuery_6647099934206970618(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_8433645492464631848(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "plugins", true);
   }
 
