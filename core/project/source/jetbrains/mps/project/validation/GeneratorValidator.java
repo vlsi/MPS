@@ -16,7 +16,8 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelDependencyScanner;
@@ -31,6 +32,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -61,6 +63,8 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     for (SModel model : myModule.getModels()) {
       // Note: the following method invocation traverses the whole model.
       // For performance reasons, we perform these checks only for loaded models.
+      // FIXME this brings incorrect results for explicit Check Module actions (where one would expect thorough check)
+      // shall consider different execution models for the validator (in addition to description object instead of String)
       if (!model.isLoaded()) {
         continue;
       }
@@ -69,33 +73,8 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
       }
       depScan.walk(model);
     }
-    Language sourceLanguage = myModule.getSourceLanguage();
-    usedLanguages.remove(sourceLanguage.getModuleName());
+    warnings.addAll(warnMissingTargetLangRuntime(usedLanguages));
 
-    Set<SModule> extendedLanguages = new HashSet<SModule>();
-    for (Language language : LanguageDependenciesManager.getAllExtendedLanguages(sourceLanguage)) {
-      extendedLanguages.add(language);
-    }
-    Set<SModule> generatesIntoLanguages = new HashSet<SModule>();
-    for (SDependency dep : sourceLanguage.getDeclaredDependencies()) {
-      if (dep.getScope() == SDependencyScope.GENERATES_INTO) {
-        generatesIntoLanguages.add(dep.getTarget());
-      }
-    }
-
-    for (String lang : usedLanguages) {
-      // XXX We shall check if sourceLanguage doesn't import runtime dependencies (those demanded by extended languages) explicitly
-      // to avoid false warnings e.g. when we target BaseLanguage (with JDK as run-time) and have MPS.Core (which re-exports JDK) as our own dependency
-      // FIXME why on earth we don't use GlobalModuleDependencyManager here?
-      Language language = ModuleRepositoryFacade.getInstance().getModule(lang, Language.class);
-      if (language == null || language.getRuntimeModulesReferences().isEmpty()) {
-        continue;
-      }
-      // language we generate into (target) has runtime, check we've got appropriate dependency
-      if (!extendedLanguages.contains(language) && !generatesIntoLanguages.contains(language)) {
-        warnings.add(String.format("%s shall specify language %s as generation target", sourceLanguage, lang));
-      }
-    }
     HashSet<SModule> seen = new HashSet<SModule>();
     for (SDependency dep : myModule.getDeclaredDependencies()) {
       if (seen.contains(dep.getTarget()) || (dep.getScope() != SDependencyScope.EXTENDS && dep.getScope() != SDependencyScope.DEFAULT)) {
@@ -116,6 +95,32 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
         // models of the dep.target are not referenced, likely superfluous dependency.
         warnings.add(String.format("Superfluous dependency to generator %s, no generator template nor its source language's node is in use", dep.getTarget().getModuleName()));
         seen.add(dep.getTarget());
+      }
+    }
+    return warnings;
+  }
+
+  private Collection<String> warnMissingTargetLangRuntime(Set<String> usedLanguages) {
+    Language sourceLanguage = myModule.getSourceLanguage();
+    usedLanguages.remove(sourceLanguage.getModuleName());
+    if (usedLanguages.isEmpty()) {
+      return Collections.emptyList();
+    }
+    ArrayList<String> warnings = new ArrayList<String>();
+
+    final HashSet<SModuleReference> compileTimeDeps = new HashSet<SModuleReference>();
+    for (SModule d : new GlobalModuleDependenciesManager(sourceLanguage).getModules(Deptype.COMPILE)) {
+      compileTimeDeps.add(d.getModuleReference());
+    }
+
+    for (String lang : usedLanguages) {
+      Language language = ModuleRepositoryFacade.getInstance().getModule(lang, Language.class);
+      if (language == null || language.getRuntimeModulesReferences().isEmpty()) {
+        continue;
+      }
+      // language we generate into (target) has runtime, check we've got appropriate dependency
+      if (!compileTimeDeps.containsAll(language.getRuntimeModulesReferences())) {
+        warnings.add(String.format("%s shall specify language %s as generation target", sourceLanguage, lang));
       }
     }
     return warnings;
