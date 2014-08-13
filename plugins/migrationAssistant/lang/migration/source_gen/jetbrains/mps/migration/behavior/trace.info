@@ -97,13 +97,13 @@
   <root nodeRef="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.migration.behavior)/3842191445091576292">
     <file name="MigrationScriptBody_Behavior.java">
       <node id="3842191445091576555" at="18,125,19,180" concept="3" />
-      <node id="586712031919772223" at="22,83,23,167" concept="3" />
+      <node id="586712031919772223" at="22,83,23,165" concept="3" />
       <node id="3842191445091576292" at="15,0,17,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3842191445091576292" at="18,0,21,0" concept="4" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
       <node id="3842191445091576292" at="22,0,25,0" concept="4" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="3842191445091576445" at="15,43,15,43" />
       <scope id="3842191445091576533" at="18,125,19,180" />
-      <scope id="586712031919765818" at="22,83,23,167" />
+      <scope id="586712031919765818" at="22,83,23,165" />
       <scope id="3842191445091576292" at="15,0,17,0">
         <var name="thisNode" id="3842191445091576292" />
       </scope>

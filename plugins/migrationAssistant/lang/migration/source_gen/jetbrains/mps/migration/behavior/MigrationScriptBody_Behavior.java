@@ -20,6 +20,6 @@ public class MigrationScriptBody_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.migration.structure.MigrationScript"), "dataType", true);
+    return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.migration.structure.MigrationScript"), "dataType", true);
   }
 }
