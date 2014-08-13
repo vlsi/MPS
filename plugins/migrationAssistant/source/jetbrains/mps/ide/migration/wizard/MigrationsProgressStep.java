@@ -101,9 +101,7 @@ public class MigrationsProgressStep extends MigrationStep {
     }
     PersistenceRegistry.getInstance().enableFastFindUsages();
 
-    if (result == MigrationState.FINISHED) {
-      myFinished = true;
-    }
+    myFinished = true;
   }
 
   private void resolveConflict() {
