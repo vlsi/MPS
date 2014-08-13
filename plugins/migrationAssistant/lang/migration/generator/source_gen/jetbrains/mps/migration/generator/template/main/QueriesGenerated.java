@@ -59,6 +59,6 @@ public class QueriesGenerated {
   }
 
   public static Iterable<SNode> sourceNodesQuery_5712848521226160537(final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.migration.structure.MigrationScript");
+    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.migration.structure.MigrationScript");
   }
 }
