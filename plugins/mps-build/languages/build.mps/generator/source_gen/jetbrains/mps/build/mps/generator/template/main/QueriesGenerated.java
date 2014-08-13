@@ -323,6 +323,26 @@ public class QueriesGenerated {
     return "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true), "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding")))});
   }
 
+  public static Object propertyMacro_GetPropertyValue_781140262677966726(final PropertyMacroContext _context) {
+    return "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon128", true), "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding")))});
+  }
+
+  public static Object propertyMacro_GetPropertyValue_781140262678093902(final PropertyMacroContext _context) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "company", true), "name", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_781140262678105144(final PropertyMacroContext _context) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "company", true), "url", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_781140262678149978(final PropertyMacroContext _context) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "plugins", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_781140262678199735(final PropertyMacroContext _context) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "whatsnew", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+  }
+
   public static Object propertyMacro_GetPropertyValue_8108467228800460452(final PropertyMacroContext _context) {
     return "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "dialogImage", true), "virtual_getLastSegment_1368030936106771141", new Object[]{Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding")))});
   }
@@ -373,6 +393,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_8877724874822463478(final PropertyMacroContext _context) {
     return (SPropertyOperations.getBoolean(((SNode) _context.getVariable("branding")), "eap") ? "eap-url" : "release-url");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_781140262678258088(final PropertyMacroContext _context) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "stats", true), "settings", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_781140262678263356(final PropertyMacroContext _context) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "stats", true), "service", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
   }
 
   public static Object propertyMacro_GetPropertyValue_6592112598314984957(final PropertyMacroContext _context) {
@@ -695,6 +723,22 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null);
   }
 
+  public static boolean ifMacro_Condition_781140262677966746(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon128", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_781140262678082421(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "company", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_781140262678141912(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "company", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_781140262678203505(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "whatsnew", true) != null);
+  }
+
   public static boolean ifMacro_Condition_1462305029084461973(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "updateWebsite", true) != null);
   }
@@ -707,8 +751,16 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "feedbackUrl", true) != null);
   }
 
+  public static boolean ifMacro_Condition_781140262678249380(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "stats", true) != null);
+  }
+
   public static boolean ifMacro_Condition_1462305029084461806(final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a521(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a731(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+  }
+
+  public static boolean ifMacro_Condition_781140262679960794(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon128", true) != null);
   }
 
   public static boolean ifMacro_Condition_2172791612910915663(final IfMacroContext _context) {
@@ -870,6 +922,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_7753544965996885835(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true);
+  }
+
+  public static SNode sourceNodeQuery_781140262679960784(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon128", true);
   }
 
   public static SNode sourceNodeQuery_1462305029084461776(final SourceSubstituteMacroNodeContext _context) {
@@ -1250,7 +1306,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_978600701690054686(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        return createGeneratorInternal_String_x583g4_a0a0a0a0kh(it);
+        return createGeneratorInternal_String_x583g4_a0a0a0a0yh(it);
       }
     });
   }
@@ -1292,7 +1348,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_3239569521490197891(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        return createGeneratorInternal_String_x583g4_a0a0a0a0ph(it);
+        return createGeneratorInternal_String_x583g4_a0a0a0a0di(it);
       }
     });
   }
@@ -1682,7 +1738,7 @@ public class QueriesGenerated {
     List<Tuples._2<SNode, String>> dependencies = new ProjectDependency(_context, _context.getNode()).collectDependencies().getDependencies();
     return ListSequence.fromList(dependencies).select(new ISelector<Tuples._2<SNode, String>, SNode>() {
       public SNode select(Tuples._2<SNode, String> it) {
-        return createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a022(it._1(), it._0());
+        return createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a432(it._1(), it._0());
       }
     }).toListSequence();
   }
@@ -1725,21 +1781,21 @@ public class QueriesGenerated {
     return partitioner;
   }
 
-  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0kh(Object p0) {
+  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0yh(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, false);
     n1.setProperty("path", String.valueOf(p0));
     return n1;
   }
 
-  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0ph(Object p0) {
+  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0di(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, false);
     n1.setProperty("path", String.valueOf(p0));
     return n1;
   }
 
-  private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a022(Object p0, Object p1) {
+  private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a432(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency", null, false);
     n1.setProperty("path", String.valueOf(p0));
@@ -1767,7 +1823,7 @@ public class QueriesGenerated {
     return str != null && str.length() > 0;
   }
 
-  private static boolean neq_x583g4_a0a0a521(Object a, Object b) {
+  private static boolean neq_x583g4_a0a0a731(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
 }
