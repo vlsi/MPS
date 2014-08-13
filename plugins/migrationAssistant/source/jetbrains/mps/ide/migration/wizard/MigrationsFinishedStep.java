@@ -27,8 +27,10 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 public class MigrationsFinishedStep extends MigrationStep {
+  public static final String ID = "finished";
+
   public MigrationsFinishedStep(Project project) {
-    super(project, "Migration Finished", "finished");
+    super(project, "Migration Finished", ID);
     createComponent();
   }
 
@@ -66,7 +68,11 @@ public class MigrationsFinishedStep extends MigrationStep {
 
   @Override
   public Object getPreviousStepId() {
-    // too late for that
+    return null;
+  }
+
+  @Override
+  public Object getNextStepId() {
     return null;
   }
 

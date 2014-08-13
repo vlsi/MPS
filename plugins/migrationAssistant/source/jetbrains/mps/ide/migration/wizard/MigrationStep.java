@@ -45,8 +45,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class MigrationStep extends AbstractWizardStepEx {
-  private static final List<String> STEP_IDS = new ArrayList<String>();
-
   private static final Icon WIZARD_ICON = General.NewProject;
 
   protected Project myProject;
@@ -57,25 +55,12 @@ public abstract class MigrationStep extends AbstractWizardStepEx {
     super(title);
     myProject = project;
     myId = id;
-    STEP_IDS.add(myId);
   }
 
   @NotNull
   @Override
   public Object getStepId() {
     return myId;
-  }
-
-  @Override
-  public Object getNextStepId() {
-    int idx = STEP_IDS.indexOf(myId) + 1;
-    return idx < STEP_IDS.size() ? STEP_IDS.get(idx) : null;
-  }
-
-  @Override
-  public Object getPreviousStepId() {
-    int idx = STEP_IDS.indexOf(myId) - 1;
-    return idx >= 0 ? STEP_IDS.get(idx) : null;
   }
 
   @Override

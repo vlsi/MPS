@@ -27,8 +27,10 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 public class InitialStep extends MigrationStep {
+  public static final String ID = "initial";
+
   public InitialStep(Project project) {
-    super(project, "Migration Required", "initial");
+    super(project, "Migration Required", ID);
     createComponent();
   }
 
@@ -64,5 +66,15 @@ public class InitialStep extends MigrationStep {
     layout.setConstraints(infoHolder, gbc);
 
     myComponent.add(pagePanel, BorderLayout.CENTER);
+  }
+
+  @Override
+  public Object getNextStepId() {
+    return MigrationsProgressStep.ID;
+  }
+
+  @Override
+  public Object getPreviousStepId() {
+    return null;
   }
 }

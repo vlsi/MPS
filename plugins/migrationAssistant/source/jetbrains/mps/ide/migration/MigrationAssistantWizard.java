@@ -26,7 +26,9 @@ import jetbrains.mps.ide.migration.wizard.MigrationsFinishedStep;
 import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
 
 import javax.swing.SwingUtilities;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
   public MigrationAssistantWizard(Project project, MigrationManager manager) {

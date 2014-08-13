@@ -37,13 +37,15 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class MigrationsProgressStep extends MigrationStep {
+  public static final String ID = "progress";
+
   private boolean myFinished;
   private MigrationManager myManager;
   private JBList myList;
   private Set<String> myExecuted = new HashSet<String>();
 
   public MigrationsProgressStep(Project project, MigrationManager manager) {
-    super(project, "Migration In Progress", "progress");
+    super(project, "Migration In Progress", ID);
     myManager = manager;
     createComponent();
   }
@@ -111,8 +113,12 @@ public class MigrationsProgressStep extends MigrationStep {
   }
 
   @Override
+  public Object getNextStepId() {
+    return MigrationsFinishedStep.ID;
+  }
+
+  @Override
   public Object getPreviousStepId() {
-    // can't go back now
     return null;
   }
 
@@ -124,10 +130,5 @@ public class MigrationsProgressStep extends MigrationStep {
   @Override
   public boolean canBeCancelled() {
     return false;
-  }
-
-  @Override
-  public void commit(CommitType commitType) throws CommitStepException {
-
   }
 }
