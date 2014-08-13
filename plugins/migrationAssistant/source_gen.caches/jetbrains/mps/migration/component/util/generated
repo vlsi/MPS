@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9yg2ovdl3w6beq4u5un3z7bpngy9b33">
+<dependencies version="2" modelHash="1jzr4ty86xzw55aq3qy4hyplegjxo7n">
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -40,7 +40,7 @@
   <source id="6547769411406853739" name="MigrationDescriptor" hash="-cda923u0y4bs71lcwkn1p2mzfzjwcoy">
     <file name="MigrationDescriptor.java" />
   </source>
-  <source id="6547769411407016197" name="MigrationsUtil" hash="d44p0eiisewtsb1en47boohzfivykdi">
+  <source id="6547769411407016197" name="MigrationsUtil" hash="2pvzpif4i383khx20ygpwfbqi3z3oez">
     <dep root="4436301628118590621" />
     <dep root="5712848521222453135" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />

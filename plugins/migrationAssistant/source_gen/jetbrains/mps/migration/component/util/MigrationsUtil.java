@@ -84,6 +84,7 @@ public class MigrationsUtil {
     assert module.getModuleDescriptor().getLanguageVersions().get(languageId) == script.getReference().getFromVersion();
     script.execute(module);
     module.getModuleDescriptor().getLanguageVersions().put(languageId, script.getReference().getFromVersion() + 1);
+    module.setChanged();
   }
 
   public static boolean isApplied(final MigrationScriptReference script, AbstractModule module) {
