@@ -143,7 +143,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
             return isAvailable(it);
           }
         });
-        if (Sequence.fromIterable(allStepScripts).isNotEmpty()) {
+        if (Sequence.fromIterable(availableScripts).isNotEmpty()) {
           MigrationsUtil.executeScript(Sequence.fromIterable(availableScripts).first().first, Sequence.fromIterable(availableScripts).first().second);
           lastState = MigrationManager.MigrationState.STEP;
         } else {
