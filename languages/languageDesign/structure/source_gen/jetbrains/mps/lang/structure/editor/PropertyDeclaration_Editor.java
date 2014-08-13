@@ -76,7 +76,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
         }
       };
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-      editorCell.setCellId("TransactionalProperty_lnae77_a0");
+      editorCell.setCellId("name");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);

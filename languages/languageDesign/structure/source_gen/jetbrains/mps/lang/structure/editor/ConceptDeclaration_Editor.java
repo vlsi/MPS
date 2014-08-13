@@ -36,8 +36,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -45,6 +43,8 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
 import jetbrains.mps.nodeEditor.CellSide;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.MacrosFactory;
@@ -582,7 +582,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createRefNodeList_ueqr71_j1c0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ConceptDeclaration_Editor.propertyDeclarationListHandler_ueqr71_j1c0(node, "propertyDeclaration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("emptyPropertiesPlaceHolder");
+    editorCell.setCellId("refNodeList_propertyDeclaration");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
@@ -611,9 +611,13 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
+    }
+
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_ueqr71_a9b2a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -627,6 +631,24 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
+      }
+    }
+
+    private EditorCell createConstant_ueqr71_a9b2a(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      editorCell.setCellId("emptyPropertiesPlaceHolder");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+      style.set(StyleAttributes.EDITABLE, true);
+      editorCell.getStyle().putAll(style);
+      editorCell.setDefaultText("<< ... >>");
+      editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ConceptDeclaration_Editor.propertyDeclarationListHandler_ueqr71_j1c0.ApplySideTransforms_null_cellMenu_ueqr71_a0a9b2a()}));
+      return editorCell;
+    }
+
+    public static class ApplySideTransforms_null_cellMenu_ueqr71_a0a9b2a extends AbstractCellMenuPart_ApplySideTransforms {
+      public ApplySideTransforms_null_cellMenu_ueqr71_a0a9b2a() {
+        super(CellSide.RIGHT, "ext_4_RTransform");
       }
     }
   }

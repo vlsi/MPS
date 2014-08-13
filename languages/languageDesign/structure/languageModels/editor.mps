@@ -175,6 +175,9 @@
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="1214314934389" nodeInfo="nn">
           <property name="style" nameId="tpc2.1186403771423" value="BOLD" />
         </node>
+        <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="850862791449653069" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="name" />
+        </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1082987076546" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value=":" />
@@ -1414,8 +1417,23 @@
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5404671619588825200" nodeInfo="nn">
               <property name="flag" nameId="tpc2.1186414551515" value="true" />
             </node>
-            <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="1272170755465069815" nodeInfo="ng">
-              <property name="name" nameId="tpck.1169194664001" value="emptyPropertiesPlaceHolder" />
+            <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1272170755472279374" nodeInfo="nn">
+              <property name="text" nameId="tpc2.1073389577007" value="" />
+              <property name="nullText" nameId="tpc2.1082639509531" value="&lt;&lt; ... &gt;&gt;" />
+              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1272170755472279375" nodeInfo="nn">
+                <property name="color" nameId="tpc2.1186403713874" value="gray" />
+              </node>
+              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="1272170755472279376" nodeInfo="nn">
+                <property name="flag" nameId="tpc2.1186414551515" value="true" />
+              </node>
+              <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="1272170755472279377" nodeInfo="ng">
+                <property name="name" nameId="tpck.1169194664001" value="emptyPropertiesPlaceHolder" />
+              </node>
+              <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="850862791448690997" nodeInfo="ng">
+                <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ApplySideTransforms" typeId="tpc2.8233876857994246075" id="850862791448693649" nodeInfo="ng">
+                  <property name="tag" nameId="tpc2.870577895075788418" value="ext_4_RTransform" />
+                </node>
+              </node>
             </node>
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1105739255645" nodeInfo="nn">
@@ -2067,8 +2085,23 @@
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5404671619589008412" nodeInfo="nn">
               <property name="flag" nameId="tpc2.1186414551515" value="true" />
             </node>
-            <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="1272170755465079760" nodeInfo="ng">
-              <property name="name" nameId="tpck.1169194664001" value="emptyPropertiesPlaceHolder" />
+            <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1272170755472304787" nodeInfo="nn">
+              <property name="text" nameId="tpc2.1073389577007" value="" />
+              <property name="nullText" nameId="tpc2.1082639509531" value="&lt;&lt; ... &gt;&gt;" />
+              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1272170755472304788" nodeInfo="nn">
+                <property name="color" nameId="tpc2.1186403713874" value="gray" />
+              </node>
+              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="1272170755472304789" nodeInfo="nn">
+                <property name="flag" nameId="tpc2.1186414551515" value="true" />
+              </node>
+              <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="1272170755472304790" nodeInfo="ng">
+                <property name="name" nameId="tpck.1169194664001" value="emptyPropertiesPlaceHolder" />
+              </node>
+              <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="850862791448700230" nodeInfo="ng">
+                <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ApplySideTransforms" typeId="tpc2.8233876857994246075" id="850862791448700235" nodeInfo="ng">
+                  <property name="tag" nameId="tpc2.870577895075788418" value="ext_4_RTransform" />
+                </node>
+              </node>
             </node>
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1169126008932" nodeInfo="nn">
@@ -3382,8 +3415,8 @@
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="1272170755465056181" nodeInfo="nn">
                         <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="1272170755465056224" nodeInfo="nn" />
-                        <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="1272170755465074834" nodeInfo="ng">
-                          <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="1272170755465069815" resolveInfo="emptyPropertiesPlaceHolder" />
+                        <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="1272170755472306150" nodeInfo="ng">
+                          <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="1272170755472279377" resolveInfo="emptyPropertiesPlaceHolder" />
                         </node>
                         <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1272170755465451858" nodeInfo="nn">
                           <property name="value" nameId="tpee.1068580320021" value="0" />
@@ -3425,8 +3458,8 @@
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="1272170755465062092" nodeInfo="nn">
                           <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="1272170755465062165" nodeInfo="nn" />
-                          <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="1272170755465082416" nodeInfo="ng">
-                            <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="1272170755465079760" resolveInfo="emptyPropertiesPlaceHolder" />
+                          <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="1272170755472312107" nodeInfo="ng">
+                            <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="1272170755472304790" resolveInfo="emptyPropertiesPlaceHolder" />
                           </node>
                           <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1272170755465452009" nodeInfo="nn">
                             <property name="value" nameId="tpee.1068580320021" value="0" />
@@ -3525,8 +3558,8 @@
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="1272170755469812719" nodeInfo="nn">
                         <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="1272170755469812720" nodeInfo="nn" />
-                        <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="1272170755469812721" nodeInfo="ng">
-                          <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="1272170755465069815" resolveInfo="emptyPropertiesPlaceHolder" />
+                        <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="1272170755472306230" nodeInfo="ng">
+                          <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="1272170755472279377" resolveInfo="emptyPropertiesPlaceHolder" />
                         </node>
                         <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1272170755469812722" nodeInfo="nn">
                           <property name="value" nameId="tpee.1068580320021" value="0" />
@@ -3568,8 +3601,8 @@
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="1272170755469812737" nodeInfo="nn">
                           <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="1272170755469812738" nodeInfo="nn" />
-                          <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="1272170755469812739" nodeInfo="ng">
-                            <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="1272170755465079760" resolveInfo="emptyPropertiesPlaceHolder" />
+                          <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="1272170755472312187" nodeInfo="ng">
+                            <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="1272170755472304790" resolveInfo="emptyPropertiesPlaceHolder" />
                           </node>
                           <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1272170755469812740" nodeInfo="nn">
                             <property name="value" nameId="tpee.1068580320021" value="0" />
