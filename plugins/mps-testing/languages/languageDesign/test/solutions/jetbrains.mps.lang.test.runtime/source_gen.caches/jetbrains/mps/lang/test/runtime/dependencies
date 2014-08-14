@@ -7,7 +7,6 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalStateException" />

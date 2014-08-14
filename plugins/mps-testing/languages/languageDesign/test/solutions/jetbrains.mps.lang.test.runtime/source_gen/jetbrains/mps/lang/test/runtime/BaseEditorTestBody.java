@@ -24,7 +24,6 @@ import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.fileEditor.FileEditorManager;
 import java.lang.reflect.InvocationTargetException;
 import java.awt.Component;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -132,17 +131,8 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   }
 
   public void testMethod() throws Throwable {
-    try {
-      this.testMethodImpl();
-      this.checkAssertion();
-    } finally {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          BaseEditorTestBody.this.closeEditor();
-        }
-      });
-    }
+    this.testMethodImpl();
+    this.checkAssertion();
   }
 
   public abstract void testMethodImpl() throws Exception;
@@ -151,12 +141,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     assert ModelAccess.instance().isInEDT();
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(this.myBefore);
     return new MPSFileNodeEditor(ProjectHelper.toIdeaProject(myProject), file).getNodeEditor();
-  }
-
-  private void closeEditor() {
-    assert ModelAccess.instance().isInEDT();
-    FileEditorManager editorManager = FileEditorManager.getInstance(ProjectHelper.toIdeaProject(myProject));
-    editorManager.closeFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(myBefore));
   }
 
   protected EditorComponent getEditorComponent() {
