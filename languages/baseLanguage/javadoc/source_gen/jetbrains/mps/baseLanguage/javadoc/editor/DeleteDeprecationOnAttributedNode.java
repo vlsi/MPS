@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
@@ -30,7 +30,7 @@ public class DeleteDeprecationOnAttributedNode {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated", "" + (false));
+      BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "virtual_unmarkDeprecated_7983358747957674666", new Object[]{});
       SelectionUtil.selectCell(editorContext, node, SelectionManager.FIRST_EDITABLE_CELL);
     }
   }
@@ -47,7 +47,7 @@ public class DeleteDeprecationOnAttributedNode {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated", "" + (false));
+      BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "virtual_unmarkDeprecated_7983358747957674666", new Object[]{});
       SelectionUtil.selectCell(editorContext, node, SelectionManager.FIRST_EDITABLE_CELL);
     }
   }
