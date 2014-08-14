@@ -298,9 +298,9 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   }
 
   private void updateCheckBoxes(JUnitSettings_Configuration configuration) {
-    myLightExecCheckBox.update();
     myLightExecCheckBox.setSelected(configuration.getLightExec());
     myReuseCachesCheckBox.setSelected(configuration.getReuseCaches());
+    myLightExecCheckBox.update();
   }
 
   public void resetEditorModelWith(final String modelName) {
