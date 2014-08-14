@@ -151,21 +151,12 @@ public class RefactoringTest extends WorkbenchMpsTest {
 
   @BeforeClass
   public static void setup() {
-    closeAllProjects();
   }
 
   @AfterClass
   public static void cleanup() {
-    closeAllProjects();
   }
 
-  private static void closeAllProjects() {
-    // FIXME
-    final Environment currentEnvironment = ActiveEnvironment.getInstance();
-//    for (Project p : currentEnvironment.openedProjects()) {
-//      currentEnvironment.disposeProject(p.getProjectFile());
-//    }
-  }
 }
 
 
