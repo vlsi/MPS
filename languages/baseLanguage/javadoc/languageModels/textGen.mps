@@ -1112,9 +1112,9 @@
           </node>
           <node role="part" roleId="2omo.1237306115446" type="2omo.NodeAppendPart" typeId="2omo.1237305334312" id="7983358747957287457" nodeInfo="ng">
             <node role="value" roleId="2omo.1237305790512" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7983358747957287458" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="2omo.NodeParameter" typeId="2omo.1233748055915" id="7983358747957287459" nodeInfo="nn" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="7983358747957287460" nodeInfo="nn">
-                <link role="property" roleId="tp25.1138056395725" targetNodeId="m373.5349172909345532826" resolveInfo="text" />
+              <node role="operand" roleId="tpee.1197027771414" type="2omo.NodeParameter" typeId="2omo.1233748055915" id="7750166210747100052" nodeInfo="nn" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7750166210747100638" nodeInfo="nn">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="m373.2667874559098216723" />
               </node>
             </node>
           </node>

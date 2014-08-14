@@ -4,13 +4,13 @@ package jetbrains.mps.baseLanguage.javadoc.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DeprecatedBlockDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     DocCommentTextGen.javadocIndent(this);
     this.append("@deprecated ");
-    this.append(SPropertyOperations.getString(node, "text"));
+    appendNode(SLinkOperations.getTarget(node, "text", true));
   }
 }
