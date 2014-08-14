@@ -1061,8 +1061,8 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   private static int horizontalDistance(EditorCell cell, int x) {
-    if (cell.getX() <= x && x <= cell.getX() + cell.getWidth()) return 0;
-    return Math.min(Math.abs(cell.getX() - x), Math.abs(cell.getX() + cell.getWidth() - x));
+    if (cell.getX() + cell.getLeftGap() <= x && x <= cell.getX() + cell.getWidth() - cell.getRightGap()) return 0;
+    return Math.min(Math.abs(cell.getX() + cell.getLeftGap() - x), Math.abs(cell.getX() + cell.getWidth() - cell.getRightGap() - x));
   }
 
   @Override
@@ -1340,6 +1340,10 @@ public abstract class EditorCell_Basic implements EditorCell {
     myGapLeft = gap;
   }
 
+  public int getLeftGap() {
+    return myGapLeft;
+  }
+
   @Override
   public void setRightGap(int gap) {
     // TODO: remove this line and modify getEffectiveWidth() method in order to return
@@ -1347,6 +1351,10 @@ public abstract class EditorCell_Basic implements EditorCell {
     // most of getWidth() usages must be replaced with getEffectiveWidth() then.
     myWidth = myWidth - myGapRight + gap;
     myGapRight = gap;
+  }
+
+  public int getRightGap() {
+    return myGapRight;
   }
 
   public void requestRelayout() {
