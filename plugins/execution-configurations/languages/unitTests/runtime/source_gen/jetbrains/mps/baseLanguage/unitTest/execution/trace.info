@@ -15,11 +15,11 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)/1796275887793108017">
     <file name="TestEvent.java">
       <node id="1796275887793108314" at="13,0,14,0" concept="10" trace="START_TEST_PREFIX" />
-      <node id="1796275887793108318" at="14,0,15,0" concept="10" trace="END_TEST_PREFIX" />
-      <node id="1796275887793108322" at="15,0,16,0" concept="10" trace="ERROR_TEST_PREFIX" />
-      <node id="1796275887793108326" at="16,0,17,0" concept="10" trace="ERROR_TEST_SUFFIX" />
-      <node id="1796275887793108330" at="17,0,18,0" concept="10" trace="FAILURE_TEST_PREFIX" />
-      <node id="1796275887793108334" at="18,0,19,0" concept="10" trace="FAILURE_TEST_SUFFIX" />
+      <node id="1796275887793108318" at="14,0,15,0" concept="10" trace="FINISH_TEST_PREFIX" />
+      <node id="1796275887793108322" at="15,0,16,0" concept="10" trace="FAILURE_TEST_PREFIX" />
+      <node id="1796275887793108326" at="16,0,17,0" concept="10" trace="FAILURE_TEST_SUFFIX" />
+      <node id="1796275887793108330" at="17,0,18,0" concept="10" trace="ASSUMPTION_FAILURE_TEST_PREFIX" />
+      <node id="1796275887793108334" at="18,0,19,0" concept="10" trace="ASSUMPTION_FAILURE_TEST_SUFFIX" />
       <node id="1796275887793108338" at="19,0,20,0" concept="10" trace="ALL_TOKENS" />
       <node id="1796275887793108234" at="20,0,21,0" concept="4" trace="myToken" />
       <node id="1796275887793108237" at="21,0,22,0" concept="4" trace="myTestCaseName" />
@@ -68,7 +68,7 @@
       <node id="1796275887793108091" at="105,53,106,56" concept="8" />
       <node id="1796275887793108093" at="107,35,108,167" concept="3" />
       <node id="1796275887793108161" at="111,5,112,21" concept="9" />
-      <node id="1796275887793108463" at="114,10,115,258" concept="3" />
+      <node id="1796275887793108463" at="114,10,115,287" concept="3" />
       <node id="1796275887793108131" at="117,0,118,0" concept="10" trace="REGEXP_6m48zo_a0a0b0b0z" />
       <node id="1796275887793108273" at="44,40,47,5" concept="6" />
       <node id="1796275887793108342" at="52,0,55,0" concept="7" trace="getToken#()Ljava/lang/String;" />
@@ -103,7 +103,7 @@
       <scope id="1796275887793108437" at="79,25,80,113" />
       <scope id="1796275887793108059" at="95,32,96,54" />
       <scope id="1796275887793108092" at="107,35,108,167" />
-      <scope id="1796275887793108462" at="114,10,115,258" />
+      <scope id="1796275887793108462" at="114,10,115,287" />
       <scope id="1796275887793108031" at="85,52,87,14" />
       <scope id="1796275887793108342" at="52,0,55,0" />
       <scope id="1796275887793108350" at="55,0,58,0" />

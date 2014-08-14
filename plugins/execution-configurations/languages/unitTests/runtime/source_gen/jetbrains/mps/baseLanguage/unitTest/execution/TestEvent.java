@@ -11,11 +11,11 @@ import java.util.ArrayList;
 
 public class TestEvent {
   public static final String START_TEST_PREFIX = "<START_TEST>";
-  public static final String END_TEST_PREFIX = "<END_TEST>";
-  public static final String ERROR_TEST_PREFIX = "<TEST_ERROR_BEGIN>";
-  public static final String ERROR_TEST_SUFFIX = "<TEST_ERROR_END>";
+  public static final String FINISH_TEST_PREFIX = "<FINISH_TEST>";
   public static final String FAILURE_TEST_PREFIX = "<TEST_FAILURE_BEGIN>";
   public static final String FAILURE_TEST_SUFFIX = "<TEST_FAILURE_END>";
+  public static final String ASSUMPTION_FAILURE_TEST_PREFIX = "<TEST_ASSUMPTION_FAILURE_BEGIN>";
+  public static final String ASSUMPTION_FAILURE_TEST_SUFFIX = "<TEST_ASSUMPTION_FAILURE_END>";
   private static List<String> ALL_TOKENS;
   private final String myToken;
   private final String myTestCaseName;
@@ -112,7 +112,7 @@ public class TestEvent {
     return testEvent;
   }
   static {
-    TestEvent.ALL_TOKENS = ListSequence.fromListAndArray(new ArrayList<String>(), TestEvent.START_TEST_PREFIX, TestEvent.END_TEST_PREFIX, TestEvent.ERROR_TEST_PREFIX, TestEvent.ERROR_TEST_SUFFIX, TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX);
+    TestEvent.ALL_TOKENS = ListSequence.fromListAndArray(new ArrayList<String>(), TestEvent.START_TEST_PREFIX, TestEvent.FINISH_TEST_PREFIX, TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX, TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX, TestEvent.ASSUMPTION_FAILURE_TEST_SUFFIX);
   }
   private static Pattern REGEXP_6m48zo_a0a0b0b0z = Pattern.compile("([^:]+)(?::([^:]+))?:memory=(\\d+):time=(\\d+)", 0);
 }

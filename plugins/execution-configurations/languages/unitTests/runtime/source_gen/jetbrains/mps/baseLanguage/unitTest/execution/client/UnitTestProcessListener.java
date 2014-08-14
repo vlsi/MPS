@@ -40,7 +40,7 @@ public class UnitTestProcessListener extends ProcessAdapter {
       myLastEvent = testEvent;
       this.myDispatcher.onTestEvent(testEvent);
     } else {
-      if (myLastEvent != null && (TestEvent.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEvent.ERROR_TEST_PREFIX.equals(myLastEvent.getToken()))) {
+      if (myLastEvent != null && (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEvent.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()))) {
         k = ProcessOutputTypes.STDERR;
       }
       this.myDispatcher.onSimpleTextAvailable(text, k);

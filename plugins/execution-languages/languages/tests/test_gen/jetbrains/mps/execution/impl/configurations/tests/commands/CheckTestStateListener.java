@@ -43,6 +43,14 @@ public class CheckTestStateListener implements TestStateListener {
     myMessages.append("Lost test: ").append(className).append(".").append(methodName).append("\n");
   }
   @Override
+  public void onTestAssumptionFailure(TestEvent event) {
+    SetSequence.fromSet(myFailed).addElement(this.getNameFromEvent(event));
+    if (!(SetSequence.fromSet(myFailExpected).contains(this.getNameFromEvent(event)))) {
+      myMessages.append("Unexpected assumption failure: ").append(this.getNameFromEvent(event)).append("\n");
+    } else {
+    }
+  }
+  @Override
   public void onTestFailure(TestEvent event) {
     SetSequence.fromSet(myFailed).addElement(this.getNameFromEvent(event));
     if (!(SetSequence.fromSet(myFailExpected).contains(this.getNameFromEvent(event)))) {
@@ -50,19 +58,11 @@ public class CheckTestStateListener implements TestStateListener {
     } else {
     }
   }
-  @Override
-  public void onTestError(TestEvent event) {
-    SetSequence.fromSet(myFailed).addElement(this.getNameFromEvent(event));
-    if (!(SetSequence.fromSet(myFailExpected).contains(this.getNameFromEvent(event)))) {
-      myMessages.append("Unexpected error: ").append(this.getNameFromEvent(event)).append("\n");
-    } else {
-    }
-  }
   private String getNameFromEvent(TestEvent event) {
     return event.getTestCaseName() + "." + event.getTestMethodName();
   }
   @Override
-  public void onTestEnd(TestEvent event) {
+  public void onTestFinish(TestEvent event) {
     if (!(SetSequence.fromSet(myFailed).contains(this.getNameFromEvent(event)))) {
       if (!(SetSequence.fromSet(mySuccessExpected).contains(this.getNameFromEvent(event)))) {
         myMessages.append("Unexpected success: ").append(this.getNameFromEvent(event)).append("\n");

@@ -66,17 +66,17 @@ public class TestLightRunListener extends RunListener {
   @Override
   public void testFailure(Failure failure) throws Exception {
     if (LOG.isDebugEnabled()) {
-      LOG.debug(TestEvent.ERROR_TEST_PREFIX + failure.getDescription());
+      LOG.debug(TestEvent.FAILURE_TEST_PREFIX + failure.getDescription());
     }
-    onTestErrorEvent(TestEvent.ERROR_TEST_PREFIX, TestEvent.ERROR_TEST_SUFFIX, failure);
+    onTestErrorEvent(TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX, failure);
   }
 
   @Override
   public void testAssumptionFailure(Failure failure) {
     if (LOG.isDebugEnabled()) {
-      LOG.debug(TestEvent.FAILURE_TEST_PREFIX + failure.getDescription());
+      LOG.debug(TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX + failure.getDescription());
     }
-    onTestErrorEvent(TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX, failure);
+    onTestErrorEvent(TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX, TestEvent.ASSUMPTION_FAILURE_TEST_SUFFIX, failure);
   }
 
   @Override
@@ -85,10 +85,10 @@ public class TestLightRunListener extends RunListener {
     // we emulate this behaviour below 
     Failure failure = new Failure(description, new AssumptionViolatedException("The test was ignored"));
     if (LOG.isDebugEnabled()) {
-      LOG.debug("Ignore " + TestEvent.FAILURE_TEST_PREFIX + failure.getDescription());
+      LOG.debug("Ignore " + TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX + failure.getDescription());
     }
     testStarted(description);
-    onTestErrorEvent(TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX, failure);
+    onTestErrorEvent(TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX, TestEvent.ASSUMPTION_FAILURE_TEST_SUFFIX, failure);
     testFinished(description);
   }
 
@@ -103,9 +103,9 @@ public class TestLightRunListener extends RunListener {
   @Override
   public void testFinished(Description description) throws Exception {
     if (LOG.isDebugEnabled()) {
-      LOG.debug(TestEvent.END_TEST_PREFIX + description.getDisplayName());
+      LOG.debug(TestEvent.FINISH_TEST_PREFIX + description.getDisplayName());
     }
-    onTestEvent(TestEvent.END_TEST_PREFIX, description);
+    onTestEvent(TestEvent.FINISH_TEST_PREFIX, description);
   }
 
   private class TestEventFactory {

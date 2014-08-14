@@ -59,7 +59,7 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
           myLastEvent = testEvent;
           myDispatcher.onTestEvent(testEvent);
         } else {
-          if (myLastEvent != null && (TestEvent.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEvent.ERROR_TEST_PREFIX.equals(myLastEvent.getToken()))) {
+          if (myLastEvent != null && (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEvent.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()))) {
             k = ProcessOutputTypes.STDERR;
           }
           myDispatcher.onSimpleTextAvailable(text, k);

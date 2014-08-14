@@ -14,22 +14,22 @@ public class DefaultRunListener extends RunListener {
   }
   @Override
   public void testFinished(Description description) throws Exception {
-    this.printSyncToken(("<END_TEST>"), description);
+    this.printSyncToken(("<FINISH_TEST>"), description);
     super.testFinished(description);
   }
   @Override
   public void testFailure(Failure failure) throws Exception {
-    this.printSyncToken(("<TEST_ERROR_BEGIN>"), failure.getDescription());
+    this.printSyncToken(("<TEST_FAILURE_BEGIN>"), failure.getDescription());
     failure.getException().printStackTrace(System.err);
-    this.printSyncToken(("<TEST_ERROR_END>"), failure.getDescription());
+    this.printSyncToken(("<TEST_FAILURE_END>"), failure.getDescription());
     super.testFailure(failure);
     ++myFailureCount;
   }
   @Override
   public void testAssumptionFailure(Failure failure) {
-    this.printSyncToken(("<TEST_FAILURE_BEGIN>"), failure.getDescription());
+    this.printSyncToken(("<TEST_ASSUMPTION_FAILURE_BEGIN>"), failure.getDescription());
     failure.getException().printStackTrace(System.err);
-    this.printSyncToken(("<TEST_FAILURE_END>"), failure.getDescription());
+    this.printSyncToken(("<TEST_ASSUMPTION_FAILURE_END>"), failure.getDescription());
     super.testAssumptionFailure(failure);
   }
   @Override

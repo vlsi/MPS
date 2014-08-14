@@ -1736,7 +1736,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5881102044690182772" resolveInfo="it" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5881102044690182770" nodeInfo="nn">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690375210" resolveInfo="onTestEnd" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690375210" resolveInfo="onTestFinish" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151616421" nodeInfo="nn">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5881102044690182778" resolveInfo="event" />
                         </node>
@@ -1780,7 +1780,7 @@
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5881102044690182780" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="onTestError" />
+      <property name="name" nameId="tpck.1169194664001" value="onTestFailure" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5881102044690182781" nodeInfo="in" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5881102044690182782" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5881102044690182783" nodeInfo="sn">
@@ -1801,7 +1801,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5881102044690182797" resolveInfo="it" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5881102044690182795" nodeInfo="nn">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690375216" resolveInfo="onTestError" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690375216" resolveInfo="onTestFailure" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151584179" nodeInfo="nn">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5881102044690182803" resolveInfo="event" />
                         </node>
@@ -1834,7 +1834,7 @@
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5881102044690182805" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="onTestFailure" />
+      <property name="name" nameId="tpck.1169194664001" value="onTestAssumptionFailure" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5881102044690182806" nodeInfo="in" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5881102044690182807" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5881102044690182808" nodeInfo="sn">
@@ -1855,7 +1855,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5881102044690182822" resolveInfo="it" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5881102044690182820" nodeInfo="nn">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690375222" resolveInfo="onTestFailure" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690375222" resolveInfo="onTestAssumptionFailure" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151451054" nodeInfo="nn">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5881102044690182828" resolveInfo="event" />
                         </node>
@@ -3398,7 +3398,7 @@
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5881102044690375210" nodeInfo="igu">
       <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="onTestEnd" />
+      <property name="name" nameId="tpck.1169194664001" value="onTestFinish" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5881102044690375211" nodeInfo="in" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5881102044690375212" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5881102044690375213" nodeInfo="sn" />
@@ -3411,7 +3411,7 @@
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5881102044690375216" nodeInfo="igu">
       <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="onTestError" />
+      <property name="name" nameId="tpck.1169194664001" value="onTestFailure" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5881102044690375217" nodeInfo="in" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5881102044690375218" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5881102044690375219" nodeInfo="sn" />
@@ -3424,7 +3424,7 @@
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5881102044690375222" nodeInfo="igu">
       <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="onTestFailure" />
+      <property name="name" nameId="tpck.1169194664001" value="onTestAssumptionFailure" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5881102044690375223" nodeInfo="in" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5881102044690375224" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5881102044690375225" nodeInfo="sn" />
@@ -3867,7 +3867,7 @@
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="5881102044690784913" nodeInfo="nn" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5881102044690784914" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690182805" resolveInfo="onTestFailure" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690182805" resolveInfo="onTestAssumptionFailure" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905150338807" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5881102044690784938" resolveInfo="event" />
                     </node>
@@ -3904,7 +3904,7 @@
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="5881102044690784928" nodeInfo="nn" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5881102044690784929" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690182780" resolveInfo="onTestError" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690182780" resolveInfo="onTestFailure" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151338737" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5881102044690784938" resolveInfo="event" />
                     </node>

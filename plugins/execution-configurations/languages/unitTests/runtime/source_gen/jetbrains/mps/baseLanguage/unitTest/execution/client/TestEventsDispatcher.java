@@ -39,12 +39,12 @@ public class TestEventsDispatcher {
     this.myState.setToken(event.getToken());
     if (TestEvent.START_TEST_PREFIX.equals(event.getToken())) {
       this.myState.onTestStarted(event);
-    } else if (TestEvent.END_TEST_PREFIX.equals(event.getToken())) {
+    } else if (TestEvent.FINISH_TEST_PREFIX.equals(event.getToken())) {
       this.myState.onTestEnded(event);
+    } else if (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(event.getToken())) {
+      this.myState.onTestAssumptionFailure(event);
     } else if (TestEvent.FAILURE_TEST_PREFIX.equals(event.getToken())) {
       this.myState.onTestFailure(event);
-    } else if (TestEvent.ERROR_TEST_PREFIX.equals(event.getToken())) {
-      this.myState.onTestError(event);
     }
   }
   private static Pattern REPLREGEXP_a0a0e = Pattern.compile("\\n", 0);

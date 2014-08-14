@@ -51,7 +51,7 @@ public class StatisticsTableModel implements TableModel {
         return getRow(event.getTestCaseName(), event.getTestMethodName());
       }
       @Override
-      public void onTestEnd(TestEvent event) {
+      public void onTestFinish(TestEvent event) {
         TestMethodRow row = findRowForEvent(event);
         if (row != null) {
           row.setFinishTime(event.getTime());
@@ -63,7 +63,7 @@ public class StatisticsTableModel implements TableModel {
         }
       }
       @Override
-      public void onTestError(TestEvent event) {
+      public void onTestFailure(TestEvent event) {
         TestMethodRow row = findRowForEvent(event);
         if (row != null) {
           row.setErrored();
@@ -71,7 +71,7 @@ public class StatisticsTableModel implements TableModel {
         }
       }
       @Override
-      public void onTestFailure(TestEvent event) {
+      public void onTestAssumptionFailure(TestEvent event) {
         TestMethodRow row = findRowForEvent(event);
         if (row != null) {
           row.setFailed();

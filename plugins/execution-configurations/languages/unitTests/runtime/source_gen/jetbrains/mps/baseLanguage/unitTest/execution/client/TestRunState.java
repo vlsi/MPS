@@ -108,24 +108,24 @@ public class TestRunState {
   public void onTestEnded(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
-        it.onTestEnd(event);
+        it.onTestFinish(event);
       }
     });
     this.endTest();
     this.completeTestEvent(event);
   }
-  public void onTestError(final TestEvent event) {
-    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
-      public void visit(TestStateListener it) {
-        it.onTestError(event);
-      }
-    });
-    this.defectTest();
-  }
   public void onTestFailure(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestFailure(event);
+      }
+    });
+    this.defectTest();
+  }
+  public void onTestAssumptionFailure(final TestEvent event) {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onTestAssumptionFailure(event);
       }
     });
     this.defectTest();

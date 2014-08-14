@@ -24,48 +24,48 @@
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1796275887793108318" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="END_TEST_PREFIX" />
+      <property name="name" nameId="tpck.1169194664001" value="FINISH_TEST_PREFIX" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1796275887793108319" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1796275887793108320" nodeInfo="in" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1796275887793108321" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value="&lt;END_TEST&gt;" />
+        <property name="value" nameId="tpee.1070475926801" value="&lt;FINISH_TEST&gt;" />
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1796275887793108322" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="ERROR_TEST_PREFIX" />
+      <property name="name" nameId="tpck.1169194664001" value="FAILURE_TEST_PREFIX" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1796275887793108323" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1796275887793108324" nodeInfo="in" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1796275887793108325" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value="&lt;TEST_ERROR_BEGIN&gt;" />
+        <property name="value" nameId="tpee.1070475926801" value="&lt;TEST_FAILURE_BEGIN&gt;" />
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1796275887793108326" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="ERROR_TEST_SUFFIX" />
+      <property name="name" nameId="tpck.1169194664001" value="FAILURE_TEST_SUFFIX" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1796275887793108327" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1796275887793108328" nodeInfo="in" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1796275887793108329" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value="&lt;TEST_ERROR_END&gt;" />
+        <property name="value" nameId="tpee.1070475926801" value="&lt;TEST_FAILURE_END&gt;" />
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1796275887793108330" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="FAILURE_TEST_PREFIX" />
+      <property name="name" nameId="tpck.1169194664001" value="ASSUMPTION_FAILURE_TEST_PREFIX" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1796275887793108331" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1796275887793108332" nodeInfo="in" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1796275887793108333" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value="&lt;TEST_FAILURE_BEGIN&gt;" />
+        <property name="value" nameId="tpee.1070475926801" value="&lt;TEST_ASSUMPTION_FAILURE_BEGIN&gt;" />
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1796275887793108334" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="FAILURE_TEST_SUFFIX" />
+      <property name="name" nameId="tpck.1169194664001" value="ASSUMPTION_FAILURE_TEST_SUFFIX" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1796275887793108335" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1796275887793108336" nodeInfo="in" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1796275887793108337" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value="&lt;TEST_FAILURE_END&gt;" />
+        <property name="value" nameId="tpee.1070475926801" value="&lt;TEST_ASSUMPTION_FAILURE_END&gt;" />
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1796275887793108338" nodeInfo="igu">
@@ -1025,23 +1025,23 @@
                 </node>
                 <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1796275887793108469" nodeInfo="nn">
                   <link role="classifier" roleId="tpee.1144433057691" targetNodeId="1796275887793108017" resolveInfo="TestEvent" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1796275887793108318" resolveInfo="END_TEST_PREFIX" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1796275887793108318" resolveInfo="FINISH_TEST_PREFIX" />
                 </node>
                 <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1796275887793108470" nodeInfo="nn">
                   <link role="classifier" roleId="tpee.1144433057691" targetNodeId="1796275887793108017" resolveInfo="TestEvent" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1796275887793108322" resolveInfo="ERROR_TEST_PREFIX" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1796275887793108322" resolveInfo="FAILURE_TEST_PREFIX" />
                 </node>
                 <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1796275887793108471" nodeInfo="nn">
                   <link role="classifier" roleId="tpee.1144433057691" targetNodeId="1796275887793108017" resolveInfo="TestEvent" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1796275887793108326" resolveInfo="ERROR_TEST_SUFFIX" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1796275887793108326" resolveInfo="FAILURE_TEST_SUFFIX" />
                 </node>
                 <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1796275887793108472" nodeInfo="nn">
                   <link role="classifier" roleId="tpee.1144433057691" targetNodeId="1796275887793108017" resolveInfo="TestEvent" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1796275887793108330" resolveInfo="FAILURE_TEST_PREFIX" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1796275887793108330" resolveInfo="ASSUMPTION_FAILURE_TEST_PREFIX" />
                 </node>
                 <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1796275887793108473" nodeInfo="nn">
                   <link role="classifier" roleId="tpee.1144433057691" targetNodeId="1796275887793108017" resolveInfo="TestEvent" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1796275887793108334" resolveInfo="FAILURE_TEST_SUFFIX" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1796275887793108334" resolveInfo="ASSUMPTION_FAILURE_TEST_SUFFIX" />
                 </node>
               </node>
             </node>

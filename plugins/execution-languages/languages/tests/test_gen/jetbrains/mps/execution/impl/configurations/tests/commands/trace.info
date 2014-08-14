@@ -224,11 +224,11 @@
       <node id="7213670651543786826" at="35,14,36,104" concept="2" />
       <node id="7213670651543786812" at="38,5,39,18" concept="8" />
       <node id="8128243960970300074" at="42,64,43,99" concept="2" />
-      <node id="7213670651543787508" at="46,46,47,75" concept="2" />
-      <node id="7213670651543787438" at="48,88,49,98" concept="2" />
+      <node id="7213670651543787508" at="46,56,47,75" concept="2" />
+      <node id="7213670651543787438" at="48,88,49,109" concept="2" />
       <node id="7213670651543787506" at="50,10,51,5" concept="0" />
-      <node id="7213670651543787519" at="54,44,55,75" concept="2" />
-      <node id="7213670651543787476" at="56,88,57,96" concept="2" />
+      <node id="7213670651543787519" at="54,46,55,75" concept="2" />
+      <node id="7213670651543787476" at="56,88,57,98" concept="2" />
       <node id="7213670651543787517" at="58,10,59,5" concept="0" />
       <node id="7213670651543787555" at="61,52,62,69" concept="8" />
       <node id="7213670651543787666" at="67,93,68,100" concept="2" />
@@ -244,10 +244,10 @@
       <node id="7213670651543787436" at="47,75,51,5" concept="5" />
       <node id="7213670651543787474" at="55,75,59,5" concept="5" />
       <node id="7213670651543786817" at="29,30,34,12" concept="2" />
-      <node id="7213670651543787528" at="65,42,70,5" concept="5" />
-      <node id="8128243960970299750" at="45,0,53,0" concept="6" trace="onTestFailure#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
-      <node id="8128243960970299756" at="53,0,61,0" concept="6" trace="onTestError#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
-      <node id="8128243960970299762" at="64,0,72,0" concept="6" trace="onTestEnd#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
+      <node id="7213670651543787528" at="65,45,70,5" concept="5" />
+      <node id="8128243960970299750" at="45,0,53,0" concept="6" trace="onTestAssumptionFailure#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
+      <node id="8128243960970299756" at="53,0,61,0" concept="6" trace="onTestFailure#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
+      <node id="8128243960970299762" at="64,0,72,0" concept="6" trace="onTestFinish#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
       <node id="8552960886532765784" at="28,70,37,7" concept="5" />
       <node id="7213670651543786790" at="27,73,38,5" concept="4" />
       <node id="8552960886532766006" at="26,0,41,0" concept="6" trace="selectNames#(Ljava/util/List;)Ljava/lang/Iterable;" />
@@ -257,8 +257,8 @@
       <scope id="8552960886532765804" at="31,57,32,61" />
       <scope id="8552960886532765972" at="35,14,36,104" />
       <scope id="8128243960970299749" at="42,64,43,99" />
-      <scope id="7213670651543787437" at="48,88,49,98" />
-      <scope id="7213670651543787475" at="56,88,57,96" />
+      <scope id="7213670651543787437" at="48,88,49,109" />
+      <scope id="7213670651543787475" at="56,88,57,98" />
       <scope id="7213670651543787554" at="61,52,62,69" />
       <scope id="7213670651543787638" at="67,93,68,100" />
       <scope id="8128243960970300115" at="75,31,76,33" />
@@ -283,9 +283,9 @@
         <var name="methodName" id="8128243960970299747" />
       </scope>
       <scope id="8552960886532765785" at="29,30,34,12" />
-      <scope id="8128243960970299755" at="46,46,51,5" />
-      <scope id="8128243960970299761" at="54,44,59,5" />
-      <scope id="8128243960970299767" at="65,42,70,5" />
+      <scope id="8128243960970299755" at="46,56,51,5" />
+      <scope id="8128243960970299761" at="54,46,59,5" />
+      <scope id="8128243960970299767" at="65,45,70,5" />
       <scope id="8128243960970299750" at="45,0,53,0">
         <var name="event" id="8128243960970299753" />
       </scope>
