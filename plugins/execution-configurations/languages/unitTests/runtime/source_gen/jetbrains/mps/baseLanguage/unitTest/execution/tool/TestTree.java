@@ -107,13 +107,15 @@ public class TestTree extends MPSTree implements TestView, Disposable {
             });
           }
         } else if (TestEvent.END_TEST_PREFIX.equals(myState.getToken())) {
-          if (TestState.IN_PROGRESS.equals(methodNode.value.getState())) {
+          if (methodNode.value != null && TestState.IN_PROGRESS.equals(methodNode.value.getState())) {
             updateState(methodNode.value, testCaseNode, TestState.PASSED);
           }
         } else if (TestEvent.FAILURE_TEST_PREFIX.equals(myState.getToken())) {
           updateState(methodNode.value, testCaseNode, TestState.FAILED);
         } else if (TestEvent.ERROR_TEST_PREFIX.equals(myState.getToken())) {
-          methodNode.value.setState(TestState.ERROR);
+          if (methodNode.value != null) {
+            methodNode.value.setState(TestState.ERROR);
+          }
           updateState(methodNode.value, testCaseNode, TestState.ERROR);
         }
       }
