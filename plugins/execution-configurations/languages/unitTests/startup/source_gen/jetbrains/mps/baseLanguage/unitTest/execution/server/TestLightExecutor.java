@@ -85,7 +85,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
   protected void doExecute(JUnitCore core, Iterable<Request> requests) throws Throwable {
     assert myTestRunState.isReady();
     if (LOG.isEnabledFor(Level.WARN)) {
-      LOG.warn("You need to be aware of your own test code execution and its consequences, when running tests in-process. " + "The code is being executed within the current MPS environment and might do a lot of damage if used without caution.");
+      LOG.warn("Be aware of the execution of your own test code and its consequences when running tests in-process. " + "The code is being executed within the current MPS environment and might do a lot of damage if written without caution.");
     }
     if (LOG.isInfoEnabled()) {
       LOG.info("Executing tests in-process...");
