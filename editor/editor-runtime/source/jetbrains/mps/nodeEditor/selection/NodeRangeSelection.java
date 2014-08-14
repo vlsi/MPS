@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -25,6 +27,7 @@ import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
@@ -32,10 +35,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -45,12 +49,15 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
   private static final String FIRST_NODE_ID_PROPERTY_NAME = "firstNodeId";
   private static final String LAST_NODE_ID_PROPERTY_NAME = "lastNodeId";
   private static final String PARENT_NODE_ID_PROPERTY_NAME = "parentNodeId";
+  private static final String SELECTION_FILTER_CLASS_NAME = "selectionFilterClassName";
+  private static final String SELECTION_FILTER_MODULE_REFERENCE = "selectionFilterModuleId";
 
   private final SNode myFirstNode;
   private final SNode myLastNode;
   private final SNode myParentNode;
   private final String myRole;
   private final String myModelReference;
+  private final RangeSelectionFilter myFilter;
 
   public NodeRangeSelection(@NotNull EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException,
       SelectionRestoreException {
@@ -82,16 +89,22 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (!myRole.equals(myFirstNode.getRoleInParent()) || !myRole.equals(myLastNode.getRoleInParent())) {
       throw new SelectionRestoreException();
     }
+    myFilter = createSelectionFilter(properties);
     initSelectedCells();
   }
 
   public NodeRangeSelection(@NotNull EditorComponent editorComponent, @NotNull SNode firstNode, @NotNull SNode lastNode) {
+    this(editorComponent, firstNode, lastNode, null);
+  }
+
+  public NodeRangeSelection(@NotNull EditorComponent editorComponent, @NotNull SNode firstNode, @NotNull SNode lastNode, RangeSelectionFilter filter) {
     super(editorComponent);
     myFirstNode = firstNode;
     myLastNode = lastNode;
     myParentNode = myFirstNode.getParent();
     myRole = myFirstNode.getRoleInParent();
     myModelReference = myFirstNode.getModel().getReference().toString();
+    myFilter = filter;
 
     assert myParentNode != null;
     assert myParentNode == myLastNode.getParent();
@@ -104,7 +117,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     List<EditorCell> selectedCells = new ArrayList<EditorCell>();
     boolean withinSelection = false;
     boolean breakLoop = false;
-    for (SNode child : myParentNode.getChildren(myRole)) {
+    for (SNode child : getChildIterable()) {
       if (myFirstNode.equals(child) || myLastNode.equals(child)) {
         if (withinSelection || myFirstNode.equals(myLastNode)) {
           breakLoop = true;
@@ -136,6 +149,11 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     selectionInfo.getPropertiesMap().put(FIRST_NODE_ID_PROPERTY_NAME, myFirstNode.getNodeId().toString());
     selectionInfo.getPropertiesMap().put(LAST_NODE_ID_PROPERTY_NAME, myLastNode.getNodeId().toString());
     selectionInfo.getPropertiesMap().put(PARENT_NODE_ID_PROPERTY_NAME, myParentNode.getNodeId().toString());
+    if (myFilter != null) {
+      selectionInfo.getPropertiesMap().put(SELECTION_FILTER_CLASS_NAME, myFilter.getClass().getName());
+      selectionInfo.getPropertiesMap().put(SELECTION_FILTER_MODULE_REFERENCE, myFilter.getModuleReference());
+      myFilter.saveFilter(selectionInfo);
+    }
     return selectionInfo;
   }
 
@@ -178,6 +196,49 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
       return;
     }
     super.executeAction(type);
+  }
+
+  private RangeSelectionFilter createSelectionFilter(Map<String, String> properties) throws SelectionStoreException, SelectionRestoreException {
+    String filterClassName = properties.get(SELECTION_FILTER_CLASS_NAME);
+    if (filterClassName == null) {
+      return null;
+    }
+
+    String moduleRefString = properties.get(SELECTION_FILTER_MODULE_REFERENCE);
+    RangeSelectionFilter result;
+    try {
+      Class filterClass = moduleRefString != null ? loadFromModule(moduleRefString, filterClassName) : Class.forName(filterClassName);
+      if (filterClass == null) {
+        throw new SelectionStoreException(
+            "Can't load selection filter class: " + filterClassName + (moduleRefString != null ? "" : "module reference: " + moduleRefString));
+      }
+      Object filterInstance = filterClass.newInstance();
+      if (filterInstance instanceof RangeSelectionFilter) {
+        result = (RangeSelectionFilter) filterInstance;
+      } else {
+        throw new SelectionStoreException("Loaded filter class " + filterInstance + " is not instance of RangeSelectionFilter");
+      }
+    } catch (ClassNotFoundException e) {
+      throw new SelectionStoreException("Filter class not found: " + e.getMessage());
+    } catch (InstantiationException e) {
+      throw new SelectionStoreException("Can't instantiate filter class: " + e.getMessage());
+    } catch (IllegalAccessException e) {
+      throw new SelectionStoreException("Illegal access while instantiating filter class: " + e.getMessage());
+    }
+    result.loadFilter(properties);
+    return result;
+  }
+
+  private Class loadFromModule(String moduleRefString, String className) throws SelectionStoreException {
+    SModuleReference moduleReference = ModuleReference.parseReference(moduleRefString);
+    if (moduleReference == null) {
+      throw new SelectionStoreException("Can't parse module reference: " + moduleRefString);
+    }
+    SModule module = moduleReference.resolve(getEditorComponent().getEditorContext().getRepository());
+    if (module == null) {
+      throw new SelectionStoreException("Can't find module: " + moduleRefString + " in the repository");
+    }
+    return ClassLoaderManager.getInstance().getOwnClass(module, className);
   }
 
   @NotNull
@@ -236,23 +297,33 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
 
   // TODO: enlargeSelection action should be handled specifically by executeAction() method
   public NodeRangeSelection enlargeSelection(boolean next) {
-
     SNode newLastNode = null;
-    for (Iterator<? extends SNode> it = myParentNode.getChildren(myRole).iterator(); it.hasNext(); ) {
-      SNode semanticNode = it.next();
-      if (semanticNode == myLastNode) {
-        if (next) {
-          if (it.hasNext()) {
-            newLastNode = it.next();
-          } else {
-            newLastNode = null;
-          }
-        }
+    SNode prevNode = null;
+    for (SNode child : getChildIterable()) {
+      if (next && prevNode == myLastNode) {
+        newLastNode = child;
         break;
       }
-      newLastNode = semanticNode;
+      if (!next && child == myLastNode) {
+        newLastNode = prevNode;
+        break;
+      }
+      prevNode = child;
     }
-    return newLastNode != null ? new NodeRangeSelection(getEditorComponent(), myFirstNode, newLastNode) : null;
+    return newLastNode != null ? new NodeRangeSelection(getEditorComponent(), myFirstNode, newLastNode, myFilter) : null;
+  }
+
+  private Iterable<? extends SNode> getChildIterable() {
+    if (myFilter == null) {
+      return myParentNode.getChildren(myRole);
+    }
+    List<SNode> result = new LinkedList<SNode>();
+    for (SNode nextChild : myParentNode.getChildren(myRole)) {
+      if (myFilter.accept(nextChild)) {
+        result.add(nextChild);
+      }
+    }
+    return result;
   }
 
   @Override
@@ -260,5 +331,20 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     EditorCell lastCellToSelect = getEditorComponent().findNodeCell(myLastNode);
     assert lastCellToSelect != null;
     getEditorComponent().scrollToCell(lastCellToSelect);
+  }
+
+  public static abstract class RangeSelectionFilter {
+    public abstract boolean accept(SNode node);
+
+    public void saveFilter(SelectionInfo info) {
+    }
+
+    /**
+     * @return SModuleReference.toString() or null if corresponding filter class can be loaded using NodeRangeSelection classloader.
+     */
+    public abstract String getModuleReference();
+
+    public void loadFilter(Map<String, String> properties) throws SelectionRestoreException, SelectionStoreException {
+    }
   }
 }

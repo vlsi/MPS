@@ -45,6 +45,8 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySi
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CreateChildRangeSelection;
+import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.MacrosFactory;
@@ -707,6 +709,9 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      CellAction_CreateChildRangeSelection selectNextPrevAction = new CellAction_CreateChildRangeSelection(elementNode, new ConceptDeclaration_Editor.RangeSelectionFilter_ueqr71_m1c0(), editorContext);
+      elementCell.setAction(CellActionType.SELECT_NEXT, selectNextPrevAction);
+      elementCell.setAction(CellActionType.SELECT_PREVIOUS, selectNextPrevAction);
       return elementCell;
     }
 
@@ -755,6 +760,18 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       public ApplySideTransforms_null_cellMenu_ueqr71_a0a21b2a() {
         super(CellSide.RIGHT, "ext_2_RTransform");
       }
+    }
+  }
+
+  public static class RangeSelectionFilter_ueqr71_m1c0 extends NodeRangeSelection.RangeSelectionFilter {
+
+
+    public boolean accept(SNode childNode) {
+      return SPropertyOperations.hasValue(SNodeOperations.cast(childNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference");
+    }
+
+    public String getModuleReference() {
+      return "c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)";
     }
   }
 
@@ -812,6 +829,9 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      CellAction_CreateChildRangeSelection selectNextPrevAction = new CellAction_CreateChildRangeSelection(elementNode, new ConceptDeclaration_Editor.RangeSelectionFilter_ueqr71_p1c0(), editorContext);
+      elementCell.setAction(CellActionType.SELECT_NEXT, selectNextPrevAction);
+      elementCell.setAction(CellActionType.SELECT_PREVIOUS, selectNextPrevAction);
       return elementCell;
     }
 
@@ -860,6 +880,18 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       public ApplySideTransforms_null_cellMenu_ueqr71_a0a51b2a() {
         super(CellSide.RIGHT, "ext_3_RTransform");
       }
+    }
+  }
+
+  public static class RangeSelectionFilter_ueqr71_p1c0 extends NodeRangeSelection.RangeSelectionFilter {
+
+
+    public boolean accept(SNode childNode) {
+      return SPropertyOperations.hasValue(SNodeOperations.cast(childNode, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "reference", "reference");
+    }
+
+    public String getModuleReference() {
+      return "c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)";
     }
   }
 

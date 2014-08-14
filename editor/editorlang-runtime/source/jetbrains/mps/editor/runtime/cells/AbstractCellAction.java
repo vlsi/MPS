@@ -23,6 +23,15 @@ import jetbrains.mps.openapi.editor.cells.CellAction;
  * Date: 2/12/13
  */
 public abstract class AbstractCellAction implements CellAction {
+  private boolean myExecuteInCommand = true;
+
+  public AbstractCellAction() {
+  }
+
+  protected AbstractCellAction(boolean executeInCommand) {
+    myExecuteInCommand = executeInCommand;
+  }
+
   @Override
   public String getDescriptionText() {
     return "no description : " + this.getClass().getName();
@@ -30,7 +39,7 @@ public abstract class AbstractCellAction implements CellAction {
 
   @Override
   public boolean executeInCommand() {
-    return true;
+    return myExecuteInCommand;
   }
 
   @Override
