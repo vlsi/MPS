@@ -16,16 +16,17 @@ public class IgnoringStoppableRunner extends StoppableRunner {
 
   @Override
   protected void doRun(RunNotifier notifier) {
-    if (myIgnoringFilter.accept(myRequest)) {
+    try {
+      myIgnoringFilter.accept(myRequest);
       myRequest.getRunner().run(notifier);
-    } else {
-      ignoreRequest(notifier);
+    } catch (Filter.FilterException e) {
+      ignoreRequest(notifier, e);
     }
   }
 
-  private void ignoreRequest(RunNotifier notifier) {
+  private void ignoreRequest(RunNotifier notifier, Exception e) {
     notifier.fireTestStarted(getDescription());
-    notifier.fireTestAssumptionFailed(new Failure(getDescription(), new Throwable("Ignoring test " + myRequest.getRunner().getDescription().getDisplayName())));
+    notifier.fireTestAssumptionFailed(new Failure(getDescription(), e));
     notifier.fireTestFinished(getDescription());
   }
 }

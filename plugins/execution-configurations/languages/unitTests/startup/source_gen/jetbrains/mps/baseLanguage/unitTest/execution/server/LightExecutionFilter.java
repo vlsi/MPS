@@ -14,34 +14,39 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class LightExecutionFilter implements Filter {
   @Override
-  public boolean accept(final Request request) {
+  public boolean accept(final Request request) throws Filter.FilterException {
     assert request instanceof TestNodeRequest;
     final ITestNodeWrapper testNodeWrapper = ((TestNodeRequest) request).getTestNode();
-    final boolean[] result = {true};
+    final Filter.FilterException[] result = {null};
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
         SNode testNode = testNodeWrapper.getNode();
         SNode rootNode = SNodeOperations.getContainingRoot(testNode);
         if (!(SNodeOperations.isInstanceOf(testNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"))) {
-          result[0] = false;
-          return;
+          result[0] = new Filter.FilterException("The test concept must be an instance on ITestable concept. Test " + testNodeWrapper.getName() + " is ignored.");
         }
         if (BehaviorReflection.invokeNonVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), "call_reOpenProject_1031873601093419509", new Object[]{SNodeOperations.getModel(rootNode)})) {
-          result[0] = false;
-          return;
+          result[0] = new Filter.FilterException("The project properties given in the TestInfo file is impossible to set in-process. Test " + testNodeWrapper.getName() + " is ignored.");
         }
         if (SNodeOperations.isInstanceOf(testNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) {
-          result[0] = BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(testNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "call_canRunInProcess_6436735966448788391", new Object[]{});
-          return;
+          if (!(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(testNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "call_canRunInProcess_6436735966448788391", new Object[]{}))) {
+            result[0] = new Filter.FilterException("The test is set not to be executed in-process. Test " + testNodeWrapper.getName() + " is ignored.");
+          }
+
         }
         // cannot run (in-process) test methods from TestCase, which is not executable in the same process 
         if (SNodeOperations.isInstanceOf(rootNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) {
-          result[0] = BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(rootNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "call_canRunInProcess_6436735966448788391", new Object[]{});
-          return;
+          if (!(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, SNodeOperations.cast(rootNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "call_canRunInProcess_6436735966448788391", new Object[]{}))) {
+            result[0] = new Filter.FilterException("The test is set not to be executed in-process. Test " + testNodeWrapper.getName() + " is ignored.");
+          }
+
         }
       }
     });
-    return result[0];
+    if (result[0] != null) {
+      throw result[0];
+    }
+    return true;
   }
 }

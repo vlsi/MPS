@@ -5,5 +5,10 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 import org.junit.runner.Request;
 
 public interface Filter {
-  public boolean accept(Request request);
+  public boolean accept(Request request) throws Filter.FilterException;
+  public static class FilterException extends Exception {
+    public FilterException(String msg) {
+      super(msg);
+    }
+  }
 }
