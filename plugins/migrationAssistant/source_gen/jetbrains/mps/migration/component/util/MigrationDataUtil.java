@@ -8,6 +8,7 @@ import jetbrains.mps.vfs.IFile;
 import java.io.OutputStreamWriter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -21,32 +22,49 @@ import jetbrains.mps.util.FileUtil;
 public class MigrationDataUtil {
   public static void saveData(AbstractModule module, Iterable<Tuples._2<MigrationScriptReference, String>> data) {
     IFile file = getDataFile(module);
+    OutputStreamWriter writer = null;
     try {
-      OutputStreamWriter writer = new OutputStreamWriter(file.openOutputStream());
+      writer = new OutputStreamWriter(file.openOutputStream());
       for (Tuples._2<MigrationScriptReference, String> p : Sequence.fromIterable(data)) {
         writer.write(p._0().serialize());
         writer.write(":");
         writer.write(p._1());
         writer.write("\n");
       }
-      writer.close();
     } catch (IOException e) {
       throw new RuntimeException(e);
+    } finally {
+      if (writer != null) {
+        try {
+          writer.close();
+        } catch (IOException e) {
+        }
+      }
     }
   }
 
   public static Iterable<Tuples._2<MigrationScriptReference, String>> loadData(AbstractModule module) {
     IFile file = getDataFile(module);
+    if (!(file.exists())) {
+      return Sequence.fromIterable(Collections.<Tuples._2<MigrationScriptReference, String>>emptyList());
+    }
     List<Tuples._2<MigrationScriptReference, String>> result = ListSequence.fromList(new ArrayList<Tuples._2<MigrationScriptReference, String>>());
+    BufferedReader reader = null;
     try {
-      BufferedReader reader = new BufferedReader(new InputStreamReader(file.openInputStream()));
+      reader = new BufferedReader(new InputStreamReader(file.openInputStream()));
       for (String line; (line = reader.readLine()) != null;) {
         int sepInd = line.indexOf(':');
         ListSequence.fromList(result).addElement(MultiTuple.<MigrationScriptReference,String>from(MigrationScriptReference.deserialize(line.substring(0, sepInd)), line.substring(sepInd + 1)));
       }
-      reader.close();
     } catch (IOException e) {
       throw new RuntimeException(e);
+    } finally {
+      if (reader != null) {
+        try {
+          reader.close();
+        } catch (IOException e) {
+        }
+      }
     }
     return result;
   }
