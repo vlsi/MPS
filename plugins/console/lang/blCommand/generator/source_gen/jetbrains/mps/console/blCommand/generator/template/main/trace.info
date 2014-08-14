@@ -226,8 +226,8 @@
   </root>
   <root nodeRef="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.console.blCommand.generator.template.main@generator)/3492877759611336981">
     <file name="QueriesGenerated.java">
-      <node id="3492877759611337804" at="323,120,324,73" concept="5" />
-      <scope id="3492877759611337803" at="323,120,324,73" />
+      <node id="6134217374019191582" at="323,120,324,73" concept="5" />
+      <scope id="6134217374019191581" at="323,120,324,73" />
     </file>
   </root>
   <root nodeRef="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.console.blCommand.generator.template.main@generator)/3492877759612264689">
@@ -351,9 +351,9 @@
   <root nodeRef="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.console.blCommand.generator.template.main@generator)/5510759644748861143">
     <file name="QueriesGenerated.java">
       <node id="5510759644748869360" at="142,109,143,198" concept="5" />
-      <node id="5510759644749147960" at="228,108,229,73" concept="5" />
+      <node id="6134217374019005719" at="228,108,229,73" concept="5" />
       <scope id="5510759644748869359" at="142,109,143,198" />
-      <scope id="5510759644749147954" at="228,108,229,73" />
+      <scope id="6134217374019005718" at="228,108,229,73" />
     </file>
   </root>
   <root nodeRef="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.console.blCommand.generator.template.main@generator)/6322385757205252390">
