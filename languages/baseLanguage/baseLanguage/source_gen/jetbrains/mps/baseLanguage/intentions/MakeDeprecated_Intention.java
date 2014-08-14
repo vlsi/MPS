@@ -14,10 +14,10 @@ import java.util.Collections;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class DeprecatedJavaDoc_Intention implements IntentionFactory {
+public class MakeDeprecated_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public DeprecatedJavaDoc_Intention() {
+  public MakeDeprecated_Intention() {
   }
 
   public String getConcept() {
@@ -25,11 +25,11 @@ public class DeprecatedJavaDoc_Intention implements IntentionFactory {
   }
 
   public String getPresentation() {
-    return "DeprecatedJavaDoc";
+    return "MakeDeprecated";
   }
 
   public String getPersistentStateKey() {
-    return "jetbrains.mps.baseLanguage.intentions.DeprecatedJavaDoc_Intention";
+    return "jetbrains.mps.baseLanguage.intentions.MakeDeprecated_Intention";
   }
 
   public String getLanguageFqName() {
@@ -58,7 +58,7 @@ public class DeprecatedJavaDoc_Intention implements IntentionFactory {
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new DeprecatedJavaDoc_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeDeprecated_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -84,7 +84,7 @@ public class DeprecatedJavaDoc_Intention implements IntentionFactory {
     }
 
     public IntentionDescriptor getDescriptor() {
-      return DeprecatedJavaDoc_Intention.this;
+      return MakeDeprecated_Intention.this;
     }
   }
 }

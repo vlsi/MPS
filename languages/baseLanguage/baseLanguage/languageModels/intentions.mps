@@ -7357,7 +7357,7 @@
     </node>
   </root>
   <root type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1223648378225" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="DeprecatedJavaDoc" />
+    <property name="name" nameId="tpck.1169194664001" value="MakeDeprecated" />
     <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpee.1224848483129" resolveInfo="IBLDeprecatable" />
     <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="1223648378226" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1223648378227" nodeInfo="sn">

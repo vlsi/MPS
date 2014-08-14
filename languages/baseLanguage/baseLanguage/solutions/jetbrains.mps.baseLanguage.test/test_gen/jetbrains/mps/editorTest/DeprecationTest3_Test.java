@@ -10,14 +10,14 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class IntentionTest_Test extends BaseTransformationTest4 {
-  public IntentionTest_Test() {
+public class DeprecationTest3_Test extends BaseTransformationTest4 {
+  public DeprecationTest3_Test() {
   }
 
   @Test
-  public void test_IntentionTest() throws Throwable {
+  public void test_DeprecationTest3() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.IntentionTest_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.DeprecationTest3_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -27,9 +27,9 @@ public class IntentionTest_Test extends BaseTransformationTest4 {
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("1230132506154", "1230132540710");
+      final Editor editor = TestBody.this.initEditor("992603586001620156", "992603586001620167");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      invokeIntention("jetbrains.mps.baseLanguage.intentions.DeprecatedJavaDoc_Intention", editor, myStart.getNode());
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Delete_Action");
     }
   }
 }
