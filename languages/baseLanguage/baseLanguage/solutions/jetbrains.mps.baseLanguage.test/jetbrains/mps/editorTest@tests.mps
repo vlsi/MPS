@@ -17398,11 +17398,7 @@
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="992603586001620105" nodeInfo="in" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="992603586001620106" nodeInfo="nn" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="992603586001620107" nodeInfo="sn" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="992603586001620108" nodeInfo="ng">
-          <node role="deprecated" roleId="m373.8465538089690331499" type="m373.DeprecatedBlockDocTag" typeId="m373.8465538089690331492" id="992603586001620109" nodeInfo="ng">
-            <node role="text" roleId="m373.2667874559098216723" type="m373.CommentLine" typeId="m373.8465538089690331500" id="992603586001620110" nodeInfo="ng" />
-          </node>
-        </node>
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="992603586001620108" nodeInfo="ng" />
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="992603586001620111" nodeInfo="nn">
           <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lc.~Deprecated" resolveInfo="Deprecated" />
         </node>
@@ -17503,11 +17499,6 @@
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="992603586001643397" nodeInfo="in" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="992603586001643398" nodeInfo="nn" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="992603586001643399" nodeInfo="sn" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="992603586001643400" nodeInfo="ng">
-          <node role="deprecated" roleId="m373.8465538089690331499" type="m373.DeprecatedBlockDocTag" typeId="m373.8465538089690331492" id="992603586001643401" nodeInfo="ng">
-            <node role="text" roleId="m373.2667874559098216723" type="m373.CommentLine" typeId="m373.8465538089690331500" id="992603586001643402" nodeInfo="ng" />
-          </node>
-        </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="992603586001643404" nodeInfo="nn" />
     </node>
