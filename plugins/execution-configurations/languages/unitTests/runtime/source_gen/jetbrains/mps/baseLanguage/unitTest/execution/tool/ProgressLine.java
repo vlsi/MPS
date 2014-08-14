@@ -39,7 +39,7 @@ public class ProgressLine extends JPanel implements TestView {
     if (myState.getAvailableText() != null || ProcessOutputTypes.SYSTEM.equals(myState.getKey())) {
       return;
     }
-    final int defectedTests = myState.getDefectTests();
+    final int defectedTests = myState.getFailedTests();
     final int totalTests = myState.getTotalTests();
     final int completedTests = myState.getCompletedTests();
     final String testName = myState.getCurrentMethod();
@@ -60,7 +60,7 @@ public class ProgressLine extends JPanel implements TestView {
       myProgressBar.setColor(ColorProgressBar.YELLOW);
     }
     if (total != 0) {
-      myProgressBar.setFraction((double) completed / (double) total);
+      myProgressBar.setFraction(completed * 1. / total);
     }
   }
   private void updateLabel(int defected, int total, int completed, String testName) {

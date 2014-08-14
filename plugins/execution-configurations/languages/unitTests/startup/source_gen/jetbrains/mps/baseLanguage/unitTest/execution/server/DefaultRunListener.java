@@ -15,14 +15,12 @@ public class DefaultRunListener extends RunListener {
   @Override
   public void testFinished(Description description) throws Exception {
     this.printSyncToken(("<FINISH_TEST>"), description);
-    super.testFinished(description);
   }
   @Override
   public void testFailure(Failure failure) throws Exception {
     this.printSyncToken(("<TEST_FAILURE_BEGIN>"), failure.getDescription());
     failure.getException().printStackTrace(System.err);
     this.printSyncToken(("<TEST_FAILURE_END>"), failure.getDescription());
-    super.testFailure(failure);
     ++myFailureCount;
   }
   @Override
@@ -30,12 +28,10 @@ public class DefaultRunListener extends RunListener {
     this.printSyncToken(("<TEST_ASSUMPTION_FAILURE_BEGIN>"), failure.getDescription());
     failure.getException().printStackTrace(System.err);
     this.printSyncToken(("<TEST_ASSUMPTION_FAILURE_END>"), failure.getDescription());
-    super.testAssumptionFailure(failure);
   }
   @Override
   public void testStarted(Description description) throws Exception {
     printSyncToken(("<START_TEST>"), description);
-    super.testStarted(description);
   }
   private void printSyncToken(String tokenPrefix, Description description) {
     StringBuilder builder = new StringBuilder();

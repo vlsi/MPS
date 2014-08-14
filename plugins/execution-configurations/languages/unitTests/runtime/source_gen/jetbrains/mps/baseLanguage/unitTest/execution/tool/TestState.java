@@ -11,11 +11,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public enum TestState {
   NOT_RAN(AllIcons.RunConfigurations.TestNotRan),
   IN_PROGRESS(AllIcons.RunConfigurations.TestInProgress1),
+  PAUSED(AllIcons.RunConfigurations.TestPaused),
   IGNORED(AllIcons.RunConfigurations.TestIgnored),
+  PASSED(AllIcons.RunConfigurations.TestPassed),
   FAILED(AllIcons.RunConfigurations.TestFailed),
   ERROR(AllIcons.RunConfigurations.TestError),
-  PASSED(AllIcons.RunConfigurations.TestPassed),
-  PAUSED(AllIcons.RunConfigurations.TestPaused),
   TERMINATED(AllIcons.RunConfigurations.TestTerminated);
 
   private final Icon myIcon;

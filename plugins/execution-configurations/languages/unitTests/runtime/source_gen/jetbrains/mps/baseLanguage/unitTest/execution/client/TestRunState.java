@@ -29,11 +29,12 @@ public class TestRunState {
   private String myCurrentClass;
   private String myCurrentMethod;
   private String myCurrentToken;
+  private volatile boolean myCurrentPassed = true;
   private String myLostTest;
   private String myLostMethod;
   private int myTotalTests = 0;
   private int myCompletedTests = 0;
-  private int myDefectTests = 0;
+  private int myFailedTests = 0;
   private boolean myIsTerminated;
   private String myAvailableText = null;
   private Key myKey = null;
@@ -105,13 +106,13 @@ public class TestRunState {
     });
     this.startTest(event.getTestCaseName(), event.getTestMethodName());
   }
-  public void onTestEnded(final TestEvent event) {
+  public void onTestFinished(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestFinish(event);
       }
     });
-    this.endTest();
+    this.finishTest();
     this.completeTestEvent(event);
   }
   public void onTestFailure(final TestEvent event) {
@@ -120,7 +121,7 @@ public class TestRunState {
         it.onTestFailure(event);
       }
     });
-    this.defectTest();
+    this.failTest();
   }
   public void onTestAssumptionFailure(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
@@ -128,7 +129,7 @@ public class TestRunState {
         it.onTestAssumptionFailure(event);
       }
     });
-    this.defectTest();
+    this.ignoreTest();
   }
 
   public void looseTest(final String className, final String testName) {
@@ -146,20 +147,30 @@ public class TestRunState {
       checkConsistency();
       this.myCurrentClass = className;
       this.myCurrentMethod = methodName;
+      this.myCurrentPassed = true;
       this.updateView();
     }
   }
-  private void endTest() {
+  private void finishTest() {
     synchronized (lock) {
-      this.myCompletedTests++;
+      if (this.myCurrentPassed) {
+        this.myCompletedTests++;
+      }
       this.updateView();
       this.myCurrentClass = null;
       this.myCurrentMethod = null;
     }
   }
-  private void defectTest() {
+  private void failTest() {
     synchronized (lock) {
-      this.myDefectTests++;
+      this.myCurrentPassed = false;
+      this.myFailedTests++;
+      this.updateView();
+    }
+  }
+  private void ignoreTest() {
+    synchronized (lock) {
+      this.myCurrentPassed = false;
       this.updateView();
     }
   }
@@ -167,8 +178,6 @@ public class TestRunState {
     synchronized (lock) {
       this.myLostTest = test;
       this.myLostMethod = method;
-      this.myDefectTests++;
-      this.myCompletedTests++;
       this.updateView();
       this.myLostTest = null;
       this.myLostMethod = null;
@@ -183,7 +192,7 @@ public class TestRunState {
   }
   private void checkConsistency() {
     assert this.myCompletedTests <= this.myTotalTests;
-    assert this.myDefectTests <= this.myCompletedTests;
+    assert this.myFailedTests <= this.myCompletedTests;
   }
   public void outputText(String text, @NotNull Key key) {
     synchronized (lock) {
@@ -239,8 +248,8 @@ public class TestRunState {
   public int getTotalTests() {
     return this.myTotalTests;
   }
-  public int getDefectTests() {
-    return this.myDefectTests;
+  public int getFailedTests() {
+    return this.myFailedTests;
   }
   public int getCompletedTests() {
     return this.myCompletedTests;

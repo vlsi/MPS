@@ -40,7 +40,7 @@ public class TestEventsDispatcher {
     if (TestEvent.START_TEST_PREFIX.equals(event.getToken())) {
       this.myState.onTestStarted(event);
     } else if (TestEvent.FINISH_TEST_PREFIX.equals(event.getToken())) {
-      this.myState.onTestEnded(event);
+      this.myState.onTestFinished(event);
     } else if (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(event.getToken())) {
       this.myState.onTestAssumptionFailure(event);
     } else if (TestEvent.FAILURE_TEST_PREFIX.equals(event.getToken())) {

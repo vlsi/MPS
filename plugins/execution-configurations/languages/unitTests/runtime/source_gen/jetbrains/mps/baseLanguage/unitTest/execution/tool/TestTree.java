@@ -10,9 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.Nullable;
-import java.util.List;
-import java.util.Arrays;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -23,7 +21,9 @@ import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
+import java.util.List;
 import java.util.ArrayList;
 
 public class TestTree extends MPSTree implements TestView, Disposable {
@@ -46,9 +46,9 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     if (methodNode != null) {
       methodNode.setState(testState);
     }
-    List<TestState> priorityList = Arrays.asList(TestState.IN_PROGRESS, TestState.PASSED, TestState.FAILED, TestState.ERROR, TestState.TERMINATED);
+    Iterable<TestState> priorityList = Sequence.fromArray(TestState.values());
     TestState oldState = testCaseNode.getState();
-    if (ListSequence.fromList(priorityList).indexOf(oldState) < ListSequence.fromList(priorityList).indexOf(testState)) {
+    if (Sequence.fromIterable(priorityList).indexOf(oldState) < Sequence.fromIterable(priorityList).indexOf(testState)) {
       if (TestState.PASSED.equals(testState)) {
         for (MPSTreeNode method : testCaseNode) {
           if (!(TestState.PASSED.equals(((TestMethodTreeNode) method).getState()))) {
@@ -111,10 +111,10 @@ public class TestTree extends MPSTree implements TestView, Disposable {
             updateState(methodNode.value, testCaseNode, TestState.PASSED);
           }
         } else if (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(myState.getToken())) {
-          updateState(methodNode.value, testCaseNode, TestState.FAILED);
+          updateState(methodNode.value, testCaseNode, TestState.IGNORED);
         } else if (TestEvent.FAILURE_TEST_PREFIX.equals(myState.getToken())) {
           if (methodNode.value != null) {
-            methodNode.value.setState(TestState.ERROR);
+            methodNode.value.setState(TestState.FAILED);
           }
           updateState(methodNode.value, testCaseNode, TestState.ERROR);
         }

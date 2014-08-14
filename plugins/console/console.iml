@@ -21,7 +21,6 @@
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="module" module-name="make-runtime" />
-    <orderEntry type="module" module-name="mpsmake" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="library" name="Annotations" level="project" />
   </component>

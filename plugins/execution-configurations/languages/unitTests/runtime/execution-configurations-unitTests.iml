@@ -36,6 +36,7 @@
     <orderEntry type="library" name="PicoContainer" level="project" />
     <orderEntry type="module" module-name="execution-configurations-plugin" />
     <orderEntry type="module" module-name="mps-testing" />
+    <orderEntry type="library" name="JMock" level="project" />
   </component>
 </module>
 
