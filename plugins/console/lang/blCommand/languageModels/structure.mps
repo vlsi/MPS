@@ -37,7 +37,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.query" />
     <property name="name" nameId="tpck.1169194664001" value="UsagesExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#usages" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="direct references to node" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="direct references to a node" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307205004131544317" resolveInfo="QueryExpression" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8483375838963816172" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -66,7 +66,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.query" />
     <property name="name" nameId="tpck.1169194664001" value="InstancesExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#instances" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="instances of concept" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="instances of a concept" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307205004131544317" resolveInfo="QueryExpression" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7738379549910147342" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -79,7 +79,7 @@
     <property name="name" nameId="tpck.1169194664001" value="ProjectExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#project" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.query" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="current project" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="the current project" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307205004131544317" resolveInfo="QueryExpression" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8365379837260459177" nodeInfo="ig">

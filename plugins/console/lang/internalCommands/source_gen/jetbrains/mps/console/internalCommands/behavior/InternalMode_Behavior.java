@@ -18,6 +18,6 @@ public class InternalMode_Behavior {
   }
 
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "access to IDE internal mode variable";
+    return "access the IDE internal mode variable";
   }
 }

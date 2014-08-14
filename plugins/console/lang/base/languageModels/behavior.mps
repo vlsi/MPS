@@ -1928,7 +1928,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="473081947983370828" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="748410583119152993" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947985255888" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="display this help or help page for a command" />
+            <property name="value" nameId="tpee.1070475926801" value="display this help or a help page for a specific command" />
           </node>
         </node>
       </node>
@@ -1941,7 +1941,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7185170375691171353" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7185170375691175706" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7185170375691175714" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="When called without arguments, prints common help.\nWhen command is specified, prints help about the command." />
+            <property name="value" nameId="tpee.1070475926801" value="When called without any arguments, lists all available commands with their brief description.\nWhen a command is specified, help specific to that command is printed." />
           </node>
         </node>
       </node>
