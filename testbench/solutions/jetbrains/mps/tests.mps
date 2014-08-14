@@ -1417,7 +1417,22 @@
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1230119686657" resolveInfo="SelectTwoCells" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096798" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1230132483495" resolveInfo="IntentionTest" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1230132483495" resolveInfo="PreviousDeprecationTest1" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="992603586003856135" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.992603586001671834" resolveInfo="PreviousDeprecationTest2" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="992603586003862340" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.992603586001643454" resolveInfo="DeprecationTest1" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="992603586003862665" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.992603586001620095" resolveInfo="DeprecationTest2" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="992603586003862991" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.992603586001620155" resolveInfo="DeprecationTest3" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="992603586003863318" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.992603586001643387" resolveInfo="DeprecationTest4" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096799" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1230137733176" resolveInfo="TwoMullTwo" />
