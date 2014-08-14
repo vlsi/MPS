@@ -153,9 +153,7 @@
                         <link role="link" roleId="tp25.1138056546658" targetNodeId="m373.8465538089690331491" />
                       </node>
                     </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tp2q.IsNotEmptyOperation" typeId="tp2q.1176501494711" id="5858074156536703249" nodeInfo="nn">
-                      <property name="right_transform_hint" value="true" />
-                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tp2q.IsNotEmptyOperation" typeId="tp2q.1176501494711" id="5858074156536703249" nodeInfo="nn" />
                   </node>
                 </node>
               </node>
