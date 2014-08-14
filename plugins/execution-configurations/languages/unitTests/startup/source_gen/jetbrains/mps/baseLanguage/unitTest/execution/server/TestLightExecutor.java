@@ -87,6 +87,9 @@ public class TestLightExecutor extends AbstractTestExecutor {
     if (LOG.isInfoEnabled()) {
       LOG.info("Executing tests in-process...");
     }
+    if (LOG.isInfoEnabled()) {
+      LOG.info("You need to be aware of your own test code execution and its consequences, when running tests in-process.\n" + "The code is being executed within the current MPS environment and may do a great harm if used without caution");
+    }
     myTestRunState.advance(RunStateEnum.READYTOEXECUTE, RunStateEnum.RUNNING);
     System.setProperty(TestLightRunState.LIGHT_EXEC_FLAG, "true");
     try {

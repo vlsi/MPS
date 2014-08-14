@@ -4012,6 +4012,17 @@
             <property name="value" nameId="tpee.1070475926801" value="Executing tests in-process..." />
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="3217528343077142807" nodeInfo="nn">
+          <property name="severity" nameId="tpib.1167245565795" value="info" />
+          <node role="logExpression" roleId="tpib.1167227463056" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3217528343077152279" nodeInfo="nn">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3217528343077153156" nodeInfo="nn">
+              <property name="value" nameId="tpee.1070475926801" value="The code is being executed within the current MPS environment and may do a great harm if used without caution" />
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3217528343077142809" nodeInfo="nn">
+              <property name="value" nameId="tpee.1070475926801" value="You need to be aware of your own test code execution and its consequences, when running tests in-process.\n" />
+            </node>
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6796535740154100507" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6796535740154100508" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2992055787332545316" nodeInfo="nn">
