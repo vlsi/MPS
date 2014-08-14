@@ -28,6 +28,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_S
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.MultiMap;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -61,6 +62,10 @@ public class GenerationPartitioner {
   private final Map<SModuleReference, TemplateModule> myModulesMap;
   private final Map<SModelReference, TemplateModel> myModelMap;
 
+  // record dependencies between generators explicitly established by priority rules
+  // use these to avoid adding explicit rules ('not later' than target language) between generators with explicit rules
+  private final Set<Pair<TemplateModule, TemplateModule>> myExplicitDependencies;
+
   // result
   private final PartitioningSolver mySolver;
   private final PriorityConflicts myConflicts;
@@ -78,6 +83,7 @@ public class GenerationPartitioner {
         myModelMap.put(model.getSModelReference(), model);
       }
     }
+    myExplicitDependencies = new HashSet<Pair<TemplateModule, TemplateModule>>();
   }
 
   public List<List<TemplateMappingConfiguration>> createMappingSets() {
@@ -165,6 +171,9 @@ public class GenerationPartitioner {
       }
       // for each target generator,  add a rule {all MC in the current generator} <= {all MC of target generator}, with respect to top-pri MC
       for (TemplateModule tg : targetGenerators) {
+        if (myExplicitDependencies.contains(new Pair<TemplateModule, TemplateModule>(generator, tg))) {
+          continue;
+        }
         RuleHelper rhsHelper = new RuleHelper(tg, new MappingConfig_RefAllLocal());
         if (rhsHelper.getAllMappings().isEmpty()) {
           continue;
@@ -216,8 +225,10 @@ public class GenerationPartitioner {
     MappingConfig_AbstractRef right = rule.getRight();
     if (left == null || right == null) return;
 
-    Collection<TemplateMappingConfiguration> lhs = new RuleHelper(generator, left).getAllMappings();
-    Collection<TemplateMappingConfiguration> rhs = new RuleHelper(generator, right).getAllMappings();
+    final RuleHelper lhsHelper = new RuleHelper(generator, left);
+    final RuleHelper rhsHelper = new RuleHelper(generator, right);
+    Collection<TemplateMappingConfiguration> lhs = lhsHelper.getAllMappings();
+    Collection<TemplateMappingConfiguration> rhs = rhsHelper.getAllMappings();
     if (lhs.isEmpty() || rhs.isEmpty()) {
       final String lang = generator.getSourceLanguage().getNamespace();
       if (lhs.isEmpty() && rhs.isEmpty()) {
@@ -228,6 +239,11 @@ public class GenerationPartitioner {
         myConflicts.registerInvalid(generator.getReference(), msg, rule);
       }
       return;
+    }
+    for (TemplateModule l : lhsHelper.getInvolvedGenerators()) {
+      for (TemplateModule r : rhsHelper.getInvolvedGenerators()) {
+        myExplicitDependencies.add(new Pair<TemplateModule, TemplateModule>(l, r));
+      }
     }
     switch (rule.getType()) {
       case STRICTLY_TOGETHER:
@@ -278,6 +294,14 @@ public class GenerationPartitioner {
         if (!mc.isTopPriority()) {
           rv.add(mc);
         }
+      }
+      return rv;
+    }
+
+    public Collection<TemplateModule> getInvolvedGenerators() {
+      HashSet<TemplateModule> rv = new HashSet<TemplateModule>();
+      for (TemplateMappingConfiguration mc : getAllMappings()) {
+        rv.add(mc.getModel().getModule());
       }
       return rv;
     }

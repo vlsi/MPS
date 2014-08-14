@@ -129,7 +129,7 @@ final class Group {
     }
     sb.append("Group[");
     for (TemplateMappingConfiguration c : myMappings) {
-//      sb.append(NameUtil.compactNamespace(SModelStereotype.withoutStereotype(c.getMappingNode().getModelReference().getModelName())));
+//      sb.append(jetbrains.mps.util.NameUtil.compactNamespace(jetbrains.mps.smodel.SModelStereotype.withoutStereotype(c.getMappingNode().getModelReference().getModelName())));
 //      sb.append('.');
       sb.append(c.getName());
       sb.append(',');

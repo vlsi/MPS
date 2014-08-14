@@ -645,7 +645,14 @@ class GenerationSession {
     if (generationPlan.hasConflictingPriorityRules()) {
       myLogger.error("Conflicting mapping priority rules encountered:");
       for (Conflict c : generationPlan.getConflicts()) {
-        myLogger.error(c.getOrigin(), c.getText());
+        SModuleReference origin = c.getOrigin();
+        if (origin == null) {
+          // there might be conflicts due to implicit rules GenerationPlan adds. These rules don't belong to any
+          // generator, thus we use current input model as the origin of the conflict.
+          // XXX it might be reasonable to keep this logic deep in GP and restrict Conflict.getOrigin != null.
+          origin = myOriginalInputModel.getModule().getModuleReference();
+        }
+        myLogger.error(origin, c.getText());
       }
       myLogger.error("");
       return false;
