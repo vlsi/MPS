@@ -15,17 +15,17 @@ public class WatchableListType_Behavior {
 
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
-    BehaviorReflection.invokeVirtual(Void.class, _quotation_createNode_za89pk_a0b0a(), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
+    BehaviorReflection.invokeVirtual(Void.class, createClassifierType_za89pk_a0b0a(), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
   }
 
-  private static SNode _quotation_createNode_za89pk_a0b0a() {
+  private static SNode createClassifierType_za89pk_a0b0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    SNode quotedNode_2 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~List")));
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.WatchableType", null, null, false);
-    quotedNode_1.addChild("parameter", quotedNode_2);
-    return quotedNode_1;
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, false);
+    {
+      n1.setReference("classifier", SReference.create("classifier", n1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~List")));
+      SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.WatchableType", null, false);
+      n1.addChild("parameter", n2);
+    }
+    return n1;
   }
 }
