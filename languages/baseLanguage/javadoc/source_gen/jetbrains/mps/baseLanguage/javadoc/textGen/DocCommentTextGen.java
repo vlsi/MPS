@@ -55,7 +55,7 @@ public abstract class DocCommentTextGen {
         textGen.appendNode(item);
       }
     }
-    textGen.appendNode(SLinkOperations.getTarget(node, "deprecated", true));
+    // <node> 
   }
 
   public static void docCommentEnd(SNode node, final SNodeTextGen textGen) {
