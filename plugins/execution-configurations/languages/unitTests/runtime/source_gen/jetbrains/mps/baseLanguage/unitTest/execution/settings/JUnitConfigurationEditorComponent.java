@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.common.LayoutUtil;
 import com.intellij.ui.components.JBTextField;
+import javax.swing.JLabel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent;
 import java.util.List;
@@ -29,11 +30,10 @@ import java.util.ArrayList;
 import jetbrains.mps.execution.lib.ClonableList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.lib.PointerUtils;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager;
 
 public class JUnitConfigurationEditorComponent extends JBPanel {
   private final JBLightExecCheckBox myLightExecCheckBox = new JBLightExecCheckBox("Execute in the same process ", true);
-  private JBReuseCachesCheckBox myReuseCachesCheckBox = new JBReuseCachesCheckBox(myLightExecCheckBox, "Reuse caches", true);
+  private JBReuseCachesCheckBox myReuseCachesCheckBox = new JBReuseCachesCheckBox("Reuse caches", true);
   private FieldWithPathChooseDialog myCachesDir = new FieldWithPathChooseDialog(new FileChooserDescriptor(false, true, false, false, false, false));
 
   private final ModuleChooser myModuleChooser;
@@ -144,6 +144,10 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     myPanels[JUnitRunTypes.NODE.ordinal()] = myClassesList;
     myPanels[JUnitRunTypes.METHOD.ordinal()] = myMethodsList;
 
+    JBPanel saveCachesPanel = new JBPanel(new GridBagLayout());
+    saveCachesPanel.add(new JLabel("Save caches in: "), LayoutUtil.createLabelConstraints(0));
+    saveCachesPanel.add(myCachesDir, LayoutUtil.createFieldConstraints(1));
+
     add(kindPanel, LayoutUtil.createPanelConstraints(0));
     add(projectPanel, LayoutUtil.createPanelConstraints(1));
     add(modulePanel, LayoutUtil.createPanelConstraints(1));
@@ -152,7 +156,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     add(myMethodsList, LayoutUtil.createPanelConstraints(1));
     add(myLightExecCheckBox, LayoutUtil.createFieldConstraints(2));
     add(myReuseCachesCheckBox, LayoutUtil.createFieldConstraints(3));
-    add(myCachesDir, LayoutUtil.createFieldConstraints(4));
+    add(saveCachesPanel, LayoutUtil.createPanelConstraints(4));
   }
 
   private void setModuleValue(final String moduleName) {
@@ -174,6 +178,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   public void attachJavaComponent(final JavaConfigurationEditorComponent javaEditorComponent) {
     myLightExecCheckBox.registerComponents(Sequence.fromArray(javaEditorComponent.getComponents()));
     myLightExecCheckBox.registerComponent(myCachesDir);
+    myLightExecCheckBox.registerComponent(myReuseCachesCheckBox);
     myLightExecCheckBox.update();
   }
 
@@ -224,7 +229,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     configuration.setModule(module.value);
     configuration.setLightExec(myLightExecCheckBox.isSelected());
     configuration.setReuseCaches(myReuseCachesCheckBox.isSelected());
-    configuration.setCachesDir(myCachesDir.getText());
+    configuration.setCachesPath(myCachesDir.getText());
   }
 
   public void reset(final JUnitSettings_Configuration settings) {
@@ -289,14 +294,13 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
 
     updateCheckBoxes(settings);
     updatePanels();
-    myCachesDir.setText(settings.getCachesDir());
+    myCachesDir.setText(settings.getCachesPath());
   }
 
   private void updateCheckBoxes(JUnitSettings_Configuration configuration) {
-    do {
-      myLightExecCheckBox.doClick();
-    } while (myLightExecCheckBox.isSelected() != configuration.getLightExec());
-    myReuseCachesCheckBox.setSelected(configuration.getReuseCaches() && !(RunCachesManager.isLocked()));
+    myLightExecCheckBox.update();
+    myLightExecCheckBox.setSelected(configuration.getLightExec());
+    myReuseCachesCheckBox.setSelected(configuration.getReuseCaches());
   }
 
   public void resetEditorModelWith(final String modelName) {

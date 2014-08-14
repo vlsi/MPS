@@ -39,20 +39,21 @@ public class JUnitExecutor implements Executor {
 
   @Override
   public ProcessHandler execute() throws ExecutionException {
-    final boolean reuseCaches = myJUnitSettings.getReuseCaches() && RunCachesManager.acquireLock();
-    ProcessHandler commandProcess = new JUnit_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(myTestNodes, this.prepareJavaParamsForTests(reuseCaches, myJUnitSettings.getCachesDir()));
+    final String dirCachesPath = myJUnitSettings.getCachesPath();
+    final boolean dirLock = RunCachesManager.acquireLock(dirCachesPath);
+    ProcessHandler commandProcess = new JUnit_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(myTestNodes, this.prepareJavaParamsForTests(dirLock, dirCachesPath));
     commandProcess.addProcessListener(new ProcessAdapter() {
       @Override
       public void processTerminated(ProcessEvent p0) {
-        if (reuseCaches) {
-          RunCachesManager.releaseLock();
+        if (dirLock) {
+          RunCachesManager.releaseLock(dirCachesPath);
         }
       }
     });
     return commandProcess;
   }
 
-  public JavaRunParameters prepareJavaParamsForTests(boolean reuseCaches, String cachesDir) {
+  public JavaRunParameters prepareJavaParamsForTests(boolean dirLock, String cachesDir) {
     JavaRunParameters_Configuration javaRunParams = myJavaRunParameters;
     JavaRunParameters parameters = javaRunParams.getJavaRunParameters().clone();
     String vmFromJava = javaRunParams.getJavaRunParameters().getVmOptions();
@@ -60,16 +61,21 @@ public class JUnitExecutor implements Executor {
       vmFromJava = "";
     }
     String runIdString;
-    if (reuseCaches) {
-      runIdString = "-D" + CachesUtil.REUSE_CACHES_DIR + "=\"" + cachesDir + "\"";
-    } else {
-      if (myJUnitSettings.getReuseCaches()) {
-        // could not acquire the lock 
+    boolean cachesReused = myJUnitSettings.getReuseCaches();
+    if (cachesReused) {
+      if (dirLock) {
+        runIdString = "-D" + CachesUtil.REUSE_CACHES_DIR + "=\"" + cachesDir + "\"";
+      } else {
+        // could not acquire the lock, but user wants to reuse caches 
         runIdString = "";
         showWarning();
-      } else {
-        // option is not selected 
+      }
+    } else {
+      if (dirLock) {
         runIdString = "-D" + CachesUtil.SAVE_CACHES_DIR + "=\"" + cachesDir + "\"";
+      } else {
+        // could not acquire the lock 
+        runIdString = "";
       }
     }
     parameters.setVmOptions(vmFromJava + " " + runIdString);
@@ -79,7 +85,7 @@ public class JUnitExecutor implements Executor {
   private void showWarning() {
     UIUtil.invokeLaterIfNeeded(new Runnable() {
       public void run() {
-        ToolWindowManager.getInstance(myProject).notifyByBalloon(myExecutor.getId(), MessageType.WARNING, "Cannot reuse caches, because the directory is locked by another run.\nSaving caches in the " + " tmp directories");
+        ToolWindowManager.getInstance(myProject).notifyByBalloon(myExecutor.getId(), MessageType.WARNING, "Cannot reuse caches, because the chosen directory is locked by another run.\nThe option will be turned off.");
       }
     });
   }

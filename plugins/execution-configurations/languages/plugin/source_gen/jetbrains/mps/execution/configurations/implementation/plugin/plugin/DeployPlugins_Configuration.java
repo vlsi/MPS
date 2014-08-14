@@ -7,6 +7,7 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -38,7 +39,7 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
   public void checkConfiguration() throws RuntimeConfigurationException {
     this.getPluginsSettings().checkConfiguration();
     if (ListSequence.fromList(this.getPluginsSettings().getPluginsListToDeploy()).isEmpty()) {
-      throw new RuntimeConfigurationException("No plugins to deploy selected");
+      throw new RuntimeConfigurationError("No plugins to deploy selected");
     }
   }
   @Override

@@ -6,14 +6,16 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import com.intellij.execution.configurations.RuntimeConfigurationError;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor;
+import jetbrains.mps.lang.test.util.RunStateEnum;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.execution.lib.ClonableList;
-import java.io.File;
-import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import java.util.List;
 import jetbrains.mps.project.Project;
@@ -35,7 +37,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   private JUnitSettings_Configuration.MyState myState = new JUnitSettings_Configuration.MyState();
   public void checkConfiguration() throws RuntimeConfigurationException {
     if (this.getRunType() == null) {
-      throw new RuntimeConfigurationException("Type of test not selected.");
+      throw new RuntimeConfigurationError("Type of test not selected.");
     }
     if (this.getRunType() != null) {
       // We do not validate, only check if there is something to test, since validating everything be very slow 
@@ -44,8 +46,15 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
         return;
       }
       if (!(hasTests(ProjectHelper.toMPSProject(myProject)))) {
-        throw new RuntimeConfigurationException("Could not find tests to run.");
+        throw new RuntimeConfigurationError("Could not find tests to run.");
       }
+    }
+
+    if (this.getLightExec() && JUnitLightExecutor.getRunState().get() != RunStateEnum.IDLE) {
+      throw new RuntimeConfigurationError("There is already another instance running tests in-process. Only one instance is allowed to run in-process.");
+    }
+    if (!(this.getLightExec()) && this.getReuseCaches() && !(canSaveCachesPath())) {
+      throw new RuntimeConfigurationError("The chosen caches directory is already locked by another run. Please choose another one.");
     }
   }
   @Override
@@ -74,8 +83,8 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public boolean getDebug() {
     return myState.myDebug;
   }
-  public String getCachesDir() {
-    return myState.myCachesDir;
+  public String getCachesPath() {
+    return myState.myCachesPath;
   }
   public ClonableList<String> getTestCases() {
     return myState.myTestCases;
@@ -101,8 +110,8 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public void setDebug(boolean value) {
     myState.myDebug = value;
   }
-  public void setCachesDir(String value) {
-    myState.myCachesDir = value;
+  public void setCachesPath(String value) {
+    myState.myCachesPath = value;
   }
   public void setTestCases(ClonableList<String> value) {
     myState.myTestCases = value;
@@ -113,10 +122,11 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public void setRunType(JUnitRunTypes value) {
     myState.myRunType = value;
   }
-  private String getDefaultPath() {
-    File tmpDir = FileUtil.getTempDir();
-    File defaultTestDir = new File(tmpDir.getAbsolutePath(), "mps_test_dir");
-    return defaultTestDir.getAbsolutePath();
+  public String getDefaultPath() {
+    return new DefaultCachesPathChooser().chooseDir();
+  }
+  public boolean canSaveCachesPath() {
+    return this.getReuseCaches() && !(RunCachesManager.isLocked(this.getCachesPath()));
   }
   public boolean canLightExecute(Iterable<ITestNodeWrapper> testNodes) {
     return this.getLightExec() && !(this.getDebug());
@@ -180,7 +190,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     public boolean myLightExec = true;
     public boolean myReuseCaches = true;
     public boolean myDebug = false;
-    public String myCachesDir = getDefaultPath();
+    public String myCachesPath = getDefaultPath();
     public ClonableList<String> myTestCases = new ClonableList<String>();
     public ClonableList<String> myTestMethods = new ClonableList<String>();
     public JUnitRunTypes myRunType = JUnitRunTypes.PROJECT;
@@ -194,7 +204,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       state.myLightExec = myLightExec;
       state.myReuseCaches = myReuseCaches;
       state.myDebug = myDebug;
-      state.myCachesDir = myCachesDir;
+      state.myCachesPath = myCachesPath;
       if (myTestCases != null) {
         state.myTestCases = myTestCases.clone();
       }

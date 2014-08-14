@@ -136,6 +136,7 @@ public final class CachesUtil {
     }
 
     private void cleanFolders(File testConfigPath, File testSystemPath) {
+      System.out.println("Cleaning the cache directory");
       FileUtil.clear(testConfigPath);
       FileUtil.clear(testSystemPath);
     }

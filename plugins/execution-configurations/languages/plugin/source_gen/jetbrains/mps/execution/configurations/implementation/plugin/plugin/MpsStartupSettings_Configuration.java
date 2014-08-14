@@ -6,6 +6,7 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -32,10 +33,10 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
   private MpsStartupSettings_Configuration.MyState myState = new MpsStartupSettings_Configuration.MyState();
   public void checkConfiguration() throws RuntimeConfigurationException {
     if (isEmptyString(this.getConfigurationPath())) {
-      throw new RuntimeConfigurationException("Configuration path is empty.");
+      throw new RuntimeConfigurationError("Configuration path is empty.");
     }
     if (isEmptyString(this.getSystemPath())) {
-      throw new RuntimeConfigurationException("System path is empty.");
+      throw new RuntimeConfigurationError("System path is empty.");
     }
   }
   @Override

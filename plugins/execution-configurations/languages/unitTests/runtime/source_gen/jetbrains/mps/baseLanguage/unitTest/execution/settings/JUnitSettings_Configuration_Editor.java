@@ -22,6 +22,7 @@ public class JUnitSettings_Configuration_Editor extends SettingsEditorEx<JUnitSe
     myEditor.apply(configuration);
   }
   public void resetEditorFrom(final JUnitSettings_Configuration configuration) {
+    configuration.setCachesPath(configuration.getDefaultPath());
     myEditor.reset(configuration);
   }
   private Project myProject;

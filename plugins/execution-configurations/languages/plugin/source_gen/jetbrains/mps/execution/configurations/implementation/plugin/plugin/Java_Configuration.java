@@ -18,6 +18,7 @@ import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -67,7 +68,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       });
 
       if (hasMainMethod.value) {
-        throw new RuntimeConfigurationException("Selected class does not have main method.");
+        throw new RuntimeConfigurationError("Selected class does not have main method.");
       }
     }
   }
