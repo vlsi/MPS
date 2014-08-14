@@ -5,6 +5,10 @@ package jetbrains.mps.migration.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 
 public class MigrationScript_Behavior {
   public static void init(SNode thisNode) {
@@ -20,5 +24,12 @@ public class MigrationScript_Behavior {
 
   public static boolean call_hasData_586712031920013598(SNode thisNode) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "dataType", true), "jetbrains.mps.baseLanguage.structure.VoidType"));
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (ScopeUtils.comeFrom("body", thisNode, child) && SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.migration.structure.RequiredDataItem")) {
+      return new NamedElementsScope(SLinkOperations.getTargets(thisNode, "requiresData", true));
+    }
+    return null;
   }
 }

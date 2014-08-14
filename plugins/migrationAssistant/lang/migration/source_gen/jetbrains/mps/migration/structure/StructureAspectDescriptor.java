@@ -20,7 +20,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptPersistedData").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("dataString", "").create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.MigrationScript").super_("jetbrains.mps.migration.structure.AbstractMigrationScript").parents("jetbrains.mps.migration.structure.AbstractMigrationScript", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"dataType", "body", "applicable", "requiresData", "serialize", "deserialize"}, new boolean[]{false, false, false, true, false, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.MigrationScript").super_("jetbrains.mps.migration.structure.AbstractMigrationScript").parents("jetbrains.mps.migration.structure.AbstractMigrationScript", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider").children(new String[]{"dataType", "body", "applicable", "requiresData", "serialize", "deserialize"}, new boolean[]{false, false, false, true, false, false}).create();
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.MigrationScriptApplicable").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
       case 5:
@@ -28,13 +28,17 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.MigrationScriptDeserialize").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.MigrationScriptSerialize").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.MigrationScriptReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("version").children(new String[]{"module"}, new boolean[]{false}).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.RequiredDataItem").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("version").children(new String[]{"module"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.MigrationScriptSerialize").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
+      case 9:
+        return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.RequiredDataItem").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"script", "type"}, new boolean[]{false, false}).create();
+      case 10:
+        return new ConceptDescriptorBuilder("jetbrains.mps.migration.structure.RequiredDataReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("item").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.migration.structure.AbstractMigrationScript", "jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptData", "jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptPersistedData", "jetbrains.mps.migration.structure.MigrationScript", "jetbrains.mps.migration.structure.MigrationScriptApplicable", "jetbrains.mps.migration.structure.MigrationScriptBody", "jetbrains.mps.migration.structure.MigrationScriptDeserialize", "jetbrains.mps.migration.structure.MigrationScriptSerialize", "jetbrains.mps.migration.structure.RequiredDataItem"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.migration.structure.AbstractMigrationScript", "jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptData", "jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptPersistedData", "jetbrains.mps.migration.structure.MigrationScript", "jetbrains.mps.migration.structure.MigrationScriptApplicable", "jetbrains.mps.migration.structure.MigrationScriptBody", "jetbrains.mps.migration.structure.MigrationScriptDeserialize", "jetbrains.mps.migration.structure.MigrationScriptReference", "jetbrains.mps.migration.structure.MigrationScriptSerialize", "jetbrains.mps.migration.structure.RequiredDataItem", "jetbrains.mps.migration.structure.RequiredDataReference"};
 }

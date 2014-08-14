@@ -13,12 +13,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
 public class RequiredDataItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -33,9 +27,7 @@ public class RequiredDataItem_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ihcojc_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ihcojc_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ihcojc_d0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_ihcojc_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ihcojc_f0(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_ihcojc_g0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ihcojc_e0(editorContext, node));
     return editorCell;
   }
 
@@ -58,7 +50,7 @@ public class RequiredDataItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ihcojc_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ihcojc_b0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -66,12 +58,12 @@ public class RequiredDataItem_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_ihcojc_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("module");
-    provider.setNoTargetText("<no module>");
+    provider.setRole("type");
+    provider.setNoTargetText("<no type>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("module");
+      editorCell.setRole("type");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -85,19 +77,21 @@ public class RequiredDataItem_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ihcojc_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from script");
     editorCell.setCellId("Constant_ihcojc_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_ihcojc_e0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("version");
-    provider.setNoTargetText("<no version>");
+  private EditorCell createRefNode_ihcojc_e0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("script");
+    provider.setNoTargetText("<no script>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_version");
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("script");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -106,32 +100,6 @@ public class RequiredDataItem_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ihcojc_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
-    editorCell.setCellId("Constant_ihcojc_f0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createReadOnlyModelAccessor_ihcojc_g0(final EditorContext editorContext, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-      public String getText() {
-        return String.valueOf(SPropertyOperations.getInteger(node, "version") + 1);
-      }
-
-      public void setText(String s) {
-      }
-
-      public boolean isValidText(String s) {
-        return EqualUtil.equals(s, getText());
-      }
-    }, node);
-    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_ihcojc_g0");
     return editorCell;
   }
 }

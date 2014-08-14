@@ -7,10 +7,12 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.migration.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.migration.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.migration.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.migration.structure.StructureAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.migration.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />

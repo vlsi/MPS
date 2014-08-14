@@ -18,7 +18,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new MigrationScript_BehaviorDescriptor();
       case 3:
         return new MigrationScriptApplicable_BehaviorDescriptor();
-      case 6:
+      case 7:
         return new MigrationScriptSerialize_BehaviorDescriptor();
       case 0:
         return new ConceptFunctionParameter_MigrationScriptData_BehaviorDescriptor();
@@ -26,12 +26,16 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new MigrationScriptDeserialize_BehaviorDescriptor();
       case 1:
         return new ConceptFunctionParameter_MigrationScriptPersistedData_BehaviorDescriptor();
-      case 7:
+      case 8:
         return new RequiredDataItem_BehaviorDescriptor();
+      case 9:
+        return new RequiredDataReference_BehaviorDescriptor();
+      case 6:
+        return new MigrationScriptReference_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptData", "jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptPersistedData", "jetbrains.mps.migration.structure.MigrationScript", "jetbrains.mps.migration.structure.MigrationScriptApplicable", "jetbrains.mps.migration.structure.MigrationScriptBody", "jetbrains.mps.migration.structure.MigrationScriptDeserialize", "jetbrains.mps.migration.structure.MigrationScriptSerialize", "jetbrains.mps.migration.structure.RequiredDataItem"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptData", "jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptPersistedData", "jetbrains.mps.migration.structure.MigrationScript", "jetbrains.mps.migration.structure.MigrationScriptApplicable", "jetbrains.mps.migration.structure.MigrationScriptBody", "jetbrains.mps.migration.structure.MigrationScriptDeserialize", "jetbrains.mps.migration.structure.MigrationScriptReference", "jetbrains.mps.migration.structure.MigrationScriptSerialize", "jetbrains.mps.migration.structure.RequiredDataItem", "jetbrains.mps.migration.structure.RequiredDataReference"};
 }

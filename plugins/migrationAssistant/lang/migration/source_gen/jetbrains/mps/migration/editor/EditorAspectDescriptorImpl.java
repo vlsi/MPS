@@ -18,7 +18,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
       case 1:
+        return Collections.<ConceptEditor>singletonList(new MigrationScriptReference_Editor());
+      case 2:
         return Collections.<ConceptEditor>singletonList(new RequiredDataItem_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new RequiredDataReference_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -30,5 +34,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.migration.structure.MigrationScript", "jetbrains.mps.migration.structure.RequiredDataItem"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.migration.structure.MigrationScript", "jetbrains.mps.migration.structure.MigrationScriptReference", "jetbrains.mps.migration.structure.RequiredDataItem", "jetbrains.mps.migration.structure.RequiredDataReference"};
 }
