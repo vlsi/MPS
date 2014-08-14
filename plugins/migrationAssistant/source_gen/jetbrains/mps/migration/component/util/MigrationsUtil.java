@@ -85,7 +85,9 @@ public class MigrationsUtil {
     AbstractModule module = ((AbstractModule) sa.getModule());
     SLanguageId languageId = IdHelper.getLanguageId(script.getReference().getModuleReference().getModuleId());
     assert module.getModuleDescriptor().getLanguageVersions().get(languageId) == script.getReference().getFromVersion();
-    script.execute(module);
+    Object data = script.execute(module);
+    MigrationDataUtil.addData(module, script.getReference(), script.serializeData(data));
+    script.serializeData(data);
     module.getModuleDescriptor().getLanguageVersions().put(languageId, script.getReference().getFromVersion() + 1);
     module.setChanged();
   }
