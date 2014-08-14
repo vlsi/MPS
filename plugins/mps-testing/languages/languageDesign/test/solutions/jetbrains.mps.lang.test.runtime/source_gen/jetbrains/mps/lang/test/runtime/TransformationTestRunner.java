@@ -10,12 +10,12 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SModel;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import junit.framework.Assert;
 import java.util.Arrays;
 import jetbrains.mps.project.ProjectManager;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import jetbrains.mps.tool.environment.Environment;
@@ -41,7 +41,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 public class TransformationTestRunner implements TestRunner {
   private static final String PATH_MACRO_PREFIX = "path.macro.";
   private static final StringSelection EMPTY_CLIPBOARD_CONTENT = new StringSelection("");
-  private static TestModelSaver ourTestModelSaver = new TestModelSaver();
 
   public TransformationTestRunner() {
   }
@@ -72,49 +71,46 @@ public class TransformationTestRunner implements TestRunner {
       LOG.info("Initializing test...");
     }
     test.setProject(testProject);
-    TransformationTest cachedTest = ourTestModelSaver.getTest();
-    SModel cachedModel = check_ovzmet_a0d0m(cachedTest);
-    SModel cachedTransientModel = check_ovzmet_a0e0m(cachedTest);
-    if (modelName.equals(check_ovzmet_a0a5a21(check_ovzmet_a0a0f0m(cachedModel)))) {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("using cache");
+    TransformationTest cachedTest = TestModelSaver.getInstance().getTest();
+    SModel cachedModel = check_ovzmet_a0d0l(cachedTest);
+    SModel cachedTransientModel = check_ovzmet_a0e0l(cachedTest);
+    if (modelName.equals(check_ovzmet_a0a5a11(check_ovzmet_a0a0f0l(cachedModel)))) {
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("Using cached model");
       }
       test.setModelDescriptor(cachedModel);
       test.setTransientModelDescriptor(cachedTransientModel);
     } else {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("caching again");
+      if (LOG.isDebugEnabled()) {
+        LOG.debug("Recaching the model again");
       }
-      if (cachedTest != null) {
-        dispose(cachedTest);
-      }
-      final Runnable runnable = new Runnable() {
-        @Override
-        public void run() {
-          initialize(test, modelName);
-        }
-
-        private void initialize(final TransformationTest test, final String modelName) {
-          SModel modelDescriptor = findModel(modelName);
-          test.setModelDescriptor(modelDescriptor);
-          test.init();
-        }
-
-        private SModel findModel(final String modelName) {
-          SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelName));
-
-          if (modelDescriptor == null) {
-            Assert.fail("Can't find model " + modelName + " in projects " + Arrays.toString(ProjectManager.getInstance().getOpenProjects()) + ".");
-          }
-          return modelDescriptor;
-        }
-      };
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
-          testProject.getModelAccess().executeCommand(runnable);
+          testProject.getModelAccess().executeCommand(new Runnable() {
+            @Override
+            public void run() {
+              initialize(test, modelName);
+            }
+
+            private void initialize(final TransformationTest test, final String modelName) {
+              SModel modelDescriptor = findModel(modelName);
+              test.setModelDescriptor(modelDescriptor);
+              test.init();
+            }
+
+            private SModel findModel(final String modelName) {
+              SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelName));
+
+              if (modelDescriptor == null) {
+                Assert.fail("Can't find model " + modelName + " in projects " + Arrays.toString(ProjectManager.getInstance().getOpenProjects()) + ".");
+              }
+              return modelDescriptor;
+            }
+          });
         }
       });
-      ourTestModelSaver.setTest(test);
+      TestModelSaver.getInstance().clean();
+      TestModelSaver.getInstance().setTest(test);
     }
   }
 
@@ -161,7 +157,7 @@ public class TransformationTestRunner implements TestRunner {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         clazz.value = ClassLoaderManager.getInstance().getClass(projectTest.getModelDescriptor().getModule(), className);
-        ClassLoader cLoader = check_ovzmet_a0b0a0a2a81(clazz.value);
+        ClassLoader cLoader = check_ovzmet_a0b0a0a2a71(clazz.value);
         assert cLoader != null : "Class is not found " + className;
         String classLoader = cLoader.toString();
         String module = projectTest.getModelDescriptor().getModule().getModuleName();
@@ -249,31 +245,31 @@ public class TransformationTestRunner implements TestRunner {
     return exception;
   }
   protected static Logger LOG = LogManager.getLogger(TransformationTestRunner.class);
-  private static SModel check_ovzmet_a0d0m(TransformationTest checkedDotOperand) {
+  private static SModel check_ovzmet_a0d0l(TransformationTest checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
-  private static SModel check_ovzmet_a0e0m(TransformationTest checkedDotOperand) {
+  private static SModel check_ovzmet_a0e0l(TransformationTest checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTransientModelDescriptor();
     }
     return null;
   }
-  private static String check_ovzmet_a0a5a21(SModelReference checkedDotOperand) {
+  private static String check_ovzmet_a0a5a11(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.toString();
     }
     return null;
   }
-  private static SModelReference check_ovzmet_a0a0f0m(SModel checkedDotOperand) {
+  private static SModelReference check_ovzmet_a0a0f0l(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-  private static ClassLoader check_ovzmet_a0b0a0a2a81(Class checkedDotOperand) {
+  private static ClassLoader check_ovzmet_a0b0a0a2a71(Class checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassLoader();
     }

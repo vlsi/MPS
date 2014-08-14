@@ -13,12 +13,11 @@ import jetbrains.mps.generator.impl.CloneUtil;
 public abstract class BaseTransformationTest implements TransformationTest {
   private Project myProject;
   private SModel myModel;
-
   private SModel myTransientModel;
   private TestRunner myRunner;
 
   public boolean isExecutionInProcess() {
-    return check_c18na_a0a6(System.getProperty(TestLightRunState.LIGHT_EXEC_FLAG));
+    return check_c18na_a0a5(System.getProperty(TestLightRunState.LIGHT_EXEC_FLAG));
   }
 
   private void initTestRunner() {
@@ -96,7 +95,7 @@ public abstract class BaseTransformationTest implements TransformationTest {
   public void setProject(Project project) {
     myProject = project;
   }
-  private static boolean check_c18na_a0a6(String checkedDotOperand) {
+  private static boolean check_c18na_a0a5(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals("true");
     }
