@@ -80,7 +80,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isMpsStartRequired_3310779261129403089", new Object[]{})) {
       Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
-      return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestExecutor", ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "-Xmx1024m", "-XX:PermSize=256m")).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
+      return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.CachingTestExecutor", ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "-Xmx1024m", "-XX:PermSize=256m")).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
         public String select(String key) {
           return String.format("-Dpath.macro.%s=\"%s\"", key, jetbrains.mps.project.PathMacros.getInstance().getValue(key));
         }

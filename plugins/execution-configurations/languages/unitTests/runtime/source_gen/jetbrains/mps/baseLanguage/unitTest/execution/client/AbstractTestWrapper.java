@@ -118,6 +118,6 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   }
   public static Tuples._3<String, List<String>, List<String>> getDefaultRunParameters() {
     List<String> startupPath = Java_Command.getClasspath(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("8b958198-128f-4136-80e5-ca9777caa869(jetbrains.mps.baseLanguage.unitTest.execution.startup)")));
-    return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.BTestExecutor", ListSequence.fromList(new ArrayList<String>()), startupPath);
+    return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor", ListSequence.fromList(new ArrayList<String>()), startupPath);
   }
 }

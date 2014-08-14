@@ -9,12 +9,12 @@ import org.junit.runner.notification.RunListener;
 import org.junit.runner.Request;
 import java.io.IOException;
 
-public class BTestExecutor extends AbstractTestExecutor {
+public class DefaultTestExecutor extends AbstractTestExecutor {
   private final String[] myArgs;
   private final CommandOutputStream myOutStream;
   private final CommandOutputStream myErrStream;
 
-  public BTestExecutor(String[] args) {
+  public DefaultTestExecutor(String[] args) {
     myArgs = args;
     myOutStream = new CommandOutputStream(System.out);
     myErrStream = new CommandOutputStream(System.err);
@@ -47,8 +47,11 @@ public class BTestExecutor extends AbstractTestExecutor {
     }
   }
 
+  /**
+   * Called when BTestCase is executed
+   */
   public static void main(String[] args) throws ClassNotFoundException, IOException {
-    BTestExecutor executor = new BTestExecutor(args);
+    DefaultTestExecutor executor = new DefaultTestExecutor(args);
     try {
       executor.run();
     } catch (Throwable t) {
@@ -58,20 +61,23 @@ public class BTestExecutor extends AbstractTestExecutor {
   }
 
   protected void run() {
-    init();
-    execute();
-    dispose();
+    try {
+      init();
+      execute();
+    } finally {
+      dispose();
+    }
   }
 
   protected void processThrowable(Throwable t) {
     t.printStackTrace(System.err);
-    System.exit(123);
+    System.exit(EXIT_CODE_FOR_EXCEPTION);
   }
 
   protected void exit() {
     DefaultRunListener listener = ((DefaultRunListener) this.getListener());
     if (listener == null) {
-      System.exit(-123);
+      System.exit(EXIT_CODE_FOR_EXCEPTION);
     } else {
       System.exit(listener.getFailureCount());
     }

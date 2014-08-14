@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public abstract class AbstractTestExecutor implements TestExecutor {
+  protected static final int EXIT_CODE_FOR_EXCEPTION = -12345;
   protected IgnoringStoppableRunner myCurrentRunner = null;
   protected Filter myFilter = new EmptyFilter();
   private RunListener myListener;
