@@ -24,6 +24,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -154,7 +156,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createRefNodeList_q2jz9e_f2a(editorContext, node));
     }
     if (renderingCondition_q2jz9e_a6c0(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_q2jz9e_g2a(editorContext, node));
+      editorCell.addEditorCell(this.createRefNode_q2jz9e_g2a(editorContext, node));
     }
     return editorCell;
   }
@@ -444,15 +446,29 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty();
   }
 
-  private EditorCell createConstant_q2jz9e_g2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@deprecated");
-    editorCell.setCellId("Constant_q2jz9e_g2a");
+  private EditorCell createRefNode_q2jz9e_g2a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("deprecated");
+    provider.setNoTargetText("<no deprecated>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("deprecated");
+    }
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     DeleteDeprecationOnAttributedNode.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 

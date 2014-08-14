@@ -165,7 +165,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createRefNodeList_ls0i5e_g2a0(editorContext, node));
     }
     if (renderingCondition_ls0i5e_a7c0a(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_ls0i5e_h2a0(editorContext, node));
+      editorCell.addEditorCell(this.createRefNode_ls0i5e_h2a0(editorContext, node));
     }
     if (renderingCondition_ls0i5e_a8c0a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_ls0i5e_i2a0(editorContext, node));
@@ -512,16 +512,29 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsTag", true)).isNotEmpty();
   }
 
-  private EditorCell createConstant_ls0i5e_h2a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@deprecated");
-    editorCell.setCellId("Constant_ls0i5e_h2a0");
+  private EditorCell createRefNode_ls0i5e_h2a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("deprecated");
+    provider.setNoTargetText("<no deprecated>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("deprecated");
+    }
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     DeleteDeprecationOnAttributedNode.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 

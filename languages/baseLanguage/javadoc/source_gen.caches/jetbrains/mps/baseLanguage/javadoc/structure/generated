@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b2jwewuxkm6lz4uv60s6q03esfzuov">
+<dependencies version="2" modelHash="6zqz6zbqqx043c4fe8dj3qspbxtz0mv">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
@@ -54,7 +54,7 @@
   <source id="5349172909345532724" name="MethodDocComment" hash="6w6ai4y7rofhq18ibv7uov7qedfc3wt" />
   <source id="8465538089690324384" name="VersionBlockDocTag" hash="aybwwdx5g3n6jhgqkinu1ln0q29xqc2" />
   <source id="8465538089690324397" name="SinceBlockDocTag" hash="-dtkzgs1ea71t5lpxvtjv6wu99vptx1y" />
-  <source id="8465538089690331492" name="DeprecatedBlockDocTag" hash="9x2q34jjxvdq9je814xcs5vsuvmpmbk" />
+  <source id="8465538089690331492" name="DeprecatedBlockDocTag" hash="-e85g8bza544i3w6bl8hz2h8hz0cxy47" />
   <source id="8465538089690331500" name="CommentLine" hash="7bblwdvjuoet4f809thnzeqmt0ojjob" />
   <source id="8465538089690881930" name="ParameterBlockDocTag" hash="8jkzgj6w1pnhk7pj6nq6ny73qlwkw5y" />
   <source id="5858074156537397872" name="ThrowsBlockDocTag" hash="-bikri7q3y3kfmzuv95f7xwtj2mafrt3" />

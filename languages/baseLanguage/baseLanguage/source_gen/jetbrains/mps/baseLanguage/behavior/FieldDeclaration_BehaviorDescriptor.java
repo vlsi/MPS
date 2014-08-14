@@ -70,6 +70,10 @@ public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_Beh
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
   }
 
+  public void virtual_markDeprecated_7983358747957651026(SNode thisNode) {
+    FieldDeclaration_Behavior.virtual_markDeprecated_7983358747957651026(thisNode);
+  }
+
   public boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
     return ClassifierMember_Behavior.virtual_needsEmptyLineAfter_641490355014298838(thisNode);
   }
@@ -80,6 +84,10 @@ public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_Beh
 
   public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     FieldDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
+  }
+
+  public void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode) {
+    FieldDeclaration_Behavior.virtual_unmarkDeprecated_7983358747957674666(thisNode);
   }
 
   @Override

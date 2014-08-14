@@ -1095,5 +1095,32 @@
       </node>
     </node>
   </root>
+  <root type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="7983358747957286919" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="tag" />
+    <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="m373.8465538089690331492" resolveInfo="DeprecatedBlockDocTag" />
+    <node role="textGenBlock" roleId="2omo.1233749296504" type="2omo.GenerateTextDeclaration" typeId="2omo.1233749247888" id="7983358747957286920" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7983358747957286921" nodeInfo="sn">
+        <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="7983358747957287452" nodeInfo="nn">
+          <node role="part" roleId="2omo.1237306115446" type="2omo.NewLineAppendPart" typeId="2omo.1237305208784" id="7983358747957287453" nodeInfo="ng" />
+          <node role="part" roleId="2omo.1237306115446" type="2omo.OperationCall" typeId="2omo.1233924848298" id="7983358747957287454" nodeInfo="ng">
+            <link role="function" roleId="2omo.1234190664409" targetNodeId="5486053361856794691" resolveInfo="javadocIndent" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="7983358747957287455" nodeInfo="nn">
+          <node role="part" roleId="2omo.1237306115446" type="2omo.ConstantStringAppendPart" typeId="2omo.1237305557638" id="7983358747957287456" nodeInfo="ng">
+            <property name="value" nameId="2omo.1237305576108" value="@deprecated " />
+          </node>
+          <node role="part" roleId="2omo.1237306115446" type="2omo.NodeAppendPart" typeId="2omo.1237305334312" id="7983358747957287457" nodeInfo="ng">
+            <node role="value" roleId="2omo.1237305790512" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7983358747957287458" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="2omo.NodeParameter" typeId="2omo.1233748055915" id="7983358747957287459" nodeInfo="nn" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="7983358747957287460" nodeInfo="nn">
+                <link role="property" roleId="tp25.1138056395725" targetNodeId="m373.5349172909345532826" resolveInfo="text" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
 </model>
 

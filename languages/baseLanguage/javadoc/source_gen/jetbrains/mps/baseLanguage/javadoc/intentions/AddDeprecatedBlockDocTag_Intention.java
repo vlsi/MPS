@@ -9,11 +9,12 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddDeprecatedBlockDocTag_Intention implements IntentionFactory {
@@ -54,7 +55,7 @@ public class AddDeprecatedBlockDocTag_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "virtual_isDeprecated_1224609060727", new Object[]{}));
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable") && !(SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated"));
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -81,7 +82,8 @@ public class AddDeprecatedBlockDocTag_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated", "" + (true));
+      BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "virtual_markDeprecated_7983358747957651026", new Object[]{});
+      editorContext.selectWRTFocusPolicy(SLinkOperations.getTarget(node, "deprecated", true));
     }
 
     public IntentionDescriptor getDescriptor() {

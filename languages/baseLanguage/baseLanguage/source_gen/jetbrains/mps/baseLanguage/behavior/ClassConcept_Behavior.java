@@ -32,6 +32,9 @@ import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -398,6 +401,20 @@ public class ClassConcept_Behavior {
       }
     }
     return SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+  }
+
+  public static void virtual_markDeprecated_7983358747957651026(SNode thisNode) {
+    BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "virtual_markDeprecated_7983358747957651026", new Object[]{});
+    if ((AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")) == null)) {
+      SNodeFactoryOperations.setNewAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment");
+    }
+    SNodeFactoryOperations.setNewChild(AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), "deprecated", "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag");
+    AnnotationUtil.attachAnnotation(thisNode, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"));
+  }
+
+  public static void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode) {
+    BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "virtual_unmarkDeprecated_7983358747957674666", new Object[]{});
+    AnnotationUtil.detachAnnotation(thisNode, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"));
   }
 
   protected static Logger LOG = LogManager.getLogger(ClassConcept_Behavior.class);

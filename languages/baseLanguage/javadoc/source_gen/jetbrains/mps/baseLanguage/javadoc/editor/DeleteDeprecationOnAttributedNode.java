@@ -9,6 +9,8 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class DeleteDeprecationOnAttributedNode {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -29,6 +31,7 @@ public class DeleteDeprecationOnAttributedNode {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated", "" + (false));
+      SelectionUtil.selectCell(editorContext, node, SelectionManager.FIRST_EDITABLE_CELL);
     }
   }
 
@@ -45,6 +48,7 @@ public class DeleteDeprecationOnAttributedNode {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated", "" + (false));
+      SelectionUtil.selectCell(editorContext, node, SelectionManager.FIRST_EDITABLE_CELL);
     }
   }
 }

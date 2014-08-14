@@ -685,5 +685,23 @@
       <unit id="4021391592917060962" at="9,0,29,0" name="jetbrains.mps.baseLanguage.javadoc.textGen.CodeSnippet_TextGen" />
     </file>
   </root>
+  <root nodeRef="r:84fe4b11-ad68-47d5-a834-0274798d73f7(jetbrains.mps.baseLanguage.javadoc.textGen)/7983358747957286919">
+    <file name="DeprecatedBlockDocTag_TextGen.java">
+      <node id="7983358747957287452" at="10,42,11,25" concept="1" />
+      <node id="7983358747957287452" at="11,25,12,42" concept="1" />
+      <node id="7983358747957287455" at="12,42,13,32" concept="1" />
+      <node id="7983358747957287455" at="13,32,14,61" concept="1" />
+      <node id="7983358747957287452" at="10,42,12,42" concept="0" />
+      <node id="7983358747957287455" at="12,42,14,61" concept="0" />
+      <node id="7983358747957286919" at="10,0,16,0" concept="5" trace="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="7983358747957287452" at="10,42,12,42" />
+      <scope id="7983358747957287455" at="12,42,14,61" />
+      <scope id="7983358747957286919" at="10,42,14,61" />
+      <scope id="7983358747957286919" at="10,0,16,0">
+        <var name="node" id="7983358747957286919" />
+      </scope>
+      <unit id="7983358747957286919" at="9,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.textGen.DeprecatedBlockDocTag_TextGen" />
+    </file>
+  </root>
 </debug-info>
 

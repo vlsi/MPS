@@ -11,7 +11,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class DeprecatedJavaDoc_Intention implements IntentionFactory {
@@ -68,18 +68,18 @@ public class DeprecatedJavaDoc_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      if (SPropertyOperations.getBoolean(node, "isDeprecated")) {
-        return "Remove Deprecated javadoc";
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDeprecated_1224609060727", new Object[]{})) {
+        return "Remove Deprecation";
       } else {
-        return "Add Deprecated javadoc";
+        return "Deprecate";
       }
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      if (SPropertyOperations.getBoolean(node, "isDeprecated")) {
-        SPropertyOperations.set(node, "isDeprecated", "" + (false));
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDeprecated_1224609060727", new Object[]{})) {
+        BehaviorReflection.invokeVirtual(Void.class, node, "virtual_unmarkDeprecated_7983358747957674666", new Object[]{});
       } else {
-        SPropertyOperations.set(node, "isDeprecated", "" + (true));
+        BehaviorReflection.invokeVirtual(Void.class, node, "virtual_markDeprecated_7983358747957651026", new Object[]{});
       }
     }
 

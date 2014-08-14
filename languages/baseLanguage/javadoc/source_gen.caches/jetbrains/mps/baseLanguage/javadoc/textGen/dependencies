@@ -48,6 +48,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.DeprecatedBlockDocTag_TextGen" file="DeprecatedBlockDocTag_TextGen.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" file="DocCommentTextGen.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />

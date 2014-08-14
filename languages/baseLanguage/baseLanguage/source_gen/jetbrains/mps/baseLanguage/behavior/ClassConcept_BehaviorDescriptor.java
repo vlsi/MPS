@@ -80,8 +80,16 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
     return ClassConcept_Behavior.virtual_isRunnable_7941158526576616752(thisNode);
   }
 
+  public void virtual_markDeprecated_7983358747957651026(SNode thisNode) {
+    ClassConcept_Behavior.virtual_markDeprecated_7983358747957651026(thisNode);
+  }
+
   public void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
     ClassConcept_Behavior.virtual_populateMembers_7405920559687241403(thisNode, context, classifierType);
+  }
+
+  public void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode) {
+    ClassConcept_Behavior.virtual_unmarkDeprecated_7983358747957674666(thisNode);
   }
 
   @Override
