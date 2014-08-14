@@ -71,6 +71,7 @@ public abstract class BaseTransformationTest implements TransformationTest {
     TemporaryModels.getInstance().dispose(myTransientModel);
     myTransientModel = null;
   }
+
   @Override
   public SModel getModelDescriptor() {
     return myModel;
