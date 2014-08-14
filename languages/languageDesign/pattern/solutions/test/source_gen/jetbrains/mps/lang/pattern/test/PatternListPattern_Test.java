@@ -58,13 +58,13 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
         int i = 0;
         {
           List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i));
-          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_i79cpz_a0a2a6a2c());
+          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_i79cpz_a0a0b0a0c0g0c2());
           Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
         }
         i++;
         {
           List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i));
-          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_i79cpz_a0a3a6a2c());
+          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_i79cpz_a0a0b0a0d0g0c2());
           Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
         }
         i++;
@@ -84,45 +84,45 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
 
       public boolean match(SNode nodeToMatch) {
         {
-          SNode nodeToMatch_9twfax_a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_9twfax_a0.getConcept().getQualifiedName()))) {
+          SNode nodeToMatch_i79cpz_a0a1a2c = nodeToMatch;
+          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_i79cpz_a0a1a2c.getConcept().getQualifiedName()))) {
             return false;
           }
           {
-            String childRole_9twfax_ = "operand";
-            if (!(PatternUtil.hasNChildren(nodeToMatch_9twfax_a0, childRole_9twfax_, 1))) {
+            String childRole_i79cpz_ = "operand";
+            if (!(PatternUtil.hasNChildren(nodeToMatch_i79cpz_a0a1a2c, childRole_i79cpz_, 1))) {
               return false;
             }
             {
-              SNode childVar_9twfax_a0a = IterableUtil.get(nodeToMatch_9twfax_a0.getChildren(childRole_9twfax_), 0);
+              SNode childVar_i79cpz_a0a0b0c2 = IterableUtil.get(nodeToMatch_i79cpz_a0a1a2c.getChildren(childRole_i79cpz_), 0);
               {
-                SNode nodeToMatch_9twfax_a0a = childVar_9twfax_a0a;
-                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_9twfax_a0a.getConcept().getQualifiedName()))) {
+                SNode nodeToMatch_i79cpz_a0a0b0c2 = childVar_i79cpz_a0a0b0c2;
+                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_i79cpz_a0a0b0c2.getConcept().getQualifiedName()))) {
                   return false;
                 }
-                patternVar_className = nodeToMatch_9twfax_a0a.getReferenceTarget("classifier");
-                patternVar_field = nodeToMatch_9twfax_a0a.getReferenceTarget("variableDeclaration");
+                patternVar_className = nodeToMatch_i79cpz_a0a0b0c2.getReferenceTarget("classifier");
+                patternVar_field = nodeToMatch_i79cpz_a0a0b0c2.getReferenceTarget("variableDeclaration");
               }
             }
           }
           {
-            String childRole_9twfax__0 = "operation";
-            if (!(PatternUtil.hasNChildren(nodeToMatch_9twfax_a0, childRole_9twfax__0, 1))) {
+            String childRole_i79cpz__0 = "operation";
+            if (!(PatternUtil.hasNChildren(nodeToMatch_i79cpz_a0a1a2c, childRole_i79cpz__0, 1))) {
               return false;
             }
             {
-              SNode childVar_9twfax_a0a_0 = IterableUtil.get(nodeToMatch_9twfax_a0.getChildren(childRole_9twfax__0), 0);
+              SNode childVar_i79cpz_a0a0b0c2_0 = IterableUtil.get(nodeToMatch_i79cpz_a0a1a2c.getChildren(childRole_i79cpz__0), 0);
               {
-                SNode nodeToMatch_9twfax_a0a_0 = childVar_9twfax_a0a_0;
-                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_9twfax_a0a_0.getConcept().getQualifiedName()))) {
+                SNode nodeToMatch_i79cpz_a0a0b0c2_0 = childVar_i79cpz_a0a0b0c2_0;
+                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_i79cpz_a0a0b0c2_0.getConcept().getQualifiedName()))) {
                   return false;
                 }
-                patternVar_method = nodeToMatch_9twfax_a0a_0.getReferenceTarget("baseMethodDeclaration");
+                patternVar_method = nodeToMatch_i79cpz_a0a0b0c2_0.getReferenceTarget("baseMethodDeclaration");
                 {
-                  String childRole_9twfax__1 = "actualArgument";
+                  String childRole_i79cpz__1 = "actualArgument";
                   this.patternVar_list = ListSequence.fromList(new ArrayList<SNode>());
                   patternVar_ignore = null;
-                  for (SNode childVar : nodeToMatch_9twfax_a0a_0.getChildren(childRole_9twfax__1)) {
+                  for (SNode childVar : nodeToMatch_i79cpz_a0a0b0c2_0.getChildren(childRole_i79cpz__1)) {
                     patternVar_ignore = childVar;
                     ListSequence.fromList(this.patternVar_list).addElement(childVar);
                   }
@@ -195,7 +195,7 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
       return quotedNode_1;
     }
 
-    private static SNode _quotation_createNode_i79cpz_a0a2a6a2c() {
+    private static SNode _quotation_createNode_i79cpz_a0a0b0a0c0g0c2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
@@ -203,7 +203,7 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
       return quotedNode_1;
     }
 
-    private static SNode _quotation_createNode_i79cpz_a0a3a6a2c() {
+    private static SNode _quotation_createNode_i79cpz_a0a0b0a0d0g0c2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
