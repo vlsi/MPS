@@ -9,21 +9,17 @@ import org.junit.runner.JUnitCore;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
-import org.junit.runner.Runner;
-import org.junit.runner.notification.RunNotifier;
-import org.junit.runner.Description;
-import org.junit.runner.notification.Failure;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public abstract class AbstractTestExecutor implements TestExecutor {
-  protected AbstractTestExecutor.StoppableIgnoringRunner myCurrentRunner = null;
+  protected IgnoringStoppableRunner myCurrentRunner = null;
   protected Filter myFilter = new EmptyFilter();
   private RunListener myListener;
   private volatile boolean myStopping = false;
 
   @Nullable
-  public AbstractTestExecutor.StoppableIgnoringRunner getCurrentRunner() {
+  public IgnoringStoppableRunner getCurrentRunner() {
     return myCurrentRunner;
   }
 
@@ -61,7 +57,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   }
 
   protected void stopRun() {
-    AbstractTestExecutor.StoppableIgnoringRunner currentRunner = this.getCurrentRunner();
+    IgnoringStoppableRunner currentRunner = this.getCurrentRunner();
     assert currentRunner != null;
     currentRunner.pleaseStop();
     myStopping = true;
@@ -69,7 +65,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
 
 
   private void updateRunner(Request request) {
-    myCurrentRunner = new AbstractTestExecutor.StoppableIgnoringRunner(request, myFilter, myStopping);
+    myCurrentRunner = new IgnoringStoppableRunner(request, myStopping, myFilter);
   }
 
   @NotNull
@@ -83,51 +79,5 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   @NotNull
   protected abstract RunListener createListener(Iterable<Request> requests);
 
-  protected static class StoppableIgnoringRunner extends Runner {
-    private final Object myLock = "";
-    private final Request myRequest;
-    private final Filter myIgnoringFilter;
-    private boolean myStopping;
-    private RunNotifier myNotifier = null;
-
-    public StoppableIgnoringRunner(Request request, Filter ignoringFilter, boolean stopping) {
-      myRequest = request;
-      myIgnoringFilter = ignoringFilter;
-      myStopping = stopping;
-    }
-
-    public Description getDescription() {
-      return myRequest.getRunner().getDescription();
-    }
-
-    public void run(RunNotifier notifier) {
-      synchronized (myLock) {
-        if (myStopping) {
-          notifier.pleaseStop();
-        }
-        myNotifier = notifier;
-      }
-      if (myIgnoringFilter.accept(myRequest)) {
-        myRequest.getRunner().run(notifier);
-      } else {
-        ignoreRequest(notifier);
-      }
-    }
-
-    private void ignoreRequest(RunNotifier notifier) {
-      notifier.fireTestStarted(getDescription());
-      notifier.fireTestAssumptionFailed(new Failure(getDescription(), new Throwable("Ignoring test " + myRequest.getRunner().getDescription().getDisplayName())));
-      notifier.fireTestFinished(getDescription());
-    }
-
-    public void pleaseStop() {
-      synchronized (myLock) {
-        if (myNotifier != null) {
-          myNotifier.pleaseStop();
-        }
-        myStopping = true;
-      }
-    }
-  }
   protected static Logger LOG = LogManager.getLogger(AbstractTestExecutor.class);
 }

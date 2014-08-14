@@ -2,11 +2,11 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.AbstractTestExecutor" file="AbstractTestExecutor.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.EmptyFilter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.Filter" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.IgnoringStoppableRunner" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="org.apache.log4j.Level" />
@@ -14,14 +14,10 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.JUnitCore" />
     <classNode dependClassName="org.junit.runner.Request" />
-    <classNode dependClassName="org.junit.runner.notification.Failure" />
     <classNode dependClassName="org.junit.runner.notification.RunListener" />
-    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor" />
-    <classNode extendsClassName="org.junit.runner.Runner" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.BTestExecutor" file="BTestExecutor.java">
     <classNode dependClassName="java.io.IOException" />
@@ -85,6 +81,15 @@
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.Filter" file="Filter.java">
     <classNode dependClassName="org.junit.runner.Request" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.IgnoringStoppableRunner" file="IgnoringStoppableRunner.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.Filter" />
+    <classNode dependClassName="org.junit.runner.Request" />
+    <classNode dependClassName="org.junit.runner.notification.Failure" />
+    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.StoppableRunner" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.LightExecutionFilter" file="LightExecutionFilter.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
@@ -125,6 +130,14 @@
     <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
     <classNode extendsClassName="org.junit.runner.Request" />
+    <classNode extendsClassName="org.junit.runner.Runner" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.StoppableRunner" file="StoppableRunner.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.junit.runner.Description" />
+    <classNode dependClassName="org.junit.runner.Request" />
+    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
     <classNode extendsClassName="org.junit.runner.Runner" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor" file="TestExecutor.java" />
