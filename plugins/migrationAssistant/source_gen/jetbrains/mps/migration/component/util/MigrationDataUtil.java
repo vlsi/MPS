@@ -78,18 +78,22 @@ public class MigrationDataUtil {
 
   public static String readData(SModule module, final MigrationScriptReference script) {
     List<Tuples._2<MigrationScriptReference, String>> loadedData = Sequence.fromIterable(loadData((AbstractModule) module)).toListSequence();
-    return ListSequence.fromList(loadedData).where(new IWhereFilter<Tuples._2<MigrationScriptReference, String>>() {
+    if (loadedData == null) {
+      return null;
+    }
+    Tuples._2<MigrationScriptReference, String> result = ListSequence.fromList(loadedData).where(new IWhereFilter<Tuples._2<MigrationScriptReference, String>>() {
       public boolean accept(Tuples._2<MigrationScriptReference, String> it) {
-        return eq_hzite5_a0a0a0a0a0a0b0d(it._0(), script);
+        return eq_hzite5_a0a0a0a0a0a0c0d(it._0(), script);
       }
-    }).first()._1();
+    }).first();
+    return (result == null ? null : result._1());
   }
 
   public static IFile getDataFile(AbstractModule module) {
     return FileSystem.getInstance().getFileByPath(FileUtil.getNameWithoutExtension(module.getDescriptorFile().getPath()) + ".migration");
   }
 
-  private static boolean eq_hzite5_a0a0a0a0a0a0b0d(Object a, Object b) {
+  private static boolean eq_hzite5_a0a0a0a0a0a0c0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

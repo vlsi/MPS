@@ -30,6 +30,7 @@ import org.apache.log4j.LogManager;
 public class MigrationComponent extends AbstractProjectComponent implements MigrationManager {
   private Map<SModule, MigrationDescriptor> loadedDescriptors = MapSequence.fromMap(new HashMap<SModule, MigrationDescriptor>());
   private Project mpsProject;
+  private MigrationManager.MigrationState lastState;
 
   public MigrationComponent(com.intellij.openapi.project.Project project, Project mpsProject) {
     super(project);
@@ -80,7 +81,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
             LOG.warn("Could not load migration descriptor for language " + depModule + ".");
           }
         }
-        MigrationScript script = check_gd1mrb_a0e0a0a0a0k(md, current);
+        MigrationScript script = check_gd1mrb_a0e0a0a0a0l(md, current);
         if (script == null) {
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Could not load migration script for language " + depModule + ", version " + current + ".");
@@ -166,7 +167,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   public MigrationManager.MigrationState nextStep() {
-    final Wrappers._T<MigrationManager.MigrationState> result = new Wrappers._T<MigrationManager.MigrationState>();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         final Iterable<ScriptApplied> allStepScripts = Sequence.fromIterable(fetchScripts()).toListSequence();
@@ -177,14 +177,14 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         });
         final ScriptApplied scriptToExecute = Sequence.fromIterable(availableScripts).first();
         if (scriptToExecute != null) {
-          result.value = new MigrationManager.MigrationState.Step() {
+          lastState = new MigrationManager.MigrationState.Step() {
             public String getDescription() {
               return scriptToExecute.getScript().toString();
             }
 
             public boolean execute() {
               final Wrappers._boolean res = new Wrappers._boolean();
-              ModelAccess.instance().runWriteAction(new Runnable() {
+              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
                   res.value = executeScript(Sequence.fromIterable(availableScripts).first());
                 }
@@ -195,9 +195,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         } else {
           if (Sequence.fromIterable(allStepScripts).isEmpty()) {
             if (isMigrationRequired()) {
-              result.value = new MigrationManager.MigrationState.Finished() {};
-            } else {
-              result.value = new MigrationManager.MigrationState.Error() {
+              lastState = new MigrationManager.MigrationState.Error() {
                 public String getErrorMessage() {
                   return "Some of scripts are missing";
                 }
@@ -206,16 +204,18 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
                   return null;
                 }
               };
+            } else {
+              lastState = new MigrationManager.MigrationState.Finished() {};
             }
           } else {
-            result.value = new MigrationManager.MigrationState.Conflict() {
+            lastState = new MigrationManager.MigrationState.Conflict() {
               public Iterable<ScriptApplied> getConflictingScripts() {
                 return allStepScripts;
               }
 
               public boolean forceExecution(ScriptApplied scriptApplied) {
                 final Wrappers._boolean res = new Wrappers._boolean();
-                ModelAccess.instance().runWriteAction(new Runnable() {
+                ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                   public void run() {
                     res.value = executeScript(Sequence.fromIterable(availableScripts).first());
                   }
@@ -227,18 +227,20 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         }
       }
     });
-    return result.value;
+    return lastState;
   }
 
 
 
-  public <T> Map<SModule, T> collectData(SModule myModule, MigrationScriptReference scriptReference) {
+  public <T> Map<SModule, T> collectData(SModule myModule, final MigrationScriptReference scriptReference) {
     final MigrationScript script = scriptReference.resolve(this, mpsProject.getRepository());
     final Map<SModule, T> requiredData = MapSequence.fromMap(new HashMap<SModule, T>());
     SetSequence.fromSet(MigrationsUtil.getModuleDependencies(myModule)).visitAll(new IVisitor<SModule>() {
       public void visit(SModule it) {
-        String dataString = MigrationDataUtil.readData(it, null);
-        MapSequence.fromMap(requiredData).put(it, (T) script.deserializeData(dataString));
+        String dataString = MigrationDataUtil.readData(it, scriptReference);
+        if (dataString != null) {
+          MapSequence.fromMap(requiredData).put(it, (T) script.deserializeData(dataString));
+        }
       }
     });
     return requiredData;
@@ -246,7 +248,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
 
   protected static Logger LOG = LogManager.getLogger(MigrationComponent.class);
 
-  private static MigrationScript check_gd1mrb_a0e0a0a0a0k(MigrationDescriptor checkedDotOperand, int current) {
+  private static MigrationScript check_gd1mrb_a0e0a0a0a0l(MigrationDescriptor checkedDotOperand, int current) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(current);
     }

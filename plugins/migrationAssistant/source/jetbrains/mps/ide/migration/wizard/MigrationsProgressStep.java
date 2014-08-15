@@ -18,6 +18,7 @@ package jetbrains.mps.ide.migration.wizard;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.ide.migration.MigrationManager.MigrationState;
 import jetbrains.mps.ide.migration.MigrationManager.MigrationState.Conflict;
@@ -39,14 +40,15 @@ public class MigrationsProgressStep extends MigrationStep {
   public static final String ID = "progress";
 
   private boolean myFinished;
-  private boolean mySuccess = true;
+  private boolean[] mySuccess;
   private MigrationManager myManager;
   private JBList myList;
   private Set<String> myExecuted = new HashSet<String>();
 
-  public MigrationsProgressStep(Project project, MigrationManager manager) {
+  public MigrationsProgressStep(Project project, MigrationManager manager, boolean[] success) {
     super(project, "Migration In Progress", ID);
     myManager = manager;
+    mySuccess = success;
     createComponent();
   }
 
@@ -82,8 +84,10 @@ public class MigrationsProgressStep extends MigrationStep {
 
     PersistenceRegistry.getInstance().disableFastFindUsages();
 
+    mySuccess[0] = true;
+
     do {
-      MigrationState result = myManager.nextStep();
+      final MigrationState result = myManager.nextStep();
       if (result instanceof Step) {
         final String step = ((Step) result).getDescription();
         final DefaultListModel model = (DefaultListModel) myList.getModel();
@@ -97,15 +101,21 @@ public class MigrationsProgressStep extends MigrationStep {
           }
         });
 
-        mySuccess = ((Step) result).execute();
+        ThreadUtils.runInUIThreadAndWait(new Runnable() {
+          @Override
+          public void run() {
+            mySuccess[0] = ((Step) result).execute();
+          }
+        });
       } else if (result instanceof Conflict) {
         resolveConflict();
       } else if (result instanceof MigrationState.Error) {
-        mySuccess = false;
+        mySuccess[0] = false;
       } else if (result instanceof Finished) {
         break;
       }
-    } while (mySuccess);
+      assert false;
+    } while (mySuccess[0]);
     PersistenceRegistry.getInstance().enableFastFindUsages();
 
     myFinished = true;

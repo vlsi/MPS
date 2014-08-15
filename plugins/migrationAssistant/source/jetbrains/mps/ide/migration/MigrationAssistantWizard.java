@@ -31,10 +31,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
-  public MigrationAssistantWizard(Project project, MigrationManager manager) {
+  public MigrationAssistantWizard(Project project, MigrationManager manager, boolean[] success) {
     super("Migration Assistant Wizard", project, Arrays.asList(
         new InitialStep(project),
-        new MigrationsProgressStep(project, manager),
+        new MigrationsProgressStep(project, manager, success),
         new MigrationsFinishedStep(project)));
   }
 

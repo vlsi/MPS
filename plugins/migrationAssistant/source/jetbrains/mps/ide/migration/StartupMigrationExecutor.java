@@ -1,4 +1,5 @@
 /*
+/*
  * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,6 +27,7 @@ import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.util.Consumer;
+import jetbrains.mps.ide.migration.MigrationManager.MigrationState;
 import jetbrains.mps.ide.migration.StartupMigrationExecutor.MyState;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -64,13 +66,15 @@ public class StartupMigrationExecutor extends AbstractProjectComponent implement
           });
         } else{
           myState.reloadFinished = false;
-          MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager);
+          final boolean[] success = new boolean[1];
+          MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager, success);
 
           //final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence)
           wizard.showAndGetOk().doWhenDone(new Consumer<Boolean>() {
             @Override
             public void consume(Boolean finished) {
               if (!finished) return;
+              if (!success[0]) return;
               ModelAccess.instance().runWriteAction(new Runnable() {
                 @Override
                 public void run() {
