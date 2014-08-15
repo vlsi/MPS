@@ -78,7 +78,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2663801026049990430" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2663801026050030057" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2663801026050030056" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="apply function to manually selected nodes" />
+            <property name="value" nameId="tpee.1070475926801" value="apply a function to manually selected nodes" />
           </node>
         </node>
       </node>
@@ -95,10 +95,10 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2663801026050030496" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2663801026050032259" nodeInfo="nn">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2663801026050032280" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="Refactoring is applied not immediately but using invokelater, so there may be issues when using several times in the same command." />
+              <property name="value" nameId="tpee.1070475926801" value="Refactoring is not applied immediately, but after a random delay due to using Java's invokelater.\nMultiple usages of the command within a single query may result in consistency issues and are discouraged." />
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2663801026050030495" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="Operates like forEach but asks user to select included/excluded nodes before refactoring.\n" />
+              <property name="value" nameId="tpee.1070475926801" value="Operates like the forEach operation, but additionally asks the user to include/exclude nodes before starting the refactoring.\n" />
             </node>
           </node>
         </node>

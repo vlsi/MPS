@@ -126,11 +126,11 @@ public class HelpCommand_Behavior {
   }
 
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "display this help or help page for a command";
+    return "display this help or a help page for a specific command";
   }
 
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
-    return "When called without arguments, prints common help.\nWhen command is specified, prints help about the command.";
+    return "When called without any arguments, lists all available commands with their brief description.\nWhen a command is specified, help specific to that command is printed.";
   }
 
   protected static Logger LOG = LogManager.getLogger(HelpCommand_Behavior.class);
