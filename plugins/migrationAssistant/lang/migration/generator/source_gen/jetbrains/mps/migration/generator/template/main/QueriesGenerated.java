@@ -68,6 +68,14 @@ public class QueriesGenerated {
     return MigrationScript_Behavior.call_hasData_586712031920013598(_context.getNode());
   }
 
+  public static boolean ifMacro_Condition_7130565133156987436(final IfMacroContext _context) {
+    return MigrationScript_Behavior.call_hasData_586712031920013598(_context.getNode());
+  }
+
+  public static boolean ifMacro_Condition_7130565133157034897(final IfMacroContext _context) {
+    return MigrationScript_Behavior.call_hasData_586712031920013598(_context.getNode());
+  }
+
   public static SNode sourceNodeQuery_5847597366793221925(final SourceSubstituteMacroNodeContext _context) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "type", true), "virtual_getBoxedType_1213877337320", new Object[]{});
   }
@@ -106,6 +114,14 @@ public class QueriesGenerated {
         return SLinkOperations.getTarget(it, "script", true);
       }
     });
+  }
+
+  public static Iterable<SNode> sourceNodesQuery_7130565133156977695(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "serialize", true), "body", true), "statement", true);
+  }
+
+  public static Iterable<SNode> sourceNodesQuery_7130565133157034904(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "deserialize", true), "body", true), "statement", true);
   }
 
   public static Iterable<SNode> sourceNodesQuery_5712848521226160537(final SourceSubstituteMacroNodesContext _context) {
