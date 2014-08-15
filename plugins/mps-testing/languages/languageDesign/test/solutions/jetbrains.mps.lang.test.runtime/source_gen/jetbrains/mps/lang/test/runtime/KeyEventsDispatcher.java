@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import javax.swing.KeyStroke;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.awt.Component;
 import java.lang.reflect.Method;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -108,54 +107,32 @@ __switch__:
   }
 
   private void processKeyEvents(final Iterable<KeyEvent> events) throws InterruptedException, InvocationTargetException {
-    final Wrappers._T<InterruptedException> ie = new Wrappers._T<InterruptedException>(null);
-    final Wrappers._T<InvocationTargetException> ite = new Wrappers._T<InvocationTargetException>(null);
     final Component eventTargetComponent = getKeyEventTargetComponent();
     final Method processKeyEventMethod = KeyEventsDispatcher.getProcessKeyEventMethod(eventTargetComponent);
     final boolean[] eventsPassed = new boolean[]{true};
-    final UndoHelper undoHelper = new UndoHelper(myProject, myEditorComponent);
+    UndoHelper undoHelper = new UndoHelper(myProject, myEditorComponent);
     if (eventTargetComponent == null) {
-      Sequence.fromIterable(events).visitAll(new IVisitor<KeyEvent>() {
-        public void visit(final KeyEvent it) {
-          try {
-            if (it.getID() == KeyEvent.KEY_TYPED) {
-              undoHelper.runUndoableInEDTAndWait(new Runnable() {
-                public void run() {
-                  myEditorComponent.processKeyTyped(it);
-                }
-              });
-            } else if (it.getID() == KeyEvent.KEY_PRESSED) {
-              undoHelper.runUndoableInEDTAndWait(new Runnable() {
-                public void run() {
-                  myEditorComponent.processKeyPressed(it);
-                }
-              });
-            } else if (it.getID() == KeyEvent.KEY_RELEASED) {
-              undoHelper.runUndoableInEDTAndWait(new Runnable() {
-                public void run() {
-                  myEditorComponent.processKeyReleased(it);
-                }
-              });
-            } else {
-              assert false : "Wrong Id " + it.getID();
+      undoHelper.runUndoableInEDTAndWait(new Runnable() {
+        public void run() {
+          Sequence.fromIterable(events).visitAll(new IVisitor<KeyEvent>() {
+            public void visit(KeyEvent it) {
+              if (it.getID() == KeyEvent.KEY_TYPED) {
+                myEditorComponent.processKeyTyped(it);
+              } else if (it.getID() == KeyEvent.KEY_PRESSED) {
+                myEditorComponent.processKeyPressed(it);
+              } else if (it.getID() == KeyEvent.KEY_RELEASED) {
+                myEditorComponent.processKeyReleased(it);
+              } else {
+                assert false : "Wrong Id " + it.getID();
+              }
             }
-          } catch (InterruptedException e) {
-            ie.value = e;
-          } catch (InvocationTargetException e) {
-            ite.value = e;
-          }
+          });
         }
       });
-      if (ie.value != null) {
-        throw ie.value;
-      }
-      if (ite.value != null) {
-        throw ite.value;
-      }
     } else {
-      for (final KeyEvent event : Sequence.fromIterable(events)) {
-        undoHelper.runUndoableInEDTAndWait(new Runnable() {
-          public void run() {
+      undoHelper.runUndoableInEDTAndWait(new Runnable() {
+        public void run() {
+          for (KeyEvent event : Sequence.fromIterable(events)) {
             try {
               processKeyEventMethod.invoke(eventTargetComponent, event);
             } catch (InvocationTargetException e) {
@@ -164,8 +141,8 @@ __switch__:
               eventsPassed[0] = false;
             }
           }
-        });
-      }
+        }
+      });
     }
     Assert.assertTrue("Keyboard events were not passed to corresponding component", eventsPassed[0]);
   }

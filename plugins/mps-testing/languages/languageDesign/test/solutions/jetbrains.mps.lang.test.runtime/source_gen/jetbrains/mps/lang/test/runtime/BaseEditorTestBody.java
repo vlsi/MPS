@@ -20,10 +20,12 @@ import java.util.HashMap;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import java.util.ArrayList;
+import com.intellij.openapi.command.impl.UndoManagerImpl;
+import com.intellij.openapi.command.undo.UndoManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
-import jetbrains.mps.ide.project.ProjectHelper;
 import java.lang.reflect.InvocationTargetException;
 import java.awt.Component;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -131,8 +133,18 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   }
 
   public void testMethod() throws Throwable {
-    this.testMethodImpl();
-    this.checkAssertion();
+    try {
+      this.testMethodImpl();
+      this.checkAssertion();
+    } finally {
+      myProject.getModelAccess().runWriteInEDT(new Runnable() {
+        public void run() {
+          UndoManagerImpl undoManager = (UndoManagerImpl) UndoManager.getInstance(ProjectHelper.toIdeaProject(myProject));
+          MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(BaseEditorTestBody.this.myBefore);
+          undoManager.clearUndoRedoQueueInTests(file);
+        }
+      });
+    }
   }
 
   public abstract void testMethodImpl() throws Exception;
@@ -213,7 +225,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         // empty task 
       }
     });
-    // <node> 
+    ModelAccess.instance().flushEventQueue();
   }
   protected static Logger LOG = LogManager.getLogger(BaseEditorTestBody.class);
 }
