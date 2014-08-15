@@ -1911,7 +1911,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(lid);
   }
 
-  private void updateWorkingMode(IdMigrationMode mode) {
+  public void updateWorkingMode(IdMigrationMode mode) {
     if (mode == IdMigrationMode.NAME) {
       if (myConceptFqName == null) {
         myConceptFqName = cid2name(myConceptId);
