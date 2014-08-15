@@ -15,24 +15,19 @@
  */
 package jetbrains.mps.ide.migration.wizard;
 
-import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Pair;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
-import com.intellij.ui.popup.WizardPopup;
 import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.ide.migration.MigrationManager.MigrationState;
-import jetbrains.mps.ide.migration.ResolveConflictDialog;
-import jetbrains.mps.ide.migration.ScriptApplied;
-import jetbrains.mps.migration.component.util.MigrationScript;
+import jetbrains.mps.ide.migration.MigrationManager.MigrationState.Conflict;
+import jetbrains.mps.ide.migration.MigrationManager.MigrationState.Finished;
+import jetbrains.mps.ide.migration.MigrationManager.MigrationState.Step;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.AbstractModule;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
@@ -44,6 +39,7 @@ public class MigrationsProgressStep extends MigrationStep {
   public static final String ID = "progress";
 
   private boolean myFinished;
+  private boolean mySuccess = true;
   private MigrationManager myManager;
   private JBList myList;
   private Set<String> myExecuted = new HashSet<String>();
@@ -84,27 +80,32 @@ public class MigrationsProgressStep extends MigrationStep {
     //if this assert fails, following invokeLater()s is not needed
     assert !SwingUtilities.isEventDispatchThread();
 
-    MigrationState result = MigrationState.STEP;
-
     PersistenceRegistry.getInstance().disableFastFindUsages();
-    while (result != MigrationState.FINISHED && result != MigrationState.ERROR) {
-      final DefaultListModel model = (DefaultListModel) myList.getModel();
-      final String step = myManager.currentStep();
 
-      SwingUtilities.invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          model.addElement(step);
-          myList.ensureIndexIsVisible(model.indexOf(step));
-          myList.repaint();
-        }
-      });
+    do {
+      MigrationState result = myManager.nextStep();
+      if (result instanceof Step) {
+        final String step = ((Step) result).getDescription();
+        final DefaultListModel model = (DefaultListModel) myList.getModel();
 
-      result = myManager.step();
-      if (result == MigrationState.CONFLICT) {
+        SwingUtilities.invokeLater(new Runnable() {
+          @Override
+          public void run() {
+            model.addElement(step);
+            myList.ensureIndexIsVisible(model.indexOf(step));
+            myList.repaint();
+          }
+        });
+
+        mySuccess = ((Step) result).execute();
+      } else if (result instanceof Conflict) {
         resolveConflict();
+      } else if (result instanceof MigrationState.Error) {
+        mySuccess = false;
+      } else if (result instanceof Finished) {
+        break;
       }
-    }
+    } while (mySuccess);
     PersistenceRegistry.getInstance().enableFastFindUsages();
 
     myFinished = true;

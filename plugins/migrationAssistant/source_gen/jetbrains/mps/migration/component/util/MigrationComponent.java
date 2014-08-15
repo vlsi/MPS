@@ -131,7 +131,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
 
-  private MigrationManager.MigrationState lastState = null;
 
   public boolean isMigrationRequired() {
     final Wrappers._boolean result = new Wrappers._boolean(false);
@@ -166,64 +165,72 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return true;
   }
 
-  public MigrationManager.MigrationState step() {
+  public MigrationManager.MigrationState nextStep() {
+    final Wrappers._T<MigrationManager.MigrationState> result = new Wrappers._T<MigrationManager.MigrationState>();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        Iterable<ScriptApplied> allStepScripts = fetchScripts();
-        Iterable<ScriptApplied> availableScripts = Sequence.fromIterable(allStepScripts).where(new IWhereFilter<ScriptApplied>() {
+        final Iterable<ScriptApplied> allStepScripts = Sequence.fromIterable(fetchScripts()).toListSequence();
+        final Iterable<ScriptApplied> availableScripts = Sequence.fromIterable(allStepScripts).where(new IWhereFilter<ScriptApplied>() {
           public boolean accept(ScriptApplied it) {
             return isAvailable(it);
           }
         });
-        if (Sequence.fromIterable(availableScripts).isNotEmpty()) {
-          boolean success = executeScript(Sequence.fromIterable(availableScripts).first());
-          lastState = (success ? MigrationManager.MigrationState.STEP : MigrationManager.MigrationState.ERROR);
+        final ScriptApplied scriptToExecute = Sequence.fromIterable(availableScripts).first();
+        if (scriptToExecute != null) {
+          result.value = new MigrationManager.MigrationState.Step() {
+            public String getDescription() {
+              return scriptToExecute.getScript().toString();
+            }
+
+            public boolean execute() {
+              final Wrappers._boolean res = new Wrappers._boolean();
+              ModelAccess.instance().runWriteAction(new Runnable() {
+                public void run() {
+                  res.value = executeScript(Sequence.fromIterable(availableScripts).first());
+                }
+              });
+              return res.value;
+            }
+          };
         } else {
           if (Sequence.fromIterable(allStepScripts).isEmpty()) {
             if (isMigrationRequired()) {
-              lastState = MigrationManager.MigrationState.FINISHED;
+              result.value = new MigrationManager.MigrationState.Finished() {};
             } else {
-              lastState = MigrationManager.MigrationState.ERROR;
+              result.value = new MigrationManager.MigrationState.Error() {
+                public String getErrorMessage() {
+                  return "Some of scripts are missing";
+                }
+
+                public Throwable cause() {
+                  return null;
+                }
+              };
             }
           } else {
-            lastState = MigrationManager.MigrationState.CONFLICT;
+            result.value = new MigrationManager.MigrationState.Conflict() {
+              public Iterable<ScriptApplied> getConflictingScripts() {
+                return allStepScripts;
+              }
+
+              public boolean forceExecution(ScriptApplied scriptApplied) {
+                final Wrappers._boolean res = new Wrappers._boolean();
+                ModelAccess.instance().runWriteAction(new Runnable() {
+                  public void run() {
+                    res.value = executeScript(Sequence.fromIterable(availableScripts).first());
+                  }
+                });
+                return res.value;
+              }
+            };
           }
         }
-      }
-    });
-    return lastState;
-  }
-
-
-
-  public String currentStep() {
-    final Wrappers._T<String> result = new Wrappers._T<String>();
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        result.value = Sequence.fromIterable(fetchScripts()).first() + "";
       }
     });
     return result.value;
   }
 
 
-
-  public Iterable<ScriptApplied> getConflictingScripts() {
-    if (lastState != MigrationManager.MigrationState.CONFLICT) {
-      throw new IllegalStateException();
-    }
-    return fetchScripts();
-  }
-
-
-
-  public void forceExecution(final ScriptApplied p) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        executeScript(p);
-      }
-    });
-  }
 
   public <T> Map<SModule, T> collectData(SModule myModule, MigrationScriptReference scriptReference) {
     final MigrationScript script = scriptReference.resolve(this, mpsProject.getRepository());

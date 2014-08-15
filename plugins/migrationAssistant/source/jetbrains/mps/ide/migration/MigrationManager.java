@@ -15,24 +15,26 @@
  */
 package jetbrains.mps.ide.migration;
 
-import com.intellij.openapi.util.Pair;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.ide.migration.wizard.MigrationStep;
-import jetbrains.mps.migration.component.util.MigrationScript;
-import jetbrains.mps.project.AbstractModule;
-
 public interface MigrationManager {
+
   boolean isMigrationRequired();
 
-  MigrationState step();
+  MigrationState nextStep();
 
-  String currentStep();
-
-  Iterable<ScriptApplied> getConflictingScripts();
-
-  void forceExecution(ScriptApplied next);
-
-  public enum MigrationState {
-    STEP, CONFLICT, FINISHED, ERROR
+  public interface MigrationState {
+    public interface Step extends MigrationState {
+      String getDescription();
+      boolean execute();
+    }
+    public interface Conflict extends MigrationState {
+      Iterable<ScriptApplied> getConflictingScripts();
+      boolean forceExecution(ScriptApplied next);
+    }
+    public interface Finished extends MigrationState {
+    }
+    public interface Error extends MigrationState {
+      String getErrorMessage();
+      Throwable cause();
+    }
   }
 }
