@@ -74,7 +74,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     try {
       header = ModelPersistence.loadDescriptor(source);
     } catch (ModelReadException ignored) {
-      LOG.error("Can't read model: ", ignored);
+      LOG.warning("Can't read model: " + ignored.getMessage());
       header = new SModelHeader();
     }
 
@@ -102,7 +102,8 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     if (modulRef == null) {
       throw new IOException("moduleRef is not provided");
     }
-    SModelReference ref = PersistenceFacade.getInstance().createModelReference(PersistenceFacade.getInstance().createModuleReference(modulRef), jetbrains.mps.smodel.SModelId.generate(), modelName);
+    SModelReference ref = PersistenceFacade.getInstance().createModelReference(PersistenceFacade.getInstance().createModuleReference(modulRef),
+        jetbrains.mps.smodel.SModelId.generate(), modelName);
     SModelHeader header = new SModelHeader();
     header.setPersistenceVersion(ModelPersistence.LAST_VERSION);
     return new DefaultSModelDescriptor((StreamDataSource) dataSource, ref, header);
