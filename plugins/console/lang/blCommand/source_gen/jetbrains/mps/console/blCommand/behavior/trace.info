@@ -108,7 +108,7 @@
       <node id="2699636778858876361" at="27,91,28,48" concept="3" />
       <node id="2699636778858878821" at="28,48,29,84" concept="1" />
       <node id="2699636778858801153" at="29,84,30,18" concept="4" />
-      <node id="7006261637493130861" at="33,94,34,36" concept="4" />
+      <node id="7006261637493130861" at="33,94,34,38" concept="4" />
       <node id="7006261637493131792" at="37,99,38,30" concept="4" />
       <node id="2699636778858790492" at="41,60,42,63" concept="3" />
       <node id="2699636778858790492" at="42,63,43,30" concept="3" />
@@ -134,7 +134,7 @@
       <scope id="2699636778858778896" at="16,43,16,43" />
       <scope id="2699636778858779397" at="19,80,20,47" />
       <scope id="2699636778858779403" at="23,69,24,61" />
-      <scope id="7006261637493130711" at="33,94,34,36" />
+      <scope id="7006261637493130711" at="33,94,34,38" />
       <scope id="7006261637493131068" at="37,99,38,30" />
       <scope id="2699636778858790492" at="43,30,44,132" />
       <scope id="2699636778858778743" at="16,0,18,0">
@@ -175,13 +175,13 @@
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/4225915845891288151">
     <file name="ShowExpression_Behavior.java">
       <node id="4225915845891288167" at="12,100,13,16" concept="4" />
-      <node id="7006261637496577698" at="16,94,17,77" concept="4" />
+      <node id="7006261637496577698" at="16,94,17,87" concept="4" />
       <node id="4225915845891288151" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4225915845891288151" at="12,0,15,0" concept="5" trace="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
       <node id="4225915845891288151" at="16,0,19,0" concept="5" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <scope id="4225915845891288153" at="9,43,9,43" />
       <scope id="4225915845891288157" at="12,100,13,16" />
-      <scope id="7006261637496568945" at="16,94,17,77" />
+      <scope id="7006261637496568945" at="16,94,17,87" />
       <scope id="4225915845891288151" at="9,0,11,0">
         <var name="thisNode" id="4225915845891288151" />
       </scope>
@@ -213,13 +213,13 @@
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/4307205004146936308">
     <file name="UsagesExpression_Behavior.java">
       <node id="4830115408592187701" at="15,114,16,145" concept="4" />
-      <node id="1433263869219693597" at="19,94,20,271" concept="4" />
+      <node id="1433263869219693597" at="19,94,20,275" concept="4" />
       <node id="4307205004146936308" at="12,0,14,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4307205004146936308" at="15,0,18,0" concept="5" trace="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
       <node id="4307205004146936308" at="19,0,22,0" concept="5" trace="virtual_getHelpPage_7006261637493125297#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <scope id="4307205004146936310" at="12,43,12,43" />
       <scope id="4307205004146983753" at="15,114,16,145" />
-      <scope id="1433263869220246216" at="19,94,20,271" />
+      <scope id="1433263869220246216" at="19,94,20,275" />
       <scope id="4307205004146936308" at="12,0,14,0">
         <var name="thisNode" id="4307205004146936308" />
       </scope>
@@ -236,9 +236,9 @@
     <file name="QueryExpression_Behavior.java">
       <node id="4225915845891111332" at="17,100,18,16" concept="4" />
       <node id="1433263869219709154" at="21,94,22,46" concept="3" />
-      <node id="1433263869219780383" at="23,449,24,71" concept="1" />
+      <node id="1433263869219780383" at="23,449,24,98" concept="1" />
       <node id="1433263869219777969" at="26,459,27,81" concept="1" />
-      <node id="1433263869219798899" at="28,12,29,72" concept="1" />
+      <node id="1433263869219798899" at="28,12,29,76" concept="1" />
       <node id="1433263869219766829" at="30,5,31,18" concept="4" />
       <node id="4307205004146945906" at="14,0,16,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1433263869219798588" at="28,10,30,5" concept="0" />
@@ -248,9 +248,9 @@
       <node id="4307205004146945906" at="21,0,33,0" concept="5" trace="virtual_getHelpPage_7006261637493125297#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <scope id="4307205004146945908" at="14,43,14,43" />
       <scope id="4225915845891111311" at="17,100,18,16" />
-      <scope id="1433263869219780382" at="23,449,24,71" />
+      <scope id="1433263869219780382" at="23,449,24,98" />
       <scope id="1433263869219703459" at="26,459,27,81" />
-      <scope id="1433263869219798589" at="28,12,29,72" />
+      <scope id="1433263869219798589" at="28,12,29,76" />
       <scope id="4307205004146945906" at="14,0,16,0">
         <var name="thisNode" id="4307205004146945906" />
       </scope>
@@ -317,13 +317,13 @@
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/4307205004146970004">
     <file name="InstancesExpression_Behavior.java">
       <node id="4830115408592075796" at="15,114,16,145" concept="4" />
-      <node id="1433263869220247007" at="19,94,20,271" concept="4" />
+      <node id="1433263869220247007" at="19,94,20,275" concept="4" />
       <node id="4307205004146970004" at="12,0,14,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4307205004146970004" at="15,0,18,0" concept="5" trace="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
       <node id="4307205004146970004" at="19,0,22,0" concept="5" trace="virtual_getHelpPage_7006261637493125297#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <scope id="4307205004146970006" at="12,43,12,43" />
       <scope id="4307205004146970054" at="15,114,16,145" />
-      <scope id="1433263869220247006" at="19,94,20,271" />
+      <scope id="1433263869220247006" at="19,94,20,275" />
       <scope id="4307205004146970004" at="12,0,14,0">
         <var name="thisNode" id="4307205004146970004" />
       </scope>
@@ -399,13 +399,13 @@
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/7006261637493132074">
     <file name="BLExpression_Behavior.java">
-      <node id="7006261637493132088" at="12,94,13,54" concept="4" />
+      <node id="7006261637493132088" at="12,94,13,57" concept="4" />
       <node id="7006261637493135794" at="16,99,17,26" concept="4" />
       <node id="7006261637493132074" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7006261637493132074" at="12,0,15,0" concept="5" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <node id="7006261637493132074" at="16,0,19,0" concept="5" trace="virtual_getDisplayString_7006261637493126103#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <scope id="7006261637493132076" at="9,43,9,43" />
-      <scope id="7006261637493132081" at="12,94,13,54" />
+      <scope id="7006261637493132081" at="12,94,13,57" />
       <scope id="7006261637493135778" at="16,99,17,26" />
       <scope id="7006261637493132074" at="9,0,11,0">
         <var name="thisNode" id="7006261637493132074" />
@@ -437,11 +437,11 @@
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/7006261637496586602">
     <file name="PrintExpression_Behavior.java">
-      <node id="7006261637496599738" at="12,94,13,32" concept="4" />
+      <node id="7006261637496599738" at="12,94,13,43" concept="4" />
       <node id="7006261637496586602" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7006261637496586602" at="12,0,15,0" concept="5" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <scope id="7006261637496586604" at="9,43,9,43" />
-      <scope id="7006261637496586609" at="12,94,13,32" />
+      <scope id="7006261637496586609" at="12,94,13,43" />
       <scope id="7006261637496586602" at="9,0,11,0">
         <var name="thisNode" id="7006261637496586602" />
       </scope>

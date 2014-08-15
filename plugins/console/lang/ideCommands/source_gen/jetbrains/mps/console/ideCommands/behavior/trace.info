@@ -235,11 +235,11 @@
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2840424593984900719">
     <file name="RemoveGenSources_Behavior.java">
-      <node id="2840424593984900922" at="12,94,13,65" concept="10" />
+      <node id="2840424593984900922" at="12,94,13,69" concept="10" />
       <node id="2840424593984900719" at="9,0,11,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2840424593984900719" at="12,0,15,0" concept="12" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <scope id="2840424593984900721" at="9,43,9,43" />
-      <scope id="2840424593984900726" at="12,94,13,65" />
+      <scope id="2840424593984900726" at="12,94,13,69" />
       <scope id="2840424593984900719" at="9,0,11,0">
         <var name="thisNode" id="2840424593984900719" />
       </scope>
@@ -480,13 +480,13 @@
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/5582028874771853135">
     <file name="Make_Behavior.java">
       <node id="4830115408593678019" at="14,114,15,144" concept="10" />
-      <node id="617513640566863466" at="18,94,19,318" concept="10" />
+      <node id="617513640566863466" at="18,94,19,416" concept="10" />
       <node id="5582028874771853135" at="11,0,13,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5582028874771853135" at="14,0,17,0" concept="12" trace="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
       <node id="5582028874771853135" at="18,0,21,0" concept="12" trace="virtual_getHelpPage_7006261637493125297#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <scope id="5582028874771853143" at="11,43,11,43" />
       <scope id="5582028874771853146" at="14,114,15,144" />
-      <scope id="617513640566799402" at="18,94,19,318" />
+      <scope id="617513640566799402" at="18,94,19,416" />
       <scope id="5582028874771853135" at="11,0,13,0">
         <var name="thisNode" id="5582028874771853135" />
       </scope>

@@ -158,7 +158,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="748410583119698902" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="748410583119698921" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="748410583119698920" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="access to IDE internal mode variable" />
+            <property name="value" nameId="tpee.1070475926801" value="access the IDE internal mode variable" />
           </node>
         </node>
       </node>
@@ -198,7 +198,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7185170375692949386" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7185170375692949481" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7185170375692949480" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="returns model in which console commands and history are stored" />
+            <property name="value" nameId="tpee.1070475926801" value="return a model, in which the console commands as well as its history are stored" />
           </node>
         </node>
       </node>
