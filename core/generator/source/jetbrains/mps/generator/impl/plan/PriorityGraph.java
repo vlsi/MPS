@@ -77,7 +77,7 @@ class PriorityGraph {
   }
 
   public void replaceWeakEdgesWithStrict() {
-    // inv: !entry.isStrict && !entry.isTrivial
+    // inv: !weakEntry.isStrict && !weakEntry.isTrivial
     final ArrayDeque<Entry> weakEntries = new ArrayDeque<Entry>();
     for (Entry entry : myRulePriorityEntries) {
       if (!entry.isStrict() && !entry.isTrivial()) {
@@ -94,7 +94,6 @@ class PriorityGraph {
     while (!weakEntries.isEmpty()) {
       Entry weak = weakEntries.removeFirst();
       myRulePriorityEntries.remove(weak); // weak edge will be replaced with new edges (either strong or weak)
-      boolean weakGotUpdate = false; // if there's any change
       Collection<Entry> toAdd = new ArrayList<Entry>();
       for (Entry entry : myRulePriorityEntries) {
         if (entry.isTrivial()) {
@@ -108,7 +107,6 @@ class PriorityGraph {
         if (!substituteForSooner && !dependsOnWeak) {
           continue;
         }
-        weakGotUpdate = true;
         final Entry newEntry;
         HashSet<MappingPriorityRule> mergedRules = new HashSet<MappingPriorityRule>(entry.getRules());
         mergedRules.addAll(weak.getRules());
@@ -125,24 +123,50 @@ class PriorityGraph {
           weakEntries.add(newEntry); // update queue with new edge to handle
         }
       }
-      if (!weakGotUpdate) {
+      if (toAdd.isEmpty()) {  // if there's no change
         // neither lhs nor rhs of the weak edge is part of any other edge, it's safe to replace it with strict
-        toAdd.add(new Entry(weak.sooner(), weak.later(), true, weak.getRules()));
-        // Does A <= B without any dependant rules effectively means A and B are independent?
-        // perhaps, shall replace with two edges, later -> empty and sooner -> empty instead?
-      }
-      // check that we don't add edges with empty dependencies if there are other dependencies for the group
-      // i.e. if we replaced X <= A, 0 < X with 0 < A, and we already have Y < A edge, there's no reason to add 0 < A.
-      for (Iterator<Entry> it = toAdd.iterator(); it.hasNext(); ) {
-        Entry next = it.next();
-        if (!next.isTrivial()) {
-          continue;
+        toAdd.add(weak.makeStrict());
+        // A <= B without any dependant rules effectively means A < B
+      } else {
+        /* Start: A <= B, X < A, B < Y
+         * toAdd:         X < B, A < Y
+         * Decision to make: if there's relation between X and Y, we're all set
+         *                   if not, we need a rule to tell A 'not later' B
+         */
+        // What new lhs and rhs groups did we get?
+        HashSet<Group> addedSooner = new HashSet<Group>();
+        HashSet<Group> addedLater = new HashSet<Group>();
+        for (Entry e : toAdd) {
+          addedSooner.add(e.sooner());
+          addedLater.add(e.later());
         }
+        addedSooner.remove(weak.sooner());
+        addedLater.remove(weak.later());
+        /*
+         * If there are existing edges X < Z and Z < Y, we build a closure for addedSooner X={Z,Y}
+         * to see it intersects with addedLater.
+         * If any element in rhs appears as 'after' of any element in lhs in existing rules,
+         * then this ensures weak dependency being processed is kept. If elements in rhs
+         * are not in any relation with lhs elements, then we need explicit edge to record 'not later' knowledge
+         * of the current weak edge.
+         */
+        TransitiveClosure<Group> closureBuilder = new TransitiveClosure<Group>();
         for (Entry e : myRulePriorityEntries) {
-          if (e.later().equals(next.later())) {
-            it.remove();
-            break;
+          if (!e.isTrivial()) {
+            closureBuilder.feed(e.sooner(), e.later());
           }
+        }
+        // all elements to show up later than those we've added as 'sooner' for our weak.later()
+        // iow, 'not later' than weak.later()
+        HashSet<Group> closure = new HashSet<Group>();
+        for (Group l : addedSooner) {
+          closure.addAll(closureBuilder.closure(l));
+        }
+        // see if newly added later (than weak.sooner) elements are in relation with the closure
+        closure.retainAll(addedLater);
+        if (closure.isEmpty()) {
+          // nope, can't get from addedSooner to addedLater
+          toAdd.add(weak.makeStrict());
         }
       }
       myRulePriorityEntries.addAll(toAdd);
@@ -352,7 +376,7 @@ class PriorityGraph {
   private static class Entry {
     private Group myLaterGroup;
     private Group mySoonerGroup;
-    private final boolean myStrict;
+    private boolean myStrict;
     // rules this relation originates from
     private final Set<MappingPriorityRule> myRules;
 
@@ -388,6 +412,11 @@ class PriorityGraph {
       mySoonerGroup = new Group();
     }
 
+    public Entry makeStrict() {
+      myStrict = true;
+      return this;
+    }
+
     @Override
     public String toString() {
       return String.format("%s %s %s", mySoonerGroup, isStrict() ? '<' : '\u2264', myLaterGroup);
@@ -397,27 +426,19 @@ class PriorityGraph {
 
   static class CycleDetector {
     private MultiMap<Group, Entry> soonerToEntry = new MultiMap<Group, Entry>();
-    private MultiMap<Group, Group> soonerToLater = new MultiMap<Group, Group>();
+    private TransitiveClosure<Group> soonerToLater = new TransitiveClosure<Group>();
 
     public void feed(Entry edge) {
       soonerToEntry.putValue(edge.sooner(), edge);
-      soonerToLater.putValue(edge.sooner(), edge.later());
+      soonerToLater.feed(edge.sooner(), edge.later());
     }
 
     Collection<Cycle> detect() {
       ArrayList<Cycle> rv = new ArrayList<Cycle>();
-      for (Group g : soonerToLater.keySet()) {
+      for (Group g : soonerToEntry.keySet()) {
         // build closure of all possible rhs (later) elements
         // i.e. for A <= B, B <= C, C <= D, A <= X and given A, builds A := B, C, D, X
-        HashSet<Group> rhsClosure = new HashSet<Group>();
-        ArrayDeque<Group> rhsQueue = new ArrayDeque<Group>();
-        rhsQueue.addAll(soonerToLater.get(g));
-        while (!rhsQueue.isEmpty()) {
-          Group rhs = rhsQueue.removeFirst();
-          if (rhsClosure.add(rhs)) {
-            rhsQueue.addAll(soonerToLater.get(rhs));
-          }
-        }
+        Set<Group> rhsClosure = soonerToLater.closure(g);
         if (!rhsClosure.contains(g)) {
           continue;
         }
@@ -452,6 +473,30 @@ class PriorityGraph {
     public Cycle(Set<Group> elements, Set<Entry> edges) {
       this.elements = elements;
       this.edges = edges;
+    }
+  }
+
+  /**
+   * For a transitive relation, builds a closure of elements, excluding the starting one, unless there's a cycle.
+   * E.g. fed with elements: AxB, BxC, CxD, produces for A: {B,C,D}, for C: {D}
+   * With another element, DxA, produces for A: {B,C,D,A}, for C:{D,A,B,C}
+   */
+  private static class TransitiveClosure<T> {
+    private final MultiMap<T,T> myMap = new MultiMap<T, T>();
+    public void feed(T left, T right) {
+      myMap.putValue(left, right);
+    }
+    public Set<T> closure(T element) {
+      HashSet<T> rhsClosure = new HashSet<T>();
+      ArrayDeque<T> rhsQueue = new ArrayDeque<T>();
+      rhsQueue.addAll(myMap.get(element));
+      while (!rhsQueue.isEmpty()) {
+        T rhs = rhsQueue.removeFirst();
+        if (rhsClosure.add(rhs)) {
+          rhsQueue.addAll(myMap.get(rhs));
+        }
+      }
+      return rhsClosure;
     }
   }
 }
