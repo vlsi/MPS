@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2mf3dm9toy6vuhlk36ks08i6mz72vke">
+<dependencies version="2" modelHash="-610mu8wr9nbo1ik1bzm525r5ho5o9fp">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="eggblwsr0208cbp174vd3je0pubxy4w" />
@@ -27,7 +27,7 @@
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="3735414794051308106" name="MigrationScriptBody" hash="-2ng5e3v4onc20i573j2hkozog7y1z3p" />
-  <source id="4436301628118948495" name="MigrationScript" hash="1e1cv6ppza1hvadwdz4yogh3ku3woox" />
+  <source id="4436301628118948495" name="MigrationScript" hash="efooy0glgg610b21e50oukvmgheoymr" />
   <source id="3290421837437511158" name="MigrationScriptApplicable" hash="82r2gzbq8ese0fqen7h524esexnzyez" />
   <source id="586712031919981082" name="MigrationScriptSerialize" hash="-55xkitud5rf9e9ttysuqgy0vuigebg0" />
   <source id="586712031919984868" name="ConceptFunctionParameter_MigrationScriptData" hash="-d54lbcw7mdbg30zumnjpqh988boj79j" />

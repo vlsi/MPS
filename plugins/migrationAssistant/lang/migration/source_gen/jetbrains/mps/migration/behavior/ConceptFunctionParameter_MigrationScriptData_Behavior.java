@@ -13,4 +13,8 @@ public class ConceptFunctionParameter_MigrationScriptData_Behavior {
   public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.migration.structure.MigrationScript", false, false), "dataType", true);
   }
+
+  public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
+    return true;
+  }
 }

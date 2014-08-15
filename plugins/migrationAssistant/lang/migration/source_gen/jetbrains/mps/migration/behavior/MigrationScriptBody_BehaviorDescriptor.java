@@ -5,18 +5,13 @@ package jetbrains.mps.migration.behavior;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.language.SConcept;
 
 public class MigrationScriptBody_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public MigrationScriptBody_BehaviorDescriptor() {
   }
 
-  public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
-    return MigrationScriptBody_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  }
-
-  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return MigrationScriptBody_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  public List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
+    return MigrationScriptBody_Behavior.virtual_getParameters_1213877374450(thisNode);
   }
 
   @Override

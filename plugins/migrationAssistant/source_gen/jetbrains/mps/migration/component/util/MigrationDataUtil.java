@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.FileUtil;
@@ -69,14 +70,14 @@ public class MigrationDataUtil {
     return result;
   }
 
-  public static void addData(AbstractModule module, MigrationScriptReference script, String data) {
-    List<Tuples._2<MigrationScriptReference, String>> loadedData = Sequence.fromIterable(loadData(module)).toListSequence();
+  public static void addData(SModule module, MigrationScriptReference script, String data) {
+    List<Tuples._2<MigrationScriptReference, String>> loadedData = Sequence.fromIterable(loadData((AbstractModule) module)).toListSequence();
     ListSequence.fromList(loadedData).addElement(MultiTuple.<MigrationScriptReference,String>from(script, data));
-    saveData(module, loadedData);
+    saveData((AbstractModule) module, loadedData);
   }
 
-  public static String readData(AbstractModule module, final MigrationScriptReference script) {
-    List<Tuples._2<MigrationScriptReference, String>> loadedData = Sequence.fromIterable(loadData(module)).toListSequence();
+  public static String readData(SModule module, final MigrationScriptReference script) {
+    List<Tuples._2<MigrationScriptReference, String>> loadedData = Sequence.fromIterable(loadData((AbstractModule) module)).toListSequence();
     return ListSequence.fromList(loadedData).where(new IWhereFilter<Tuples._2<MigrationScriptReference, String>>() {
       public boolean accept(Tuples._2<MigrationScriptReference, String> it) {
         return eq_hzite5_a0a0a0a0a0a0b0d(it._0(), script);

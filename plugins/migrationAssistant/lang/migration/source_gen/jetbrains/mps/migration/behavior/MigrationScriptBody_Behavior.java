@@ -4,22 +4,20 @@ package jetbrains.mps.migration.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MigrationScriptBody_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule"));
-  }
-
-  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.migration.structure.MigrationScript"), "dataType", true);
+  public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
+    List<SNode> result = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule"));
+    if (MigrationScript_Behavior.call_hasData_586712031920013598(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.migration.structure.MigrationScript"))) {
+      ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptData"));
+    }
+    return result;
   }
 }

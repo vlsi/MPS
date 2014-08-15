@@ -13,6 +13,10 @@ public class ConceptFunctionParameter_MigrationScriptData_BehaviorDescriptor ext
     return ConceptFunctionParameter_MigrationScriptData_Behavior.virtual_getType_2443692612523876968(thisNode);
   }
 
+  public boolean virtual_isLValue_1213877519786(SNode thisNode) {
+    return ConceptFunctionParameter_MigrationScriptData_Behavior.virtual_isLValue_1213877519786(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.migration.structure.ConceptFunctionParameter_MigrationScriptData";

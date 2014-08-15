@@ -8,7 +8,7 @@ public interface MigrationScript {
   public String getCaption();
   public MigrationScriptReference getReference();
   public boolean applicableToModule(SModule module);
-  public Object execute(SModule moduleToMigrate);
+  public void execute(SModule moduleToMigrate, MigrationComponent migrationComponent);
   public Iterable<MigrationScriptReference> requiresData();
   public String serializeData(Object data);
   public Object deserializeData(String data);

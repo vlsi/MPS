@@ -17,11 +17,8 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.ide.migration.ScriptApplied;
-import org.jetbrains.mps.openapi.language.SLanguageId;
-import jetbrains.mps.smodel.adapter.IdHelper;
-import org.jetbrains.mps.openapi.module.SDependency;
 import java.util.Set;
+import org.jetbrains.mps.openapi.module.SDependency;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -80,27 +77,15 @@ public class MigrationsUtil {
     return result;
   }
 
-  public static void executeScript(ScriptApplied sa) {
-    MigrationScript script = sa.getScript();
-    AbstractModule module = ((AbstractModule) sa.getModule());
-    SLanguageId languageId = IdHelper.getLanguageId(script.getReference().getModuleReference().getModuleId());
-    assert module.getModuleDescriptor().getLanguageVersions().get(languageId) == script.getReference().getFromVersion();
-    Object data = script.execute(module);
-    MigrationDataUtil.addData(module, script.getReference(), script.serializeData(data));
-    script.serializeData(data);
-    module.getModuleDescriptor().getLanguageVersions().put(languageId, script.getReference().getFromVersion() + 1);
-    module.setChanged();
-  }
-
   public static boolean isApplied(final MigrationScriptReference script, AbstractModule module) {
     return !(Sequence.fromIterable(MigrationsUtil.checkDependenciesVersions(module)).any(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
       public boolean accept(Tuples._3<SModule, Integer, Integer> it) {
-        return eq_7hm1hv_a0a0a0a0a0a0a0k(it._0().getModuleReference(), script.getModuleReference()) && (int) it._1() <= script.getFromVersion();
+        return eq_7hm1hv_a0a0a0a0a0a0a0j(it._0().getModuleReference(), script.getModuleReference()) && (int) it._1() <= script.getFromVersion();
       }
     }));
   }
 
-  public static boolean isAppliedForAllMyDeps(final MigrationScriptReference script, final SModule module) {
+  public static Set<SModule> getModuleDependencies(final SModule module) {
     Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();
     Set<SModule> dependencies = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable(declaredDependencies).translate(new ITranslator2<SDependency, SModule>() {
       public Iterable<SModule> translate(SDependency it) {
@@ -108,7 +93,11 @@ public class MigrationsUtil {
       }
     }));
     SetSequence.fromSet(dependencies).addElement(module);
-    return SetSequence.fromSet(dependencies).all(new IWhereFilter<SModule>() {
+    return dependencies;
+  }
+
+  public static boolean isAppliedForAllMyDeps(final MigrationScriptReference script, SModule module) {
+    return SetSequence.fromSet(getModuleDependencies(module)).all(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
         return isApplied(script, (AbstractModule) it);
       }
@@ -125,7 +114,7 @@ public class MigrationsUtil {
     return (type.isInstance(o) ? (T) o : null);
   }
 
-  private static boolean eq_7hm1hv_a0a0a0a0a0a0a0k(Object a, Object b) {
+  private static boolean eq_7hm1hv_a0a0a0a0a0a0a0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
