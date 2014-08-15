@@ -69,7 +69,9 @@
       <fileset dir="${basedir}/testbench/modules/testActions/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.testActions-src.jar">
-      <fileset dir="${basedir}/testbench/modules/testActions/source_gen" />
+      <fileset dir="${basedir}/testbench/modules/testActions/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${basedir}/testbench/modules/testActions/jetbrains.mps.testActions.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testActions-models" prefix="module/models" />
     </jar>

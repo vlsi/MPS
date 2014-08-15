@@ -9,8 +9,8 @@ public class UsagesExpression_BehaviorDescriptor extends QueryExpression_Behavio
   public UsagesExpression_BehaviorDescriptor() {
   }
 
-  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
-    return UsagesExpression_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
+  public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept) {
+    return UsagesExpression_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
   }
 
   public Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SConcept thisConcept) {

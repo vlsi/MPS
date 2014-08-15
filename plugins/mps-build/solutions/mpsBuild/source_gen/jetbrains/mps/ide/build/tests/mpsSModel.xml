@@ -129,7 +129,9 @@
       <fileset dir="${basedir}/testbench/modules/testRead/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.testRead-src.jar">
-      <fileset dir="${basedir}/testbench/modules/testRead/resources" />
+      <fileset dir="${basedir}/testbench/modules/testRead/resources">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${basedir}/testbench/modules/testRead/jetbrains.mps.testRead.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testRead-models" prefix="module/models" />
     </jar>

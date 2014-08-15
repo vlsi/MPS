@@ -6,14 +6,17 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.java.util.JavaPaster;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.java.newparser.FeatureKind;
 import jetbrains.mps.project.MPSProject;
@@ -35,6 +38,9 @@ public class PasteAsJavaMethods_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (ReadOnlyUtil.isSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")))) {
+      return false;
+    }
     return (SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("anchorNode"))), "jetbrains.mps.baseLanguage.structure.Classifier", true, false) != null) && JavaPaster.areDataAvailableInClipboard();
   }
 
@@ -73,6 +79,16 @@ public class PasteAsJavaMethods_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+      return false;
+    }
+    {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+    }
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;

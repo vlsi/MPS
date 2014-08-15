@@ -21,9 +21,7 @@
   <source id="1904811872814327578" name="main" hash="-27nkhg2kxldcjcx8j1rxl70r0wtdd1t">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1904811872814327603" name="reduce_And" hash="d2wiihz4r98klza7iz058vnrwspubw0">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1904811872814327603" name="reduce_And" hash="d2wiihz4r98klza7iz058vnrwspubw0" />
   <source id="1904811872814327665" name="reduce_Or" hash="-bzy59r9y686n8l6q9snvtdacaztcf1m" />
 </dependencies>
 

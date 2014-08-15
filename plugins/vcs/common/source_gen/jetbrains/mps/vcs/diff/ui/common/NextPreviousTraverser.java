@@ -216,8 +216,10 @@ public class NextPreviousTraverser {
   }
 
   public void goToBounds(Bounds bounds) {
-    goToY((int) bounds.end());
-    goToY((int) bounds.start());
+    if (!(myLastEditor.isDisposed())) {
+      goToY((int) bounds.end());
+      goToY((int) bounds.start());
+    }
   }
 
   private synchronized void goToY(int y) {

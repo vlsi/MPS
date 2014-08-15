@@ -240,12 +240,26 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     final String pattern = getPatternEditor().getPattern();
 
     List<SubstituteAction> matchingActions = getMatchingActions(pattern, false);
-    if (matchingActions.isEmpty()) {
-      matchingActions = getMatchingActions(IntelligentInputUtil.trimLeft(pattern), false);
+    boolean needToTrim;
+    String trimPattern = IntelligentInputUtil.trimLeft(pattern);
+    if (pattern.equals(trimPattern)) {
+      needToTrim = false;
+    } else {
+      needToTrim = true;
+      if (!matchingActions.isEmpty()) {
+        for (SubstituteAction action : matchingActions) {
+          if (action.canSubstitute(pattern)) {
+            needToTrim = false;
+            break;
+          }
+        }
+      }
     }
-
+    if (needToTrim) {
+      matchingActions = getMatchingActions(trimPattern, false);
+    }
     try {
-      Collections.sort(matchingActions, SubstituteActionUtil.createComparator(pattern));
+      Collections.sort(matchingActions, SubstituteActionUtil.createComparator(needToTrim ? trimPattern : pattern));
 
       if (myIsSmart /*&& false*/) {
         sortSmartActions(matchingActions);
@@ -355,18 +369,20 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private boolean doSubstitute() {
-    String pattern = getPatternEditor().getPattern();
+    final String pattern = getPatternEditor().getPattern();
 
-    List<SubstituteAction> matchingActions = new ArrayList<SubstituteAction>();
-    for (SubstituteAction item : mySubstituteActions) {
-      if (SubstituteActionUtil.canSubstitute(item, pattern)) {
-        matchingActions.add(item);
+    if (mySubstituteActions.size() == 1) {
+      final SubstituteAction action = mySubstituteActions.get(0);
+      Boolean canSubstitute = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        @Override
+        public Boolean compute() {
+          return action.canSubstitute(pattern);
+        }
+      });
+      if (canSubstitute) {
+        setVisible(false);
+        action.substitute(myEditorComponent.getEditorContext(), pattern);
       }
-    }
-
-    if (matchingActions.size() == 1) {
-      setVisible(false);
-      matchingActions.get(0).substitute(myEditorComponent.getEditorContext(), pattern);
     }
     return true;
   }

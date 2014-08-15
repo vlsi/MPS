@@ -166,20 +166,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (pattern.equals("")) return false;
 
     List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, strict);
-    if (matchingActions.size() == 0 && canActivatePopup) {
-      return false;
-    }
-    if (matchingActions.size() != 1) {
-      if (canActivatePopup) {
-        getEditor().activateNodeSubstituteChooser(this, false);
-      } else {
-        return false;
-      }
-      return true;
-    }
-
-    matchingActions.get(0).substitute(getContext(), pattern);
-    return true;
+    return APICellAdapter.substituteIfPossible(this, canActivatePopup, pattern, matchingActions);
   }
 
   public boolean isDrawBrackets() {
