@@ -123,40 +123,51 @@
     <unitInfo nodeId="2298389068003808761" fileName="CellAction_DeleteSmart.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
   </root>
   <root nodeRef="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)/6859763651190628904">
-    <nodeInfo nodeId="8187915715528135942" fileName="CellAction_CreateChildRangeSelection.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="7011643302025813747" fileName="CellAction_CreateChildRangeSelection.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorContext" />
-    <nodeInfo nodeId="7011643302025824520" fileName="CellAction_CreateChildRangeSelection.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFilter" />
-    <nodeInfo nodeId="8187915715527932688" fileName="CellAction_CreateChildRangeSelection.java" startLine="18" startPosition="136" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8187915715528136649" fileName="CellAction_CreateChildRangeSelection.java" startLine="19" startPosition="17" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7011643302025827313" fileName="CellAction_CreateChildRangeSelection.java" startLine="20" startPosition="18" endLine="21" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7011643302025815338" fileName="CellAction_CreateChildRangeSelection.java" startLine="21" startPosition="22" endLine="22" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8187915715527947363" fileName="CellAction_CreateChildRangeSelection.java" startLine="26" startPosition="52" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8187915715528185620" fileName="CellAction_CreateChildRangeSelection.java" startLine="27" startPosition="56" endLine="28" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1616799692075646927" fileName="CellAction_CreateChildRangeSelection.java" startLine="31" startPosition="46" endLine="32" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1616799692075646937" fileName="CellAction_CreateChildRangeSelection.java" startLine="32" startPosition="116" endLine="33" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1616799692075646944" fileName="CellAction_CreateChildRangeSelection.java" startLine="33" startPosition="70" endLine="34" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8187915715527934290" fileName="CellAction_CreateChildRangeSelection.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="8187915715527839764" fileName="CellAction_CreateChildRangeSelection.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="8187915715527840989" fileName="CellAction_CreateChildRangeSelection.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellAction_CreateChildRangeSelection#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/selection/NodeRangeSelection/RangeSelectionFilter;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <scopeInfo nodeId="8187915715527934296" fileName="CellAction_CreateChildRangeSelection.java" startLine="26" startPosition="52" endLine="28" endPosition="69">
+    <nodeInfo nodeId="8187915715528135942" fileName="CellAction_CreateChildRangeSelection.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="7011643302025813747" fileName="CellAction_CreateChildRangeSelection.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorContext" />
+    <nodeInfo nodeId="7011643302025824520" fileName="CellAction_CreateChildRangeSelection.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFilter" />
+    <nodeInfo nodeId="6228269109689844659" fileName="CellAction_CreateChildRangeSelection.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNext" />
+    <nodeInfo nodeId="1578842687908025286" fileName="CellAction_CreateChildRangeSelection.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEmptyCellId" />
+    <nodeInfo nodeId="8187915715527932688" fileName="CellAction_CreateChildRangeSelection.java" startLine="19" startPosition="170" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8187915715528136649" fileName="CellAction_CreateChildRangeSelection.java" startLine="20" startPosition="17" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7011643302025827313" fileName="CellAction_CreateChildRangeSelection.java" startLine="21" startPosition="18" endLine="22" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7011643302025815338" fileName="CellAction_CreateChildRangeSelection.java" startLine="22" startPosition="22" endLine="23" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1578842687908027003" fileName="CellAction_CreateChildRangeSelection.java" startLine="23" startPosition="36" endLine="24" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6228269109689847737" fileName="CellAction_CreateChildRangeSelection.java" startLine="24" startPosition="32" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8187915715527947363" fileName="CellAction_CreateChildRangeSelection.java" startLine="29" startPosition="52" endLine="30" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8187915715528185620" fileName="CellAction_CreateChildRangeSelection.java" startLine="30" startPosition="56" endLine="31" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6228269109689737880" fileName="CellAction_CreateChildRangeSelection.java" startLine="34" startPosition="46" endLine="35" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1616799692075646927" fileName="CellAction_CreateChildRangeSelection.java" startLine="35" startPosition="64" endLine="36" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7912182441121810384" fileName="CellAction_CreateChildRangeSelection.java" startLine="37" startPosition="55" endLine="38" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1616799692075646937" fileName="CellAction_CreateChildRangeSelection.java" startLine="39" startPosition="5" endLine="40" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1616799692075646944" fileName="CellAction_CreateChildRangeSelection.java" startLine="40" startPosition="70" endLine="41" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6228269109689739925" fileName="CellAction_CreateChildRangeSelection.java" startLine="36" startPosition="140" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8187915715527934290" fileName="CellAction_CreateChildRangeSelection.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="8187915715527840989" fileName="CellAction_CreateChildRangeSelection.java" startLine="19" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellAction_CreateChildRangeSelection#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/selection/NodeRangeSelection/RangeSelectionFilter;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;Z)V" />
+    <nodeInfo nodeId="8187915715527839764" fileName="CellAction_CreateChildRangeSelection.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="6228269109689739928" fileName="CellAction_CreateChildRangeSelection.java" startLine="37" startPosition="55" endLine="38" endPosition="59" />
+    <scopeInfo nodeId="8187915715527934296" fileName="CellAction_CreateChildRangeSelection.java" startLine="29" startPosition="52" endLine="31" endPosition="69">
       <varInfo nodeId="8187915715527947364" varName="selectedCell" />
     </scopeInfo>
-    <scopeInfo nodeId="8187915715527839772" fileName="CellAction_CreateChildRangeSelection.java" startLine="31" startPosition="46" endLine="34" endPosition="33">
-      <varInfo nodeId="1616799692075646928" varName="newSelection" />
-    </scopeInfo>
-    <scopeInfo nodeId="8187915715527840993" fileName="CellAction_CreateChildRangeSelection.java" startLine="18" startPosition="136" endLine="22" endPosition="36" />
-    <scopeInfo nodeId="8187915715527934290" fileName="CellAction_CreateChildRangeSelection.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="8187915715527934290" fileName="CellAction_CreateChildRangeSelection.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="8187915715527934294" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="8187915715527839764" fileName="CellAction_CreateChildRangeSelection.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="8187915715527839768" varName="context" />
+    <scopeInfo nodeId="8187915715527840993" fileName="CellAction_CreateChildRangeSelection.java" startLine="19" startPosition="170" endLine="25" endPosition="18" />
+    <scopeInfo nodeId="8187915715527839772" fileName="CellAction_CreateChildRangeSelection.java" startLine="34" startPosition="46" endLine="41" endPosition="33">
+      <varInfo nodeId="1616799692075646928" varName="newSelection" />
+      <varInfo nodeId="6228269109689737881" varName="selectedCell" />
     </scopeInfo>
-    <scopeInfo nodeId="8187915715527840989" fileName="CellAction_CreateChildRangeSelection.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="8187915715527840989" fileName="CellAction_CreateChildRangeSelection.java" startLine="19" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="7011643302025812115" varName="editorContext" />
+      <varInfo nodeId="1578842687908009600" varName="emptyCellId" />
       <varInfo nodeId="7011643302025826729" varName="filter" />
+      <varInfo nodeId="6228269109689846979" varName="next" />
       <varInfo nodeId="8187915715528134158" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6859763651190628904" fileName="CellAction_CreateChildRangeSelection.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CreateChildRangeSelection" />
+    <scopeInfo nodeId="8187915715527839764" fileName="CellAction_CreateChildRangeSelection.java" startLine="34" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="8187915715527839768" varName="context" />
+    </scopeInfo>
+    <unitInfo nodeId="6859763651190628904" fileName="CellAction_CreateChildRangeSelection.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CreateChildRangeSelection" />
   </root>
 </debugInfo>
 

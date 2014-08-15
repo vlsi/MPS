@@ -709,9 +709,8 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
-      CellAction_CreateChildRangeSelection selectNextPrevAction = new CellAction_CreateChildRangeSelection(elementNode, new ConceptDeclaration_Editor.RangeSelectionFilter_ueqr71_m1c0(), editorContext);
-      elementCell.setAction(CellActionType.SELECT_NEXT, selectNextPrevAction);
-      elementCell.setAction(CellActionType.SELECT_PREVIOUS, selectNextPrevAction);
+      elementCell.setAction(CellActionType.SELECT_NEXT, new CellAction_CreateChildRangeSelection(elementNode, new ConceptDeclaration_Editor.RangeSelectionFilter_ueqr71_m1c0(), "emptyChildrenPlaceHolder", editorContext, true));
+      elementCell.setAction(CellActionType.SELECT_PREVIOUS, new CellAction_CreateChildRangeSelection(elementNode, new ConceptDeclaration_Editor.RangeSelectionFilter_ueqr71_m1c0(), "emptyChildrenPlaceHolder", editorContext, false));
       return elementCell;
     }
 
@@ -829,9 +828,8 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
-      CellAction_CreateChildRangeSelection selectNextPrevAction = new CellAction_CreateChildRangeSelection(elementNode, new ConceptDeclaration_Editor.RangeSelectionFilter_ueqr71_p1c0(), editorContext);
-      elementCell.setAction(CellActionType.SELECT_NEXT, selectNextPrevAction);
-      elementCell.setAction(CellActionType.SELECT_PREVIOUS, selectNextPrevAction);
+      elementCell.setAction(CellActionType.SELECT_NEXT, new CellAction_CreateChildRangeSelection(elementNode, new ConceptDeclaration_Editor.RangeSelectionFilter_ueqr71_p1c0(), "emptyRefPlaceHolder", editorContext, true));
+      elementCell.setAction(CellActionType.SELECT_PREVIOUS, new CellAction_CreateChildRangeSelection(elementNode, new ConceptDeclaration_Editor.RangeSelectionFilter_ueqr71_p1c0(), "emptyRefPlaceHolder", editorContext, false));
       return elementCell;
     }
 

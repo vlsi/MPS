@@ -7,19 +7,22 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.selection.Selection;
 
 public class CellAction_CreateChildRangeSelection extends AbstractCellAction {
   private SNode myNode;
   private EditorContext myEditorContext;
   private NodeRangeSelection.RangeSelectionFilter myFilter;
+  private boolean myNext = false;
+  private String myEmptyCellId;
 
 
-  public CellAction_CreateChildRangeSelection(SNode node, NodeRangeSelection.RangeSelectionFilter filter, EditorContext editorContext) {
+  public CellAction_CreateChildRangeSelection(SNode node, NodeRangeSelection.RangeSelectionFilter filter, String emptyCellId, EditorContext editorContext, boolean next) {
     super(false);
     myNode = node;
     myFilter = filter;
     myEditorContext = editorContext;
+    myEmptyCellId = emptyCellId;
+    myNext = next;
   }
 
   @Override
@@ -29,7 +32,11 @@ public class CellAction_CreateChildRangeSelection extends AbstractCellAction {
   }
 
   public void execute(EditorContext context) {
-    Selection newSelection = new NodeRangeSelection(myEditorContext.getEditorComponent(), myNode, myNode, myFilter);
+    EditorCell selectedCell = myEditorContext.getSelectedCell();
+    NodeRangeSelection newSelection = new NodeRangeSelection(myEditorContext.getEditorComponent(), myNode, myNode, myFilter, myEmptyCellId);
+    if (selectedCell != null && selectedCell.isBig()) {
+      newSelection = newSelection.enlargeSelection(myNext);
+    }
     myEditorContext.getSelectionManager().pushSelection(newSelection);
     newSelection.ensureVisible();
   }

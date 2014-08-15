@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.EditorComponent;
@@ -26,6 +27,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
@@ -51,6 +53,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
   private static final String PARENT_NODE_ID_PROPERTY_NAME = "parentNodeId";
   private static final String SELECTION_FILTER_CLASS_NAME = "selectionFilterClassName";
   private static final String SELECTION_FILTER_MODULE_REFERENCE = "selectionFilterModuleId";
+  private static final String EMPTY_CELL_ID = "emptyCellId";
 
   private final SNode myFirstNode;
   private final SNode myLastNode;
@@ -58,6 +61,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
   private final String myRole;
   private final String myModelReference;
   private final RangeSelectionFilter myFilter;
+  private final String myEmptyCellId;
 
   public NodeRangeSelection(@NotNull EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException,
       SelectionRestoreException {
@@ -78,10 +82,9 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (sModelDescriptor == null) {
       throw new SelectionRestoreException();
     }
-    SModel sModel = sModelDescriptor;
-    myFirstNode = findNode(sModel, properties, FIRST_NODE_ID_PROPERTY_NAME);
-    myLastNode = findNode(sModel, properties, LAST_NODE_ID_PROPERTY_NAME);
-    myParentNode = findNode(sModel, properties, PARENT_NODE_ID_PROPERTY_NAME);
+    myFirstNode = findNode(sModelDescriptor, properties, FIRST_NODE_ID_PROPERTY_NAME);
+    myLastNode = findNode(sModelDescriptor, properties, LAST_NODE_ID_PROPERTY_NAME);
+    myParentNode = findNode(sModelDescriptor, properties, PARENT_NODE_ID_PROPERTY_NAME);
 
     if (myParentNode != myFirstNode.getParent() || myParentNode != myLastNode.getParent()) {
       throw new SelectionRestoreException();
@@ -90,14 +93,16 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
       throw new SelectionRestoreException();
     }
     myFilter = createSelectionFilter(properties);
+    myEmptyCellId = properties.get(EMPTY_CELL_ID);
     initSelectedCells();
   }
 
   public NodeRangeSelection(@NotNull EditorComponent editorComponent, @NotNull SNode firstNode, @NotNull SNode lastNode) {
-    this(editorComponent, firstNode, lastNode, null);
+    this(editorComponent, firstNode, lastNode, null, null);
   }
 
-  public NodeRangeSelection(@NotNull EditorComponent editorComponent, @NotNull SNode firstNode, @NotNull SNode lastNode, RangeSelectionFilter filter) {
+  public NodeRangeSelection(@NotNull EditorComponent editorComponent, @NotNull SNode firstNode, @NotNull SNode lastNode, RangeSelectionFilter filter,
+      String emptyCellId) {
     super(editorComponent);
     myFirstNode = firstNode;
     myLastNode = lastNode;
@@ -105,6 +110,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     myRole = myFirstNode.getRoleInParent();
     myModelReference = myFirstNode.getModel().getReference().toString();
     myFilter = filter;
+    myEmptyCellId = emptyCellId;
 
     assert myParentNode != null;
     assert myParentNode == myLastNode.getParent();
@@ -154,6 +160,9 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
       selectionInfo.getPropertiesMap().put(SELECTION_FILTER_MODULE_REFERENCE, myFilter.getModuleReference());
       myFilter.saveFilter(selectionInfo);
     }
+    if (myEmptyCellId != null) {
+      selectionInfo.getPropertiesMap().put(EMPTY_CELL_ID, myEmptyCellId);
+    }
     return selectionInfo;
   }
 
@@ -167,19 +176,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     }
 
     NodeRangeSelection that = (NodeRangeSelection) another;
-    if (!myFirstNode.equals(that.myFirstNode)) {
-      return false;
-    }
-    if (!myLastNode.equals(that.myLastNode)) {
-      return false;
-    }
-    if (!myParentNode.equals(that.myParentNode)) {
-      return false;
-    }
-    if (!myRole.equals(that.myRole)) {
-      return false;
-    }
-    return true;
+    return myFirstNode.equals(that.myFirstNode) && myLastNode.equals(that.myLastNode) && myParentNode.equals(that.myParentNode) && myRole.equals(that.myRole);
   }
 
 
@@ -256,7 +253,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     return sNode;
   }
 
-  private void performDeleteAction(CellActionType type) {
+  private void performDeleteAction(final CellActionType type) {
     // TODO: handle delete action similar to all other actions (using corresponding editor component action)
     final EditorContext editorContext = getEditorComponent().getEditorContext();
     int selectedCellsSize = getSelectedCells().size();
@@ -265,9 +262,38 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
         @Override
         public void run() {
           List<SNode> selectedNodes = getSelectedNodes();
+          assert selectedNodes.size() > 1;
+          SNode prevSelectableNode = getNextSelectableNode(selectedNodes.get(0), false);
+          SNode nextSelectableNode = getNextSelectableNode(selectedNodes.get(selectedNodes.size() - 1), true);
           for (SNode node : selectedNodes) {
             node.delete();
           }
+          switch (type) {
+            case BACKSPACE:
+              if (selectNode(prevSelectableNode, false) || selectNode(nextSelectableNode, true)) {
+                return;
+              }
+              break;
+            case DELETE:
+              if (selectNode(nextSelectableNode, true) || selectNode(prevSelectableNode, false)) {
+                return;
+              }
+              break;
+            default:
+              assert false : "Incorrect acton type passed: " + type;
+          }
+          // selecting default cell - no children found.
+          if (myEmptyCellId != null) {
+            SelectionUtil.selectLabelCellAnSetCaret(editorContext, myParentNode, myEmptyCellId, 0);
+            return;
+          }
+
+          EditorCell emptyCell = getEditorComponent().findNodeCellWithRole(myParentNode, myRole);
+          if (emptyCell != null) {
+            editorContext.selectWRTFocusPolicy(emptyCell);
+            return;
+          }
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, myParentNode, SelectionManager.LAST_CELL, -1);
         }
       });
     } else if (selectedCellsSize == 1) {
@@ -295,22 +321,32 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     }
   }
 
+  private boolean selectNode(SNode node, boolean startPosition) {
+    if (node != null) {
+      SelectionUtil.selectLabelCellAnSetCaret(getEditorComponent().getEditorContext(), node,
+          startPosition ? SelectionManager.FIRST_CELL : SelectionManager.LAST_CELL, startPosition ? 0 : -1);
+    }
+    return node != null;
+  }
+
   // TODO: enlargeSelection action should be handled specifically by executeAction() method
   public NodeRangeSelection enlargeSelection(boolean next) {
-    SNode newLastNode = null;
+    SNode newLastNode = getNextSelectableNode(myLastNode, next);
+    return newLastNode != null ? new NodeRangeSelection(getEditorComponent(), myFirstNode, newLastNode, myFilter, myEmptyCellId) : null;
+  }
+
+  private SNode getNextSelectableNode(SNode anchorNode, boolean forward) {
     SNode prevNode = null;
     for (SNode child : getChildIterable()) {
-      if (next && prevNode == myLastNode) {
-        newLastNode = child;
-        break;
+      if (forward && prevNode == anchorNode) {
+        return child;
       }
-      if (!next && child == myLastNode) {
-        newLastNode = prevNode;
-        break;
+      if (!forward && child == anchorNode) {
+        return prevNode;
       }
       prevNode = child;
     }
-    return newLastNode != null ? new NodeRangeSelection(getEditorComponent(), myFirstNode, newLastNode, myFilter) : null;
+    return null;
   }
 
   private Iterable<? extends SNode> getChildIterable() {
