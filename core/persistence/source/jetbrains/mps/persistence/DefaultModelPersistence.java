@@ -32,11 +32,13 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.xml.sax.InputSource;
 
+import javax.sound.midi.InvalidMidiDataException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -75,7 +77,8 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
       header = ModelPersistence.loadDescriptor(source);
     } catch (ModelReadException ignored) {
       LOG.warning("Can't read model: " + ignored.getMessage());
-      header = new SModelHeader();
+      //todo after merging model and its descriptor, an IllegalModelDescriptor should be used here and errors shown from calling code
+      throw new IOException("Incorrect model data");
     }
 
     SModelReference modelReference;
