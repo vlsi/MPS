@@ -51,10 +51,18 @@
   <source id="1202577940061" name="reduce_ValueParameter" hash="-cpduzdd3xdt04oe3u1vnh0jd2z4z0kd">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1206152999436" name="reduce_AssignmentExpression_propertySet" hash="-gj9cjekxrs17hvohiqznbiikn2tcov" />
-  <source id="1206154637872" name="reduce_DotExpression_propertyGet" hash="am3r34xcd4dfuaveulxse7vjqgeb3fu" />
-  <source id="1224072707336" name="reduce_AsExpression" hash="-80290soaphppkbr06qsy5wfhrpj23a" />
-  <source id="5862977038373365416" name="reduceGetProperty" hash="51uu5rhgdyba9ntl0kz1xkz3jj1hi43" />
+  <source id="1206152999436" name="reduce_AssignmentExpression_propertySet" hash="-gj9cjekxrs17hvohiqznbiikn2tcov">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1206154637872" name="reduce_DotExpression_propertyGet" hash="am3r34xcd4dfuaveulxse7vjqgeb3fu">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1224072707336" name="reduce_AsExpression" hash="-80290soaphppkbr06qsy5wfhrpj23a">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="5862977038373365416" name="reduceGetProperty" hash="51uu5rhgdyba9ntl0kz1xkz3jj1hi43">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="5862977038373397976" name="reduce_AssignmentExpression_localPropertySet" hash="48tjalr4bgxbuap8ggeugclidp090n6" />
   <source id="4540508509676720565" name="reduce_OperationAssignmentExpression_propertySet" hash="33ugd0a0pofy8fh0h2g8lhhhmho9pn5" />
   <source id="4540508509677199925" name="OperationAssignmentRValueSwitch" hash="54jswkes6o22c47tvs7eu9m5ej7l4es" />
