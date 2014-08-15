@@ -95,6 +95,11 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
         public void run() {
           // todo remove this read after 3.2. Needed to get concept fq name from id in 3.2 
           SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
+          // e.g. model with merge conflict 
+          if (sModel == null) {
+            return;
+          }
+
           for (final SNode nextNode : SNodeUtil.getDescendants(sModel)) {
             if (isInstanceOfClassConcept(nextNode)) {
               SNode classNode = (SNode) nextNode;

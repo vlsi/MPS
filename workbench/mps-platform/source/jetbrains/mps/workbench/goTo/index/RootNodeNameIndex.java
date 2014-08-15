@@ -160,6 +160,8 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
           @Override
           public void run() {
             SModel model = doModelParsing(inputData);
+            // e.g. model with merge conflict
+            if (model == null) return;
 
             for (final SNode node : getRootsToIterate(model)) {
               String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
