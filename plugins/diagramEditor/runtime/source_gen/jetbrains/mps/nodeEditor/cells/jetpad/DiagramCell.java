@@ -582,7 +582,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
 
     public boolean isValid() {
-      return myFromNode != null && myToNode != null;
+      return getFromNode() != null && getToNode() != null;
     }
 
     private SNode myFromNode;
