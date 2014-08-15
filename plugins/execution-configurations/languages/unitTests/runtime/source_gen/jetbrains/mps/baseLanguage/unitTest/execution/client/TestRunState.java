@@ -29,7 +29,7 @@ public class TestRunState {
   private String myCurrentClass;
   private String myCurrentMethod;
   private String myCurrentToken;
-  private volatile boolean myCurrentPassed = true;
+  private volatile boolean myCurrentCompleted = true;
   private String myLostTest;
   private String myLostMethod;
   private int myTotalTests = 0;
@@ -147,13 +147,13 @@ public class TestRunState {
       checkConsistency();
       this.myCurrentClass = className;
       this.myCurrentMethod = methodName;
-      this.myCurrentPassed = true;
+      this.myCurrentCompleted = true;
       this.updateView();
     }
   }
   private void finishTest() {
     synchronized (lock) {
-      if (this.myCurrentPassed) {
+      if (this.myCurrentCompleted) {
         this.myCompletedTests++;
       }
       this.updateView();
@@ -163,14 +163,13 @@ public class TestRunState {
   }
   private void failTest() {
     synchronized (lock) {
-      this.myCurrentPassed = false;
       this.myFailedTests++;
       this.updateView();
     }
   }
   private void ignoreTest() {
     synchronized (lock) {
-      this.myCurrentPassed = false;
+      this.myCurrentCompleted = false;
       this.updateView();
     }
   }
