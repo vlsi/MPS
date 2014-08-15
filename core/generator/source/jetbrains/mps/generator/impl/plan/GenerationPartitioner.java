@@ -63,9 +63,9 @@ public class GenerationPartitioner {
   private final Map<SModuleReference, TemplateModule> myModulesMap;
   private final Map<SModelReference, TemplateModel> myModelMap;
 
-  // record dependencies between MCs explicitly established by priority rules
-  // use these to avoid adding implicit rules ('not later' than target language) that might conflict with explicit rules
-  private final Set<Pair<TemplateMappingConfiguration, TemplateMappingConfiguration>> myExplicitDependencies;
+  // record dependencies between generators explicitly established by priority rules
+  // use these to avoid adding implicit rules ('not later' than target language) between generators with explicit rules
+   private final Set<Pair<TemplateModule, TemplateModule>> myExplicitDependencies;
 
   // result
   private final PartitioningSolver mySolver;
@@ -84,7 +84,7 @@ public class GenerationPartitioner {
         myModelMap.put(model.getSModelReference(), model);
       }
     }
-    myExplicitDependencies = new HashSet<Pair<TemplateMappingConfiguration, TemplateMappingConfiguration>>();
+    myExplicitDependencies = new HashSet<Pair<TemplateModule, TemplateModule>>();
   }
 
   public List<List<TemplateMappingConfiguration>> createMappingSets() {
@@ -172,6 +172,9 @@ public class GenerationPartitioner {
       }
       // for each target generator,  add a rule {all MC in the current generator} <= {all MC of target generator}, with respect to top-pri MC
       for (TemplateModule tg : targetGenerators) {
+        if (myExplicitDependencies.contains(new Pair<TemplateModule, TemplateModule>(generator, tg))) {
+          continue;
+        }
         RuleHelper rhsHelper = new RuleHelper(tg, new MappingConfig_RefAllLocal());
         if (rhsHelper.getAllMappings().isEmpty()) {
           continue;
@@ -192,32 +195,25 @@ public class GenerationPartitioner {
   }
 
   private void addImplicitTargetLanguageRule(Collection<TemplateMappingConfiguration> lhs, TemplateModule generator1, Collection<TemplateMappingConfiguration> rhs, TemplateModule generator2) {
-    ArrayList<TemplateMappingConfiguration> filteredLeft = new ArrayList<TemplateMappingConfiguration>();
-    ArrayList<TemplateMappingConfiguration> filteredRight = new ArrayList<TemplateMappingConfiguration>();
-    for (Iterator<TemplateMappingConfiguration> it1 = lhs.iterator(); it1.hasNext(); ) {
-      final TemplateMappingConfiguration l = it1.next();
-      for (Iterator<TemplateMappingConfiguration> it2 = rhs.iterator(); it2.hasNext(); ) {
-        final TemplateMappingConfiguration r = it2.next();
-        if (myExplicitDependencies.contains(new Pair<TemplateMappingConfiguration, TemplateMappingConfiguration>(l, r))) {
-          continue;
-        }
-        MappingPriorityRule rule = new MappingPriorityRule();
-        rule.setLeft(createRef(generator1, l));
-        rule.setRight(createRef(generator2, r));
-        rule.setType(RuleType.BEFORE_OR_TOGETHER);
-        processRule(rule, generator1);
-      }
-    }
+    MappingPriorityRule rule = new MappingPriorityRule();
+    rule.setLeft(createRefs(generator1, lhs));
+    rule.setRight(createRefs(generator2, rhs));
+    rule.setType(RuleType.BEFORE_OR_TOGETHER);
+    processRule(rule, generator1);
   }
 
   // XXX likely there's similar code in UI and/or TemplateUtil, need to check/refactor
-  private static MappingConfig_AbstractRef createRef(TemplateModule generator, TemplateMappingConfiguration mc) {
+  private static MappingConfig_AbstractRef createRefs(TemplateModule generator, Collection<TemplateMappingConfiguration> cfgs) {
     final MappingConfig_ExternalRef ext = new MappingConfig_ExternalRef();
     ext.setGenerator(generator.getReference());
-    final MappingConfig_SimpleRef r = new MappingConfig_SimpleRef();
-    r.setModelUID(mc.getMappingNode().getModelReference().toString());
-    r.setNodeID(((SNodePointer) mc.getMappingNode()).getNodeId().toString());
-    ext.setMappingConfig(r);
+    final MappingConfig_RefSet set = new MappingConfig_RefSet();
+    ext.setMappingConfig(set);
+    for (TemplateMappingConfiguration mc : cfgs) {
+      final MappingConfig_SimpleRef e = new MappingConfig_SimpleRef();
+      e.setModelUID(mc.getMappingNode().getModelReference().toString());
+      e.setNodeID(((SNodePointer) mc.getMappingNode()).getNodeId().toString());
+      set.getMappingConfigs().add(e);
+    }
     return ext;
   }
 
@@ -241,9 +237,9 @@ public class GenerationPartitioner {
       }
       return;
     }
-    for (TemplateMappingConfiguration l : lhs) {
-      for (TemplateMappingConfiguration r : rhs) {
-        myExplicitDependencies.add(new Pair<TemplateMappingConfiguration, TemplateMappingConfiguration>(l, r));
+    for (TemplateModule l : lhsHelper.getInvolvedGenerators()) {
+      for (TemplateModule r : rhsHelper.getInvolvedGenerators()) {
+        myExplicitDependencies.add(new Pair<TemplateModule, TemplateModule>(l, r));
       }
     }
     switch (rule.getType()) {
@@ -295,6 +291,14 @@ public class GenerationPartitioner {
         if (!mc.isTopPriority()) {
           rv.add(mc);
         }
+      }
+      return rv;
+    }
+
+    public Collection<TemplateModule> getInvolvedGenerators() {
+      HashSet<TemplateModule> rv = new HashSet<TemplateModule>();
+      for (TemplateMappingConfiguration mc : getAllMappings()) {
+        rv.add(mc.getModel().getModule());
       }
       return rv;
     }
