@@ -169,13 +169,9 @@ public class TransformationTestRunner implements TestRunner {
     clazz.value.getField("myProject").set(obj, projectTest.getProject());
     final Throwable[] exception = new Throwable[1];
     if (runInCommand) {
-      SwingUtilities.invokeAndWait(new Runnable() {
+      projectTest.getProject().getModelAccess().runWriteInEDT(new Runnable() {
         public void run() {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              exception[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
-            }
-          }, projectTest.getProject());
+          exception[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
         }
       });
     } else {
