@@ -84,6 +84,12 @@ class PriorityGraph {
         weakEntries.add(entry);
       }
     }
+    if (Boolean.TRUE.booleanValue()) {
+      for (Entry weak : weakEntries) {
+        weak.makeStrict();
+      }
+      return;
+    }
     /* sooner   later
      *     A <= B
      *     B  < C
