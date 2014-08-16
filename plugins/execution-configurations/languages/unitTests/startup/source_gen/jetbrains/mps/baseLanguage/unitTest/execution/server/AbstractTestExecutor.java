@@ -8,6 +8,7 @@ import org.junit.runner.Request;
 import org.junit.runner.JUnitCore;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.test.util.RunEventsDispatcher;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -43,6 +44,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
     JUnitCore core = new JUnitCore();
     myListener = createListener(requests);
     core.addListener(myListener);
+    core.addListener(RunEventsDispatcher.getInstance());
     if (Sequence.fromIterable(reqSeq).count() > 0) {
       Request firstRequest = Sequence.fromIterable(reqSeq).first();
       updateRunner(firstRequest);
