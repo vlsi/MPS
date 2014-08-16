@@ -47,7 +47,7 @@ public class NodeEditorComponent extends EditorComponent {
         ModelAccess.instance().runReadAction(new Runnable() {
           @Override
           public void run() {
-            if (!isShowing() || RuntimeFlags.getTestMode() != TestMode.NONE)
+            if (isShowing() || RuntimeFlags.getTestMode() != TestMode.NONE)
               inspect(toSelect[0]);
           }
         });

@@ -23,6 +23,7 @@ public class TestModelSaver {
   }
 
   public void setTest(TransformationTest test) {
+    assert myTest == null;
     myTest = test;
   }
 

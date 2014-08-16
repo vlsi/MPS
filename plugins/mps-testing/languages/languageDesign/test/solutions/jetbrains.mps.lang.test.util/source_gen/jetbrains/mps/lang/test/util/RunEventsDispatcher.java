@@ -18,10 +18,10 @@ public class RunEventsDispatcher {
   }
 
   public void onTestRunDone() {
+    assert ListSequence.fromList(myListeners).count() <= 1;
     for (MpsRunListener listener : ListSequence.fromList(myListeners)) {
       listener.testRunDone();
     }
-    ListSequence.fromList(myListeners).clear();
   }
 
   public void addListener(MpsRunListener listener) {

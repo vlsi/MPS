@@ -202,7 +202,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     final AnActionEvent event = ActionUtils.createEvent(ActionPlaces.MAIN_MENU, DATA_MANAGER.getDataContext(getEditorComponent()));
     undoHelper.runUndoableInEDTAndWait(new Runnable() {
       public void run() {
-        myEditor.getCurrentEditorComponent().rebuildEditorContent();
+        if (actionId.equals("$Undo")) {
+          myEditor.getCurrentEditorComponent().rebuildEditorContent();
+        }
         action.actionPerformed(event);
       }
     });
@@ -226,7 +228,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         // empty task 
       }
     });
-    // <node> 
+    ModelAccess.instance().flushEventQueue();
   }
   protected static Logger LOG = LogManager.getLogger(BaseEditorTestBody.class);
 }
