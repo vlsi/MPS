@@ -24,6 +24,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
 
+  public static Object propertyMacro_GetPropertyValue_4850335266370449649(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "description");
+  }
+
   public static Object propertyMacro_GetPropertyValue_5847597366793561294(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }

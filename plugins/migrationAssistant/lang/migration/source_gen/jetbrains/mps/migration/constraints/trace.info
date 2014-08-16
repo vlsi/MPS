@@ -59,50 +59,11 @@
   </root>
   <root nodeRef="r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.migration.constraints)/8866965183499033798">
     <file name="MigrationScript_Constraints.java">
-      <node id="8866965183499033798" at="40,37,40,37" concept="0" />
-      <node id="8866965183499033798" at="14,40,15,63" concept="7" />
-      <node id="8866965183499033798" at="19,82,20,74" concept="4" />
-      <node id="8866965183499033798" at="23,37,24,20" concept="5" />
-      <node id="8866965183499033798" at="28,42,29,37" concept="4" />
-      <node id="8866965183499033798" at="29,37,30,125" concept="0" />
-      <node id="8866965183499035296" at="29,37,30,125" concept="5" />
-      <node id="8866965183499033798" at="34,37,35,20" concept="5" />
-      <node id="8866965183499033798" at="39,62,40,37" concept="4" />
-      <node id="8866965183499033798" at="42,7,43,22" concept="5" />
-      <node id="8866965183499033798" at="14,0,17,0" concept="1" trace="MigrationScript_Constraints#()V" />
-      <node id="8866965183499033798" at="22,0,26,0" concept="3" trace="hasOwnGetter#()Z" />
-      <node id="8866965183499033798" at="33,0,37,0" concept="3" trace="hasOwnSetter#()Z" />
-      <node id="8866965183499033798" at="38,0,42,0" concept="3" trace="setValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
-      <node id="8866965183499033798" at="27,0,32,0" concept="3" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="8866965183499033798" at="20,74,42,7" concept="2" />
-      <node id="8866965183499033798" at="18,0,45,0" concept="3" trace="getNotDefaultProperties#()Ljava/util/Map;" />
-      <scope id="8866965183499034598" at="40,37,40,37" />
-      <scope id="8866965183499033798" at="14,40,15,63" />
-      <scope id="8866965183499033798" at="23,37,24,20" />
-      <scope id="8866965183499034618" at="29,37,30,125" />
-      <scope id="8866965183499033798" at="34,37,35,20" />
-      <scope id="8866965183499033798" at="39,62,40,37">
-        <var name="propertyName" id="8866965183499033798" />
-      </scope>
-      <scope id="8866965183499033798" at="28,42,30,125">
-        <var name="propertyName" id="8866965183499033798" />
-      </scope>
-      <scope id="8866965183499033798" at="14,0,17,0" />
-      <scope id="8866965183499033798" at="22,0,26,0" />
-      <scope id="8866965183499033798" at="33,0,37,0" />
-      <scope id="8866965183499033798" at="38,0,42,0">
-        <var name="node" id="8866965183499033798" />
-        <var name="propertyValue" id="8866965183499033798" />
-      </scope>
-      <scope id="8866965183499033798" at="27,0,32,0">
-        <var name="node" id="8866965183499033798" />
-      </scope>
-      <scope id="8866965183499033798" at="19,82,43,22">
-        <var name="properties" id="8866965183499033798" />
-      </scope>
-      <scope id="8866965183499033798" at="18,0,45,0" />
-      <unit id="8866965183499033798" at="21,31,42,5" name="jetbrains.mps.migration.constraints.MigrationScript_Constraints$1" />
-      <unit id="8866965183499033798" at="13,0,46,0" name="jetbrains.mps.migration.constraints.MigrationScript_Constraints" />
+      <node id="8866965183499033798" at="8,40,9,63" concept="7" />
+      <node id="8866965183499033798" at="8,0,11,0" concept="1" trace="MigrationScript_Constraints#()V" />
+      <scope id="8866965183499033798" at="8,40,9,63" />
+      <scope id="8866965183499033798" at="8,0,11,0" />
+      <unit id="8866965183499033798" at="7,0,12,0" name="jetbrains.mps.migration.constraints.MigrationScript_Constraints" />
     </file>
   </root>
 </debug-info>

@@ -155,6 +155,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.migration.behavior.AbstractMigrationScript_Behavior" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

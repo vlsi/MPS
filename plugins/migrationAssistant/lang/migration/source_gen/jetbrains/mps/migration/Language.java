@@ -28,7 +28,7 @@ public class Language extends LanguageRuntime {
 
   @Override
   protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.baseLanguage"};
+    return new String[]{"jetbrains.mps.lang.smodel", "jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.collections"};
   }
 
   @Override
