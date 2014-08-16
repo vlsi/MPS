@@ -1588,8 +1588,8 @@
       <node id="2345623147105465521" at="21,107,22,109" concept="2" />
       <node id="2345623147105465521" at="29,51,30,63" concept="2" />
       <node id="8262891670217997174" at="30,63,31,77" concept="2" />
-      <node id="297555905489768634" at="33,27,34,157" concept="6" />
-      <node id="297555905489768638" at="34,157,35,131" concept="6" />
+      <node id="297555905489768634" at="33,27,34,153" concept="6" />
+      <node id="297555905489768638" at="34,153,35,131" concept="6" />
       <node id="297555905489768646" at="35,131,36,96" concept="2" />
       <node id="2345623147105465521" at="17,0,19,0" concept="1" trace="SmartReferenseUpdateOnChange_Test#()V" />
       <node id="2345623147105465521" at="26,0,28,0" concept="1" trace="TestBody#()V" />
@@ -2371,73 +2371,83 @@
       <node id="3852894662483077199" at="22,114,23,119" concept="2" />
       <node id="3852894662483077199" at="26,65,27,114" concept="2" />
       <node id="3852894662483077199" at="27,114,28,127" concept="2" />
-      <node id="2329139814027285002" at="32,59,33,176" concept="2" />
-      <node id="2329139814027285199" at="33,176,34,177" concept="2" />
-      <node id="2329139814027284890" at="34,177,35,0" concept="8" />
-      <node id="3852894662483077222" at="36,7,37,220" concept="6" />
-      <node id="3852894662483077222" at="37,220,38,219" concept="6" />
-      <node id="3852894662483077222" at="38,219,39,146" concept="2" />
-      <node id="3852894662483230176" at="42,67,43,176" concept="2" />
-      <node id="2329139814025602974" at="43,176,44,177" concept="2" />
-      <node id="3852894662483230169" at="45,7,46,215" concept="6" />
-      <node id="3852894662483230169" at="46,215,47,214" concept="6" />
-      <node id="3852894662483230169" at="47,214,48,146" concept="2" />
+      <node id="3852894662483077213" at="32,59,33,46" concept="2" />
+      <node id="3852894662483077213" at="33,46,34,46" concept="2" />
+      <node id="3852894662483077213" at="34,46,35,46" concept="2" />
+      <node id="3852894662483077213" at="35,46,36,46" concept="2" />
+      <node id="2329139814027285002" at="36,46,37,172" concept="2" />
+      <node id="2329139814027285199" at="37,172,38,173" concept="2" />
+      <node id="2329139814027284890" at="38,173,39,0" concept="8" />
+      <node id="3852894662483077222" at="40,7,41,216" concept="6" />
+      <node id="3852894662483077222" at="41,216,42,215" concept="6" />
+      <node id="3852894662483077222" at="42,215,43,146" concept="2" />
+      <node id="3852894662483230160" at="46,67,47,46" concept="2" />
+      <node id="3852894662483230160" at="47,46,48,46" concept="2" />
+      <node id="3852894662483230160" at="48,46,49,46" concept="2" />
+      <node id="3852894662483230160" at="49,46,50,46" concept="2" />
+      <node id="3852894662483230176" at="50,46,51,172" concept="2" />
+      <node id="2329139814025602974" at="51,172,52,173" concept="2" />
+      <node id="3852894662483230169" at="53,7,54,211" concept="6" />
+      <node id="3852894662483230169" at="54,211,55,210" concept="6" />
+      <node id="3852894662483230169" at="55,210,56,146" concept="2" />
       <node id="3852894662483077199" at="20,0,25,0" concept="5" trace="test_noBinaryOperation#()V" />
       <node id="3852894662483077199" at="25,0,30,0" concept="5" trace="test_thereIsAlreadyParenthesis#()V" />
-      <node id="3852894662483077222" at="35,0,40,7" concept="0" />
-      <node id="3852894662483230169" at="44,177,49,7" concept="0" />
-      <node id="3852894662483230160" at="42,0,51,0" concept="5" trace="test_thereIsAlreadyParenthesis#()V" />
-      <node id="3852894662483077213" at="32,0,42,0" concept="5" trace="test_noBinaryOperation#()V" />
+      <node id="3852894662483077222" at="39,0,44,7" concept="0" />
+      <node id="3852894662483230169" at="52,173,57,7" concept="0" />
+      <node id="3852894662483230160" at="46,0,59,0" concept="5" trace="test_thereIsAlreadyParenthesis#()V" />
+      <node id="3852894662483077213" at="32,0,46,0" concept="5" trace="test_noBinaryOperation#()V" />
       <scope id="3852894662483077199" at="21,57,23,119" />
       <scope id="3852894662483077199" at="26,65,28,127" />
-      <scope id="3852894662483077222" at="36,7,39,146">
+      <scope id="3852894662483077222" at="40,7,43,146">
         <var name="nodesAfter" id="3852894662483077222" />
         <var name="nodesBefore" id="3852894662483077222" />
       </scope>
-      <scope id="3852894662483230169" at="45,7,48,146">
+      <scope id="3852894662483230169" at="53,7,56,146">
         <var name="nodesAfter" id="3852894662483230169" />
         <var name="nodesBefore" id="3852894662483230169" />
       </scope>
       <scope id="3852894662483077199" at="20,0,25,0" />
       <scope id="3852894662483077199" at="25,0,30,0" />
-      <scope id="3852894662483230160" at="42,67,49,7" />
-      <scope id="3852894662483077213" at="32,59,40,7" />
-      <scope id="3852894662483230160" at="42,0,51,0" />
-      <scope id="3852894662483077213" at="32,0,42,0" />
-      <unit id="3852894662483077199" at="30,0,52,0" name="jetbrains.mps.editorTest.SurroundWithParenthesisTest_Test$TestBody" />
-      <unit id="3852894662483077199" at="18,0,53,0" name="jetbrains.mps.editorTest.SurroundWithParenthesisTest_Test" />
+      <scope id="3852894662483230160" at="46,67,57,7" />
+      <scope id="3852894662483077213" at="32,59,44,7" />
+      <scope id="3852894662483230160" at="46,0,59,0" />
+      <scope id="3852894662483077213" at="32,0,46,0" />
+      <unit id="3852894662483077199" at="30,0,60,0" name="jetbrains.mps.editorTest.SurroundWithParenthesisTest_Test$TestBody" />
+      <unit id="3852894662483077199" at="18,0,61,0" name="jetbrains.mps.editorTest.SurroundWithParenthesisTest_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3852894662483397197">
     <file name="PriorityCheckTest_Test.java">
       <node id="3852894662483397197" at="24,52,25,114" concept="2" />
       <node id="3852894662483397197" at="25,114,26,104" concept="2" />
-      <node id="3852894662483449727" at="30,54,31,111" concept="6" />
-      <node id="3852894662483493968" at="31,111,32,118" concept="6" />
-      <node id="3852894662483493976" at="32,118,33,59" concept="2" />
-      <node id="3852894662483493950" at="33,59,34,70" concept="2" />
-      <node id="3852894662483493995" at="34,70,35,167" concept="2" />
-      <node id="3852894662483494009" at="35,167,36,183" concept="2" />
-      <node id="3852894662483494029" at="36,183,37,52" concept="2" />
-      <node id="3852894662483494025" at="38,7,39,215" concept="6" />
-      <node id="3852894662483494025" at="39,215,40,214" concept="6" />
-      <node id="3852894662483494025" at="40,214,41,146" concept="2" />
+      <node id="3852894662483449723" at="30,54,31,46" concept="2" />
+      <node id="3852894662483449723" at="31,46,32,46" concept="2" />
+      <node id="3852894662483449727" at="32,46,33,111" concept="6" />
+      <node id="3852894662483493968" at="33,111,34,118" concept="6" />
+      <node id="3852894662483493976" at="34,118,35,59" concept="2" />
+      <node id="3852894662483493950" at="35,59,36,70" concept="2" />
+      <node id="3852894662483493995" at="36,70,37,163" concept="2" />
+      <node id="3852894662483494009" at="37,163,38,179" concept="2" />
+      <node id="3852894662483494029" at="38,179,39,52" concept="2" />
+      <node id="3852894662483494025" at="40,7,41,211" concept="6" />
+      <node id="3852894662483494025" at="41,211,42,210" concept="6" />
+      <node id="3852894662483494025" at="42,210,43,146" concept="2" />
       <node id="3852894662483397197" at="23,0,28,0" concept="5" trace="test_testRotation#()V" />
-      <node id="3852894662483494025" at="37,52,42,7" concept="0" />
-      <node id="3852894662483449723" at="30,0,44,0" concept="5" trace="test_testRotation#()V" />
+      <node id="3852894662483494025" at="39,52,44,7" concept="0" />
+      <node id="3852894662483449723" at="30,0,46,0" concept="5" trace="test_testRotation#()V" />
       <scope id="3852894662483397197" at="24,52,26,104" />
-      <scope id="3852894662483494025" at="38,7,41,146">
+      <scope id="3852894662483494025" at="40,7,43,146">
         <var name="nodesAfter" id="3852894662483494025" />
         <var name="nodesBefore" id="3852894662483494025" />
       </scope>
       <scope id="3852894662483397197" at="23,0,28,0" />
-      <scope id="3852894662483449723" at="30,54,42,7">
+      <scope id="3852894662483449723" at="30,54,44,7">
         <var name="constant" id="3852894662483493969" />
         <var name="op" id="3852894662483449728" />
       </scope>
-      <scope id="3852894662483449723" at="30,0,44,0" />
-      <unit id="3852894662483397197" at="28,0,45,0" name="jetbrains.mps.editorTest.PriorityCheckTest_Test$TestBody" />
-      <unit id="3852894662483397197" at="21,0,46,0" name="jetbrains.mps.editorTest.PriorityCheckTest_Test" />
+      <scope id="3852894662483449723" at="30,0,46,0" />
+      <unit id="3852894662483397197" at="28,0,47,0" name="jetbrains.mps.editorTest.PriorityCheckTest_Test$TestBody" />
+      <unit id="3852894662483397197" at="21,0,48,0" name="jetbrains.mps.editorTest.PriorityCheckTest_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3891087596588926733">
@@ -4916,64 +4926,68 @@
     <file name="PriorityCheckTestMulFirst_Test.java">
       <node id="818296778579227381" at="24,52,25,114" concept="2" />
       <node id="818296778579227381" at="25,114,26,112" concept="2" />
-      <node id="818296778579227404" at="30,54,31,110" concept="6" />
-      <node id="818296778579227410" at="31,110,32,118" concept="6" />
-      <node id="818296778579227416" at="32,118,33,59" concept="2" />
-      <node id="818296778579227422" at="33,59,34,70" concept="2" />
-      <node id="818296778579227428" at="34,70,35,166" concept="2" />
-      <node id="818296778579227433" at="35,166,36,182" concept="2" />
-      <node id="818296778579227439" at="36,182,37,52" concept="2" />
-      <node id="818296778579227442" at="38,7,39,214" concept="6" />
-      <node id="818296778579227442" at="39,214,40,213" concept="6" />
-      <node id="818296778579227442" at="40,213,41,146" concept="2" />
+      <node id="818296778579227401" at="30,54,31,45" concept="2" />
+      <node id="818296778579227401" at="31,45,32,45" concept="2" />
+      <node id="818296778579227404" at="32,45,33,110" concept="6" />
+      <node id="818296778579227410" at="33,110,34,118" concept="6" />
+      <node id="818296778579227416" at="34,118,35,59" concept="2" />
+      <node id="818296778579227422" at="35,59,36,70" concept="2" />
+      <node id="818296778579227428" at="36,70,37,162" concept="2" />
+      <node id="818296778579227433" at="37,162,38,178" concept="2" />
+      <node id="818296778579227439" at="38,178,39,52" concept="2" />
+      <node id="818296778579227442" at="40,7,41,210" concept="6" />
+      <node id="818296778579227442" at="41,210,42,209" concept="6" />
+      <node id="818296778579227442" at="42,209,43,146" concept="2" />
       <node id="818296778579227381" at="23,0,28,0" concept="5" trace="test_testRotation#()V" />
-      <node id="818296778579227442" at="37,52,42,7" concept="0" />
-      <node id="818296778579227401" at="30,0,44,0" concept="5" trace="test_testRotation#()V" />
+      <node id="818296778579227442" at="39,52,44,7" concept="0" />
+      <node id="818296778579227401" at="30,0,46,0" concept="5" trace="test_testRotation#()V" />
       <scope id="818296778579227381" at="24,52,26,112" />
-      <scope id="818296778579227442" at="38,7,41,146">
+      <scope id="818296778579227442" at="40,7,43,146">
         <var name="nodesAfter" id="818296778579227442" />
         <var name="nodesBefore" id="818296778579227442" />
       </scope>
       <scope id="818296778579227381" at="23,0,28,0" />
-      <scope id="818296778579227401" at="30,54,42,7">
+      <scope id="818296778579227401" at="30,54,44,7">
         <var name="constant" id="818296778579227411" />
         <var name="op" id="818296778579227405" />
       </scope>
-      <scope id="818296778579227401" at="30,0,44,0" />
-      <unit id="818296778579227381" at="28,0,45,0" name="jetbrains.mps.editorTest.PriorityCheckTestMulFirst_Test$TestBody" />
-      <unit id="818296778579227381" at="21,0,46,0" name="jetbrains.mps.editorTest.PriorityCheckTestMulFirst_Test" />
+      <scope id="818296778579227401" at="30,0,46,0" />
+      <unit id="818296778579227381" at="28,0,47,0" name="jetbrains.mps.editorTest.PriorityCheckTestMulFirst_Test$TestBody" />
+      <unit id="818296778579227381" at="21,0,48,0" name="jetbrains.mps.editorTest.PriorityCheckTestMulFirst_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/818296778579245154">
     <file name="PriorityCheckTestPlusFirst_Test.java">
       <node id="818296778579245154" at="24,52,25,114" concept="2" />
       <node id="818296778579245154" at="25,114,26,113" concept="2" />
-      <node id="818296778579245177" at="30,54,31,111" concept="6" />
-      <node id="818296778579245183" at="31,111,32,118" concept="6" />
-      <node id="818296778579245189" at="32,118,33,59" concept="2" />
-      <node id="818296778579245195" at="33,59,34,70" concept="2" />
-      <node id="818296778579245201" at="34,70,35,165" concept="2" />
-      <node id="818296778579245206" at="35,165,36,181" concept="2" />
-      <node id="818296778579245212" at="36,181,37,52" concept="2" />
-      <node id="818296778579245215" at="38,7,39,214" concept="6" />
-      <node id="818296778579245215" at="39,214,40,213" concept="6" />
-      <node id="818296778579245215" at="40,213,41,146" concept="2" />
+      <node id="818296778579245174" at="30,54,31,45" concept="2" />
+      <node id="818296778579245174" at="31,45,32,45" concept="2" />
+      <node id="818296778579245177" at="32,45,33,111" concept="6" />
+      <node id="818296778579245183" at="33,111,34,118" concept="6" />
+      <node id="818296778579245189" at="34,118,35,59" concept="2" />
+      <node id="818296778579245195" at="35,59,36,70" concept="2" />
+      <node id="818296778579245201" at="36,70,37,161" concept="2" />
+      <node id="818296778579245206" at="37,161,38,177" concept="2" />
+      <node id="818296778579245212" at="38,177,39,52" concept="2" />
+      <node id="818296778579245215" at="40,7,41,210" concept="6" />
+      <node id="818296778579245215" at="41,210,42,209" concept="6" />
+      <node id="818296778579245215" at="42,209,43,146" concept="2" />
       <node id="818296778579245154" at="23,0,28,0" concept="5" trace="test_testRotation#()V" />
-      <node id="818296778579245215" at="37,52,42,7" concept="0" />
-      <node id="818296778579245174" at="30,0,44,0" concept="5" trace="test_testRotation#()V" />
+      <node id="818296778579245215" at="39,52,44,7" concept="0" />
+      <node id="818296778579245174" at="30,0,46,0" concept="5" trace="test_testRotation#()V" />
       <scope id="818296778579245154" at="24,52,26,113" />
-      <scope id="818296778579245215" at="38,7,41,146">
+      <scope id="818296778579245215" at="40,7,43,146">
         <var name="nodesAfter" id="818296778579245215" />
         <var name="nodesBefore" id="818296778579245215" />
       </scope>
       <scope id="818296778579245154" at="23,0,28,0" />
-      <scope id="818296778579245174" at="30,54,42,7">
+      <scope id="818296778579245174" at="30,54,44,7">
         <var name="constant" id="818296778579245184" />
         <var name="op" id="818296778579245178" />
       </scope>
-      <scope id="818296778579245174" at="30,0,44,0" />
-      <unit id="818296778579245154" at="28,0,45,0" name="jetbrains.mps.editorTest.PriorityCheckTestPlusFirst_Test$TestBody" />
-      <unit id="818296778579245154" at="21,0,46,0" name="jetbrains.mps.editorTest.PriorityCheckTestPlusFirst_Test" />
+      <scope id="818296778579245174" at="30,0,46,0" />
+      <unit id="818296778579245154" at="28,0,47,0" name="jetbrains.mps.editorTest.PriorityCheckTestPlusFirst_Test$TestBody" />
+      <unit id="818296778579245154" at="21,0,48,0" name="jetbrains.mps.editorTest.PriorityCheckTestPlusFirst_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8221415467041264294">

@@ -124,6 +124,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1221567898739(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
+  public static Object propertyMacro_GetPropertyValue_1225976113121(final PropertyMacroContext _context) {
+    return _context.getNode().getNodeId().toString();
+  }
   public static Object propertyMacro_GetPropertyValue_1225976126786(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getTestName_1216136419751", new Object[]{});
   }
@@ -236,6 +239,13 @@ public class QueriesGenerated {
   }
   public static Iterable<SNode> sourceNodesQuery_1732396662099747730(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "throwsItem", true);
+  }
+  public static Iterable<SNode> sourceNodesQuery_1225976113129(final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> nodes = new ArrayList<SNode>();
+    for (SNode nodeTocheck : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.test.structure.NodesTestCase", false, false), "nodesToCheck", true))) {
+      ListSequence.fromList(nodes).addElement(SNodeOperations.cast(nodeTocheck, "jetbrains.mps.lang.test.structure.TestNode"));
+    }
+    return nodes;
   }
   public static Iterable<SNode> sourceNodesQuery_1225976257814(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
