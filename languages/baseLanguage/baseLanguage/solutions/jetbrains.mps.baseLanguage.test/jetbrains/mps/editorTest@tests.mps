@@ -17362,6 +17362,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="4177017564823046256" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="TrickyUndoTest" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="undoRedo" />
+    <property name="canNotRunInProcess" nameId="tpe3.6427619394892729757" value="false" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="4177017564823046257" nodeInfo="nn">
       <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="4177017564823046258" nodeInfo="sn">
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4177017564823054023" nodeInfo="ng">

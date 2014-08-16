@@ -9,6 +9,77 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <root nodeRef="r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)/107428392343534654">
+    <file name="JUnitInProcessUndo_Test.java">
+      <node id="107428392343534654" at="37,59,38,149" concept="1" />
+      <node id="107428392343534654" at="38,149,39,148" concept="1" />
+      <node id="107428392343534801" at="43,61,44,166" concept="1" />
+      <node id="107428392343534658" at="46,32,47,121" concept="5" />
+      <node id="107428392343534666" at="50,11,51,129" concept="4" />
+      <node id="107428392343534676" at="51,129,52,66" concept="4" />
+      <node id="107428392343534682" at="52,66,53,83" concept="4" />
+      <node id="107428392343534688" at="53,83,54,0" concept="6" />
+      <node id="107428392343534689" at="54,0,55,33" concept="4" />
+      <node id="107428392343534692" at="55,33,56,78" concept="1" />
+      <node id="107428392343534699" at="57,34,58,52" concept="1" />
+      <node id="107428392343534701" at="59,9,60,59" concept="4" />
+      <node id="107428392343534707" at="60,59,61,108" concept="4" />
+      <node id="107428392343534716" at="63,29,64,79" concept="1" />
+      <node id="107428392343534723" at="64,79,65,54" concept="1" />
+      <node id="107428392343534728" at="67,11,68,90" concept="1" />
+      <node id="107428392343534734" at="68,90,69,78" concept="4" />
+      <node id="107428392343534744" at="70,65,71,116" concept="1" />
+      <node id="107428392343534765" at="72,34,73,57" concept="1" />
+      <node id="107428392343534770" at="75,62,76,57" concept="1" />
+      <node id="107428392343534786" at="78,38,79,36" concept="1" />
+      <node id="107428392343534654" at="83,0,84,0" concept="7" trace="LOG" />
+      <node id="107428392343534798" at="43,0,46,0" concept="3" trace="test_startTrickyTestCase#()V" />
+      <node id="107428392343534654" at="46,0,49,0" concept="3" trace="getMyModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="107428392343534699" at="56,78,59,9" concept="0" />
+      <node id="107428392343534699" at="56,78,59,9" concept="2" />
+      <node id="107428392343534768" at="74,9,77,9" concept="2" />
+      <node id="107428392343534714" at="63,0,67,0" concept="3" trace="run#()V" />
+      <node id="107428392343534654" at="36,0,41,0" concept="3" trace="test_startTrickyTestCase#()V" />
+      <node id="107428392343534742" at="69,78,74,9" concept="2" />
+      <node id="107428392343534710" at="61,108,67,11" concept="1" />
+      <node id="107428392343534664" at="49,104,80,7" concept="8" />
+      <node id="107428392343534654" at="49,0,82,0" concept="3" trace="checkTests#(Ljava/util/List;Ljava/util/List;)V" />
+      <scope id="107428392343534798" at="43,61,44,166" />
+      <scope id="107428392343534654" at="46,32,47,121" />
+      <scope id="107428392343534699" at="57,34,58,52" />
+      <scope id="107428392343534743" at="70,65,71,116" />
+      <scope id="107428392343534764" at="72,34,73,57" />
+      <scope id="107428392343534769" at="75,62,76,57" />
+      <scope id="107428392343534782" at="78,0,79,36">
+        <var name="e" id="107428392343534783" />
+      </scope>
+      <scope id="107428392343534785" at="78,38,79,36" />
+      <scope id="107428392343534654" at="37,59,39,148" />
+      <scope id="107428392343534715" at="63,29,65,54" />
+      <scope id="107428392343534798" at="43,0,46,0" />
+      <scope id="107428392343534654" at="46,0,49,0" />
+      <scope id="107428392343534699" at="56,78,59,9" />
+      <scope id="107428392343534714" at="63,0,67,0" />
+      <scope id="107428392343534654" at="36,0,41,0" />
+      <scope id="107428392343534665" at="50,11,77,9">
+        <var name="checkListener" id="107428392343534708" />
+        <var name="eventsDispatcher" id="107428392343534683" />
+        <var name="exitcode" id="107428392343534735" />
+        <var name="process" id="107428392343534702" />
+        <var name="processExecutor" id="107428392343534690" />
+        <var name="runState" id="107428392343534677" />
+        <var name="testNodes" id="107428392343534667" />
+      </scope>
+      <scope id="107428392343534654" at="49,104,80,7" />
+      <scope id="107428392343534654" at="49,0,82,0">
+        <var name="failure" id="107428392343534794" />
+        <var name="success" id="107428392343534791" />
+      </scope>
+      <unit id="107428392343534714" at="62,49,67,9" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test$1" />
+      <unit id="107428392343534654" at="41,0,83,0" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test$TestBody" />
+      <unit id="107428392343534654" at="34,0,85,0" name="jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessUndo_Test" />
+    </file>
+  </root>
   <root nodeRef="r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)/6339244025082257302">
     <file name="JUnitInProcess_Test.java">
       <node id="6339244025082257302" at="37,59,38,149" concept="1" />
