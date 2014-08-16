@@ -9,8 +9,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class TestLightRunState implements Comparable<TestLightRunState> {
-  public static final String LIGHT_EXEC_FLAG = "mps.light.execution";
-
   private final AtomicReference<RunStateEnum> myValue;
 
   public TestLightRunState() {

@@ -4,7 +4,8 @@ package jetbrains.mps.lang.test.runtime;
 
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.test.util.TestLightRunState;
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.TestMode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
@@ -17,7 +18,7 @@ public abstract class BaseTransformationTest implements TransformationTest {
   private TestRunner myRunner;
 
   public boolean isExecutionInProcess() {
-    return check_c18na_a0a5(System.getProperty(TestLightRunState.LIGHT_EXEC_FLAG));
+    return RuntimeFlags.getTestMode() == TestMode.IN_PROCESS;
   }
 
   private void initTestRunner() {
@@ -95,11 +96,5 @@ public abstract class BaseTransformationTest implements TransformationTest {
   @Override
   public void setProject(Project project) {
     myProject = project;
-  }
-  private static boolean check_c18na_a0a5(String checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.equals("true");
-    }
-    return false;
   }
 }
