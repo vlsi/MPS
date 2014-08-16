@@ -30,29 +30,21 @@ public class SurroundWithParenthesisTest_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_noBinaryOperation() throws Exception {
-      this.addNodeById("3852894662483077200");
-      this.addNodeById("3852894662483077206");
-      this.addNodeById("3852894662483228699");
-      this.addNodeById("3852894662483230132");
-      ParenthesisUtil.createUnmatchedLeftParenthesis(SNodeOperations.cast(this.getNodeById("2329139814027568804"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
-      ParenthesisUtil.createUnmatchedRightParenthesis(SNodeOperations.cast(this.getNodeById("2329139814027568804"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+      ParenthesisUtil.createUnmatchedLeftParenthesis(SNodeOperations.cast(this.getRealNodeById("2329139814027568804"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+      ParenthesisUtil.createUnmatchedRightParenthesis(SNodeOperations.cast(this.getRealNodeById("2329139814027568804"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
 
       {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2329139814027569571"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2329139814027568774"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getRealNodeById("2329139814027569571"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getRealNodeById("2329139814027568774"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
     }
     public void test_thereIsAlreadyParenthesis() throws Exception {
-      this.addNodeById("3852894662483077200");
-      this.addNodeById("3852894662483077206");
-      this.addNodeById("3852894662483228699");
-      this.addNodeById("3852894662483230132");
-      ParenthesisUtil.createUnmatchedLeftParenthesis(SNodeOperations.cast(this.getNodeById("3852894662483230127"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
-      ParenthesisUtil.createUnmatchedRightParenthesis(SNodeOperations.cast(this.getNodeById("3852894662483230127"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+      ParenthesisUtil.createUnmatchedLeftParenthesis(SNodeOperations.cast(this.getRealNodeById("3852894662483230127"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+      ParenthesisUtil.createUnmatchedRightParenthesis(SNodeOperations.cast(this.getRealNodeById("3852894662483230127"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
       {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230135"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230126"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getRealNodeById("3852894662483230135"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getRealNodeById("3852894662483230126"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
     }

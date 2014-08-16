@@ -28,18 +28,16 @@ public class PriorityCheckTest_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_testRotation() throws Exception {
-      this.addNodeById("3852894662483441863");
-      this.addNodeById("3852894662483449708");
       SNode op = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlusExpression", null);
       SNode constant = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(constant, "value", "" + (3));
       SLinkOperations.setTarget(op, "leftExpression", constant, true);
-      SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("3852894662483449704"), "jetbrains.mps.baseLanguage.structure.PlusExpression"), op);
-      SLinkOperations.setTarget(op, "rightExpression", SNodeOperations.cast(this.getNodeById("3852894662483449704"), "jetbrains.mps.baseLanguage.structure.PlusExpression"), true);
+      SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getRealNodeById("3852894662483449704"), "jetbrains.mps.baseLanguage.structure.PlusExpression"), op);
+      SLinkOperations.setTarget(op, "rightExpression", SNodeOperations.cast(this.getRealNodeById("3852894662483449704"), "jetbrains.mps.baseLanguage.structure.PlusExpression"), true);
       ParenthesisUtil.checkOperationWRTPriority(op);
       {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483449711"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483449702"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getRealNodeById("3852894662483449711"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getRealNodeById("3852894662483449702"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
     }

@@ -202,6 +202,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     final AnActionEvent event = ActionUtils.createEvent(ActionPlaces.MAIN_MENU, DATA_MANAGER.getDataContext(getEditorComponent()));
     undoHelper.runUndoableInEDTAndWait(new Runnable() {
       public void run() {
+        myEditor.getCurrentEditorComponent().rebuildEditorContent();
         action.actionPerformed(event);
       }
     });
@@ -225,7 +226,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         // empty task 
       }
     });
-    ModelAccess.instance().flushEventQueue();
+    // <node> 
   }
   protected static Logger LOG = LogManager.getLogger(BaseEditorTestBody.class);
 }

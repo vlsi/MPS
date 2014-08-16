@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,20 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package jetbrains.mps;
 
-package jetbrains.mps.idea.java.tests;
-
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import jetbrains.mps.TestMode;
-import jetbrains.mps.RuntimFlags;
-
-@RunWith(Suite.class)
-@Suite.SuiteClasses({ForeignIdReferenceCacheTest.class})
-public class AllJavaTests {
-  @BeforeClass
-  public static void setTestMode() {
-    MPSCore.getInstance().setTestMode(TestMode.USUAL);
-  }
+/**
+ * @author Alex Pyshkin on 8/16/14.
+ */
+public enum TestMode {
+  NONE,
+  USUAL,
+  IN_PROCESS
 }

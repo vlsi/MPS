@@ -166,12 +166,12 @@ public final class MPSCore extends ComponentPlugin {
   }
 
   /**
-   * @deprecated use [kernel] {@link RuntimeFlags#setTestMode(boolean)} instead
+   * @deprecated use [kernel] {@link RuntimeFlags#setTestMode(jetbrains.mps.TestMode)} instead
    */
   @Deprecated
   @ToRemove(version = 3.2)
   public void setTestMode(boolean flag) {
-    RuntimeFlags.setTestMode(flag);
+    RuntimeFlags.setTestMode(TestMode.USUAL);
   }
 
   /**

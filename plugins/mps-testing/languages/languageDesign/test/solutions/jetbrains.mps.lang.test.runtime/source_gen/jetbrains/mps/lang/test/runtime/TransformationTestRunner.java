@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.TestMode;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -50,18 +51,15 @@ public class TransformationTestRunner implements TestRunner {
   }
 
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean reopenProject) throws Exception {
-    // todo: create configuration pack for TransformationTest 
     startMps();
-
     final Project testProject = openTestProject(projectPath, reopenProject);
     doInitTest(test, testProject, modelName);
     ModelAccess.instance().flushEventQueue();
   }
 
   private void startMps() {
-    RuntimeFlags.setTestMode(true);
+    RuntimeFlags.setTestMode(TestMode.USUAL);
     MpsTestsSupport.initEnv(true);
-    // <node> 
     clearSystemClipboard();
     readSystemMacro();
   }

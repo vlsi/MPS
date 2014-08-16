@@ -12,6 +12,7 @@ import java.io.File;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.TestMode;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.testbench.IdeaEnvironment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
@@ -68,7 +69,7 @@ public class MpsTestsSupport {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing environment");
     }
-    RuntimeFlags.setTestMode(true);
+    RuntimeFlags.setTestMode(TestMode.USUAL);
     Environment currentEnv = ActiveEnvironment.getInstance();
     if (currentEnv == null) {
       currentEnv = (withIdea ? new IdeaEnvironment(config) : new MpsEnvironment(config));

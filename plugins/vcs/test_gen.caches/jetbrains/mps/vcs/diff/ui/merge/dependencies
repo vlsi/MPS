@@ -21,6 +21,7 @@
     <classNode dependClassName="java.util.Scanner" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
+    <classNode dependClassName="jetbrains.mps.TestMode" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.ide.bookmark.BookmarkManager" />

@@ -9,6 +9,7 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.TestMode;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import java.util.Map;
@@ -38,16 +39,11 @@ public class MpsEnvironment implements Environment {
       LOG.info("Creating MPS environment");
     }
     ActiveEnvironment.activateEnvironment(this);
-
-    // todo: plugins, libs 
-
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.INFO);
-
     myPlatformLoader = new MpsPlatform();
     myPlatformLoader.init();
-    // todo: =( 
-    RuntimeFlags.setTestMode(true);
+    RuntimeFlags.setTestMode(TestMode.USUAL);
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
 
     try {

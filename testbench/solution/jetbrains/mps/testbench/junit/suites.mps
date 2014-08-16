@@ -173,11 +173,12 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3524448713228282634" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3524448713228283187" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1p1t.~RuntimeFlags%dsetTestMode(boolean)%cvoid" resolveInfo="setTestMode" />
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4037555506747829666" nodeInfo="nn">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1p1t.~RuntimeFlags%dsetTestMode(jetbrains%dmps%dTestMode)%cvoid" resolveInfo="setTestMode" />
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1p1t.~RuntimeFlags" resolveInfo="RuntimeFlags" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3524448713228283710" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580123138" value="true" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4037555506747830454" nodeInfo="nn">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1p1t.~TestMode%dUSUAL" resolveInfo="USUAL" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1p1t.~TestMode" resolveInfo="TestMode" />
             </node>
           </node>
         </node>
