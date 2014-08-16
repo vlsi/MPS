@@ -98,39 +98,45 @@
   </root>
   <root nodeRef="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)/2330422591390467286">
     <file name="RunEventsDispatcher.java">
-      <node id="2330422591390476989" at="12,0,13,0" concept="3" trace="myListeners" />
-      <node id="2330422591390522943" at="13,0,14,0" concept="8" trace="ourInstance" />
-      <node id="2330422591390523470" at="18,51,19,23" concept="7" />
-      <node id="2330422591390528007" at="22,49,23,60" concept="2" />
-      <node id="2330422591390544399" at="26,52,27,63" concept="2" />
-      <node id="2330422591390498338" at="32,69,33,39" concept="2" />
-      <node id="2330422591390518515" at="15,0,17,0" concept="1" trace="RunEventsDispatcher#()V" />
-      <node id="2330422591390520871" at="18,0,21,0" concept="9" trace="getInstance#()Ljetbrains/mps/lang/test/util/RunEventsDispatcher;" />
-      <node id="2330422591390496413" at="22,0,25,0" concept="6" trace="addListener#(Lorg/junit/runner/notification/RunListener;)V" />
-      <node id="2330422591390525502" at="26,0,29,0" concept="6" trace="removeListener#(Lorg/junit/runner/notification/RunListener;)V" />
-      <node id="2330422591390497965" at="31,63,34,5" concept="4" />
-      <node id="2330422591390469273" at="30,0,36,0" concept="6" trace="testRunFinished#(Lorg/junit/runner/Result;)V" />
-      <scope id="2330422591390518518" at="15,33,15,33" />
-      <scope id="2330422591390520347" at="18,51,19,23" />
-      <scope id="2330422591390496416" at="22,49,23,60" />
-      <scope id="2330422591390525505" at="26,52,27,63" />
-      <scope id="2330422591390497968" at="32,69,33,39" />
-      <scope id="2330422591390518515" at="15,0,17,0" />
-      <scope id="2330422591390520871" at="18,0,21,0" />
-      <scope id="2330422591390496413" at="22,0,25,0">
-        <var name="listener" id="2330422591390527501" />
-      </scope>
-      <scope id="2330422591390525502" at="26,0,29,0">
-        <var name="listener" id="2330422591390526078" />
-      </scope>
-      <scope id="2330422591390469280" at="31,63,34,5" />
-      <scope id="2330422591390497965" at="31,63,34,5">
+      <node id="2330422591390476989" at="10,0,11,0" concept="3" trace="myListeners" />
+      <node id="2330422591390522943" at="11,0,12,0" concept="8" trace="ourInstance" />
+      <node id="2330422591390523470" at="16,51,17,23" concept="7" />
+      <node id="2330422591390498338" at="21,72,22,29" concept="2" />
+      <node id="1029577880240357763" at="23,5,24,47" concept="2" />
+      <node id="2330422591390528007" at="27,52,28,60" concept="2" />
+      <node id="2330422591390544399" at="31,55,32,63" concept="2" />
+      <node id="2330422591390518515" at="13,0,15,0" concept="1" trace="RunEventsDispatcher#()V" />
+      <node id="2330422591390520871" at="16,0,19,0" concept="9" trace="getInstance#()Ljetbrains/mps/lang/test/util/RunEventsDispatcher;" />
+      <node id="2330422591390497965" at="20,31,23,5" concept="4" />
+      <node id="2330422591390496413" at="27,0,30,0" concept="6" trace="addListener#(Ljetbrains/mps/lang/test/util/MpsRunListener;)V" />
+      <node id="2330422591390525502" at="31,0,34,0" concept="6" trace="removeListener#(Ljetbrains/mps/lang/test/util/MpsRunListener;)V" />
+      <node id="8079831088531605214" at="20,0,26,0" concept="6" trace="onTestRunDone#()V" />
+      <scope id="2330422591390518518" at="13,33,13,33" />
+      <scope id="2330422591390520347" at="16,51,17,23" />
+      <scope id="2330422591390497968" at="21,72,22,29" />
+      <scope id="2330422591390496416" at="27,52,28,60" />
+      <scope id="2330422591390525505" at="31,55,32,63" />
+      <scope id="2330422591390518515" at="13,0,15,0" />
+      <scope id="2330422591390520871" at="16,0,19,0" />
+      <scope id="2330422591390497965" at="20,31,23,5">
         <var name="listener" id="2330422591390497966" />
       </scope>
-      <scope id="2330422591390469273" at="30,0,36,0">
-        <var name="result" id="2330422591390469277" />
+      <scope id="2330422591390496413" at="27,0,30,0">
+        <var name="listener" id="2330422591390527501" />
       </scope>
-      <unit id="2330422591390467286" at="11,0,37,0" name="jetbrains.mps.lang.test.util.RunEventsDispatcher" />
+      <scope id="2330422591390525502" at="31,0,34,0">
+        <var name="listener" id="2330422591390526078" />
+      </scope>
+      <scope id="8079831088531559563" at="20,31,24,47" />
+      <scope id="8079831088531605214" at="20,0,26,0" />
+      <unit id="2330422591390467286" at="9,0,35,0" name="jetbrains.mps.lang.test.util.RunEventsDispatcher" />
+    </file>
+  </root>
+  <root nodeRef="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)/8079831088531566773">
+    <file name="MpsRunListener.java">
+      <node id="8079831088531566801" at="7,0,8,0" concept="6" trace="testRunDone#()V" />
+      <scope id="8079831088531566801" at="7,0,8,0" />
+      <unit id="8079831088531566773" at="6,0,9,0" name="jetbrains.mps.lang.test.util.MpsRunListener" />
     </file>
   </root>
 </debug-info>

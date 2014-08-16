@@ -935,6 +935,7 @@
     <orderEntry type="library" name="JetPad" level="project" />
     <orderEntry type="module" module-name="execution-configurations-unitTests" />
     <orderEntry type="module" module-name="testbench" />
+    <orderEntry type="module" module-name="mps-testing" />
   </component>
 </module>
 

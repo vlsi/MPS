@@ -70,9 +70,11 @@ public class TransformationTestRunner implements TestRunner {
     }
     test.setProject(testProject);
     TransformationTest cachedTest = TestModelSaver.getInstance().getTest();
-    SModel cachedModel = check_ovzmet_a0d0l(cachedTest);
-    SModel cachedTransientModel = check_ovzmet_a0e0l(cachedTest);
-    if (modelName.equals(check_ovzmet_a0a5a11(check_ovzmet_a0a0f0l(cachedModel)))) {
+
+    SModel cachedModel = check_ovzmet_a0e0l(cachedTest);
+    SModel cachedTransientModel = check_ovzmet_a0f0l(cachedTest);
+    String cachedModelName = check_ovzmet_a0g0l(check_ovzmet_a0a6a11(cachedModel));
+    if (cachedModelName != null && cachedModelName.equals(modelName)) {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Using cached model");
       }
@@ -239,25 +241,25 @@ public class TransformationTestRunner implements TestRunner {
     return exception;
   }
   protected static Logger LOG = LogManager.getLogger(TransformationTestRunner.class);
-  private static SModel check_ovzmet_a0d0l(TransformationTest checkedDotOperand) {
+  private static SModel check_ovzmet_a0e0l(TransformationTest checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
-  private static SModel check_ovzmet_a0e0l(TransformationTest checkedDotOperand) {
+  private static SModel check_ovzmet_a0f0l(TransformationTest checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTransientModelDescriptor();
     }
     return null;
   }
-  private static String check_ovzmet_a0a5a11(SModelReference checkedDotOperand) {
+  private static String check_ovzmet_a0g0l(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.toString();
     }
     return null;
   }
-  private static SModelReference check_ovzmet_a0a0f0l(SModel checkedDotOperand) {
+  private static SModelReference check_ovzmet_a0a6a11(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
