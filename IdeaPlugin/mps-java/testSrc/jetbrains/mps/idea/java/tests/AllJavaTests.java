@@ -20,13 +20,13 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import jetbrains.mps.TestMode;
-import jetbrains.mps.RuntimFlags;
+import jetbrains.mps.RuntimeFlags;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ForeignIdReferenceCacheTest.class})
 public class AllJavaTests {
   @BeforeClass
   public static void setTestMode() {
-    MPSCore.getInstance().setTestMode(TestMode.USUAL);
+    RuntimeFlags.setTestMode(TestMode.USUAL);
   }
 }
