@@ -15,7 +15,9 @@ public class RunEventsDispatcher {
   }
 
   public void onTestRunDone() {
-    myListener.testRunDone();
+    if (myListener != null) {
+      myListener.testRunDone();
+    }
   }
 
   public void setListener(MpsRunListener listener) {
