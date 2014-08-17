@@ -16,23 +16,18 @@ public class UpdateDeprecatedBlockDocTags_MigrationScript extends BaseMigrationS
       public String getName() {
         return "Adds the new CommentLine child to all DeprecatedBlockDocTag instance that miss it";
       }
-
       public String getAdditionalInfo() {
         return "Adds the new CommentLine child to all DeprecatedBlockDocTag instance that miss it";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return (SLinkOperations.getTarget(node, "text", true) == null);
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNodeFactoryOperations.setNewChild(node, "text", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

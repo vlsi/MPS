@@ -171,7 +171,7 @@ public class TransformationTestRunner implements TestRunner {
     if (runInCommand) {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
-          projectTest.getProject().getModelAccess().runWriteAction(new Runnable() {
+          projectTest.getProject().getModelAccess().executeCommand(new Runnable() {
             public void run() {
               exception[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
             }
@@ -190,14 +190,6 @@ public class TransformationTestRunner implements TestRunner {
     if (LOG.isInfoEnabled()) {
       LOG.info("Test passed");
     }
-  }
-
-  private void dispose(final TransformationTest projectTest) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        projectTest.dispose();
-      }
-    });
   }
 
   private static void clearSystemClipboard() {
