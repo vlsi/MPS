@@ -6,6 +6,9 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.execution.impl.configurations.util.JUnitUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,7 +25,6 @@ import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnit
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
@@ -41,7 +43,12 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startTrickyTestCase() throws Exception {
-      this.checkTests(JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton("TrickyUndoTest")), ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
+      String testName = ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          return SNodeOperations.getNode("r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", "4177017564823046256").getName();
+        }
+      });
+      this.checkTests(JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton(testName)), ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     }
     public SModel getMyModel() {
       return SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.editorTest", "tests"));

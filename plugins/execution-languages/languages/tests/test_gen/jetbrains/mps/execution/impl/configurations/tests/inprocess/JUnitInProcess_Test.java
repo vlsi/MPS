@@ -6,6 +6,9 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.execution.impl.configurations.util.JUnitUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,7 +25,6 @@ import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnit
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
@@ -46,10 +48,20 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startSimpleTestCase() throws Exception {
-      this.checkTests(JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton("SimpleTestCase_Test")), ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
+      String testName = ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          return SNodeOperations.getNode("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6937584626643047380").getName();
+        }
+      });
+      this.checkTests(JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton(testName)), ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     }
     public void test_startFailedTestCase() throws Exception {
-      this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton("FailedTestCase_Test")));
+      String testName = ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          return SNodeOperations.getNode("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082034140").getName();
+        }
+      });
+      this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton(testName)));
     }
     public SModel getMyModel() {
       return SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2", "tests"));

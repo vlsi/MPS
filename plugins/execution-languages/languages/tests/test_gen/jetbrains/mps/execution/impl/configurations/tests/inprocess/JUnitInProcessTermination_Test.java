@@ -9,6 +9,9 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.execution.impl.configurations.util.JUnitUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
@@ -21,7 +24,6 @@ import jetbrains.mps.lang.test.util.TestLightRunState;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
@@ -48,7 +50,12 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_terminate() throws Exception {
       SModel model = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2", "tests"));
-      this.startAndTerminate(JUnitUtil.wrapTests(model, Sequence.<String>singleton("WaitingTestCase_Test")));
+      String testName = ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          return SNodeOperations.getNode("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082972090").getName();
+        }
+      });
+      this.startAndTerminate(JUnitUtil.wrapTests(model, Sequence.<String>singleton(testName)));
     }
     public void startAndTerminate(final List<ITestNodeWrapper> testNodes) {
       try {
