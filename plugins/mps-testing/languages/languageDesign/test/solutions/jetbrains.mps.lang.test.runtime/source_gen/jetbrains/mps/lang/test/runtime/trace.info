@@ -903,54 +903,80 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/591841948921320201">
     <file name="TestModelSaver.java">
-      <node id="5255291810367384795" at="10,0,11,0" concept="15" trace="ourInstance" />
-      <node id="2330422591390766180" at="11,0,12,0" concept="15" trace="ourListener" />
-      <node id="591841948921971507" at="12,0,13,0" concept="7" trace="myTest" />
-      <node id="5255291810367383830" at="17,46,18,38" concept="12" />
-      <node id="591841948921972310" at="21,39,22,18" concept="12" />
-      <node id="8656851929924008556" at="25,48,26,26" concept="0" />
-      <node id="591841948921973181" at="26,26,27,18" concept="6" />
-      <node id="8748258279217383188" at="31,25,32,13" concept="12" />
-      <node id="5255291810367637834" at="35,25,36,25" concept="6" />
-      <node id="6689127279475087170" at="36,25,37,22" concept="6" />
-      <node id="2330422591390780407" at="45,33,46,43" concept="6" />
-      <node id="2330422591390781043" at="48,6,49,60" concept="6" />
-      <node id="2330422591390782089" at="49,60,50,20" concept="12" />
-      <node id="5255291810367383287" at="14,0,16,0" concept="3" trace="TestModelSaver#()V" />
-      <node id="5255291810367383710" at="17,0,20,0" concept="16" trace="getInstance#()Ljetbrains/mps/lang/test/runtime/TestModelSaver;" />
-      <node id="591841948921972166" at="21,0,24,0" concept="10" trace="getTest#()Ljetbrains/mps/lang/test/runtime/TransformationTest;" />
-      <node id="8748258279217382366" at="30,23,33,5" concept="9" />
-      <node id="591841948921972840" at="25,0,29,0" concept="10" trace="setTest#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
-      <node id="6689127279475088730" at="35,0,39,0" concept="10" trace="run#()V" />
-      <node id="2330422591390780400" at="44,0,48,0" concept="10" trace="testRunDone#()V" />
-      <node id="6689127279475087500" at="33,5,39,7" concept="6" />
-      <node id="2330422591390780394" at="42,50,48,6" concept="11" />
-      <node id="2330422591390779510" at="42,0,52,0" concept="16" trace="createListener#()Ljetbrains/mps/lang/test/util/MpsRunListener;" />
-      <node id="5255291810367637656" at="30,0,41,0" concept="10" trace="clean#()V" />
-      <scope id="5255291810367383290" at="14,28,14,28" />
-      <scope id="5255291810367383713" at="17,46,18,38" />
-      <scope id="591841948921972169" at="21,39,22,18" />
-      <scope id="8748258279217382369" at="31,25,32,13" />
-      <scope id="2330422591390780406" at="45,33,46,43" />
-      <scope id="5255291810367383287" at="14,0,16,0" />
-      <scope id="591841948921972843" at="25,48,27,18" />
-      <scope id="6689127279475088731" at="35,25,37,22" />
-      <scope id="5255291810367383710" at="17,0,20,0" />
-      <scope id="591841948921972166" at="21,0,24,0" />
-      <scope id="591841948921972840" at="25,0,29,0">
+      <node id="5255291810367384795" at="15,0,16,0" concept="15" trace="ourInstance" />
+      <node id="2330422591390766180" at="16,0,17,0" concept="15" trace="ourListener" />
+      <node id="591841948921971507" at="17,0,18,0" concept="7" trace="myTest" />
+      <node id="5255291810367383830" at="22,46,23,38" concept="12" />
+      <node id="591841948921972310" at="26,39,27,18" concept="12" />
+      <node id="8656851929924008556" at="30,48,31,26" concept="0" />
+      <node id="591841948921973181" at="31,26,32,18" concept="6" />
+      <node id="8748258279217383188" at="36,25,37,13" concept="12" />
+      <node id="5255291810367637834" at="43,31,44,31" concept="6" />
+      <node id="6689127279475087170" at="44,31,45,28" concept="6" />
+      <node id="5511762546002724826" at="51,42,52,25" concept="6" />
+      <node id="5511762546002725444" at="55,42,56,25" concept="6" />
+      <node id="2330422591390780407" at="64,33,65,43" concept="6" />
+      <node id="2330422591390781043" at="67,6,68,60" concept="6" />
+      <node id="2330422591390782089" at="68,60,69,20" concept="12" />
+      <node id="591841948921320201" at="71,0,72,0" concept="15" trace="LOG" />
+      <node id="5255291810367383287" at="19,0,21,0" concept="3" trace="TestModelSaver#()V" />
+      <node id="5255291810367383710" at="22,0,25,0" concept="16" trace="getInstance#()Ljetbrains/mps/lang/test/runtime/TestModelSaver;" />
+      <node id="591841948921972166" at="26,0,29,0" concept="10" trace="getTest#()Ljetbrains/mps/lang/test/runtime/TransformationTest;" />
+      <node id="8748258279217382366" at="35,23,38,5" concept="9" />
+      <node id="5511762546002724826" at="50,43,53,7" concept="1" />
+      <node id="5511762546002724826" at="50,43,53,7" concept="9" />
+      <node id="5511762546002725444" at="54,38,57,7" concept="1" />
+      <node id="5511762546002725444" at="54,38,57,7" concept="9" />
+      <node id="591841948921972840" at="30,0,34,0" concept="10" trace="setTest#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="5511762546002720525" at="43,0,47,0" concept="10" trace="run#()V" />
+      <node id="2330422591390780400" at="63,0,67,0" concept="10" trace="testRunDone#()V" />
+      <node id="6689127279475087500" at="41,27,47,13" concept="6" />
+      <node id="2330422591390780394" at="61,50,67,6" concept="11" />
+      <node id="6689127279475088730" at="41,0,49,0" concept="10" trace="run#()V" />
+      <node id="5511762546002715030" at="39,9,49,9" concept="6" />
+      <node id="2330422591390779510" at="61,0,71,0" concept="16" trace="createListener#()Ljetbrains/mps/lang/test/util/MpsRunListener;" />
+      <node id="5511762546002723151" at="38,5,58,5" concept="20" />
+      <node id="5255291810367637656" at="35,0,60,0" concept="10" trace="clean#()V" />
+      <scope id="5255291810367383290" at="19,28,19,28" />
+      <scope id="5255291810367383713" at="22,46,23,38" />
+      <scope id="591841948921972169" at="26,39,27,18" />
+      <scope id="8748258279217382369" at="36,25,37,13" />
+      <scope id="5511762546002724826" at="51,42,52,25" />
+      <scope id="5511762546002725444" at="55,42,56,25" />
+      <scope id="2330422591390780406" at="64,33,65,43" />
+      <scope id="5255291810367383287" at="19,0,21,0" />
+      <scope id="591841948921972843" at="30,48,32,18" />
+      <scope id="5511762546002720526" at="43,31,45,28" />
+      <scope id="5255291810367383710" at="22,0,25,0" />
+      <scope id="591841948921972166" at="26,0,29,0" />
+      <scope id="5511762546002723143" at="50,0,53,7">
+        <var name="e" id="5511762546002723145" />
+      </scope>
+      <scope id="5511762546002723144" at="50,43,53,7" />
+      <scope id="5511762546002724826" at="50,43,53,7" />
+      <scope id="5511762546002723147" at="54,0,57,7">
+        <var name="e" id="5511762546002723149" />
+      </scope>
+      <scope id="5511762546002723148" at="54,38,57,7" />
+      <scope id="5511762546002725444" at="54,38,57,7" />
+      <scope id="591841948921972840" at="30,0,34,0">
         <var name="test" id="591841948921973020" />
       </scope>
-      <scope id="6689127279475088730" at="35,0,39,0" />
-      <scope id="2330422591390780400" at="44,0,48,0" />
-      <scope id="2330422591390779513" at="42,50,50,20">
+      <scope id="5511762546002720525" at="43,0,47,0" />
+      <scope id="2330422591390780400" at="63,0,67,0" />
+      <scope id="6689127279475088731" at="41,27,47,13" />
+      <scope id="6689127279475088730" at="41,0,49,0" />
+      <scope id="2330422591390779513" at="61,50,69,20">
         <var name="listener" id="2330422591390780395" />
       </scope>
-      <scope id="5255291810367637659" at="30,23,39,7" />
-      <scope id="2330422591390779510" at="42,0,52,0" />
-      <scope id="5255291810367637656" at="30,0,41,0" />
-      <unit id="6689127279475088730" at="34,45,39,5" name="jetbrains.mps.lang.test.runtime.TestModelSaver$1" />
-      <unit id="2330422591390780398" at="43,34,48,5" name="jetbrains.mps.lang.test.runtime.TestModelSaver$2" />
-      <unit id="591841948921320201" at="9,0,53,0" name="jetbrains.mps.lang.test.runtime.TestModelSaver" />
+      <scope id="5511762546002723152" at="39,9,49,9" />
+      <scope id="2330422591390779510" at="61,0,71,0" />
+      <scope id="5255291810367637659" at="35,23,58,5" />
+      <scope id="5255291810367637656" at="35,0,60,0" />
+      <unit id="5511762546002720525" at="42,52,47,11" name="jetbrains.mps.lang.test.runtime.TestModelSaver$2" />
+      <unit id="2330422591390780398" at="62,34,67,5" name="jetbrains.mps.lang.test.runtime.TestModelSaver$2" />
+      <unit id="6689127279475088730" at="40,39,49,7" name="jetbrains.mps.lang.test.runtime.TestModelSaver$1" />
+      <unit id="591841948921320201" at="14,0,73,0" name="jetbrains.mps.lang.test.runtime.TestModelSaver" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/6270156512828582018">
