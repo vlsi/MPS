@@ -23,13 +23,13 @@
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/5582028874770305521">
     <file name="ConsoleModelExpression_Behavior.java">
       <node id="5582028874770305527" at="11,114,12,16" concept="1" />
-      <node id="7185170375692949481" at="14,94,15,76" concept="1" />
+      <node id="7185170375692949481" at="14,94,15,93" concept="1" />
       <node id="5582028874770305521" at="9,0,11,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5582028874770305521" at="11,0,14,0" concept="2" trace="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
       <node id="5582028874770305521" at="14,0,17,0" concept="2" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <scope id="5582028874770305523" at="9,43,9,43" />
       <scope id="5582028874770305526" at="11,114,12,16" />
-      <scope id="7185170375692949386" at="14,94,15,76" />
+      <scope id="7185170375692949386" at="14,94,15,93" />
       <scope id="5582028874770305521" at="9,0,11,0">
         <var name="thisNode" id="5582028874770305521" />
       </scope>
@@ -88,7 +88,7 @@
     <file name="InternalMode_Behavior.java">
       <node id="8829647120617324524" at="11,72,12,16" concept="1" />
       <node id="8829647120617324563" at="14,82,15,16" concept="1" />
-      <node id="748410583119698921" at="17,94,18,50" concept="1" />
+      <node id="748410583119698921" at="17,94,18,51" concept="1" />
       <node id="8829647120617318761" at="9,0,11,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8829647120617318761" at="11,0,14,0" concept="2" trace="virtual_isLValue_1213877519786#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="8829647120617318761" at="14,0,17,0" concept="2" trace="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -96,7 +96,7 @@
       <scope id="8829647120617318914" at="9,43,9,43" />
       <scope id="8829647120617319091" at="11,72,12,16" />
       <scope id="8829647120617324541" at="14,82,15,16" />
-      <scope id="748410583119698902" at="17,94,18,50" />
+      <scope id="748410583119698902" at="17,94,18,51" />
       <scope id="8829647120617318761" at="9,0,11,0">
         <var name="thisNode" id="8829647120617318761" />
       </scope>

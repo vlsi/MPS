@@ -20,6 +20,7 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.NodeByConcept_Configuration" file="NodeByConcept_Configuration.java">
+    <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationError" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
     <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
@@ -63,6 +64,7 @@
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration" file="NodeBySeveralConcepts_Configuration.java">
+    <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationError" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
     <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />

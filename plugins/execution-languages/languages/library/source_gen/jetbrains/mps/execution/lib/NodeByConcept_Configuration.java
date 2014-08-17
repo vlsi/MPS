@@ -9,6 +9,7 @@ import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
+import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -40,7 +41,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
         }
       });
       if (isNotEmptyString(errorText.value)) {
-        throw new RuntimeConfigurationException(errorText.value);
+        throw new RuntimeConfigurationError(errorText.value);
       }
     }
   }

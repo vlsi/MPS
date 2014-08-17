@@ -9,6 +9,6 @@ public class PrintExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "print into console";
+    return "print into the console window";
   }
 }

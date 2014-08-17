@@ -12,6 +12,6 @@ public class ConsoleModelExpression_Behavior {
     return null;
   }
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "returns model in which console commands and history are stored";
+    return "return a model, in which the console commands as well as its history are stored";
   }
 }

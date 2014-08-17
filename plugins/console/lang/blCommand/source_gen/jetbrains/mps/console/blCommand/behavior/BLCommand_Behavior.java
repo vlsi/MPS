@@ -27,7 +27,7 @@ public class BLCommand_Behavior {
     return result;
   }
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "execute statement list";
+    return "execute a statement list";
   }
   public static String virtual_getDisplayString_7006261637493126103(SAbstractConcept thisConcept) {
     return "{ <statements> }";

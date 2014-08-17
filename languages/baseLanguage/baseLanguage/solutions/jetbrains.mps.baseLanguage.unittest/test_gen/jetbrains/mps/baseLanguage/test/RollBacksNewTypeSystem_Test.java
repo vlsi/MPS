@@ -19,7 +19,8 @@ public class RollBacksNewTypeSystem_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_GenerationMode() throws Exception {
-      TypeSystemCheckUtil.checkRollBacks(SNodeOperations.cast(this.getRealNodeById("5210914756411638027"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+      this.addNodeById("5210914756411638024");
+      TypeSystemCheckUtil.checkRollBacks(SNodeOperations.cast(this.getNodeById("5210914756411638027"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
     }
   }
 }

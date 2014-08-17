@@ -27,6 +27,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtilCore;
@@ -112,11 +113,14 @@ public class MPSFrameworkSupportConfigurable extends FrameworkSupportConfigurabl
 
   @NonNls
   private String getDefaultModelDirectoryName() {
-    if(myFrameworkSupportModel.getModuleBuilder() instanceof JavaModuleBuilder
-      && !((JavaModuleBuilder)myFrameworkSupportModel.getModuleBuilder()).getSourcePaths().isEmpty())
-      return ((JavaModuleBuilder)myFrameworkSupportModel.getModuleBuilder()).getSourcePaths().get(0).first.
-        replace(((FrameworkSupportModelBase) myFrameworkSupportModel).getBaseDirectoryForLibrariesPath(), "").replace("/", "");
-
+    if(myFrameworkSupportModel.getModuleBuilder() instanceof JavaModuleBuilder) {
+      JavaModuleBuilder moduleBuilder = (JavaModuleBuilder)myFrameworkSupportModel.getModuleBuilder();
+      List<Pair<String, String>> sourcePaths = moduleBuilder.getSourcePaths();
+      if (!sourcePaths.isEmpty()) {
+        // first source path is: moduleBuilder.getContentEntryPath() + File.separator + "src"
+        return sourcePaths.get(0).first.replace(moduleBuilder.getContentEntryPath() + File.separator, "");
+      }
+    }
     return "models";
   }
 

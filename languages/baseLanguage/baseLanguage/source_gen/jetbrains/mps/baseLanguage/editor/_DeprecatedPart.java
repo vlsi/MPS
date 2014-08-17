@@ -13,6 +13,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class _DeprecatedPart implements ConceptEditorComponent {
@@ -40,16 +41,21 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    DeleteOrTransformDeprecationDoc.setCellActions(editorCell, node, editorContext);
     editorCell.setCanBeFolded(true);
     editorCell.setFoldedCell(this.createConstant_uc5iyq_a0a_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uc5iyq_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uc5iyq_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uc5iyq_c0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uc5iyq_d0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_uc5iyq_e0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_uc5iyq_f0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_uc5iyq_g0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_uc5iyq_h0a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_uc5iyq_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isDeprecated");
+    return SPropertyOperations.getBoolean(node, "isDeprecated") && IBLDeprecatable_Behavior.call_shouldDeprecatedDocBeVisible_8362517669638582065(node);
   }
   private EditorCell createConstant_uc5iyq_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**");
@@ -57,37 +63,81 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
+    DeleteOrTransformDeprecationDoc.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_uc5iyq_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " * ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_uc5iyq_b0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
+    DeleteOrTransformDeprecationDoc.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_uc5iyq_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@deprecated");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_uc5iyq_c0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_uc5iyq_d0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " * ");
     editorCell.setCellId("Constant_uc5iyq_d0a");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    DeleteOrTransformDeprecationDoc.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_uc5iyq_e0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@deprecated");
+    editorCell.setCellId("Constant_uc5iyq_e0a");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    editorCell.getStyle().putAll(style);
+    DeleteOrTransformDeprecationDoc.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_uc5iyq_f0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    editorCell.setCellId("Constant_uc5iyq_f0a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    editorCell.getStyle().putAll(style);
+    DeleteOrTransformDeprecationDoc.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_uc5iyq_g0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_uc5iyq_g0a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_uc5iyq_h0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
+    editorCell.setCellId("Constant_uc5iyq_h0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    DeleteOrTransformDeprecationDoc.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -97,6 +147,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_FoldedCell(style, editorCell);
     editorCell.getStyle().putAll(style);
+    DeleteOrTransformDeprecationDoc.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

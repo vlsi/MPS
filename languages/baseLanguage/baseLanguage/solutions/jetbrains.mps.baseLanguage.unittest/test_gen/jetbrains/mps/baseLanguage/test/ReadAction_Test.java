@@ -25,6 +25,7 @@ public class ReadAction_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ReadAction() throws Exception {
+      this.addNodeById("1217271586326");
     }
     public void test_ErrorMessagesCheck1216549241562() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1216549241562"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");

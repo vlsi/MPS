@@ -107,15 +107,16 @@
     <file name="ForLoop_Test.java">
       <node id="1217271585523" at="15,47,16,121" concept="1" />
       <node id="1217271585523" at="16,121,17,96" concept="1" />
-      <node id="1215444253193" at="21,49,22,189" concept="1" />
-      <node id="1225979304340" at="21,0,24,0" concept="2" trace="test_ForLoop#()V" />
+      <node id="1225979304340" at="21,49,22,40" concept="1" />
+      <node id="1215444253193" at="22,40,23,185" concept="1" />
+      <node id="1225979304340" at="21,0,25,0" concept="2" trace="test_ForLoop#()V" />
       <node id="1217271585523" at="14,0,19,0" concept="2" trace="test_ForLoop#()V" />
-      <scope id="1225979304340" at="21,49,22,189" />
       <scope id="1217271585523" at="15,47,17,96" />
-      <scope id="1225979304340" at="21,0,24,0" />
+      <scope id="1225979304340" at="21,49,23,185" />
+      <scope id="1225979304340" at="21,0,25,0" />
       <scope id="1217271585523" at="14,0,19,0" />
-      <unit id="1217271585523" at="19,0,25,0" name="jetbrains.mps.baseLanguage.test.ForLoop_Test$TestBody" />
-      <unit id="1217271585523" at="12,0,26,0" name="jetbrains.mps.baseLanguage.test.ForLoop_Test" />
+      <unit id="1217271585523" at="19,0,26,0" name="jetbrains.mps.baseLanguage.test.ForLoop_Test$TestBody" />
+      <unit id="1217271585523" at="12,0,27,0" name="jetbrains.mps.baseLanguage.test.ForLoop_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271585641">
@@ -126,35 +127,36 @@
       <node id="1217271585641" at="23,121,24,164" concept="1" />
       <node id="1217271585641" at="27,105,28,121" concept="1" />
       <node id="1217271585641" at="28,121,29,167" concept="1" />
-      <node id="1215444224366" at="33,62,34,186" concept="1" />
-      <node id="1217271585641" at="36,104,37,146" concept="3" />
-      <node id="1217271585641" at="37,146,38,159" concept="1" />
-      <node id="1217271585641" at="40,107,41,146" concept="3" />
-      <node id="1217271585641" at="41,146,42,159" concept="1" />
-      <node id="1225979305378" at="33,0,36,0" concept="2" trace="test_MethodParametersTest#()V" />
-      <node id="1217271585641" at="36,0,40,0" concept="2" trace="test_NodeVariableHasNotBeenInitializedErrorCheck6923385624927544278#()V" />
-      <node id="1217271585641" at="40,0,44,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624929086232#()V" />
+      <node id="1225979305378" at="33,62,34,40" concept="1" />
+      <node id="1215444224366" at="34,40,35,182" concept="1" />
+      <node id="1217271585641" at="37,104,38,146" concept="3" />
+      <node id="1217271585641" at="38,146,39,159" concept="1" />
+      <node id="1217271585641" at="41,107,42,146" concept="3" />
+      <node id="1217271585641" at="42,146,43,159" concept="1" />
+      <node id="1225979305378" at="33,0,37,0" concept="2" trace="test_MethodParametersTest#()V" />
+      <node id="1217271585641" at="37,0,41,0" concept="2" trace="test_NodeVariableHasNotBeenInitializedErrorCheck6923385624927544278#()V" />
+      <node id="1217271585641" at="41,0,45,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624929086232#()V" />
       <node id="1217271585641" at="16,0,21,0" concept="2" trace="test_MethodParametersTest#()V" />
       <node id="1217271585641" at="21,0,26,0" concept="2" trace="test_NodeVariableHasNotBeenInitializedErrorCheck6923385624927544278#()V" />
       <node id="1217271585641" at="26,0,31,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624929086232#()V" />
-      <scope id="1225979305378" at="33,62,34,186" />
       <scope id="1217271585641" at="17,60,19,122" />
       <scope id="1217271585641" at="22,102,24,164" />
       <scope id="1217271585641" at="27,105,29,167" />
-      <scope id="1217271585641" at="36,104,38,159">
+      <scope id="1225979305378" at="33,62,35,182" />
+      <scope id="1217271585641" at="37,104,39,159">
         <var name="operation" id="1217271585641" />
       </scope>
-      <scope id="1217271585641" at="40,107,42,159">
+      <scope id="1217271585641" at="41,107,43,159">
         <var name="operation" id="1217271585641" />
       </scope>
-      <scope id="1225979305378" at="33,0,36,0" />
-      <scope id="1217271585641" at="36,0,40,0" />
-      <scope id="1217271585641" at="40,0,44,0" />
+      <scope id="1225979305378" at="33,0,37,0" />
+      <scope id="1217271585641" at="37,0,41,0" />
+      <scope id="1217271585641" at="41,0,45,0" />
       <scope id="1217271585641" at="16,0,21,0" />
       <scope id="1217271585641" at="21,0,26,0" />
       <scope id="1217271585641" at="26,0,31,0" />
-      <unit id="1217271585641" at="31,0,45,0" name="jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody" />
-      <unit id="1217271585641" at="14,0,46,0" name="jetbrains.mps.baseLanguage.test.MethodParametersTest_Test" />
+      <unit id="1217271585641" at="31,0,46,0" name="jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody" />
+      <unit id="1217271585641" at="14,0,47,0" name="jetbrains.mps.baseLanguage.test.MethodParametersTest_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271585692">
@@ -163,25 +165,26 @@
       <node id="1217271585692" at="18,121,19,114" concept="1" />
       <node id="1217271585692" at="22,105,23,121" concept="1" />
       <node id="1217271585692" at="23,121,24,163" concept="1" />
-      <node id="1215444198405" at="28,58,29,186" concept="1" />
-      <node id="1217271585692" at="31,107,32,146" concept="3" />
-      <node id="1217271585692" at="32,146,33,159" concept="1" />
-      <node id="1225979305996" at="28,0,31,0" concept="2" trace="test_UnusedAssignment#()V" />
-      <node id="1217271585692" at="31,0,35,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624928924551#()V" />
+      <node id="1225979305996" at="28,58,29,40" concept="1" />
+      <node id="1215444198405" at="29,40,30,182" concept="1" />
+      <node id="1217271585692" at="32,107,33,146" concept="3" />
+      <node id="1217271585692" at="33,146,34,159" concept="1" />
+      <node id="1225979305996" at="28,0,32,0" concept="2" trace="test_UnusedAssignment#()V" />
+      <node id="1217271585692" at="32,0,36,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624928924551#()V" />
       <node id="1217271585692" at="16,0,21,0" concept="2" trace="test_UnusedAssignment#()V" />
       <node id="1217271585692" at="21,0,26,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624928924551#()V" />
-      <scope id="1225979305996" at="28,58,29,186" />
       <scope id="1217271585692" at="17,56,19,114" />
       <scope id="1217271585692" at="22,105,24,163" />
-      <scope id="1217271585692" at="31,107,33,159">
+      <scope id="1225979305996" at="28,58,30,182" />
+      <scope id="1217271585692" at="32,107,34,159">
         <var name="operation" id="1217271585692" />
       </scope>
-      <scope id="1225979305996" at="28,0,31,0" />
-      <scope id="1217271585692" at="31,0,35,0" />
+      <scope id="1225979305996" at="28,0,32,0" />
+      <scope id="1217271585692" at="32,0,36,0" />
       <scope id="1217271585692" at="16,0,21,0" />
       <scope id="1217271585692" at="21,0,26,0" />
-      <unit id="1217271585692" at="26,0,36,0" name="jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody" />
-      <unit id="1217271585692" at="14,0,37,0" name="jetbrains.mps.baseLanguage.test.UnusedAssignment_Test" />
+      <unit id="1217271585692" at="26,0,37,0" name="jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody" />
+      <unit id="1217271585692" at="14,0,38,0" name="jetbrains.mps.baseLanguage.test.UnusedAssignment_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271586138">
@@ -340,24 +343,25 @@
       <node id="1217271586324" at="17,121,18,102" concept="1" />
       <node id="1217271586324" at="21,71,22,121" concept="1" />
       <node id="1217271586324" at="22,121,23,123" concept="1" />
-      <node id="1217271586324" at="29,73,30,140" concept="3" />
-      <node id="1217271586324" at="30,140,31,153" concept="1" />
-      <node id="1225979300041" at="27,0,29,0" concept="2" trace="test_ReadAction#()V" />
-      <node id="1217271586324" at="29,0,33,0" concept="2" trace="test_ErrorMessagesCheck1216549241562#()V" />
+      <node id="1225979300041" at="27,52,28,40" concept="1" />
+      <node id="1217271586324" at="30,73,31,140" concept="3" />
+      <node id="1217271586324" at="31,140,32,153" concept="1" />
+      <node id="1225979300041" at="27,0,30,0" concept="2" trace="test_ReadAction#()V" />
+      <node id="1217271586324" at="30,0,34,0" concept="2" trace="test_ErrorMessagesCheck1216549241562#()V" />
       <node id="1217271586324" at="15,0,20,0" concept="2" trace="test_ReadAction#()V" />
       <node id="1217271586324" at="20,0,25,0" concept="2" trace="test_ErrorMessagesCheck1216549241562#()V" />
-      <scope id="1225979300041" at="27,52,27,52" />
+      <scope id="1225979300041" at="27,52,28,40" />
       <scope id="1217271586324" at="16,50,18,102" />
       <scope id="1217271586324" at="21,71,23,123" />
-      <scope id="1225979300041" at="27,0,29,0" />
-      <scope id="1217271586324" at="29,73,31,153">
+      <scope id="1217271586324" at="30,73,32,153">
         <var name="operation" id="1217271586324" />
       </scope>
-      <scope id="1217271586324" at="29,0,33,0" />
+      <scope id="1225979300041" at="27,0,30,0" />
+      <scope id="1217271586324" at="30,0,34,0" />
       <scope id="1217271586324" at="15,0,20,0" />
       <scope id="1217271586324" at="20,0,25,0" />
-      <unit id="1217271586324" at="25,0,34,0" name="jetbrains.mps.baseLanguage.test.ReadAction_Test$TestBody" />
-      <unit id="1217271586324" at="13,0,35,0" name="jetbrains.mps.baseLanguage.test.ReadAction_Test" />
+      <unit id="1217271586324" at="25,0,35,0" name="jetbrains.mps.baseLanguage.test.ReadAction_Test$TestBody" />
+      <unit id="1217271586324" at="13,0,36,0" name="jetbrains.mps.baseLanguage.test.ReadAction_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271586411">
@@ -366,25 +370,26 @@
       <node id="1217271586411" at="18,121,19,116" concept="1" />
       <node id="1217271586411" at="22,105,23,121" concept="1" />
       <node id="1217271586411" at="23,121,24,164" concept="1" />
-      <node id="1215444268436" at="28,59,29,186" concept="1" />
-      <node id="1217271586411" at="31,107,32,146" concept="3" />
-      <node id="1217271586411" at="32,146,33,159" concept="1" />
-      <node id="1225979301883" at="28,0,31,0" concept="2" trace="test_DataFlowInClosure#()V" />
-      <node id="1217271586411" at="31,0,35,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624928941627#()V" />
+      <node id="1225979301883" at="28,59,29,40" concept="1" />
+      <node id="1215444268436" at="29,40,30,182" concept="1" />
+      <node id="1217271586411" at="32,107,33,146" concept="3" />
+      <node id="1217271586411" at="33,146,34,159" concept="1" />
+      <node id="1225979301883" at="28,0,32,0" concept="2" trace="test_DataFlowInClosure#()V" />
+      <node id="1217271586411" at="32,0,36,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624928941627#()V" />
       <node id="1217271586411" at="16,0,21,0" concept="2" trace="test_DataFlowInClosure#()V" />
       <node id="1217271586411" at="21,0,26,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624928941627#()V" />
-      <scope id="1225979301883" at="28,59,29,186" />
       <scope id="1217271586411" at="17,57,19,116" />
       <scope id="1217271586411" at="22,105,24,164" />
-      <scope id="1217271586411" at="31,107,33,159">
+      <scope id="1225979301883" at="28,59,30,182" />
+      <scope id="1217271586411" at="32,107,34,159">
         <var name="operation" id="1217271586411" />
       </scope>
-      <scope id="1225979301883" at="28,0,31,0" />
-      <scope id="1217271586411" at="31,0,35,0" />
+      <scope id="1225979301883" at="28,0,32,0" />
+      <scope id="1217271586411" at="32,0,36,0" />
       <scope id="1217271586411" at="16,0,21,0" />
       <scope id="1217271586411" at="21,0,26,0" />
-      <unit id="1217271586411" at="26,0,36,0" name="jetbrains.mps.baseLanguage.test.DataFlowInClosure_Test$TestBody" />
-      <unit id="1217271586411" at="14,0,37,0" name="jetbrains.mps.baseLanguage.test.DataFlowInClosure_Test" />
+      <unit id="1217271586411" at="26,0,37,0" name="jetbrains.mps.baseLanguage.test.DataFlowInClosure_Test$TestBody" />
+      <unit id="1217271586411" at="14,0,38,0" name="jetbrains.mps.baseLanguage.test.DataFlowInClosure_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271586585">
@@ -393,25 +398,26 @@
       <node id="1217271586585" at="18,121,19,146" concept="1" />
       <node id="1217271586585" at="22,87,23,121" concept="1" />
       <node id="1217271586585" at="23,121,24,161" concept="1" />
-      <node id="1215444400381" at="28,74,29,176" concept="1" />
-      <node id="1217271586585" at="31,89,32,146" concept="3" />
-      <node id="1217271586585" at="32,146,33,159" concept="1" />
-      <node id="1225979304892" at="28,0,31,0" concept="2" trace="test_UnexpectedReturnInAnonymousClass#()V" />
-      <node id="1217271586585" at="31,0,35,0" concept="2" trace="test_NodeReturnExpectedErrorCheck6923385624929494145#()V" />
+      <node id="1225979304892" at="28,74,29,40" concept="1" />
+      <node id="1215444400381" at="29,40,30,172" concept="1" />
+      <node id="1217271586585" at="32,89,33,146" concept="3" />
+      <node id="1217271586585" at="33,146,34,159" concept="1" />
+      <node id="1225979304892" at="28,0,32,0" concept="2" trace="test_UnexpectedReturnInAnonymousClass#()V" />
+      <node id="1217271586585" at="32,0,36,0" concept="2" trace="test_NodeReturnExpectedErrorCheck6923385624929494145#()V" />
       <node id="1217271586585" at="16,0,21,0" concept="2" trace="test_UnexpectedReturnInAnonymousClass#()V" />
       <node id="1217271586585" at="21,0,26,0" concept="2" trace="test_NodeReturnExpectedErrorCheck6923385624929494145#()V" />
-      <scope id="1225979304892" at="28,74,29,176" />
       <scope id="1217271586585" at="17,72,19,146" />
       <scope id="1217271586585" at="22,87,24,161" />
-      <scope id="1217271586585" at="31,89,33,159">
+      <scope id="1225979304892" at="28,74,30,172" />
+      <scope id="1217271586585" at="32,89,34,159">
         <var name="operation" id="1217271586585" />
       </scope>
-      <scope id="1225979304892" at="28,0,31,0" />
-      <scope id="1217271586585" at="31,0,35,0" />
+      <scope id="1225979304892" at="28,0,32,0" />
+      <scope id="1217271586585" at="32,0,36,0" />
       <scope id="1217271586585" at="16,0,21,0" />
       <scope id="1217271586585" at="21,0,26,0" />
-      <unit id="1217271586585" at="26,0,36,0" name="jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody" />
-      <unit id="1217271586585" at="14,0,37,0" name="jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test" />
+      <unit id="1217271586585" at="26,0,37,0" name="jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody" />
+      <unit id="1217271586585" at="14,0,38,0" name="jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271587023">
@@ -426,54 +432,55 @@
       <node id="1217271587023" at="32,121,33,156" concept="1" />
       <node id="1217271587023" at="36,89,37,121" concept="1" />
       <node id="1217271587023" at="37,121,38,156" concept="1" />
-      <node id="1217271587023" at="44,79,45,146" concept="3" />
-      <node id="1217271587023" at="45,146,46,153" concept="1" />
-      <node id="1217271587023" at="48,91,49,146" concept="3" />
-      <node id="1217271587023" at="49,146,50,159" concept="1" />
-      <node id="1217271587023" at="52,91,53,146" concept="3" />
-      <node id="1217271587023" at="53,146,54,159" concept="1" />
-      <node id="1217271587023" at="56,91,57,146" concept="3" />
-      <node id="1217271587023" at="57,146,58,159" concept="1" />
-      <node id="1225979305492" at="42,0,44,0" concept="2" trace="test_UnusedVariableDeclaration#()V" />
-      <node id="1217271587023" at="44,0,48,0" concept="2" trace="test_ErrorMessagesCheck5684597377559856228#()V" />
-      <node id="1217271587023" at="48,0,52,0" concept="2" trace="test_NodeUnusedVariableWarningCheck6923385624927220340#()V" />
-      <node id="1217271587023" at="52,0,56,0" concept="2" trace="test_NodeUnusedVariableWarningCheck6923385624927360820#()V" />
-      <node id="1217271587023" at="56,0,60,0" concept="2" trace="test_NodeUnusedVariableWarningCheck6923385624929638863#()V" />
+      <node id="1225979305492" at="42,67,43,40" concept="1" />
+      <node id="1217271587023" at="45,79,46,146" concept="3" />
+      <node id="1217271587023" at="46,146,47,153" concept="1" />
+      <node id="1217271587023" at="49,91,50,146" concept="3" />
+      <node id="1217271587023" at="50,146,51,159" concept="1" />
+      <node id="1217271587023" at="53,91,54,146" concept="3" />
+      <node id="1217271587023" at="54,146,55,159" concept="1" />
+      <node id="1217271587023" at="57,91,58,146" concept="3" />
+      <node id="1217271587023" at="58,146,59,159" concept="1" />
+      <node id="1225979305492" at="42,0,45,0" concept="2" trace="test_UnusedVariableDeclaration#()V" />
+      <node id="1217271587023" at="45,0,49,0" concept="2" trace="test_ErrorMessagesCheck5684597377559856228#()V" />
+      <node id="1217271587023" at="49,0,53,0" concept="2" trace="test_NodeUnusedVariableWarningCheck6923385624927220340#()V" />
+      <node id="1217271587023" at="53,0,57,0" concept="2" trace="test_NodeUnusedVariableWarningCheck6923385624927360820#()V" />
+      <node id="1217271587023" at="57,0,61,0" concept="2" trace="test_NodeUnusedVariableWarningCheck6923385624929638863#()V" />
       <node id="1217271587023" at="15,0,20,0" concept="2" trace="test_UnusedVariableDeclaration#()V" />
       <node id="1217271587023" at="20,0,25,0" concept="2" trace="test_ErrorMessagesCheck5684597377559856228#()V" />
       <node id="1217271587023" at="25,0,30,0" concept="2" trace="test_NodeUnusedVariableWarningCheck6923385624927220340#()V" />
       <node id="1217271587023" at="30,0,35,0" concept="2" trace="test_NodeUnusedVariableWarningCheck6923385624927360820#()V" />
       <node id="1217271587023" at="35,0,40,0" concept="2" trace="test_NodeUnusedVariableWarningCheck6923385624929638863#()V" />
-      <scope id="1225979305492" at="42,67,42,67" />
+      <scope id="1225979305492" at="42,67,43,40" />
       <scope id="1217271587023" at="16,65,18,132" />
       <scope id="1217271587023" at="21,77,23,144" />
       <scope id="1217271587023" at="26,89,28,156" />
       <scope id="1217271587023" at="31,89,33,156" />
       <scope id="1217271587023" at="36,89,38,156" />
-      <scope id="1225979305492" at="42,0,44,0" />
-      <scope id="1217271587023" at="44,79,46,153">
+      <scope id="1217271587023" at="45,79,47,153">
         <var name="operation" id="1217271587023" />
       </scope>
-      <scope id="1217271587023" at="48,91,50,159">
+      <scope id="1217271587023" at="49,91,51,159">
         <var name="operation" id="1217271587023" />
       </scope>
-      <scope id="1217271587023" at="52,91,54,159">
+      <scope id="1217271587023" at="53,91,55,159">
         <var name="operation" id="1217271587023" />
       </scope>
-      <scope id="1217271587023" at="56,91,58,159">
+      <scope id="1217271587023" at="57,91,59,159">
         <var name="operation" id="1217271587023" />
       </scope>
-      <scope id="1217271587023" at="44,0,48,0" />
-      <scope id="1217271587023" at="48,0,52,0" />
-      <scope id="1217271587023" at="52,0,56,0" />
-      <scope id="1217271587023" at="56,0,60,0" />
+      <scope id="1225979305492" at="42,0,45,0" />
+      <scope id="1217271587023" at="45,0,49,0" />
+      <scope id="1217271587023" at="49,0,53,0" />
+      <scope id="1217271587023" at="53,0,57,0" />
+      <scope id="1217271587023" at="57,0,61,0" />
       <scope id="1217271587023" at="15,0,20,0" />
       <scope id="1217271587023" at="20,0,25,0" />
       <scope id="1217271587023" at="25,0,30,0" />
       <scope id="1217271587023" at="30,0,35,0" />
       <scope id="1217271587023" at="35,0,40,0" />
-      <unit id="1217271587023" at="40,0,61,0" name="jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test$TestBody" />
-      <unit id="1217271587023" at="13,0,62,0" name="jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test" />
+      <unit id="1217271587023" at="40,0,62,0" name="jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test$TestBody" />
+      <unit id="1217271587023" at="13,0,63,0" name="jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271587074">
@@ -484,35 +491,36 @@
       <node id="1217271587074" at="23,121,24,161" concept="1" />
       <node id="1217271587074" at="27,105,28,121" concept="1" />
       <node id="1217271587074" at="28,121,29,161" concept="1" />
-      <node id="1215444376244" at="33,56,34,186" concept="1" />
-      <node id="1217271587074" at="36,107,37,146" concept="3" />
-      <node id="1217271587074" at="37,146,38,159" concept="1" />
-      <node id="1217271587074" at="40,107,41,146" concept="3" />
-      <node id="1217271587074" at="41,146,42,159" concept="1" />
-      <node id="1225979303691" at="33,0,36,0" concept="2" trace="test_AnonymousClass#()V" />
-      <node id="1217271587074" at="36,0,40,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624927142051#()V" />
-      <node id="1217271587074" at="40,0,44,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624929101294#()V" />
+      <node id="1225979303691" at="33,56,34,40" concept="1" />
+      <node id="1215444376244" at="34,40,35,182" concept="1" />
+      <node id="1217271587074" at="37,107,38,146" concept="3" />
+      <node id="1217271587074" at="38,146,39,159" concept="1" />
+      <node id="1217271587074" at="41,107,42,146" concept="3" />
+      <node id="1217271587074" at="42,146,43,159" concept="1" />
+      <node id="1225979303691" at="33,0,37,0" concept="2" trace="test_AnonymousClass#()V" />
+      <node id="1217271587074" at="37,0,41,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624927142051#()V" />
+      <node id="1217271587074" at="41,0,45,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624929101294#()V" />
       <node id="1217271587074" at="16,0,21,0" concept="2" trace="test_AnonymousClass#()V" />
       <node id="1217271587074" at="21,0,26,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624927142051#()V" />
       <node id="1217271587074" at="26,0,31,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624929101294#()V" />
-      <scope id="1225979303691" at="33,56,34,186" />
       <scope id="1217271587074" at="17,54,19,110" />
       <scope id="1217271587074" at="22,105,24,161" />
       <scope id="1217271587074" at="27,105,29,161" />
-      <scope id="1217271587074" at="36,107,38,159">
+      <scope id="1225979303691" at="33,56,35,182" />
+      <scope id="1217271587074" at="37,107,39,159">
         <var name="operation" id="1217271587074" />
       </scope>
-      <scope id="1217271587074" at="40,107,42,159">
+      <scope id="1217271587074" at="41,107,43,159">
         <var name="operation" id="1217271587074" />
       </scope>
-      <scope id="1225979303691" at="33,0,36,0" />
-      <scope id="1217271587074" at="36,0,40,0" />
-      <scope id="1217271587074" at="40,0,44,0" />
+      <scope id="1225979303691" at="33,0,37,0" />
+      <scope id="1217271587074" at="37,0,41,0" />
+      <scope id="1217271587074" at="41,0,45,0" />
       <scope id="1217271587074" at="16,0,21,0" />
       <scope id="1217271587074" at="21,0,26,0" />
       <scope id="1217271587074" at="26,0,31,0" />
-      <unit id="1217271587074" at="31,0,45,0" name="jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody" />
-      <unit id="1217271587074" at="14,0,46,0" name="jetbrains.mps.baseLanguage.test.AnonymousClass_Test" />
+      <unit id="1217271587074" at="31,0,46,0" name="jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody" />
+      <unit id="1217271587074" at="14,0,47,0" name="jetbrains.mps.baseLanguage.test.AnonymousClass_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271587656">
@@ -525,44 +533,45 @@
       <node id="1217271587656" at="27,121,28,168" concept="1" />
       <node id="1217271587656" at="31,71,32,121" concept="1" />
       <node id="1217271587656" at="32,121,33,134" concept="1" />
-      <node id="1217271587656" at="39,104,40,146" concept="3" />
-      <node id="1217271587656" at="40,146,41,159" concept="1" />
-      <node id="1217271587656" at="43,107,44,146" concept="3" />
-      <node id="1217271587656" at="44,146,45,159" concept="1" />
-      <node id="1217271587656" at="47,73,48,140" concept="3" />
-      <node id="1217271587656" at="48,140,49,153" concept="1" />
-      <node id="1225979303302" at="37,0,39,0" concept="2" trace="test_VariableUninitialized#()V" />
-      <node id="1217271587656" at="39,0,43,0" concept="2" trace="test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928777982#()V" />
-      <node id="1217271587656" at="43,0,47,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624927691402#()V" />
-      <node id="1217271587656" at="47,0,51,0" concept="2" trace="test_ErrorMessagesCheck1216893950801#()V" />
+      <node id="1225979303302" at="37,63,38,40" concept="1" />
+      <node id="1217271587656" at="40,104,41,146" concept="3" />
+      <node id="1217271587656" at="41,146,42,159" concept="1" />
+      <node id="1217271587656" at="44,107,45,146" concept="3" />
+      <node id="1217271587656" at="45,146,46,159" concept="1" />
+      <node id="1217271587656" at="48,73,49,140" concept="3" />
+      <node id="1217271587656" at="49,140,50,153" concept="1" />
+      <node id="1225979303302" at="37,0,40,0" concept="2" trace="test_VariableUninitialized#()V" />
+      <node id="1217271587656" at="40,0,44,0" concept="2" trace="test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928777982#()V" />
+      <node id="1217271587656" at="44,0,48,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624927691402#()V" />
+      <node id="1217271587656" at="48,0,52,0" concept="2" trace="test_ErrorMessagesCheck1216893950801#()V" />
       <node id="1217271587656" at="15,0,20,0" concept="2" trace="test_VariableUninitialized#()V" />
       <node id="1217271587656" at="20,0,25,0" concept="2" trace="test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928777982#()V" />
       <node id="1217271587656" at="25,0,30,0" concept="2" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624927691402#()V" />
       <node id="1217271587656" at="30,0,35,0" concept="2" trace="test_ErrorMessagesCheck1216893950801#()V" />
-      <scope id="1225979303302" at="37,63,37,63" />
+      <scope id="1225979303302" at="37,63,38,40" />
       <scope id="1217271587656" at="16,61,18,124" />
       <scope id="1217271587656" at="21,102,23,165" />
       <scope id="1217271587656" at="26,105,28,168" />
       <scope id="1217271587656" at="31,71,33,134" />
-      <scope id="1225979303302" at="37,0,39,0" />
-      <scope id="1217271587656" at="39,104,41,159">
+      <scope id="1217271587656" at="40,104,42,159">
         <var name="operation" id="1217271587656" />
       </scope>
-      <scope id="1217271587656" at="43,107,45,159">
+      <scope id="1217271587656" at="44,107,46,159">
         <var name="operation" id="1217271587656" />
       </scope>
-      <scope id="1217271587656" at="47,73,49,153">
+      <scope id="1217271587656" at="48,73,50,153">
         <var name="operation" id="1217271587656" />
       </scope>
-      <scope id="1217271587656" at="39,0,43,0" />
-      <scope id="1217271587656" at="43,0,47,0" />
-      <scope id="1217271587656" at="47,0,51,0" />
+      <scope id="1225979303302" at="37,0,40,0" />
+      <scope id="1217271587656" at="40,0,44,0" />
+      <scope id="1217271587656" at="44,0,48,0" />
+      <scope id="1217271587656" at="48,0,52,0" />
       <scope id="1217271587656" at="15,0,20,0" />
       <scope id="1217271587656" at="20,0,25,0" />
       <scope id="1217271587656" at="25,0,30,0" />
       <scope id="1217271587656" at="30,0,35,0" />
-      <unit id="1217271587656" at="35,0,52,0" name="jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody" />
-      <unit id="1217271587656" at="13,0,53,0" name="jetbrains.mps.baseLanguage.test.VariableUninitialized_Test" />
+      <unit id="1217271587656" at="35,0,53,0" name="jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody" />
+      <unit id="1217271587656" at="13,0,54,0" name="jetbrains.mps.baseLanguage.test.VariableUninitialized_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271587918">
@@ -571,25 +580,26 @@
       <node id="1217271587918" at="18,121,19,120" concept="1" />
       <node id="1217271587918" at="22,102,23,121" concept="1" />
       <node id="1217271587918" at="23,121,24,163" concept="1" />
-      <node id="1215444237482" at="28,61,29,186" concept="1" />
-      <node id="1217271587918" at="31,104,32,146" concept="3" />
-      <node id="1217271587918" at="32,146,33,159" concept="1" />
-      <node id="1225979303578" at="28,0,31,0" concept="2" trace="test_IfStatementDataFlow#()V" />
-      <node id="1217271587918" at="31,0,35,0" concept="2" trace="test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755#()V" />
+      <node id="1225979303578" at="28,61,29,40" concept="1" />
+      <node id="1215444237482" at="29,40,30,182" concept="1" />
+      <node id="1217271587918" at="32,104,33,146" concept="3" />
+      <node id="1217271587918" at="33,146,34,159" concept="1" />
+      <node id="1225979303578" at="28,0,32,0" concept="2" trace="test_IfStatementDataFlow#()V" />
+      <node id="1217271587918" at="32,0,36,0" concept="2" trace="test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755#()V" />
       <node id="1217271587918" at="16,0,21,0" concept="2" trace="test_IfStatementDataFlow#()V" />
       <node id="1217271587918" at="21,0,26,0" concept="2" trace="test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755#()V" />
-      <scope id="1225979303578" at="28,61,29,186" />
       <scope id="1217271587918" at="17,59,19,120" />
       <scope id="1217271587918" at="22,102,24,163" />
-      <scope id="1217271587918" at="31,104,33,159">
+      <scope id="1225979303578" at="28,61,30,182" />
+      <scope id="1217271587918" at="32,104,34,159">
         <var name="operation" id="1217271587918" />
       </scope>
-      <scope id="1225979303578" at="28,0,31,0" />
-      <scope id="1217271587918" at="31,0,35,0" />
+      <scope id="1225979303578" at="28,0,32,0" />
+      <scope id="1217271587918" at="32,0,36,0" />
       <scope id="1217271587918" at="16,0,21,0" />
       <scope id="1217271587918" at="21,0,26,0" />
-      <unit id="1217271587918" at="26,0,36,0" name="jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test$TestBody" />
-      <unit id="1217271587918" at="14,0,37,0" name="jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test" />
+      <unit id="1217271587918" at="26,0,37,0" name="jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test$TestBody" />
+      <unit id="1217271587918" at="14,0,38,0" name="jetbrains.mps.baseLanguage.test.IfStatementDataFlow_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217861204623">
@@ -4297,15 +4307,16 @@
     <file name="RollBacksNewTypeSystem_Test.java">
       <node id="5210914756411638023" at="15,54,16,121" concept="1" />
       <node id="5210914756411638023" at="16,121,17,118" concept="1" />
-      <node id="5210914756411638057" at="21,56,22,171" concept="1" />
-      <node id="5210914756411638054" at="21,0,24,0" concept="2" trace="test_GenerationMode#()V" />
+      <node id="5210914756411638054" at="21,56,22,46" concept="1" />
+      <node id="5210914756411638057" at="22,46,23,167" concept="1" />
+      <node id="5210914756411638054" at="21,0,25,0" concept="2" trace="test_GenerationMode#()V" />
       <node id="5210914756411638023" at="14,0,19,0" concept="2" trace="test_GenerationMode#()V" />
-      <scope id="5210914756411638054" at="21,56,22,171" />
       <scope id="5210914756411638023" at="15,54,17,118" />
-      <scope id="5210914756411638054" at="21,0,24,0" />
+      <scope id="5210914756411638054" at="21,56,23,167" />
+      <scope id="5210914756411638054" at="21,0,25,0" />
       <scope id="5210914756411638023" at="14,0,19,0" />
-      <unit id="5210914756411638023" at="19,0,25,0" name="jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test$TestBody" />
-      <unit id="5210914756411638023" at="12,0,26,0" name="jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test" />
+      <unit id="5210914756411638023" at="19,0,26,0" name="jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test$TestBody" />
+      <unit id="5210914756411638023" at="12,0,27,0" name="jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/5679018521759262129">
@@ -4882,15 +4893,16 @@
     <file name="hasSameSignatureTest_Test.java">
       <node id="6639374232683434563" at="16,44,17,121" concept="1" />
       <node id="6639374232683434563" at="17,121,18,106" concept="1" />
-      <node id="5157939743593410699" at="22,46,23,358" concept="1" />
-      <node id="6639374232683434579" at="22,0,25,0" concept="2" trace="test_list#()V" />
+      <node id="6639374232683434579" at="22,46,23,46" concept="1" />
+      <node id="5157939743593410699" at="23,46,24,350" concept="1" />
+      <node id="6639374232683434579" at="22,0,26,0" concept="2" trace="test_list#()V" />
       <node id="6639374232683434563" at="15,0,20,0" concept="2" trace="test_list#()V" />
-      <scope id="6639374232683434579" at="22,46,23,358" />
       <scope id="6639374232683434563" at="16,44,18,106" />
-      <scope id="6639374232683434579" at="22,0,25,0" />
+      <scope id="6639374232683434579" at="22,46,24,350" />
+      <scope id="6639374232683434579" at="22,0,26,0" />
       <scope id="6639374232683434563" at="15,0,20,0" />
-      <unit id="6639374232683434563" at="20,0,26,0" name="jetbrains.mps.baseLanguage.test.hasSameSignatureTest_Test$TestBody" />
-      <unit id="6639374232683434563" at="13,0,27,0" name="jetbrains.mps.baseLanguage.test.hasSameSignatureTest_Test" />
+      <unit id="6639374232683434563" at="20,0,27,0" name="jetbrains.mps.baseLanguage.test.hasSameSignatureTest_Test$TestBody" />
+      <unit id="6639374232683434563" at="13,0,28,0" name="jetbrains.mps.baseLanguage.test.hasSameSignatureTest_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/6640766779615010044">
@@ -4951,30 +4963,32 @@
     <file name="TestGenerationMode_Test.java">
       <node id="7187651930235347758" at="15,54,16,121" concept="1" />
       <node id="7187651930235347758" at="16,121,17,114" concept="1" />
-      <node id="5210914756411573029" at="21,56,22,176" concept="1" />
-      <node id="7187651930235347795" at="21,0,24,0" concept="2" trace="test_GenerationMode#()V" />
+      <node id="7187651930235347795" at="21,56,22,46" concept="1" />
+      <node id="5210914756411573029" at="22,46,23,172" concept="1" />
+      <node id="7187651930235347795" at="21,0,25,0" concept="2" trace="test_GenerationMode#()V" />
       <node id="7187651930235347758" at="14,0,19,0" concept="2" trace="test_GenerationMode#()V" />
-      <scope id="7187651930235347795" at="21,56,22,176" />
       <scope id="7187651930235347758" at="15,54,17,114" />
-      <scope id="7187651930235347795" at="21,0,24,0" />
+      <scope id="7187651930235347795" at="21,56,23,172" />
+      <scope id="7187651930235347795" at="21,0,25,0" />
       <scope id="7187651930235347758" at="14,0,19,0" />
-      <unit id="7187651930235347758" at="19,0,25,0" name="jetbrains.mps.baseLanguage.test.TestGenerationMode_Test$TestBody" />
-      <unit id="7187651930235347758" at="12,0,26,0" name="jetbrains.mps.baseLanguage.test.TestGenerationMode_Test" />
+      <unit id="7187651930235347758" at="19,0,26,0" name="jetbrains.mps.baseLanguage.test.TestGenerationMode_Test$TestBody" />
+      <unit id="7187651930235347758" at="12,0,27,0" name="jetbrains.mps.baseLanguage.test.TestGenerationMode_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7209837885462471125">
     <file name="ReturnFromTry_Test.java">
       <node id="7209837885462471125" at="15,53,16,121" concept="1" />
       <node id="7209837885462471125" at="16,121,17,108" concept="1" />
-      <node id="7209837885462541929" at="21,55,22,195" concept="1" />
-      <node id="7209837885462539568" at="21,0,24,0" concept="2" trace="test_ReturnFromTry#()V" />
+      <node id="7209837885462539568" at="21,55,22,46" concept="1" />
+      <node id="7209837885462541929" at="22,46,23,191" concept="1" />
+      <node id="7209837885462539568" at="21,0,25,0" concept="2" trace="test_ReturnFromTry#()V" />
       <node id="7209837885462471125" at="14,0,19,0" concept="2" trace="test_ReturnFromTry#()V" />
-      <scope id="7209837885462539568" at="21,55,22,195" />
       <scope id="7209837885462471125" at="15,53,17,108" />
-      <scope id="7209837885462539568" at="21,0,24,0" />
+      <scope id="7209837885462539568" at="21,55,23,191" />
+      <scope id="7209837885462539568" at="21,0,25,0" />
       <scope id="7209837885462471125" at="14,0,19,0" />
-      <unit id="7209837885462471125" at="19,0,25,0" name="jetbrains.mps.baseLanguage.test.ReturnFromTry_Test$TestBody" />
-      <unit id="7209837885462471125" at="12,0,26,0" name="jetbrains.mps.baseLanguage.test.ReturnFromTry_Test" />
+      <unit id="7209837885462471125" at="19,0,26,0" name="jetbrains.mps.baseLanguage.test.ReturnFromTry_Test$TestBody" />
+      <unit id="7209837885462471125" at="12,0,27,0" name="jetbrains.mps.baseLanguage.test.ReturnFromTry_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7430872850884066230">

@@ -298,7 +298,6 @@ public class QueriesGenerated {
         ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(field, "annotation", true)));
         SLinkOperations.setTarget(_context.getNewNode(), "visibility", SLinkOperations.getTarget(field, "visibility", true), true);
         SPropertyOperations.set(_context.getNewNode(), "isDeprecated", "" + (SPropertyOperations.getBoolean(field, "isDeprecated")));
-        AttributeOperations.setAttribute(_context.getNewNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), AttributeOperations.getAttribute(field, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")));
       }
     }
   }
@@ -315,7 +314,6 @@ public class QueriesGenerated {
         ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(staticField, "annotation", true)));
         SLinkOperations.setTarget(_context.getNewNode(), "visibility", SLinkOperations.getTarget(staticField, "visibility", true), true);
         SPropertyOperations.set(_context.getNewNode(), "isDeprecated", "" + (SPropertyOperations.getBoolean(staticField, "isDeprecated")));
-        AttributeOperations.setAttribute(_context.getNewNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), AttributeOperations.getAttribute(staticField, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")));
       }
     }
   }

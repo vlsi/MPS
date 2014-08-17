@@ -89,8 +89,14 @@ public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDe
   public String virtual_jniSignature_8847328628797656446(SNode thisNode) {
     return BaseMethodDeclaration_Behavior.virtual_jniSignature_8847328628797656446(thisNode);
   }
+  public void virtual_markDeprecated_7983358747957651026(SNode thisNode) {
+    BaseMethodDeclaration_Behavior.virtual_markDeprecated_7983358747957651026(thisNode);
+  }
   public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
     return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
+  }
+  public void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode) {
+    BaseMethodDeclaration_Behavior.virtual_unmarkDeprecated_7983358747957674666(thisNode);
   }
   @Override
   public String getConceptFqName() {

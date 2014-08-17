@@ -65,4 +65,9 @@ public final class SDependencyImpl implements SDependency {
     SDependencyImpl o = (SDependencyImpl) obj;
     return myTarget == o.myTarget && myScope == o.myScope && myIsExport == o.myIsExport;
   }
+
+  @Override
+  public String toString() {
+    return String.format("{%s} %s", myScope, myTarget);
+  }
 }

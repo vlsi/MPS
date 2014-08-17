@@ -47,14 +47,14 @@
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/2663801026049983654">
     <file name="RefactorOperation_Behavior.java">
-      <node id="2663801026050030057" at="11,94,12,55" concept="0" />
-      <node id="2663801026050030496" at="14,94,15,240" concept="0" />
+      <node id="2663801026050030057" at="11,94,12,57" concept="0" />
+      <node id="2663801026050030496" at="14,94,15,351" concept="0" />
       <node id="2663801026049983654" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2663801026049983654" at="11,0,14,0" concept="1" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <node id="2663801026049983654" at="14,0,17,0" concept="1" trace="virtual_getHelpPage_7006261637493125297#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <scope id="2663801026049983810" at="9,43,9,43" />
-      <scope id="2663801026049990430" at="11,94,12,55" />
-      <scope id="2663801026050030077" at="14,94,15,240" />
+      <scope id="2663801026049990430" at="11,94,12,57" />
+      <scope id="2663801026050030077" at="14,94,15,351" />
       <scope id="2663801026049983654" at="9,0,11,0">
         <var name="thisNode" id="2663801026049983654" />
       </scope>

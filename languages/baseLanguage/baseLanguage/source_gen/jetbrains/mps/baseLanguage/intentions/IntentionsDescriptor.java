@@ -38,7 +38,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new CreateMethodDeclaration_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new CreateReferenceOnClass_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new CreateSetAccessor_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new DeprecatedJavaDoc_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ElsifSwapWithMain_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ElsifTransform_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ExpandBoolean_Intention());
@@ -50,6 +49,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new MakeClassAbstract_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeClassAbstractFromMethod_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeClassFinal_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeDeprecated_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeFieldTransient_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeFieldVolatile_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeGeneric_Intention());

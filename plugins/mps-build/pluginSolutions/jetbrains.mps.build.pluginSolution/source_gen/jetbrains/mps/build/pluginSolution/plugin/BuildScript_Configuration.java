@@ -13,6 +13,7 @@ import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -54,7 +55,7 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
         }
       });
       if (isPackaged.value) {
-        throw new RuntimeConfigurationException("Can not execute packaged build script.");
+        throw new RuntimeConfigurationError("Can not execute packaged build script.");
       }
     }
   }

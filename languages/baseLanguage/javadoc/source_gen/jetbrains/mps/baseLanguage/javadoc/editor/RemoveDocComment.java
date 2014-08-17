@@ -9,6 +9,9 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class RemoveDocComment {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -26,8 +29,12 @@ public class RemoveDocComment {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode doc = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", true, new String[]{})).first();
-      editorContext.selectWRTFocusPolicy(SNodeOperations.getParent(doc));
+      SNode commentedNode = SNodeOperations.getParent(doc);
       SNodeOperations.deleteNode(doc);
+      if (SNodeOperations.isInstanceOf(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")) {
+        SPropertyOperations.set(SNodeOperations.cast(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated", "" + (false));
+      }
+      SelectionUtil.selectCell(editorContext, commentedNode, SelectionManager.FIRST_CELL);
     }
   }
   public static class RemoveDocComment_BACKSPACE extends AbstractCellAction {
@@ -40,8 +47,12 @@ public class RemoveDocComment {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode doc = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", true, new String[]{})).first();
-      editorContext.selectWRTFocusPolicy(SNodeOperations.getParent(doc));
+      SNode commentedNode = SNodeOperations.getParent(doc);
       SNodeOperations.deleteNode(doc);
+      if (SNodeOperations.isInstanceOf(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")) {
+        SPropertyOperations.set(SNodeOperations.cast(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated", "" + (false));
+      }
+      SelectionUtil.selectCell(editorContext, commentedNode, SelectionManager.FIRST_CELL);
     }
   }
   public static class RemoveDocComment_INSERT extends AbstractCellAction {

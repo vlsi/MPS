@@ -15,6 +15,6 @@ public class UsagesExpression_Behavior {
     return Sequence.<SNode>singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterScope"));
   }
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
-    return BehaviorReflection.invokeSuperStatic(String.class, thisConcept, "jetbrains.mps.console.blCommand.structure.QueryExpression", "virtual_getHelpPage_7006261637493125297", new Object[]{}) + "\nImplementation of this command uses IDE indexes to speed up execution";
+    return BehaviorReflection.invokeSuperStatic(String.class, thisConcept, "jetbrains.mps.console.blCommand.structure.QueryExpression", "virtual_getHelpPage_7006261637493125297", new Object[]{}) + "\nImplementation of this command uses the IDE indexes to speed up execution";
   }
 }

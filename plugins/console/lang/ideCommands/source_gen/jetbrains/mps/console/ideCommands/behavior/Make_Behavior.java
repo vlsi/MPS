@@ -14,6 +14,6 @@ public class Make_Behavior {
     return Sequence.<SNode>singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.WithDependencies"));
   }
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
-    return "Makes models given as argument.\nAccepts argument of types: model, SModule, sequence<model>, sequence<SModule>.\nIf no arguments given, makes whole project.\nAffects only `generation required` models.\nWith option <withDependencies> makes not only models given as parameters, but also their dependencies.";
+    return "Makes the models specified as the argument.\nAccepts argument of types: model, SModule, sequence<model>, sequence<SModule>.\nIf no arguments is provided, make is invoked on the whole project.\nAffects only the models that need generation (marked by MPS as `generation required`).\nWith the option <withDependencies> set, the models specified in the argument are generated as well as their dependencies.";
   }
 }

@@ -45,7 +45,7 @@
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#stat" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="stat" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="display statistics" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="display useful statistics" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7490254719522675891" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -148,7 +148,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7057947030097724900" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ShowGenPlan" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#showGenPlan" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="show generation plan" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="show the generation plan" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7057947030097725050" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -207,7 +207,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5582028874769074093" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="CallActionExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#callAction" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="call IDE action with custom parameters" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="call an IDE action with custom parameters" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.callAction" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5582028874769074094" nodeInfo="ig">
@@ -300,7 +300,7 @@
     <property name="name" nameId="tpck.1169194664001" value="OfAspectOperation" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ofAspect" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="filter models by aspect" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="filter models by their aspect" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp2q.1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5932042262275696048" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />

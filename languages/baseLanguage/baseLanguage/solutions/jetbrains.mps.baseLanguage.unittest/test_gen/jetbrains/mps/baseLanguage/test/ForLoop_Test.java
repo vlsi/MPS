@@ -19,7 +19,8 @@ public class ForLoop_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ForLoop() throws Exception {
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getRealNodeById("1215444253196"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false, false);
+      this.addNodeById("1217271585525");
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444253196"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false, false);
     }
   }
 }

@@ -26,7 +26,8 @@ public class UnexpectedReturnInAnonymousClass_Test extends BaseTransformationTes
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_UnexpectedReturnInAnonymousClass() throws Exception {
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getRealNodeById("1215444400359"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
+      this.addNodeById("1217271586587");
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444400359"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     }
     public void test_NodeReturnExpectedErrorCheck6923385624929494145() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929494145"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");

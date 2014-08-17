@@ -12,21 +12,20 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class DeprecatedJavaDoc_Intention implements IntentionFactory {
+public class MakeDeprecated_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-  public DeprecatedJavaDoc_Intention() {
+  public MakeDeprecated_Intention() {
   }
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.IBLDeprecatable";
   }
   public String getPresentation() {
-    return "DeprecatedJavaDoc";
+    return "MakeDeprecated";
   }
   public String getPersistentStateKey() {
-    return "jetbrains.mps.baseLanguage.intentions.DeprecatedJavaDoc_Intention";
+    return "jetbrains.mps.baseLanguage.intentions.MakeDeprecated_Intention";
   }
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
@@ -48,7 +47,7 @@ public class DeprecatedJavaDoc_Intention implements IntentionFactory {
   }
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new DeprecatedJavaDoc_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeDeprecated_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -57,20 +56,20 @@ public class DeprecatedJavaDoc_Intention implements IntentionFactory {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDeprecated_1224609060727", new Object[]{})) {
-        return "Remove Deprecated javadoc";
+        return "Remove Deprecation";
       } else {
-        return "Add Deprecated javadoc";
+        return "Deprecate";
       }
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      if (SPropertyOperations.getBoolean(node, "isDeprecated")) {
-        SPropertyOperations.set(node, "isDeprecated", "" + (false));
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDeprecated_1224609060727", new Object[]{})) {
+        BehaviorReflection.invokeVirtual(Void.class, node, "virtual_unmarkDeprecated_7983358747957674666", new Object[]{});
       } else {
-        SPropertyOperations.set(node, "isDeprecated", "" + (true));
+        BehaviorReflection.invokeVirtual(Void.class, node, "virtual_markDeprecated_7983358747957651026", new Object[]{});
       }
     }
     public IntentionDescriptor getDescriptor() {
-      return DeprecatedJavaDoc_Intention.this;
+      return MakeDeprecated_Intention.this;
     }
   }
 }

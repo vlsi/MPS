@@ -12,6 +12,6 @@ public class ShowExpression_Behavior {
     return true;
   }
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "show sequence of nodes/references/models/modules in usages view";
+    return "show sequence of nodes/references/models/modules in the Usages View panel";
   }
 }

@@ -117,7 +117,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7006261637493130711" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7006261637493130861" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7006261637493130860" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="execute statement list" />
+            <property name="value" nameId="tpee.1070475926801" value="execute a statement list" />
           </node>
         </node>
       </node>
@@ -302,7 +302,7 @@
               </node>
             </node>
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1433263869219669662" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="\nImplementation of this command uses IDE indexes to speed up execution" />
+              <property name="value" nameId="tpee.1070475926801" value="\nImplementation of this command uses the IDE indexes to speed up execution" />
             </node>
           </node>
         </node>
@@ -364,11 +364,11 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1433263869219780382" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1433263869219780383" nodeInfo="nn">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusAssignmentExpression" typeId="tpee.1215695189714" id="1433263869219780384" nodeInfo="nn">
-                <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1433263869219780385" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1070475926801" value="scope  (default = project)   scope where to search\n" />
-                </node>
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8069979745008386876" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1433263869219709157" resolveInfo="result" />
+                </node>
+                <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1433263869219780385" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1070475926801" value="scope  (default = project)   specifies the boundaries of the lookup operation\n" />
                 </node>
               </node>
             </node>
@@ -391,11 +391,11 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1433263869219703459" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1433263869219777969" nodeInfo="nn">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusAssignmentExpression" typeId="tpee.1215695189714" id="1433263869219777970" nodeInfo="nn">
-                <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1433263869219777971" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1070475926801" value="r/o+   (default = false)     also search in read-only models\n" />
-                </node>
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8069979745008387664" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1433263869219709157" resolveInfo="result" />
+                </node>
+                <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1433263869219777971" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1070475926801" value="r/o+   (default = false)     also search in read-only models\n" />
                 </node>
               </node>
             </node>
@@ -417,11 +417,11 @@
             <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1433263869219798589" nodeInfo="sn">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1433263869219798899" nodeInfo="nn">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusAssignmentExpression" typeId="tpee.1215695189714" id="1433263869219799453" nodeInfo="nn">
-                  <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1433263869219801383" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="Note: read-only models are included in search scope\n" />
-                  </node>
                   <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8069979745008295625" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1433263869219709157" resolveInfo="result" />
+                  </node>
+                  <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1433263869219801383" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1070475926801" value="Note: read-only models are included in the search scope\n" />
                   </node>
                 </node>
               </node>
@@ -598,7 +598,7 @@
               </node>
             </node>
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1433263869220247012" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="\nImplementation of this command uses IDE indexes to speed up execution" />
+              <property name="value" nameId="tpee.1070475926801" value="\nImplementation of this command uses the IDE indexes to speed up execution" />
             </node>
           </node>
         </node>
@@ -698,7 +698,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7006261637496568945" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7006261637496577698" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7006261637496577697" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="show sequence of nodes/references/models/modules in usages view" />
+            <property name="value" nameId="tpee.1070475926801" value="show sequence of nodes/references/models/modules in the Usages View panel" />
           </node>
         </node>
       </node>
@@ -745,7 +745,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7006261637496586609" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7006261637496599738" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7006261637496599737" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="print into console" />
+            <property name="value" nameId="tpee.1070475926801" value="print into the console window" />
           </node>
         </node>
       </node>
@@ -767,7 +767,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7006261637493132081" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7006261637493132088" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7006261637493132087" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="evaluate expression and print its result" />
+            <property name="value" nameId="tpee.1070475926801" value="evaluate an expression and print its result" />
           </node>
         </node>
       </node>

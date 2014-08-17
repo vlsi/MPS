@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root nodeRef="r:5cc40f3f-8490-4eff-97dc-454147d36c2e(jetbrains.mps.baseLanguage.javadoc.scripts)/992603585967257187">
+    <file name="UpdateDeprecatedBlockDocTags_MigrationScript.java">
+      <node id="992603585967257187" at="13,91,14,42" concept="5" />
+      <node id="992603585967261966" at="16,31,17,99" concept="4" />
+      <node id="992603585967261966" at="20,41,21,99" concept="4" />
+      <node id="992603585967261966" at="24,59,25,84" concept="4" />
+      <node id="992603585967339909" at="28,59,29,71" concept="4" />
+      <node id="992603585967423760" at="32,52,33,117" concept="2" />
+      <node id="992603585967261966" at="36,42,37,21" concept="4" />
+      <node id="992603585967261966" at="16,0,19,0" concept="3" trace="getName#()Ljava/lang/String;" />
+      <node id="992603585967261966" at="20,0,23,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="992603585967261966" at="24,0,27,0" concept="3" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="992603585967261966" at="28,0,31,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="992603585967261966" at="32,0,35,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="992603585967261966" at="36,0,39,0" concept="3" trace="isShowAsIntention#()Z" />
+      <node id="992603585967257187" at="14,42,39,7" concept="0" />
+      <node id="992603585967261966" at="14,42,39,7" concept="2" />
+      <node id="992603585967257187" at="13,0,41,0" concept="1" trace="UpdateDeprecatedBlockDocTags_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <scope id="992603585967261966" at="16,31,17,99" />
+      <scope id="992603585967261966" at="20,41,21,99" />
+      <scope id="992603585967261966" at="24,59,25,84" />
+      <scope id="992603585967339884" at="28,59,29,71" />
+      <scope id="992603585967261968" at="32,52,33,117" />
+      <scope id="992603585967261966" at="36,42,37,21" />
+      <scope id="992603585967261966" at="16,0,19,0" />
+      <scope id="992603585967261966" at="20,0,23,0" />
+      <scope id="992603585967261966" at="24,0,27,0" />
+      <scope id="992603585967261966" at="28,0,31,0">
+        <var name="node" id="992603585967261966" />
+      </scope>
+      <scope id="992603585967261966" at="32,0,35,0">
+        <var name="node" id="992603585967261966" />
+      </scope>
+      <scope id="992603585967261966" at="36,0,39,0" />
+      <scope id="992603585967261966" at="14,42,39,7" />
+      <scope id="992603585967257187" at="13,91,39,7" />
+      <scope id="992603585967257187" at="13,0,41,0">
+        <var name="operationContext" id="992603585967257187" />
+      </scope>
+      <unit id="992603585967261966" at="15,28,39,5" name="jetbrains.mps.baseLanguage.javadoc.scripts.UpdateDeprecatedBlockDocTags_MigrationScript$1" />
+      <unit id="992603585967257187" at="12,0,42,0" name="jetbrains.mps.baseLanguage.javadoc.scripts.UpdateDeprecatedBlockDocTags_MigrationScript" />
+    </file>
+  </root>
+</debug-info>
+

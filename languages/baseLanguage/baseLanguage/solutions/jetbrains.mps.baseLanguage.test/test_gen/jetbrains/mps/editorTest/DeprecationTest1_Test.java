@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class IntentionTest_Test extends BaseTransformationTest {
-  public IntentionTest_Test() {
+public class DeprecationTest1_Test extends BaseTransformationTest {
+  public DeprecationTest1_Test() {
   }
   @Test
-  public void test_IntentionTest() throws Throwable {
+  public void test_DeprecationTest1() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.IntentionTest_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.DeprecationTest1_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,8 +22,8 @@ public class IntentionTest_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1230132506154", "1230132540710");
-      invokeIntention("jetbrains.mps.baseLanguage.intentions.DeprecatedJavaDoc_Intention", myStart.getNode());
+      initEditor("992603586001643455", "992603586001643462");
+      invokeIntention("jetbrains.mps.baseLanguage.intentions.MakeDeprecated_Intention", myStart.getNode());
     }
   }
 }

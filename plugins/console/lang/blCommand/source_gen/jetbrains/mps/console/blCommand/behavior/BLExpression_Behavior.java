@@ -9,7 +9,7 @@ public class BLExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "evaluate expression and print its result";
+    return "evaluate an expression and print its result";
   }
   public static String virtual_getDisplayString_7006261637493126103(SAbstractConcept thisConcept) {
     return "<expression>";

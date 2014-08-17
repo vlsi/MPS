@@ -39,7 +39,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 12:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 13:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag").super_("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag").parents("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag").super_("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag").parents("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag").children(new String[]{"text"}, new boolean[]{false}).create();
       case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference").super_("jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference").parents("jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference").references("parameterDeclaration").create();
       case 15:

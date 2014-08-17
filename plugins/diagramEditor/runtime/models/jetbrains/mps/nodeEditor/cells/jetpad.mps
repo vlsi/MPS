@@ -624,10 +624,10 @@
       <property name="isTransient" nameId="tpee.8606350594693632173" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="myPalettePanel" />
       <property name="isFinal" nameId="tpee.1176718929932" value="false" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="639949279726999308" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6499241661880654588" nodeInfo="in">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mkps.3607386276087791804" resolveInfo="DiagramPalette" />
       </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="639949279726999308" nodeInfo="nn" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="639949279744062348" nodeInfo="igu">
       <property name="isVolatile" nameId="tpee.1240249534625" value="false" />
@@ -5083,14 +5083,14 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5204867329717623377" nodeInfo="nn">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.AndExpression" typeId="tpee.1080120340718" id="5204867329717713463" nodeInfo="nn">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="5204867329717748708" nodeInfo="nn">
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5204867329717763916" nodeInfo="nn" />
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PropertyValueReference" typeId="tpee.2622108313324567541" id="5204867329717844499" nodeInfo="ng">
-                  <link role="owningProperty" roleId="tpee.2622108313342889969" targetNodeId="5204867329715844682" />
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalPropertyReference" typeId="tpee.5862977038373003187" id="6401251612452968868" nodeInfo="nn">
+                  <link role="property" roleId="tpee.5862977038373003188" targetNodeId="5204867329715844682" resolveInfo="toNode" />
                 </node>
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5204867329717763916" nodeInfo="nn" />
               </node>
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="5204867329717658965" nodeInfo="nn">
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PropertyValueReference" typeId="tpee.2622108313324567541" id="5204867329717805123" nodeInfo="ng">
-                  <link role="owningProperty" roleId="tpee.2622108313342889969" targetNodeId="5204867329715575036" />
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalPropertyReference" typeId="tpee.5862977038373003187" id="6401251612452972296" nodeInfo="nn">
+                  <link role="property" roleId="tpee.5862977038373003188" targetNodeId="5204867329715575036" resolveInfo="fromNode" />
                 </node>
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5204867329717674126" nodeInfo="nn" />
               </node>

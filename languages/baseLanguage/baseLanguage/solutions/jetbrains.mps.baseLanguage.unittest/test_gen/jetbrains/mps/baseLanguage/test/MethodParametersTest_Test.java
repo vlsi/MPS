@@ -31,7 +31,8 @@ public class MethodParametersTest_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_MethodParametersTest() throws Exception {
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getRealNodeById("1215444224347"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
+      this.addNodeById("1217271585643");
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444224347"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
     }
     public void test_NodeVariableHasNotBeenInitializedErrorCheck6923385624927544278() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927544278"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");

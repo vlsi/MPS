@@ -2153,7 +2153,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="617513640566799402" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="617513640566863466" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="617513640566863465" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="Makes models given as argument.\nAccepts argument of types: model, SModule, sequence&lt;model&gt;, sequence&lt;SModule&gt;.\nIf no arguments given, makes whole project.\nAffects only `generation required` models.\nWith option &lt;withDependencies&gt; makes not only models given as parameters, but also their dependencies." />
+            <property name="value" nameId="tpee.1070475926801" value="Makes the models specified as the argument.\nAccepts argument of types: model, SModule, sequence&lt;model&gt;, sequence&lt;SModule&gt;.\nIf no arguments is provided, make is invoked on the whole project.\nAffects only the models that need generation (marked by MPS as `generation required`).\nWith the option &lt;withDependencies&gt; set, the models specified in the argument are generated as well as their dependencies." />
           </node>
         </node>
       </node>
@@ -2222,7 +2222,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2840424593984900726" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2840424593984900922" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2840424593984900921" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="delete source_gen and source_gen.caches directories" />
+            <property name="value" nameId="tpee.1070475926801" value="delete the source_gen and source_gen.caches directories" />
           </node>
         </node>
       </node>
