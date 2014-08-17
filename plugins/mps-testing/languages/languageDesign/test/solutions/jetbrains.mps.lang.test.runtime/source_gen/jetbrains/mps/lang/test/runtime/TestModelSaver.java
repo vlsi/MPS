@@ -9,7 +9,7 @@ import jetbrains.mps.lang.test.util.RunEventsDispatcher;
 public class TestModelSaver {
   private static TestModelSaver ourInstance = new TestModelSaver();
   private static MpsRunListener ourListener = createListener();
-  private TransformationTest myTest = null;
+  private volatile TransformationTest myTest = null;
 
   private TestModelSaver() {
   }
@@ -28,14 +28,15 @@ public class TestModelSaver {
   }
 
   public void clean() {
-    if (myTest != null) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          myTest.dispose();
-        }
-      });
-      myTest = null;
+    if (myTest == null) {
+      return;
     }
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      public void run() {
+        myTest.dispose();
+        myTest = null;
+      }
+    });
   }
 
   private static MpsRunListener createListener() {
@@ -45,7 +46,7 @@ public class TestModelSaver {
         TestModelSaver.ourInstance.clean();
       }
     };
-    RunEventsDispatcher.getInstance().addListener(listener);
+    RunEventsDispatcher.getInstance().setListener(listener);
     return listener;
   }
 }

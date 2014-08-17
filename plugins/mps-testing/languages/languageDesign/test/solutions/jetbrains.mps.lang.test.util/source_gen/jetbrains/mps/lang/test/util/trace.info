@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -13,40 +11,40 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)/1813663789079454564">
     <file name="TestLightRunState.java">
-      <node id="1813663789079454565" at="12,0,13,0" concept="4" trace="myValue" />
-      <node id="1813663789079454571" at="14,30,15,67" concept="3" />
-      <node id="2992055787332344903" at="18,29,19,25" concept="8" />
-      <node id="6316468760759880023" at="22,39,23,23" concept="3" />
-      <node id="1813663789079454604" at="26,69,27,50" concept="8" />
-      <node id="4451088350021333301" at="32,42,33,53" concept="3" />
-      <node id="6316468760759901481" at="35,5,36,35" concept="3" />
-      <node id="1813663789079454611" at="39,25,40,35" concept="8" />
-      <node id="1813663789079454621" at="43,48,44,46" concept="8" />
-      <node id="1813663789079454635" at="47,53,48,46" concept="8" />
-      <node id="1813663789079454651" at="52,60,53,58" concept="8" />
-      <node id="1813663789079454662" at="56,34,57,53" concept="8" />
-      <node id="3488529421156595115" at="60,28,61,56" concept="8" />
-      <node id="1813663789079454670" at="64,30,65,49" concept="8" />
-      <node id="1813663789079454678" at="68,34,69,53" concept="8" />
-      <node id="1813663789079454686" at="72,33,73,52" concept="8" />
-      <node id="1813663789079454564" at="76,0,77,0" concept="9" trace="LOG" />
-      <node id="1813663789079454568" at="14,0,17,0" concept="2" trace="TestLightRunState#()V" />
-      <node id="2992055787332343263" at="18,0,21,0" concept="7" trace="get#()Ljetbrains/mps/lang/test/util/RunStateEnum;" />
-      <node id="1813663789079454583" at="22,0,25,0" concept="7" trace="set#(Ljetbrains/mps/lang/test/util/RunStateEnum;)V" />
-      <node id="1813663789079454593" at="26,0,29,0" concept="7" trace="advance#(Ljetbrains/mps/lang/test/util/RunStateEnum;Ljetbrains/mps/lang/test/util/RunStateEnum;)Z" />
-      <node id="4451088350021333301" at="31,28,34,7" concept="1" />
-      <node id="4451088350021333301" at="31,28,34,7" concept="6" />
-      <node id="1813663789079454609" at="39,0,42,0" concept="7" trace="ordinal#()I" />
-      <node id="1813663789079454617" at="43,0,46,0" concept="7" trace="greater#(Ljetbrains/mps/lang/test/util/RunStateEnum;)Z" />
-      <node id="1813663789079454631" at="47,0,50,0" concept="7" trace="greater#(Ljetbrains/mps/lang/test/util/TestLightRunState;)Z" />
-      <node id="1813663789079454660" at="56,0,59,0" concept="7" trace="isInitialized#()Z" />
-      <node id="3488529421156593412" at="60,0,63,0" concept="7" trace="isReady#()Z" />
-      <node id="1813663789079454668" at="64,0,67,0" concept="7" trace="isRunning#()Z" />
-      <node id="1813663789079454676" at="68,0,71,0" concept="7" trace="isTerminating#()Z" />
-      <node id="1813663789079454684" at="72,0,75,0" concept="7" trace="isTerminated#()Z" />
-      <node id="1813663789079454645" at="51,0,55,0" concept="7" trace="compareTo#(Ljetbrains/mps/lang/test/util/TestLightRunState;)I" />
-      <node id="4451088350021332594" at="30,23,35,5" concept="6" />
-      <node id="2992055787332479193" at="30,0,38,0" concept="7" trace="reset#()V" />
+      <node id="1813663789079454565" at="12,0,13,0" concept="3" trace="myValue" />
+      <node id="1813663789079454571" at="14,30,15,67" concept="2" />
+      <node id="2992055787332344903" at="18,29,19,25" concept="6" />
+      <node id="6316468760759880023" at="22,39,23,23" concept="2" />
+      <node id="1813663789079454604" at="26,69,27,50" concept="6" />
+      <node id="4451088350021333301" at="32,42,33,53" concept="2" />
+      <node id="6316468760759901481" at="35,5,36,35" concept="2" />
+      <node id="1813663789079454611" at="39,25,40,35" concept="6" />
+      <node id="1813663789079454621" at="43,48,44,46" concept="6" />
+      <node id="1813663789079454635" at="47,53,48,46" concept="6" />
+      <node id="1813663789079454651" at="52,60,53,58" concept="6" />
+      <node id="1813663789079454662" at="56,34,57,53" concept="6" />
+      <node id="3488529421156595115" at="60,28,61,56" concept="6" />
+      <node id="1813663789079454670" at="64,30,65,49" concept="6" />
+      <node id="1813663789079454678" at="68,34,69,53" concept="6" />
+      <node id="1813663789079454686" at="72,33,73,52" concept="6" />
+      <node id="1813663789079454564" at="76,0,77,0" concept="7" trace="LOG" />
+      <node id="1813663789079454568" at="14,0,17,0" concept="1" trace="TestLightRunState#()V" />
+      <node id="2992055787332343263" at="18,0,21,0" concept="5" trace="get#()Ljetbrains/mps/lang/test/util/RunStateEnum;" />
+      <node id="1813663789079454583" at="22,0,25,0" concept="5" trace="set#(Ljetbrains/mps/lang/test/util/RunStateEnum;)V" />
+      <node id="1813663789079454593" at="26,0,29,0" concept="5" trace="advance#(Ljetbrains/mps/lang/test/util/RunStateEnum;Ljetbrains/mps/lang/test/util/RunStateEnum;)Z" />
+      <node id="4451088350021333301" at="31,28,34,7" concept="0" />
+      <node id="4451088350021333301" at="31,28,34,7" concept="4" />
+      <node id="1813663789079454609" at="39,0,42,0" concept="5" trace="ordinal#()I" />
+      <node id="1813663789079454617" at="43,0,46,0" concept="5" trace="greater#(Ljetbrains/mps/lang/test/util/RunStateEnum;)Z" />
+      <node id="1813663789079454631" at="47,0,50,0" concept="5" trace="greater#(Ljetbrains/mps/lang/test/util/TestLightRunState;)Z" />
+      <node id="1813663789079454660" at="56,0,59,0" concept="5" trace="isInitialized#()Z" />
+      <node id="3488529421156593412" at="60,0,63,0" concept="5" trace="isReady#()Z" />
+      <node id="1813663789079454668" at="64,0,67,0" concept="5" trace="isRunning#()Z" />
+      <node id="1813663789079454676" at="68,0,71,0" concept="5" trace="isTerminating#()Z" />
+      <node id="1813663789079454684" at="72,0,75,0" concept="5" trace="isTerminated#()Z" />
+      <node id="1813663789079454645" at="51,0,55,0" concept="5" trace="compareTo#(Ljetbrains/mps/lang/test/util/TestLightRunState;)I" />
+      <node id="4451088350021332594" at="30,23,35,5" concept="4" />
+      <node id="2992055787332479193" at="30,0,38,0" concept="5" trace="reset#()V" />
       <scope id="1813663789079454570" at="14,30,15,67" />
       <scope id="2992055787332343266" at="18,29,19,25" />
       <scope id="1813663789079454586" at="22,39,23,23" />
@@ -99,43 +97,31 @@
   </root>
   <root nodeRef="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)/2330422591390467286">
     <file name="RunEventsDispatcher.java">
-      <node id="2330422591390476989" at="10,0,11,0" concept="4" trace="myListeners" />
-      <node id="2330422591390522943" at="11,0,12,0" concept="9" trace="ourInstance" />
-      <node id="2330422591390523470" at="16,51,17,23" concept="8" />
-      <node id="1833443276914571814" at="20,31,21,59" concept="0" />
-      <node id="2330422591390498338" at="22,72,23,29" concept="3" />
-      <node id="2330422591390528007" at="27,52,28,60" concept="3" />
-      <node id="2330422591390544399" at="31,55,32,63" concept="3" />
-      <node id="2330422591390518515" at="13,0,15,0" concept="2" trace="RunEventsDispatcher#()V" />
-      <node id="2330422591390520871" at="16,0,19,0" concept="10" trace="getInstance#()Ljetbrains/mps/lang/test/util/RunEventsDispatcher;" />
-      <node id="2330422591390497965" at="21,59,24,5" concept="5" />
-      <node id="2330422591390496413" at="27,0,30,0" concept="7" trace="addListener#(Ljetbrains/mps/lang/test/util/MpsRunListener;)V" />
-      <node id="2330422591390525502" at="31,0,34,0" concept="7" trace="removeListener#(Ljetbrains/mps/lang/test/util/MpsRunListener;)V" />
-      <node id="8079831088531605214" at="20,0,26,0" concept="7" trace="onTestRunDone#()V" />
-      <scope id="2330422591390518518" at="13,33,13,33" />
-      <scope id="2330422591390520347" at="16,51,17,23" />
-      <scope id="2330422591390497968" at="22,72,23,29" />
-      <scope id="2330422591390496416" at="27,52,28,60" />
-      <scope id="2330422591390525505" at="31,55,32,63" />
-      <scope id="2330422591390518515" at="13,0,15,0" />
-      <scope id="2330422591390520871" at="16,0,19,0" />
-      <scope id="2330422591390497965" at="21,59,24,5">
-        <var name="listener" id="2330422591390497966" />
-      </scope>
-      <scope id="2330422591390496413" at="27,0,30,0">
+      <node id="4726019589175496138" at="7,0,8,0" concept="3" trace="myListener" />
+      <node id="2330422591390522943" at="8,0,9,0" concept="7" trace="ourInstance" />
+      <node id="2330422591390523470" at="13,51,14,23" concept="6" />
+      <node id="2330422591390498338" at="17,31,18,29" concept="2" />
+      <node id="2330422591390528007" at="21,52,22,26" concept="2" />
+      <node id="2330422591390518515" at="10,0,12,0" concept="1" trace="RunEventsDispatcher#()V" />
+      <node id="2330422591390520871" at="13,0,16,0" concept="8" trace="getInstance#()Ljetbrains/mps/lang/test/util/RunEventsDispatcher;" />
+      <node id="8079831088531605214" at="17,0,20,0" concept="5" trace="onTestRunDone#()V" />
+      <node id="2330422591390496413" at="21,0,24,0" concept="5" trace="setListener#(Ljetbrains/mps/lang/test/util/MpsRunListener;)V" />
+      <scope id="2330422591390518518" at="10,33,10,33" />
+      <scope id="2330422591390520347" at="13,51,14,23" />
+      <scope id="8079831088531559563" at="17,31,18,29" />
+      <scope id="2330422591390496416" at="21,52,22,26" />
+      <scope id="2330422591390518515" at="10,0,12,0" />
+      <scope id="2330422591390520871" at="13,0,16,0" />
+      <scope id="8079831088531605214" at="17,0,20,0" />
+      <scope id="2330422591390496413" at="21,0,24,0">
         <var name="listener" id="2330422591390527501" />
       </scope>
-      <scope id="2330422591390525502" at="31,0,34,0">
-        <var name="listener" id="2330422591390526078" />
-      </scope>
-      <scope id="8079831088531559563" at="20,31,24,5" />
-      <scope id="8079831088531605214" at="20,0,26,0" />
-      <unit id="2330422591390467286" at="9,0,35,0" name="jetbrains.mps.lang.test.util.RunEventsDispatcher" />
+      <unit id="2330422591390467286" at="6,0,25,0" name="jetbrains.mps.lang.test.util.RunEventsDispatcher" />
     </file>
   </root>
   <root nodeRef="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)/8079831088531566773">
     <file name="MpsRunListener.java">
-      <node id="8079831088531566801" at="7,0,8,0" concept="7" trace="testRunDone#()V" />
+      <node id="8079831088531566801" at="7,0,8,0" concept="5" trace="testRunDone#()V" />
       <scope id="8079831088531566801" at="7,0,8,0" />
       <unit id="8079831088531566773" at="6,0,9,0" name="jetbrains.mps.lang.test.util.MpsRunListener" />
     </file>
