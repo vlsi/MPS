@@ -4337,6 +4337,36 @@
       <unit id="5679018521759262129" at="13,0,28,0" name="jetbrains.mps.baseLanguage.test.GetElementOperationFollowedByPropertyAccess_Test" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/5772383102104979493">
+    <file name="PropertySetterReturn_Test.java">
+      <node id="5772383102104979493" at="16,73,17,121" concept="1" />
+      <node id="5772383102104979493" at="17,121,18,135" concept="1" />
+      <node id="5772383102104979493" at="21,77,22,121" concept="1" />
+      <node id="5772383102104979493" at="22,121,23,139" concept="1" />
+      <node id="5772383102104979493" at="27,75,28,146" concept="3" />
+      <node id="5772383102104979493" at="28,146,29,159" concept="1" />
+      <node id="5772383102104979493" at="31,79,32,146" concept="3" />
+      <node id="5772383102104979493" at="32,146,33,159" concept="1" />
+      <node id="5772383102104979493" at="27,0,31,0" concept="2" trace="test_NodeErrorCheck5772383102105107064#()V" />
+      <node id="5772383102104979493" at="31,0,35,0" concept="2" trace="test_ErrorMessagesCheck5772383102105107061#()V" />
+      <node id="5772383102104979493" at="15,0,20,0" concept="2" trace="test_NodeErrorCheck5772383102105107064#()V" />
+      <node id="5772383102104979493" at="20,0,25,0" concept="2" trace="test_ErrorMessagesCheck5772383102105107061#()V" />
+      <scope id="5772383102104979493" at="16,73,18,135" />
+      <scope id="5772383102104979493" at="21,77,23,139" />
+      <scope id="5772383102104979493" at="27,75,29,159">
+        <var name="operation" id="5772383102104979493" />
+      </scope>
+      <scope id="5772383102104979493" at="31,79,33,159">
+        <var name="operation" id="5772383102104979493" />
+      </scope>
+      <scope id="5772383102104979493" at="27,0,31,0" />
+      <scope id="5772383102104979493" at="31,0,35,0" />
+      <scope id="5772383102104979493" at="15,0,20,0" />
+      <scope id="5772383102104979493" at="20,0,25,0" />
+      <unit id="5772383102104979493" at="25,0,36,0" name="jetbrains.mps.baseLanguage.test.PropertySetterReturn_Test$TestBody" />
+      <unit id="5772383102104979493" at="13,0,37,0" name="jetbrains.mps.baseLanguage.test.PropertySetterReturn_Test" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/595838485955053993">
     <file name="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java">
       <node id="595838485955053993" at="16,74,17,121" concept="1" />
