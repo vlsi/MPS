@@ -32,11 +32,24 @@ public abstract class SConceptRepository {
   }
 
   @NotNull
+  public abstract SConcept getInstanceConcept(@NotNull SConceptId conceptId);
+
+  public abstract SAbstractConcept getConcept(@NotNull SConceptId conceptId);
+
+  public abstract SEnumeration getEnumeration(@NotNull SConceptId conceptId);
+
+  public abstract SLanguage getLanguage(@NotNull SLanguageId languageId);
+
+  @Deprecated // since 3.2
+  @NotNull
   public abstract SConcept getInstanceConcept(@NotNull String qualifiedName);
 
+  @Deprecated // since 3.2
   public abstract SAbstractConcept getConcept(@NotNull String qualifiedName);
 
+  @Deprecated // since 3.2
   public abstract SEnumeration getEnumeration(@NotNull String qualifiedName);
 
+  @Deprecated // since 3.2
   public abstract SLanguage getLanguage(@NotNull String qualifiedName);
 }

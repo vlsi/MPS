@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -27,6 +28,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -67,19 +70,54 @@ public class DynamicReference extends SReferenceBase {
   /*
    * create 'mature' reference
    */
+  @Deprecated
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, String resolveInfo) {
+    this(role, sourceNode, targetModelReference == null ? null : targetModelReference.getModelName(), resolveInfo);
+  }
+
+  public DynamicReference(@NotNull SReferenceLinkId role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, String resolveInfo) {
+    this(role, sourceNode, targetModelReference == null ? null : targetModelReference.getModelName(), resolveInfo);
+  }
+
+  public static DynamicReference createDynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
+    return new DynamicReference(role, sourceNode, modelName, resolveInfo);
+  }
+
+  private DynamicReference(@NotNull SReferenceLinkId role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
     super(role, sourceNode, null, null);
-    if (targetModelReference != null && !resolveInfo.startsWith(SModelStereotype.withoutStereotype(targetModelReference.getModelName())) && isTargetClassifier(sourceNode, role)) {
+    if (modelName != null && !resolveInfo.startsWith(SModelStereotype.withoutStereotype(modelName)) && isTargetClassifier(sourceNode, role)) {
       // hack for classifiers resolving with specified targetModelReference. For now (18/04/2012) targetModelReference used only for Classifiers (in stubs and [model]node construction).
-      setResolveInfo(SModelStereotype.withoutStereotype(targetModelReference.getModelName()) + "." + resolveInfo);
+      setResolveInfo(SModelStereotype.withoutStereotype(modelName) + "." + resolveInfo);
     } else {
       setResolveInfo(resolveInfo);
     }
   }
 
+  @Deprecated
+  private DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
+    super(role, sourceNode, null, null);
+    if (modelName != null && !resolveInfo.startsWith(SModelStereotype.withoutStereotype(modelName)) && isTargetClassifier(sourceNode, role)) {
+      // hack for classifiers resolving with specified targetModelReference. For now (18/04/2012) targetModelReference used only for Classifiers (in stubs and [model]node construction).
+      setResolveInfo(SModelStereotype.withoutStereotype(modelName) + "." + resolveInfo);
+    } else {
+      setResolveInfo(resolveInfo);
+    }
+  }
+
+  @Deprecated
   private boolean isTargetClassifier(@NotNull SNode node, @NotNull String role) {
     SAbstractLink lnk = node.getConcept().getLink(role);
     SAbstractConcept lnkTarget = lnk == null ? null : lnk.getTargetConcept();
+    if (lnkTarget == null) {
+      return false;
+    }
+    final SConcept classifierConcept = SConceptRepository.getInstance().getInstanceConcept("jetbrains.mps.baseLanguage.structure.Classifier");
+    return lnkTarget.isSubConceptOf(classifierConcept);
+  }
+
+  private boolean isTargetClassifier(@NotNull SNode node, @NotNull SReferenceLinkId role) {
+    SAbstractLink lnk = new SReferenceLinkAdapter(role);
+    SAbstractConcept lnkTarget = lnk.getTargetConcept();
     if (lnkTarget == null) {
       return false;
     }

@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -67,9 +69,10 @@ public class NodesWriter {
   }
 
   public void writeNode(SNode node, ModelOutputStream os) throws IOException {
-    os.writeString(node.getConcept().getQualifiedName());
+    os.writeString(node.getConcept().getId().serialize());
     os.writeNodeId(node.getNodeId());
-    os.writeString(node.getRoleInParent());
+    SContainmentLinkId roleInParentId = node.getRoleInParentId();
+    os.writeString(roleInParentId == null ? null :  roleInParentId.serialize());
     os.writeByte(getNodeInfo(node));
     os.writeByte('{');
 
@@ -130,7 +133,7 @@ public class NodesWriter {
       } else {
         throw new IOException("cannot store reference: " + reference.toString());
       }
-      os.writeString(reference.getRole());
+      os.writeString(reference.getRoleId().serialize());
       if (targetModelReference != null && targetModelReference.equals(myModelReference)) {
         os.writeByte(17);
       } else {
@@ -142,13 +145,13 @@ public class NodesWriter {
   }
 
   protected void writeProperties(SNode node, ModelOutputStream os) throws IOException {
-    final Map<String, String> properties = new HashMap<String, String>();
-    for (String name : node.getPropertyNames()) {
-      properties.put(name, node.getProperty(name));
+    final Map<SPropertyId, String> properties = new HashMap<SPropertyId, String>();
+    for (SPropertyId id : node.getPropertyIds()) {
+      properties.put(id, node.getProperty(id));
     }
     os.writeInt(properties.size());
-    for (Entry<String, String> entry : properties.entrySet()) {
-      os.writeString(entry.getKey());
+    for (Entry<SPropertyId, String> entry : properties.entrySet()) {
+      os.writeString(entry.getKey().serialize());
       os.writeString(entry.getValue());
     }
   }

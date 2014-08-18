@@ -44,7 +44,6 @@ public class JavaForeignIdBuilder {
   }
 
 
-
   @Nullable
   public static SNodeId.Foreign computeNodeId(@NotNull PsiElement element) {
 
@@ -69,7 +68,6 @@ public class JavaForeignIdBuilder {
     }
     return computeNodeId(prefix, element);
   }
-
 
 
   @Nullable
@@ -107,8 +105,8 @@ public class JavaForeignIdBuilder {
   }
 
 
-
-  /*package*/ static jetbrains.mps.smodel.SModelReference computeModelReference(String packageName, String mpsModuleId) {
+  /*package*/
+  static jetbrains.mps.smodel.SModelReference computeModelReference(String packageName, String mpsModuleId) {
     String stereotype = "java_stub";
     if (packageName.length() == 0) {
       packageName = "<default package>";
@@ -117,12 +115,12 @@ public class JavaForeignIdBuilder {
     SModelFqName fqName = new SModelFqName(packageName, stereotype);
     SModelId modelId = SModelId.foreign(fqName.getStereotype(), mpsModuleId, fqName.getLongName());
 
-    return new jetbrains.mps.smodel.SModelReference(fqName, modelId);
+    return new jetbrains.mps.smodel.SModelReference(null, modelId, packageName + "@" + stereotype);
   }
 
 
-
-  /*package*/ static SNodeId.Foreign computeNodeId(String prefix, PsiElement element) {
+  /*package*/
+  static SNodeId.Foreign computeNodeId(String prefix, PsiElement element) {
     StringBuilder sb = new StringBuilder(prefix);
 
     if (element instanceof PsiClass || element instanceof PsiField) {

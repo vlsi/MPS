@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -31,14 +32,11 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Set;
 
-/**
- * User: Sergey Dmitriev
- * Date: Aug 2, 2003
- */
 public abstract class SReference implements org.jetbrains.mps.openapi.model.SReference {
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
 
   private String myRole;
+  private SReferenceLinkId myRoleId;
   protected final SNode mySourceNode; // made protected only for assert in DynamicReference
 
   private volatile String myResolveInfo;
@@ -46,14 +44,51 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   /**
    * role must be "genuine", interned
    */
+  @Deprecated
   protected SReference(String role, SNode sourceNode) {
     myRole = role;
+    if (((SReferenceSource) sourceNode).workingMode() == IdMigrationMode.ID){
+      myRoleId = ((SReferenceSource) sourceNode).getReferenceLinkId(sourceNode.getConceptId(), myRole);
+    }
+    mySourceNode = sourceNode;
+  }
+
+  protected SReference(SReferenceLinkId role, SNode sourceNode) {
+    myRoleId = role;
+    if (((SReferenceSource) sourceNode).workingMode() == IdMigrationMode.NAME) {
+      myRole = ((SReferenceSource) sourceNode).getLinkName(myRoleId);
+    }
     mySourceNode = sourceNode;
   }
 
   @Override
   public String getRole() {
+    if (workingMode() == IdMigrationMode.ID) {
+      return ((SReferenceSource) mySourceNode).getLinkName(myRoleId);
+    } else {
+      return myRole;
+    }
+  }
+
+  // remove after 3.2
+  //only for SNode.updateReferenceWorkingMode()
+  public String getRole_byName() {
     return myRole;
+  }
+
+  // remove after 3.2
+  //only for SNode.updateReferenceWorkingMode()
+  public SReferenceLinkId getRoleId_byId() {
+    return myRoleId;
+  }
+
+  @Override
+  public SReferenceLinkId getRoleId() {
+    if (workingMode() == IdMigrationMode.NAME) {
+      return ((SReferenceSource) mySourceNode).getReferenceLinkId(mySourceNode.getConceptId(), myRole);
+    } else {
+      return myRoleId;
+    }
   }
 
   @Override
@@ -104,7 +139,27 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   public void setRole(String newRole) {
-    myRole = InternUtil.intern(newRole);
+    if (workingMode() == IdMigrationMode.ID) {
+      myRoleId = ((SReferenceSource) mySourceNode).getReferenceLinkId(mySourceNode.getConceptId(), newRole);
+    } else {
+      if (newRole == null) {
+        myRole = null;
+        return;
+      }
+      myRole = InternUtil.intern(newRole);
+    }
+  }
+
+  public void setRoleId(SReferenceLinkId newRole) {
+    if (workingMode() == IdMigrationMode.NAME) {
+      myRole = ((SReferenceSource) mySourceNode).getLinkName(newRole);
+    } else {
+      myRoleId = newRole;
+    }
+  }
+
+  public void setRoleId_direct(SReferenceLinkId newRole) {
+    myRoleId = newRole;
   }
 
   //-------------------------
@@ -126,6 +181,14 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public abstract boolean isExternal();
 
   //-------- factory methods -----------
+
+  public static SReference create(SReferenceLinkId id, SNode sourceNode, SNode targetNode) {
+    if (sourceNode.getModel() != null && targetNode.getModel() != null) {
+      // 'mature' reference
+      return new StaticReference(id, sourceNode, targetNode.getModel().getReference(), targetNode.getNodeId(), targetNode.getName());
+    }
+    return new StaticReference(id, sourceNode, targetNode);
+  }
 
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.getModel() != null && targetNode.getModel() != null) {
@@ -196,6 +259,11 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
         }
       }
     }
+  }
+
+  protected IdMigrationMode workingMode() {
+    if (!(mySourceNode instanceof SReferenceSource)) return IdMigrationMode.UNKNOWN;
+    return ((SReferenceSource) mySourceNode).workingMode();
   }
 
   @Immutable

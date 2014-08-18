@@ -20,10 +20,12 @@ import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collection;
@@ -128,6 +130,11 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   public Collection<LanguageRuntime> getAvailableLanguages() {
     ModelAccess.assertLegalRead();
     return myLanguages.values();
+  }
+
+  @Nullable
+  public LanguageRuntime getLanguage(SLanguageId id) {
+    return getLanguage(MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(id));
   }
 
   @Nullable

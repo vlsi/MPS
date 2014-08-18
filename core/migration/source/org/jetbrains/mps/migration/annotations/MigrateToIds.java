@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,20 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package org.jetbrains.mps.migration.annotations;
 
-import org.jetbrains.mps.openapi.language.SAbstractLinkId;
-import org.jetbrains.mps.openapi.language.SConceptId;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-public abstract class SAbstractLinkIdImpl implements SAbstractLinkId {
-  protected final SConceptId myConceptId;
-
-  public SAbstractLinkIdImpl(SConceptId conceptId) {
-    myConceptId = conceptId;
-  }
-
-  @Override
-  public SConceptId getConceptId() {
-    return myConceptId;
-  }
+@Retention(value = RetentionPolicy.SOURCE)
+//means this code uses names and should be migrated to Ids
+public @interface MigrateToIds {
+  String comment() default "";
 }

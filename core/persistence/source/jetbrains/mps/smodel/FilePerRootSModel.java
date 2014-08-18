@@ -209,7 +209,7 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
       loadedSModel.setVersion(latestVersion);
-      LOG.error("Version for model " + getModelName() + " was not set.");
+      //LOG.error("Version for model " + getModelName() + " was not set.");
     }
   }
 

@@ -299,11 +299,6 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public void runIndexing(Runnable r) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
   public void addCommandListener(ModelAccessListener l) {
   }
 

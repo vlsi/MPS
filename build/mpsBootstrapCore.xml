@@ -1762,9 +1762,6 @@
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.smodel-generator.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel#1139186730696" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-smodel-generator">
-      <fileset dir="${mps_home}/languages/languageDesign/smodel/generator" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-smodel-generator-baseLanguage">
       <fileset dir="${mps_home}/languages/languageDesign/smodel/generator/baseLanguage" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
@@ -1779,7 +1776,6 @@
         <exclude name="**/trace.info" />
       </fileset>
       <zipfileset file="${mps_home}/languages/languageDesign/smodel/jetbrains.mps.lang.smodel.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-smodel-generator" prefix="module/generator" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-smodel-generator-baseLanguage" prefix="module/generator/baseLanguage" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-smodel-languageModels" prefix="module/languageModels" />
     </jar>

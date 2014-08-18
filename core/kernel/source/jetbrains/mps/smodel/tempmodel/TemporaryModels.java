@@ -53,7 +53,7 @@ public class TemporaryModels {
   public SModel create(boolean readOnly, boolean trackUndo, @NotNull TempModuleOptions mp) {
     SModuleBase module = (SModuleBase) mp.createModule();
 
-    TempModel model = new TempModel(readOnly, trackUndo);
+    TempModel model = new TempModel(readOnly, trackUndo, module.getModuleReference());
     myCreatedModels.put(model, mp);
     module.registerModel(model);
     return model;

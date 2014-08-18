@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.debug.api.IDebugger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -145,23 +146,27 @@ public class Java_Command {
     }
   }
   public ProcessHandler createProcess(final SNodeReference nodePointer) throws ExecutionException {
-    final Wrappers._T<SModule> module = new Wrappers._T<SModule>(null);
-    final Wrappers._T<String> text = new Wrappers._T<String>();
+    final Wrappers._T<String> text = new Wrappers._T<String>(null);
+    final Wrappers._T<List<String>> path = new Wrappers._T<List<String>>();
+    final Wrappers._T<String> name = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        module.value = check_yvpt_a0a0a2a0d(check_yvpt_a0a0a0c0a3(check_yvpt_a0a0a0a2a0d(nodePointer)));
-        if (module.value == null) {
+        SModule module = check_yvpt_a0a0a3a0d(check_yvpt_a0a0a0d0a3(check_yvpt_a0a0a0a3a0d(nodePointer)));
+        if (module == null) {
           text.value = "Can't find module for node " + nodePointer;
+        } else {
+          path.value = Java_Command.getClasspath(module);
+          name.value = Java_Command.getClassName(nodePointer);
         }
       }
     });
-
-    if (module.value == null) {
+    if (text.value != null) {
       throw new ExecutionException(text.value);
     }
 
-    return new Java_Command().setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setClassPath_ListString(Java_Command.getClasspath(module.value)).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(Java_Command.getClassName(nodePointer));
+    return new Java_Command().setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setClassPath_ListString(path.value).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(name.value);
   }
+
   public ProcessHandler createProcess(JavaRunParameters runParameters, SNodeReference nodePointer) throws ExecutionException {
     return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory_File((isEmptyString(check_yvpt_a0a4a0a0e(runParameters)) ? null : new File(check_yvpt_a0a0e0a0a4(runParameters)))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(nodePointer);
   }
@@ -323,19 +328,22 @@ public class Java_Command {
     }
     return 0;
   }
-  private static SModule check_yvpt_a0a0a2a0d(SModel checkedDotOperand) {
+
+  private static SModule check_yvpt_a0a0a3a0d(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModel check_yvpt_a0a0a0c0a3(SNode checkedDotOperand) {
+
+  private static SModel check_yvpt_a0a0a0d0a3(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
     return null;
   }
-  private static SNode check_yvpt_a0a0a0a2a0d(SNodeReference checkedDotOperand) {
+
+  private static SNode check_yvpt_a0a0a0a3a0d(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }

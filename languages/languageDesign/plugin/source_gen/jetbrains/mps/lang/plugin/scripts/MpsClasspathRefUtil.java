@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -31,7 +32,7 @@ import jetbrains.mps.project.AbstractModule;
 
     for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
       SModelReference oldModelRef = ref.getTargetSModelReference();
-      final String fqname = check_xpwqv8_a0b0f0b(((jetbrains.mps.smodel.SModelReference) oldModelRef));
+      final String fqname = SModelStereotype.withoutStereotype(check_xpwqv8_a0a1a5a1(oldModelRef));
       for (SModule newModule : modules) {
         if (newModule == null) {
           continue;
@@ -70,9 +71,10 @@ import jetbrains.mps.project.AbstractModule;
     }
     return null;
   }
-  private static String check_xpwqv8_a0b0f0b(jetbrains.mps.smodel.SModelReference checkedDotOperand) {
+
+  private static String check_xpwqv8_a0a1a5a1(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getLongName();
+      return checkedDotOperand.getModelName();
     }
     return null;
   }

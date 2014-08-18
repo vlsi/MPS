@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.IdUtil;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
@@ -39,6 +40,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashSet;
@@ -103,7 +105,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   }
 
   @NotNull
-  public ConceptDescriptor getConceptDescriptor(@Nullable String fqName) {
+  public ConceptDescriptor getConceptDescriptor(@NotNull String fqName) {
     ConceptDescriptor descriptor = conceptDescriptors.get(fqName);
 
     if (descriptor != null) {

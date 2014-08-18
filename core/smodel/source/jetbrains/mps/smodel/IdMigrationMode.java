@@ -15,20 +15,4 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
-
-public class SReferenceLinkIdImpl extends SAbstractLinkIdImpl implements SReferenceLinkId {
-  private final int myRefLinkId;
-
-  public SReferenceLinkIdImpl(SConceptId conceptId, int refLinkId) {
-    super(conceptId);
-    myRefLinkId = refLinkId;
-  }
-
-  @Override
-  public int getReferenceLinkId() {
-    return myRefLinkId;
-  }
-}
+public enum IdMigrationMode {ID, NAME, UNKNOWN}

@@ -7,24 +7,31 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import org.jetbrains.mps.openapi.language.SConceptId;
 
 public abstract class SAbstractLinkAdapter implements SAbstractLink {
   protected String conceptName;
   protected String role;
 
+
   public SAbstractLinkAdapter(String conceptName, String role) {
     this.conceptName = conceptName;
     this.role = role;
   }
+
+
+
   @Override
   public String getRole() {
+    fillBothIds();
+    // todo here we should obtain name from a concept node, but since we now having code which doesn't work by id and therefore obtains the name 
+    // todo frequently, we get a huge slowdown if obtaining name from a node here 
+    // todo in 3.2, it is supposed that we either remove most accesses to this method or we'll return role here and clear it in all concepts when renaming role in IDE 
     return role;
   }
+
+
+
   @Override
   public boolean isOptional() {
     // TODO reimplement using ConceptDescriptor 
@@ -34,6 +41,9 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     }
     return SPropertyOperations.hasValue(link, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "0..n", "0..1");
   }
+
+
+
   @Override
   public SAbstractConcept getTargetConcept() {
     // TODO reimplement using ConceptDescriptor 
@@ -42,27 +52,16 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
       return null;
     }
     SNode t = SLinkOperations.getTarget(link, "target", false);
-    return (SNodeOperations.isInstanceOf(t, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") ? new SInterfaceConceptAdapter(NameUtil.nodeFQName(t)) : SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(t)));
+    SConceptId id = IdHelper.getConceptId((jetbrains.mps.smodel.SNode) t);
+    boolean isConcept = t.getConcept().getQualifiedName().equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+    return (isConcept ? new SConceptAdapter(id) : new SInterfaceConceptAdapter(id));
   }
 
-  @Override
-  public int hashCode() {
-    return conceptName.hashCode() * 31 + role.hashCode() * 17;
-  }
-  @Override
-  public boolean equals(Object o) {
-    if (o == null || o.getClass() != getClass()) {
-      return false;
-    }
-    SAbstractLinkAdapter la = (SAbstractLinkAdapter) o;
-    return conceptName.equals(la.conceptName) && role.equals(la.role);
-  }
 
-  protected final SNode getLinkNode() {
-    SNode concept = SModelUtil.findConceptDeclaration(conceptName);
-    if ((concept == null)) {
-      return null;
-    }
-    return (SNode) new ConceptAndSuperConceptsScope(concept).getLinkDeclarationByRole(role);
-  }
+
+  public abstract SNode getLinkNode();
+
+
+
+  protected abstract boolean fillBothIds();
 }

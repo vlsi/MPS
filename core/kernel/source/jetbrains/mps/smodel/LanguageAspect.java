@@ -19,6 +19,7 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -265,11 +266,6 @@ public enum LanguageAspect {
     if (md != null && SModelRepository.getInstance().getOwner(md) == l) return md;
     return doCreate ? createNew(l) : null;
   }
-
-  public SModelReference get(SModuleReference l) {
-    return new jetbrains.mps.smodel.SModelReference(l.getModuleName() + "." + myName, null);
-  }
-
   public String getName() {
     return myName;
   }

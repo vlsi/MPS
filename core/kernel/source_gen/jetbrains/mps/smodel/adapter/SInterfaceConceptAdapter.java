@@ -4,45 +4,53 @@ package jetbrains.mps.smodel.adapter;
 
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
-import jetbrains.mps.smodel.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import java.util.List;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements SInterfaceConcept {
+  public SInterfaceConceptAdapter(@NotNull SConceptId conceptId) {
+    super(conceptId);
+  }
+
+
+
   public SInterfaceConceptAdapter(@NotNull String conceptName) {
     super(conceptName);
   }
 
   @Override
   public SAbstractLink getLink(String role) {
-    // TODO fix all usages remove this hack 
-    if (SNodeUtil.link_BaseConcept_smodelAttribute.equals(role)) {
-      return new SContainmentLinkAdapter(SNodeUtil.concept_BaseConcept, role);
+    // TODO fix all usages remove this hack  
+    if ("smodelAttribute".equals(role)) {
+      SNode linkNode = new ConceptAndSuperConceptsScope(getConceptDeclarationNode()).getLinkDeclarationByRole(role);
+      if (linkNode == null) {
+        return null;
+      }
+      return new SContainmentLinkAdapter(IdHelper.getNodeRoleId((jetbrains.mps.smodel.SNode) linkNode));
     }
     return super.getLink(role);
   }
 
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
-    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(getQualifiedName());
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
       return null;
     }
-
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
-    for (String i : d.getParentsNames()) {
-      SAbstractConcept resolved = SConceptRepository.getInstance().getConcept(i);
-      if (resolved instanceof SInterfaceConcept) {
-        res.add((SInterfaceConcept) resolved);
-      }
+    for (String name : d.getParentsNames()) {
+      res.add(new SInterfaceConceptAdapter(name));
     }
     return res;
   }
+
+
 }

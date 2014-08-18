@@ -32,8 +32,12 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.IdHelper;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
@@ -46,6 +50,7 @@ import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
 import jetbrains.mps.workbench.goTo.navigation.RootNodeElement;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -122,6 +127,7 @@ public class ImportHelper {
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
       @Override
       public NavigationItem doGetNavigationItem(SModuleReference ref) {
+        SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
         return new AddLanguageItem(project, ref, contextModule, model);
       }
 
@@ -220,19 +226,19 @@ public class ImportHelper {
         public void run() {
           boolean reload = false;
           for (SModuleReference ref : toImport) {
+            Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
+            if (lang == null) continue;
             if (myContextModule instanceof DevKit) {
               ((DevKit) myContextModule).getModuleDescriptor().getExportedLanguages().add(ref);
               ((DevKit) myContextModule).setChanged();
             } else {
-              Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
-              if (lang == null) continue;
               if (!new GlobalModuleDependenciesManager(myContextModule).getUsedLanguages().contains(lang)) {
                 ((AbstractModule) myContextModule).addUsedLanguage(ref);
                 reload = true;
               }
             }
             if (myModel != null) {
-              ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage(ref);
+              ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage(lang);
             }
           }
           if (reload) {

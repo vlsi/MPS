@@ -81,8 +81,12 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     if (modelName == null) {
       throw new IOException("modelName is not provided");
     }
+    String modulRef = options.get(OPTION_MODULEREF);
+    if (modulRef == null) {
+      throw new IOException("moduleRef is not provided");
+    }
 
-    SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
+    SModelReference ref = PersistenceFacade.getInstance().createModelReference(PersistenceFacade.getInstance().createModuleReference(modulRef), jetbrains.mps.smodel.SModelId.generate(), modelName);
     return new BinarySModelDescriptor(source, new BinaryModelHeader(ref));
   }
 

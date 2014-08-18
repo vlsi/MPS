@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.stubs.javastub.classpath;
 
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
@@ -26,22 +27,9 @@ public class StubHelper {
   public StubHelper() {
   }
 
-  @Deprecated
-  public static SModelReference uidForPackageInStubs(String pack, String languageId, @NotNull SModuleReference moduleRef) {
-    return uidForPackageInStubs(pack, languageId, moduleRef, false);
-  }
-
-  @Deprecated
-  public static SModelReference uidForPackageInStubs(String pack, String languageId, @NotNull SModuleReference moduleRef, boolean forceResolve) {
-    String stereo = SModelStereotype.getStubStereotypeForId(languageId);
-    return uidForPackageInStubs(new SModelFqName(pack, stereo), moduleRef, forceResolve);
-  }
-
-  public static SModelReference uidForPackageInStubs(SModelFqName name, @NotNull SModuleReference moduleRef, boolean forceResolve) {
-    String moduleName = moduleRef.getModuleName();
-    SModelId id = jetbrains.mps.smodel.SModelId.foreign(name.getStereotype(), moduleRef.getModuleId().toString(), name.getLongName());
-
-    SModelFqName fqName = new SModelFqName(moduleName, name.getLongName(), name.getStereotype());
-    return new jetbrains.mps.smodel.SModelReference(fqName, id);
+  public static SModelReference uidForPackageInStubs(@NotNull SModuleReference moduleRef, String name){
+    String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
+    SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(stereo, moduleRef.getModuleId().toString(), name);
+    return new jetbrains.mps.smodel.SModelReference(moduleRef, modelId, name + "@" + stereo);
   }
 }

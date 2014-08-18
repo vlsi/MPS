@@ -14,6 +14,8 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 
@@ -40,14 +42,27 @@ public class ConvertToBinaryWorker {
       mpsCore.dispose();
     }
   }
-  private void convertModelToBinary(String sourceFile, String destFile, boolean stripImplementation) throws IOException {
+
+  private void convertModelToBinary(String sourceFile, final String destFile, boolean stripImplementation) throws IOException {
     IFile source = FileSystem.getInstance().getFileByPath(sourceFile);
     try {
-      DefaultSModel model = (stripImplementation ? ModelPersistence.readModelWithoutImplementation(new FileDataSource(source)) : ModelPersistence.readModel(new FileDataSource(source), false));
+      final DefaultSModel model = (stripImplementation ? ModelPersistence.readModelWithoutImplementation(new FileDataSource(source)) : ModelPersistence.readModel(new FileDataSource(source), false));
       if (model.getSModelHeader().getPersistenceVersion() < ModelPersistence.LAST_VERSION) {
         throw new IOException("cannot convert " + sourceFile + ": model persistence is too old, please upgrade");
       }
-      BinaryPersistence.writeModel(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
+      final Wrappers._T<IOException> e = new Wrappers._T<IOException>(null);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          try {
+            BinaryPersistence.writeModel(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
+          } catch (IOException e1) {
+            e.value = e1;
+          }
+        }
+      });
+      if (e.value != null) {
+        throw e.value;
+      }
     } catch (ModelReadException e) {
       throw new IOException("Couldn't parse " + sourceFile + ": " + e.getMessageEx(), e);
     }

@@ -18,7 +18,6 @@
           <sourceRoot location="classes_gen" />
         </modelRoot>
         <modelRoot contentPath="${module}" type="default">
-          <sourceRoot location="generator" />
           <sourceRoot location="generator/baseLanguage" />
         </modelRoot>
       </models>

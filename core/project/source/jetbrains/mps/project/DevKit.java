@@ -25,13 +25,16 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -101,6 +104,19 @@ public class DevKit extends AbstractModule {
       for (Language l : dk.getExportedLanguages()) {
         if (!result.contains(l)) {
           result.add(l);
+        }
+      }
+    }
+    return result;
+  }
+
+  public Iterable<SLanguageId> getAllExportedLanguageIds() {
+    Set<SLanguageId> result = new HashSet<SLanguageId>();
+    for (DevKit dk : getAllExtendedDevkits()) {
+      for (SModuleReference l : dk.myDescriptor.getExportedLanguages()) {
+        SLanguageId lang = IdHelper.getLanguageId(l.getModuleId());
+        if (!result.contains(lang)) {
+          result.add(lang);
         }
       }
     }
