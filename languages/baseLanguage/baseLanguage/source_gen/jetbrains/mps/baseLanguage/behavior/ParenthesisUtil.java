@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 
@@ -43,21 +43,26 @@ public class ParenthesisUtil {
    * The current node is added at the front or back of the list, depending on the requested paren type,
    * so that it is always the most distant node among the returned candidates
    */
-  private static List<SNode> descendInto(SNode expr, final boolean completingByRightParen) {
-    final List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-
-    if (completingByRightParen && (AttributeOperations.getAttribute(expr, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null)) {
-      ListSequence.fromList(result).addElement(expr);
+  private static List<SNode> descendInto(SNode expr, boolean completingByRightParen) {
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    if (expr == null) {
+      return result;
     }
-    ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), expr, "virtual_getOrderedChildExpressions_7583777362095257106", new Object[]{})).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(descendInto(it, completingByRightParen)));
+
+    if (completingByRightParen) {
+      if ((AttributeOperations.getAttribute(expr, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null)) {
+        ListSequence.fromList(result).addElement(expr);
       }
-    });
-    if (!(completingByRightParen) && (AttributeOperations.getAttribute(expr, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null)) {
-      ListSequence.fromList(result).addElement(expr);
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(descendInto(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), expr, "virtual_getLeftSideExpression_7583777362095214544", new Object[]{}), completingByRightParen)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(descendInto(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), expr, "virtual_getRightSideExpression_7583777362095256690", new Object[]{}), completingByRightParen)));
     }
-
+    if (!(completingByRightParen)) {
+      if ((AttributeOperations.getAttribute(expr, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null)) {
+        ListSequence.fromList(result).addElement(expr);
+      }
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(descendInto(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), expr, "virtual_getRightSideExpression_7583777362095256690", new Object[]{}), completingByRightParen)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(descendInto(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), expr, "virtual_getLeftSideExpression_7583777362095214544", new Object[]{}), completingByRightParen)));
+    }
     return result;
   }
 
@@ -72,10 +77,6 @@ public class ParenthesisUtil {
     List<SNode> myParentPath = parentPath(myExpression, completingByRightParen);
     SNode topExp = ListSequence.fromList(myParentPath).last();
     List<SNode> candidateParenthedNodes = descendInto(topExp, completingByRightParen);
-    // Reverse the candidates if searchng for a matching right paren 
-    if (!(completingByRightParen)) {
-      candidateParenthedNodes = ListSequence.fromList(candidateParenthedNodes).reversedList();
-    }
 
     int index = ListSequence.fromList(candidateParenthedNodes).count() - 1;
     SNode candidateExpression = null;
@@ -86,7 +87,7 @@ public class ParenthesisUtil {
     // Find a matching parenthesis among candidates, going from the back of the list 
     while (index >= 0) {
       candidateExpression = ListSequence.fromList(candidateParenthedNodes).getElement(index);
-      if (eq_a65dpo_a0b0o0i(candidateExpression, myExpression)) {
+      if (eq_a65dpo_a0b0m0i(candidateExpression, myExpression)) {
         // they are both the same node 
         ParenthesisUtil.clearIncompleteParens(candidateExpression, completingByRightParen);
         SNode parens = SNodeFactoryOperations.replaceWithNewChild(candidateExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
@@ -419,7 +420,7 @@ public class ParenthesisUtil {
     return BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{}) || (isRight && ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{})) == ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{})));
   }
 
-  private static boolean eq_a65dpo_a0b0o0i(Object a, Object b) {
+  private static boolean eq_a65dpo_a0b0m0i(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
