@@ -27,7 +27,7 @@ public class StringLiteralRegexp_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "text";
-        return (SPropertyOperations.getString(propertyValue)).indexOf(" ") < 1;
+        return (SPropertyOperations.getString(propertyValue)).charAt((SPropertyOperations.getString(propertyValue)).length() - 1) != ' ';
       }
     });
     return properties;
