@@ -38,10 +38,10 @@ import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.Conflict;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
+import jetbrains.mps.generator.impl.plan.MapCfgComparator;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
-import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
@@ -71,7 +71,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -325,18 +324,7 @@ class GenerationSession {
     }
 
     // -- prepare generator
-    Collections.sort(mappingConfigurations, new Comparator<TemplateMappingConfiguration>() {
-      @Override
-      public int compare(TemplateMappingConfiguration o1, TemplateMappingConfiguration o2) {
-        TemplateModel m1 = o1.getModel();
-        TemplateModel m2 = o2.getModel();
-        int result = m1 == m2 ? 0 : m1.getLongName().compareTo(m2.getLongName());
-        if (result != 0) {
-          return result;
-        }
-        return o1.getName().compareTo(o2.getName());
-      }
-    });
+    Collections.sort(mappingConfigurations, new MapCfgComparator());
     RuleManager ruleManager = new RuleManager(myGenerationPlan, mappingConfigurations, myLogger);
 
     try {
