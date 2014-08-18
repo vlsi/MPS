@@ -35,7 +35,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -513,7 +513,18 @@ public class QueriesGenerated {
         referenceNode.setProperty("targetModel", originalInput.getModelReference().toString());
         targetNode = originalInput.resolve(MPSModuleRepository.getInstance());
       } else {
-        referenceNode.setProperty("targetModel", ((SModelReference) ref.getTargetSModelReference()).update().toString());
+        // Here comes odd logic: it didn't account for dynamic references (where ref.getTargetSModelReference == null) 
+        // and always creates static reference. Besides, I don't know why it tries to update reference during generation. 
+        // (due to 'make quotations generator stable' rev.323f93d) 
+        SModelReference targetModelRef;
+        if (ref.getTargetSModelReference() == null) {
+          targetModelRef = (targetNode == null || SNodeOperations.getModel(targetNode) == null ? null : SNodeOperations.getModel(targetNode).getReference());
+        } else {
+          targetModelRef = ((jetbrains.mps.smodel.SModelReference) ref.getTargetSModelReference()).update();
+        }
+        if (targetModelRef != null) {
+          referenceNode.setProperty("targetModel", targetModelRef.toString());
+        }
       }
       if (targetNode != null) {
         referenceNode.setProperty("targetNodeId", targetNode.getNodeId().toString());
