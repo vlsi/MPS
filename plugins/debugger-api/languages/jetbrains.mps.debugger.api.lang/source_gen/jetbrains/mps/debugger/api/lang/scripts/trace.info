@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:2ba4781c-9b5c-4ca4-9a8b-b3b397109c9e(jetbrains.mps.debugger.api.lang.scripts)/1713726972417136549">
+    <nodeInfo nodeId="1713726972417136549" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="13" startPosition="87" endLine="14" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="16" startPosition="31" endLine="17" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="20" startPosition="41" endLine="21" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="24" startPosition="59" endLine="25" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1713726972417139809" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1713726972417152614" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="32" startPosition="52" endLine="33" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1713726972417159443" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="33" startPosition="152" endLine="34" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1713726972417173363" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="34" startPosition="209" endLine="35" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="38" startPosition="42" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1713726972417136549" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="14" startPosition="41" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="14" startPosition="41" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1713726972417136549" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="13" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrateBreakpointCreator_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="16" startPosition="31" endLine="17" endPosition="46" />
+    <scopeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="20" startPosition="41" endLine="21" endPosition="46" />
+    <scopeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="24" startPosition="59" endLine="25" endPosition="82" />
+    <scopeInfo nodeId="1713726972417139096" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="132" />
+    <scopeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="38" startPosition="42" endLine="39" endPosition="20" />
+    <scopeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1713726972417137847" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1713726972417137849" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="32" startPosition="52" endLine="35" endPosition="68" />
+    <scopeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1713726972417137847" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="14" startPosition="41" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="1713726972417136549" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="13" startPosition="87" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="1713726972417136549" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="13" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1713726972417136549" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="1713726972417137847" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="15" startPosition="28" endLine="41" endPosition="5" unitName="jetbrains.mps.debugger.api.lang.scripts.MigrateBreakpointCreator_MigrationScript$1" />
+    <unitInfo nodeId="1713726972417136549" fileName="MigrateBreakpointCreator_MigrationScript.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.scripts.MigrateBreakpointCreator_MigrationScript" />
+  </root>
+</debugInfo>
+

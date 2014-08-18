@@ -91,7 +91,7 @@ public class PluginUtil {
 
   private static Object createPlugin(SModule module, String className) {
     try {
-      Class pluginClass = ClassLoaderManager.getInstance().getClass(module, className);
+      Class pluginClass = ClassLoaderManager.getInstance().getOwnClass(module, className);
       if (pluginClass == null) return null;
 
       return pluginClass.newInstance();

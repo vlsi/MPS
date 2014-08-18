@@ -34,7 +34,7 @@ public class DescriptorUtils {
         return null;
       }
 
-      Class clazz = ClassLoaderManager.getInstance().getClass(language, className);
+      Class clazz = ClassLoaderManager.getInstance().getOwnClass(language, className);
       if (clazz == null) {
         return null;
       }
@@ -58,7 +58,7 @@ public class DescriptorUtils {
   @Nullable
   public static <T> T getObjectByClassNameForLanguage(String className, Class<T> castTo, @NotNull Language language) {
     try {
-      Class clazz = ClassLoaderManager.getInstance().getClass(language, className);
+      Class clazz = ClassLoaderManager.getInstance().getOwnClass(language, className);
       if (clazz == null) {
         return null;
       }

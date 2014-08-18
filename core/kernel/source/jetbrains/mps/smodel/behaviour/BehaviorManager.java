@@ -89,7 +89,7 @@ public final class BehaviorManager {
         String behaviorClass = behaviorClassByConceptFqName(fqName);
 
         try {
-          Class cls = ClassLoaderManager.getInstance().getClass(l, behaviorClass);
+          Class cls = ClassLoaderManager.getInstance().getOwnClass(l, behaviorClass);
           if (cls != null) {
             method = cls.getMethod(methodName, parameterTypes);
           }

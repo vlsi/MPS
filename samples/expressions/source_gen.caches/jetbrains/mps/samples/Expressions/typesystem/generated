@@ -117,7 +117,6 @@
   <source id="2073504467209504627" name="SimpleMathNumberType_subtypeOf_Element" hash="-ao5scnrxbjxmoncxfwg60jbeqr39efx">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SimpleMathNumberType_subtypeOf_Element_SubtypingRule.java" />

@@ -62,22 +62,6 @@
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="748410583119789989" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="748410583119789990" nodeInfo="sn" />
     </node>
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="748410583119790112" nodeInfo="ng">
-      <property name="isAbstract" nameId="1i04.1225194472834" value="false" />
-      <property name="isVirtual" nameId="1i04.1225194472832" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="getShortHelp" />
-      <property name="isStatic" nameId="1i04.5864038008284099149" value="true" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="zyb2.473081947982699339" resolveInfo="getShortHelp" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="748410583119790113" nodeInfo="nn" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="748410583119790116" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="748410583119790123" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="748410583119790122" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="execute script" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="748410583119790117" nodeInfo="in" />
-    </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2663801026049983654" nodeInfo="ng">
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="z2sp.2377091791517030718" resolveInfo="RefactorOperation" />
@@ -94,7 +78,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2663801026049990430" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2663801026050030057" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2663801026050030056" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="apply function to manually selected nodes" />
+            <property name="value" nameId="tpee.1070475926801" value="apply a function to manually selected nodes" />
           </node>
         </node>
       </node>
@@ -111,10 +95,10 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2663801026050030496" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2663801026050032259" nodeInfo="nn">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2663801026050032280" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="Refactoring is applied not immediately but using invokelater, so there may be issues when using several times in the same command." />
+              <property name="value" nameId="tpee.1070475926801" value="Refactoring is not applied immediately, but after a random delay due to using Java's invokelater.\nMultiple usages of the command within a single query may result in consistency issues and are discouraged." />
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2663801026050030495" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="Operates like forEach but asks user to select included/excluded nodes before refactoring.\n" />
+              <property name="value" nameId="tpee.1070475926801" value="Operates like the forEach operation, but additionally asks the user to include/exclude nodes before starting the refactoring.\n" />
             </node>
           </node>
         </node>

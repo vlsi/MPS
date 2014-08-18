@@ -239,14 +239,18 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     myNodeEditorComponent.flushEvents();
   }
 
+  /**
+   * @deprecated since MPS 3.1 use createMemento()
+   */
   @Override
+  @Deprecated
   public Object createMemento(boolean full) {
-    return new Memento(this, full);
+    return createMemento();
   }
 
   @Override
   public Object createMemento() {
-    return createMemento(true);
+    return new Memento(this, false);
   }
 
   @Override

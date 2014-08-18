@@ -171,10 +171,18 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
       @Override
       public void run() {
         if (context != null) {
-          // completion can be invoked by typing invalid stuff into exising cells, revert it back to the model state
+          // completion can be invoked by typing invalid stuff into existing cells, revert it back to the model state
           jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = (jetbrains.mps.nodeEditor.cells.EditorCell) context.getSelectedCell();
           if (selectedCell != null) {
-            selectedCell.getContainingBigCell().synchronizeViewWithModel();
+            // Trying to invoke synchronizeViewWithModel() for the cell which was modified by "typing invalid stuff into" only.
+            //
+            // This is necessary to not reset all states of all "error" cells with modified text within them.
+            // Important for auto-re-resolving functionality (see http://youtrack.jetbrains.com/issue/MPS-19751).
+            //
+            // In case this will break something we can thing of more careful "synchronizeViewWithModel()" execution.
+            // For example: run synchronizeViewWithModel() only for constant cells or only for cells representing this
+            // node only (not it's children).
+            selectedCell.synchronizeViewWithModel();
           }
         }
 

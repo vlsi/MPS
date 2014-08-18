@@ -13,7 +13,6 @@
     <file name="Simple.java" />
   </source>
   <source id="3453667744252546022" name="TypeError" hash="-b68plf2s5khy8teyb0qwq7rwgc34fgh">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TypeError.java" />
   </source>
 </dependencies>

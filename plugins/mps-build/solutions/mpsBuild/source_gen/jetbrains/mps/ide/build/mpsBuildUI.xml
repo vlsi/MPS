@@ -21,6 +21,7 @@
       <include name="javac2.jar" />
       <include name="jdom.jar" />
       <include name="asm4-all.jar" />
+      <include name="asm-all.jar" />
       <include name="jgoodies-forms.jar" />
     </fileset>
   </path>
@@ -76,7 +77,9 @@
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/jetbrains.mps.build.mps.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-pluginSolutions-jetbrains.mps.build.mps.pluginSolution-models" prefix="module/models" />
     </jar>
@@ -112,7 +115,9 @@
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen" />
+      <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/jetbrains.mps.build.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-pluginSolutions-jetbrains.mps.build.pluginSolution-models" prefix="module/models" />
     </jar>
@@ -313,6 +318,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.jar" />
@@ -361,6 +367,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.jar" />

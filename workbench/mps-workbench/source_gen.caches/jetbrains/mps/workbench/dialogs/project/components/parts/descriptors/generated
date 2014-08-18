@@ -15,6 +15,7 @@
     <file name="StringPathDescriptor.java" />
   </source>
   <source id="1560298786499491489" name="BooleanDescriptor" hash="-ao4h2bjwf3tcpfhgf78mc2yj47ofuo3">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BooleanDescriptor.java" />
   </source>
   <source id="1560298786499493471" name="ModuleDescriptor" hash="dxywezy4th3flh4s4hflnofv8e2be2c">

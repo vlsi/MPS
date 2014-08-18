@@ -9,7 +9,7 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.editor.actions.EditorActionUtils;
+import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -37,7 +37,7 @@ public class UncommentStatements_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", true, false) != null) && EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), Sequence.<EditorCell>singleton(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(((SNode) MapSequence.fromMap(_params).get("node")))));
+    return (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", true, false) != null) && !(ReadOnlyUtil.isCellsReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), Sequence.<EditorCell>singleton(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(((SNode) MapSequence.fromMap(_params).get("node"))))));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -70,7 +70,13 @@ public class UncommentStatements_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+    }
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }

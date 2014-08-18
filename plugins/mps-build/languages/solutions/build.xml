@@ -61,7 +61,9 @@
       <fileset dir="${basedir}/jetbrains.mps.build.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/test1/languages/jetbrains.mps.build.tests-src.jar">
-      <fileset dir="${basedir}/jetbrains.mps.build.tests/source_gen" />
+      <fileset dir="${basedir}/jetbrains.mps.build.tests/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${basedir}/jetbrains.mps.build.tests/jetbrains.mps.build.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.tests-models" prefix="module/models" />
     </jar>
@@ -90,7 +92,9 @@
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/test1/languages/jetbrains.mps.build.sandbox-src.jar">
-      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" />
+      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${basedir}/jetbrains.mps.build.sandbox/jetbrains.mps.build.sandbox.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.sandbox-models" prefix="module/models" />
     </jar>
@@ -316,6 +320,7 @@
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
         <fileset file="${artifacts.mps}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.mps}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.mps}/lib/asm-all.jar" />
         <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
@@ -367,6 +372,7 @@
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
         <fileset file="${artifacts.mps}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.mps}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.mps}/lib/asm-all.jar" />
         <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.jar" />

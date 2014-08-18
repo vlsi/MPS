@@ -387,353 +387,471 @@
     <unitInfo nodeId="1270798772176070201" fileName="BreakpointCreator_Editor.java" startLine="23" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.editor.BreakpointCreator_Editor" />
   </root>
   <root nodeRef="r:600c053c-afd8-419c-b24b-2550d269af72(jetbrains.mps.debugger.api.lang.editor)/2566194812862845914">
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="34" startPosition="89" endLine="35" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="35" startPosition="97" endLine="36" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="36" startPosition="48" endLine="37" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="38" startPosition="61" endLine="39" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="41" startPosition="61" endLine="42" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="43" startPosition="5" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="43" startPosition="5" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="44" startPosition="81" endLine="45" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="44" startPosition="81" endLine="45" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="45" startPosition="83" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="49" startPosition="90" endLine="50" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="50" startPosition="97" endLine="51" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="51" startPosition="49" endLine="52" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="51" startPosition="49" endLine="52" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="52" startPosition="82" endLine="53" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="52" startPosition="82" endLine="53" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="53" startPosition="84" endLine="54" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8751745335399639859" fileName="BreakpointableNodeItem_Editor.java" startLine="57" startPosition="97" endLine="58" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="61" startPosition="89" endLine="62" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="62" startPosition="99" endLine="63" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="63" startPosition="48" endLine="64" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="64" startPosition="34" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="68" startPosition="91" endLine="69" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="69" startPosition="99" endLine="70" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="70" startPosition="50" endLine="71" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="71" startPosition="34" endLine="72" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="72" startPosition="49" endLine="73" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="73" startPosition="40" endLine="74" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="73" startPosition="40" endLine="74" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="74" startPosition="85" endLine="75" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="74" startPosition="85" endLine="75" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="75" startPosition="86" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5789575999242884587" fileName="BreakpointableNodeItem_Editor.java" startLine="79" startPosition="92" endLine="80" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5789575999242884587" fileName="BreakpointableNodeItem_Editor.java" startLine="80" startPosition="78" endLine="81" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="84" startPosition="93" endLine="85" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="85" startPosition="173" endLine="86" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="86" startPosition="108" endLine="87" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="87" startPosition="67" endLine="88" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="88" startPosition="49" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="93" startPosition="120" endLine="94" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="97" startPosition="66" endLine="98" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="98" startPosition="41" endLine="99" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="102" startPosition="86" endLine="103" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="103" startPosition="80" endLine="104" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="104" startPosition="95" endLine="105" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="108" startPosition="68" endLine="109" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="109" startPosition="34" endLine="110" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="110" startPosition="55" endLine="111" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="111" startPosition="87" endLine="112" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="116" startPosition="96" endLine="117" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="118" startPosition="34" endLine="119" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="119" startPosition="95" endLine="120" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="122" startPosition="131" endLine="123" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="129" startPosition="90" endLine="130" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="130" startPosition="97" endLine="131" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="131" startPosition="49" endLine="132" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="132" startPosition="34" endLine="133" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="133" startPosition="49" endLine="134" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="134" startPosition="40" endLine="135" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="134" startPosition="40" endLine="135" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="135" startPosition="82" endLine="136" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="135" startPosition="82" endLine="136" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="136" startPosition="84" endLine="137" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7796501636717833665" fileName="BreakpointableNodeItem_Editor.java" startLine="140" startPosition="97" endLine="141" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="144" startPosition="89" endLine="145" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="145" startPosition="102" endLine="146" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="146" startPosition="48" endLine="147" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="147" startPosition="34" endLine="148" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="151" startPosition="91" endLine="152" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="152" startPosition="99" endLine="153" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="153" startPosition="50" endLine="154" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="153" startPosition="50" endLine="154" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="154" startPosition="85" endLine="155" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="154" startPosition="85" endLine="155" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="155" startPosition="82" endLine="156" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7796501636717833693" fileName="BreakpointableNodeItem_Editor.java" startLine="159" startPosition="92" endLine="160" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7796501636717833693" fileName="BreakpointableNodeItem_Editor.java" startLine="160" startPosition="78" endLine="161" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="164" startPosition="89" endLine="165" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="165" startPosition="81" endLine="166" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="166" startPosition="37" endLine="167" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="167" startPosition="50" endLine="168" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="168" startPosition="26" endLine="169" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="170" startPosition="39" endLine="171" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="172" startPosition="5" endLine="173" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="173" startPosition="73" endLine="174" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="174" startPosition="57" endLine="175" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="176" startPosition="35" endLine="177" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="177" startPosition="72" endLine="178" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="178" startPosition="78" endLine="179" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="180" startPosition="10" endLine="181" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="184" startPosition="88" endLine="185" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="185" startPosition="104" endLine="186" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="186" startPosition="47" endLine="187" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="187" startPosition="34" endLine="188" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="191" startPosition="90" endLine="192" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="192" startPosition="99" endLine="193" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="193" startPosition="49" endLine="194" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="194" startPosition="34" endLine="195" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="195" startPosition="49" endLine="196" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="196" startPosition="40" endLine="197" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="196" startPosition="40" endLine="197" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="197" startPosition="84" endLine="198" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="197" startPosition="84" endLine="198" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="198" startPosition="81" endLine="199" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5789575999242884598" fileName="BreakpointableNodeItem_Editor.java" startLine="202" startPosition="91" endLine="203" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5789575999242884598" fileName="BreakpointableNodeItem_Editor.java" startLine="203" startPosition="78" endLine="204" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="207" startPosition="88" endLine="208" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="208" startPosition="81" endLine="209" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="209" startPosition="41" endLine="210" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="210" startPosition="54" endLine="211" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="211" startPosition="26" endLine="212" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="213" startPosition="39" endLine="214" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="215" startPosition="5" endLine="216" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="216" startPosition="73" endLine="217" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="217" startPosition="57" endLine="218" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="219" startPosition="35" endLine="220" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="220" startPosition="72" endLine="221" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="221" startPosition="78" endLine="222" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="223" startPosition="10" endLine="224" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="37" startPosition="28" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="37" startPosition="28" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="40" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="40" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8751745335399632089" fileName="BreakpointableNodeItem_Editor.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_4n0rw6_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="conceptsToCreateBreakpointListHandler_4n0rw6_b1a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="121" startPosition="9" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7796501636717832277" fileName="BreakpointableNodeItem_Editor.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_4n0rw6_a1a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="169" startPosition="58" endLine="172" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="212" startPosition="58" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5789575999242884587" fileName="BreakpointableNodeItem_Editor.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_4n0rw6_a1a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="117" startPosition="134" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7796501636717833693" fileName="BreakpointableNodeItem_Editor.java" startLine="159" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_4n0rw6_a1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5789575999242884598" fileName="BreakpointableNodeItem_Editor.java" startLine="202" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_4n0rw6_a3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="102" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="61" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4n0rw6_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="108" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="144" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4n0rw6_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="175" startPosition="59" endLine="181" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="184" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4n0rw6_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="218" startPosition="59" endLine="224" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="84" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_4n0rw6_b1a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="151" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="68" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="115" startPosition="132" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="129" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="191" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="115" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="34" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="164" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_4n0rw6_b1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="207" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_4n0rw6_b3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="63" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="38" startPosition="61" endLine="39" endPosition="85" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="41" startPosition="61" endLine="42" endPosition="85" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="43" startPosition="5" endLine="44" endPosition="81" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="44" startPosition="81" endLine="45" endPosition="83" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="51" startPosition="49" endLine="52" endPosition="82" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="52" startPosition="82" endLine="53" endPosition="84" />
-    <scopeInfo nodeId="8751745335399632090" fileName="BreakpointableNodeItem_Editor.java" startLine="57" startPosition="97" endLine="58" endPosition="64" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="73" startPosition="40" endLine="74" endPosition="85" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="74" startPosition="85" endLine="75" endPosition="86" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="93" startPosition="120" endLine="94" endPosition="50" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="122" startPosition="131" endLine="123" endPosition="139" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="134" startPosition="40" endLine="135" endPosition="82" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="135" startPosition="82" endLine="136" endPosition="84" />
-    <scopeInfo nodeId="7796501636717832278" fileName="BreakpointableNodeItem_Editor.java" startLine="140" startPosition="97" endLine="141" endPosition="61" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="153" startPosition="50" endLine="154" endPosition="85" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="154" startPosition="85" endLine="155" endPosition="82" />
-    <scopeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="170" startPosition="39" endLine="171" endPosition="41" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="196" startPosition="40" endLine="197" endPosition="84" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="197" startPosition="84" endLine="198" endPosition="81" />
-    <scopeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="213" startPosition="39" endLine="214" endPosition="45" />
-    <scopeInfo nodeId="5789575999242884587" fileName="BreakpointableNodeItem_Editor.java" startLine="79" startPosition="92" endLine="81" endPosition="22">
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="31" startPosition="79" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="35" startPosition="89" endLine="36" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="36" startPosition="97" endLine="37" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="37" startPosition="48" endLine="38" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="39" startPosition="61" endLine="40" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="42" startPosition="61" endLine="43" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="45" startPosition="61" endLine="46" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="47" startPosition="5" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="47" startPosition="5" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="49" startPosition="83" endLine="50" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="49" startPosition="83" endLine="50" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="50" startPosition="81" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="54" startPosition="90" endLine="55" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="55" startPosition="97" endLine="56" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="56" startPosition="49" endLine="57" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="56" startPosition="49" endLine="57" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="57" startPosition="82" endLine="58" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="57" startPosition="82" endLine="58" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="58" startPosition="84" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8751745335399639859" fileName="BreakpointableNodeItem_Editor.java" startLine="62" startPosition="97" endLine="63" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="66" startPosition="89" endLine="67" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="67" startPosition="99" endLine="68" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="68" startPosition="48" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="69" startPosition="34" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="73" startPosition="91" endLine="74" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="74" startPosition="99" endLine="75" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="75" startPosition="50" endLine="76" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="76" startPosition="34" endLine="77" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="77" startPosition="49" endLine="78" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="78" startPosition="40" endLine="79" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="78" startPosition="40" endLine="79" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="79" startPosition="85" endLine="80" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="79" startPosition="85" endLine="80" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="80" startPosition="86" endLine="81" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5789575999242884587" fileName="BreakpointableNodeItem_Editor.java" startLine="84" startPosition="92" endLine="85" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5789575999242884587" fileName="BreakpointableNodeItem_Editor.java" startLine="85" startPosition="78" endLine="86" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="89" startPosition="93" endLine="90" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="90" startPosition="173" endLine="91" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="91" startPosition="108" endLine="92" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="92" startPosition="67" endLine="93" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="93" startPosition="49" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="98" startPosition="120" endLine="99" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="102" startPosition="66" endLine="103" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="103" startPosition="41" endLine="104" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="107" startPosition="86" endLine="108" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="108" startPosition="80" endLine="109" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="109" startPosition="95" endLine="110" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="113" startPosition="68" endLine="114" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="114" startPosition="34" endLine="115" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="115" startPosition="55" endLine="116" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="116" startPosition="87" endLine="117" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="121" startPosition="96" endLine="122" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="123" startPosition="34" endLine="124" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="124" startPosition="95" endLine="125" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="127" startPosition="131" endLine="128" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="134" startPosition="90" endLine="135" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="135" startPosition="97" endLine="136" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="136" startPosition="49" endLine="137" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="137" startPosition="34" endLine="138" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="138" startPosition="49" endLine="139" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="139" startPosition="40" endLine="140" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="139" startPosition="40" endLine="140" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="140" startPosition="82" endLine="141" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="140" startPosition="82" endLine="141" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="141" startPosition="84" endLine="142" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796501636717833665" fileName="BreakpointableNodeItem_Editor.java" startLine="145" startPosition="97" endLine="146" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="149" startPosition="89" endLine="150" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="150" startPosition="102" endLine="151" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="151" startPosition="48" endLine="152" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="152" startPosition="34" endLine="153" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="156" startPosition="91" endLine="157" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="157" startPosition="99" endLine="158" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="158" startPosition="50" endLine="159" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="158" startPosition="50" endLine="159" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="159" startPosition="85" endLine="160" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="159" startPosition="85" endLine="160" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="160" startPosition="82" endLine="161" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796501636717833693" fileName="BreakpointableNodeItem_Editor.java" startLine="164" startPosition="92" endLine="165" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7796501636717833693" fileName="BreakpointableNodeItem_Editor.java" startLine="165" startPosition="78" endLine="166" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="169" startPosition="89" endLine="170" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="170" startPosition="81" endLine="171" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="171" startPosition="37" endLine="172" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="172" startPosition="50" endLine="173" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="173" startPosition="26" endLine="174" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="175" startPosition="39" endLine="176" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="177" startPosition="5" endLine="178" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="178" startPosition="73" endLine="179" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="179" startPosition="57" endLine="180" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="181" startPosition="35" endLine="182" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="182" startPosition="72" endLine="183" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="183" startPosition="78" endLine="184" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="185" startPosition="10" endLine="186" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="189" startPosition="90" endLine="190" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="190" startPosition="97" endLine="191" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="191" startPosition="49" endLine="192" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="192" startPosition="34" endLine="193" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="193" startPosition="49" endLine="194" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="194" startPosition="40" endLine="195" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="194" startPosition="40" endLine="195" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="195" startPosition="82" endLine="196" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="195" startPosition="82" endLine="196" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="196" startPosition="84" endLine="197" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3104811047188348762" fileName="BreakpointableNodeItem_Editor.java" startLine="200" startPosition="97" endLine="201" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3104811047188348758" fileName="BreakpointableNodeItem_Editor.java" startLine="204" startPosition="89" endLine="205" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104811047188348758" fileName="BreakpointableNodeItem_Editor.java" startLine="205" startPosition="111" endLine="206" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104811047188348758" fileName="BreakpointableNodeItem_Editor.java" startLine="206" startPosition="48" endLine="207" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104811047188348758" fileName="BreakpointableNodeItem_Editor.java" startLine="207" startPosition="34" endLine="208" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="211" startPosition="91" endLine="212" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="212" startPosition="99" endLine="213" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="213" startPosition="50" endLine="214" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="213" startPosition="50" endLine="214" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="214" startPosition="85" endLine="215" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="214" startPosition="85" endLine="215" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="215" startPosition="82" endLine="216" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3104811047188348767" fileName="BreakpointableNodeItem_Editor.java" startLine="219" startPosition="92" endLine="220" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104811047188348767" fileName="BreakpointableNodeItem_Editor.java" startLine="220" startPosition="78" endLine="221" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="224" startPosition="89" endLine="225" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="225" startPosition="81" endLine="226" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="226" startPosition="47" endLine="227" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="227" startPosition="60" endLine="228" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="228" startPosition="26" endLine="229" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="230" startPosition="39" endLine="231" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="232" startPosition="5" endLine="233" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="233" startPosition="73" endLine="234" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="234" startPosition="57" endLine="235" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="236" startPosition="35" endLine="237" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="237" startPosition="72" endLine="238" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="238" startPosition="78" endLine="239" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="240" startPosition="10" endLine="241" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="244" startPosition="88" endLine="245" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="245" startPosition="104" endLine="246" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="246" startPosition="47" endLine="247" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="247" startPosition="34" endLine="248" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="251" startPosition="90" endLine="252" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="252" startPosition="99" endLine="253" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="253" startPosition="49" endLine="254" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="254" startPosition="34" endLine="255" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="255" startPosition="49" endLine="256" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="256" startPosition="40" endLine="257" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="256" startPosition="40" endLine="257" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="257" startPosition="84" endLine="258" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="257" startPosition="84" endLine="258" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="258" startPosition="81" endLine="259" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5789575999242884598" fileName="BreakpointableNodeItem_Editor.java" startLine="262" startPosition="91" endLine="263" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5789575999242884598" fileName="BreakpointableNodeItem_Editor.java" startLine="263" startPosition="78" endLine="264" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="267" startPosition="88" endLine="268" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="268" startPosition="81" endLine="269" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="269" startPosition="41" endLine="270" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="270" startPosition="54" endLine="271" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="271" startPosition="26" endLine="272" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="273" startPosition="39" endLine="274" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="275" startPosition="5" endLine="276" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="276" startPosition="73" endLine="277" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="277" startPosition="57" endLine="278" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="279" startPosition="35" endLine="280" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="280" startPosition="72" endLine="281" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="281" startPosition="78" endLine="282" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="283" startPosition="10" endLine="284" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3104811047188725336" fileName="BreakpointableNodeItem_Editor.java" startLine="287" startPosition="88" endLine="288" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3104811047188725336" fileName="BreakpointableNodeItem_Editor.java" startLine="288" startPosition="86" endLine="289" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104811047188725336" fileName="BreakpointableNodeItem_Editor.java" startLine="289" startPosition="47" endLine="290" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3104811047188725336" fileName="BreakpointableNodeItem_Editor.java" startLine="290" startPosition="34" endLine="291" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="38" startPosition="28" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="38" startPosition="28" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="41" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="41" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="44" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="44" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8751745335399632089" fileName="BreakpointableNodeItem_Editor.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_4n0rw6_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="98" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="conceptsToCreateBreakpointListHandler_4n0rw6_b1a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="126" startPosition="9" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7796501636717832277" fileName="BreakpointableNodeItem_Editor.java" startLine="145" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_4n0rw6_a1a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="174" startPosition="58" endLine="177" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3104811047188348760" fileName="BreakpointableNodeItem_Editor.java" startLine="200" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_4n0rw6_a2a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="229" startPosition="58" endLine="232" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="272" startPosition="58" endLine="275" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5789575999242884587" fileName="BreakpointableNodeItem_Editor.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_4n0rw6_a1a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="122" startPosition="134" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7796501636717833693" fileName="BreakpointableNodeItem_Editor.java" startLine="164" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_4n0rw6_a1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3104811047188348767" fileName="BreakpointableNodeItem_Editor.java" startLine="219" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_4n0rw6_a1c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5789575999242884598" fileName="BreakpointableNodeItem_Editor.java" startLine="262" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_4n0rw6_a4a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="107" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4n0rw6_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="113" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="149" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4n0rw6_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="180" startPosition="59" endLine="186" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3104811047188348758" fileName="BreakpointableNodeItem_Editor.java" startLine="204" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4n0rw6_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="235" startPosition="59" endLine="241" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="244" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4n0rw6_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="278" startPosition="59" endLine="284" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3104811047188725336" fileName="BreakpointableNodeItem_Editor.java" startLine="287" startPosition="0" endLine="293" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4n0rw6_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="54" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="89" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_4n0rw6_b1a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="156" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="211" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="73" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="120" startPosition="132" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="134" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="189" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="251" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="120" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="35" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4n0rw6_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="169" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_4n0rw6_b1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="224" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_4n0rw6_b1c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="267" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_4n0rw6_b4a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="31" startPosition="79" endLine="32" endPosition="63" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="39" startPosition="61" endLine="40" endPosition="85" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="42" startPosition="61" endLine="43" endPosition="85" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="45" startPosition="61" endLine="46" endPosition="85" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="47" startPosition="5" endLine="48" endPosition="81" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="83" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="49" startPosition="83" endLine="50" endPosition="81" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="56" startPosition="49" endLine="57" endPosition="82" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="57" startPosition="82" endLine="58" endPosition="84" />
+    <scopeInfo nodeId="8751745335399632090" fileName="BreakpointableNodeItem_Editor.java" startLine="62" startPosition="97" endLine="63" endPosition="64" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="78" startPosition="40" endLine="79" endPosition="85" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="79" startPosition="85" endLine="80" endPosition="86" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="98" startPosition="120" endLine="99" endPosition="50" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="127" startPosition="131" endLine="128" endPosition="139" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="139" startPosition="40" endLine="140" endPosition="82" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="140" startPosition="82" endLine="141" endPosition="84" />
+    <scopeInfo nodeId="7796501636717832278" fileName="BreakpointableNodeItem_Editor.java" startLine="145" startPosition="97" endLine="146" endPosition="128" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="158" startPosition="50" endLine="159" endPosition="85" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="159" startPosition="85" endLine="160" endPosition="82" />
+    <scopeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="175" startPosition="39" endLine="176" endPosition="41" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="194" startPosition="40" endLine="195" endPosition="82" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="195" startPosition="82" endLine="196" endPosition="84" />
+    <scopeInfo nodeId="3104811047188348761" fileName="BreakpointableNodeItem_Editor.java" startLine="200" startPosition="97" endLine="201" endPosition="128" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="213" startPosition="50" endLine="214" endPosition="85" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="214" startPosition="85" endLine="215" endPosition="82" />
+    <scopeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="230" startPosition="39" endLine="231" endPosition="51" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="256" startPosition="40" endLine="257" endPosition="84" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="257" startPosition="84" endLine="258" endPosition="81" />
+    <scopeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="273" startPosition="39" endLine="274" endPosition="45" />
+    <scopeInfo nodeId="5789575999242884587" fileName="BreakpointableNodeItem_Editor.java" startLine="84" startPosition="92" endLine="86" endPosition="22">
       <varInfo nodeId="5789575999242884587" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="97" startPosition="66" endLine="99" endPosition="93">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="102" startPosition="66" endLine="104" endPosition="93">
       <varInfo nodeId="2566194812862845914" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="118" startPosition="34" endLine="120" endPosition="98" />
-    <scopeInfo nodeId="7796501636717833693" fileName="BreakpointableNodeItem_Editor.java" startLine="159" startPosition="92" endLine="161" endPosition="22">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="123" startPosition="34" endLine="125" endPosition="98" />
+    <scopeInfo nodeId="7796501636717833693" fileName="BreakpointableNodeItem_Editor.java" startLine="164" startPosition="92" endLine="166" endPosition="22">
       <varInfo nodeId="7796501636717833693" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5789575999242884598" fileName="BreakpointableNodeItem_Editor.java" startLine="202" startPosition="91" endLine="204" endPosition="22">
+    <scopeInfo nodeId="3104811047188348767" fileName="BreakpointableNodeItem_Editor.java" startLine="219" startPosition="92" endLine="221" endPosition="22">
+      <varInfo nodeId="3104811047188348767" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5789575999242884598" fileName="BreakpointableNodeItem_Editor.java" startLine="262" startPosition="91" endLine="264" endPosition="22">
       <varInfo nodeId="5789575999242884598" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="2566194812862845914" varName="editorContext" />
       <varInfo nodeId="2566194812862845914" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="37" startPosition="28" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="40" startPosition="5" endLine="43" endPosition="5" />
-    <scopeInfo nodeId="8751745335399632089" fileName="BreakpointableNodeItem_Editor.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="38" startPosition="28" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="41" startPosition="5" endLine="44" endPosition="5" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="44" startPosition="5" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="8751745335399632089" fileName="BreakpointableNodeItem_Editor.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="8751745335399632089" varName="editorContext" />
       <varInfo nodeId="8751745335399632089" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="93" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="98" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="2566194812862845914" varName="childRole" />
       <varInfo nodeId="2566194812862845914" varName="context" />
       <varInfo nodeId="2566194812862845914" varName="ownerNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="102" startPosition="86" endLine="105" endPosition="25">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="107" startPosition="86" endLine="110" endPosition="25">
       <varInfo nodeId="2566194812862845914" varName="elementCell" />
     </scopeInfo>
-    <scopeInfo nodeId="7796501636717832277" fileName="BreakpointableNodeItem_Editor.java" startLine="140" startPosition="0" endLine="143" endPosition="0">
+    <scopeInfo nodeId="7796501636717832277" fileName="BreakpointableNodeItem_Editor.java" startLine="145" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="7796501636717832277" varName="editorContext" />
       <varInfo nodeId="7796501636717832277" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="176" startPosition="35" endLine="179" endPosition="109">
+    <scopeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="181" startPosition="35" endLine="184" endPosition="109">
       <varInfo nodeId="8751745335399671877" varName="manager" />
       <varInfo nodeId="8751745335399671877" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="219" startPosition="35" endLine="222" endPosition="109">
+    <scopeInfo nodeId="3104811047188348760" fileName="BreakpointableNodeItem_Editor.java" startLine="200" startPosition="0" endLine="203" endPosition="0">
+      <varInfo nodeId="3104811047188348760" varName="editorContext" />
+      <varInfo nodeId="3104811047188348760" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="236" startPosition="35" endLine="239" endPosition="109">
+      <varInfo nodeId="3104811047188348769" varName="manager" />
+      <varInfo nodeId="3104811047188348769" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="279" startPosition="35" endLine="282" endPosition="109">
       <varInfo nodeId="5789575999242884600" varName="manager" />
       <varInfo nodeId="5789575999242884600" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="61" startPosition="89" endLine="65" endPosition="22">
+    <scopeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="66" startPosition="89" endLine="70" endPosition="22">
       <varInfo nodeId="5789575999242884580" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5789575999242884587" fileName="BreakpointableNodeItem_Editor.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="5789575999242884587" fileName="BreakpointableNodeItem_Editor.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="5789575999242884587" varName="editorContext" />
       <varInfo nodeId="5789575999242884587" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="102" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="2566194812862845914" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="108" startPosition="68" endLine="112" endPosition="23">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="113" startPosition="68" endLine="117" endPosition="23">
       <varInfo nodeId="2566194812862845914" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="144" startPosition="89" endLine="148" endPosition="22">
+    <scopeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="149" startPosition="89" endLine="153" endPosition="22">
       <varInfo nodeId="7796501636717833694" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="7796501636717833693" fileName="BreakpointableNodeItem_Editor.java" startLine="159" startPosition="0" endLine="163" endPosition="0">
+    <scopeInfo nodeId="7796501636717833693" fileName="BreakpointableNodeItem_Editor.java" startLine="164" startPosition="0" endLine="168" endPosition="0">
       <varInfo nodeId="7796501636717833693" varName="editorContext" />
       <varInfo nodeId="7796501636717833693" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="184" startPosition="88" endLine="188" endPosition="22">
+    <scopeInfo nodeId="3104811047188348758" fileName="BreakpointableNodeItem_Editor.java" startLine="204" startPosition="89" endLine="208" endPosition="22">
+      <varInfo nodeId="3104811047188348758" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3104811047188348767" fileName="BreakpointableNodeItem_Editor.java" startLine="219" startPosition="0" endLine="223" endPosition="0">
+      <varInfo nodeId="3104811047188348767" varName="editorContext" />
+      <varInfo nodeId="3104811047188348767" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="244" startPosition="88" endLine="248" endPosition="22">
       <varInfo nodeId="5789575999242884592" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5789575999242884598" fileName="BreakpointableNodeItem_Editor.java" startLine="202" startPosition="0" endLine="206" endPosition="0">
+    <scopeInfo nodeId="5789575999242884598" fileName="BreakpointableNodeItem_Editor.java" startLine="262" startPosition="0" endLine="266" endPosition="0">
       <varInfo nodeId="5789575999242884598" varName="editorContext" />
       <varInfo nodeId="5789575999242884598" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="49" startPosition="90" endLine="54" endPosition="22">
+    <scopeInfo nodeId="3104811047188725336" fileName="BreakpointableNodeItem_Editor.java" startLine="287" startPosition="88" endLine="291" endPosition="22">
+      <varInfo nodeId="3104811047188725336" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="54" startPosition="90" endLine="59" endPosition="22">
       <varInfo nodeId="2566194812862845914" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="84" startPosition="93" endLine="89" endPosition="22">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="89" startPosition="93" endLine="94" endPosition="22">
       <varInfo nodeId="2566194812862845914" varName="editorCell" />
       <varInfo nodeId="2566194812862845914" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="102" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="107" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="2566194812862845914" varName="editorContext" />
       <varInfo nodeId="2566194812862845914" varName="elementNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="151" startPosition="91" endLine="156" endPosition="22">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="156" startPosition="91" endLine="161" endPosition="22">
       <varInfo nodeId="2566194812862845914" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="61" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="211" startPosition="91" endLine="216" endPosition="22">
+      <varInfo nodeId="2566194812862845914" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5789575999242884580" fileName="BreakpointableNodeItem_Editor.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="5789575999242884580" varName="editorContext" />
       <varInfo nodeId="5789575999242884580" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="108" startPosition="0" endLine="114" endPosition="0">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="113" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="2566194812862845914" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="144" startPosition="0" endLine="150" endPosition="0">
+    <scopeInfo nodeId="7796501636717833694" fileName="BreakpointableNodeItem_Editor.java" startLine="149" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="7796501636717833694" varName="editorContext" />
       <varInfo nodeId="7796501636717833694" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="184" startPosition="0" endLine="190" endPosition="0">
+    <scopeInfo nodeId="3104811047188348758" fileName="BreakpointableNodeItem_Editor.java" startLine="204" startPosition="0" endLine="210" endPosition="0">
+      <varInfo nodeId="3104811047188348758" varName="editorContext" />
+      <varInfo nodeId="3104811047188348758" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5789575999242884592" fileName="BreakpointableNodeItem_Editor.java" startLine="244" startPosition="0" endLine="250" endPosition="0">
       <varInfo nodeId="5789575999242884592" varName="editorContext" />
       <varInfo nodeId="5789575999242884592" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="49" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="3104811047188725336" fileName="BreakpointableNodeItem_Editor.java" startLine="287" startPosition="0" endLine="293" endPosition="0">
+      <varInfo nodeId="3104811047188725336" varName="editorContext" />
+      <varInfo nodeId="3104811047188725336" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="2566194812862845914" varName="editorContext" />
       <varInfo nodeId="2566194812862845914" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="84" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="89" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="2566194812862845914" varName="editorContext" />
       <varInfo nodeId="2566194812862845914" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="151" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="156" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="2566194812862845914" varName="editorContext" />
       <varInfo nodeId="2566194812862845914" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="68" startPosition="91" endLine="76" endPosition="22">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="211" startPosition="0" endLine="218" endPosition="0">
+      <varInfo nodeId="2566194812862845914" varName="editorContext" />
+      <varInfo nodeId="2566194812862845914" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="73" startPosition="91" endLine="81" endPosition="22">
       <varInfo nodeId="2566194812862845914" varName="editorCell" />
       <varInfo nodeId="2566194812862845914" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="116" startPosition="96" endLine="124" endPosition="9" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="129" startPosition="90" endLine="137" endPosition="22">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="121" startPosition="96" endLine="129" endPosition="9" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="134" startPosition="90" endLine="142" endPosition="22">
       <varInfo nodeId="2566194812862845914" varName="editorCell" />
       <varInfo nodeId="2566194812862845914" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="191" startPosition="90" endLine="199" endPosition="22">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="189" startPosition="90" endLine="197" endPosition="22">
       <varInfo nodeId="2566194812862845914" varName="editorCell" />
       <varInfo nodeId="2566194812862845914" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="68" startPosition="0" endLine="78" endPosition="0">
-      <varInfo nodeId="2566194812862845914" varName="editorContext" />
-      <varInfo nodeId="2566194812862845914" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="115" startPosition="132" endLine="125" endPosition="7" />
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="129" startPosition="0" endLine="139" endPosition="0">
-      <varInfo nodeId="2566194812862845914" varName="editorContext" />
-      <varInfo nodeId="2566194812862845914" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="191" startPosition="0" endLine="201" endPosition="0">
-      <varInfo nodeId="2566194812862845914" varName="editorContext" />
-      <varInfo nodeId="2566194812862845914" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="34" startPosition="89" endLine="46" endPosition="22">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="251" startPosition="90" endLine="259" endPosition="22">
       <varInfo nodeId="2566194812862845914" varName="editorCell" />
+      <varInfo nodeId="2566194812862845914" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="115" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="73" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="2566194812862845914" varName="editorContext" />
+      <varInfo nodeId="2566194812862845914" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="120" startPosition="132" endLine="130" endPosition="7" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="134" startPosition="0" endLine="144" endPosition="0">
+      <varInfo nodeId="2566194812862845914" varName="editorContext" />
+      <varInfo nodeId="2566194812862845914" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="189" startPosition="0" endLine="199" endPosition="0">
+      <varInfo nodeId="2566194812862845914" varName="editorContext" />
+      <varInfo nodeId="2566194812862845914" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="251" startPosition="0" endLine="261" endPosition="0">
+      <varInfo nodeId="2566194812862845914" varName="editorContext" />
+      <varInfo nodeId="2566194812862845914" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="120" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="2566194812862845914" varName="editorContext" />
       <varInfo nodeId="2566194812862845914" varName="elementCell" />
       <varInfo nodeId="2566194812862845914" varName="elementNode" />
       <varInfo nodeId="2566194812862845914" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="34" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="2566194812862845914" varName="editorContext" />
-      <varInfo nodeId="2566194812862845914" varName="node" />
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="35" startPosition="89" endLine="51" endPosition="22">
+      <varInfo nodeId="2566194812862845914" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="164" startPosition="89" endLine="181" endPosition="22">
+    <scopeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="169" startPosition="89" endLine="186" endPosition="22">
       <varInfo nodeId="8751745335399671877" varName="attributeConcept" />
       <varInfo nodeId="8751745335399671877" varName="attributeKind" />
       <varInfo nodeId="8751745335399671877" varName="editorCell" />
       <varInfo nodeId="8751745335399671877" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="207" startPosition="88" endLine="224" endPosition="22">
+    <scopeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="224" startPosition="89" endLine="241" endPosition="22">
+      <varInfo nodeId="3104811047188348769" varName="attributeConcept" />
+      <varInfo nodeId="3104811047188348769" varName="attributeKind" />
+      <varInfo nodeId="3104811047188348769" varName="editorCell" />
+      <varInfo nodeId="3104811047188348769" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="267" startPosition="88" endLine="284" endPosition="22">
       <varInfo nodeId="5789575999242884600" varName="attributeConcept" />
       <varInfo nodeId="5789575999242884600" varName="attributeKind" />
       <varInfo nodeId="5789575999242884600" varName="editorCell" />
       <varInfo nodeId="5789575999242884600" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="164" startPosition="0" endLine="183" endPosition="0">
+    <scopeInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="35" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="2566194812862845914" varName="editorContext" />
+      <varInfo nodeId="2566194812862845914" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8751745335399671877" fileName="BreakpointableNodeItem_Editor.java" startLine="169" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="8751745335399671877" varName="editorContext" />
       <varInfo nodeId="8751745335399671877" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="207" startPosition="0" endLine="226" endPosition="0">
+    <scopeInfo nodeId="3104811047188348769" fileName="BreakpointableNodeItem_Editor.java" startLine="224" startPosition="0" endLine="243" endPosition="0">
+      <varInfo nodeId="3104811047188348769" varName="editorContext" />
+      <varInfo nodeId="3104811047188348769" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5789575999242884600" fileName="BreakpointableNodeItem_Editor.java" startLine="267" startPosition="0" endLine="286" endPosition="0">
       <varInfo nodeId="5789575999242884600" varName="editorContext" />
       <varInfo nodeId="5789575999242884600" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="92" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.editor.BreakpointableNodeItem_Editor$conceptsToCreateBreakpointListHandler_4n0rw6_b1a0" />
-    <unitInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="29" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.editor.BreakpointableNodeItem_Editor" />
+    <unitInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="97" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.editor.BreakpointableNodeItem_Editor$conceptsToCreateBreakpointListHandler_4n0rw6_b1a0" />
+    <unitInfo nodeId="2566194812862845914" fileName="BreakpointableNodeItem_Editor.java" startLine="30" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.editor.BreakpointableNodeItem_Editor" />
   </root>
   <root nodeRef="r:600c053c-afd8-419c-b24b-2550d269af72(jetbrains.mps.debugger.api.lang.editor)/2569394751387978477">
     <nodeInfo nodeId="2569394751387978477" fileName="CreateBreakpointOperation_Editor.java" startLine="37" startPosition="79" endLine="38" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

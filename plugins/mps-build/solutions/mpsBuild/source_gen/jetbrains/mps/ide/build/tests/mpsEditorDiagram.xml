@@ -20,6 +20,7 @@
       <include name="javac2.jar" />
       <include name="jdom.jar" />
       <include name="asm4-all.jar" />
+      <include name="asm-all.jar" />
       <include name="jgoodies-forms.jar" />
     </fileset>
   </path>
@@ -63,7 +64,9 @@
       <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.figures.sandbox-src.jar">
-      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/source_gen" />
+      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/jetbrains.mps.lang.editor.figures.sandbox.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-test-jetbrains.mps.lang.editor.figures.sandbox-models" prefix="module/models" />
     </jar>
@@ -104,8 +107,12 @@
       <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.diagram.testLanguage-src.jar">
-      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/generator/source_gen" />
-      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/source_gen" />
+      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/generator/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
+      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
       <zipfileset file="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/jetbrains.mps.lang.editor.diagram.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-test-jetbrains.mps.lang.editor.diagram.testLanguage-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-test-jetbrains.mps.lang.editor.diagram.testLanguage-languageModels" prefix="module/languageModels" />
@@ -302,6 +309,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram.runtime.jar" />
@@ -365,6 +373,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
@@ -431,6 +440,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
@@ -477,6 +487,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />

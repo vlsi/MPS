@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-ak413f2ys6mxpxxzo32tsimrywd7p0i">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6coyx9cq8icm86dy9j1trq5a7ubwr79" />
@@ -13,7 +12,6 @@
     <dep root="954830572075912399" />
     <dep root="954830572075998495" />
     <dep root="954830572075998500" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

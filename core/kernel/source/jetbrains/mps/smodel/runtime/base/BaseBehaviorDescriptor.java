@@ -17,19 +17,19 @@ package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -91,9 +91,6 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<Method>>() {
       @Override
       public List<Method> compute() {
-        String languageNamespace = NameUtil.namespaceFromConceptFQName(conceptFqName);
-        final Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
-
         List<Method> methodsToCall = new ArrayList<Method>();
         Set<SNode> processed = new HashSet<SNode>();
 
@@ -106,17 +103,15 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
               continue;
             }
             String fqName = NameUtil.nodeFQName(currentConcept);
-            String behaviorClass = behaviorClassByConceptFqName(fqName);
-
-            try {
-              Class cls = ClassLoaderManager.getInstance().getClass(language, behaviorClass);
-              if (cls != null) {
+            Class cls = getGeneratedClass(fqName, behaviorClassByConceptFqName(fqName));
+            if (cls != null) {
+              try {
                 Method method = cls.getMethod("init", SNode.class);
                 method.setAccessible(true);
                 methodsToCall.add(method);
+              } catch (NoSuchMethodException e) {
+                //ignore
               }
-            } catch (NoSuchMethodException e) {
-              //ignore
             }
 
             if (SNodeUtil.isInstanceOfConceptDeclaration(currentConcept)) {
@@ -142,6 +137,16 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
         return methodsToCall;
       }
     });
+  }
+
+  // TODO: Reflection should not be used here. Either make this method private for InterpretedBehaviorDescriptor or (better) generate all necessary code and kill this method completel
+  protected static Class<?> getGeneratedClass(String conceptFqName, String className) {
+    String conceptLanguageNamespace = NameUtil.namespaceFromConceptFQName(conceptFqName);
+    Language language = ModuleRepositoryFacade.getInstance().getModule(conceptLanguageNamespace, Language.class);
+    if (language == null) {
+      return null;
+    }
+    return ClassLoaderManager.getInstance().getOwnClass(language, className);
   }
 
   @Deprecated

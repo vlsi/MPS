@@ -102,6 +102,10 @@ public interface EditorContext {
 
   boolean isEditable();
 
+  /**
+   * @deprecated since MPS 3.1 use createMemento()
+   */
+  @Deprecated
   Object createMemento(boolean full);
 
   Object createMemento();

@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -87,7 +88,13 @@ public class GoToOverridenMethod_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("selectedCell") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+    }
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }

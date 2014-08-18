@@ -10,7 +10,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.lang.actions#1154466409006" uuid="018659ff-d3ef-4215-97e0-bcfeeb111145" needs-opctx="false">
+    <generator name="" generatorUID="jetbrains.mps.lang.actions#1154466409006" uuid="018659ff-d3ef-4215-97e0-bcfeeb111145">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generators/baseLanguage/templates" />
@@ -148,10 +148,12 @@
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="false">1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)</dependency>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
+    <dependency reexport="false">d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)</dependency>
     <dependency reexport="false">7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
+    <usedLanguage>d8f591ec-4d86-4af2-9f92-a9e93c803ffa(jetbrains.mps.lang.scopes)</usedLanguage>
   </usedLanguages>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
