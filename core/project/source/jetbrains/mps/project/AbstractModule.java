@@ -742,16 +742,14 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     Set<ModelRoot> toRemove = new HashSet<ModelRoot>(mySModelRoots);
     Set<ModelRoot> toUpdate = new HashSet<ModelRoot>(mySModelRoots);
+    Set<ModelRoot> toAttach = new HashSet<ModelRoot>();
 
     for (ModelRoot root : loadRoots()) {
       try {
         if (mySModelRoots.contains(root)) {
           toRemove.remove(root);
         } else {
-          ModelRootBase rootBase = (ModelRootBase) root;
-          rootBase.setModule(this);
-          mySModelRoots.add(root);
-          rootBase.attach();
+          toAttach.add(root);
         }
       } catch (Exception e) {
         LOG.error("Error loading models from root `" + root.getPresentation() + "'. Requested by: " + this, e);
@@ -763,6 +761,12 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       ((ModelRootBase) modelRoot).dispose();
     }
     mySModelRoots.removeAll(toRemove);
+    for (ModelRoot modelRoot : toAttach) {
+      ModelRootBase rootBase = (ModelRootBase) modelRoot;
+      rootBase.setModule(this);
+      mySModelRoots.add(modelRoot);
+      rootBase.attach();
+    }
     for (ModelRoot modelRoot : toUpdate) {
       ((ModelRootBase) modelRoot).update();
     }
