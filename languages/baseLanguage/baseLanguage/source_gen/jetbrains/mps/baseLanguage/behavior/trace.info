@@ -12910,76 +12910,79 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/2572626204577884822">
     <nodeInfo nodeId="4985347495069590319" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="130" endLine="18" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2572626204612741199" fileName="TernaryOperatorExpression_Behavior.java" startLine="18" startPosition="38" endLine="19" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4985347495059467874" fileName="TernaryOperatorExpression_Behavior.java" startLine="22" startPosition="100" endLine="23" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495057936801" fileName="TernaryOperatorExpression_Behavior.java" startLine="26" startPosition="101" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2572626204598029510" fileName="TernaryOperatorExpression_Behavior.java" startLine="30" startPosition="100" endLine="31" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4985347495062974204" fileName="TernaryOperatorExpression_Behavior.java" startLine="34" startPosition="185" endLine="35" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495062974212" fileName="TernaryOperatorExpression_Behavior.java" startLine="36" startPosition="28" endLine="37" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974221" fileName="TernaryOperatorExpression_Behavior.java" startLine="38" startPosition="29" endLine="39" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974228" fileName="TernaryOperatorExpression_Behavior.java" startLine="39" startPosition="187" endLine="40" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974238" fileName="TernaryOperatorExpression_Behavior.java" startLine="41" startPosition="14" endLine="42" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974250" fileName="TernaryOperatorExpression_Behavior.java" startLine="45" startPosition="29" endLine="46" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974257" fileName="TernaryOperatorExpression_Behavior.java" startLine="46" startPosition="109" endLine="47" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974267" fileName="TernaryOperatorExpression_Behavior.java" startLine="48" startPosition="14" endLine="49" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974272" fileName="TernaryOperatorExpression_Behavior.java" startLine="51" startPosition="5" endLine="52" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974279" fileName="TernaryOperatorExpression_Behavior.java" startLine="52" startPosition="84" endLine="53" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062938750" fileName="TernaryOperatorExpression_Behavior.java" startLine="57" startPosition="171" endLine="58" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062938763" fileName="TernaryOperatorExpression_Behavior.java" startLine="59" startPosition="5" endLine="60" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1063516660192754696" fileName="TernaryOperatorExpression_Behavior.java" startLine="18" startPosition="38" endLine="19" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2572626204612741199" fileName="TernaryOperatorExpression_Behavior.java" startLine="19" startPosition="75" endLine="20" endPosition="403" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4985347495059467874" fileName="TernaryOperatorExpression_Behavior.java" startLine="23" startPosition="100" endLine="24" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495057936801" fileName="TernaryOperatorExpression_Behavior.java" startLine="27" startPosition="101" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2572626204598029510" fileName="TernaryOperatorExpression_Behavior.java" startLine="31" startPosition="100" endLine="32" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4985347495062974204" fileName="TernaryOperatorExpression_Behavior.java" startLine="35" startPosition="185" endLine="36" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495062974212" fileName="TernaryOperatorExpression_Behavior.java" startLine="37" startPosition="28" endLine="38" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974221" fileName="TernaryOperatorExpression_Behavior.java" startLine="39" startPosition="29" endLine="40" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974228" fileName="TernaryOperatorExpression_Behavior.java" startLine="40" startPosition="187" endLine="41" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974238" fileName="TernaryOperatorExpression_Behavior.java" startLine="42" startPosition="14" endLine="43" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974250" fileName="TernaryOperatorExpression_Behavior.java" startLine="46" startPosition="29" endLine="47" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974257" fileName="TernaryOperatorExpression_Behavior.java" startLine="47" startPosition="109" endLine="48" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974267" fileName="TernaryOperatorExpression_Behavior.java" startLine="49" startPosition="14" endLine="50" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974272" fileName="TernaryOperatorExpression_Behavior.java" startLine="52" startPosition="5" endLine="53" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974279" fileName="TernaryOperatorExpression_Behavior.java" startLine="53" startPosition="84" endLine="54" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062938750" fileName="TernaryOperatorExpression_Behavior.java" startLine="58" startPosition="171" endLine="59" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062938763" fileName="TernaryOperatorExpression_Behavior.java" startLine="60" startPosition="5" endLine="61" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4985347495062974236" fileName="TernaryOperatorExpression_Behavior.java" startLine="41" startPosition="12" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4985347495062974265" fileName="TernaryOperatorExpression_Behavior.java" startLine="48" startPosition="12" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setLeftSideExpression_7583777362102629706#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setRightSideExpression_7583777362102706555#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOrderedChildExpressions_7583777362095257106#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="4985347495062938748" fileName="TernaryOperatorExpression_Behavior.java" startLine="56" startPosition="111" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_2572626204612659829#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
-    <nodeInfo nodeId="4985347495062974219" fileName="TernaryOperatorExpression_Behavior.java" startLine="37" startPosition="114" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4985347495062974248" fileName="TernaryOperatorExpression_Behavior.java" startLine="44" startPosition="12" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="56" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_findBottomMostTernary_4985347495062938743#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4985347495062974246" fileName="TernaryOperatorExpression_Behavior.java" startLine="44" startPosition="10" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4985347495062974210" fileName="TernaryOperatorExpression_Behavior.java" startLine="35" startPosition="132" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="34" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_rebalanceAfterParenthing_4985347495062678851#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4985347495062974236" fileName="TernaryOperatorExpression_Behavior.java" startLine="42" startPosition="12" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4985347495062974265" fileName="TernaryOperatorExpression_Behavior.java" startLine="49" startPosition="12" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setLeftSideExpression_7583777362102629706#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setRightSideExpression_7583777362102706555#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOrderedChildExpressions_7583777362095257106#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="4985347495062938748" fileName="TernaryOperatorExpression_Behavior.java" startLine="57" startPosition="111" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_2572626204612659829#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
+    <nodeInfo nodeId="4985347495062974219" fileName="TernaryOperatorExpression_Behavior.java" startLine="38" startPosition="114" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4985347495062974248" fileName="TernaryOperatorExpression_Behavior.java" startLine="45" startPosition="12" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="57" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_findBottomMostTernary_4985347495062938743#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4985347495062974246" fileName="TernaryOperatorExpression_Behavior.java" startLine="45" startPosition="10" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4985347495062974210" fileName="TernaryOperatorExpression_Behavior.java" startLine="36" startPosition="132" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="35" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_rebalanceAfterParenthing_4985347495062678851#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="2572626204577884824" fileName="TernaryOperatorExpression_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="4985347495059467501" fileName="TernaryOperatorExpression_Behavior.java" startLine="22" startPosition="100" endLine="23" endPosition="65" />
-    <scopeInfo nodeId="4985347495057936451" fileName="TernaryOperatorExpression_Behavior.java" startLine="26" startPosition="101" endLine="27" endPosition="63" />
-    <scopeInfo nodeId="2572626204598029250" fileName="TernaryOperatorExpression_Behavior.java" startLine="30" startPosition="100" endLine="31" endPosition="228" />
-    <scopeInfo nodeId="4985347495062974237" fileName="TernaryOperatorExpression_Behavior.java" startLine="41" startPosition="14" endLine="42" endPosition="139" />
-    <scopeInfo nodeId="4985347495062974266" fileName="TernaryOperatorExpression_Behavior.java" startLine="48" startPosition="14" endLine="49" endPosition="61" />
-    <scopeInfo nodeId="4985347495062938749" fileName="TernaryOperatorExpression_Behavior.java" startLine="57" startPosition="171" endLine="58" endPosition="176" />
+    <scopeInfo nodeId="4985347495059467501" fileName="TernaryOperatorExpression_Behavior.java" startLine="23" startPosition="100" endLine="24" endPosition="65" />
+    <scopeInfo nodeId="4985347495057936451" fileName="TernaryOperatorExpression_Behavior.java" startLine="27" startPosition="101" endLine="28" endPosition="63" />
+    <scopeInfo nodeId="2572626204598029250" fileName="TernaryOperatorExpression_Behavior.java" startLine="31" startPosition="100" endLine="32" endPosition="228" />
+    <scopeInfo nodeId="4985347495062974237" fileName="TernaryOperatorExpression_Behavior.java" startLine="42" startPosition="14" endLine="43" endPosition="139" />
+    <scopeInfo nodeId="4985347495062974266" fileName="TernaryOperatorExpression_Behavior.java" startLine="49" startPosition="14" endLine="50" endPosition="61" />
+    <scopeInfo nodeId="4985347495062938749" fileName="TernaryOperatorExpression_Behavior.java" startLine="58" startPosition="171" endLine="59" endPosition="176" />
     <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204612740855" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="130" endLine="19" endPosition="147" />
-    <scopeInfo nodeId="4985347495062974220" fileName="TernaryOperatorExpression_Behavior.java" startLine="38" startPosition="29" endLine="40" endPosition="139" />
-    <scopeInfo nodeId="4985347495062974249" fileName="TernaryOperatorExpression_Behavior.java" startLine="45" startPosition="29" endLine="47" endPosition="139" />
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="4985347495062974220" fileName="TernaryOperatorExpression_Behavior.java" startLine="39" startPosition="29" endLine="41" endPosition="139" />
+    <scopeInfo nodeId="4985347495062974249" fileName="TernaryOperatorExpression_Behavior.java" startLine="46" startPosition="29" endLine="48" endPosition="139" />
+    <scopeInfo nodeId="2572626204612740855" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="130" endLine="20" endPosition="403">
+      <varInfo nodeId="1063516660192754697" varName="ancestors" />
+    </scopeInfo>
+    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="4985347495059467502" varName="expr" />
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="4985347495057936452" varName="expr" />
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="4985347495062938747" fileName="TernaryOperatorExpression_Behavior.java" startLine="57" startPosition="111" endLine="61" endPosition="29" />
+    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="2572626204612740856" varName="leaf" />
       <varInfo nodeId="2572626204612740858" varName="rightParen" />
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495062938747" fileName="TernaryOperatorExpression_Behavior.java" startLine="56" startPosition="111" endLine="60" endPosition="29" />
-    <scopeInfo nodeId="4985347495062974247" fileName="TernaryOperatorExpression_Behavior.java" startLine="44" startPosition="12" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="56" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="4985347495062974247" fileName="TernaryOperatorExpression_Behavior.java" startLine="45" startPosition="12" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="57" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="4985347495062938766" varName="bottomMostTernary" />
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495062974211" fileName="TernaryOperatorExpression_Behavior.java" startLine="36" startPosition="28" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="4985347495062973465" fileName="TernaryOperatorExpression_Behavior.java" startLine="34" startPosition="185" endLine="53" endPosition="76">
+    <scopeInfo nodeId="4985347495062974211" fileName="TernaryOperatorExpression_Behavior.java" startLine="37" startPosition="28" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="4985347495062973465" fileName="TernaryOperatorExpression_Behavior.java" startLine="35" startPosition="185" endLine="54" endPosition="76">
       <varInfo nodeId="4985347495062974205" varName="bottomMostTernary" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="34" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="35" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="4985347495062973474" varName="leftAccumulator" />
       <varInfo nodeId="4985347495062973468" varName="leftTurn" />
       <varInfo nodeId="4985347495062973470" varName="parens" />
@@ -12987,7 +12990,7 @@
       <varInfo nodeId="4985347495062973466" varName="rightTurn" />
       <varInfo nodeId="2572626204577884822" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="13" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TernaryOperatorExpression_Behavior" />
+    <unitInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TernaryOperatorExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/2572626204612779323">
     <nodeInfo nodeId="2572626204612779490" fileName="CastExpression_Behavior.java" startLine="14" startPosition="130" endLine="15" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

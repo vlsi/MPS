@@ -66,7 +66,6 @@ import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
-import jetbrains.mps.baseLanguage.editor.EditorParenthesisUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
@@ -4421,9 +4420,10 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode parens = ParenthesisUtil.createUnmatchedLeftParenthesis(_context.getSourceNode());
-        SNode leftMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpressionIgnoringParens(parens, false);
-        SelectionUtil.selectLabelCellAnSetCaret(editorContext, leftMostNode, SelectionManager.FIRST_CELL, 0);
+        SNode parenthesisedNode = ParenthesisUtil.createUnmatchedLeftParenthesis(_context.getSourceNode());
+        if (SNodeOperations.isInstanceOf(parenthesisedNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(parenthesisedNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "openParen", -1);
+        }
         return null;
       }
 
