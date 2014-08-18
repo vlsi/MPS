@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
@@ -30,12 +31,14 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 
 import java.util.Map;
 
-public class DebugRegistryUtil {
+public class DebugRegistryUtil implements CoreComponent {
 
   public static boolean initialized = false;
+  private SRepositoryAdapter myListener;
 
   public static String getINamedConceptName(jetbrains.mps.smodel.SNode node) {
     if (node.workingMode() == IdMigrationMode.ID) {
@@ -94,33 +97,35 @@ public class DebugRegistryUtil {
 
   //remove after 3.2
   public static void fillDebugRegistry() {
-    DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
-
     for (SModule module : MPSModuleRepository.getInstance().getModules()) {
       if (module instanceof Language) {
-        SLanguageId lid = IdHelper.getLanguageId(module.getModuleReference().getModuleId());
-        dr.addLanguageName(lid, module.getModuleName());
+        fillDebugRegistryForLanguage((Language) module);
+      }
+    }
+  }
 
-        org.jetbrains.mps.openapi.model.SModel structureModel  = LanguageAspect.STRUCTURE.get((Language) module);
+  private static void fillDebugRegistryForLanguage(Language language) {
+    DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
+    SLanguageId lid = IdHelper.getLanguageId(language.getModuleReference().getModuleId());
+    dr.addLanguageName(lid, language.getModuleName());
 
-        for (SNode root : structureModel.getRootNodes()) {
-          if (!(root instanceof jetbrains.mps.smodel.SNode)) { continue; }
-          jetbrains.mps.smodel.SNode concept = (jetbrains.mps.smodel.SNode) root;
-          if (isInstanceOfConceptDeclaration(concept)) {
-            dr.addConceptName(IdHelper.getConceptId(concept), getINamedConceptName(concept));
-            for (SNode linkDeclaration : getConceptLinkDeclarations(concept)) {
-              dr.addLinkName(("aggregation".equals(getLinkMetaClass((jetbrains.mps.smodel.SNode) linkDeclaration)) ? IdHelper.getNodeRoleId(((jetbrains.mps.smodel.SNode) linkDeclaration)) : IdHelper.getRefRoleId(((jetbrains.mps.smodel.SNode) linkDeclaration))), getLinkRole(
-                  (jetbrains.mps.smodel.SNode) linkDeclaration));
-            }
-            for (SNode propertyDeclaration : getPropertyDeclarations(concept)) {
-              dr.addPropertyName(IdHelper.getPropId(((jetbrains.mps.smodel.SNode) propertyDeclaration)), getINamedConceptName(
-                  (jetbrains.mps.smodel.SNode) propertyDeclaration));
-            }
-          }
+    org.jetbrains.mps.openapi.model.SModel structureModel  = LanguageAspect.STRUCTURE.get((Language) language);
+
+    for (SNode root : structureModel.getRootNodes()) {
+      if (!(root instanceof jetbrains.mps.smodel.SNode)) { continue; }
+      jetbrains.mps.smodel.SNode concept = (jetbrains.mps.smodel.SNode) root;
+      if (isInstanceOfConceptDeclaration(concept)) {
+        dr.addConceptName(IdHelper.getConceptId(concept), getINamedConceptName(concept));
+        for (SNode linkDeclaration : getConceptLinkDeclarations(concept)) {
+          dr.addLinkName(("aggregation".equals(getLinkMetaClass((jetbrains.mps.smodel.SNode) linkDeclaration)) ? IdHelper.getNodeRoleId(((jetbrains.mps.smodel.SNode) linkDeclaration)) : IdHelper.getRefRoleId(((jetbrains.mps.smodel.SNode) linkDeclaration))), getLinkRole(
+              (jetbrains.mps.smodel.SNode) linkDeclaration));
+        }
+        for (SNode propertyDeclaration : getPropertyDeclarations(concept)) {
+          dr.addPropertyName(IdHelper.getPropId(((jetbrains.mps.smodel.SNode) propertyDeclaration)), getINamedConceptName(
+              (jetbrains.mps.smodel.SNode) propertyDeclaration));
         }
       }
     }
-
   }
 
   //remove after 3.2
@@ -203,4 +208,21 @@ public class DebugRegistryUtil {
     }
   }
 
+  @Override
+  public void init() {
+    myListener = new SRepositoryAdapter() {
+      @Override
+      public void moduleAdded(SModule module) {
+        if (initialized && module instanceof Language) {
+          fillDebugRegistryForLanguage((Language) module);
+        }
+      }
+    };
+    MPSModuleRepository.getInstance().addRepositoryListener(myListener);
+  }
+
+  @Override
+  public void dispose() {
+    MPSModuleRepository.getInstance().removeRepositoryListener(myListener);
+  }
 }
