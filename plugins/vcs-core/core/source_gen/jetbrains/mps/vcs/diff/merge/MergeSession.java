@@ -19,6 +19,9 @@ import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.DefaultSModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.IdMigrationMode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
@@ -34,7 +37,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.SModelAdapter;
@@ -68,6 +70,13 @@ public class MergeSession {
     jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(((SModelBase) base).getSModel());
     if (resModel instanceof DefaultSModel) {
       int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
+      if (pv > 8) {
+        for (SNode root : resModel.getRootNodes()) {
+          for (SNode node : SNodeUtil.getDescendants(root)) {
+            ((jetbrains.mps.smodel.SNode) node).updateWorkingMode(IdMigrationMode.ID);
+          }
+        }
+      }
       ((DefaultSModel) resModel).setPersistenceVersion(pv);
     }
     return new MergeSession(base, mine, repository, new MergeTemporaryModel(resModel, false));

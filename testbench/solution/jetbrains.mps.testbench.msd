@@ -41,5 +41,19 @@
     <usedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguage>
     <usedLanguage>9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)</usedLanguage>
   </usedLanguages>
+  <languageVersions>
+    <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" version="0" />
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" version="0" />
+    <language id="479c7a8c-02f9-43b5-9139-d910cb22f298" version="0" />
+    <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="0" />
+    <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" version="0" />
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" />
+    <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" version="0" />
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" />
+    <language id="fd392034-7849-419d-9071-12563d152375" version="0" />
+    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" version="0" />
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" version="0" />
+    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="0" />
+  </languageVersions>
 </solution>
 

@@ -115,7 +115,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
     }
 
-    dependencies.add(new SDependencyImpl(BootstrapLanguages.coreLanguage(), SDependencyScope.DEFAULT, true));
+    Language core = BootstrapLanguages.coreLanguage();
+    if (core != null) {
+      dependencies.add(new SDependencyImpl(core, SDependencyScope.DEFAULT, true));
+    }
 
     return dependencies;
   }
@@ -276,7 +279,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   /**
-   * @deprecated  Either switch to SConcept, or use {@link jetbrains.mps.smodel.ConceptDeclarationLookup} in case concept's SNode is what you truly need.
+   * @deprecated Either switch to SConcept, or use {@link jetbrains.mps.smodel.ConceptDeclarationLookup} in case concept's SNode is what you truly need.
    */
   @Deprecated
   @ToRemove(version = 3.2)

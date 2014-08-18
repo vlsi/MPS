@@ -105,7 +105,7 @@ public class ModelPersistence {
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";
 
-  public static final int LAST_VERSION = 8;
+  public static final int LAST_VERSION = 9;
 
   private static final IModelPersistence[] myModelPersistenceFactory = {
       null,

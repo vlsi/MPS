@@ -144,6 +144,8 @@ public class BinaryPersistence {
     for (Pair<Pair<SLanguageId, Integer>, Boolean> ref : loadUsedLanguagesList(is)) {
       if (!ref.o2) {
         model.addLanguage(ref.o1.o1, ref.o1.o2);
+      } else {
+        model.addImplicitlyUsedLanguage(ref.o1.o1, ref.o1.o2);
       }
     }
     for (SModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
@@ -224,6 +226,7 @@ public class BinaryPersistence {
   }
 
   private static void saveModel(SModel model, ModelOutputStream os) throws IOException {
+    model.validateImplicitlyUsedLanguages();
     saveModelProperties(model, os);
 
     ArrayList<SNode> roots = new ArrayList<SNode>(IterableUtil.asCollection(model.getRootNodes()).size());

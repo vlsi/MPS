@@ -21,7 +21,6 @@ import com.intellij.facet.FacetManager;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import com.intellij.util.xml.ModuleContentRootSearchScope;
 import jetbrains.mps.ide.java.sourceStubs.Util;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiField;
@@ -42,6 +41,7 @@ public class JavaForeignIdBuilder {
     }
     return new NodePtr(modelRef, nodeId);
   }
+
 
 
   @Nullable
@@ -68,6 +68,7 @@ public class JavaForeignIdBuilder {
     }
     return computeNodeId(prefix, element);
   }
+
 
 
   @Nullable
@@ -105,22 +106,21 @@ public class JavaForeignIdBuilder {
   }
 
 
-  /*package*/
-  static jetbrains.mps.smodel.SModelReference computeModelReference(String packageName, String mpsModuleId) {
+
+  /*package*/ static jetbrains.mps.smodel.SModelReference computeModelReference(String packageName, String mpsModuleId) {
     String stereotype = "java_stub";
     if (packageName.length() == 0) {
       packageName = "<default package>";
     }
 
-    SModelFqName fqName = new SModelFqName(packageName, stereotype);
-    SModelId modelId = SModelId.foreign(fqName.getStereotype(), mpsModuleId, fqName.getLongName());
+    SModelId modelId = SModelId.foreign(stereotype, mpsModuleId, packageName);
 
     return new jetbrains.mps.smodel.SModelReference(null, modelId, packageName + "@" + stereotype);
   }
 
 
-  /*package*/
-  static SNodeId.Foreign computeNodeId(String prefix, PsiElement element) {
+
+  /*package*/ static SNodeId.Foreign computeNodeId(String prefix, PsiElement element) {
     StringBuilder sb = new StringBuilder(prefix);
 
     if (element instanceof PsiClass || element instanceof PsiField) {

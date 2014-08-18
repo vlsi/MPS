@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.IdUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -333,7 +334,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       if (lang != null) {
         myConceptName = NameUtil.nodeFQName(LanguageAspect.STRUCTURE.get(lang).getNode(new SNodeId.Regular(myConceptId.getConceptId())));
       } else {
-        myConceptName = MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(myConceptId);
+        myConceptName = IdUtil.getConceptFqName(myConceptId);
       }
     }
     synchronized (ourNames) {

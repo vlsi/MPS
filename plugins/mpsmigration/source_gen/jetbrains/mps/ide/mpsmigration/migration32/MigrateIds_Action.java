@@ -147,6 +147,9 @@ public class MigrateIds_Action extends BaseAction {
       });
       Sequence.fromIterable(models).visitAll(new IVisitor<DefaultSModelDescriptor>() {
         public void visit(DefaultSModelDescriptor model) {
+          if (model.getModule().getModuleName().equals("testRefactoring") || model.getModule().getModuleName().equals("testRefactoringTargetLang") || model.getModule().getModuleName().equals("testRefactoring.sandbox")) {
+            return;
+          }
           LazySModel innerModel = model.getSModelInternal();
           if (innerModel instanceof DefaultSModel) {
             ((DefaultSModel) innerModel).setPersistenceVersion(9);

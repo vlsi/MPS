@@ -29,6 +29,10 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptId" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLinkId" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SPropertyId" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLinkId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
 </dependenciesRoot>

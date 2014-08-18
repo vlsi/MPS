@@ -598,7 +598,7 @@ public class SModel implements SModelData {
 
   //language
 
-  public void calculateImplicitLanguages() {
+  public void validateImplicitlyUsedLanguages() {
     Set<SLanguageId> myUsedLanguages = new HashSet<SLanguageId>();
 
     for (org.jetbrains.mps.openapi.model.SNode root : getRootNodes()) {
@@ -638,6 +638,11 @@ public class SModel implements SModelData {
     }
 
     myImplicitLanguagesIds = myNewImplicitLanguagesIds;
+  }
+
+  // for persistence
+  public void addImplicitlyUsedLanguage(SLanguageId id, int version) {
+    myImplicitLanguagesIds.put(id, version);
   }
 
   public Map<SLanguageId, Integer> implicitlyUsedLanguagesWithVersions() {

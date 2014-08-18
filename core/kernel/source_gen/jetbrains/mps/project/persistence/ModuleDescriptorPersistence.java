@@ -9,10 +9,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import java.util.Map;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
@@ -47,7 +50,8 @@ public class ModuleDescriptorPersistence {
   private static final String HEADER_PATTERN = ".*<(language|dev-kit|solution)[^>]+(namespace|name)=\\\"([^\"]+)\\\"[^>]+uuid=\\\"([^\"]+)\\\".*";
   private ModuleDescriptorPersistence() {
   }
-  public static void loadDependencies(ModuleDescriptor descriptor, Element root) {
+
+  public static void loadDependencies(final ModuleDescriptor descriptor, Element root) {
     descriptor.getDependencies().addAll(loadDependenciesList(XmlUtil.first(root, "dependencies")));
 
     descriptor.getUsedLanguages().addAll(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "usedLanguages"), "usedLanguage")).select(new ISelector<Element, SModuleReference>() {
@@ -61,6 +65,12 @@ public class ModuleDescriptorPersistence {
         return PersistenceFacade.getInstance().createModuleReference(udk.getText());
       }
     }).toListSequence());
+
+    Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "languageVersions"), "language")).visitAll(new IVisitor<Element>() {
+      public void visit(Element it) {
+        descriptor.getLanguageVersions().put(SLanguageId.deserialize(it.getAttributeValue("id")), Integer.parseInt(it.getAttributeValue("version")));
+      }
+    });
 
     if (descriptor instanceof LanguageDescriptor) {
       LanguageDescriptor ld = (LanguageDescriptor) descriptor;
@@ -92,6 +102,16 @@ public class ModuleDescriptorPersistence {
         XmlUtil.tagWithText(usedDevKits, "usedDevKit", dkRef.toString());
       }
       result.addContent(usedDevKits);
+    }
+    if (!((descriptor.getLanguageVersions().isEmpty()))) {
+      Element languageVersions = new Element("languageVersions");
+      for (Map.Entry<SLanguageId, Integer> lv : descriptor.getLanguageVersions().entrySet()) {
+        Element languageVersion = new Element("language");
+        languageVersion.setAttribute("id", lv.getKey().serialize());
+        languageVersion.setAttribute("version", String.valueOf(lv.getValue()));
+        languageVersions.addContent(languageVersion);
+      }
+      result.addContent(languageVersions);
     }
 
     if (descriptor instanceof LanguageDescriptor) {

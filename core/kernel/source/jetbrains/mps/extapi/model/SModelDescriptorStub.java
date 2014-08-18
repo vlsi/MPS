@@ -268,7 +268,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public void calculateImplicitLanguages() {
-    getSModelInternal().calculateImplicitLanguages();
+    getSModelInternal().validateImplicitlyUsedLanguages();
   }
 
   @Override
